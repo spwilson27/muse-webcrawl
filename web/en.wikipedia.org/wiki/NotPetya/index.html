@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NotPetya - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+#content{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.88em;margin:0 0 12px 16px;border-collapse:collapse;font-family:sans-serif}
+.infobox th,.infobox td{border:1px solid #a2a9b1;padding:4px 6px;text-align:left;vertical-align:top}
+.infobox .ib-title{background:#b0c4de;text-align:center;font-size:1.05em}
+figure.hero{margin:0 0 12px 0;text-align:center}
+figure.hero img{max-width:100%;border:1px solid #a2a9b1;background:#eaecf0}
+figcaption{font-size:0.85em;color:#54595d;font-family:sans-serif}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>NotPetya</h1>
+<figure class="hero"><img src="images/notpetya.png" alt="The ransom note displayed by NotPetya on an infected computer"><figcaption>The screen displayed on systems infected by NotPetya</figcaption></figure>
+<table class="infobox">
+<tr><th colspan="2" class="ib-title">NotPetya</th></tr>
+<tr><th>Type</th><td>Malware (wiper disguised as ransomware)</td></tr>
+<tr><th>First detected</th><td>27 June 2017</td></tr>
+<tr><th>Initial vector</th><td>Compromised update of M.E.Doc accounting software (Ukraine)</td></tr>
+<tr><th>Exploits used</th><td>EternalBlue, EternalRomance, Mimikatz credential theft, PsExec/WMIC lateral movement</td></tr>
+<tr><th>Attributed to</th><td>Sandworm (Russian military intelligence, GRU Unit 74455)</td></tr>
+<tr><th>Estimated damage</th><td>Over US$10 billion</td></tr>
+</table>
+<p><b>NotPetya</b> is a family of destructive malware that struck on 27 June 2017, initially targeting organisations in <a href="../Ukraine/index.html">Ukraine</a> before spreading worldwide. Although it presented itself as <a href="../Ransomware/index.html">ransomware</a> — a variant of the earlier Petya malware — researchers soon concluded it was in fact a <b>wiper</b>: it irreversibly destroyed data, and payment could not restore encrypted files. The attack caused an estimated US$10 billion in damages, making it one of the most destructive cyberattacks in history.</p>
+<h2>Attack</h2>
+<p>The initial infection vector was the software update mechanism of <b>M.E.Doc</b>, a tax-accounting program widely used in Ukraine; the attackers had compromised the vendor's update server. From there NotPetya spread rapidly across networks using the EternalBlue and EternalRomance SMB exploits (also used by <a href="../WannaCry_ransomware_attack/index.html">WannaCry</a> a month earlier), together with stolen credentials harvested by a Mimikatz-like tool and legitimate administration utilities (PsExec and WMIC), allowing it to infect even fully patched machines.</p>
+<p>On infection, the malware encrypted the master file table and overwrote the master boot record, then forced a reboot and displayed a ransom demand of $300 in Bitcoin. Because the displayed "personal installation key" was randomly generated and unrelated to any actual decryption key, recovery by payment was effectively impossible — evidence that destruction, not extortion, was the goal.</p>
+<h2>Impact</h2>
+<p>Ukrainian government ministries, banks, the postal service, Kyiv's metro and the Chernobyl monitoring systems were hit. The malware then spread globally via multinational firms with Ukrainian offices. Major victims included shipping giant <b>Maersk</b> (losses of roughly $300 million; its container terminals stalled worldwide), pharmaceutical company Merck (~$870 million), FedEx subsidiary TNT Express (~$400 million), Mondelez, Reckitt Benckiser and the law firm DLA Piper. The White House later put total damages above $10 billion.</p>
+<h2>Attribution and response</h2>
+<p>In February 2018 the United Kingdom and the United States publicly attributed NotPetya to the Russian military — specifically the Sandworm group of the GRU — describing it as an attack on Ukraine that recklessly spilled over. Russia denied responsibility. In October 2020 the US Department of Justice indicted six GRU Unit 74455 officers in connection with NotPetya and other operations. The attack also triggered landmark insurance litigation (notably Merck's claim against insurers who invoked a "war exclusion"), in which courts ruled the exclusion did not apply.</p>
+<p class="small">See also: <a href="../Petya_(malware)/index.html">Petya (malware)</a> · <a href="../Sandworm_(hacker_group)/index.html">Sandworm</a> · <a href="../Cyberwarfare/index.html">Cyberwarfare</a></p>
+</div>
+</body>
+</html>

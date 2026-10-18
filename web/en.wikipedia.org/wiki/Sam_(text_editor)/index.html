@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sam (text editor) - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+h3{font-size:1.15em}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.85em;font-family:sans-serif}
+.infobox th{text-align:left;background:#eaecf0;padding:3px 6px}
+.infobox td{padding:3px 6px}
+.hero{margin:14px 0;text-align:center}
+.hero img{max-width:420px;width:100%;border:1px solid #a2a9b1;background:#f8f9fa;min-height:160px}
+.caption{font-size:0.82em;color:#54595d;font-family:sans-serif}
+.small{font-size:0.85em;color:#54595d}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Sam (text editor)</h1>
+<p><b>Sam</b> is a multi-file text editor based on structural regular expressions. It was originally designed in the early 1980s at <a href="../Bell_Labs/index.html">Bell Labs</a> by <a href="../Rob_Pike/index.html">Rob Pike</a> with the help of Ken Thompson and other Unix developers. Sam was the standard text editor for <a href="../Plan_9_from_Bell_Labs/index.html">Plan 9 from Bell Labs</a> and is included in most Plan 9 distributions, as well as in the Plan 9 from User Space utilities for Unix-like systems.</p>
+<div class="hero"><img src="images/sam-text-editor.png" alt="Screenshot-style placeholder of the Sam text editor interface"><div class="caption">Sam running under the Plan 9 window system, showing its command window and editing panes.</div></div>
+<table class="infobox">
+<tr><th colspan="2">Sam</th></tr>
+<tr><th>Original author</th><td>Rob Pike</td></tr>
+<tr><th>Developer</th><td>Bell Labs</td></tr>
+<tr><th>Initial release</th><td>Early 1980s</td></tr>
+<tr><th>Written in</th><td>C</td></tr>
+<tr><th>Operating system</th><td>Plan 9, Unix, Unix-like</td></tr>
+<tr><th>Type</th><td>Text editor</td></tr>
+<tr><th>License</th><td>Lucent Public License / MIT</td></tr>
+</table>
+<h2>History</h2>
+<p>Sam was developed as the successor to the venerable <a href="../Ed_(text_editor)/index.html">ed</a> line editor, bringing its terse command language to a bitmapped-display environment. Pike designed Sam for the Blit terminal and later for the DMD 5620, exploiting the mouse for pointing and text selection while retaining a powerful command language. The editor's design was described in Pike's 1987 paper "The Text Editor sam".</p>
+<p>When Plan 9 was developed at Bell Labs in the late 1980s and early 1990s, Sam became its standard editor, splitting into a small terminal-side front end and a file-system-side back end that communicate over a protocol — an arrangement that makes remote editing natural on a distributed system.</p>
+<h2>Design</h2>
+<p>Sam has two editing modes: a command language accessed through a special command window, and direct mouse-driven editing. Its most influential feature is <i>structural regular expressions</i>, which extend the familiar regular-expression notation so that patterns can be composed and nested to describe hierarchical structure in text. Commands such as <code>x</code> (extract), <code>y</code>, <code>g</code> (guard) and <code>v</code> can be combined to select and transform regions precisely.</p>
+<p>Like its predecessor ed, Sam treats files as sequences of characters rather than lines, and multiple files can be open simultaneously in a single session. The editor's minimal interface — essentially a set of resizable text panes — influenced later editors by Pike, notably <a href="../Acme_(text_editor)/index.html">Acme</a>.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Ed_(text_editor)/index.html">ed (text editor)</a></li>
+<li><a href="../Acme_(text_editor)/index.html">Acme (text editor)</a></li>
+<li><a href="../Plan_9_from_Bell_Labs/index.html">Plan 9 from Bell Labs</a></li>
+<li><a href="../Rob_Pike/index.html">Rob Pike</a></li>
+</ul>
+<p class="small">References: Pike, R. "The Text Editor sam", <i>Software—Practice and Experience</i>, 1987.</p>
+</div>
+</body>
+</html>

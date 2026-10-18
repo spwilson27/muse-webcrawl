@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Moment-generating function - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:28px}
+h3{font-size:17px;margin-top:20px}
+p{line-height:1.6;font-family:sans-serif;font-size:14.5px}
+li{line-height:1.6;font-family:sans-serif;font-size:14.5px}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-family:sans-serif;font-size:13px}
+.infobox th{background:#b0c4de;padding:4px;text-align:center}
+.infobox td{padding:3px 6px;vertical-align:top}
+figure.hero{margin:0 0 8px 0}
+figure.hero img{width:100%;background:#eaecf0;border:1px solid #c8ccd1;min-height:140px}
+figcaption{font-family:sans-serif;font-size:12px;color:#54595d;text-align:center;padding:4px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.eq{font-family:'DejaVu Sans Mono',monospace;background:#f8f9fa;border:1px solid #eaecf0;padding:10px;margin:10px 0;text-align:center}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Moment-generating function</h1>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Moment-generating function</th></tr>
+<tr><td colspan="2"><figure class="hero"><img src="images/moment-generating-function.png" alt="Graph of the moment-generating function of a normal distribution"></figure></td></tr>
+<tr><td><b>Field</b></td><td>Probability theory, statistics</td></tr>
+<tr><td><b>Notation</b></td><td>M<sub>X</sub>(t)</td></tr>
+<tr><td><b>Related</b></td><td>Characteristic function, cumulant-generating function</td></tr>
+</table>
+</div>
+<p>In probability theory and statistics, the <b>moment-generating function</b> (<b>MGF</b>) of a real-valued random variable is an alternative specification of its probability distribution, often more convenient than working directly with probability density or mass functions. As its name implies, the derivatives of the MGF at zero give the moments of the distribution.</p>
+<h2>Definition</h2>
+<p>The moment-generating function of a random variable X is</p>
+<div class="eq">M<sub>X</sub>(t) = E[e<sup>tX</sup>] = ∫ e<sup>tx</sup> f<sub>X</sub>(x) dx</div>
+<p>wherever the expectation exists — that is, for t in some open interval around 0. If the expectation does not exist in a neighbourhood of 0 (as for some heavy-tailed distributions, such as the Cauchy distribution), the MGF is undefined, and the characteristic function, which always exists, is used instead. For a discrete random variable, the integral is replaced by a sum over the probability mass function. The MGF is the two-sided Laplace transform of the density evaluated with a sign change, and can be viewed as encoding all moments in a single analytic object.</p>
+<h2>Moments</h2>
+<p>Provided the MGF exists near 0, it can be expanded as a power series whose coefficients are the moments:</p>
+<div class="eq">M<sub>X</sub>(t) = 1 + t·E[X] + t²/2!·E[X²] + t³/3!·E[X³] + ⋯</div>
+<p>Consequently, the n-th moment is the n-th derivative at zero: E[X<sup>n</sup>] = M<sub>X</sub><sup>(n)</sup>(0). The first two derivatives give the mean and, with the mean, the variance: Var(X) = M″(0) − (M′(0))². The logarithm of the MGF is the <b>cumulant-generating function</b>, whose derivatives give the cumulants.</p>
+<h2>Properties and examples</h2>
+<ul>
+<li>If the MGF exists in an open interval around 0, it uniquely determines the distribution: two random variables with the same MGF have the same distribution.</li>
+<li>For independent random variables, the MGF of the sum is the product of the MGFs, mirroring the convolution of distributions; this makes MGFs a standard tool for deriving the distributions of sums (for example, that independent normal and Poisson variables are additive in their parameters).</li>
+<li>For a normal distribution N(μ, σ²), M(t) = exp(μt + σ²t²/2). For a Poisson distribution with rate λ, M(t) = exp(λ(e<sup>t</sup> − 1)).</li>
+<li>An affine transformation gives M<sub>aX+b</sub>(t) = e<sup>bt</sup> M<sub>X</sub>(at).</li>
+</ul>
+<p>MGFs are also used in the proof of limit theorems: pointwise convergence of MGFs to the MGF of a limiting distribution implies convergence in distribution, a route to the central limit theorem. In actuarial science and economics, the MGF of the exponential distribution underlies risk and utility calculations.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Characteristic_function_(probability_theory)/index.html">Characteristic function (probability theory)</a></li>
+<li><a href="../Moment_(mathematics)/index.html">Moment (mathematics)</a></li>
+<li><a href="../Cumulant/index.html">Cumulant</a></li>
+<li><a href="../Probability-generating_function/index.html">Probability-generating function</a></li>
+</ul>
+<p class="ref">Categories: Probability theory · Generating functions · Moments (mathematics)</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rasterisation - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a7d7f9;margin:0 0 4px;font-size:30px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #c8ccd1;margin:24px 0 8px;font-size:23px}
+h3{font-size:17px;margin:18px 0 6px}
+p{line-height:1.6;margin:8px 0;font-size:15px}
+ul,ol{line-height:1.6;font-size:15px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 16px 20px;padding:6px}
+.infobox th{background:#b0c4de;text-align:center;padding:6px;font-size:15px}
+.infobox td{padding:3px 6px;vertical-align:top}
+.infobox .lbl{font-weight:bold;width:100px}
+.hero{text-align:center;margin:12px 0}
+.hero img{max-width:100%;border:1px solid #c8ccd1;background:#eef}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.note{color:#54595d;font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Rasterisation</h1>
+<p class="note">From Wikipedia, the free encyclopedia</p>
+
+<table class="infobox">
+<tr><th colspan="2">Rasterisation</th></tr>
+<tr><td class="lbl">Field</td><td>Computer graphics</td></tr>
+<tr><td class="lbl">Input</td><td>Geometric primitives (points, lines, triangles) in vector form</td></tr>
+<tr><td class="lbl">Output</td><td>Raster image (pixels in a framebuffer)</td></tr>
+<tr><td class="lbl">Used in</td><td>GPU rendering pipelines (OpenGL, Direct3D, Vulkan), print/RIP, GIS, font rendering</td></tr>
+</table>
+
+<div class="hero"><img src="images/rasterisation.png" alt="A triangle converted into the grid of pixels it covers during rasterisation"></div>
+
+<p><b>Rasterisation</b> (also <b>rasterization</b>) is the process of taking an image described in a vector graphics format (shapes) and converting it into a raster image (a series of pixels, dots or lines, which, when displayed together, create the image which was represented via shapes). This conversion happens either in software or in dedicated graphics hardware, and it is the core technique by which real-time 3D graphics — games, CAD and visualisation — are rendered on essentially all modern GPUs.</p>
+
+<h2>Process</h2>
+<p>In a 3D rendering pipeline, objects are modelled as meshes of triangles. Vertices are transformed into screen space (clip space, then normalised device coordinates, then window coordinates), triangles are clipped against the view frustum, and the rasteriser determines which pixels (fragments) each triangle covers. For each fragment, attributes such as colour, depth, texture coordinates and normals are interpolated across the triangle — typically using barycentric coordinates with perspective correction — and passed to a fragment (pixel) shader that computes the final colour. A depth (z) buffer resolves visibility between overlapping fragments.</p>
+
+<h2>Line and polygon rasterisation</h2>
+<p>Classic algorithms include Bresenham's line algorithm and the midpoint algorithm for drawing lines, and scanline conversion for filling polygons. Because sampling a shape at discrete pixel positions produces aliasing — jagged edges or "jaggies" — graphics systems use antialiasing techniques such as supersampling (SSAA) and multisample antialiasing (MSAA), or post-process methods, to smooth the result.</p>
+
+<h2>Rasterisation versus ray tracing</h2>
+<p>Rasterisation projects geometry onto the image plane and therefore handles direct visibility very efficiently, but global effects such as reflections, refractions, soft shadows and indirect illumination must be approximated with tricks (shadow maps, environment maps, screen-space techniques). Ray tracing, which simulates the path of light rays through the scene, handles these effects naturally but has historically been far more expensive; modern GPUs increasingly combine the two, rasterising primary visibility and ray-tracing selected effects.</p>
+
+<h2>Other uses</h2>
+<p>The term is also used for the conversion of vector data to raster in printing (raster image processing, RIP), font rendering, mapping and GIS, and for converting vector artwork into bitmaps for display or print production.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Rendering_(computer_graphics)/index.html">Rendering (computer graphics)</a></li>
+<li><a href="../Bresenham%27s_line_algorithm/index.html">Bresenham's line algorithm</a></li>
+<li><a href="../Ray_tracing_(graphics)/index.html">Ray tracing (graphics)</a></li>
+<li><a href="../Graphics_pipeline/index.html">Graphics pipeline</a></li>
+<li><a href="../Anti-aliasing/index.html">Anti-aliasing</a></li>
+</ul>
+</div>
+</body>
+</html>

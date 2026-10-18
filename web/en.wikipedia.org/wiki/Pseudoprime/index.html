@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pseudoprime - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:24px 20px 60px;line-height:1.6;font-size:15px}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:32px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:23px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+h3{font-size:17px;margin-top:20px}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:4px 0 14px 18px;padding:0;border-collapse:collapse}
+.infobox caption{background:#b0c4de;font-weight:bold;padding:6px;font-size:14px}
+.infobox th,.infobox td{padding:4px 8px;vertical-align:top;text-align:left;border-top:1px solid #eaecf0}
+.infobox img{width:100%;display:block}
+.hero{margin:0}.hero figcaption{font-size:12px;color:#54595d;padding:4px 2px}
+sup{font-size:11px}.hatnote{font-style:italic;color:#54595d;font-size:13px;margin-bottom:10px}
+ul,ol{margin:6px 0 6px 22px;padding:0}li{margin:3px 0}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+table.wikitable{border-collapse:collapse;margin:12px 0}table.wikitable th,table.wikitable td{border:1px solid #a2a9b1;padding:5px 9px;font-size:14px}table.wikitable th{background:#eaecf0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Pseudoprime</h1>
+<p class="hatnote">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<caption>Pseudoprime</caption>
+<tr><td colspan="2"><figure class="hero"><img src="images/Pseudoprime.png" alt="Number line highlighting 341, the smallest Fermat pseudoprime to base 2"><figcaption>341 = 11 × 31, the smallest base-2 Fermat pseudoprime</figcaption></figure></td></tr>
+<tr><th>Field</th><td><a href="../Number_theory/index.html">Number theory</a></td></tr>
+<tr><th>Definition</th><td>Composite number that passes a test all primes pass</td></tr>
+<tr><th>Main types</th><td>Fermat pseudoprimes; Carmichael numbers; Euler pseudoprimes; strong pseudoprimes; Lucas pseudoprimes</td></tr>
+<tr><th>Smallest example</th><td>341 (base 2)</td></tr>
+<tr><th>Importance</th><td>Primality testing; cryptography (Miller–Rabin test)</td></tr>
+</table>
+<p>A <b>pseudoprime</b> is a <a href="../Composite_number/index.html">composite number</a> that satisfies some property that all <a href="../Prime_number/index.html">prime numbers</a> satisfy—usually the passing of a <a href="../Primality_test/index.html">primality test</a> designed to identify primes quickly. Pseudoprimes matter because fast primality tests used in <a href="../Cryptography/index.html">cryptography</a>, above all the <a href="../Miller–Rabin_primality_test/index.html">Miller–Rabin test</a>, are probabilistic: they never declare a prime composite, but a composite number that slips through is a pseudoprime to that test. The more refined the test, the rarer and more interesting its pseudoprimes.</p>
+<h2>Fermat pseudoprimes</h2>
+<p>By <a href="../Fermat's_little_theorem/index.html">Fermat's little theorem</a>, if <i>p</i> is prime and <i>a</i> is not divisible by <i>p</i>, then <i>a</i><sup><i>p</i>−1</sup> ≡ 1 (mod <i>p</i>). A composite <i>n</i> with <i>a</i><sup><i>n</i>−1</sup> ≡ 1 (mod <i>n</i>) for a chosen base <i>a</i> (coprime to <i>n</i>) is a <b>Fermat pseudoprime to base <i>a</i></b>. The smallest, to base 2, is 341 = 11 × 31: indeed 2<sup>340</sup> ≡ 1 (mod 341) even though 341 is composite—an anomaly reportedly known to Chinese mathematicians in antiquity in the mistaken belief that the condition characterised primes (hence the older name "Chinese hypothesis" for the converse error). The first few base-2 pseudoprimes are 341, 561, 645, 1105, 1387, 1729, 1905, 2047 and 2465. There are infinitely many Fermat pseudoprimes to any given base, but they are far rarer than primes: only 245 base-2 pseudoprimes lie below one million, against 78,498 primes.</p>
+<h2>Carmichael numbers</h2>
+<p>A <b><a href="../Carmichael_number/index.html">Carmichael number</a></b> is a composite <i>n</i> that is a Fermat pseudoprime to <i>every</i> base coprime to it; equivalently (Korselt's criterion, 1899), <i>n</i> is square-free and <i>p</i> − 1 divides <i>n</i> − 1 for every prime factor <i>p</i> of <i>n</i>. The smallest is 561 = 3 × 11 × 17, since 2, 10 and 16 all divide 560. Others include 1105, 1729 (the Hardy–Ramanujan number), 2465 and 2821. Robert Carmichael identified the concept in 1910; whether infinitely many exist was an open problem until 1994, when Alford, Granville and Pomerance proved that there are. Carmichael numbers defeat the plain Fermat test completely, which is why practical tests use stronger conditions.</p>
+<h2>Euler and strong pseudoprimes</h2>
+<p>An <b>Euler pseudoprime</b> to base <i>a</i> satisfies the stronger congruence <i>a</i><sup>(<i>n</i>−1)/2</sup> ≡ ±1 (mod <i>n</i>), matching the sign given by the Jacobi symbol, as Euler's criterion guarantees for primes. A <b>strong pseudoprime</b>, defined through the Miller–Rabin decomposition <i>n</i> − 1 = 2<sup><i>s</i></sup><i>d</i> with <i>d</i> odd, requires that <i>a</i><sup><i>d</i></sup> ≡ 1 (mod <i>n</i>) or <i>a</i><sup>2<sup><i>r</i></sup><i>d</i></sup> ≡ −1 (mod <i>n</i>) for some <i>r</i> &lt; <i>s</i>. Every strong pseudoprime is an Euler pseudoprime, and every Euler pseudoprime a Fermat pseudoprime, with strict inclusions. The smallest strong pseudoprime to base 2 is 2047 = 23 × 89. Crucially, no analogue of Carmichael numbers exists for the strong test: for any odd composite <i>n</i>, at most one quarter of the possible bases are "liars" that let <i>n</i> pass as a strong pseudoprime (the Monier–Rabin bound), so a handful of random bases makes error astronomically unlikely—for example, testing the specific bases 2, 3, 5, 7, 11, 13 and 17 is provably correct for all <i>n</i> below 341,550,071,728,321.</p>
+<h2>Other families</h2>
+<p>Analogues exist for other tests: <b>Lucas pseudoprimes</b> and the stronger Frobenius pseudoprimes arise from Lucas-sequence tests used in the Baillie–PSW primality test, for which no counterexample is known at all despite an extensive search and a standing prize offer; <b>Catalan pseudoprimes</b>, <b>elliptic pseudoprimes</b>, and Perrin pseudoprimes (based on the Perrin sequence, smallest 271,441) are also studied. Pseudoprimes of every standard type become rarer as the numbers grow, and their distribution—governed by results such as the Erdős–Pomerance estimates for Carmichael numbers—is an active topic in analytic number theory.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Primality_test/index.html">Primality test</a></li>
+<li><a href="../Miller–Rabin_primality_test/index.html">Miller–Rabin primality test</a></li>
+<li><a href="../Carmichael_number/index.html">Carmichael number</a></li>
+<li><a href="../Fermat's_little_theorem/index.html">Fermat's little theorem</a></li>
+<li><a href="../Probable_prime/index.html">Probable prime</a></li>
+</ul>
+<h2>References</h2>
+<ol>
+<li>Alford, W. R., Granville, A. and Pomerance, C., "There are infinitely many Carmichael numbers", <i>Annals of Mathematics</i> 139 (1994), 703–722.</li>
+<li>Crandall, R. and Pomerance, C., <i>Prime Numbers: A Computational Perspective</i> (2005), chapter 3.</li>
+</ol>
+</div>
+</body>
+</html>

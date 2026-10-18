@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Proof of work - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+#content{background:#fff;margin:1em auto;max-width:960px;padding:1.5em 2em;border:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;margin:0 0 .4em;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+p,li{font-family:sans-serif;font-size:.92em;line-height:1.55}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;text-align:center;font-size:.78em;font-family:sans-serif;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Proof of work</h1>
+<p><b>Proof of work</b> (<b>PoW</b>) is a consensus mechanism and form of cryptographic proof in which one party (the prover) demonstrates to verifiers that a specified amount of computational effort has been expended. Verifying the proof must be cheap compared with producing it. Proof of work is best known as the consensus algorithm of <a href="../Bitcoin/">Bitcoin</a> and other <a href="../Cryptocurrency/">cryptocurrencies</a>, where "miners" compete to find a <a href="../Cryptographic_hash_function/">hash</a> below a target value — the process that orders transactions, secures the blockchain, and issues new coins.</p>
+<div class="thumb"><img src="images/proof-of-work.png" alt="Diagram of hashcash-style proof of work: adjusting a nonce until the hash meets a difficulty target">[Image: Hash-based proof of work]</div>
+<h2>History</h2>
+<p>The idea originated in anti-spam research: Cynthia Dwork and Moni Naor proposed "pricing via processing" in 1992, requiring email senders to perform a modest computation per message. Adam Back's <b>Hashcash</b> (1997) implemented hash-based partial-hash-inversion puzzles and coined the term "proof-of-work". Hal Finney's reusable proof of work (2004) anticipated cryptocurrency tokens, and <a href="../Satoshi_Nakamoto/">Satoshi Nakamoto</a> combined hashcash-style PoW with a peer-to-peer ledger and difficulty adjustment in Bitcoin (2009).</p>
+<h2>How it works in blockchains</h2>
+<p>Miners assemble candidate blocks and repeatedly vary a nonce (and other fields) until the block header's double-SHA-256 hash (in Bitcoin) falls below the current target. The protocol automatically retargets the difficulty — in Bitcoin every 2,016 blocks — to hold the average block interval near ten minutes. The first miner to find a valid block broadcasts it; others verify it instantly and build on the longest (most cumulative work) chain. Rewards of new coins plus transaction fees compensate miners for the real-world cost of computation and electricity, which is what makes rewriting history prohibitively expensive.</p>
+<h2>Criticism and alternatives</h2>
+<p>PoW systems are criticised for their very large energy consumption and electronic waste, and for mining centralisation in pools and ASIC hardware. These concerns motivated alternative consensus mechanisms, notably <a href="../Proof_of_stake/">proof of stake</a>, to which Ethereum migrated in 2022 ("the Merge"). Supporters argue that PoW's energy use buys uniquely objective, thermodynamically anchored security for a permissionless network.</p>
+</div>
+</body>
+</html>

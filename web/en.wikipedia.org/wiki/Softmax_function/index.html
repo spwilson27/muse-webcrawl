@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Softmax function - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#f8f9fa;color:#202122;margin:0}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;margin-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;text-align:center;font-size:0.85em;float:right;width:280px;margin:0 0 12px 16px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.mono{font-family:monospace;background:#f0f0f0;padding:8px;display:block;text-align:center}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Softmax function</h1>
+<div class="thumb"><img src="images/Softmax_function.png" alt="Plot of softmax outputs for a vector of inputs" style="width:100%"></div>
+<p>The <b>softmax function</b> is a function that converts a vector of K real numbers into a probability distribution of K possible outcomes. It is a generalization of the logistic function to multiple dimensions, and used in multinomial logistic regression. The softmax function is often used as the last activation function of a neural network to normalize the output of a network to a probability distribution over predicted output classes.</p>
+<h2>Definition</h2>
+<p>The standard softmax function σ : ℝ<sup>K</sup> → (0,1)<sup>K</sup> is defined by the formula</p>
+<span class="mono">σ(z)<sub>i</sub> = e<sup>z<sub>i</sub></sup> / Σ<sub>j=1..K</sub> e<sup>z<sub>j</sub></sup></span>
+<p>for i = 1, …, K and z = (z<sub>1</sub>, …, z<sub>K</sub>) ∈ ℝ<sup>K</sup>. In other words, it applies the standard exponential function to each element z<sub>i</sub> of the input vector z and normalizes these values by dividing by the sum of all these exponentials. The output components are all positive and sum to 1, so they may be interpreted as probabilities.</p>
+<h2>Applications</h2>
+<ul>
+<li><b>Multinomial logistic regression</b> and classification layers of neural networks.</li>
+<li><b>Attention mechanisms</b>: scaled dot-product attention in transformers applies softmax to compatibility scores to produce weights.</li>
+<li><b>Reinforcement learning</b>: Boltzmann (softmax) action selection, as used by Luce's choice axiom.</li>
+<li><b>Statistical mechanics</b>: the Boltzmann distribution is a softmax with temperature parameter.</li>
+</ul>
+<h2>Temperature and numerical stability</h2>
+<p>A temperature parameter T can sharpen (T &lt; 1) or flatten (T &gt; 1) the output distribution, used in knowledge distillation and sampling from language models. For numerical stability, implementations subtract the maximum input component before exponentiating, which leaves the result unchanged.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Logistic_function/index.html">Logistic function</a></li>
+<li><a href="../Multinomial_logistic_regression/index.html">Multinomial logistic regression</a></li>
+<li><a href="../Activation_function/index.html">Activation function</a></li>
+</ul>
+</div>
+</body>
+</html>

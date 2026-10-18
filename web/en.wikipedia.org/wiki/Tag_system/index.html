@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tag system - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 16px 20px;border-collapse:collapse}
+.infobox th{background:#ccf;padding:6px;text-align:center;font-size:15px}
+.infobox td{padding:4px 8px;vertical-align:top;border-top:1px solid #eaecf0}
+.hero{display:block;width:100%;background:#eef;border:1px solid #ccd;text-align:center;padding:18px 0;color:#555;font-style:italic}
+.small{font-size:13px;color:#54595d}
+code{font-family:monospace;background:#f0f0f0;padding:0 3px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Tag system</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<tr><th>Tag system</th></tr>
+<tr><td><img class="hero" src="images/tag-system.png" alt="Diagram of a tag system production step — placeholder image"></td></tr>
+</table>
+<p>A <b>tag system</b> is a deterministic computational model introduced by Emil Leon Post in 1943 as a simple model of computation, related to his earlier Post canonical systems. Tag systems operate on strings of symbols and are of interest in computability theory because sufficiently general tag systems are Turing complete.</p>
+<h2>Definition</h2>
+<p>An <i>m</i>-tag system is defined by an alphabet of symbols, a deletion number <i>m</i> (a positive integer), and a set of production rules, one for each symbol. Computation proceeds on a string as follows: read the first symbol of the string, append the production associated with that symbol to the end of the string, then delete the first <i>m</i> symbols. The process repeats until the string becomes shorter than <i>m</i>, the string becomes empty, or a special halting symbol is read.</p>
+<h2>History and significance</h2>
+<p>Post hoped tag systems would yield an approach to the decision problem, but in 1943 he could prove neither undecidability nor decidability for the general class. In 1961 Marvin Minsky showed that tag systems with deletion number 2 are universal — capable of simulating any Turing machine — resolving the question: the halting problem for 2-tag systems is undecidable. Simpler variants, such as cyclic tag systems (a restriction in which productions are used in a fixed rotation), were later shown by Matthew Cook to support universal computation and were used in the proof that the elementary cellular automaton Rule 110 is universal.</p>
+<h2>Example</h2>
+<p>Consider a 3-tag system with alphabet {a, b, c} and productions a → bc, b → a, c → aaa. Starting from the string <code>baa</code>: read b, append a, delete three symbols, giving <code>a</code>, which is shorter than 3, so the computation halts.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Emil_Leon_Post/index.html">Emil Leon Post</a></li>
+<li><a href="../Turing_machine/index.html">Turing machine</a></li>
+<li><a href="../Computability_theory/index.html">Computability theory</a></li>
+<li><a href="../Cyclic_tag_system/index.html">Cyclic tag system</a></li>
+<li><a href="../Queue_automaton/index.html">Queue automaton</a></li>
+</ul>
+<p class="small">Categories: Models of computation · Theory of computation</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>T-distributed stochastic neighbor embedding - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;color:#202122;background:#fff}
+#content{max-width:960px;margin:0 auto;padding:1em 2em}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em;margin:0 0 1em 1em;font-size:0.85em;font-family:sans-serif;width:260px}
+.infobox th{text-align:left;background:#eaf3ff;padding:3px}
+.infobox td{padding:3px}
+.figure{text-align:center}
+p{line-height:1.6}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>T-distributed stochastic neighbor embedding</h1>
+<div class="infobox">
+<table>
+<tr><th colspan="2">t-SNE</th></tr>
+<tr><td colspan="2" class="figure"><img src="images/tsne.png" alt="t-SNE visualisation of clustered data points"></td></tr>
+<tr><th>Type</th><td>Dimensionality reduction / machine learning algorithm</td></tr>
+<tr><th>Authors</th><td>Laurens van der Maaten, Geoffrey Hinton</td></tr>
+<tr><th>Published</th><td>2008</td></tr>
+<tr><th>Predecessor</th><td>Stochastic neighbor embedding (SNE)</td></tr>
+<tr><th>Key parameter</th><td>Perplexity</td></tr>
+</table>
+</div>
+<p><b>T-distributed stochastic neighbor embedding</b> (<b>t-SNE</b>) is a statistical method for visualizing high-dimensional data by giving each datapoint a location in a two- or three-dimensional map. It is based on stochastic neighbor embedding, originally developed by Sam Roweis and Geoffrey Hinton, and was extended by Laurens van der Maaten and Hinton in 2008. It is a nonlinear dimensionality reduction technique especially well-suited for embedding high-dimensional data for visualization in a low-dimensional space of two or three dimensions.</p>
+<h2>Method</h2>
+<p>t-SNE converts similarities between data points to joint probabilities: similar points are modelled by nearby points and dissimilar points by distant points with high probability. In the original high-dimensional space, similarities are computed with Gaussian distributions; in the low-dimensional map, a Student's t-distribution with one degree of freedom is used instead. This heavy-tailed distribution alleviates the "crowding problem" — the tendency of moderate distances in high dimensions to collapse when mapped into few dimensions. The algorithm then minimises the Kullback–Leibler divergence between the two distributions by gradient descent.</p>
+<h2>Usage and caveats</h2>
+<p>t-SNE became a standard tool for visualising clusters in data such as single-cell RNA sequencing, word embeddings and image collections. Interpreters must be cautious: cluster sizes and distances between clusters in a t-SNE plot carry little quantitative meaning, results vary with the perplexity hyperparameter and random initialisation, and the method's O(n²) naive cost has motivated accelerated variants (Barnes–Hut, FFT-accelerated) used in modern implementations.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Principal_component_analysis/index.html">Principal component analysis</a></li>
+<li><a href="../UMAP/index.html">UMAP</a></li>
+<li><a href="../Dimensionality_reduction/index.html">Dimensionality reduction</a></li>
+</ul>
+</div>
+</body>
+</html>

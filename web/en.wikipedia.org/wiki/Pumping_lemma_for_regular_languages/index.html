@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pumping lemma for regular languages - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine",Georgia,serif;margin:0;background:#f8f9fa;color:#202122;line-height:1.6}
+.mw-body{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-size:30px;border-bottom:1px solid #a2a9b1;font-weight:normal;margin:0 0 6px}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:26px}
+h3{font-size:17px;margin-top:20px}
+p{font-size:14.5px}
+a{color:#0645ad;text-decoration:none}
+.math{font-style:italic}
+.figure{float:right;width:250px;margin:4px 0 12px 18px;text-align:center;font-size:12px;color:#54595d}
+.figure img{width:100%;background:#eaecf0;border:1px solid #a2a9b1}
+blockquote{background:#f8f9fa;border-left:4px solid #a2a9b1;margin:14px 20px;padding:10px 16px;font-size:14.5px}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Pumping lemma for regular languages</h1>
+<figure class="figure"><img src="images/pumping_lemma.png" alt="Diagram showing a string split into x, y and z parts with the y part repeated"><figcaption>Schematic of "pumping": the substring <i>y</i> in <i>xyz</i> can be repeated any number of times and the result stays in the language.</figcaption></figure>
+<p>In the theory of formal languages, the <b>pumping lemma for regular languages</b> states a necessary condition that every <a href="../Regular_language/index.html">regular language</a> must satisfy. It is most often used, via its contrapositive, to prove that a given language is <i>not</i> regular: if a language violates the condition, no finite automaton can recognise it. The lemma was proved by Yehoshua Bar-Hillel, Micha Perles and Eli Shamir in 1961, in work on simplification of context-free grammars.</p>
+<h2>Statement</h2>
+<blockquote>
+If a language <i>L</i> is regular, then there exists an integer <i>p</i> ≥ 1 (the <b>pumping length</b>) such that every string <i>s</i> in <i>L</i> with |<i>s</i>| ≥ <i>p</i> can be written as <i>s</i> = <i>xyz</i> satisfying:
+<ol>
+<li>|<i>y</i>| ≥ 1 (the middle part is non-empty);</li>
+<li>|<i>xy</i>| ≤ <i>p</i> (the first two parts together are no longer than <i>p</i>);</li>
+<li>for every integer <i>i</i> ≥ 0, the string <i>xy<sup>i</sup>z</i> is in <i>L</i>.</li>
+</ol>
+</blockquote>
+<p>Intuitively: a finite automaton with <i>p</i> states reading a long input must revisit some state, completing a loop; the loop segment <i>y</i> can then be traversed any number of times ("pumped" up or down) without leaving the language.</p>
+<h2>Proof idea</h2>
+<p>Let <i>p</i> be the number of states of a deterministic finite automaton accepting <i>L</i>. For a string <i>s</i> of length at least <i>p</i>, the run of the automaton visits <i>p</i> + 1 states, so by the pigeonhole principle some state repeats within the first <i>p</i> symbols. The substring read between the two visits forms <i>y</i>; deleting it or repeating it keeps the run on a valid path from the start state to an accept state.</p>
+<h2>Use: proving non-regularity</h2>
+<p>The standard application is a proof by contradiction, framed as a game: the adversary chooses <i>p</i>; the prover exhibits a string <i>s</i> ∈ <i>L</i> with |<i>s</i>| ≥ <i>p</i>; the adversary splits <i>s</i> = <i>xyz</i> subject to the constraints; the prover finds an <i>i</i> with <i>xy<sup>i</sup>z</i> ∉ <i>L</i>.</p>
+<p>Classic example: let <i>L</i> = { <i>a<sup>n</sup>b<sup>n</sup></i> : <i>n</i> ≥ 0 }. Choose <i>s</i> = <i>a<sup>p</sup>b<sup>p</sup></i>. Since |<i>xy</i>| ≤ <i>p</i>, the part <i>y</i> consists only of <i>a</i>'s; pumping up to <i>xy<sup>2</sup>z</i> gives more <i>a</i>'s than <i>b</i>'s, which is not in <i>L</i>. Hence <i>L</i> is not regular.</p>
+<h2>Limitations</h2>
+<p>The condition is necessary but not sufficient: some non-regular languages satisfy it, so the lemma cannot prove a language regular. Finer tools for non-regularity include the Myhill–Nerode theorem, which gives an exact characterisation, and closure arguments.</p>
+<h2>Generalisations</h2>
+<p>Analogous pumping lemmas exist for context-free languages (the Bar-Hillel lemma) and for other families in the Chomsky hierarchy, and there are stronger forms (e.g. Ogden's lemma) for finer distinctions.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Regular_language/index.html">Regular language</a></li>
+<li><a href="../Pumping_lemma_for_context-free_languages/index.html">Pumping lemma for context-free languages</a></li>
+<li><a href="../Myhill%E2%80%93Nerode_theorem/index.html">Myhill–Nerode theorem</a></li>
+<li><a href="../Finite_automaton/index.html">Finite automaton</a></li>
+</ul>
+</div>
+</body>
+</html>

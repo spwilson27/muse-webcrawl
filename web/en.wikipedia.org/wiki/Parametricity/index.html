@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Parametricity - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.mw-body{max-width:960px;margin:0 auto;padding:20px 30px}
+h1{font-size:28px;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px}
+h2{font-size:22px;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+p{margin:8px 0;font-size:15px}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:300px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 16px 20px;padding:0}
+.infobox th{background:#eaf3ff;padding:6px 8px;text-align:left}
+.infobox td{padding:4px 8px;border-top:1px solid #eaecf0;vertical-align:top}
+.infobox .ib-title{background:#cbd7f0;text-align:center;font-weight:bold;font-size:15px;padding:8px}
+.thumb{float:right;clear:right;width:280px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;margin:0 0 14px 18px;font-size:12.5px;color:#54595d}
+.thumb img{width:100%;display:block;background:#e8e8e8;min-height:140px}
+ul,ol{font-size:15px}
+code{font-family:monospace;background:#f8f9fa}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Parametricity</h1>
+
+<table class="infobox">
+<tr><td class="ib-title" colspan="2">Parametricity</td></tr>
+<tr><th>Field</th><td>Programming language theory, type theory</td></tr>
+<tr><th>Introduced</th><td>John C. Reynolds, "Types, Abstraction and Parametric Polymorphism" (1983)</td></tr>
+<tr><th>Key results</th><td>Abstraction theorem; Wadler's "Theorems for Free!" (1989)</td></tr>
+<tr><th>Related</th><td>Parametric polymorphism, generic programming, logical relations</td></tr>
+</table>
+
+<div class="thumb"><img src="images/parametricity.png" alt="Diagram of a polymorphic function behaving uniformly at every type">[Image placeholder] Parametric functions behave uniformly for all instantiations of their type variables.</div>
+
+<p>In programming language theory, <b>parametricity</b> is an abstract property enjoyed by parametrically polymorphic functions: such a function behaves <i>uniformly</i> at all types, without depending on the concrete representation of the values it manipulates. The property was isolated by John C. Reynolds in his 1983 paper "Types, Abstraction and Parametric Polymorphism", which introduced the technique of logical relations to prove representation-independence results. Philip Wadler's celebrated 1989 paper "Theorems for Free!" showed how the type of a polymorphic function alone determines equational theorems the function must satisfy.</p>
+
+<h2>Idea</h2>
+<p>Consider a function of type <code>∀α. list α → list α</code> in System F, such as a list-reversing function. Because the function cannot inspect the elements (it has no operations available on an abstract α), it can only rearrange, duplicate or discard them. Parametricity strengthens such intuitions into a theorem: for any two types and any relation between them, the function preserves the lifting of that relation to lists. From this, one can prove, for example, that any function of that type commutes with mapping an arbitrary function over the list: <code>f (map g xs) = map g (f xs)</code> — a theorem obtained "for free", from the type alone.</p>
+
+<h2>The abstraction theorem</h2>
+<p>Reynolds' abstraction theorem states that every well-typed term in a parametrically polymorphic language is related to itself by the logical relation built from its type, provided the language's primitives respect the relations. Consequences include data abstraction guarantees: two implementations of an abstract data type that are relationally equivalent cannot be distinguished by any client program. Languages that permit type-case inspection or certain effects (such as unrestricted reflection) can break parametricity, which is why full parametricity holds in pure calculi like System F but only approximately in industrial languages with features like Java's <code>instanceof</code> or Haskell's <code>Typeable</code>.</p>
+
+<h2>Applications</h2>
+<p>Parametricity underlies proofs of program equivalence, compiler optimisation justification, information-flow security, and the theory of generic programming; in dependently typed languages and proof assistants it appears as internal parametricity axioms and "parametricity translations" used to derive free theorems automatically.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Parametric_polymorphism/index.html">Parametric polymorphism</a></li>
+<li><a href="../System_F/index.html">System F</a></li>
+<li><a href="../Logical_relation/index.html">Logical relation</a></li>
+<li><a href="../Philip_Wadler/index.html">Philip Wadler</a></li>
+</ul>
+</div>
+</body>
+</html>

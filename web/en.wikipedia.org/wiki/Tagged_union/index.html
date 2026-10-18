@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tagged union - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 16px 20px;border-collapse:collapse}
+.infobox th{background:#ccf;padding:6px;text-align:center;font-size:15px}
+.infobox td{padding:4px 8px;vertical-align:top;border-top:1px solid #eaecf0}
+.hero{display:block;width:100%;background:#eef;border:1px solid #ccd;text-align:center;padding:18px 0;color:#555;font-style:italic}
+.small{font-size:13px;color:#54595d}
+code{font-family:monospace;background:#f0f0f0;padding:0 3px}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;overflow:auto;font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Tagged union</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<tr><th>Tagged union</th></tr>
+<tr><td><img class="hero" src="images/tagged-union.png" alt="Diagram of a tagged union: a tag field selecting among variant payloads — placeholder image"></td></tr>
+</table>
+<p>In computer science, a <b>tagged union</b>, also called a <b>variant</b>, <b>variant record</b>, <b>choice type</b>, <b>discriminated union</b>, <b>disjoint union</b>, <b>sum type</b>, or <b>coproduct</b>, is a data structure used to hold a value that could take on several different, but fixed, types. Only one of the types can be in use at any one time, and a <i>tag</i> field explicitly indicates which one is in use.</p>
+<h2>Concept</h2>
+<p>A tagged union can be thought of as a type that has several "cases", each of which should be handled separately when the value is inspected — analogous to an enumerated type where each enumerator carries its own payload data. Unlike the unions of C, which are untagged and permit unsafe reinterpretation of the stored bits, a tagged union records the active case, so the language or runtime can enforce that a value is only read as the type it was written as.</p>
+<h2>Language support</h2>
+<p>Algebraic data types in functional languages such as ML and Haskell are intrinsically tagged unions; Haskell's <code>data</code> declarations define sum types whose constructors serve as tags. Rust provides tagged unions via <code>enum</code>, with each variant optionally carrying data, and guarantees exhaustive handling through pattern matching. Swift, Kotlin (sealed classes), and TypeScript (discriminated unions of object types) offer similar constructs. In C, programmers emulate tagged unions by pairing an <code>enum</code> tag with a <code>union</code> of payloads, and C++17 added the library type <code>std::variant</code>.</p>
+<pre>-- Haskell: a shape as a sum type
+data Shape = Circle Double
+           | Rectangle Double Double
+           | Triangle Double Double
+
+area :: Shape -&gt; Double
+area (Circle r)       = pi * r * r
+area (Rectangle w h)  = w * h
+area (Triangle b h)   = b * h / 2</pre>
+<h2>Advantages</h2>
+<p>Compared with encoding alternatives with inheritance or nullable pointers, tagged unions make the set of possible cases explicit and closed, let compilers check that pattern matches are exhaustive, and store values compactly without indirection.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Algebraic_data_type/index.html">Algebraic data type</a></li>
+<li><a href="../Union_type/index.html">Union type</a></li>
+<li><a href="../Pattern_matching/index.html">Pattern matching</a></li>
+<li><a href="../Type_system/index.html">Type system</a></li>
+</ul>
+<p class="small">Categories: Data types · Type theory</p>
+</div>
+</body>
+</html>

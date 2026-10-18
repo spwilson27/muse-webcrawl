@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pattern matching - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#f8f9fa;color:#202122;margin:0}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;min-height:100vh}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:24px;font-weight:normal}
+p{line-height:1.6;font-family:sans-serif;font-size:0.95em}
+ul,ol{line-height:1.6;font-family:sans-serif;font-size:0.95em}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;font-size:0.85em;overflow-x:auto}
+.figure{margin:12px 0;text-align:center}
+.figure img{max-width:420px;border:1px solid #a2a9b1;background:#eef}
+.figcap{font-size:0.8em;color:#54595d;font-family:sans-serif}
+a{color:#0645ad;text-decoration:none}
+.nav{font-size:0.8em;font-family:sans-serif;color:#54595d;border-bottom:1px solid #eaecf0;padding-bottom:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="nav">From Wikipedia, the free encyclopedia</div>
+<h1>Pattern matching</h1>
+<div class="figure"><img src="images/pattern-matching.png" alt="Diagram of a value being matched against a sequence of patterns"><div class="figcap">A value is tested against patterns in order; the first match selects its branch.</div></div>
+<p>In computer science, <b>pattern matching</b> is the act of checking a given sequence of tokens for the presence of the constituents of some pattern. In contrast to pattern recognition, the match usually has to be exact: either it will or will not be a match. The patterns generally have the form of either sequences or tree structures.</p>
+<h2>In programming languages</h2>
+<p>Pattern matching is a core feature of functional programming languages such as ML, Haskell, Erlang, Elixir, Scala, Rust, and OCaml, where it serves both to test the shape of a data value and to destructure it, binding variables to its parts. A match expression lists patterns — literals, variables, wildcards, tuples, lists, and constructors of algebraic data types — each with a corresponding result expression:</p>
+<pre>describe []        = "empty"
+describe [x]       = "singleton"
+describe (x : xs)  = "headed by " ++ show x</pre>
+<p>Compilers for such languages typically check that matches are <i>exhaustive</i> (all possible cases are covered) and warn about redundant clauses. Pattern matching on strings is most commonly provided through regular expressions, while languages such as Snobol and early string-processing systems historically specialised in it.</p>
+<h2>Tree patterns</h2>
+<p>When data takes the form of trees — abstract syntax trees, XML documents, or term-rewriting systems — pattern matching generalises to tree patterns, which can include variables standing for whole subtrees. Term rewriting systems such as Mathematica's use patterns with named blanks to define symbolic transformations.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Regular_expression/index.html">Regular expression</a></li>
+<li><a href="../Functional_programming/index.html">Functional programming</a></li>
+<li><a href="../String-searching_algorithm/index.html">String-searching algorithm</a></li>
+</ul>
+</div>
+</body>
+</html>
