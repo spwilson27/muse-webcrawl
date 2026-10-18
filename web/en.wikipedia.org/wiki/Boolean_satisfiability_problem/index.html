@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Boolean satisfiability problem - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f6f6f6;color:#202122}
+#content{background:#fff;margin:0 auto;max-width:960px;padding:20px 32px 40px;border:1px solid #a7d7f9}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.infobox{float:right;width:250px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:88%;margin:0 0 1em 1em;padding:6px}
+.infobox th{text-align:left;padding:2px 6px}.infobox td{padding:2px 6px}
+.infobox .title{background:#cedff2;text-align:center;font-weight:bold;font-size:105%}
+.imgbox{float:right;clear:right;width:250px;border:1px solid #c8ccd1;background:#f8f9fa;margin:0 0 1em 1em;padding:8px;font-size:85%;text-align:center;color:#54595d}
+ul{line-height:1.6}p{line-height:1.7}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Boolean satisfiability problem</h1>
+<figure class="consolidation-embed"><img src="images/sat-formula.png" alt="" style="max-width:100%"></figure>
+<p>The <b>Boolean satisfiability problem</b> (abbreviated <b>SATISFIABILITY</b>, or more commonly <b>SAT</b>) is the problem of determining whether there exists an assignment of truth values to the variables of a given Boolean formula that makes the formula evaluate to true. SAT was the first problem shown to be NP-complete, in the Cook–Levin theorem proved by <a href="../Stephen_Cook/index.html">Stephen Cook</a> in 1971 and independently by <a href="../Leonid_Levin/index.html">Leonid Levin</a>. Despite its worst-case difficulty, modern SAT solvers routinely solve industrial instances with millions of variables.</p>
+<div class="infobox">
+<div class="title">Boolean satisfiability problem</div>
+<table>
+<tr><th>Problem</th><td>Given a Boolean formula, decide whether it has a satisfying assignment</td></tr>
+<tr><th>Complexity</th><td>NP-complete</td></tr>
+<tr><th>Standard form</th><td>Conjunctive normal form (CNF)</td></tr>
+<tr><th>Key special cases</th><td>2-SAT (polynomial time); 3-SAT (NP-complete)</td></tr>
+</table>
+</div>
+<div class="imgbox">[Image: A Boolean formula in conjunctive normal form written as a set of clauses on a blackboard]</div>
+<h2>Definitions</h2>
+<p>A formula is usually given in conjunctive normal form: a conjunction of clauses, each clause being a disjunction of literals (variables or their negations). The special case in which each clause contains at most three literals is called 3-SAT and remains NP-complete, whereas 2-SAT can be solved in polynomial time. MAX-SAT asks instead for an assignment satisfying as many clauses as possible and is a standard target of <a href="../Approximation_algorithm/index.html">approximation algorithms</a>.</p>
+<h2>SAT solvers</h2>
+<p>The classical algorithm is DPLL (Davis–Putnam–Logemann–Loveland), based on backtracking search with unit propagation. Modern conflict-driven clause learning (CDCL) solvers, introduced in the late 1990s, add clause learning, efficient watched-literal data structures, and randomised restarts, and they underpin applications in hardware and software verification, planning, and <a href="../Quantum_cryptography/index.html">cryptanalysis-adjacent</a> testing problems. Annual SAT competitions have driven steady improvements in solver performance.</p>
+<h2>Significance</h2>
+<p>Because every problem in NP can be reduced to SAT in polynomial time, SAT is the canonical NP-complete problem; <a href="../Richard_Karp/index.html">Richard Karp</a> used it as the starting point to show 21 further problems NP-complete in 1972. If P ≠ NP, no polynomial-time algorithm for SAT exists, though average-case and industrial instances are often tractable in practice.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../NP-completeness/index.html">NP-completeness</a></li>
+<li><a href="../Stephen_Cook/index.html">Stephen Cook</a></li>
+<li><a href="../Tautology_(logic)/index.html">Tautology</a></li>
+<li><a href="../../index.html">Wikipedia home</a></li>
+</ul>
+</div>
+</body>
+</html>

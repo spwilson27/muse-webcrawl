@@ -1,0 +1,155 @@
+#!/usr/bin/env python3
+import sys; sys.path.insert(0, "/home/hatch/workspace/muse-webcrawl")
+from bb_engine import build, finish
+
+PAGES = [
+{
+"slug": "Internet_protocol_suite", "title": "Internet protocol suite", "depth": 2,
+"source": "https://en.wikipedia.org/wiki/Internet",
+"imgbox": "Diagram of the Internet protocol suite's four layers — link, internet, transport and application — with example protocols in each",
+"infobox": [("Developed by", "[[Vint_Cerf]], [[Bob_Kahn|Robert Kahn]]; [[Internet_Engineering_Task_Force|IETF]]"), ("Influenced", "[[OSI_model|OSI model]]"), ("Key protocols", "[[Internet_Protocol|IP]], [[TCP]], [[User_Datagram_Protocol|UDP]], [[HTTP]], [[Domain_Name_System|DNS]]")],
+"body": [
+"The <b>Internet protocol suite</b>, commonly known as <b>TCP/IP</b>, is the set of communications protocols used in the [[Internet]] and similar computer networks. It provides end-to-end data communication specifying how data should be packetized, addressed, transmitted, routed, and received, and it underpins services such as the [[World_Wide_Web]], [[Email|email]] and file transfer.",
+"The suite grew out of research funded by the US Department of Defense's DARPA in the 1970s. [[Vint_Cerf]] and [[Bob_Kahn|Robert Kahn]] published the foundational design in 1974, describing a Transmission Control Program that was later split into the Transmission Control Protocol ([[TCP]]) and the Internet Protocol ([[Internet_Protocol|IP]]). The suite was adopted as the standard for the [[ARPANET]] on 1 January 1983 — a 'flag day' transition from the earlier NCP protocol.",
+("h2", "Layers"),
+"Unlike the seven-layer [[OSI_model|OSI model]], the Internet protocol suite is usually described with four abstraction layers. The <b>link layer</b> covers communication within a single network segment, using technologies such as [[Ethernet]] and [[Wi-Fi]]. The <b>internet layer</b> connects independent networks using IP, which delivers packets across network boundaries. The <b>transport layer</b> provides host-to-host communication: TCP offers reliable, ordered, connection-oriented delivery, while the [[User_Datagram_Protocol|User Datagram Protocol (UDP)]] offers a lightweight, unreliable datagram service. The <b>application layer</b> contains the protocols applications use directly, including [[HTTP]] for the web, [[SMTP]] for email and the [[Domain_Name_System|Domain Name System]].",
+("h2", "Governance"),
+"Standards for the suite are developed openly by the [[Internet_Engineering_Task_Force]] (IETF) and published as RFCs (Requests for Comments). Address allocation is coordinated by [[ICANN]] and the regional Internet registries. The suite's design principles — packet switching, the end-to-end principle, and robustness in the face of partial failure — are widely credited with the Internet's ability to scale from a research network to a global infrastructure.",
+],
+"see_also": ["TCP/IP_model", "OSI_model", "Packet_switching", "Internet_Protocol", "History_of_the_Internet"],
+"unsure": ["Exact wording of layer names varies between RFC 1122 and later descriptions"],
+},
+{
+"slug": "TCP/IP_model", "title": "TCP/IP model", "depth": 3,
+"source": "https://en.wikipedia.org/wiki/Internet_protocol_suite",
+"imgbox": "Comparison diagram of the four-layer TCP/IP model beside the seven-layer OSI model",
+"body": [
+"The <b>TCP/IP model</b> is a descriptive framework for the protocols of the [[Internet_protocol_suite|Internet protocol suite]], named after its two most important protocols, the Transmission Control Protocol ([[TCP]]) and the Internet Protocol ([[Internet_Protocol|IP]]). It organises networking functions into four layers of abstraction.",
+"The layers, from bottom to top, are: the <b>link layer</b> (network access), which handles communication on the local link via technologies such as [[Ethernet]]; the <b>internet layer</b>, where [[IP_address|IP addressing]] and routing between networks occur; the <b>transport layer</b>, where TCP provides reliable streams and [[User_Datagram_Protocol|UDP]] provides datagrams; and the <b>application layer</b>, home to [[HTTP]], [[Domain_Name_System|DNS]], [[SMTP]] and most other user-facing protocols.",
+("h2", "Comparison with the OSI model"),
+"The older [[OSI_model|OSI model]] divides the same functions into seven layers, splitting TCP/IP's application layer into application, presentation and session layers, and its link layer into physical and data link layers. In practice the OSI model is used mainly as a teaching and reference tool, while the protocols that actually run the Internet follow the TCP/IP architecture. Critics note that the four-layer model's boundaries are loose — some descriptions add a fifth 'physical' layer — but its closeness to the real protocol stack keeps it dominant in textbooks and practice.",
+],
+"see_also": ["Internet_protocol_suite", "OSI_model", "TCP", "Internet_Protocol"],
+"unsure": ["Whether a five-layer variant should be presented as equally standard"],
+},
+{
+"slug": "User_Datagram_Protocol", "title": "User Datagram Protocol", "depth": 3,
+"source": "https://en.wikipedia.org/wiki/Internet_protocol_suite",
+"imgbox": "Diagram of a UDP header showing source port, destination port, length and checksum fields",
+"infobox": [("Layer", "Transport"), ("Standard", "RFC 768 (1980)"), ("Designed by", "David P. Reed"), ("Port range", "0–65535")],
+"body": [
+"The <b>User Datagram Protocol</b> (<b>UDP</b>) is one of the core communication protocols of the [[Internet_protocol_suite|Internet protocol suite]]. It provides a simple, connectionless transport service: applications send messages, called datagrams, to other hosts on an [[Internet_Protocol|IP]] network without first establishing a connection.",
+"Unlike [[TCP]], UDP guarantees neither delivery, ordering, nor duplicate protection; packets may arrive out of order, be duplicated, or be lost silently, and the sender is not notified. In exchange, UDP adds almost no overhead — its header is just eight bytes, carrying source and destination ports, a length field and an optional checksum (mandatory with [[IPv6]]). There is no handshaking, retransmission or congestion control built in.",
+("h2", "Applications"),
+"UDP suits applications where timeliness matters more than completeness. It carries [[Domain_Name_System|DNS]] lookups, the [[Dynamic_Host_Configuration_Protocol|DHCP]] configuration protocol, streaming audio and video, voice over IP, online games, and the QUIC transport protocol that underlies [[HTTP|HTTP/3]]. When reliability is needed over UDP, it must be implemented by the application itself, as QUIC does.",
+"The protocol was designed by David P. Reed in 1980 and is formally defined in RFC 768.",
+],
+"see_also": ["TCP", "Internet_protocol_suite", "Domain_Name_System", "Streaming_media"],
+"unsure": ["Exact share of Internet traffic carried by UDP/QUIC is fast-moving"],
+},
+{
+"slug": "IP_address", "title": "IP address", "depth": 3,
+"source": "https://en.wikipedia.org/wiki/Internet_Protocol",
+"imgbox": "Diagram showing an IPv4 address in dotted-decimal notation and an IPv6 address in hexadecimal notation",
+"body": [
+"An <b>Internet Protocol address</b> (<b>IP address</b>) is a numerical label assigned to each device connected to a computer network that uses the [[Internet_Protocol|Internet Protocol]] for communication. An IP address serves two main functions: it identifies the host, or more specifically its network interface, and it provides the location of the host in the network, enabling packets to be routed to it.",
+"Two versions of the Internet Protocol are in use. [[IPv4]] addresses are 32-bit numbers, usually written in dotted-decimal notation as four numbers from 0 to 255 separated by dots, such as 192.0.2.1. [[IPv6]] addresses are 128 bits long, written as groups of hexadecimal digits separated by colons, and were introduced to overcome the exhaustion of the IPv4 address space.",
+("h2", "Allocation and types"),
+"Addresses are allocated hierarchically: [[ICANN]], through the Internet Assigned Numbers Authority, assigns blocks to five regional Internet registries, which in turn allocate them to [[Internet_service_provider|Internet service providers]] and organisations. Addresses may be <b>static</b> (fixed) or <b>dynamic</b> (assigned temporarily, typically via [[Dynamic_Host_Configuration_Protocol|DHCP]]). Special ranges are reserved for private networks — for example 10.0.0.0/8 and 192.168.0.0/16 — whose addresses are not routable on the public Internet and are shared through network address translation (NAT).",
+"A human-readable [[Domain_name|domain name]] is translated into an IP address by the [[Domain_Name_System|Domain Name System]], so users rarely need to type addresses directly.",
+],
+"see_also": ["IPv4", "IPv6", "Domain_Name_System", "Internet_Protocol", "Subnet"],
+"unsure": ["Regional registry allocation figures change constantly"],
+},
+{
+"slug": "IPv4", "title": "IPv4", "depth": 3,
+"source": "https://en.wikipedia.org/wiki/IP_address",
+"imgbox": "Diagram of the IPv4 packet header with its fields: version, header length, total length, identification, flags, fragment offset, TTL, protocol, checksum, source and destination addresses",
+"infobox": [("Address size", "32 bits"), ("Address space", "4,294,967,296 (2^32)"), ("Standard", "RFC 791 (1981)"), ("Notation", "Dotted decimal, e.g. 192.0.2.1")],
+"body": [
+"<b>Internet Protocol version 4</b> (<b>IPv4</b>) is the fourth version of the [[Internet_Protocol]] and was the first version widely deployed for the [[ARPANET]] and the subsequent [[Internet]]. Described in RFC 791 in 1981, it routes most of today's Internet traffic, carrying packets between networks using 32-bit addresses.",
+"IPv4 addresses are usually written in dotted-decimal notation: four decimal numbers, each representing one byte, separated by periods. The total space of about 4.3 billion addresses seemed ample in the 1980s but proved finite; blocks are set aside for private networks, multicast and research, shrinking the public pool further.",
+("h2", "Address exhaustion"),
+"By the 1990s it was clear the free pool would run out. [[ICANN|IANA]] allocated the last of its unassigned address blocks to the regional registries in February 2011, and the registries themselves have since exhausted their reserves. Several stopgaps prolonged IPv4's life: classless inter-domain routing (CIDR) made allocation more efficient, network address translation (NAT) let whole households and companies share a single public address, and a transfer market emerged for trading blocks. The long-term answer is [[IPv6]], whose adoption has grown steadily but which coexists with IPv4 rather than replacing it outright.",
+("h2", "The packet"),
+"An IPv4 packet carries a header of at least 20 bytes containing, among other fields, the source and destination addresses, a time-to-live (TTL) counter that prevents packets looping forever, a protocol field identifying the payload (often [[TCP]] or [[User_Datagram_Protocol|UDP]]), and a header checksum. Routers may fragment packets that exceed the next link's maximum transmission unit.",
+],
+"see_also": ["IPv6", "IP_address", "Internet_Protocol", "TCP"],
+"unsure": ["Current IPv6 adoption percentages are fast-moving"],
+},
+{
+"slug": "IPv6", "title": "IPv6", "depth": 3,
+"source": "https://en.wikipedia.org/wiki/IP_address",
+"imgbox": "Diagram of the IPv6 packet header, showing version, traffic class, flow label, payload length, next header, hop limit and the 128-bit source and destination addresses",
+"infobox": [("Address size", "128 bits"), ("Standard", "RFC 2460 (1998); RFC 8200 (2017)"), ("Notation", "Hexadecimal groups, e.g. 2001:db8::1"), ("Developed by", "[[Internet_Engineering_Task_Force|IETF]]")],
+"body": [
+"<b>Internet Protocol version 6</b> (<b>IPv6</b>) is the most recent version of the [[Internet_Protocol]], the communications protocol that provides identification and location for computers on networks and routes traffic across the [[Internet]]. It was developed by the [[Internet_Engineering_Task_Force]] to succeed [[IPv4]] and deal with the long-anticipated problem of IPv4 address exhaustion.",
+"IPv6 addresses are 128 bits long, giving roughly 3.4 × 10^38 possible addresses — enough, in the usual phrase, for every atom on Earth to have many addresses each. They are written as eight groups of four hexadecimal digits separated by colons; leading zeros can be dropped and one run of zero groups can be compressed to '::', so the documentation example 2001:0db8:0000:0000:0000:ff00:0042:8329 becomes 2001:db8::ff00:42:8329.",
+("h2", "Design changes"),
+"Beyond the address space, IPv6 simplifies the packet header, drops the header checksum so routers work faster, replaces broadcast with multicast, and makes autoconfiguration a standard feature: a device can generate its own address (SLAAC) without a [[Dynamic_Host_Configuration_Protocol|DHCP]] server. Extension headers carry optional information, and the flow label supports quality-of-service handling. Network address translation is generally unnecessary, restoring the original end-to-end model of the Internet.",
+("h2", "Deployment"),
+"World IPv6 Day in 2011 and the World IPv6 Launch in 2012 marked the start of permanent deployment by large providers. Adoption has climbed steadily since: mobile networks in several countries are majority-IPv6, and global usage measured by large content providers passed roughly a third of users in the early 2020s and continues to grow, though IPv4 remains widespread through dual-stack operation.",
+],
+"see_also": ["IPv4", "IP_address", "Internet_Engineering_Task_Force", "Internet_Protocol"],
+"unsure": ["Global adoption percentage at time of writing is approximate and rising"],
+},
+{
+"slug": "OSI_model", "title": "OSI model", "depth": 3,
+"source": "https://en.wikipedia.org/wiki/Internet_protocol_suite",
+"imgbox": "Diagram of the seven layers of the OSI model, from physical at the bottom to application at the top",
+"infobox": [("Developed by", "ISO"), ("Standard", "ISO/IEC 7498-1 (1984)"), ("Layers", "7")],
+"body": [
+"The <b>Open Systems Interconnection model</b> (<b>OSI model</b>) is a conceptual model from the International Organization for Standardization (ISO) that divides a telecommunication or computing system into seven abstraction layers. First published in 1984, it standardised how the functions of a communication system are partitioned, even though the protocols that won in practice were those of the [[Internet_protocol_suite|TCP/IP suite]].",
+("h2", "The seven layers"),
+"From the bottom up: the <b>physical layer</b> moves raw bits over cables, fibre or radio (see [[Ethernet]] and [[Wi-Fi]] hardware); the <b>data link layer</b> frames bits and handles local delivery; the <b>network layer</b> routes packets between networks — the home of [[Internet_Protocol|IP]]; the <b>transport layer</b> provides end-to-end communication, as [[TCP]] and [[User_Datagram_Protocol|UDP]] do; the <b>session layer</b> manages dialogue between applications; the <b>presentation layer</b> handles data formats, encryption and compression; and the <b>application layer</b> serves the end user, with protocols such as [[HTTP]] and [[SMTP]]. Students remember the order with mnemonics like 'Please Do Not Throw Sausage Pizza Away'.",
+("h2", "Legacy"),
+"The OSI protocol suite itself lost the 'protocol wars' to TCP/IP, which was simpler, working, and already deployed on the [[ARPANET]]. The model nevertheless survives as the common vocabulary of networking: engineers still describe problems as 'a layer 1 issue' or 'layer 8' (jokingly, the user), and it remains the framework in most networking courses, usually taught alongside the leaner [[TCP/IP_model]].",
+],
+"see_also": ["TCP/IP_model", "Internet_protocol_suite", "Computer_network"],
+"unsure": [],
+},
+{
+"slug": "Packet_switching", "title": "Packet switching", "depth": 3,
+"source": "https://en.wikipedia.org/wiki/Internet",
+"imgbox": "Diagram comparing packet switching, where datagrams take different routes and are reassembled, with circuit switching's single fixed path",
+"body": [
+"<b>Packet switching</b> is a method of grouping data into short blocks, called packets, that are transmitted over a digital network. Each packet carries a header with addressing information, allowing network nodes — routers — to forward it toward its destination, possibly along entirely different paths from its companions. The receiving host reassembles the packets into the original message.",
+"The idea was developed independently in the 1960s by Paul Baran at RAND, who wanted a communications network that could survive partial destruction, and by Donald Davies at the UK's National Physical Laboratory, who coined the word 'packet'. Leonard Kleinrock's queueing-theory work provided the mathematical foundation. Packet switching became the basis of the [[ARPANET]] and hence of the [[Internet_protocol_suite|Internet protocols]].",
+("h2", "Versus circuit switching"),
+"Traditional telephone networks use circuit switching: a dedicated path is reserved for the whole call, guaranteeing capacity but wasting it during silences. Packet switching shares links statistically — many conversations interleave on the same line — which is far more efficient for bursty computer data, at the cost of variable delay and possible loss, which protocols like [[TCP]] then repair. Modern telephone traffic itself now largely travels as packets (voice over IP).",
+],
+"see_also": ["Internet_protocol_suite", "ARPANET", "TCP", "Computer_network"],
+"unsure": ["Baran's reports dated 1960-1964; exact priority narrative varies by source"],
+},
+{
+"slug": "Border_Gateway_Protocol", "title": "Border Gateway Protocol", "depth": 3,
+"source": "https://en.wikipedia.org/wiki/Routing",
+"imgbox": "Map-style diagram of autonomous systems exchanging routes with BGP across the Internet backbone",
+"infobox": [("Port", "TCP 179"), ("Standard", "RFC 4271 (BGP-4, 2006)"), ("Type", "Path-vector routing protocol")],
+"body": [
+"<b>Border Gateway Protocol</b> (<b>BGP</b>) is a standardised exterior gateway protocol designed to exchange routing and reachability information among [[Autonomous_system_(Internet)|autonomous systems]] (AS) — the independently operated networks, such as [[Internet_service_provider|ISPs]], universities and large companies, that together make up the [[Internet]]. It is often described as the protocol that 'holds the Internet together', or its 'postal service'.",
+"BGP does not discover routes by measuring distance alone. It is a path-vector protocol: each advertisement carries the full list of autonomous systems a route passes through, and operators apply local policy — commercial relationships, cost, preference — to choose among candidate paths. Sessions between routers run over [[TCP]] port 179; the version in use, BGP-4, dates from the mid-1990s and was extended to carry [[IPv6]] routes.",
+("h2", "Incidents"),
+"Because BGP originally trusted announcements implicitly, misconfigurations and hijacks can have global effects: a network that wrongly announces address blocks it does not own can black-hole or intercept traffic worldwide, as happened in notable incidents involving Pakistan Telecom in 2008 (which took YouTube offline globally) and several large leaks since. Security extensions such as RPKI, which cryptographically attests to address ownership, are being deployed gradually to mitigate this.",
+],
+"see_also": ["Routing", "Autonomous_system_(Internet)", "Internet_backbone", "Internet_service_provider"],
+"unsure": ["Details of specific routing incidents are summarised from memory"],
+},
+{
+"slug": "Routing", "title": "Routing", "depth": 3,
+"source": "https://en.wikipedia.org/wiki/Computer_network",
+"imgbox": "Diagram of routers forwarding packets across interconnected networks toward a destination address",
+"body": [
+"<b>Routing</b> is the process of selecting a path for traffic in a network, or across multiple networks. In packet-switched networks such as the [[Internet]], routing directs [[Internet_Protocol|IP]] packets from their source to their destination through intermediate nodes called [[Router_(computing)|routers]], which consult routing tables to decide where each packet goes next.",
+"Routers learn their tables in two ways. <b>Static routing</b> is configured by hand and suits small, stable networks. <b>Dynamic routing</b> uses protocols that let routers exchange information automatically: interior gateway protocols such as OSPF and IS-IS work inside one organisation's network, while the [[Border_Gateway_Protocol]] (BGP) routes between the independent [[Autonomous_system_(Internet)|autonomous systems]] of the global Internet.",
+("h2", "How a packet travels"),
+"When a packet arrives, the router examines its destination [[IP_address|IP address]], finds the longest matching prefix in its table, and forwards the packet out the corresponding interface, decrementing the time-to-live field so lost packets cannot loop forever. The path is chosen hop by hop — no router knows the whole route in advance — yet packets reliably cross dozens of networks in milliseconds. Tools like [[Traceroute]] make this invisible journey visible by listing the hops a packet takes.",
+],
+"see_also": ["Router_(computing)", "Border_Gateway_Protocol", "Packet_switching", "IP_address"],
+"unsure": [],
+},
+]
+
+for p in PAGES:
+    build(p)
+finish()

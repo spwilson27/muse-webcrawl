@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>NP-completeness - Wikipedia</title>
+<style>
+  body { font-family: sans-serif; margin: 0; color: #202122; background: #f8f9fa; font-size: 14px; line-height: 1.6; }
+  a { color: #0645ad; text-decoration: none; } a:hover { text-decoration: underline; }
+  .topbar { background: #fff; border-bottom: 1px solid #a7d7f9; padding: 8px 16px; display: flex; gap: 16px; align-items: center; }
+  .topbar .wordmark { font-family: Georgia, serif; font-size: 24px; color: #000; }
+  .topbar input[type=search] { padding: 5px; width: 240px; border: 1px solid #a2a9b1; }
+  .layout { display: flex; } .sidebar { width: 176px; padding: 16px 10px; font-size: 13px; flex: none; }
+  .sidebar h3 { font-size: 12px; color: #54595d; border-bottom: 1px solid #c8ccd1; font-weight: normal; }
+  .sidebar ul { list-style: none; padding-left: 8px; } .sidebar li { margin: 4px 0; }
+  .content { background: #fff; padding: 20px 28px; flex: 1; border-left: 1px solid #a7d7f9; }
+  h1 { font-family: Georgia, serif; font-weight: normal; font-size: 28px; border-bottom: 1px solid #a2a9b1; margin: 0 0 6px; }
+  h2 { font-family: Georgia, serif; font-weight: normal; font-size: 21px; border-bottom: 1px solid #a2a9b1; margin-top: 24px; }
+  h3 { font-family: Georgia, serif; font-weight: normal; font-size: 17px; margin-top: 18px; }
+  .imgbox { border: 1px solid #c8ccd1; background: #f8f9fa; color: #54595d; padding: 24px 10px; text-align: center; font-size: 12px; margin: 8px 0; }
+  .thumb { float: right; width: 250px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 5px; margin: 0 0 10px 14px; font-size: 12px; color: #54595d; }
+  .infobox { float: right; width: 250px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px; margin: 0 0 10px 14px; font-size: 12px; }
+  .infobox th { text-align: left; vertical-align: top; padding-right: 6px; }
+  .footer { border-top: 1px solid #a2a9b1; margin-top: 36px; padding-top: 10px; font-size: 12px; color: #54595d; clear: both; }
+</style></head>
+<body>
+<div class="topbar"><div class="wordmark">WIKIPEDIA</div><div><input type="search" placeholder="Search Wikipedia"><button>Search</button></div><div style="margin-left:auto; font-size:13px;">Create account &middot; Log in</div></div>
+<div class="layout">
+<nav class="sidebar"><h3>Navigation</h3><ul><li><a href="../../index.html">Main page</a></li><li><a href="../Wikipedia:Contents/index.html">Contents</a></li><li><a href="../Portal:Current_events/index.html">Current events</a></li><li><a href="../Special:Random/index.html">Random article</a></li><li><a href="../Wikipedia:About/index.html">About Wikipedia</a></li></ul></nav>
+<main class="content">
+<h1>NP-completeness</h1><div>From Wikipedia, the free encyclopedia</div>
+<table class="infobox"><caption style="font-weight:bold; font-size:13px;">NP-completeness</caption><tr><th>Field</th><td><a href="../Computational_complexity_theory/index.html">Computational complexity theory</a></td></tr><tr><th>Key figures</th><td><a href="../Stephen_Cook/index.html">Stephen Cook</a>, <a href="../Leonid_Levin/index.html">Leonid Levin</a>, <a href="../Richard_Karp/index.html">Richard Karp</a></td></tr><tr><th>Related</th><td><a href="../P_versus_NP_problem/index.html">P versus NP problem</a>, <a href="../Boolean_satisfiability_problem/index.html">Boolean satisfiability problem</a></td></tr></table>
+<div class="thumb"><div class="imgbox"><img src="images/complexity-classes.png" alt="complexity-classes" style="max-width:100%;display:block;margin:0 auto 6px;">[Image: Venn-style Euler diagram of complexity classes P, NP, NP-complete and NP-hard under the assumption P != NP]</div>Relation of NP-complete problems to other classes if P ≠ NP.</div>
+<p>In <a href="../Computational_complexity_theory/index.html">computational complexity theory</a>, a problem is <b>NP-complete</b> if it belongs to the class NP (its solutions can be verified in polynomial time) and every problem in NP can be reduced to it in polynomial time — that is, it is NP-hard and in NP. NP-complete problems are often addressed by using heuristic algorithms and approximation algorithms.</p>
+<p>The concept was introduced by <a href="../Stephen_Cook/index.html">Stephen Cook</a> in his 1971 paper 'The complexity of theorem proving procedures', which proved that the <a href="../Boolean_satisfiability_problem/index.html">Boolean satisfiability problem</a> (SAT) is NP-complete; <a href="../Leonid_Levin/index.html">Leonid Levin</a> independently developed the theory in the Soviet Union. In 1972 <a href="../Richard_Karp/index.html">Richard Karp</a> showed that 21 classic combinatorial problems are NP-complete, demonstrating the concept's reach.</p>
+<p>If any NP-complete problem could be solved in polynomial time, then every problem in NP could — resolving the <a href="../P_versus_NP_problem/index.html">P versus NP problem</a> in the affirmative. No such algorithm is known, and NP-completeness is widely taken as strong evidence that a problem is computationally intractable in the worst case.</p>
+<h2>Definition</h2>
+<p>A decision problem is NP-complete if (1) it is in NP — given a 'yes' answer, a certificate exists that can be checked in polynomial time — and (2) every problem in NP is polynomial-time reducible to it. Reductions transfer hardness: to prove a new problem NP-complete, it suffices to reduce a known NP-complete problem to it.</p>
+<h2>Examples</h2>
+<p>Karp's 21 problems include the <a href="../Travelling_salesman_problem/index.html">travelling salesman problem</a> (decision form), vertex cover, clique, Hamiltonian path and cycle, graph colouring, knapsack and bin packing. Literally thousands of problems across computer science, operations research, biology and physics have since been shown NP-complete, including — famously — generalised versions of games such as Minesweeper, Tetris and certain puzzles.</p>
+<h2>Dealing with NP-complete problems</h2>
+<p>In practice, NP-complete problems are attacked with exact exponential algorithms improved by clever pruning, <a href="../Approximation_algorithm/index.html">approximation algorithms</a> with provable guarantees (or provable limits), fixed-parameter algorithms exploiting small parameters, randomisation, heuristics and metaheuristics such as simulated annealing, and industrial SAT solvers that perform far better in practice than worst-case theory suggests.</p>
+<h2>History</h2>
+<p>Cook's theorem appeared in 1971; Levin's version, with the concept of universal search problems, was published in 1973. Karp's 1972 paper 'Reducibility among combinatorial problems' enormously popularised the idea. The term 'NP-complete' itself, settled after debate in the community (Knuth ran an informal poll), became standard by the mid-1970s.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../P_versus_NP_problem/index.html">P versus NP problem</a></li>
+<li><a href="../Boolean_satisfiability_problem/index.html">Boolean satisfiability problem</a></li>
+<li><a href="../Stephen_Cook/index.html">Stephen Cook</a></li>
+<li><a href="../Richard_Karp/index.html">Richard Karp</a></li>
+<li><a href="../Computational_complexity_theory/index.html">Computational complexity theory</a></li>
+<li><a href="../Travelling_salesman_problem/index.html">Travelling salesman problem</a></li>
+</ul>
+
+<div class="footer">This page was last edited on 12 October 2026, at 18:42 (UTC).<br>Text is available under the Creative Commons Attribution-ShareAlike 4.0 License.</div>
+</main></div>
+</body></html>

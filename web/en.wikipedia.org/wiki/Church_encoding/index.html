@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Church encoding - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;margin:0;color:#202122;background:#fff;line-height:1.6}
+.mw-body{max-width:960px;margin:0 auto;padding:1em 1.5em 3em}
+h1{font-family:'Linux Libertine','Georgia',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;margin-bottom:.3em}
+h2{font-family:'Linux Libertine','Georgia',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:3px;text-align:center;font-size:88%}
+.thumb img{max-width:100%}
+.small{font-size:90%}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow:auto}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Church encoding</h1>
+<figure class="thumb" style="float:right;width:280px;margin:0 0 1em 1em"><img src="images/church-encoding.png" alt="Diagram of Church numerals represented as nested function applications"></figure>
+<p>In mathematics, computer science, and logic, <b>Church encoding</b> is a means of representing data and operators in the lambda calculus. Named after <a href="../Alonzo_Church">Alonzo Church</a>, who devised it in the 1930s, the encoding shows that numbers, booleans, pairs, and lists can all be built purely out of functions — a demonstration that the lambda calculus alone is a universal model of computation, foundational to later languages such as <a href="../Lisp_(programming_language)">Lisp</a>.</p>
+<h2>Church numerals</h2>
+<p>A natural number <i>n</i> is represented by a higher-order function that takes a function <i>f</i> and a value <i>x</i> and applies <i>f</i> to <i>x</i> exactly <i>n</i> times:</p>
+<pre>0 := λf.λx. x
+1 := λf.λx. f x
+2 := λf.λx. f (f x)
+3 := λf.λx. f (f (f x))</pre>
+<p>Arithmetic operations become function definitions: the successor adds one more application of <i>f</i>; addition composes applications; multiplication composes numerals themselves; and exponentiation is simply application of one numeral to another. A predecessor function is considerably trickier and typically uses pairs.</p>
+<h2>Booleans and data structures</h2>
+<p><b>Church booleans</b> encode truth values as selectors: TRUE := λx.λy. x and FALSE := λx.λy. y, so a conditional is just application. Pairs are encoded as functions that hand their two components to a selector, from which projection functions recover each element. Lists can be built from pairs terminated by a special NIL value, or via right-fold (Scott and Böhm–Berarducci encodings offer alternatives).</p>
+<h2>Significance</h2>
+<p>Church encoding underlies the Church–Turing thesis argument that lambda calculus computes exactly the computable functions, and it remains a standard teaching example in programming-language theory; models of the untyped calculus (see <a href="../Dana_Scott">Dana Scott</a>'s domain theory) had to account for such encodings.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../J._Barkley_Rosser">J. Barkley Rosser</a></li>
+<li><a href="../Lambda_calculus">Lambda calculus</a></li>
+<li><a href="../Mogensen%E2%80%93Scott_encoding">Mogensen–Scott encoding</a></li>
+</ul>
+<p class="small">Categories: Lambda calculus | Data types</p>
+</div>
+</body>
+</html>

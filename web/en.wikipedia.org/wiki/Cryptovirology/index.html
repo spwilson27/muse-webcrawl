@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cryptovirology - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;margin:0;background:#f6f6f6;color:#202122}
+.mw-body{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:1.45em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+h3{font-size:1.15em;margin-top:20px}
+p{line-height:1.65;margin:10px 0}
+ul,ol{line-height:1.6}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.88em;margin:4px 0 16px 20px;padding:0}
+.infobox th,.infobox td{padding:6px 9px;vertical-align:top;text-align:left}
+.infobox caption{background:#b0c4de;font-weight:bold;padding:7px;text-align:center}
+figure{float:right;margin:4px 0 16px 20px;text-align:center}
+figure img{max-width:280px;border:1px solid #a2a9b1;background:#eef2f5}
+figcaption{font-size:0.85em;color:#54595d;padding:4px}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Cryptovirology</h1>
+<figure>
+<img src="images/cryptovirology.png" alt="Computer screen showing an encrypted-files ransom notice with a padlock symbol">
+<figcaption>A ransomware note: the public face of cryptovirology.</figcaption>
+</figure>
+<table class="infobox">
+<caption>Cryptovirology</caption>
+<tr><th>Field</th><td>Computer security, <a href="../Cryptography/">cryptography</a>, malware research</td></tr>
+<tr><th>Originated</th><td>1996, Adam L. Young and Moti Yung</td></tr>
+<tr><th>Key concept</th><td>The <i>cryptovirus</i>: malware using public-key cryptography against the victim</td></tr>
+<tr><th>Best-known realization</th><td><a href="../Ransomware/">Ransomware</a> (e.g., CryptoLocker, 2013)</td></tr>
+<tr><th>Related field</th><td>Kleptography</td></tr>
+</table>
+<p><b>Cryptovirology</b> is the study of the use of <a href="../Cryptography/">cryptography</a> in <a href="../Malware/">malicious software</a> — in particular, of how strong public-key cryptography can be turned against users to build malware that resists analysis and enables extortion. The field was founded by Adam L. Young and Moti Yung of Columbia University, whose 1996 paper "Cryptovirology: Extortion-Based Security Threats and Countermeasures" (presented at the IEEE Symposium on Security and Privacy) defined the central concept, the <b>cryptovirus</b>.</p>
+<h2>The cryptovirus</h2>
+<p>A cryptovirus is a computer virus or worm that carries the public key of its author and uses hybrid encryption in its attack: upon infecting a machine, it generates a fresh symmetric session key, encrypts the victim's files with it, then encrypts the session key under the author's embedded public key and destroys the plaintext. The victim's data can then be recovered only with the author's private key — for which the author demands ransom. The key insight is asymmetry: because the decryption key never appears on the victim's machine, victims and antivirus researchers cannot simply extract a key from the code (as they could when malware used a single hardcoded symmetric key), and tampering cannot turn the attacker's cryptography to the defender's advantage. Young and Yung also described kleptographic attacks, in which cryptographic systems themselves are subverted so that their outputs leak secrets to the designer — an idea later echoed in debates over backdoored random number generators and standards.</p>
+<h2>History and realizations</h2>
+<p>The earliest real-world precursor, the AIDS Trojan (PC Cyborg) of 1989, mailed by biologist Joseph Popp, used only weak symmetric encryption and was quickly defeated. The cryptovirology framework predicted genuinely robust successors, which arrived with the ransomware era: early samples such as GPCode (2004–2008) progressively fixed implementation errors — weak keys, recoverable temporary files — until families such as <b>CryptoLocker</b> (2013) implemented the 1996 design essentially correctly, combining RSA-2048 key protection, anonymous payment in Bitcoin, and botnet distribution to extort tens of millions of dollars before an international law-enforcement operation dismantled its infrastructure in 2014. Later ransomware-as-a-service operations, including the double-extortion groups that also exfiltrate and threaten to publish data, descend directly from this model.</p>
+<h2>Defenses</h2>
+<p>Countermeasures studied in the literature include antivirus monitoring of cryptographic API calls and entropy analysis to catch mass encryption in progress, OS-level restrictions on bulk file modification, and — decisive in practice — maintained, offline, tested backups that remove the victim's need to pay. Young and Yung themselves argued that the field was dual-use and necessary: the same analysis underlies defensive design (for example, cryptography that malware cannot abuse, and secure deletion), and publishing the attack model was essential to preparing defenses against adversaries who would discover it independently.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Ransomware/">Ransomware</a></li>
+<li><a href="../Malware/">Malware</a></li>
+<li><a href="../Public-key_cryptography/">Public-key cryptography</a></li>
+<li><a href="../Moti_Yung/">Moti Yung</a></li>
+<li><a href="../CryptoLocker/">CryptoLocker</a></li>
+</ul>
+</div>
+</body>
+</html>
