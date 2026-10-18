@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>A Mathematical Theory of Communication — C. E. Shannon (1948)</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 760px; margin: 0 auto; padding: 24px 20px 60px; color: #111; line-height: 1.6; font-size: 16px; background: #fff; }
+.toolbar { border: 1px solid #bbb; background: #f7f4ec; padding: 10px 14px; margin-bottom: 26px; font-family: Helvetica, Arial, sans-serif; font-size: 14px; }
+.toolbar button { background: #b03030; color: #fff; border: 0; padding: 8px 20px; font-size: 15px; border-radius: 3px; cursor: pointer; }
+.journal { text-align: center; font-variant: small-caps; letter-spacing: 1px; color: #333; margin-bottom: 2px; }
+.cite { text-align: center; font-size: 13.5px; color: #555; margin-bottom: 22px; }
+h1 { font-size: 23px; text-align: center; line-height: 1.3; margin: 6px 0 10px 0; }
+.authors { text-align: center; font-size: 16.5px; margin-bottom: 2px; }
+.affil { text-align: center; font-style: italic; font-size: 14.5px; color: #333; margin-bottom: 4px; }
+.doi { text-align: center; font-size: 13px; color: #555; margin-bottom: 24px; }
+h2 { font-size: 17px; margin: 26px 0 8px 0; }
+p { margin: 8px 0; text-align: justify; }
+.eq { text-align: center; font-style: italic; margin: 14px 0; font-size: 16.5px; }
+.abstract { border-top: 2px solid #333; border-bottom: 1px solid #333; padding: 10px 4px; margin: 18px 0; font-size: 15px; }
+.fig { border: 1px dashed #999; background: #fafafa; padding: 14px; margin: 16px 0; font-size: 14px; color: #333; }
+.refs { font-size: 14px; }
+.refs li { margin: 4px 0; }
+.small { font-size: 13px; color: #555; }
+@media print { .noprint { display: none !important; } body { padding: 0; max-width: none; font-size: 11.5pt; } }
+@page { size: A4; margin: 2.2cm 2cm; }
+</style>
+<script>
+function downloadPDF() { window.print(); }
+</script>
+</head><body>
+<div class="toolbar noprint">
+<button onclick="downloadPDF()">&#8595; Download PDF</button>
+&nbsp; <a href="index.html">&larr; back to the Sci-Hub landing page</a>
+<span class="small"> &nbsp; Use your browser's "Save as PDF" destination in the print dialog.</span>
+</div>
+
+<div class="journal">The Bell System Technical Journal</div>
+<div class="cite">27: 379&ndash;423 and 623&ndash;656 (1948) &middot; published in two parts, July and October 1948</div>
+
+<h1>A Mathematical Theory of Communication</h1>
+<div class="authors">C. E. Shannon</div>
+<div class="affil">Bell Telephone Laboratories, Murray Hill, N.J.</div>
+<div class="doi">DOI: 10.1002/j.1538-7305.1948.tb01338.x</div>
+
+<div class="abstract">
+<b>Abstract.</b> The fundamental problem of communication is that of reproducing at one point either exactly or approximately a message selected at another point. Frequently the messages have meaning; these semantic aspects of communication are irrelevant to the engineering problem. On this basis a mathematical theory is developed. A communication system consists of a source, a transmitter, a channel (with noise), a receiver and a destination. For a source producing symbols with probabilities p<sub>1</sub>, &hellip;, p<sub>n</sub>, the quantity H = &minus;K &Sigma; p<sub>i</sub> log p<sub>i</sub> measures the information, choice, or uncertainty involved; with logarithms to base 2 the unit is the binary digit, or bit. It is proved (the fundamental theorem for a noiseless channel) that a source of entropy H can be encoded for a channel of capacity C symbols per second with average rate arbitrarily close to C/H symbols per second, and no faster. For a channel disturbed by noise, the capacity is C = max [H(x) &minus; H<sub>x</sub>(y)], and &mdash; the central theorem of the paper &mdash; by suitable encoding the frequency of errors can be made arbitrarily small for any transmission rate below C, while above C it cannot. For continuous channels of bandwidth W with average signal power P and noise power N, the capacity is C = W log((P + N)/N) binary digits per second.
+</div>
+
+<h2>Introduction</h2>
+<p>The recent development of various methods of modulation, such as PCM and PPM, which exchange bandwidth for a signal-to-noise ratio, has intensified the interest in a general theory of communication. A preliminary discussion of the subject at large is given by Hartley, who enumerated some relevant factors. Nyquist treated certain aspects of telegraph speed in two classical papers. The present paper will extend the theory to include a number of new factors, in particular the effect of noise in the channel, and the savings possible due to the statistical structure of the original message and due to the nature of the final destination of the information.</p>
+<p>By a communication system we will mean a system of the type indicated schematically in Fig. 1. It consists of essentially five parts:</p>
+<div class="fig">[Figure 1 placeholder &mdash; the famous schematic diagram of a general communication system: five boxes in a row labelled Information Source &rarr; Transmitter &rarr; Channel &rarr; Receiver &rarr; Destination, with the Noise Source feeding into the Channel from below.]<div class="figcap" style="font-size:13.5px; margin-top:6px;">Fig. 1. Schematic diagram of a general communication system.</div></div>
+<p>An <i>information source</i> produces a message or sequence of messages to be communicated to the receiving terminal. A <i>transmitter</i> operates on the message in some way to produce a signal suitable for transmission over the channel. The <i>channel</i> is merely the medium used to transmit the signal. In a radio system the channel is simply free space; because of noise, the signal received may differ from that sent. The <i>receiver</i> performs the inverse operation of the transmitter, reconstructing the message from the signal. The <i>destination</i> is the person (or thing) for whom the message is intended.</p>
+
+<h2>Part I: Discrete Noiseless Systems</h2>
+<h2>1. The discrete noiseless channel</h2>
+<p>A teletype system with a 32-symbol alphabet and a channel able to transmit n symbols per second has capacity C = n log 32 binary digits per second. In general, the capacity of a noiseless channel is C = lim<sub>T&rarr;&infin;</sub> (log N(T))/T, where N(T) is the number of allowed signals of duration T.</p>
+<h2>2. The discrete source of information</h2>
+<p>We can regard a discrete source as generating the message symbol by symbol according to probabilities which may depend on preceding symbols (a Markov process, or chain). If p<sub>i</sub> is the probability of symbol i, we define</p>
+<p class="eq">H = &minus;K &Sigma;<sub>i</sub> p<sub>i</sub> log p<sub>i</sub>,</p>
+<p>and require of H the natural properties: it is continuous in the p<sub>i</sub>; it increases with n for equal probabilities; and it is consistent under grouping of choices. The only function satisfying these requirements is the one written (Theorem 2, Appendix 1). H measures how much "information" is produced by the source, or rather the uncertainty of the receiver as to what will be produced. If the logarithm is taken to base 2, H is in binary digits, or more briefly <i>bits</i>, per symbol. H is maximal, log n, when all symbols are equally likely, and zero when one symbol has probability 1. For a Markov source, H is computed from the stationary state probabilities and the transition probabilities, as a weighted mean of the corresponding partial entropies.</p>
+<h2>3. The series of approximations to English</h2>
+<p>The structure of a language is exhibited by a succession of approximations: the zero-order (letters independent and equiprobable) produces gibberish such as XFOML RXKHRJFFJUJ; the first-order (letters with their text frequencies) gives ON THE UNDERTAKING OCCURS &hellip ;; second-order (digram) approximations give IN NO IST LAT WHEY CRATICT &hellip ;; and word-level approximations read THE HEAD AND IN FRONTAL ATTACK ON AN ENGLISH WRITER &hellip; With letter frequencies alone the entropy is about 4.03 bits per letter; taking account of the statistics of English up to trigrams and words it falls to roughly 1&ndash;1.5 bits per letter, i.e. written English is about 50 per cent redundant &mdash; a fact familiar from crossword puzzles, which at about this redundancy are just possible.</p>
+<h2>4. Graphical representation; encodings</h2>
+<p>[State diagrams represent a Markov source (as for a simplified printing-telegraphy source); an encoding is a mapping of source sequences into channel sequences. The average rate of a code is governed completely by H:]</p>
+<p class="eq"><b>Fundamental theorem for a noiseless channel.</b> Let a source have entropy H (bits per symbol) and a channel have capacity C (bits per second). Then it is possible to encode the output of the source so as to transmit at the average rate C/H &minus; &epsilon; symbols per second over the channel, where &epsilon; is arbitrarily small. It is not possible to transmit at an average rate greater than C/H.</p>
+
+<h2>Part II: The Discrete Channel with Noise</h2>
+<h2>5. Representation; equivocation and channel capacity</h2>
+<p>With noise, receiving y does not determine what was sent, x. Define the rate of actual transmission R = H(x) &minus; H<sub>x</sub>(y), where H<sub>x</sub>(y) is the <i>equivocation</i>, the conditional entropy of the input given the output. The capacity of a noisy channel is the maximum of this rate over all possible input ensembles:</p>
+<p class="eq">C = max<sub>input</sub> [ H(x) &minus; H<sub>x</sub>(y) ].</p>
+<p>For a channel with independent noise flipping each binary digit with probability p, C = 1 &minus; H(p) per digit, with H(p) = &minus;p log p &minus; (1&minus;p) log (1&minus;p).</p>
+<h2>6. The fundamental theorem for a channel with noise</h2>
+<p class="eq"><b>Noisy-channel coding theorem.</b> Let a discrete channel have capacity C and a discrete source have entropy per second H. If H &le; C there exists a coding system such that the output of the source can be transmitted over the channel with an arbitrarily small frequency of errors. If H &gt; C it is possible to encode the source so that the equivocation is less than H &minus; C + &epsilon;, and impossible to make it smaller.</p>
+<p>The proof is by random coding: group long blocks of symbols; out of the M<sup>&delta;</sup> possible input sequences select codewords at random; the probability that noise carries any codeword into the typical output region of another decreases exponentially with block length when the rate is below C. The theorem asserts existence only &mdash; the encoding and decoding devices required are in general extremely complex &mdash; but it fixes the absolute limits within which all practical designs must work, and refutes the plausible belief that reducing errors requires reducing the rate towards zero.</p>
+
+<h2>Part III: Continuous Information</h2>
+<h2>7. Continuous channels</h2>
+<p>A continuous signal of bandwidth W is completely determined by 2W samples per second (the sampling theorem). Counting distinguishable amplitude levels against noise of power N with average signal power P gives</p>
+<p class="eq">C = W log<sub>2</sub> ( (P + N) / N ) &nbsp; bits per second,</p>
+<p>the famous formula due essentially to Hartley's reasoning completed by the statistical treatment of noise. It exhibits the exchangeability of bandwidth and signal power: capacity grows linearly with bandwidth but only logarithmically with power. For continuous sources, entropy is defined with a density, H = &minus;&int; p(x) log p(x) dx, and transmission with a prescribed fidelity criterion replaces exact reproduction as the goal; the maximum entropy for given power is attained by a Gaussian (white noise) distribution of the signal.</p>
+
+<h2>Acknowledgment</h2>
+<p>The author is indebted to his colleagues at Bell Telephone Laboratories for many stimulating discussions; the theory rests on the work of Nyquist and Hartley cited below, and on Wiener's treatment of the continuous case.</p>
+
+<h2>References</h2>
+<ol class="refs">
+<li>H. Nyquist, Certain factors affecting telegraph speed, Bell Syst. Tech. J. 3, 324 (1924); Certain topics in telegraph transmission theory, Trans. AIEE 47, 617 (1928).</li>
+<li>R. V. L. Hartley, Transmission of information, Bell Syst. Tech. J. 7, 535 (1928).</li>
+<li>N. Wiener, Extrapolation, Interpolation and Smoothing of Stationary Time Series, Wiley (1949, in press).</li>
+<li>A. Kolmogoroff, works on the interpolation and extrapolation of stationary random sequences (1941), cited in the text.</li>
+<li>W. Weaver, discussion of the theory in The Mathematical Theory of Communication, University of Illinois Press (1949, in preparation, with C. E. Shannon).</li>
+</ol>
+</body></html>

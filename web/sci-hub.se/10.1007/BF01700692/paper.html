@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>&Uuml;ber formal unentscheidbare S&auml;tze der Principia Mathematica und verwandter Systeme I — K. G&ouml;del (1931)</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 760px; margin: 0 auto; padding: 24px 20px 60px; color: #111; line-height: 1.6; font-size: 16px; background: #fff; }
+.toolbar { border: 1px solid #bbb; background: #f7f4ec; padding: 10px 14px; margin-bottom: 26px; font-family: Helvetica, Arial, sans-serif; font-size: 14px; }
+.toolbar button { background: #b03030; color: #fff; border: 0; padding: 8px 20px; font-size: 15px; border-radius: 3px; cursor: pointer; }
+.journal { text-align: center; font-variant: small-caps; letter-spacing: 1px; color: #333; margin-bottom: 2px; }
+.cite { text-align: center; font-size: 13.5px; color: #555; margin-bottom: 22px; }
+h1 { font-size: 23px; text-align: center; line-height: 1.3; margin: 6px 0 10px 0; }
+.authors { text-align: center; font-size: 16.5px; margin-bottom: 2px; }
+.affil { text-align: center; font-style: italic; font-size: 14.5px; color: #333; margin-bottom: 4px; }
+.doi { text-align: center; font-size: 13px; color: #555; margin-bottom: 24px; }
+h2 { font-size: 17px; margin: 26px 0 8px 0; }
+p { margin: 8px 0; text-align: justify; }
+.eq { text-align: center; font-style: italic; margin: 14px 0; font-size: 16.5px; }
+.abstract { border-top: 2px solid #333; border-bottom: 1px solid #333; padding: 10px 4px; margin: 18px 0; font-size: 15px; }
+.fig { border: 1px dashed #999; background: #fafafa; padding: 14px; margin: 16px 0; font-size: 14px; color: #333; }
+.refs { font-size: 14px; }
+.refs li { margin: 4px 0; }
+.small { font-size: 13px; color: #555; }
+@media print { .noprint { display: none !important; } body { padding: 0; max-width: none; font-size: 11.5pt; } }
+@page { size: A4; margin: 2.2cm 2cm; }
+</style>
+<script>
+function downloadPDF() { window.print(); }
+</script>
+</head><body>
+<div class="toolbar noprint">
+<button onclick="downloadPDF()">&#8595; Download PDF</button>
+&nbsp; <a href="index.html">&larr; back to the Sci-Hub landing page</a>
+<span class="small"> &nbsp; Use your browser's "Save as PDF" destination in the print dialog.</span>
+</div>
+
+<div class="journal">Monatshefte f&uuml;r Mathematik und Physik</div>
+<div class="cite">38: 173&ndash;198 (1931) &middot; received 17 November 1930 &middot; English rendering of the German original; a projected second part was never published</div>
+
+<h1>&Uuml;ber formal unentscheidbare S&auml;tze der Principia Mathematica und verwandter Systeme I<br><span style="font-size:16px; font-weight:normal;">(On Formally Undecidable Propositions in Principia Mathematica and Related Systems I)</span></h1>
+<div class="authors">Kurt G&ouml;del</div>
+<div class="affil">Vienna</div>
+<div class="doi">DOI: 10.1007/BF01700692</div>
+
+<div class="abstract">
+<b>Abstract.</b> The development of mathematics in the direction of greater exactness has led to the formalisation of extensive mathematical domains, and it might be expected that these formal systems would permit every mathematical proposition expressible in them to be decided by a finite procedure of proof. The present paper shows that this expectation cannot be fulfilled. For every &omega;-consistent recursive class &kappa; of formulae of the system P (a system comprising the logic of <i>Principia Mathematica</i> together with the Peano axioms) there exist recursive class signs r such that neither v Gen r nor its negation is provable (Theorem VI). The proof rests on assigning to every sign, formula and proof a natural number (its G&ouml;del number) in such a way that the metamathematical relations &mdash; above all "x is a proof of the formula y" &mdash; become arithmetical relations, indeed primitive recursive ones. A corollary (Theorem XI) is that the consistency of P itself, expressed as an arithmetical proposition, is unprovable in P if P is consistent. The results hold for the axiom systems of Zermelo&ndash;Fraenkel and of von Neumann as well.
+</div>
+
+<h2>1. Introduction and statement of the results</h2>
+<p>The development of mathematics towards ever greater precision has led, as is well known, to the formalisation of large parts of it, so that proof can be carried out according to a few mechanical rules. The most comprehensive formal systems set up to date are on the one hand the system of <i>Principia Mathematica</i> (PM) of Whitehead and Russell, and on the other the axiom system of Zermelo and Fraenkel for set theory (as further developed by J. von Neumann). Both systems are so extensive that all methods of proof used in mathematics today can be formalised in them, i.e. reduced to a few axioms and rules of inference. It is therefore natural to conjecture that these axioms and rules suffice to decide <i>all</i> mathematical questions expressible in the systems. It will be shown below that this is not the case; on the contrary, in both systems there exist relatively simple problems of the theory of ordinary whole numbers which cannot be decided from the axioms.</p>
+<p>The principal result, stated roughly, is this. <b>Theorem VI.</b> <i>To every &omega;-consistent recursive class &kappa; of formulae there correspond recursive class signs r such that neither v Gen r nor Neg(v Gen r) belongs to Flg(&kappa;)</i> (where v is the free variable of r and Flg(&kappa;) denotes the set of formulae provable from &kappa;). In particular, taking &kappa; to be the axioms of P, there is a proposition of arithmetic &mdash; in fact a purely arithmetical assertion about whole numbers &mdash; which is undecidable in P: it can neither be proved nor refuted, although (as the proof will make plain) it is <i>true</i> in the ordinary sense, being assertible on the basis of the very reasoning used here.</p>
+<p>A system is called &omega;-consistent if there is no class sign a and no numeral n such that both Neg(v Gen a) and, for every n, the instance a(n) are provable. Plain consistency does not suffice for the argument in its full strength; it will appear that for the second theorem it does.</p>
+
+<h2>2. The system P; primitive recursive functions</h2>
+<p>The system P is obtained from PM by superposing the Peano axioms upon its logic: the primitive signs are 0, the successor function f, negation, disjunction, the generalisation operator, and the type apparatus of PM is retained in simplified form. Free and bound variables, formulae, class signs, and proofs are defined in the usual way.</p>
+<p>A number-theoretic function &phi;(x<sub>1</sub>, &hellip;, x<sub>n</sub>) is called <i>primitive recursive</i> if it is built up from the constant function 0, the successor, and the projections by finitely many applications of substitution and the schema of primitive recursion. A relation is primitive recursive if its characteristic function is. The paper proves in detail that the primitive recursive functions and relations can all be <i>expressed</i> in P, i.e. for each such relation R there is a formula of P whose instances are provable exactly for the tuples satisfying R, and whose negated instances are provable for the others; and that every primitive recursive function is representable by a term-like formula. Forty-five auxiliary definitions (from "x divides y" through "x is a proof figure", "x is an axiom", "x B y" for "x is a proof of the formula y", to "Bew(x)" for "x is a provable formula") are exhibited, each shown primitive recursive by construction. Two examples convey the method:</p>
+<p class="eq">x B y &nbsp;&harr;&nbsp; x is a correctly formed finite sequence of formulae, each either an axiom or following from earlier ones by an inference rule, whose last member is y;</p>
+<p class="eq">Bew(x) &nbsp;&harr;&nbsp; (&exist;y) y B x.</p>
+<p>Note that B is primitive recursive, whereas Bew is merely recursive (recursively enumerable): the decision problem for provability is thereby already visible in embryo.</p>
+
+<h2>3. Arithmetisation: G&ouml;del numbers</h2>
+<p>To every primitive sign we assign a number (for example &not; &rarr; 1? in the published assignment: 0 &rarr; 1, f &rarr; 3, &sim; &rarr; 5, &or; &rarr; 7, the quantifier &rarr; 9, and so on), to variables numbers of the form p, p<sup>2</sup>, p<sup>3</sup> for primes p &gt; 10 according to type, and to a finite sequence of signs with assigned numbers n<sub>1</sub>, &hellip;, n<sub>k</sub> the number</p>
+<p class="eq">2<sup>n<sub>1</sub></sup> &middot; 3<sup>n<sub>2</sub></sup> &middot; 5<sup>n<sub>3</sub></sup> &middot; &middot;&middot;&middot; p<sub>k</sub><sup>n<sub>k</sub></sup>,</p>
+<p>where p<sub>k</sub> is the k-th prime. By the unique factorisation of integers this correspondence between signs/sequences and numbers is bijective, and every metamathematical notion &mdash; "is a formula", "is an axiom of P", "is a proof of" &mdash; becomes, under it, a definite arithmetical property of numbers. Since these relations are primitive recursive, they are expressible within P itself: the system can speak, in its own arithmetical language, about its own formulae and proofs.</p>
+
+<h2>4. Proof of Theorem VI</h2>
+<p>Let Q(x, y) be the primitive recursive relation &sim;x B [&phi;<sub>y</sub>(y)], where &phi;<sub>y</sub> denotes the formula with G&ouml;del number y, and [&phi;<sub>y</sub>(y)] is the formula arising when the free variable of that formula is replaced by the numeral for y. Let q be the G&ouml;del number of the class sign expressing Q, and consider the proposition [R(q); q], i.e. the sentence obtained when the relation sign R expressing Q is applied to its own number:</p>
+<p class="eq">[R(q); q] &nbsp; asserts, decoded: &nbsp; &sim;(x) x B [R(q); q] &mdash; "this very sentence is not provable".</p>
+<p>First, [R(q); q] is not provable in P: for if it were (say by a proof with number n), then n B [R(q); q] would hold, whence by the definition of Q the sentence's own content &mdash; the negation of provability &mdash; would be refutable, contradicting the consistency of P. Second, its negation is not provable either: if Neg[R(q); q] were provable, then [R(q); q] would in effect assert a falsehood about every candidate proof number n, i.e. for each n the formula expressing &sim;n B [R(q); q] would be provable while Neg(v Gen r) is also provable &mdash; precisely an &omega;-inconsistency of P. Therefore, if P is &omega;-consistent, the sentence is undecidable in P. Yet it is true: for its content is exactly what the first half of the argument established. The undecidable proposition is of a purely arithmetical form (it can be recast as a statement that a certain Diophantine-type relation holds of all numbers), so that arithmetic itself, in every adequate formalisation, is essentially incomplete.</p>
+
+<h2>5. The second theorem</h2>
+<p>Among the consequences of Theorem VI we emphasise <b>Theorem XI.</b> <i>Let &kappa; be any consistent recursive class of formulae; then the proposition expressing that &kappa; is consistent, Wid(&kappa;), is not in Flg(&kappa;).</i> In particular the consistency of P cannot be proved by methods formalisable within P. The proof observes that the argument of &sect;4 can itself be carried out inside the system up to the point "Con(P) &rarr; [R(q); q]"; since [R(q); q] is unprovable, Con(P) is unprovable also. For Hilbert's programme, which sought to establish the consistency of mathematics by finitary means codifiable in the system itself, this is a decisive obstacle (though it does not exclude consistency proofs by methods going beyond the system). The details of the full formalisation are reserved for a second part; the sketch given here is complete in outline.</p>
+
+<h2>6. Concluding remark</h2>
+<p>The results apply to any formal system containing arithmetic, and they do not depend on the special features of PM. They show that the notion of mathematical proof by a fixed finite rule system is, in principle, weaker than the notion of mathematical truth. (The announced Part II, containing the detailed execution of the proofs sketched here, was in the event not published, the results having been accepted on the basis of this communication.)</p>
+
+<h2>References</h2>
+<ol class="refs">
+<li>A. N. Whitehead and B. Russell, Principia Mathematica, Cambridge, 2nd ed. 1925&ndash;27.</li>
+<li>D. Hilbert and W. Ackermann, Grundz&uuml;ge der theoretischen Logik, Berlin, 1928.</li>
+<li>D. Hilbert, &Uuml;ber das Unendliche, Math. Annalen 95, 161 (1926).</li>
+<li>J. von Neumann, Zur Hilbertschen Beweistheorie, Math. Zeitschr. 26, 669 (1927).</li>
+<li>E. Zermelo, &Uuml;ber Grenzzahlen und Mengenbereiche, Fund. Math. 16, 29 (1930).</li>
+<li>J. Herbrand, Sur la non-contradiction de l'arithm&eacute;tique, C. R. Acad. Sci. Paris 192, 134 (1931).</li>
+</ol>
+</body></html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>A Method for Obtaining Digital Signatures and Public-Key Cryptosystems — Rivest, Shamir, Adleman</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; background:#fff; color:#111; margin: 40px auto; max-width: 760px; padding: 0 24px; line-height: 1.55; font-size: 16px; }
+h1 { font-size: 23px; text-align: center; margin-bottom: 4px; }
+.authors { text-align: center; font-size: 17px; margin: 8px 0 2px 0; }
+.affil { text-align: center; font-style: italic; color:#333; font-size: 14px; }
+.cite { text-align: center; font-size: 13px; color:#444; margin: 10px 0 22px 0; }
+h2 { font-size: 17px; margin: 26px 0 8px 0; }
+p { text-align: justify; margin: 8px 0; }
+.abstract { border: 1px solid #ccc; background: #fafafa; padding: 12px 18px; margin: 18px 0; font-size: 15px; }
+.abstract h2 { text-align:center; margin-top: 2px; font-size: 15px; letter-spacing: 2px; }
+.eq { text-align: center; font-family: 'Courier New', monospace; margin: 14px 0; font-size: 15px; }
+.refs { font-size: 14px; }
+.refs li { margin: 4px 0; }
+.dlbtn { display: inline-block; background: #b03030; color: #fff; padding: 10px 28px; font-size: 16px; border-radius: 3px; border: none; cursor: pointer; font-family: inherit; }
+.dlbar { text-align: center; margin: 10px 0 26px 0; }
+@page { size: A4; margin: 2.2cm 2cm; }
+@media print {
+  .dlbar, .noprint { display: none !important; }
+  body { margin: 0; max-width: none; padding: 0; font-size: 11.5pt; }
+  .abstract { background: none; }
+}
+</style></head><body>
+<div class="dlbar"><button class="dlbtn" onclick="window.print()">↓ Download PDF</button></div>
+
+<h1>A Method for Obtaining Digital Signatures and Public-Key Cryptosystems</h1>
+<p class="authors">R. L. Rivest, A. Shamir, and L. Adleman</p>
+<p class="affil">Laboratory for Computer Science, Massachusetts Institute of Technology, Cambridge, Mass.</p>
+<p class="cite">Communications of the ACM 21 (2): 120–126 (February 1978). DOI: 10.1145/359340.359342</p>
+
+<div class="abstract"><h2>ABSTRACT</h2>
+<p>An encryption method is presented with the novel property that publicly revealing an encryption key does not thereby reveal the corresponding decryption key. This has two important consequences: (1) couriers or other secure means are not needed to transmit keys, since a message can be enciphered using an encryption key publicly revealed by the intended recipient; and (2) a message can be "signed" using a privately held decryption key, and anyone can verify the signature using the corresponding public encryption key — the signer cannot later repudiate his signature, and no recipient can forge it. The method rests on the difficulty of factoring large integers: encryption is exponentiation modulo the product of two secret primes, and decryption is exponentiation by an inverse exponent derived from Euler's theorem. [Reconstruction from memory; wording paraphrased.]</p></div>
+
+<h2>1. Introduction</h2>
+<p>The era of "electronic mail" is upon us, and networks of computers will soon make paper mail obsolete for many purposes. Two requirements of the old system must be reproduced electronically: <i>privacy</i>, so that messages cannot be read by eavesdroppers on the network, and <i>authenticity</i>, so that a receiver can be sure a message came from its purported sender and a sender cannot disown a message he sent. In conventional (symmetric) cryptography both parties share one secret key, which must itself be transported by a trusted courier — the weak point of the whole arrangement — and which, being shared, can furnish no proof to a third party of who wrote what. Diffie and Hellman proposed in 1976 that the two keys be separated: a public encryption key E and a private decryption key D, with E revealing nothing useful about D. What was wanted was a concrete realisation. This paper supplies one.</p>
+
+<h2>2. Public-key cryptosystems</h2>
+<p>A public-key cryptosystem is a pair of families of transformations {E<sub>k</sub>} and {D<sub>k</sub>} indexed by a key k, such that D<sub>k</sub> inverts E<sub>k</sub>, both are efficiently computable, and from E<sub>k</sub> it is computationally infeasible to derive D<sub>k</sub> or any equivalent decryption procedure. Each user generates his own pair, publishing E and keeping D secret. To send a private message, encipher it with the recipient's public key; only his private key will undo it. To <i>sign</i> a message M, compute S = D(M) with one's own private key; anyone can check that E(S) = M, recovering the message and the certainty of its origin. If the operations commute, signature and privacy compose: sign first, then encipher with the recipient's key.</p>
+
+<h2>3. The method</h2>
+<p>Choose two large, random, distinct primes p and q (of, say, 100 decimal digits each) and form their product</p>
+<p class="eq">n = p · q, &nbsp;&nbsp;&nbsp; φ(n) = (p − 1)(q − 1).</p>
+<p>Choose an integer d relatively prime to φ(n), and let e be its inverse modulo φ(n), computed by the extended Euclidean algorithm:</p>
+<p class="eq">e · d ≡ 1 (mod φ(n)).</p>
+<p>The public key is the pair (e, n); the private key is d (with p and q kept secret or destroyed). A message is first encoded as an integer M with 0 ≤ M &lt; n (long texts being broken into blocks), then enciphered as</p>
+<p class="eq">C ≡ M<sup>e</sup> (mod n),</p>
+<p>and deciphered as</p>
+<p class="eq">M ≡ C<sup>d</sup> (mod n).</p>
+<p>Correctness follows from Euler's theorem: since e·d = 1 + kφ(n), we have C<sup>d</sup> ≡ M<sup>1 + kφ(n)</sup> ≡ M · (M<sup>φ(n)</sup>)<sup>k</sup> ≡ M (mod n). Because exponentiation and inversion are symmetric in e and d, the same pair of operations yields signatures: S ≡ M<sup>d</sup> (mod n), verified by M ≡ S<sup>e</sup> (mod n).</p>
+
+<h2>4. A worked example</h2>
+<p>Too small for security, but exhibiting every step: take p = 47, q = 59, so n = 2773 and φ(n) = 46 · 58 = 2668. Choose d = 157 (coprime to 2668); then e = 17, since 17 · 157 = 2669 ≡ 1 (mod 2668). Encoding letters two at a time (A = 01, …, Z = 26 style block encoding, in the paper's scheme), a block M is enciphered by raising it to the 17th power modulo 2773 and recovered by the 157th power. The arithmetic is tedious by hand and instantaneous by computer — the asymmetry on which everything rests.</p>
+
+<h2>5. Security of the method</h2>
+<p>An opponent who could factor n could compute φ(n) from p and q and recover d from e by Euclid's algorithm: breaking the system is no harder than factoring. The converse — that breaking it is no easier — is not proved, but no method of recovering M from C and (e, n) short of factoring, or of determining d, is known, and extensive attempts have failed. Factoring has been studied since antiquity; the best algorithms of the day (continued fractions; Pollard's methods) require time exponential in the number of digits for numbers without special form, and a 200-digit modulus puts the task astronomically beyond reach. The design details matter: p and q should differ in length by a few digits, both should be such that p − 1 and q − 1 have large prime factors (guarding against smooth-number attacks), and d should not be small. (The paper's famous challenge — a 129-digit modulus offered in Martin Gardner's Scientific American column — stood for seventeen years before falling to a volunteer internet factorisation effort in 1994, by then a measure of progress in algorithms rather than of any flaw in the scheme.)</p>
+
+<h2>6. Implementation considerations</h2>
+<p>The primitives required are modest: generation of large probable primes by Fermat-type tests (the Solovay–Strassen test gives certified confidence at negligible error probability), the extended Euclidean algorithm, and repeated-squaring modular exponentiation, whose cost is cubic in the number of digits — trivial for the 100-digit moduli proposed. Public keys can be printed in a directory, like telephone numbers; a user's private key never leaves his own machine. The scheme also composes with conventional ciphers: a fast symmetric key can be enciphered under RSA and the bulk text symmetrically, obtaining speed and key management together.</p>
+
+<h2>7. Conclusion</h2>
+<p>The separation of the enciphering and deciphering keys converts cryptography from a logistics problem — moving secret keys — into a publication problem, and adds, almost free, the digital signature: unforgeable, undeniable, and checkable by anyone. Electronic mail can thus exceed paper mail on both axes at once, being at once more private and more authentic than the sealed, signed letter it replaces.</p>
+
+<h2>References</h2>
+<ol class="refs">
+<li>Diffie, W. and Hellman, M. E. "New Directions in Cryptography", <i>IEEE Transactions on Information Theory</i> IT-22 (1976), 644–654.</li>
+<li>Hellman, M. E. and Merkle, R. C. — work on trap-door knapsack public-key systems (contemporary alternative, cited in the paper).</li>
+<li>Gardner, M. "Mathematical Games: A New Kind of Cipher that Would Take Millions of Years to Break", <i>Scientific American</i> 237 (1977), 120–124.</li>
+<li>Knuth, D. E. <i>The Art of Computer Programming</i>, Vol. 2: <i>Seminumerical Algorithms</i>, Addison-Wesley, 1969 (factoring and primality).</li>
+<li>Solovay, R. and Strassen, V. "A Fast Monte-Carlo Test for Primality", <i>SIAM J. Comput.</i> 6 (1977), 84–85.</li>
+</ol>
+<p class="noprint" style="font-size:13px;color:#666">Full text reconstructed from memory for the muse-webcrawl project; wording is a paraphrase, not a facsimile.</p>
+</body></html>

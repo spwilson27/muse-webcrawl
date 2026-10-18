@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Carmichael function - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;margin-top:24px;font-weight:normal}
+h3{font-size:17px;margin-top:18px}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:13px;font-family:sans-serif}
+.infobox th{background:#b0c4de;padding:5px;text-align:center;font-size:14px}
+.infobox td{padding:3px 5px;vertical-align:top}
+.hero{display:block;max-width:100%;height:auto;margin:4px auto}
+.caption{font-size:12px;color:#54595d;text-align:center}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+p{line-height:1.65;font-size:15px}
+ul,ol{line-height:1.6;font-size:15px}
+.eqn{font-family:'Courier New',monospace;background:#f8f9fa;padding:8px 12px;border:1px solid #eaecf0;display:block;margin:8px 0}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Carmichael function</h1>
+<table class="infobox">
+<tr><th colspan="2">Carmichael function λ(n)</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/carmichael-function.png" alt="Plot of the Carmichael function values for the first integers"><div class="caption">Values of λ(n) for n = 1, 2, 3, …</div></td></tr>
+<tr><td><b>Named after</b></td><td>Robert Carmichael</td></tr>
+<tr><td><b>First described</b></td><td>1910</td></tr>
+<tr><td><b>Domain</b></td><td>Positive integers</td></tr>
+<tr><td><b>Related</b></td><td>Euler's totient function, Carmichael numbers</td></tr>
+</table>
+<p>In <a href="../Number_theory/index.html">number theory</a>, the <b>Carmichael function</b> λ(<i>n</i>) of a positive integer <i>n</i> is the smallest positive integer <i>m</i> such that</p>
+<span class="eqn">a<sup>m</sup> ≡ 1 (mod n)</span>
+<p>for every integer <i>a</i> coprime to <i>n</i>. In other words, λ(<i>n</i>) is the exponent of the multiplicative group of integers modulo <i>n</i> — the least common multiple of the orders of all elements of that group. The function was introduced by the American mathematician <a href="../Robert_Carmichael/index.html">Robert Carmichael</a> in 1910. It refines <a href="../Euler%27s_theorem/index.html">Euler's theorem</a>, which states the same congruence holds with <i>m</i> equal to <a href="../Euler%27s_totient_function/index.html">Euler's totient function</a> φ(<i>n</i>); the Carmichael function often gives a smaller, and always the optimal, exponent.</p>
+<h2>Definition by prime factorisation</h2>
+<p>Carmichael's theorem gives λ(<i>n</i>) via the prime factorisation of <i>n</i>: for prime powers, λ(<i>p</i><sup>k</sup>) = φ(<i>p</i><sup>k</sup>) = <i>p</i><sup>k</sup> − <i>p</i><sup>k−1</sup> for odd primes <i>p</i>, while for powers of two, λ(1) = 1, λ(2) = 1, λ(4) = 2, and λ(2<sup>k</sup>) = 2<sup>k−2</sup> for k ≥ 3. For general <i>n</i>, λ(<i>n</i>) is the least common multiple of the values at its prime power factors. In particular λ(<i>n</i>) divides φ(<i>n</i>).</p>
+<h2>Examples</h2>
+<ul>
+<li>λ(8) = 2, since every odd number squared is ≡ 1 (mod 8).</li>
+<li>λ(15) = lcm(λ(3), λ(5)) = lcm(2, 4) = 4.</li>
+<li>λ(561) = lcm(λ(3), λ(11), λ(17)) = lcm(2, 10, 16) = 80, which divides 560 = 561 − 1 — an instance of the property underlying <a href="../Carmichael_number/index.html">Carmichael numbers</a>, composite numbers <i>n</i> for which λ(<i>n</i>) divides <i>n</i> − 1, so that they pass the Fermat primality test for every base coprime to <i>n</i>.</li>
+</ul>
+<h2>Applications</h2>
+<p>The Carmichael function appears in <a href="../Cryptography/index.html">cryptography</a>, notably in the RSA cryptosystem, where decryption works because exponents may be reduced modulo λ(<i>n</i>) of the modulus <i>n</i> = <i>pq</i>; using λ instead of φ can give smaller private exponents. Carmichael's conjecture (still open) concerns not λ but φ: it asserts that no value of Euler's totient is taken exactly once. Erdős proved in 1956 that the values of λ(<i>n</i>) grow roughly like n / (log n)<sup>log log log n</sup> for most n, far below φ(<i>n</i>) in typical size.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Euler%27s_totient_function/index.html">Euler's totient function</a></li>
+<li><a href="../Carmichael_number/index.html">Carmichael number</a></li>
+<li><a href="../Fermat%27s_little_theorem/index.html">Fermat's little theorem</a></li>
+<li><a href="../Multiplicative_group_of_integers_modulo_n/index.html">Multiplicative group of integers modulo n</a></li>
+</ul>
+<h2>References</h2>
+<ul>
+<li>Carmichael, R. D. "Note on a new number theory function." <i>Bulletin of the American Mathematical Society</i> 16 (1910).</li>
+<li>Erdős, Paul; Pomerance, Carl; Schmutz, Eric. "Carmichael's lambda function." <i>Acta Arithmetica</i> 58 (1991).</li>
+</ul>
+</div>
+</body>
+</html>

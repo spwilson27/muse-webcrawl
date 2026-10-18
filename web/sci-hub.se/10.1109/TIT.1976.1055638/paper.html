@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>New Directions in Cryptography — Diffie &amp; Hellman (1976)</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; background: #fdfdfa; color: #111; margin: 0; line-height: 1.55; }
+.page { max-width: 760px; margin: 0 auto; padding: 28px 34px 60px 34px; }
+.toolbar { background: #20242a; padding: 10px 16px; border-radius: 6px; margin-bottom: 26px; display: flex; align-items: center; gap: 14px; }
+.toolbar button { background: #b03030; color: #fff; border: 0; padding: 9px 22px; font-size: 15px; border-radius: 3px; cursor: pointer; font-family: inherit; }
+.toolbar button:hover { background: #8f2626; }
+.toolbar span { color: #ccc; font-size: 13px; }
+h1 { font-size: 24px; text-align: center; margin: 10px 0 6px 0; line-height: 1.3; }
+.authors { text-align: center; font-size: 16px; margin: 4px 0; }
+.affil { text-align: center; font-size: 13.5px; color: #444; font-style: italic; margin: 2px 0 14px 0; }
+.citation { text-align: center; font-size: 13px; color: #555; border-top: 1px solid #bbb; border-bottom: 1px solid #bbb; padding: 6px 0; margin-bottom: 20px; }
+h2 { font-size: 17px; margin: 24px 0 8px 0; text-transform: uppercase; letter-spacing: 0.4px; }
+h3 { font-size: 15px; margin: 18px 0 6px 0; }
+p { font-size: 15px; text-align: justify; margin: 8px 0; }
+.abstract { background: #f4f1e8; border: 1px solid #ddd6c2; padding: 12px 18px; margin: 16px 0; }
+.abstract p { font-size: 14px; }
+.eqn { text-align: center; font-size: 16px; margin: 14px 0; font-style: italic; }
+.figcap { border: 1px dashed #999; background: #fafafa; padding: 12px 16px; margin: 16px 0; font-size: 13.5px; color: #333; }
+.figcap b { color: #000; }
+.refs { font-size: 13.5px; }
+.refs li { margin: 5px 0; text-align: left; }
+.backlink { font-size: 13px; margin-top: 30px; }
+@media print {
+  .toolbar, .backlink { display: none !important; }
+  body { background: #fff; }
+  .page { max-width: none; padding: 0; }
+  .abstract { background: #fff; border: none; padding: 0; }
+  .figcap { border: 1px solid #bbb; background: #fff; }
+}
+@page { size: A4; margin: 2.2cm 2cm 2.4cm 2cm; }
+</style></head><body>
+<div class="page">
+<div class="toolbar"><button id="pdfbtn" type="button">↓ Download PDF</button><span>Uses your browser's print dialog — choose “Save as PDF”.</span></div>
+<header>
+<h1>New Directions in Cryptography</h1>
+<p class="authors">Whitfield Diffie and Martin E. Hellman</p>
+<p class="affil">Department of Electrical Engineering, Stanford University, Stanford, California</p>
+<p class="citation">IEEE Transactions on Information Theory, Vol. 22, No. 6, pp. 644–654 (1976) · DOI: 10.1109/TIT.1976.1055638</p>
+</header>
+
+<div class="abstract">
+<h2 style="margin-top:0">Abstract</h2>
+<p>Classical cryptography requires sender and receiver to share a secret key, delivered beforehand over a secure channel — a requirement that becomes impractical when communication networks grow large, and one that makes digital signatures impossible in principle, since whatever the receiver can verify the receiver can also forge. This paper proposes a radical alternative: public-key cryptography, in which each user publishes an encryption key while keeping the matching decryption key secret. Two strangers can then communicate privately over a wholly public channel, and a user can produce signatures that anyone can verify but no one else can create. The mathematical engine is the one-way function, and the paper gives a concrete protocol — key agreement by exponentiation modulo a prime — whose security rests on the apparent difficulty of computing discrete logarithms. It also analyses the security of existing ciphers, notably the new Data Encryption Standard, against exhaustive key search, arguing that its 56-bit key is uncomfortably short.</p>
+</div>
+
+<h2>I. Introduction: the Key Distribution Problem</h2>
+<p>The spread of computer networks and electronic mail is about to make cryptography a civilian necessity rather than a purely military art. But the classical scheme has a structural weakness. If n users are to communicate pairwise in secret with conventional ciphers, they need of order n² keys, each delivered by courier or some other protected channel before use; and a user who joins the network must somehow be supplied with all of them. Worse, the protection collapses if the traffic between two users who have never met must begin at once. A second, deeper defect is the impossibility of a true digital signature: in a symmetric system, any message the recipient can verify as authentic he could equally well have fabricated himself, so a signed electronic document can never bind its signer before a third party, as a handwritten signature does. Both defects vanish if encryption and decryption need not use the same key.</p>
+
+<h2>II. Public-Key Cryptosystems</h2>
+<p>Suppose each user A generates a pair of transformations: a public enciphering procedure E<sub>A</sub>, published in a public directory like a telephone book, and a private deciphering procedure D<sub>A</sub>, kept secret, with D<sub>A</sub>(E<sub>A</sub>(M)) = M for every message M, while knowledge of E<sub>A</sub> gives no practical way to compute D<sub>A</sub> or to invert E<sub>A</sub>. Then anyone can send A a private message by applying E<sub>A</sub>; only A can read it. No prior secret contact is needed, and the number of keys grows linearly, not quadratically, with the number of users. If in addition the pair can be applied in the reverse order, E<sub>A</sub>(D<sub>A</sub>(M)) = M, A can <i>sign</i> M by computing S = D<sub>A</sub>(M): anyone can check E<sub>A</sub>(S) = M, but only A could have produced S. The pair (E, D) must be built from a <i>trapdoor</i> one-way function — easy to compute, infeasible to invert, except with the secret trapdoor information used in its construction. (Unknown to the authors' readers, Rivest, Shamir and Adleman would exhibit, two years later, a concrete trapdoor based on the difficulty of factoring.)</p>
+
+<h2>III. One-Way Functions and a Key-Exchange Protocol</h2>
+<p>A candidate one-way function is exponentiation in a finite field. Let q be a large prime and α a primitive root modulo q. The map</p>
+<p class="eqn">Y = α<sup>X</sup> mod q</p>
+<p>is cheap to compute (a few hundred multiplications), while recovering X from Y — the discrete logarithm — had, in 1976, no known algorithm much better than trying all possibilities. Two users who know nothing of each other can exploit this to agree a secret key over a public channel. A picks a secret random X<sub>A</sub> and sends Y<sub>A</sub> = α<sup>X<sub>A</sub></sup> mod q; B likewise sends Y<sub>B</sub>. Each then raises the received value to his own secret exponent:</p>
+<p class="eqn">K = Y<sub>B</sub><sup>X<sub>A</sub></sup> = Y<sub>A</sub><sup>X<sub>B</sub></sup> = α<sup>X<sub>A</sub>X<sub>B</sub></sup> mod q</p>
+<p>Both arrive at the same K, which they use as a conventional session key. An eavesdropper sees only Y<sub>A</sub> and Y<sub>B</sub>, and deriving K from them appears to require solving a discrete logarithm. The scheme is not, by itself, authentication — a man in the middle could interpose two exchanges — and the paper is frank about this; signatures from Section II are the remedy.</p>
+<div class="figcap"><b>Figure 1 (placeholder).</b> Diagram of the two-user key exchange: A and B exchange the public values α<sup>X<sub>A</sub></sup> and α<sup>X<sub>B</sub></sup> (mod q) over an insecure channel and independently compute the common secret α<sup>X<sub>A</sub>X<sub>B</sub></sup>, while an eavesdropper's view contains only the public values.</div>
+
+<h2>IV. Cryptanalysis and the Cost of Exhaustive Search</h2>
+<p>The paper then turns to the security of conventional systems, and to a warning. Security against exhaustive key search is an economic quantity: the work factor must exceed what technology makes affordable, and computing costs fall exponentially. A machine built for about $20 million, in the technology of the day, could search the 2<sup>56</sup> keys of the proposed Data Encryption Standard in about a day, bringing the cost per recovered key within the reach of intelligence agencies and large corporations. The authors therefore argue that key lengths must be chosen with a generous margin — and that the DES standard, at 56 bits, is inadequate for high-value traffic. History sided with them: DES fell to public brute-force demonstrations in the late 1990s and was superseded by AES.</p>
+
+<h2>V. Conclusion</h2>
+<p>The conceptual reorientation is the paper's lasting contribution: secrecy does not require a shared secret to begin with, because computation itself can be asymmetric — easy in one direction, hard in the other, and easy again with a trapdoor. From this follow key agreement between strangers, digital signatures with non-repudiation, and the whole architecture of secured electronic commerce. The authors close by acknowledging the independent and then-unpublished work of Ralph Merkle on key distribution, and by noting how much of the programme — concrete trapdoor functions, proofs of security — remained to be done.</p>
+
+<h2>References</h2>
+<ol class="refs">
+<li>Diffie, W., and Hellman, M. E., New directions in cryptography, <i>IEEE Trans. Inf. Theory</i>, 1976, IT-22, 644.</li>
+<li>Shannon, C. E., Communication theory of secrecy systems, <i>Bell Syst. Tech. J.</i>, 1949, 28, 656.</li>
+<li>Merkle, R. C., Secure communications over insecure channels, <i>Commun. ACM</i>, 1978, 21, 294 (submitted 1975).</li>
+<li>Hellman, M. E., and Diffie, W., related Stanford memoranda on public-key distribution, 1975–76.</li>
+<li>National Bureau of Standards, Data Encryption Standard, <i>FIPS PUB 46</i>, 1977 (the standard whose key length the paper criticizes).</li>
+</ol>
+
+<p class="backlink">← Back to the <a href="index.html">Sci-Hub landing page for this paper</a>.</p>
+</div>
+<script>
+document.getElementById('pdfbtn').addEventListener('click', function () { window.print(); });
+</script>
+</body></html>

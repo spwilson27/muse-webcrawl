@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Girsanov theorem - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header .wordmark{font-size:22px;font-family:serif}
+main{max-width:960px;margin:0 auto;padding:20px 24px}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 16px 16px;border-collapse:collapse}
+.infobox th,.infobox td{padding:5px 8px;text-align:left;vertical-align:top}
+.infobox .ib-title{background:#b0c4de;text-align:center;font-size:15px}
+.infobox img{max-width:260px}
+.math{background:#f8f9fa;border:1px solid #eaecf0;padding:10px 16px;margin:12px 0;font-family:serif;text-align:center}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<header><span class="wordmark">Wikipedia</span> <span class="small">The Free Encyclopedia</span></header>
+<main>
+<h1>Girsanov theorem</h1>
+<p><img src="images/Girsanov_theorem.png" alt="Illustration of Brownian motion paths under a change of measure (image placeholder)"></p>
+<p>In probability theory, the <b>Girsanov theorem</b> describes how the dynamics of stochastic processes change when the original measure is replaced by an equivalent (or absolutely continuous) probability measure. Named after the Russian mathematician Igor Vladimirovich Girsanov, who published it in 1960, the theorem gives an explicit formula — via the <a href="../Radon%E2%80%93Nikodym_theorem/index.html">Radon–Nikodym derivative</a> — for how a <a href="../Brownian_motion/index.html">Brownian motion</a> acquires a drift under the new measure, and conversely how drift can be removed.</p>
+<h2>Statement</h2>
+<p>Let <i>W</i><sub>t</sub> be a Brownian motion on a filtered probability space (Ω, ℱ, (ℱ<sub>t</sub>), ℙ) and let θ<sub>t</sub> be an adapted process satisfying a condition such as Novikov's condition,</p>
+<div class="math">𝔼[ exp( ½ ∫₀<sup>T</sup> θ<sub>s</sub>² ds ) ] &lt; ∞,</div>
+<p>so that the stochastic exponential</p>
+<div class="math">Z<sub>t</sub> = exp( −∫₀<sup>t</sup> θ<sub>s</sub> dW<sub>s</sub> − ½ ∫₀<sup>t</sup> θ<sub>s</sub>² ds )</div>
+<p>is a martingale. Defining a new measure ℚ by dℚ/dℙ = Z<sub>T</sub>, the theorem states that the process</p>
+<div class="math">W̃<sub>t</sub> = W<sub>t</sub> + ∫₀<sup>t</sup> θ<sub>s</sub> ds</div>
+<p>is a Brownian motion under ℚ. Thus a drift of −θ under ℙ becomes zero drift under ℚ: change of measure and change of drift are equivalent operations.</p>
+<h2>Applications</h2>
+<p>The Girsanov theorem is a cornerstone of <a href="../Mathematical_finance/index.html">mathematical finance</a>. In the <a href="../Black%E2%80%93Scholes_model/index.html">Black–Scholes model</a> and its generalisations, it justifies passing from the real-world measure to the <a href="../Risk-neutral_measure/index.html">risk-neutral measure</a> under which discounted asset prices are martingales: the market price of risk plays the role of θ, and Girsanov's theorem shows the drift can be replaced by the risk-free rate without changing the volatility. It is also used in stochastic control, filtering theory, the theory of weak solutions of <a href="../Stochastic_differential_equation/index.html">stochastic differential equations</a>, and in statistics for computing likelihoods of diffusion processes.</p>
+<h2>Related results</h2>
+<p>The theorem is closely related to the Cameron–Martin theorem, which describes how the Wiener measure transforms under translations in Cameron–Martin space; Girsanov's result is the general stochastic-process extension. Sufficient conditions guaranteeing that the stochastic exponential is a true martingale include Novikov's condition and Kazamaki's condition.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../It%C3%B4_calculus/index.html">Itô calculus</a></li>
+<li><a href="../Equivalent_measure/index.html">Equivalent martingale measure</a></li>
+<li><a href="../Fundamental_theorem_of_asset_pricing/index.html">Fundamental theorem of asset pricing</a></li>
+</ul>
+<p class="small">Categories: Stochastic calculus | Theorems in probability theory | Mathematical finance</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>On Computable Numbers, with an Application to the Entscheidungsproblem — A. M. Turing</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; background:#fff; color:#111; margin: 40px auto; max-width: 760px; padding: 0 24px; line-height: 1.55; font-size: 16px; }
+h1 { font-size: 24px; text-align: center; margin-bottom: 4px; }
+.authors { text-align: center; font-size: 17px; margin: 8px 0 2px 0; }
+.affil { text-align: center; font-style: italic; color:#333; font-size: 14px; }
+.cite { text-align: center; font-size: 13px; color:#444; margin: 10px 0 22px 0; }
+h2 { font-size: 17px; margin: 26px 0 8px 0; }
+h3 { font-size: 15px; margin: 18px 0 6px 0; }
+p { text-align: justify; margin: 8px 0; }
+.abstract { border: 1px solid #ccc; background: #fafafa; padding: 12px 18px; margin: 18px 0; font-size: 15px; }
+.abstract h2 { text-align:center; margin-top: 2px; font-size: 15px; letter-spacing: 2px; }
+.eq { text-align: center; font-family: 'Courier New', monospace; margin: 14px 0; font-size: 15px; }
+.fig { border: 1px dashed #999; background:#fbfbfb; padding: 10px 14px; margin: 14px 0; font-size: 14px; color:#333; }
+.fig b { color:#000; }
+table.mtab { border-collapse: collapse; margin: 12px auto; font-family: 'Courier New', monospace; font-size: 14px; }
+table.mtab th, table.mtab td { border: 1px solid #bbb; padding: 3px 10px; text-align: left; }
+.refs { font-size: 14px; }
+.refs li { margin: 4px 0; }
+.dlbtn { display: inline-block; background: #b03030; color: #fff; padding: 10px 28px; font-size: 16px; border-radius: 3px; border: none; cursor: pointer; font-family: inherit; }
+.dlbar { text-align: center; margin: 10px 0 26px 0; }
+@page { size: A4; margin: 2.2cm 2cm; }
+@media print {
+  .dlbar, .noprint { display: none !important; }
+  body { margin: 0; max-width: none; padding: 0; font-size: 11.5pt; }
+  .abstract { background: none; }
+}
+</style></head><body>
+<div class="dlbar"><button class="dlbtn" onclick="window.print()">↓ Download PDF</button></div>
+
+<h1>On Computable Numbers, with an Application to the Entscheidungsproblem</h1>
+<p class="authors">By A. M. Turing</p>
+<p class="affil">King's College, Cambridge</p>
+<p class="cite">Proceedings of the London Mathematical Society, s2-42 (1): 230–265 (1937). Received 28 May 1936; read 12 November 1936. DOI: 10.1112/plms/s2-42.1.230</p>
+
+<div class="abstract"><h2>ABSTRACT</h2>
+<p>The "computable" numbers may be described briefly as the real numbers whose expressions as a decimal are calculable by finite means. In this paper an automatic machine is described which, when applied to a properly prepared tape, computes successive figures of a computable sequence. It is shown that there is a single universal machine which can be made to mimic any other machine. A diagonal argument then establishes the existence of real numbers which are not computable, and the unsolvability of the problem of deciding whether a given machine ever halts ("prints 0 or 1 indefinitely" in the paper's formulation, i.e. is circle-free). As an application, it is proved that there can be no general process for determining whether a given formula of the Hilbert function calculus is provable: the Entscheidungsproblem has no solution. [Reconstruction from memory; argument paraphrased.]</p></div>
+
+<h2>1. Computing machines</h2>
+<p>We suppose a machine to be supplied with a tape divided into squares, each square bearing a symbol, the tape extending indefinitely in both directions. At any moment the machine reads ("scans") one square; its behaviour is determined by the symbol scanned and by its internal state, which the paper calls its <i>m-configuration</i>. In one complete motion the machine may change the symbol on the scanned square, move the tape one square to the left or right, and pass into a new m-configuration. The possible behaviours are tabulated once and for all: the table is the machine. A human "computer" works under the same restrictions — a finite stock of states of mind, symbols written on paper, one symbol observed at a time — so the machines capture everything that can fairly be called a mechanical method of calculation.</p>
+
+<h2>2. Definitions</h2>
+<p>An <i>automatic machine</i> (a-machine) is one whose motion at each stage is completely determined by its configuration. If an a-machine prints, as it runs, only symbols of the first kind (0 and 1) in the figures of a binary expansion, and prints infinitely many of them, it is called <i>circle-free</i>; otherwise it is <i>circular</i>. A sequence is <i>computable</i> if it can be printed by a circle-free machine, and a number is computable if its binary expansion differs from a computable sequence only in finitely many places. The machine's description can itself be written out as a string of letters A, C, D, L, R, N and semicolons — its <i>standard description</i> — and replacing these by digits yields a <i>description number</i>, so that machines can be enumerated like the integers.</p>
+
+<h2>3. Examples of computing machines</h2>
+<p>Two examples fix the conventions. The first machine, with m-configurations <i>b</i>, <i>c</i>, <i>f</i>, <i>e</i>, prints 0, then blank, then 1, then blank, for ever: the sequence 010101…. The second example is more instructive: a machine which successively prints</p>
+<p class="eq">0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, …</p>
+<p>i.e. blocks of 1's of increasing length separated by 0's. A variant of the same construction computes the constant <i>e</i> digit by digit if supplied with the patience to run it.</p>
+
+<table class="mtab"><tr><th>m-configuration</th><th>symbol</th><th>operations</th><th>final m-config.</th></tr>
+<tr><td>b</td><td>None</td><td>P0, R</td><td>c</td></tr>
+<tr><td>c</td><td>None</td><td>R</td><td>e</td></tr>
+<tr><td>e</td><td>None</td><td>P1, R</td><td>f</td></tr>
+<tr><td>f</td><td>None</td><td>R</td><td>b</td></tr></table>
+<p style="text-align:center;font-size:13px;color:#444">Table (reconstructed in the paper's notation): part of the instruction table of the machine computing 0101….</p>
+
+<h2>4. Abbreviated tables</h2>
+<p>Writing out a full table for a complicated machine is laborious, so skeleton tables are introduced: entries may contain variables ranging over symbols or m-configurations, and a single line of a skeleton table stands for many lines of a complete table. With this economy, machines can be combined — one machine can be made to carry out a named sub-operation and hand control back to another part of the table, much as a subroutine will later be used in stored-program computing.</p>
+
+<h2>5. Enumeration of computable sequences</h2>
+<p>Every computable sequence has at least one description number. Certain integers, called <i>satisfactory</i>, are description numbers of circle-free machines. The diagonal process shows at once that the satisfactory numbers cannot be effectively listed: if there were a machine which, given <i>n</i>, decides whether <i>n</i> is satisfactory, we could construct a machine computing a sequence differing from the <i>n</i>-th computable sequence in its <i>n</i>-th figure, which could therefore be no computable sequence at all — a contradiction. Hence there is no machine which tests circle-freeness, and (in modern parlance) the halting problem is undecidable.</p>
+
+<h2>6. The universal computing machine</h2>
+<p>It is possible to construct one machine, denoted 𝒰, which imitates the behaviour of any other machine M. The tape of 𝒰 carries the standard description of M followed by a working copy of M's tape, the two being interleaved on alternate squares. 𝒰 repeatedly looks up, in the description of M, the instruction matching M's current m-configuration and scanned symbol, applies it to the copy of the tape, and prints the same figures M would print. A single machine is therefore programmable: the distinction between machine and data dissolves.</p>
+
+<h2>7. Detailed description of the universal machine</h2>
+<p>The construction of 𝒰's table is given in full in the original, using the abbreviated-table machinery: auxiliary m-configurations mark positions on the tape with distinguishing letters, compare two stretches of tape symbol by symbol, and erase their marks when the comparison is finished. The argument is one of existence and mechanical verifiability rather than elegance; no reader is expected to enjoy it, but no step appeals to intuition.</p>
+
+<h2>8. Application of the diagonal process</h2>
+<p>Suppose, for contradiction, a machine ℋ which tests whether any given machine is circle-free: fed with a description number <i>n</i>, ℋ reaches a verdict in finite time. Combine ℋ with the universal machine to build a machine which computes the <i>n</i>-th figure of its output as 1 minus the <i>n</i>-th figure of the <i>n</i>-th computable sequence. That machine is itself circle-free, so it has a description number, say <i>K</i>; asking for its <i>K</i>-th figure gives 0 = 1. The assumption collapses, and with it every hope of a general halting test.</p>
+
+<h2>9. The extent of computable numbers</h2>
+<p>Although the computable numbers are countable, they include every number arising in ordinary analysis that has ever been defined by a finite rule: π, <i>e</i>, the real algebraic numbers, the Bessel functions of integral order, and so on. Their class is closed under the usual operations, and any number definable by a convergent process in which each stage is rule-governed lies within it. The computable reals thus form a kind of skeleton of the continuum, dense yet of measure zero.</p>
+
+<h2>10. Examples of large classes of numbers which are computable</h2>
+<p>The paper closes its descriptive part by verifying that broad classes — algebraic numbers, solutions of polynomial equations with computable coefficients, values of standard special functions — are indeed computable, exhibiting machines in outline for each case.</p>
+
+<h2>11. Application to the Entscheidungsproblem</h2>
+<p>Hilbert's Entscheidungsproblem asks for a process which, given a formula of the restricted function calculus, decides whether it is provable. To each machine M and integer <i>n</i> the paper associates a formula Un(M, n) expressing, in the calculus, that M, started appropriately, eventually prints 0 — or, in the precise construction, a formula [A(s)] which is provable if and only if M is circle-free. A decision process for provability would therefore yield a decision process for circle-freeness, which §8 shows impossible. We conclude that there can be no general process for determining whether a given formula is provable: the Entscheidungsproblem is unsolvable.</p>
+
+<h2>Appendix and correction</h2>
+<p>A postscript (added 1936, and a formal correction in vol. 43, 1937) notes Church's independent proof of the same result by means of λ-definability ("An Unsolvable Problem of Elementary Number Theory", Amer. J. Math. 58), and repairs a gap in the argument of §11 concerning the form of the formula associated with a machine. The equivalence of "computability" in Turing's sense and λ-definability in Church's would come to be called the Church–Turing thesis.</p>
+
+<h2>References</h2>
+<ol class="refs">
+<li>Hilbert, D. and Ackermann, W. <i>Grundzüge der theoretischen Logik</i> (Berlin, 1928) — statement of the Entscheidungsproblem.</li>
+<li>Gödel, K. "Über formal unentscheidbare Sätze der Principia Mathematica und verwandter Systeme I", <i>Monatsh. Math. Phys.</i> 38 (1931), 173–198.</li>
+<li>Church, A. "An Unsolvable Problem of Elementary Number Theory", <i>American Journal of Mathematics</i> 58 (1936), 345–363.</li>
+<li>Turing, A. M. "On Computable Numbers, with an Application to the Entscheidungsproblem. A Correction", <i>Proc. London Math. Soc.</i> s2-43 (1937), 544–546.</li>
+</ol>
+<p class="noprint" style="font-size:13px;color:#666">Full text reconstructed from memory for the muse-webcrawl project; wording is a paraphrase, not a facsimile.</p>
+</body></html>

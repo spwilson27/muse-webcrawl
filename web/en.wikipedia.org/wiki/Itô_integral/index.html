@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Itô integral - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;max-width:900px;margin:0 auto;padding:20px;color:#202122;line-height:1.6;background:#fff}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+h3{font-size:18px;font-weight:bold;margin-top:20px}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.infobox{float:right;width:300px;border:1px solid #a2a9b1;background:#f8f9fa;padding:12px;margin:0 0 16px 20px;font-size:13px;font-family:sans-serif}
+.infobox th{text-align:left;padding:3px 8px 3px 0;vertical-align:top}
+.infobox td{padding:3px 0}
+.infobox .title{background:#b0c4de;text-align:center;font-weight:bold;font-size:15px;padding:6px}
+.hero{text-align:center;margin:16px 0}
+.hero img{border:1px solid #ccc;max-width:100%}
+.hero figcaption{font-size:12px;color:#54595d;font-family:sans-serif}
+.small{font-size:13px;color:#54595d}
+.math{font-style:italic}
+.def{border:1px solid #a2a9b1;background:#f8f9fa;padding:10px 16px;margin:12px 0}
+</style>
+</head>
+<body>
+<h1>Itô integral</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="infobox">
+<div class="title">Itô integral</div>
+<table>
+<tr><th>Named after</th><td>Kiyoshi Itô</td></tr>
+<tr><th>Introduced</th><td>1944 (Itô's papers on stochastic equations)</td></tr>
+<tr><th>Field</th><td>Stochastic calculus, probability theory</td></tr>
+<tr><th>Integrand</th><td>Predictable processes adapted to a filtration</td></tr>
+<tr><th>Key property</th><td>Itô isometry; integral is a martingale</td></tr>
+<tr><th>Alternative</th><td>Stratonovich integral</td></tr>
+</table>
+</div>
+<p>The <b>Itô integral</b> is a fundamental concept in stochastic calculus, introduced by Japanese mathematician Kiyoshi Itô in the 1940s. It defines integration of a stochastic process with respect to Brownian motion (or, more generally, a semimartingale), where the ordinary Riemann–Stieltjes integral fails because Brownian paths have unbounded variation. The integral is constructed by evaluating the integrand at the <i>left-hand endpoint</i> of each subinterval, which makes the integrand non-anticipating — a convention that produces results different from classical calculus and underpins modern mathematical finance.</p>
+<figure class="hero">
+<img src="images/ito-integral.png" alt="Labelled placeholder image: a jagged Brownian motion path with a step-function integrand">
+<figcaption>Integrating against a Brownian path — image placeholder</figcaption>
+</figure>
+<h2>Construction</h2>
+<div class="def">
+<p>For a step process <span class="math">H</span> taking the value <span class="math">H<sub>k</sub></span> on each interval <span class="math">[t<sub>k</sub>, t<sub>k+1</sub>)</span>, the integral over <span class="math">[0,T]</span> is defined as the sum of <span class="math">H<sub>k</sub>(W<sub>t<sub>k+1</sub></sub> − W<sub>t<sub>k</sub></sub>)</span>. The definition is extended to general predictable, square-integrable processes by approximation in the L² sense.</p>
+</div>
+<h2>Properties</h2>
+<ul>
+<li><b>Itô isometry:</b> the expected square of the integral equals the expected integral of the squared integrand — E[(∫H dW)²] = E[∫H² dt].</li>
+<li><b>Martingale property:</b> with suitable conditions the Itô integral is a martingale, with zero expectation; this reflects the left-endpoint rule, which forbids using future information.</li>
+<li><b>Itô's lemma:</b> the chain rule acquires a second-order correction term because Brownian motion has nonzero quadratic variation, [W]<sub>t</sub> = t; for a smooth f, df(W) = f′(W) dW + ½ f″(W) dt.</li>
+</ul>
+<h2>Comparison with the Stratonovich integral</h2>
+<p>The Stratonovich integral evaluates the integrand at interval midpoints, obeys the ordinary rules of calculus, but is not a martingale and corresponds to anticipating half a step ahead. The two are related by a correction involving the quadratic covariation of integrand and integrator; physics and engineering applications often favour Stratonovich, while finance uses Itô because portfolio strategies must be non-anticipating.</p>
+<h2>Applications</h2>
+<p>The Itô integral is the building block of Itô stochastic differential equations, used to model diffusions in physics, biology and — most famously — mathematical finance, where the Black–Scholes framework expresses a self-financing trading strategy exactly as an Itô integral with respect to a Brownian-driven stock price.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Itô's_lemma/index.html">Itô's lemma</a></li>
+<li><a href="../Itô_calculus/index.html">Itô calculus</a></li>
+<li><a href="../Stochastic_calculus/index.html">Stochastic calculus</a></li>
+<li><a href="../Kiyoshi_Itô/index.html">Kiyoshi Itô</a></li>
+<li><a href="../Stratonovich_integral/index.html">Stratonovich integral</a></li>
+</ul>
+</body>
+</html>

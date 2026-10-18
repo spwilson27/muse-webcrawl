@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Equilibrium Points in n-Person Games — Nash, PNAS 36 (1950)</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 780px; margin: 0 auto; padding: 24px 20px 60px; color: #111; line-height: 1.55; background: #fff; }
+.toolbar { background:#f4f1ea; border:1px solid #ccc; padding:10px 14px; margin-bottom:22px; font-family: Helvetica, Arial, sans-serif; font-size: 14px; }
+.pdfbtn { background:#b03030; color:#fff; border:none; padding:9px 22px; font-size:15px; border-radius:3px; cursor:pointer; font-family: inherit; }
+.pdfbtn:hover { background:#8c2626; }
+.toolbar a { color:#a33; margin-left: 14px; }
+header { text-align:center; border-bottom: 2px solid #111; padding-bottom: 14px; margin-bottom: 18px; }
+.journal { font-variant: small-caps; letter-spacing: 1px; font-size: 15px; margin: 0 0 10px; }
+h1 { font-size: 24px; line-height: 1.25; margin: 6px 0 10px; }
+.authors { font-size: 16.5px; margin: 4px 0; }
+.affil { font-size: 13.5px; font-style: italic; color: #333; margin: 2px 0; }
+.doi { font-size: 13px; color:#444; margin-top: 8px; }
+h2 { font-size: 18px; margin: 24px 0 8px; border-bottom: 1px solid #bbb; padding-bottom: 3px; }
+h3 { font-size: 15.5px; margin: 18px 0 6px; }
+p { margin: 8px 0; text-align: justify; }
+.abstract { background: #faf8f3; border: 1px solid #ddd; padding: 12px 18px; }
+.abstract h2 { border: none; margin-top: 2px; font-size: 16px; }
+.eq { text-align: center; font-size: 16.5px; margin: 14px 0; font-style: italic; }
+.fig { border: 1.5px dashed #999; background: #fafafa; padding: 26px 14px; text-align: center; color: #666; font-family: Helvetica, Arial, sans-serif; font-size: 13px; margin: 16px 0 4px; }
+.figcap { font-size: 13.5px; margin: 4px 0 14px; text-align: justify; }
+.figcap b { font-variant: small-caps; }
+table { border-collapse: collapse; margin: 12px auto; font-size: 14px; }
+th, td { border: 1px solid #999; padding: 4px 9px; text-align: left; }
+th { background: #f0ece4; }
+.refs { font-size: 13.5px; line-height: 1.45; }
+.refs li { margin: 3px 0; }
+.foot { border-top: 1px solid #999; margin-top: 30px; padding-top: 8px; font-size: 12.5px; color: #555; font-family: Helvetica, Arial, sans-serif; }
+@media print {
+  .toolbar, .noprint { display: none !important; }
+  body { max-width: none; padding: 0; font-size: 11.5pt; line-height: 1.5; }
+  header { border-bottom: 1.5pt solid #000; }
+  .abstract { background: none; border: none; padding: 0; }
+  a { color: #000; text-decoration: none; }
+  h2 { page-break-after: avoid; }
+  .fig { page-break-inside: avoid; }
+  @page { size: A4; margin: 22mm 18mm; }
+}
+</style></head><body>
+<div class="toolbar noprint"><button class="pdfbtn" id="pdfbtn">&#8595; Download PDF</button> Opens your browser&#x27;s print dialog &mdash; choose &ldquo;Save as PDF&rdquo;.<a href="index.html">&larr; Sci-Hub landing page</a></div>
+<header>
+<p class="journal">Proceedings of the National Academy of Sciences 36 (1), 48&ndash;49 (January 1950)</p>
+<h1>Equilibrium Points in <i>n</i>-Person Games</h1>
+<p class="authors">John F. Nash, Jr.</p>
+<p class="affil">Department of Mathematics, Princeton University, Princeton, New Jersey</p>
+<p class="doi">doi:10.1073/pnas.36.1.48 &nbsp;·&nbsp; Communicated by S. Lefschetz, November 16, 1949</p>
+</header>
+
+<section class="abstract"><h2>Abstract</h2>
+<p>One may define a concept of an <i>n</i>-person game in which each player has a finite set of pure strategies and in which a definite set of payments to the <i>n</i> players occurs when the <i>n</i> players play their pure strategies. The players may also use <i>mixed</i> strategies, in which each player uses a probability distribution over his pure strategies, his choice being independent of the choices of the others. An equilibrium point is an <i>n</i>-tuple of mixed strategies such that each player&#x27;s strategy maximises his expected payoff against the strategies of the others. It is shown, by means of a fixed-point theorem, that every finite <i>n</i>-person game possesses at least one equilibrium point. The concept generalises von Neumann&#x27;s minimax solution for two-person zero-sum games to arbitrary <i>n</i>-person games, cooperative or not.</p>
+</section>
+
+<h2>Definitions</h2>
+<p>An <i>n</i>-person game is specified by giving, for each of the players <i>i</i> = 1, &hellip;, <i>n</i>, a finite set of <i>pure strategies</i>, and a payoff function which assigns a real number, the payoff to player <i>i</i>, to every combination of one pure strategy from each player. A <i>mixed strategy</i> for player <i>i</i> is a probability distribution over his pure strategies: if his pure strategies are numbered 1, &hellip;, <i>m<sub>i</sub></i>, a mixed strategy is a vector <i>s<sub>i</sub></i> = (<i>s<sub>i</sub></i><sup>1</sup>, &hellip;, <i>s<sub>i</sub></i><sup><i>m<sub>i</sub></i></sup>) with <i>s<sub>i</sub></i><sup>&alpha;</sup> &ge; 0 and &Sigma;<sub>&alpha;</sub> <i>s<sub>i</sub></i><sup>&alpha;</sup> = 1, the number <i>s<sub>i</sub></i><sup>&alpha;</sup> being the probability with which he plays his &alpha;-th pure strategy, independently of the others. The <i>expected payoff</i> to player <i>i</i> from an <i>n</i>-tuple <i>s</i> = (<i>s</i><sub>1</sub>, &hellip;, <i>s<sub>n</sub></i>) of mixed strategies is the expectation of his payoff over the independently chosen pure strategies; it is a function of <i>s</i> which is linear in each <i>s<sub>i</sub></i> separately:</p>
+<p class="eq"><i>u<sub>i</sub></i>(<i>s</i>) = &Sigma;<sub>&alpha;<sub>1</sub></sub> &hellip; &Sigma;<sub>&alpha;<i><sub>n</sub></i></sub> <i>p<sub>i</sub></i>(&alpha;<sub>1</sub>, &hellip;, &alpha;<i><sub>n</sub></i>) &middot; <i>s</i><sub>1</sub><sup>&alpha;<sub>1</sub></sup> &middot;&middot;&middot; <i>s<sub>n</sub></i><sup>&alpha;<i><sub>n</sub></i></sup>,</p>
+<p>where <i>p<sub>i</sub></i>(&alpha;<sub>1</sub>, &hellip;, &alpha;<i><sub>n</sub></i>) is the payoff to player <i>i</i> when the players use the pure strategies &alpha;<sub>1</sub>, &hellip;, &alpha;<i><sub>n</sub></i>.</p>
+<p><b>Definition.</b> An <i>n</i>-tuple <i>s</i> of mixed strategies is an <i>equilibrium point</i> of the game if, for every player <i>i</i> and every alternative mixed strategy <i>t<sub>i</sub></i> of that player,</p>
+<p class="eq"><i>u<sub>i</sub></i>(<i>s</i>) &ge; <i>u<sub>i</sub></i>(<i>s</i><sub>1</sub>, &hellip;, <i>s</i><sub><i>i</i>&minus;1</sub>, <i>t<sub>i</sub></i>, <i>s</i><sub><i>i</i>+1</sub>, &hellip;, <i>s<sub>n</sub></i>),</p>
+<p>that is, if no player can gain by departing unilaterally from his strategy while the others hold theirs fixed. At an equilibrium point each player&#x27;s strategy is a best reply to the strategies of the rest; the <i>n</i>-tuple is, in this precise sense, self-enforcing.</p>
+
+<h2>Theorem</h2>
+<p><b>Theorem.</b> <i>Every finite n-person game has at least one equilibrium point.</i></p>
+<p><b>Proof.</b> Let <i>s</i> be an arbitrary <i>n</i>-tuple of mixed strategies. For player <i>i</i> and his pure strategy &alpha;, define the <i>gain function</i></p>
+<p class="eq">&phi;<i><sub>i</sub></i><sup>&alpha;</sup>(<i>s</i>) = max { 0, <i>u<sub>i</sub></i>(<i>s</i> with &alpha; substituted for <i>s<sub>i</sub></i>) &minus; <i>u<sub>i</sub></i>(<i>s</i>) },</p>
+<p>the amount by which player <i>i</i> could improve his payoff by switching to the pure strategy &alpha;, the other players&#x27; strategies being unchanged, or zero if he cannot improve. Each &phi;<i><sub>i</sub></i><sup>&alpha;</sup> is a continuous function of <i>s</i>. Now define a transformation <i>T</i> of the set of all <i>n</i>-tuples of mixed strategies into itself by</p>
+<p class="eq"><i>T</i>(<i>s</i>)<i><sub>i</sub></i><sup>&alpha;</sup> = ( <i>s<sub>i</sub></i><sup>&alpha;</sup> + &phi;<i><sub>i</sub></i><sup>&alpha;</sup>(<i>s</i>) ) / ( 1 + &Sigma;<sub>&beta;</sub> &phi;<i><sub>i</sub></i><sup>&beta;</sup>(<i>s</i>) ).</p>
+<p>The transformation adds to each pure strategy probability in proportion to the gain available from that strategy, and renormalises; thus the image of a mixed strategy is again a mixed strategy. <i>T</i> is continuous, and the set of all <i>n</i>-tuples of mixed strategies is a compact convex set (a product of simplices). By the Brouwer fixed-point theorem, <i>T</i> has a fixed point <i>s</i>*: <i>T</i>(<i>s</i>*) = <i>s</i>*.</p>
+<p>We show that a fixed point is an equilibrium point. Suppose not: then for some player <i>i</i> some gain function is positive at <i>s</i>*. Since <i>u<sub>i</sub></i> is linear in <i>s<sub>i</sub></i>, the weighted average over &alpha; of the gains &phi;<i><sub>i</sub></i><sup>&alpha;</sup>(<i>s</i>*), weighted by the probabilities <i>s<sub>i</sub></i>*<sup>&alpha;</sup>, equals the gain from the strategy <i>s<sub>i</sub></i>* itself against the others, which is zero; hence some &alpha; with <i>s<sub>i</sub></i>*<sup>&alpha;</sup> &gt; 0 must have gain zero where another has positive gain. But at a fixed point, comparing <i>T</i>(<i>s</i>*)<i><sub>i</sub></i><sup>&alpha;</sup> with <i>s<sub>i</sub></i>*<sup>&alpha;</sup> for such an &alpha; gives a contradiction: the normalising denominator exceeds 1 while the numerator is unchanged, so the probability of a zero-gain strategy in positive use would have to decrease. This contradicts the fixed-point property. Therefore all gain functions vanish at <i>s</i>*; no player can gain by any unilateral change of strategy, pure or mixed; and <i>s</i>* is an equilibrium point. <i>Q.E.D.</i></p>
+
+<h2>Remarks</h2>
+<p>The equilibrium concept reduces, for two-person zero-sum games, to von Neumann&#x27;s minimax theorem: in that case the equilibrium points are precisely the pairs of optimal strategies, and all equilibrium points yield the same payoff, the value of the game. For general games this agreeable uniqueness fails &mdash; equilibrium points need not be interchangeable, nor need an equilibrium point be optimal for the players collectively, since profitable joint deviations may exist which no single player can carry out alone. It is this distinction that separates the non-cooperative theory developed here from the cooperative theory of von Neumann and Morgenstern: if coalitions and side payments are admitted, additional structure must be imposed. Equilibria with special properties can also be singled out; in a symmetric game, for example, there always exists a symmetric equilibrium point. The concept applies directly to economic competition, to bargaining (where an equilibrium analysis of the non-cooperative form of the bargaining game selects the solution the author has proposed elsewhere), and in general to any situation of conflict or interdependence among a finite number of agents with finite choices.</p>
+
+<h2>References</h2>
+<ol class="refs">
+<li>von Neumann, J., and Morgenstern, O., <i>Theory of Games and Economic Behavior</i> (Princeton University Press, 1944; 2nd ed. 1947).</li>
+<li>von Neumann, J., <i>Math. Annalen</i>, <b>100</b>, 295&ndash;320 (1928).</li>
+<li>Kakutani, S., <i>Duke Math. J.</i>, <b>8</b>, 457&ndash;459 (1941).</li>
+<li>Nash, J. F., <i>The Bargaining Problem</i>, <i>Econometrica</i>, <b>18</b>, 155&ndash;162 (1950).</li>
+</ol>
+
+<div class="foot">Nash, J. F., Jr. Equilibrium points in n-person games. <i>Proc. Natl Acad. Sci. USA</i> <b>36</b>, 48&ndash;49 (1950). doi:10.1073/pnas.36.1.48</div>
+
+<script>
+(function(){
+  var b = document.getElementById('pdfbtn');
+  if (b) { b.addEventListener('click', function(){ window.print(); }); }
+})();
+</script>
+</body></html>

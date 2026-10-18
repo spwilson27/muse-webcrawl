@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>The Complexity of Theorem-Proving Procedures — Stephen A. Cook</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; background:#fff; color:#111; margin: 40px auto; max-width: 760px; padding: 0 24px; line-height: 1.55; font-size: 16px; }
+h1 { font-size: 23px; text-align: center; margin-bottom: 4px; }
+.authors { text-align: center; font-size: 17px; margin: 8px 0 2px 0; }
+.affil { text-align: center; font-style: italic; color:#333; font-size: 14px; }
+.cite { text-align: center; font-size: 13px; color:#444; margin: 10px 0 22px 0; }
+h2 { font-size: 17px; margin: 26px 0 8px 0; }
+p { text-align: justify; margin: 8px 0; }
+.abstract { border: 1px solid #ccc; background: #fafafa; padding: 12px 18px; margin: 18px 0; font-size: 15px; }
+.abstract h2 { text-align:center; margin-top: 2px; font-size: 15px; letter-spacing: 2px; }
+.eq { text-align: center; font-family: 'Courier New', monospace; margin: 14px 0; font-size: 15px; }
+.refs { font-size: 14px; }
+.refs li { margin: 4px 0; }
+.dlbtn { display: inline-block; background: #b03030; color: #fff; padding: 10px 28px; font-size: 16px; border-radius: 3px; border: none; cursor: pointer; font-family: inherit; }
+.dlbar { text-align: center; margin: 10px 0 26px 0; }
+@page { size: A4; margin: 2.2cm 2cm; }
+@media print {
+  .dlbar, .noprint { display: none !important; }
+  body { margin: 0; max-width: none; padding: 0; font-size: 11.5pt; }
+  .abstract { background: none; }
+}
+</style></head><body>
+<div class="dlbar"><button class="dlbtn" onclick="window.print()">↓ Download PDF</button></div>
+
+<h1>The Complexity of Theorem-Proving Procedures</h1>
+<p class="authors">Stephen A. Cook</p>
+<p class="affil">Department of Computer Science, University of Toronto</p>
+<p class="cite">Proceedings of the Third Annual ACM Symposium on Theory of Computing (STOC '71), Shaker Heights, Ohio, 1971, pp. 151–158. DOI: 10.1145/800157.806691</p>
+
+<div class="abstract"><h2>ABSTRACT</h2>
+<p>It is shown that any recognition problem solved by a polynomial-time nondeterministic Turing machine can be "reduced" to the problem of determining whether a given propositional formula is a tautology, the reduction being computable in polynomial time. Hence the satisfiability problem (equivalently, the tautology problem) is at least as hard as every problem in the class now called NP: if tautologies could be recognised in polynomial time, then so could all problems solvable in nondeterministic polynomial time, including many natural problems for which no good algorithm is known — the travelling salesman problem, subgraph isomorphism, and the scheduling problems. The paper thereby founds the theory of NP-completeness. [Reconstruction from memory; argument paraphrased.]</p></div>
+
+<h2>1. Introduction</h2>
+<p>Theoretical computer science has measured procedures chiefly in terms of computability; but for problems that arise in practice — in theorem proving, in combinatorics, in operations research — the operative question is not whether a procedure exists but whether one exists whose running time grows only polynomially in the size of the input. Consider the problem of deciding whether a propositional formula in disjunctive normal form is a tautology. The obvious procedure tests all assignments; nothing substantially better is known. This paper shows the poverty of our algorithms is not accidental: the tautology problem stands at the head of a large class of seemingly unrelated problems, all equivalent under efficient reductions. Either all of them admit polynomial procedures, or none does.</p>
+
+<h2>2. Definitions</h2>
+<p>A <i>query machine</i> is a Turing machine equipped with a query tape and distinguished states; on entering a query state it asks whether the string then on the query tape belongs to a fixed set (the "oracle"), and continues according to the answer, the whole question costing one step. A set S is <b>P-reducible</b> to a set T if a query machine with oracle T decides S in a number of steps bounded by a polynomial in the length of its input. A set S belongs to the class <b>𝒫</b> if it is decided by an ordinary machine in polynomial time, and to the class <b>𝒩𝒫</b> if it is decided by a nondeterministic machine — one allowed to branch, accepting if some branch accepts — in polynomial time. Clearly 𝒫 ⊆ 𝒩𝒫; whether equality holds is the great open question the paper leaves on the table.</p>
+
+<h2>3. The main theorem</h2>
+<p><b>Theorem 1.</b> If a set S of strings is accepted by some nondeterministic Turing machine within polynomial time, then S is P-reducible to the set of satisfiable (equivalently, of tautologous in disjunctive normal form) propositional formulas.</p>
+<p>The proof constructs, for a given machine M, input w of length n, and time bound p(n), a propositional formula A(w) whose variables describe the entire computation tableau of M on w: variable Q[i,t] says the machine is in state i at time t; H[i,t] locates the tape head; S[j,i,t] says square i holds symbol j at time t. Clauses then enforce, purely propositionally, that the first row of the tableau is the initial configuration on w, that each successive row follows from its predecessor by M's transition table, that the head is in exactly one place at each time, and that the final row contains an accepting state. The formula has polynomially many variables and clauses — O(p(n)²), in effect a square tableau — and it is a tautology (in the satisfiable-sign variant) exactly when M accepts w. Theorem proving is thereby shown to be the universal nondeterministic problem.</p>
+<p class="eq">w accepted in time p(n) &nbsp;⟹&nbsp; A(w) satisfiable,&nbsp;&nbsp; |A(w)| = O(p(n)² log p(n))</p>
+
+<h2>4. Corollaries and companion problems</h2>
+<p>Because P-reducibility composes, Theorem 1 propagates hardness through any chain of efficient reductions. The paper lists natural companions of the tautology problem: whether a formula in conjunctive normal form is satisfiable (with three literals per clause already as hard as the general case); whether two graphs contain isomorphic subgraphs of a given size, or one graph contains a clique or an independent set of size k; whether a graph has a Hamiltonian path; set covering and exact cover; and the integer-programming feasibility problem. Each is in 𝒩𝒫 by inspection — guess the witness and check it — and each inherits, via short reductions from satisfiability, the property of being complete for 𝒩𝒫. The class of problems for which only exponential procedures are known is thus a single web, not a scattered collection of puzzles.</p>
+
+<h2>5. Concluding remarks</h2>
+<p>The theorem does not prove that no polynomial procedure exists for the tautology problem; it proves that finding one would settle, in the affirmative and all at once, hundreds of problems that have resisted attack — among them most of the open optimisation problems of combinatorics. The presumption of the field thereafter: 𝒫 ≠ 𝒩𝒫, and the problems catalogued here are intrinsically exponential. That presumption, still unproved half a century on, is the P versus NP problem; the paper's eight pages are its birthplace, and Karp's 1972 catalogue of 21 complete problems its first expansion.</p>
+
+<h2>References</h2>
+<ol class="refs">
+<li>Edmonds, J. "Paths, Trees, and Flowers", <i>Canadian Journal of Mathematics</i> 17 (1965), 449–467 — on polynomial-time "good" algorithms.</li>
+<li>Cobham, A. "The Intrinsic Computational Difficulty of Functions", <i>Proc. 1964 Congress for Logic, Methodology and Philosophy of Science</i>, North-Holland, 1965, 24–30.</li>
+<li>Hartmanis, J. and Stearns, R. E. "On the Computational Complexity of Algorithms", <i>Transactions of the AMS</i> 117 (1965), 285–306.</li>
+<li>Karp, R. M. "Reducibility among Combinatorial Problems", in <i>Complexity of Computer Computations</i>, Plenum, 1972, 85–103 (subsequent expansion of the catalogue).</li>
+</ol>
+<p class="noprint" style="font-size:13px;color:#666">Full text reconstructed from memory for the muse-webcrawl project; wording is a paraphrase, not a facsimile.</p>
+</body></html>

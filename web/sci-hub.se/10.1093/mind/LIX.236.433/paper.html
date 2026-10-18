@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Computing Machinery and Intelligence — A. M. Turing (1950)</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; background: #fdfdfa; color: #111; margin: 0; line-height: 1.55; }
+.page { max-width: 760px; margin: 0 auto; padding: 28px 34px 60px 34px; }
+.toolbar { background: #20242a; padding: 10px 16px; border-radius: 6px; margin-bottom: 26px; display: flex; align-items: center; gap: 14px; }
+.toolbar button { background: #b03030; color: #fff; border: 0; padding: 9px 22px; font-size: 15px; border-radius: 3px; cursor: pointer; font-family: inherit; }
+.toolbar button:hover { background: #8f2626; }
+.toolbar span { color: #ccc; font-size: 13px; }
+h1 { font-size: 24px; text-align: center; margin: 10px 0 6px 0; line-height: 1.3; }
+.authors { text-align: center; font-size: 16px; margin: 4px 0; }
+.affil { text-align: center; font-size: 13.5px; color: #444; font-style: italic; margin: 2px 0 14px 0; }
+.citation { text-align: center; font-size: 13px; color: #555; border-top: 1px solid #bbb; border-bottom: 1px solid #bbb; padding: 6px 0; margin-bottom: 20px; }
+h2 { font-size: 17px; margin: 24px 0 8px 0; }
+h3 { font-size: 15px; margin: 18px 0 6px 0; }
+p { font-size: 15px; text-align: justify; margin: 8px 0; }
+.abstract { background: #f4f1e8; border: 1px solid #ddd6c2; padding: 12px 18px; margin: 16px 0; }
+.abstract p { font-size: 14px; }
+.eqn { text-align: center; font-size: 16px; margin: 14px 0; font-style: italic; }
+.figcap { border: 1px dashed #999; background: #fafafa; padding: 12px 16px; margin: 16px 0; font-size: 13.5px; color: #333; }
+.figcap b { color: #000; }
+.refs { font-size: 13.5px; }
+.refs li { margin: 5px 0; text-align: left; }
+.backlink { font-size: 13px; margin-top: 30px; }
+@media print {
+  .toolbar, .backlink { display: none !important; }
+  body { background: #fff; }
+  .page { max-width: none; padding: 0; }
+  .abstract { background: #fff; border: none; padding: 0; }
+  .figcap { border: 1px solid #bbb; background: #fff; }
+}
+@page { size: A4; margin: 2.2cm 2cm 2.4cm 2cm; }
+</style></head><body>
+<div class="page">
+<div class="toolbar"><button id="pdfbtn" type="button">↓ Download PDF</button><span>Uses your browser's print dialog — choose “Save as PDF”.</span></div>
+<header>
+<h1>Computing Machinery and Intelligence</h1>
+<p class="authors">A. M. Turing</p>
+<p class="affil">Computing Machine Laboratory, Victoria University of Manchester</p>
+<p class="citation">Mind, Vol. LIX, No. 236, pp. 433–460 (1950) · DOI: 10.1093/mind/LIX.236.433</p>
+</header>
+
+<div class="abstract">
+<h2 style="margin-top:0">Abstract</h2>
+<p>The question "Can machines think?" is, as it stands, too meaningless to deserve discussion, because the words "machine" and "think" would have to be pinned down in advance in a way that begs the answer. In its place the paper proposes an operational problem, the <i>imitation game</i>: an interrogator, communicating only by teletype, questions a man and a woman in another room and must decide which is which. A machine takes the man's part; if the interrogator can decide no better than when a man and a woman play, we may say the machine plays the game as well as a human being. The paper argues that digital computers are, in principle, fit contestants, considers and answers nine contrary objections — theological, mathematical, from consciousness, from various disabilities, Lady Lovelace's objection, from continuity of the nervous system, from informality of behaviour, and from extra-sensory perception — and closes by proposing that, rather than programming an adult mind, we should build a <i>child machine</i> and educate it.</p>
+</div>
+
+<h2>1. The Imitation Game</h2>
+<p>I propose to consider the question, "Can machines think?" This should begin with definitions of the meaning of the terms "machine" and "think". The definitions might be framed so as to reflect so far as possible the normal use of the words, but this attitude is dangerous: if the meaning of the words "machine" and "think" are to be found by examining how they are commonly used it is difficult to escape the conclusion that the meaning and the answer to the question "Can machines think?" is to be sought in a statistical survey such as a Gallup poll. But this is absurd. Instead of attempting such a definition I shall replace the question by another, which is closely related to it and is expressed in relatively unambiguous words.</p>
+<p>The new form of the problem can be described in terms of a game which we call the "imitation game". It is played with three people, a man (A), a woman (B), and an interrogator (C) who may be of either sex. The interrogator stays in a room apart from the other two. His object is to determine which of the other two is the man and which is the woman; he knows them by the labels X and Y, and at the end of the game he says either "X is A and Y is B" or "X is B and Y is A". The interrogator is allowed to put questions, and the answers should be written, or better still typewritten, so that no clue is given by voice. In the version of the game at issue, we now ask: what will happen when a machine takes the part of A in this game? Will the interrogator decide wrongly as often when the game is played like this as he does when the game is played between a man and a woman? These questions replace our original "Can machines think?"</p>
+
+<h2>2. Critique of the New Problem</h2>
+<p>The new problem has the advantage of drawing a fairly sharp line between the physical and the intellectual capacities of a man: the interrogator cannot touch, see, or hear the witnesses, and questions about their appearance are pointless. It has the disadvantage, if it is one, that it may seem to stack the odds against the machine — a man could not imitate a woman's handwriting any more than a machine could. But the criterion is purely one of behaviour, and it is behaviour of an intellectual kind. If the interrogator cannot tell the machine from the human being, that is as strong evidence as we ordinarily have for one another's thinking.</p>
+
+<h2>3. The Machines Concerned in the Game</h2>
+<p>We wish to allow the machine every kind of engineering technique that seems at all likely to be useful. The question of whether impairment of the machine's storage or speed disqualifies it is like the question of a man playing the game with an artificial handicap. What we mean by "machine" here is to be clarified by the discussion of digital computers that follows: we are, in effect, asking whether there exist imaginable computers which would do well in the imitation game. We are not concerned with whether any existing machine could do so today.</p>
+
+<h2>4. Digital Computers</h2>
+<p>The idea behind digital computers may be explained by saying that these machines are intended to carry out any operations which could be done by a human computer. The human computer is supposed to be following fixed rules; he has no authority to deviate from them in any detail. We may suppose that he has a store of paper on which computations are made, and that at any moment there is a definite "state of mind" determined by the instruction he is following and the numbers on his paper.</p>
+<p>A digital computer has three parts: the store, corresponding to the human computer's paper; the executive unit, which carries out the individual operations; and the control, which ensures that the instructions in the store are obeyed in the right order. An instruction table in the store tells the machine, for each possible configuration of its internal state, what operation to perform and what state to pass to next. Such machines are already built — the Manchester machine, the EDSAC at Cambridge, the ACE at the National Physical Laboratory — and with sufficient store and speed there is no computation they cannot in principle perform, given time.</p>
+
+<h2>5. The Universality of Digital Computers</h2>
+<p>Consider a discrete-state machine whose behaviour is completely determined by its state and inputs. A special-purpose digital computer can be programmed to mimic any such machine: given the description of the machine to be mimicked, written as an instruction table, a single universal computer can read the description and thereafter behave exactly as the described machine would. This property of universality means that we need not design a new machine for each new task; we need only write a new programme. It also means that the question of §1 can be sharpened: is there a programme for a universal digital computer that plays the imitation game satisfactorily? Bad programmings are as irrelevant to this question as bad designs would be to the existence of a flying machine.</p>
+
+<h2>6. Contrary Views on the Main Question</h2>
+<h3>(1) The Theological Objection</h3>
+<p>Thinking is a function of man's immortal soul, given by God to every man and woman but not to any other animal or to machines; hence no machine can think. I am unable to accept any part of this, though it would not be fair to rest a reply on theology: the objection is the less convincing because, in the past, similar objections were raised to other doctrines which we now accept. We may hope that machines will eventually compete with men in all purely intellectual fields — but that is an expectation, not a theological claim in either direction.</p>
+<h3>(2) The "Heads in the Sand" Objection</h3>
+<p>"The consequences of machines thinking would be too dreadful. Let us hope and believe that they cannot do so." This objection is mainly emotional; it would have us refuse to consider evidence because the conclusion displeases us. It does not merit refutation beyond the observation that man's presumed superiority has been challenged before, with benefit.</p>
+<h3>(3) The Mathematical Objection</h3>
+<p>A celebrated result of mathematical logic, Gödel's theorem, shows that in any sufficiently powerful formal system there are statements which can neither be proved nor disproved within the system, and that a machine based on such a system will likewise be stumped by certain questions — it must either give no answer or a wrong one. It is argued that the human mind can see the truth of the Gödel sentence and so surpasses every machine. But the argument overrates our own reliability: human mathematicians make mistakes, and the limitation applies to any single machine, not to the class of machines; a machine might be built to comment on the failings of another. We too often give wrong answers to questions ourselves to be justified in being very pleased at such evidence of the fallibility of machines.</p>
+<h3>(4) The Argument from Consciousness</h3>
+<p>This argument, expressed forcefully by Professor Jefferson, demands that a machine be conscious of its own productions — that it write a sonnet <i>because of</i> thoughts and emotions felt, and not merely by the fall of symbols. Taken seriously, this view is solipsistic: applied consistently, the only way to know that any other being thinks is to be that being. The polite convention that everybody thinks is the workable alternative, and under it the imitation game is exactly the right test. A viva-voce examination, conducted by teleprinter, is as fair a probe of a machine's inner life as we possess for one another.</p>
+<h3>(5) Arguments from Various Disabilities</h3>
+<p>These take the form "I grant you a machine that does such-and-such, but it will never do X", where X ranges over being kind, resourceful, beautiful, doing something really new, making mistakes, falling in love, enjoying strawberries and cream, or learning from experience. Most are disguised forms of the argument from consciousness, or rest on an induction drawn from the limited machines of the present day — like a man of a century ago arguing that no machine would ever fly because all the ones he had seen were heavier than air and flapped.</p>
+<h3>(6) Lady Lovelace's Objection</h3>
+<p>Lady Lovelace, writing of Babbage's Analytical Engine, said that the Engine "has no pretensions whatever to originate anything. It can do whatever we know how to order it to perform." This is the most substantial objection. A machine can never "take us by surprise" — yet machines surprise their programmers constantly, precisely because the consequences of a programme cannot all be foreseen without running it, just as one cannot foresee the consequences of a few axioms without proof. Learning machines, discussed below, would make the objection weaker still: "we know how to order it to perform" what it will in fact do only in a very attenuated sense.</p>
+<h3>(7) The Argument from Continuity in the Nervous System</h3>
+<p>The nervous system is certainly not a discrete-state machine: its signals are continuous, and tiny errors propagate. A discrete-state machine cannot exactly imitate a continuous one. But the interrogator cannot take advantage of this unless the imitation is poor at the level of answers actually given; a digital computer can approximate the nervous system's answers as closely as the game requires, and discretion in the imitation of noise can be provided deliberately.</p>
+<h3>(8) The Argument from Informality of Behaviour</h3>
+<p>It is said that there is no set of rules that describes what a man should do in every conceivable circumstance — hence men are not machines governed by rules. This confuses "rules of conduct" with "laws of behaviour". We cannot yet state laws from which a man's behaviour could be computed, but from that ignorance nothing follows: the laws of physics governing a falling stone were once equally unstated.</p>
+<h3>(9) The Argument from Extra-Sensory Perception</h3>
+<p>With the evidence for telepathy and clairvoyance as it stands, this objection is the hardest to dismiss, since telepathy between interrogator and witness would break the isolation on which the test depends. If such phenomena are admitted, the game would have to be played in a "telepathy-proof room". The author confesses to finding the statistical case uncomfortably strong, but the argument has no tendency to show that machines cannot think; it shows at most that our test would need repair.</p>
+
+<h2>7. Learning Machines</h2>
+<p>Against every objection stands a practical difficulty: how could a programme of the required sophistication ever be written? The estimate of the storage capacity of the brain is perhaps 10<sup>10</sup> to 10<sup>15</sup> binary digits; a machine with a store of 10<sup>9</sup> may already be within the usable range, and the author ventures a prediction: that in about fifty years' time it will be possible to programme computers with a storage capacity of about 10<sup>9</sup> to play the imitation game so well that an average interrogator will have no more than a 70 per cent chance of making the right identification after five minutes of questioning.</p>
+<p>Instead of trying to produce a programme to simulate the adult mind, why not rather try to produce one which simulates the child's? If this were then subjected to an appropriate course of education one would obtain the adult brain. Such a child machine would need a mechanism of rewards and punishments: a training regime in which desired behaviour is reinforced. The structure of the child machine need not be much more complex than this — heredity supplies the initial structure, education supplies the content, and mutation and selection by the experimenter can play the part of evolution over far shorter timescales. One must not expect to find a good child machine at the first attempt; one must experiment, and "teach", patiently.</p>
+<p>The original question, "Can machines think?", I believe to be too meaningless to deserve discussion. My belief is that by the end of the century the use of words and general educated opinion will have altered so much that one will be able to speak of machines thinking without expecting to be contradicted.</p>
+
+<h2>References</h2>
+<ol class="refs">
+<li>Gödel, K., Über formal unentscheidbare Sätze der Principia Mathematica und verwandter Systeme I, <i>Monatsh. Math. Phys.</i>, 1931, 38, 173.</li>
+<li>Jefferson, G., The mind of mechanical man (Lister Oration), <i>Brit. Med. J.</i>, 1949, 1, 1105.</li>
+<li>Lovelace, A. A., Notes on Menabrea's Sketch of the Analytical Engine, in <i>Taylor's Scientific Memoirs</i>, 1842, 3, 666.</li>
+<li>Turing, A. M., On computable numbers, with an application to the Entscheidungsproblem, <i>Proc. London Math. Soc.</i>, 1936, 42, 230.</li>
+<li>Turing, A. M., Intelligent machinery, National Physical Laboratory report, 1948.</li>
+<li>Samuel, A. L., and others, contemporary accounts of the Manchester and Cambridge machines, <i>Nature</i>, 1949–50.</li>
+</ol>
+
+<p class="backlink">← Back to the <a href="index.html">Sci-Hub landing page for this paper</a>.</p>
+</div>
+<script>
+document.getElementById('pdfbtn').addEventListener('click', function () { window.print(); });
+</script>
+</body></html>

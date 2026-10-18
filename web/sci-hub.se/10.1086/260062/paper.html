@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>The Pricing of Options and Corporate Liabilities — Black &amp; Scholes (1973)</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; background: #fdfdfa; color: #111; margin: 0; line-height: 1.55; }
+.page { max-width: 760px; margin: 0 auto; padding: 28px 34px 60px 34px; }
+.toolbar { background: #20242a; padding: 10px 16px; border-radius: 6px; margin-bottom: 26px; display: flex; align-items: center; gap: 14px; }
+.toolbar button { background: #b03030; color: #fff; border: 0; padding: 9px 22px; font-size: 15px; border-radius: 3px; cursor: pointer; font-family: inherit; }
+.toolbar button:hover { background: #8f2626; }
+.toolbar span { color: #ccc; font-size: 13px; }
+h1 { font-size: 24px; text-align: center; margin: 10px 0 6px 0; line-height: 1.3; }
+.authors { text-align: center; font-size: 16px; margin: 4px 0; }
+.affil { text-align: center; font-size: 13.5px; color: #444; font-style: italic; margin: 2px 0 14px 0; }
+.citation { text-align: center; font-size: 13px; color: #555; border-top: 1px solid #bbb; border-bottom: 1px solid #bbb; padding: 6px 0; margin-bottom: 20px; }
+h2 { font-size: 17px; margin: 24px 0 8px 0; text-transform: uppercase; letter-spacing: 0.4px; }
+h3 { font-size: 15px; margin: 18px 0 6px 0; }
+p { font-size: 15px; text-align: justify; margin: 8px 0; }
+.abstract { background: #f4f1e8; border: 1px solid #ddd6c2; padding: 12px 18px; margin: 16px 0; }
+.abstract p { font-size: 14px; }
+.eqn { text-align: center; font-size: 16px; margin: 14px 0; font-style: italic; }
+.figcap { border: 1px dashed #999; background: #fafafa; padding: 12px 16px; margin: 16px 0; font-size: 13.5px; color: #333; }
+.figcap b { color: #000; }
+table.data { border-collapse: collapse; margin: 14px auto; font-size: 14px; }
+table.data th, table.data td { border: 1px solid #aaa; padding: 4px 12px; text-align: center; }
+table.data th { background: #f0ece4; }
+.refs { font-size: 13.5px; }
+.refs li { margin: 5px 0; text-align: left; }
+.backlink { font-size: 13px; margin-top: 30px; }
+@media print {
+  .toolbar, .backlink { display: none !important; }
+  body { background: #fff; }
+  .page { max-width: none; padding: 0; }
+  .abstract { background: #fff; border: none; padding: 0; }
+  .figcap { border: 1px solid #bbb; background: #fff; }
+}
+@page { size: A4; margin: 2.2cm 2cm 2.4cm 2cm; }
+</style></head><body>
+<div class="page">
+<div class="toolbar"><button id="pdfbtn" type="button">↓ Download PDF</button><span>Uses your browser's print dialog — choose “Save as PDF”.</span></div>
+<header>
+<h1>The Pricing of Options and Corporate Liabilities</h1>
+<p class="authors">Fischer Black and Myron Scholes</p>
+<p class="affil">Massachusetts Institute of Technology; University of Chicago</p>
+<p class="citation">Journal of Political Economy, Vol. 81, No. 3, pp. 637–654 (1973) · DOI: 10.1086/260062</p>
+</header>
+
+<div class="abstract">
+<h2 style="margin-top:0">Abstract</h2>
+<p>If options are correctly priced in the market, it should not be possible to make sure profits by creating portfolios of long and short positions in options and their underlying stocks. Using this principle, a theoretical valuation formula for options is derived. Because the formula contains the stock's volatility but not its expected return, the valuation is the same for all investors whatever their attitudes toward risk. The formula is tested against data on options traded on the over-the-counter market, and the results support the model reasonably well. The same reasoning values the securities issued by a firm: the common stock of a levered firm is a call option on the value of the firm, and the risk premium on its bonds can be expressed in terms of the option formula.</p>
+</div>
+
+<h2>1. Introduction</h2>
+<p>An option is a security giving the right to buy or sell an asset, subject to certain conditions, within a specified period of time. Options have been traded for centuries, yet until recently there existed no satisfactory theory of what an option is worth. The previous literature — Sprenkle, Boness, Samuelson, and others — produced formulas that depended on the expected return on the underlying stock and on the investor's attitude toward risk, quantities that cannot be observed directly and on which investors will disagree.</p>
+<p>Our approach is different. We construct a portfolio consisting of a long position in the stock and a short position in the option, in proportions chosen so that the portfolio is, for a short interval, riskless: the gains and losses on the two positions exactly offset one another, whatever happens to the stock price. In equilibrium such a portfolio must earn the short-term rate of interest. This condition yields a partial differential equation for the value of the option, and the equation does not contain the expected return on the stock at all. Its solution, for a European call option on a non-dividend-paying stock, is a definite formula.</p>
+
+<h2>2. The Valuation Formula</h2>
+<p>Let <i>x</i> be the current price of the stock, <i>w(x, t)</i> the value of the option at time <i>t</i>, <i>c</i> the exercise price, <i>r</i> the short-term interest rate (assumed constant), and <i>v</i><sup>2</sup> the (constant) variance rate of return on the stock. Suppose the stock price follows the diffusion process assumed in the preceding literature, in which proportional changes in price are log-normally distributed. Form the hedged portfolio described above, with the number of shares held against each option written adjusted continuously so that the position remains riskless. Equilibrium then requires</p>
+<p class="eqn">∂w/∂t = r w − r x (∂w/∂x) − ½ v² x² (∂²w/∂x²)</p>
+<p>Any security whose value is a function of the stock price and time alone, and which is not a source or use of funds, must satisfy this equation. For a call option expiring at time <i>t</i>* with boundary condition <i>w(x, t*) = max(0, x − c)</i>, the equation can be solved in closed form:</p>
+<p class="eqn">w(x, t) = x N(d<sub>1</sub>) − c e<sup>−r(t* − t)</sup> N(d<sub>2</sub>)</p>
+<p class="eqn">d<sub>1</sub> = [ln(x/c) + (r + ½v²)(t* − t)] / [v √(t* − t)], &nbsp;&nbsp; d<sub>2</sub> = d<sub>1</sub> − v √(t* − t)</p>
+<p>where N(d) is the cumulative normal density function. The interpretation is transparent: the option is equivalent to a leveraged position in the stock — N(d<sub>1</sub>) shares purchased in part with borrowed funds, the loan being the second term. Note that the formula involves only variables that are, in principle, observable: the stock price, the exercise price, the time to expiration, the interest rate, and the variance of the stock's return.</p>
+<div class="figcap"><b>Figure 1 (placeholder).</b> Value of a call option as a function of the stock price for several times to expiration, with the payoff at expiration max(0, x − c) as the limiting curve; the option value lies above the expiration payoff and approaches it as expiration nears.</div>
+
+<h2>3. Extensions and Empirical Tests</h2>
+<p>The basic derivation extends in several directions. Warrants may be handled by accounting for the dilution that occurs on exercise: if the firm has n shares and m warrants outstanding, each warrant is worth a fraction of an ordinary call option on the augmented firm. Options on dividend-paying stocks, and American options exercisable before expiration, require more care; for a stock paying no dividends, early exercise of a call is never optimal, so the European formula applies equally to the American contract.</p>
+<p>We test the formula using data on over-the-counter options — principally six-month calls written by dealers — comparing model prices with market prices, using variances estimated from past stock prices. On average the model prices correspond closely to the prices at which options actually traded: buyers of options identified as underpriced by the model, and sellers of options identified as overpriced, would have earned returns only roughly consistent with zero after allowance is made for the high transactions costs of the period, and hedged positions constructed according to the model in fact earned close to the riskless rate. Departures of market from model prices tend to be corrected, and there is some evidence that dealers' pricing rules anticipated the formula's implications informally.</p>
+
+<h2>4. Corporate Liabilities</h2>
+<p>The theory applies directly to the securities a corporation issues. Consider a firm whose capital structure consists of common stock and a single issue of discount bonds maturing at time <i>t</i>*, with promised payment <i>B</i>. If the value of the firm is <i>V</i>, then at maturity the stockholders receive max(0, V − B) and the bondholders receive the rest. The stock is therefore exactly a call option on the value of the firm with exercise price <i>B</i>, and the option formula prices both securities:</p>
+<p class="eqn">E = V N(d<sub>1</sub>) − B e<sup>−r(t* − t)</sup> N(d<sub>2</sub>), &nbsp;&nbsp; D = V − E</p>
+<p>From this follow several conclusions: the risk premium on a bond — the excess of its promised yield over the riskless rate — is determined by the firm's leverage and by the variance of the return on the firm's assets; Modigliani–Miller invariance of total firm value is preserved, since the formulas add up to <i>V</i>; and apparently disturbing results, such as the incentive of stockholders of a nearly insolvent firm to accept risky projects, emerge naturally as consequences of the option character of equity.</p>
+
+<h2>5. Conclusion</h2>
+<p>The valuation of options need not rest on assumptions about investors' preferences or about the expected return of the underlying stock. A hedged position forces the price, and the resulting formula does tolerably well against market data. The same principle prices the liabilities of a firm, unifying the theory of options with the theory of capital structure.</p>
+
+<h2>References</h2>
+<ol class="refs">
+<li>Boness, A. J., Elements of a theory of stock-option value, <i>J. Polit. Econ.</i>, 1964, 72, 163.</li>
+<li>Sprenkle, C. M., Warrant prices as indications of expectations and preferences, <i>Yale Econ. Essays</i>, 1961, 1, 178.</li>
+<li>Samuelson, P. A., Rational theory of warrant pricing, <i>Indust. Mgmt. Rev.</i>, 1965, 6, 13.</li>
+<li>Modigliani, F., and Miller, M. H., The cost of capital, corporation finance and the theory of investment, <i>Am. Econ. Rev.</i>, 1958, 48, 261.</li>
+<li>Sharpe, W. F., Capital asset prices: a theory of market equilibrium under conditions of risk, <i>J. Finance</i>, 1964, 19, 425.</li>
+<li>Black, F., and Scholes, M., The valuation of option contracts and a test of market efficiency, <i>J. Finance</i>, 1972, 27, 399.</li>
+</ol>
+
+<p class="backlink">← Back to the <a href="index.html">Sci-Hub landing page for this paper</a>.</p>
+</div>
+<script>
+document.getElementById('pdfbtn').addEventListener('click', function () { window.print(); });
+</script>
+</body></html>
