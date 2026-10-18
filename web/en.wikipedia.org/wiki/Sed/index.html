@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>sed - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f6f6f6;color:#202122}
+#content{background:#fff;margin:0 auto;max-width:960px;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;width:260px;font-size:90%}
+.infobox th{text-align:left;background:#e9ecef;padding:3px 6px}
+.infobox td{padding:3px 6px}
+.infobox .ibtitle{text-align:center;font-weight:bold;background:#dfe3e8;font-size:110%}
+.hero{display:block;margin:12px auto;max-width:420px}
+.caption{text-align:center;font-size:85%;color:#54595d}
+.small{font-size:88%}
+code{background:#f0f0f0;padding:0 3px;font-size:90%}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>sed</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<tr><td class="ibtitle" colspan="2">sed</td></tr>
+<tr><th>Original author</th><td>Lee E. McMahon (Bell Labs)</td></tr>
+<tr><th>First released</th><td>1974</td></tr>
+<tr><th>Platform</th><td>Unix, Unix-like systems</td></tr>
+<tr><th>Type</th><td>Utility; stream editor</td></tr>
+<tr><th>Standard</th><td>POSIX</td></tr>
+</table>
+<img class="hero" src="images/sed.png" alt="Illustration of a terminal window showing sed commands filtering lines of text">
+<p class="caption">A sed script transforming a text stream line by line</p>
+<p><b>sed</b> ("stream editor") is a Unix utility that parses and transforms text, using a compact programming language developed by Lee E. McMahon of Bell Labs in 1973–1974, first appearing in Version 7 Unix. It reads input line by line, applies a series of editing commands — most commonly substitutions based on regular expressions — and writes the result to standard output, making it a core tool of Unix shell pipelines.</p>
+<h2>Usage</h2>
+<p>The best-known command is substitution: <code>sed 's/old/new/g'</code> replaces every occurrence of "old" with "new" on each line. Other commands delete (<code>d</code>), insert (<code>i</code>), append (<code>a</code>), print (<code>p</code>) and transliterate (<code>y</code>) text, and addresses select which lines commands apply to — line numbers or regex patterns. With the <code>-n</code> flag, sed suppresses automatic printing, a mode used for extraction tasks. GNU sed's <code>-i</code> option edits files in place.</p>
+<h2>Language and influence</h2>
+<p>Although usually used in one-liners, sed is Turing complete: it has two buffers (the pattern space and hold space), branching, and looping constructs, and enthusiasts have written interpreters and games in it. Its command syntax descends from the ed line editor, and it strongly influenced the later tools <a href="../AWK/">awk</a> (1977) and Perl (1987), whose substitution syntax <code>s///</code> is directly borrowed. POSIX standardises sed, and implementations ship with GNU/Linux, BSD and macOS systems.</p>
+<h2>Examples</h2>
+<p><code>sed -n '5,10p' file</code> prints lines 5–10; <code>sed '/^#/d' file</code> removes comment lines; <code>echo "hello world" | sed 's/world/sed/'</code> outputs "hello sed".</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../AWK/">AWK</a></li>
+<li><a href="../Grep/">grep</a></li>
+<li><a href="../Regular_expression/">Regular expression</a></li>
+<li><a href="../Unix_philosophy/">Unix philosophy</a></li>
+</ul>
+</div>
+</body>
+</html>

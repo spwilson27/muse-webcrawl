@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Top posts of all time — r/gonewild</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "IBM Plex Sans", "Noto Sans", Arial, sans-serif; background: #dae0e6; color: #1c1c1c; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .topnav { background: #fff; border-bottom: 1px solid #ccc; display: flex; align-items: center; gap: 16px; padding: 0 20px; height: 48px; position: sticky; top: 0; z-index: 10; }
+  .logo { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 20px; }
+  .logo-badge { width: 32px; height: 32px; border-radius: 50%; background: #ff4500; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .search { flex: 0 1 420px; background: #f6f7f8; border: 1px solid #edeff1; border-radius: 20px; padding: 7px 14px; color: #818384; font-size: 14px; }
+  .navlinks { margin-left: auto; display: flex; gap: 10px; align-items: center; font-size: 14px; }
+  .btn { border: 1px solid #0079d3; color: #0079d3; border-radius: 999px; padding: 5px 16px; font-weight: 700; }
+  .btn.solid { background: #0079d3; color: #fff; }
+  .nsfw-strip { background: #fff; border-bottom: 1px solid #e3e3e3; }
+  .nsfw-strip-inner { max-width: 1060px; margin: 0 auto; padding: 8px 20px; font-size: 12px; color: #7c7c7c; }
+  .nsfw-tag { background: #ff585b; color: #fff; border-radius: 3px; padding: 1px 5px; font-weight: 700; font-size: 11px; margin-right: 6px; }
+  .banner { height: 110px; background: linear-gradient(90deg, #232323, #4a4a4a); display: flex; align-items: center; justify-content: center; color: #9a9a9a; font-size: 13px; letter-spacing: .04em; }
+  .comm-head { background: #fff; }
+  .comm-head-inner { max-width: 1060px; margin: 0 auto; padding: 12px 20px 14px; display: flex; gap: 16px; align-items: flex-start; }
+  .comm-icon { width: 72px; height: 72px; border-radius: 50%; background: #3d3d3d; border: 4px solid #fff; margin-top: -26px; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 11px; text-align: center; }
+  .comm-title h1 { font-size: 28px; font-weight: 700; }
+  .comm-title .sub { color: #7c7c7c; font-size: 14px; margin-top: 2px; }
+  .comm-actions { margin-left: auto; display: flex; gap: 10px; padding-top: 8px; }
+  .layout { max-width: 1060px; margin: 20px auto; padding: 0 20px; display: flex; gap: 24px; align-items: flex-start; }
+  .feed { flex: 1 1 auto; min-width: 0; }
+  .sidebar { flex: 0 0 312px; }
+  .card { background: #fff; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 16px; }
+  .sortbar { display: flex; gap: 6px; padding: 10px 12px; align-items: center; flex-wrap: wrap; }
+  .sortbar span { font-size: 14px; font-weight: 700; color: #7c7c7c; padding: 5px 10px; border-radius: 999px; }
+  .sortbar span.active { background: #f6f7f8; color: #0079d3; }
+  .sortbar .range { margin-left: auto; font-size: 13px; color: #0079d3; font-weight: 700; }
+  .post { display: flex; background: #fff; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 12px; overflow: hidden; }
+  .post:hover { border-color: #898989; }
+  .votes { background: #f8f9fa; width: 44px; display: flex; flex-direction: column; align-items: center; padding-top: 8px; gap: 2px; font-size: 12px; font-weight: 700; }
+  .votes .arrow { font-size: 16px; color: #878a8c; line-height: 1; }
+  .post-body { flex: 1; padding: 8px 12px 10px; min-width: 0; }
+  .post-meta { font-size: 12px; color: #787c7e; margin-bottom: 6px; }
+  .post-meta .flair { background: #e9f5fd; color: #0079d3; border-radius: 999px; padding: 1px 8px; font-weight: 700; font-size: 11px; margin-left: 6px; }
+  .post-meta .verified { background: #46d160; color: #fff; border-radius: 3px; padding: 0 4px; font-size: 10px; font-weight: 700; }
+  .post h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+  .thumb { background: #f2f2f2; border: 1px solid #e3e3e3; border-radius: 4px; height: 320px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #9a9a9a; font-size: 13px; gap: 6px; margin-bottom: 8px; }
+  .thumb .nsfw-tag { margin: 0; }
+  .post-actions { display: flex; gap: 4px; font-size: 12px; font-weight: 700; color: #878a8c; }
+  .post-actions span { padding: 5px 8px; border-radius: 2px; }
+  .post-actions span:hover { background: #e8e8e8; }
+  .side-head { background: #1c1c1c; color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 12px; border-radius: 4px 4px 0 0; }
+  .side-body { padding: 12px; font-size: 14px; line-height: 1.45; }
+  .side-body p { margin-bottom: 10px; }
+  .stats { display: flex; gap: 32px; padding: 4px 12px 12px; }
+  .stats .num { font-size: 16px; font-weight: 700; }
+  .stats .lbl { font-size: 12px; color: #7c7c7c; }
+  .created { padding: 0 12px 12px; font-size: 12px; color: #7c7c7c; }
+  .side-btn { display: block; text-align: center; background: #0079d3; color: #fff; border-radius: 999px; padding: 7px; font-weight: 700; font-size: 14px; margin: 0 12px 12px; }
+  .footer-note { font-size: 12px; color: #7c7c7c; padding: 0 4px; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<header class="topnav">
+  <div class="logo"><span class="logo-badge">●</span> reddit</div>
+  <div class="search">🔍 Search Reddit</div>
+  <nav class="navlinks">
+    <span>Popular</span><span>All</span>
+    <a class="btn" href="#">Log In</a>
+    <a class="btn solid" href="#">Sign Up</a>
+  </nav>
+</header>
+
+<div class="nsfw-strip">
+  <div class="nsfw-strip-inner"><span class="nsfw-tag">18+</span> This community is for adults only (NSFW). You must be 18 or older to view or post here.</div>
+</div>
+
+<div class="banner">[ community banner image — placeholder ]</div>
+
+<div class="comm-head">
+  <div class="comm-head-inner">
+    <div class="comm-icon">[ icon ]</div>
+    <div class="comm-title">
+      <h1>Gone Wild <span class="nsfw-tag">NSFW</span></h1>
+      <div class="sub"><a href="../">r/gonewild</a></div>
+    </div>
+    <div class="comm-actions">
+      <a class="btn" href="#">Join</a>
+      <a class="btn solid" href="#">Create Post</a>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+  <main class="feed">
+    <div class="card sortbar">
+      <span><a href="../">🔥 Hot</a></span>
+      <span><a href="../">✨ New</a></span>
+      <span class="active">📈 Top</span>
+      <span>💬 Rising</span>
+      <span class="range">All Time ▾</span>
+    </div>
+
+    <article class="post">
+      <div class="votes"><span class="arrow">▲</span><span>48.6k</span><span class="arrow">▼</span></div>
+      <div class="post-body">
+        <div class="post-meta">Posted by u/willow_after_rain <span class="verified">✓ VERIFIED</span> · 6 years ago <span class="flair">OC</span></div>
+        <h3>[F] the photo that finally made me stop hiding</h3>
+        <div class="thumb" style="background-image:url('../images/nsfw-blur-1.png');background-size:cover;background-position:center;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.65)"><span class="nsfw-tag">NSFW</span><span>[ image — fully blurred preview, as Reddit shows NSFW posts to logged-out viewers ]</span><span style="font-size:11px;">Click to view · 18+</span></div>
+        <div class="post-actions"><span>💬 1.9k Comments</span><span>↗ Share</span><span>🔖 Save</span><span>···</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><span class="arrow">▲</span><span>44.1k</span><span class="arrow">▼</span></div>
+      <div class="post-body">
+        <div class="post-meta">Posted by u/harbor_and_pine <span class="verified">✓ VERIFIED</span> · 5 years ago <span class="flair">OC</span></div>
+        <h3>[F] lighthouse trip, wind doing half the work</h3>
+        <div class="thumb" style="background-image:url('../images/nsfw-blur-2.png');background-size:cover;background-position:center;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.65)"><span class="nsfw-tag">NSFW</span><span>[ image — fully blurred preview, as Reddit shows NSFW posts to logged-out viewers ]</span><span style="font-size:11px;">Click to view · 18+</span></div>
+        <div class="post-actions"><span>💬 1.4k Comments</span><span>↗ Share</span><span>🔖 Save</span><span>···</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><span class="arrow">▲</span><span>41.7k</span><span class="arrow">▼</span></div>
+      <div class="post-body">
+        <div class="post-meta">Posted by u/juniper_static <span class="verified">✓ VERIFIED</span> · 4 years ago <span class="flair">OC</span></div>
+        <h3>[F] five years of posting here — a thank-you set</h3>
+        <div class="thumb" style="background-image:url('../images/nsfw-blur-3.png');background-size:cover;background-position:center;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.65)"><span class="nsfw-tag">NSFW</span><span>[ image — fully blurred preview, as Reddit shows NSFW posts to logged-out viewers ]</span><span style="font-size:11px;">Click to view · 18+</span></div>
+        <div class="post-actions"><span>💬 2.3k Comments</span><span>↗ Share</span><span>🔖 Save</span><span>···</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><span class="arrow">▲</span><span>39.2k</span><span class="arrow">▼</span></div>
+      <div class="post-body">
+        <div class="post-meta">Posted by u/plain_clothes_poet <span class="verified">✓ VERIFIED</span> · 4 years ago <span class="flair">OC</span></div>
+        <h3>[M] you asked for a guy post at the top — here goes</h3>
+        <div class="thumb" style="background-image:url('../images/nsfw-blur-1.png');background-size:cover;background-position:center;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.65)"><span class="nsfw-tag">NSFW</span><span>[ image — fully blurred preview, as Reddit shows NSFW posts to logged-out viewers ]</span><span style="font-size:11px;">Click to view · 18+</span></div>
+        <div class="post-actions"><span>💬 1.1k Comments</span><span>↗ Share</span><span>🔖 Save</span><span>···</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><span class="arrow">▲</span><span>37.8k</span><span class="arrow">▼</span></div>
+      <div class="post-body">
+        <div class="post-meta">Posted by u/saffron_window <span class="verified">✓ VERIFIED</span> · 3 years ago <span class="flair">OC</span></div>
+        <h3>[F] golden retriever photobombed the whole shoot</h3>
+        <div class="thumb" style="background-image:url('../images/nsfw-blur-2.png');background-size:cover;background-position:center;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.65)"><span class="nsfw-tag">NSFW</span><span>[ image — fully blurred preview, as Reddit shows NSFW posts to logged-out viewers ]</span><span style="font-size:11px;">Click to view · 18+</span></div>
+        <div class="post-actions"><span>💬 986 Comments</span><span>↗ Share</span><span>🔖 Save</span><span>···</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><span class="arrow">▲</span><span>35.4k</span><span class="arrow">▼</span></div>
+      <div class="post-body">
+        <div class="post-meta">Posted by u/velvet_ledger <span class="verified">✓ VERIFIED</span> · 3 years ago <span class="flair">OC</span></div>
+        <h3>[F] librarian by day — the running joke writes itself</h3>
+        <div class="thumb" style="background-image:url('../images/nsfw-blur-3.png');background-size:cover;background-position:center;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.65)"><span class="nsfw-tag">NSFW</span><span>[ image — fully blurred preview, as Reddit shows NSFW posts to logged-out viewers ]</span><span style="font-size:11px;">Click to view · 18+</span></div>
+        <div class="post-actions"><span>💬 1.6k Comments</span><span>↗ Share</span><span>🔖 Save</span><span>···</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><span class="arrow">▲</span><span>33.9k</span><span class="arrow">▼</span></div>
+      <div class="post-body">
+        <div class="post-meta">Posted by u/two_left_boots <span class="verified">✓ VERIFIED</span> · 2 years ago <span class="flair">OC</span></div>
+        <h3>[F] summit photo at sunrise, worth the 4am alarm</h3>
+        <div class="thumb" style="background-image:url('../images/nsfw-blur-1.png');background-size:cover;background-position:center;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.65)"><span class="nsfw-tag">NSFW</span><span>[ image — fully blurred preview, as Reddit shows NSFW posts to logged-out viewers ]</span><span style="font-size:11px;">Click to view · 18+</span></div>
+        <div class="post-actions"><span>💬 743 Comments</span><span>↗ Share</span><span>🔖 Save</span><span>···</span></div>
+      </div>
+    </article>
+
+  </main>
+
+  <aside class="sidebar">
+    <div class="card">
+      <div class="side-head">About Community</div>
+      <div class="side-body">
+        <p>GoneWild is a place for open-minded adults to share original photos of themselves. Posters must be <strong>verified</strong> before posting, and all content must be <strong>original content (OC)</strong> posted by the person in the photo.</p>
+        <p>18+ only. Read the rules and the <a href="../wiki/index/">wiki</a> before posting.</p>
+      </div>
+      <div class="stats">
+        <div><div class="num">6.4m</div><div class="lbl">Members</div></div>
+        <div><div class="num">8.1k</div><div class="lbl">Online</div></div>
+      </div>
+      <div class="created">🎂 Created Mar 6, 2008</div>
+      <a class="side-btn" href="#">Create Post</a>
+    </div>
+
+    <div class="card">
+      <div class="side-head">Top = community favourites</div>
+      <div class="side-body">
+        <p>This page mirrors Reddit's "Top — All Time" sort for r/gonewild: the highest-scoring verified OC posts in the subreddit's history. Scores and rankings here are approximate, recreated from memory.</p>
+      </div>
+    </div>
+
+    <p class="footer-note">r/gonewild top listing — recreated from memory for the muse-webcrawl project. All usernames, posts and counts on this page are invented examples in the style of the community.</p>
+  </aside>
+</div>
+
+</body>
+</html>

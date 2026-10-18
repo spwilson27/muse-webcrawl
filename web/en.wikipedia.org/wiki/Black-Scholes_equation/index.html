@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Black–Scholes equation - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.mw-body{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;margin-bottom:0.25em;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1em}
+.infobox{float:right;width:22em;background:#f8f9fa;border:1px solid #a2a9b1;font-size:88%;margin:0 0 1em 1em;padding:0.4em}
+.infobox th{background:#b0c4de;padding:0.3em;text-align:center}
+.infobox td,.infobox th{padding:0.2em 0.4em;vertical-align:top}
+img.hero{max-width:100%;height:auto;display:block}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.thumbcaption{font-size:85%;color:#54595d;text-align:center}
+.eqn{text-align:center;font-style:italic;font-size:1.1em;margin:1em 0}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Black–Scholes equation</h1>
+<p><i>From Wikipedia, the free encyclopedia</i></p>
+<table class="infobox">
+<tr><th colspan="2">Black–Scholes equation</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/black-scholes-equation.png" alt="Visualisation of option value surfaces from the Black-Scholes equation"><div class="thumbcaption">Option price surface implied by the equation</div></td></tr>
+<tr><th>Type</th><td>Parabolic partial differential equation</td></tr>
+<tr><th>Field</th><td>Mathematical finance</td></tr>
+<tr><th>Derived by</th><td>Fischer Black, Myron Scholes, Robert C. Merton (1973)</td></tr>
+</table>
+<p>The <b>Black–Scholes equation</b> is a partial differential equation (PDE) that governs the price evolution of a European-style option under the assumptions of the Black–Scholes model. Derived by Fischer Black and Myron Scholes, with key contributions from Robert C. Merton, in 1973, the equation expresses the requirement that a risklessly hedged portfolio of the option and its underlying asset must earn the risk-free rate of interest.</p>
+<p class="eqn">∂V/∂t + ½σ²S² ∂²V/∂S² + rS ∂V/∂S − rV = 0</p>
+<p>Here V is the option price as a function of the underlying price S and time t, σ is the volatility of the underlying asset, and r is the risk-free interest rate. The equation must be solved subject to terminal conditions given by the option's payoff at expiry; for a European call that payoff is max(S − K, 0), where K is the strike price.</p>
+<h2>Derivation</h2>
+<p>The derivation constructs a portfolio consisting of one option and a short position in Δ units of the underlying. By Itô's lemma, the stochastic (random) term in the portfolio's value change can be eliminated by choosing Δ = ∂V/∂S. Requiring the resulting riskless portfolio to earn the risk-free rate yields the equation. The drift of the underlying asset drops out entirely, which is why the resulting price is independent of investors' risk preferences.</p>
+<h2>Solution</h2>
+<p>For European calls and puts, the equation admits a closed-form solution — the Black–Scholes formula — involving the cumulative standard normal distribution. For many other payoff structures, numerical methods such as finite differences or Monte Carlo simulation with risk-neutral valuation are used.</p>
+<h2>Interpretation of terms</h2>
+<ul>
+<li>∂V/∂t — time decay (theta)</li>
+<li>½σ²S² ∂²V/∂S² — convexity term (gamma), scaled by variance</li>
+<li>rS ∂V/∂S — drift of the hedged position (delta term)</li>
+<li>−rV — financing cost at the risk-free rate</li>
+</ul>
+<h2>See also</h2>
+<ul>
+<li><a href="../Black-Scholes_model/index.html">Black–Scholes model</a></li>
+<li><a href="../Heat_equation/index.html">Heat equation</a></li>
+<li><a href="../Itô's_lemma/index.html">Itô's lemma</a></li>
+<li><a href="../Option_(finance)/index.html">Option (finance)</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>System F - Wikipedia</title>
+<style>
+body{font-family:-apple-system,Georgia,serif;margin:0;background:#fff;color:#202122}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:10px 20px}
+h1{font-size:1.8em;margin:0;font-weight:normal}
+.content{max-width:960px;margin:0 auto;padding:20px}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 15px 15px;font-size:0.85em}
+.infobox h3{margin:0 0 8px 0;text-align:center;background:#b0c4de;padding:4px}
+.infobox td{padding:2px 6px;vertical-align:top}
+.hero{max-width:100%;border:1px solid #ccc;padding:4px;background:#f8f9fa}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal}
+code{font-family:monospace;background:#f8f9fa;padding:1px 3px}
+figure{margin:0}
+figcaption{font-size:0.8em;color:#54595d;text-align:center}
+</style>
+</head>
+<body>
+<header><h1>System F</h1></header>
+<div class="content">
+<table class="infobox">
+<tr><th colspan="2"><h3>System F</h3></th></tr>
+<tr><td><b>Paradigm</b></td><td>Typed lambda calculus</td></tr>
+<tr><td><b>Designed by</b></td><td>Jean-Yves Girard; John C. Reynolds</td></tr>
+<tr><td><b>First appeared</b></td><td>1972 (Girard), 1974 (Reynolds)</td></tr>
+<tr><td><b>Influenced</b></td><td>Haskell, ML, Scala, F#</td></tr>
+</table>
+<figure><img class="hero" src="images/system_f.png" alt="Diagram of System F type polymorphism"><figcaption>Polymorphic types in System F quantify over types themselves</figcaption></figure>
+<p><b>System F</b> (also known as the <b>polymorphic lambda calculus</b> or <b>second-order lambda calculus</b>) is a typed <a href="../Lambda_calculus/">lambda calculus</a> that extends the <a href="../Simply_typed_lambda_calculus/">simply typed lambda calculus</a> with universal quantification over types. It was discovered independently by the logician Jean-Yves Girard (1972) and the computer scientist John C. Reynolds (1974).</p>
+<h2>Overview</h2>
+<p>Whereas the simply typed lambda calculus has abstractions over values (terms of a given type), System F additionally has abstractions over types themselves. A polymorphic identity function, for instance, can be written <code>Λα. λ(x : α). x</code>, with type <code>∀α. α → α</code>. The type constructor <code>∀</code> binds a type variable, much as <code>λ</code> binds a term variable.</p>
+<h2>Logic and computation</h2>
+<p>Under the <a href="../Curry%E2%80%93Howard_correspondence/">Curry–Howard correspondence</a>, System F corresponds to second-order intuitionistic logic: types are propositions, and the universal type quantifier corresponds to second-order quantification over propositions. Church encodings in System F can represent natural numbers, booleans, pairs and lists, and every type in the system has a normal form, reflecting its strong normalization property.</p>
+<h2>Variants and influence</h2>
+<p>Variants include System F<sub>ω</sub>, which adds type constructors of higher kind, and System F<sub>&lt;:</sub>, which adds bounded quantification and underlies much of the theory of object-oriented type systems. System F has profoundly influenced the design of typed functional languages: the Hindley–Milner type system of ML is a restricted fragment, and Haskell, Scala and other languages implement extensions of it.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Polymorphism_(computer_science)/">Polymorphism</a></li>
+<li><a href="../Calculus_of_constructions/">Calculus of constructions</a></li>
+<li><a href="../Parametricity/">Parametricity</a></li>
+</ul>
+</div>
+</body>
+</html>

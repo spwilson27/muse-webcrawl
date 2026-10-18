@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Attention (machine learning) - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;color:#202122;background:#fff}
+.mw-body{max-width:960px;margin:0 auto;padding:1em 1.5em}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:1.8em;margin-bottom:.2em}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:1.4em;margin-top:1.2em}
+p{font-family:sans-serif;font-size:.95em;line-height:1.6}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.4em .8em;margin:0 0 1em 1em;font-size:.85em;font-family:sans-serif;width:260px}
+.infobox th{background:#eaf3ff;text-align:left;padding:.2em .4em}
+.infobox caption{font-weight:bold;font-size:1.1em;padding:.3em}
+figure.hero{float:right;margin:0 0 1em 1em;clear:right;text-align:center;font-family:sans-serif;font-size:.8em;width:280px}
+figure.hero img{max-width:280px;border:1px solid #a2a9b1}
+code{font-family:monospace;background:#f8f9fa;padding:0 .3em}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Attention (machine learning)</h1>
+<figure class="hero"><img src="images/Attention_(machine_learning).png" alt="Diagram of an attention mechanism showing queries, keys and values weighted across a sequence"><figcaption>Scaled dot-product attention, the core of the Transformer</figcaption></figure>
+<table class="infobox">
+<caption>Attention</caption>
+<tr><th>Field</th><td>Machine learning, deep learning</td></tr>
+<tr><th>Introduced</th><td>2014 (Bahdanau et al.); 2017 (Transformer)</td></tr>
+<tr><th>Core operation</th><td>softmax(QK<sup>T</sup>/√d<sub>k</sub>)V</td></tr>
+<tr><th>Used in</th><td>Transformers, GPT, BERT, neural machine translation</td></tr>
+</table>
+<p>In <a href="../Machine_learning/">machine learning</a>, <b>attention</b> is a mechanism that allows a model to dynamically weight the importance of different parts of its input when producing each element of its output. Originally developed for neural machine translation, attention became the foundational building block of the <a href="../Transformer_(machine_learning_model)/">Transformer</a> architecture and hence of modern large language models.</p>
+<h2>History</h2>
+<p>Bahdanau, Cho, and Bengio introduced attention in 2014 to address the bottleneck of encoding a whole source sentence into a single fixed-length vector in sequence-to-sequence models; their decoder learned to "softly search" the source words relevant to each target word being generated. Luong et al. proposed simpler variants in 2015. In 2017, Vaswani and colleagues at Google published "Attention Is All You Need," showing that a network built entirely from self-attention — the Transformer — outperformed recurrent and convolutional approaches while training faster.</p>
+<h2>Scaled dot-product attention</h2>
+<p>The widely used form computes, for a set of queries Q, keys K, and values V: attention(Q, K, V) = softmax(QK<sup>T</sup>/√d<sub>k</sub>)V. Each query is matched against all keys by dot product, the scores are scaled by the square root of the key dimension, normalised with a softmax into weights, and used to form a weighted sum of the values. In <b>self-attention</b>, queries, keys, and values all derive from the same sequence, letting every position incorporate context from every other. <b>Multi-head attention</b> runs several such operations in parallel with different learned projections, allowing the model to attend to different types of relationships simultaneously.</p>
+<h2>Variants and applications</h2>
+<p>Cross-attention lets a decoder attend to an encoder's output; masked attention prevents positions from attending to later ones in autoregressive generation. Later work introduced efficient variants for long sequences, including sparse attention, FlashAttention (an IO-aware exact implementation), and grouped-query attention. Attention underlies systems including BERT, the GPT family, T5, Vision Transformers, and diffusion models, and attention weights are sometimes visualised as an aid — though a contested one — to model interpretability.</p>
+<h2>See also</h2>
+<p><a href="../Transformer_(machine_learning_model)/">Transformer</a> · <a href="../Large_language_model/">Large language model</a> · <a href="../Neural_machine_translation/">Neural machine translation</a> · <a href="../Softmax_function/">Softmax function</a></p>
+</div>
+</body>
+</html>

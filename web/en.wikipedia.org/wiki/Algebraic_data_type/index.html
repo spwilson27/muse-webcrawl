@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Algebraic data type - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 8px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px; overflow-x: auto; font-size: 13px; }
+.hero { text-align: center; margin: 12px 0; }
+.hero img { max-width: 420px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Algebraic data type</h1>
+<div class="hero"><img src="images/Algebraic_data_type.png" alt="Diagram showing sum and product type constructions combining simpler types into a tree-shaped algebraic data type"></div>
+<p>In <a href="../Computer_programming/">computer programming</a>, especially <a href="../Functional_programming/">functional programming</a> and <a href="../Type_theory/">type theory</a>, an <b>algebraic data type</b> (ADT) is a kind of composite data type, i.e., a data type formed by combining other types. Two common classes of algebraic types are <i>product types</i> (such as tuples and records) and <i>sum types</i> (also called tagged or disjoint unions, or variant types).</p>
+<p>The values of a product type typically contain several values, called fields. All values of that type have the same combination of field types. The set of all possible values of a product type is the Cartesian product of the sets of all possible values of its field types. The values of a sum type are typically grouped into several classes, called variants. A value of a variant type is usually created with a quasi-functional entity called a <i>constructor</i>. Each variant has its own constructor, which takes a specified number of arguments with specified types. The set of all possible values of a sum type is the disjoint union of the sets of all possible values of its variants.</p>
+<h2>Examples</h2>
+<p>One of the most common examples of an algebraic data type is the singly linked list. In <a href="../Haskell/">Haskell</a>:</p>
+<pre>data List a = Nil | Cons a (List a)</pre>
+<p>Here <code>Nil</code> and <code>Cons</code> are constructors of the <code>List</code> type. Algebraic data types are used with <a href="../Pattern_matching/">pattern matching</a>, which allows programs to deconstruct values in a type-safe way:</p>
+<pre>sum :: List Int -&gt; Int
+sum Nil = 0
+sum (Cons x xs) = x + sum xs</pre>
+<h2>History and usage</h2>
+<p>Algebraic data types were introduced in the Hope programming language in the 1970s and became a hallmark of the ML family of languages and Haskell. Variants of the idea appear in many modern languages: enums with associated values in <a href="../Rust_(programming_language)/">Rust</a> and <a href="../Swift_(programming_language)/">Swift</a>, sealed classes in Scala and Kotlin, and discriminated unions in <a href="../F_Sharp_(programming_language)/">F#</a> and TypeScript.</p>
+<p>A <i>generalised algebraic data type</i> (GADT) relaxes the requirement that all constructors return the same type, allowing type parameters to vary by constructor and giving the type system additional expressive power.</p>
+<p><i>See also:</i> <a href="../Data_type/">Data type</a>, <a href="../Tagged_union/">Tagged union</a>, <a href="../Type_system/">Type system</a></p>
+</div>
+</body>
+</html>

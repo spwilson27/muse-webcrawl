@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gonewild</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: verdana, arial, helvetica, sans-serif; background: #fff; color: #222; font-size: 12px; }
+  a { color: #369; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  /* sr header */
+  #sr-header-area { background: #f0f0f0; border-bottom: 1px solid #808080; font-size: 9px; text-transform: uppercase; padding: 2px 6px; color: #333; white-space: nowrap; overflow: hidden; }
+  #sr-header-area a { color: #333; margin-right: 6px; }
+  /* header */
+  #header { background: #cee3f8; border-bottom: 1px solid #5f99cf; position: relative; }
+  #header-top { display: flex; align-items: flex-end; padding: 6px 10px 0; gap: 14px; }
+  .reddit-logo { font-size: 22px; font-weight: bold; color: #222; }
+  .reddit-logo .alien { display: inline-flex; width: 30px; height: 30px; border-radius: 50%; background: #fff; border: 1px solid #c7d6e8; align-items: center; justify-content: center; font-size: 9px; font-weight: normal; color: #888; vertical-align: middle; margin-right: 4px; }
+  .pagename { font-size: 18px; font-weight: bold; font-variant: small-caps; margin-bottom: 4px; }
+  .pagename a { color: #222; }
+  .nsfw-stamp { color: #d10023; border: 1px solid #d10023; border-radius: 3px; font-size: 10px; padding: 0 3px; font-variant: normal; margin-left: 6px; vertical-align: middle; }
+  .tabmenu { display: flex; gap: 2px; list-style: none; margin-left: 8px; }
+  .tabmenu li a { background: #eff7ff; padding: 2px 8px; font-weight: bold; color: #369; border: 1px solid #5f99cf; border-bottom: none; }
+  .tabmenu li.selected a { background: #fff; color: #ff4500; border-bottom: 1px solid #fff; }
+  #header-bottom-right { position: absolute; right: 10px; bottom: 6px; background: #eff7ff; padding: 3px 8px; border-radius: 4px 4px 0 0; font-size: 11px; }
+  /* content */
+  .content { display: flex; gap: 16px; padding: 10px; align-items: flex-start; }
+  .listing { flex: 1 1 auto; min-width: 0; }
+  .thing { display: flex; gap: 6px; margin-bottom: 12px; }
+  .rank { color: #c6c6c6; font-size: 14px; width: 22px; text-align: right; padding-top: 6px; }
+  .midcol { width: 34px; text-align: center; }
+  .midcol .arrow { font-size: 13px; color: #b6b6b6; cursor: pointer; line-height: 1.1; }
+  .midcol .arrow.upmod { color: #ff8b60; }
+  .midcol .score { font-weight: bold; font-size: 12px; color: #666; padding: 1px 0; }
+  .thumb { width: 70px; height: 52px; flex: 0 0 70px; background: #f5f5f5; border: 1px solid #d8d8d8; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 8px; color: #999; text-align: center; }
+  .thumb .t-nsfw { color: #d10023; font-weight: bold; font-size: 9px; }
+  .entry { flex: 1; min-width: 0; }
+  .entry .title { font-size: 14px; color: #0000ff; }
+  .entry .title:visited { color: #551a8b; }
+  .entry .domain { font-size: 10px; color: #888; }
+  .tagline { font-size: 10px; color: #888; margin: 2px 0; }
+  .tagline .verified { color: #228822; font-weight: bold; }
+  .tagline .flair { background: #f5f5f5; border: 1px solid #ddd; border-radius: 2px; padding: 0 3px; color: #555; }
+  .buttons { list-style: none; display: flex; gap: 10px; font-size: 10px; font-weight: bold; }
+  .buttons a { color: #888; }
+  .buttons a:hover { text-decoration: underline; }
+  /* side */
+  .side { flex: 0 0 300px; }
+  .side .box { border: 1px solid #5f99cf; margin-bottom: 14px; }
+  .side .box-title { background: #cee3f8; padding: 4px 8px; font-weight: bold; font-size: 12px; }
+  .side .box-body { padding: 8px; font-size: 11px; line-height: 1.5; }
+  .side input[type=text] { width: 100%; border: 1px solid #999; padding: 4px; font-size: 12px; margin-bottom: 6px; }
+  .morelink { background: #cee3f8; text-align: center; font-weight: bold; font-size: 14px; padding: 6px; border: 1px solid #5f99cf; margin-bottom: 14px; }
+  .morelink a { color: #369; display: block; }
+  .morelink:hover { background: #5f99cf; }
+  .morelink:hover a { color: #fff; }
+  .subscribers { font-size: 11px; }
+  .subscribers .number { font-size: 15px; font-weight: bold; }
+  .rules-old { list-style: decimal; margin-left: 20px; }
+  .rules-old li { margin-bottom: 5px; }
+  .login-form input { width: 100%; border: 1px solid #999; padding: 4px; margin-bottom: 6px; font-size: 12px; }
+  .login-form button { background: #fcfcfc; border: 1px solid #999; padding: 3px 10px; font-size: 11px; }
+  .footer { text-align: center; color: #888; font-size: 10px; padding: 14px 10px 24px; line-height: 1.7; }
+  .age-gate { background: #fdf3f3; border: 1px solid #d10023; padding: 8px; font-size: 11px; margin-bottom: 14px; line-height: 1.5; }
+  .age-gate strong { color: #d10023; }
+</style>
+</head>
+<body>
+
+<div id="sr-header-area">
+  MY SUBREDDITS ▾ &nbsp; <a href="#">POPULAR</a>-<a href="#">ALL</a>-<a href="#">RANDOM</a>-<a href="#">ASKREDDIT</a>-<a href="#">PICS</a>-<a href="#">FUNNY</a>-<a href="#">WORLDNEWS</a>-<a href="#">SCIENCE</a>-<a href="#">GAMING</a>-<a href="#">MOVIES</a>-<a href="#">MUSIC</a>-<a href="#">AWW</a>-<a href="#">TODAYILEARNED</a>-<a href="#">EDIT »</a>
+</div>
+
+<div id="header">
+  <div id="header-top">
+    <span class="reddit-logo"><span class="alien">[ alien ]</span>reddit</span>
+    <span class="pagename"><a href="#">gonewild</a><span class="nsfw-stamp">NSFW 18+</span></span>
+    <ul class="tabmenu">
+      <li class="selected"><a href="#">hot</a></li>
+      <li><a href="#">new</a></li>
+      <li><a href="#">rising</a></li>
+      <li><a href="#">controversial</a></li>
+      <li><a href="https://www.reddit.com/r/gonewild/top/">top</a></li>
+      <li><a href="#">gilded</a></li>
+      <li><a href="https://www.reddit.com/r/gonewild/wiki/index/">wiki</a></li>
+      <li><a href="#">promoted</a></li>
+    </ul>
+  </div>
+  <div id="header-bottom-right">want to join? <a href="#">log in</a> or <a href="#">sign up</a> in seconds</div>
+</div>
+
+<div class="content">
+  <div class="listing" role="main">
+
+    <div class="thing">
+      <span class="rank">1</span>
+      <div class="midcol"><div class="arrow upmod">▲</div><div class="score">4.2k</div><div class="arrow">▼</div></div>
+      <div class="thumb"><span class="t-nsfw">nsfw</span>[ thumbnail ]</div>
+      <div class="entry">
+        <a class="title" href="#">[F] lazy sunday morning light through the curtains</a> <span class="domain">(i.redd.it)</span>
+        <p class="tagline">submitted 3 hours ago by <a href="#">quiet_harborlight</a> <span class="verified">✓ verified</span> <span class="flair">OC</span></p>
+        <ul class="buttons"><li><a href="#">212 comments</a></li><li><a href="#">share</a></li><li><a href="#">save</a></li><li><a href="#">hide</a></li><li><a href="#">report</a></li></ul>
+      </div>
+    </div>
+
+    <div class="thing">
+      <span class="rank">2</span>
+      <div class="midcol"><div class="arrow upmod">▲</div><div class="score">3.8k</div><div class="arrow">▼</div></div>
+      <div class="thumb"><span class="t-nsfw">nsfw</span>[ thumbnail ]</div>
+      <div class="entry">
+        <a class="title" href="#">[F] first post here — road trip stop at golden hour</a> <span class="domain">(i.redd.it)</span>
+        <p class="tagline">submitted 5 hours ago by <a href="#">northbound_june</a> <span class="verified">✓ verified</span> <span class="flair">OC</span></p>
+        <ul class="buttons"><li><a href="#">348 comments</a></li><li><a href="#">share</a></li><li><a href="#">save</a></li><li><a href="#">hide</a></li><li><a href="#">report</a></li></ul>
+      </div>
+    </div>
+
+    <div class="thing">
+      <span class="rank">3</span>
+      <div class="midcol"><div class="arrow upmod">▲</div><div class="score">2.9k</div><div class="arrow">▼</div></div>
+      <div class="thumb"><span class="t-nsfw">nsfw</span>[ thumbnail ]</div>
+      <div class="entry">
+        <a class="title" href="#">[F] post-hike, cabin window, zero filters</a> <span class="domain">(i.redd.it)</span>
+        <p class="tagline">submitted 7 hours ago by <a href="#">fieldnotes_and_tea</a> <span class="verified">✓ verified</span> <span class="flair">OC</span></p>
+        <ul class="buttons"><li><a href="#">156 comments</a></li><li><a href="#">share</a></li><li><a href="#">save</a></li><li><a href="#">hide</a></li><li><a href="#">report</a></li></ul>
+      </div>
+    </div>
+
+    <div class="thing">
+      <span class="rank">4</span>
+      <div class="midcol"><div class="arrow upmod">▲</div><div class="score">2.1k</div><div class="arrow">▼</div></div>
+      <div class="thumb"><span class="t-nsfw">nsfw</span>[ thumbnail ]</div>
+      <div class="entry">
+        <a class="title" href="#">[M] gym progress check-in, month six</a> <span class="domain">(i.redd.it)</span>
+        <p class="tagline">submitted 9 hours ago by <a href="#">steadywestline</a> <span class="verified">✓ verified</span> <span class="flair">OC</span></p>
+        <ul class="buttons"><li><a href="#">98 comments</a></li><li><a href="#">share</a></li><li><a href="#">save</a></li><li><a href="#">hide</a></li><li><a href="#">report</a></li></ul>
+      </div>
+    </div>
+
+    <div class="thing">
+      <span class="rank">5</span>
+      <div class="midcol"><div class="arrow upmod">▲</div><div class="score">1.7k</div><div class="arrow">▼</div></div>
+      <div class="thumb"><span class="t-nsfw">nsfw</span>[ thumbnail ]</div>
+      <div class="entry">
+        <a class="title" href="#">[F] red dress, rooftop, city lights behind me</a> <span class="domain">(i.redd.it)</span>
+        <p class="tagline">submitted 11 hours ago by <a href="#">paperlantern_co</a> <span class="verified">✓ verified</span> <span class="flair">OC</span></p>
+        <ul class="buttons"><li><a href="#">264 comments</a></li><li><a href="#">share</a></li><li><a href="#">save</a></li><li><a href="#">hide</a></li><li><a href="#">report</a></li></ul>
+      </div>
+    </div>
+
+    <div class="thing">
+      <span class="rank">6</span>
+      <div class="midcol"><div class="arrow upmod">▲</div><div class="score">1.3k</div><div class="arrow">▼</div></div>
+      <div class="thumb"><span class="t-nsfw">nsfw</span>[ thumbnail ]</div>
+      <div class="entry">
+        <a class="title" href="#">[F] rainy day in, favourite sweater, book stack</a> <span class="domain">(i.redd.it)</span>
+        <p class="tagline">submitted 14 hours ago by <a href="#">mossandmirror</a> <span class="verified">✓ verified</span> <span class="flair">OC</span></p>
+        <ul class="buttons"><li><a href="#">87 comments</a></li><li><a href="#">share</a></li><li><a href="#">save</a></li><li><a href="#">hide</a></li><li><a href="#">report</a></li></ul>
+      </div>
+    </div>
+
+    <div class="thing">
+      <span class="rank">7</span>
+      <div class="midcol"><div class="arrow upmod">▲</div><div class="score">986</div><div class="arrow">▼</div></div>
+      <div class="thumb"><span class="t-nsfw">nsfw</span>[ thumbnail ]</div>
+      <div class="entry">
+        <a class="title" href="#">[M] beach house balcony, early morning</a> <span class="domain">(i.redd.it)</span>
+        <p class="tagline">submitted 18 hours ago by <a href="#">copperline_sam</a> <span class="verified">✓ verified</span> <span class="flair">OC</span></p>
+        <ul class="buttons"><li><a href="#">64 comments</a></li><li><a href="#">share</a></li><li><a href="#">save</a></li><li><a href="#">hide</a></li><li><a href="#">report</a></li></ul>
+      </div>
+    </div>
+
+    <p style="font-size:11px; color:#888; margin-top:6px;">view more: <a href="#">next ›</a></p>
+  </div>
+
+  <div class="side">
+    <div class="box">
+      <div class="box-body">
+        <form class="login-form">
+          <input type="text" placeholder="username">
+          <input type="text" placeholder="password">
+          <label style="font-size:10px;"><input type="checkbox" checked> remember me</label>
+          <a href="#" style="font-size:10px; float:right;">reset password</a>
+          <div style="margin-top:6px;"><button type="button">login</button></div>
+        </form>
+      </div>
+    </div>
+
+    <div class="age-gate"><strong>18+ only.</strong> This subreddit is for adults. All posters are verified adults posting their own original content. If you are under 18, do not browse or post here.</div>
+
+    <div class="box">
+      <div class="box-body">
+        <input type="text" placeholder="search">
+        <div class="subscribers"><span class="number">6,412,208</span> readers<br><span class="number" style="font-size:12px;">~8,100</span> users here now</div>
+        <p style="margin-top:6px;">a community for 17 years</p>
+      </div>
+    </div>
+
+    <div class="morelink"><a href="#">Submit a new link</a></div>
+    <div class="morelink"><a href="#">Submit a new text post</a></div>
+
+    <div class="box">
+      <div class="box-title">gonewild — rules</div>
+      <div class="box-body">
+        <ol class="rules-old">
+          <li><strong>OC only</strong> — you must be the person in the photo.</li>
+          <li><strong>Verification required</strong> before posting — handwritten sign with username, subreddit and date, sent via modmail. See the <a href="https://www.reddit.com/r/gonewild/wiki/index/">wiki</a>.</li>
+          <li><strong>Title must start with a gender tag</strong>: [F], [M], [F/M], [T] …</li>
+          <li><strong>No selling or promotion</strong> — no paid-site links or watermarks.</li>
+          <li><strong>Be respectful</strong> — no harassment, no unsolicited PMs.</li>
+          <li><strong>No identifying info</strong> — no names, places, workplaces.</li>
+          <li><strong>18+ only.</strong> Zero tolerance.</li>
+        </ol>
+        <p style="margin-top:6px;">Full rules, verification guide and FAQ: <a href="https://www.reddit.com/r/gonewild/wiki/index/">the wiki</a>.</p>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="box-title">moderators</div>
+      <div class="box-body">
+        <p><a href="#">message the moderators</a></p>
+        <ul style="list-style:none; margin-top:4px;">
+          <li><a href="#">gw_modteam_lead</a></li>
+          <li><a href="#">verification_desk</a></li>
+          <li><a href="#">rules_and_filter</a></li>
+          <li><a href="#">nightshift_mod</a></li>
+          <li><a href="#">GoneWildAutoMod</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  Use of this site constitutes acceptance of our User Agreement and Privacy Policy. © 2026 reddit inc. All rights reserved.<br>
+  REDDIT and the ALIEN Logo are registered trademarks of reddit inc.<br>
+  <span style="color:#aaa;">old.reddit.com/r/gonewild — recreated from memory for the muse-webcrawl project. All usernames, posts and counts are invented examples.</span>
+</div>
+
+</body>
+</html>

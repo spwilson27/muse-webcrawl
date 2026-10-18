@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>r/programming - Programming</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: Verdana, Geneva, sans-serif; background:#dae0e6; color:#1a1a1b; }
+  .topnav { background:#fff; border-bottom:1px solid #ccc; padding:6px 16px; display:flex; align-items:center; gap:16px; position:sticky; top:0; }
+  .logo { color:#ff4500; font-weight:bold; font-size:20px; text-decoration:none; }
+  .logo span { color:#1a1a1b; }
+  .search { flex:1; max-width:560px; }
+  .search input { width:100%; padding:7px 12px; border:1px solid #ccc; border-radius:20px; background:#f6f7f8; }
+  .navbtns { margin-left:auto; display:flex; gap:8px; }
+  .btn { padding:6px 18px; border-radius:20px; font-weight:bold; font-size:13px; text-decoration:none; }
+  .btn-outline { border:1px solid #0079d3; color:#0079d3; }
+  .btn-solid { background:#0079d3; color:#fff; }
+  .banner { background:#0d2137; height:110px; }
+  .banner img { width:100%; height:100%; object-fit:cover; display:block; }
+  .subheader { background:#fff; padding:12px 20px; display:flex; align-items:center; gap:14px; border-bottom:1px solid #ccc; }
+  .subicon { width:64px; height:64px; border-radius:50%; background:#0d2137; color:#fff; display:flex; align-items:center; justify-content:center; font-size:26px; font-weight:bold; border:4px solid #fff; margin-top:-30px; }
+  .subheader h1 { font-size:26px; }
+  .subheader .rname { color:#7c7c7c; font-size:14px; }
+  .joinbtn { margin-left:auto; background:#0079d3; color:#fff; padding:8px 26px; border-radius:20px; font-weight:bold; text-decoration:none; }
+  .layout { max-width:1000px; margin:20px auto; display:flex; gap:20px; padding:0 12px; }
+  .feed { flex:1; }
+  .sortbar { background:#fff; border:1px solid #ccc; border-radius:4px; padding:10px 14px; margin-bottom:14px; font-size:13px; font-weight:bold; }
+  .sortbar a { color:#0079d3; text-decoration:none; margin-right:14px; }
+  .post { background:#fff; border:1px solid #ccc; border-radius:4px; margin-bottom:12px; display:flex; }
+  .post:hover { border-color:#898989; }
+  .votes { background:#f8f9fa; width:44px; text-align:center; padding:8px 0; border-radius:4px 0 0 4px; }
+  .votes .arrow { font-size:16px; color:#878a8c; cursor:pointer; }
+  .votes .up:hover { color:#ff4500; } .votes .down:hover { color:#7193ff; }
+  .votes .score { font-weight:bold; font-size:13px; margin:3px 0; }
+  .postbody { padding:8px 12px; flex:1; }
+  .postmeta { font-size:12px; color:#787c7e; margin-bottom:4px; }
+  .postmeta .flair { background:#edeff1; border-radius:10px; padding:1px 8px; color:#1a1a1b; font-weight:bold; font-size:11px; }
+  .posttitle { font-size:17px; font-weight:bold; color:#1a1a1b; text-decoration:none; line-height:1.35; }
+  .posttext { font-size:14px; color:#1a1a1b; margin-top:6px; line-height:1.45; }
+  .postactions { margin-top:8px; font-size:12px; color:#878a8c; font-weight:bold; }
+  .postactions span { margin-right:16px; }
+  .sidebar { width:312px; flex-shrink:0; }
+  .card { background:#fff; border:1px solid #ccc; border-radius:4px; margin-bottom:16px; overflow:hidden; }
+  .cardhead { background:#0d2137; color:#fff; padding:10px 12px; font-size:13px; font-weight:bold; text-transform:uppercase; letter-spacing:.4px; }
+  .cardbody { padding:12px; font-size:14px; line-height:1.5; }
+  .stats { display:flex; gap:24px; margin-top:10px; }
+  .stats .num { font-size:16px; font-weight:bold; }
+  .stats .lbl { font-size:12px; color:#7c7c7c; }
+  .cardbody ol, .cardbody ul { margin-left:18px; }
+  .cardbody li { margin-bottom:6px; font-size:13px; }
+  .cardbody a { color:#0079d3; text-decoration:none; }
+  .footer-note { text-align:center; color:#7c7c7c; font-size:12px; padding:18px; }
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a class="logo" href="../../">reddit<span>.</span></a>
+  <div class="search"><input type="text" placeholder="Search Reddit"></div>
+  <div class="navbtns"><a class="btn btn-outline" href="#">Log In</a><a class="btn btn-solid" href="#">Sign Up</a></div>
+</nav>
+
+<div class="banner"><img src="images/programming.png" alt="r/programming banner - code on a dark editor illustration"></div>
+<div class="subheader">
+  <div class="subicon">{;}</div>
+  <div>
+    <h1>Programming</h1>
+    <div class="rname">r/programming</div>
+  </div>
+  <a class="joinbtn" href="#">Join</a>
+</div>
+
+<div class="layout">
+  <main class="feed">
+    <div class="sortbar"><a href="#">🔥 Hot</a><a href="#">✨ New</a><a href="#">🏆 Top</a><a href="#">📈 Rising</a></div>
+
+    <article class="post">
+      <div class="votes"><div class="arrow up">⬆</div><div class="score">4,213</div><div class="arrow down">⬇</div></div>
+      <div class="postbody">
+        <div class="postmeta"><span class="flair">Article</span> Posted by u/systems_scribe 3 hours ago</div>
+        <a class="posttitle" href="#">How a single misplaced cache header took down a payment pipeline for six hours</a>
+        <p class="posttext">A blameless postmortem from an engineering blog: a CDN cached an error response, the health checker trusted it, and the failover never fired. Great read on designing for the failure you didn't imagine.</p>
+        <div class="postactions"><span>💬 486 Comments</span><span>↗ Share</span><span>🏅 Awards</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><div class="arrow up">⬆</div><div class="score">3,672</div><div class="arrow down">⬇</div></div>
+      <div class="postbody">
+        <div class="postmeta"><span class="flair">Discussion</span> Posted by u/legacy_code_larry 6 hours ago</div>
+        <a class="posttitle" href="#">The best code I ever wrote was a deletion: removing 40,000 lines of an unused framework</a>
+        <p class="posttext">We replaced a homegrown everything-framework with the standard library and a few small packages. Build times halved, onboarding got easier, and nothing of value was lost.</p>
+        <div class="postactions"><span>💬 912 Comments</span><span>↗ Share</span><span>🏅 Awards</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><div class="arrow up">⬆</div><div class="score">2,918</div><div class="arrow down">⬇</div></div>
+      <div class="postbody">
+        <div class="postmeta"><span class="flair">Research</span> Posted by u/paper_trail_pam 9 hours ago</div>
+        <a class="posttitle" href="#">New paper: formal verification of a small production database kernel finds two real bugs</a>
+        <p class="posttext">The team proved crash-safety properties for their storage engine and the proof process itself surfaced bugs testing never caught. The code and proofs are open.</p>
+        <div class="postactions"><span>💬 274 Comments</span><span>↗ Share</span><span>🏅 Awards</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><div class="arrow up">⬆</div><div class="score">2,204</div><div class="arrow down">⬇</div></div>
+      <div class="postbody">
+        <div class="postmeta"><span class="flair">Blog</span> Posted by u/zero_alloc_zoe 12 hours ago</div>
+        <a class="posttitle" href="#">Your profiler is lying to you: a field guide to measurement bias in benchmarks</a>
+        <p class="posttext">Observer effects, dead-code elimination, and warm-up costs — why the microbenchmark you ran this morning probably measured the wrong thing, and how to fix your methodology.</p>
+        <div class="postactions"><span>💬 391 Comments</span><span>↗ Share</span><span>🏅 Awards</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><div class="arrow up">⬆</div><div class="score">1,587</div><div class="arrow down">⬇</div></div>
+      <div class="postbody">
+        <div class="postmeta"><span class="flair">Release</span> Posted by u/release_notes_ron 16 hours ago</div>
+        <a class="posttitle" href="#">A popular open-source parser library ships 3.0 with a stable API promise and 2x throughput</a>
+        <p class="posttext">Release notes highlight a rewritten tokenizer, fuzzing in CI, and a commitment to semantic versioning after years of breaking changes. Migration guide linked inside.</p>
+        <div class="postactions"><span>💬 208 Comments</span><span>↗ Share</span><span>🏅 Awards</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><div class="arrow up">⬆</div><div class="score">1,129</div><div class="arrow down">⬇</div></div>
+      <div class="postbody">
+        <div class="postmeta"><span class="flair">Opinion</span> Posted by u/plaintext_priya 20 hours ago</div>
+        <a class="posttitle" href="#">Monorepos won the tooling war, but the interesting question is what we lost</a>
+        <p class="posttext">Atomic commits and shared refactoring are wonderful. The cost is that "the build" becomes a distributed system of its own. A balanced take from someone who has run both.</p>
+        <div class="postactions"><span>💬 657 Comments</span><span>↗ Share</span><span>🏅 Awards</span></div>
+      </div>
+    </article>
+  </main>
+
+  <aside class="sidebar">
+    <div class="card">
+      <div class="cardhead">About Community</div>
+      <div class="cardbody">
+        A subreddit for programming articles, papers and discussion. Note: this is not a help community — questions about how to fix your code belong in r/learnprogramming.
+        <div class="stats">
+          <div><div class="num">6.5M</div><div class="lbl">Members</div></div>
+          <div><div class="num">3.1K</div><div class="lbl">Online</div></div>
+        </div>
+        <p style="margin-top:10px; font-size:12px; color:#7c7c7c;">Created Jan 31, 2008</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardhead">r/programming Rules</div>
+      <div class="cardbody">
+        <ol>
+          <li>Content must be about programming</li>
+          <li>No help requests, homework or career questions</li>
+          <li>No low-quality or off-topic submissions</li>
+          <li>Don't editorialize link titles</li>
+          <li>No surveys or self-promotion without mod approval</li>
+          <li>Be civil in discussion</li>
+        </ol>
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardhead">Related Communities</div>
+      <div class="cardbody">
+        <ul>
+          <li><a href="../learnprogramming/">r/learnprogramming</a></li>
+          <li><a href="../wallstreetbets/">r/wallstreetbets</a></li>
+          <li><a href="../interestingasfuck/">r/interestingasfuck</a></li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+</div>
+<p class="footer-note">r/programming — recreated from memory. All posts and usernames are invented examples.</p>
+</body>
+</html>

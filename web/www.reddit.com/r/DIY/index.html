@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>r/DIY - Do It Yourself</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: Verdana, Geneva, sans-serif; background:#dae0e6; color:#1a1a1b; }
+  .topnav { background:#fff; border-bottom:1px solid #ccc; padding:6px 16px; display:flex; align-items:center; gap:16px; position:sticky; top:0; }
+  .logo { color:#ff4500; font-weight:bold; font-size:20px; text-decoration:none; }
+  .logo span { color:#1a1a1b; }
+  .search { flex:1; max-width:560px; }
+  .search input { width:100%; padding:7px 12px; border:1px solid #ccc; border-radius:20px; background:#f6f7f8; }
+  .navbtns { margin-left:auto; display:flex; gap:8px; }
+  .btn { padding:6px 18px; border-radius:20px; font-weight:bold; font-size:13px; text-decoration:none; }
+  .btn-outline { border:1px solid #0079d3; color:#0079d3; }
+  .btn-solid { background:#0079d3; color:#fff; }
+  .banner { background:#d84315; height:110px; }
+  .banner img { width:100%; height:100%; object-fit:cover; display:block; }
+  .subheader { background:#fff; padding:12px 20px; display:flex; align-items:center; gap:14px; border-bottom:1px solid #ccc; }
+  .subicon { width:64px; height:64px; border-radius:50%; background:#d84315; color:#fff; display:flex; align-items:center; justify-content:center; font-size:30px; font-weight:bold; border:4px solid #fff; margin-top:-30px; }
+  .subheader h1 { font-size:26px; }
+  .subheader .rname { color:#7c7c7c; font-size:14px; }
+  .joinbtn { margin-left:auto; background:#0079d3; color:#fff; padding:8px 26px; border-radius:20px; font-weight:bold; text-decoration:none; }
+  .layout { max-width:1000px; margin:20px auto; display:flex; gap:20px; padding:0 12px; }
+  .feed { flex:1; }
+  .sortbar { background:#fff; border:1px solid #ccc; border-radius:4px; padding:10px 14px; margin-bottom:14px; font-size:13px; font-weight:bold; }
+  .sortbar a { color:#0079d3; text-decoration:none; margin-right:14px; }
+  .post { background:#fff; border:1px solid #ccc; border-radius:4px; margin-bottom:12px; display:flex; }
+  .post:hover { border-color:#898989; }
+  .votes { background:#f8f9fa; width:44px; text-align:center; padding:8px 0; border-radius:4px 0 0 4px; }
+  .votes .arrow { font-size:16px; color:#878a8c; cursor:pointer; }
+  .votes .up:hover { color:#ff4500; } .votes .down:hover { color:#7193ff; }
+  .votes .score { font-weight:bold; font-size:13px; margin:3px 0; }
+  .postbody { padding:8px 12px; flex:1; }
+  .postmeta { font-size:12px; color:#787c7e; margin-bottom:4px; }
+  .postmeta .flair { background:#edeff1; border-radius:10px; padding:1px 8px; color:#1a1a1b; font-weight:bold; font-size:11px; }
+  .posttitle { font-size:17px; font-weight:bold; color:#1a1a1b; text-decoration:none; line-height:1.35; }
+  .posttext { font-size:14px; color:#1a1a1b; margin-top:6px; line-height:1.45; }
+  .postactions { margin-top:8px; font-size:12px; color:#878a8c; font-weight:bold; }
+  .postactions span { margin-right:16px; }
+  .hero { margin:10px 12px 4px; background:#edeff1; border-radius:4px; min-height:140px; display:flex; align-items:center; justify-content:center; font-size:40px; }
+  .sidebar { width:312px; flex-shrink:0; }
+  .card { background:#fff; border:1px solid #ccc; border-radius:4px; margin-bottom:16px; overflow:hidden; }
+  .cardhead { background:#d84315; color:#fff; padding:10px 12px; font-size:13px; font-weight:bold; text-transform:uppercase; letter-spacing:.4px; }
+  .cardbody { padding:12px; font-size:14px; line-height:1.5; }
+  .stats { display:flex; gap:24px; margin-top:10px; }
+  .stats .num { font-size:16px; font-weight:bold; }
+  .stats .lbl { font-size:12px; color:#7c7c7c; }
+  .cardbody ol, .cardbody ul { margin-left:18px; }
+  .cardbody li { margin-bottom:6px; font-size:13px; }
+  .cardbody a { color:#0079d3; text-decoration:none; }
+  .footer-note { text-align:center; color:#7c7c7c; font-size:12px; padding:18px; }
+</style>
+</head>
+<body>
+<nav class="topnav">
+  <a class="logo" href="../../">reddit<span>.</span></a>
+  <div class="search"><input type="text" placeholder="Search Reddit"></div>
+  <div class="navbtns"><a class="btn btn-outline" href="#">Log In</a><a class="btn btn-solid" href="#">Sign Up</a></div>
+</nav>
+
+<div class="banner"><img src="images/diy.png" alt="r/DIY banner - workbench and tools illustration"></div>
+<div class="subheader">
+  <div class="subicon">🔨</div>
+  <div>
+    <h1>DIY</h1>
+    <div class="rname">r/DIY</div>
+  </div>
+  <a class="joinbtn" href="#">Join</a>
+</div>
+
+<div class="layout">
+  <main class="feed">
+    <div class="sortbar"><a href="#">🔥 Hot</a><a href="#">✨ New</a><a href="#">🏆 Top</a><a href="#">📈 Rising</a></div>
+
+    <article class="post">
+      <div class="votes"><div class="arrow up">⬆</div><div class="score">18.4k</div><div class="arrow down">⬇</div></div>
+      <div class="postbody">
+        <div class="postmeta"><span class="flair">Finished Project</span> Posted by u/weekend_woodworker 4 hours ago</div>
+        <a class="posttitle" href="#">I turned a damp, unusable basement corner into a reading nook with a built-in bench — start to finish album</a>
+        <div class="hero">🛋️</div>
+        <p class="posttext">Framing, foam insulation, a vapor barrier lesson I learned the hard way, and bench storage my kids immediately claimed. Materials list and total cost in the album captions. Ask me anything about the moisture part.</p>
+        <div class="postactions"><span>💬 743 Comments</span><span>↗ Share</span><span>🏅 Awards</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><div class="arrow up">⬆</div><div class="score">13.7k</div><div class="arrow down">⬇</div></div>
+      <div class="postbody">
+        <div class="postmeta"><span class="flair">Help</span> Posted by u/first_time_tiler 6 hours ago</div>
+        <a class="posttitle" href="#">Bathroom floor tiles keep cracking in the same spot — is this a subfloor problem before I re-tile a third time?</a>
+        <p class="posttext">Photos of the joist spacing and the deflection I'm seeing inside. Consensus in the thread: yes, it's flex, and tiling over it again will crack again. Bracing plan forming in the comments.</p>
+        <div class="postactions"><span>💬 512 Comments</span><span>↗ Share</span><span>🏅 Awards</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><div class="arrow up">⬆</div><div class="score">10.9k</div><div class="arrow down">⬇</div></div>
+      <div class="postbody">
+        <div class="postmeta"><span class="flair">Finished Project</span> Posted by u/pallet_queen 9 hours ago</div>
+        <a class="posttitle" href="#">Built a kitchen island from reclaimed gym flooring — the lane lines are still in the wood</a>
+        <div class="hero">🍳</div>
+        <p class="posttext">Salvaged maple from a demolished school gym, sanded just enough to keep the court markings under the finish. The free-throw line runs right through the breakfast bar. Full build album inside.</p>
+        <div class="postactions"><span>💬 608 Comments</span><span>↗ Share</span><span>🏅 Awards</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><div class="arrow up">⬆</div><div class="score">8.2k</div><div class="arrow down">⬇</div></div>
+      <div class="postbody">
+        <div class="postmeta"><span class="flair">Guide</span> Posted by u/caulk_and_talk 12 hours ago</div>
+        <a class="posttitle" href="#">A beginner's guide to drywall patches that don't telegraph through the paint six months later</a>
+        <p class="posttext">Feathering distance, primer choice, and why the "invisible" patch glows under raking light. Written after my third attempt at the same hallway dent. Includes the lighting trick for checking your work.</p>
+        <div class="postactions"><span>💬 394 Comments</span><span>↗ Share</span><span>🏅 Awards</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><div class="arrow up">⬆</div><div class="score">6.5k</div><div class="arrow down">⬇</div></div>
+      <div class="postbody">
+        <div class="postmeta"><span class="flair">Safety</span> Posted by u/breaker_panel_bob 16 hours ago</div>
+        <a class="posttitle" href="#">Reminder from an electrician-in-training: the breaker you think is off is a guess until a tester says so</a>
+        <p class="posttext">Non-contact tester, then contact tester, every time — because panels get mislabeled constantly, including, it turns out, mine. Cheap tools, un-fun stories, one clear rule.</p>
+        <div class="postactions"><span>💬 471 Comments</span><span>↗ Share</span><span>🏅 Awards</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><div class="arrow up">⬆</div><div class="score">5.1k</div><div class="arrow down">⬇</div></div>
+      <div class="postbody">
+        <div class="postmeta"><span class="flair">In Progress</span> Posted by u/deck_season_dana 21 hours ago</div>
+        <a class="posttitle" href="#">Deck rebuild, weekend three: footings passed inspection, and I finally understand ledger flashing</a>
+        <p class="posttext">Photo diary of the least glamorous and most important part of the whole project. Inspector's one correction and how I fixed it inside. Framing starts next weekend, weather permitting.</p>
+        <div class="postactions"><span>💬 229 Comments</span><span>↗ Share</span><span>🏅 Awards</span></div>
+      </div>
+    </article>
+  </main>
+
+  <aside class="sidebar">
+    <div class="card">
+      <div class="cardhead">About Community</div>
+      <div class="cardbody">
+        A community for do-it-yourself projects and advice. Finished projects require a start-to-finish description of the process — tools, materials, mistakes and all. Research your project first: many questions are answered in the wiki and past threads.
+        <div class="stats">
+          <div><div class="num">25M</div><div class="lbl">Members</div></div>
+          <div><div class="num">3.9K</div><div class="lbl">Online</div></div>
+        </div>
+        <p style="margin-top:10px; font-size:12px; color:#7c7c7c;">Created Mar 18, 2008</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardhead">r/DIY Rules</div>
+      <div class="cardbody">
+        <ol>
+          <li>Finished project posts must include a detailed process description</li>
+          <li>Do your research first — basic questions may be removed</li>
+          <li>No spam, marketing or "for hire" posts</li>
+          <li>Safety first: dangerous advice is removed; know when to hire a pro</li>
+          <li>One project per submission; progress posts go in follow-ups</li>
+          <li>Be constructive — criticism must be helpful</li>
+        </ol>
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardhead">Related Communities</div>
+      <div class="cardbody">
+        <ul>
+          <li><a href="../gardening/">r/gardening</a></li>
+          <li><a href="../cooking/">r/cooking</a></li>
+          <li><a href="../learnprogramming/">r/learnprogramming</a></li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+</div>
+<p class="footer-note">r/DIY — recreated from memory. All posts and usernames are invented examples.</p>
+</body>
+</html>

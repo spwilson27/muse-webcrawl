@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AWK - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff;line-height:1.55}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:10px 24px;font-size:14px}
+header .logo{font-family:Georgia,serif;font-size:22px}
+main{max-width:960px;margin:0 auto;padding:16px 24px 48px}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+.infobox{float:right;width:280px;margin:0 0 16px 20px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;border-collapse:collapse}
+.infobox caption{background:#b0c4de;font-weight:bold;padding:6px;font-size:14px}
+.infobox th{text-align:left;padding:4px 8px;background:#eaecf0;vertical-align:top}
+.infobox td{padding:4px 8px}
+figure.hero{margin:0 0 16px}
+figure.hero img{max-width:100%;border:1px solid #c8ccd1;background:#f8f9fa}
+figcaption{font-size:12px;color:#54595d}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.refs{font-size:13px;color:#54595d}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;overflow:auto;font-size:13px}
+</style>
+</head>
+<body>
+<header><span class="logo">Wikipedia</span> &nbsp;The Free Encyclopedia</header>
+<main>
+<h1>AWK</h1>
+<figure class="hero"><img src="images/AWK.png" alt="Terminal window showing an AWK one-liner processing a column of text"></figure>
+<table class="infobox">
+<caption>AWK</caption>
+<tr><th>Paradigm</th><td>Data-driven, procedural</td></tr>
+<tr><th>Designed by</th><td>Alfred Aho, Peter Weinberger, Brian Kernighan</td></tr>
+<tr><th>First appeared</th><td>1977</td></tr>
+<tr><th>Typing discipline</th><td>Dynamic; strings and numbers</td></tr>
+<tr><th>Implementations</th><td>awk (BWK awk), gawk, mawk, BusyBox awk</td></tr>
+<tr><th>Influenced</th><td>Perl, and text-processing idioms generally</td></tr>
+</table>
+<p><b>AWK</b> is a domain-specific programming language designed for text processing and typically used as a data extraction and reporting tool. It is a standard feature of most Unix-like operating systems. The name derives from the surnames of its creators: Alfred Aho, Peter Weinberger and Brian Kernighan, of Bell Labs, who developed it in 1977.</p>
+<h2>Structure</h2>
+<p>An AWK program consists of pattern&ndash;action pairs. The interpreter reads input line by line (records), splits each line into fields ($1, $2, &hellip;, with $0 the whole line), tests each pattern, and executes the associated action on matches. Special patterns BEGIN and END run before and after input is processed. For example, summing the first column of a file:</p>
+<pre>{ sum += $1 } END { print sum }</pre>
+<p>AWK provides strings, numbers, associative arrays, regular expressions and built-in variables such as NR (record number) and FS (field separator), making it well suited to one-liners in shell pipelines.</p>
+<h2>Versions</h2>
+<p>The language was substantially extended in "new awk" (nawk) in 1985 and documented in Aho, Kernighan and Weinberger's 1988 book <i>The AWK Programming Language</i>. GNU Awk (gawk) adds features such as multi-dimensional arrays and networking; mawk is a fast implementation by Mike Brennan. AWK's text-processing model strongly influenced Larry Wall's design of Perl.</p>
+<p class="refs">See also: <a href="../Perl/">Perl</a> &middot; <a href="../Sed/">Sed</a> &middot; <a href="../Unix/">Unix</a></p>
+</main>
+</body>
+</html>

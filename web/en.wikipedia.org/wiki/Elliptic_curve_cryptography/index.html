@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Elliptic-curve cryptography - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine','Georgia',serif;margin:0;color:#202122;background:#f8f9fa}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:1.5em 2em;border:1px solid #a7d7f9;border-top:none}
+h1{font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-weight:normal;border-bottom:1px solid #a2a9b1}
+.infobox{float:right;clear:right;width:22em;border:1px solid #a2a9b1;background:#f8f9fa;padding:.4em;margin:.2em 0 1em 1em;font-size:90%;font-family:sans-serif}
+.infobox th{text-align:left;background:#e0e8f0;padding:.2em .4em}
+.infobox td{padding:.2em .4em}
+img{max-width:100%}
+p{line-height:1.6}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.caption{font-size:85%;color:#54595d;text-align:center}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Elliptic-curve cryptography</h1>
+<p><b>Elliptic-curve cryptography</b> (<b>ECC</b>) is an approach to <a href="../Public-key_cryptography/">public-key cryptography</a> based on the algebraic structure of <a href="../Elliptic_curve/">elliptic curves</a> over <a href="../Finite_field/">finite fields</a>. ECC allows smaller keys compared to non-EC cryptography (based on plain Galois fields) to provide equivalent security — a 256-bit elliptic-curve key offers security comparable to a 3072-bit RSA key. Elliptic curves are applicable for key agreement (ECDH), digital signatures (ECDSA, EdDSA), and encryption schemes.</p>
+<img src="images/elliptic-curve-cryptography.png" alt="Graph of an elliptic curve with the chord-and-tangent point addition construction">
+<p class="caption">Point addition on an elliptic curve: the group law underpinning ECC.</p>
+<h2>History</h2>
+<p>The use of elliptic curves in cryptography was suggested independently by <a href="../Neal_Koblitz/">Neal Koblitz</a> and <a href="../Victor_S._Miller/">Victor Miller</a> in 1985. ECC schemes entered wide use in the mid-2000s as patents expired and standards matured (<a href="../Transport_Layer_Security/">TLS</a>, <a href="../Bitcoin/">Bitcoin</a> uses the secp256k1 curve). In 2013, revelations about the Dual EC DRBG random number generator — suspected of containing an NSA backdoor — damaged trust in some standardized parameters and spurred adoption of "nothing-up-my-sleeve" curves and newer designs such as <a href="../Curve25519/">Curve25519</a> (Daniel J. Bernstein).</p>
+<h2>Mathematical basis</h2>
+<p>An elliptic curve over a finite field consists of points satisfying an equation such as y² = x³ + ax + b (with non-zero discriminant), together with a point at infinity that acts as the group identity. Points form an abelian group under the chord-and-tangent rule. The security of ECC rests on the <b>elliptic-curve discrete logarithm problem</b> (ECDLP): given points P and Q = dP, finding the scalar d is computationally infeasible for well-chosen curves; the best generic attacks (Pollard's rho) run in time proportional to the square root of the group order, which is why ECC key sizes grow only linearly with security level in bits.</p>
+<h2>Schemes and standards</h2>
+<p>Common ECC schemes include ECDH (key agreement), ECDSA and EdDSA (signatures), and ECIES (encryption). Widely used curves include the NIST curves P-256 and P-384, Curve25519/Ed25519, secp256k1 (Bitcoin, Ethereum), and Brainpool curves. Implementations must guard against invalid-curve attacks, small-subgroup attacks, timing side channels, and twist insecurity.</p>
+<h2>Quantum vulnerability</h2>
+<p>Like RSA and Diffie–Hellman, ECC is broken in principle by <a href="../Shor's_algorithm/">Shor's algorithm</a> on a sufficiently large quantum computer — indeed, ECDLP requires fewer qubits to attack than comparable RSA. Migration plans toward <a href="../Post-quantum_cryptography/">post-quantum cryptography</a> therefore include ECC systems, and hybrid key exchange combining ECDH with lattice-based KEMs has been deployed in TLS.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Elliptic_curve/">Elliptic curve</a></li>
+<li><a href="../ECDSA/">ECDSA</a></li>
+<li><a href="../Curve25519/">Curve25519</a></li>
+<li><a href="../Public-key_cryptography/">Public-key cryptography</a></li>
+</ul>
+</div>
+</body>
+</html>

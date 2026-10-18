@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Post correspondence problem - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine','Georgia',serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px}
+h1{font-size:28px;border-bottom:1px solid #a7d7f9;padding-bottom:4px;font-weight:normal}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:2px;font-weight:normal;margin-top:28px}
+p{font-size:15px;line-height:1.6}
+figure{margin:12px 0;text-align:center}
+figure img{max-width:100%}
+figcaption{font-size:13px;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{font-size:15px;line-height:1.6}
+table.t{border-collapse:collapse;margin:12px auto}
+table.t td,table.t th{border:1px solid #a2a9b1;padding:6px 14px;text-align:center;font-family:monospace}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Post correspondence problem</h1>
+<p>The <b>Post correspondence problem</b> is an undecidable decision problem that was introduced by <a href="../Emil_Leon_Post/">Emil Leon Post</a> in 1946. Because it is simpler than the <a href="../Halting_problem/">halting problem</a> and the <i>Entscheidungsproblem</i>, it is often used in proofs of undecidability.</p>
+<figure><img src="images/post_correspondence_problem.png" alt="Domino tiles illustrating the Post correspondence problem"><figcaption>An instance of the problem as a set of dominoes</figcaption></figure>
+<h2>Definition of the problem</h2>
+<p>Let <i>A</i> be an alphabet with at least two symbols. The input of the problem consists of two finite lists of words over <i>A</i>. A solution to this problem is a sequence of indices such that the concatenation of the corresponding words from the first list equals the concatenation of the corresponding words from the second list. The decision problem is then to decide whether such a solution exists.</p>
+<h3>Alternative definition as dominoes</h3>
+<p>The problem is often visualised in terms of dominoes, each bearing two strings, one on each side. A solution is a sequence of dominoes (repetitions allowed) such that the string formed by the top halves is the same as the string formed by the bottom halves.</p>
+<table class="t">
+<tr><th>i</th><th>Top</th><th>Bottom</th></tr>
+<tr><td>1</td><td>a</td><td>baa</td></tr>
+<tr><td>2</td><td>ab</td><td>aa</td></tr>
+<tr><td>3</td><td>bba</td><td>bb</td></tr>
+</table>
+<p>For this instance, the sequence 3, 2, 3, 1 is a solution: bba + ab + bba + a = bb + aa + bb + baa = "bbaabbabbaa".</p>
+<h2>Undecidability</h2>
+<p>Post showed that the correspondence problem is undecidable in general, by reduction from the acceptance problem for Turing machines. A bounded version of the problem, in which the solution length is bounded, is NP-complete. The problem remains undecidable even for small instances; it is known to be undecidable for as few as a small fixed number of domino pairs, while instances with only two pairs are decidable.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Undecidable_problem/">Undecidable problem</a></li>
+<li><a href="../Context-free_grammar/">Context-free grammar</a></li>
+<li><a href="../Tag_system/">Tag system</a></li>
+</ul>
+</div>
+</body>
+</html>

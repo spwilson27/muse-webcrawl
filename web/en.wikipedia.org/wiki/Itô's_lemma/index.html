@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Itô's lemma - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine",Georgia,serif;margin:0 auto;max-width:960px;padding:20px;line-height:1.6;color:#202122}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;font-size:1.4em;margin-top:1.2em}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:0.9em;width:270px}
+.infobox th{text-align:left;background:#eaecf0;padding:4px}
+.infobox td{padding:4px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+figure{margin:1em 0;text-align:center}
+figcaption{font-size:0.85em;color:#54595d}
+img{max-width:100%}
+.eq{font-family:"Cambria Math",Georgia,serif;font-style:italic;text-align:center;font-size:1.1em;margin:1em 0}
+</style>
+</head>
+<body>
+<h1>Itô's lemma</h1>
+<table class="infobox">
+<tr><th colspan="2">Itô's lemma</th></tr>
+<tr><th>Field</th><td>Stochastic calculus</td></tr>
+<tr><th>Named after</th><td><a href="../Kiyosi_Itô/index.html">Kiyosi Itô</a></td></tr>
+<tr><th>Published</th><td>1951</td></tr>
+<tr><th>Generalises</th><td>Chain rule of ordinary calculus</td></tr>
+</table>
+<p>In mathematics, <b>Itô's lemma</b> or <b>Itô's formula</b> is an identity used in <a href="../Itô_calculus/index.html">Itô calculus</a> to find the differential of a time-dependent function of a <a href="../Stochastic_process/index.html">stochastic process</a>. It is the stochastic-calculus counterpart of the chain rule in ordinary calculus. The lemma was discovered by the Japanese mathematician <a href="../Kiyosi_Itô/index.html">Kiyosi Itô</a> and is one of the most widely used results in stochastic calculus, with central applications in <a href="../Mathematical_finance/index.html">mathematical finance</a>, notably in the derivation of the <a href="../Black-Scholes_model/index.html">Black–Scholes equation</a>.</p>
+<figure><img src="images/itos-lemma.png" alt="Illustration of a Wiener process path and a function applied to it"><figcaption>A sample path of a diffusion process; Itô's lemma describes how a smooth function of the process evolves.</figcaption></figure>
+<h2>Statement</h2>
+<p>Let <i>X<sub>t</sub></i> be an Itô process satisfying the stochastic differential equation</p>
+<p class="eq">dX<sub>t</sub> = μ<sub>t</sub> dt + σ<sub>t</sub> dB<sub>t</sub>,</p>
+<p>where <i>B<sub>t</sub></i> is a <a href="../Wiener_process/index.html">Wiener process</a>. If <i>f</i>(<i>t</i>, <i>x</i>) is a twice-differentiable scalar function, then</p>
+<p class="eq">df = ( ∂f/∂t + μ ∂f/∂x + (σ²/2) ∂²f/∂x² ) dt + σ ∂f/∂x dB<sub>t</sub>.</p>
+<p>The extra second-order term (σ²/2) ∂²f/∂x², absent from the ordinary chain rule, arises because a Wiener process has non-zero <a href="../Quadratic_variation/index.html">quadratic variation</a>: informally, (dB<sub>t</sub>)² = dt.</p>
+<h2>Informal derivation</h2>
+<p>A formal proof proceeds by expanding <i>f</i> in a Taylor series and retaining terms up to order dt, using the multiplication rules dt² = 0, dt·dB<sub>t</sub> = 0 and (dB<sub>t</sub>)² = dt, which can be justified using the quadratic variation of Brownian motion. Unlike ordinary calculus, the second-order spatial derivative therefore contributes to the drift.</p>
+<h2>Applications</h2>
+<p>Itô's lemma is used to derive the dynamics of derivative prices from an assumed process for the underlying asset. Applying it to the option value function in the Black–Scholes model yields the Black–Scholes partial differential equation. It is also used to solve stochastic differential equations — for example, applying the lemma to log <i>S<sub>t</sub></i> solves the geometric Brownian motion equation — and underlies the <a href="../Girsanov_theorem/index.html">Girsanov theorem</a> and the Feynman–Kac formula's stochastic representation of partial differential equations.</p>
+<h2>Generalizations</h2>
+<p>The formula extends to functions of several Itô processes (with cross-variation terms), to processes with jumps (where a correction involving the jump sizes appears), and to the Itô–Stratonovich conversion between the <a href="../Itô_calculus/index.html">Itô</a> and <a href="../Stratonovich_integral/index.html">Stratonovich</a> interpretations of stochastic integration.</p>
+<p><i>See also:</i> <a href="../Stochastic_calculus/index.html">Stochastic calculus</a> · <a href="../Itô_integral/index.html">Itô integral</a> · <a href="../Black-Scholes_equation/index.html">Black–Scholes equation</a></p>
+</body>
+</html>
