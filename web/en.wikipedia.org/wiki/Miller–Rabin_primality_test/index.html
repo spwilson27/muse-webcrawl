@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Miller–Rabin primality test — Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 16px 20px;border-collapse:collapse}
+.infobox th{background:#b0c4de;padding:6px;text-align:center}
+.infobox td{padding:4px 8px;vertical-align:top}
+.infobox td:first-child{font-weight:bold;width:40%}
+.thumb{float:right;clear:right;width:280px;border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;margin:0 0 12px 20px;font-size:12px;text-align:center}
+.thumb img{width:100%;background:#e9ecef;min-height:120px}
+.thumb .cap{text-align:left;padding:4px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+code{background:#f0f0f0;padding:0 3px}
+.ref{font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Miller–Rabin primality test</h1>
+<p><i>From Wikipedia, the free encyclopedia</i></p>
+
+<table class="infobox">
+<tr><th colspan="2">Miller–Rabin primality test</th></tr>
+<tr><td>Type</td><td>Probabilistic primality test</td></tr>
+<tr><td>Named after</td><td>Gary L. Miller; Michael O. Rabin</td></tr>
+<tr><td>Introduced</td><td>Miller (1976, deterministic form); Rabin (1980, probabilistic form)</td></tr>
+<tr><td>Error</td><td>One-sided: a composite may be reported prime with probability at most 4<sup>−k</sup> after k rounds</td></tr>
+<tr><td>Application</td><td>Cryptography, e.g. RSA key generation</td></tr>
+</table>
+
+<div class="thumb">
+<img src="images/miller-rabin.png" alt="Flowchart of the Miller–Rabin primality test with repeated witness rounds">
+<div class="cap">The Miller–Rabin test repeatedly checks whether random bases "witness" that a number is composite.</div>
+</div>
+
+<p>The <b>Miller–Rabin primality test</b> is a probabilistic algorithm for determining whether a given number is a probable prime. It is the most widely used primality test in practice, particularly in cryptographic applications such as generating the large prime numbers needed for <a href="../RSA_(cryptosystem)/index.html">RSA</a>. The test is a refinement of the Fermat primality test and is based on properties of strong pseudoprimes.</p>
+
+<h2>Background</h2>
+<p>Gary L. Miller first proposed the test in 1976 as a deterministic polynomial-time algorithm whose correctness depends on the truth of the generalised Riemann hypothesis. Michael O. Rabin modified Miller's idea in 1980 into an unconditional probabilistic test: for any odd composite <i>n</i>, at least three quarters of the possible bases <i>a</i> reveal <i>n</i> to be composite, so repeating the test with <i>k</i> independent random bases makes the probability of a false "prime" verdict at most 4<sup>−k</sup>.</p>
+
+<h2>Algorithm</h2>
+<p>Given an odd integer <i>n</i> &gt; 2, write <i>n</i> − 1 = 2<sup><i>s</i></sup>·<i>d</i> with <i>d</i> odd. For a randomly chosen base <i>a</i> in the range [2, <i>n</i> − 2], compute <i>x</i> = <i>a</i><sup><i>d</i></sup> mod <i>n</i>. If <i>x</i> is 1 or <i>n</i> − 1, the test passes for this base. Otherwise, square <i>x</i> repeatedly (up to <i>s</i> − 1 times); if it never equals <i>n</i> − 1, then <i>a</i> is a <i>witness</i> that <i>n</i> is definitely composite. If no witness is found after <i>k</i> rounds, <i>n</i> is declared a probable prime.</p>
+
+<h2>Deterministic variants</h2>
+<p>For numbers below known bounds, testing a small fixed set of bases is provably sufficient, making the test deterministic in those ranges. For example, testing the first twelve prime bases suffices for all 64-bit integers. Such deterministic variants are used in computer algebra systems and programming libraries.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Primality_test/index.html">Primality test</a></li>
+<li><a href="../Fermat_primality_test/index.html">Fermat primality test</a></li>
+<li><a href="../AKS_primality_test/index.html">AKS primality test</a></li>
+<li><a href="../Pseudoprime/index.html">Pseudoprime</a></li>
+</ul>
+
+<p class="ref">Categories: Primality tests · Number theory algorithms · Monte Carlo methods</p>
+</div>
+</body>
+</html>
