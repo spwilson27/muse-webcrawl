@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kripke semantics - Wikipedia</title>
+<style>
+body{font-family:sans-serif;font-size:14px;line-height:1.6;margin:0;padding:0 20px;color:#202122;background:#fff}
+h1{font-family:serif;font-size:28px;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:2px}
+h2{font-family:serif;font-size:22px;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1em}
+h3{font-size:16px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:6px 10px;margin:0 0 12px 16px;width:260px;font-size:12.5px;line-height:1.45}
+.infobox caption{font-weight:bold;font-size:14px;text-align:center;padding:4px}
+.infobox td{padding:2px 6px;vertical-align:top}
+.infobox th{text-align:left;padding:2px 6px;vertical-align:top}
+.thumb{float:right;border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;margin:0 0 10px 14px;width:220px;font-size:12px;text-align:center;color:#54595d}
+.thumb img{width:212px;height:150px;background:#eaecf0;border:1px solid #c8ccd1;display:block;margin-bottom:4px}
+.ref{font-size:12px;color:#54595d}
+#toc{border:1px solid #a2a9b1;background:#f8f9fa;padding:8px 16px;display:inline-block;margin:10px 0}
+</style>
+</head>
+<body>
+<h1>Kripke semantics</h1>
+<p><b>Kripke semantics</b> (also known as <b>relational semantics</b> or <b>frame semantics</b>, and often confused with possible world semantics) is a formal semantics for non-classical logic systems created in the 1950s and 1960s by <a href="../Saul_Kripke/index.html">Saul Kripke</a>, then still a teenager. Kripke semantics have found influential applications in modal logic, intuitionistic logic, multi-valued logics, computer science and linguistics. The core idea is to evaluate formulas at points of a structure consisting of a set of "worlds" (or states) together with relations between them and a valuation assigning truth values to atomic formulas at each world; modal operators are interpreted by quantifying over accessible worlds.</p>
+
+<div class="thumb"><img src="images/kripke-semantics.png" alt="A Kripke frame diagram with worlds and accessibility arrows"><div>A simple Kripke frame: worlds linked by an accessibility relation (image placeholder)</div></div>
+
+<div id="toc"><b>Contents</b>
+<ol>
+<li><a href="#basics">Basic definitions</a></li>
+<li><a href="#correspondence">Frame correspondence</a></li>
+<li><a href="#applications">Applications</a></li>
+<li><a href="#history">History</a></li>
+<li><a href="#seealso">See also</a></li>
+</ol></div>
+
+<h2 id="basics">Basic definitions</h2>
+<p>A <b>Kripke frame</b> consists of a non-empty set W of worlds (nodes, states or moments) and binary accessibility relations on W — one for each modal operator (in intuitionistic logic, a partial order; in temporal logic, orderings on time points). A <b>Kripke model</b> adds a valuation V specifying, for each propositional variable and world, whether the variable is true at that world. Satisfaction is then defined recursively; for modal logic the crucial clauses are:</p>
+<ul>
+<li>A world w satisfies □A ("necessarily A") iff every world u accessible from w (wRu) satisfies A.</li>
+<li>A world w satisfies ◇A ("possibly A") iff some accessible world satisfies A.</li>
+</ul>
+<p>A formula is <b>valid on a frame</b> if it is true at every world under every valuation, and valid in a logic if valid on all frames of the corresponding class. Kripke proved completeness results connecting the standard modal systems (K, T, S4, S5, B) with simple conditions on frames: for example, the axiom □A → A is valid exactly on reflexive frames; the S4 axioms correspond to reflexive, transitive frames; and S5 to frames whose accessibility is an equivalence relation.</p>
+
+<h2 id="correspondence">Frame correspondence</h2>
+<p>The tight match between axioms and first-order conditions on frames gave rise to correspondence theory and to "canonical model" completeness proofs. The framework also supplies simple countermodels: to show that a formula is not derivable in a system, one exhibits a finite Kripke model in which it fails. Frame definability, the Sahlqvist theorem (1975), and duality theory between frames and modal algebras developed these ideas algebraically. Variations include neighbourhood semantics (a generalisation), two-dimensional semantics, and dynamic epistemic logic, in which models are transformed by informational events — extensively used in computer science for the verification of protocols and multi-agent systems.</p>
+
+<h2 id="applications">Applications</h2>
+<ul>
+<li><b>Modal logic</b>: alethic, deontic, epistemic, temporal and doxastic logics all use Kripke-style semantics, with accessibility read as epistemic possibility, temporal succession, obligation-ideality and so on.</li>
+<li><b>Intuitionistic logic</b>: Kripke's semantics (1963) models truth as persistence along an information order, with atomic truth monotone along the ordering; failure of excluded middle is visualised by worlds that may later decide a proposition.</li>
+<li><b>Philosophy</b>: the possible-worlds framework underlies Kripke's <i><a href="../Naming_and_Necessity/index.html">Naming and Necessity</a></i> (lectures 1970; published 1972) and David Lewis's modal realism debates.</li>
+<li><b>Computer science</b>: Kripke structures are the standard model for model checking of hardware and software, where states are worlds and transition relations are accessibility.</li>
+</ul>
+
+<h2 id="history">History</h2>
+<p>Kripke developed modal model theory in papers from 1959 (age 18–19) onwards, including "A Completeness Theorem in Modal Logic" (1959) and "Semantical Considerations on Modal Logic" (1963). Related ideas were developed independently by Stig Kanger, Jaakko Hintikka, E. J. Lemmon and others, but Kripke's formulation — especially the use of varying domains and accessibility relations — became canonical. Ruth Barcan Marcus had earlier pioneered quantified modal logic; Kripke semantics gave quantified modal logic its standard possible-worlds treatment.</p>
+
+<h2 id="seealso">See also</h2>
+<ul>
+<li><a href="../Saul_Kripke/index.html">Saul Kripke</a></li>
+<li><a href="../Modal_logic/index.html">Modal logic</a></li>
+<li><a href="../Possible_world/index.html">Possible world</a></li>
+<li><a href="../Intuitionistic_logic/index.html">Intuitionistic logic</a></li>
+</ul>
+<p class="ref">References: background knowledge reconstruction. Kripke, Journal of Symbolic Logic 24 (1959); Acta Philosophica Fennica 16 (1963); Sahlqvist 1975 on correspondence and completeness.</p>
+</body>
+</html>

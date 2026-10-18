@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kleene's theorem - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:90%}
+.infobox caption{font-weight:bold;background:#d5d9dc;padding:4px}
+.infobox td{padding:3px 6px;vertical-align:top}
+.hero{display:block;margin:12px 0;max-width:320px;border:1px solid #a2a9b1;background:#f8f9fa;padding:6px;text-align:center;font-size:85%;color:#54595d}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:monospace;background:#f8f9fa}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Kleene's theorem</h1>
+<p>In the theory of computation, <b>Kleene's theorem</b> — named after the American mathematician Stephen Cole Kleene, who published it in 1956 — is a fundamental result characterising the <a href="../Regular_language/index.html">regular languages</a>. It states that a language over a finite alphabet is accepted by some finite automaton if and only if it can be described by a regular expression. The theorem thereby establishes the equivalence of two very different ways of specifying the same class of languages: by machines (finite automata) and by formulas (regular expressions).</p>
+<img class="hero" src="images/automaton.png" alt="A finite automaton of the kind whose languages Kleene's theorem equates with regular expressions">
+
+<h2>Statement</h2>
+<p>Let Σ be a finite alphabet and L ⊆ Σ* a language. The following are equivalent:</p>
+<ol>
+<li>L is <i>regular</i>: it is described by a regular expression built from ∅, {ε}, and the singletons {a} for a ∈ Σ, using union, concatenation, and Kleene star.</li>
+<li>L is accepted by a deterministic finite automaton.</li>
+<li>L is accepted by a nondeterministic finite automaton.</li>
+<li>L is accepted by a nondeterministic finite automaton with ε-transitions.</li>
+</ol>
+<p>The equivalences among (2)–(4) are proved separately (subset construction and elimination of ε-transitions); Kleene's theorem proper is the equivalence (1) ⟺ (3)/(4).</p>
+
+<h2>Proof outline</h2>
+<p><b>Regular expression → automaton.</b> By structural induction on the regular expression (a construction now usually given in the form of Thompson's construction, 1968), one builds an ε-NFA for each of the base expressions and shows how to combine automata for union, concatenation, and star.</p>
+<p><b>Automaton → regular expression.</b> For an automaton with states 1, …, n, let R(i, j, k) be the set of strings taking the automaton from state i to state j using only intermediate states numbered at most k. One shows inductively that each R(i, j, k) is regular: R(i, j, 0) is finite, and R(i, j, k) = R(i, j, k−1) ∪ R(i, k, k−1) · R(k, k, k−1)* · R(k, j, k−1). The language of the automaton is the union of R(start, accept, n) over accepting states. This is often called Kleene's algorithm; the state-elimination method is an equivalent formulation.</p>
+
+<h2>History and significance</h2>
+<p>Kleene introduced regular expressions in a 1951 RAND memorandum and published the theorem in "Representation of events in nerve nets and finite automata" (1956), motivated by the McCulloch–Pitts model of neural activity. The result anchors the bottom level of the Chomsky hierarchy and remains foundational in compiler construction, text processing, and formal language theory; it also generalises in algebra to the theory of Kleene algebras and rational series.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Stephen_Cole_Kleene/index.html">Stephen Cole Kleene</a></li>
+<li><a href="../Regular_language/index.html">Regular language</a></li>
+<li><a href="../Regular_expression/index.html">Regular expression</a></li>
+<li><a href="../Finite-state_machine/index.html">Finite-state machine</a></li>
+<li><a href="../Kleene_star/index.html">Kleene star</a></li>
+</ul>
+<p style="font-size:85%;color:#54595d">Categories: Formal languages · Theorems in theoretical computer science · Automata (computation)</p>
+</div>
+</body>
+</html>
