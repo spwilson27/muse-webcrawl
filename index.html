@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>muse-webcrawl — the internet, rebuilt from memory</title>
+<style>
+  :root {
+    --ink: #1a1a2e; --muted: #5a5a72; --accent: #3366cc; --accent-dark: #2a4b8d;
+    --bg: #f6f6f2; --card: #ffffff; --line: #ddd8c8; --chip: #eceadf;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: Georgia, 'Times New Roman', serif;
+    background: var(--bg); color: var(--ink); line-height: 1.5;
+  }
+  header {
+    background: var(--ink); color: #f2f0e6; padding: 2.2rem 1rem 1.6rem;
+    text-align: center; border-bottom: 4px solid var(--accent);
+  }
+  header h1 { margin: 0 0 .3rem; font-size: 2.1rem; letter-spacing: .5px; }
+  header p { margin: .2rem auto; max-width: 44rem; color: #c9c7bb; }
+  header .stats { margin-top: 1rem; font-size: 1.05rem; color: #fff; }
+  header .stats b { color: #ffd76a; font-size: 1.25rem; }
+  main { max-width: 62rem; margin: 0 auto; padding: 1.2rem 1rem 3rem; }
+  .seed-cta {
+    display: block; text-align: center; margin: 1.2rem auto; padding: 1rem;
+    background: var(--accent); color: #fff; text-decoration: none;
+    border-radius: 8px; font-size: 1.2rem; max-width: 34rem;
+  }
+  .seed-cta:hover { background: var(--accent-dark); }
+  .note {
+    background: #fffbe8; border: 1px solid #e6d98a; border-radius: 8px;
+    padding: .8rem 1rem; font-size: .95rem; margin: 1rem 0;
+  }
+  .controls { display: flex; gap: .6rem; flex-wrap: wrap; margin: 1.2rem 0 .6rem; }
+  .controls input[type="search"] {
+    flex: 1 1 18rem; padding: .6rem .8rem; font-size: 1rem;
+    border: 1px solid var(--line); border-radius: 6px; font-family: inherit;
+  }
+  .controls button {
+    padding: .6rem 1rem; font-size: .95rem; cursor: pointer;
+    border: 1px solid var(--line); background: var(--card); border-radius: 6px;
+  }
+  #status { color: var(--muted); font-size: .92rem; min-height: 1.3em; }
+  details.domain {
+    background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+    margin: .55rem 0; padding: .2rem .9rem;
+  }
+  details.domain > summary {
+    cursor: pointer; padding: .55rem 0; font-size: 1.08rem; list-style: none;
+    display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  }
+  details.domain > summary::-webkit-details-marker { display: none; }
+  details.domain > summary .dname { font-weight: bold; color: var(--accent-dark); }
+  .counts { color: var(--muted); font-size: .9rem; }
+  .chip {
+    background: var(--chip); border-radius: 999px; padding: .05rem .6rem;
+    font-size: .82rem; color: var(--muted); white-space: nowrap;
+  }
+  ul.pages { margin: .3rem 0 .8rem; padding-left: 1.2rem; columns: 2; column-gap: 2rem; }
+  ul.pages li { break-inside: avoid; margin: .18rem 0; }
+  ul.pages a { color: var(--accent); text-decoration: none; }
+  ul.pages a:hover { text-decoration: underline; }
+  ul.pages .path { display: block; color: var(--muted); font-size: .78rem; word-break: break-all; }
+  #results { margin-top: .5rem; }
+  #results ul { list-style: none; padding: 0; }
+  #results li {
+    background: var(--card); border: 1px solid var(--line); border-radius: 6px;
+    padding: .5rem .8rem; margin: .4rem 0;
+  }
+  #results a { color: var(--accent); text-decoration: none; font-weight: bold; }
+  #results a:hover { text-decoration: underline; }
+  #results .path { display: block; color: var(--muted); font-size: .8rem; word-break: break-all; }
+  footer { text-align: center; color: var(--muted); font-size: .88rem; padding: 1rem; }
+  @media (max-width: 640px) { ul.pages { columns: 1; } header h1 { font-size: 1.6rem; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>🕸️ muse-webcrawl</h1>
+  <p><b>The internet, rebuilt purely from Muse's memory.</b> Starting from Wikipedia,
+     an AI recreated web pages as static HTML from memory alone — no live lookups — then
+     followed each page's links and recreated those too, expanding outward domain by domain.</p>
+  <p class="stats" id="stats">Loading the crawl index…</p>
+</header>
+
+<main>
+  <a class="seed-cta" href="web/en.wikipedia.org/index.html">▶ Start at the seed: Wikipedia, from memory</a>
+
+  <div class="note">
+    <b>How images work here:</b> this repo is pushed through a text-only channel, so every
+    image lives in the repo as a base64 text file (<code>…/images/foo.png.b64</code>) while the
+    pages reference the plain image path. A small service worker registered by this page
+    intercepts image requests, decodes the base64 in your browser, and serves the real
+    picture. <b>Tip:</b> land on this page once per visit so the worker activates; if a page
+    ever shows blank images, come back here and then hard-refresh (Ctrl/Cmd+Shift+R).
+  </div>
+
+  <div class="controls">
+    <input type="search" id="search" placeholder="Search page titles and paths across every domain…" aria-label="Search pages">
+    <button id="expandAll" type="button">Expand all domains</button>
+    <button id="collapseAll" type="button">Collapse all</button>
+  </div>
+  <p id="status"></p>
+
+  <section id="results" hidden></section>
+  <section id="domains" aria-label="Domains"></section>
+</main>
+
+<footer>
+  muse-webcrawl · an experiment in AI memory · every page recreated from memory, not copied ·
+  index generated by <code>scripts/build_ui_index.py</code>
+</footer>
+
+<script src="assets/museweb.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  /* 1. Register the image-bridge service worker (repo-root scope). */
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('sw.js', { scope: './' }).catch(function (err) {
+        console.warn('muse-webcrawl: service worker registration failed', err);
+      });
+    });
+  }
+
+  var statsEl = document.getElementById('stats');
+  var statusEl = document.getElementById('status');
+  var domainsEl = document.getElementById('domains');
+  var resultsEl = document.getElementById('results');
+  var searchEl = document.getElementById('search');
+  var sitemap = null;
+
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function renderStats() {
+    var t = sitemap.totals;
+    statsEl.innerHTML = '';
+    statsEl.appendChild(document.createTextNode('So far: '));
+    var bits = [
+      [t.pages.toLocaleString(), ' pages'],
+      [Object.keys(sitemap.domains).length.toLocaleString(), ' domains'],
+      [t.images.toLocaleString(), ' images']
+    ];
+    bits.forEach(function (b, i) {
+      if (i) statsEl.appendChild(document.createTextNode(' · '));
+      var bold = el('b', null, b[0]);
+      statsEl.appendChild(bold);
+      statsEl.appendChild(document.createTextNode(b[1]));
+    });
+    statsEl.appendChild(document.createTextNode(' — all written from memory.'));
+  }
+
+  function buildPageList(pages) {
+    var ul = el('ul', 'pages');
+    pages.forEach(function (p) {
+      var li = el('li');
+      var a = el('a', null, p.title || p.path);
+      a.href = p.path;
+      li.appendChild(a);
+      var sub = el('span', 'path', p.path.replace(/^web\//, '').replace(/\/index\.html$/, ''));
+      li.appendChild(sub);
+      ul.appendChild(li);
+    });
+    return ul;
+  }
+
+  function renderDomains() {
+    domainsEl.innerHTML = '';
+    var names = Object.keys(sitemap.domains).sort(function (a, b) {
+      return sitemap.domains[b].pages.length - sitemap.domains[a].pages.length || a.localeCompare(b);
+    });
+    names.forEach(function (name) {
+      var d = sitemap.domains[name];
+      var det = el('details', 'domain');
+      det.dataset.domain = name;
+      var sum = el('summary');
+      var left = el('span');
+      var dn = el('span', 'dname', name);
+      left.appendChild(dn);
+      sum.appendChild(left);
+      var counts = el('span', 'counts');
+      var c1 = el('span', 'chip', d.pages.length.toLocaleString() + ' pages');
+      counts.appendChild(c1);
+      if (d.images) {
+        counts.appendChild(document.createTextNode(' '));
+        counts.appendChild(el('span', 'chip', d.images.toLocaleString() + ' images'));
+      }
+      sum.appendChild(counts);
+      det.appendChild(sum);
+      /* Lazy-build the page list on first expand (keeps initial render light). */
+      det.addEventListener('toggle', function onToggle() {
+        if (det.open && !det.dataset.built) {
+          det.dataset.built = '1';
+          det.appendChild(buildPageList(d.pages));
+        }
+      });
+      domainsEl.appendChild(det);
+    });
+    statusEl.textContent = names.length + ' domains. Click a domain to browse its pages, or search above.';
+  }
+
+  function search(query) {
+    var q = query.trim().toLowerCase();
+    if (!q) {
+      resultsEl.hidden = true;
+      domainsEl.hidden = false;
+      statusEl.textContent = Object.keys(sitemap.domains).length + ' domains. Click a domain to browse its pages, or search above.';
+      return;
+    }
+    var hits = [];
+    Object.keys(sitemap.domains).forEach(function (name) {
+      sitemap.domains[name].pages.forEach(function (p) {
+        if ((p.title && p.title.toLowerCase().indexOf(q) !== -1) ||
+            p.path.toLowerCase().indexOf(q) !== -1) {
+          hits.push(p);
+        }
+      });
+    });
+    domainsEl.hidden = true;
+    resultsEl.hidden = false;
+    resultsEl.innerHTML = '';
+    var head = el('h2', null, hits.length.toLocaleString() + ' matching page' + (hits.length === 1 ? '' : 's'));
+    resultsEl.appendChild(head);
+    var ul = el('ul');
+    hits.slice(0, 300).forEach(function (p) {
+      var li = el('li');
+      var a = el('a', null, p.title || p.path);
+      a.href = p.path;
+      li.appendChild(a);
+      li.appendChild(el('span', 'path', p.path));
+      ul.appendChild(li);
+    });
+    resultsEl.appendChild(ul);
+    if (hits.length > 300) {
+      resultsEl.appendChild(el('p', null, 'Showing the first 300 matches — refine your search to narrow it down.'));
+    }
+    statusEl.textContent = '';
+  }
+
+  var debounce = null;
+  searchEl.addEventListener('input', function () {
+    clearTimeout(debounce);
+    debounce = setTimeout(function () { search(searchEl.value); }, 120);
+  });
+
+  document.getElementById('expandAll').addEventListener('click', function () {
+    domainsEl.querySelectorAll('details.domain').forEach(function (d) { d.open = true; });
+  });
+  document.getElementById('collapseAll').addEventListener('click', function () {
+    domainsEl.querySelectorAll('details.domain').forEach(function (d) { d.open = false; });
+  });
+
+  /* 2. Load the crawl index and render. */
+  fetch('sitemap.json', { credentials: 'same-origin' })
+    .then(function (r) {
+      if (!r.ok) throw new Error('sitemap.json HTTP ' + r.status);
+      return r.json();
+    })
+    .then(function (data) {
+      sitemap = data;
+      renderStats();
+      renderDomains();
+      /* Fallback for environments where the worker never activates. */
+      if (window.MuseWeb) window.MuseWeb.fixImages(document);
+    })
+    .catch(function (err) {
+      statsEl.textContent = 'Could not load sitemap.json (' + err.message + ').';
+      statusEl.textContent = 'If you are viewing this from the repo, the index may not have been generated yet — run scripts/build_ui_index.py.';
+    });
+})();
+</script>
+</body>
+</html>
