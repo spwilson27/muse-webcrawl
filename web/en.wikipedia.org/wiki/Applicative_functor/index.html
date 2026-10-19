@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Applicative functor - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine','Hoefler Text',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+p{line-height:1.6;font-family:sans-serif;font-size:14px}
+li{line-height:1.6;font-family:sans-serif;font-size:14px}
+.hero{display:block;max-width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:6px;text-align:center;font-family:sans-serif;font-size:12px;color:#54595d;margin:8px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:12px;color:#54595d;font-family:sans-serif}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px;font-size:13px}
+pre{font-family:monospace;background:#f8f9fa;border:1px solid #a2a9b1;padding:10px 14px;font-size:13px;overflow-x:auto;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Applicative functor</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/Applicative_functor.png" alt="Diagram-style illustration of a function inside a context applied to values in a context">
+<p>In functional programming, an <b>applicative functor</b>, or simply an <b>applicative</b>, is a type class (or corresponding structure in other languages) that sits between functors and monads in expressive power. Applicative functors allow functions to be applied to values wrapped in a computational context, and allow several independent computations in that context to be combined, while not permitting the structure of later computations to depend on the results of earlier ones — the limitation that distinguishes them from monads. The concept was introduced by Conor McBride and Ross Paterson in their 2008 paper "Applicative programming with effects".</p>
+<h2>Definition</h2>
+<p>In Haskell, the <code>Applicative</code> type class is defined (in modern versions of the language, as a superclass of <code>Monad</code> and subclass of <code>Functor</code>) with two principal operations:</p>
+<pre>class Functor f =&gt; Applicative f where
+    pure  :: a -&gt; f a
+    (&lt;*&gt;) :: f (a -&gt; b) -&gt; f a -&gt; f b</pre>
+<p><code>pure</code> embeds a plain value into the context, and the infix operator <code>&lt;*&gt;</code> (pronounced "ap") applies a function wrapped in a context to a value wrapped in a context. Applicatives must obey four laws: identity, composition, homomorphism, and interchange, which together guarantee that applicative expressions behave predictably regardless of how they are associated or reordered.</p>
+<h2>Examples and uses</h2>
+<p>With the <code>Maybe</code> applicative, a computation proceeds only if every step yields a value: <code>pure (+) &lt;*&gt; Just 2 &lt;*&gt; Just 3</code> evaluates to <code>Just 5</code>, while any <code>Nothing</code> propagates to the result. With lists, applicative application forms all combinations of functions and arguments, making it useful for non-deterministic computations. The <code>ZipList</code> applicative instead combines lists element-wise. Applicative style is widely used in parser combinator libraries and in validation code: the <code>Validation</code> applicative can accumulate <i>all</i> errors from independent checks, something a monad (which must stop or branch at the first failure) cannot do, because monadic binding makes each step depend on the previous value.</p>
+<h2>Relation to monads and functors</h2>
+<p>Every monad gives rise to an applicative functor, and every applicative is a functor, so the classes form a hierarchy: Functor ⊃ Applicative ⊃ Monad. The key difference is dependency: in an applicative expression the set of effects is fixed statically by the structure of the expression, which permits analyses and optimisations impossible with monads — for example, running independent database queries or remote calls in parallel. This static character also means applicative computations can be freely reordered by a compiler or library when the laws hold.</p>
+<h2>History</h2>
+<p>McBride and Paterson introduced applicative functors in the context of the Epigram language, recognising that many idiomatic uses of monads did not exploit the full power of monadic binding. The class was added to Haskell's standard library in GHC 7.10 (2015) as part of the Functor–Applicative–Monad proposal, which made <code>Applicative</code> a superclass of <code>Monad</code>. Analogous abstractions now exist in many languages and libraries, including Scala, F#, OCaml, and Rust-adjacent designs.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Monad_(functional_programming)/index.html">Monad (functional programming)</a></li>
+<li><a href="../Functor/index.html">Functor</a></li>
+<li><a href="../Haskell/index.html">Haskell</a></li>
+<li><a href="../Aptamer/index.html">Aptamer</a> (unrelated concept)</li>
+</ul>
+<p class="small">Categories: Functional programming | Type classes</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Augmented Backus–Naur form - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.container{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;margin:0 0 8px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:24px}
+p{line-height:1.6;margin:8px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.figure{text-align:center;margin:16px 0}
+.figure img{max-width:420px;width:100%;border:1px solid #c8ccd1;background:#eef3f8;min-height:180px}
+.figcap{font-size:0.85em;color:#54595d}
+ul,pre{line-height:1.6}
+pre{background:#f8f9fa;border:1px solid #a2a9b1;padding:10px;overflow-x:auto}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Augmented Backus–Naur form</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<p>In computer science, <b>Augmented Backus–Naur form</b> (<b>ABNF</b>) is a metalanguage based on Backus–Naur form (BNF) that is used to describe a formal system of a language, most often the syntax of Internet protocols. ABNF was standardised by the Internet Engineering Task Force in RFC 5234 (2008), superseding RFC 4234 and the original RFC 2234, with case-sensitive string support added by RFC 7405.</p>
+<div class="figure"><img src="images/abnf.png" alt="Example of an ABNF grammar defining a date format"><div class="figcap">ABNF rules defining a simple date syntax.</div></div>
+<h2>Description</h2>
+<p>An ABNF specification is a set of derivation rules of the form:</p>
+<pre>rulename = elements</pre>
+<p>Rule names are case-insensitive. Elements may be terminals written as quoted strings (case-insensitive by default), numeric values given in decimal, hexadecimal or binary (e.g. <code>%x41</code> for "A"), or references to other rules. Operators include concatenation (juxtaposition), alternation (<code>/</code>), grouping with parentheses, optional elements in square brackets, and repetition prefixes such as <code>1*4</code> (one to four occurrences) or <code>*</code> (zero or more). Comments follow a semicolon.</p>
+<h2>Example</h2>
+<p>The postal address example from RFC 5234 illustrates typical usage:</p>
+<pre>postal-address   = name-part street zip-part
+name-part        = *(personal-part SP) last-name [SP suffix]
+                     CRLF
+street           = [apt SP] house-num SP street-name CRLF
+zip-part         = town-name "," SP state 1*2SP zip-code CRLF</pre>
+<h2>Usage</h2>
+<p>ABNF is the standard grammar notation of IETF specifications: it defines parts of HTTP, SMTP, IMAP, SIP, URI syntax and many other protocols. RFC 5234 itself defines a "core" set of rules (ALPHA, DIGIT, CRLF, SP, etc.) in its appendix that other specifications import.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Backus%E2%80%93Naur_form/index.html">Backus–Naur form</a></li>
+<li><a href="../Extended_Backus%E2%80%93Naur_form/index.html">Extended Backus–Naur form</a></li>
+<li><a href="../Context-free_grammar/index.html">Context-free grammar</a></li>
+<li><a href="../Request_for_Comments/index.html">Request for Comments</a></li>
+</ul>
+<p class="small">Categories: Formal languages · Metalanguages · Internet Standards</p>
+</div>
+</body>
+</html>

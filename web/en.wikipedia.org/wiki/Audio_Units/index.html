@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Audio Units - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.container{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;margin:0 0 8px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:24px}
+p{line-height:1.6;margin:8px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;margin:0 0 12px 16px;font-size:0.88em;border-collapse:collapse}
+.infobox th,.infobox td{border:1px solid #a2a9b1;padding:5px 8px;text-align:left}
+.infobox caption{font-weight:bold;padding:6px;background:#eaecf0;text-align:center}
+.figure{text-align:center;margin:16px 0}
+.figure img{max-width:420px;width:100%;border:1px solid #c8ccd1;background:#eef3f8;min-height:180px}
+.figcap{font-size:0.85em;color:#54595d}
+ul{line-height:1.6}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Audio Units</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<caption>Audio Units</caption>
+<tr><th>Developer</th><td>Apple Inc.</td></tr>
+<tr><th>Operating system</th><td>macOS, iOS</td></tr>
+<tr><th>Type</th><td>Audio plug-in architecture</td></tr>
+<tr><th>Part of</th><td>Core Audio</td></tr>
+</table>
+<p><b>Audio Units</b> (<b>AU</b>) are a system-level plug-in architecture provided by the Core Audio framework in Apple's macOS and iOS operating systems. Audio Units allow applications — typically digital audio workstations such as Logic Pro, GarageBand and third-party hosts — to load software instruments and audio effects written by Apple or third parties. The format is a direct competitor to Steinberg's VST and Avid's AAX formats.</p>
+<div class="figure"><img src="images/audio-units.png" alt="An Audio Unit effect plug-in window inside a digital audio workstation"><div class="figcap">An Audio Unit plug-in hosted in a DAW.</div></div>
+<h2>Architecture</h2>
+<p>Audio Units are built on Apple's Component Manager and later component plug-in APIs. Each unit declares a type — effect, instrument (music device), generator, mixer, panner, output and others — and communicates with the host through a C API describing properties, parameters and audio streams in the AudioStreamBasicDescription format. AU plug-ins historically shipped as bundles with the <code>.component</code> extension installed in <code>/Library/Audio/Plug-Ins/Components</code>.</p>
+<h2>AU version 3 and app extensions</h2>
+<p>With OS X El Capitan and iOS 9 (2015), Apple introduced Audio Unit version 3 (AUv3), implemented as app extensions. AUv3 plug-ins can run out of process, can be distributed through the App Store inside a containing app, and can run on both macOS and iOS, enabling desktop-class instruments and effects on iPad and iPhone hosts such as GarageBand for iOS and AUM.</p>
+<h2>Built-in units</h2>
+<p>macOS ships with a large set of Apple Audio Units, including AUDelay, AUDynamicsProcessor, AUBandpass, AUReverb2, the AUMatrixReverb, samplers (AUSampler), and the DLS synth. Apple's AU Lab and the command-line tool <code>auval</code> are used by developers to host and validate plug-ins.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Core_Audio/index.html">Core Audio</a></li>
+<li><a href="../Virtual_Studio_Technology/index.html">Virtual Studio Technology</a></li>
+<li><a href="../Logic_Pro/index.html">Logic Pro</a></li>
+<li><a href="../Digital_audio_workstation/index.html">Digital audio workstation</a></li>
+</ul>
+<p class="small">Categories: Audio engineering · Apple Inc. software · Music software plugin architectures</p>
+</div>
+</body>
+</html>

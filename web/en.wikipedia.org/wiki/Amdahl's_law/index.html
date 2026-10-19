@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Amdahl's law - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122;line-height:1.6}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.88em;margin:0 0 16px 20px;padding:8px}
+.infobox th{text-align:left;background:#eaf0f5;padding:4px}
+.infobox td{padding:4px}
+.infobox caption{font-weight:bold;font-size:1.1em;padding:6px;background:#cedff2}
+img.hero{display:block;width:100%;background:#eef;border:1px solid #ccc;min-height:120px}
+a{color:#0645ad;text-decoration:none}
+.ref{font-size:0.85em;color:#555}
+code{font-family:monospace;background:#f0f0f0;padding:1px 4px}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Amdahl's law</h1>
+<p><b>Amdahl's law</b> (or <b>Amdahl's argument</b>) is a formula in computer science and engineering that gives the theoretical speedup in latency of the execution of a task at fixed workload when resources are added to a system. Named after computer scientist Gene Amdahl, who presented it in 1967, it is most often used in parallel computing to predict the maximum improvement obtainable by parallelising a program: the speedup is limited by the fraction of the task that must remain serial.</p>
+<img class="hero" src="images/Amdahl's_law.png" alt="Curve showing diminishing speedup as processors increase for different parallel fractions">
+<table class="infobox">
+<caption>Amdahl's law</caption>
+<tr><th>Named after</th><td>Gene Amdahl (1967)</td></tr>
+<tr><th>Field</th><td>Computer architecture, parallel computing</td></tr>
+<tr><th>Formula</th><td>S = 1 / ((1 − p) + p/s)</td></tr>
+</table>
+<h2>Formula</h2>
+<p>If a fraction <i>p</i> of a task can be accelerated by a factor <i>s</i>, and the remaining fraction (1 − <i>p</i>) cannot, the overall speedup is:</p>
+<p style="text-align:center"><code>S = 1 / ((1 − p) + p/s)</code></p>
+<p>As <i>s</i> tends to infinity, the maximum speedup approaches 1/(1 − <i>p</i>): if 5% of a program is inherently serial, no amount of parallel hardware can speed it up more than twentyfold. In the parallel case, <i>s</i> is the number of processors N, giving S = 1 / ((1 − p) + p/N).</p>
+<h2>Implications</h2>
+<p>Amdahl's law highlights diminishing returns from adding processors and the importance of reducing the serial fraction of software. It is sometimes contrasted with Gustafson's law, which notes that in practice problem sizes grow with available resources, keeping the parallel fraction effectively larger. The argument also generalises to other engineering improvements: optimising a component yields returns bounded by that component's share of the whole task.</p>
+<h2>History</h2>
+<p>Gene Amdahl presented the argument at the 1967 AFIPS Spring Joint Computer Conference as a case against the then-fashionable enthusiasm for massively parallel machines for general-purpose workloads, though its quantitative form has since become a standard tool in computer architecture.</p>
+<p class="ref">See also: <a href="../Gustafson%27s_law/index.html">Gustafson's law</a>, <a href="../Parallel_computing/index.html">Parallel computing</a>, <a href="../Gene_Amdahl/index.html">Gene Amdahl</a>.</p>
+</div>
+</body>
+</html>
