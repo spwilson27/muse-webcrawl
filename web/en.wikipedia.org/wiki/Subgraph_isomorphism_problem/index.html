@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Subgraph isomorphism problem - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+#content{max-width:960px;margin:0 auto;padding:20px 30px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.85em;margin:0 0 1em 1em;padding:8px}
+.infobox th{background:#b0c4de;text-align:center;padding:4px}
+.infobox td{padding:3px 6px;vertical-align:top}
+.tagline{font-size:0.85em;color:#54595d;margin-bottom:1em}
+ul{margin:0.3em 0 0.3em 1.6em}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Subgraph isomorphism problem</h1>
+<div class="tagline">From Wikipedia, the free encyclopedia</div>
+<table class="infobox">
+<tr><th colspan="2">Subgraph isomorphism</th></tr>
+<tr><td colspan="2" style="text-align:center"><img src="images/Subgraph_isomorphism_problem.png" alt="A small pattern graph highlighted as a subgraph within a larger target graph" width="240"></td></tr>
+<tr><td><b>Field</b></td><td>Graph theory, computational complexity</td></tr>
+<tr><td><b>Complexity</b></td><td>NP-complete</td></tr>
+</table>
+<p>In theoretical computer science, the <b>subgraph isomorphism problem</b> is a computational task in which two <a href="../Graph_(discrete_mathematics)/index.html">graphs</a> G and H are given as input, and one must determine whether G contains a subgraph that is <a href="../Graph_isomorphism/index.html">isomorphic</a> to H. Subgraph isomorphism is a generalisation of both the maximum clique problem and the problem of testing whether a graph contains a Hamiltonian cycle, and is therefore <b>NP-complete</b>.</p>
+<h2>Decision problem and complexity</h2>
+<p>The formal decision problem asks: given graphs G and H, does there exist an injective mapping f from the vertices of H to vertices of G such that every edge of H maps to an edge of G? Because the clique problem and Hamiltonian cycle problem are special cases, subgraph isomorphism is NP-hard; it belongs to NP because a proposed mapping can be verified in polynomial time. Nevertheless, practical algorithms solve many real-world instances quickly, because typical graphs are sparse or have labels (colours) on vertices and edges that drastically prune the search.</p>
+<h2>Algorithms</h2>
+<ul>
+<li><b>Ullmann's algorithm</b> (1976) – backtracking search with pruning by vertex degrees and matrix refinement.</li>
+<li><b>VF2</b> (Cordella et al.) – a widely used state-space search with feasibility rules, standard in graph-matching libraries.</li>
+<li><b>Constraint programming and SAT encodings</b> – modern solvers such as the Glasgow Subgraph Solver use sophisticated propagation and restarts.</li>
+<li>Special cases are polynomial: subgraph isomorphism for trees, planar pattern graphs, and graphs of bounded treewidth can be solved efficiently.</li>
+</ul>
+<h2>Applications</h2>
+<p>Subgraph isomorphism underlies molecular substructure search in cheminformatics (finding whether a molecule contains a given functional group), pattern matching in social and biological networks, CAD and electronic design automation, image recognition, and program analysis. In chemistry, graphs are labelled by atom and bond types, which makes practical searches fast.</p>
+<h2>Related problems</h2>
+<ul>
+<li><a href="../Graph_isomorphism_problem/index.html">Graph isomorphism problem</a> – deciding whether two whole graphs are isomorphic; not known to be NP-complete.</li>
+<li><a href="../Induced_subgraph/index.html">Induced subgraph</a> isomorphism – the mapping must preserve non-edges as well.</li>
+<li><a href="../Maximum_common_subgraph/index.html">Maximum common subgraph</a> – the optimisation version.</li>
+<li><a href="../Clique_problem/index.html">Clique problem</a></li>
+</ul>
+<p style="font-size:0.85em;color:#54595d">Categories: Graph theory | NP-complete problems | Computational problems in graph theory</p>
+</div>
+</body>
+</html>

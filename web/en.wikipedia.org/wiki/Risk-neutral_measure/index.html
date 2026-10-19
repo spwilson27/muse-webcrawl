@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Risk-neutral measure - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-bottom: 4px; }
+h2 { font-family: sans-serif; border-bottom: 1px solid #a2a9b1; font-size: 1.3em; margin-top: 1.2em; }
+.hero { text-align: center; margin: 8px 0; }
+.hero img { max-width: 100%; border: 1px solid #ccc; background: #eee; }
+p { line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.math { font-style: italic; text-align: center; font-size: 1.1em; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Risk-neutral measure</h1>
+<div class="hero"><img src="images/Risk-neutral_measure.png" alt="Diagram of risk-neutral valuation (image placeholder)"></div>
+<p>In mathematical finance, a <b>risk-neutral measure</b> (also called an equilibrium measure or equivalent martingale measure) is a probability measure such that each share price is exactly the discounted expectation of the share price under this measure. Risk-neutral measures are central to the pricing of derivative securities: when a market is complete, there is a unique risk-neutral measure, and the arbitrage-free price of any derivative is its expected payoff discounted at the risk-free rate under that measure.</p>
+<p>The concept arises because, in a risk-neutral world where all investors are indifferent to risk, expected returns on all assets equal the risk-free rate. Although real investors are risk-averse, the fundamental theorem of asset pricing shows that absence of arbitrage is equivalent to the existence of at least one risk-neutral measure, which justifies computing prices as if the world were risk-neutral.</p>
+<h2>Motivation</h2>
+<p>Consider a stock that will be worth either 120 or 80 in one period, currently priced at 100, with a risk-free rate of 0 for simplicity. Under the real-world measure the two outcomes might be equally likely, giving an expected value of 100—but generally investors demand a risk premium, so real-world probabilities do not directly give prices. The risk-neutral probability q solves 100 = q·120 + (1−q)·80, giving q = 0.5 here by construction; more generally q is determined by the current price, not by anyone's beliefs. Any derivative on the stock, such as a call option struck at 100 (paying 20 or 0), is then priced as q·20 + (1−q)·0 = 10.</p>
+<h2>Formal definition</h2>
+<p>A measure Q is a risk-neutral measure if it is equivalent to the real-world measure P (assigning zero probability to exactly the same events) and if the discounted price process of every traded asset is a martingale under Q. In continuous models such as Black–Scholes, the risk-neutral measure is obtained from the real-world measure by the Girsanov theorem, shifting the drift of asset prices from their real-world expected return to the risk-free rate while leaving volatility unchanged.</p>
+<h2>Applications</h2>
+<p>Risk-neutral valuation underlies the Black–Scholes option pricing formula, binomial tree models, and Monte Carlo simulation of derivative prices. In practice, risk-neutral probabilities are backed out from observed market prices (for example through implied volatility), allowing hedging and relative-value trading without estimating real-world expected returns.</p>
+<h2>See also</h2>
+<p><a href="../Risk/index.html">Risk</a> &middot; <a href="../Martingale_(probability_theory)/index.html">Martingale</a> &middot; <a href="../Black–Scholes_model/index.html">Black–Scholes model</a> &middot; <a href="../Fundamental_theorem_of_asset_pricing/index.html">Fundamental theorem of asset pricing</a></p>
+</div>
+</body>
+</html>

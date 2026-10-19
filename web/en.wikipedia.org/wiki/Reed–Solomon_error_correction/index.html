@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Reed–Solomon error correction - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:24px 20px 60px}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-family:Georgia,'Times New Roman',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:.88em;margin:0 0 14px 18px;border-collapse:collapse}
+.infobox th,.infobox td{padding:5px 8px;border-bottom:1px solid #eaecf0;vertical-align:top;text-align:left}
+.infobox .ib-title{background:#b0c4de;text-align:center;font-size:1.05em}
+.hero{display:block;max-width:420px;width:100%;margin:10px 0;background:#f8f9fa;border:1px solid #c8ccd1;padding:6px}
+.caption{font-size:.85em;color:#54595d}
+.small{font-size:.9em;color:#54595d}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Reed–Solomon error correction</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+
+<table class="infobox">
+<tr><th colspan="2" class="ib-title">Reed–Solomon code</th></tr>
+<tr><th>Type</th><td>Block error-correcting code</td></tr>
+<tr><th>Introduced</th><td>1960, by Irving S. Reed and Gustave Solomon</td></tr>
+<tr><th>Based on</th><td>Polynomial oversampling over finite fields</td></tr>
+<tr><th>Used in</th><td>CDs, DVDs, QR codes, DSL, deep-space links, RAID 6</td></tr>
+</table>
+
+<img class="hero" src="images/Reed–Solomon_error_correction.png" alt="Placeholder diagram illustrating Reed–Solomon encoding of data into a polynomial">
+<p class="caption">Reed–Solomon codes treat a block of data as coefficients of a polynomial evaluated at many points.</p>
+
+<p><b>Reed–Solomon error correction</b> is a family of error-correcting codes invented in 1960 by Irving S. Reed and Gustave Solomon of MIT's Lincoln Laboratory. Reed–Solomon (RS) codes are non-binary cyclic codes that operate on blocks of symbols rather than individual bits, making them especially effective against burst errors. They are among the most widely deployed error-correction schemes in consumer and industrial technology.</p>
+
+<h2>Principle</h2>
+<p>An RS encoder takes a block of <i>k</i> data symbols and interprets them as the coefficients of a polynomial over a finite (Galois) field, typically GF(2<sup>8</sup>), whose elements are bytes. The polynomial is evaluated at <i>n</i> distinct points, producing an <i>n</i>-symbol codeword. Because a polynomial of degree less than <i>k</i> is uniquely determined by any <i>k</i> of its values, the receiver can reconstruct the data even if some symbols are corrupted or lost: an RS(<i>n</i>, <i>k</i>) code can correct up to (<i>n</i> − <i>k</i>)/2 symbol errors at unknown positions, or up to <i>n</i> − <i>k</i> erasures whose positions are known. RS codes achieve the maximum possible minimum distance for their length and dimension, and are therefore maximum-distance-separable (MDS) codes.</p>
+<p>Practical decoders — beginning with the Berlekamp–Massey algorithm and related methods of the late 1960s — made decoding fast enough for real-time hardware, opening the way to mass application.</p>
+
+<h2>Applications</h2>
+<ul>
+<li><b>Optical discs</b> — cross-interleaved Reed–Solomon coding (CIRC) protects audio CDs; DVDs and Blu-ray discs use RS product codes, allowing scratched discs to play perfectly.</li>
+<li><b>Barcodes</b> — <a href="../QR_code/index.html">QR codes</a> use RS correction to remain readable when partly damaged or obscured.</li>
+<li><b>Communications</b> — deep-space missions (including Voyager), satellite links, DSL and cable modems, and digital television broadcasting.</li>
+<li><b>Storage</b> — RAID 6 arrays and distributed storage systems use RS-style erasure coding to survive disk failures.</li>
+</ul>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Error_correction_code/index.html">Error correction code</a></li>
+<li><a href="../BCH_code/index.html">BCH code</a></li>
+<li><a href="../Finite_field/index.html">Finite field</a></li>
+<li><a href="../QR_code/index.html">QR code</a></li>
+<li><a href="../Berlekamp%E2%80%93Massey_algorithm/index.html">Berlekamp–Massey algorithm</a></li>
+</ul>
+</div>
+</body>
+</html>

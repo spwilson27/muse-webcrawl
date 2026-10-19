@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Spike-timing-dependent plasticity - Wikipedia</title>
+<style>
+body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+#wrap{max-width:960px;margin:0 auto;padding:1em 1.5em 3em}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:normal;font-size:2em;border-bottom:1px solid #a2a9b1;margin-bottom:.2em}
+h2{font-family:Georgia,serif;font-weight:normal;font-size:1.5em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:.85em;margin:.3em 0 1em 1em;padding:.5em}
+.infobox th{text-align:left;vertical-align:top;padding:.2em .5em}
+.infobox td{padding:.2em .5em}
+.infobox caption{font-weight:bold;font-size:1.1em;padding:.3em}
+figure.thumb{margin:0;text-align:center}
+figure.thumb img{max-width:250px;width:100%;border:1px solid #c8ccd1;background:#eaecf0}
+figcaption{font-size:.8em;color:#54595d;padding:.3em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:.85em;color:#54595d}
+.eq{text-align:center;font-style:italic;background:#f8f9fa;border:1px solid #eaecf0;padding:.5em;margin:.7em 0}
+ul{margin:.3em 0 .3em 1.6em;padding:0}
+</style>
+</head>
+<body>
+<div id="wrap">
+<h1>Spike-timing-dependent plasticity</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="infobox">
+<figure class="thumb">
+<img src="images/stdp.png" alt="Learning window graph showing potentiation and depression versus spike timing">
+<figcaption>The STDP learning window: change in synaptic strength versus the relative timing of pre- and postsynaptic spikes</figcaption>
+</figure>
+<table>
+<caption>Spike-timing-dependent plasticity</caption>
+<tr><th>Type</th><td>Hebbian learning rule</td></tr>
+<tr><th>Timescale</th><td>Tens of milliseconds</td></tr>
+<tr><th>Key demonstration</th><td>Bi &amp; Poo (1998)</td></tr>
+</table>
+</div>
+<p><b>Spike-timing-dependent plasticity</b> (<b>STDP</b>) is a form of synaptic plasticity in which the direction and magnitude of the change in synaptic strength depend on the precise relative timing of action potentials ("spikes") in the presynaptic and postsynaptic neurons. It is regarded as a temporally precise implementation of <a href="../../Hebbian_theory/">Hebb's rule</a> — often summarized as "cells that fire together wire together."</p>
+<h2>The learning rule</h2>
+<p>In the canonical form of STDP, if a presynaptic spike arrives shortly <i>before</i> a postsynaptic spike (typically within about 10–20&nbsp;ms), the synapse is strengthened — a form of long-term potentiation (LTP). If the order is reversed and the presynaptic spike arrives shortly <i>after</i> the postsynaptic spike, the synapse is weakened — a form of long-term depression (LTD). As the time difference grows, the change decays roughly exponentially, and spike pairs separated by much more than about 50–100&nbsp;ms produce little change.</p>
+<div class="eq">Δw = A<sub>+</sub> e<sup>−Δt/τ+</sup> for Δt &gt; 0 (pre before post); Δw = −A<sub>−</sub> e<sup>Δt/τ−</sup> for Δt &lt; 0 (post before pre)</div>
+<p>The logic is causal: a presynaptic spike that helps to fire the postsynaptic cell is taken as evidence that the synapse contributed to the firing, so it is reinforced; a spike arriving just after firing cannot have contributed, so it is weakened.</p>
+<h2>Biological evidence</h2>
+<p>Timing-dependent plasticity was demonstrated in several preparations in the 1990s, notably by Markram and colleagues in cortical slices and, most influentially, by Guo-qiang Bi and Mu-ming Poo (1998) in cultured hippocampal neurons, who mapped the temporal window for potentiation and depression. Related timing rules have since been reported in the cortex, hippocampus, cerebellum-like structures, and other systems, though the exact shape of the window varies with synapse type, firing frequency, and the neuron's recent history.</p>
+<h2>Mechanisms</h2>
+<p>The leading mechanistic account involves NMDA receptors, which open only when presynaptic glutamate release coincides with postsynaptic depolarization, admitting calcium. Large, rapid calcium elevations tend to trigger LTP, while smaller, prolonged elevations trigger LTD. Backpropagating action potentials in the dendrite provide the timing signal that interacts with arriving synaptic input.</p>
+<h2>Function and applications</h2>
+<p>STDP is thought to underlie sequence learning, the formation of receptive fields in sensory systems, and competitive reorganization of neural circuits during development. In computational work, STDP is widely used as a local, unsupervised learning rule in <a href="../../Spiking_neural_network/">spiking neural networks</a> and in neuromorphic hardware, where it allows synapses to adapt using only information available at the synapse itself.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../Hebbian_theory/">Hebbian theory</a></li>
+<li><a href="../../Long-term_potentiation/">Long-term potentiation</a></li>
+<li><a href="../../Long-term_depression/">Long-term depression</a></li>
+<li><a href="../../Synaptic_plasticity/">Synaptic plasticity</a></li>
+<li><a href="../../Spiking_neural_network/">Spiking neural network</a></li>
+</ul>
+</div>
+</body>
+</html>
