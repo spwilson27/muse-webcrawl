@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pinhole camera model - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; color: #202122; background: #fff; }
+#content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; font-weight: normal; margin-top: 1.4em; }
+p { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 100%; border: 1px solid #a2a9b1; background: #eaecf0; }
+.caption { font-size: 0.8em; color: #54595d; }
+ul { line-height: 1.6; font-size: 0.95em; }
+code { background: #f8f9fa; padding: 1px 4px; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Pinhole camera model</h1>
+<p>The <b>pinhole camera model</b> describes the mathematical relationship between the coordinates of a point in three-dimensional space and its projection onto the image plane of an ideal <a href="../Pinhole_camera/index.html">pinhole camera</a>, where the camera aperture is described as a point and no lenses are used to focus light. The model does not include geometric distortions or blurring of unfocused objects caused by lenses and finite sized apertures.</p>
+<div class="hero"><img src="images/pinhole_camera_model.png" alt="Diagram of pinhole camera geometry">
+<div class="caption">Geometry of the pinhole camera: a scene point projects through the aperture centre onto the image plane</div></div>
+<p>Despite its simplifications, the pinhole model is a good approximation of how a real camera forms images, and it is the standard model used in <a href="../Computer_vision/index.html">computer vision</a>, photogrammetry and computer graphics.</p>
+<h2>Geometry</h2>
+<p>The camera is modelled with its aperture at the origin of a 3D coordinate system, with the image (or virtual image) plane at distance <i>f</i> — the focal length — along the optical axis. A point (<i>X</i>, <i>Y</i>, <i>Z</i>) in the scene projects to the image point (<i>x</i>, <i>y</i>) = (<i>fX</i>/<i>Z</i>, <i>fY</i>/<i>Z</i>). Because the physical image plane lies behind the aperture, the image is inverted; for analysis it is conventional to use a virtual image plane in front of the aperture, yielding an upright image.</p>
+<h2>Camera matrix</h2>
+<p>In homogeneous coordinates the projection is expressed by a 3×4 camera matrix <b>P</b> = <b>K</b>[<b>R</b> | <b>t</b>], where <b>K</b> is the intrinsic matrix containing focal lengths, principal point and skew, and [<b>R</b> | <b>t</b>] are the extrinsic parameters describing the camera's rotation and position in the world. Recovering <b>P</b> from point correspondences is the problem of camera calibration (or resectioning), solved in practice with methods such as the direct linear transformation, and extended to real lenses by adding distortion coefficients.</p>
+<h2>Applications</h2>
+<p>The model underlies stereo vision and epipolar geometry, structure-from-motion and 3D reconstruction, augmented reality, and the rendering pipeline of computer graphics, where an equivalent perspective projection matrix maps a scene onto the screen.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Pinhole_camera/index.html">Pinhole camera</a></li>
+<li><a href="../Camera_calibration/index.html">Camera calibration</a></li>
+<li><a href="../Epipolar_geometry/index.html">Epipolar geometry</a></li>
+<li><a href="../Computer_vision/index.html">Computer vision</a></li>
+</ul>
+</div>
+</body>
+</html>

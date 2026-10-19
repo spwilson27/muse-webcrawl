@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Monad (functional programming) - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#fff;color:#202122;margin:0;padding:0 1.5em;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+h3{font-size:1.15em;font-weight:bold}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.6em;margin:0 0 1em 1em;width:260px;font-size:0.88em;font-family:sans-serif}
+.infobox th{text-align:left;background:#eaf3ff;padding:3px}
+.infobox td{padding:3px}
+.hero{display:block;margin:1em auto;max-width:420px;border:1px solid #a2a9b1;background:#f8f9fa;padding:6px;text-align:center;font-size:0.85em;color:#54595d}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:0.8em;overflow-x:auto;font-size:0.9em}
+code{font-family:monospace}
+ul,ol{margin-left:1.2em}
+</style>
+</head>
+<body>
+<h1>Monad (functional programming)</h1>
+<p>In <a href="../Functional_programming/index.html">functional programming</a>, a <b>monad</b> is a structure that combines program fragments (functions) and wraps their return values in a type with additional computation. Programmers use monads to allow actions (functions that affect the program's environment) to be composed in a sequence, similar to using pipelines in Unix shells. This design pattern is especially prominent in the programming language <a href="../Haskell/index.html">Haskell</a>, where monads are used extensively to handle <a href="../Input/output/index.html">input/output</a>, state, exceptions, and other effects within a purely functional setting.</p>
+<figure class="hero"><img src="images/monad.png" alt="Diagram illustrating monadic bind chaining computations"></figure>
+<table class="infobox">
+<tr><th colspan="2">Monad</th></tr>
+<tr><th>Type</th><td>Design pattern / type class</td></tr>
+<tr><th>Field</th><td>Functional programming</td></tr>
+<tr><th>Origin</th><td>Category theory</td></tr>
+<tr><th>Key operations</th><td>return (unit), bind (&gt;&gt;=)</td></tr>
+</table>
+<h2>Definition</h2>
+<p>Formally, a monad is defined by a type constructor <i>M</i> together with two operations:</p>
+<ul>
+<li><b>return</b> (also called <i>unit</i> or <i>pure</i>): takes a value <i>a</i> and produces a computation of type <i>M a</i>.</li>
+<li><b>bind</b> (written <code>&gt;&gt;=</code>): takes a computation of type <i>M a</i> and a function from <i>a</i> to <i>M b</i>, and produces a computation of type <i>M b</i>.</li>
+</ul>
+<p>These operations must satisfy the three <b>monad laws</b>:</p>
+<ol>
+<li><b>Left identity:</b> <code>return a &gt;&gt;= f</code> is the same as <code>f a</code>.</li>
+<li><b>Right identity:</b> <code>m &gt;&gt;= return</code> is the same as <code>m</code>.</li>
+<li><b>Associativity:</b> <code>(m &gt;&gt;= f) &gt;&gt;= g</code> is the same as <code>m &gt;&gt;= (\x -&gt; f x &gt;&gt;= g)</code>.</li>
+</ol>
+<h2>Examples</h2>
+<h3>Maybe monad</h3>
+<p>The <i>Maybe</i> monad represents computations that may fail. A value of type <code>Maybe a</code> is either <code>Just a</code> or <code>Nothing</code>. Binding a function over <code>Nothing</code> yields <code>Nothing</code>, short-circuiting the rest of the computation, which provides a clean alternative to explicit error checks or <a href="../Null_pointer/index.html">null references</a>.</p>
+<h3>List monad</h3>
+<p>Lists form a monad in which bind corresponds to mapping a function over each element and concatenating the results, modelling non-deterministic computations that can return multiple results.</p>
+<h3>IO monad</h3>
+<p>In Haskell, the <code>IO</code> monad encapsulates computations that interact with the outside world, allowing a pure language to perform impure operations in a controlled, sequenced way.</p>
+<h2>History</h2>
+<p>The concept derives from the monads of <a href="../Category_theory/index.html">category theory</a>, introduced into computer science by Eugenio Moggi in 1991 as a framework for structuring denotational semantics. Philip Wadler popularised their use in functional programming in the early 1990s. Monads were incorporated into Haskell's standard approach to I/O in the mid-1990s and have since influenced languages such as Scala, F#, Rust, and Swift.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Functor/index.html">Functor</a></li>
+<li><a href="../Applicative_functor/index.html">Applicative functor</a></li>
+<li><a href="../Monoid/index.html">Monoid</a></li>
+<li><a href="../Haskell/index.html">Haskell</a></li>
+</ul>
+</body>
+</html>

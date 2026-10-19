@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Molecular dynamics - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine','Georgia',serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:.85em;margin:0 0 1em 1em;padding:8px}
+.infobox th{background:#eaf3ff;text-align:left;padding:4px}
+.infobox td{padding:4px}
+.hero{text-align:center;margin:1em 0}
+.hero img{max-width:320px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Molecular dynamics</h1>
+<p><b>Molecular dynamics</b> (<b>MD</b>) is a computer simulation method for analysing the physical movements of atoms and molecules. The atoms and molecules are allowed to interact for a fixed period of time, giving a view of the dynamic evolution of the system, typically by numerically integrating Newton's equations of motion with forces derived from an empirical potential energy function (a <b>force field</b>). The method is widely applied in chemical physics, materials science and structural biology, where it is used to study protein folding, ligand binding, diffusion, phase transitions and the mechanical properties of materials.</p>
+<div class="hero"><img src="images/molecular-dynamics.png" alt="Snapshot of a simulated protein surrounded by water molecules"></div>
+<table class="infobox">
+<tr><th colspan="2">Molecular dynamics</th></tr>
+<tr><th>Type</th><td>Computer simulation</td></tr>
+<tr><th>Basis</th><td>Newtonian mechanics, force fields</td></tr>
+<tr><th>Pioneers</th><td>Alder &amp; Wainwright (1950s); Rahman (1964); Karplus and others</td></tr>
+<tr><th>Software</th><td>GROMACS, LAMMPS, NAMD, AMBER, CHARMM</td></tr>
+</table>
+<h2>Method</h2>
+<p>An MD simulation proceeds by choosing a time step — typically around one femtosecond, small enough to resolve the fastest bond vibrations — and repeatedly computing the force on each atom from the force field, then updating positions and velocities with an integrator such as the Verlet algorithm or leapfrog scheme. Force fields decompose the energy into bonded terms (bond stretching, angle bending, dihedral rotation) and non-bonded terms (Lennard-Jones van der Waals interactions and Coulomb electrostatics). Simulations are run in thermodynamic ensembles such as NVE (constant energy), NVT (constant temperature, via a thermostat) and NPT (constant pressure, via thermostat and barostat), often with periodic boundary conditions to mimic bulk material.</p>
+<h2>History</h2>
+<p>The method began with hard-sphere simulations by Berni Alder and Thomas Wainwright in the late 1950s; Aneesur Rahman's 1964 simulation of liquid argon used a continuous potential. The first protein simulation, of bovine pancreatic trypsin inhibitor, was reported by Martin Karplus's group in 1977. Karplus, Michael Levitt and Arieh Warshel received the 2013 Nobel Prize in Chemistry for the development of multiscale models for complex chemical systems, work foundational to modern biomolecular simulation. Continual gains in computing power — including special-purpose machines such as Anton and the distributed Folding@home project — have pushed accessible timescales from picoseconds to milliseconds for selected systems.</p>
+<h2>Applications and limitations</h2>
+<p>MD is used to predict binding free energies in drug design, to observe conformational changes inaccessible to experiment, and to compute transport and mechanical properties of materials. Its accuracy is limited by the quality of the force field, and its cost by the number of atoms and the need for femtosecond steps; enhanced-sampling techniques such as metadynamics and replica exchange address the problem of rare events, while coarse-grained models trade atomic detail for longer timescales. Reactive processes require quantum-mechanical or reactive force fields, as in <i>ab initio</i> MD.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Force_field_(chemistry)/index.html">Force field (chemistry)</a></li>
+<li><a href="../Monte_Carlo_method/index.html">Monte Carlo method</a></li>
+<li><a href="../Protein_folding/index.html">Protein folding</a></li>
+<li><a href="../Computational_chemistry/index.html">Computational chemistry</a></li>
+</ul>
+<p class="small">Categories: Molecular dynamics | Computational chemistry | Molecular modelling</p>
+</div>
+</body>
+</html>

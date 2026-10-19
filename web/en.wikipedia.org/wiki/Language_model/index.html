@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Language model - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:1.2em}
+p{line-height:1.6;font-size:0.95em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;background:#f8f9fa;border:1px solid #a2a9b1;padding:10px;margin:0 0 16px 20px;font-size:0.85em}
+.infobox th{background:#b0c4de;text-align:center;padding:4px}
+.infobox td{padding:3px 4px;vertical-align:top}
+.hero{text-align:center;margin:16px 0}
+.hero img{max-width:420px;border:1px solid #a2a9b1;background:#eaecf0;padding:8px}
+.caption{font-size:0.8em;color:#54595d}
+.ref{font-size:0.8em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Language model</h1>
+<p>A <b>language model</b> is a computational model of the probability distribution over sequences of words (or characters, or subword tokens) in a language. Given a context, a language model assigns probabilities to possible continuations, enabling machines to generate text, recognise speech, translate between languages, and complete sentences. Language modelling is a foundational task of natural language processing and, since roughly 2018, the basis of the large language models (LLMs) that power modern AI assistants.</p>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Language model</th></tr>
+<tr><td><b>Type</b></td><td>Statistical / neural model of language</td></tr>
+<tr><td><b>Task</b></td><td>Estimate P(next token | context); generate text</td></tr>
+<tr><td><b>Key metric</b></td><td>Perplexity</td></tr>
+<tr><td><b>Milestones</b></td><td>n-gram models; LSTM; Transformer (2017); GPT and BERT (2018)</td></tr>
+</table>
+</div>
+<div class="hero">
+<img src="images/language_model.png" alt="Diagram of a neural network predicting the next word in a sentence">
+<div class="caption">A language model predicts the probability of each possible next word (placeholder image).</div>
+</div>
+<h2>History</h2>
+<p>Claude Shannon's work in the 1940s–50s treated English statistically and measured its entropy using character predictions. Statistical language modelling matured in speech recognition research at IBM and elsewhere in the 1970s–90s, dominated by <b>n-gram models</b>, which estimate the probability of a word from the previous n−1 words, smoothed to handle unseen combinations (e.g. Kneser–Ney smoothing). Neural language models began with Bengio et al. (2003), which learned distributed word embeddings, followed by recurrent networks and LSTMs, then the Transformer architecture (2017), whose self-attention mechanism enabled efficient training on huge corpora.</p>
+<h2>Large language models</h2>
+<p>Scaling up Transformer models pretrained by simple next-token prediction on web-scale text — GPT-2 and GPT-3, PaLM, LLaMA, and others — produced systems with striking general abilities: few-shot learning, translation, summarisation, code generation, and dialogue after further fine-tuning and reinforcement learning from human feedback (RLHF). Masked language models such as BERT instead predict hidden words from both directions and became standard for classification and embedding tasks. Evaluation uses perplexity (the exponentiated average negative log-likelihood) for intrinsic quality and a wide range of benchmark tasks for downstream ability.</p>
+<h2>Applications and issues</h2>
+<p>Applications include autocomplete, machine translation, chatbots, search, spell checking, and assistive communication. Language models raise issues of factual reliability ("hallucination"), bias inherited from training data, copyright in training corpora, and large compute and energy costs; these are active subjects of research and regulation.</p>
+<h2>See also</h2>
+<p><a href="../Large_language_model/index.html">Large language model</a> &middot; <a href="../N-gram/index.html">N-gram</a> &middot; <a href="../Transformer_(machine_learning_model)/index.html">Transformer</a> &middot; <a href="../Perplexity/index.html">Perplexity</a> &middot; <a href="../Natural_language_processing/index.html">Natural language processing</a> &middot; <a href="../GPT-3/index.html">GPT-3</a></p>
+<p class="ref">This page was recreated from memory for the muse-webcrawl project; details may differ from the live encyclopedia article.</p>
+</div>
+</body>
+</html>
