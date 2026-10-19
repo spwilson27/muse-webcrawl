@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Elliptic-curve cryptography - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a2a9b1;border-right:1px solid #a2a9b1}
+h1{font-family:serif;font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;padding-bottom:2px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:.88em;margin:0 0 16px 16px;padding:8px}
+.infobox th{text-align:left;background:#e0e4ea;padding:3px 6px}
+.infobox td{padding:3px 6px}
+.infobox .title{text-align:center;font-weight:bold;background:#d5dce8;font-size:1.05em}
+.hero{display:block;margin:12px auto;max-width:100%;background:#eaecf0;border:1px dashed #a2a9b1;padding:40px 0;text-align:center;color:#54595d}
+code{font-family:monospace;background:#f8f9fa}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Elliptic-curve cryptography</h1>
+<p><b>Elliptic-curve cryptography</b> (<b>ECC</b>) is an approach to public-key cryptography based on the algebraic structure of elliptic curves over finite fields. ECC allows smaller keys to provide equivalent security compared to non-EC cryptography (larger keys) based on Galois fields.</p>
+<table class="infobox">
+<tr><td class="title" colspan="2">Elliptic-curve cryptography</td></tr>
+<tr><th>General</th><td>Public-key cryptography</td></tr>
+<tr><th>Designers</th><td>Neal Koblitz, Victor S. Miller (independently, 1985)</td></tr>
+<tr><th>Based on</th><td>Elliptic curve discrete logarithm problem (ECDLP)</td></tr>
+<tr><th>Key sizes</th><td>256 bits typical (≈128-bit security)</td></tr>
+</table>
+<figure><img class="hero" src="images/Elliptic-curve_cryptography.png" alt="Elliptic curve point addition diagram"></figure>
+<p>Elliptic curves are applicable for key agreement, digital signatures, pseudo-random generators and other tasks. The primary benefit promised by elliptic curve cryptography is a smaller key size, reducing storage and transmission requirements, while providing the same level of security.</p>
+<h2>Introduction</h2>
+<p>Public-key cryptography is based on the intractability of certain mathematical problems. Early public-key systems based on integer factorization, such as <a href="../RSA_(cryptosystem)/index.html">RSA</a>, remain secure for large key sizes. For elliptic curves, the presumed difficulty of computing the discrete logarithm of a random elliptic curve element with respect to a publicly known base point has resisted analysis for decades; no efficient algorithm has been published that computes it in the general case.</p>
+<h2>Mathematical theory</h2>
+<p>For current cryptographic purposes, an elliptic curve is a plane curve over a finite field consisting of the points satisfying the equation y² = x³ + ax + b, together with a distinguished point at infinity. The set of points forms an abelian group in which the point at infinity serves as the identity element. Scalar multiplication — adding a point to itself n times — is the fundamental operation, and its one-way nature (easy to compute, hard to invert) underlies ECC security.</p>
+<h2>Domain parameters and key sizes</h2>
+<p>Because the most secure pairs of finite fields and elliptic curves cannot be subjected to a dedicated attack, standardised domain parameters are used, such as NIST P-256 and Curve25519. A 256-bit elliptic curve public key provides comparable security to a 3072-bit RSA public key.</p>
+<h2>Schemes</h2>
+<p>Well-known ECC schemes include the Elliptic Curve Diffie–Hellman (ECDH) key agreement protocol, the Elliptic Curve Digital Signature Algorithm (ECDSA), used in <a href="../Bitcoin/index.html">Bitcoin</a> and in TLS, and the Edwards-curve Digital Signature Algorithm (EdDSA). ECC is widely deployed in <a href="../Transport_Layer_Security/index.html">Transport Layer Security</a> (TLS) certificates and secure messaging.</p>
+<h2>Implementation challenges</h2>
+<p>The NSA's announcement in 2015 of plans to transition to quantum-resistant algorithms reflected the vulnerability of ECC to a sufficiently large quantum computer running Shor's algorithm, which could solve the ECDLP efficiently. Post-quantum cryptography standards have since been developed to succeed it.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Elliptic_curve/index.html">Elliptic curve</a></li>
+<li><a href="../Curve25519/index.html">Curve25519</a></li>
+<li><a href="../Post-quantum_cryptography/index.html">Post-quantum cryptography</a></li>
+</ul>
+<p><i>References available in the full article.</i></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>True quantified Boolean formula - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+p{font-family:sans-serif;font-size:14px;line-height:1.6}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-family:sans-serif;font-size:12px;margin:0 0 16px 20px;border-collapse:collapse}
+.infobox th{background:#b0c4de;padding:6px;text-align:center;font-size:13px}
+.infobox td{padding:5px 8px;border-top:1px solid #eaecf0;vertical-align:top}
+.infobox td:first-child{font-weight:bold;width:38%}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;text-align:center;font-family:sans-serif;font-size:12px;color:#54595d}
+.thumb img{max-width:100%;background:#eaecf0;min-height:120px;display:block;width:100%}
+a{color:#0645ad;text-decoration:none}
+.small{font-size:12px;color:#54595d;font-family:sans-serif}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>True quantified Boolean formula</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+
+<table class="infobox">
+<tr><th colspan="2">True quantified Boolean formula (TQBF)</th></tr>
+<tr><td colspan="2"><div class="thumb"><img src="images/tqbf.png" alt="Placeholder image: A quantified Boolean formula with alternating quantifiers">A quantified Boolean formula (image placeholder)</div></td></tr>
+<tr><td>Field</td><td>Computational complexity theory</td></tr>
+<tr><td>Complexity</td><td>PSPACE-complete</td></tr>
+<tr><td>Decision problem</td><td>Is a fully quantified Boolean formula true?</td></tr>
+<tr><td>Canonical for</td><td>PSPACE (like geography and quantified satisfiability)</td></tr>
+</table>
+
+<p>In computational complexity theory, the language <b>TQBF</b> (<b>true quantified Boolean formulas</b>) is a formal language consisting of the quantified Boolean formulas that evaluate to true. A quantified Boolean formula (QBF) is a formula in propositional logic where variables may be quantified by either existential (∃) or universal (∀) quantifiers, for example ∀x ∃y (x ∨ y) ∧ (¬x ∨ ¬y). Deciding whether such a formula is true is the canonical <b>PSPACE-complete</b> problem.</p>
+
+<h2>Definition</h2>
+<p>A fully quantified Boolean formula is one in which every variable is bound by a quantifier, so the formula has no free variables and is simply true or false. It can be evaluated recursively: ∃x φ(x) is true if φ is true for x = true or x = false; ∀x φ(x) is true if φ is true for both assignments. TQBF is the set of all such formulas that are true.</p>
+
+<h2>PSPACE-completeness</h2>
+<p>TQBF can be solved in polynomial space by a straightforward recursive evaluation that reuses space for each level of quantification, placing it in PSPACE. It is also PSPACE-hard: any problem solvable by a polynomial-space Turing machine can be reduced to it, a result central to the proof given in standard treatments following Savitch's theorem. Consequently TQBF is PSPACE-complete. Because PSPACE contains both NP and coNP, quantified formulas are believed to be substantially harder than ordinary satisfiability (SAT): alternation of quantifiers corresponds to the moves of two players, a generalisation that also makes QBF the natural formalism for two-player games.</p>
+
+<h2>Applications</h2>
+<p>Quantified Boolean formulas model problems involving adversarial choices and planning under uncertainty: game solving, formal verification, synthesis, and certain problems in knowledge representation and artificial intelligence. Practical QBF solvers exist and are used in hardware verification, despite the worst-case complexity.</p>
+
+<p class="small">Categories: Computational complexity theory | Boolean algebra | PSPACE-complete problems</p>
+</div>
+</body>
+</html>

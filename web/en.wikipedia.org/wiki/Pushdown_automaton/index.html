@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pushdown automaton - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; line-height: 1.6; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-bottom: 0.3em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.1em; margin-top: 1.2em; }
+h3 { margin-top: 1em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; clear: right; width: 260px; margin: 0 0 1em 1.5em; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 88%; padding: 0.4em 0.6em; }
+.infobox th { background: #e7e9ec; text-align: left; padding: 0.2em 0.4em; }
+.infobox td { padding: 0.2em 0.4em; vertical-align: top; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 420px; width: 100%; background: #f0f0f0; border: 1px solid #c8ccd1; padding: 0.5em; }
+.caption { font-size: 85%; color: #54595d; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0.6em; overflow-x: auto; }
+.small { font-size: 90%; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Pushdown automaton</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+
+<table class="infobox">
+<tr><th colspan="2">Pushdown automaton</th></tr>
+<tr><th>Type</th><td>Computational model / automaton</td></tr>
+<tr><th>Memory</th><td>Stack (LIFO)</td></tr>
+<tr><th>Recognizes</th><td>Context-free languages</td></tr>
+<tr><th>Equivalent model</th><td><a href="../Context-free_grammar/index.html">Context-free grammar</a></td></tr>
+<tr><th>Weaker than</th><td><a href="../Turing_machine/index.html">Turing machine</a></td></tr>
+<tr><th>Stronger than</th><td><a href="../Finite-state_machine/index.html">Finite automaton</a></td></tr>
+</table>
+
+<p>In the <a href="../Theory_of_computation/index.html">theory of computation</a>, a branch of theoretical computer science, a <b>pushdown automaton</b> (<b>PDA</b>) is a type of <a href="../Automaton/index.html">automaton</a> that employs a <a href="../Stack_(abstract_data_type)/index.html">stack</a>. Pushdown automata are used in theories about what can be computed by machines. They are more capable than <a href="../Finite-state_machine/index.html">finite-state machines</a> but less capable than <a href="../Turing_machine/index.html">Turing machines</a>. The term "pushdown" refers to the fact that the stack can be regarded as being "pushed down" like a tray dispenser at a cafeteria, since the operations never work on elements other than the top of the stack.</p>
+
+<div class="hero">
+<img src="images/pushdown-automaton.png" alt="Diagram of a pushdown automaton reading input symbols while pushing and popping symbols on a stack">
+<div class="caption">A pushdown automaton manipulates an input tape together with a stack.</div>
+</div>
+
+<p>A finite-state machine only needs to track its current state to know everything about its past computations, which is a finite amount of information. A pushdown automaton has the additional ability to store an unbounded amount of information on its stack, although it can only access that information in a last-in, first-out manner. The class of languages recognized by pushdown automata is exactly the class of <a href="../Context-free_language/index.html">context-free languages</a>, which include languages such as the set of all correctly matched parentheses and the language of palindromes (in the nondeterministic case).</p>
+
+<h2>Informal description</h2>
+<p>A pushdown automaton differs from a finite-state machine in two ways:</p>
+<ol>
+<li>It can use the top of the stack to decide which transition to take.</li>
+<li>It can manipulate the stack as part of performing a transition, pushing a symbol onto it or popping the top symbol off.</li>
+</ol>
+<p>A pushdown automaton can also read input symbols, as a finite automaton does, and it may additionally make transitions that consume no input symbol (ε-transitions) and transitions that push or pop without reading input. Acceptance is usually defined in one of two equivalent ways: by <i>final state</i>, in which the automaton accepts if it reaches a designated accepting state after consuming the whole input, or by <i>empty stack</i>, in which it accepts if it empties its stack after consuming the whole input.</p>
+
+<h2>Formal definition</h2>
+<p>A pushdown automaton is formally defined as a 7-tuple:</p>
+<p style="text-align:center"><i>M</i> = (<i>Q</i>, Σ, Γ, <i>δ</i>, <i>q</i><sub>0</sub>, <i>Z</i><sub>0</sub>, <i>F</i>)</p>
+<ul>
+<li><i>Q</i> is a finite set of states;</li>
+<li>Σ is a finite set called the input alphabet;</li>
+<li>Γ is a finite set called the stack alphabet;</li>
+<li><i>δ</i> is the transition function, mapping <i>Q</i> × Σ<sub>ε</sub> × Γ<sub>ε</sub> into finite subsets of <i>Q</i> × Γ*;</li>
+<li><i>q</i><sub>0</sub> ∈ <i>Q</i> is the start state;</li>
+<li><i>Z</i><sub>0</sub> ∈ Γ is the initial stack symbol;</li>
+<li><i>F</i> ⊆ <i>Q</i> is the set of accepting (final) states.</li>
+</ul>
+<p>A configuration of the automaton is a triple (<i>q</i>, <i>w</i>, <i>α</i>) giving the current state, the input remaining to be read, and the contents of the stack. A <b>deterministic pushdown automaton</b> (DPDA) is one in which the transition function never offers a choice of moves and never mixes input-consuming and ε-moves from the same configuration. Unlike the nondeterministic case, deterministic PDAs are strictly weaker: they recognize exactly the <a href="../Deterministic_context-free_language/index.html">deterministic context-free languages</a>, a proper subset of the context-free languages. For example, a DPDA can recognize { <i>a</i><sup>n</sup><i>b</i><sup>n</sup> } but no DPDA can recognize all even-length palindromes, because the machine cannot guess where the middle of the string lies.</p>
+
+<h2>Example</h2>
+<p>The language <i>L</i> = { <i>a</i><sup>n</sup><i>b</i><sup>n</sup> : <i>n</i> ≥ 0 } is not <a href="../Regular_language/index.html">regular</a> — no finite-state machine can recognize it, because doing so requires counting an unbounded number of <i>a</i>'s. A pushdown automaton recognizes it easily: it pushes a marker onto the stack for every <i>a</i> read, and once <i>b</i>'s begin to appear it pops one marker per <i>b</i>. If the stack empties exactly as the input ends, the string is accepted.</p>
+<pre>
+On a: push A
+On first b: switch state; on each b: pop A
+Accept if input exhausted and stack empty
+</pre>
+
+<h2>Equivalence with context-free grammars</h2>
+<p>Every context-free grammar can be transformed into an equivalent pushdown automaton that accepts the same language, and vice versa. The automaton can simulate a leftmost derivation of the grammar on its stack: it repeatedly expands the variable on top of the stack using a production of the grammar, or matches a terminal on top of the stack against the next input symbol. This equivalence makes PDAs a central tool in the design of <a href="../Parser/index.html">parsers</a> for programming languages, whose syntax is conventionally specified by context-free grammars.</p>
+
+<h2>Generalizations and restrictions</h2>
+<p>Equipping a pushdown automaton with two stacks yields a machine equivalent in power to a Turing machine, because the two stacks can simulate the two halves of a Turing tape. Conversely, if the stack alphabet has only one symbol, the automaton degenerates to a <i>counter automaton</i>, which is weaker than a general PDA. A PDA whose stack depth is bounded is equivalent to a finite-state machine, since only finitely many configurations remain possible.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Context-free_language/index.html">Context-free language</a></li>
+<li><a href="../Chomsky_hierarchy/index.html">Chomsky hierarchy</a></li>
+<li><a href="../Deterministic_pushdown_automaton/index.html">Deterministic pushdown automaton</a></li>
+<li><a href="../Stack_machine/index.html">Stack machine</a></li>
+<li><a href="../Turing_machine/index.html">Turing machine</a></li>
+</ul>
+
+<h2>References</h2>
+<ul>
+<li>Hopcroft, John E.; Motwani, Rajeev; Ullman, Jeffrey D. (2006). <i>Introduction to Automata Theory, Languages, and Computation</i> (3rd ed.). Addison-Wesley.</li>
+<li>Sipser, Michael (2013). <i>Introduction to the Theory of Computation</i> (3rd ed.). Cengage Learning.</li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>r/AskReddit — Ask Reddit Anything</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "IBM Plex Sans", "Noto Sans", Arial, sans-serif; background: #dae0e6; color: #1a1a1a; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  /* top bar */
+  .topbar { background: #fff; border-bottom: 1px solid #ccc; height: 48px; display: flex; align-items: center; padding: 0 16px; gap: 16px; position: sticky; top: 0; z-index: 10; }
+  .logo { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 20px; }
+  .logo .ball { width: 32px; height: 32px; border-radius: 50%; background: #ff4500; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .search { flex: 1; max-width: 600px; }
+  .search input { width: 100%; padding: 8px 12px; border: 1px solid #edeff1; background: #f6f7f8; border-radius: 20px; font-size: 14px; }
+  .navlinks { display: flex; gap: 14px; font-size: 14px; font-weight: 600; color: #1a1a1a; }
+  .login { background: #fff; border: 1px solid #0079d3; color: #0079d3; padding: 6px 18px; border-radius: 999px; font-weight: 700; font-size: 14px; }
+  .signup { background: #0079d3; border: 1px solid #0079d3; color: #fff; padding: 6px 18px; border-radius: 999px; font-weight: 700; font-size: 14px; }
+  /* sub banner */
+  .banner { background: #0079d3; height: 64px; }
+  .subhead { background: #fff; border-bottom: 1px solid #ccc; }
+  .subhead-inner { max-width: 1024px; margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; gap: 14px; }
+  .subicon { width: 56px; height: 56px; border-radius: 50%; background: #24a0ed; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 700; border: 4px solid #fff; margin-top: -26px; }
+  .subname { font-size: 28px; font-weight: 700; }
+  .subtag { font-size: 14px; color: #7c7c7c; }
+  .join { margin-left: auto; background: #0079d3; color: #fff; border: none; padding: 6px 24px; border-radius: 999px; font-weight: 700; font-size: 14px; cursor: pointer; }
+  /* layout */
+  .wrap { max-width: 1024px; margin: 20px auto; padding: 0 16px; display: flex; gap: 24px; align-items: flex-start; }
+  .feed { flex: 1; min-width: 0; }
+  .sortbar { background: #fff; border: 1px solid #ccc; border-radius: 4px; padding: 10px 12px; display: flex; gap: 16px; font-size: 14px; font-weight: 700; color: #7c7c7c; margin-bottom: 16px; }
+  .sortbar .active { color: #0079d3; }
+  .post { background: #fff; border: 1px solid #ccc; border-radius: 4px; display: flex; margin-bottom: 10px; }
+  .post:hover { border-color: #898989; }
+  .votes { background: #f8f9fa; width: 44px; padding: 8px 0; display: flex; flex-direction: column; align-items: center; gap: 2px; border-radius: 4px 0 0 4px; font-size: 12px; font-weight: 700; }
+  .votes .arrow { color: #878a8c; font-size: 16px; line-height: 1; }
+  .votes .up:hover { color: #ff4500; }
+  .votes .down:hover { color: #7193ff; }
+  .postbody { padding: 8px 12px; flex: 1; }
+  .postmeta { font-size: 12px; color: #787c7e; margin-bottom: 6px; }
+  .postmeta b { color: #1c1c1c; }
+  .postmeta .flair { background: #e9f5fd; color: #0079d3; border-radius: 2px; padding: 1px 4px; font-weight: 700; }
+  .posttitle { font-size: 18px; font-weight: 600; line-height: 1.3; margin-bottom: 6px; }
+  .posttext { font-size: 14px; color: #1a1a1a; line-height: 1.45; margin-bottom: 8px; }
+  .postactions { display: flex; gap: 16px; font-size: 12px; font-weight: 700; color: #878a8c; }
+  .awards { font-size: 12px; color: #7c7c7c; }
+  /* sidebar */
+  .sidebar { width: 312px; flex-shrink: 0; }
+  .card { background: #fff; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 16px; overflow: hidden; }
+  .card h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .5px; padding: 10px 12px; background: #0079d3; color: #fff; }
+  .card .inner { padding: 12px; font-size: 14px; line-height: 1.5; }
+  .stats { display: flex; gap: 24px; padding: 0 12px 12px; }
+  .stats div b { display: block; font-size: 16px; }
+  .stats div span { font-size: 12px; color: #7c7c7c; }
+  .rule { padding: 8px 12px; border-top: 1px solid #edeff1; font-size: 14px; }
+  .hero { padding: 12px; }
+  .hero img { width: 100%; border-radius: 4px; background: #e9f5fd; display: block; }
+  .foot { text-align: center; color: #7c7c7c; font-size: 12px; padding: 24px 0 40px; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="logo" href="../../index.html"><span class="ball">●</span> reddit</a>
+  <div class="search"><input type="text" placeholder="Search Reddit"></div>
+  <nav class="navlinks">
+    <a href="#">Popular</a><a href="#">All</a><a href="#">Random</a>
+  </nav>
+  <button class="login">Log In</button>
+  <button class="signup">Sign Up</button>
+</header>
+
+<div class="banner"></div>
+<div class="subhead">
+  <div class="subhead-inner">
+    <div class="subicon">?</div>
+    <div>
+      <div class="subname">AskReddit</div>
+      <div class="subtag">r/AskReddit</div>
+    </div>
+    <button class="join">Join</button>
+  </div>
+</div>
+
+<div class="wrap">
+  <main class="feed">
+    <div class="sortbar">
+      <span class="active">🔥 Hot</span><span>✨ New</span><span>🏆 Top</span><span>📈 Rising</span>
+    </div>
+
+    <article class="post">
+      <div class="votes"><span class="arrow up">▲</span><span>84.2k</span><span class="arrow down">▼</span></div>
+      <div class="postbody">
+        <div class="postmeta">Posted by <b>u/curious_pineapple42</b> 6 hours ago <span class="awards">🏅 12 Awards</span></div>
+        <div class="posttitle"><a href="#">What small decision completely changed the direction of your life?</a></div>
+        <div class="postactions"><span>💬 21.4k Comments</span><span>↪ Share</span><span>🔖 Save</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><span class="arrow up">▲</span><span>67.9k</span><span class="arrow down">▼</span></div>
+      <div class="postbody">
+        <div class="postmeta">Posted by <b>u/nightly_notebook</b> 4 hours ago <span class="flair">Serious</span></div>
+        <div class="posttitle"><a href="#">[Serious] Doctors of Reddit, what is the one symptom people ignore that they absolutely should not?</a></div>
+        <div class="postactions"><span>💬 14.8k Comments</span><span>↪ Share</span><span>🔖 Save</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><span class="arrow up">▲</span><span>52.1k</span><span class="arrow down">▼</span></div>
+      <div class="postbody">
+        <div class="postmeta">Posted by <b>u/wandering_socks</b> 9 hours ago</div>
+        <div class="posttitle"><a href="#">What is a movie you can quote from start to finish?</a></div>
+        <div class="posttext">For me it is the same three films on rotation. I did not choose this life, the DVDs chose me.</div>
+        <div class="postactions"><span>💬 31.2k Comments</span><span>↪ Share</span><span>🔖 Save</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><span class="arrow up">▲</span><span>45.6k</span><span class="arrow down">▼</span></div>
+      <div class="postbody">
+        <div class="postmeta">Posted by <b>u/tiny_kitchen_wizard</b> 11 hours ago</div>
+        <div class="posttitle"><a href="#">Chefs of Reddit, what is one cheap ingredient that instantly makes home cooking taste like a restaurant?</a></div>
+        <div class="postactions"><span>💬 9.7k Comments</span><span>↪ Share</span><span>🔖 Save</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><span class="arrow up">▲</span><span>38.4k</span><span class="arrow down">▼</span></div>
+      <div class="postbody">
+        <div class="postmeta">Posted by <b>u/maple_and_moss</b> 13 hours ago</div>
+        <div class="posttitle"><a href="#">What did your job look like on your very first day versus now?</a></div>
+        <div class="postactions"><span>💬 7.3k Comments</span><span>↪ Share</span><span>🔖 Save</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><span class="arrow up">▲</span><span>29.8k</span><span class="arrow down">▼</span></div>
+      <div class="postbody">
+        <div class="postmeta">Posted by <b>u/quiet_orchard</b> 16 hours ago <span class="flair">Mod Post</span></div>
+        <div class="posttitle"><a href="#">What is the most interesting statistic you know?</a></div>
+        <div class="postactions"><span>💬 18.1k Comments</span><span>↪ Share</span><span>🔖 Save</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><span class="arrow up">▲</span><span>24.3k</span><span class="arrow down">▼</span></div>
+      <div class="postbody">
+        <div class="postmeta">Posted by <b>u/paperboat_captain</b> 19 hours ago</div>
+        <div class="posttitle"><a href="#">Teachers, what was the funniest wrong answer you ever saw on a test?</a></div>
+        <div class="postactions"><span>💬 11.5k Comments</span><span>↪ Share</span><span>🔖 Save</span></div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="votes"><span class="arrow up">▲</span><span>19.7k</span><span class="arrow down">▼</span></div>
+      <div class="postbody">
+        <div class="postmeta">Posted by <b>u/lantern_in_june</b> 22 hours ago</div>
+        <div class="posttitle"><a href="#">What is something that is free, that people still refuse to take advantage of?</a></div>
+        <div class="postactions"><span>💬 8.9k Comments</span><span>↪ Share</span><span>🔖 Save</span></div>
+      </div>
+    </article>
+  </main>
+
+  <aside class="sidebar">
+    <div class="card">
+      <h3>About Community</h3>
+      <div class="inner">r/AskReddit is the place to ask and answer thought-provoking questions. Pull up a chair, ask something interesting, and read what the world answers.</div>
+      <div class="stats">
+        <div><b>47.2m</b><span>Members</span></div>
+        <div><b>38.4k</b><span>Online</span></div>
+      </div>
+      <div class="inner" style="border-top:1px solid #edeff1; color:#7c7c7c; font-size:12px;">Created Jan 25, 2008</div>
+    </div>
+    <div class="card">
+      <div class="hero"><img src="images/askreddit-banner.png" alt="AskReddit community banner artwork (placeholder)"></div>
+    </div>
+    <div class="card">
+      <h3>r/AskReddit Rules</h3>
+      <div class="rule">1. Questions must be clear and direct</div>
+      <div class="rule">2. No personal information</div>
+      <div class="rule">3. No loaded or agenda-driven questions</div>
+      <div class="rule">4. Tag serious posts with [Serious]</div>
+      <div class="rule">5. Be civil to one another</div>
+    </div>
+  </aside>
+</div>
+
+<div class="foot">AskReddit — ask the world a question. A from-memory recreation for archival purposes.</div>
+</body>
+</html>
