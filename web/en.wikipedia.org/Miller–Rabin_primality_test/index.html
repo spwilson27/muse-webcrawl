@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Miller–Rabin primality test - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine','Georgia',serif;margin:0;background:#fff;color:#202122}
+.wrap{max-width:960px;margin:0 auto;padding:20px 28px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+p{line-height:1.6;font-family:sans-serif;font-size:0.95em}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;font-size:0.85em;overflow-x:auto}
+.hero{text-align:center;margin:12px 0}
+.hero img{max-width:420px;width:100%;border:1px solid #a2a9b1;background:#eaecf0;min-height:180px}
+.cap{font-family:sans-serif;font-size:0.8em;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Miller–Rabin primality test</h1>
+<div class="hero"><img src="images/miller-rabin.png" alt="Diagram of repeated modular exponentiation rounds in the Miller–Rabin test"></div>
+<p>The <b>Miller–Rabin primality test</b> is a probabilistic algorithm for determining whether a given number is a probable prime. It was developed from Gary Miller's deterministic test of 1976, which depended on the generalised Riemann hypothesis, and Michael O. Rabin's randomised variant of 1980, which needs no unproved assumptions. The test is widely used in cryptography, where fast primality checking of large integers is essential for generating keys in systems such as RSA.</p>
+<h2>Concept</h2>
+<p>The test rests on properties of modular arithmetic related to Fermat's little theorem and the fact that the only square roots of 1 modulo a prime p are ±1. To test an odd integer n, write n − 1 as 2<sup>s</sup>·d with d odd. A base a is a <b>witness</b> to the compositeness of n if a<sup>d</sup> is not congruent to 1 mod n and a<sup>2<sup>r</sup>d</sup> is not congruent to −1 mod n for any r from 0 to s − 1. If such a witness is found, n is certainly composite. If no witness is found after k independent rounds, n is prime with probability at least 1 − 4<sup>−k</sup>.</p>
+<h2>Accuracy and deterministic variants</h2>
+<p>For random odd composite n, at most one quarter of bases are "liars" that fail to witness compositeness, so a handful of rounds makes the error probability negligible. For numbers below fixed bounds, testing a small predetermined set of bases is provably exact — for example, testing the first twelve prime bases decides primality deterministically for all n below about 3.3 × 10<sup>24</sup>. These deterministic variants are what most software libraries implement for machine-sized integers.</p>
+<h2>Applications</h2>
+<p>Miller–Rabin is the standard primality test in computer algebra systems and cryptographic libraries because, combined with fast modular exponentiation, it runs in polynomial time (roughly O(k log<sup>3</sup> n)) while being simple to implement. It is typically paired with trial division by small primes to dispose of easy composites quickly.</p>
+<pre>Input: n &gt; 2 (odd), k rounds
+write n − 1 = 2^s · d with d odd
+repeat k times:
+    pick random a in [2, n − 2]
+    x = a^d mod n
+    if x == 1 or x == n − 1: continue
+    repeat s − 1 times:
+        x = x^2 mod n
+        if x == n − 1: break
+    otherwise: return "composite"
+return "probably prime"</pre>
+</div>
+</body>
+</html>

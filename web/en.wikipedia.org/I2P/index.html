@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>I2P - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+#content{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:270px;background:#f8f9fa;border:1px solid #a2a9b1;font-size:0.85em;margin:0 0 12px 16px;padding:8px}
+.infobox caption{font-weight:bold;font-size:1.05em;background:#b0c4de;padding:4px}
+.infobox td{padding:3px 6px;vertical-align:top}
+.hero{display:block;max-width:100%;background:#eaecf0;border:1px dashed #72777d;color:#54595d;text-align:center;padding:18px 8px;font-family:sans-serif;font-size:0.85em}
+.ref{font-size:0.8em;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>I2P</h1>
+<img class="hero" src="images/i2p.png" alt="Placeholder image: I2P router console network diagram">
+<table class="infobox">
+<caption>I2P</caption>
+<tr><td><b>Developer</b></td><td>The I2P Project (community)</td></tr>
+<tr><td><b>Initial release</b></td><td>2003</td></tr>
+<tr><td><b>Written in</b></td><td>Java; C++ implementation (i2pd)</td></tr>
+<tr><td><b>Operating system</b></td><td>Cross-platform</td></tr>
+<tr><td><b>Type</b></td><td>Anonymous overlay network, mixnet</td></tr>
+<tr><td><b>License</b></td><td>Free/open source (multiple licenses)</td></tr>
+</table>
+<p>The <b>Invisible Internet Project</b> (<b>I2P</b>) is an anonymous network layer (implemented as a mixnet) that allows for censorship-resistant, peer-to-peer communication. Anonymous connections are achieved by encrypting the user's traffic (by using end-to-end encryption), and sending it through a volunteer-run network of roughly 55,000 computers distributed around the world. Given the high number of possible paths the traffic can transit, a third party watching a full connection is unlikely to be able to trace its origin or destination.</p>
+<h2>Design</h2>
+<p>I2P uses <a href="../Garlic_routing/index.html">garlic routing</a>, a variant of onion routing in which multiple messages can be bundled into a single "garlic clove" and each peer both routes traffic and runs its own applications. Traffic passes through unidirectional inbound and outbound tunnels, typically three hops each, which are rebuilt frequently. Network information is stored in a distributed hash table called the netDb, maintained using the Kademlia algorithm with floodfill routers.</p>
+<p>Unlike <a href="../Tor_(network)/index.html">Tor</a>, which was designed primarily for accessing the regular internet anonymously through exit nodes, I2P is designed mainly for internal services: hidden websites called "eepsites", anonymous email (I2P-Bote and the bundled mail service), IRC, file sharing and blogging. Outproxies to the clearnet exist but are not the network's focus.</p>
+<h2>History</h2>
+<p>I2P began in 2003 as a fork of the Freenet-related Invisible IRC Project. The reference implementation is written in Java and is bundled as a router with applications for web browsing within the network, email and BitTorrent (I2PSnark). A lightweight C++ implementation, i2pd ("Purple I2P"), was developed independently. The software is free and open-source, published under multiple licences.</p>
+<h2>Terminology</h2>
+<ul>
+<li><b>Router</b> — the I2P software that routes encrypted packets for the user.</li>
+<li><b>Eepsite</b> — a website hosted anonymously within the I2P network, reachable by a .i2p pseudo-top-level domain or a long base-32/base-64 "destination" address.</li>
+<li><b>Tunnels</b> — unidirectional paths through a sequence of peers, used separately for inbound and outbound traffic.</li>
+<li><b>netDb</b> — the distributed database of router information and destination lease sets.</li>
+</ul>
+<p class="ref">See also: <a href="../Tor_(network)/index.html">Tor</a>, <a href="../Garlic_routing/index.html">Garlic routing</a>, <a href="../Darknet/index.html">Darknet</a>, <a href="../Freenet/index.html">Freenet</a>.</p>
+</div>
+</body>
+</html>

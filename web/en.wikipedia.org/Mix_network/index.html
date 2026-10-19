@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mix network - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine','Georgia',serif;margin:0;background:#fff;color:#202122}
+.wrap{max-width:960px;margin:0 auto;padding:20px 28px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+p{line-height:1.6;font-family:sans-serif;font-size:0.95em}
+.hero{text-align:center;margin:12px 0}
+.hero img{max-width:420px;width:100%;border:1px solid #a2a9b1;background:#eaecf0;min-height:180px}
+.cap{font-family:sans-serif;font-size:0.8em;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Mix network</h1>
+<div class="hero"><img src="images/mix-network.png" alt="Diagram of messages being shuffled and re-encrypted as they pass through a chain of mix nodes"></div>
+<p><b>Mix networks</b> are routing protocols that create hard-to-trace communications by using a chain of proxy servers known as <b>mixes</b>, which take in messages from multiple senders, shuffle them, and send them on to the next destination in random order. This breaks the link between the source and destination of a communication, making traffic analysis difficult. Mix networks were first described by David Chaum in 1981 and underlie anonymous communication systems such as remailers and, in modified form, onion routing.</p>
+<h2>How it works</h2>
+<p>A sender encrypts a message in successive layers using the public keys of each mix in the chosen path. Each mix decrypts one layer with its private key, learning only the next hop, collects a batch of incoming messages, strips away duplicates, reorders them randomly, and forwards them. Because each message is cryptographically transformed at every step, an observer who watches the network cannot correlate an incoming message with the identical message leaving a mix, provided at least one mix in the path is honest.</p>
+<p>Classic mix networks trade latency for anonymity: messages are deliberately delayed, pooled and padded so that timing and volume patterns leak less information. Low-latency descendants such as Tor sacrifice some of this protection for interactivity, which leaves them more vulnerable to end-to-end timing correlation by powerful adversaries.</p>
+<h2>Developments</h2>
+<p>Subsequent designs include Chaum's dining cryptographers networks, stop-and-go mixes, and modern systems offering formal privacy guarantees, such as Loopix and the Nym network, which add cover traffic and Poisson-distributed delays. Mix networks have been applied to anonymous email (Mixmaster, Mixminion), electronic voting, private messaging and censorship-resistant publishing.</p>
+<h2>Limitations</h2>
+<p>Mix networks require enough participating traffic to form large anonymity sets; an adversary controlling many mixes or observing both ends of a low-traffic system may still deanonymise users. Their delays also make them unsuitable for interactive applications such as web browsing or voice calls.</p>
+</div>
+</body>
+</html>

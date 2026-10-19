@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kalman filter - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#fff;color:#202122;margin:0;padding:0 2em;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-bottom:0.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.88em;margin:0 0 1em 1em;padding:0.5em;font-family:sans-serif}
+.infobox th{text-align:left;vertical-align:top;padding:2px 6px}
+.infobox td{padding:2px 6px}
+.infobox .ib-title{text-align:center;font-weight:bold;font-size:1.1em;background:#e7e7e7;padding:4px}
+.infobox img{width:100%;display:block}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hatnote{font-style:italic;font-size:0.9em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Kalman filter</h1>
+<p class="hatnote">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<tr><td class="ib-title" colspan="2">Kalman filter</td></tr>
+<tr><td colspan="2"><img src="images/Kalman_filter.png" alt="Diagram of the Kalman filter prediction and update cycle"></td></tr>
+<tr><th>Type</th><td>Recursive state estimation algorithm</td></tr>
+<tr><th>Published</th><td>1960, Rudolf E. Kálmán</td></tr>
+<tr><th>Uses</th><td>Navigation, tracking, control, signal processing, econometrics</td></tr>
+</table>
+<p>The <b>Kalman filter</b> is an algorithm that uses a series of measurements observed over time, which contain statistical noise and other inaccuracies, to produce estimates of unknown variables that tend to be more accurate than those based on a single measurement alone. Named after Rudolf E. Kálmán, who published the method in 1960, it is a cornerstone of modern control theory and signal processing.</p>
+<h2>Overview</h2>
+<p>The filter operates recursively in two steps. In the <i>prediction</i> step, it uses a model of the system's dynamics to project the current state estimate and its uncertainty forward in time. In the <i>update</i> step, it combines that prediction with a new measurement, weighting the two according to their respective uncertainties via the <b>Kalman gain</b>; measurements with less noise influence the estimate more. For linear systems with Gaussian noise, the result is the optimal (minimum mean-square error) estimator.</p>
+<h2>History</h2>
+<p>Similar recursive least-squares ideas go back to Gauss, and related methods were developed independently by Thorvald Thiele and Peter Swerling. Kálmán's formulation in terms of state-space models made the method suitable for digital computers. Stanley Schmidt at NASA Ames recognised its value, and Kalman filters guided the Apollo programme's navigation computers; the algorithm has since been used in spacecraft navigation, radar tracking, GPS receivers, weather forecasting, and financial time-series analysis.</p>
+<h2>Extensions</h2>
+<p>Real systems are often nonlinear. The <b>extended Kalman filter</b> (EKF) linearises the model about the current estimate, while the <b>unscented Kalman filter</b> (UKF) propagates a set of sigma points through the true nonlinearity and generally performs better. Related techniques include particle filters (sequential Monte Carlo), which represent the state distribution by samples and handle non-Gaussian cases.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Rudolf_E._Kálmán/index.html">Rudolf E. Kálmán</a></li>
+<li><a href="../Hidden_Markov_model/index.html">Hidden Markov model</a></li>
+<li><a href="../Recursive_least_squares_filter/index.html">Recursive least squares filter</a></li>
+</ul>
+</body>
+</html>

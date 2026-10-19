@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RSA (cryptosystem) - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine",Georgia,serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:16px 24px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+p{font-family:sans-serif;font-size:0.95em;line-height:1.6}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-family:sans-serif;font-size:0.85em;margin:0 0 12px 16px;padding:8px}
+.infobox th{background:#b0c4de;text-align:center;padding:4px}
+.infobox td{padding:3px 6px;vertical-align:top}
+.hero{display:block;margin:8px auto;max-width:240px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>RSA (cryptosystem)</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="infobox">
+<img class="hero" src="images/rsa_cryptosystem.png" alt="Diagram of RSA public-key encryption between two parties">
+<table>
+<tr><th colspan="2">RSA</th></tr>
+<tr><td><b>Designers</b></td><td>Ron Rivest, Adi Shamir, Leonard Adleman</td></tr>
+<tr><td><b>First published</b></td><td>1977</td></tr>
+<tr><td><b>Type</b></td><td>Public-key cryptosystem</td></tr>
+<tr><td><b>Security basis</b></td><td>Difficulty of integer factorisation</td></tr>
+<tr><td><b>Typical key sizes</b></td><td>2048–4096 bits</td></tr>
+</table>
+</div>
+<p><b>RSA</b> is a public-key cryptosystem named after its inventors Ron Rivest, Adi Shamir and Leonard Adleman, who published it in 1977 while at MIT. It was the first widely used scheme enabling secure communication and digital signatures without a pre-shared secret, and it remains common in protocols such as TLS, though elliptic-curve methods have taken over many uses. An equivalent system had been devised in 1973 by Clifford Cocks at the British signals-intelligence agency GCHQ, but it stayed classified until 1997.</p>
+<h2>Operation</h2>
+<p>Key generation chooses two large secret primes <i>p</i> and <i>q</i> and publishes their product <i>n</i> together with a public exponent <i>e</i>. The private exponent <i>d</i> is computed as the modular inverse of <i>e</i> modulo φ(<i>n</i>) = (<i>p</i>−1)(<i>q</i>−1). Encryption raises the message to the power <i>e</i> modulo <i>n</i>; decryption raises the ciphertext to the power <i>d</i>. Security rests on the practical difficulty of factoring <i>n</i> to recover the primes.</p>
+<h2>Security and practice</h2>
+<p>Textbook RSA is deterministic and malleable, so real systems use padding schemes such as OAEP for encryption and PSS for signatures, standardised in the PKCS #1 specifications. Attacks have exploited small exponents, poorly generated primes, side channels and faulty padding (notably Bleichenbacher's 1998 attack), rather than factoring itself; keys of 2048 bits or more are currently recommended. RSA would be broken by a large fault-tolerant quantum computer running Shor's algorithm, which motivates the migration to post-quantum cryptography.</p>
+<p class="small">See also: <a href="../Public-key_cryptography/index.html">Public-key cryptography</a> · <a href="../Diffie-Hellman_key_exchange/index.html">Diffie–Hellman key exchange</a></p>
+</div>
+</body>
+</html>
