@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Moore–Penrose inverse - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine','Georgia',serif;margin:0;color:#202122;background:#fff}
+#content{max-width:960px;margin:0 auto;padding:1em 1.5em}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+h3{font-size:1.15em;margin-top:1em}
+p{line-height:1.6;font-size:.95em}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:.85em;margin:0 0 1em 1em;padding:.5em}
+.infobox th{background:#b0c4de;text-align:center;padding:.4em}
+.infobox td{padding:.25em .4em;vertical-align:top}
+.infobox .label{font-weight:bold;width:40%}
+.hero{text-align:center;margin:1em 0}
+.hero img{max-width:420px;width:100%;background:#eaecf0;border:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{line-height:1.6;font-size:.95em}
+.math{font-family:'Cambria Math','Georgia',serif;font-style:italic}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Moore–Penrose inverse</h1>
+<table class="infobox">
+<tr><th colspan="2">Moore–Penrose inverse</th></tr>
+<tr><td class="label">Field</td><td>Linear algebra</td></tr>
+<tr><td class="label">Notation</td><td><span class="math">A</span><sup>+</sup></td></tr>
+<tr><td class="label">Introduced by</td><td>E. H. Moore (1920); Roger Penrose (1955)</td></tr>
+<tr><td class="label">Also called</td><td>Pseudoinverse</td></tr>
+</table>
+<p>In mathematics, and in particular linear algebra, the <b>Moore–Penrose inverse</b> <span class="math">A</span><sup>+</sup> of a matrix <span class="math">A</span> — commonly called the <b>pseudoinverse</b> — is the most widely known generalisation of the inverse matrix. It exists uniquely for every matrix, including rectangular and singular ones, and gives the least-squares solution of a system of linear equations. It was described independently by E. H. Moore in 1920 and by Roger Penrose in 1955.</p>
+<div class="hero"><img src="images/Moore–Penrose_inverse.png" alt="Placeholder image: diagram of the pseudoinverse as orthogonal projection onto a column space"></div>
+<h2>Definition</h2>
+<p>For a matrix <span class="math">A</span> with real (or complex) entries, the Moore–Penrose inverse <span class="math">A</span><sup>+</sup> is the unique matrix satisfying all four Penrose conditions:</p>
+<ul>
+<li><span class="math">A A</span><sup>+</sup><span class="math">A = A</span></li>
+<li><span class="math">A</span><sup>+</sup><span class="math">A A</span><sup>+</sup> = <span class="math">A</span><sup>+</sup></li>
+<li>(<span class="math">A A</span><sup>+</sup>)* = <span class="math">A A</span><sup>+</sup></li>
+<li>(<span class="math">A</span><sup>+</sup><span class="math">A</span>)* = <span class="math">A</span><sup>+</sup><span class="math">A</span></li>
+</ul>
+<p>where * denotes the conjugate transpose. If <span class="math">A</span> is invertible, then <span class="math">A</span><sup>+</sup> coincides with the ordinary inverse <span class="math">A</span><sup>−1</sup>.</p>
+<h2>Construction via the singular value decomposition</h2>
+<p>If <span class="math">A = UΣV</span>* is a singular value decomposition of <span class="math">A</span>, then <span class="math">A</span><sup>+</sup> = <span class="math">VΣ</span><sup>+</sup><span class="math">U</span>*, where <span class="math">Σ</span><sup>+</sup> is formed by taking the reciprocal of each non-zero singular value and transposing. This is the basis of most numerical algorithms, such as the <span class="math">pinv</span> functions in MATLAB and NumPy.</p>
+<h2>Applications</h2>
+<p>For a system <span class="math">Ax = b</span>, the vector <span class="math">x = A</span><sup>+</sup><span class="math">b</span> is the solution of minimum Euclidean norm among all least-squares solutions: it minimises ‖<span class="math">Ax − b</span>‖, and among all minimisers has the smallest ‖<span class="math">x</span>‖. This makes the pseudoinverse fundamental in linear regression, signal processing, control theory, and statistics, where it underlies the ordinary least-squares estimator.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Singular_value_decomposition/index.html">Singular value decomposition</a></li>
+<li><a href="../Least_squares/index.html">Least squares</a></li>
+<li><a href="../Generalized_inverse/index.html">Generalized inverse</a></li>
+</ul>
+</div>
+</body>
+</html>

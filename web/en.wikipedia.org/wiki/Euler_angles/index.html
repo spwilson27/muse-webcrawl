@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euler angles - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin:0 0 4px}
+h2{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+p{line-height:1.6}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:88%;margin:0 0 16px 16px;padding:6px}
+.infobox caption{font-weight:bold;font-size:110%;padding:4px}
+.infobox td,.infobox th{padding:3px 6px;vertical-align:top;text-align:left}
+.hero{display:block;width:100%;height:160px;background:#eaf3ff;border:1px solid #a7d7f9;color:#3366cc;text-align:center;line-height:160px;font-family:sans-serif}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Euler angles</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+
+<table class="infobox">
+<caption>Euler angles</caption>
+<tr><td colspan="2"><img class="hero" src="images/euler_angles.png" alt="Diagram of the three Euler angles rotating a coordinate frame"></td></tr>
+<tr><th>Named after</th><td>Leonhard Euler</td></tr>
+<tr><th>Field</th><td>Geometry, rigid-body dynamics, robotics, aerospace engineering</td></tr>
+<tr><th>Number of angles</th><td>Three</td></tr>
+<tr><th>Conventions</th><td>12 sequences (e.g. z-x-z classical; z-y-x Tait–Bryan)</td></tr>
+<tr><th>Known problem</th><td>Gimbal lock</td></tr>
+</table>
+
+<p>The <b>Euler angles</b> are three angles introduced by <a href="../Leonhard_Euler/index.html">Leonhard Euler</a> to describe the orientation of a rigid body with respect to a fixed coordinate system. Any orientation in three-dimensional space can be obtained by composing three successive rotations about specified axes, and the Euler angles are the magnitudes of those rotations. They are fundamental in <a href="../Rigid_body_dynamics/index.html">rigid-body dynamics</a>, aerospace engineering (where roll, pitch and yaw are Euler angles of the Tait–Bryan type), robotics, crystallography and computer graphics.</p>
+
+<h2>Conventions</h2>
+<p>Twelve conventions exist, depending on the sequence of axes used. The "classical" Euler angles use a z–x–z sequence: a rotation φ about the z-axis, then θ about the new x-axis (the line of nodes), then ψ about the new z-axis — the convention used for tops and gyroscopes in mechanics. The Tait–Bryan angles use three different axes (e.g. z–y–x), giving yaw, pitch and roll as used for aircraft and ships. Angles may be defined intrinsically (about the moving axes) or extrinsically (about the fixed axes); the two descriptions are equivalent with reversed order.</p>
+
+<h2>Euler's rotation theorem</h2>
+<p>Underlying the parametrisation is <a href="../Euler%27s_rotation_theorem/index.html">Euler's rotation theorem</a>: any displacement of a rigid body with one point fixed is equivalent to a single rotation about some axis through that point. The three Euler angles, combined into rotation matrices or quaternions, encode this rotation in a form convenient for computation.</p>
+
+<h2>Gimbal lock</h2>
+<p>Euler-angle representations have a singularity: when the middle rotation aligns the first and third axes (for example, pitch of ±90° in the yaw–pitch–roll convention), one degree of freedom is lost — the phenomenon of <a href="../Gimbal_lock/index.html">gimbal lock</a>. At such a configuration two of the angles produce rotation about the same physical axis, and the orientation cannot be smoothly tracked by the angles alone. For this reason spacecraft and 3D graphics often use <a href="../Quaternion/index.html">quaternions</a> internally, converting to Euler angles only for human-readable display.</p>
+
+<h2>Applications</h2>
+<p>Euler angles describe aircraft attitude (heading, pitch, bank), the orientation of crystallites in texture analysis (the Bunge convention), joint angles in robotics and biomechanics, and camera orientation in computer vision and graphics. In quantum mechanics the same rotations, applied to spinors, connect with the rotation group SO(3) and its double cover SU(2).</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Euler%27s_rotation_theorem/index.html">Euler's rotation theorem</a></li>
+<li><a href="../Gimbal_lock/index.html">Gimbal lock</a></li>
+<li><a href="../Rotation_matrix/index.html">Rotation matrix</a></li>
+<li><a href="../Quaternion/index.html">Quaternion</a></li>
+<li><a href="../Aircraft_principal_axes/index.html">Aircraft principal axes</a></li>
+</ul>
+<p class="small">Categories: Rotation in three dimensions · Leonhard Euler · Rigid body mechanics</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Load balancer - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+.hero{display:block;margin:12px auto;max-width:400px;border:1px solid #a2a9b1;background:#eef3f8;padding:10px;text-align:center}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.ref{font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Load balancer</h1>
+<img class="hero" src="images/load_balancer.png" alt="Diagram of a load balancer distributing requests across a server farm">
+<p>A <b>load balancer</b> is a device or software component that distributes network traffic or application requests across a group of servers (a server farm or pool) in order to improve responsiveness, reliability and capacity. By spreading work evenly, load balancing prevents any single server from becoming a bottleneck or a single point of failure, and allows systems to scale horizontally by adding more servers.</p>
+<h2>How it works</h2>
+<p>Clients connect to a single virtual address or hostname exposed by the load balancer. The balancer inspects each incoming request and forwards it to one of the available back-end servers according to a scheduling algorithm. Common algorithms include:</p>
+<ul>
+<li><b>Round robin</b> — requests are distributed in simple rotation.</li>
+<li><b>Weighted round robin</b> — servers receive traffic in proportion to assigned weights reflecting their capacity.</li>
+<li><b>Least connections</b> — the request goes to the server currently handling the fewest active sessions.</li>
+<li><b>Least response time</b> — combines connection count and observed latency.</li>
+<li><b>IP hash / consistent hashing</b> — a hash of the client address or request key selects the server, giving session affinity.</li>
+</ul>
+<p>Load balancers perform <b>health checks</b> on back-end servers, automatically removing failed instances from the pool until they recover. Many also provide <b>session persistence</b> ("sticky sessions"), SSL/TLS termination, connection multiplexing, content caching and request rewriting.</p>
+<h2>Layer 4 and layer 7</h2>
+<p>Load balancers are often classified by the OSI layer at which they operate. <b>Layer 4</b> (transport-layer) balancers route packets based on IP addresses and TCP/UDP ports without inspecting application content, and are fast and simple. <b>Layer 7</b> (application-layer) balancers understand protocols such as HTTP and can route based on URLs, headers, cookies or message content, enabling features such as content-based routing and web application firewall integration.</p>
+<h2>Implementations</h2>
+<p>Load balancing is delivered in several forms: dedicated hardware appliances (historically dominated by vendors such as F5 Networks), software balancers such as <a href="../HAProxy/index.html">HAProxy</a>, <a href="../Nginx/index.html">nginx</a> and Envoy, and cloud services such as AWS Elastic Load Balancing, Azure Load Balancer and Google Cloud Load Balancing. DNS-based distribution — publishing several IP addresses for one hostname — is a simpler, coarser form of load balancing.</p>
+<h2>Related concepts</h2>
+<p>Load balancing is closely related to reverse proxies, content delivery networks (CDNs) and global server load balancing (GSLB), which distributes traffic between geographically dispersed data centres. In distributed systems, similar algorithms appear in client-side balancing within microservice architectures, where a service registry supplies the list of healthy instances.</p>
+<p class="ref">See also: <a href="../Load_balancing_(computing)/index.html">Load balancing (computing)</a>, <a href="../Reverse_proxy/index.html">Reverse proxy</a>, <a href="../High_availability/index.html">High availability</a>, <a href="../Scalability/index.html">Scalability</a>.</p>
+</div>
+</body>
+</html>

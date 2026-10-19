@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Logical relation - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+.hero{display:block;margin:12px auto;max-width:400px;border:1px solid #a2a9b1;background:#eef3f8;padding:10px;text-align:center}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.ref{font-size:13px;color:#54595d}
+code{font-family:monospace;background:#f8f9fa;padding:0 3px}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Logical relation</h1>
+<img class="hero" src="images/logical_relation.png" alt="Diagram of two program terms related at a function type">
+<p>A <b>logical relation</b> is a family of relations between terms (or values) of a programming language, indexed by types, used in the theory of <a href="../Programming_language/index.html">programming languages</a> to prove properties of programs by induction on their types. Logical relations were introduced by Gordon Plotkin in the 1970s, building on the concept of <i>logical predicates</i> used by J. Howard for the Curry–Howard correspondence, and were developed further by John Reynolds in his work on parametric polymorphism.</p>
+<h2>Definition</h2>
+<p>Given two terms <code>M</code> and <code>M'</code> of a typed language, one defines a relation at each type by recursion on the type's structure. At a base type (such as integers or booleans), the relation typically says the terms evaluate to equal — or otherwise observably equivalent — values. At a function type <code>σ → τ</code>, two functions <code>f</code> and <code>f'</code> are related if they map related arguments at type <code>σ</code> to related results at type <code>τ</code>. The <b>fundamental lemma</b> (or basic lemma) states that every well-typed term is related to itself; consequences such as program equivalence, representation independence and termination then follow by choosing the base relations appropriately.</p>
+<h2>Applications</h2>
+<ul>
+<li><b>Parametricity</b> — Reynolds's abstraction theorem: logical relations prove that polymorphic programs behave uniformly for all types, yielding "free theorems" (Wadler) about functions from their types alone.</li>
+<li><b>Representation independence</b> — showing that clients of an abstract data type cannot distinguish between two implementations.</li>
+<li><b>Compiler correctness and program equivalence</b> — proving that source and compiled programs, or two optimisations, are contextually equivalent.</li>
+<li><b>Termination and type soundness</b> — defining logical predicates over a single program to show it cannot diverge or get stuck.</li>
+<li><b>Step-indexed logical relations</b> — used to handle recursive types, higher-order state and general references, where the relation is additionally indexed by a number of computation steps.</li>
+</ul>
+<h2>Relation to other concepts</h2>
+<p>Logical relations generalise the technique of strong-normalisation proofs by Tait (reducibility candidates) for the simply typed lambda calculus. In modern mechanised proofs (for example in the Coq and Agda proof assistants), logical relations and their step-indexed variants are a standard tool in programming-language semantics, including large developments such as verified compilers and foundational type soundness proofs.</p>
+<p class="ref">See also: <a href="../Parametric_polymorphism/index.html">Parametric polymorphism</a>, <a href="../Type_theory/index.html">Type theory</a>, <a href="../Denotational_semantics/index.html">Denotational semantics</a>, <a href="../Curry–Howard_correspondence/index.html">Curry–Howard correspondence</a>, <a href="../John_C._Reynolds/index.html">John C. Reynolds</a>.</p>
+</div>
+</body>
+</html>

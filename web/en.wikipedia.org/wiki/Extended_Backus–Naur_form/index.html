@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Extended Backus–Naur form - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:88%;margin:0 0 12px 18px;padding:8px}
+.infobox th{background:#b0c4de;padding:4px;text-align:center}
+.infobox td{padding:3px 6px;vertical-align:top}
+.hero{text-align:center;margin:12px 0}
+.hero img{max-width:420px;width:100%;border:1px solid #a2a9b1;background:#eef}
+.caption{font-size:85%;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{line-height:1.6}
+p{line-height:1.65}
+code,pre{font-family:monospace;background:#f8f9fa}
+pre{border:1px solid #a2a9b1;padding:10px;overflow:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Extended Backus–Naur form</h1>
+<p>In computer science, <b>extended Backus–Naur form</b> (<b>EBNF</b>) is a family of metasyntax notations, any of which can be used to express a context-free grammar. EBNF extends the basic features of Backus–Naur form (BNF) with additional notation for optionality, repetition and grouping, making grammars shorter and easier to read.</p>
+<div class="hero"><img src="images/ebnf.png" alt="Illustration of a grammar production written in EBNF notation"><div class="caption">EBNF adds concise operators for repetition and optional elements to BNF.</div></div>
+<table class="infobox">
+<tr><th colspan="2">Extended Backus–Naur form</th></tr>
+<tr><td><b>Type</b></td><td>Metasyntax / grammar notation</td></tr>
+<tr><td><b>Standard</b></td><td>ISO/IEC 14977:1996</td></tr>
+<tr><td><b>Derived from</b></td><td>Backus–Naur form (BNF)</td></tr>
+</table>
+<h2>Motivation</h2>
+<p>Plain BNF expresses repetition only through recursion, which makes grammars verbose. Niklaus Wirth and others introduced extensions — square brackets for optional parts, braces for repetition — and variants proliferated in programming-language manuals. Because the variants differ in details, the ISO standard (ISO/IEC 14977) defines one particular EBNF, which is not identical to the EBNF used by Wirth or in many textbooks.</p>
+<h2>ISO EBNF notation</h2>
+<pre>
+digit      = "0" | "1" | "2" | "3" | "4"
+           | "5" | "6" | "7" | "8" | "9" ;
+integer    = [ "-" ] , digit , { digit } ;
+</pre>
+<p>In ISO EBNF, a definition is terminated by a semicolon, concatenation is marked with a comma, terminals are quoted, <code>[ ... ]</code> denotes an optional sequence, <code>{ ... }</code> denotes zero or more repetitions, and parentheses group expressions. Special sequences may appear between question marks.</p>
+<h2>Use</h2>
+<p>EBNF and its variants are used to define the syntax of programming languages, data formats and communication protocols, and are the usual input style for parser generators in the tradition of Wirth's compiler courses.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Backus–Naur_form/index.html">Backus–Naur form</a></li>
+<li><a href="../Context-free_grammar/index.html">Context-free grammar</a></li>
+<li><a href="../Augmented_Backus–Naur_form/index.html">Augmented Backus–Naur form</a></li>
+</ul>
+<h2>References</h2>
+<p>ISO/IEC 14977:1996, <i>Information technology — Syntactic metalanguage — Extended BNF</i>. Wirth, N. (1977). "What can we do about the unnecessary diversity of notation for syntactic definitions?" <i>Communications of the ACM</i>.</p>
+</div>
+</body>
+</html>

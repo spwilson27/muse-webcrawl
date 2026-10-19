@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Probability-generating function - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122;}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border:1px solid #a7d7f9;}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px;font-weight:normal;}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em;font-weight:normal;}
+p{line-height:1.6;font-size:0.95em;}
+a{color:#0645ad;text-decoration:none;}
+a:hover{text-decoration:underline;}
+.hero{display:block;margin:12px auto;max-width:420px;width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:40px 0;text-align:center;color:#72777d;}
+.small{font-size:0.8em;color:#54595d;}
+.math{font-style:italic;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Probability-generating function</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/probability-generating-function.png" alt="Graph of a probability-generating function for a discrete random variable">
+<p>In probability theory, the <b>probability-generating function</b> (PGF) of a discrete random variable is a power-series representation of its probability mass function. It is widely used in the analysis of branching processes, queueing theory and risk theory because convolutions of distributions become products of generating functions.</p>
+<h2>Definition</h2>
+<p>If X is a random variable taking values in the non-negative integers {0, 1, 2, ...} with probabilities p<sub>k</sub> = P(X = k), its probability-generating function is</p>
+<p class="math">G(z) = E(z<sup>X</sup>) = &Sigma;<sub>k&ge;0</sub> p<sub>k</sub> z<sup>k</sup>,</p>
+<p>defined for all z with |z| &le; 1 (and often beyond, up to the radius of convergence). In particular G(1) = 1 for a proper distribution.</p>
+<h2>Properties</h2>
+<p>The probabilities are recovered by differentiation: p<sub>k</sub> = G<sup>(k)</sup>(0)/k!. The mean is E(X) = G&prime;(1), and the variance is Var(X) = G&Prime;(1) + G&prime;(1) &minus; G&prime;(1)<sup>2</sup>. Factorial moments are given directly: E(X(X&minus;1)&middot;&middot;&middot;(X&minus;k+1)) = G<sup>(k)</sup>(1).</p>
+<p>If X and Y are independent, the PGF of their sum is the product of their PGFs: G<sub>X+Y</sub>(z) = G<sub>X</sub>(z) G<sub>Y</sub>(z). For a random sum of i.i.d. variables with a random count N, the PGF is the composition G<sub>N</sub>(G<sub>X</sub>(z)).</p>
+<h2>Examples</h2>
+<p>For a Poisson variable with mean &lambda;, G(z) = e<sup>&lambda;(z&minus;1)</sup>. For a binomial(n, p) variable, G(z) = (1 &minus; p + pz)<sup>n</sup>. For a geometric variable counting failures before the first success, G(z) = p/(1 &minus; (1&minus;p)z).</p>
+<h2>Related functions</h2>
+<p>The PGF is closely related to the moment-generating function M(t) = G(e<sup>t</sup>) and to the characteristic function &phi;(t) = G(e<sup>it</sup>). In the theory of Galton–Watson branching processes, the extinction probability is the smallest fixed point of the offspring PGF in [0, 1].</p>
+<p class="small">See also: <a href="../Generating_function/index.html">Generating function</a> &middot; <a href="../Moment-generating_function/index.html">Moment-generating function</a> &middot; <a href="../Branching_process/index.html">Branching process</a> &middot; <a href="../Probability_density_function/index.html">Probability density function</a></p>
+</div>
+</body>
+</html>

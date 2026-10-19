@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Recurrent neural network - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; background: #f8f9fa; border: 1px solid #a2a9b1; padding: 10px; margin: 0 0 12px 16px; font-size: 13px; }
+.hero { display: block; margin: 12px auto; max-width: 420px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Recurrent neural network</h1>
+<div class="infobox"><b>Recurrent neural network</b><br>Type: Artificial neural network<br>Applications: Sequence modelling, speech recognition, machine translation, time-series prediction</div>
+<img class="hero" src="images/Recurrent_neural_network.png" alt="Diagram of a recurrent neural network unrolled through time">
+<p>A <b>recurrent neural network</b> (<b>RNN</b>) is a class of artificial neural networks designed for processing sequential data. Unlike feedforward networks, an RNN maintains a hidden state that carries information from earlier elements of a sequence to later ones, giving the network a form of memory.</p>
+<h2>Architecture</h2>
+<p>At each time step t, the network receives an input x<sub>t</sub> and updates its hidden state h<sub>t</sub> = f(W<sub>h</sub>h<sub>t−1</sub> + W<sub>x</sub>x<sub>t</sub> + b). The same weights are shared across all time steps. Outputs may be produced at every step, as in language modelling, or only after the whole sequence has been consumed, as in sentiment classification.</p>
+<h2>Training</h2>
+<p>RNNs are trained by <b>backpropagation through time</b>, in which the network is unrolled into a deep feedforward network and gradients are propagated across time steps. Plain RNNs suffer from vanishing and exploding gradients, which make learning long-range dependencies difficult.</p>
+<h2>Variants</h2>
+<h3>Long short-term memory</h3>
+<p>The <b>long short-term memory</b> (LSTM) architecture, proposed by Sepp Hochreiter and Jürgen Schmidhuber in 1997, uses gated memory cells with input, forget, and output gates that regulate information flow and largely solve the vanishing gradient problem.</p>
+<h3>Gated recurrent unit</h3>
+<p>The GRU, introduced in 2014, simplifies the LSTM with fewer gates and parameters while retaining comparable performance.</p>
+<h3>Other variants</h3>
+<p>Elman and Jordan networks, echo state networks, bidirectional RNNs, and neural Turing machines are other members of the family. The Hopfield network is an early recurrent model.</p>
+<h2>Applications</h2>
+<p>RNNs were the dominant architecture for speech recognition, handwriting recognition, machine translation, and text generation before being largely superseded by the Transformer architecture after 2017; they remain useful for streaming and low-latency sequence tasks.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Long_short-term_memory/index.html">Long short-term memory</a></li>
+<li><a href="../Transformer_(machine_learning_model)/index.html">Transformer</a></li>
+<li><a href="../Artificial_neural_network/index.html">Artificial neural network</a></li>
+<li><a href="../Backpropagation_through_time/index.html">Backpropagation through time</a></li>
+</ul>
+</div>
+</body>
+</html>

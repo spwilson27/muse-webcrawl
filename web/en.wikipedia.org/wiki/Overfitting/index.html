@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Overfitting - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#f6f6f6;color:#202122;margin:0}
+.mw-body{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;margin:0 0 8px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:24px;font-weight:normal}
+h3{font-size:1.15em;margin-top:18px}
+p{line-height:1.6;margin:8px 0}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 16px 16px;font-size:0.85em;font-family:sans-serif}
+.infobox th{background:#eaf3ff;text-align:left;padding:4px 6px}
+.infobox td{padding:4px 6px;vertical-align:top}
+.infobox .title{background:#eaf3ff;text-align:center;font-weight:bold;font-size:1.05em}
+figure.thumb{margin:12px 0;text-align:center}
+figure.thumb img{max-width:320px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px}
+figcaption{font-size:0.85em;color:#54595d;font-family:sans-serif}
+ul{line-height:1.6}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.catlinks{border:1px solid #a2a9b1;background:#f8f9fa;padding:6px 10px;font-size:0.85em;font-family:sans-serif;margin-top:24px}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Overfitting</h1>
+<p>In statistics and machine learning, <b>overfitting</b> is the production of a model that corresponds too closely to a particular set of training data — modelling the random noise in the data rather than the underlying relationship — and therefore performs poorly on new, unseen data. An overfitted model is said to lack <b>generalisation</b>: it has memorised the training set instead of learning the pattern that generated it. The opposite problem, in which a model is too simple to capture the underlying structure, is called <b>underfitting</b>.</p>
+<figure class="thumb"><img src="images/overfitting.png" alt="[Image placeholder: Graph showing a wiggly overfitted curve passing through every data point versus a smooth curve capturing the trend]"><figcaption>An overfitted curve (green) follows the noise in the data, while a regularised fit captures the underlying trend</figcaption></figure>
+<h2>Causes</h2>
+<p>Overfitting arises when a model has too much capacity — too many parameters or degrees of freedom — relative to the amount and quality of training data. A classic illustration is fitting a high-degree polynomial to a small set of noisy points: the polynomial can pass exactly through every point, yet oscillate wildly between them and extrapolate disastrously. Overfitting can also arise from training for too long, from data leakage (information about the target contaminating the training process), from noisy or mislabelled data, and from repeatedly tuning a model against the same validation or test set, which gradually fits the model to that set as well.</p>
+<h2>Bias–variance tradeoff</h2>
+<p>The expected prediction error of a model can be decomposed into bias, variance and irreducible noise. Simple models have high bias but low variance; complex models can achieve low bias but have high variance, their predictions changing sharply with small changes in the training data. Overfitting is the high-variance regime. Good model design consists largely of finding a point on the bias–variance tradeoff that minimises total error on unseen data.</p>
+<h2>Detection</h2>
+<p>The standard diagnostic is to evaluate the model on data that played no part in training. If performance on the training data continues to improve while performance on a held-out validation set deteriorates, the model is overfitting. Techniques such as <a href="../Cross-validation_(statistics)/index.html">cross-validation</a>, learning curves and monitoring validation loss during training are used to detect the point at which generalisation begins to decline.</p>
+<h2>Prevention</h2>
+<ul>
+<li><b>More data</b> — larger and more representative training sets reduce the chance that noise dominates.</li>
+<li><b>Regularisation</b> — penalties on model complexity, such as L1 (lasso) and L2 (ridge) penalties, weight decay and dropout in neural networks.</li>
+<li><b>Early stopping</b> — halting training when validation performance begins to worsen.</li>
+<li><b>Simpler models</b> — reducing the number of features or parameters; feature selection; pruning of decision trees.</li>
+<li><b>Cross-validation</b> — averaging model selection over multiple data splits.</li>
+<li><b>Data augmentation and ensembling</b> — artificially expanding the data, or averaging many models (bagging, random forests), which cancels out idiosyncratic fits.</li>
+</ul>
+<h2>Consequences</h2>
+<p>Overfitted models give misleadingly optimistic estimates of their own accuracy and fail when deployed. The concept extends beyond machine learning: in empirical research, overfitting analogues include p-hacking, over-parameterised economic models that "explain" historical data but cannot forecast, and trading strategies backtested until they fit past market data. The 21st-century replication crisis in psychology and other fields is in part a story of models and analyses overfit to small, noisy datasets.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Bias–variance_tradeoff/index.html">Bias–variance tradeoff</a></li>
+<li><a href="../Regularization_(mathematics)/index.html">Regularisation</a></li>
+<li><a href="../Cross-validation_(statistics)/index.html">Cross-validation</a></li>
+<li><a href="../Machine_learning/index.html">Machine learning</a></li>
+<li><a href="../Occam's_razor/index.html">Occam's razor</a></li>
+</ul>
+<div class="catlinks">Categories: Machine learning · Statistical models · Model selection</div>
+</div>
+</body>
+</html>

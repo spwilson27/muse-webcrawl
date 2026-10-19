@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Finite difference method - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine","Georgia",serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px 24px 60px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:10px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em;font-weight:normal}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.88em;margin:0 0 14px 18px;padding:8px;border-collapse:collapse}
+.infobox th{background:#f2c94c;text-align:center;padding:5px}
+.infobox td{padding:3px 6px;vertical-align:top}
+.infobox .lbl{font-weight:bold;width:40%}
+.hero{width:100%;height:150px;background:#eef2f5;border:1px dashed #a2a9b1;display:block;object-fit:cover}
+.caption{font-size:0.8em;color:#54595d;text-align:center}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{margin:0.3em 0 0.3em 1.6em;padding:0}
+.ref{font-size:0.85em;color:#54595d}
+.math{font-style:italic}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Finite difference method</h1>
+<table class="infobox">
+<tr><th colspan="2">Finite difference method</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/finite_difference_method.png" alt="Simulation grid for a finite difference solution"><div class="caption">A discrete grid used in FDM</div></td></tr>
+<tr><td class="lbl">Field</td><td>Numerical analysis</td></tr>
+<tr><td class="lbl">Solves</td><td>Ordinary and partial differential equations</td></tr>
+<tr><td class="lbl">Basis</td><td>Taylor-series finite-difference approximations of derivatives</td></tr>
+<tr><td class="lbl">Key concepts</td><td>Consistency, stability, convergence; CFL condition</td></tr>
+</table>
+<p>In numerical analysis, <b>finite-difference methods</b> (<b>FDM</b>) are a class of numerical techniques for solving differential equations by approximating derivatives with finite differences. The domain is discretised into a grid of points, the derivatives at each point are replaced by algebraic differences of neighbouring values, and the resulting system of equations is solved numerically.</p>
+<h2>Derivation</h2>
+<p>From Taylor's theorem, the first derivative can be approximated by the forward difference <span class="math">f&prime;(x) &asymp; (f(x+h) &minus; f(x)) / h</span> with error O(h); central differences such as <span class="math">(f(x+h) &minus; f(x&minus;h)) / 2h</span> improve the accuracy to O(h&sup2;). Second derivatives are commonly approximated by <span class="math">(f(x&minus;h) &minus; 2f(x) + f(x+h)) / h&sup2;</span>.</p>
+<h2>Time-dependent problems</h2>
+<p>For evolution equations such as the heat equation, schemes may be explicit (e.g. the FTCS method), implicit, or semi-implicit (Crank–Nicolson). Explicit schemes are simple but conditionally stable — for advection problems the Courant–Friedrichs–Lewy (CFL) condition must be satisfied — while implicit schemes are usually unconditionally stable at greater computational cost per step. The Lax equivalence theorem states that for a consistent scheme, stability is necessary and sufficient for convergence.</p>
+<h2>Applications</h2>
+<p>Finite differences are widely used in computational fluid dynamics, heat transfer, weather prediction, seismology and quantitative finance — the Black–Scholes equation is routinely solved by finite-difference grids. They complement the finite element and finite volume methods, against which they trade geometric flexibility for simplicity on structured grids.</p>
+<p class="ref">See also: <a href="../Finite_element_method/index.html">Finite element method</a> · <a href="../Finite_volume_method/index.html">Finite volume method</a> · <a href="../Crank–Nicolson_method/index.html">Crank–Nicolson method</a> · <a href="../Courant–Friedrichs–Lewy_condition/index.html">CFL condition</a></p>
+</div>
+</body>
+</html>

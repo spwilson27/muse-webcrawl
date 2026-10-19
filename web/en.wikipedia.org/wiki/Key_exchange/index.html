@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Key exchange - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#f6f6f6;margin:0;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border:1px solid #a7d7f9}
+h1{font-size:29px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal}
+p,li{font-family:sans-serif;font-size:14px;line-height:1.6}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-family:sans-serif;font-size:13px}
+.infobox th{background:#b0c4de;text-align:center;padding:5px}
+.infobox td{padding:3px 5px;vertical-align:top}
+.hero{width:100%;height:180px;background:linear-gradient(135deg,#fff9c4,#fbc02d);display:flex;align-items:center;justify-content:center;color:#5d4037;font-style:italic;border:1px solid #a2a9b1}
+a{color:#3366cc;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Key exchange</h1>
+<div class="infobox">
+<img class="hero" src="images/key-exchange.png" alt="A diagram of two parties establishing a shared secret over a public channel">
+<table>
+<tr><th colspan="2">Key exchange</th></tr>
+<tr><td><b>Field</b></td><td>Cryptography</td></tr>
+<tr><td><b>Purpose</b></td><td>Establish a shared secret key over an insecure channel</td></tr>
+<tr><td><b>Key examples</b></td><td>Diffie–Hellman key exchange, ECDH</td></tr>
+</table>
+</div>
+<p><b>Key exchange</b> (also called key establishment) is a method in cryptography by which cryptographic keys are exchanged between two parties, allowing use of a cryptographic algorithm such as symmetric encryption for the rest of their communication. The central problem is that the parties may have only an insecure channel — monitored by an eavesdropper — over which to agree a secret.</p>
+<h2>Diffie–Hellman key exchange</h2>
+<p>The breakthrough came in 1976 with the Diffie–Hellman key exchange, published by Whitfield Diffie and Martin Hellman (with the underlying concept developed by Ralph Merkle, and an equivalent system devised earlier in secret at GCHQ by James Ellis, Clifford Cocks and Malcolm Williamson). Each party generates a private exponent and sends the other a public value computed by exponentiation in a finite group; both then compute the same shared secret, while an observer who sees only the public values cannot feasibly derive it — a security property resting on the difficulty of the discrete logarithm problem. Variants using elliptic curves (ECDH) provide the same security with smaller keys and are used pervasively in protocols such as TLS, SSH and Signal.</p>
+<h2>Limitations and authentication</h2>
+<p>Unauthenticated key exchange is vulnerable to man-in-the-middle attacks, in which an attacker runs separate exchanges with each party. Practical systems therefore authenticate the exchange using digital signatures and certificates (as in TLS) or pre-shared information. Exchanging ephemeral keys each session provides <i>forward secrecy</i>, ensuring that compromise of long-term keys does not expose past communications. Post-quantum key encapsulation mechanisms, such as ML-KEM standardised by NIST in 2024, address the threat that quantum computers pose to discrete-logarithm-based schemes.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Diffie-Hellman_key_exchange/index.html">Diffie–Hellman key exchange</a></li>
+<li><a href="../Public-key_cryptography/index.html">Public-key cryptography</a></li>
+<li><a href="../Transport_Layer_Security/index.html">Transport Layer Security</a></li>
+<li><a href="../Forward_secrecy/index.html">Forward secrecy</a></li>
+</ul>
+</div>
+</body>
+</html>

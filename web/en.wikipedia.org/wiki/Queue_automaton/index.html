@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Queue automaton - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{background:#b0c4de;text-align:center;padding:4px}
+.infobox td{padding:2px 4px;vertical-align:top}
+.hero{display:block;max-width:100%;margin:10px 0;background:#eaecf0;border:1px solid #a2a9b1;padding:30px 0;text-align:center;color:#54595d;font-style:italic}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Queue automaton</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/queue-automaton.png" alt="Diagram of a queue automaton reading and writing a queue">
+<p>A <b>queue automaton</b> is a finite-state machine equipped with a single infinite queue, a first-in-first-out (FIFO) storage structure from which symbols may be removed only at the head and to which symbols may be appended only at the tail. Queue automata are a model of computation equivalent in power to Turing machines: any computation that can be performed by a Turing machine can be simulated by a queue automaton, and vice versa, even though the queue automaton has only one queue and a finite control.</p>
+<h2>Formal definition</h2>
+<p>A queue automaton is formally defined as a tuple consisting of a finite set of states, an input alphabet, a queue alphabet (possibly larger than the input alphabet and containing a special bottom-of-queue marker), an initial state, a set of accepting states, and a transition function. On each step, the machine reads the symbol at the head of the queue, removes it, and, depending on its current state, appends zero or more symbols to the tail of the queue and moves to a new state. Some formulations also allow the machine to read an input string initially loaded into the queue.</p>
+<h2>Computational power</h2>
+<p>Despite the restriction that data can only be accessed in FIFO order, a queue automaton is Turing complete. The key idea of the simulation is that the contents of a Turing machine tape can be represented as the contents of the queue: by repeatedly cycling symbols from the head of the queue to the tail, the machine can bring any desired cell to the head, modify it, and restore the cyclic order. This rotation technique compensates for the lack of random access, at the cost of extra steps.</p>
+<p>Because queue automata are Turing equivalent, the halting problem for them is undecidable, and they compute exactly the recursively enumerable languages when equipped with suitable acceptance conditions.</p>
+<h2>Variants</h2>
+<p>Several restricted variants have been studied. A queue automaton with a bounded number of queue reversals or with a finite number of visits to each symbol has strictly less power. Machines combining a stack and a queue, and multi-queue automata, have also been defined; two queues already suffice for Turing completeness by direct simulation of a two-stack machine or a Turing machine tape split into two halves.</p>
+<h2>See also</h2>
+<p><a href="../Pushdown_automaton/index.html">Pushdown automaton</a> &middot; <a href="../Turing_machine/index.html">Turing machine</a> &middot; <a href="../Queue_(abstract_data_type)/index.html">Queue (abstract data type)</a> &middot; <a href="../Computability_theory/index.html">Computability theory</a></p>
+<h2>References</h2>
+<p class="small">Standard treatments of queue automata appear in textbooks on automata theory and computability, where they are used to show that modest extensions of finite-state control yield universal computation.</p>
+</div>
+</body>
+</html>

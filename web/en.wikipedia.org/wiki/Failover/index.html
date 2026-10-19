@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Failover - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px 12px;margin:0 0 16px 20px;font-size:88%;font-family:sans-serif}
+.infobox th{background:#cedff2;text-align:center;font-size:105%;padding:4px}
+.infobox td{padding:2px 4px;vertical-align:top}
+.hero{display:block;max-width:420px;width:100%;margin:12px 0;background:#eef3f8;border:1px solid #a2a9b1;padding:6px}
+.small{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Failover</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/failover.png" alt="Diagram of a primary server failing over to a standby server">
+<table class="infobox">
+<tr><th colspan="2">Failover</th></tr>
+<tr><td><b>Type</b></td><td>Fault-tolerance mechanism</td></tr>
+<tr><td><b>Components</b></td><td>Primary system, standby system, heartbeat monitoring, switching mechanism</td></tr>
+<tr><td><b>Related</b></td><td>Switchover, redundancy, high availability, disaster recovery</td></tr>
+</table>
+<p><b>Failover</b> is the process of automatically switching to a redundant or standby computer server, system, hardware component, or network when the previously active application, server, system, hardware component, or network fails or is terminated abnormally. Failover and switchover are closely related: switchover typically describes a planned/manual switch, while failover happens automatically in response to a failure.</p>
+<p>Systems designers usually provide failover capability in servers, systems, or networks requiring continuous availability and a high degree of reliability. At the server level, failover automation usually uses a "heartbeat" cable that connects two servers; as long as a regular "pulse" or "heartbeat" continues between the main server and the secondary server, the secondary will not initiate its systems. There may also be a third "spare parts" server that runs standby components for fault tolerance.</p>
+<h2>Design</h2>
+<p>The first server acts as primary and the second as standby. If the primary server becomes unavailable, the system fails over services to the standby. A variation is to use a secondary system in normal operation: this is called a multi-master approach, in contrast to the active–passive (primary–standby) approach. In active–active configurations, both systems process requests and load is balanced between them, so the failure of one simply shifts its load to the other.</p>
+<h2>Failback</h2>
+<p><b>Failback</b> is the process of restoring a system, component, or service previously in a state of failure back to its original, working state, and having the standby system go from performing a function to being back in standby mode. In databases, failover often involves promoting a replica to become the new primary; returning writes to the original primary requires resynchronisation to avoid data divergence.</p>
+<h2>Applications</h2>
+<p>Failover is used in database clusters, web hosting, telecommunications, and cloud computing, where virtual IP addresses and DNS changes can redirect traffic to healthy instances. It is also used in non-computing contexts: vehicle systems such as dual-circuit brakes, essential aircraft flight controls, and electrical grids all employ analogous automatic switching. In computing systems subject to intermittent failure, clustering with automated failover is a standard element of high availability architecture, often measured against service-level objectives such as 99.9% ("three nines") uptime.</p>
+<h2>Limitations</h2>
+<p>Failover mechanisms can themselves fail: split-brain scenarios occur when network partitions cause both nodes to believe they are primary. Techniques such as quorum, fencing, and STONITH ("shoot the other node in the head") are used to prevent data corruption in such cases. Failover also adds cost and complexity, and the standby resources may sit idle most of the time.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../High_availability/">High availability</a></li>
+<li><a href="../Redundancy_(engineering)/">Redundancy (engineering)</a></li>
+<li><a href="../Fault_tolerance/">Fault tolerance</a></li>
+<li><a href="../Disaster_recovery/">Disaster recovery</a></li>
+</ul>
+<p class="small">Categories: Fault-tolerant computer systems · System administration</p>
+</div>
+</body>
+</html>

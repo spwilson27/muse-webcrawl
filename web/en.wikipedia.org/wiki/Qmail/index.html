@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Qmail - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.35em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+p{line-height:1.65;font-size:0.95em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.85em;margin:0 0 16px 20px;border-collapse:collapse}
+.infobox th,.infobox td{border:1px solid #a2a9b1;padding:5px 8px;text-align:left}
+.infobox .hd{background:#b0c4de;text-align:center;font-weight:bold;font-size:1.05em}
+.hero{display:block;width:100%;max-width:420px;margin:12px auto;background:#eaecf0;border:1px solid #a2a9b1;padding:24px 0;text-align:center;color:#54595d;font-style:italic}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Qmail</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/qmail.png" alt="Block diagram of qmail's component pipeline: qmail-smtpd, qmail-queue, qmail-send, qmail-lspawn and the queue directories">
+<table class="infobox">
+<tr><th class="hd" colspan="2">qmail</th></tr>
+<tr><th>Developer</th><td>Daniel J. Bernstein (djbdns)</td></tr>
+<tr><th>Initial release</th><td>1995</td></tr>
+<tr><th>Stable release</th><td>1.03 (1998)</td></tr>
+<tr><th>Written in</th><td>C</td></tr>
+<tr><th>Operating system</th><td>Unix and Unix-like</td></tr>
+<tr><th>Type</th><td>Mail transfer agent (MTA)</td></tr>
+<tr><th>License</th><td>Public domain (since 2007)</td></tr>
+</table>
+<p><b>qmail</b> is a mail transfer agent (MTA) that runs on Unix. It was written as a more secure replacement for Sendmail by Daniel J. Bernstein, a mathematician, starting around 1995 and first released in 1997. qmail was designed around a philosophy of minimal, modular components, each running with the least privilege necessary and communicating only through well-defined channels.</p>
+
+<h2>Architecture</h2>
+<p>Instead of one large program, qmail is a pipeline of small utilities: <i>qmail-smtpd</i> accepts mail over SMTP, <i>qmail-queue</i> stores it in the queue directory, <i>qmail-send</i> schedules delivery, <i>qmail-lspawn</i> and <i>qmail-rspawn</i> handle local and remote delivery, and <i>qmail-clean</i> tidies the queue. qmail introduced the Maildir mailbox format, in which each message is stored in its own file, avoiding the locking problems of the traditional mbox format. It has no monolithic configuration file; each tunable is a single file in the control directory.</p>
+
+<h2>Security</h2>
+<p>Bernstein offered a US$500 reward for anyone who could find a security hole in qmail, and for years none was claimed—the first publicly accepted vulnerability (a potential integer overflow) appeared only in 2005. This record, together with its modular design, made qmail a benchmark for secure software. In 2007, Bernstein placed qmail in the public domain, encouraging the community patches and forks that had long been maintained informally.</p>
+
+<h2>Legacy</h2>
+<p>qmail ran a significant share of the world's mail servers in the late 1990s and early 2000s, and its Maildir format is still widely used. Its influence extends to the design of later MTAs and to the broader practice of privilege-separated, least-privilege system design.</p>
+
+<h2>See also</h2>
+<p><a href="../Sendmail/index.html">Sendmail</a> · <a href="../Postfix/index.html">Postfix</a> · <a href="../Maildir/index.html">Maildir</a> · <a href="../Mail_transfer_agent/index.html">Mail transfer agent</a></p>
+<p class="small">Categories: Free email software · Mail transfer agents · Public-domain software</p>
+</div>
+</body>
+</html>

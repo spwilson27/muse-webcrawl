@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>F-score - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;width:250px;font-size:0.88em}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+.hero{text-align:center;margin:16px 0}
+.hero img{max-width:100%;border:1px solid #ccc;background:#eee;min-height:180px;width:100%}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.caption{font-size:0.85em;color:#54595d}
+.eq{text-align:center;font-style:italic;margin:12px 0}
+</style>
+</head>
+<body>
+<h1>F-score</h1>
+<table class="infobox">
+<tr><th>Type</th><td>Statistical measure of classification / retrieval performance</td></tr>
+<tr><th>Range</th><td>0 to 1 (1 = perfect precision and recall)</td></tr>
+<tr><th>Based on</th><td>Harmonic mean of precision and recall</td></tr>
+<tr><th>Origin</th><td>Information retrieval; named for van Rijsbergen's effectiveness measure</td></tr>
+</table>
+<div class="hero"><img src="images/F-score.png" alt="Hero image placeholder: precision-recall diagram illustrating the balance the F-score measures"><div class="caption">Placeholder image: precision and recall, the two quantities combined by the F-score.</div></div>
+<p>In statistical analysis of binary classification and information retrieval, the <b>F-score</b> or <b>F-measure</b> is a measure of a test's accuracy. It is calculated from the precision and the recall of the test, where the precision is the number of true positive results divided by the number of all positive results, including those not identified correctly, and the recall is the number of true positive results divided by the number of all samples that should have been identified as positive.</p>
+<h2>Definition</h2>
+<p>The traditional F-measure, F<sub>1</sub>, is the harmonic mean of precision (P) and recall (R):</p>
+<p class="eq">F<sub>1</sub> = 2 · (P · R) / (P + R) = TP / (TP + ½(FP + FN))</p>
+<p>where TP, FP and FN are the numbers of true positives, false positives and false negatives. The harmonic mean is used, rather than the arithmetic mean, because it penalises extreme imbalance: a system with very high precision but negligible recall scores poorly.</p>
+<h2>The F<sub>β</sub> score</h2>
+<p>The general F<sub>β</sub> score weights recall β times as much as precision:</p>
+<p class="eq">F<sub>β</sub> = (1 + β²) · (P · R) / (β²P + R)</p>
+<p>Common choices are F<sub>2</sub>, which emphasises recall, and F<sub>0.5</sub>, which emphasises precision. The measure derives from C. J. van Rijsbergen's effectiveness measure E, with the "F" conventionally taken from the complement of that measure.</p>
+<h2>Applications and criticism</h2>
+<p>The F-score is ubiquitous in information retrieval, named-entity recognition, machine translation evaluation and imbalanced classification, where plain accuracy is misleading. Criticisms note that F<sub>1</sub> ignores true negatives, weights false positives and false negatives equally regardless of context, and can favour biased classifiers on skewed datasets; alternatives include the Matthews correlation coefficient and precision–recall curves summarised by average precision.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Precision_and_recall/index.html">Precision and recall</a></li>
+<li><a href="../Confusion_matrix/index.html">Confusion matrix</a></li>
+<li><a href="../Matthews_correlation_coefficient/index.html">Matthews correlation coefficient</a></li>
+<li><a href="../Receiver_operating_characteristic/index.html">Receiver operating characteristic</a></li>
+</ul>
+</body>
+</html>

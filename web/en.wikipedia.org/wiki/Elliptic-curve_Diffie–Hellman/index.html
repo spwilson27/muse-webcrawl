@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Elliptic-curve Diffie–Hellman - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal;margin-top:1.2em}
+p{line-height:1.6;font-size:0.95em}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.85em;margin:0 0 16px 20px;padding:8px 12px}
+.infobox caption{font-weight:bold;font-size:1.1em;padding:4px 0}
+.infobox th{text-align:left;vertical-align:top;padding:2px 6px 2px 0}
+.infobox td{padding:2px 0}
+.hero{display:block;max-width:100%;margin:10px auto;background:#eaecf0;border:1px solid #c8ccd1;padding:24px 0;text-align:center;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{line-height:1.6;font-size:0.95em}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Elliptic-curve Diffie–Hellman</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/Elliptic-curve_Diffie–Hellman.png" alt="Diagram of an elliptic-curve Diffie–Hellman key exchange">
+<p><b>Elliptic-curve Diffie–Hellman</b> (<b>ECDH</b>) is a key agreement protocol that allows two parties, each having an elliptic-curve public–private key pair, to establish a shared secret over an insecure channel. It is a variant of the <a href="../Diffie–Hellman_key_exchange/index.html">Diffie–Hellman protocol</a> using elliptic-curve cryptography.</p>
+<h2>Key establishment protocol</h2>
+<p>The parties agree on a domain parameter set for an elliptic curve (such as Curve25519 or the NIST P-256 curve). Each party generates a private scalar <i>d</i> and a public key point <i>Q = dG</i>, where <i>G</i> is the curve's base point. After exchanging public keys, each party computes the point <i>d<sub>A</sub>Q<sub>B</sub> = d<sub>B</sub>Q<sub>A</sub></i>; the x-coordinate of this shared point is typically hashed to derive a symmetric session key, for example for use with AES.</p>
+<h2>Security</h2>
+<p>The security of ECDH rests on the elliptic-curve discrete logarithm problem: given <i>G</i> and <i>Q = dG</i>, recovering <i>d</i> is computationally infeasible for properly chosen curves. Because elliptic curves offer equivalent security to RSA or finite-field Diffie–Hellman at much smaller key sizes — a 256-bit elliptic-curve key is roughly comparable to a 3072-bit RSA key — ECDH is widely used in protocols such as TLS 1.3, Signal and WireGuard.</p>
+<h2>Ephemeral and static variants</h2>
+<p>When both parties generate fresh key pairs for each session, the scheme is called ephemeral ECDH (ECDHE) and provides forward secrecy: compromise of long-term keys does not reveal past session keys. TLS 1.3 mandates ephemeral key exchange. Static ECDH, in which one or both keys are long-term, lacks this property.</p>
+<h2>Attacks and validation</h2>
+<p>Implementations must validate received public keys to prevent invalid-curve attacks, in which an attacker supplies a point on a weak curve to leak information about the victim's private key. Protocols such as X25519 are designed to make such validation checks largely unnecessary.</p>
+<p class="small">See also: <a href="../Elliptic-curve_cryptography/index.html">Elliptic-curve cryptography</a> · <a href="../Elliptic_Curve_Digital_Signature_Algorithm/index.html">Elliptic Curve Digital Signature Algorithm</a> · <a href="../Curve25519/index.html">Curve25519</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Myhill–Nerode theorem - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122;line-height:1.6}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:0}
+h2{font-family:sans-serif;border-bottom:1px solid #a2a9b1;font-size:1.4em;margin-top:1.2em}
+h3{font-family:sans-serif;font-size:1.15em}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.85em;font-family:sans-serif}
+.infobox th{background:#b0c4de;padding:4px;text-align:left}
+.infobox td{padding:3px 4px;vertical-align:top}
+.hero{display:block;margin:12px auto;max-width:420px;width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:24px 0;text-align:center;color:#54595d;font-family:sans-serif}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.ref{font-size:0.85em;color:#54595d}
+ul{margin:0.3em 0}
+.mono{font-family:monospace}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Myhill–Nerode theorem</h1>
+<p>In the theory of formal languages, the <b>Myhill–Nerode theorem</b> provides a necessary and sufficient condition for a language to be regular. It is named after John Myhill and Anil Nerode, who proved it at the University of Chicago in 1958. Whereas the pumping lemma gives only a necessary condition (and so can only show languages non-regular), the Myhill–Nerode theorem characterizes regularity exactly and also yields the unique minimal deterministic finite automaton for a regular language.</p>
+<img class="hero" src="images/myhill_nerode_theorem.png" alt="Transition diagram of a minimal deterministic finite automaton">
+<div class="infobox">
+<table>
+<tr><th colspan="2">Myhill–Nerode theorem</th></tr>
+<tr><td><b>Field</b></td><td>Automata theory, formal languages</td></tr>
+<tr><td><b>Proved by</b></td><td>John Myhill, Anil Nerode (1958)</td></tr>
+<tr><td><b>Characterizes</b></td><td>Regular languages</td></tr>
+<tr><td><b>Key notion</b></td><td>Nerode equivalence (right congruence of finite index)</td></tr>
+</table>
+</div>
+<h2>Definitions</h2>
+<p>Given a language <i>L</i> over an alphabet Σ, two strings <i>x</i> and <i>y</i> are called <b>indistinguishable by L</b> (written <i>x</i> ≡<sub>L</sub> <i>y</i>) if for every string <i>z</i>, the concatenation <i>xz</i> belongs to <i>L</i> if and only if <i>yz</i> belongs to <i>L</i>. Indistinguishability is an equivalence relation on strings, and it refines the split between membership and non-membership in <i>L</i>. The number of equivalence classes is called the <b>index</b> of the relation.</p>
+<h2>Statement</h2>
+<p>The following three statements are equivalent for any language <i>L</i>:</p>
+<ol>
+<li><i>L</i> is a regular language (accepted by some deterministic finite automaton).</li>
+<li><i>L</i> is the union of some of the equivalence classes of a right congruence of finite index on Σ*.</li>
+<li>The indistinguishability relation ≡<sub>L</sub> has finite index.</li>
+</ol>
+<p>Moreover, the number of equivalence classes of ≡<sub>L</sub> equals the number of states in the minimal DFA for <i>L</i>, and that minimal automaton is unique up to isomorphism: its states are exactly the equivalence classes, its start state is the class of the empty string, and its transitions append one symbol at a time.</p>
+<h2>Applications</h2>
+<p>To prove a language is <i>not</i> regular, it suffices to exhibit infinitely many pairwise distinguishable strings. The classic example is <i>L</i> = {<i>a<sup>n</sup>b<sup>n</sup></i> : <i>n</i> ≥ 0}: for each <i>n</i>, the string <i>a<sup>n</sup></i> is distinguished from every <i>a<sup>m</sup></i> (<i>m</i> ≠ <i>n</i>) by the suffix <i>b<sup>n</sup></i>, so ≡<sub>L</sub> has infinitely many classes and <i>L</i> is not regular. The theorem also underpins DFA minimization algorithms and learning algorithms for regular languages.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Regular_language/index.html">Regular language</a></li>
+<li><a href="../Pumping_lemma_for_regular_languages/index.html">Pumping lemma for regular languages</a></li>
+<li><a href="../Deterministic_finite_automaton/index.html">Deterministic finite automaton</a></li>
+<li><a href="../DFA_minimization/index.html">DFA minimization</a></li>
+</ul>
+<p class="ref">This page was recreated from memory for the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

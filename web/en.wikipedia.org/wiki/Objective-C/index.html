@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Objective-C - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px;font-weight:normal}
+h3{font-size:17px;margin-top:20px}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:270px;background:#f8f9fa;border:1px solid #a2a9b1;padding:10px;margin:0 0 14px 18px;font-size:13px;line-height:1.5}
+.infobox th{background:#b2b8c0;padding:6px;text-align:center;font-size:14px}
+.infobox td{padding:3px 6px;vertical-align:top}
+.hero{display:block;margin:14px auto;max-width:420px;width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:10px;text-align:center}
+.toc{background:#f8f9fa;border:1px solid #a2a9b1;padding:10px 18px;display:inline-block;font-size:14px;line-height:1.7}
+code{background:#f8f9fa;padding:1px 4px;font-family:monospace;font-size:13px}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;font-size:13px;overflow-x:auto}
+ul,ol{line-height:1.6;font-size:15px}
+.refs{font-size:13px;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Objective-C</h1>
+<p>From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<tr><th colspan="2">Objective-C</th></tr>
+<tr><td><b>Paradigm</b></td><td>Object-oriented, reflective</td></tr>
+<tr><td><b>Designed by</b></td><td>Brad Cox, Tom Love</td></tr>
+<tr><td><b>First appeared</b></td><td>1984</td></tr>
+<tr><td><b>Developer</b></td><td>Stepstone, NeXT, Apple Inc.</td></tr>
+<tr><td><b>Typing discipline</b></td><td>Static, dynamic, weak</td></tr>
+<tr><td><b>File extensions</b></td><td>.h, .m, .mm</td></tr>
+<tr><td><b>Influenced by</b></td><td>C, Smalltalk</td></tr>
+<tr><td><b>Influenced</b></td><td>Swift, Java (early design discussions)</td></tr>
+</table>
+<img class="hero" src="images/Objective-C.png" alt="Objective-C source code in an editor">
+<p><b>Objective-C</b> is a general-purpose, <a href="../../Object-oriented_programming/index.html">object-oriented</a> programming language that adds <a href="../../Smalltalk/index.html">Smalltalk</a>-style messaging to the <a href="../../C_(programming_language)/index.html">C</a> programming language. Originally developed in the early 1980s by Brad Cox and Tom Love at Stepstone, it was later selected by <a href="../../NeXT/index.html">NeXT</a> for its NeXTSTEP operating system, and became the primary language for developing software for Apple's <a href="../../MacOS/index.html">macOS</a> and <a href="../../IOS/index.html">iOS</a> until the introduction of <a href="../../Swift_(programming_language)/index.html">Swift</a> in 2014.</p>
+<div class="toc"><b>Contents</b><br>
+1 History<br>2 Syntax<br>3 Messaging<br>4 The runtime<br>5 Use at Apple<br>6 See also</div>
+<h2>History</h2>
+<p>Cox began work on an object-oriented layer on top of C in the early 1980s, inspired by Smalltalk-80. The language was licensed by NeXT in 1988 and shipped with NeXTSTEP, whose application frameworks were written in Objective-C. When Apple acquired NeXT in 1997, those frameworks became the basis of Mac OS X's <a href="../../Cocoa_(API)/index.html">Cocoa</a> API. Objective-C was the main language of the original iPhone software development kit in 2008, driving a resurgence of interest.</p>
+<h2>Syntax</h2>
+<p>Objective-C is a strict superset of C: any valid C program is a valid Objective-C program. Object-oriented extensions use a syntax derived from Smalltalk messaging, with method calls written in square brackets:</p>
+<pre>[receiver messageWithArgument:arg anotherArgument:other];</pre>
+<p>Class interfaces are declared with <code>@interface</code> and implementations with <code>@implementation</code>. The later Objective-C 2.0 release added properties, fast enumeration, blocks and automatic reference counting (ARC).</p>
+<h2>Messaging</h2>
+<p>Unlike C++-style function calls, Objective-C method invocations are messages resolved at runtime. The runtime looks up the method implementation for the receiver's class when the message is sent, enabling dynamic behaviour such as message forwarding, swizzling and categories (adding methods to existing classes).</p>
+<h2>The runtime</h2>
+<p>The Objective-C runtime is a small library that supports the language's dynamic features: class creation at runtime, introspection, and dynamic typing through the generic object pointer type <code>id</code>. Apple's modern runtime is open source and also underpins much of Swift's interoperability with Apple frameworks.</p>
+<h2>Use at Apple</h2>
+<p>For three decades Objective-C was the principal language of Apple's platforms. Although Swift is now preferred for new development, large parts of macOS and iOS, and frameworks such as UIKit and AppKit, remain written in or exposed through Objective-C, and interoperability between the two languages is maintained.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../Swift_(programming_language)/index.html">Swift (programming language)</a></li>
+<li><a href="../../NeXTSTEP/index.html">NeXTSTEP</a></li>
+<li><a href="../../Object_type_(object-oriented_programming)/index.html">Object type (object-oriented programming)</a></li>
+</ul>
+<h2>References</h2>
+<p class="refs">1. Cox, Brad J. <i>Object-Oriented Programming: An Evolutionary Approach</i>. Addison-Wesley, 1986.<br>
+2. Apple Inc. <i>Programming with Objective-C</i>. Developer documentation.</p>
+</div>
+</body>
+</html>

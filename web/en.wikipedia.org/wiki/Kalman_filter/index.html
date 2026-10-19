@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kalman filter - Wikipedia</title>
+<style>
+body{font-family:sans-serif;background:#f6f6f6;color:#202122;margin:0}
+.content{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px;line-height:1.6}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+.hero{width:100%;border:1px solid #a2a9b1;background:#eaecf0;text-align:center;padding:18px 0;color:#54595d;max-width:520px}
+a{color:#0645ad;text-decoration:none}
+.eq{text-align:center;font-family:Georgia,serif;font-size:108%;margin:1em 0}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Kalman filter</h1>
+<p>The <b>Kalman filter</b> is an algorithm that uses a series of measurements observed over time, including statistical noise and other inaccuracies, to produce estimates of unknown variables that tend to be more accurate than those based on a single measurement alone. It is named after Rudolf E. Kálmán, who published the method in 1960, and it is optimal — in the minimum-variance sense — for linear systems with Gaussian noise.</p>
+<div class="hero"><img src="images/Kalman_filter.png" alt="Kalman filter tracking a moving object through noisy measurements (labelled placeholder image)"></div>
+<h2>Overview</h2>
+<p>The filter operates in two repeating steps. In the <b>predict</b> step, the current state estimate is projected forward through a process model, along with its uncertainty (covariance). In the <b>update</b> step, a new measurement is blended with the prediction, weighted by the <b>Kalman gain</b>, which trusts the measurement more when the prediction is uncertain and vice versa:</p>
+<p class="eq">x̂<sub>k</sub> = x̂<sub>k</sub><sup>−</sup> + K<sub>k</sub>(z<sub>k</sub> − H x̂<sub>k</sub><sup>−</sup>)</p>
+<p>Only the previous estimate is needed, so the algorithm requires little memory and is well suited to real-time computation.</p>
+<h2>Applications</h2>
+<p>The Kalman filter was developed for and famously used in the Apollo program's navigation computer, and is now ubiquitous: in GPS and inertial navigation, spacecraft and missile guidance, radar tracking, robot motion planning, computer vision, signal processing, econometrics, and the smoothing of sensor data such as battery state-of-charge estimates. Non-linear versions include the extended Kalman filter (EKF), the unscented Kalman filter (UKF), and related particle filters.</p>
+<h2>History</h2>
+<p>Kálmán's 1960 paper built on earlier work by Thorvald Thiele, Peter Swerling and others, reformulating Wiener filtering in state-space terms. Stanley Schmidt's implementation at NASA Ames made the method practical, and it guided Apollo spacecraft to the Moon.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Extended_Kalman_filter/index.html">Extended Kalman filter</a></li>
+<li><a href="../Rudolf_E._Kálmán/index.html">Rudolf E. Kálmán</a></li>
+<li><a href="../State-space_representation/index.html">State-space representation</a></li>
+<li><a href="../Particle_filter/index.html">Particle filter</a></li>
+</ul>
+<p><i>This page was recreated from memory for the muse-webcrawl project.</i></p>
+</div>
+</body>
+</html>

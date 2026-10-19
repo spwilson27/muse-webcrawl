@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kubernetes - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine",Georgia,serif;margin:0;color:#202122;background:#fff}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.topbar{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:8px 24px;font-family:sans-serif;font-size:13px}
+.wrap{max-width:960px;margin:0 auto;padding:20px 24px 60px}
+h1{font-size:30px;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-size:22px;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px;padding-bottom:3px}
+p{font-size:15px;line-height:1.6;margin:8px 0}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-family:sans-serif;font-size:13px;margin:0 0 16px 20px}
+.infobox th{background:#b0c4de;padding:6px;text-align:center;font-size:14px}
+.infobox td{padding:4px 8px;vertical-align:top}
+.infobox .lbl{font-weight:bold;width:95px}
+.infobox img{width:100%;display:block}
+.hero{margin:0}.hero figcaption{font-size:12px;color:#54595d;padding:4px 8px}
+.refs{font-size:13px}
+.site{font-family:sans-serif;font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="topbar">Wikipedia &nbsp;·&nbsp; The Free Encyclopedia</div>
+<div class="wrap">
+<h1>Kubernetes</h1>
+<p class="site">From Wikipedia, the free encyclopedia</p>
+
+<table class="infobox">
+<tr><th colspan="2">Kubernetes</th></tr>
+<tr><td colspan="2"><figure class="hero"><img src="images/kubernetes.png" alt="The Kubernetes logo: a white ship's wheel with seven spokes on a blue heptagon"><figcaption>The Kubernetes logo</figcaption></figure></td></tr>
+<tr><td class="lbl">Original author</td><td><a href="../Google/index.html">Google</a></td></tr>
+<tr><td class="lbl">Developer</td><td>Cloud Native Computing Foundation</td></tr>
+<tr><td class="lbl">Initial release</td><td>7 June 2014</td></tr>
+<tr><td class="lbl">Written in</td><td><a href="../Go_(programming_language)/index.html">Go</a></td></tr>
+<tr><td class="lbl">Type</td><td>Cluster management software; container orchestration</td></tr>
+<tr><td class="lbl">Licence</td><td>Apache License 2.0</td></tr>
+</table>
+
+<p><b>Kubernetes</b> (also <b>K8s</b>) is an open-source <a href="../Container_orchestration/index.html">container orchestration</a> system for automating software deployment, scaling, and management. Originally designed by Google, the project is now maintained by a worldwide community of contributors, and the trademark is held by the Cloud Native Computing Foundation. The name derives from Ancient Greek κυβερνήτης (<i>kubernḗtēs</i>), meaning "helmsman" or "pilot"; the abbreviation K8s counts the eight letters between "K" and "s".</p>
+
+<h2>History</h2>
+<p>Kubernetes grew out of Google's internal cluster manager <a href="../Borg_(cluster_manager)/index.html">Borg</a>, which had run Google's production services for over a decade. Google released Kubernetes as open source in 2014, influenced also by its Omega scheduler research; version 1.0 followed in July 2015, when Google donated the project to the newly formed Cloud Native Computing Foundation. It graduated from the CNCF in 2018 and became the de facto standard for container orchestration, offered as a managed service by every major cloud provider (GKE, EKS, AKS).</p>
+
+<h2>Architecture</h2>
+<p>Kubernetes groups machines into a <i>cluster</i> divided into a control plane and worker nodes. The control plane comprises the API server (the system's front door), etcd (a distributed key-value store holding cluster state), the scheduler (which assigns workloads to nodes), and controller managers that run reconciliation loops driving the actual state toward the desired state. On each node, the <i>kubelet</i> agent manages <i>Pods</i> — the smallest deployable units, each holding one or more containers sharing storage and network resources.</p>
+
+<h2>Workload resources</h2>
+<p>Users declare desired state in YAML or JSON manifests. Core objects include <i>Deployments</i> (declarative management of replicated Pods with rolling updates), <i>Services</i> (stable network endpoints with load balancing), <i>ConfigMaps</i> and <i>Secrets</i> (configuration), <i>Namespaces</i> (virtual partitions), and <i>StatefulSets</i> and <i>DaemonSets</i> for stateful and per-node workloads. The command-line tool is <code>kubectl</code>; packages of manifests are commonly distributed as Helm charts.</p>
+
+<h2>Adoption and criticism</h2>
+<p>Kubernetes underpins much of modern cloud-native computing and anchors a large ecosystem of networking, storage, and observability plugins. Its power comes with acknowledged complexity, prompting a market of managed services, distributions, and simpler alternatives, as well as debate about over-engineering for small deployments.</p>
+
+<h2>See also</h2>
+<p><a href="../Docker_(software)/index.html">Docker</a> · <a href="../Cloud_Native_Computing_Foundation/index.html">Cloud Native Computing Foundation</a> · <a href="../Microservices/index.html">Microservices</a> · <a href="../DevOps/index.html">DevOps</a> · <a href="../OpenShift/index.html">OpenShift</a></p>
+
+<h2>References</h2>
+<p class="refs">1. Burns, Brendan et al. (2016). "Borg, Omega, and Kubernetes". <i>ACM Queue</i> 14 (1).<br>
+2. Kubernetes Documentation, kubernetes.io.</p>
+</div>
+</body>
+</html>

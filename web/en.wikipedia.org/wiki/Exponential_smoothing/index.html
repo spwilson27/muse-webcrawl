@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exponential smoothing - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:88%;margin:0 0 12px 18px;padding:8px}
+.infobox th{background:#b0c4de;padding:4px;text-align:center}
+.infobox td{padding:3px 6px;vertical-align:top}
+.hero{text-align:center;margin:12px 0}
+.hero img{max-width:420px;width:100%;border:1px solid #a2a9b1;background:#eef}
+.caption{font-size:85%;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{line-height:1.6}
+p{line-height:1.65}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Exponential smoothing</h1>
+<p><b>Exponential smoothing</b> is a rule of thumb technique for smoothing time series data using an exponential window function. Whereas in the simple moving average the past observations are weighted equally, exponential functions assign exponentially decreasing weights over time. It is an easily learned and easily applied procedure for making determinations based on prior assumptions about the data and is widely used in forecasting, especially in inventory management.</p>
+<div class="hero"><img src="images/exponential-smoothing.png" alt="Line chart of raw data with an exponentially smoothed curve"><div class="caption">Exponential smoothing weights recent observations more heavily than older ones.</div></div>
+<table class="infobox">
+<tr><th colspan="2">Exponential smoothing</th></tr>
+<tr><td><b>Type</b></td><td>Forecasting / time-series method</td></tr>
+<tr><td><b>Originators</b></td><td>Robert Goodell Brown; Charles C. Holt; Peter Winters</td></tr>
+<tr><td><b>Key parameter</b></td><td>Smoothing factor α (0 &lt; α &lt; 1)</td></tr>
+</table>
+<h2>Simple exponential smoothing</h2>
+<p>In the simplest form, the smoothed value is a weighted average of the current observation and the previous smoothed value: s<sub>t</sub> = αx<sub>t</sub> + (1 − α)s<sub>t−1</sub>. Values of α close to 1 track the data closely; small values produce a smoother, slower-reacting series. The method works best for data without trend or seasonality.</p>
+<h2>Extensions</h2>
+<p><b>Holt's linear method</b> adds a trend component with its own smoothing parameter. <b>Holt–Winters</b> further adds a seasonal component, in additive or multiplicative form, and remains a standard for seasonal demand forecasting. The family of models was unified in the <b>ETS (Error, Trend, Seasonal)</b> state-space framework by Hyndman and colleagues, which also provides prediction intervals and automatic model selection by information criteria.</p>
+<h2>Applications</h2>
+<p>Exponential smoothing underlies much operational forecasting: retail and manufacturing demand planning, call-centre volume prediction, and inventory control, where its simplicity and low data requirements are major advantages.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Moving_average/index.html">Moving average</a></li>
+<li><a href="../Time_series/index.html">Time series</a></li>
+<li><a href="../Forecasting/index.html">Forecasting</a></li>
+</ul>
+<h2>References</h2>
+<p>Brown, R. G. (1956). <i>Smoothing, Forecasting and Prediction of Discrete Time Series</i>. Hyndman, R. J. &amp; Athanasopoulos, G. (2021). <i>Forecasting: Principles and Practice</i>, 3rd ed.</p>
+</div>
+</body>
+</html>

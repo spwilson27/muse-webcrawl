@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Lempel–Ziv–Welch - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:860px;margin:2em auto;padding:0 1em;line-height:1.55;color:#202122}h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #a2a9b1;font-size:1.35em;margin-top:1.4em}.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.88em}.infobox th{text-align:left;padding-right:.5em;vertical-align:top}.hero{display:block;margin:1em auto;max-width:420px;width:100%}a{color:#0645ad}code{font-family:monospace;background:#f0f0f0;padding:0 .2em}</style>
+</head><body>
+<h1>Lempel–Ziv–Welch</h1>
+<table class="infobox"><tr><th>Type</th><td>Lossless data compression algorithm</td></tr><tr><th>Published</th><td>1984</td></tr><tr><th>Author</th><td>Terry Welch</td></tr><tr><th>Based on</th><td>LZ78 (Lempel &amp; Ziv, 1978)</td></tr><tr><th>Used in</th><td>GIF, TIFF, PDF, Unix compress, V.42bis</td></tr></table>
+<img class="hero" src="images/lempel_ziv_welch.png" alt="Diagram of the LZW dictionary being built during compression">
+<p><b>Lempel–Ziv–Welch</b> (<b>LZW</b>) is a universal lossless data compression algorithm created by Abraham Lempel, Jacob Ziv and Terry Welch. It was published by Welch in 1984 as an improved implementation of the LZ78 algorithm published by Lempel and Ziv in 1978.</p>
+<h2>Algorithm</h2>
+<p>LZW builds a dictionary (string table) of sequences encountered in the input. The encoder starts with a table containing all single characters, then repeatedly finds the longest sequence already in the table that matches the current input, outputs its code, and adds that sequence plus the next character as a new table entry. Codes are typically emitted at increasing widths, commonly up to 12 bits, allowing a table of 4,096 entries. The decoder reconstructs the identical table on the fly from the code stream, so no dictionary needs to be stored or transmitted.</p>
+<h2>Applications and patents</h2>
+<p>LZW became extremely widely used: it is the compression behind the GIF image format, an option in TIFF and PDF, and the algorithm of the Unix <code>compress</code> utility and the V.42bis modem standard. Unisys held a patent on LZW (US 4,558,302); the controversy over enforcing it against GIF software in the 1990s spurred the creation of the patent-free PNG format. The LZW patents expired in 2003–2004.</p>
+<p>See also: <a href="../LZ77_and_LZ78/index.html">LZ77 and LZ78</a>, <a href="../GIF/index.html">GIF</a>, <a href="../Data_compression/index.html">Data compression</a>.</p>
+</body></html>

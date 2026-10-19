@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nodal analysis - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+#content{max-width:960px;margin:0 auto;padding:20px 30px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.eq{background:#f8f9fa;border:1px solid #eaecf0;padding:8px 14px;text-align:center;font-family:'Times New Roman',serif;font-style:italic}
+.ref{font-size:0.8em;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Nodal analysis</h1>
+<div class="thumb" style="float:right;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:4px"><img src="images/nodal_analysis.png" alt="Circuit diagram illustrating nodal analysis" width="260"><br>Labelled placeholder: example circuit</div>
+<p>In <a href="../Electric_network/index.html">electric circuits analysis</a>, <b>nodal analysis</b>, <b>node-voltage analysis</b>, or the <b>branch current method</b> is a method of determining the voltage (potential difference) between "nodes" (points where elements or branches connect) in an electrical circuit in terms of the branch currents.</p>
+<p>Nodal analysis is essentially an application of <a href="../Kirchhoff%27s_circuit_laws/index.html">Kirchhoff's current law</a> (KCL). Nodal analysis is possible when all the circuit elements' branch constitutive relations have an admittance representation. Nodal analysis produces a compact set of equations for the network, which can be solved by hand if small, or can be quickly solved using linear algebra by computer. Because of the compact system of equations, many circuit simulation programs (e.g., SPICE) use nodal analysis as a basis. When elements do not have admittance representations, a more general extension of nodal analysis, <a href="../Modified_nodal_analysis/index.html">modified nodal analysis</a>, must be used.</p>
+<p>Although simple examples with a DC (resistive) focus on linear elements, nodal analysis equations can be reformulated for more general complex frequency-dependent linear elements, as long as their branch constitutive relations also allow an admittance representation.</p>
+<h2>Method</h2>
+<ol>
+<li>Note all connected wire segments in the circuit. These are the <i>nodes</i> of nodal analysis.</li>
+<li>Select one node as the ground reference. The choice does not affect the element voltages (only their reference) but does affect the solution complexity. Choose the node with the most connections to simplify.</li>
+<li>For each node except the reference, assign a variable designating the voltage at the node with respect to the reference. These voltages are the unknowns to be solved.</li>
+<li>For each unknown voltage, form an equation based on Kirchhoff's current law (i.e., add together all currents leaving the node and mark the sum equal to zero). The current through an element is the element's admittance times the voltage difference across the element.</li>
+<li>If there are voltage sources between two unknown voltages, form a supernode. A supernode is formed by enclosing the voltage source and any elements connected in parallel with it, so that all elements in that supernode are considered in a single KCL equation.</li>
+<li>Solve the system of simultaneous equations for each unknown voltage.</li>
+</ol>
+<h2>Example</h2>
+<p>Consider a basic circuit with two nodes, one of which is the reference (ground). With resistor R<sub>1</sub> connected to a current source I<sub>s</sub> at node V<sub>1</sub>, and resistor R<sub>2</sub> from V<sub>1</sub> to ground, KCL at node 1 gives:</p>
+<p class="eq">(V<sub>1</sub> − V<sub>s</sub>)/R<sub>1</sub> + V<sub>1</sub>/R<sub>2</sub> − I<sub>s</sub> = 0</p>
+<p>This single equation can be solved directly for V<sub>1</sub>.</p>
+<h2>Supernodes</h2>
+<p>In a supernode, the KCL equation is written for the region enclosed by the boundaries around both nodes connected by a voltage source. A constraint equation equating the difference between the two node voltages to the source voltage is added, reducing the number of unknowns by one for each voltage source.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Mesh_analysis/index.html">Mesh analysis</a></li>
+<li><a href="../Kirchhoff%27s_circuit_laws/index.html">Kirchhoff's circuit laws</a></li>
+<li><a href="../Modified_nodal_analysis/index.html">Modified nodal analysis</a></li>
+<li><a href="../Ybus_matrix/index.html">Ybus matrix</a></li>
+</ul>
+<p class="ref">From Wikipedia, the free encyclopedia.</p>
+</div>
+</body>
+</html>

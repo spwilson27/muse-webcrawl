@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Parser - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f6f6f6;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;border-bottom:1px solid #a7d7f9;padding-bottom:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px 12px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+figure.hero{margin:0 0 16px;text-align:center}
+figure.hero img{max-width:100%;border:1px solid #ccc;background:#eef;padding:40px 0;width:100%}
+figcaption{font-size:0.85em;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Parser</h1>
+<figure class="hero"><img src="images/Parser.png" alt="Placeholder image for Parser"><figcaption>Image placeholder: diagram of a parser producing a parse tree from tokens.</figcaption></figure>
+<p>A <b>parser</b> is a software component that takes input data (frequently text) and builds a data structure — often some kind of parse tree, abstract syntax tree, or other hierarchical structure — that gives a structural representation of the input while checking it for correct syntax. Parsing is a central stage of compilers and interpreters, but parsers are also used for data interchange formats, query languages, configuration files, and natural language processing.</p>
+<h2>Role in a compiler</h2>
+<p>In a typical compiler front end, a lexical analyser (lexer or scanner) first breaks the source text into tokens. The parser then consumes the token stream and determines whether it conforms to the grammar of the language, organising it into a tree that later phases — semantic analysis, optimisation, and code generation — can traverse. Parsers commonly report syntax errors and attempt to recover so that further errors can be found in a single pass.</p>
+<h2>Types of parser</h2>
+<table class="infobox">
+<tr><th colspan="2">Common parsing approaches</th></tr>
+<tr><th>Top-down</th><td>Recursive descent, LL parsers, PEG/packrat</td></tr>
+<tr><th>Bottom-up</th><td>LR, SLR, LALR, GLR (shift–reduce)</td></tr>
+<tr><th>Generators</th><td>yacc, GNU Bison, ANTLR</td></tr>
+</table>
+<p><b>Top-down parsers</b> start from the grammar's start symbol and try to expand it into the input, effectively building the parse tree from the root down. Recursive descent parsers implement each grammar rule as a procedure and are often hand-written. <b>Bottom-up parsers</b> start from the input tokens and repeatedly reduce them toward the start symbol; the LR family, usually generated from grammar tables by tools such as yacc or Bison, powers many production compilers. Chart parsers and the Earley parser are used where grammars are ambiguous, as in natural language.</p>
+<h2>Parser generators</h2>
+<p>A parser generator takes a formal grammar as input and produces parser source code. Classic tools include yacc (Yet Another Compiler-Compiler) and its successor GNU Bison for LALR grammars, and ANTLR for LL(*) grammars. Parsing expression grammars (PEGs) and combinators offer alternative approaches in which the grammar is written directly in a host programming language.</p>
+<h2>Applications beyond compilers</h2>
+<p>Parsers validate and structure JSON, XML, HTML, and other data formats; interpret query languages such as SQL; read configuration files; and, in computational linguistics, analyse the grammatical structure of sentences in human languages.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Compiler/index.html">Compiler</a></li>
+<li><a href="../Context-free_grammar/index.html">Context-free grammar</a></li>
+<li><a href="../Abstract_syntax_tree/index.html">Abstract syntax tree</a></li>
+<li><a href="../Lexical_analysis/index.html">Lexical analysis</a></li>
+</ul>
+</div>
+</body>
+</html>

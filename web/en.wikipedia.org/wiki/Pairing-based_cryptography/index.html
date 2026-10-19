@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pairing-based cryptography - Wikipedia</title>
+<style>
+body{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;margin:0;background:#f8f9fa;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:90%;margin:0 0 16px 20px;padding:8px}
+.infobox th{background:#b0c4de;padding:4px;text-align:center}
+.infobox td{padding:3px 6px;vertical-align:top}
+.infobox img{width:100%;height:auto;background:#eaecf0}
+code{background:#f8f9fa;font-size:92%}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:88%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Pairing-based cryptography</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+
+<table class="infobox">
+<tr><th colspan="2">Pairing-based cryptography</th></tr>
+<tr><td colspan="2"><img src="images/pairing-based-cryptography.png" alt="Diagram of a bilinear pairing mapping two elliptic-curve groups into a target group"></td></tr>
+<tr><td><b>Field</b></td><td>Cryptography, public-key cryptography</td></tr>
+<tr><td><b>Mathematical basis</b></td><td>Bilinear pairings on elliptic curves (Weil and Tate pairings)</td></tr>
+<tr><td><b>Key constructions</b></td><td>Identity-based encryption; BLS signatures; tripartite key exchange</td></tr>
+<tr><td><b>Common curves</b></td><td>BN254, BLS12-381</td></tr>
+</table>
+
+<p><b>Pairing-based cryptography</b> is the use of a bilinear pairing — a map between elements of two groups on an elliptic curve and elements of a third group — to build cryptographic protocols and schemes. Pairings, originally studied through the Weil and Tate pairings of algebraic geometry, were at first used to attack elliptic-curve cryptosystems; from around 2000 they were turned into a constructive tool that enabled entirely new classes of schemes, most famously identity-based encryption.</p>
+
+<h2>Bilinear pairings</h2>
+<p>A pairing is a map e: G<sub>1</sub> × G<sub>2</sub> → G<sub>T</sub> between groups of prime order r which is bilinear, meaning e(aP, bQ) = e(P, Q)<sup>ab</sup> for all points P, Q and scalars a, b; non-degenerate; and efficiently computable. In practice G<sub>1</sub> and G<sub>2</sub> are groups of points on an elliptic curve over finite fields and G<sub>T</sub> is a multiplicative group of a larger extension field. Security rests on variants of the bilinear Diffie–Hellman problem.</p>
+
+<h2>History and applications</h2>
+<p>In 1993 Menezes, Okamoto, and Vanstone showed that the Weil pairing could reduce the discrete logarithm problem on certain supersingular curves to a weaker field (the MOV attack). The constructive era began in 2000–2001: Joux presented a one-round tripartite Diffie–Hellman key exchange; Sakai, Ohgishi, and Kasahara proposed identity-based key agreement; and Boneh and Franklin gave the first practical identity-based encryption scheme, realising a concept Shamir had posed in 1984. Boneh, Boyen, and others added hierarchical IBE and attribute-based encryption.</p>
+
+<p>Other landmark pairing-based constructions include the BLS short signature scheme of Boneh, Lynn, and Shacham — signatures half the size of comparable DSA signatures, with natural aggregate-signature properties — and pairing-based non-interactive zero-knowledge proofs (Groth–Sahai) and zk-SNARKs. Pairing-friendly curves such as Barreto–Naehrig (BN) curves and BLS12-381 are widely deployed, for example in the Zcash cryptocurrency and in Ethereum's proof-of-stake consensus (BLS signatures), and pairing operations were added to Ethereum via precompiled contracts.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Elliptic-curve_cryptography/index.html">Elliptic-curve cryptography</a></li>
+<li><a href="../Identity-based_cryptography/index.html">Identity-based cryptography</a></li>
+<li><a href="../Weil_pairing/index.html">Weil pairing</a></li>
+<li><a href="../BLS_digital_signature/index.html">BLS digital signature</a></li>
+<li><a href="../Zero-knowledge_proof/index.html">Zero-knowledge proof</a></li>
+</ul>
+
+<h2>References</h2>
+<ul class="small">
+<li>Boneh, Dan; Franklin, Matthew. "Identity-Based Encryption from the Weil Pairing." <i>CRYPTO 2001</i>, LNCS 2139.</li>
+<li>Joux, Antoine. "A One Round Protocol for Tripartite Diffie–Hellman." <i>ANTS 2000</i>, LNCS 1838.</li>
+<li>Galbraith, Steven D.; Paterson, Kenneth G.; Smart, Nigel P. "Pairings for Cryptographers." <i>Discrete Applied Mathematics</i> 156 (2008).</li>
+</ul>
+</div>
+</body>
+</html>

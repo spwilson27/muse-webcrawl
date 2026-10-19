@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fisher's exact test - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.topbar{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:10px 20px;font-family:sans-serif}
+.content{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;font-size:1.4em;margin-top:1.2em}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-family:sans-serif;font-size:.85em;margin:0 0 12px 16px;padding:8px}
+.infobox th{text-align:left;background:#e8ecf0;padding:4px}
+.infobox td{padding:4px}
+.hero{display:block;max-width:100%;background:#eaecf0;border:1px solid #c8ccd1;text-align:center;padding:30px 0;color:#54595d;font-family:sans-serif}
+table.ct{border-collapse:collapse;margin:12px 0}table.ct td,table.ct th{border:1px solid #a2a9b1;padding:4px 10px;text-align:center}
+</style>
+</head>
+<body>
+<div class="topbar">Wikipedia &mdash; The Free Encyclopedia</div>
+<div class="content">
+<h1>Fisher's exact test</h1>
+<img class="hero" src="images/Fisher_exact_test.png" alt="A 2 by 2 contingency table">
+<p><b>Fisher's exact test</b> is a statistical significance test used in the analysis of contingency tables. Named after its inventor, Ronald Fisher, it is one of a class of exact tests, so called because the significance of the deviation from a null hypothesis can be calculated exactly, rather than relying on an approximation that becomes exact only for large samples.</p>
+<h2>Use</h2>
+<p>The test is useful for categorical data that result from classifying objects in two different ways; it tests the null hypothesis that the classifications are independent. It is especially valuable when sample sizes are small, where the chi-squared test may be unreliable because expected cell counts are low.</p>
+<table class="ct">
+<tr><th></th><th>Category 1</th><th>Category 2</th><th>Row total</th></tr>
+<tr><th>Group 1</th><td>a</td><td>b</td><td>a + b</td></tr>
+<tr><th>Group 2</th><td>c</td><td>d</td><td>c + d</td></tr>
+<tr><th>Column total</th><td>a + c</td><td>b + d</td><td>n</td></tr>
+</table>
+<h2>Computation</h2>
+<p>For a 2&times;2 table with cell counts a, b, c and d and total n, and with row and column margins treated as fixed, the probability of the observed table under the null hypothesis follows the hypergeometric distribution:</p>
+<p><i>p</i> = [(a+b)! (c+d)! (a+c)! (b+d)!] / [a! b! c! d! n!]</p>
+<p>The p-value is obtained by summing the probabilities of all tables with the same margins that are as extreme as, or more extreme than, the table observed. Extensions to larger r&times;c tables exist, commonly computed with the Freeman&ndash;Halton extension, though the enumeration of tables grows rapidly and Monte Carlo methods are often used.</p>
+<h2>Example</h2>
+<p>A famous example is Fisher's "lady tasting tea" experiment, in which a lady claimed she could tell whether milk or tea was poured first into a cup. Fisher designed an experiment with eight cups, four of each type, and used the exact test to assess whether her correct classifications could plausibly have arisen by chance.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Chi-squared_test/index.html">Chi-squared test</a></li>
+<li><a href="../Contingency_table/index.html">Contingency table</a></li>
+<li><a href="../Statistical_hypothesis_testing/index.html">Statistical hypothesis testing</a></li>
+</ul>
+</div>
+</body>
+</html>

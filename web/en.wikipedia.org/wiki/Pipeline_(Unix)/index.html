@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pipeline (Unix) - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#f8f9fa;color:#202122;margin:0;padding:20px}
+#content{background:#fff;border:1px solid #a7d7f9;padding:24px;max-width:960px;margin:0 auto}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;margin:0 0 10px;padding-bottom:6px}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;margin:22px 0 8px}
+.infobox{float:right;border:1px solid #a7d7f9;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;width:270px;font-family:sans-serif;font-size:13px}
+.infobox caption{font-weight:bold;text-align:center;font-size:15px;padding:4px}
+.infobox th{text-align:left;background:#eaecf0;padding:4px}
+.infobox td{padding:4px}
+.infobox img{width:100%;background:#eef;border:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.caption{font-size:12px;color:#54595d;text-align:center}
+code{font-family:monospace;background:#f5f5f5}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Pipeline (Unix)</h1>
+<table class="infobox">
+<caption>Pipeline (Unix)</caption>
+<tr><td colspan="2"><img src="images/Pipeline.png" alt="Diagram of a Unix pipeline connecting programs"></td></tr>
+<tr><th>Operating system</th><td>Unix and Unix-like</td></tr>
+<tr><th>Shell syntax</th><td><code>command1 | command2 | command3</code></td></tr>
+<tr><th>Conceived by</th><td>Douglas McIlroy; implemented by Ken Thompson (1973)</td></tr>
+</table>
+<p>In <a href="../Unix/index.html">Unix</a> and Unix-like operating systems, a <b>pipeline</b> is a mechanism for inter-process communication in which the output (stdout) of one process is passed as the input (stdin) of the next, forming a chain of processes connected by pipes. In shell syntax, pipelines are written with the vertical bar character: <code>ls -l | grep "key" | sort</code>.</p>
+<h2>Concept</h2>
+<p>The pipeline is a central element of the Unix philosophy of writing small programs that do one thing well and work together through text streams. The idea was proposed by Douglas McIlroy in 1964 and implemented by Ken Thompson in 1973, who added the pipe system call and the shell's <code>|</code> notation to Unix. Data flows through the processes concurrently, with the kernel buffering a limited amount in each pipe.</p>
+<h2>Implementation</h2>
+<p>In POSIX systems, pipes are created with the <code>pipe()</code> system call, producing a pair of file descriptors. The shell forks each command in the pipeline and redirects its standard input and output accordingly, so all stages run in parallel. If a stage tries to write to a pipe whose reader has closed, it receives the SIGPIPE signal. Named pipes (FIFOs), created with <code>mkfifo</code>, allow unrelated processes to communicate through the file system.</p>
+<h2>Extensions</h2>
+<p>Shells provide related features such as process substitution, the <code>tee</code> command for splitting a stream, and capturing a pipeline's exit status. The pipeline concept influenced stream processing in many later systems and languages, including PowerShell's object pipelines and functional stream APIs.</p>
+<p class="caption">Recreated from memory as part of the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

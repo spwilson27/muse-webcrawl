@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fallacies of distributed computing - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.infobox{float:right;width:290px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px 12px;margin:0 0 16px 20px;font-size:88%;font-family:sans-serif}
+.infobox th{background:#cedff2;text-align:center;font-size:105%;padding:4px}
+.infobox td{padding:2px 4px;vertical-align:top}
+.hero{display:block;max-width:420px;width:100%;margin:12px 0;background:#eef3f8;border:1px solid #a2a9b1;padding:6px}
+.small{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Fallacies of distributed computing</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/fallacies-of-distributed-computing.png" alt="Network of computers representing a distributed system">
+<table class="infobox">
+<tr><th colspan="2">Fallacies of distributed computing</th></tr>
+<tr><td><b>Proposed by</b></td><td>L. Peter Deutsch and others at Sun Microsystems</td></tr>
+<tr><td><b>Date</b></td><td>1994 (first seven); eighth added by James Gosling, c. 1997</td></tr>
+<tr><td><b>Field</b></td><td>Distributed computing</td></tr>
+</table>
+<p>The <b>fallacies of distributed computing</b> are a set of assertions made by L. Peter Deutsch and others at Sun Microsystems describing false assumptions that programmers new to distributed applications invariably make. The fallacies are:</p>
+<ol>
+<li>The network is reliable.</li>
+<li>Latency is zero.</li>
+<li>Bandwidth is infinite.</li>
+<li>The network is secure.</li>
+<li>Topology doesn't change.</li>
+<li>There is one administrator.</li>
+<li>Transport cost is zero.</li>
+<li>The network is homogeneous.</li>
+</ol>
+<p>The first seven fallacies were enumerated by Deutsch in 1994; the eighth was added by James Gosling around 1997. Bill Joy and Tom Lyon had earlier referred to the first four as "The Fallacies of Networked Computing" in internal Sun documents.</p>
+<h2>The fallacies in detail</h2>
+<h2>The network is reliable</h2>
+<p>Networks drop packets, connections fail, and hardware faults occur. Software designed assuming perfect delivery will fail — in the words associated with the fallacy, the network is reliable only until it isn't; systems must handle retries, timeouts, and partial failure. This is related to the Two Generals' Problem, which shows that perfect coordination over an unreliable channel is impossible.</p>
+<h2>Latency is zero</h2>
+<p>Unlike in-process calls, network requests incur latency that grows with distance and cannot be optimised away. Designs that make many small chatty calls across a network perform badly; asynchronous messaging and batching mitigate the problem.</p>
+<h2>Bandwidth is infinite</h2>
+<p>Throughput is finite and shared; usage grows to consume available capacity. Serialising large object graphs or streaming unbounded data can saturate links. Compression helps only until encrypted or already-compressed data dominates.</p>
+<h2>The network is secure</h2>
+<p>Networks can be eavesdropped on and attacked; systems require authentication, authorisation, and encryption in transit, especially once traffic leaves a trusted data centre.</p>
+<h2>Topology doesn't change</h2>
+<p>Hosts, services, and routes are added, removed, and re-addressed continuously — particularly in cloud environments — so hardcoded addresses and static assumptions break.</p>
+<h2>There is one administrator</h2>
+<p>Real distributed systems span multiple organisations, teams, and vendors, requiring coordination of changes and standards across administrative domains.</p>
+<h2>Transport cost is zero</h2>
+<p>Moving data costs money and resources: bandwidth charges, serialization overhead, and infrastructure all carry real costs that designs must budget for.</p>
+<h2>The network is homogeneous</h2>
+<p>Networks mix vendors, protocols, versions, and encodings; assuming a single stack leads to interoperability failures, making standard formats and protocols essential.</p>
+<h2>Influence</h2>
+<p>The fallacies are widely cited in software architecture education and in discussions of microservices and cloud-native design, where each fallacy maps to concrete engineering practices: resilience patterns, observability, encryption by default, service discovery, and contract testing.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Distributed_computing/">Distributed computing</a></li>
+<li><a href="../CAP_theorem/">CAP theorem</a></li>
+<li><a href="../Two_Generals%27_Problem/">Two Generals' Problem</a></li>
+<li><a href="../Microservices/">Microservices</a></li>
+</ul>
+<p class="small">Categories: Distributed computing architecture · Computer programming folklore</p>
+</div>
+</body>
+</html>

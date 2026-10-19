@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GridFTP - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 16px 20px;padding:8px}
+.infobox th{background:#b0c4de;text-align:center;padding:4px;font-size:14px}
+.infobox td{padding:3px 6px;vertical-align:top}
+.infobox .lbl{font-weight:bold;width:90px}
+img.hero{width:100%;height:auto;background:#eaecf0;border:1px solid #c8ccd1;display:block}
+.fig{text-align:center;font-size:12px;color:#54595d;margin:4px 0 0}
+ul{line-height:1.6;font-size:15px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>GridFTP</h1>
+<table class="infobox">
+<tr><th colspan="2">GridFTP</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/GridFTP.png" alt="Diagram of parallel data streams in a GridFTP transfer"><div class="fig">Parallel streams in GridFTP</div></td></tr>
+<tr><td class="lbl">Type</td><td>Network protocol (extension of FTP)</td></tr>
+<tr><td class="lbl">Developed by</td><td>Globus Alliance / Argonne National Laboratory</td></tr>
+<tr><td class="lbl">Purpose</td><td>High-performance, secure, reliable bulk data transfer</td></tr>
+<tr><td class="lbl">Standard</td><td>Open Grid Forum (GFD.020 and related)</td></tr>
+</table>
+<p><b>GridFTP</b> is an extension of the File Transfer Protocol (FTP) designed for high-performance, secure and reliable transfer of very large datasets in grid computing environments. Developed within the Globus project and standardised through the Open Grid Forum, it became the standard data-moving protocol of large scientific collaborations, notably the Worldwide LHC Computing Grid, which used it to distribute petabytes of particle-physics data.</p>
+<h2>Features</h2>
+<p>GridFTP adds to FTP a set of capabilities aimed at wide-area, high-bandwidth networks:</p>
+<ul>
+<li><b>Parallel data streams</b> — multiple simultaneous TCP connections between the same hosts to fill high bandwidth-delay product links.</li>
+<li><b>Striped transfers</b> — data distributed across several servers at each end, aggregating their bandwidth and storage throughput.</li>
+<li><b>Partial and restartable transfers</b> — support for transferring file ranges and resuming interrupted transfers, essential for multi-gigabyte files.</li>
+<li><b>Security</b> — authentication, integrity protection and optional confidentiality using GSI (Grid Security Infrastructure, based on X.509 certificates).</li>
+<li><b>Third-party transfers</b> — one host can orchestrate a direct transfer between two others.</li>
+<li><b>Automatic TCP tuning</b> — negotiation of buffer and window sizes for optimal throughput.</li>
+</ul>
+<h2>Implementations and successors</h2>
+<p>The reference implementation ships with the Globus Toolkit (the <i>globus-url-copy</i> client and GridFTP server), and the protocol was supported by storage systems at CERN, Fermilab and other laboratories. GridFTP underpinned the Globus transfer service used by thousands of research institutions. More recently, HTTP-based transfer (WebDAV/HTTPS with third-party copy) has been adopted as the LHC grid's successor protocol, though GridFTP remains in production use.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../File_Transfer_Protocol/index.html">File Transfer Protocol</a></li>
+<li><a href="../Globus_Toolkit/index.html">Globus Toolkit</a></li>
+<li><a href="../Grid_computing/index.html">Grid computing</a></li>
+<li><a href="../Worldwide_LHC_Computing_Grid/index.html">Worldwide LHC Computing Grid</a></li>
+</ul>
+</div>
+</body>
+</html>

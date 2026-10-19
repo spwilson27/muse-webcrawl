@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Formal verification - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 36px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 14.5px; }
+ul, ol { font-family: sans-serif; font-size: 14.5px; line-height: 1.6; }
+a { color: #3366cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 12.5px; font-family: sans-serif; margin: 0 0 12px 18px; padding: 10px; }
+.infobox th { background: #dfe5ea; padding: 6px; font-size: 13.5px; }
+.infobox td { padding: 4px 6px; vertical-align: top; }
+.hero { text-align: center; }
+.hero img { width: 240px; height: 150px; background: #eaecf0; border: 1px solid #c8ccd1; }
+.caption { font-size: 11.5px; color: #54595d; }
+.refs { font-size: 12.5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Formal verification</h1>
+<p>In the context of hardware and software systems, <b>formal verification</b> is the act of proving or disproving the correctness of a system with respect to a certain formal specification or property, using formal methods of mathematics. Formal verification is a key incentive for formal specification of systems, and is at the core of building high-integrity systems, where correctness matters more than in consumer applications — for example in avionics, railway signalling, medical devices and cryptographic protocols.</p>
+<p>The verification of a system involves constructing an abstract model of the system and a formal statement of the property to be checked, expressed in a logic such as temporal logic, then demonstrating mathematically that the model satisfies the property. Unlike testing, which samples only some behaviours, formal verification in principle covers all possible behaviours of the model — although it can only prove correctness relative to the model and specification, not to reality itself.</p>
+
+<div class="infobox">
+<table>
+<tr><th colspan="2">Formal verification</th></tr>
+<tr><td colspan="2" class="hero"><img src="images/formal-verification.png" alt="Workflow diagram: system model and property enter a model checker or theorem prover"><div class="caption">A model checker explores all reachable states of a system model.</div></td></tr>
+<tr><td><b>Field</b></td><td>Formal methods, computer science</td></tr>
+<tr><td><b>Techniques</b></td><td>Model checking, theorem proving, equivalence checking</td></tr>
+<tr><td><b>Logics used</b></td><td>Temporal logic (LTL, CTL), first-order logic</td></tr>
+</table>
+</div>
+
+<h2>Approaches</h2>
+<ul>
+<li><b>Model checking</b>: an algorithm automatically explores the state space of a finite-state model to check whether a temporal-logic property holds; if not, it produces a counterexample trace. Edmund Clarke, E. Allen Emerson and Joseph Sifakis received the 2007 Turing Award for this work.</li>
+<li><b>Theorem proving</b>: correctness is established with deductive proof, often assisted by interactive proof assistants such as Coq, Isabelle or Lean. This scales to infinite-state systems but requires human guidance.</li>
+<li><b>Equivalence checking</b>: used in hardware design to prove that two circuit descriptions (e.g. register-transfer level and gate level) behave identically.</li>
+<li><b>Static analysis and abstract interpretation</b>: over-approximate program behaviour to prove the absence of classes of runtime errors.</li>
+</ul>
+
+<h2>Notable verified systems</h2>
+<p>Landmark projects include the seL4 microkernel, whose functional correctness was machine-proved in Isabelle/HOL; the CompCert C compiler, verified in Coq; and floating-point hardware verification at Intel and AMD, spurred by the 1994 Pentium FDIV bug, which made model checking and equivalence checking standard in processor design flows.</p>
+
+<h2>Challenges</h2>
+<p>The main obstacles are state-space explosion, the effort of writing good specifications, and modelling gaps between the formal model and the implemented system. Industrial practice often applies formal verification selectively to the most critical components or properties.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Formal_semantics_(logic)/index.html">Formal semantics (logic)</a></li>
+<li>Model checking</li>
+<li>Formal methods</li>
+<li>Hoare logic</li>
+</ul>
+
+<h2>References</h2>
+<ol class="refs">
+<li>Baier, Christel &amp; Katoen, Joost-Pieter (2008). <i>Principles of Model Checking</i>. MIT Press.</li>
+<li>Klein, Gerwin et al. (2009). "seL4: Formal Verification of an OS Kernel". <i>SOSP</i>.</li>
+<li>Harrison, John (2009). <i>Handbook of Practical Logic and Automated Reasoning</i>. Cambridge University Press.</li>
+</ol>
+</div>
+</body>
+</html>

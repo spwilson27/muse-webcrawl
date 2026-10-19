@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Elliptic Curve Digital Signature Algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal;margin-top:1.2em}
+p{line-height:1.6;font-size:0.95em}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.85em;margin:0 0 16px 20px;padding:8px 12px}
+.infobox caption{font-weight:bold;font-size:1.1em;padding:4px 0}
+.infobox th{text-align:left;vertical-align:top;padding:2px 6px 2px 0}
+.infobox td{padding:2px 0}
+.hero{display:block;max-width:100%;margin:10px auto;background:#eaecf0;border:1px solid #c8ccd1;padding:24px 0;text-align:center;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{line-height:1.6;font-size:0.95em}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Elliptic Curve Digital Signature Algorithm</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/Elliptic_Curve_Digital_Signature_Algorithm.png" alt="Diagram of ECDSA signing and verification">
+<p>The <b>Elliptic Curve Digital Signature Algorithm</b> (<b>ECDSA</b>) is a variant of the Digital Signature Algorithm (DSA) which uses elliptic-curve cryptography. It was standardised in ANSI X9.62 in 1998 and in FIPS 186, and is one of the most widely deployed public-key signature schemes.</p>
+<h2>Algorithm</h2>
+<p>A signer's private key is a random integer <i>d</i>; the public key is the curve point <i>Q = dG</i>. To sign a message, the signer hashes the message, picks a secret random nonce <i>k</i>, computes the point <i>kG</i>, and derives the signature pair (<i>r</i>, <i>s</i>) from that point's x-coordinate and the hash. A verifier with the public key can check the signature using only public information.</p>
+<h2>Nonce security</h2>
+<p>The nonce <i>k</i> must be unique and unpredictable for every signature. Reusing a nonce for two different messages allows an attacker to solve for the private key — a failure famously exploited against the PlayStation 3, which used a constant nonce. Deterministic nonce generation, specified in RFC 6979, derives <i>k</i> from the message and private key and removes the dependence on a random number generator.</p>
+<h2>Applications</h2>
+<p>ECDSA is used in TLS certificates, secure messaging, and cryptocurrencies: Bitcoin uses ECDSA with the secp256k1 curve to authorise transactions, as did Ethereum before its later protocol changes. Common standard curves include NIST P-256 and P-384.</p>
+<h2>Comparison with EdDSA</h2>
+<p>Newer protocols often prefer EdDSA (such as Ed25519), which is deterministic by design, faster, and less vulnerable to implementation mistakes, though ECDSA remains entrenched in existing standards and hardware.</p>
+<p class="small">See also: <a href="../Elliptic-curve_cryptography/index.html">Elliptic-curve cryptography</a> · <a href="../Elliptic-curve_Diffie–Hellman/index.html">Elliptic-curve Diffie–Hellman</a> · <a href="../Digital_Signature_Algorithm/index.html">Digital Signature Algorithm</a></p>
+</div>
+</body>
+</html>

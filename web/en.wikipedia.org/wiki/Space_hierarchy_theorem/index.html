@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Space hierarchy theorem - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine','Georgia',serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a2a9b1;border-right:1px solid #a2a9b1}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+img.hero{width:100%;background:#eaecf0;border:1px solid #a2a9b1}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 16px 16px;padding:8px}
+.infobox th{text-align:left;padding:2px 6px;vertical-align:top}
+.infobox td{padding:2px 6px}
+.infobox .cap{text-align:center;font-weight:bold;font-size:15px;background:#eaf3ff;padding:6px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Space hierarchy theorem</h1>
+<table class="infobox">
+<tr><td class="cap" colspan="2">Space hierarchy theorem</td></tr>
+<tr><td colspan="2"><img class="hero" src="images/Space_hierarchy_theorem.png" alt="Diagram showing strict inclusions between space complexity classes"></td></tr>
+<tr><th>Field</th><td>Computational complexity theory</td></tr>
+<tr><th>Statement (informal)</th><td>Given asymptotically more space, a Turing machine can solve strictly more problems</td></tr>
+<tr><th>Key requirement</th><td>Space-constructibility of the bounding functions</td></tr>
+<tr><th>Method</th><td>Diagonalisation</td></tr>
+</table>
+<p>In computational complexity theory, the <b>space hierarchy theorems</b> state that a Turing machine with more memory can recognise strictly more languages than one with less memory, provided the bounds involved are reasonably well-behaved (space-constructible). Formally, for space-constructible functions f and g with f(n) = o(g(n)) and g(n) ≥ log n:</p>
+<p style="text-align:center"><b>SPACE(f(n)) ⊊ SPACE(g(n))</b></p>
+<p>The proof is by diagonalisation: one constructs a machine that simulates all machines using at most f(n) space and does the opposite on some input, ensuring the resulting language lies in SPACE(g) but not SPACE(f). A small technical overhead — asymptotically negligible — is needed to mark off the allowed space and to run a clock guarding against infinite loops, which is why a little slack between the bounds is required.</p>
+<h2>Consequences</h2>
+<p>The theorem yields a strict hierarchy of space classes. Combined with Savitch's theorem, it implies that <b>PSPACE</b> strictly contains, for example, <b>L</b> and <b>NL</b>-bounded subclasses at lower levels; in particular EXPSPACE ≠ PSPACE, and the corresponding separations separate classes such as SPACE(n) ⊊ SPACE(n²). It is the space analogue of the time hierarchy theorem, though with stronger conclusions because space, unlike time, can be reused — an ingredient in the proof that PSPACE strictly contains P (via padding and related arguments in standard treatments).</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Time_hierarchy_theorem/index.html">Time hierarchy theorem</a></li>
+<li><a href="../Savitch's_theorem/index.html">Savitch's theorem</a></li>
+<li><a href="../PSPACE/index.html">PSPACE</a></li>
+<li><a href="../Diagonalisation/index.html">Diagonalisation</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>QUIC - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.35em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+p{line-height:1.65;font-size:0.95em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.85em;margin:0 0 16px 20px;border-collapse:collapse}
+.infobox th,.infobox td{border:1px solid #a2a9b1;padding:5px 8px;text-align:left}
+.infobox .hd{background:#b0c4de;text-align:center;font-weight:bold;font-size:1.05em}
+.hero{display:block;width:100%;max-width:420px;margin:12px auto;background:#eaecf0;border:1px solid #a2a9b1;padding:24px 0;text-align:center;color:#54595d;font-style:italic}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>QUIC</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/quic.png" alt="Diagram of a QUIC connection over UDP carrying multiple independent encrypted streams">
+<table class="infobox">
+<tr><th class="hd" colspan="2">QUIC</th></tr>
+<tr><th>Developer</th><td>Google (origin); IETF (standardisation)</td></tr>
+<tr><th>Introduced</th><td>2012 (Google); RFC 9000 in May 2021</td></tr>
+<tr><th>Runs over</th><td>UDP</td></tr>
+<tr><th>Purpose</th><td>General-purpose encrypted transport protocol</td></tr>
+<tr><th>Key use</th><td>Transport for HTTP/3</td></tr>
+</table>
+<p><b>QUIC</b> is a general-purpose transport layer network protocol initially designed by Jim Roskind at Google and deployed in 2012. It was standardised by the Internet Engineering Task Force (IETF) in May 2021 as RFC 9000. QUIC runs on top of UDP and provides a reliable, encrypted, multiplexed connection between two endpoints, forming the transport layer for HTTP/3.</p>
+
+<h2>Features</h2>
+<p>QUIC integrates transport and cryptographic handshakes—using TLS 1.3—so most connections are established in a single round trip, and resumed connections may send data immediately ("0-RTT"). Unlike TCP, QUIC multiplexes many independent streams over one connection, so a lost packet blocks only the stream it belongs to, eliminating transport-layer head-of-line blocking. Connections are identified by connection IDs rather than IP addresses, allowing a session to survive network changes, such as moving from Wi-Fi to a mobile network. Flow control, congestion control, and loss detection are built in, implemented in user space so the protocol can evolve without operating-system changes.</p>
+
+<h2>History</h2>
+<p>Google deployed an early version, gQUIC, in Chrome and across its servers from 2013, by 2015 carrying a substantial share of Google's web traffic. The IETF took up standardisation in 2016, separating the transport from Google's HTTP mapping and mandating TLS 1.3 encryption. Major browsers, content delivery networks, and companies including Meta and Akamai have since deployed QUIC and HTTP/3 widely.</p>
+
+<h2>See also</h2>
+<p><a href="../HTTP/3/index.html">HTTP/3</a> · <a href="../Transmission_Control_Protocol/index.html">Transmission Control Protocol</a> · <a href="../User_Datagram_Protocol/index.html">User Datagram Protocol</a> · <a href="../Transport_Layer_Security/index.html">Transport Layer Security</a></p>
+<p class="small">Categories: Internet protocols · Transport layer protocols · Google software</p>
+</div>
+</body>
+</html>

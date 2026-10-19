@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Instrumental variables estimation - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:13px}
+.infobox th{background:#b0c4de;padding:5px;text-align:center;font-size:14px}
+.infobox td{padding:3px 6px;vertical-align:top}
+img.hero{display:block;max-width:100%;margin:10px 0;background:#eef;padding:20px;text-align:center;border:1px solid #ccc}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{line-height:1.6;font-size:15px}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Instrumental variables estimation</h1>
+<p><b>Instrumental variables</b> (<b>IV</b>) estimation is a method used in statistics and econometrics to estimate causal relationships when controlled experiments are not available and standard regression is biased because an explanatory variable is correlated with the error term — a situation called endogeneity. The method uses an auxiliary variable, an <b>instrument</b>, that is correlated with the suspect explanatory variable (<i>relevance</i>) but not directly with the error term, affecting the outcome only through that explanatory variable (<i>exclusion restriction</i>).</p>
+<img class="hero" src="images/Instrumental_variables_estimation.png" alt="Placeholder image: path diagram of instrument Z affecting outcome Y only through treatment X">
+<table class="infobox">
+<tr><th colspan="2">Instrumental variables</th></tr>
+<tr><td><b>Field</b></td><td>Econometrics, statistics, epidemiology</td></tr>
+<tr><td><b>Addresses</b></td><td>Endogeneity, omitted variables, measurement error, simultaneity</td></tr>
+<tr><td><b>Key conditions</b></td><td>Relevance; exclusion restriction; exogeneity</td></tr>
+<tr><td><b>Common estimator</b></td><td>Two-stage least squares (2SLS)</td></tr>
+</table>
+<h2>Motivation</h2>
+<p>Endogeneity arises from omitted confounding variables, measurement error in a regressor, or simultaneity (the outcome also causing the predictor, as with price and quantity in supply-and-demand systems). In such cases, ordinary least squares (OLS) is inconsistent. Instrumental variables isolate the part of the variation in the explanatory variable that is driven by the instrument — and therefore plausibly exogenous — and use only that variation to estimate the effect.</p>
+<h2>Estimation</h2>
+<p>The standard implementation is <b>two-stage least squares</b>: in the first stage, the endogenous variable is regressed on the instruments to obtain predicted values; in the second stage, the outcome is regressed on those predicted values. With heterogeneous treatment effects, IV estimates a local average treatment effect (LATE) — the effect for "compliers," whose treatment status is moved by the instrument — as shown by Imbens and Angrist (1994). Weak instruments, only slightly correlated with the endogenous variable, can make IV estimates more biased and imprecise than OLS, so first-stage strength (commonly an F-statistic above 10) must be checked.</p>
+<h2>Examples</h2>
+<p>Famous instruments include quarter of birth to study the effect of schooling on earnings (Angrist and Krueger, 1991), distance to college as an instrument for education, draft-lottery numbers as an instrument for military service, and genetic variants in Mendelian randomization in epidemiology. The idea traces back to work by Philip Wright (1928) on supply and demand curves.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Econometrics/index.html">Econometrics</a></li>
+<li><a href="../Endogeneity_(econometrics)/index.html">Endogeneity</a></li>
+<li><a href="../Two-stage_least_squares/index.html">Two-stage least squares</a></li>
+<li><a href="../Mendelian_randomization/index.html">Mendelian randomization</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Curry–Howard correspondence - Wikipedia</title>
+<style>
+body{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff}
+#content{max-width:960px;margin:0 auto;padding:20px 28px 60px}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:32px;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-bottom:4px}
+h2{font-family:Georgia,serif;font-size:24px;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 16px 20px;padding:8px}
+.infobox th{text-align:left;vertical-align:top;padding:3px 6px}
+.infobox td{padding:3px 6px}
+.infobox .title{background:#cedff2;text-align:center;font-weight:bold;font-size:15px;padding:6px}
+figure.hero{margin:0 0 14px;text-align:center}
+figure.hero img{max-width:520px;width:100%;background:#eef;border:1px solid #a2a9b1}
+table.wikitable{border-collapse:collapse;margin:12px 0}
+table.wikitable th,table.wikitable td{border:1px solid #a2a9b1;padding:5px 10px;font-size:14px}
+table.wikitable th{background:#eaecf0}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Curry–Howard correspondence</h1>
+<figure class="hero"><img src="images/curry-howard-correspondence.png" alt="Diagram aligning logical connectives with programming types"></figure>
+<table class="infobox">
+<tr><th colspan="2" class="title">Curry–Howard correspondence</th></tr>
+<tr><th>Also called</th><td>Propositions-as-types; proofs-as-programs</td></tr>
+<tr><th>Key figures</th><td>Haskell Curry (1934/1958), William Alvin Howard (1969/1980)</td></tr>
+<tr><th>Relates</th><td>Natural deduction ↔ typed lambda calculus</td></tr>
+</table>
+<p>In programming language theory and proof theory, the <b>Curry–Howard correspondence</b> (also known as the <b>Curry–Howard isomorphism</b> or <b>equivalence</b>, or the <b>proofs-as-programs</b> and <b>propositions-as-types</b> interpretations) is the direct relationship between computer programs and mathematical proofs: a formal proof in a logical system corresponds, structurally, to a program in a typed lambda calculus, and the type of the program is the proposition that the proof proves. Simplifying or normalising the proof corresponds to evaluating (running) the program.</p>
+<h2>The correspondence</h2>
+<table class="wikitable">
+<tr><th>Logic</th><th>Programming</th></tr>
+<tr><td>Proposition</td><td>Type</td></tr>
+<tr><td>Proof</td><td>Program (term inhabiting the type)</td></tr>
+<tr><td>Implication A → B</td><td>Function type A → B</td></tr>
+<tr><td>Conjunction A ∧ B</td><td>Product type (pair)</td></tr>
+<tr><td>Disjunction A ∨ B</td><td>Sum type (tagged union)</td></tr>
+<tr><td>True / False</td><td>Unit type / empty type</td></tr>
+<tr><td>Proof normalisation</td><td>Program evaluation (β-reduction)</td></tr>
+<tr><td>Universal / existential quantifier</td><td>Dependent function (Π) / dependent pair (Σ) type</td></tr>
+</table>
+<h2>History</h2>
+<p>Haskell Curry observed in 1934 (and in his 1958 book with Robert Feys) that the types of combinators in combinatory logic matched the axiom schemes of intuitionistic implication. William Alvin Howard made the full correspondence explicit in a 1969 manuscript, published in 1980, showing that intuitionistic natural deduction corresponds to the simply typed lambda calculus. The idea was subsequently extended: Girard's System F corresponds to second-order logic; the calculus of constructions of Coquand and Huet underlies the Coq proof assistant; Martin-Löf type theory and homotopy type theory continue the programme. Classical logic corresponds, via work by Griffin and Parigot, to control operators such as call/cc and the λμ-calculus.</p>
+<h2>Significance</h2>
+<p>The correspondence is the theoretical foundation of proof assistants such as Coq, Agda and Lean: to prove a theorem is to write a program of the corresponding type, and type checking is proof checking (the de Bruijn criterion). It also informs programming language design — features of Haskell, ML and Rust trace to logical systems — and supports program extraction, whereby verified algorithms are generated from constructive proofs.</p>
+<h2>See also</h2>
+<p><a href="../index.html">Intuitionistic logic</a> · <a href="../Lambda_calculus/index.html">Lambda calculus</a> · <a href="../Type_theory/index.html">Type theory</a> · <a href="../Proof_assistant/index.html">Proof assistant</a> · <a href="../Haskell_Curry/index.html">Haskell Curry</a></p>
+</div>
+</body>
+</html>

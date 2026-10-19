@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PACELC theorem - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#f6f6f6;color:#202122;margin:0}
+.mw-body{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;margin:0 0 8px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:24px;font-weight:normal}
+h3{font-size:1.15em;margin-top:18px}
+p{line-height:1.6;margin:8px 0}
+figure.thumb{margin:12px 0;text-align:center}
+figure.thumb img{max-width:320px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px}
+figcaption{font-size:0.85em;color:#54595d;font-family:sans-serif}
+ul{line-height:1.6}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.catlinks{border:1px solid #a2a9b1;background:#f8f9fa;padding:6px 10px;font-size:0.85em;font-family:sans-serif;margin-top:24px}
+.box{background:#f8f9fa;border:1px solid #a2a9b1;padding:10px 16px;margin:12px 0;font-family:sans-serif;font-size:0.95em}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>PACELC theorem</h1>
+<p>The <b>PACELC theorem</b> is an extension of the CAP theorem in distributed computing, proposed by Daniel J. Abadi of Yale University in 2010 and published in refined form in 2012. Where CAP describes the trade-off a distributed data system faces only when a network partition occurs, PACELC observes that even when the system is running normally — the far more common case — there is a trade-off between latency and consistency. The theorem is intended to give a more complete description of the consistency/latency trade-offs that designers of distributed databases (particularly the NoSQL systems that proliferated in the 2000s) must make.</p>
+<figure class="thumb"><img src="images/pacelc.png" alt="[Image placeholder: Diagram contrasting the CAP trade-off during a partition with the latency-consistency trade-off during normal operation]"><figcaption>PACELC adds the normal-operation trade-off (latency vs consistency) to CAP's partition trade-off</figcaption></figure>
+<h2>Statement</h2>
+<div class="box"><b>PACELC:</b> <i>if</i> there is a Partition (P), a distributed system must choose between Availability (A) and Consistency (C); <i>else</i> (E), when the system is operating normally, it must choose between Latency (L) and Consistency (C).</div>
+<p>The reasoning behind the "else" branch is that maintaining strong consistency in a replicated system requires coordination between replicas — for example, synchronous replication or quorum reads and writes spread across data centres — and that coordination adds delay. A system that replicates asynchronously can respond faster, but at the price of weaker (typically eventual) consistency, with the risk of reading stale data or losing recent writes.</p>
+<h2>Classification of systems</h2>
+<p>PACELC allows systems to be classified by two letters pairs, written PA/EL, PA/EC, PC/EL or PC/EC:</p>
+<ul>
+<li><b>PA/EL</b> — under partition, favour availability; otherwise, favour latency. Many eventually consistent NoSQL systems, such as Dynamo-style stores (Amazon DynamoDB in its default mode, Cassandra, Riak), fall here.</li>
+<li><b>PA/EC</b> — favour availability under partition but consistency in normal operation; Abadi cited the (since discontinued) Yahoo! PNUTS system in this region.</li>
+<li><b>PC/EL</b> — favour consistency under partition, latency otherwise; considered an unusual combination.</li>
+<li><b>PC/EC</b> — favour consistency in both cases. Traditional ACID databases and strongly consistent distributed systems such as Google Spanner and HBase are examples; they accept higher latency to keep replicas in agreement.</li>
+</ul>
+<h2>Relationship to CAP and criticism</h2>
+<p>PACELC does not overturn the CAP theorem; it supplements it by pointing out that CAP says nothing about the trade-offs that dominate day-to-day behaviour, since partitions are comparatively rare whereas the latency cost of consistency is paid on every operation. Critics, including proponents of refined readings of CAP (notably Eric Brewer himself in his 2012 "CAP Twelve Years Later" retrospective), note that the choice is not binary: systems can offer tunable consistency, partial availability and degrees of latency, so PACELC, like CAP, is best read as a design heuristic rather than a strict dichotomy. Abadi has acknowledged this, presenting PACELC as a framework for describing a system's default stance.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../CAP_theorem/index.html">CAP theorem</a></li>
+<li><a href="../Eventual_consistency/index.html">Eventual consistency</a></li>
+<li><a href="../Distributed_database/index.html">Distributed database</a></li>
+<li><a href="../Daniel_Abadí/index.html">Daniel Abadi</a></li>
+<li><a href="../Spanner_(database)/index.html">Spanner</a></li>
+</ul>
+<div class="catlinks">Categories: Distributed computing · Database theory · Theorems in computer science</div>
+</div>
+</body>
+</html>

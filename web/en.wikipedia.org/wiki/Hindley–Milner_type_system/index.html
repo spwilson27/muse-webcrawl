@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hindley–Milner type system - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#fff;color:#202122}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{background:#b0c4de;text-align:center;padding:4px}
+.infobox td{padding:3px 6px;vertical-align:top}
+.hero{display:block;max-width:100%;margin:8px auto;background:#eaecf0;border:1px dashed #72777d;padding:24px;text-align:center;color:#54595d}
+.small{font-size:0.85em;color:#54595d}
+code{font-family:monospace;background:#f8f9fa}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Hindley–Milner type system</h1>
+<table class="infobox">
+<tr><th colspan="2">Hindley–Milner</th></tr>
+<tr><td><b>Designed by</b></td><td>J. Roger Hindley (1969); Robin Milner (1978)</td></tr>
+<tr><td><b>Key property</b></td><td>Complete type inference; principal types</td></tr>
+<tr><td><b>Used in</b></td><td>ML, Haskell, OCaml, F#, Rust (in part)</td></tr>
+</table>
+<img class="hero" src="images/Hindley-Milner_type_system.png" alt="Diagram of let-polymorphism and type inference in the Hindley–Milner system">
+<p>A <b>Hindley–Milner (HM) type system</b> is a classical type system for the lambda calculus with parametric polymorphism. It was described by J. Roger Hindley in 1969 and rediscovered and extended by Robin Milner in 1978 in connection with the ML programming language. Its most remarkable property is that a complete, sound type inference algorithm exists — Algorithm W — which always infers the most general (principal) type of an expression without any type annotations.</p>
+<h2>Features</h2>
+<p>HM combines simply typed lambda calculus with <i>let-polymorphism</i>: a value bound by a <code>let</code> expression may be used at several different types, because its type is generalised into a type scheme (a universally quantified type) before use. For example, the identity function can be given the scheme <code>∀a. a → a</code>, allowing it to be applied both to integers and to strings within the same program.</p>
+<p>Type inference proceeds by generating equality constraints between type expressions and solving them with unification, generalising free type variables at let-bindings. Luis Damas and Milner proved the soundness and completeness of Algorithm W in 1982.</p>
+<h2>Influence and limitations</h2>
+<p>HM-style inference is the foundation of the type systems of the ML family (Standard ML, OCaml), Haskell, Clean, F# and many other languages, and has influenced languages such as Rust and Swift. Its principal limitations include the lack of subtyping, difficulty with higher-rank polymorphism, mutable references (addressed in ML by the value restriction), and the fact that error messages from global unification can be hard to localise.</p>
+<p class="small">See also: <a href="../Type_inference/index.html">Type inference</a> · Parametric polymorphism · Lambda calculus · ML (programming language)</p>
+</div>
+</body>
+</html>

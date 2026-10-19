@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PL/I - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#f6f6f6;color:#202122;margin:0}
+.mw-body{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;margin:0 0 8px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:24px;font-weight:normal}
+h3{font-size:1.15em;margin-top:18px}
+p{line-height:1.6;margin:8px 0}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 16px 16px;font-size:0.85em;font-family:sans-serif}
+.infobox th{background:#eaf3ff;text-align:left;padding:4px 6px}
+.infobox td{padding:4px 6px;vertical-align:top}
+.infobox .title{background:#eaf3ff;text-align:center;font-weight:bold;font-size:1.05em}
+figure.thumb{margin:12px 0;text-align:center}
+figure.thumb img{max-width:320px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px}
+figcaption{font-size:0.85em;color:#54595d;font-family:sans-serif}
+ul{line-height:1.6}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.catlinks{border:1px solid #a2a9b1;background:#f8f9fa;padding:6px 10px;font-size:0.85em;font-family:sans-serif;margin-top:24px}
+pre{background:#f8f9fa;border:1px solid #a2a9b1;padding:10px 14px;font-size:0.88em;overflow-x:auto}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>PL/I</h1>
+<p><b>PL/I</b> (Programming Language One, pronounced "P-L-one") is a procedural, imperative computer programming language designed by IBM in the 1960s for scientific, engineering, business and systems programming. Intended to be a single language replacing the separate worlds of FORTRAN (scientific), COBOL (business) and assembly language (systems), PL/I was one of the most ambitious languages of its era: it combined array processing, string handling, record-structured files, exception handling, pointers, recursion, multitasking and compile-time macro preprocessing in one large design. Though it never displaced its rivals, PL/I was heavily used — especially on IBM mainframes — and influenced many later languages. Substantial PL/I code remains in production in banking, insurance and government systems.</p>
+<figure class="thumb"><img src="images/pl1.png" alt="[Image placeholder: An IBM mainframe computer room of the System/360 era]"><figcaption>PL/I was created for the IBM System/360</figcaption></figure>
+<div class="infobox">
+<table>
+<tr><th class="title" colspan="2">PL/I</th></tr>
+<tr><th>Paradigm</th><td>Procedural, imperative, structured</td></tr>
+<tr><th>Designed by</th><td>IBM and the SHARE user group</td></tr>
+<tr><th>First appeared</th><td>1964 (specification); compilers from 1966</td></tr>
+<tr><th>Typing discipline</th><td>Static, with extensive defaulting and conversion</td></tr>
+<tr><th>Platform</th><td>Originally IBM System/360 mainframes</td></tr>
+<tr><th>Influenced</th><td>PL/S, PL/M, XPL, and (indirectly) much systems-programming practice</td></tr>
+</table>
+</div>
+<h2>History</h2>
+<p>PL/I grew out of a 1963–64 joint committee of IBM and its user group SHARE, formed to design a successor language for the new System/360 family. Originally to be called NPL (New Programming Language) — a name changed because it clashed with Britain's National Physical Laboratory — the language was renamed PL/I. The first manual appeared in 1964 and the first compilers (the "F" compiler, then the optimising compiler) followed from 1966. IBM's insistence that one language could serve all purposes made PL/I very large: George Radin, one of its architects, and the committee produced a design in which most features had defaults, so beginners could write simple programs while experts could exploit the full feature set. An ANSI standard was published in 1976 (with a "General Purpose Subset", Subset G, intended for minicomputers).</p>
+<h2>Features and character</h2>
+<p>PL/I programs are built from procedures, which may be internal or external, recursive or re-entrant. The language offers:</p>
+<ul>
+<li>Rich data types: fixed- and floating-point decimal and binary arithmetic with user-specified precision, character and bit strings, arrays, structures (records), pointers and offsets, and controlled (heap) storage.</li>
+<li>Powerful I/O: stream I/O (GET/PUT) for formatted data and record I/O for files, including indexed (VSAM) datasets.</li>
+<li>Exception handling via ON-units — an early form of structured error handling covering conditions such as OVERFLOW, ZERODIVIDE, ENDFILE and user-defined conditions.</li>
+<li>String handling and editing facilities rivalling COBOL's, plus list processing and multitasking support.</li>
+<li>A compile-time preprocessor influenced by, and influencing, macro languages.</li>
+</ul>
+<pre>HELLO: PROCEDURE OPTIONS (MAIN);
+   DECLARE MSG CHARACTER (20) VARYING INITIAL ('Hello, world!');
+   PUT LIST (MSG);
+END HELLO;</pre>
+<p>The same flexibility made the language notorious for complexity: because PL/I performs automatic type conversions and requires no declarations, the (apocryphal but famous) statement fragment "IF IF = THEN THEN THEN = ELSE;" could be valid in dialects where keywords are not reserved. Compilers were large and slow by 1960s standards, and the language's size contributed to disputes between IBM and academic critics — Edsger Dijkstra was scathing — while practitioners valued its productivity.</p>
+<h2>Notable uses</h2>
+<p>PL/I was used to write much of the Multics operating system — the first major operating system written in a high-level language — using the EPL subset and later full PL/I. Intel commissioned Gary Kildall's PL/M dialect for microprocessors, and the language saw heavy mainframe use for decades: IBM continues to sell and develop its Enterprise PL/I compilers for z/OS. The language's ambition — one tool for every job — anticipated later "kitchen-sink" designs, and its exception handling, string types and generics-like defaults foreshadowed features that became mainstream decades later.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../IBM_System/360/index.html">IBM System/360</a></li>
+<li><a href="../Multics/index.html">Multics</a></li>
+<li><a href="../COBOL/index.html">COBOL</a></li>
+<li><a href="../Fortran/index.html">Fortran</a></li>
+<li><a href="../PL/M/index.html">PL/M</a></li>
+</ul>
+<div class="catlinks">Categories: PL/I · Programming languages · IBM software</div>
+</div>
+</body>
+</html>

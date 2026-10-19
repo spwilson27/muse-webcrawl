@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Homogeneous coordinates - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;color:#202122;background:#fff}
+.mw-body{max-width:960px;margin:0 auto;padding:20px 30px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-bottom:0.3em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+p{line-height:1.6;font-size:0.95em}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 15px 20px;width:270px;font-size:0.85em}
+.infobox th{text-align:left;background:#eaecf0;padding:4px}
+.infobox td{padding:4px}
+.hero{display:block;margin:10px auto;max-width:400px;background:#eaecf0;text-align:center;padding:30px;color:#72777d;border:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{line-height:1.6;font-size:0.95em}
+code{font-family:monospace}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Homogeneous coordinates</h1>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Homogeneous coordinates</th></tr>
+<tr><th>Field</th><td><a href="../Projective_geometry/index.html">Projective geometry</a>, computer graphics</td></tr>
+<tr><th>Introduced by</th><td>August Ferdinand Möbius (1827)</td></tr>
+<tr><th>Key property</th><td>Coordinates defined up to a nonzero scale factor</td></tr>
+</table>
+</div>
+<img class="hero" src="images/Homogeneous_coordinates.png" alt="Placeholder image: projection of a point onto the plane w = 1">
+<p>In mathematics, <b>homogeneous coordinates</b> or <b>projective coordinates</b>, introduced by August Ferdinand Möbius in his 1827 work <i>Der barycentrische Calcul</i>, are a system of coordinates used in <a href="../Projective_geometry/index.html">projective geometry</a>, just as Cartesian coordinates are used in Euclidean geometry. Points in the projective plane are represented by triples (x : y : w), not all zero, where two triples represent the same point if one is a nonzero scalar multiple of the other.</p>
+<h2>Definition</h2>
+<p>Homogeneous coordinates for a point in the Euclidean plane (X, Y) are any triple (x, y, w) with w ≠ 0 such that X = x/w and Y = y/w. The point (X, Y) thus corresponds to the whole line of triples (tX, tY, t) for t ≠ 0. Points with w = 0 have no Euclidean counterpart; they are the <i>points at infinity</i>, one for each direction, which together form the line at infinity. The construction generalises to any dimension: points of n-dimensional projective space are equivalence classes of nonzero (n+1)-tuples.</p>
+<h2>Advantages</h2>
+<p>In homogeneous coordinates, equations of curves take a uniform form, intersection of parallel lines becomes an ordinary intersection at a point at infinity, and projective transformations — including translations, rotations, scalings, and perspective projections when embedded in one higher dimension — are all represented by a single matrix multiplication. Duality between points and lines in the projective plane also becomes transparent.</p>
+<h2>Use in computer graphics</h2>
+<p>Homogeneous coordinates are fundamental in computer graphics and computer vision. In 3D graphics pipelines, a point (x, y, z) is stored as (x, y, z, 1); affine transformations and perspective projection are 4×4 matrices, and the perspective divide (dividing by the fourth component, w) produces the projected point. This is the basis of the standard model–view–projection pipeline used in APIs such as OpenGL and Direct3D, and clipping is performed in homogeneous (clip) space.</p>
+<h2>Other applications</h2>
+<p>Homogeneous coordinates also appear in the Plücker coordinates for lines, in conic and quadric geometry (where a conic is a symmetric 3×3 matrix), and, in weighted form, in rational Bézier curves and NURBS used in computer-aided design.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Projective_geometry/index.html">Projective geometry</a></li>
+<li><a href="../Projective_plane/index.html">Projective plane</a></li>
+<li><a href="../Point_at_infinity/index.html">Point at infinity</a></li>
+<li><a href="../Transformation_matrix/index.html">Transformation matrix</a></li>
+<li><a href="../Perspective_projection/index.html">Perspective projection</a></li>
+</ul>
+</div>
+</body>
+</html>
