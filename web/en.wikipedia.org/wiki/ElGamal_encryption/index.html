@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ElGamal encryption - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.content{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:2px;font-weight:normal;margin-top:28px}
+p{font-family:sans-serif;font-size:14px;line-height:1.6}
+.infobox{float:right;width:250px;border:1px solid #a2a9b1;background:#f8f9fa;font-family:sans-serif;font-size:12px;margin:0 0 12px 16px;padding:8px}
+.infobox th{background:#b0c4de;text-align:center;font-size:13px;padding:4px}
+.infobox td{padding:3px 6px;vertical-align:top}
+.hero{text-align:center;margin:12px 0}
+.hero img{max-width:360px;width:100%;background:#eaecf0;border:1px solid #a2a9b1}
+.caption{font-family:sans-serif;font-size:12px;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{font-family:sans-serif;font-size:14px;line-height:1.6}
+code{font-family:monospace;background:#f8f9fa}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>ElGamal encryption</h1>
+<table class="infobox">
+<tr><th colspan="2">ElGamal encryption</th></tr>
+<tr><td><b>Designer</b></td><td>Taher Elgamal</td></tr>
+<tr><td><b>Published</b></td><td>1985</td></tr>
+<tr><td><b>Based on</b></td><td>Diffie–Hellman key exchange</td></tr>
+<tr><td><b>Security basis</b></td><td>Discrete logarithm problem; decisional Diffie–Hellman assumption</td></tr>
+<tr><td><b>Type</b></td><td>Asymmetric (public-key) encryption</td></tr>
+</table>
+<div class="hero"><img src="images/ElGamal_encryption.png" alt="Diagram of the ElGamal public-key encryption scheme"><div class="caption">ElGamal encryption extends Diffie–Hellman key exchange into a full cryptosystem (recreated placeholder).</div></div>
+<p>In cryptography, the <b>ElGamal encryption system</b> is an asymmetric key encryption algorithm for public-key cryptography which is based on the Diffie–Hellman key exchange. It was described by Taher Elgamal in 1985. ElGamal encryption is used in the free GNU Privacy Guard software, in older versions of PGP, and in other cryptosystems. The Digital Signature Algorithm (DSA) is a variant of the ElGamal signature scheme, not to be confused with ElGamal encryption itself.</p>
+<h2>The algorithm</h2>
+<p>ElGamal consists of three components: key generation, encryption, and decryption.</p>
+<p><b>Key generation.</b> Alice generates an efficient description of a cyclic group <i>G</i> of order <i>q</i> with generator <i>g</i>. She chooses a random private key <i>x</i> and computes the public key <i>h = g<sup>x</sup></i>. She publishes (<i>G</i>, <i>q</i>, <i>g</i>, <i>h</i>) and keeps <i>x</i> secret.</p>
+<p><b>Encryption.</b> To encrypt a message <i>m</i> for Alice, Bob chooses a random ephemeral value <i>y</i>, computes <i>c<sub>1</sub> = g<sup>y</sup></i> and the shared secret <i>s = h<sup>y</sup></i>, and sends the ciphertext (<i>c<sub>1</sub></i>, <i>c<sub>2</sub> = m · s</i>).</p>
+<p><b>Decryption.</b> Alice computes <i>s = c<sub>1</sub><sup>x</sup></i> and recovers <i>m = c<sub>2</sub> · s<sup>−1</sup></i>, since <i>c<sub>1</sub><sup>x</sup> = g<sup>xy</sup> = h<sup>y</sup></i>.</p>
+<h2>Security</h2>
+<p>The security of ElGamal depends on the difficulty of the discrete logarithm problem and on the decisional Diffie–Hellman assumption: under that assumption the scheme is semantically secure against chosen-plaintext attack. However, the basic scheme is malleable and is not secure against chosen-ciphertext attack; practical systems use padded or hybrid variants. A critical implementation requirement is that the ephemeral value <i>y</i> must be fresh and random for every message: reusing it reveals information that can expose other messages.</p>
+<h2>Properties and variants</h2>
+<p>ElGamal is probabilistic — encrypting the same plaintext twice yields different ciphertexts — and it expands the message by a factor of two. The scheme generalises to any cyclic group, including elliptic curves. Hybrid encryption schemes such as DHIES/ECIES combine an ElGamal-like key exchange with symmetric encryption for efficiency.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../ElGamal_signature_scheme/index.html">ElGamal signature scheme</a></li>
+<li><a href="../Diffie–Hellman_key_exchange/index.html">Diffie–Hellman key exchange</a></li>
+<li><a href="../Discrete_logarithm/index.html">Discrete logarithm</a></li>
+<li><a href="../Digital_Signature_Algorithm/index.html">Digital Signature Algorithm</a></li>
+</ul>
+</div>
+</body>
+</html>

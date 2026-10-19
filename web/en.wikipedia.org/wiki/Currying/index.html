@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Currying - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine","Georgia",serif;margin:0;color:#202122;background:#fff}
+header{border-bottom:1px solid #a7d7f9;padding:12px 24px;background:#f8f9fa}
+header .site{font-family:"Liberation Sans",sans-serif;font-size:14px;color:#54595d}
+h1{font-size:30px;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin:16px 24px 8px}
+main{padding:0 24px 40px;max-width:960px;line-height:1.6}
+h2{font-size:22px;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+h3{font-size:18px;margin-top:20px}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-family:"Liberation Sans",sans-serif;font-size:13px;margin:0 0 16px 20px;padding:8px}
+.infobox .ib-title{text-align:center;font-weight:bold;font-size:15px;padding:4px}
+.infobox img{width:100%;display:block}
+.infobox table{width:100%;border-collapse:collapse}
+.infobox th{text-align:left;vertical-align:top;padding:3px 6px;background:#eaf3ff}
+.infobox td{padding:3px 6px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.caption{font-size:12px;color:#54595d;text-align:center;padding:4px}
+ul,ol{margin-left:8px}
+.eq{text-align:center;font-style:italic;margin:14px 0}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia — The Free Encyclopedia</span></header>
+<h1>Currying</h1>
+<main>
+<aside class="infobox">
+<div class="ib-title">Currying</div>
+<img src="images/currying.png" alt="Hero image: a diagram transforming a two-argument function into a chain of one-argument functions (placeholder)">
+<div class="caption">Currying transforms f(x, y) into a chain of single-argument functions</div>
+<table>
+<tr><th>Named after</th><td>Haskell Curry</td></tr>
+<tr><th>Originated by</th><td>Moses Schönfinkel (1920s); also Gottlob Frege</td></tr>
+<tr><th>Field</th><td>Functional programming, mathematical logic</td></tr>
+<tr><th>Inverse</th><td>Uncurrying</td></tr>
+</table>
+</aside>
+<p>In mathematics and computer science, <b>currying</b> is the technique of translating a function that takes multiple arguments into a sequence of functions each taking a single argument. A function f(x, y) is curried into a function that takes x and returns another function that takes y and produces f's result:</p>
+<p class="eq">curry(f)(x)(y) = f(x, y)</p>
+<p>The term honours the logician Haskell Curry, in whose work the transformation was prominent, although it was introduced earlier by Moses Schönfinkel (building on ideas of Gottlob Frege); some authors accordingly call it Schönfinkelisation. The inverse transformation, combining a chain of unary functions into one multi-argument function, is called <b>uncurrying</b>.</p>
+<h2>In programming</h2>
+<p>In functional programming languages such as Haskell (named after Curry, and in which every function formally takes exactly one argument), ML and OCaml, functions are curried by default: writing <code>add x y = x + y</code> defines <code>add</code> as a function returning a function. Currying enables <b>partial application</b> — supplying fewer arguments than a function expects to obtain a specialised function, as in <code>add1 = add 1</code>. Languages such as JavaScript, Scala and Python support currying through libraries or manual transformation, and it is used in point-free style, combinators and function composition pipelines.</p>
+<h2>Mathematical significance</h2>
+<p>Currying underlies the correspondence between multi-argument functions and higher-order functions in the lambda calculus, where all functions are unary by construction. In category theory it appears as the exponential-object adjunction (the "curry–Howard" circle of ideas also connects it to implication in logic: a proof of A ∧ B → C corresponds to a proof of A → (B → C)). In type-theoretic notation the correspondence is visible directly: (A × B → C) ≅ (A → B → C).</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Haskell_Curry/index.html">Haskell Curry</a></li>
+<li><a href="../Lambda_calculus/index.html">Lambda calculus</a></li>
+<li><a href="../Partial_application/index.html">Partial application</a></li>
+<li><a href="../Higher-order_function/index.html">Higher-order function</a></li>
+<li><a href="../Closure_(computer_programming)/index.html">Closure (computer programming)</a></li>
+</ul>
+</main>
+</body>
+</html>

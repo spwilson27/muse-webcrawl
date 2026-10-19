@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Consistency (database systems) - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{text-align:center;margin:16px 0}
+.hero img{max-width:420px;border:1px solid #a2a9b1;background:#eaecf0}
+.ref{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Consistency (database systems)</h1>
+<p>In database systems, <b>consistency</b> (or <b>correctness</b>) refers to the requirement that a database transaction must change affected data only in valid ways — that is, any data written to the database must conform to all defined rules, including constraints, cascades, triggers, and any combination thereof. It is one of the four ACID properties of transactions, alongside atomicity, isolation, and durability.</p>
+<div class="hero"><img src="images/Consistency_database.png" alt="Diagram of a transaction preserving database constraints"></div>
+<h2>ACID consistency</h2>
+<p>Consistency in the ACID sense guarantees that a transaction brings the database from one valid state to another: if a transaction would violate a declared constraint — such as a uniqueness rule, a foreign key, or a CHECK condition — it is aborted and rolled back, leaving the database in its prior valid state. Maintaining consistency is a shared responsibility: the database system enforces declared integrity constraints, but the application must define the rules that capture the intended semantics of the data.</p>
+<h2>Consistency models in distributed systems</h2>
+<p>The term is also used more broadly for the guarantees a system makes about the visibility of writes, especially in distributed and replicated databases. Models range from <b>strong (linearizable) consistency</b>, in which all clients see the same data at the same time, through sequential and causal consistency, to <b>eventual consistency</b>, in which replicas converge to the same value if writes stop.</p>
+<p>The CAP theorem states that a distributed data store can provide at most two of consistency (in the linearizability sense), availability, and partition tolerance; since network partitions are unavoidable, designers must trade consistency against availability. The related BASE philosophy (Basically Available, Soft state, Eventual consistency) describes systems that relax ACID consistency for scalability and availability.</p>
+<h2>See also</h2>
+<p class="ref"><a href="../ACID/">ACID</a>; <a href="../CAP_theorem/">CAP theorem</a>; <a href="../Eventual_consistency/">Eventual consistency</a>; <a href="../Database_transaction/">Database transaction</a>; <a href="../Data_integrity/">Data integrity</a>.</p>
+</div>
+</body>
+</html>

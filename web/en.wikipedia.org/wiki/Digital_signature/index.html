@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Digital signature - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+p{line-height:1.6;font-family:sans-serif;font-size:0.95em}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.85em;font-family:sans-serif;margin:0 0 12px 16px;padding:8px}
+.infobox th{background:#b0c4de;text-align:center;padding:4px}
+.infobox td{padding:3px 6px;vertical-align:top}
+.hero{text-align:center;margin:12px 0}
+.hero img{max-width:420px;width:100%;border:1px solid #a2a9b1;background:#eaecf0}
+.caption{font-size:0.8em;color:#54595d;font-family:sans-serif}
+a{color:#0645ad;text-decoration:none}
+ul,ol{font-family:sans-serif;font-size:0.95em;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Digital signature</h1>
+<p>A <b>digital signature</b> is a mathematical scheme for verifying the authenticity of digital messages or documents. A valid digital signature gives a recipient reason to believe that the message was created by a known sender (authentication), that the sender cannot deny having sent it (non-repudiation), and that the message was not altered in transit (integrity). Digital signatures are a standard element of most <a href="../Public-key_cryptography/index.html">public-key cryptography</a> protocol suites and are used for software distribution, financial transactions and contract management.</p>
+<div class="hero"><img src="images/Digital_signature.png" alt="Diagram of signing a message hash with a private key and verifying with a public key"><div class="caption">Signing and verification in a digital signature scheme.</div></div>
+<table class="infobox">
+<tr><th colspan="2">Digital signature</th></tr>
+<tr><td><b>Properties</b></td><td>Authentication, integrity, non-repudiation</td></tr>
+<tr><td><b>Common schemes</b></td><td>RSA, DSA, ECDSA, EdDSA</td></tr>
+<tr><td><b>Standard</b></td><td>FIPS 186 (Digital Signature Standard)</td></tr>
+<tr><td><b>Based on</b></td><td>Public-key cryptography, hash functions</td></tr>
+</table>
+<h2>How it works</h2>
+<p>A signature scheme consists of three algorithms: key generation, which produces a private signing key and a corresponding public verification key; signing, which takes the private key and a message and produces a signature; and verification, which takes the public key, the message and the signature and accepts or rejects it. In practice the message is first passed through a cryptographic hash function, and the resulting digest is signed, so signatures can be applied to messages of any length efficiently.</p>
+<p>Security rests on the infeasibility of deriving the private key from the public key or of forging a signature without it. The concept was first described publicly by Whitfield Diffie and Martin Hellman in 1976; the RSA algorithm, presented in 1978, provided the first practical realisation.</p>
+<h2>Common algorithms</h2>
+<ul>
+<li><b>RSA signatures</b> — based on the difficulty of factoring large integers; widely used with padding schemes such as PKCS #1 and PSS.</li>
+<li><b>DSA</b> — the Digital Signature Algorithm, based on discrete logarithms and standardised in the US Digital Signature Standard.</li>
+<li><b>ECDSA</b> — an elliptic-curve analogue of DSA offering shorter keys for equivalent security.</li>
+<li><b>EdDSA</b> — a modern scheme using twisted Edwards curves, including the widely deployed Ed25519 variant.</li>
+</ul>
+<h2>Applications and law</h2>
+<p>Digital signatures authenticate software updates, secure email (S/MIME and OpenPGP), TLS certificates and blockchain transactions, in which each transfer of funds is authorised by a signature. Many jurisdictions give digital signatures legal effect: the EU's eIDAS regulation recognises qualified electronic signatures as equivalent to handwritten ones, and the United States ESIGN Act of 2000 grants electronic signatures broad legal validity. A digital signature is distinct from an electronic signature in the wider legal sense, which can include any electronic indication of agreement.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Public-key_cryptography/index.html">Public-key cryptography</a></li>
+<li><a href="../Cryptographic_hash_function/index.html">Cryptographic hash function</a></li>
+<li><a href="../Certificate_authority/index.html">Certificate authority</a></li>
+</ul>
+</div>
+</body>
+</html>

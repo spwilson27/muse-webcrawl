@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Discrete cosine transform - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#f6f6f6;color:#202122;margin:0}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.hero{display:block;max-width:100%;margin:12px 0;background:#eef3f8;border:1px dashed #7a9cc0;color:#33506e;text-align:center;padding:28px 8px;font-family:sans-serif;font-size:0.9em}
+.formula{font-style:italic;background:#f8f9fa;border:1px solid #eaecf0;padding:8px 14px;display:inline-block}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Discrete cosine transform</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/Discrete_cosine_transform.png" alt="The eight basis functions of an 8-point DCT (image placeholder)">
+<p>A <b>discrete cosine transform</b> (<b>DCT</b>) expresses a finite sequence of data points in terms of a sum of cosine functions oscillating at different frequencies. The DCT, first proposed by Nasir Ahmed in 1972, is a widely used transformation technique in signal processing and data compression, due to its strong "energy compaction" property: most of the signal energy concentrates in a few low-frequency components of the DCT.</p>
+<h2>DCT-II</h2>
+<p>The most common form, the DCT-II, is defined for a sequence x<sub>0</sub>, …, x<sub>N−1</sub> by:</p>
+<p><span class="formula">X<sub>k</sub> = Σ<sub>n=0</sub><sup>N−1</sup> x<sub>n</sub> cos[ π/N (n + ½) k ], &nbsp; k = 0, …, N−1</span></p>
+<p>Its inverse is the DCT-III. The DCT-I, DCT-II, DCT-III and DCT-IV differ in the boundary conditions they implicitly impose on the signal; the DCT can be understood as the <a href="../Discrete_Fourier_transform/index.html">discrete Fourier transform</a> of a symmetrically extended real sequence, which is why its outputs are purely real.</p>
+<h2>Applications</h2>
+<p>The 8×8 DCT-II is the workhorse of lossy compression: it is the core of the JPEG image standard, of MPEG video standards, and of audio codecs such as MP3 (via the related modified DCT, MDCT) and AAC. Blocks of an image are transformed, the coefficients quantised — discarding perceptually minor high-frequency detail — and then entropy-coded. Because smooth image regions are well approximated by a few cosine terms, high compression ratios are achievable with modest visible loss.</p>
+<h2>Relation to the DFT</h2>
+<p>Unlike the DFT, which produces complex outputs and implicitly assumes a periodic extension that can introduce a discontinuity at the boundary, the DCT's even extension avoids that discontinuity. This gives the DCT better energy compaction for typical correlated signals such as images and audio.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Discrete_sine_transform/index.html">Discrete sine transform</a></li>
+<li><a href="../JPEG/index.html">JPEG</a></li>
+<li><a href="../Modified_discrete_cosine_transform/index.html">Modified discrete cosine transform</a></li>
+<li><a href="../Data_compression/index.html">Data compression</a></li>
+</ul>
+<p class="small">This page was recreated from memory as part of the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

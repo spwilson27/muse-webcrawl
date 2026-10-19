@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bézier curve - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#fff;color:#202122;margin:0;padding:0 1.5em;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.1em;font-weight:normal;margin-top:1.2em}
+h3{font-size:1.15em;font-weight:bold}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{text-align:center;margin:1em 0}
+.hero img{max-width:420px;border:1px solid #a2a9b1;background:#f8f9fa}
+.caption{font-size:.85em;color:#54595d}
+.formula{font-family:'Times New Roman',serif;font-style:italic;text-align:center;font-size:1.1em;margin:.6em 0}
+</style>
+</head>
+<body>
+<h1>Bézier curve</h1>
+<p>A <b>Bézier curve</b> is a parametric curve used in computer graphics and related fields. A set of discrete "control points" defines a smooth, continuous curve by means of a formula. Usually the curve is intended to approximate a real-world shape that otherwise has no mathematical representation or whose representation is unknown or too complicated. The Bézier curve is named after French engineer <a href="../Pierre_Bézier/index.html">Pierre Bézier</a>, who used it in the 1960s for designing curves for automobile bodies at Renault; the underlying mathematics rests on Bernstein polynomials, studied by Sergei Bernstein in 1912, and an efficient evaluation algorithm was developed by Paul de Casteljau at Citroën in 1959.</p>
+<div class="hero"><img src="images/bezier-curve.png" alt="A cubic Bézier curve with its four control points"><div class="caption">A cubic Bézier curve defined by four control points P<sub>0</sub>–P<sub>3</sub>.</div></div>
+<h2>Definition</h2>
+<p>A Bézier curve of degree <i>n</i> is defined by <i>n</i> + 1 control points <b>P</b><sub>0</sub> … <b>P</b><sub>n</sub> and the Bernstein basis polynomials:</p>
+<p class="formula"><b>B</b>(t) = Σ<sub>i=0..n</sub> C(n,i) (1−t)<sup>n−i</sup> t<sup>i</sup> <b>P</b><sub>i</sub>, &nbsp; 0 ≤ t ≤ 1</p>
+<p>The curve starts at <b>P</b><sub>0</sub> and ends at <b>P</b><sub>n</sub>, and is tangent at its ends to the first and last segments of the control polygon. It lies within the convex hull of its control points and exhibits the variation-diminishing property. Quadratic (n = 2) and cubic (n = 3) curves are the most common; cubic Béziers are the standard curve primitive in PostScript, PDF, SVG, and font outlines (with quadratics used in TrueType).</p>
+<h2>Evaluation</h2>
+<p>De Casteljau's algorithm evaluates the curve by repeated linear interpolation between control points; it is numerically stable and also subdivides the curve into two Bézier segments, which is used for rendering and intersection testing. Curves can be joined with positional or tangent continuity, and derivative control permits shapes such as circles to be approximated closely (though not exactly — rational Bézier curves, used in NURBS, can represent circles exactly).</p>
+<h2>Applications</h2>
+<p>Bézier curves are fundamental to vector graphics editors, computer-aided design, animation keyframing (easing curves), typography, and robotics path planning.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../B-spline/index.html">B-spline</a></li>
+<li><a href="../NURBS/index.html">NURBS</a></li>
+<li><a href="../Pierre_Bézier/index.html">Pierre Bézier</a></li>
+<li><a href="../De_Casteljau's_algorithm/index.html">De Casteljau's algorithm</a></li>
+<li><a href="../Bernstein_polynomial/index.html">Bernstein polynomial</a></li>
+</ul>
+<h2>References</h2>
+<ol>
+<li>Farin, G. (2002). <i>Curves and Surfaces for CAGD</i> (5th ed.). Morgan Kaufmann.</li>
+<li>Prautzsch, H., Boehm, W. &amp; Paluszny, M. (2002). <i>Bézier and B-Spline Techniques</i>. Springer.</li>
+</ol>
+</body>
+</html>

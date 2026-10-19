@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cryptographic hash function - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:28px}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 12px 16px;border-collapse:collapse}
+.infobox th{background:#b0c4de;padding:6px;text-align:center;font-size:14px}
+.infobox td{padding:4px 8px;vertical-align:top}
+.infobox td.k{font-weight:bold;width:38%}
+.hero{display:block;margin:12px auto;max-width:400px}
+figure{text-align:center;font-size:13px;color:#54595d}
+.small{font-size:13px;color:#54595d}
+ul{line-height:1.6}
+p{line-height:1.65}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Cryptographic hash function</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<tr><th colspan="2">Cryptographic hash function</th></tr>
+<tr><td class="k">Type</td><td>One-way function</td></tr>
+<tr><td class="k">Properties</td><td>Deterministic; preimage resistance; second-preimage resistance; collision resistance; avalanche effect</td></tr>
+<tr><td class="k">Examples</td><td>SHA-256, SHA-3, BLAKE2, BLAKE3</td></tr>
+<tr><td class="k">Broken examples</td><td>MD5 (collisions, 2004), SHA-1 (SHAttered, 2017)</td></tr>
+<tr><td class="k">Uses</td><td>Digital signatures, password storage, integrity checking, blockchains</td></tr>
+</table>
+<figure>
+<img class="hero" src="images/Cryptographic_hash_function.png" alt="Diagram showing a small change in input producing a completely different hash output (avalanche effect)">
+<figcaption>The avalanche effect: a tiny input change scrambles the output</figcaption>
+</figure>
+<p>A <b>cryptographic hash function</b> (<b>CHF</b>) is a mathematical algorithm that maps data of arbitrary size to a fixed-size bit string (a hash, digest, or fingerprint) and is designed to be a one-way function — infeasible to invert. Unlike ordinary hash functions used in data structures, cryptographic hash functions must resist deliberate attack.</p>
+<h2>Properties</h2>
+<ul>
+<li><b>Preimage resistance</b>: given a hash, it is infeasible to find any input producing it.</li>
+<li><b>Second-preimage resistance</b>: given an input, it is infeasible to find a different input with the same hash.</li>
+<li><b>Collision resistance</b>: it is infeasible to find any two distinct inputs with the same hash.</li>
+<li><b>Avalanche effect</b>: flipping one input bit changes about half the output bits unpredictably.</li>
+</ul>
+<h2>Constructions and history</h2>
+<p>Most classic designs (MD5, the SHA family) use the Merkle–Damgård construction, processing message blocks through a compression function; SHA-3 (standardised 2015, from the Keccak design) uses a sponge construction instead. MD5 collisions were demonstrated in 2004 and exploited by the Flame malware in 2012; Google and CWI announced the first practical SHA-1 collision ("SHAttered") in 2017, driving migration to SHA-256 and SHA-3.</p>
+<h2>Applications</h2>
+<p>Hash functions underpin digital signatures (signing the hash of a message), message authentication (HMAC), password storage (with slow, salted password hashing functions such as bcrypt, scrypt, and Argon2), file integrity verification, content addressing in version control (Git) and peer-to-peer systems, and proof-of-work in cryptocurrencies such as Bitcoin, which uses double SHA-256.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../SHA-2/index.html">SHA-2</a></li>
+<li><a href="../Cryptanalysis_of_the_Enigma/index.html">Cryptanalysis of the Enigma</a></li>
+<li><a href="../Digital_signature/index.html">Digital signature</a></li>
+</ul>
+</div>
+</body>
+</html>

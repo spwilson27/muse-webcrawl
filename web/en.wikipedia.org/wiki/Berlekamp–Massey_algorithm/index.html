@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Berlekamp–Massey algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;color:#202122;background:#fff}
+.topbar{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:8px 20px;font-family:sans-serif;font-size:13px}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:32px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+p{line-height:1.6}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;margin:0 0 16px 16px;font-family:sans-serif;font-size:13px;border-collapse:collapse}
+.infobox th{background:#eaf3ff;padding:6px;text-align:left}
+.infobox td{padding:6px;border-top:1px solid #eaecf0;vertical-align:top}
+.infobox caption{font-weight:bold;font-size:15px;padding:6px;background:#eaf3ff}
+.hero{display:block;margin:12px auto;max-width:100%}
+.fig{text-align:center;font-family:sans-serif;font-size:12px;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{line-height:1.6}
+.mono{font-family:monospace;background:#f8f9fa;padding:2px 4px}
+</style>
+</head>
+<body>
+<div class="topbar">From Wikipedia, the free encyclopedia</div>
+<div class="wrap">
+<h1>Berlekamp–Massey algorithm</h1>
+<p>The <b>Berlekamp–Massey algorithm</b> is an algorithm for finding the shortest linear-feedback shift register (LFSR) that generates a given binary output sequence. Equivalently, over any field it finds the minimal polynomial of a linearly recurrent sequence given some of its terms. It is a cornerstone of algebraic decoding of error-correcting codes such as Reed–Solomon and BCH codes.</p>
+<figure class="fig"><img class="hero" src="images/Berlekamp–Massey_algorithm.png" alt="Diagram of a linear-feedback shift register">
+<figcaption>A linear-feedback shift register, whose minimal form the algorithm computes</figcaption></figure>
+<table class="infobox">
+<caption>Berlekamp–Massey algorithm</caption>
+<tr><th>Class</th><td>Algorithm (coding theory / computer algebra)</td></tr>
+<tr><th>Named after</th><td>Elwyn Berlekamp; James Massey</td></tr>
+<tr><th>Published</th><td>1968 (Berlekamp); 1969 (Massey)</td></tr>
+<tr><th>Input</th><td>Finite sequence over a field</td></tr>
+<tr><th>Output</th><td>Minimal connection polynomial / shortest LFSR</td></tr>
+<tr><th>Complexity</th><td>O(n²) for a sequence of length n</td></tr>
+</table>
+<h2>History</h2>
+<p>Elwyn Berlekamp devised the algorithm in 1968 for decoding BCH codes, presenting it in his book <i>Algebraic Coding Theory</i>. James Massey, in 1969, recognised its application to synthesising the shortest LFSR for a given sequence and gave the algorithm its common form and name. The procedure is closely related to the extended Euclidean algorithm applied to polynomials and to Padé approximation.</p>
+<h2>Description</h2>
+<p>The algorithm processes the sequence term by term, maintaining a candidate connection polynomial <span class="mono">C(x)</span>. For each new term it computes a <i>discrepancy</i> — the difference between the actual term and the value predicted by the current register. If the discrepancy is zero the register is unchanged; otherwise the polynomial is corrected using the last polynomial that caused a change, scaled and shifted to cancel the discrepancy. When a correction increases the register length, bookkeeping variables are updated. The result after processing the whole sequence is the minimal polynomial of the linear recurrence that generates it.</p>
+<h2>Applications</h2>
+<p>In Reed–Solomon and BCH decoders, Berlekamp–Massey finds the error-locator polynomial from syndrome values. It also appears in stream-cipher cryptanalysis — the linear complexity of a keystream can be computed with it — and in computer algebra for finding minimal polynomials and rational generating functions.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Linear-feedback_shift_register/index.html">Linear-feedback shift register</a></li>
+<li><a href="../Reed–Solomon_error_correction/index.html">Reed–Solomon error correction</a></li>
+<li><a href="../Elwyn_Berlekamp/index.html">Elwyn Berlekamp</a></li>
+<li><a href="../James_Massey/index.html">James Massey</a></li>
+</ul>
+</div>
+</body>
+</html>

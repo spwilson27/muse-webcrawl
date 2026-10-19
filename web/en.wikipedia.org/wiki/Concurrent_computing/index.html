@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Concurrent computing - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#f8f9fa;color:#202122;margin:0;padding:0}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:0}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+p{line-height:1.6}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.85em;margin:0 0 16px 16px;padding:8px}
+.infobox th{background:#b0c4de;padding:4px;text-align:center}
+.infobox td{padding:3px 6px;vertical-align:top}
+.hero{display:block;max-width:320px;width:100%;margin:8px auto;border:1px solid #c8ccd1;background:#eaecf0}
+.caption{text-align:center;font-size:0.82em;color:#54595d}
+code{background:#f8f9fa;border:1px solid #eaecf0;padding:0 3px;font-size:0.9em}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Concurrent computing</h1>
+<img class="hero" src="images/concurrent_computing.png" alt="Diagram of interleaved execution of concurrent processes (image placeholder)">
+<p class="caption">Interleaving of instructions from two concurrent processes</p>
+<p><b>Concurrent computing</b> is a form of computing in which several computations are executed concurrently — during overlapping time periods — instead of sequentially, with one completing before the next starts. It is a property of a system in which processes may overlap in time but need not run simultaneously on separate processors. Concurrency is distinct from parallelism, in which computations are literally executed at the same instant, for example on multiple cores of a multicore processor. A concurrent system may execute on a single processor through interleaved scheduling, whereas a parallel system requires multiple processing units.</p>
+<h2>History</h2>
+<p>Concurrency arose with early multitasking and time-sharing operating systems of the 1960s, which interleaved several programs on one machine. Edsger W. Dijkstra's work on cooperating sequential processes introduced the semaphore in 1965, and C. A. R. Hoare developed monitors and later Communicating Sequential Processes (CSP, 1978). Per Brinch Hansen contributed concurrent programming concepts to operating system design, and the actor model was formulated by Carl Hewitt in 1973. With the spread of multicore processors in the 2000s, concurrency became essential to mainstream software performance.</p>
+<h2>Concepts</h2>
+<p>Concurrent programs are built from processes or threads that communicate through shared memory or message passing. Because interleavings are nondeterministic, concurrent programming introduces hazards absent from sequential code: <i>race conditions</i>, in which a result depends on the timing of unsynchronised accesses; <i>deadlock</i>, in which processes wait indefinitely for one another; <i>livelock</i> and <i>starvation</i>. Synchronisation mechanisms include locks, mutexes, semaphores, monitors, condition variables, barriers, atomic operations and lock-free algorithms. Properties of concurrent systems are often described in terms of safety ("nothing bad happens") and liveness ("something good eventually happens").</p>
+<h2>Models and languages</h2>
+<p>Formal models of concurrency include CSP, the π-calculus and Petri nets. Programming languages support concurrency in varied ways: Java provides threads and the <code>java.util.concurrent</code> library; C++ has a standard thread library since C++11; Go offers lightweight goroutines and channels following CSP; Erlang and Elixir use the actor model with immutable messages, suiting telecom and fault-tolerant systems; Rust enforces data-race freedom through its ownership type system.</p>
+<h2>Applications</h2>
+<p>Concurrency underpins operating systems, web servers handling many simultaneous requests, graphical user interfaces that must remain responsive, databases managing concurrent transactions, distributed systems, and real-time and embedded systems.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Parallel_computing/index.html">Parallel computing</a></li>
+<li><a href="../Thread_(computing)/index.html">Thread (computing)</a></li>
+<li><a href="../Race_condition/index.html">Race condition</a></li>
+<li><a href="../Deadlock/index.html">Deadlock</a></li>
+<li><a href="../Semaphore_(programming)/index.html">Semaphore (programming)</a></li>
+<li><a href="../Actor_model/index.html">Actor model</a></li>
+<li><a href="../Communicating_sequential_processes/index.html">Communicating sequential processes</a></li>
+</ul>
+</div>
+</body>
+</html>

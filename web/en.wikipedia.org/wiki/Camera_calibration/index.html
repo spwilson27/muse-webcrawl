@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Camera calibration - Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:960px;margin:0 auto;padding:1em;line-height:1.6;color:#202122}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em;margin:0 0 1em 1em;width:260px;font-size:0.9em}
+.infobox th{background:#cedff2;padding:0.3em;text-align:center}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{display:block;max-width:320px;border:1px solid #a2a9b1;background:#f8f9fa;padding:4px}
+.caption{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Camera calibration</h1>
+<table class="infobox">
+<tr><th colspan="2">Camera calibration</th></tr>
+<tr><td><b>Field</b></td><td>Computer vision, photogrammetry</td></tr>
+<tr><td><b>Also called</b></td><td>Geometric camera calibration; camera resectioning</td></tr>
+</table>
+<img class="hero" src="images/camera-calibration.png" alt="A checkerboard calibration target photographed from several angles">
+<p class="caption">Placeholder image: a checkerboard calibration target (image not generated).</p>
+<p><b>Camera calibration</b>, in computer vision and photogrammetry, is the process of determining the parameters of the camera model that produced an image or video. Calibration estimates both <i>intrinsic</i> parameters (internal geometry) and <i>extrinsic</i> parameters (the camera's position and orientation relative to a scene).</p>
+<h2>Parameters</h2>
+<p>Under the pinhole camera model, intrinsic parameters include the focal length in pixel units, the principal point (usually near the image centre), and often a skew coefficient. Real lenses deviate from the pinhole model, so calibration also estimates lens distortion coefficients — typically radial distortion and tangential distortion terms. Extrinsic parameters are a rotation and translation describing the camera's pose relative to a world coordinate frame.</p>
+<h2>Methods</h2>
+<p>The most common approach photographs a calibration target of known geometry — classically a planar chessboard pattern or grid of circles — from multiple viewpoints. Corners are detected and the parameters are fit by minimising reprojection error, usually with nonlinear optimisation (e.g. Levenberg–Marquardt). Zhengyou Zhang's 1999 flexible method, implemented in libraries such as OpenCV, made this procedure routine. In photogrammetry the same process has a longer history under the name <i>self-calibration</i> within bundle adjustment. Calibration-free and target-free methods instead exploit scene structure such as vanishing points, or use the camera's motion (self-calibration from moving cameras).</p>
+<h2>Applications</h2>
+<p>Accurate calibration is required for metric 3-D reconstruction, stereo vision, augmented reality, robot navigation, visual odometry and any task that converts pixel measurements into real-world distances or angles.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Pinhole_camera_model/index.html">Pinhole camera model</a></li>
+<li><a href="../Distortion_(optics)/index.html">Distortion (optics)</a></li>
+<li><a href="../Bundle_adjustment/index.html">Bundle adjustment</a></li>
+<li><a href="../Camera_resectioning/index.html">Camera resectioning</a></li>
+</ul>
+</body>
+</html>

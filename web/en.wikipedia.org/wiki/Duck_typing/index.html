@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Duck typing - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#fff;color:#202122}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 18px;font-size:13px;font-family:sans-serif}
+.infobox th{text-align:left;background:#eaf0fa;padding:4px}
+.infobox td{padding:4px}
+.hero{text-align:center;margin:14px 0}
+.hero img{max-width:520px;width:100%;border:1px solid #a2a9b1;background:#f8f9fa}
+.caption{font-size:12px;color:#54595d;font-family:sans-serif}
+code{background:#f8f9fa;padding:1px 4px;font-size:13px}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;overflow:auto;font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Duck typing</h1>
+<div class="hero"><img src="images/Duck_typing.png" alt="Illustration of a rubber duck beside lines of programming code, representing duck typing"><div class="caption">Duck typing: if it walks like a duck and quacks like a duck, it can be treated as a duck.</div></div>
+<table class="infobox">
+<tr><th colspan="2">Duck typing</th></tr>
+<tr><td><b>Paradigm</b></td><td>Dynamic typing, structural typing</td></tr>
+<tr><td><b>Common in</b></td><td>Python, Ruby, JavaScript, Smalltalk</td></tr>
+<tr><td><b>Named after</b></td><td>The "duck test" attributed to James Whitcomb Riley</td></tr>
+</table>
+<p><b>Duck typing</b> is a style of dynamic typing in object-oriented programming in which an object's suitability for a particular purpose is determined by the presence of certain methods and properties, rather than by its actual type or class. The name comes from the duck test: "When I see a bird that walks like a duck and swims like a duck and quacks like a duck, I call that bird a duck."</p>
+<h2>Concept</h2>
+<p>In a duck-typed language, a function that expects an object with a <code>quack()</code> method will accept any object that has such a method, regardless of whether the object is declared to be a duck. This contrasts with <a href="../Nominative_type_system/index.html">nominative typing</a>, where an object is usable only if it belongs to (or inherits from) a specific named type. Duck typing is closely related to <a href="../Structural_type_system/index.html">structural typing</a>, though structural type systems may check conformance at compile time.</p>
+<h2>Example</h2>
+<pre>
+class Duck:
+    def quack(self): return "Quack!"
+
+class Person:
+    def quack(self): return "I'm imitating a duck."
+
+def make_it_quack(thing):
+    print(thing.quack())
+</pre>
+<p>Both <code>Duck</code> and <code>Person</code> objects can be passed to <code>make_it_quack</code>, because both provide the required method.</p>
+<h2>Advantages and criticism</h2>
+<p>Duck typing encourages loose coupling and rapid prototyping, and underlies much of the flexibility of languages such as <a href="../Python_(programming_language)/index.html">Python</a> and <a href="../Ruby_(programming_language)/index.html">Ruby</a>. Critics note that errors surface only at runtime, and that implicit interfaces can be hard to discover; Python's "Easier to Ask Forgiveness than Permission" (EAFP) idiom, using <code>try</code>/<code>except</code> blocks, is a common companion practice. Later Python versions added <i>protocols</i> via the <code>typing</code> module to document and statically check duck-typed interfaces.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Dynamic_typing/index.html">Dynamic typing</a></li>
+<li><a href="../Polymorphism_(computer_science)/index.html">Polymorphism</a></li>
+<li><a href="../Interface_(computing)/index.html">Interface (computing)</a></li>
+</ul>
+</div>
+</body>
+</html>

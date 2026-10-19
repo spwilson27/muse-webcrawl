@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ElGamal signature scheme - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.content{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:2px;font-weight:normal;margin-top:28px}
+p{font-family:sans-serif;font-size:14px;line-height:1.6}
+.infobox{float:right;width:250px;border:1px solid #a2a9b1;background:#f8f9fa;font-family:sans-serif;font-size:12px;margin:0 0 12px 16px;padding:8px}
+.infobox th{background:#b0c4de;text-align:center;font-size:13px;padding:4px}
+.infobox td{padding:3px 6px;vertical-align:top}
+.hero{text-align:center;margin:12px 0}
+.hero img{max-width:360px;width:100%;background:#eaecf0;border:1px solid #a2a9b1}
+.caption{font-family:sans-serif;font-size:12px;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{font-family:sans-serif;font-size:14px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>ElGamal signature scheme</h1>
+<table class="infobox">
+<tr><th colspan="2">ElGamal signature scheme</th></tr>
+<tr><td><b>Designer</b></td><td>Taher Elgamal</td></tr>
+<tr><td><b>Published</b></td><td>1985</td></tr>
+<tr><td><b>Type</b></td><td>Digital signature scheme</td></tr>
+<tr><td><b>Security basis</b></td><td>Discrete logarithm problem</td></tr>
+<tr><td><b>Descendants</b></td><td>Digital Signature Algorithm (DSA); Schnorr-like variants</td></tr>
+</table>
+<div class="hero"><img src="images/ElGamal_signature_scheme.png" alt="Diagram of signing and verification in the ElGamal signature scheme"><div class="caption">The ElGamal signature scheme, the ancestor of DSA (recreated placeholder).</div></div>
+<p>The <b>ElGamal signature scheme</b> is a digital signature scheme which is based on the difficulty of computing discrete logarithms. It was described by Taher Elgamal in 1985. The scheme is rarely used directly in practice, but its close variant, the Digital Signature Algorithm (DSA), was standardised by NIST and is widely deployed; the Schnorr signature scheme is also closely related.</p>
+<h2>Parameters and keys</h2>
+<p>System parameters consist of a large prime <i>p</i>, a generator <i>g</i> of the multiplicative group modulo <i>p</i>, and a cryptographic hash function <i>H</i>. The signer chooses a private key <i>x</i> with 1 &lt; <i>x</i> &lt; <i>p</i> − 1 and publishes the public key <i>y = g<sup>x</sup></i> mod <i>p</i>.</p>
+<h2>Signing</h2>
+<p>To sign a message <i>m</i>, the signer chooses a random <i>k</i> coprime to <i>p</i> − 1, computes <i>r = g<sup>k</sup></i> mod <i>p</i>, and then <i>s = (H(m) − xr) k<sup>−1</sup></i> mod (<i>p</i> − 1). The signature is the pair (<i>r</i>, <i>s</i>). The value <i>k</i> must be kept secret and never reused: reusing <i>k</i> for two signatures allows an attacker to solve for the private key <i>x</i>.</p>
+<h2>Verification</h2>
+<p>A verifier checks that 0 &lt; <i>r</i> &lt; <i>p</i> and 0 &lt; <i>s</i> &lt; <i>p</i> − 1, and confirms that <i>g<sup>H(m)</sup> ≡ y<sup>r</sup> r<sup>s</sup></i> (mod <i>p</i>). If the congruence holds, the signature is accepted; correctness follows by substituting the definition of <i>s</i>.</p>
+<h2>Security</h2>
+<p>Forging an ElGamal signature requires either solving the discrete logarithm problem or finding hash collisions. The scheme is existentially forgeable in its raw form for certain parameter choices, which is one reason hashed, standardised descendants such as DSA are preferred. The requirement for a fresh, unpredictable <i>k</i> per signature is shared with DSA and ECDSA, where nonce failures have caused real-world key compromises.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../ElGamal_encryption/index.html">ElGamal encryption</a></li>
+<li><a href="../Digital_Signature_Algorithm/index.html">Digital Signature Algorithm</a></li>
+<li><a href="../Schnorr_signature/index.html">Schnorr signature</a></li>
+<li><a href="../Discrete_logarithm/index.html">Discrete logarithm</a></li>
+</ul>
+</div>
+</body>
+</html>

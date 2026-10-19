@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ChaCha20-Poly1305 - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+#content{max-width:960px;margin:0 auto;padding:20px 30px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-size:28px;border-bottom:1px solid #a7d7f9;padding-bottom:4px;font-weight:normal}
+h2{font-family:'Linux Libertine',Georgia,serif;font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:2px;font-weight:normal;margin-top:28px}
+h3{font-size:17px;margin-top:20px}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;width:260px;font-size:13px;font-family:sans-serif}
+.infobox th{background:#b0c4de;text-align:center;padding:4px;font-size:14px}
+.infobox td{padding:3px 6px;vertical-align:top}
+.hero{text-align:center;margin:16px 0}
+.hero img{max-width:420px;width:100%;border:1px solid #a2a9b1;background:#eef}
+.caption{font-size:12px;color:#54595d;font-family:sans-serif}
+code{font-family:monospace;background:#f8f9fa}
+.small{font-size:13px}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>ChaCha20-Poly1305</h1>
+<p><b>ChaCha20-Poly1305</b> is an <a href="../Authenticated_encryption/index.html">authenticated encryption with associated data</a> (AEAD) algorithm that combines the <a href="../ChaCha_(cipher)/index.html">ChaCha20</a> stream cipher with the <a href="../Poly1305/index.html">Poly1305</a> message authentication code, both designed by Daniel J. Bernstein. It is widely used in Internet protocols, notably TLS 1.3, where it offers high performance in software, especially on devices without AES hardware acceleration.</p>
+<table class="infobox">
+<tr><th colspan="2">ChaCha20-Poly1305</th></tr>
+<tr><td><b>Type</b></td><td>AEAD stream cipher construction</td></tr>
+<tr><td><b>Designer</b></td><td>Daniel J. Bernstein</td></tr>
+<tr><td><b>Key size</b></td><td>256 bits</td></tr>
+<tr><td><b>Nonce</b></td><td>96 bits (IETF variant)</td></tr>
+<tr><td><b>Tag size</b></td><td>128 bits</td></tr>
+<tr><td><b>Standard</b></td><td>RFC 8439 (2018)</td></tr>
+</table>
+<div class="hero">
+<img src="images/ChaCha20-Poly1305.png" alt="Diagram of ChaCha20-Poly1305 authenticated encryption of a message">
+<div class="caption">ChaCha20 encrypts the plaintext while Poly1305 authenticates the ciphertext and associated data.</div>
+</div>
+<h2>Construction</h2>
+<p>In the IETF variant specified in RFC 8439, encryption uses a 256-bit key, a 96-bit nonce and a 32-bit block counter. The first ChaCha20 block (counter 0) is generated and its first 32 bytes are used as a one-time Poly1305 key. The plaintext is then encrypted with ChaCha20 starting at counter 1. The Poly1305 tag is computed over the associated data, the ciphertext and their lengths, each padded to a multiple of 16 bytes. A related variant, XChaCha20-Poly1305, uses an extended 192-bit nonce.</p>
+<h2>Adoption</h2>
+<p>Google adopted ChaCha20-Poly1305 for HTTPS traffic from Android devices and Chrome in 2014, reporting substantially better performance than AES-GCM on processors lacking AES instructions. The construction was standardised for TLS in RFC 7905 and is one of only three cipher suites permitted in TLS 1.3. It is also used in the WireGuard VPN protocol, OpenSSH, and numerous libraries.</p>
+<h2>Security</h2>
+<p>The security of the construction rests on the ChaCha20 permutation and the Poly1305 one-time authenticator. As with other AEAD schemes, nonce reuse with the same key is catastrophic: it leaks the Poly1305 key and exposes the XOR of plaintexts. Implementations are typically constant-time and free of lookup tables, making the cipher attractive on embedded and mobile hardware.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../ChaCha_(cipher)/index.html">ChaCha (cipher)</a></li>
+<li><a href="../Poly1305/index.html">Poly1305</a></li>
+<li><a href="../Authenticated_encryption/index.html">Authenticated encryption</a></li>
+<li><a href="../TLS_1.3/index.html">TLS 1.3</a></li>
+</ul>
+<p class="small">This article is a recreation from memory for the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

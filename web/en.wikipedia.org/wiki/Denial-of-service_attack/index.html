@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Denial-of-service attack - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122;line-height:1.6}
+header{background:#fff;border-bottom:1px solid #a2a9b1;padding:10px 24px}
+header .site{font-family:sans-serif;font-size:0.85em;color:#54595d}
+main{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:0}
+h2{border-bottom:1px solid #a2a9b1;font-size:1.35em;margin-top:1.4em}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-family:sans-serif;font-size:0.85em;margin:0 0 16px 20px;padding:10px}
+.infobox h3{text-align:center;margin:4px 0 8px}
+.infobox img{width:100%;display:block}
+.infobox table{width:100%;border-collapse:collapse}
+.infobox td{padding:3px 4px;vertical-align:top}
+.infobox td.k{font-weight:bold;width:38%}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+footer{max-width:960px;margin:0 auto;padding:16px 32px;font-family:sans-serif;font-size:0.8em;color:#54595d}
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia — The Free Encyclopedia</span></header>
+<main>
+<h1>Denial-of-service attack</h1>
+<aside class="infobox">
+<h3>Denial-of-service attack</h3>
+<img src="images/Denial-of-service_attack.png" alt="Diagram of a distributed denial-of-service attack in which many compromised machines flood a single target">
+<table>
+<tr><td class="k">Type</td><td>Cyberattack</td></tr>
+<tr><td class="k">Abbreviations</td><td>DoS; DDoS (distributed)</td></tr>
+<tr><td class="k">First major incidents</td><td>1990s (e.g., flood attacks on IRC and early ISPs); February 2000 attacks on Yahoo!, CNN and eBay</td></tr>
+<tr><td class="k">Defences</td><td>Rate limiting, anycast networks, traffic scrubbing, CDNs, blackholing</td></tr>
+</table>
+</aside>
+<p>In computing, a <b>denial-of-service attack</b> (<b>DoS attack</b>) is a cyberattack in which the perpetrator seeks to make a machine or network resource unavailable to its intended users by temporarily or indefinitely disrupting the services of a host connected to a network. Denial of service is typically accomplished by flooding the targeted machine or resource with superfluous requests in an attempt to overload systems and prevent some or all legitimate requests from being fulfilled. A <b>distributed denial-of-service</b> (<b>DDoS</b>) attack uses many sources — often a botnet of compromised devices — to generate the flood.</p>
+<h2>Types of attack</h2>
+<p>Volumetric attacks saturate the target's bandwidth, for example with UDP floods or amplification attacks that abuse misconfigured DNS, NTP, or memcached servers to multiply traffic, sometimes reaching several terabits per second. Protocol attacks exhaust server resources with malformed or state-exhausting requests, the classic example being the SYN flood, which opens many half-completed TCP handshakes. Application-layer attacks mimic legitimate requests (such as HTTP floods or Slowloris, which holds connections open with slow partial requests) and can be effective at much lower bandwidth. The 2016 Mirai botnet attacks, built from insecure Internet-of-things devices, knocked major DNS provider Dyn offline and disrupted large parts of the web; GitHub survived a record 1.35 Tbit/s memcached amplification attack in 2018, and subsequent attacks have exceeded 2–3 Tbit/s and hundreds of millions of requests per second.</p>
+<h2>Motives and law</h2>
+<p>Motives include extortion ("ransom DDoS"), hacktivist protest (for example by Anonymous using tools such as LOIC), competitive sabotage, online gaming disputes, diversion during other intrusions, and state-sponsored disruption of banks, media and government services. Performing a DoS attack is a crime in most jurisdictions — under, for example, the US Computer Fraud and Abuse Act and the UK Computer Misuse Act 1990 — and commercial "booter" or "stresser" services that sell attacks have been repeatedly prosecuted and seized.</p>
+<h2>Defence</h2>
+<p>Mitigation combines over-provisioning and anycast diffusion of traffic, upstream filtering and "scrubbing centers" that remove malicious traffic, rate limiting, SYN cookies, web application firewalls, and content delivery networks that absorb floods at the network edge. Incident response plans typically include contacting the ISP, null-routing (blackholing) under extreme attack, and preserving logs for law enforcement. Because reflection attacks abuse third-party servers, internet-wide hygiene — such as source-address validation (BCP 38) — is also an important systemic defence.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Botnet/index.html">Botnet</a></li>
+<li><a href="../Mirai_(malware)/index.html">Mirai (malware)</a></li>
+<li><a href="../SYN_flood/index.html">SYN flood</a></li>
+<li><a href="../Slowloris_(computer_security)/index.html">Slowloris</a></li>
+<li><a href="../Computer_Fraud_and_Abuse_Act/index.html">Computer Fraud and Abuse Act</a></li>
+</ul>
+<h2>References</h2>
+<ol>
+<li>Mirkovic, J. &amp; Reiher, P. (2004). "A taxonomy of DDoS attack and DDoS defense mechanisms." <i>ACM SIGCOMM Computer Communication Review</i>, 34(2), 39–53.</li>
+<li>Cloudflare and Akamai threat reports on the 2018 GitHub memcached attack and subsequent record HTTP DDoS attacks.</li>
+<li>US CERT / CISA alerts on UDP amplification and botnet-based denial of service.</li>
+</ol>
+</main>
+<footer>Recreated from memory as part of the muse-webcrawl project. Content paraphrased from the corresponding Wikipedia article.</footer>
+</body>
+</html>

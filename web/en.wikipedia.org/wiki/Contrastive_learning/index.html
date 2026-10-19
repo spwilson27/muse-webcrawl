@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Contrastive learning - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.content{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.5em;border-bottom:1px solid #a2a9b1;padding-bottom:2px;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{text-align:center;margin:16px 0}
+.hero img{max-width:420px;width:100%;border:1px solid #a2a9b1;background:#eaecf0}
+.caption{font-size:0.85em;color:#54595d}
+.formula{background:#f8f9fa;border:1px solid #eaecf0;padding:10px 16px;text-align:center}
+.refs{font-size:0.9em}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Contrastive learning</h1>
+<p><b>Contrastive learning</b> is a machine learning framework, widely used for self-supervised representation learning, in which a model learns representations by contrasting similar ("positive") pairs of data points against dissimilar ("negative") pairs. The objective pulls embeddings of positive pairs together in a latent space while pushing embeddings of negative pairs apart, so that semantically related inputs receive similar representations without requiring manual labels.</p>
+<div class="hero">
+<img src="images/contrastive_learning.png" alt="Placeholder image: embedding space with positive pairs pulled together and negatives pushed apart">
+<div class="caption">Contrastive objectives attract positive pairs and repel negative pairs in embedding space.</div>
+</div>
+<h2>History</h2>
+<p>The roots of contrastive learning lie in metric learning and in early work on energy-based models and Siamese networks (Bromley et al., 1993, for signature verification). The "contrastive loss" was formalised by Hadsell, Chopra and LeCun (2006) for dimensionality reduction. Noise-contrastive estimation (Gutmann and Hyvärinen, 2010) and word2vec's negative sampling (Mikolov et al., 2013) provided related foundations.</p>
+<p>Interest surged from 2018 onwards with instance-discrimination methods and frameworks such as MoCo (Momentum Contrast, 2019) and SimCLR (2020), which achieved image representations competitive with supervised pretraining. CLIP (2021) extended contrastive learning to image–text pairs at web scale, enabling zero-shot image classification.</p>
+<h2>Method</h2>
+<p>In a typical image pipeline, two augmented views of the same image form a positive pair, while views of different images are negatives. An encoder maps views to embeddings, often normalised onto a unit hypersphere, and a contrastive loss such as InfoNCE is minimised:</p>
+<div class="formula">L = −log [ exp(sim(zᵢ, zⱼ)/τ) / Σₖ exp(sim(zᵢ, zₖ)/τ) ]</div>
+<p>where sim is typically cosine similarity and τ is a temperature hyperparameter. Key design elements include the data augmentation strategy, the use of large batches or memory banks/queues of negatives, momentum encoders, and projection heads.</p>
+<h2>Variants</h2>
+<p>Related methods such as BYOL and SimSiam dispense with explicit negatives, relying instead on asymmetry and stop-gradients to avoid representational collapse. Supervised contrastive learning (Khosla et al., 2020) uses label information to define positives. Contrastive objectives are also used in natural language processing (e.g. sentence embeddings), graph learning, audio, and reinforcement learning.</p>
+<h2>Applications</h2>
+<p>Contrastive pretraining underlies modern foundation models for vision and vision–language tasks, image retrieval, face recognition, speaker verification, and medical imaging, and it is a common first stage before fine-tuning on downstream tasks.</p>
+<h2>See also</h2>
+<p><a href="../Self-supervised_learning/index.html">Self-supervised learning</a> · <a href="../CLIP_(model)/index.html">CLIP</a> · <a href="../Siamese_neural_network/index.html">Siamese neural network</a> · <a href="../Metric_learning/index.html">Metric learning</a> · <a href="../Word2vec/index.html">Word2vec</a></p>
+<h2>References</h2>
+<div class="refs">
+<p>1. Chen, T. et al. (2020). "A Simple Framework for Contrastive Learning of Visual Representations" (SimCLR). <i>ICML</i>.<br>
+2. He, K. et al. (2020). "Momentum Contrast for Unsupervised Visual Representation Learning" (MoCo). <i>CVPR</i>.<br>
+3. Radford, A. et al. (2021). "Learning Transferable Visual Models From Natural Language Supervision" (CLIP). <i>ICML</i>.<br>
+4. van den Oord, A. et al. (2018). "Representation Learning with Contrastive Predictive Coding".</p>
+</div>
+</div>
+</body>
+</html>

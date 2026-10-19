@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bresenham's line algorithm - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#fff;color:#202122;margin:0;padding:0 2em;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-bottom:.2em}
+h2{font-size:1.5em;border-bottom:1px solid #a2a9b1;font-weight:normal}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.4em;margin:0 0 1em 1em;width:280px;font-size:.88em;font-family:sans-serif}
+.infobox th{background:#d9e2ec;text-align:center;padding:.3em}
+.infobox td{padding:.2em .4em;vertical-align:top}
+img.hero{display:block;max-width:100%;background:#eaecf0;border:1px solid #a2a9b1;min-height:160px}
+.figcap{text-align:center;font-size:.85em;color:#54595d}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.small{font-size:.85em;color:#54595d}
+pre{background:#f8f9fa;border:1px solid #a2a9b1;padding:.8em;font-size:.9em;overflow:auto}
+</style>
+</head>
+<body>
+<h1>Bresenham's line algorithm</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<tr><th colspan="2">Bresenham's line algorithm</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/bresenham-line.png" alt="A line rasterised on a pixel grid using Bresenham's algorithm (image placeholder)"><div class="figcap">A rasterised line segment</div></td></tr>
+<tr><td><b>Class</b></td><td>Rasterisation algorithm</td></tr>
+<tr><td><b>Inventor</b></td><td>Jack Elton Bresenham</td></tr>
+<tr><td><b>Published</b></td><td>1965</td></tr>
+<tr><td><b>Uses</b></td><td>Computer graphics, plotters, CNC</td></tr>
+</table>
+<p><b>Bresenham's line algorithm</b> is an algorithm that determines the points of an n-dimensional raster that should be selected in order to form a close approximation to a straight line between two points. It is one of the earliest algorithms developed in the field of <a href="../Computer_graphics/index.html">computer graphics</a> and remains widely used because it relies only on fast integer addition, subtraction and bit shifting, avoiding floating-point arithmetic.</p>
+<h2>History</h2>
+<p>The algorithm was developed by Jack Elton Bresenham at IBM in 1962 for controlling a digital plotter, and was presented at the 1963 ACM national convention; it was published in the <i>IBM Systems Journal</i> in 1965 as "Algorithm for computer control of a digital plotter". Bresenham reportedly declined to patent it, and it spread throughout graphics programming.</p>
+<h2>Method</h2>
+<p>For a line with slope between 0 and 1, the algorithm steps along the x-axis one pixel at a time and at each step decides, using an accumulated integer error term, whether to keep the same y or increment y by one. The decision variable is derived from the implicit line equation evaluated at the midpoint between the two candidate pixels (the related midpoint line algorithm makes this explicit).</p>
+<pre>
+plotLine(x0, y0, x1, y1):
+  dx = x1 - x0
+  dy = y1 - y0
+  D = 2*dy - dx
+  y = y0
+  for x from x0 to x1:
+    plot(x, y)
+    if D &gt; 0:
+      y = y + 1
+      D = D - 2*dx
+    D = D + 2*dy
+</pre>
+<p>Generalisations handle all octants, circles and ellipses (Bresenham's circle algorithm / midpoint circle algorithm), and the same incremental error-term idea underlies much scan-conversion in graphics hardware and firmware.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Rasterisation/index.html">Rasterisation</a></li>
+<li><a href="../Digital_differential_analyzer_(graphics_algorithm)/index.html">Digital differential analyzer</a></li>
+<li><a href="../Midpoint_circle_algorithm/index.html">Midpoint circle algorithm</a></li>
+<li><a href="../Anti-aliasing/index.html">Anti-aliasing</a></li>
+</ul>
+<p class="small">Categories: Computer graphics algorithms | 1965 in computing</p>
+</body>
+</html>
