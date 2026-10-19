@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vision transformer - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;padding:0;background:#f6f6f6;color:#202122}
+.container{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:0}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:24px}
+h3{font-size:17px;margin-top:18px}
+p{line-height:1.6;font-size:15px}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 18px;font-size:13px;font-family:sans-serif}
+.infobox th{text-align:left;background:#e8eef5;padding:4px 6px}
+.infobox td{padding:4px 6px;vertical-align:top}
+.infobox .title{background:#b0c4de;text-align:center;font-weight:bold;font-size:15px}
+.hero{display:block;margin:12px auto;max-width:400px;border:1px solid #ccc;background:#eee;padding:20px;text-align:center;color:#555}
+ul,ol{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.ref{font-size:12px;color:#555}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Vision transformer</h1>
+<img class="hero" src="images/Vision_transformer.png" alt="Diagram of the vision transformer architecture splitting an image into patches processed by a transformer encoder">
+<p>A <b>vision transformer</b> (<b>ViT</b>) is a type of artificial neural network based on the transformer architecture, applied to image recognition tasks. Introduced by a team at Google Brain in the 2020 paper "An Image is Worth 16×16 Words", the vision transformer showed that a pure transformer applied directly to sequences of image patches could achieve state-of-the-art results on image classification benchmarks, rivalling and eventually surpassing convolutional neural networks (CNNs).</p>
+<h2>Architecture</h2>
+<p>An input image is divided into a grid of fixed-size patches (typically 16×16 pixels). Each patch is flattened and linearly projected to an embedding vector — analogous to the tokens of a language model — and combined with a learned positional embedding. A learnable classification token, similar to BERT's [CLS] token, is prepended to the sequence. The sequence is then processed by a standard transformer encoder of multi-head self-attention and feed-forward layers, and the classification token's final state feeds a classifier head.</p>
+<h2>Training and scaling</h2>
+<p>Because ViTs lack the inductive biases of CNNs — locality and translation equivariance — they underperform when trained on modest datasets alone, but excel when pre-trained on very large datasets such as ImageNet-21k or Google's internal JFT-300M, then fine-tuned on the target task. This scaling behaviour helped drive the broader shift toward large pre-trained "foundation models" in computer vision.</p>
+<h2>Variants and influence</h2>
+<p>Numerous variants followed, including DeiT, which used distillation to train effectively on ImageNet-1k alone; the Swin Transformer, which introduced hierarchical shifted windows for dense prediction tasks such as object detection and segmentation; and hybrid CNN–transformer designs. Vision transformers also underpin multimodal systems: CLIP uses a ViT image encoder alongside a text transformer, and ViT encoders are standard in vision-language models.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Transformer_(machine_learning_model)/index.html">Transformer (machine learning model)</a></li>
+<li><a href="../Convolutional_neural_network/index.html">Convolutional neural network</a></li>
+<li><a href="../CLIP_(model)/index.html">CLIP (model)</a></li>
+<li><a href="../Computer_vision/index.html">Computer vision</a></li>
+</ul>
+<p class="ref">This article is a recreation from memory of the English Wikipedia article "Vision transformer".</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WebRTC - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:900px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:5px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 15px 15px;width:280px;font-size:0.9em}
+.infobox th{text-align:left;background:#e8eaf0;padding:4px}
+.infobox td{padding:4px}
+.infobox img{width:100%}
+.navbox{border:1px solid #a2a9b1;background:#fdfdfd;padding:8px;font-size:0.85em;margin-top:20px}
+</style>
+</head>
+<body>
+<h1>WebRTC</h1>
+<div class="infobox">
+<img src="images/WebRTC.png" alt="Diagram of two browsers establishing a peer-to-peer WebRTC connection through a signalling server">
+<table>
+<tr><th>Developed by</th><td>Google (originated); standardised by W3C and IETF</td></tr>
+<tr><th>First released</th><td>2011 (open-sourced by Google)</td></tr>
+<tr><th>Status</th><td>W3C Recommendation (January 2021)</td></tr>
+<tr><th>Type</th><td>Real-time communication API and protocol suite</td></tr>
+<tr><th>Key protocols</th><td>SRTP, DTLS, ICE, STUN, TURN, SCTP</td></tr>
+</table>
+</div>
+<p><b>WebRTC</b> (<b>Web Real-Time Communication</b>) is a free and open-source project providing web browsers and mobile applications with real-time communication via application programming interfaces. It allows audio and video communication and arbitrary data transfer to work inside web pages by allowing direct peer-to-peer communication, eliminating the need to install plugins or native applications. Supported by all major browser vendors, WebRTC became a W3C Recommendation and IETF standard in January 2021.</p>
+<h2>History</h2>
+<p>Google acquired the voice and video technology companies Global IP Solutions and On2 in 2010 and open-sourced their technology as WebRTC in May 2011. The W3C and IETF then developed the standard APIs and protocols. Browser support rolled out through the 2010s — Chrome and Firefox first, then Edge and Safari — and usage surged with the growth of browser-based video conferencing during the COVID-19 pandemic. Google Meet, Discord, Facebook Messenger and many other services use WebRTC for their media paths.</p>
+<h2>Design</h2>
+<p>The JavaScript API comprises three main interfaces: <b>getUserMedia</b>, which obtains access to the camera and microphone; <b>RTCPeerConnection</b>, which manages the encrypted media session, codec negotiation and connectivity; and <b>RTCDataChannel</b>, a generic bidirectional channel for arbitrary data, carried over SCTP. Establishing a connection requires exchanging session descriptions (using the Session Description Protocol) through some external "signalling" channel — deliberately left unspecified by the standard. Connectivity through NATs and firewalls is handled by the ICE framework with STUN servers for address discovery and TURN servers as relays of last resort. Media is encrypted with DTLS-SRTP; encryption is mandatory.</p>
+<h2>Codecs and applications</h2>
+<p>Mandatory-to-implement audio codecs are Opus and G.711; for video, implementations must support VP8 or H.264, with VP9 and AV1 increasingly common. Applications include video conferencing, telehealth, live streaming, cloud gaming, remote desktop, and peer-to-peer file sharing.</p>
+<h2>Criticism and privacy</h2>
+<p>Because ICE gathers local network addresses, WebRTC has been criticised for potentially revealing a user's real IP address behind a VPN ("WebRTC leaks"); browsers have responded by masking local addresses with mDNS hostnames. The technology's mandatory encryption and peer-to-peer architecture are, conversely, cited as privacy and resilience advantages.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Session_Initiation_Protocol/index.html">Session Initiation Protocol</a></li>
+<li><a href="../Real-time_Transport_Protocol/index.html">Real-time Transport Protocol</a></li>
+<li><a href="../Videotelephony/index.html">Videotelephony</a></li>
+<li><a href="../STUN/index.html">STUN</a></li>
+</ul>
+<div class="navbox">Categories: Web development | Videotelephony | IETF standards | W3C standards</div>
+</body>
+</html>

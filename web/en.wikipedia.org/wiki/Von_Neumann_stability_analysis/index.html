@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Von Neumann stability analysis - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+.hero{display:block;max-width:320px;margin:8px auto}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Von Neumann stability analysis</h1>
+<img class="hero" src="images/Von_Neumann_stability_analysis.png" alt="Numerical grid used in finite difference stability analysis">
+<p>In numerical analysis, <b>von Neumann stability analysis</b> (also known as Fourier stability analysis) is a procedure used to check the stability of finite difference schemes as applied to linear partial differential equations. Developed by John von Neumann during his work on hydrodynamics at Los Alamos in the 1940s, the method analyzes how numerical errors — decomposed into Fourier modes — grow or decay as a computation advances.</p>
+<h2>Method</h2>
+<p>The numerical solution is assumed to be the sum of the exact solution and an error. Because the scheme is linear, each Fourier component of the error evolves independently: a discrete mode exp(i k x) is multiplied at each time step by an <b>amplification factor</b> ξ(k). The scheme is stable if |ξ| ≤ 1 (more precisely |ξ| ≤ 1 + O(Δt)) for all wavenumbers k, so that no error mode grows without bound.</p>
+<h2>Example: the FTCS scheme</h2>
+<p>Applying the analysis to the forward-time centered-space (FTCS) discretization of the one-dimensional diffusion equation u<sub>t</sub> = α u<sub>xx</sub> gives ξ = 1 − 4r sin²(kΔx/2), where r = αΔt/(Δx)². Stability (|ξ| ≤ 1 for all k) requires r ≤ 1/2 — the familiar restriction that the time step must shrink with the square of the spatial step. The same scheme applied to the advection equation is unconditionally unstable. By contrast, the implicit Crank–Nicolson scheme is unconditionally stable for diffusion.</p>
+<h2>Scope and limitations</h2>
+<p>Von Neumann analysis is strictly valid for linear equations with constant coefficients and periodic or infinite domains, but it is routinely used as a local guide for nonlinear problems and schemes with boundary conditions, where it gives necessary (and often practically sufficient) stability conditions such as the CFL condition. It is a cornerstone of computational fluid dynamics and numerical PDE coursework.</p>
+<p>See also: <a href="../John_von_Neumann/index.html">John von Neumann</a>, <a href="../Finite_difference_method/index.html">Finite difference method</a>, <a href="../CFL_condition/index.html">CFL condition</a>, <a href="../Crank–Nicolson_method/index.html">Crank–Nicolson method</a>.</p>
+</div>
+</body>
+</html>

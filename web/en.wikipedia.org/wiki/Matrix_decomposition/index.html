@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Matrix decomposition - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#fff;color:#202122}
+.wrap{max-width:960px;margin:0 auto;padding:20px 24px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+h3{font-size:17px;font-weight:bold;margin-top:20px}
+p{font-family:sans-serif;font-size:14.5px;line-height:1.65}
+ul,ol{font-family:sans-serif;font-size:14.5px;line-height:1.6}
+table{border-collapse:collapse;font-family:sans-serif;font-size:13.5px;margin:12px 0}
+td,th{border:1px solid #a2a9b1;padding:5px 9px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;margin:0 0 14px 18px;font-size:13px}
+.infobox th{background:#eaf3ff;text-align:center;font-size:14px;padding:6px}
+.infobox td{border:none;border-top:1px solid #eaecf0;padding:4px 8px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{text-align:center;margin:14px 0}
+.hero img{max-width:420px;width:100%;border:1px solid #c8ccd1;background:#f8f9fa}
+.caption{font-family:sans-serif;font-size:12px;color:#54595d}
+.eq{font-family:Georgia,serif;font-style:italic;text-align:center;font-size:16px;margin:12px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Matrix decomposition</h1>
+<p>In the mathematical discipline of <a href="../Linear_algebra/index.html">linear algebra</a>, a <b>matrix decomposition</b> or <b>matrix factorization</b> is a factorization of a <a href="../Matrix_(mathematics)/index.html">matrix</a> into a product of matrices. There are many different matrix decompositions; each finds use among a particular class of problems. Decompositions are central to <a href="../Numerical_linear_algebra/index.html">numerical linear algebra</a>, where they provide stable and efficient algorithms for solving <a href="../System_of_linear_equations/index.html">systems of linear equations</a>, computing <a href="../Eigenvalues_and_eigenvectors/index.html">eigenvalues</a>, and many other tasks.</p>
+<div class="hero"><img src="images/matrix_decomposition.png" alt="[Image placeholder: diagram illustrating a matrix factored into a product of simpler matrices]"><div class="caption">A matrix decomposition expresses a matrix as a product of simpler, structured matrices.</div></div>
+<h2>Examples</h2>
+<h3>LU decomposition</h3>
+<p>In numerical analysis, different decompositions are used to implement efficient matrix algorithms. The <a href="../LU_decomposition/index.html">LU decomposition</a> factors a matrix as the product of a lower triangular matrix <i>L</i> and an upper triangular matrix <i>U</i>, sometimes with a permutation matrix:</p>
+<p class="eq">A = PLU</p>
+<p>It is the matrix form of <a href="../Gaussian_elimination/index.html">Gaussian elimination</a> and is used to solve linear systems, compute determinants, and find inverses. A related variant, the <a href="../Cholesky_decomposition/index.html">Cholesky decomposition</a>, applies to symmetric (or Hermitian) positive-definite matrices and factors A = LL*.</p>
+<h3>Eigendecomposition</h3>
+<p>The <a href="../Eigendecomposition_of_a_matrix/index.html">eigendecomposition</a> applies to diagonalizable square matrices and writes</p>
+<p class="eq">A = PDP<sup>−1</sup></p>
+<p>where D is a diagonal matrix of eigenvalues and the columns of P are the corresponding eigenvectors. For symmetric matrices, the <a href="../Spectral_theorem/index.html">spectral theorem</a> guarantees an orthogonal eigendecomposition.</p>
+<h3>Singular value decomposition</h3>
+<p>The <a href="../Singular_value_decomposition/index.html">singular value decomposition</a> (SVD) exists for every real or complex matrix and factors it as</p>
+<p class="eq">A = UΣV*</p>
+<p>where U and V are unitary matrices and Σ is a diagonal matrix of non-negative singular values. The SVD underlies <a href="../Principal_component_analysis/index.html">principal component analysis</a>, low-rank approximation, and the <a href="../Moore–Penrose_inverse/index.html">Moore–Penrose pseudoinverse</a>.</p>
+<h3>QR decomposition</h3>
+<p>The <a href="../QR_decomposition/index.html">QR decomposition</a> factors a matrix into an orthogonal matrix Q and an upper triangular matrix R. It is commonly computed by <a href="../Householder_transformation/index.html">Householder reflections</a> or <a href="../Givens_rotation/index.html">Givens rotations</a> and is the basis of the <a href="../QR_algorithm/index.html">QR algorithm</a> for eigenvalues and of least-squares solvers.</p>
+<h2>Other decompositions</h2>
+<ul>
+<li><b>Polar decomposition</b>: A = UP, a unitary matrix times a positive-semidefinite Hermitian matrix.</li>
+<li><b>Schur decomposition</b>: A = UTU*, with T upper triangular.</li>
+<li><b>Jordan decomposition</b>: expresses a matrix in Jordan normal form.</li>
+<li><b>Takagi factorization</b>, <b>LDU decomposition</b>, and rank factorizations for structured or rank-deficient matrices.</li>
+</ul>
+<h2>Applications</h2>
+<p>Matrix decompositions are used in solving linear systems, least-squares fitting, signal processing, statistics, computer graphics, quantum mechanics, and control theory. Choosing the right decomposition depends on the structure of the matrix (symmetric, sparse, positive-definite) and on numerical stability requirements.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Matrix_(mathematics)/index.html">Matrix (mathematics)</a></li>
+<li><a href="../Gaussian_elimination/index.html">Gaussian elimination</a></li>
+<li><a href="../Numerical_linear_algebra/index.html">Numerical linear algebra</a></li>
+</ul>
+</div>
+</body>
+</html>
