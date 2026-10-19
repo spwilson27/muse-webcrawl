@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Deconvolution - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+header{background:#fff;border-bottom:1px solid #a7d7f9;padding:10px 24px}
+header .site{font-size:1.6em;font-weight:bold}
+nav{font-size:.85em;color:#3366cc}
+main{max-width:960px;margin:0 auto;background:#fff;padding:20px 28px 40px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+figure.hero{float:right;width:280px;margin:0 0 12px 16px;text-align:center;font-size:.8em;color:#54595d}
+figure.hero img{width:100%;background:#eaecf0;border:1px dashed #a2a9b1;padding:40px 0}
+a{color:#0645ad;text-decoration:none}
+.small{font-size:.85em;color:#54595d}
+code{background:#f0f0f0;padding:1px 4px}
+</style>
+</head>
+<body>
+<header><div class="site">Wikipedia</div><nav>The Free Encyclopedia</nav></header>
+<main>
+<h1>Deconvolution</h1>
+<figure class="hero"><img src="images/Deconvolution.png" alt="Hero image placeholder: a blurred signal restored by deconvolution"></figure>
+<p>In mathematics, <b>deconvolution</b> is the operation inverse to <a href="../Convolution/index.html">convolution</a>. Both operations are used in signal processing and image processing: whereas convolution models how a system blurs or transforms a signal, deconvolution seeks to recover the original signal (or an estimate of it) from the recorded, convolved data. In practice the recorded signal is <code>g = f * h</code>, where <code>f</code> is the signal to be recovered, <code>h</code> is the system's response (point spread function), and the task is to estimate <code>f</code> knowing <code>g</code> and, ideally, <code>h</code>.</p>
+<h2>Problem and ill-posedness</h2>
+<p>If <code>h</code> is known exactly and no noise is present, deconvolution is straightforward: in the Fourier domain, convolution becomes multiplication, so division recovers the original spectrum. Real measurements, however, contain noise, and where the transfer function is small or zero the division hugely amplifies that noise, making naive deconvolution unstable. Deconvolution is therefore a classic ill-posed inverse problem, and practical methods incorporate assumptions or regularisation to suppress the noise amplification.</p>
+<h2>Methods</h2>
+<ul>
+<li><b>Wiener deconvolution</b> — minimises the mean-square error given assumed signal and noise spectra; standard in image restoration.</li>
+<li><b>Richardson–Lucy deconvolution</b> — an iterative Bayesian method assuming Poisson noise, widely used in astronomy and microscopy to deblur images.</li>
+<li><b>Regularised least squares</b> (e.g. Tikhonov regularisation) — balances fidelity to the data against smoothness of the estimate.</li>
+<li><b>Blind deconvolution</b> — estimates both the signal and the unknown blur simultaneously, used when the point spread function cannot be measured.</li>
+</ul>
+<h2>Applications</h2>
+<p>Deconvolution is used to sharpen astronomical images (correcting atmospheric and optical blur), in fluorescence microscopy, in seismology to compress the source wavelet and reveal subsurface reflectivity, in audio and communications channel equalisation, and in analytical chemistry to resolve overlapping spectral peaks.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Convolution/index.html">Convolution</a></li>
+<li><a href="../Wiener_filter/index.html">Wiener filter</a></li>
+<li><a href="../Richardson%E2%80%93Lucy_deconvolution/index.html">Richardson–Lucy deconvolution</a></li>
+<li><a href="../Inverse_problem/index.html">Inverse problem</a></li>
+</ul>
+<p class="small">References: standard texts on digital signal processing and image restoration.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ACID - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.6;color:#202122;margin:0;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+.hero{border:1px dashed #72777d;background:#f8f9fa;text-align:center;padding:28px 10px;color:#54595d;font-style:italic;margin:12px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body><div class="wrap">
+<h1>ACID</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="hero">[Image placeholder: Diagram of a database transaction committing atomically]</div>
+<p>In computer science, <b>ACID</b> (atomicity, consistency, isolation, durability) is a set of properties of database transactions intended to guarantee data validity despite errors, power failures, and other mishaps. A database transaction that satisfies these properties is said to be an ACID transaction, and database systems that support such transactions are often called ACID-compliant. The concept was articulated in work by Theo Härder and Andreas Reuter in 1983, building on transaction concepts developed by Jim Gray in the late 1970s.</p>
+<h2>Properties</h2>
+<h3>Atomicity</h3>
+<p>Atomicity guarantees that each transaction is treated as a single unit: either all of its operations succeed, or none of them do. If part of a transaction fails, the whole transaction is aborted and the database is left unchanged — as in a bank transfer, where a debit and its matching credit must never be separated.</p>
+<h3>Consistency</h3>
+<p>Consistency ensures that a transaction can only bring the database from one valid state to another, maintaining all defined rules and constraints, such as unique keys, referential integrity, and application invariants (for example, that the total money across accounts is preserved by a transfer).</p>
+<h3>Isolation</h3>
+<p>Isolation ensures that concurrently executing transactions do not interfere with one another: the result is the same as if the transactions had run sequentially. Systems implement isolation through locking or multiversion concurrency control, and offer graded isolation levels (such as read committed and serializable) that trade concurrency for strictness.</p>
+<h3>Durability</h3>
+<p>Durability guarantees that once a transaction has been committed, it remains committed even in the event of a system crash or power loss. Committed data is recorded in non-volatile storage, typically via a write-ahead log, before the commit is acknowledged.</p>
+<h2>ACID versus BASE</h2>
+<p>Large distributed systems often relax ACID guarantees in favour of availability and partition tolerance, following instead the BASE model (Basically Available, Soft state, Eventual consistency), as described by the CAP theorem. Systems such as many NoSQL databases adopt eventual consistency, while modern distributed SQL systems attempt to provide ACID semantics at scale.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Database_transaction/index.html">Database transaction</a></li>
+<li><a href="../CAP_theorem/index.html">CAP theorem</a></li>
+<li><a href="../Eventual_consistency/index.html">Eventual consistency</a></li>
+</ul>
+</div></body></html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Monad (category theory) - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#fff;color:#202122;margin:0;padding:0 1.5em;line-height:1.6;}
+h1{font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;}
+h2{font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em;}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;font-size:88%;width:22em;margin:0 0 1em 1em;padding:.4em;}
+.infobox th{text-align:left;background:#eaecf0;padding:.2em .4em;}
+.infobox td{padding:.2em .4em;}
+.hero{display:block;max-width:400px;width:100%;margin:1em auto;border:1px solid #c8ccd1;background:#f8f9fa;text-align:center;padding:2em 0;color:#72777d;}
+a{color:#0645ad;text-decoration:none;} a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+<h1>Monad (category theory)</h1>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Monad</th></tr>
+<tr><th>Field</th><td>Category theory</td></tr>
+<tr><th>Definition</th><td>Endofunctor with unit and multiplication natural transformations</td></tr>
+<tr><th>Equivalent notion</th><td>Monoid in the category of endofunctors</td></tr>
+<tr><th>Historical name</th><td>"Triple" (standard construction)</td></tr>
+<tr><th>Famous characterisation</th><td>"A monad is just a monoid in the category of endofunctors" (Mac Lane)</td></tr>
+</table>
+</div>
+<img class="hero" src="images/monad.png" alt="Commutative diagram of the monad unit and multiplication laws">
+<p>In category theory, a <b>monad</b> is a structure that is an endofunctor together with two natural transformations — a unit and a multiplication — satisfying coherence laws analogous to associativity and identity in a monoid. Monads generalise the way algebraic structure arises from adjunctions: every adjunction gives rise to a monad, and each monad has categories of algebras (the Eilenberg–Moore category) and of free algebras (the Kleisli category) that recover the adjunction. Monads were historically called "triples" or "standard constructions"; the term "monad," borrowing from philosophy (and Leibniz's monads), was popularised by Jean Bénabou in the late 1960s.</p>
+<h2>Formal definition</h2>
+<p>A monad on a category C consists of an endofunctor T : C → C and natural transformations η : Id → T (unit) and μ : T² → T (multiplication, or "join"/"flatten") such that μ ∘ Tμ = μ ∘ μT (associativity) and μ ∘ Tη = μ ∘ ηT = id (unit laws). This makes a monad precisely a monoid in the strict monoidal category of endofunctors of C under composition — the basis of Saunders Mac Lane's aphorism, "a monad is just a monoid in the category of endofunctors, what's the problem?" (quoted in <i>Categories for the Working Mathematician</i>).</p>
+<h2>Examples</h2>
+<p>Familiar examples include the monads induced by free-forgetful adjunctions: the free group monad, the free vector space monad, ring and module monads, the powerset monad (whose algebras are complete lattices), the ultrafilter monad (whose Eilenberg–Moore category is that of compact Hausdorff spaces), and in functional programming the list, maybe/option, state, continuation, and IO monads used in Haskell.</p>
+<h2>Algebras and the Kleisli category</h2>
+<p>An algebra for a monad (an Eilenberg–Moore algebra) is an object equipped with a structure map T A → A satisfying unit and associativity conditions, formalising the idea of an object "equipped with the operations the monad describes." The Kleisli category, whose morphisms A → B are maps A → T B in the original category, models computations with monadic effects, an interpretation central to Eugenio Moggi's computational metalanguage and modern functional programming.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Adjunction_(category_theory)/index.html">Adjunction</a></li>
+<li><a href="../Comonad/index.html">Comonad</a></li>
+<li><a href="../Eilenberg–Moore_category/index.html">Eilenberg–Moore category</a></li>
+<li><a href="../Monad_(functional_programming)/index.html">Monad (functional programming)</a></li>
+<li><a href="../Category_theory/index.html">Category theory</a></li>
+</ul>
+</body>
+</html>

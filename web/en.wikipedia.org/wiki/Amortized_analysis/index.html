@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amortized analysis - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; padding: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+.infobox { float: right; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 16px 20px; font-size: 13px; }
+.infobox th { text-align: left; padding: 3px 6px; vertical-align: top; }
+.infobox td { padding: 3px 6px; }
+.infobox .title { text-align: center; font-weight: bold; font-size: 15px; background: #e8e8e8; padding: 6px; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #ccc; }
+.hero figcaption { font-size: 12px; color: #54595d; }
+a { color: #3366cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul { line-height: 1.6; font-size: 15px; }
+.ref { font-size: 13px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="content">
+<div class="infobox">
+<div class="title">Amortized analysis</div>
+<table>
+<tr><th>Field</th><td>Analysis of algorithms</td></tr>
+<tr><th>Introduced</th><td>1985 (Tarjan, "Amortized Computational Complexity")</td></tr>
+<tr><th>Methods</th><td>Aggregate, accounting, potential</td></tr>
+<tr><th>Classic examples</th><td>Dynamic arrays, splay trees, Fibonacci heaps, disjoint-set union</td></tr>
+</table>
+</div>
+<h1>Amortized analysis</h1>
+<p>In computer science, <b>amortized analysis</b> is a method for analysing an algorithm's time complexity by averaging the cost of operations over a sequence: even if a single operation occasionally takes much longer than the rest, amortized analysis bounds the cost <i>per operation over the whole sequence</i>. It differs from average-case analysis because it makes no probabilistic assumptions — the guarantee holds for the worst-case sequence. The technique was systematically developed by Robert Tarjan in 1985; the word "amortized" is borrowed from the accounting notion of spreading a cost over time.</p>
+<figure class="hero">
+<img src="images/amortized-analysis.png" alt="Diagram of a dynamic array doubling in capacity">
+<figcaption>A dynamic array: most insertions are cheap, while occasional doubling is expensive — yet insertion is O(1) amortized.</figcaption>
+</figure>
+<h2>Methods</h2>
+<h3>Aggregate method</h3>
+<p>Show that any sequence of <i>n</i> operations takes total time T(n); the amortized cost per operation is then T(n)/n.</p>
+<h3>Accounting method</h3>
+<p>Assign each operation an artificial "charge"; inexpensive operations bank credit with the data structure, which expensive operations later spend. The charges must be set so the bank balance never goes negative.</p>
+<h3>Potential method</h3>
+<p>Define a potential function Φ on the data structure's state; the amortized cost of an operation is its actual cost plus the change in potential, Φ(after) − Φ(before). Expensive operations "pay for themselves" by reducing potential.</p>
+<h2>Example: dynamic arrays</h2>
+<p>A dynamic array (as in C++ <code>vector</code> or Java <code>ArrayList</code>) doubles its capacity when full: most appends cost O(1), but the append that triggers a resize costs O(n) to copy the elements. Over n appends the total copying cost is n + n/2 + n/4 + … &lt; 2n, so append is O(1) amortized even though an individual append can be expensive. Amortized bounds of this kind underpin the analysis of splay trees, Fibonacci heaps (O(1) amortized decrease-key) and the union–find data structure (inverse-Ackermann amortized cost).</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Computational_complexity_theory/index.html">Computational complexity theory</a></li>
+<li><a href="../Dynamic_array/index.html">Dynamic array</a></li>
+<li><a href="../Splay_tree/index.html">Splay tree</a></li>
+<li><a href="../Fibonacci_heap/index.html">Fibonacci heap</a></li>
+</ul>
+<p class="ref">This article is a recreation from memory for the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

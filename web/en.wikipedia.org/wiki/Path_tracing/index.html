@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Path tracing - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#fff;color:#202122;margin:0;line-height:1.6}
+.header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:10px 20px;font-family:sans-serif}
+.content{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;margin-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;font-size:1.4em;margin-top:28px}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 14px 18px;font-family:sans-serif;font-size:0.88em}
+.infobox th{background:#cedff2;text-align:center;padding:4px}
+.infobox td{padding:3px 6px;vertical-align:top}
+.hero{display:block;width:100%;margin-bottom:8px}
+a{color:#0645ad;text-decoration:none}
+.wikitable{border-collapse:collapse;margin:12px 0}
+.wikitable th,.wikitable td{border:1px solid #a2a9b1;padding:5px 9px}
+.wikitable th{background:#eaecf0}
+</style>
+</head>
+<body>
+<div class="header">From Wikipedia, the free encyclopedia</div>
+<div class="content">
+<h1>Path tracing</h1>
+<div class="infobox">
+<img class="hero" src="images/Path_tracing.png" alt="Path-traced rendering of a scene with soft shadows and global illumination">
+<table>
+<tr><th colspan="2">Path tracing</th></tr>
+<tr><td><b>Type</b></td><td>Global illumination rendering algorithm</td></tr>
+<tr><td><b>Introduced</b></td><td>1986 (James Kajiya, rendering equation)</td></tr>
+<tr><td><b>Based on</b></td><td>Monte Carlo integration</td></tr>
+<tr><td><b>Related</b></td><td>Ray tracing, bidirectional path tracing, Metropolis light transport</td></tr>
+</table>
+</div>
+<p><b>Path tracing</b> is a computer graphics Monte Carlo method of rendering images of three-dimensional scenes such that the global illumination is faithful to reality. Fundamentally, the algorithm is integrating over all the illuminance arriving to a single point on the surface of an object. This illuminance is then reduced by a surface reflectance function (BRDF) to determine how much of it will ultimately go towards the viewing camera. This integration procedure is repeated for every pixel in the output image. When combined with physically accurate models of surfaces, accurate models of real light sources, and optically correct cameras, path tracing can produce still images that are indistinguishable from photographs.</p>
+<h2>History</h2>
+<p>The theoretical foundation of path tracing is the rendering equation, introduced by James Kajiya in his 1986 SIGGRAPH paper "The Rendering Equation". Kajiya showed that rendering could be formulated as the solution of an integral equation describing the equilibrium distribution of light in a scene, and proposed Monte Carlo integration — tracing random paths of light through the scene — as the practical means of solving it. Earlier work by Robert Cook and others on distributed ray tracing had introduced stochastic sampling for effects such as soft shadows, depth of field and motion blur, but it was Kajiya's framework that unified these into a single physically based approach.</p>
+<p>For many years path tracing was considered too slow for production work and was used mainly in academic research and offline rendering. Advances in computing power, importance sampling and acceleration structures made it practical for film production in the 2000s and 2010s; systems such as Arnold, and later Pixar's RenderMan and Disney's Hyperion, adopted path tracing as their core algorithm. By the late 2010s, real-time path tracing in games and interactive applications became feasible with hardware-accelerated ray tracing and denoising.</p>
+<h2>Algorithm</h2>
+<p>In its simplest form, the algorithm works backwards from the camera: a ray is cast through each pixel into the scene, and at each surface intersection a new ray is generated in a random direction sampled according to the surface's BRDF. Each bounce multiplies the path's throughput by the BRDF and a cosine term; the path terminates when it reaches a light source, misses the scene entirely (sampling the environment), or is terminated probabilistically by Russian roulette. Many paths are averaged per pixel, and the result converges to the correct image as the number of samples grows, because the estimator is unbiased. The principal drawback is noise: variance decreases only with the square root of the sample count, so difficult lighting situations such as caustics or small light sources can require thousands of samples per pixel.</p>
+<h2>Variants and improvements</h2>
+<table class="wikitable">
+<tr><th>Technique</th><th>Description</th></tr>
+<tr><td>Bidirectional path tracing</td><td>Traces paths from both the camera and the light sources and connects them, improving caustics and indirect lighting.</td></tr>
+<tr><td>Metropolis light transport</td><td>Uses Markov chain Monte Carlo to mutate successful paths, concentrating samples in important regions.</td></tr>
+<tr><td>Photon mapping</td><td>A two-pass method that stores photons emitted from lights in a spatial data structure; handles caustics well but is biased.</td></tr>
+<tr><td>Multiple importance sampling</td><td>Combines sampling strategies (e.g. BRDF and light sampling) with weights that minimise variance.</td></tr>
+<tr><td>Denoising</td><td>Post-process filters, including machine-learning-based denoisers, reconstruct a clean image from few samples.</td></tr>
+</table>
+<h2>Applications</h2>
+<p>Path tracing is now the dominant rendering method in film and animation production, architectural visualisation and product design, and is increasingly used in real-time graphics. Because it simulates light transport physically, effects such as colour bleeding, soft shadows, glossy reflections and depth of field emerge naturally rather than being added as separate approximations.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Ray_tracing/index.html">Ray tracing</a></li>
+<li><a href="../Global_illumination/index.html">Global illumination</a></li>
+<li><a href="../Rendering_equation/index.html">Rendering equation</a></li>
+<li><a href="../Monte_Carlo_method/index.html">Monte Carlo method</a></li>
+<li><a href="../Photon_mapping/index.html">Photon mapping</a></li>
+</ul>
+</div>
+</body>
+</html>

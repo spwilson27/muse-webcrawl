@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ethernet frame - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine","Georgia",serif;margin:0;background:#f8f9fa;color:#202122}
+header{background:#fff;border-bottom:1px solid #a2a9b1;padding:10px 20px}
+header h1{font-size:1.8em;margin:0;font-weight:normal}
+main{max-width:960px;margin:0 auto;background:#fff;padding:20px 30px;border:1px solid #a2a9b1;border-top:none}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:0.85em;font-family:sans-serif}
+.infobox th{background:#eaf3ff;text-align:left;padding:3px}
+.infobox td{padding:3px}
+img.hero{width:100%;border:1px solid #c8ccd1;background:#eee}
+a{color:#0645ad;text-decoration:none}
+.caption{font-size:0.8em;color:#54595d;text-align:center}
+</style>
+</head>
+<body>
+<header><h1>Ethernet frame</h1></header>
+<main>
+<table class="infobox">
+<tr><th colspan="2">Ethernet frame</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/ethernet-frame.png" alt="Diagram of an Ethernet frame showing header, payload, and frame check sequence"></td></tr>
+<tr><td colspan="2" class="caption">Structure of an IEEE 802.3 Ethernet frame (placeholder image)</td></tr>
+<tr><th>Layer</th><td>Data link layer (OSI layer 2)</td></tr>
+<tr><th>Standard</th><td>IEEE 802.3</td></tr>
+<tr><th>Payload size</th><td>46–1500 bytes (standard MTU); up to ~9000 in jumbo frames</td></tr>
+<tr><th>Error check</th><td>32-bit cyclic redundancy check (FCS)</td></tr>
+</table>
+<p>In computer networking, an <b>Ethernet frame</b> is a data link layer protocol data unit on an Ethernet network. A frame begins with header and trailer features — including source and destination MAC addresses — used to deliver data between nodes on the same local network segment. Frames are carried inside the physical layer's signal as packets of bits, with a preamble and start frame delimiter marking where each frame begins.</p>
+<h2>Structure</h2>
+<p>A typical IEEE 802.3 frame consists of: a 7-byte preamble and 1-byte start frame delimiter (on the wire, not counted in the frame size); a 6-byte destination MAC address; a 6-byte source MAC address; an optional 4-byte 802.1Q VLAN tag; a 2-byte field that in Ethernet II gives the EtherType of the encapsulated protocol (e.g. 0x0800 for IPv4, 0x0806 for ARP, 0x86DD for IPv6) or in 802.3 gives the payload length; a payload of 46 to 1500 bytes (padded if necessary); and a 4-byte frame check sequence (FCS), a CRC-32 used to detect corruption. Frames are separated on the medium by an interframe gap of 96 bit times.</p>
+<p>Total frame size on the wire for standard Ethernet ranges from 64 to 1518 bytes (1522 with a VLAN tag). Oversized "jumbo frames" of up to about 9000 bytes are widely supported on modern equipment to improve efficiency but are not part of the original standard. Frames shorter than 64 bytes ("runts") and frames failing the FCS check are discarded.</p>
+<h2>Frame types</h2>
+<p>Historically, several framing conventions coexisted: Ethernet II (DIX) framing, Novell's raw 802.3 framing, IEEE 802.3 with LLC (802.2) headers, and 802.3 with SNAP. Receivers distinguish them by the value of the length/EtherType field: values of 1536 (0x0600) and above indicate an EtherType, smaller values indicate length. Ethernet II framing dominates modern networks.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Ethernet/index.html">Ethernet</a></li>
+<li><a href="../MAC_address/index.html">MAC address</a></li>
+<li><a href="../Maximum_transmission_unit/index.html">Maximum transmission unit</a></li>
+<li><a href="../Jumbo_frame/index.html">Jumbo frame</a></li>
+<li><a href="../IEEE_802.1Q/index.html">IEEE 802.1Q</a></li>
+</ul>
+</main>
+</body>
+</html>

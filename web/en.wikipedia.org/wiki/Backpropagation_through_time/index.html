@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Backpropagation through time - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; color: #202122; background: #fff; }
+#content { max-width: 960px; margin: 0 auto; padding: 1em 2em 3em; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 88%; margin: 0 0 1em 1em; padding: 0.5em; }
+.infobox th { background: #eaf3ff; text-align: left; padding: 3px 6px; }
+.infobox td { padding: 3px 6px; }
+.hero { text-align: center; background: #f8f9fa; border: 1px solid #eaecf0; padding: 1em; margin: 1em 0; color: #54595d; font-style: italic; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.small { font-size: 90%; color: #54595d; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Backpropagation through time</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="hero">[Image: A recurrent neural network unfolded in time, with gradients flowing backwards through each time step]</div>
+<p><b>Backpropagation through time</b> (<b>BPTT</b>) is a gradient-based technique for training certain types of <a href="../Recurrent_neural_network/index.html">recurrent neural networks</a>. It is used to train networks such as <a href="../Long_short-term_memory/index.html">long short-term memory</a> (LSTM) networks, in which the output of the network depends on earlier inputs in a sequence.</p>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Backpropagation through time</th></tr>
+<tr><th>Class</th><td>Optimization algorithm for recurrent neural networks</td></tr>
+<tr><th>Based on</th><td><a href="../Backpropagation/index.html">Backpropagation</a></td></tr>
+<tr><th>Related to</th><td><a href="../Chain_rule/index.html">Chain rule</a>, <a href="../Gradient_descent/index.html">gradient descent</a></td></tr>
+<tr><th>First described</th><td>1980s (Werbos; Robinson &amp; Fallside)</td></tr>
+</table>
+</div>
+<h2>Overview</h2>
+<p>The algorithm works by unfolding the recurrent network through time: each time step is treated as if it were a layer of a feedforward network, with shared weights across steps. The standard <a href="../Backpropagation/index.html">backpropagation</a> algorithm is then applied to the unfolded network, and the gradients for the shared weights are summed across all time steps.</p>
+<h2>History</h2>
+<p>The core ideas were developed in the 1970s and 1980s, notably in the work of Paul Werbos, and were popularised through papers by Robinson and Fallside (1987) and by Ronald J. Williams and David Zipser, who developed related real-time recurrent learning algorithms. BPTT became the standard training method for recurrent networks used in tasks such as speech recognition and time-series prediction.</p>
+<h2>Truncated BPTT</h2>
+<p>For long sequences, full BPTT is computationally expensive and suffers from the vanishing and exploding gradient problems. A common practical variant is <b>truncated backpropagation through time</b>, in which the sequence is divided into shorter chunks and gradients are propagated back only a limited number of steps within each chunk, while the hidden state is carried forward between chunks.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Backpropagation/index.html">Backpropagation</a></li>
+<li><a href="../Recurrent_neural_network/index.html">Recurrent neural network</a></li>
+<li><a href="../Vanishing_gradient_problem/index.html">Vanishing gradient problem</a></li>
+<li><a href="../Long_short-term_memory/index.html">Long short-term memory</a></li>
+</ul>
+<p class="small">Categories: Artificial neural networks · Machine learning algorithms · Optimization algorithms</p>
+</div>
+</body>
+</html>

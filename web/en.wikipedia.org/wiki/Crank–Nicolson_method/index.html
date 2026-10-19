@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Crank–Nicolson method - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.content{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+p,ul,ol{font-family:sans-serif;font-size:14.5px;line-height:1.6}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-family:sans-serif;font-size:12.5px;margin:0 0 12px 18px;border-collapse:collapse}
+.infobox th{background:#b5d6a7;padding:6px;text-align:center;font-size:13.5px}
+.infobox td{padding:4px 6px;border-top:1px solid #eaecf0;vertical-align:top}
+.infobox td:first-child{font-weight:bold;width:38%}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:100%;margin:12px 0}
+.caption{font-family:sans-serif;font-size:12px;color:#54595d}
+code{font-size:13.5px}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Crank–Nicolson method</h1>
+<img class="hero" src="images/Crank–Nicolson_method.png" alt="Numerical grid illustrating the Crank–Nicolson finite difference scheme">
+<p>In numerical analysis, the <b>Crank–Nicolson method</b> is a finite difference scheme used for numerically solving partial differential equations, particularly the heat equation and other parabolic (diffusion-like) problems. Developed by the British physicists John Crank and Phyllis Nicolson in 1947, the method is a second-order scheme in both time and space. It is the average of the forward Euler method at time step <i>n</i> and the backward Euler method at step <i>n</i> + 1 — equivalently, it applies the trapezoidal rule in time — which makes it implicit but unconditionally stable for linear diffusion problems.</p>
+<h2>Formulation</h2>
+<p>For the one-dimensional heat equation ∂u/∂t = α ∂²u/∂x², the centred difference in space is evaluated at both the old and the new time level and averaged. Writing <i>r</i> = αΔt/(Δx)², the scheme is:</p>
+<p style="text-align:center"><code>−r·u<sub>i−1</sub><sup>n+1</sup> + (2 + 2r)·u<sub>i</sub><sup>n+1</sup> − r·u<sub>i+1</sub><sup>n+1</sup> = r·u<sub>i−1</sub><sup>n</sup> + (2 − 2r)·u<sub>i</sub><sup>n</sup> + r·u<sub>i+1</sub><sup>n</sup></code></p>
+<p>At each time step a tridiagonal linear system must be solved (efficiently, by the Thomas algorithm), so the cost per step is higher than for an explicit method, but the unconditional stability — there is no constraint on Δt from the CFL-type condition that limits explicit schemes — permits much larger time steps for stiff problems.</p>
+<h2>Accuracy and stability</h2>
+<p>The local truncation error is O(Δt²) + O(Δx²), making the method second-order accurate in both variables, in contrast to the first-order-in-time Euler schemes. Von Neumann stability analysis shows the amplification factor never exceeds unity in magnitude for the linear heat equation, so the scheme is unconditionally stable and A-stable. A practical caveat is that for very large time steps relative to the spatial mesh, non-physical oscillations can appear near sharp initial gradients, because the method is not L-stable; this can be mitigated by taking a few small backward-Euler starting steps (Rannacher smoothing).</p>
+<h2>Applications</h2>
+<p>Crank–Nicolson is a standard solver for diffusion equations in heat transfer and groundwater flow, for the Black–Scholes equation in mathematical finance, and, in split form, for the time-dependent Schrödinger equation, where its unitarity preserves the norm of the wavefunction. Variants such as the Douglas–Gunn alternating-direction implicit scheme extend the approach to two and three spatial dimensions while retaining tridiagonal solves.</p>
+<p class="caption">See also: <a href="../Finite_difference_method/index.html">Finite difference method</a> · <a href="../Heat_equation/index.html">Heat equation</a> · <a href="../John_Crank/index.html">John Crank</a> · <a href="../Stiff_equation/index.html">Stiff equation</a></p>
+</div>
+</body>
+</html>

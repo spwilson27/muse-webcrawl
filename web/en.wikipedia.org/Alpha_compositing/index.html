@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alpha compositing - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+p{line-height:1.6;font-family:sans-serif;font-size:0.95em}
+code{font-family:monospace;background:#f8f9fa}
+.hero{text-align:center;margin:14px 0}
+.hero img{max-width:520px;width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:24px 0}
+.caption{font-size:0.8em;color:#54595d;font-family:sans-serif}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Alpha compositing</h1>
+<p>In computer graphics, <b>alpha compositing</b> or <b>alpha blending</b> is the process of combining one image with a background to create the appearance of partial or full transparency. It is often useful to render picture elements (pixels) in separate images or "passes" and then combine the resulting images into a single final image, called a composite.</p>
+<div class="hero"><img src="images/alpha-compositing.png" alt="Alpha compositing of a semi-transparent foreground over a background"><div class="caption">A semi-transparent foreground composited over a chequered background.</div></div>
+<h2>The alpha channel and the "over" operator</h2>
+<p>The technique stores, alongside each pixel's red, green, and blue values, an additional <b>alpha</b> value (α) representing coverage or opacity: α = 1 is fully opaque, α = 0 fully transparent. The algebra of compositing was formalized by Thomas Porter and Tom Duff in their influential 1984 SIGGRAPH paper "Compositing Digital Images," which defined the <i>over</i> operator: placing element A over B yields a colour computed as A plus B attenuated by A's transparency. In premultiplied form the resulting colour is C<sub>o</sub> = C<sub>A</sub> + C<sub>B</sub>(1 − α<sub>A</sub>), with combined alpha α<sub>o</sub> = α<sub>A</sub> + α<sub>B</sub>(1 − α<sub>A</sub>).</p>
+<h2>Premultiplied alpha</h2>
+<p>Most professional systems store colour values premultiplied by alpha, which simplifies compositing arithmetic and makes filtering and interpolation behave correctly. Confusing straight and premultiplied data is a classic source of dark or bright fringes ("halos") at image edges.</p>
+<h2>Applications</h2>
+<p>Alpha compositing underlies virtually all modern image editing, motion-picture visual effects, video-game sprites, and graphical user interfaces, and is supported by file formats such as PNG and TIFF with an alpha channel and by window systems that composite layered windows in real time.</p>
+<h2>See also</h2>
+<p><a href="../Compositing/index.html">Compositing</a> · <a href="../Porter-Duff/index.html">Porter–Duff compositing</a> · <a href="../Chroma_key/index.html">Chroma key</a></p>
+</div>
+</body>
+</html>

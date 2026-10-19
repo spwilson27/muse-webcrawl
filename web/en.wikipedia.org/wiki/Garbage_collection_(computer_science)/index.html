@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Garbage collection (computer science) - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;margin:0 0 .3em}
+h2{border-bottom:1px solid #a2a9b1;font-size:1.4em;margin-top:1.2em}
+.infobox{float:right;width:270px;background:#f8f9fa;border:1px solid #a2a9b1;padding:8px 12px;margin:0 0 12px 16px;font-size:.88em}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+.hero{display:block;width:100%;max-width:400px;margin:10px auto;background:#eef;border:1px dashed #88a;padding:22px;text-align:center;color:#446}
+a{color:#0645ad;text-decoration:none}
+.small{font-size:.85em;color:#54595d}
+</style></head><body><div class="wrap">
+<h1>Garbage collection (computer science)</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<tr><th>Field</th><td>Computer science, programming languages</td></tr>
+<tr><th>Invented</th><td>c. 1959, by John McCarthy for Lisp</td></tr>
+<tr><th>Common strategies</th><td>Tracing (mark-and-sweep), reference counting, generational collection</td></tr>
+<tr><th>Used in</th><td>Java, C#, Python, JavaScript, Go, Lisp, Haskell</td></tr>
+</table>
+<img class="hero" src="images/garbage-collection.png" alt="Diagram of tracing garbage collection placeholder">
+<p><b>Garbage collection</b> (<b>GC</b>) is a form of automatic memory management in which the runtime system reclaims memory occupied by objects that are no longer reachable — "garbage" — freeing the programmer from explicitly deallocating memory. It was invented around 1959 by <a href="../John_McCarthy_(computer_scientist)/index.html">John McCarthy</a> for the <a href="../Lisp_(programming_language)/index.html">Lisp</a> programming language.</p>
+<h2>Strategies</h2>
+<p><b>Tracing garbage collectors</b> periodically determine which objects are reachable from a set of roots (global variables, local variables, CPU registers) and free everything else. Variants include mark-and-sweep, copying (semi-space) collectors, and mark-compact collectors that also defragment the heap. <b>Reference counting</b> tracks the number of references to each object and frees it when the count reaches zero, but cannot by itself collect cyclic structures. Many modern systems use <b>generational collection</b>, exploiting the observation that most objects die young by collecting a small "nursery" heap frequently.</p>
+<h2>Advantages and disadvantages</h2>
+<p>Garbage collection prevents whole classes of bugs — use-after-free, double-free, and many memory leaks — and simplifies program design. Its costs include runtime overhead, unpredictable pauses ("stop-the-world" collection), and increased memory footprint. Modern collectors in the <a href="../Java_virtual_machine/index.html">JVM</a>, .NET, and Go runtimes use concurrent and incremental techniques to keep pauses very short.</p>
+<h2>Languages</h2>
+<p>Most high-level languages — Java, C#, Python, Ruby, JavaScript, Go, and functional languages such as Haskell — rely on garbage collection, while systems languages such as C and C++ traditionally use manual management, with Rust instead enforcing ownership at compile time.</p>
+<p class="small">See also: <a href="../Memory_management/index.html">Memory management</a> · <a href="../Reference_counting/index.html">Reference counting</a> · <a href="../Memory_leak/index.html">Memory leak</a></p>
+</div></body></html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Encapsulation (computer programming) - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#fff;color:#202122}
+a{color:#3366cc;text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px 40px}
+h1{font-size:2rem;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin:18px 0 8px}
+h2{font-size:1.4rem;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:24px}
+p,li,pre{line-height:1.6;font-family:sans-serif;font-size:.95rem}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;font-family:monospace;font-size:.85rem;overflow-x:auto}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:.85rem;margin:0 0 12px 16px;font-family:sans-serif}
+.infobox th{background:#b0d0e8;padding:6px;text-align:center;font-size:1rem}
+.infobox td{padding:4px 8px;border-top:1px solid #e0e0e0;vertical-align:top}
+.infobox .lbl{font-weight:bold;width:40%}
+.infobox img{width:230px;height:150px;background:#eaecf0;border:1px solid #a2a9b1}
+ul{font-family:sans-serif;font-size:.95rem}
+.hatnote{font-style:italic;font-family:sans-serif;font-size:.9rem;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Encapsulation (computer programming)</h1>
+<p class="hatnote">From Wikipedia, the free encyclopedia</p>
+
+<table class="infobox">
+<tr><th colspan="2">Encapsulation</th></tr>
+<tr><td colspan="2" style="text-align:center"><img src="images/Encapsulation_(computer_programming).png" alt="Diagram of an object with hidden internal state and a public interface"></td></tr>
+<tr><td class="lbl">Field</td><td>Object-oriented programming</td></tr>
+<tr><td class="lbl">Related concepts</td><td>Information hiding, abstraction, modularity</td></tr>
+<tr><td class="lbl">Key mechanism</td><td>Access modifiers (public, private, protected)</td></tr>
+</table>
+
+<p>In object-oriented programming (OOP), <b>encapsulation</b> refers to the bundling of data with the methods that operate on that data, and the restriction of direct access to some of an object's components. Encapsulation is used to hide the internal representation, or state, of an object from the outside, a practice often called <b>information hiding</b>. It is one of the fundamental principles of OOP, alongside inheritance, polymorphism and abstraction.</p>
+
+<h2>Definition and rationale</h2>
+<p>Encapsulation allows a class's implementation to be changed without breaking code that depends on its public interface. By exposing only selected operations, the class can enforce invariants on its internal state: for example, a <code>BankAccount</code> class that keeps its balance in a private field and exposes <code>deposit</code> and <code>withdraw</code> methods can guarantee that the balance never becomes negative in an invalid way. This reduces coupling between components and improves maintainability of large systems.</p>
+
+<pre>// Java-like example
+public class BankAccount {
+    private double balance;          // hidden state
+    public void deposit(double amt) { if (amt > 0) balance += amt; }
+    public double getBalance()      { return balance; }
+}</pre>
+
+<h2>Access control</h2>
+<p>Most object-oriented languages provide access modifiers. Java and C# offer <code>public</code>, <code>protected</code>, package-private (or internal) and <code>private</code> levels; C++ adds friend declarations; Python relies on naming conventions (a leading underscore, and name mangling for double underscores) rather than enforced restrictions; Smalltalk makes all instance variables private by default. Properties, getters and setters are commonly used to mediate access while preserving encapsulation.</p>
+
+<h2>Encapsulation beyond OOP</h2>
+<p>The term is also used more generally in computing: in networking, encapsulation describes wrapping data in protocol headers as it passes down a protocol stack (as in the OSI model); in functional programming, closures and abstract data types achieve similar information hiding without classes.</p>
+
+<h2>See also</h2>
+<ul>
+<li>Object-oriented programming</li>
+<li>Information hiding</li>
+<li>Abstraction (computer science)</li>
+<li>Inheritance (object-oriented programming)</li>
+<li>Polymorphism (computer science)</li>
+</ul>
+
+</div>
+</body>
+</html>

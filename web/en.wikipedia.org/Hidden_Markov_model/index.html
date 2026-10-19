@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hidden Markov model - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-family:Georgia,'Times New Roman',serif;font-size:1.5em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.88em;margin:0 0 1em 1.5em;border-collapse:collapse}
+.infobox th,.infobox td{padding:6px 8px;vertical-align:top;border-top:1px solid #eaecf0;text-align:left}
+.infobox .title{background:#b0c4de;text-align:center;font-weight:bold;font-size:1.05em;border-top:none}
+.infobox .imgcell{text-align:center;background:#fff}
+.hero{max-width:100%;height:auto;border:1px solid #c8ccd1;background:#eaecf0}
+.caption{font-size:0.85em;color:#54595d;text-align:center;padding:4px}
+.refs{font-size:0.9em;color:#333}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Hidden Markov model</h1>
+<table class="infobox">
+<tr><th class="title" colspan="2">Hidden Markov model</th></tr>
+<tr><td class="imgcell" colspan="2"><img class="hero" src="images/Hidden_Markov_model.png" alt="Diagram of a hidden Markov model with hidden states and observations"><div class="caption">Hidden states x emit observations y</div></td></tr>
+<tr><th>Type</th><td>Statistical Markov model</td></tr>
+<tr><th>Introduced</th><td>Leonard Baum and colleagues, 1960s</td></tr>
+<tr><th>Key algorithms</th><td>Forward–backward, Viterbi, Baum–Welch</td></tr>
+<tr><th>Applications</th><td>Speech recognition, bioinformatics, gesture recognition, finance, cryptanalysis</td></tr>
+</table>
+<p>A <b>hidden Markov model</b> (<b>HMM</b>) is a statistical model in which the system being modelled is a Markov process with hidden (unobserved) states. An HMM can be thought of as the simplest dynamic Bayesian network: at each time step the system occupies one of a set of discrete states, transitions between states according to fixed probabilities, and emits an observable symbol whose probability depends on the current state.</p>
+<h2>Architecture and parameters</h2>
+<p>An HMM is specified by the number of states N, the state-transition probability matrix A, the emission (observation) probability distribution B for each state, and the initial state distribution π; collectively λ = (A, B, π). The model generates an observation sequence by walking through hidden states and emitting symbols along the way. Because emissions are probabilistic, the same state can produce different observations, and the same observation can arise from different states — hence the state sequence is "hidden" and must be inferred.</p>
+<h2>Three basic problems</h2>
+<p>Three canonical problems define work with HMMs. <b>Evaluation</b> — computing the probability of an observation sequence given a model — is solved efficiently by the forward algorithm (and its backward counterpart). <b>Decoding</b> — finding the most likely hidden state sequence — is solved by the Viterbi algorithm. <b>Learning</b> — estimating the parameters λ from observed sequences — is typically done with the Baum–Welch algorithm, a special case of expectation–maximization. These algorithms make HMMs practical for sequences of substantial length.</p>
+<h2>Applications</h2>
+<p>HMMs were developed mathematically by Leonard Baum and co-workers in the 1960s and became famous through speech recognition, where from the 1970s (work at IBM and CMU) until the rise of deep learning they were the dominant technology, modelling phonemes as states. In bioinformatics, profile HMMs underpin sequence alignment and gene finding (tools such as HMMER); other uses include part-of-speech tagging, handwriting and gesture recognition, musical score following, financial time-series analysis, and decoding neural signals. Extensions include continuous-density (Gaussian mixture) emissions, factorial HMMs, hierarchical HMMs and input–output HMMs.</p>
+<h2>See also</h2>
+<p><a href="../Markov_chain/index.html">Markov chain</a> · <a href="../Viterbi_algorithm/index.html">Viterbi algorithm</a> · <a href="../Baum%E2%80%93Welch_algorithm/index.html">Baum–Welch algorithm</a> · <a href="../Speech_recognition/index.html">Speech recognition</a></p>
+<h2>References</h2>
+<p class="refs">1. Rabiner, Lawrence R., "A Tutorial on Hidden Markov Models and Selected Applications in Speech Recognition", <i>Proceedings of the IEEE</i> 77(2), 1989. 2. Eddy, Sean R., "Profile hidden Markov models", <i>Bioinformatics</i> 14(9), 1998.</p>
+</div>
+</body>
+</html>

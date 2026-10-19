@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Discrete Fourier transform - Wikipedia</title>
+<style>
+body{font-family:sans-serif;font-size:14px;line-height:1.6;color:#202122;margin:0;padding:20px 40px;max-width:1000px}
+h1{font-family:serif;font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-family:serif;font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:24px}
+h3{font-size:16px;margin-top:18px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{float:right;clear:right;margin:0 0 12px 20px;width:260px;text-align:center;font-size:12px;color:#54595d;border:1px solid #a2a9b1;background:#f8f9fa;padding:6px}
+.hero img{max-width:100%}
+ul,ol{margin:6px 0 6px 24px;padding:0}
+.ref{font-size:12px;color:#54595d}
+.mono{font-family:monospace;background:#f8f9fa;padding:2px 5px}
+</style>
+</head>
+<body>
+<h1>Discrete Fourier transform</h1>
+<div class="hero"><img src="images/discrete_fourier_transform.png" alt="A time-domain signal and its frequency-domain representation"><br>A signal and its DFT frequency components</div>
+<p>In mathematics, the <b>discrete Fourier transform</b> (<b>DFT</b>) converts a finite sequence of equally spaced samples of a function into a same-length sequence of equally spaced samples of the discrete-time Fourier transform, which is a complex-valued function of frequency. The interval at which the DTFT is sampled is the reciprocal of the duration of the input sequence. The DFT is the most important discrete transform, used in signal processing and related fields to analyse the frequencies contained in a signal, solve partial differential equations, and perform operations such as polynomial multiplication.</p>
+<h2>Definition</h2>
+<p>The DFT of a sequence of <i>N</i> complex numbers <span class="mono">x<sub>0</sub>, …, x<sub>N−1</sub></span> is another sequence of <i>N</i> complex numbers:</p>
+<p style="text-align:center;font-family:serif;font-size:16px"><i>X<sub>k</sub></i> = Σ<sub><i>n</i>=0…<i>N</i>−1</sub> <i>x<sub>n</sub></i> · e<sup>−i 2π <i>kn</i>/<i>N</i></sup>, &nbsp; for <i>k</i> = 0, …, <i>N</i>−1.</p>
+<p>The inverse DFT recovers the original samples by the analogous sum with the opposite sign in the exponent and a factor of 1/<i>N</i>. The DFT can be viewed as a change of basis: it expresses the input as a superposition of complex exponentials (sinusoids), with <i>X<sub>k</sub></i> giving the amplitude and phase of the component at frequency <i>k</i>.</p>
+<h2>Computation</h2>
+<p>Computing the DFT directly from the definition takes O(N²) operations. A fast Fourier transform (FFT) algorithm computes the same result in O(N log N) operations; the best-known is the Cooley–Tukey algorithm (1965), which recursively breaks a transform of composite size into smaller transforms, though the underlying idea goes back to Gauss (1805). The FFT's efficiency made practical digital signal processing possible. Equivalently, the DFT is a matrix multiplication by the Vandermonde-like DFT matrix, and it diagonalizes convolution: circular convolution in the time domain corresponds to pointwise multiplication in the frequency domain (the convolution theorem).</p>
+<h2>Applications</h2>
+<p>The DFT underlies digital audio and image compression (as in the related discrete cosine transform used in JPEG and MP3), spectral analysis, OFDM modulation in Wi-Fi and LTE, medical imaging reconstruction, fast multiplication of large integers and polynomials, and solving differential equations numerically. Variants include the discrete-time Fourier transform of infinite sequences and the Z-transform.</p>
+<h2>See also</h2>
+<ul>
+<li>Fast Fourier transform</li>
+<li>Discrete cosine transform</li>
+<li>Fourier series</li>
+<li>Spectral leakage</li>
+</ul>
+<h2>References</h2>
+<ol class="ref">
+<li>Oppenheim, Alan V. &amp; Schafer, Ronald W. (2009). <i>Discrete-Time Signal Processing</i>, 3rd ed. Prentice Hall.</li>
+<li>Cooley, J. W. &amp; Tukey, J. W. (1965). "An algorithm for the machine calculation of complex Fourier series." <i>Mathematics of Computation</i> 19.</li>
+</ol>
+</body>
+</html>

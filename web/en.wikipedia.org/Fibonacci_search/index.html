@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fibonacci search - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#fff;color:#202122;margin:0;line-height:1.6}
+#content{max-width:960px;margin:0 auto;padding:20px 30px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{font-size:1.5em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1em}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 1em 1em;width:270px;font-size:0.88em;font-family:sans-serif}
+.infobox th{text-align:left;vertical-align:top;padding:2px 6px}
+.infobox td{padding:2px 6px}
+.infobox .title{background:#b0c4de;text-align:center;font-weight:bold;font-size:1.05em}
+figure{margin:1em 0;text-align:center}
+figcaption{font-size:0.85em;color:#54595d;font-family:sans-serif}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.ref{font-size:0.85em}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Fibonacci search</h1>
+<table class="infobox">
+<tr><td class="title" colspan="2">Fibonacci search technique</td></tr>
+<tr><th>Class</th><td>Search algorithm</td></tr>
+<tr><th>Time complexity</th><td>O(log n)</td></tr>
+<tr><th>Data structure</th><td>Sorted array</td></tr>
+</table>
+<figure>
+<img src="images/Fibonacci_search.png" alt="Fibonacci search splitting a sorted array">
+<figcaption>Fibonacci search divides the array at indices offset by Fibonacci numbers</figcaption>
+</figure>
+<p>The <b>Fibonacci search technique</b> is a method of searching a sorted array using a divide and conquer algorithm that narrows down possible locations with the aid of Fibonacci numbers. Like binary search it runs in logarithmic time, but it probes elements at positions derived from Fibonacci numbers rather than the midpoint.</p>
+<h2>Algorithm</h2>
+<p>Given an array of length <i>n</i>, the algorithm finds the smallest Fibonacci number greater than or equal to <i>n</i> and uses the preceding Fibonacci numbers to set probe indices. Each comparison discards a portion of the array whose size is again a Fibonacci number, so the sequence of splits descends the Fibonacci ladder. Because successive probes differ by subtraction rather than division, the method historically suited machines where division was expensive, and it tends to access memory in patterns favourable to some cache and tape-storage systems.</p>
+<h2>Comparison with binary search</h2>
+<p>On average Fibonacci search performs slightly more comparisons than binary search, and its advantage in locality — examining elements closer together — matters mainly on non-uniform access media. A related method, the <a href="../Golden-section_search/index.html">golden-section search</a>, uses the golden ratio to minimise the number of evaluations of a unimodal function and shares the same mathematical basis in the growth of Fibonacci numbers.</p>
+<p class="ref">See also: <a href="../Fibonacci/index.html">Fibonacci</a> · <a href="../Binary_search_algorithm/index.html">Binary search algorithm</a> · <a href="../Fibonacci_heap/index.html">Fibonacci heap</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ARP spoofing</title>
+<style>
+body{font-family:Georgia,serif;max-width:900px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:2px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+.hero{display:block;margin:10px 0;max-width:100%}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>ARP spoofing</h1>
+<img class="hero" src="images/ARP_spoofing.png" alt="ARP spoofing — hero image (placeholder)">
+<p><b>ARP spoofing</b>, <b>ARP cache poisoning</b>, or <b>ARP poison routing</b>, is a technique by which an attacker sends (spoofed) <a href="../Address_Resolution_Protocol/index.html">Address Resolution Protocol</a> (ARP) messages onto a local area network. The aim is to associate the attacker's <a href="../MAC_address/index.html">MAC address</a> with the IP address of another host, such as the default gateway, causing any traffic meant for that IP address to be sent to the attacker instead.</p>
+<h2>Mechanism</h2>
+<p>ARP was designed without any authentication mechanism: a host accepts ARP replies even if it never sent a request, and updates its ARP cache accordingly. An attacker exploits this by sending forged ARP replies claiming that the attacker's MAC address corresponds to the gateway's IP address. Victims then send their traffic to the attacker, who may simply forward it (a <a href="../Man-in-the-middle_attack/index.html">man-in-the-middle attack</a>), modify it, or drop it (a denial-of-service attack).</p>
+<h2>Uses</h2>
+<p>ARP spoofing can be used to intercept, modify, or stop data in transit on a switched network, enabling session hijacking, eavesdropping on unencrypted traffic, and credential theft. It is also used legitimately in some network administration, virtualisation and high-availability setups, and is a feature of tools such as arpspoof, Ettercap and Cain and Abel.</p>
+<h2>Defences</h2>
+<p>Defences include static ARP entries for critical hosts, Dynamic ARP Inspection on managed switches (which validates ARP packets against a DHCP snooping database), ARP monitoring tools such as Arpwatch, and the use of encrypted protocols (such as TLS and SSH) so that intercepted traffic cannot be read or usefully modified.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Address_Resolution_Protocol/index.html">Address Resolution Protocol</a></li>
+<li><a href="../MAC_spoofing/index.html">MAC spoofing</a></li>
+<li><a href="../Man-in-the-middle_attack/index.html">Man-in-the-middle attack</a></li>
+</ul>
+<p><i>Categories: Computer network security, Hacking (computer security)</i></p>
+</body>
+</html>

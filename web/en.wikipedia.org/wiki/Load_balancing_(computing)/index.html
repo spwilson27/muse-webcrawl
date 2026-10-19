@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Load balancing (computing) - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine','Georgia',serif;max-width:960px;margin:0 auto;padding:1em 1.5em;background:#fff;color:#202122;line-height:1.6}
+h1{font-family:'Linux Libertine','Georgia',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:'Linux Libertine','Georgia',serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+img.hero{max-width:100%;border:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+table.wikitable{border-collapse:collapse;margin:1em 0}
+table.wikitable th,table.wikitable td{border:1px solid #a2a9b1;padding:.3em .6em}
+table.wikitable th{background:#eaecf0}
+</style>
+</head>
+<body>
+<h1>Load balancing (computing)</h1>
+<p>In computing, <b>load balancing</b> is the process of distributing a set of tasks over a set of resources (computing units), with the aim of making overall processing more efficient. Load balancing can optimise response time and avoid unevenly overloading some computing nodes while other nodes are left idle.</p>
+<img class="hero" src="images/Load_balancing_(computing).png" alt="Diagram of a load balancer distributing requests across servers (placeholder image)">
+<h2>Overview</h2>
+<p>Load balancing is a key component of high-availability infrastructures commonly used to improve the reliability and performance of web sites, applications, databases and other services by distributing the workload across multiple servers. A <b>load balancer</b> sits between clients and a server farm, accepting requests and forwarding each to a server capable of fulfilling it.</p>
+<h2>Algorithms</h2>
+<table class="wikitable">
+<tr><th>Algorithm</th><th>Description</th></tr>
+<tr><td>Round-robin</td><td>Requests are distributed sequentially in rotation across the server pool</td></tr>
+<tr><td>Weighted round-robin</td><td>Servers with greater capacity receive a proportionally larger share</td></tr>
+<tr><td>Least connections</td><td>Each new request goes to the server with the fewest active connections</td></tr>
+<tr><td>Least response time</td><td>Directs traffic to the server responding fastest with the fewest connections</td></tr>
+<tr><td>IP hash / consistent hashing</td><td>The client's identity determines the server, preserving session affinity</td></tr>
+<tr><td>Random</td><td>Requests are assigned to servers at random</td></tr>
+</table>
+<h2>Hardware and software balancers</h2>
+<p>Load balancing may be implemented in dedicated hardware appliances (often combined with SSL offloading and application delivery features, e.g. F5 BIG-IP), in software (e.g. HAProxy, NGINX, Envoy), or by DNS (round-robin DNS). Cloud providers offer managed load balancers operating at layer 4 (transport) or layer 7 (application) of the OSI model.</p>
+<h2>Health checking and failover</h2>
+<p>Load balancers typically probe back-end servers ("health checks") and remove failed instances from rotation automatically, enabling redundancy and fault tolerance. Related techniques include session persistence ("sticky sessions"), geographic load balancing, and anycast routing.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Computer_cluster/">Computer cluster</a></li>
+<li><a href="../Round-robin_DNS/">Round-robin DNS</a></li>
+<li><a href="../High_availability/">High availability</a></li>
+<li><a href="../Reverse_proxy/">Reverse proxy</a></li>
+</ul>
+</body>
+</html>

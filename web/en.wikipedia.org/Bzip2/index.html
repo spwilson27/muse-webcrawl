@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>bzip2 - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;max-width:960px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}
+h1{border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 15px 15px;width:260px;font-size:88%}
+.infobox th{background:#b0c4de;padding:6px;text-align:center}
+img.hero{max-width:100%;display:block;margin:10px auto}
+.caption{font-size:85%;color:#54595d;text-align:center}
+a{color:#0645ad;text-decoration:none}
+.mono{font-family:monospace;background:#f8f9fa;padding:0 4px}
+</style>
+</head>
+<body>
+<h1>bzip2</h1>
+<table class="infobox">
+<tr><th colspan="2">bzip2</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/bzip2.png" alt="Terminal window showing bzip2 compressing a file"></td></tr>
+<tr><th>Developer</th><td>Julian Seward</td></tr>
+<tr><th>Initial release</th><td>18 July 1996 (bzip, v0.15); 2000 (bzip2 v1.0)</td></tr>
+<tr><th>Filename extension</th><td>.bz2, .bz, .tbz2, .tbz</td></tr>
+<tr><th>Type</th><td>Lossless data compression</td></tr>
+<tr><th>License</th><td>BSD-like (permissive)</td></tr>
+</table>
+<p><b>bzip2</b> is a free and open-source file compression program developed by Julian Seward that uses the <a href="../Burrows–Wheeler_transform/index.html">Burrows–Wheeler algorithm</a>. It typically compresses files to within 10–15% of the best available techniques such as PPM, though at slower speeds than algorithms like DEFLATE (gzip). It compresses only single files, not archives; multi-file archives are usually created by combining it with <span class="mono">tar</span> (<span class="mono">.tar.bz2</span>).</p>
+<h2>Compression pipeline</h2>
+<p>bzip2 processes data in blocks of 100–900 kB. Each block passes through run-length encoding, the Burrows–Wheeler transform (which groups similar characters together), a move-to-front transform, a second run-length encoding stage, and finally Huffman coding. The resulting format includes CRC checksums for each block, allowing damaged archives to be partially recovered with <span class="mono">bzip2recover</span>.</p>
+<h2>History</h2>
+<p>Seward released the first version in 1996; version 1.0 followed in 2000. bzip2 became a staple of Unix and Linux systems and was widely used for distributing source code and software packages. Long-standing maintenance passed from Seward to the Sourceware project in 2019. Newer formats such as xz and zstd generally offer better speed–ratio trade-offs, but bzip2 remains ubiquitous.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Data_compression/index.html">Data compression</a></li>
+<li><a href="../Gzip/index.html">gzip</a></li>
+<li><a href="../Burrows–Wheeler_transform/index.html">Burrows–Wheeler transform</a></li>
+<li><a href="../Xz/index.html">xz</a></li>
+</ul>
+</body>
+</html>

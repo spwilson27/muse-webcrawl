@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dynamic dispatch - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px 12px;margin:0 0 12px 16px;font-size:0.85em;font-family:sans-serif}
+.infobox th{text-align:left;background:#e9ecef;padding:4px}
+.infobox td{padding:4px}
+.hero{display:block;margin:12px auto;max-width:420px}
+.caption{text-align:center;font-size:0.85em;color:#54595d;font-family:sans-serif}
+code{font-family:monospace;background:#f8f9fa}
+</style>
+</head>
+<body>
+<h1>Dynamic dispatch</h1>
+<img class="hero" src="images/Dynamic_dispatch.png" alt="Diagram of a virtual method table used in dynamic dispatch">
+<p class="caption">A virtual method table (vtable) resolves calls at run time</p>
+<p>In computer science, <b>dynamic dispatch</b> is the process of selecting which implementation of a polymorphic operation (method or function) to call at run time, based on the actual type of the object (or arguments) involved, rather than on the static type known at compile time. It is a core mechanism of object-oriented and other polymorphic programming languages, in contrast to <i>static dispatch</i>, in which the implementation is chosen at compile time.</p>
+<h2>Single and multiple dispatch</h2>
+<p>In <b>single dispatch</b>, the selection depends on one argument — in most object-oriented languages, the receiver object of a method call (<code>this</code>/<code>self</code>). Languages such as Common Lisp (CLOS), Julia and Dylan support <b>multiple dispatch</b>, in which generic functions select a method based on the types of all their arguments. <b>Double dispatch</b> is a work-around pattern for emulating two-argument dispatch in single-dispatch languages, often used with the visitor pattern.</p>
+<h2>Implementation</h2>
+<p>The most common implementation is the <b>virtual method table</b> (vtable): each class has a table of pointers to its method implementations, and each object carries a pointer to its class's table, so a virtual call costs an indirection. Alternatives include message-passing lookup in languages derived from Smalltalk and Objective-C, method caches and inline caches in JIT-compiled environments, type classes in Haskell, and trait objects in Rust, the latter allowing the programmer to choose between static and dynamic dispatch explicitly.</p>
+<h2>Performance</h2>
+<p>Dynamic dispatch historically carried a reputation for overhead because it inhibits inlining and forces indirect branches, which stress branch predictors. Modern JIT compilers mitigate this with speculative devirtualization, and CPUs have become adept at predicting repeated indirect targets, so the cost is often small relative to the design benefits.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Virtual_function/index.html">Virtual function</a></li>
+<li><a href="../Multiple_dispatch/index.html">Multiple dispatch</a></li>
+<li><a href="../Polymorphism_(computer_science)/index.html">Polymorphism (computer science)</a></li>
+</ul>
+</body>
+</html>

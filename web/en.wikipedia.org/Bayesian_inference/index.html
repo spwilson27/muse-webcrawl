@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bayesian inference - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.topbar{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:8px 20px;font-family:sans-serif;font-size:13px}
+.content{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:30px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+h3{font-size:17px;margin-top:20px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;margin:0 0 14px 18px;font-size:13px;font-family:sans-serif}
+.infobox caption{background:#c8d8e8;font-weight:bold;padding:6px;text-align:center}
+.infobox th{text-align:left;padding:4px 8px;background:#eaf0f6;vertical-align:top;width:38%}
+.infobox td{padding:4px 8px}
+.hero{display:block;max-width:420px;width:100%;border:1px solid #c8ccd1;background:#eef2f5;padding:6px;margin:10px 0}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.eq{background:#f8f9fa;border:1px solid #eaecf0;padding:10px 16px;text-align:center;font-size:17px;margin:14px 0}
+.small{font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="topbar">From Wikipedia, the free encyclopedia</div>
+<div class="content">
+<h1>Bayesian inference</h1>
+<img class="hero" src="images/Bayesian_inference.png" alt="Diagram showing a prior distribution updated by data into a posterior distribution">
+<p><b>Bayesian inference</b> is a method of <a href="../Statistical_inference/index.html">statistical inference</a> in which <a href="../Bayes_theorem/index.html">Bayes' theorem</a> is used to update the probability for a hypothesis as more evidence or information becomes available. It is a central technique in <a href="../Bayesian_statistics/index.html">Bayesian statistics</a>, and underlies applications ranging from scientific reasoning and medical diagnosis to machine learning and decision analysis.</p>
+<h2>Bayes' theorem</h2>
+<p>Bayes' theorem describes the probability of an event, based on prior knowledge of conditions related to the event. For a hypothesis <i>H</i> and evidence <i>E</i>:</p>
+<div class="eq">P(H | E) = P(E | H) · P(H) / P(E)</div>
+<p>Here P(H) is the <i>prior probability</i> of the hypothesis before seeing the evidence; P(E | H) is the <i>likelihood</i> of the evidence given the hypothesis; P(E) is the marginal probability of the evidence, acting as a normalising constant; and P(H | E) is the <i>posterior probability</i> of the hypothesis after taking the evidence into account. The posterior can then serve as the prior for the next round of inference — learning is sequential.</p>
+<h2>Formal description</h2>
+<h3>Statistical models</h3>
+<p>In Bayesian inference, unknown quantities — model parameters, missing data, or future observations — are treated as random variables with probability distributions. Given a parametric model with parameter θ, data <i>x</i>, a likelihood function L(θ | x) and a prior distribution p(θ), the posterior distribution is</p>
+<div class="eq">p(θ | x) = L(θ | x) · p(θ) / p(x)</div>
+<p>Predictions about future data are made with the <i>posterior predictive distribution</i>, obtained by integrating the likelihood over the posterior. Point estimates are commonly taken as the posterior mean, median, or the maximum a posteriori (MAP) estimate, and uncertainty is summarised with credible intervals — regions containing a specified mass of posterior probability.</p>
+<h3>Priors</h3>
+<p>The choice of prior is a distinctive and sometimes controversial feature of the Bayesian approach. <i>Informative priors</i> encode substantive knowledge; <i>weakly informative</i> and <i>non-informative</i> priors (such as Jeffreys priors) aim to let the data dominate. <i>Conjugate priors</i> — such as the beta distribution paired with the binomial likelihood — yield posteriors of the same family and closed-form updates. Empirical Bayes methods estimate the prior from the data itself.</p>
+<h2>Computation</h2>
+<p>Because the normalising constant p(x) involves a high-dimensional integral, exact Bayesian inference is often intractable. Modern practice relies on approximation: Laplace approximations, variational inference, and especially Markov chain Monte Carlo (MCMC) methods such as the Metropolis–Hastings algorithm, Gibbs sampling, and Hamiltonian Monte Carlo, implemented in software such as Stan, PyMC, and JAGS.</p>
+<h2>History</h2>
+<p>The theorem is named for Thomas Bayes (1701–1761), whose work was published posthumously in 1763 by Richard Price. Pierre-Simon Laplace independently developed and generalised the approach in the late 18th and early 19th centuries. Bayesian methods fell out of favour in the early 20th century as frequentist statistics — associated with Fisher, Neyman, and Pearson — came to dominate, then revived from the 1950s onward through the work of de Finetti, Savage, Jeffreys, and others, and became practical at scale with the MCMC computational revolution of the 1990s.</p>
+<h2>Applications</h2>
+<p>Bayesian inference is used in spam filtering, A/B testing, clinical trial design, phylogenetics, cosmology, robotics (Bayes filters for localisation), and as the theoretical basis of Bayesian networks, Gaussian processes, and Bayesian optimisation.</p>
+<p class="small">See also: <a href="../Bayes_theorem/index.html">Bayes' theorem</a> · <a href="../Bayesian_statistics/index.html">Bayesian statistics</a> · <a href="../Frequentist_inference/index.html">Frequentist inference</a> · <a href="../Markov_chain_Monte_Carlo/index.html">Markov chain Monte Carlo</a></p>
+</div>
+</body>
+</html>

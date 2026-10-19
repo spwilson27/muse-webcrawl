@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>BLS digital signature - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 16px 20px;border-collapse:collapse}
+.infobox th,.infobox td{border:1px solid #a2a9b1;padding:5px 8px;vertical-align:top}
+.infobox .hd{background:#b0c4de;text-align:center;font-size:15px}
+.hero{float:right;clear:right;width:280px;margin:0 0 16px 20px;text-align:center}
+.hero .ph{border:1px dashed #72777d;background:#eaecf0;padding:40px 10px;font-size:13px;color:#54595d}
+.hero figcaption{font-size:12px;color:#54595d;margin-top:4px}
+a{color:#0645ad;text-decoration:none}
+code{font-family:monospace;background:#f8f9fa}
+ul{line-height:1.6;font-size:15px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>BLS digital signature</h1>
+<p>The <b>BLS digital signature</b> scheme is a cryptographic signature scheme described by Dan Boneh, Ben Lynn, and Hovav Shacham that allows a user to verify that a signer is authentic. The scheme uses a bilinear pairing, in particular the Weil pairing on elliptic curves, and supports efficient <b>signature aggregation</b>: many signatures generated under many different public keys for many different messages can be aggregated into a single short signature.</p>
+<table class="infobox">
+<tr><th class="hd" colspan="2">BLS signature scheme</th></tr>
+<tr><th>Designers</th><td>Dan Boneh, Ben Lynn, Hovav Shacham</td></tr>
+<tr><th>First published</th><td>2001 (paper), 2004 (journal version)</td></tr>
+<tr><th>Based on</th><td>Bilinear pairings on elliptic curves; Gap Diffie–Hellman groups</td></tr>
+<tr><th>Signature size</th><td>One group element (about half the size of a DSA signature for the same security level)</td></tr>
+<tr><th>Key features</th><td>Deterministic, aggregatable, threshold-friendly</td></tr>
+</table>
+<figure class="hero"><div class="ph">[Image placeholder: diagram of BLS signing and verification using a bilinear pairing]</div><figcaption>Schematic of the BLS signature scheme</figcaption></figure>
+<h2>Properties</h2>
+<p>BLS signatures are <b>short</b>: a signature consists of a single element of an elliptic curve group, roughly 160–256 bits depending on the security parameter. They are <b>deterministic</b>, requiring no randomness at signing time, which removes a common failure mode of schemes such as ECDSA. Because the verification equation is multiplicative, signatures can be <b>aggregated</b>: given signatures σ<sub>1</sub>, …, σ<sub>n</sub>, anyone can compute the product σ = σ<sub>1</sub>···σ<sub>n</sub>, which verifies against all the corresponding public keys and messages at once with only two pairing computations.</p>
+<h2>Scheme</h2>
+<p>Let <i>e</i> : G<sub>1</sub> × G<sub>2</sub> → G<sub>T</sub> be a bilinear pairing and <i>g</i> a generator of G<sub>2</sub>. A private key is a random scalar <i>x</i>; the public key is <i>v</i> = <i>g<sup>x</sup></i>. To sign a message <i>m</i>, the signer hashes it to a point <i>H(m)</i> in G<sub>1</sub> and outputs σ = <i>H(m)<sup>x</sup></i>. Verification checks that <i>e</i>(σ, <i>g</i>) = <i>e</i>(<i>H(m)</i>, <i>v</i>).</p>
+<h2>Applications</h2>
+<p>BLS signatures are used in blockchain systems, most notably the Ethereum consensus layer, where thousands of validator attestations are aggregated into a single signature each block. They also underpin threshold signature schemes used in distributed randomness beacons such as drand, because partial signatures from many parties combine into one valid signature.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Digital_signature/index.html">Digital signature</a></li>
+<li><a href="../Elliptic-curve_cryptography/index.html">Elliptic-curve cryptography</a></li>
+<li><a href="../Schnorr_signature/index.html">Schnorr signature</a></li>
+</ul>
+</div>
+</body>
+</html>

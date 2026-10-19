@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tar (computing) - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0 auto;max-width:960px;padding:0 20px;color:#202122;background:#fff}
+h1{font-family:sans-serif;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:sans-serif;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;width:280px;font-size:90%;font-family:sans-serif}
+.infobox th{background:#b0c4de;padding:4px;text-align:center}
+.infobox td{padding:3px 6px;vertical-align:top}
+figure.hero{float:right;border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;margin:0 0 12px 16px;width:280px;text-align:center;font-size:85%;font-family:sans-serif;clear:right}
+figure.hero img{width:100%;height:160px;background:#eaecf0;display:block}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:85%;color:#54595d}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+pre{font-family:monospace;background:#f8f9fa;padding:8px;overflow:auto}
+</style>
+</head>
+<body>
+<h1>Tar (computing)</h1>
+<p>In computing, <b>tar</b> (from <i>tape archive</i>) is a file format and the name of a utility used to collect many files into a single archive file, often called a <b>tarball</b>, for distribution or backup, while preserving file metadata such as permissions, ownership, and timestamps. Tar itself does not compress the archive; it is usually combined with a compression program such as gzip (.tar.gz, .tgz), bzip2 (.tar.bz2), or xz (.tar.xz).</p>
+<figure class="hero"><img src="images/tar_computing.png" alt="Placeholder image: A magnetic tape drive of the era tar was designed for"><figcaption>Image placeholder — tar was designed for sequential tape storage.</figcaption></figure>
+<table class="infobox">
+<tr><th colspan="2">tar</th></tr>
+<tr><td><b>Initial release</b></td><td>January 1979 (Version 7 Unix)</td></tr>
+<tr><td><b>Type</b></td><td>Archive file format / utility</td></tr>
+<tr><td><b>Extensions</b></td><td>.tar, .tar.gz, .tgz, .tar.bz2, .tar.xz</td></tr>
+<tr><td><b>Standard</b></td><td>POSIX.1-1988 (ustar); pax extensions (POSIX.1-2001)</td></tr>
+<tr><td><b>Implementations</b></td><td>GNU tar, BSD tar (libarchive), star</td></tr>
+</table>
+<h2>Format</h2>
+<p>A tar archive consists of a series of 512-byte records. Each file is preceded by a header block containing its name (100 bytes), mode, owner and group IDs, size, modification time, a checksum, and a type flag; the file's data follows, padded to a multiple of 512 bytes. The archive ends with at least two zero-filled blocks. The POSIX "ustar" extension added fields for longer paths (via a prefix field) and user/group names, and the later "pax" format added extended headers capable of storing arbitrary metadata and unlimited file sizes and name lengths.</p>
+<h2>Usage</h2>
+<p>Typical commands include:</p>
+<pre>tar -cf archive.tar files/    # create
+tar -xzf archive.tar.gz        # extract a gzipped archive
+tar -tvf archive.tar           # list contents verbosely</pre>
+<p>Tar remains ubiquitous in Unix-like systems: source-code releases, package formats (Debian .deb, Slackware packages, Docker image layers), and backup workflows all build on it. Because it was designed for sequential tape media, tar has no central index — listing or extracting a file near the end requires reading through preceding data — and files are typically accessed as a stream.</p>
+<h2>History</h2>
+<p>Tar first appeared in Version 7 Unix in 1979. Successive format variants (notably GNU tar's) added features and incompatibilities that the POSIX ustar (1988) and pax (2001) standards sought to reconcile. The phrase "tarball" is now generic for distributed archive bundles, and the idiom "tar and feathers" jokes aside, the command's terse flags (<code>-cvf</code>, <code>-xvf</code>) are among the most memorised in Unix culture.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Gzip/">gzip</a></li>
+<li><a href="../Archive_file/">Archive file</a></li>
+<li><a href="../Cpio/">cpio</a></li>
+<li><a href="../Pax_(command)/">pax</a></li>
+</ul>
+<p class="small">Recreated from memory for the muse-webcrawl project.</p>
+</body>
+</html>

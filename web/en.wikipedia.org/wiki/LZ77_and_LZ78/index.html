@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LZ77 and LZ78 - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#fff;color:#202122}
+#content{max-width:960px;margin:0 auto;padding:1em 1.5em 3em}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-bottom:.25em}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a7d7f9;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+.hero{display:block;max-width:320px;margin:1em auto;border:1px solid #a2a9b1;padding:4px;background:#f8f9fa;text-align:center;font-size:.8em;color:#54595d}
+.catlinks{border:1px solid #a2a9b1;background:#f8f9fa;padding:.4em;font-size:.85em;margin-top:2em}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>LZ77 and LZ78</h1>
+<p><b>LZ77</b> and <b>LZ78</b> are the two lossless data compression algorithms published in papers by Abraham Lempel and Jacob Ziv in 1977 and 1978. They are also known as <b>LZ1</b> and <b>LZ2</b> respectively. These two algorithms form the basis for many variations including LZW, LZSS, LZMA, and others. Besides their academic influence, these algorithms formed the basis of several ubiquitous compression schemes, including GIF and the DEFLATE algorithm used in PNG and ZIP.</p>
+<div class="hero"><img src="images/LZ77_and_LZ78.png" alt="Sliding-window dictionary compression diagram"><br>LZ77's sliding-window principle</div>
+<h2>LZ77</h2>
+<p>LZ77 is a dictionary coder that replaces repeated occurrences of data with references to an earlier copy within a sliding window of already-encoded text. Each output is a triple (offset, length, next character): copy <i>length</i> bytes starting <i>offset</i> bytes back, then output the given literal. Variants of LZ77 dominate practical compression: LZSS substitutes a flag to distinguish literals from references, and DEFLATE (used in ZIP, gzip, and PNG) combines LZ77 with Huffman coding.</p>
+<h2>LZ78</h2>
+<p>LZ78 instead builds an explicit dictionary of phrases encountered in the input, outputting (dictionary index, new character) pairs. Its best-known descendant is LZW (Lempel–Ziv–Welch, 1984), which powers the GIF image format and the historical Unix <i>compress</i> utility; the LZW patent held by Unisys until 2003–2004 famously constrained GIF software. Other relatives include LZAP and the Lempel–Ziv parsing schemes underlying LZMA.</p>
+<h2>See also</h2>
+<p><a href="../Lempel–Ziv–Welch/index.html">Lempel–Ziv–Welch</a> &middot; <a href="../Deflate/index.html">Deflate</a> &middot; <a href="../LZMA/index.html">LZMA</a> &middot; <a href="../Data_compression/index.html">Data compression</a></p>
+<div class="catlinks">Categories: Lossless compression algorithms &middot; Data compression</div>
+</div>
+</body>
+</html>

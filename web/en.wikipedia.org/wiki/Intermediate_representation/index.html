@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Intermediate representation - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:0}
+h2{font-family:'Linux Libertine',Georgia,serif;font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+h3{font-size:17px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 12px 16px;border-collapse:collapse}
+.infobox th{background:#b0c4de;padding:6px;text-align:center;font-size:15px}
+.infobox td{padding:4px 8px;border-top:1px solid #eaecf0;vertical-align:top}
+.infobox td:first-child{font-weight:bold;width:38%}
+.hero{display:block;margin:12px auto;max-width:100%}
+.fig{text-align:center;font-size:13px;color:#54595d;margin:8px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{line-height:1.6}
+p{line-height:1.65}
+.small{font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Intermediate representation</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+
+<table class="infobox">
+<tr><th colspan="2">Intermediate representation</th></tr>
+<tr><td>Used in</td><td>Compilers, virtual machines, program analysis</td></tr>
+<tr><td>Forms</td><td>Graph-based (AST, CFG), linear (three-address code), stack-based (bytecode)</td></tr>
+<tr><td>Examples</td><td>LLVM IR, Java bytecode, CIL, WebAssembly, GIMPLE</td></tr>
+</table>
+
+<figure class="fig">
+<img class="hero" src="images/intermediate-representation.png" alt="Compiler pipeline diagram: source code to IR to optimized IR to machine code">
+<figcaption>A compiler's front end, middle end, and back end are connected by intermediate representations.</figcaption>
+</figure>
+
+<p>An <b>intermediate representation</b> (<b>IR</b>) is the data structure or code used internally by a <a href="../Compiler/index.html">compiler</a> or virtual machine to represent source code. An IR is designed to be conducive to further processing, such as optimization and translation. A "good" IR must be able to represent the source code without loss of information and be independent of any particular source or target language.</p>
+
+<p>The use of an IR decouples the front end of a compiler (which parses a particular source language) from the back end (which generates code for a particular machine), so that M front ends and N back ends require only M + N components rather than M × N. Most modern compilers use several IRs at different levels of abstraction, lowering progressively toward machine code.</p>
+
+<h2>Classification</h2>
+<ul>
+<li><b>Graphical IRs</b> — abstract syntax trees, control-flow graphs, and data-flow graphs; suited to structural analysis.</li>
+<li><b>Linear IRs</b> — sequences of simple instructions such as three-address code; close to assembly language but machine-independent, using virtual registers.</li>
+<li><b>Hybrid forms</b> — notably static single assignment (SSA) form, which combines a control-flow graph with the rule that each variable is assigned exactly once, making many optimizations straightforward.</li>
+</ul>
+
+<h2>Well-known IRs</h2>
+<p><b>LLVM IR</b> is an SSA-based, typed assembly-like language at the heart of the LLVM project and the Clang compiler, designed for lifetime-long program analysis and transformation. <b>Java bytecode</b> and the <b>Common Intermediate Language</b> (CIL) of the .NET platform are stack-based IRs verified and executed by virtual machines. <b>WebAssembly</b> extends the idea to a portable compilation target for the web. GCC internally uses GENERIC and GIMPLE trees, while CPython compiles source to bytecode for its interpreter loop.</p>
+
+<h2>Uses beyond compilation</h2>
+<p>IRs are also central to static program analysis, binary translation, decompilation, and hardware synthesis, where register-transfer level descriptions serve as an intermediate step between behavioral specifications and logic gates.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Compiler/index.html">Compiler</a></li>
+<li>Bytecode</li>
+<li>Static single assignment form</li>
+<li>Abstract syntax tree</li>
+</ul>
+<p class="small">Categories: Compiler construction | Intermediate representations</p>
+</div>
+</body>
+</html>

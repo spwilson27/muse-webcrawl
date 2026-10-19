@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>YUV - Wikipedia</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{font-family:'Linux Libertine','Georgia','Times',serif;margin:0;background:#f8f9fa;color:#202122}
+#mw{max-width:1200px;margin:0 auto;background:#fff;display:flex;min-height:100vh}
+#sidebar{width:176px;flex:none;background:#f8f9fa;border-right:1px solid #a2a9b1;padding:12px;font-size:.85em}
+#content{flex:1;padding:24px 32px;line-height:1.65}
+h1{font-size:2.1em;font-weight:400;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{font-size:1.5em;font-weight:400;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:1.6em}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:.82em;margin:0 0 12px 14px;line-height:1.5}
+.infobox th{background:#d9e2ec;text-align:center;padding:6px;font-size:1.05em}
+.infobox td,.infobox th{padding:4px 8px;vertical-align:top}
+.eq{text-align:center;font-size:1.05em;margin:14px 0;font-family:monospace}
+.toc{border:1px solid #a2a9b1;background:#f8f9fa;padding:10px 14px;display:inline-block;font-size:.9em;margin:10px 0}
+.catlinks{border-top:1px solid #a2a9b1;margin-top:30px;padding-top:8px;font-size:.85em;color:#54595d}
+#footer{background:#f8f9fa;border-top:1px solid #a2a9b1;padding:12px;font-size:.8em;color:#54595d;text-align:center}
+.hero{margin:12px 0}
+.hero img{max-width:300px;border:1px solid #a2a9b1;background:#eee;display:block}
+.hero .cap{font-size:.8em;color:#54595d}
+</style>
+</head>
+<body>
+<div id="mw">
+<nav id="sidebar">
+<p><strong>Wikipedia</strong><br>The Free Encyclopedia</p>
+<ul style="list-style:none;padding:0">
+<li><a href="../../Main_Page/index.html">Main page</a></li>
+<li><a href="../../Contents/index.html">Contents</a></li>
+<li><a href="../../Featured_content/index.html">Featured content</a></li>
+<li><a href="../../Random/index.html">Random article</a></li>
+</ul>
+</nav>
+<main id="content">
+<h1>YUV</h1>
+<table class="infobox">
+<tr><th colspan="2">YUV</th></tr>
+<tr><td><strong>Components</strong></td><td>Y (luma); U, V (chrominance)</td></tr>
+<tr><td><strong>Developed for</strong></td><td>PAL and analog television</td></tr>
+<tr><td><strong>Related models</strong></td><td>YCbCr (digital), YIQ (NTSC)</td></tr>
+<tr><td><strong>Uses</strong></td><td>Analog TV, video compression, image processing</td></tr>
+</table>
+<div class="hero"><img src="images/YUV.png" alt="Placeholder: sample image separated into Y, U and V component planes"><div class="cap">Placeholder of Y, U and V planes of an image.</div></div>
+<p><strong>YUV</strong> is a <a href="../Color_model/index.html">color model</a> typically used as part of a color image pipeline. It encodes a color image or video taking human perception into account, allowing reduced bandwidth for chrominance components. The Y component represents brightness (<a href="../Luma_(video)/index.html">luma</a>), while the U and V components represent color (chrominance), specifically the blue-difference and red-difference signals. YUV was developed for the <a href="../PAL/index.html">PAL</a> analog television system and closely parallels NTSC's <a href="../YIQ/index.html">YIQ</a>.</p>
+<div class="toc"><strong>Contents</strong><ol>
+<li>Rationale</li><li>Conversion from RGB</li><li>YUV and YCbCr</li><li>Pixel formats</li><li>See also</li></ol></div>
+<h2>Rationale</h2>
+<p>Human vision has much finer spatial acuity for brightness than for color. YUV exploits this by devoting most of the signal to the Y channel and subsampling or compressing the chroma channels, as in <a href="../Chroma_subsampling/index.html">chroma subsampling</a> schemes such as 4:2:2 and 4:2:0. When color television was introduced, transmitting color as luma + chroma also kept the signal backward-compatible with black-and-white sets, which simply displayed Y.</p>
+<h2>Conversion from RGB</h2>
+<p>For standard-definition video (BT.601) the luma is a weighted sum of gamma-corrected RGB:</p>
+<p class="eq">Y = 0.299R + 0.587G + 0.114B<br>U = 0.492(B &minus; Y)<br>V = 0.877(R &minus; Y)</p>
+<p>The precise coefficients differ between standards; high-definition video (BT.709) uses weights favouring green somewhat differently.</p>
+<h2>YUV and YCbCr</h2>
+<p><a href="../YCbCr/index.html">YCbCr</a> is the digital counterpart of YUV, with scaled and offset components suitable for digital representation (JPEG, MPEG, H.264). In informal video-engineering usage the two terms are often used interchangeably, though strictly YUV refers to the analog formulation.</p>
+<h2>Pixel formats</h2>
+<p>Common YUV pixel formats in software include YUY2 (packed 4:2:2), I420/YV12 (planar 4:2:0), and NV12 (semi-planar 4:2:0), widely used as the internal format of hardware video decoders and most digital video codecs.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../YCbCr/index.html">YCbCr</a></li>
+<li><a href="../Chroma_subsampling/index.html">Chroma subsampling</a></li>
+<li><a href="../PAL/index.html">PAL</a></li>
+<li><a href="../RGB_color_model/index.html">RGB color model</a></li>
+</ul>
+<div class="catlinks">Categories: <a href="#">Color space</a> | <a href="#">Television technology</a> | <a href="#">Film and video technology</a></div>
+</main>
+</div>
+<div id="footer">This page was recreated from memory for the muse-webcrawl project. Text is available under the Creative Commons Attribution-ShareAlike License.</div>
+</body>
+</html>

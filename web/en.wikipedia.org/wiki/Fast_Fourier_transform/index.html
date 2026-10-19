@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fast Fourier transform - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;margin:0;background:#f8f9fa;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-size:1.9em}
+h2{font-family:Georgia,'Times New Roman',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.4em}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px 12px;margin:0 0 12px 16px;font-size:0.88em}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+.hero{display:block;max-width:100%;background:#eaecf0;border:1px dashed #72777d;color:#54595d;text-align:center;padding:28px 8px;margin:12px 0;font-style:italic}
+a{color:#3366cc;text-decoration:none}a:hover{text-decoration:underline}
+.small{font-size:0.85em;color:#54595d}
+code{font-family:monospace;background:#f8f9fa}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Fast Fourier transform</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/fft.png" alt="Butterfly diagram of a radix-2 fast Fourier transform">
+<p>A <b>fast Fourier transform</b> (<b>FFT</b>) is an algorithm that computes the discrete Fourier transform (DFT) of a sequence, or its inverse. Whereas evaluating the DFT directly takes O(n²) arithmetic operations, an FFT reduces the cost to O(n log n), making spectral analysis of large signals practical. The FFT is one of the most important numerical algorithms of the twentieth century.</p>
+<h2>The Cooley–Tukey algorithm</h2>
+<p>The most common FFT is the Cooley–Tukey algorithm, popularized by James Cooley and John Tukey in 1965, though Carl Friedrich Gauss had derived an equivalent method in 1805. It is a divide-and-conquer algorithm that recursively breaks a DFT of size n = n<sub>1</sub>n<sub>2</sub> into smaller DFTs. In the radix-2 decimation-in-time variant, the transform of a sequence of length n is split into the transforms of its even-indexed and odd-indexed elements, which are combined using complex roots of unity called twiddle factors; the basic combination step is drawn as a "butterfly."</p>
+<h2>Other algorithms</h2>
+<p>Variants include the prime-factor algorithm for sizes with coprime factors, Bruun's algorithm, Rader's algorithm for prime sizes, and the chirp Z transform. Libraries such as FFTW ("Fastest Fourier Transform in the West") automatically select among strategies for a given size and hardware.</p>
+<h2>Applications</h2>
+<p>FFTs are used in digital signal processing, audio and image compression (as in JPEG and MP3-related transforms), solving partial differential equations, fast convolution and correlation, large-integer multiplication, spectrum analysis, OFDM modulation in Wi-Fi and LTE, and medical imaging. The speed of the FFT made real-time spectral processing feasible on modest hardware and underlies much of modern communications.</p>
+<h2>See also</h2>
+<p><a href="../Discrete_Fourier_transform/index.html">Discrete Fourier transform</a> · <a href="../Fourier_transform/index.html">Fourier transform</a> · <a href="../Cooley–Tukey_FFT_algorithm/index.html">Cooley–Tukey FFT algorithm</a> · <a href="../FFTW/index.html">FFTW</a></p>
+</div>
+</body>
+</html>

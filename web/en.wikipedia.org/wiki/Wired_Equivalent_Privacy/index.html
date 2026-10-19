@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wired Equivalent Privacy - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:0}
+h2{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 16px 16px;padding:8px}
+.infobox table{border-collapse:collapse;width:100%}
+.infobox th{text-align:left;background:#b0c4de;padding:4px}
+.infobox td{padding:4px;border-top:1px solid #e0e0e0}
+.infobox img{width:100%}
+a{color:#3366cc;text-decoration:none}a:hover{text-decoration:underline}
+.hero{width:100%;border:1px solid #ccc}
+.ref{font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Wired Equivalent Privacy</h1>
+<p><b>Wired Equivalent Privacy</b> (<b>WEP</b>) is a deprecated security algorithm for IEEE 802.11 wireless networks. Introduced as part of the original 802.11 standard in 1997, it was intended to provide data confidentiality comparable to that of a traditional wired network. WEP was found to have serious design flaws, and in 2004 the IEEE formally deprecated it in favour of Wi-Fi Protected Access (WPA and WPA2).</p>
+<img class="hero" src="images/Wired_Equivalent_Privacy.png" alt="Wired Equivalent Privacy placeholder image">
+<div class="infobox">
+<table>
+<tr><th colspan="2">Wired Equivalent Privacy (WEP)</th></tr>
+<tr><td colspan="2"><img src="images/Wired_Equivalent_Privacy.png" alt="WEP diagram"></td></tr>
+<tr><td><b>Introduced</b></td><td>1997 (IEEE 802.11)</td></tr>
+<tr><td><b>Cipher</b></td><td>RC4 stream cipher</td></tr>
+<tr><td><b>Key sizes</b></td><td>64-bit or 128-bit (40/104-bit secret key + 24-bit IV)</td></tr>
+<tr><td><b>Status</b></td><td>Deprecated (2004); broken</td></tr>
+<tr><td><b>Successors</b></td><td>WPA, WPA2, WPA3</td></tr>
+</table>
+</div>
+<h2>How it works</h2>
+<p>WEP encrypts each frame with the RC4 stream cipher using a concatenation of a shared secret key and a 24-bit initialisation vector (IV), and appends a CRC-32 checksum as an integrity check value. Two key lengths were common: "64-bit WEP" (40-bit key) and "128-bit WEP" (104-bit key), the shorter length resulting from US export restrictions of the era.</p>
+<h2>Flaws</h2>
+<p>The 24-bit IV is so short that it repeats after only a few thousand packets, and RC4 key scheduling weaknesses — exposed by Fluhrer, Mantin and Shamir in 2001 — let attackers recover the key passively after collecting enough traffic. The linear CRC-32 is not a cryptographic integrity check, so packets can be modified undetected. Tools such as Aircrack-ng can crack a WEP key in minutes, and WEP should never be used where any alternative exists.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Wi-Fi_Protected_Access/index.html">Wi-Fi Protected Access</a></li>
+<li><a href="../IEEE_802.11/index.html">IEEE 802.11</a></li>
+<li><a href="../RC4/index.html">RC4</a></li>
+</ul>
+<p class="ref">Recreated from memory as part of the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

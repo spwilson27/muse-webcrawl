@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nyquist–Shannon sampling theorem - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#fff;color:#202122;margin:0;padding:0 1.5em;line-height:1.6}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:1.9em;margin-bottom:0.25em}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:1.4em;margin-top:1em}
+h3{font-size:1.15em;margin-top:0.8em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.formula{background:#f8f9fa;border:1px solid #a2a9b1;padding:0.5em 1em;text-align:center;font-size:1.1em;margin:0.8em auto;max-width:480px}
+.hero{float:right;clear:right;margin:0.3em 0 0.8em 1em;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:6px;text-align:center;font-size:0.85em;color:#54595d}
+.hero .ph{width:100%;height:160px;background:#eaecf0;display:flex;align-items:center;justify-content:center;color:#72777d;border:1px dashed #a2a9b1}
+ul{margin:0.3em 0 0.3em 1.5em;padding:0}
+.refs{font-size:0.85em}
+</style>
+</head>
+<body>
+<h1>Nyquist–Shannon sampling theorem</h1>
+<div class="hero"><div class="ph">Image placeholder: Sampling and reconstruction of a bandlimited signal</div>Samples of a continuous signal, from which the original can be reconstructed</div>
+<p>The <b>Nyquist–Shannon sampling theorem</b> is an essential principle for digital signal processing linking the frequency range of a signal and the sample rate required to avoid a type of distortion called <a href="../Aliasing/index.html">aliasing</a>. The theorem states that the sample rate must be at least twice the bandwidth of the signal to avoid aliasing.</p>
+<p>In practice, due to the possible accumulation of errors and timing jitter, a somewhat larger sample rate is often applied. The sampling theorem was implied by the work of Harry Nyquist in 1928 and rigorously proven by Claude Shannon in 1949; related results were independently developed by Vladimir Kotelnikov in the Soviet Union.</p>
+<h2>Statement</h2>
+<p>If a function <i>x</i>(<i>t</i>) contains no frequencies higher than <i>B</i> hertz, it is completely determined by giving its ordinates at a series of points spaced 1/(2<i>B</i>) seconds apart. The minimum sampling rate, 2<i>B</i>, is called the <b>Nyquist rate</b> for a signal of bandwidth <i>B</i>; half of it, <i>B</i>, is the <a href="../Nyquist_frequency/index.html">Nyquist frequency</a>.</p>
+<div class="formula"><i>f<sub>s</sub></i> &gt; 2<i>B</i></div>
+<h2>Reconstruction</h2>
+<p>The original bandlimited signal can be reconstructed by interpolating its samples with sinc functions (the Whittaker–Shannon interpolation formula), in which each sample contributes a sinc pulse scaled by the sample value, and the sum reproduces the continuous waveform exactly in the ideal case.</p>
+<h2>Aliasing</h2>
+<p>If a signal is sampled below the Nyquist rate, frequency components above half the sampling rate "fold back" into the measured band and appear as spurious lower frequencies — the aliasing phenomenon. To prevent this, signals are passed through an anti-aliasing low-pass filter before sampling. A familiar example is the 44.1 kHz sampling rate of compact discs, chosen to exceed twice the ~20 kHz limit of human hearing.</p>
+<h2>History</h2>
+<p>Harry Nyquist's 1928 paper "Certain topics in telegraph transmission theory" established the sampling criterion in the context of telegraphy. Claude Shannon's 1949 paper "Communication in the presence of noise" gave the rigorous form central to information theory. E. T. Whittaker and others had anticipated aspects of the interpolation result earlier.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Claude_Shannon/index.html">Claude Shannon</a></li>
+<li><a href="../Harry_Nyquist/index.html">Harry Nyquist</a></li>
+<li><a href="../Aliasing/index.html">Aliasing</a></li>
+<li><a href="../Nyquist_frequency/index.html">Nyquist frequency</a></li>
+<li><a href="../Digital_signal_processing/index.html">Digital signal processing</a></li>
+</ul>
+<p class="refs"><i>This article is a recreation from memory for the muse-webcrawl project.</i></p>
+</body>
+</html>

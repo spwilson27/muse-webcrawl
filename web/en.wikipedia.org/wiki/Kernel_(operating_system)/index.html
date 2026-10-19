@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kernel (operating system) - Wikipedia</title>
+<style>
+body{font-family:sans-serif;line-height:1.6;margin:0 auto;max-width:960px;padding:16px;color:#202122;background:#fff}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:0.9em;width:280px}
+.infobox caption{font-weight:bold;text-align:center}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+figure{text-align:center;margin:1em auto}
+footer{font-size:0.85em;color:#54595d;border-top:1px solid #a2a9b1;margin-top:2em;padding-top:8px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Kernel (operating system)</h1>
+<table class="infobox">
+<caption>Kernel</caption>
+<tr><th>Type</th><td>Core component of an operating system</td></tr>
+<tr><th>Architectures</th><td>Monolithic, microkernel, hybrid, exokernel</td></tr>
+<tr><th>Examples</th><td>Linux kernel, Windows NT kernel, XNU (macOS), Mach</td></tr>
+</table>
+<figure><img src="images/Kernel_(operating_system).png" alt="Diagram showing the kernel mediating between applications and computer hardware"></figure>
+<p>The <b>kernel</b> is a computer program at the core of a computer's <a href="../Operating_system/index.html">operating system</a> and generally has complete control over everything in the system. It is the portion of the operating system code that is always resident in memory, and it facilitates interactions between hardware and software components.</p>
+<h2>Functions</h2>
+<p>The kernel manages the system's resources: it schedules processes and threads on the CPU, manages memory (including virtual memory and paging), handles interrupts and device drivers, and provides system calls through which user programs request services such as file access, networking and process creation. It enforces the separation between privileged kernel space and user space, protecting stability and security.</p>
+<h2>Designs</h2>
+<ul>
+<li><b>Monolithic kernels</b> run all operating system services in kernel space (e.g. Linux, traditional Unix), offering performance at the cost of a large trusted codebase.</li>
+<li><b>Microkernels</b> (e.g. Minix, Mach, L4) run only basic functions—scheduling, memory management and inter-process communication—in the kernel, with drivers and services in user space, improving modularity and fault isolation.</li>
+<li><b>Hybrid kernels</b> (e.g. Windows NT, XNU in macOS) combine aspects of both.</li>
+<li><b>Exokernels</b> expose hardware resources almost directly to applications.</li>
+</ul>
+<h2>Criticality</h2>
+<p>Because the kernel runs with full privileges, a bug can crash the whole system (a "kernel panic" on Unix-like systems, or the "Blue Screen of Death" historically on Windows). Modern development focuses on modular loadable components, verified microkernels such as seL4, and moving drivers out of the privileged core.</p>
+<footer>Recreated from memory for the muse-webcrawl project.</footer>
+</body>
+</html>

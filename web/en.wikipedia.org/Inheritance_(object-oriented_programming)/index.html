@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Inheritance (object-oriented programming) - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;padding:0 1.2em 2em;color:#202122;background:#fff;line-height:1.55}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;font-weight:normal}
+h2{font-size:1.35em;border-bottom:1px solid #a2a9b1;padding-bottom:.1em;font-weight:normal;margin-top:1.2em}
+h3{font-size:1.1em;margin-top:1em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+pre{background:#f8f9fa;border:1px solid #a2a9b1;padding:.6em;font-size:.85em;overflow:auto}
+.hero{float:right;width:270px;margin:0 0 1em 1em;text-align:center;font-size:.8em;color:#54595d}
+.hero img{width:100%;border:1px solid #a2a9b1;background:#eaecf0;min-height:150px}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Inheritance (object-oriented programming)</h1>
+<div class="hero"><img src="images/inheritance-oop.png" alt="Placeholder image: class hierarchy diagram"><br>A class hierarchy: subclasses inherit attributes and behaviour from a superclass.</div>
+<p>In <a href="../Object-oriented_programming/">object-oriented programming</a>, <b>inheritance</b> is the mechanism by which one class (the subclass or derived class) acquires the properties and behaviours of another class (the superclass or base class). It supports code reuse and the modelling of "is-a" relationships: a <code>Car</code> subclass of <code>Vehicle</code> inherits wheels and a method for moving, and may override or extend them. Inheritance creates a class hierarchy and, together with polymorphism, allows programs to treat objects of subclasses as objects of their superclass.</p>
+<h2>Types of inheritance</h2>
+<p>In <b>single inheritance</b> a class derives from one base class, as in Java and C#. In <b>multiple inheritance</b>, supported by C++ and Python, a class may derive from several base classes, which introduces complications such as the "diamond problem", in which a feature is inherited along two paths. Languages resolve this in different ways; many modern languages instead allow a class to implement multiple <a href="../Interface_(computing)/">interfaces</a> while inheriting implementation from a single class.</p>
+<h2>Subclasses and overriding</h2>
+<p>A subclass inherits fields and methods, may add new ones, and may override inherited methods to specialise behaviour. Constructors are not inherited but are invoked in a chain. Access modifiers such as <code>public</code>, <code>protected</code> and <code>private</code> control what a subclass can see. Abstract classes and methods define behaviour that subclasses must supply.</p>
+<pre>class Vehicle {
+    int wheels;
+    void move() { ... }
+}
+
+class Car extends Vehicle {   // Car inherits from Vehicle
+    void move() { ... }       // overridden method
+}</pre>
+<h2>Criticism and alternatives</h2>
+<p>Deep inheritance hierarchies can be fragile: changes to a base class may break subclasses (the fragile base class problem), and inheritance couples classes tightly. A common design maxim, popularised by the book <i>Design Patterns</i> (1994), is to "favour composition over inheritance" — assembling behaviour from component objects instead. Prototype-based languages such as JavaScript achieve reuse through prototype chains rather than classes, and trait/mixin systems offer inheritance-like reuse without a strict hierarchy.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Object-oriented_programming/">Object-oriented programming</a></li>
+<li><a href="../Interface_(computing)/">Interface (computing)</a></li>
+<li><a href="../Polymorphism_(computer_science)/">Polymorphism</a></li>
+<li><a href="../Encapsulation_(computer_programming)/">Encapsulation</a></li>
+</ul>
+<p class="small">Recreated from memory for the muse-webcrawl project.</p>
+</body>
+</html>

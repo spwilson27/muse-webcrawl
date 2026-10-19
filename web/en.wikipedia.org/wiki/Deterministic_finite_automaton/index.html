@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Deterministic finite automaton - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;color:#202122;background:#fff}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:10px 20px}
+header .logo{font-size:22px;font-family:serif}
+nav.toc{background:#f8f9fa;border:1px solid #a2a9b1;padding:10px 15px;margin:15px 0;width:280px;font-size:14px}
+main{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 15px;width:250px;font-size:13px}
+.infobox th{background:#eaf3ff;text-align:center}
+.hero{display:block;margin:12px auto;max-width:420px;width:100%}
+figure{text-align:center;font-size:13px;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+footer{border-top:1px solid #a2a9b1;padding:12px 20px;font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<header><span class="logo">Wikipedia</span> — The Free Encyclopedia</header>
+<main>
+<h1>Deterministic finite automaton</h1>
+<table class="infobox">
+<tr><th colspan="2">Deterministic finite automaton</th></tr>
+<tr><td><b>Type</b></td><td>Finite-state machine</td></tr>
+<tr><td><b>Languages recognized</b></td><td>Regular languages</td></tr>
+<tr><td><b>Equivalent models</b></td><td>NFA, regular expressions</td></tr>
+</table>
+<figure>
+<img class="hero" src="images/dfa.png" alt="Placeholder image: a state transition diagram of a deterministic finite automaton">
+<figcaption>State diagram of a DFA: circles are states, arrows are transitions labeled by input symbols.</figcaption>
+</figure>
+<p>In the theory of computation, a branch of theoretical computer science, a <b>deterministic finite automaton</b> (<b>DFA</b>) — also known as deterministic finite acceptor (DFA), deterministic finite-state machine (DFSM), or deterministic finite-state automaton (DFSA) — is a finite-state machine that accepts or rejects a given string of symbols by running through a state sequence uniquely determined by the string.</p>
+<p><i>Deterministic</i> refers to the uniqueness of the computation: in each state, each possible input symbol has exactly one transition. DFAs recognize exactly the regular languages, and every nondeterministic finite automaton can be converted into an equivalent DFA by the powerset construction, at the cost of a possible exponential increase in states.</p>
+<nav class="toc"><b>Contents</b>
+<ol>
+<li>Formal definition</li>
+<li>Example</li>
+<li>Closure properties</li>
+<li>Minimization</li>
+<li>Applications</li>
+<li>See also</li>
+</ol></nav>
+<h2>Formal definition</h2>
+<p>A DFA is a 5-tuple (Q, Σ, δ, q<sub>0</sub>, F) consisting of a finite set of states Q; a finite set of input symbols Σ (the alphabet); a transition function δ : Q × Σ → Q; a start state q<sub>0</sub> ∈ Q; and a set of accepting states F ⊆ Q. The machine reads the input string symbol by symbol, following δ, and accepts exactly when it ends in a state of F. The language of the machine is the set of strings it accepts.</p>
+<h2>Example</h2>
+<p>A two-state DFA over the alphabet {0, 1} can accept the binary strings with an even number of 0s: the states record parity, each 0 flips the state, each 1 leaves it unchanged, and the start state (representing "even so far") is accepting.</p>
+<h2>Closure properties</h2>
+<p>The regular languages are closed under union, intersection, complement, concatenation, and Kleene star; each operation has a corresponding construction on DFAs (for complement, simply swapping accepting and non-accepting states). Emptiness and equivalence of DFAs are decidable, and equivalence is tested by minimizing both machines and comparing them.</p>
+<h2>Minimization</h2>
+<p>Every DFA has a unique minimal-state equivalent DFA (up to isomorphism), whose states correspond to the equivalence classes of the Myhill–Nerode relation. Hopcroft's algorithm computes it in O(n log n) time; Brzozowski's algorithm achieves minimization by reversing and determinizing twice.</p>
+<h2>Applications</h2>
+<p>DFAs underlie lexical analysis in compilers, regular-expression matching, protocol and circuit verification, text search, and the control logic of simple devices such as vending machines and traffic lights.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Nondeterministic_finite_automaton/index.html">Nondeterministic finite automaton</a></li>
+<li><a href="../Regular_language/index.html">Regular language</a></li>
+<li><a href="../DFA_minimization/index.html">DFA minimization</a></li>
+</ul>
+</main>
+<footer>From Wikipedia, the free encyclopedia — page recreated from memory for the muse-webcrawl project.</footer>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NaN - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;margin:0;background:#f8f9fa;color:#202122;line-height:1.6}
+.mw-body{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:0}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:90%}
+.infobox th{background:#b0c4de;text-align:center;padding:4px}
+.infobox td{padding:2px 4px;vertical-align:top}
+.infobox .iblabel{font-weight:bold;width:90px}
+img.hero{width:100%;height:auto;background:#eaecf0;border:1px solid #c8ccd1;display:block}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.toc{border:1px solid #a2a9b1;background:#f8f9fa;padding:8px 16px;display:inline-block;font-size:95%}
+.small{font-size:85%;color:#54595d}
+code{font-family:monospace;background:#f8f9fa;border:1px solid #eaecf0;padding:0 3px}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>NaN</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+
+<table class="infobox">
+<tr><th colspan="2">NaN</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/NaN.png" alt="NaN value displayed in a computation"></td></tr>
+<tr><td class="iblabel">Meaning</td><td>"Not a Number"</td></tr>
+<tr><td class="iblabel">Standard</td><td>IEEE 754 floating-point</td></tr>
+<tr><td class="iblabel">Introduced</td><td>1985 (IEEE 754-1985)</td></tr>
+</table>
+
+<p>In computing, <b>NaN</b> (/næn/), standing for <b>Not a Number</b>, is a particular value of a numeric data type (often a floating-point number) used to represent an undefined or unrepresentable value, especially in floating-point arithmetic. Systematic use of NaNs was introduced by the IEEE 754 floating-point standard in 1985, along with the representation of other non-finite quantities such as infinities.</p>
+
+<div class="toc"><b>Contents</b>
+<ul>
+<li>1 Floating point</li>
+<li>2 Types of NaN</li>
+<li>3 Operations producing NaN</li>
+<li>4 Comparisons and testing</li>
+<li>5 Encoding</li>
+</ul></div>
+
+<h2>Floating point</h2>
+<p>NaNs are produced when an arithmetic operation yields a result that has no meaningful numeric value. In the IEEE 754 standard, a NaN is encoded with the exponent field filled with ones (like infinity) and a non-zero significand (unlike infinity). Two separate kinds are distinguished: <b>quiet NaNs</b> (qNaN), which propagate through most operations without raising an exception, and <b>signaling NaNs</b> (sNaN), which may raise an invalid-operation exception when consumed.</p>
+
+<h2>Types of NaN</h2>
+<p>A <b>quiet NaN</b> propagates through arithmetic, allowing a computation to continue and produce a NaN result, which is useful for deferred error handling. A <b>signaling NaN</b> is intended to trap when it participates in an operation, making it useful for detecting use of uninitialised memory or for filling variables with recognisable filler values. In practice, signaling NaNs are rarely used because many systems convert them to quiet NaNs during operations.</p>
+
+<h2>Operations producing NaN</h2>
+<p>Common operations that yield NaN include:</p>
+<ul>
+<li>Division of zero by zero (0/0) and other indeterminate forms such as ∞ − ∞ and 0 × ∞</li>
+<li>The square root of a negative number</li>
+<li>Logarithm of a negative number</li>
+<li>Operations in which a NaN is an operand (most return NaN)</li>
+<li>Real operations delivering complex results, such as arcsine of a value greater than 1</li>
+</ul>
+
+<h2>Comparisons and testing</h2>
+<p>A peculiar property of NaN, specified by IEEE 754, is that it is unordered with respect to every value, including itself: all comparisons <code>x &lt; NaN</code>, <code>x &gt; NaN</code>, <code>x == NaN</code>, and even <code>NaN == NaN</code> evaluate to false. Consequently, the standard way to test whether a value is NaN is to check whether <code>x != x</code>, or to use a library function such as <code>isnan()</code> in C or <code>Number.isNaN()</code> in JavaScript. This behaviour is frequently a source of bugs, since NaNs can silently propagate through sorting, search, and data pipelines.</p>
+
+<h2>Encoding</h2>
+<p>In IEEE 754 binary formats, NaNs have all-ones exponents and a non-zero fraction field; the most significant fraction bit distinguishes quiet (1) from signaling (0) NaNs. The remaining fraction bits may carry a "payload" that diagnostic software can use to identify the origin of the NaN. A decimal NaN representation also exists in the 2008 revision of the standard.</p>
+
+<p class="small">Categories: Computer arithmetic · IEEE 754 · Numerical analysis</p>
+</div>
+</body>
+</html>

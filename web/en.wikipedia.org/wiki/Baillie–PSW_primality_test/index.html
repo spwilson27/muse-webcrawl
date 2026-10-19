@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Baillie–PSW primality test - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; color: #202122; background: #fff; }
+#content { max-width: 960px; margin: 0 auto; padding: 1em 2em 3em; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 88%; margin: 0 0 1em 1em; padding: 0.5em; }
+.infobox th { background: #eaf3ff; text-align: left; padding: 3px 6px; }
+.infobox td { padding: 3px 6px; }
+.hero { text-align: center; background: #f8f9fa; border: 1px solid #eaecf0; padding: 1em; margin: 1em 0; color: #54595d; font-style: italic; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.small { font-size: 90%; color: #54595d; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Baillie–PSW primality test</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="hero">[Image: Flowchart of the combined Miller–Rabin and Lucas probable-prime tests]</div>
+<p>The <b>Baillie–PSW primality test</b> is a probabilistic <a href="../Primality_test/index.html">primality test</a> that combines a base-2 <a href="../Miller–Rabin_primality_test/index.html">Miller–Rabin</a> probable-prime test with a strong <a href="../Lucas_primality_test/index.html">Lucas probable-prime test</a>. It is named after Robert Baillie and Samuel S. Wagstaff Jr.; "PSW" refers to Carl Pomerance, John Selfridge and Wagstaff.</p>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Baillie–PSW primality test</th></tr>
+<tr><th>Type</th><td>Probabilistic primality test</td></tr>
+<tr><th>Components</th><td>Miller–Rabin (base 2) + Lucas test</td></tr>
+<tr><th>Named after</th><td>Baillie, Pomerance, Selfridge, Wagstaff</td></tr>
+<tr><th>Known counterexamples</th><td>None (verified to at least 2<sup>64</sup>)</td></tr>
+</table>
+</div>
+<h2>Description</h2>
+<p>Given an odd integer <i>n</i>, the test first checks small factors and perfect squares, then applies a strong Miller–Rabin test with base 2. If <i>n</i> passes, it then performs a strong Lucas test with parameters chosen by Selfridge's method. A composite passing both is called a Baillie–PSW pseudoprime.</p>
+<h2>Accuracy</h2>
+<p>No composite number is known to pass the full test: exhaustive computation has shown there are no Baillie–PSW pseudoprimes below 2<sup>64</sup>, and Pomerance conjectured infinitely many exist, with a $620 prize once offered for an example. Because the two component tests err on essentially independent sets, the combined test is used in computer algebra systems such as Mathematica and Maple as a fast, effectively reliable primality check, though it is not a proof like the AKS test.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Miller–Rabin_primality_test/index.html">Miller–Rabin primality test</a></li>
+<li><a href="../Lucas_primality_test/index.html">Lucas primality test</a></li>
+<li><a href="../Primality_test/index.html">Primality test</a></li>
+<li><a href="../Probable_prime/index.html">Probable prime</a></li>
+</ul>
+<p class="small">Categories: Primality tests · Number theory</p>
+</div>
+</body>
+</html>

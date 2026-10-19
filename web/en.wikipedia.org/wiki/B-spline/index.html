@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>B-spline - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine","Georgia",serif;margin:0;background:#f6f6f6;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:1em 2em 3em;border-left:1px solid #a2a9b1;border-right:1px solid #a2a9b1}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-bottom:.3em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+p,li{font-family:sans-serif;font-size:.92em;line-height:1.55}
+.hero{clear:both;text-align:center;margin:1em 0}
+.hero .ph{display:inline-block;width:560px;max-width:100%;height:260px;background:#e8e8e8;border:1px dashed #888;color:#555;font-family:sans-serif;font-size:.9em;line-height:260px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.ref{font-size:.8em;color:#54595d}
+code{font-size:.95em;background:#f8f9fa;padding:0 .2em}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>B-spline</h1>
+<div class="hero"><span class="ph">[ Image placeholder: Cubic B-spline basis functions ]</span></div>
+<p>In mathematics, a <b>B-spline</b> (basis spline) is a spline function that has minimal support with respect to a given degree, smoothness and knot partition. B-splines were introduced by Isaac Schoenberg (1946) and form a basis for the vector space of all splines of a given degree over a given knot sequence: any spline function can be written uniquely as a linear combination of B-splines of that degree. They are the standard curve- and surface-representation tool in computer-aided geometric design, generalising Bézier curves.</p>
+<h2>Definition</h2>
+<p>Given a non-decreasing knot vector <i>t</i> = (t<sub>0</sub>, …, t<sub>m</sub>), the B-spline basis functions B<sub>i,k</sub> of degree <i>k</i> are defined by the Cox–de Boor recursion: B<sub>i,0</sub>(t) = 1 if t<sub>i</sub> ≤ t &lt; t<sub>i+1</sub>, else 0; higher degrees are convex combinations of two lower-degree basis functions. Each B<sub>i,k</sub> is non-zero only over k+2 consecutive knots (local support), is a piecewise polynomial of degree k, and the functions form a partition of unity.</p>
+<h2>Curve representation</h2>
+<p>A B-spline curve is C(t) = Σ<sub>i</sub> P<sub>i</sub> B<sub>i,k</sub>(t), where P<sub>i</sub> are control points. Repeated knots reduce continuity in a controlled way; Bézier curves are the special case with knots only at the ends. Rational B-splines, weighted by w<sub>i</sub>, give NURBS, which can represent conic sections exactly and are ubiquitous in CAD kernels, font outlines (in quadratic form), animation and isogeometric analysis.</p>
+<h2>Properties</h2>
+<ul>
+<li>Local control — moving one control point affects only k+1 spans of the curve.</li>
+<li>Convex hull and variation-diminishing properties.</li>
+<li>Efficient, numerically stable evaluation via the de Boor algorithm.</li>
+<li>Knot insertion and degree elevation allow refinement without changing the shape.</li>
+</ul>
+<h2>See also</h2>
+<ul>
+<li><a href="../Spline_(mathematics)/index.html">Spline (mathematics)</a></li>
+<li><a href="../Non-uniform_rational_B-spline/index.html">NURBS</a></li>
+<li><a href="../Bézier_curve/index.html">Bézier curve</a></li>
+<li><a href="../De_Boor's_algorithm/index.html">De Boor's algorithm</a></li>
+</ul>
+<p class="ref">Recreated from memory.</p>
+</div>
+</body>
+</html>

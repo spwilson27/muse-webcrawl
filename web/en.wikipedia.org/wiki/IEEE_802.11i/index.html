@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IEEE 802.11i - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.mw-body { max-width: 960px; margin: 0 auto; padding: 1em 1.5em; font-size: 0.95em; line-height: 1.6; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+.infobox { float: right; width: 300px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em; margin: 0 0 1em 1em; font-size: 0.88em; }
+.infobox th { background: #cedff2; text-align: center; padding: 0.4em; }
+.infobox td { padding: 0.3em 0.4em; vertical-align: top; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { display: block; margin: 1em auto; max-width: 640px; width: 100%; background: #eaecf0; border: 1px solid #a2a9b1; padding: 2em 0; text-align: center; color: #54595d; }
+.toc { border: 1px solid #a2a9b1; background: #f8f9fa; display: inline-block; padding: 0.5em 1.5em 0.5em 0.5em; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>IEEE 802.11i</h1>
+<p><b>IEEE 802.11i-2004</b>, or <b>802.11i</b> for short, is an amendment to the IEEE 802.11 standard specifying security mechanisms for wireless networks. Ratified on 24 June 2004, it replaced the broken Wired Equivalent Privacy (WEP) with a Robust Security Network (RSN) framework based on strong encryption and authentication. The Wi-Fi Alliance's <b>WPA2</b> certification is based on the full IEEE 802.11i standard. The amendment was later incorporated into IEEE 802.11-2007.</p>
+<img class="hero" src="images/ieee-80211i.png" alt="Illustrative placeholder image: wireless network security diagram">
+<div class="infobox">
+<table>
+<tr><th colspan="2">IEEE 802.11i</th></tr>
+<tr><td><b>Full name</b></td><td>IEEE 802.11i-2004</td></tr>
+<tr><td><b>Ratified</b></td><td>24 June 2004</td></tr>
+<tr><td><b>Purpose</b></td><td>Security mechanisms for Wi-Fi networks</td></tr>
+<tr><td><b>Replaces</b></td><td>WEP</td></tr>
+<tr><td><b>Certification</b></td><td>WPA2 (Wi-Fi Alliance)</td></tr>
+</table>
+</div>
+<div class="toc"><b>Contents</b>
+<ol>
+<li>Background</li>
+<li>Architecture</li>
+<li>The four-way handshake</li>
+<li>Encryption protocols</li>
+<li>Security issues</li>
+</ol>
+</div>
+<h2>Background</h2>
+<p>WEP, the original security protocol of 802.11, was shown in 2001 to be fundamentally flawed: its use of the RC4 stream cipher with short 24-bit initialisation vectors allowed key recovery from passively collected traffic. As an interim fix, the Wi-Fi Alliance created WPA in 2003, based on a draft of 802.11i, introducing TKIP (Temporal Key Integrity Protocol) as a firmware-upgradable patch for existing hardware. IEEE 802.11i completed the work with a full redesign around the Advanced Encryption Standard (AES).</p>
+<h2>Architecture</h2>
+<p>802.11i defines a Robust Security Network with three entities: the station (supplicant), the access point (authenticator), and an authentication server, typically RADIUS. Authentication can use IEEE 802.1X with an EAP method (Enterprise mode) or a pre-shared key (PSK, Personal mode). A Pairwise Master Key is established, from which session keys are derived. The standard mandates CCMP — Counter Mode with CBC-MAC Protocol — based on AES, providing confidentiality, authentication, and replay protection; TKIP is retained as an optional transitional protocol.</p>
+<h2>The four-way handshake</h2>
+<p>To derive fresh session keys, the supplicant and authenticator perform a four-way handshake using nonces exchanged in EAPOL-Key frames. From the Pairwise Master Key and the two nonces both sides compute a Pairwise Transient Key, split into keys for confirming the handshake, encrypting keys, and encrypting data. A separate group key handshake distributes the broadcast/multicast Group Temporal Key.</p>
+<h2>Encryption protocols</h2>
+<ul>
+<li><b>TKIP</b> — wraps RC4 with per-packet key mixing, a 48-bit sequence counter, and the Michael message integrity check; designed for legacy hardware and now deprecated.</li>
+<li><b>CCMP</b> — AES in counter mode with CBC-MAC; the mandatory-to-implement cipher of 802.11i and default of WPA2.</li>
+<li><b>WRAP</b> — an earlier AES-based proposal (offset codebook mode) dropped in favour of CCMP.</li>
+</ul>
+<h2>Security issues</h2>
+<p>In 2017 the KRACK (Key Reinstallation Attacks) disclosed by Mathy Vanhoef showed that the four-way handshake could be manipulated into reinstalling an already-used key, weakening encryption on most implementations; the flaw was addressed by software patches and later by WPA3 (2018), which replaced the PSK handshake with SAE (Simultaneous Authentication of Equals).</p>
+<p><i>See also:</i> <a href="../Wi-Fi_Protected_Access/index.html">Wi-Fi Protected Access</a>, <a href="../Wired_Equivalent_Privacy/index.html">Wired Equivalent Privacy</a>, <a href="../IEEE_802.11/index.html">IEEE 802.11</a>, <a href="../KRACK/index.html">KRACK</a>.</p>
+</div>
+</body>
+</html>

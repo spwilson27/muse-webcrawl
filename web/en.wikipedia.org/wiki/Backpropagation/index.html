@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Backpropagation - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:2px;font-weight:normal;margin-top:1.2em}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.85em;margin:0 0 1em 1.5em;padding:0}
+.infobox th{background:#b0c4de;padding:6px;text-align:left}
+.infobox td{padding:4px 8px;border-top:1px solid #eaecf0}
+.infobox .cap{text-align:center;padding:6px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{margin:0.3em 0 0.3em 1.6em;padding:0}
+.eq{text-align:center;font-style:italic;margin:1em 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Backpropagation</h1>
+<table class="infobox">
+<tr><th colspan="2">Backpropagation</th></tr>
+<tr><td colspan="2" class="cap"><img src="images/backpropagation.png" alt="A multilayer neural network with error signals propagating backwards"></td></tr>
+<tr><th>Field</th><td>Machine learning, neural networks</td></tr>
+<tr><th>Purpose</th><td>Computing gradients of a loss function</td></tr>
+<tr><th>Method</th><td>Chain rule applied in reverse mode</td></tr>
+<tr><th>Key works</th><td>Werbos (1974); Rumelhart, Hinton &amp; Williams (1986)</td></tr>
+</table>
+<p>In machine learning, <b>backpropagation</b> is a gradient estimation method commonly used for training a <a href="../Neural_network_(machine_learning)/index.html">neural network</a> to compute its parameter updates. It is an efficient application of the chain rule of calculus — specifically reverse-mode automatic differentiation — that computes the gradient of a loss function with respect to all weights in the network from a single backward pass.</p>
+<p>The term "backpropagation" is often used more loosely for the whole training procedure: a forward pass computes the network's output and loss, backpropagation computes the gradient, and an optimisation algorithm such as <a href="../Stochastic_gradient_descent/index.html">stochastic gradient descent</a> updates the weights.</p>
+<h2>Overview</h2>
+<p>Backpropagation proceeds in two phases. In the <b>forward pass</b>, an input is propagated through the network and each layer's activations are stored. The output is compared to the target using a loss function. In the <b>backward pass</b>, the error signal is propagated from the output layer back toward the input, and each weight's gradient is computed as the product of the downstream error term and the upstream activation:</p>
+<p class="eq">∂L/∂w<sub>ij</sub> = δ<sub>j</sub> · a<sub>i</sub></p>
+<p>Because each local gradient is computed once and reused, the algorithm requires time proportional to the number of weights, rather than the quadratic cost of numerical differentiation.</p>
+<h2>History</h2>
+<p>The mathematics of reverse-mode differentiation was described by Seppo Linnainmaa in 1970 and applied to neural networks in Paul Werbos's 1974 doctoral thesis. In 1986, David Rumelhart, Geoffrey Hinton and Ronald Williams published an influential paper demonstrating that backpropagation could train multilayer networks to learn useful internal representations, overcoming the limitations of single-layer perceptrons highlighted by Minsky and Papert. Backpropagation became the standard training method for neural networks and underpins the modern deep learning revolution.</p>
+<h2>Limitations</h2>
+<p>Gradient descent with backpropagation can converge to local minima or suffer from vanishing and exploding gradients in deep networks — problems mitigated by activation functions such as ReLU, careful weight initialisation, normalisation layers and skip connections. Backpropagation is also not considered biologically plausible as a literal model of learning in the brain, though it remains the workhorse of practical artificial intelligence.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Gradient_descent/index.html">Gradient descent</a></li>
+<li><a href="../Deep_learning/index.html">Deep learning</a></li>
+<li><a href="../Automatic_differentiation/index.html">Automatic differentiation</a></li>
+<li><a href="../Perceptron/index.html">Perceptron</a></li>
+</ul>
+</div>
+</body>
+</html>

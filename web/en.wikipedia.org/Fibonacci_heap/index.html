@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fibonacci heap - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#fff;color:#202122;margin:0;line-height:1.6}
+#content{max-width:960px;margin:0 auto;padding:20px 30px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{font-size:1.5em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1em}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 1em 1em;width:270px;font-size:0.88em;font-family:sans-serif}
+.infobox th{text-align:left;vertical-align:top;padding:2px 6px}
+.infobox td{padding:2px 6px}
+.infobox .title{background:#b0c4de;text-align:center;font-weight:bold;font-size:1.05em}
+figure{margin:1em 0;text-align:center}
+figcaption{font-size:0.85em;color:#54595d;font-family:sans-serif}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.ref{font-size:0.85em}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Fibonacci heap</h1>
+<table class="infobox">
+<tr><td class="title" colspan="2">Fibonacci heap</td></tr>
+<tr><th>Type</th><td>Heap (priority queue)</td></tr>
+<tr><th>Invented</th><td>1984, by Michael L. Fredman and Robert Endre Tarjan</td></tr>
+<tr><th>Decrease-key</th><td>O(1) amortised</td></tr>
+<tr><th>Insert / merge</th><td>O(1) amortised</td></tr>
+<tr><th>Delete-min</th><td>O(log n) amortised</td></tr>
+</table>
+<figure>
+<img src="images/Fibonacci_heap.png" alt="Structure of a Fibonacci heap">
+<figcaption>A Fibonacci heap: a forest of heap-ordered trees linked in a root list</figcaption>
+</figure>
+<p>A <b>Fibonacci heap</b> is a data structure for priority queue operations, consisting of a collection of heap-ordered trees. It was developed by Michael Fredman and Robert Tarjan in 1984 and achieves exceptionally fast amortised running times, especially for the decrease-key operation, which runs in constant amortised time.</p>
+<h2>Structure</h2>
+<p>The heap is a forest of trees obeying the min-heap property, with roots joined in a circular doubly linked list and a pointer to the minimum root. Operations are deliberately lazy: insertion simply adds a one-node tree, and merging two heaps concatenates their root lists. Consolidation of trees of equal degree is postponed until a delete-min operation forces a cleanup pass.</p>
+<h2>Decrease-key and cascading cuts</h2>
+<p>To decrease a key, the node is cut from its parent if heap order is violated and placed in the root list. A marking scheme triggers <i>cascading cuts</i>: a parent that loses a second child is itself cut, and so on up the tree. This rule bounds the degree of any node to O(log n), with maximum degree governed by the golden ratio — the property from which the Fibonacci heap takes its name, since a node of degree k has at least F<sub>k+2</sub> descendants, where F is the Fibonacci sequence.</p>
+<h2>Applications</h2>
+<p>Fibonacci heaps improve the asymptotic running time of graph algorithms that use many decrease-key operations, notably Dijkstra's shortest-path algorithm (to O(E + V log V)) and Prim's minimum spanning tree algorithm. In practice their large constant factors and pointer-heavy structure often make simpler heaps faster on real inputs.</p>
+<p class="ref">See also: <a href="../Fibonacci/index.html">Fibonacci</a> · <a href="../Priority_queue/index.html">Priority queue</a> · <a href="../Dijkstras_algorithm/index.html">Dijkstra's algorithm</a></p>
+</div>
+</body>
+</html>

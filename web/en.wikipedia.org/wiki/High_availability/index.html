@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>High availability - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 16px 16px;border-collapse:collapse}
+.infobox th,.infobox td{border:1px solid #a2a9b1;padding:4px 8px;text-align:left;vertical-align:top}
+.infobox .title{background:#b0c4de;text-align:center;font-weight:bold;font-size:15px}
+img.hero{max-width:100%;display:block}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol,table.data{font-size:15px;line-height:1.6}
+table.data{border-collapse:collapse}
+table.data th,table.data td{border:1px solid #a2a9b1;padding:4px 10px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>High availability</h1>
+<table class="infobox">
+<tr><th class="title" colspan="2">High availability</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/High_availability.png" alt="Diagram of a redundant high-availability cluster"></td></tr>
+<tr><th>Measure</th><td>Uptime as a percentage of total time</td></tr>
+<tr><th>"Five nines"</th><td>99.999% &asymp; 5.26 minutes downtime per year</td></tr>
+<tr><th>Key methods</th><td>Redundancy, failover, elimination of single points of failure</td></tr>
+</table>
+<p><b>High availability</b> (<b>HA</b>) is a characteristic of a system that aims to ensure an agreed level of operational performance, usually uptime, for a higher than normal period. Availability is commonly expressed as a percentage of uptime in a given year; a system that is designed for 99.999% ("five nines") availability may be down for no more than about five minutes per year.</p>
+<h2>Principles</h2>
+<p>Highly available systems are built around three principles: elimination of <a href="../Single_point_of_failure/index.html">single points of failure</a> by adding redundancy so that the failure of one component does not bring down the whole; reliable crossover or failover, so a standby component can detect failure and take over automatically; and detection of failures as they occur. In computing this is commonly implemented with clusters of servers, load balancers, replicated databases and redundant power and network paths, increasingly spread across data centres and availability zones.</p>
+<h2>Availability levels</h2>
+<table class="data">
+<tr><th>Availability</th><th>Downtime per year</th><th>Downtime per month</th></tr>
+<tr><td>99% ("two nines")</td><td>3.65 days</td><td>7.31 hours</td></tr>
+<tr><td>99.9% ("three nines")</td><td>8.77 hours</td><td>43.8 minutes</td></tr>
+<tr><td>99.99% ("four nines")</td><td>52.6 minutes</td><td>4.38 minutes</td></tr>
+<tr><td>99.999% ("five nines")</td><td>5.26 minutes</td><td>26.3 seconds</td></tr>
+<tr><td>99.9999% ("six nines")</td><td>31.6 seconds</td><td>2.63 seconds</td></tr>
+</table>
+<h2>Design considerations</h2>
+<p>Availability can be estimated from the mean time between failures (MTBF) and mean time to repair (MTTR): availability &asymp; MTBF / (MTBF + MTTR). Planned maintenance counts against availability unless the system can be serviced without downtime, for example through rolling upgrades. High availability differs from <a href="../Fault_tolerance/index.html">fault tolerance</a>, in which a system continues operating without interruption through a failure, and from <a href="../Disaster_recovery/index.html">disaster recovery</a>, which restores service after a major incident. Service-level agreements usually specify availability targets and remedies, and the cost of each additional "nine" rises steeply, so targets are set by business need rather than maximised blindly.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Fault_tolerance/index.html">Fault tolerance</a></li>
+<li><a href="../Single_point_of_failure/index.html">Single point of failure</a></li>
+<li><a href="../Computer_cluster/index.html">Computer cluster</a></li>
+<li><a href="../Disaster_recovery/index.html">Disaster recovery</a></li>
+</ul>
+</div>
+</body>
+</html>
