@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ray tracing (graphics) - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+#mw{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a2a9b1;border-right:1px solid #a2a9b1}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:0}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+p{line-height:1.6;font-family:sans-serif;font-size:14.5px}
+ul{font-family:sans-serif;font-size:14.5px;line-height:1.6}
+.infobox{float:right;width:250px;border:1px solid #a2a9b1;background:#f8f9fa;font-family:sans-serif;font-size:12.5px;margin:0 0 16px 20px;padding:8px}
+.infobox th{background:#b0c4de;padding:5px;text-align:center}
+.infobox td{padding:3px 5px;vertical-align:top}
+.hero{display:block;margin:12px auto;max-width:420px;width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:24px 0;text-align:center;color:#54595d;font-family:sans-serif;font-size:13px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div id="mw">
+<h1>Ray tracing (graphics)</h1>
+<table class="infobox">
+<tr><th colspan="2">Ray tracing</th></tr>
+<tr><td><b>Type</b></td><td>3D rendering algorithm</td></tr>
+<tr><td><b>Key papers</b></td><td>Appel (1968); Whitted (1980); Kajiya (1986)</td></tr>
+<tr><td><b>Effects</b></td><td>Reflection, refraction, soft shadows, global illumination</td></tr>
+<tr><td><b>Alternative</b></td><td><a href="../Rasterisation/index.html">Rasterisation</a></td></tr>
+</table>
+<img class="hero" src="images/ray-tracing.png" alt="Hero image placeholder: a ray-traced scene of reflective chrome spheres over a checkerboard floor">
+<p>In <a href="../3D_computer_graphics/index.html">3D computer graphics</a>, <b>ray tracing</b> is a technique for modelling <a href="../Light_transport_theory/index.html">light transport</a> to generate digital images by tracing the paths of light as rays that interact with the surfaces of virtual objects. The technique is capable of producing a high degree of photorealism: it naturally generates shadows, reflections, refractions, caustics, depth of field and motion blur, at the price of far greater computational cost than <a href="../Rasterisation/index.html">rasterisation</a>, the traditional method used in real-time graphics.</p>
+<h2>Algorithm</h2>
+<p>In the classic (backward) ray-tracing algorithm, a ray is cast from the camera through each pixel of the image plane into the scene. The nearest object struck by the ray determines the pixel's shading: additional "shadow rays" are cast toward each light source to test occlusion, and recursive "secondary rays" are spawned in the directions of reflection and refraction, as formalised by Turner Whitted in 1980. Rendering stops when rays leave the scene or reach a maximum recursion depth.</p>
+<h2>Path tracing and global illumination</h2>
+<p>The rendering equation of James Kajiya (1986) placed image synthesis on a firm physical footing; <b>path tracing</b> solves it by Monte Carlo sampling — each ray bounces randomly according to surface properties, accumulating light over thousands of samples per pixel, with noise ("fireflies" and grain) diminishing as sampling proceeds and assisted by modern <a href="../Denoising/index.html">denoising</a> algorithms. Extensions such as bidirectional path tracing and Metropolis light transport handle difficult lighting such as caustics. Film studios adopted path tracing wholesale in the 2000s–2010s (Pixar's RenderMan, Disney's Hyperion, Arnold), making it the standard for animated features and visual effects.</p>
+<h2>Real-time ray tracing</h2>
+<p>For decades ray tracing was confined to offline rendering because of its cost; acceleration structures such as <a href="../Bounding_volume_hierarchy/index.html">bounding volume hierarchies</a> (BVH) and kd-trees made intersection tests logarithmic rather than linear in scene size. In 2018, dedicated hardware (NVIDIA's RTX GPUs with RT cores, Microsoft's DirectX Raytracing and the Vulkan ray-tracing extensions) brought hybrid ray tracing — typically used for reflections, shadows and global illumination layered on rasterised images — into real-time video games.</p>
+<h2>History</h2>
+<p>Arthur Appel described ray casting for shading in 1968; Robert Goldstein and Roger Nagel published early ray-traced images in 1971; Whitted's 1980 paper added recursive reflection and refraction; and the 1986 work of Cook, Porter and Carpenter (distributed ray tracing) and Kajiya completed the foundations. Turner Whitted's reflective-sphere-over-checkerboard imagery remains the field's visual cliché.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Path_tracing/index.html">Path tracing</a></li>
+<li><a href="../Rasterisation/index.html">Rasterisation</a></li>
+<li><a href="../Global_illumination/index.html">Global illumination</a></li>
+<li><a href="../Rendering_equation/index.html">The rendering equation</a></li>
+<li><a href="../Photon_mapping/index.html">Photon mapping</a></li>
+</ul>
+<p><i>This article was recreated from memory for the muse-webcrawl project.</i></p>
+</div>
+</body>
+</html>

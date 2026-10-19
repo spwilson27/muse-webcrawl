@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Parametric polymorphism - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f8f9fa;color:#202122}
+#content{background:#fff;max-width:1000px;margin:0 auto;padding:20px 28px;border:1px solid #a2a9b1}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;margin:0 0 12px 16px;font-size:88%;border-collapse:collapse}
+.infobox th{background:#ccd2e8;text-align:center;padding:6px}
+.infobox td,.infobox th[scope=row]{padding:4px 8px;vertical-align:top}
+.infobox th[scope=row]{background:#eef;text-align:left;width:38%}
+figure.hero{float:right;width:290px;margin:0 0 12px 16px;text-align:center;font-size:85%;background:#f8f9fa;border:1px solid #a2a9b1;padding:6px}
+figure.hero img{width:100%;height:150px;object-fit:cover;background:#ddd}
+code,pre{font-family:monospace;background:#f0f0f0}
+pre{padding:10px;overflow:auto}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Parametric polymorphism</h1>
+<p>In programming languages and type theory, <b>parametric polymorphism</b> allows a function or a data type to be written generically, so that it can handle values identically without depending on their type. Such functions and data types are called <b>generic functions</b> and <b>generic definitions</b> respectively, and form the basis of generic programming.</p>
+<figure class="hero"><img src="images/Parametric_polymorphism.png" alt="Diagram of a single generic list type instantiated at many element types">
+<figcaption>One generic definition, many instantiations</figcaption></figure>
+<h2>Definition</h2>
+<p>A function exhibits parametric polymorphism if its behaviour does not depend on the concrete types at which it is used. The canonical example is the identity function, which in Hindley–Milner notation has the type <code>∀a. a → a</code>: for every type <i>a</i>, it maps a value of that type to a value of the same type. Similarly the type of lists can be written <code>∀a. [a]</code>. Christopher Strachey distinguished parametric polymorphism from <i>ad hoc</i> polymorphism (overloading) in 1967, a classification still in use.</p>
+<h2>Parametricity</h2>
+<p>Because a parametrically polymorphic function cannot inspect the values of an abstract type, its behaviour is tightly constrained — a principle John C. Reynolds formalised as <i>parametricity</i>, and Philip Wadler popularised as "theorems for free": properties of generic functions can be deduced from their types alone. For example, any function of type <code>∀a. [a] → [a]</code> can only rearrange, duplicate, or drop elements of its input list.</p>
+<h2>Implementations</h2>
+<p>Parametric polymorphism is a core feature of ML-family languages (ML, OCaml, Haskell), where it is inferred by the Hindley–Milner type system. Other languages provide it as <i>generics</i>: Java (via type erasure), C# (via reification), C++ (templates, checked at instantiation), and Rust (traits with monomorphisation). Bounded parametric polymorphism constrains type parameters with subtyping bounds or type-class constraints.</p>
+<h2>History</h2>
+<p>The concept was identified in logic by Gerhard Gentzen's work in the 1930s and developed for programming by Strachey, Reynolds (who introduced System F in 1974), and Jean-Yves Girard, who independently developed System F.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Polymorphism_(computer_science)/index.html">Polymorphism (computer science)</a></li>
+<li><a href="../Generic_programming/index.html">Generic programming</a></li>
+<li><a href="../System_F/index.html">System F</a></li>
+</ul>
+</div>
+</body>
+</html>

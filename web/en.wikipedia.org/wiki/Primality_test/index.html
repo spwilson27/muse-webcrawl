@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Primality test - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+#mw{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a2a9b1;border-right:1px solid #a2a9b1}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:0}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+h3{font-size:17px}
+p{line-height:1.6;font-family:sans-serif;font-size:14.5px}
+ul,ol{font-family:sans-serif;font-size:14.5px;line-height:1.6}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-family:sans-serif;font-size:12.5px;margin:0 0 16px 20px;padding:8px}
+.infobox th{background:#b0c4de;padding:5px;text-align:center;font-size:13px}
+.infobox td{padding:3px 5px;vertical-align:top}
+.hero{display:block;margin:12px auto;max-width:420px;width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:24px 0;text-align:center;color:#54595d;font-family:sans-serif;font-size:13px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.formula{font-family:'Times New Roman',serif;font-style:italic;text-align:center;font-size:16px;margin:12px 0}
+.toc{background:#f8f9fa;border:1px solid #a2a9b1;display:inline-block;padding:8px 20px 8px 8px;font-family:sans-serif;font-size:13px}
+</style>
+</head>
+<body>
+<div id="mw">
+<h1>Primality test</h1>
+<img class="hero" src="images/primality-test.png" alt="Hero image placeholder: a grid of integers with the prime numbers highlighted">
+<p>A <b>primality test</b> is an <a href="../Algorithm/index.html">algorithm</a> for determining whether an input number is <a href="../Prime_number/index.html">prime</a>. Among other fields of <a href="../Number_theory/index.html">number theory</a>, it is used for <a href="../Cryptography/index.html">cryptography</a>. Unlike <a href="../Integer_factorization/index.html">integer factorization</a>, primality tests do not generally give <a href="../Prime_factor/index.html">prime factors</a>, only stating whether the input number is prime or not. Factorization is thought to be a computationally difficult problem, whereas primality testing is comparatively easy (its running time is <a href="../Polynomial_time/index.html">polynomial</a> in the size of the input). Some primality tests prove that a number is prime, while others, like <a href="../Miller%E2%80%93Rabin_primality_test/index.html">Miller–Rabin</a>, prove that a number is composite and are therefore called probabilistic tests.</p>
+<div class="toc"><b>Contents</b>
+<ol>
+<li>Simple methods</li>
+<li>Probabilistic tests</li>
+<li>Fast deterministic tests</li>
+<li>Complexity</li>
+<li>See also</li>
+</ol>
+</div>
+<h2>Simple methods</h2>
+<p>The simplest primality test is <b>trial division</b>: given an input number <i>n</i>, check whether it is evenly divisible by any prime number between 2 and √<i>n</i> (i.e., that the division leaves no remainder). If so, then <i>n</i> is composite. Otherwise, it is prime. For example, to test whether 211 is prime, one divides it by 2, 3, 5, 7, 11 and 13; none divides it evenly, and since 17² = 289 &gt; 211 testing can stop, so 211 is prime.</p>
+<p>Trial division can be improved with a <a href="../Wheel_factorization/index.html">wheel</a>, for instance testing only numbers coprime to the first few primes. Nevertheless, trial division is exponential in the number of digits of <i>n</i> and is impractical for numbers with hundreds of digits.</p>
+<h2>Probabilistic tests</h2>
+<p>Probabilistic tests are based on properties that primes satisfy but composites usually do not. The <b>Fermat primality test</b> uses <a href="../Fermat%27s_little_theorem/index.html">Fermat's little theorem</a>: if <i>p</i> is prime and <i>a</i> is not divisible by <i>p</i>, then</p>
+<p class="formula">a<sup>p−1</sup> ≡ 1 (mod p).</p>
+<p>Composites that pass for a given base are called <a href="../Fermat_pseudoprime/index.html">Fermat pseudoprimes</a>; <a href="../Carmichael_number/index.html">Carmichael numbers</a> pass for every base coprime to them. The <b>Miller–Rabin test</b> strengthens this idea by writing <i>p</i> − 1 = 2<sup>s</sup>·<i>d</i> and examining the sequence of square roots of 1 modulo <i>p</i>; it has no Carmichael-like counterexamples and, repeated <i>k</i> times, errs with probability at most 4<sup>−k</sup>. In practice Miller–Rabin (often combined with small trial division) is the standard method used by <a href="../Computer_algebra_system/index.html">computer algebra systems</a> and cryptographic libraries.</p>
+<p>Other probabilistic tests include the Solovay–Strassen test, based on the <a href="../Euler%27s_criterion/index.html">Euler criterion</a>, and the Lucas and Frobenius pseudoprime tests; the Baillie–PSW test combines a Miller–Rabin test with a Lucas test and has no known counterexamples.</p>
+<h2>Fast deterministic tests</h2>
+<p>For numbers below fixed bounds, deterministic variants of Miller–Rabin with a small fixed set of bases are exact; for example, testing seven specific bases is correct for all 64-bit integers. The <b>AKS primality test</b>, published in 2002 by Agrawal, Kayal and Saxena ("PRIMES is in P"), was the first unconditional deterministic polynomial-time test, though its running time makes it slower than probabilistic tests in practice.</p>
+<p>Tests based on elliptic curves (Elliptic Curve Primality Proving, ECPP) and the Adleman–Pomerance–Rumely test provide primality certificates and are used to prove primality of numbers with thousands of digits.</p>
+<h2>Complexity</h2>
+<p>In <a href="../Computational_complexity_theory/index.html">computational complexity theory</a>, the formal language corresponding to primality testing is denoted PRIMES. It was long known to lie in NP ∩ coNP; the AKS algorithm showed it belongs to P. Generating a random prime of cryptographic size (e.g. for <a href="../RSA_(cryptosystem)/index.html">RSA</a>) proceeds by choosing random odd numbers and testing them until a prime is found, which by the <a href="../Prime_number_theorem/index.html">prime number theorem</a> takes only a few hundred trials for 1024-bit candidates.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../AKS_primality_test/index.html">AKS primality test</a></li>
+<li><a href="../Miller%E2%80%93Rabin_primality_test/index.html">Miller–Rabin primality test</a></li>
+<li><a href="../Sieve_of_Eratosthenes/index.html">Sieve of Eratosthenes</a></li>
+<li><a href="../Prime_number/index.html">Prime number</a></li>
+<li><a href="../Probable_prime/index.html">Probable prime</a></li>
+</ul>
+<p><i>This article was recreated from memory for the muse-webcrawl project.</i></p>
+</div>
+</body>
+</html>

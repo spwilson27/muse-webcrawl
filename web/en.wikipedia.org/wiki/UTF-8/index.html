@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>UTF-8 - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#f8f9fa;color:#202122;margin:0}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+.infobox{float:right;width:280px;background:#f8f9fa;border:1px solid #a2a9b1;padding:8px;margin:0 0 12px 16px;font-size:0.85em;font-family:sans-serif}
+.infobox th{background:#cedff2;padding:4px;text-align:center}
+.infobox td{padding:3px 6px;border-bottom:1px solid #eaecf0}
+img.hero{display:block;max-width:100%;border:1px solid #c8ccd1;background:#eaecf0;padding:6px;margin:12px 0}
+a{color:#0645ad;text-decoration:none}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>UTF-8</h1>
+<p><b>UTF-8</b> is a variable-length character encoding standard for <a href="../Unicode/index.html">Unicode</a>, defined by the Unicode Standard and by RFC 3629. It uses one to four 1-byte units (8-bit code units) to encode all 1,112,064 valid Unicode code points. UTF-8 is backward compatible with ASCII: the first 128 Unicode characters are encoded identically to their ASCII counterparts in a single byte. It is by far the dominant encoding on the World Wide Web, used by the overwhelming majority of web pages, and is the default or recommended encoding for most modern software.</p>
+<img class="hero" src="images/UTF-8.png" alt="UTF-8 encoding scheme: byte patterns for 1- to 4-byte sequences">
+<table class="infobox">
+<tr><th colspan="2">UTF-8</th></tr>
+<tr><td><b>Designers</b></td><td>Ken Thompson, Rob Pike</td></tr>
+<tr><td><b>Created</b></td><td>1992</td></tr>
+<tr><td><b>Type</b></td><td>Variable-length Unicode encoding (1–4 bytes)</td></tr>
+<tr><td><b>Standard</b></td><td>Unicode Standard; RFC 3629</td></tr>
+</table>
+<h2>History</h2>
+<p>UTF-8 was designed at Bell Labs by Ken Thompson and Rob Pike in September 1992 for the Plan 9 operating system; Thompson famously sketched the design on a placemat. It was presented publicly in 1993 and later standardised by the Unicode Consortium and the IETF. Its self-synchronising design—a decoder can find the start of a character from any byte—made it robust and simple to adopt.</p>
+<h2>Encoding scheme</h2>
+<p>The leading bits of the first byte indicate the sequence length: 0xxxxxxx (1 byte, ASCII), 110xxxxx (2 bytes), 1110xxxx (3 bytes), 11110xxx (4 bytes); continuation bytes all begin with 10. Characters in most European scripts take two bytes; most Chinese, Japanese and Korean characters take three; emoji and rare historic scripts take four.</p>
+<h2>Adoption</h2>
+<p>UTF-8 became the most common encoding for web pages in the late 2000s and now accounts for nearly all web content. It is the required default in standards such as JSON (in practice), HTML5, and XML recommendations, and the standard character set for most programming languages' source files and for Unix-like systems generally.</p>
+<p class="small">See also: <a href="../Unicode/index.html">Unicode</a> · <a href="../UTF-16/index.html">UTF-16</a> · <a href="../ASCII/index.html">ASCII</a></p>
+</div>
+</body>
+</html>
