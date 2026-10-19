@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>U-Net - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#f8f9fa;color:#202122;margin:0}
+#content{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{border-bottom:1px solid #a2a9b1;font-size:1.4em;margin-top:1.2em;font-weight:normal}
+p{line-height:1.6;font-family:sans-serif;font-size:0.95em}
+.hero{display:block;max-width:400px;width:100%;border:1px solid #c8ccd1;background:#eaecf0}
+figcaption{font-family:sans-serif;font-size:0.8em;color:#54595d;text-align:center}
+a{color:#0645ad;text-decoration:none}
+</style></head><body><div id="content">
+<h1>U-Net</h1>
+<figure><img class="hero" src="images/u-net.png" alt="The U-Net architecture diagram"><figcaption>The U-shaped architecture of U-Net.</figcaption></figure>
+<p><b>U-Net</b> is a convolutional neural network architecture developed for biomedical image segmentation at the University of Freiburg. It was introduced by Olaf Ronneberger, Philipp Fischer, and Thomas Brox in 2015. The architecture consists of a contracting path to capture context and a symmetric expanding path that enables precise localization, forming a characteristic U shape.</p>
+<h2>Architecture</h2>
+<p>The contracting (encoder) path repeatedly applies convolutions followed by max-pooling, doubling the number of feature channels at each downsampling step. The expansive (decoder) path upsamples the feature map and concatenates it with the correspondingly cropped feature map from the contracting path — the distinctive "skip connections" of U-Net — which allows high-resolution features to be combined with upsampled output. A final 1×1 convolution maps the feature vector to the desired number of classes.</p>
+<h2>Applications</h2>
+<p>U-Net achieved state-of-the-art results on several biomedical segmentation challenges while training on very few annotated images, aided by aggressive data augmentation with elastic deformations. Variants have since been applied far beyond medicine, including satellite imagery, industrial inspection, and as the denoising network in diffusion models for image generation.</p>
+</div></body></html>

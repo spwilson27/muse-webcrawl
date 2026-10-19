@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Union type - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#fff;color:#202122}
+#content{margin:0 auto;max-width:960px;padding:20px 28px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{text-align:center;margin:14px 0}
+.hero img{max-width:420px;width:100%;background:#eaecf0;border:1px solid #a2a9b1}
+.caption{font-size:12px;color:#54595d}
+.catlinks{border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;font-size:13px;margin-top:30px}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Union type</h1>
+<div class="hero"><img src="images/Union_type.png" alt="Diagram of a value that may hold either a number or a string, the two members of a union type"><div class="caption">A union type variable may hold a value of any one of its member types.</div></div>
+<p>In computer science, a <b>union type</b> is a type that can hold values of several different (but fixed) types; only one of the alternatives can be present at any time. Union types are closely related to sum types and tagged (discriminated) unions in type theory, and appear in languages such as TypeScript, Rust (through enums), Haskell and ML (as algebraic data types), C and C++ (as the <code>union</code> construct), and PHP and Python (through type annotations such as <code>int | str</code>).</p>
+<h2>Tagged and untagged unions</h2>
+<p>In a <b>tagged union</b> (discriminated union), each value carries an explicit tag recording which alternative it currently holds, so a program can safely determine the active member at runtime. Languages such as Rust, Swift, Haskell and OCaml build their enumerations on this principle. In an <b>untagged union</b>, such as C's <code>union</code>, the storage simply overlays the members: the programmer is responsible for knowing which member was last written, and reading another member reinterprets the bits — a flexible but error-prone feature inherited from systems programming.</p>
+<h2>Union types in type systems</h2>
+<p>TypeScript popularised union types in mainstream programming with syntax such as <code>string | number</code>, combined with type narrowing through control-flow analysis. Flow, Hack and PHP 8 support similar constructs. In set-theoretic terms the union type corresponds to the set union of its member types, and is dual to the intersection type. A value of a union type may be used anywhere a value of one specific member is expected only after the program has checked which alternative is present.</p>
+<h2>Applications</h2>
+<p>Union types model values that may legitimately take different forms: a function result that is either a value or an error (result types), optional values (<code>T | null</code>), polymorphic function arguments, and nodes of abstract syntax trees in compilers.</p>
+<h2>See also</h2>
+<p><a href="../Sum_type/index.html">Sum type</a> · <a href="../Tagged_union/index.html">Tagged union</a> · <a href="../Algebraic_data_type/index.html">Algebraic data type</a> · <a href="../Intersection_type/index.html">Intersection type</a> · <a href="../Type_system/index.html">Type system</a></p>
+<div class="catlinks">Categories: Data types | Type theory | Programming language topics</div>
+</div>
+</body>
+</html>

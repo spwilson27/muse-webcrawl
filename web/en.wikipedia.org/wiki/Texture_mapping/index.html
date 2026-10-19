@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Texture mapping - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;color:#202122;background:#f8f9fa}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:88%;margin:0 0 12px 16px;padding:8px}
+.infobox th{background:#b0c4de;text-align:center;padding:4px}
+.infobox td{padding:2px 4px;vertical-align:top}
+.hero{text-align:center;margin:16px 0}
+.hero img{max-width:420px;width:100%;border:1px solid #a2a9b1;background:#eaecf0}
+.caption{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Texture mapping</h1>
+<p><b>Texture mapping</b> is a method for mapping a two-dimensional surface texture onto a three-dimensional object in computer graphics, so that the object appears to have surface detail, colour variation, or material properties without modelling that detail geometrically. The 2D image used is called a <b>texture map</b>, and each point on the model's surface is assigned texture coordinates, conventionally called <i>u</i> and <i>v</i>.</p>
+<div class="hero"><img src="images/texture-mapping.png" alt="A checkerboard texture map wrapped onto a three-dimensional sphere and plane"><div class="caption">A checkerboard texture applied to 3D geometry; distortion reveals how the surface is parameterised.</div></div>
+<h2>History</h2>
+<p>The technique was developed in the 1970s. Edwin Catmull described texture mapping in his 1974 PhD thesis at the University of Utah, and James Blinn and Martin Newell refined the method in 1976. Blinn went on to introduce related techniques such as bump mapping (1978) and reflection mapping. Texture mapping became a standard feature of graphics hardware in the 1990s, when 3D accelerator cards made per-pixel texture sampling fast enough for real-time games.</p>
+<h2>How it works</h2>
+<p>A texture map is an image whose pixels are called <i>texels</i>. During rendering, each pixel of the object on screen is mapped back to a position in texture space, and the texel colour there is sampled. Because a screen pixel rarely aligns exactly with a single texel, filtering is used: nearest-neighbour sampling gives a blocky appearance, while bilinear and trilinear filtering interpolate smoothly. <b>Mipmaps</b> — precomputed smaller versions of the texture — are selected according to distance to reduce aliasing and shimmering, often combined with anisotropic filtering for surfaces viewed at grazing angles.</p>
+<h2>UV mapping</h2>
+<p>Assigning texture coordinates to a mesh is called <b>UV mapping</b>. Artists typically "unwrap" the model, cutting seams so the surface can be laid flat in texture space with minimal distortion and wasted space. Poor unwraps produce stretching or visible seams; chart packing arranges the flattened pieces efficiently in the texture atlas.</p>
+<h2>Applications and related techniques</h2>
+<p>Texture mapping underpins modern real-time rendering in video games, film, simulation, and visualisation. Related techniques store other surface properties in maps: normal maps and bump maps fake fine geometry, specular/roughness maps control shininess, and ambient occlusion maps darken crevices. Procedural textures generate the image algorithmically instead of painting it. In modern physically based rendering (PBR) workflows, an albedo (base colour) map is combined with metallic, roughness, and normal maps following a standardised material model.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../UV_mapping/index.html">UV mapping</a></li>
+<li><a href="../Mipmap/index.html">Mipmap</a></li>
+<li><a href="../Bump_mapping/index.html">Bump mapping</a></li>
+<li><a href="../Normal_mapping/index.html">Normal mapping</a></li>
+<li><a href="../3D_computer_graphics/index.html">3D computer graphics</a></li>
+</ul>
+</div>
+</body>
+</html>

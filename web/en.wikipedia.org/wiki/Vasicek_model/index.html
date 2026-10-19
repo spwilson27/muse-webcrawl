@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vasicek model - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.5em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+p{line-height:1.6;font-family:sans-serif;font-size:0.95em}
+.hero{display:block;width:100%;height:160px;background:#eef;border:1px solid #a2a9b1;text-align:center;line-height:160px;color:#555;margin-bottom:8px}
+.eq{text-align:center;font-family:Georgia,serif;font-size:1.05em;margin:1em 0}
+a{color:#0645ad;text-decoration:none}
+.small{font-size:0.8em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Vasicek model</h1>
+<img class="hero" src="images/Vasicek_model.png" alt="Simulated mean-reverting interest-rate paths under the Vasicek model">
+<p>In finance, the <b>Vasicek model</b> is a mathematical model describing the evolution of interest rates. Proposed by Oldřich Vašíček in 1977, it was the first model to capture <b>mean reversion</b> in interest rates and remains a foundational example of a one-factor short-rate model. It is a special case of the Ornstein–Uhlenbeck process applied to the instantaneous short rate.</p>
+<h2>The model</h2>
+<p>The short rate r<sub>t</sub> follows the stochastic differential equation:</p>
+<p class="eq">dr<sub>t</sub> = a(b − r<sub>t</sub>)dt + σ dW<sub>t</sub></p>
+<p>where b is the long-run mean rate, a is the speed of reversion toward that mean, σ is the instantaneous volatility, and W<sub>t</sub> is a Wiener process under the risk-neutral measure. When the rate is above b the drift is negative, and vice versa, so rates are pulled toward the long-run level while being continuously disturbed by random shocks. Because the process is Gaussian, the short rate at any future time is normally distributed with a mean that decays exponentially toward b.</p>
+<h2>Bond pricing</h2>
+<p>The model admits closed-form prices for zero-coupon bonds, which are exponential-affine functions of the short rate, and hence an analytic term structure of interest rates. This tractability made the model extremely influential in the development of interest-rate derivatives pricing.</p>
+<h2>Limitations and extensions</h2>
+<p>The model's best-known defect is that, being Gaussian, it allows interest rates to become negative with positive probability — a feature once thought unrealistic, though less troubling in the era of negative policy rates in Europe and Japan. The model also cannot be calibrated to fit an arbitrary initial yield curve exactly; the Cox–Ingersoll–Ross model, which keeps rates non-negative, and the Hull–White model, which adds a time-dependent drift to fit the initial term structure, were developed partly in response.</p>
+<h2>See also</h2>
+<p><a href="../Short-rate_model/index.html">Short-rate model</a> · <a href="../Ornstein-Uhlenbeck_process/index.html">Ornstein–Uhlenbeck process</a> · <a href="../Hull-White_model/index.html">Hull–White model</a></p>
+<p class="small">Recreated from memory for the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

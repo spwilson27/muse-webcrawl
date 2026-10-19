@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>String-searching algorithm - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff}
+.mw-body{max-width:960px;margin:0 auto;padding:20px 28px;line-height:1.6}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-size:1.9em}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.4em}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;margin:0 0 1em 1.2em;padding:8px;font-size:0.88em}
+.infobox th{background:#e8eaf0;text-align:left;padding:3px 6px}
+.infobox td{padding:3px 6px}
+.infobox .ib-title{background:#dfe3ec;text-align:center;font-weight:bold;font-size:1.05em}
+img.hero{display:block;width:100%;height:auto;background:#eef;border:1px solid #ccc}
+.thumb{color:#54595d;font-size:0.85em;text-align:center}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+code{font-family:ui-monospace,monospace;background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>String-searching algorithm</h1>
+<div class="infobox">
+<div class="ib-title">String searching</div>
+<img class="hero" src="images/string-searching-algorithm.png" alt="Diagram of a pattern being matched against a text">
+<div class="thumb">Searching for a pattern within a text (placeholder)</div>
+<table>
+<tr><th>Class</th><td>Search algorithm</td></tr>
+<tr><th>Problem</th><td>Find occurrences of a "pattern" string within a "text" string</td></tr>
+<tr><th>Notable algorithms</th><td>Knuth–Morris–Pratt, Boyer–Moore, Rabin–Karp, Aho–Corasick</td></tr>
+</table>
+</div>
+<p>In computer science, <b>string-searching algorithms</b>, sometimes called <b>string-matching algorithms</b>, are an important class of string algorithms that try to find a place where one or several strings (also called patterns) are found within a larger string or text. Formally, given a text of length <i>n</i> and a pattern of length <i>m</i>, the task is to report all starting positions at which the pattern occurs in the text.</p>
+<h2>Naive search</h2>
+<p>The simplest approach aligns the pattern at every position of the text and compares characters one by one. It requires no preprocessing and constant extra space, but its worst-case running time is O(<i>n·m</i>), which occurs, for example, when searching for many repetitions of a character followed by a mismatch.</p>
+<h2>Classic algorithms</h2>
+<h3>Knuth–Morris–Pratt (1977)</h3>
+<p>The Knuth–Morris–Pratt (KMP) algorithm preprocesses the pattern into a "failure function" recording, for each prefix, the longest proper border. This lets the search skip ahead on a mismatch without re-examining text characters, guaranteeing O(<i>n</i> + <i>m</i>) time.</p>
+<h3>Boyer–Moore (1977)</h3>
+<p>The Boyer–Moore algorithm compares the pattern from right to left and uses "bad character" and "good suffix" heuristics to skip large portions of the text, often achieving sublinear performance in practice. Its simplified variant, Boyer–Moore–Horspool, is widely used in library implementations of <code>memmem</code>-style searches.</p>
+<h3>Rabin–Karp (1987)</h3>
+<p>Rabin–Karp uses rolling hash functions to compare the pattern's hash with hashes of text windows, verifying candidate matches character by character. It is especially useful for multiple-pattern search, where many patterns of the same length can be sought simultaneously.</p>
+<h3>Finite-automaton and multiple-pattern methods</h3>
+<p>The Aho–Corasick algorithm (1975) builds a trie with failure links to find all occurrences of a dictionary of patterns in a single pass, and underpins intrusion-detection and antivirus scanning tools. Algorithms based on suffix arrays, suffix trees and the Burrows–Wheeler transform (as in FM-indexes) support fast repeated queries over static texts.</p>
+<h2>Applications</h2>
+<p>String searching is fundamental to text editors, search engines, plagiarism detection, bioinformatics (searching DNA and protein sequences), network security, and spell checking.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm/index.html">Knuth–Morris–Pratt algorithm</a></li>
+<li><a href="../Boyer%E2%80%93Moore_string-search_algorithm/index.html">Boyer–Moore string-search algorithm</a></li>
+<li><a href="../Regular_expression/index.html">Regular expression</a></li>
+</ul>
+</div>
+</body>
+</html>

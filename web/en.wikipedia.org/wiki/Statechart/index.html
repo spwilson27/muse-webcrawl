@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Statechart - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:960px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-family:sans-serif;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-size:1.8em}
+h2{font-family:sans-serif;border-bottom:1px solid #a2a9b1;font-size:1.3em;margin-top:1.2em}
+.hero{display:block;max-width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:8px;text-align:center;font-family:sans-serif;font-size:0.85em;color:#54595d;margin:10px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Statechart</h1>
+<img class="hero" src="images/Statechart.png" alt="Example statechart diagram showing hierarchical states and transitions">
+<p>A <b>statechart</b> is a formalism and visual language for describing the behaviour of complex reactive systems. It was invented by David Harel in the 1980s and presented in his influential 1987 paper "Statecharts: A Visual Formalism for Complex Systems". Statecharts extend conventional finite-state machines with hierarchy, concurrency and communication, addressing the "state explosion" problem that makes flat state diagrams impractical for large systems.</p>
+<h2>Features</h2>
+<h3>Hierarchy</h3>
+<p>States may contain substates, allowing behaviour to be described at multiple levels of abstraction. A transition from a high-level state applies to all of its substates, so common behaviour does not have to be repeated for every nested state.</p>
+<h3>Orthogonality (concurrency)</h3>
+<p>A state may be decomposed into orthogonal regions separated by dashed lines, each region being an independent state machine running in parallel. This models concurrent components without multiplying out all combinations of states.</p>
+<h3>Broadcast communication</h3>
+<p>Events generated in one part of the diagram can trigger transitions elsewhere, providing a mechanism for communication between orthogonal regions.</p>
+<h3>History</h3>
+<p>A history pseudo-state allows a composite state to "remember" which substate was active when it was last exited, so that re-entering the state resumes where it left off. Shallow history remembers only the immediate substate; deep history remembers nested configurations.</p>
+<h2>Semantics and variants</h2>
+<p>Because Harel's original paper left some semantic choices open, many variants exist. The state-machine notation of the Unified Modeling Language (UML) — called <i>state machine diagrams</i> — is based on statecharts but has its own semantics, notably run-to-completion event processing. The W3C's SCXML (State Chart XML) standard defines an executable statechart language used in voice applications and elsewhere. Tools implementing Harel-style semantics include Statemate (the original commercial tool), Rhapsody, Yakindu Statechart Tools, and the JavaScript library XState.</p>
+<h2>Applications</h2>
+<p>Statecharts are used in embedded and safety-critical systems — avionics, automotive control, medical devices — as well as in user-interface logic, game development and workflow modelling, anywhere a system's behaviour depends on its history of events.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Finite-state_machine/index.html">Finite-state machine</a></li>
+<li><a href="../David_Harel/index.html">David Harel</a></li>
+<li><a href="../UML_state_machine/index.html">UML state machine</a></li>
+<li><a href="../SCXML/index.html">SCXML</a></li>
+<li><a href="../Petri_net/index.html">Petri net</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vanishing gradient problem - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.5em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+p{line-height:1.6;font-family:sans-serif;font-size:0.95em}
+.hero{display:block;width:100%;height:160px;background:#eef;border:1px solid #a2a9b1;text-align:center;line-height:160px;color:#555;margin-bottom:8px}
+a{color:#0645ad;text-decoration:none}
+.small{font-size:0.8em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Vanishing gradient problem</h1>
+<img class="hero" src="images/Vanishing_gradient_problem.png" alt="Diagram of gradients shrinking through layers of a neural network">
+<p>In machine learning, the <b>vanishing gradient problem</b> is a difficulty encountered when training artificial neural networks with gradient-based methods such as backpropagation. As the gradient of the loss function is propagated backwards through many layers — or, in recurrent networks, through many time steps — it is repeatedly multiplied by small numbers and can shrink exponentially toward zero. Early layers then learn extremely slowly or not at all, making deep networks difficult to train.</p>
+<h2>Cause</h2>
+<p>Backpropagation computes gradients by the chain rule, so the gradient reaching an early layer is a product of many factors: the derivatives of the activation functions and the weights of each intervening layer. With saturating activations such as the sigmoid or hyperbolic tangent, whose derivatives are at most 0.25 (for sigmoid), each layer can shrink the gradient substantially; a product over dozens of layers effectively vanishes. The related <b>exploding gradient problem</b> arises when the factors exceed one and the gradient grows uncontrollably.</p>
+<p>The problem was identified and analysed in the early 1990s, notably in Sepp Hochreiter's 1991 diploma thesis and in work by Yoshua Bengio and colleagues (1994), and it largely explained why deep and recurrent networks underperformed for many years.</p>
+<h2>Solutions</h2>
+<p>Several innovations mitigate the problem. Long short-term memory (LSTM) networks, introduced by Hochreiter and Jürgen Schmidhuber in 1997, preserve gradients through a self-connected memory cell — the "constant error carousel" — and gated units such as GRUs use similar ideas. In feedforward networks, non-saturating activations such as the rectified linear unit (ReLU), careful weight initialisation schemes (Glorot/Xavier and He initialisation), batch normalisation, gradient clipping (against explosion), and residual connections that let gradients bypass layers have made training networks with hundreds of layers routine.</p>
+<h2>See also</h2>
+<p><a href="../Backpropagation/index.html">Backpropagation</a> · <a href="../Long_short-term_memory/index.html">Long short-term memory</a> · <a href="../Deep_learning/index.html">Deep learning</a></p>
+<p class="small">Recreated from memory for the muse-webcrawl project.</p>
+</div>
+</body>
+</html>
