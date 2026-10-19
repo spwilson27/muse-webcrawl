@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Onion routing - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#fff;color:#202122}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+#content{max-width:960px;margin:0 auto;padding:1em 1.5em}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+p{line-height:1.6;font-family:sans-serif;font-size:.95em}
+.infobox{float:right;width:22em;border:1px solid #a2a9b1;background:#f8f9fa;padding:.5em;margin:0 0 1em 1em;font-family:sans-serif;font-size:.85em}
+.infobox th{background:#b0c4de;text-align:center;padding:.3em}
+.infobox td{padding:.15em .4em;vertical-align:top}
+.hero{text-align:center;margin:1em 0}
+.hero img{max-width:100%;border:1px solid #a2a9b1;background:#eaecf0;padding:2em 1em;color:#72777d}
+.caption{font-size:.8em;color:#54595d;font-family:sans-serif}
+ul{font-family:sans-serif;font-size:.95em;line-height:1.6}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Onion routing</h1>
+<p><b>Onion routing</b> is a technique for anonymous communication over a computer network. In an <b>onion network</b>, messages are encapsulated in layers of encryption, analogous to the layers of an onion. The encrypted data is transmitted through a series of network nodes called <b>onion routers</b>, each of which "peels" away a single layer, revealing the data's next destination. When the final layer is decrypted, the message arrives at its destination. The sender remains anonymous because each intermediary knows only the location of the immediately preceding and following nodes.</p>
+<div class="hero"><img src="images/Onion_routing.png" alt="Illustration placeholder: diagram of a message passing through three onion routers">
+<div class="caption">Data is wrapped in successive layers of encryption, one removed at each relay.</div></div>
+<table class="infobox">
+<tr><th colspan="2">Onion routing</th></tr>
+<tr><td><b>Developed</b></td><td>Mid-1990s, U.S. Naval Research Laboratory</td></tr>
+<tr><td><b>Key researchers</b></td><td>Paul Syverson, Michael G. Reed, David Goldschlag</td></tr>
+<tr><td><b>Main implementation</b></td><td><a href="../Tor_(network)/index.html">Tor</a></td></tr>
+<tr><td><b>Purpose</b></td><td>Anonymous communication, traffic-analysis resistance</td></tr>
+</table>
+<h2>How it works</h2>
+<p>A client builds a circuit through (typically) three relays chosen from a public directory. It negotiates a separate encryption key with each relay using public-key cryptography, then wraps outgoing data in three layers of encryption. The entry (guard) relay knows the client's address but not the destination; the middle relay knows neither endpoint; the exit relay knows the destination but not the client. Each relay removes only its own layer, so no single node can link sender to recipient. Circuits are usually rotated periodically.</p>
+<h2>History and Tor</h2>
+<p>Onion routing was developed at the U.S. Naval Research Laboratory in the 1990s to protect U.S. intelligence communications online, and the underlying patent was granted in 1998. A second-generation design by Roger Dingledine, Nick Mathewson and Paul Syverson became <a href="../Tor_(network)/index.html">Tor</a>, released as free software in 2003–2004. Tor supports "onion services" (formerly hidden services) that allow servers themselves to remain anonymous, reachable via <i>.onion</i> addresses.</p>
+<h2>Weaknesses</h2>
+<p>Onion routing does not protect against a global passive adversary able to observe traffic entering and leaving the network and correlate timing and volume (end-to-end correlation attacks). Exit traffic to unencrypted destinations can be observed or tampered with by exit-relay operators. Browser-level leaks and user behaviour can also compromise anonymity.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Tor_(network)/index.html">Tor (network)</a></li>
+<li><a href="../Anonymous_communication/index.html">Anonymous communication</a></li>
+<li><a href="../Mix_network/index.html">Mix network</a></li>
+<li><a href="../Dark_web/index.html">Dark web</a></li>
+</ul>
+</div>
+</body>
+</html>
