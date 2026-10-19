@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CLIP (model) - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine','Georgia',serif;background:#fff;color:#202122;margin:0;padding:0 1.5em;line-height:1.6}
+#content{max-width:960px;margin:0 auto}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;margin:.5em 0 .3em;padding-bottom:.2em;font-weight:normal}
+h2{font-size:1.5em;border-bottom:1px solid #a2a9b1;margin:.8em 0 .4em;font-weight:normal}
+p{margin:.4em 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:.85em;margin:.5em 0 1em 1em;padding:.5em}
+.infobox th,.infobox td{padding:.25em .4em;vertical-align:top;text-align:left}
+.infobox caption{font-weight:bold;background:#eaecf0;padding:.3em}
+.hero{border:1px solid #c8ccd1;background:#f8f9fa;padding:.5em;text-align:center;margin:1em 0;font-size:.9em;color:#54595d}
+.refs{font-size:.85em}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>CLIP (model)</h1>
+<table class="infobox"><caption>CLIP</caption>
+<tr><th>Developer</th><td>OpenAI</td></tr>
+<tr><th>Initial release</th><td>January 2021 (paper February 2021)</td></tr>
+<tr><th>Type</th><td>Vision–language model</td></tr>
+<tr><th>License</th><td>MIT (code and weights)</td></tr>
+</table>
+<div class="hero"><img src="images/clip-model.png" alt="Diagram of contrastive image–text pre-training">[Hero image placeholder: CLIP contrastive training diagram]</div>
+<p><b>CLIP</b> (<b>Contrastive Language–Image Pre-training</b>) is a neural network model developed by OpenAI that learns visual concepts from natural language supervision. Introduced in 2021, it jointly trains an image encoder and a text encoder on a large dataset of image–caption pairs collected from the internet, using a contrastive objective: the model learns to predict which caption in a batch matches which image.</p>
+<h2>Method</h2>
+<p>CLIP was trained on a dataset of about 400 million (image, text) pairs. During training, the image and text encoders produce embeddings that are compared with cosine similarity; the contrastive loss maximises the similarity of correct pairs and minimises that of incorrect pairs. The image encoder used either a modified ResNet or a Vision Transformer (ViT), while the text encoder was a Transformer.</p>
+<h2>Zero-shot transfer</h2>
+<p>Because CLIP maps images and text into a shared embedding space, it can perform classification without task-specific training examples: given an image, one embeds candidate class descriptions (e.g. "a photo of a dog") and selects the closest. OpenAI reported that a zero-shot CLIP model matched the accuracy of a fully supervised ResNet-50 on ImageNet without using any of ImageNet's training images.</p>
+<h2>Applications and influence</h2>
+<p>CLIP became a foundational component in multimodal AI. It has been used for image search and moderation, as the conditioning encoder in text-to-image generation systems such as DALL·E 2 and Stable Diffusion, and as a building block in vision-language models. OpenAI released the code and weights under the MIT license, and open reproductions such as OpenCLIP followed.</p>
+<h2>Limitations</h2>
+<p>Researchers have noted weaknesses in counting, fine-grained classification, and spatial reasoning, and that biases present in web-scraped training data can be reflected in the model's behaviour.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../OpenAI">OpenAI</a></li>
+<li><a href="../DALL-E">DALL-E</a></li>
+<li><a href="../Vision_transformer">Vision transformer</a></li>
+<li><a href="../Contrastive_learning">Contrastive learning</a></li>
+</ul>
+<h2>References</h2>
+<ol class="refs">
+<li>Radford, A.; Kim, J. W.; Hallacy, C.; et al. "Learning Transferable Visual Models From Natural Language Supervision." ICML, 2021.</li>
+</ol>
+</div>
+</body>
+</html>

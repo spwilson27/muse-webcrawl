@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CFL condition - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine','Georgia',serif;background:#fff;color:#202122;margin:0;padding:0 1.5em;line-height:1.6}
+#content{max-width:960px;margin:0 auto}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;margin:.5em 0 .3em;padding-bottom:.2em;font-weight:normal}
+h2{font-size:1.5em;border-bottom:1px solid #a2a9b1;margin:.8em 0 .4em;font-weight:normal}
+p{margin:.4em 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.eq{background:#f8f9fa;border:1px solid #eaecf0;padding:.6em 1em;text-align:center;font-size:1.1em;margin:1em 0}
+.hero{border:1px solid #c8ccd1;background:#f8f9fa;padding:.5em;text-align:center;margin:1em 0;font-size:.9em;color:#54595d}
+.refs{font-size:.85em}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>CFL condition</h1>
+<div class="hero"><img src="images/cfl-condition.png" alt="Diagram showing the domain of dependence of a point in a numerical scheme">[Hero image placeholder: domain of dependence diagram]</div>
+<p>In mathematics, the <b>Courant–Friedrichs–Lewy condition</b> (<b>CFL condition</b>) is a necessary condition for convergence while solving certain partial differential equations (usually hyperbolic PDEs) numerically. It arises in the numerical analysis of explicit time integration schemes, where it imposes a limit on the size of the time step that can be taken for a given spatial discretisation.</p>
+<h2>Formulation</h2>
+<p>For a one-dimensional problem, the CFL condition states that</p>
+<div class="eq">C = u·Δt / Δx ≤ C<sub>max</sub></div>
+<p>where u is a characteristic velocity, Δt is the time step, Δx is the spatial step, and C is the <b>Courant number</b>. The constant C<sub>max</sub> depends on the particular scheme; for many explicit methods it is 1.</p>
+<h2>Intuition</h2>
+<p>The physical interpretation is that information in the true solution travels at a finite speed. The numerical domain of dependence of a point must contain the physical domain of dependence; otherwise the scheme cannot "see" the information it needs and becomes unstable. In practical terms, a fluid particle (or wave) must not cross more than one grid cell in a single time step.</p>
+<h2>History</h2>
+<p>The condition was published in 1928 by Richard Courant, Kurt Friedrichs and Hans Lewy in their paper "Über die partiellen Differenzengleichungen der mathematischen Physik" in <i>Mathematische Annalen</i>. At the time it was a theoretical result about existence proofs rather than a practical guide, since the calculations were done by hand.</p>
+<h2>Multidimensional problems</h2>
+<p>In two and three dimensions the condition generalises, roughly requiring the sum (or the Euclidean norm) of the Courant numbers in each direction to remain below the stability limit. For convection–diffusion problems, additional constraints arise from the diffusion term, typically scaling with Δx².</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Von_Neumann_stability_analysis">Von Neumann stability analysis</a></li>
+<li><a href="../Finite_difference_method">Finite difference method</a></li>
+<li><a href="../Computational_fluid_dynamics">Computational fluid dynamics</a></li>
+</ul>
+<h2>References</h2>
+<ol class="refs">
+<li>Courant, R.; Friedrichs, K.; Lewy, H. (1928). "Über die partiellen Differenzengleichungen der mathematischen Physik." Mathematische Annalen 100 (1): 32–74.</li>
+<li>LeVeque, Randall J. Finite Volume Methods for Hyperbolic Problems. Cambridge University Press, 2002.</li>
+</ol>
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Graph canonization - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine",Georgia,serif;margin:0;color:#202122;background:#fff}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.topbar{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:8px 20px;font-family:sans-serif;font-size:13px}
+.content{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-family:sans-serif;font-size:13px;margin:0 0 12px 16px;padding:8px}
+.infobox th{background:#cedff2;text-align:center;padding:5px}
+.infobox td{padding:3px 5px;vertical-align:top}
+.heroimg{display:block;margin:10px auto;max-width:420px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;text-align:center;font-family:sans-serif;font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="topbar">Wikipedia &nbsp;·&nbsp; The Free Encyclopedia</div>
+<div class="content">
+<h1>Graph canonization</h1>
+<table class="infobox">
+<tr><th colspan="2">Graph canonization</th></tr>
+<tr><td><b>Field</b></td><td>Computational complexity, graph theory</td></tr>
+<tr><td><b>Input</b></td><td>A graph G</td></tr>
+<tr><td><b>Output</b></td><td>A canonical representative of the isomorphism class of G</td></tr>
+<tr><td><b>Related problem</b></td><td>Graph isomorphism</td></tr>
+</table>
+<div class="heroimg"><img src="images/Graph_canonization.png" alt="Two differently labelled copies of the same graph mapped to one canonical labelling" width="400"><br>Labelled placeholder: isomorphic graphs being mapped to a single canonical form.</div>
+<p>In graph theory, a branch of mathematics, <b>graph canonization</b> is the task of finding a canonical form of a given graph G. A canonical form is a labelled graph Canon(G) that is isomorphic to G, such that every graph that is isomorphic to G has the same canonical form as G. Thus, from a solution to the graph canonization problem, one could also solve the problem of <a href="../Graph_isomorphism_problem/index.html">graph isomorphism</a>: to test whether two graphs G and H are isomorphic, compute their canonical forms Canon(G) and Canon(H), and test whether these canonical forms are identical.</p>
+<p>Despite the close relationship, the graph isomorphism problem and the graph canonization problem are not known to be computationally equivalent in general; canonization is at least as hard as isomorphism testing, and for some classes of graphs canonization is known to be polynomial-time solvable while for others the status matches that of the isomorphism problem.</p>
+<h2>Known results</h2>
+<p>Graph canonization is solvable in polynomial time for several special classes of graphs, including trees, planar graphs, and graphs of bounded degree, following classical work such as that of Hopcroft and Wong (1974) on linear-time canonization of planar graphs. For general graphs, the best known theoretical bounds mirror those for graph isomorphism, including the quasi-polynomial-time algorithm of László Babai (announced 2015).</p>
+<p>A <i>complete invariant</i> is a computable function that takes the same value on isomorphic graphs and different values on non-isomorphic graphs; a canonical form is a particularly concrete type of complete invariant. Not every complete invariant corresponds to a canonical labelling.</p>
+<h2>Practical algorithms</h2>
+<p>Widely used practical canonization tools include:</p>
+<ul>
+<li><b>nauty</b> and <b>Traces</b> by Brendan McKay and Adolfo Piperno, based on partition refinement and individualization;</li>
+<li><b>bliss</b>, developed in Finland, used in many isomorphism applications;</li>
+<li><b>saucy</b>, optimized for sparse graphs arising in circuit verification.</li>
+</ul>
+<p>These programs also compute the <a href="../Graph_automorphism/index.html">automorphism group</a> of the input graph, which they use to prune the search tree during canonization. Applications include chemical database deduplication, verification of combinatorial designs, and enumeration of non-isomorphic structures.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Graph_isomorphism_problem/index.html">Graph isomorphism problem</a></li>
+<li><a href="../Graph_automorphism/index.html">Graph automorphism</a></li>
+<li><a href="../Canonical_form/index.html">Canonical form</a></li>
+</ul>
+<h2>References</h2>
+<p>From memory: Babai, "Graph isomorphism in quasipolynomial time" (2016); McKay &amp; Piperno, "Practical graph isomorphism, II" (2014); Köbler, Schöning &amp; Torán, <i>The Graph Isomorphism Problem</i> (1993).</p>
+</div>
+</body>
+</html>

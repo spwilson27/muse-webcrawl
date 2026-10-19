@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fermat primality test - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,Times,serif;margin:0;color:#202122;background:#fff}
+.mw-body{max-width:960px;margin:0 auto;padding:20px 30px;line-height:1.6}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-bottom:4px}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:24px}
+h3{font-size:17px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:13px}
+.infobox caption{font-weight:bold;font-size:15px;padding:4px}
+.infobox td,.infobox th{padding:3px 6px;vertical-align:top;text-align:left}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;font-size:13px}
+.ref{font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Fermat primality test</h1>
+<p>The <b>Fermat primality test</b> is a probabilistic test to determine whether a number is a probable prime. It is based on Fermat's little theorem, which states that if <i>p</i> is prime and <i>a</i> is not divisible by <i>p</i>, then a<sup>p−1</sup> ≡ 1 (mod p).</p>
+<h2>Algorithm</h2>
+<p>Given an integer n &gt; 1 to test, choose a random base a in the range 2 ≤ a ≤ n − 2 and compute a<sup>n−1</sup> mod n. If the result is not 1, then n is definitely composite. If it is 1, n is a "probable prime to base a." Repeating the test with several independent bases reduces the probability of error—but not to zero, because some composite numbers pass for particular bases.</p>
+<pre>
+function isProbablePrime(n, k):
+    repeat k times:
+        pick a at random in [2, n-2]
+        if a^(n-1) mod n != 1: return composite
+    return probably prime
+</pre>
+<h2>Fermat liars and Carmichael numbers</h2>
+<p>A base a for which a composite n satisfies a<sup>n−1</sup> ≡ 1 (mod n) is called a Fermat liar, and n is a pseudoprime to base a. If n passes for <i>every</i> base a coprime to n, it is a Carmichael number; infinitely many exist (e.g., 561 = 3 × 11 × 17). Carmichael numbers make the Fermat test unreliable in the worst case, though they are rare among random numbers in practice.</p>
+<h2>Applications</h2>
+<p>The Fermat test is fast and simple and forms the conceptual basis of more powerful tests. In practice it has largely been superseded by the Miller–Rabin primality test, which detects all Carmichael numbers, and by the deterministic Baillie–PSW test used in computer algebra systems. Fermat-style tests are still used in cryptographic key generation as a quick screen for candidate primes in some implementations.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../Fermat%27s_little_theorem/index.html">Fermat's little theorem</a></li>
+<li><a href="../../Miller–Rabin_primality_test/index.html">Miller–Rabin primality test</a></li>
+<li><a href="../../Carmichael_number/index.html">Carmichael number</a></li>
+</ul>
+<p class="ref">Recreated from memory as part of the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

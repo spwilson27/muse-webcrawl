@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Confusion matrix - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine","Georgia",serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:24px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-bottom:6px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+p,li{font-family:sans-serif;font-size:0.92em;line-height:1.55}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+table.cm{border-collapse:collapse;font-family:sans-serif;font-size:0.9em;margin:1em auto}
+table.cm td,table.cm th{border:1px solid #a2a9b1;padding:6px 12px;text-align:center}
+table.cm th{background:#f8f9fa}
+figure.hero{float:right;margin:0 0 14px 18px;text-align:center;font-family:sans-serif;font-size:0.8em}
+figure.hero img{width:260px;height:170px;background:#eaecf0;border:1px solid #a2a9b1}
+.footer{clear:both;border-top:1px solid #a2a9b1;margin-top:2em;font-family:sans-serif;font-size:0.8em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Confusion matrix</h1>
+<p>From Wikipedia, the free encyclopedia</p>
+
+<figure class="hero"><img src="images/confusion_matrix.png" alt="[Image placeholder: example confusion matrix heatmap]"><figcaption>[Image: an example confusion matrix]</figcaption></figure>
+
+<p>In the field of <a href="../Machine_learning/index.html">machine learning</a> and specifically the problem of <a href="../Statistical_classification/index.html">statistical classification</a>, a <b>confusion matrix</b>, also known as an <b>error matrix</b>, is a specific table layout that allows visualization of the performance of an algorithm, typically a supervised learning one. Each row of the matrix represents the instances in an actual class while each column represents the instances in a predicted class, or vice versa.</p>
+
+<h2>Binary classification</h2>
+<p>For a binary classifier, the matrix has four entries:</p>
+<table class="cm">
+<tr><th></th><th>Predicted positive</th><th>Predicted negative</th></tr>
+<tr><th>Actually positive</th><td>True positive (TP)</td><td>False negative (FN)</td></tr>
+<tr><th>Actually negative</th><td>False positive (FP)</td><td>True negative (TN)</td></tr>
+</table>
+<p>The terminology comes from diagnostic testing and signal detection: a <b>false positive</b> is a "false alarm" (type I error), and a <b>false negative</b> is a "miss" (type II error).</p>
+
+<h2>Derived measures</h2>
+<p>Many standard evaluation metrics are computed from the four counts:</p>
+<ul>
+<li><b><a href="../Accuracy_and_precision/index.html">Accuracy</a></b> = (TP + TN) / (TP + TN + FP + FN)</li>
+<li><b><a href="../Precision_and_recall/index.html">Precision</a></b> (positive predictive value) = TP / (TP + FP)</li>
+<li><b>Recall</b> (<a href="../Sensitivity_and_specificity/index.html">sensitivity</a>, true positive rate) = TP / (TP + FN)</li>
+<li><b>Specificity</b> (true negative rate) = TN / (TN + FP)</li>
+<li><b><a href="../F-score/index.html">F1 score</a></b> = harmonic mean of precision and recall</li>
+<li><b><a href="../Matthews_correlation_coefficient/index.html">Matthews correlation coefficient</a></b> — a balanced measure using all four cells.</li>
+</ul>
+<p>Accuracy alone can be misleading on imbalanced datasets — a classifier that always predicts the majority class may score highly while being useless — so the full matrix and per-class measures are preferred.</p>
+
+<h2>Multiclass case</h2>
+<p>For problems with more than two classes, the confusion matrix is an n × n table whose diagonal entries are correct predictions and whose off-diagonal entries show which classes are confused with one another, guiding feature engineering and error analysis.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Receiver_operating_characteristic/index.html">Receiver operating characteristic</a></li>
+<li><a href="../Precision_and_recall/index.html">Precision and recall</a></li>
+<li><a href="../Type_I_and_type_II_errors/index.html">Type I and type II errors</a></li>
+</ul>
+
+<div class="footer">This page was last edited on 31 May 2025. Text is available under the Creative Commons Attribution-ShareAlike License.</div>
+</div>
+</body>
+</html>

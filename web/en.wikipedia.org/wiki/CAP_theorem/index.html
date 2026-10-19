@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CAP theorem - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine','Georgia',serif;background:#fff;color:#202122;margin:0;padding:0 1.5em;line-height:1.6}
+#content{max-width:960px;margin:0 auto}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;margin:.5em 0 .3em;padding-bottom:.2em;font-weight:normal}
+h2{font-size:1.5em;border-bottom:1px solid #a2a9b1;margin:.8em 0 .4em;font-weight:normal}
+h3{font-size:1.2em;margin:.7em 0 .3em}
+p{margin:.4em 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:.85em;margin:.5em 0 1em 1em;padding:.5em;border-collapse:collapse}
+.infobox th,.infobox td{padding:.25em .4em;vertical-align:top;text-align:left}
+.infobox caption{font-weight:bold;background:#eaecf0;padding:.3em}
+.hero{border:1px solid #c8ccd1;background:#f8f9fa;padding:.5em;text-align:center;margin:1em 0;font-size:.9em;color:#54595d}
+.refs{font-size:.85em}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>CAP theorem</h1>
+<div class="hero"><img src="images/cap-theorem.png" alt="Diagram of the CAP theorem triangle: consistency, availability, partition tolerance">[Hero image placeholder: CAP theorem triangle diagram]</div>
+<p>In theoretical computer science, the <b>CAP theorem</b>, also named <b>Brewer's theorem</b> after computer scientist Eric Brewer, states that any distributed data store can provide only two of the following three guarantees:</p>
+<ul>
+<li><b>Consistency</b> — every read receives the most recent write or an error.</li>
+<li><b>Availability</b> — every request receives a (non-error) response, without the guarantee that it contains the most recent write.</li>
+<li><b>Partition tolerance</b> — the system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes.</li>
+</ul>
+<p>Because network failures are unavoidable in a distributed system, partition tolerance cannot be given up in practice. As a result, designers of distributed databases must choose between consistency and availability whenever a network partition occurs.</p>
+<h2>History</h2>
+<p>Eric Brewer first presented the idea as a conjecture at the ACM Symposium on Principles of Distributed Computing (PODC) in 2000. In 2002, Seth Gilbert and Nancy Lynch of MIT published a formal proof of the conjecture, establishing it as a theorem. Brewer later revisited the theorem in a 2012 article, "CAP Twelve Years Later: How the 'Rules' Have Changed," arguing that the choice is not a permanent binary one, and that systems can and should manage the trade-off dynamically as partitions heal.</p>
+<h2>Explanation</h2>
+<p>When a network partition separates nodes into groups that cannot communicate, the system faces two options. It may cancel operations to preserve consistency, reducing availability, or it may proceed with operations on both sides, risking inconsistent states. If no partition exists, both consistency and availability can be guaranteed simultaneously.</p>
+<h2>Alternatives and extensions</h2>
+<p>The <b>PACELC theorem</b>, proposed by Daniel J. Abadi, extends CAP by noting that even in the absence of partitions (<i>else</i>), a system must trade off latency against consistency. Many real-world systems, such as Google's Spanner, aim to minimise the practical impact of the trade-off using synchronised clocks and careful engineering.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Consistency_(database)">Consistency (database)</a></li>
+<li><a href="../Distributed_computing">Distributed computing</a></li>
+<li><a href="../Fallacies_of_distributed_computing">Fallacies of distributed computing</a></li>
+<li><a href="../PACELC_theorem">PACELC theorem</a></li>
+</ul>
+<h2>References</h2>
+<ol class="refs">
+<li>Brewer, Eric A. "Towards robust distributed systems." PODC Keynote, 2000.</li>
+<li>Gilbert, Seth; Lynch, Nancy. "Brewer's Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web Services." ACM SIGACT News, 2002.</li>
+<li>Brewer, Eric. "CAP Twelve Years Later: How the 'Rules' Have Changed." Computer, 2012.</li>
+</ol>
+</div>
+</body>
+</html>

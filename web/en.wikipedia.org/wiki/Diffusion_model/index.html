@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Diffusion model - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:1.5em 2em;border:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+p,li{font-family:sans-serif;font-size:.92em;line-height:1.6}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:.85em;margin:0 0 1em 1.5em;padding:.5em;font-family:sans-serif}
+.infobox th{text-align:left;padding:.2em .4em;background:#eaecf0}
+.infobox caption{font-weight:bold;padding:.4em;background:#dfe3ea}
+.hero{display:block;margin:0 auto 1em auto;max-width:420px;border:1px solid #a2a9b1;background:#eaecf0;padding:1em;text-align:center;font-family:sans-serif;font-size:.85em;color:#54595d}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Diffusion model</h1>
+<p>In machine learning, <b>diffusion models</b>, also known as <b>diffusion probabilistic models</b> or <b>score-based generative models</b>, are a class of latent variable generative models. A diffusion model consists of three major components: a forward process (or diffusion process) that gradually adds Gaussian noise to data, a learned reverse process that progressively removes the noise to reconstruct data from pure noise, and a sampling procedure. They are used commercially by <a href="../DALL-E/index.html">DALL-E 2</a>, <a href="../Stable_Diffusion/index.html">Stable Diffusion</a> and <a href="../Midjourney/index.html">Midjourney</a>.</p>
+<img class="hero" src="images/Diffusion_model.png" alt="Placeholder image: a sequence showing an image emerging from Gaussian noise over denoising steps">
+<h2>Overview</h2>
+<p>Training data are corrupted stepwise over many timesteps according to a fixed noise schedule until they become indistinguishable from isotropic Gaussian noise. A neural network — commonly a <a href="../U-Net/index.html">U-Net</a> — is trained to predict the noise (or the score) at each step, so that sampling can start from random noise and iteratively denoise into a new data sample. Conditioning, for example on a text prompt via cross-attention and <a href="../CLIP_(model)/index.html">CLIP</a> embeddings, turns the model into a text-to-image generator; latent diffusion models perform the process in a compressed latent space to reduce cost.</p>
+<h2>History</h2>
+<p>The idea originated with Sohl-Dickstein et al. (2015), drawing on non-equilibrium statistical physics. It was popularised by Ho, Jain and Abbeel's denoising diffusion probabilistic models (DDPM, 2020) and subsequent work on score-based models and improved samplers such as DDIM, and from 2022 diffusion models surpassed GANs as the leading approach to image synthesis.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Generative_model/index.html">Generative model</a></li>
+<li><a href="../Generative_adversarial_network/index.html">Generative adversarial network</a></li>
+<li><a href="../Stable_Diffusion/index.html">Stable Diffusion</a></li>
+</ul>
+</div>
+</body>
+</html>

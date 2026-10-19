@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bisection method - Wikipedia</title>
+<style>
+body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;margin:0;color:#202122;line-height:1.6;background:#fff}
+.content{max-width:960px;margin:0 auto;padding:20px 24px 60px}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-size:2rem;margin-bottom:4px}
+h2{font-family:Georgia,"Times New Roman",serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:1.5rem;margin-top:1.4em}
+.infobox{float:right;width:270px;background:#f8f9fa;border:1px solid #a2a9b1;padding:10px 14px;margin:0 0 14px 18px;font-size:0.88em}
+.infobox th{text-align:left;vertical-align:top;padding:2px 6px 2px 0}
+.infobox td{padding:2px 0}
+.hero{display:block;margin:14px auto;max-width:520px;width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:36px 0;text-align:center;color:#54595d}
+a{color:#3366cc;text-decoration:none}a:hover{text-decoration:underline}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Bisection method</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<aside class="infobox">
+<table>
+<tr><th>Class</th><td>Root-finding algorithm</td></tr>
+<tr><th>Requirement</th><td>Continuous function with a sign change on an interval</td></tr>
+<tr><th>Convergence</th><td>Linear (interval halves each step)</td></tr>
+<tr><th>Basis</th><td>Intermediate value theorem</td></tr>
+</table>
+</aside>
+<img class="hero" src="images/Bisection_method.png" alt="Graph showing successive interval halvings converging on a root">
+<p>In numerical analysis, the <b>bisection method</b> is a root-finding method that applies to any continuous function for which one knows two values with opposite signs. The method repeatedly bisects an interval and then selects the subinterval in which the function changes sign, and therefore must contain a root. It is a simple and robust method, but relatively slow, and is the prototype of the bracketing methods.</p>
+<h2>Method</h2>
+<p>Given a continuous function <i>f</i> and an interval [<i>a</i>, <i>b</i>] with <i>f</i>(<i>a</i>) and <i>f</i>(<i>b</i>) of opposite signs, the <a href="../Intermediate_value_theorem/index.html">intermediate value theorem</a> guarantees a root inside the interval. One computes the midpoint <i>c</i> = (<i>a</i> + <i>b</i>)/2 and evaluates <i>f</i>(<i>c</i>). If <i>f</i>(<i>c</i>) has the same sign as <i>f</i>(<i>a</i>), the root lies in [<i>c</i>, <i>b</i>]; otherwise it lies in [<i>a</i>, <i>c</i>]. The interval thus halves with each iteration.</p>
+<h2>Convergence</h2>
+<p>After <i>n</i> iterations the error is at most (<i>b</i> − <i>a</i>)/2<sup><i>n</i></sup>, so the method converges linearly, gaining roughly one binary digit per step — about three iterations per decimal digit. Unlike Newton's method or the secant method, the bisection method cannot fail to converge once a valid bracket is found, provided continuity holds; however, it cannot detect roots where the function touches zero without changing sign (even-multiplicity roots), and it requires only function evaluations of sign, not derivatives. Faster bracketing methods such as Brent's method build on its reliability.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Root-finding_algorithm/index.html">Root-finding algorithm</a></li>
+<li><a href="../Intermediate_value_theorem/index.html">Intermediate value theorem</a></li>
+<li><a href="../Newton's_method/index.html">Newton's method</a></li>
+<li><a href="../Brent's_method/index.html">Brent's method</a></li>
+</ul>
+<p class="small">Categories: Root-finding algorithms · Numerical analysis</p>
+</div>
+</body>
+</html>

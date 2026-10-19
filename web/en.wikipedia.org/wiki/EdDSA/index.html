@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>EdDSA - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine","Georgia",serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+#mw-head{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:8px 20px;font-family:sans-serif;font-size:13px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;margin:10px 0;padding-bottom:4px;font-weight:normal}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:24px}
+h3{font-size:18px;font-weight:bold}
+.content{max-width:960px;margin:0 auto;padding:0 20px 40px}
+.infobox{float:right;width:280px;background:#f8f9fa;border:1px solid #a2a9b1;font-size:13px;font-family:sans-serif;margin:0 0 16px 16px;padding:8px}
+.infobox caption{font-weight:bold;text-align:center;font-size:15px}
+.infobox td{padding:3px 6px;vertical-align:top}
+.thumb{float:right;clear:right;margin:0 0 12px 12px;border:1px solid #c8ccd1;padding:4px;background:#f8f9fa;font-size:12px;font-family:sans-serif;width:230px;text-align:center}
+.thumb img{width:220px;height:150px;background:#eaecf0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{margin:6px 0 6px 20px;padding:0}
+.refs{font-size:13px}
+small{color:#54595d}
+</style>
+</head>
+<body>
+<div id="mw-head">Wikipedia — The Free Encyclopedia</div>
+<div class="content">
+<h1>EdDSA</h1>
+<div class="infobox">
+<table>
+<caption>Edwards-curve Digital Signature Algorithm</caption>
+<tr><td><b>Designers</b></td><td>Daniel J. Bernstein, Niels Duif, Tanja Lange, Peter Schwabe, Bo-Yin Yang</td></tr>
+<tr><td><b>Published</b></td><td>2011 (as Ed25519); generalised in RFC 8032 (2017)</td></tr>
+<tr><td><b>Family</b></td><td>Schnorr-type signature scheme on twisted Edwards curves</td></tr>
+<tr><td><b>Instances</b></td><td>Ed25519 (curve edwards25519, SHA-512); Ed448 (curve edwards448, SHAKE256)</td></tr>
+<tr><td><b>Standards</b></td><td>RFC 8032; NIST FIPS 186-5 (2023)</td></tr>
+</table>
+</div>
+<div class="thumb"><img src="images/EdDSA.png" alt="Point addition on a twisted Edwards curve"><br>Geometric addition of points on a twisted Edwards curve</div>
+<p>The <b>Edwards-curve Digital Signature Algorithm</b> (<b>EdDSA</b>) is a <a href="../../../../en.wikipedia.org/wiki/Digital_signature/index.html">digital signature</a> scheme using a variant of Schnorr signatures based on twisted Edwards curves. It is designed to be faster than existing digital signature schemes without sacrificing security, and includes design features — notably deterministic nonce generation — intended to make implementations robust against common failure modes. Its best-known instance is <a href="../../../../en.wikipedia.org/wiki/Ed25519/index.html">Ed25519</a>; a larger instance, Ed448, offers a higher security level.</p>
+<h2>Algorithm</h2>
+<p>An EdDSA scheme is parameterised by a finite field, a twisted Edwards curve over that field, a base point B of prime order L, and a cryptographic hash function H with 2b-bit output. The key generation hashes a b-bit secret seed and clamps the first half to obtain the secret scalar a; the public key is the encoding of the point A = [a]B. To sign a message M, the signer deterministically derives r = H(second half of the hashed seed ‖ M), computes R = [r]B, and outputs S = (r + H(R ‖ A ‖ M)·a) mod L together with R. Verification reconstructs the equation [S]B = R + [H(R ‖ A ‖ M)]A. Because the nonce r is derived deterministically from the key and message, no random number generator is required when signing — avoiding the key-recovery disasters that afflicted ECDSA when its random nonces were biased or repeated.</p>
+<h2>Design choices</h2>
+<ul>
+<li><b>Twisted Edwards curves</b> give a complete addition law (no special cases for the identity or inverses), enabling fast, constant-time arithmetic and reducing implementation errors.</li>
+<li><b>Transparent parameters</b> — curves are selected by a rigid "nothing up my sleeve" procedure from efficiency and security criteria.</li>
+<li><b>Collision resistance</b> — EdDSA retains security even if the hash function suffers collisions, a property distinguishing it from some other Schnorr variants.</li>
+<li><b>Strong unforgeability</b> — RFC 8032 verification uses the cofactored equation; debates over cofactorless strict verification ("ZIP-215" rules in Zcash) illustrate subtle differences among implementations.</li>
+</ul>
+<h2>History and standardisation</h2>
+<p>EdDSA generalises <a href="../../../../en.wikipedia.org/wiki/Ed25519/index.html">Ed25519</a>, published in 2011 by Daniel J. Bernstein, Niels Duif, Tanja Lange, Peter Schwabe and Bo-Yin Yang. Ed448 followed in 2015, using the "Goldilocks" curve edwards448 and SHAKE256. The IETF published RFC 8032, <i>Edwards-Curve Digital Signature Algorithm (EdDSA)</i>, in January 2017; NIST included Ed25519 and Ed448 in FIPS 186-5 in February 2023. EdDSA is used in TLS 1.3, SSH, DNSSEC experiments, cryptocurrencies, and messaging protocols.</p>
+<h2>Variants</h2>
+<p>Each instance has three modes: the "pure" mode signing the whole message, a pre-hashed mode (Ed25519ph, Ed448ph) for streaming data, and a context mode (Ed25519ctx) providing domain separation. Related derivatives include XEdDSA (used by the Signal protocol) and the Schnorrkel/Ristretto ecosystem in some blockchain systems.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../../../en.wikipedia.org/wiki/Ed25519/index.html">Ed25519</a></li>
+<li><a href="../../../../en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm/index.html">ECDSA</a></li>
+<li><a href="../../../../en.wikipedia.org/wiki/Schnorr_signature/index.html">Schnorr signature</a></li>
+<li><a href="../../../../en.wikipedia.org/wiki/Curve25519/index.html">Curve25519</a></li>
+</ul>
+<h2>References</h2>
+<ol class="refs">
+<li>Josefsson, S., &amp; Liusvaara, I. RFC 8032, IETF, 2017.</li>
+<li>Bernstein, D. J., et al. "High-speed high-security signatures." CHES 2011 / <i>J. Cryptographic Engineering</i> 2012.</li>
+<li>NIST, FIPS 186-5, <i>Digital Signature Standard</i>, 2023.</li>
+</ol>
+<p><small>Categories: Digital signature schemes | Elliptic curve cryptography | Public-key cryptography</small></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Diffie–Hellman key exchange - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:1.5em 2em;border:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+p,li{font-family:sans-serif;font-size:.92em;line-height:1.6}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:.85em;margin:0 0 1em 1.5em;padding:.5em;font-family:sans-serif}
+.infobox th{text-align:left;padding:.2em .4em;background:#eaecf0}
+.infobox caption{font-weight:bold;padding:.4em;background:#dfe3ea}
+.hero{display:block;margin:0 auto 1em auto;max-width:420px;border:1px solid #a2a9b1;background:#eaecf0;padding:1em;text-align:center;font-family:sans-serif;font-size:.85em;color:#54595d}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Diffie–Hellman key exchange</h1>
+<p><b>Diffie–Hellman</b> (<b>DH</b>) <b>key exchange</b> is a mathematical method of securely exchanging cryptographic keys over a public channel, and was one of the first public-key protocols, published by <a href="../Whitfield_Diffie/index.html">Whitfield Diffie</a> and <a href="../Martin_Hellman/index.html">Martin Hellman</a> in 1976. It was also independently developed earlier within GCHQ by Malcolm Williamson, but kept classified until 1997. Diffie–Hellman allows two parties with no prior knowledge of each other to jointly establish a shared secret key over an insecure channel, which can then be used for symmetric-key encryption.</p>
+<img class="hero" src="images/Diffie–Hellman_key_exchange.png" alt="Placeholder image: diagram of the Diffie-Hellman exchange using the paint-mixing analogy">
+<h2>Protocol</h2>
+<p>The two parties, conventionally <a href="../Alice_and_Bob/index.html">Alice and Bob</a>, agree on a large prime <i>p</i> and a generator <i>g</i>. Each chooses a secret integer (<i>a</i> and <i>b</i>), and they exchange the public values <i>g<sup>a</sup></i> mod <i>p</i> and <i>g<sup>b</sup></i> mod <i>p</i>. Each can then compute the shared secret <i>g<sup>ab</sup></i> mod <i>p</i>, while an eavesdropper who sees only the public values must solve the computationally hard <a href="../Discrete_logarithm/index.html">discrete logarithm problem</a> to recover it.</p>
+<h2>Security</h2>
+<p>The protocol provides no authentication by itself and is therefore vulnerable to man-in-the-middle attacks unless public values are signed or otherwise authenticated. Ephemeral variants (DHE and, using elliptic curves, <a href="../Elliptic-curve_Diffie–Hellman/index.html">ECDHE</a>) provide forward secrecy and are widely used in <a href="../Transport_Layer_Security/index.html">TLS</a>. Diffie and Hellman received the 2015 Turing Award in part for this work.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Public-key_cryptography/index.html">Public-key cryptography</a></li>
+<li><a href="../Key_exchange/index.html">Key exchange</a></li>
+<li><a href="../RSA_(cryptosystem)/index.html">RSA</a></li>
+</ul>
+</div>
+</body>
+</html>

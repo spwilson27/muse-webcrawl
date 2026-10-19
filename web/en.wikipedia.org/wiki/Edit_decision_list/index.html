@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Edit decision list - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine","Georgia",serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+#mw-head{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:8px 20px;font-family:sans-serif;font-size:13px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;margin:10px 0;padding-bottom:4px;font-weight:normal}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:24px}
+h3{font-size:18px;font-weight:bold}
+.content{max-width:960px;margin:0 auto;padding:0 20px 40px}
+.infobox{float:right;width:280px;background:#f8f9fa;border:1px solid #a2a9b1;font-size:13px;font-family:sans-serif;margin:0 0 16px 16px;padding:8px}
+.infobox caption{font-weight:bold;text-align:center;font-size:15px}
+.infobox td{padding:3px 6px;vertical-align:top}
+.thumb{float:right;clear:right;margin:0 0 12px 12px;border:1px solid #c8ccd1;padding:4px;background:#f8f9fa;font-size:12px;font-family:sans-serif;width:230px;text-align:center}
+.thumb img{width:220px;height:150px;background:#eaecf0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{margin:6px 0 6px 20px;padding:0}
+.refs{font-size:13px}
+small{color:#54595d}
+</style>
+</head>
+<body>
+<div id="mw-head">Wikipedia — The Free Encyclopedia</div>
+<div class="content">
+<h1>Edit decision list</h1>
+<div class="infobox">
+<table>
+<caption>Edit decision list (EDL)</caption>
+<tr><td><b>Type</b></td><td>Post-production metadata format</td></tr>
+<tr><td><b>Introduced</b></td><td>1970s (videotape linear editing)</td></tr>
+<tr><td><b>Classic format</b></td><td>CMX3600 (plain text)</td></tr>
+<tr><td><b>Modern successors</b></td><td>AAF, XML/OTIO project interchange</td></tr>
+<tr><td><b>Contains</b></td><td>Ordered reel names and timecodes for edits, transitions, effects</td></tr>
+</table>
+</div>
+<div class="thumb"><img src="images/Edit_decision_list.png" alt="An excerpt of a CMX3600 edit decision list"><br>Excerpt of a CMX3600-format EDL</div>
+<p>An <b>edit decision list</b> (<b>EDL</b>) is a document or data file used in film and television <a href="../../../../en.wikipedia.org/wiki/Post-production/index.html">post-production</a> that lists, in order, the source material and timings needed to reconstruct an edited programme. Each entry gives a reel (or clip) name, the source in- and out-timecodes, and the record in- and out-timecodes in the assembled master, together with information about the transition (cut, dissolve, wipe) and any split edits or effects. In the era of linear videotape editing the EDL drove the automatic assembly of the final tape from source reels; today EDLs remain a lowest-common-denominator interchange format between editing systems.</p>
+<h2>History</h2>
+<p>EDLs originated with computerised videotape editing systems of the 1970s, notably those of CMX Systems (a CBS/Memorex joint venture), whose CMX 600 pioneered non-linear concepts and whose later online editing systems made the paper punch-tape and printed EDL the transportable record of an edit. The <b>CMX3600</b> text format became the de facto standard and is still exported by virtually every non-linear editor. Because an EDL stores only decisions (not media), editors could offline-edit cheaply at low resolution and then "conform" the EDL at full quality in an expensive online suite — the classic offline/online workflow.</p>
+<h2>Contents and limitations</h2>
+<p>A CMX3600 EDL is a plain-text list with a title header and lines such as:</p>
+<pre style="background:#f8f9fa;border:1px solid #a2a9b1;padding:8px;font-size:12px;overflow:auto">
+TITLE: DEMO_SEQUENCE
+FCM: NON-DROP FRAME
+001  REEL_A   V  C        01:00:12:10 01:00:18:05 00:59:55:00 01:00:00:20
+002  REEL_B   AA/V  D  012 01:02:44:00 ... 
+</pre>
+<p>The format's age shows: it handles only one video track robustly, transitions are coded briefly, audio channel mapping is ambiguous, and titles, speed changes, colour decisions and nested sequences cannot be represented faithfully. Richer interchange standards — Avid's AAF, Final Cut Pro XML, Adobe Premiere XML and the open-source OpenTimelineIO — largely supersede EDLs inside modern facilities, but the CMX3600 EDL persists because of its simplicity and universal support. An EDL is distinct from, though sometimes derived alongside, the cue sheet, negative cutting list (for film), and the XML project file.</p>
+<h2>Uses</h2>
+<ul>
+<li><b>Conform and online finishing</b> — rebuilding an offline edit from high-resolution media.</li>
+<li><b>Archive and reconstruction</b> — re-creating programmes when project files are lost.</li>
+<li><b>Broadcast compliance and re-versioning</b> — identifying cuts for censorship, localisation or music replacement.</li>
+<li><b>Data interchange</b> — moving a sequence between different editing applications for colour grading (e.g. to DaVinci Resolve) or sound mixing.</li>
+</ul>
+<h2>See also</h2>
+<ul>
+<li><a href="../../../../en.wikipedia.org/wiki/Non-linear_editing/index.html">Non-linear editing</a></li>
+<li><a href="../../../../en.wikipedia.org/wiki/Timecode/index.html">Timecode</a></li>
+<li><a href="../../../../en.wikipedia.org/wiki/Offline_editing/index.html">Offline editing</a></li>
+<li><a href="../../../../en.wikipedia.org/wiki/Advanced_Authoring_Format/index.html">Advanced Authoring Format</a></li>
+</ul>
+<h2>References</h2>
+<ol class="refs">
+<li>Browne, Steven E. <i>Video Editing: A Postproduction Primer</i>. Focal Press.</li>
+<li>SMPTE documentation on EDL formats; CMX3600 specification summaries.</li>
+<li>OpenTimelineIO project documentation, Academy Software Foundation.</li>
+</ol>
+<p><small>Categories: Film editing | Television technology | Post-production | Metadata formats</small></p>
+</div>
+</body>
+</html>

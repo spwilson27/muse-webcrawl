@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Inertial navigation system - Wikipedia</title>
+<style>
+body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff}
+header{border-bottom:1px solid #a7d7f9;padding:12px 24px;background:#f8f9fa}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+.content{max-width:960px;margin:0 auto;padding:16px 24px;line-height:1.6}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 16px 16px;font-size:90%}
+.infobox caption{font-weight:bold;background:#eaecf0;padding:4px}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;margin:8px 0;text-align:center;font-size:88%;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+.ref{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> — The Free Encyclopedia</header>
+<div class="content">
+<h1>Inertial navigation system</h1>
+<p>An <b>inertial navigation system</b> (<b>INS</b>) is a navigation device that uses motion sensors (<a href="../../Accelerometer/index.html">accelerometers</a>), rotation sensors (<a href="../../Gyroscope/index.html">gyroscopes</a>) and a computer to continuously calculate by <a href="../../Dead_reckoning/index.html">dead reckoning</a> the position, orientation and velocity of a moving object without the need for external references. INS are used on vehicles such as aircraft, spacecraft, submarines, missiles and ships, and in miniaturised form in smartphones and game controllers. Their main drawback is that errors accumulate over time, so they are often combined with other navigation aids such as <a href="../../GPS/index.html">GPS</a>.</p>
+
+<div class="infobox">
+<table>
+<caption>Inertial navigation system</caption>
+<tr><th>Type</th><td>Self-contained navigation system</td></tr>
+<tr><th>Sensors</th><td>Accelerometers, gyroscopes (IMU)</td></tr>
+<tr><th>Principle</th><td>Dead reckoning via double integration of acceleration</td></tr>
+<tr><th>Main limitation</th><td>Position drift from accumulating sensor errors</td></tr>
+<tr><th>Applications</th><td>Aircraft, spacecraft, submarines, missiles, robotics</td></tr>
+</table>
+</div>
+
+<div class="thumb"><img src="images/inertial_navigation.png" alt="An inertial measurement unit with gyroscopes and accelerometers"><br>A gimballed inertial platform of the type used on early ballistic missiles.</div>
+
+<h2>Principles</h2>
+<p>The core of an INS is an <b>inertial measurement unit</b> (IMU) containing three accelerometers and three gyroscopes mounted on orthogonal axes. The gyroscopes track orientation; the accelerometers measure specific force, from which gravity is subtracted and the remainder integrated once to give velocity and twice to give position. Because position comes from a double integration, small constant sensor biases grow into large position errors — roughly quadratically (for a constant acceleration bias) with time — hence long-endurance systems require extremely accurate sensors or periodic external fixes.</p>
+
+<h2>Gimballed and strapdown systems</h2>
+<p>Early systems mounted the IMU on a mechanically <b>gimballed platform</b> stabilised to remain aligned with a fixed frame. Modern systems are usually <b>strapdown</b>: sensors are fixed to the vehicle body and the computer performs the coordinate transformations numerically, using quaternion or direction-cosine algorithms. Strapdown designs dominate because they are smaller, cheaper and more reliable. Sensor technologies range from spinning-mass and <a href="../../Ring_laser_gyroscope/index.html">ring laser gyroscopes</a> and fibre-optic gyros to low-cost <a href="../../MEMS/index.html">MEMS</a> devices.</p>
+
+<h2>History</h2>
+<p>Inertial guidance was pioneered in rocketry: the German <a href="../../V-2/index.html">V-2</a> used simple gyroscopic guidance, and post-war work by <a href="../../Charles_Stark_Draper/index.html">Charles Stark Draper</a>'s laboratory at MIT produced the guidance for the <a href="../../Titan_II/index.html">Titan</a> and <a href="../../Polaris_missile/index.html">Polaris</a> missiles and the <a href="../../Apollo_program/index.html">Apollo</a> spacecraft. Airliners adopted INS in the late 1960s (beginning with the <a href="../../Boeing_747/index.html">Boeing 747</a> era), greatly improving oceanic navigation before satellite navigation became available.</p>
+
+<h2>Applications</h2>
+<p>INS remains essential where external signals are unavailable or untrusted: submarine navigation, spacecraft attitude determination, guided weapons, surveying, borehole drilling, autonomous vehicles and pedestrian navigation. Sensor fusion (for example with a <a href="../../Kalman_filter/index.html">Kalman filter</a> blending GPS and INS data) is the standard remedy for drift.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../../Dead_reckoning/index.html">Dead reckoning</a></li>
+<li><a href="../../Gyroscope/index.html">Gyroscope</a></li>
+<li><a href="../../Accelerometer/index.html">Accelerometer</a></li>
+<li><a href="../../Ring_laser_gyroscope/index.html">Ring laser gyroscope</a></li>
+<li><a href="../../Attitude_and_heading_reference_system/index.html">Attitude and heading reference system</a></li>
+</ul>
+<p class="ref">This article is a recreation from memory of the Wikipedia article "Inertial navigation system".</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Greeks (finance) - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:20px 24px 60px}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:88%;margin:0 0 1em 1em;border-collapse:collapse}
+.infobox th,.infobox td{padding:4px 8px;text-align:left;border-top:1px solid #eaecf0;vertical-align:top}
+.infobox caption{background:#b0c4de;font-weight:bold;padding:6px}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;text-align:center;font-size:85%;color:#54595d}
+.hero{display:block;max-width:100%;height:180px;background:#eaecf0;color:#72777d;text-align:center;line-height:180px;font-size:14px}
+a{color:#0645ad;text-decoration:none} a:hover{text-decoration:underline}
+.small{font-size:85%;color:#54595d}
+table.wikitable{border-collapse:collapse;margin:1em 0}
+table.wikitable th,table.wikitable td{border:1px solid #a2a9b1;padding:4px 8px}
+table.wikitable th{background:#eaecf0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Greeks (finance)</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+
+<table class="infobox">
+<caption>Greeks</caption>
+<tr><th>First-order</th><td>Delta, Theta, Vega, Rho</td></tr>
+<tr><th>Second-order</th><td>Gamma, Vanna, Charm, Vomma</td></tr>
+<tr><th>Third-order</th><td>Speed, Zomma, Color, Ultima</td></tr>
+<tr><th>Used for</th><td>Measuring sensitivity of option prices to underlying parameters</td></tr>
+</table>
+
+<div class="thumb"><img class="hero" src="images/greeks.png" alt="[Image: chart of option price sensitivity]"></div>
+
+<p>In mathematical finance, the <b>Greeks</b> are the quantities representing the sensitivity of the price of a derivative product such as an <a href="../Option_(finance)/index.html">option</a> to a change in one of its underlying parameters on which the value of an instrument or portfolio of financial instruments is dependent. The name is used because the most common of these sensitivities are denoted by Greek letters (as are some other finance measures). Collectively these have also been called the risk sensitivities, risk measures or hedge parameters.</p>
+
+<h2>Use of the Greeks</h2>
+<p>The Greeks are vital tools in risk management. Each Greek measures the sensitivity of the value of a portfolio to a small change in a given underlying parameter, so that component risks may be treated in isolation, and the portfolio rebalanced accordingly to achieve a desired exposure; see for example <a href="../Delta_neutral/index.html">delta hedging</a>.</p>
+<p>The Greeks in the <a href="../Black–Scholes_model/index.html">Black–Scholes model</a> are relatively easy to calculate, a desirable property of financial models, and are very useful for derivatives traders, especially those who seek to hedge their portfolios from adverse changes in market conditions. For this reason, these Greeks are so useful that they are provided on most trading platforms for all major trading strategies.</p>
+
+<h2>First-order Greeks</h2>
+<table class="wikitable">
+<tr><th>Greek</th><th>Measures sensitivity to</th></tr>
+<tr><td><b>Delta</b> (Δ)</td><td>Change in the price of the underlying asset</td></tr>
+<tr><td><b>Theta</b> (Θ)</td><td>Passage of time (time decay)</td></tr>
+<tr><td><b>Vega</b> (ν)</td><td>Volatility of the underlying asset</td></tr>
+<tr><td><b>Rho</b> (ρ)</td><td>Interest rate</td></tr>
+<tr><td><b>Lambda</b> (λ)</td><td>Percentage change in the underlying price (leverage)</td></tr>
+</table>
+
+<h3>Delta</h3>
+<p>Delta measures the rate of change of the theoretical option value with respect to changes in the underlying asset's price. Delta is the first derivative of the value of the option with respect to the underlying instrument's price. For a vanilla option, delta will be a number between 0.0 and 1.0 for a long call (or a short put) and between 0.0 and −1.0 for a long put (or a short call); depending on price, a call option behaves as if one owns 1 share of the underlying stock (if deep in the money), or owns nothing (if far out of the money), or something in between, and conversely for a put option.</p>
+
+<h3>Theta</h3>
+<p>Theta measures the sensitivity of the value of the derivative to the passage of time (see <a href="../Option_time_value/index.html">option time value</a>): the "time decay".</p>
+
+<h3>Vega</h3>
+<p>Vega measures sensitivity to volatility. Vega is the derivative of the option value with respect to the volatility of the underlying asset. It is most commonly expressed as the amount of money per option that the option's value will gain or lose as volatility rises or falls by 1 percentage point. Most long options have positive vega and most short options have negative vega.</p>
+
+<h3>Rho</h3>
+<p>Rho measures sensitivity to the interest rate: it is the derivative of the option value with respect to the risk-free interest rate.</p>
+
+<h2>Second-order Greeks</h2>
+<h3>Gamma</h3>
+<p>Gamma measures the rate of change in the delta with respect to changes in the underlying price. Gamma is the second derivative of the value function with respect to the underlying price. Most long options have positive gamma and most short options have negative gamma. Long options have a positive relationship with gamma because as price increases, gamma increases as well, causing delta to approach 1 from 0 (long call option) or 0 from −1 (long put option).</p>
+<h3>Vanna, Charm and Vomma</h3>
+<p>Vanna, also referred to as DvegaDspot and DdeltaDvol, is a second-order derivative of the option value, once to the underlying spot price and once to volatility. Charm, or delta decay, measures the instantaneous rate of change of delta over the passage of time. Vomma, volga, vega convexity, or DvegaDvol measures second-order sensitivity to volatility.</p>
+
+<h2>Third-order Greeks</h2>
+<p>Third-order Greeks include speed (the rate of change of gamma with respect to the underlying price), zomma (sensitivity of gamma to volatility), color (rate of change of gamma over time), and ultima (sensitivity of vomma to volatility).</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Black–Scholes_model/index.html">Black–Scholes model</a></li>
+<li><a href="../Delta_neutral/index.html">Delta neutral</a></li>
+<li><a href="../Derivative_(finance)/index.html">Derivative (finance)</a></li>
+<li><a href="../Implied_volatility/index.html">Implied volatility</a></li>
+</ul>
+</div>
+</body>
+</html>

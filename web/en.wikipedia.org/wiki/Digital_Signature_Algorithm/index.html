@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Digital Signature Algorithm - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:1.5em 2em;border:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+p,li{font-family:sans-serif;font-size:.92em;line-height:1.6}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:.85em;margin:0 0 1em 1.5em;padding:.5em;font-family:sans-serif}
+.infobox th{text-align:left;padding:.2em .4em;background:#eaecf0}
+.infobox caption{font-weight:bold;padding:.4em;background:#dfe3ea}
+.hero{display:block;margin:0 auto 1em auto;max-width:420px;border:1px solid #a2a9b1;background:#eaecf0;padding:1em;text-align:center;font-family:sans-serif;font-size:.85em;color:#54595d}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Digital Signature Algorithm</h1>
+<p>The <b>Digital Signature Algorithm</b> (<b>DSA</b>) is a public-key cryptosystem and <a href="../Federal_Information_Processing_Standards/index.html">Federal Information Processing Standard</a> for digital signatures, based on the mathematical concept of modular exponentiation and the discrete logarithm problem. DSA is a variant of the Schnorr and <a href="../ElGamal_signature_scheme/index.html">ElGamal signature schemes</a>. It was proposed by the National Institute of Standards and Technology (NIST) in 1991 and adopted as FIPS 186 in 1994.</p>
+<img class="hero" src="images/Digital_Signature_Algorithm.png" alt="Placeholder image: flow diagram of DSA key generation, signing and verification">
+<h2>Operation</h2>
+<p>DSA works in a subgroup of prime order <i>q</i> within the multiplicative group modulo a large prime <i>p</i>. The signer holds a private key <i>x</i> and publishes <i>y = g<sup>x</sup></i> mod <i>p</i>. Signing a message hash uses a fresh random per-message value <i>k</i> to produce the signature pair (<i>r</i>, <i>s</i>); verification checks an equation that holds only for the genuine signature. Reusing or leaking <i>k</i> exposes the private key — a failure mode that has caused real-world compromises, including the 2010 PlayStation 3 signing-key incident (with ECDSA, DSA's elliptic-curve analogue).</p>
+<h2>History and status</h2>
+<p>The NSA-designed algorithm was controversial at its introduction, partly over patent claims by Claus Schnorr and concerns about covert design choices. DSA is used for signing only — unlike RSA it cannot encrypt. Modern guidance has moved toward ECDSA and Ed25519; FIPS 186-5 (2023) retains DSA for verifying legacy signatures but no longer approves it for signature generation.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Digital_signature/index.html">Digital signature</a></li>
+<li><a href="../Elliptic_Curve_Digital_Signature_Algorithm/index.html">ECDSA</a></li>
+<li><a href="../ElGamal_encryption/index.html">ElGamal encryption</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ed25519 - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine","Georgia",serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+#mw-head{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:8px 20px;font-family:sans-serif;font-size:13px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;margin:10px 0;padding-bottom:4px;font-weight:normal}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:24px}
+h3{font-size:18px;font-weight:bold}
+.content{max-width:960px;margin:0 auto;padding:0 20px 40px}
+.infobox{float:right;width:280px;background:#f8f9fa;border:1px solid #a2a9b1;font-size:13px;font-family:sans-serif;margin:0 0 16px 16px;padding:8px}
+.infobox caption{font-weight:bold;text-align:center;font-size:15px}
+.infobox td{padding:3px 6px;vertical-align:top}
+.thumb{float:right;clear:right;margin:0 0 12px 12px;border:1px solid #c8ccd1;padding:4px;background:#f8f9fa;font-size:12px;font-family:sans-serif;width:230px;text-align:center}
+.thumb img{width:220px;height:150px;background:#eaecf0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{margin:6px 0 6px 20px;padding:0}
+.refs{font-size:13px}
+small{color:#54595d}
+</style>
+</head>
+<body>
+<div id="mw-head">Wikipedia — The Free Encyclopedia</div>
+<div class="content">
+<h1>Ed25519</h1>
+<div class="infobox">
+<table>
+<caption>Ed25519</caption>
+<tr><td><b>Designers</b></td><td>Daniel J. Bernstein, Niels Duif, Tanja Lange, Peter Schwabe, Bo-Yin Yang</td></tr>
+<tr><td><b>Published</b></td><td>2011</td></tr>
+<tr><td><b>Scheme</b></td><td>EdDSA signature scheme</td></tr>
+<tr><td><b>Curve</b></td><td>Curve25519 (twisted Edwards form, −x² + y² = 1 + dx²y², d = −121665/121666)</td></tr>
+<tr><td><b>Key sizes</b></td><td>32-byte private seed; 32-byte public key</td></tr>
+<tr><td><b>Signature size</b></td><td>64 bytes</td></tr>
+<tr><td><b>Security level</b></td><td>~128 bits</td></tr>
+<tr><td><b>Standards</b></td><td>RFC 8032 (EdDSA), FIPS 186-5, RFC 8446 (TLS 1.3)</td></tr>
+</table>
+</div>
+<div class="thumb"><img src="images/Ed25519.png" alt="The twisted Edwards curve used by Ed25519"><br>Edwards curve geometry underlying Ed25519</div>
+<p><b>Ed25519</b> is an <a href="../../../../en.wikipedia.org/wiki/EdDSA/index.html">EdDSA</a> digital signature scheme using SHA-512 (SHA-2) and the twisted Edwards curve −x² + y² = 1 + dx²y² with d = −121665/121666, related by a birational equivalence to <a href="../../../../en.wikipedia.org/wiki/Curve25519/index.html">Curve25519</a>. It was introduced in 2011 by Daniel J. Bernstein and co-authors in the paper "High-speed high-security signatures". Ed25519 is designed to provide fast signing and verification, small keys and signatures, and — critically — deterministic signature generation that avoids the catastrophic failures that occur when a conventional random number generator fails during signing.</p>
+<h2>Design and properties</h2>
+<p>In Ed25519, the private key is a 32-byte seed, hashed with SHA-512 to derive a secret scalar and a nonce prefix. The signature nonce is computed deterministically as a hash of the nonce prefix and the message, so signing the same message always yields the same signature and no randomness is needed at signing time. A signature consists of 64 bytes: a curve point R and a scalar S. Verification checks the group equation [S]B = R + [H(R, A, M)]A, where A is the public key and H is SHA-512 reduced mod the group order.</p>
+<p>Key features include:</p>
+<ul>
+<li><b>Speed</b> — over 100,000 signatures per second were reported on contemporary hardware in the original paper, with fast batch verification.</li>
+<li><b>Safety by design</b> — the curve parameters were chosen transparently from explicit security criteria; the implementation avoids secret-dependent branches and array indices, resisting timing side channels.</li>
+<li><b>Collision resilience</b> — security is not undermined by hash collisions in the way Schnorr-style schemes analysed generically are.</li>
+<li><b>Small sizes</b> — 32-byte public keys and 64-byte signatures.</li>
+</ul>
+<h2>Adoption</h2>
+<p>Ed25519 is supported in OpenSSH (as a default key type since version 6.5), GnuPG, NaCl/libsodium, OpenSSL, Bouncy Castle and many other libraries. It was standardised with Ed448 in RFC 8032 (2017) and included in TLS 1.3, FIPS 186-5 (2023), and the protocols of Signal, Tor (next-generation onion services), and many blockchain systems. Its deterministic signing and resistance to implementation pitfalls have made it the default recommendation for new signature applications.</p>
+<h2>Variants</h2>
+<p><b>Ed25519ph</b> signs a pre-hashed message for contexts where the message cannot be processed in one pass; <b>Ed25519ctx</b> adds a context string for domain separation. Related schemes include Ed448 (using the larger Goldilocks curve) and the XEdDSA variant used by Signal, which allows the same key material to be used for both X25519 key agreement and signatures.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../../../en.wikipedia.org/wiki/EdDSA/index.html">EdDSA</a></li>
+<li><a href="../../../../en.wikipedia.org/wiki/Curve25519/index.html">Curve25519</a></li>
+<li><a href="../../../../en.wikipedia.org/wiki/Elliptic-curve_cryptography/index.html">Elliptic-curve cryptography</a></li>
+<li><a href="../../../../en.wikipedia.org/wiki/Daniel_J._Bernstein/index.html">Daniel J. Bernstein</a></li>
+</ul>
+<h2>References</h2>
+<ol class="refs">
+<li>Bernstein, D. J. et al. "High-speed high-security signatures." <i>Journal of Cryptographic Engineering</i> 2 (2012); CHES 2011 proceedings.</li>
+<li>Josefsson, S., &amp; Liusvaara, I. RFC 8032: <i>Edwards-Curve Digital Signature Algorithm (EdDSA)</i>. 2017.</li>
+<li>Bernstein, D. J. "Ed25519: high-speed high-security signatures" (project page, ed25519.cr.yp.to).</li>
+</ol>
+<p><small>Categories: Public-key cryptography | Elliptic curve cryptography | Digital signature schemes | 2011 introductions</small></p>
+</div>
+</body>
+</html>

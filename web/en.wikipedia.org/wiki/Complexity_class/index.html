@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Complexity class - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine","Georgia",serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:24px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-bottom:6px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+h3{font-size:1.15em}
+p,li{font-family:sans-serif;font-size:0.92em;line-height:1.55}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.82em;font-family:sans-serif;margin:0 0 14px 18px;padding:8px}
+.infobox th{background:#e8f0e8;text-align:center;padding:5px;font-size:1.05em}
+.infobox td{padding:3px 5px;vertical-align:top}
+.infobox .lab{font-weight:bold;width:38%}
+figure.hero{float:right;margin:0 0 14px 18px;text-align:center;font-family:sans-serif;font-size:0.8em}
+figure.hero img{width:260px;height:170px;background:#eaecf0;border:1px solid #a2a9b1}
+.toc{border:1px solid #a2a9b1;background:#f8f9fa;display:inline-block;padding:8px 18px;font-family:sans-serif;font-size:0.88em}
+.footer{clear:both;border-top:1px solid #a2a9b1;margin-top:2em;font-family:sans-serif;font-size:0.8em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Complexity class</h1>
+<p>From Wikipedia, the free encyclopedia</p>
+
+<figure class="hero"><img src="images/complexity_class.png" alt="[Image placeholder: diagram of inclusions among complexity classes]"><figcaption>[Image: inclusions among common complexity classes]</figcaption></figure>
+
+<p>In <a href="../Computational_complexity_theory/index.html">computational complexity theory</a>, a <b>complexity class</b> is a set of computational problems "of related resource-based complexity". The two most commonly analyzed resources are time and memory. In general, a complexity class is defined in terms of a type of computational problem, a model of computation, and a bounding resource, and the class is the set of problems that can be solved by an algorithm using a certain amount of the resource.</p>
+
+<p>Many complex questions can be framed in terms of the inclusions and relationships between various complexity classes. For example, <a href="../P_versus_NP_problem/index.html">P versus NP</a>, one of the <a href="../Millennium_Prize_Problems/index.html">Millennium Prize Problems</a>, asks whether the complexity classes P and NP are equal; the related but stronger question of whether P and PSPACE are equal is also unresolved.</p>
+
+<h2>Defining complexity classes</h2>
+<p>A complexity class is specified by three components: a model of computation (most commonly a <a href="../Turing_machine/index.html">Turing machine</a>), a mode of computation (deterministic, nondeterministic, probabilistic, alternating, or quantum), and a resource bound (such as a function of the input size limiting time or space). Under this scheme there are four common measures: <b>DTIME</b>, <b>NTIME</b>, <b>DSPACE</b>, and <b>NSPACE</b>.</p>
+<p>By the time hierarchy theorems, allowing an algorithm more time genuinely enlarges the class of solvable problems, so the deterministic time classes form a strict hierarchy. The space hierarchy theorems give analogous results for space. In contrast, nondeterministic space classes satisfy Savitch's theorem, which shows NSPACE(s(n)) ⊆ DSPACE(s(n)<sup>2</sup>), and the Immerman–Szelepcsényi theorem, which shows nondeterministic space classes are closed under complement.</p>
+
+<h2>Important complexity classes</h2>
+<p>Some of the most studied complexity classes include:</p>
+<ul>
+<li><b><a href="../P_(complexity)/index.html">P</a></b> — problems solvable in polynomial time by a deterministic Turing machine.</li>
+<li><b><a href="../NP_(complexity)/index.html">NP</a></b> — problems whose "yes" answers can be verified in polynomial time, or equivalently solved in polynomial time by a nondeterministic machine.</li>
+<li><b>coNP</b> — problems whose "no" answers can be verified in polynomial time.</li>
+<li><b><a href="../PSPACE/index.html">PSPACE</a></b> — problems solvable using polynomial space.</li>
+<li><b>EXP</b> (or EXPTIME) — problems solvable in exponential time.</li>
+<li><b><a href="../BQP/index.html">BQP</a></b> — problems solvable in polynomial time by a quantum computer with bounded error.</li>
+<li><b>L</b> and <b>NL</b> — problems solvable in logarithmic space, deterministically and nondeterministically.</li>
+<li><b>PH</b> — the <a href="../Polynomial_hierarchy/index.html">polynomial hierarchy</a>, a union of generalizations of P, NP, and coNP.</li>
+</ul>
+<p>Known inclusions include L ⊆ NL ⊆ P ⊆ NP ⊆ PSPACE ⊆ EXP. At least one of these inclusions must be strict, because the time and space hierarchy theorems imply P ⊊ EXP and L ⊊ PSPACE, but it is not known which.</p>
+
+<h2>Complete problems</h2>
+<p>A central tool for comparing classes is the notion of a <b>complete problem</b>: a problem in a class that is among the "hardest" in the class, in the sense that every other problem in the class can be reduced to it. The Cook–Levin theorem established that the Boolean satisfiability problem (SAT) is <a href="../NP-completeness/index.html">NP-complete</a>. Thousands of problems across combinatorics, graph theory, and logic have since been shown NP-complete.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Computational_complexity_theory/index.html">Computational complexity theory</a></li>
+<li><a href="../Complexity/index.html">Complexity</a></li>
+<li><a href="../Reduction_(complexity)/index.html">Reduction (complexity)</a></li>
+<li><a href="../Time_complexity/index.html">Time complexity</a></li>
+</ul>
+
+<h2>References</h2>
+<p>Arora, Sanjeev; Barak, Boaz (2009). <i>Computational Complexity: A Modern Approach</i>. Cambridge University Press. Sipser, Michael (2006). <i>Introduction to the Theory of Computation</i>. Papadimitriou, Christos (1994). <i>Computational Complexity</i>. Addison-Wesley.</p>
+
+<div class="footer">This page was last edited on 14 June 2025. Text is available under the Creative Commons Attribution-ShareAlike License.</div>
+</div>
+</body>
+</html>
