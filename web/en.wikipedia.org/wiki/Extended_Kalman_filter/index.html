@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Extended Kalman filter - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+.main{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.hero{float:right;margin:0 0 12px 20px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;text-align:center;font-size:12px}
+.hero img{width:260px;height:170px;background:#e8e8e8;display:block}
+.ref{font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="main">
+<h1>Extended Kalman filter</h1>
+<div class="hero"><img src="images/Extended_Kalman_filter.png" alt="Block diagram of extended Kalman filter estimation loop"><div>The predict–update loop of the extended Kalman filter.</div></div>
+<p>In estimation theory, the <b>extended Kalman filter</b> (EKF) is the nonlinear version of the <a href="../Kalman_filter/">Kalman filter</a> which linearises about the current mean and covariance estimate. The EKF has been the de facto standard in navigation systems, GPS, and process control since the 1960s, when it was developed for the Apollo guidance system.</p>
+<h2>Method</h2>
+<p>For a nonlinear system x<sub>k</sub> = f(x<sub>k−1</sub>, u<sub>k</sub>) + w<sub>k</sub> with measurements z<sub>k</sub> = h(x<sub>k</sub>) + v<sub>k</sub>, the EKF propagates the state estimate through the nonlinear function f, but propagates the covariance using the Jacobians of f and h evaluated at the current estimate. Each cycle has a <i>predict</i> step (time update) and a <i>correct</i> step (measurement update) that computes a Kalman gain exactly as in the linear filter, but with the linearised system matrices.</p>
+<h2>Limitations and variants</h2>
+<p>Because linearisation discards higher-order terms, the EKF can perform poorly — and even diverge — when nonlinearities are severe or initial errors are large. It is also not an optimal estimator in the nonlinear case. These shortcomings motivated alternatives such as the unscented Kalman filter (UKF), which propagates carefully chosen sigma points through the true nonlinearity, and particle filters, which represent the distribution non-parametrically. Despite this, the EKF remains widely used because of its simplicity, speed, and good behaviour in mildly nonlinear problems.</p>
+<h2>Applications</h2>
+<ul>
+<li>Spacecraft and aircraft navigation and attitude estimation.</li>
+<liGPS/INS integration in vehicles and smartphones.</li>
+<li>Simultaneous localisation and mapping (SLAM) in robotics.</li>
+<li>Battery state-of-charge estimation and biomedical signal tracking.</li>
+</ul>
+<h2>See also</h2>
+<ul>
+<li><a href="../Kalman_filter/">Kalman filter</a></li>
+<li><a href="../Unscented_transform/">Unscented transform</a></li>
+<li><a href="../Particle_filter/">Particle filter</a></li>
+</ul>
+<p class="ref">Categories: Nonlinear filters | Estimation theory | Control theory</p>
+</div>
+</body>
+</html>

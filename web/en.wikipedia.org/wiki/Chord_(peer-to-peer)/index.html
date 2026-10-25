@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chord (peer-to-peer) - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#f8f9fa;color:#202122;margin:0;padding:0;}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;box-shadow:0 0 4px rgba(0,0,0,.1);}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;margin-bottom:4px;font-weight:normal;}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em;}
+.meta{font-size:.85em;color:#54595d;}
+.hero{text-align:center;margin:1em 0;}
+.hero div{border:1px dashed #72777d;background:#eaecf0;padding:36px 8px;color:#54595d;font-size:.9em;}
+a{color:#0645ad;text-decoration:none;} a:hover{text-decoration:underline;}
+ul{line-height:1.5;}
+code{font-family:monospace;background:#eaecf0;padding:0 3px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Chord (peer-to-peer)</h1>
+<p class="meta">From Wikipedia, the free encyclopedia</p>
+<p><b>Chord</b> is a protocol and algorithm for a <a href="../Peer-to-peer/index.html">peer-to-peer</a> <a href="../Distributed_hash_table/index.html">distributed hash table</a> (DHT). A distributed hash table stores key-value pairs by assigning keys to different computers (known as "nodes"); a node will store the values for all the keys for which it is responsible. Chord specifies how keys are assigned to nodes and how a node can discover the value for a given key by first locating the node responsible for that key.</p>
+<div class="hero"><div>[Hero image: nodes arranged on the Chord identifier circle with finger tables — image placeholder]</div></div>
+<h2>Overview</h2>
+<p>Chord was introduced in 2001 by Ion Stoica, Robert Morris, David Karger, Frans Kaashoek and Hari Balakrishnan at <a href="../Massachusetts_Institute_of_Technology/index.html">MIT</a>. Nodes and keys are assigned an <i>m</i>-bit identifier using <a href="../Consistent_hashing/index.html">consistent hashing</a> (typically SHA-1). Identifiers are arranged on a circle modulo 2<sup>m</sup>, and a key is stored at its "successor" — the first node whose identifier equals or follows the key's identifier.</p>
+<h2>Finger tables</h2>
+<p>Each node maintains a routing table, called a <i>finger table</i>, with up to <i>m</i> entries pointing to nodes at exponentially increasing distances around the circle. This allows lookups to be resolved in O(log N) messages for a network of N nodes, and nodes can join and leave the network with minimal disruption. Periodic "stabilisation" operations keep finger tables and successor pointers correct as the network changes.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Distributed_hash_table/index.html">Distributed hash table</a></li>
+<li><a href="../Kademlia/index.html">Kademlia</a></li>
+<li><a href="../Pastry_(DHT)/index.html">Pastry</a></li>
+<li><a href="../Consistent_hashing/index.html">Consistent hashing</a></li>
+</ul>
+<p class="meta">Categories: Distributed data storage · Peer-to-peer computing · Hash-based data structures</p>
+</div>
+</body>
+</html>

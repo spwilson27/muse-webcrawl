@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Generalized linear model - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.4em}
+a{color:#36c;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:12px auto;max-width:640px;width:100%;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px}
+.small{font-size:0.9em;color:#54595d}
+.eq{font-family:"Times New Roman",serif;font-size:1.15em;text-align:center;margin:14px 0}
+table{border-collapse:collapse;margin:12px 0}
+th,td{border:1px solid #a2a9b1;padding:6px 10px;text-align:left}
+th{background:#eaecf0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Generalized linear model</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/Generalized_linear_model.png" alt="A logistic curve fitted to binary data, an example of a generalized linear model">
+<p>In statistics, a <b>generalized linear model</b> (<b>GLM</b>) is a flexible generalization of ordinary linear regression. The GLM generalizes linear regression by allowing the linear model to be related to the response variable via a <i>link function</i> and by allowing the magnitude of the variance of each measurement to be a function of its predicted value. Generalized linear models were formulated by John Nelder and Robert Wedderburn as a way of unifying various other statistical models, including linear regression, logistic regression and Poisson regression, in their landmark 1972 paper.</p>
+<h2>Components</h2>
+<p>A GLM consists of three elements:</p>
+<ol>
+<li><b>Random component</b> — a probability distribution for the response variable from the exponential family (e.g. normal, binomial, Poisson, gamma).</li>
+<li><b>Systematic component</b> — a linear predictor η = <b>Xβ</b>, a linear combination of unknown parameters and known covariates.</li>
+<li><b>Link function</b> — a monotonic differentiable function g such that g(μ) = η, connecting the expected value μ of the response to the linear predictor.</li>
+</ol>
+<p class="eq">g(E[Y]) = <b>Xβ</b></p>
+<h2>Common examples</h2>
+<table>
+<tr><th>Model</th><th>Distribution</th><th>Link</th><th>Typical use</th></tr>
+<tr><td>Linear regression</td><td>Normal</td><td>Identity</td><td>Continuous response</td></tr>
+<tr><td>Logistic regression</td><td>Binomial</td><td>Logit</td><td>Binary or proportional response</td></tr>
+<tr><td>Probit model</td><td>Binomial</td><td>Probit (Φ<sup>−1</sup>)</td><td>Binary response</td></tr>
+<tr><td>Poisson regression</td><td>Poisson</td><td>Log</td><td>Count data</td></tr>
+<tr><td>Gamma regression</td><td>Gamma</td><td>Inverse or log</td><td>Positive continuous, skewed data</td></tr>
+</table>
+<h2>Fitting</h2>
+<p>Parameters are usually estimated by maximum likelihood. Because the estimating equations are generally nonlinear, they are solved iteratively by <b>iteratively reweighted least squares</b> (IRLS), the algorithm proposed by Nelder and Wedderburn and implemented in software such as R's <code>glm()</code> function. Model assessment uses quantities such as the deviance and information criteria like the AIC.</p>
+<h2>Extensions</h2>
+<p>GLMs have been extended in many directions: generalized additive models (GAMs) replace the linear predictor with smooth functions of the covariates; generalized linear mixed models (GLMMs) add random effects; quasi-likelihood methods relax the distributional assumption; and generalized estimating equations (GEE) handle correlated responses. A Bayesian formulation places priors on the coefficients and is fitted by Markov chain Monte Carlo.</p>
+<p class="small">See also: <a href="../Linear_regression/index.html">Linear regression</a> · <a href="../Logistic_regression/index.html">Logistic regression</a> · <a href="../Poisson_regression/index.html">Poisson regression</a> · <a href="../Generalized_additive_model/index.html">Generalized additive model</a> · <a href="../John_Nelder/index.html">John Nelder</a></p>
+</div>
+</body>
+</html>

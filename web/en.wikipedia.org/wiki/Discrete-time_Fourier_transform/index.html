@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Discrete-time Fourier transform - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px;font-weight:normal}
+p{line-height:1.6;font-size:0.95em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.85em;margin:0 0 16px 20px;padding:8px}
+.infobox th{text-align:left;padding:3px 6px;vertical-align:top}
+.infobox td{padding:3px 6px}
+.infobox .title{background:#b0c4de;text-align:center;font-weight:bold;padding:6px}
+.hero{margin:12px 0;text-align:center}
+.hero img{max-width:100%;border:1px solid #ccc;background:#eee;min-height:180px}
+.caption{font-size:0.8em;color:#54595d;margin-top:4px}
+.small{font-size:0.85em;color:#54595d}
+.formula{background:#f8f9fa;border:1px solid #ddd;padding:10px 14px;font-family:'Courier New',monospace;text-align:center;margin:12px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Discrete-time Fourier transform</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<tr><td class="title" colspan="2">Discrete-time Fourier transform</td></tr>
+<tr><th>Abbreviation</th><td>DTFT</td></tr>
+<tr><th>Domain</th><td>Discrete time (samples), continuous periodic frequency</td></tr>
+<tr><th>Period</th><td>2π in angular frequency ω</td></tr>
+<tr><th>Related transforms</th><td>DFT, Z-transform, Fourier series</td></tr>
+</table>
+<div class="hero"><img src="images/Discrete-time_Fourier_transform.png" alt="Periodic spectrum of a sampled signal placeholder"><div class="caption">The DTFT of a sampled signal is periodic in frequency.</div></div>
+<p>The <b>discrete-time Fourier transform</b> (<b>DTFT</b>) is a frequency-domain representation of a discrete-time sequence. Unlike the discrete Fourier transform (DFT), which produces a finite set of frequency samples, the DTFT produces a continuous function of frequency, which is periodic with period 2π. It is the discrete-time counterpart of the continuous-time Fourier transform and a special case of the Z-transform evaluated on the unit circle.</p>
+<h2>Definition</h2>
+<p>For a sequence x[n], the DTFT is</p>
+<div class="formula">X(e<sup>jω</sup>) = Σ<sub>n=−∞</sub><sup>∞</sup> x[n] · e<sup>−jωn</sup></div>
+<p>with inverse</p>
+<div class="formula">x[n] = (1/2π) ∫<sub>−π</sub><sup>π</sup> X(e<sup>jω</sup>) · e<sup>jωn</sup> dω</div>
+<h2>Relation to sampling</h2>
+<p>When a continuous signal is sampled, its spectrum becomes a periodic summation of copies of the original spectrum; the DTFT of the samples is exactly this periodic spectrum, scaled. This explains aliasing: if the sampling rate is too low, the copies overlap (the Nyquist–Shannon sampling theorem). The DFT of a finite segment can be viewed as samples of the DTFT at N equally spaced frequencies, which is the basis of practical spectrum estimation.</p>
+<h2>Properties</h2>
+<p>The DTFT is linear and satisfies convolution, modulation and Parseval relations analogous to those of the continuous transform. Convergence of the defining sum requires the sequence to be absolutely summable for a uniformly convergent, continuous transform; finite-energy but non-absolutely-summable sequences (such as the unit step) have DTFTs understood in a distributional sense, containing impulses.</p>
+<h2>See also</h2>
+<p><a href="../Discrete_sine_transform/index.html">Discrete sine transform</a> · <a href="../Discrete_Fourier_transform/index.html">Discrete Fourier transform</a> · <a href="../Z-transform/index.html">Z-transform</a></p>
+</div>
+</body>
+</html>

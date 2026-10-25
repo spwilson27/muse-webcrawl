@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bias–variance tradeoff - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; color: #202122; background: #fff; }
+.mw-body { max-width: 960px; margin: 0 auto; padding: 20px 30px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+.math { font-family: 'Cambria Math', 'Times New Roman', serif; font-style: italic; text-align: center; font-size: 17px; margin: 14px 0; }
+.hero { text-align: center; margin: 10px 0; }
+.hero img { max-width: 100%; border: 1px solid #a2a9b1; background: #eaecf0; }
+.caption { font-size: 12px; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Bias–variance tradeoff</h1>
+<div class="hero"><img src="images/bias-variance.png" alt="Hero image placeholder: a graph showing bias and variance components of error as model complexity grows"><div class="caption">Expected error as a function of model complexity: bias falls and variance rises.</div></div>
+<p>The <b>bias–variance tradeoff</b> is a central problem in supervised machine learning and statistics: models with low bias tend to have high variance and vice versa, so an optimal model must balance the two. The expected prediction error of a model can be decomposed into three parts: the square of the bias, the variance, and the irreducible noise.</p>
+<h2>Decomposition</h2>
+<p>For a target value <i>y</i> = <i>f</i>(<i>x</i>) + ε and a model <i>f̂</i> trained on random datasets, the expected squared error decomposes as</p>
+<p class="math">E[(y − f̂(x))<sup>2</sup>] = (Bias[f̂(x)])<sup>2</sup> + Var[f̂(x)] + σ<sup>2</sup>.</p>
+<h2>Interpretation</h2>
+<p>A simple model (such as linear regression applied to a curved relationship) underfits: it has high bias but its predictions are stable, i.e. low variance. A very flexible model (such as an unpruned decision tree) overfits: low bias on the training data but high variance, because its predictions swing wildly with the training sample. Model selection methods such as cross-validation, regularization, bagging, and ensembling all amount to managing this tradeoff.</p>
+<h2>Recent perspective</h2>
+<p>Research on deep neural networks has complicated the classical picture: heavily over-parameterised models can interpolate the training data yet still generalize well, a phenomenon studied under the name "double descent", in which test error falls again after the interpolation threshold.</p>
+<h2>See also</h2>
+<p><a href="../Bias_(statistics)/index.html">Bias (statistics)</a> · <a href="../Overfitting/index.html">Overfitting</a> · <a href="../Cross-validation_(statistics)/index.html">Cross-validation (statistics)</a></p>
+</div>
+</body>
+</html>

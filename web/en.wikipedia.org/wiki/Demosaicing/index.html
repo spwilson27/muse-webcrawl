@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Demosaicing - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+figure.hero{margin:0 0 12px 0;text-align:center}
+figure.hero img{width:100%;max-width:640px;height:220px;object-fit:cover;background:#e8e8e8;border:1px solid #a2a9b1}
+figcaption{font-size:85%;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Demosaicing</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<figure class="hero"><img src="images/demosaicing.png" alt="Hero image placeholder: a Bayer filter mosaic pattern enlarged"><figcaption>Placeholder image: the Bayer colour filter array; each pixel records only one colour.</figcaption></figure>
+<p><b>Demosaicing</b> (also <b>de-mosaicing</b>, <b>demosaicking</b>, or <b>debayering</b>) is a <a href="../Digital_image_processing/index.html">digital image processing</a> algorithm used to reconstruct a full-colour image from the incomplete colour samples output by an image sensor overlaid with a <a href="../Color_filter_array/index.html">colour filter array</a> (CFA). Most modern digital cameras use a single sensor with the <a href="../Bayer_filter/index.html">Bayer filter</a> mosaic, in which each pixel records only one of the three primary colours — half the pixels green, and a quarter each red and blue — so demosaicing must interpolate the two missing colour values at every pixel.</p>
+<h2>Goal</h2>
+<p>The aim of demosaicing is to reconstruct a full-resolution colour image while avoiding visible artefacts such as colour fringing, zippering along edges, and false-colour <a href="../Moir%C3%A9_pattern/index.html">moiré</a> patterns. Because human vision is more sensitive to luminance detail than to colour detail, good algorithms interpolate along edges rather than across them, exploiting correlations between the colour channels.</p>
+<h2>Methods</h2>
+<p>The simplest method, bilinear interpolation, averages the neighbouring samples of each missing colour; it is fast but produces soft images with pronounced edge artefacts. More advanced methods include edge-directed interpolation, which chooses the interpolation direction based on local gradients; constant-hue and median-based methods; frequency-domain approaches; and modern learning-based methods using <a href="../Convolutional_neural_network/index.html">convolutional neural networks</a>. Demosaicing is performed either in-camera when producing JPEG files, or by <a href="../Raw_image_format/index.html">raw</a> conversion software on a computer, where more sophisticated algorithms can be applied.</p>
+<h2>Artefacts</h2>
+<p>Poor demosaicing produces characteristic defects: zipper effects along high-contrast edges, maze patterns in fine textures, and rainbow moiré in repeating details such as fabrics. These artefacts are one reason some cameras use alternative sensor designs — stacked sensors such as <a href="../Foveon_X3_sensor/index.html">Foveon X3</a>, three-sensor beam-splitter systems, or pixel-shift multi-shot modes — that capture full colour at every location and avoid demosaicing altogether.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Bayer_filter/index.html">Bayer filter</a></li>
+<li><a href="../Color_filter_array/index.html">Color filter array</a></li>
+<li><a href="../Raw_image_format/index.html">Raw image format</a></li>
+<li><a href="../Interpolation/index.html">Interpolation</a></li>
+</ul>
+<p class="small">Categories: Digital imaging · Image processing · Color</p>
+</div>
+</body>
+</html>

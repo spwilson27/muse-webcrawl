@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Denotational semantics - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+figure.hero{margin:0 0 12px 0;text-align:center}
+figure.hero img{width:100%;max-width:640px;height:220px;object-fit:cover;background:#e8e8e8;border:1px solid #a2a9b1}
+figcaption{font-size:85%;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Denotational semantics</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<figure class="hero"><img src="images/denotational-semantics.png" alt="Hero image placeholder: a diagram mapping program phrases to mathematical objects"><figcaption>Placeholder image: each syntactic phrase is mapped to a mathematical denotation.</figcaption></figure>
+<p>In computer science, <b>denotational semantics</b> is an approach to formalising the meanings of <a href="../Programming_language/index.html">programming languages</a> by constructing mathematical objects — called <i>denotations</i> — that represent the meaning of phrases and programs. It was developed in the 1960s and 1970s principally by <a href="../Christopher_Strachey/index.html">Christopher Strachey</a> and <a href="../Dana_Scott/index.html">Dana Scott</a> at Oxford, building on earlier work in the semantics of formal languages.</p>
+<h2>Principles</h2>
+<p>Denotational semantics is <b>compositional</b>: the denotation of a compound phrase is built from the denotations of its parts. A semantic function maps each syntactic construct to an element of a mathematical domain. For example, expressions denote values, commands denote functions from states to states, and declarations denote functions on environments. Because meaning is given by mathematical objects rather than by an abstract machine, denotational definitions support rigorous proofs about programs, such as proofs of compiler correctness and program equivalence.</p>
+<h2>Domains and recursion</h2>
+<p>The central technical problem is giving meaning to loops and recursive definitions, whose denotations must satisfy equations of the form <i>x = f(x)</i>. Scott's solution was <b>domain theory</b>: semantic domains are partially ordered sets (complete partial orders) equipped with a notion of approximation, in which recursive definitions denote <a href="../Fixed-point_theorem/index.html">least fixed points</a> of continuous functions — intuitively, the limit of successively better approximations, where non-terminating computations denote the undefined element ⊥ ("bottom").</p>
+<h2>Relation to other semantics</h2>
+<p>Denotational semantics contrasts with <a href="../Operational_semantics/index.html">operational semantics</a>, which defines meaning through the steps of an abstract machine, and <a href="../Axiomatic_semantics/index.html">axiomatic semantics</a>, which defines meaning through logical assertions about programs. A denotational model is called <b>fully abstract</b> if it identifies exactly those programs that are observationally equivalent. Denotational techniques strongly influenced functional programming and the design of languages such as <a href="../Scheme_(programming_language)/index.html">Scheme</a>.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Operational_semantics/index.html">Operational semantics</a></li>
+<li><a href="../Domain_theory/index.html">Domain theory</a></li>
+<li><a href="../Dana_Scott/index.html">Dana Scott</a></li>
+<li><a href="../Formal_semantics_of_programming_languages/index.html">Formal semantics of programming languages</a></li>
+</ul>
+<p class="small">Categories: Formal methods · Programming language semantics · Domain theory</p>
+</div>
+</body>
+</html>

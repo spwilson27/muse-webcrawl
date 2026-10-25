@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Diffie–Hellman key exchange - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;padding:0 2em;color:#202122;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;font-weight:normal}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;margin:0 0 1em 1em;font-size:.9em;border-collapse:collapse}
+.infobox th{background:#e8eaf0;padding:.4em;text-align:center}
+.infobox td{padding:.3em .5em}
+.hero{text-align:center;margin:1em 0}
+.hero img{max-width:420px;border:1px solid #a2a9b1;background:#eee}
+.caption{font-size:.85em;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Diffie–Hellman key exchange</h1>
+<table class="infobox">
+<tr><th colspan="2">Diffie–Hellman key exchange</th></tr>
+<tr><td><b>Type</b></td><td>Cryptographic key-agreement protocol</td></tr>
+<tr><td><b>Designers</b></td><td>Whitfield Diffie, Martin Hellman (1976); Ralph Merkle (concepts)</td></tr>
+<tr><td><b>Hardness assumption</b></td><td>Discrete logarithm problem</td></tr>
+<tr><td><b>Uses</b></td><td>TLS, SSH, IPsec, messaging protocols</td></tr>
+</table>
+<div class="hero"><img src="images/diffie-hellman.png" alt="Diagram of two parties mixing secret colours with a shared colour to reach a common secret"><div class="caption">The paint-mixing analogy: public mixtures are exchanged, and each party adds its secret to reach the same shared secret</div></div>
+<p><b>Diffie–Hellman (DH) key exchange</b> is a mathematical method of securely exchanging cryptographic keys over a public channel. It was one of the first public-key protocols, published by Whitfield Diffie and Martin Hellman in 1976 in their paper "New Directions in Cryptography", and was the first practical method for establishing a shared secret over an unprotected communications channel. Ralph Merkle's earlier work on public-key distribution influenced the protocol, and it is sometimes called Diffie–Hellman–Merkle key exchange.</p>
+<h2>Protocol</h2>
+<p>Two parties publicly agree a large prime <i>p</i> and a generator <i>g</i>. Each chooses a secret integer (<i>a</i> and <i>b</i>) and sends the other <i>g<sup>a</sup></i> mod <i>p</i> and <i>g<sup>b</sup></i> mod <i>p</i> respectively. Each can then compute the shared secret <i>g<sup>ab</sup></i> mod <i>p</i>, while an eavesdropper who sees only the exchanged values faces the discrete logarithm problem, believed computationally infeasible for suitably large parameters.</p>
+<h2>Security</h2>
+<p>Basic Diffie–Hellman provides no authentication, so by itself it is vulnerable to man-in-the-middle attacks; deployed protocols therefore authenticate the exchange with digital signatures or pre-shared keys. Modern deployments prefer ephemeral Diffie–Hellman (DHE, or ECDHE over elliptic curves), which generates fresh keys per session and thereby provides forward secrecy. Weak parameter choices have caused real-world failures, notably the Logjam attack (2015) against 512-bit and widely reused 1024-bit groups.</p>
+<h2>History</h2>
+<p>It later emerged that an equivalent system had been developed in secret at the UK Government Communications Headquarters (GCHQ) by James Ellis, Clifford Cocks and Malcolm Williamson in the early 1970s; this was declassified in 1997.</p>
+<h2>See also</h2>
+<p><a href="../Public-key_cryptography/index.html">Public-key cryptography</a> · <a href="../Elliptic-curve_Diffie–Hellman/index.html">Elliptic-curve Diffie–Hellman</a> · <a href="../Discrete_logarithm/index.html">Discrete logarithm</a> · <a href="../Transport_Layer_Security/index.html">Transport Layer Security</a></p>
+</body>
+</html>

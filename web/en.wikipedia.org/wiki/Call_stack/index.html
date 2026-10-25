@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Call stack - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f8f9fa;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:88%}
+.infobox th{background:#b0c4de;text-align:center;padding:4px}
+.infobox td{padding:2px 4px;vertical-align:top}
+.hero{text-align:center;margin:12px 0}
+.hero img{max-width:420px;background:#eaecf0;border:1px solid #a2a9b1;padding:24px}
+.caption{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Call stack</h1>
+<div class="hero"><img src="images/call_stack.png" alt="Diagram of a call stack growing and shrinking with function calls"><div class="caption">A call stack stores one frame per active subroutine call. (Illustration placeholder)</div></div>
+<table class="infobox">
+<tr><th colspan="2">Call stack</th></tr>
+<tr><td>Type</td><td>Stack data structure (runtime)</td></tr>
+<tr><td>Contents</td><td>Stack frames: return address, saved registers, local variables, arguments</td></tr>
+<tr><td>Operations</td><td>Push frame on call; pop frame on return</td></tr>
+<tr><td>Failure mode</td><td>Stack overflow (excessive recursion/depth)</td></tr>
+</table>
+<p>In computer science, a <b>call stack</b> is a stack data structure that stores information about the active subroutines of a computer program. This type of stack is also known as an <b>execution stack</b>, <b>program stack</b>, <b>control stack</b>, <b>run-time stack</b>, or <b>machine stack</b>, and is often shortened to just "the stack". Although maintenance of the call stack is important for the proper functioning of most software, the details are normally hidden and automatic in high-level programming languages.</p>
+<h2>Function</h2>
+<p>When a subroutine is called, a stack frame (activation record) is pushed containing the return address, the caller's saved registers and frame pointer, the arguments and space for local variables. On return, the frame is popped and execution resumes in the caller. The call stack thereby keeps track of the point to which each active subroutine should return control when it finishes executing.</p>
+<h2>Uses and abuses</h2>
+<p>Debuggers display the call stack as a "stack trace" or backtrace to show the chain of calls leading to an error. Because the return address is stored in memory, corrupting it through a buffer overflow is a classic software vulnerability, exploited by techniques such as stack smashing and return-oriented programming. Deep recursion or unbounded call chains can exhaust the stack and cause a stack overflow crash.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Stack_(abstract_data_type)/">Stack (abstract data type)</a></li>
+<li><a href="../Stack_overflow/">Stack overflow</a></li>
+<li><a href="../Recursion_(computer_science)/">Recursion (computer science)</a></li>
+<li><a href="../Calling_convention/">Calling convention</a></li>
+</ul>
+</div>
+</body>
+</html>

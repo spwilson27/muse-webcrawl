@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Digital differential analyzer (graphics algorithm) - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;padding:0 2em;color:#202122;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;font-weight:normal}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;margin:0 0 1em 1em;font-size:.9em;border-collapse:collapse}
+.infobox th{background:#e8eaf0;padding:.4em;text-align:center}
+.infobox td{padding:.3em .5em}
+.hero{text-align:center;margin:1em 0}
+.hero img{max-width:420px;border:1px solid #a2a9b1;background:#eee}
+.caption{font-size:.85em;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Digital differential analyzer (graphics algorithm)</h1>
+<table class="infobox">
+<tr><th colspan="2">Digital differential analyzer</th></tr>
+<tr><td><b>Type</b></td><td>Line-drawing (rasterisation) algorithm</td></tr>
+<tr><td><b>Field</b></td><td>Computer graphics</td></tr>
+<tr><td><b>Method</b></td><td>Incremental evaluation along the line's longer axis</td></tr>
+<tr><td><b>Superseded by</b></td><td>Bresenham's line algorithm (integer arithmetic)</td></tr>
+</table>
+<div class="hero"><img src="images/dda-graphics.png" alt="Pixels selected by the DDA algorithm along a line between two endpoints"><div class="caption">Pixels chosen by incremental sampling along a line segment</div></div>
+<p>A <b>digital differential analyzer</b> (DDA) is a line-drawing algorithm used in computer graphics to rasterise a line segment between two endpoints. It works by sampling the line at uniform intervals along its dominant axis and rounding the computed coordinate on the other axis to the nearest pixel. The name is borrowed from the digital differential analyzer, a class of early computing machine that solved problems incrementally.</p>
+<h2>Algorithm</h2>
+<p>Given endpoints (x<sub>0</sub>, y<sub>0</sub>) and (x<sub>1</sub>, y<sub>1</sub>), the algorithm computes dx and dy, takes steps = max(|dx|, |dy|), and increments x by dx/steps and y by dy/steps at each of the steps, plotting the rounded coordinates. Because each step depends only on fixed increments added to running values, the method is simple and was well suited to early graphics hardware and software, though it relies on floating-point arithmetic and division.</p>
+<h2>Variants and successors</h2>
+<p>The same incremental principle extends to circles and other curves, and to texture-mapping and ray casting (for example grid traversal in tile-based games). For line drawing it was largely superseded by Bresenham's line algorithm (1962–65), which achieves the same result using only integer addition and subtraction, making it faster on early hardware.</p>
+<h2>See also</h2>
+<p><a href="../Bresenham's_line_algorithm/index.html">Bresenham's line algorithm</a> · <a href="../Rasterisation/index.html">Rasterisation</a> · <a href="../Line_drawing_algorithm/index.html">Line drawing algorithm</a> · <a href="../Xiaolin_Wu's_line_algorithm/index.html">Xiaolin Wu's line algorithm</a></p>
+</body>
+</html>

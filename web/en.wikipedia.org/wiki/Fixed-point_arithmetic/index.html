@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fixed-point arithmetic - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:860px;margin:0 auto;padding:24px;color:#202122;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-family:'Linux Libertine',Georgia,serif;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal;margin-top:1.2em}
+p{margin:0.6em 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:100%;margin:12px auto;border:1px solid #ccc}
+ul{margin:0.4em 0 0.4em 1.4em}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<h1>Fixed-point arithmetic</h1>
+<img class="hero" src="images/Fixed-point_arithmetic.png" alt="Binary fixed-point number showing the fixed position of the binary point">
+<p>In computing, <b>fixed-point</b> is a real data type for a number that has a fixed number of digits (or bits) after — and sometimes before — the radix point. A fixed-point representation is essentially an integer scaled by a fixed factor: for example, the value 12.34 might be stored as the integer 1234 with an implicit scaling of two decimal places. The position of the point is fixed by convention for all numbers of the type, in contrast to <a href="../Floating-point_arithmetic/index.html">floating-point</a> representation, in which the point can move and an exponent is stored.</p>
+<h2>Notation</h2>
+<p>Fixed-point formats are commonly described in <b>Q notation</b>: Q<i>m</i>.<i>n</i> denotes a signed number with <i>m</i> integer bits and <i>n</i> fractional bits. Thus Q1.15 — one sign/integer bit and fifteen fractional bits — is the classic format for signal-processing values between −1 and just under +1, and Q16.16 gives a 32-bit number with a range of about ±32,768 and a resolution of about 1/65,536.</p>
+<h2>Operations</h2>
+<p>Addition and subtraction of fixed-point numbers use ordinary integer arithmetic. Multiplication produces a result with twice the fractional bits, which must be shifted and rounded or truncated back to the working format; division is correspondingly more involved. Because the representable range is small, overflow is a constant hazard, and programmers must track the range of every quantity — the payoff is speed and simplicity on hardware without a floating-point unit, exact representation of decimal fractions such as tenths, and perfectly reproducible results across platforms.</p>
+<h2>Applications</h2>
+<p>Fixed-point arithmetic was the norm in early computers and remains standard in embedded systems, digital signal processors, financial software (where exact decimal representation of currency is required), and many game engines and graphics pipelines of the 1990s — the original PlayStation's geometry hardware, for instance, worked in fixed point. Languages such as COBOL and PL/I, and SQL's DECIMAL type, provide native fixed-point decimal types, while in C and C++ fixed-point work is usually done with integer types and explicit scaling, or with libraries.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Floating-point_arithmetic/index.html">Floating-point arithmetic</a></li>
+<li><a href="../Binary-coded_decimal/index.html">Binary-coded decimal</a></li>
+<li><a href="../Q_(number_format)/index.html">Q (number format)</a></li>
+<li><a href="../Integer_(computer_science)/index.html">Integer</a></li>
+</ul>
+</body>
+</html>

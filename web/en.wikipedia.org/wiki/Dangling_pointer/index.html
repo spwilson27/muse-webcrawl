@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dangling pointer - Wikipedia</title>
+<style>
+body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:24px}
+h1{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 18px;font-size:0.88em}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+.infobox caption{font-weight:bold;background:#dfe3ea;padding:4px}
+.hero{border:1px dashed #72777d;background:#f8f9fa;text-align:center;padding:28px 10px;color:#54595d;font-style:italic;margin-bottom:14px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;overflow-x:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Dangling pointer</h1>
+<p>A <b>dangling pointer</b>, in computer programming, is a pointer that does not point to a valid object of the appropriate type. Dangling pointers arise when memory is freed or goes out of scope while a pointer to it is retained; dereferencing such a pointer is undefined behaviour in languages such as C and C++ and is a classic source of crashes, data corruption and security vulnerabilities (use-after-free errors).</p>
+<div class="hero">[Image: Diagram of a pointer still referencing memory after it has been freed]</div>
+<h2>Causes</h2>
+<p>The most common cause is freeing memory and then continuing to use the pointer:</p>
+<pre>char *p = malloc(16);
+free(p);
+/* p is now a dangling pointer */
+*p = 'x';   /* undefined behaviour */</pre>
+<p>Other causes include returning the address of a local (stack) variable from a function, and retaining a pointer to an object that has been deleted through a different pointer (aliasing).</p>
+<h2>Prevention</h2>
+<p>Mitigations include setting pointers to NULL after freeing, using garbage-collected languages, reference counting and smart pointers (such as C++ <i>unique_ptr</i> and <i>shared_ptr</i>), borrowing/ownership systems as in Rust, and runtime tools such as AddressSanitizer and Valgrind that detect use-after-free errors.</p>
+<p>See also: <a href="../Wild_pointer/index.html">Wild pointer</a>, <a href="../Memory_safety/index.html">Memory safety</a>, <a href="../Use_after_free/index.html">Use after free</a>, <a href="../Dangerous_Liaisons/index.html">Dangerous Liaisons</a> (unrelated).</p>
+</div>
+</body>
+</html>

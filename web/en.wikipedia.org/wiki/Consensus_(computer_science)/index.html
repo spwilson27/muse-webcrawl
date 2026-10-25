@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Consensus (computer science) - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#fff;color:#202122;margin:0;padding:0 2em;line-height:1.6}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;font-weight:normal;margin-top:1.2em}
+h3{font-size:1.15em;font-weight:bold}
+p{font-size:.95em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.5em 1em;margin:0 0 1em 1em;font-size:.85em;width:260px}
+.infobox th{text-align:left;background:#eaecf0;padding:.2em .4em}
+.infobox td{padding:.2em .4em}
+.hero{border:1px dashed #72777d;background:#f8f9fa;text-align:center;padding:2em 1em;margin:1em 0;color:#54595d;font-size:.9em}
+sup{font-size:.75em}
+</style>
+</head>
+<body>
+<h1>Consensus (computer science)</h1>
+<div class="hero">[Hero image placeholder: illustration of distributed nodes reaching agreement]</div>
+<p><b>Consensus</b> is a fundamental problem in <a href="../Distributed_computing/index.html">distributed computing</a> in which multiple processes, nodes, or agents must agree on a single data value. The value may be needed for agreement on which transaction to commit to a database, which block to append to a blockchain, or which process should act as leader. Consensus is considered one of the most important problems in fault-tolerant distributed systems, because many other problems — such as <a href="../State_machine_replication/index.html">state machine replication</a> — can be reduced to it.</p>
+
+<h2>Problem description</h2>
+<p>A consensus protocol typically must satisfy three properties:</p>
+<ul>
+<li><b>Termination</b>: every correct process eventually decides some value.</li>
+<li><b>Agreement</b>: all correct processes decide the same value.</li>
+<li><b>Validity</b>: the decided value must have been proposed by some process.</li>
+</ul>
+<p>Consensus must be achieved even in the presence of faulty processes. In the classical <a href="../Byzantine_fault/index.html">Byzantine generals problem</a>, processes may behave arbitrarily, including maliciously misreporting values.</p>
+
+<h2>The FLP impossibility result</h2>
+<p>In 1985, Fischer, Lynch and Paterson proved the <a href="../FLP_impossibility/index.html">FLP impossibility result</a>: in a fully asynchronous system, no deterministic consensus protocol can guarantee termination if even a single process may crash. In practice, systems circumvent the result by using partial synchrony assumptions, randomization, or failure detectors.</p>
+
+<h2>Algorithms</h2>
+<h3>Paxos</h3>
+<p><a href="../Paxos_(computer_science)/index.html">Paxos</a>, described by Leslie Lamport, is a family of protocols for achieving consensus among unreliable processors. It is widely used in production systems, including Google's Chubby lock service and the Spanner database.</p>
+<h3>Raft</h3>
+<p><a href="../Raft_(algorithm)/index.html">Raft</a> was designed as a more understandable alternative to Paxos. It separates leader election, log replication, and safety into modular components.</p>
+<h3>Byzantine fault tolerant protocols</h3>
+<p>Practical Byzantine Fault Tolerance (PBFT), introduced by Castro and Liskov in 1999, tolerates up to <i>f</i> malicious replicas out of 3<i>f</i>+1 total. Modern <a href="../Blockchain/index.html">blockchain</a> systems such as those using proof of stake employ variants of BFT consensus.</p>
+
+<h2>Applications</h2>
+<p>Consensus algorithms underpin distributed databases, configuration management systems such as ZooKeeper and etcd, leader election, atomic broadcast, and cryptocurrency networks. Bitcoin's proof-of-work protocol achieves a probabilistic form of consensus known as Nakamoto consensus.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Byzantine_fault/index.html">Byzantine fault</a></li>
+<li><a href="../Two-phase_commit_protocol/index.html">Two-phase commit protocol</a></li>
+<li><a href="../CAP_theorem/index.html">CAP theorem</a></li>
+</ul>
+<p><i>Categories: Distributed computing problems; Fault tolerance</i></p>
+</body>
+</html>

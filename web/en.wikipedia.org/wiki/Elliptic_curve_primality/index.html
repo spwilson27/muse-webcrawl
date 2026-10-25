@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Elliptic curve primality - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 36px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { display: block; margin: 12px auto; border: 1px solid #c8ccd1; padding: 4px; background: #fff; }
+.small { font-size: 0.85em; color: #54595d; }
+code { font-family: monospace; background: #f8f9fa; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Elliptic curve primality</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/Elliptic_curve_primality.png" alt="Elliptic curve over a finite field used in a primality certificate">
+<p><b>Elliptic curve primality</b> testing, and in particular the <b>elliptic curve primality proving</b> (ECPP) algorithm, is a method for proving that a given integer is prime by means of the arithmetic of elliptic curves. Introduced by Shafi Goldwasser and Joe Kilian and developed into a practical algorithm by A. O. L. Atkin and François Morain, ECPP produces a short, efficiently checkable <i>primality certificate</i> and is among the fastest methods in practice for general numbers of hundreds or thousands of digits.</p>
+<h2>Idea of the algorithm</h2>
+<p>Classical primality proofs such as Pocklington's criterion rely on finding a group whose order is known and sufficiently factored. For elliptic curves modulo the candidate prime <i>n</i>, Hasse's theorem says the number of points lies close to <i>n</i> + 1, within an interval of width 4√<i>n</i>. The algorithm constructs a curve whose point count <i>m</i> has a large prime factor <i>q</i> greater than the Hasse bound's threshold; a point of order <i>q</i> on the curve then certifies that <i>n</i> is prime provided <i>q</i> itself is prime. Because <i>q</i> is substantially smaller than <i>n</i>, the process recurses, generating a chain of certificates that descends to small primes that can be checked directly.</p>
+<h2>Finding the curve order</h2>
+<p>The practical ECPP algorithm of Atkin and Morain works in reverse: it uses complex multiplication to construct curves with a predetermined number of points. For a candidate order <i>m</i> = <i>n</i> + 1 − <i>t</i>, the Hilbert class polynomial for a suitable imaginary quadratic field is solved modulo <i>n</i> to obtain a curve with exactly <i>m</i> points. Choosing discriminants with small class numbers keeps the polynomials manageable.</p>
+<h2>Complexity and use</h2>
+<p>Heuristically ECPP runs in time roughly O(log<sup>5+ε</sup> <i>n</i>), and certificate verification is faster still. Implementations in systems such as Primo have certified primes of tens of thousands of digits. ECPP contrasts with the deterministic polynomial-time AKS test, which is elegant but generally slower in practice for large inputs, and with probabilistic tests such as Miller–Rabin, which cannot furnish a proof.</p>
+<p class="small">See also: <a href="../Primality_test/index.html">Primality test</a> · <a href="../Elliptic_curve/index.html">Elliptic curve</a> · <a href="../AKS_primality_test/index.html">AKS primality test</a></p>
+</div>
+</body>
+</html>

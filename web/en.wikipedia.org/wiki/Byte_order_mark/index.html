@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Byte order mark - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.mw-body{max-width:960px;margin:0 auto;padding:20px 30px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.5em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+h3{font-size:1.2em;font-weight:bold;margin-top:1em}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.85em;margin:0 0 1em 1.5em;border-collapse:collapse}
+.infobox th,.infobox td{border:1px solid #a2a9b1;padding:4px 8px;vertical-align:top}
+.infobox caption{background:#b0c4de;font-weight:bold;padding:6px;font-size:1.05em}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;margin:0 0 1em 1.5em;float:right;width:260px;font-size:0.85em;text-align:center}
+.thumb img{max-width:100%;background:#e8e8e8;display:block;margin:0 auto}
+.thumb figcaption{padding-top:4px;text-align:left}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{margin:.3em 0 .3em 1.6em;padding:0}
+.mono{font-family:monospace;background:#f0f0f0;padding:0 3px}
+.ref{font-size:0.85em;color:#54595d}
+.small{font-size:0.9em}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Byte order mark</h1>
+<p>The <b>byte order mark</b> (<b>BOM</b>) is a particular Unicode character, U+FEFF ZERO WIDTH NO-BREAK SPACE, whose appearance at the very beginning of a text stream indicates to a reader the byte order (endianness) of the following encoded text, and in some contexts which Unicode encoding is in use. The BOM is deprecated as a zero-width space character in most circumstances; its role in encoding detection remains its principal function.</p>
+<figure class="thumb"><img src="images/byte-order-mark.png" alt="Placeholder image: hex dump showing BOM bytes at the start of a text file"><figcaption>Hex view of a UTF-8 file beginning with the three BOM bytes EF BB BF. <span class="small">(Image placeholder)</span></figcaption></figure>
+<table class="infobox">
+<caption>Byte order mark</caption>
+<tr><th>Unicode code point</th><td>U+FEFF</td></tr>
+<tr><th>Name</th><td>ZERO WIDTH NO-BREAK SPACE</td></tr>
+<tr><th>UTF-8 bytes</th><td><span class="mono">EF BB BF</span></td></tr>
+<tr><th>UTF-16 (big-endian)</th><td><span class="mono">FE FF</span></td></tr>
+<tr><th>UTF-16 (little-endian)</th><td><span class="mono">FF FE</span></td></tr>
+<tr><th>UTF-32 (big-endian)</th><td><span class="mono">00 00 FE FF</span></td></tr>
+<tr><th>UTF-32 (little-endian)</th><td><span class="mono">FF FE 00 00</span></td></tr>
+</table>
+<h2>Usage</h2>
+<p>For UTF-16, where code units are two bytes, a BOM of <span class="mono">FE FF</span> signals big-endian text and <span class="mono">FF FE</span> signals little-endian text; the Unicode standard requires consumers to assume big-endian in the absence of a BOM. For UTF-8, endianness is irrelevant, but a BOM (<span class="mono">EF BB BF</span>) is often used simply as a signature identifying the file as UTF-8 — historically common in Windows applications such as Notepad. The Unicode standard does not require or recommend a BOM for UTF-8.</p>
+<h2>Practical issues</h2>
+<p>A UTF-8 BOM can break software that does not expect it: it may appear as stray characters ("ï»¿") when a file is decoded as Latin-1, cause compilers and interpreters to error — for instance preventing a Unix shell script or PHP file from working correctly — or leak into web output before headers are sent. Consequently, many coding standards require UTF-8 files to be saved without a BOM. In Unicode terminology, U+FEFF occurring in the middle of a file is treated as a zero-width no-break space (or, since Unicode 3.2, preferably the word joiner U+2060 serves that function).</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../UTF-8/index.html">UTF-8</a></li>
+<li><a href="../UTF-16/index.html">UTF-16</a></li>
+<li><a href="../Endianness/index.html">Endianness</a></li>
+<li><a href="../Unicode/index.html">Unicode</a></li>
+</ul>
+<p class="ref">References: The Unicode Standard, chapter on conformance and the FAQ on BOM usage.</p>
+</div>
+</body>
+</html>

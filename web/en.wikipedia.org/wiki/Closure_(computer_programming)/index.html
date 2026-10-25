@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Closure (computer programming) - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+#content{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em;font-weight:normal}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.88em;margin:0 0 12px 16px;padding:8px}
+.infobox th{background:#b0c4de;padding:4px;text-align:center}
+.infobox td{padding:3px 6px;vertical-align:top}
+.hero{border:1px solid #a2a9b1;background:#eef3f8;text-align:center;padding:28px 8px;margin:10px 0;font-style:italic;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Closure (computer programming)</h1>
+<p>In programming languages, a <b>closure</b> is a technique for implementing lexically scoped name binding in a language with first-class functions: a function, together with references to the variables of the environment in which it was defined. When the closure is invoked, it can access those captured variables even after the enclosing scope has finished executing.</p>
+<div class="hero">[Image: Diagram of a closure capturing a variable from its enclosing scope]</div>
+<h2>History</h2>
+<p>The concept originated in the lambda calculus and was implemented in Lisp and Scheme in the 1960s–70s; Peter Landin coined the term. Closures spread to mainstream programming through languages such as Smalltalk, JavaScript, Python, Ruby, and later C++ (lambda expressions, C++11), Java (lambdas, Java 8), and C#.</p>
+<h2>Behaviour</h2>
+<p>Languages differ on whether a closure captures variables themselves or their values at the moment of creation. A classic consequence is the "loop variable" pitfall, in which closures created in a loop all share one mutable variable unless the language binds a fresh copy per iteration. Because captured variables can outlive their defining stack frame, implementations typically allocate them on the heap, and closures thereby provide a lightweight mechanism for encapsulation, callbacks, event handlers, currying, and partial application.</p>
+<h2>Example</h2>
+<p>In JavaScript, a counter factory returns a closure over a private variable: <code>function makeCounter(){ let n=0; return () =&gt; ++n; }</code> — each returned function remembers and mutates its own <code>n</code>, demonstrating how closures serve as the basis for module patterns and private state.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Lambda_calculus/index.html">Lambda calculus</a></li>
+<li><a href="../First-class_function/index.html">First-class function</a></li>
+<li><a href="../Anonymous_function/index.html">Anonymous function</a></li>
+<li><a href="../Scope_(computer_science)/index.html">Scope</a></li>
+</ul>
+</div>
+</body>
+</html>

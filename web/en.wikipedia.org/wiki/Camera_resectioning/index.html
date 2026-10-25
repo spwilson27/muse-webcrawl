@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Camera resectioning - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:88%;margin:0 0 12px 16px;padding:8px}
+.infobox th{background:#b0c4de;padding:4px;text-align:center}
+.infobox td{padding:3px 6px;vertical-align:top}
+.hero{border:1px solid #c8ccd1;background:#f8f9fa;padding:10px;text-align:center;color:#72777d;font-style:italic;margin:12px 0}
+.small{font-size:90%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Camera resectioning</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+
+<table class="infobox">
+<tr><th colspan="2">Camera resectioning</th></tr>
+<tr><td colspan="2" style="text-align:center">[Image placeholder: diagram of a camera pose estimated from 3D–2D point correspondences]</td></tr>
+<tr><td><b>Field</b></td><td>Photogrammetry, computer vision</td></tr>
+<tr><td><b>Inputs</b></td><td>Correspondences between 3D scene points and 2D image points</td></tr>
+<tr><td><b>Outputs</b></td><td>Camera position, orientation, and (optionally) intrinsic parameters</td></tr>
+</table>
+
+<div class="hero"><img src="images/camera-resectioning.png" alt="Hero image placeholder: geometric diagram of camera resectioning from known control points"> [Hero image placeholder]</div>
+
+<p><b>Camera resectioning</b> (also called <b>camera calibration</b> in some contexts, or <b>space resection</b> in photogrammetry) is the process of determining the parameters of a camera — principally its position and orientation in space (the <i>extrinsic</i> parameters) — from correspondences between known three-dimensional points in a scene and their two-dimensional projections in an image. It is the inverse of forward projection: instead of computing where scene points appear, one recovers where the camera must have been.</p>
+
+<h2>Problem formulation</h2>
+<p>Under the pinhole camera model, a 3D point <b>X</b> projects to an image point <b>x</b> according to <b>x</b> = K[R | t]<b>X</b>, where K contains the intrinsic parameters (focal length, principal point, skew) and [R | t] is the camera pose. Resectioning estimates these unknowns from a set of correspondences. The minimal case — the Perspective-Three-Point (P3P) problem — uses three points and can yield up to four solutions; additional points disambiguate. With known intrinsics, three points suffice in principle; with unknown intrinsics, more correspondences are required.</p>
+
+<h2>Methods</h2>
+<ul>
+<li><b>Direct Linear Transformation (DLT):</b> treats the projection matrix entries as unknowns in a linear system solved from six or more correspondences, followed by decomposition into K, R, and t.</li>
+<li><b>PnP algorithms:</b> Perspective-n-Point methods such as EPnP and iterative Levenberg–Marquardt refinement minimise reprojection error efficiently for large point sets.</li>
+<li><b>RANSAC-based estimation:</b> robust variants tolerate outlier correspondences, essential in automated matching from image features.</li>
+</ul>
+
+<h2>Applications</h2>
+<p>Resectioning underlies aerial and close-range <a href="../Photogrammetry/index.html">photogrammetry</a> (where ground control points fix the camera's position for mapping), augmented reality (tracking a device's pose against a known model), robot and vehicle localisation, motion capture, and visual effects, where virtual cameras must be matched to live-action footage. In structure-from-motion pipelines, resectioning incrementally registers new images to a growing 3D reconstruction.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Photogrammetry/index.html">Photogrammetry</a></li>
+<li><a href="../Bundle_adjustment/index.html">Bundle adjustment</a></li>
+<li><a href="../Pinhole_camera_model/index.html">Pinhole camera model</a></li>
+<li><a href="../Structure_from_motion/index.html">Structure from motion</a></li>
+</ul>
+
+<p class="small">Categories: Photogrammetry | Computer vision | Geometry in computer vision</p>
+</div>
+</body>
+</html>

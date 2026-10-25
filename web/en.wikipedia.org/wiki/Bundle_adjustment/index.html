@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bundle adjustment - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+#content{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em;font-weight:normal}
+p{line-height:1.6;font-family:sans-serif;font-size:0.95em}
+ul{line-height:1.6;font-family:sans-serif;font-size:0.95em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{float:right;width:280px;margin:0 0 12px 18px;text-align:center;font-family:sans-serif;font-size:0.8em;color:#54595d}
+.hero .ph{border:1px dashed #a2a9b1;background:#eaecf0;height:160px;display:flex;align-items:center;justify-content:center;padding:8px}
+.toc{background:#f8f9fa;border:1px solid #a2a9b1;display:inline-block;padding:10px 18px;font-family:sans-serif;font-size:0.9em}
+.small{font-size:0.85em;color:#54595d;font-family:sans-serif}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Bundle adjustment</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+
+<div class="hero"><div class="ph">[Image placeholder: Diagram of camera rays converging on 3D scene points]</div><div>Bundles of light rays from scene points to cameras give the method its name</div></div>
+
+<p>In photogrammetry and computer vision, <b>bundle adjustment</b> is the problem of simultaneously refining the 3D coordinates of scene geometry, the parameters of the relative camera motion, and the optical characteristics of the cameras, given a set of images depicting a number of 3D points from different viewpoints. The name refers to the "bundles" of light rays leaving each 3D feature and converging on each camera's optical centre, which are optimally "adjusted" so that the predicted image projections match the observed image features.</p>
+
+<div class="toc"><b>Contents</b>
+<ol>
+<li>Formulation</li>
+<li>Algorithms</li>
+<li>Applications</li>
+<li>See also</li>
+</ol>
+</div>
+
+<h2>Formulation</h2>
+<p>Bundle adjustment is typically formulated as a non-linear least squares problem: minimise the total reprojection error, the sum over all cameras and points of the squared distance between each observed image feature and the projection of its corresponding 3D point. Camera parameters may include position, orientation, focal length, and lens distortion coefficients. Without constraints, the solution is defined only up to a similarity transformation (the gauge freedom), which is fixed by anchoring some parameters or points.</p>
+
+<h2>Algorithms</h2>
+<p>Because the problem is large but sparse — each observation links only one camera and one point — specialised solvers exploit the sparse structure of the normal equations, typically using the Levenberg-Marquardt algorithm together with the Schur complement to eliminate either the point or the camera parameters. Well-known software implementations include the SBA library and the Ceres Solver, and bundle adjustment is the final refinement stage in most structure-from-motion pipelines such as COLMAP and VisualSFM.</p>
+
+<h2>Applications</h2>
+<p>Bundle adjustment originated in aerial photogrammetry in the mid-20th century for producing accurate maps from survey photographs. Today it underpins 3D reconstruction from photo collections, visual SLAM (simultaneous localisation and mapping) in robotics and augmented reality, drone mapping, and cultural-heritage documentation. In SLAM systems, local bundle adjustment over a sliding window of recent camera poses is a standard component for maintaining accurate trajectories.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Bundle_branch_block/index.html">Bundle branch block</a></li>
+</ul>
+
+<p class="small">Categories: Computer vision | Photogrammetry | Optimization algorithms</p>
+</div>
+</body>
+</html>

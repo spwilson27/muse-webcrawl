@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Elastic net regularization - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;color:#202122;background:#fff}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header h1{font-size:1.8em;margin:0;font-weight:normal}
+main{max-width:960px;margin:0 auto;padding:20px 24px;line-height:1.6}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+img.hero{max-width:100%;display:block;margin:12px auto}
+.eq{text-align:center;font-style:italic;margin:1em 0}
+</style>
+</head>
+<body>
+<header><h1>Elastic net regularization</h1></header>
+<main>
+<img class="hero" src="images/Elastic_net_regularization.png" alt="Constraint regions of ridge, lasso and elastic net penalties">
+<p>In statistics and machine learning, the <b>elastic net</b> is a regularized regression method that linearly combines the L<sub>1</sub> and L<sub>2</sub> penalties of the <a href="../Lasso_(statistics)/index.html">lasso</a> and <a href="../Ridge_regression/index.html">ridge regression</a> methods. It was introduced by Hui Zou and Trevor Hastie in a 2005 paper, "Regularization and variable selection via the elastic net".</p>
+<h2>Formulation</h2>
+<p>Given data with predictors X and response y, the elastic net estimator minimises the residual sum of squares plus a penalty mixing the two norms:</p>
+<p class="eq">min<sub>β</sub> ‖y − Xβ‖² + λ [ α‖β‖₁ + (1 − α)‖β‖²₂ / 2 ],</p>
+<p>where λ ≥ 0 controls overall shrinkage and α ∈ [0, 1] balances the lasso (α = 1) and ridge (α = 0) components.</p>
+<h2>Motivation</h2>
+<p>The lasso performs variable selection but behaves erratically with groups of highly correlated predictors — tending to pick one arbitrarily — and cannot select more predictors than observations. Ridge regression handles correlation smoothly but performs no selection. The elastic net inherits the lasso's sparsity while exhibiting a "grouping effect": strongly correlated variables tend to enter or leave the model together, with similar coefficients. Zou and Hastie originally proposed a two-stage "naive elastic net" with a rescaling correction; later implementations, such as the coordinate-descent algorithm in the glmnet package, solve the penalised problem directly.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Lasso_(statistics)/index.html">Lasso (statistics)</a></li>
+<li><a href="../Ridge_regression/index.html">Ridge regression</a></li>
+<li><a href="../Regularization_(mathematics)/index.html">Regularization (mathematics)</a></li>
+</ul>
+</main>
+</body>
+</html>

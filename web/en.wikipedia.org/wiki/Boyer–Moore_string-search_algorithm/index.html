@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Boyer–Moore string-search algorithm - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#fff;color:#202122}
+a{color:#3366cc;text-decoration:none}a:hover{text-decoration:underline}
+.header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:10px 20px}
+.header h1{font-size:1.8em;margin:0;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+.content{max-width:960px;margin:0 auto;padding:20px;line-height:1.6;font-size:0.95em}
+.infobox{float:right;width:280px;background:#f8f9fa;border:1px solid #a2a9b1;padding:8px;margin:0 0 12px 16px;font-size:0.85em}
+.infobox caption{font-weight:bold;background:#cedff2;padding:4px;text-align:center}
+.infobox td{padding:3px 6px;vertical-align:top}
+.infobox th{text-align:left;padding:3px 6px;background:#eaf3ff}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+.hero{background:#eaf3ff;border:1px dashed #72777d;text-align:center;padding:30px 10px;color:#54595d;font-style:italic;margin:12px 0}
+pre{background:#f8f9fa;border:1px solid #a2a9b1;padding:10px;overflow:auto}
+</style>
+</head>
+<body>
+<div class="header"><h1>Boyer–Moore string-search algorithm</h1></div>
+<div class="content">
+<table class="infobox">
+<caption>Boyer–Moore string-search algorithm</caption>
+<tr><th>Class</th><td>String-searching algorithm</td></tr>
+<tr><th>Designed by</th><td>Robert S. Boyer and J Strother Moore (1977)</td></tr>
+<tr><th>Worst-case performance</th><td>O(nm) (Θ(n) if the pattern does not appear in the text)</td></tr>
+<tr><th>Best-case performance</th><td>Ω(n/m)</td></tr>
+<tr><th>Worst-case space</th><td>Θ(k + m)</td></tr>
+</table>
+<div class="hero">[Image: Illustration of right-to-left comparison in the Boyer–Moore algorithm]</div>
+<p>The <b>Boyer–Moore string-search algorithm</b> is an efficient string-searching algorithm that is the standard benchmark for practical string-search literature. It was developed by Robert S. Boyer and J Strother Moore in 1977. The algorithm preprocesses the pattern being searched for (not the text being searched in) and skips sections of the text by comparing characters from the <i>end</i> of the pattern to the beginning, so on average it need not examine every character of the target string.</p>
+<h2>Description</h2>
+<p>The algorithm aligns the pattern with the start of the text and compares characters from right to left. On a mismatch it uses two precomputed heuristics to shift the pattern to the right by more than one position:</p>
+<ul>
+<li>The <b>bad-character rule</b>: shift the pattern so that the mismatched character in the text aligns with its last occurrence in the pattern, or past it if it does not occur in the pattern.</li>
+<li>The <b>good-suffix rule</b>: shift the pattern so that the already-matched suffix aligns with another occurrence of it in the pattern, or with a prefix of the pattern that matches a suffix of the matched part.</li>
+</ul>
+<p>The greater of the two shifts is applied. Because the algorithm can skip large portions of the text, its best-case running time is Ω(n/m), and it is especially fast for long patterns and large alphabets. Variants include the Boyer–Moore–Horspool algorithm, which uses only the bad-character rule, and the Turbo Boyer–Moore algorithm. The algorithm underlies the search implementation in many text editors and the Unix <i>grep</i> family of tools (via related heuristics).</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Knuth–Morris–Pratt_algorithm/index.html">Knuth–Morris–Pratt algorithm</a></li>
+<li><a href="../Rabin–Karp_algorithm/index.html">Rabin–Karp algorithm</a></li>
+<li><a href="../String-searching_algorithm/index.html">String-searching algorithm</a></li>
+</ul>
+</div>
+</body>
+</html>

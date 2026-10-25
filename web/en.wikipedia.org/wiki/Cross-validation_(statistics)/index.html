@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cross-validation (statistics) - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine",Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.topbar{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:8px 20px;font-family:sans-serif;font-size:13px;color:#54595d}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:4px;font-weight:normal}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px;font-weight:normal}
+h3{font-size:17px;margin-top:20px}
+p{margin:8px 0;font-size:15px}
+.infobox{float:right;width:280px;background:#f8f9fa;border:1px solid #a2a9b1;font-size:13px;font-family:sans-serif;margin:0 0 16px 20px;padding:0}
+.infobox th{background:#b0c4de;padding:6px;text-align:center;font-size:14px}
+.infobox td{padding:4px 8px;border-top:1px solid #eaecf0}
+.infobox .imgbox{text-align:center;background:#eaecf0;padding:10px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.refs{font-size:13px}
+.toc{background:#f8f9fa;border:1px solid #a2a9b1;display:inline-block;padding:10px 20px;font-size:14px;font-family:sans-serif}
+</style>
+</head>
+<body>
+<div class="topbar">From Wikipedia, the free encyclopedia</div>
+<div class="wrap">
+<h1>Cross-validation (statistics)</h1>
+<table class="infobox">
+<tr><th colspan="2">Cross-validation</th></tr>
+<tr><td colspan="2" class="imgbox"><img src="images/cross-validation.png" alt="Hero image placeholder: diagram of a dataset split into four folds for k-fold cross-validation" width="240"><br><i>Hero image placeholder — k-fold cross-validation</i></td></tr>
+<tr><td><b>Purpose</b></td><td>Estimate how accurately a predictive model will perform in practice</td></tr>
+<tr><td><b>Fields</b></td><td><a href="../Statistics/index.html">Statistics</a>, <a href="../Machine_learning/index.html">machine learning</a></td></tr>
+<tr><td><b>Common types</b></td><td>Holdout, k-fold, leave-one-out, stratified, nested</td></tr>
+<tr><td><b>Related</b></td><td><a href="../Bootstrapping_(statistics)/index.html">Bootstrapping</a>, <a href="../Overfitting/index.html">overfitting</a>, model selection</td></tr>
+</table>
+<p><b>Cross-validation</b>, sometimes called <b>rotation estimation</b> or <b>out-of-sample testing</b>, is any of various similar model validation techniques for assessing how the results of a statistical analysis will generalize to an independent data set. Cross-validation is a resampling method that uses different portions of the data to test and train a model on different iterations. It is mainly used in settings where the goal is prediction, and one wants to estimate how accurately a predictive model will perform in practice.</p>
+<p>In a prediction problem, a model is usually given a dataset of known data on which training is run (<i>training dataset</i>), and a dataset of unknown data (or <i>first seen</i> data) against which the model is tested (called the <a href="../Training,_validation,_and_test_data_sets/index.html">validation dataset</a> or <i>testing set</i>). The goal of cross-validation is to test the model's ability to predict new data that was not used in estimating it, in order to flag problems like <a href="../Overfitting/index.html">overfitting</a> or selection bias and give insight on how the model will generalize to an independent dataset.</p>
+<div class="toc"><b>Contents</b><br>1 Motivation<br>2 Common types<br>3 Statistical analysis<br>4 Misuse and leakage<br>5 See also<br>6 References</div>
+<h2>Motivation</h2>
+<p>When a model is fitted to data, maximizing a fit criterion such as likelihood tends to overfit: the model may describe random noise rather than the underlying relationship. Cross-validation addresses this by evaluating the model on data it did not see during fitting. A single holdout estimate depends heavily on which observations happen to land in the test set, so averaging over many splits gives a more stable estimate of out-of-sample performance.</p>
+<h2>Common types</h2>
+<h3>Holdout method</h3>
+<p>The simplest approach partitions the data once into a training set and a test set. It is fast but its estimate has high variance and wastes data.</p>
+<h3>K-fold cross-validation</h3>
+<p>The original sample is randomly partitioned into k equal-sized subsamples (folds). Of the k subsamples, a single subsample is retained as the validation data for testing the model, and the remaining k − 1 subsamples are used as training data. The process is repeated k times, with each of the k subsamples used exactly once as the validation data. The k results are then averaged. Ten-fold cross-validation is a common choice, and stratified variants preserve class proportions in classification problems.</p>
+<h3>Leave-one-out and leave-p-out</h3>
+<p>Leave-one-out cross-validation (LOOCV) is the limiting case where each single observation forms the validation set in turn. It has low bias but can have high variance and is computationally demanding for models that are expensive to refit; for many parametric models closed-form shortcuts exist.</p>
+<h3>Nested cross-validation</h3>
+<p>When cross-validation is used both to tune hyperparameters and to estimate generalization error, the two uses must be separated: an outer loop estimates performance while an inner loop selects hyperparameters. Using one loop for both tasks produces optimistically biased estimates.</p>
+<h3>Time-series variants</h3>
+<p>For temporal data, random folds leak future information into training; rolling-origin (forward-chaining) splits, in which training always precedes testing in time, are used instead.</p>
+<h2>Statistical analysis</h2>
+<p>Cross-validation estimates the expected out-of-sample error of a fitting procedure. Its variability is a subject of active study; naive variance estimates that ignore the overlap between training sets understate uncertainty. Cross-validation is used to choose model complexity — for example the number of neighbors in k-nearest-neighbors or the penalty parameter in regularized regression — and forms the basis of model-selection criteria implemented in most machine-learning libraries.</p>
+<h2>Misuse and leakage</h2>
+<p>Common errors include performing feature selection or data cleaning on the whole dataset before splitting (target leakage), applying cross-validation after tuning on the same folds and reporting the tuned score as the generalization estimate, and using ordinary folds for clustered or time-ordered data. Correct practice places every data-dependent step inside the resampling loop.</p>
+<h2>See also</h2>
+<p><a href="../Bootstrapping_(statistics)/index.html">Bootstrapping (statistics)</a> · <a href="../Cross_entropy/index.html">Cross entropy</a> · <a href="../Overfitting/index.html">Overfitting</a> · <a href="../Training,_validation,_and_test_data_sets/index.html">Training, validation, and test data sets</a></p>
+<h2>References</h2>
+<p class="refs">1. Stone, M. (1974). "Cross-validatory choice and assessment of statistical predictions." <i>Journal of the Royal Statistical Society, Series B</i>.<br>2. Kohavi, R. (1995). "A study of cross-validation and bootstrap for accuracy estimation and model selection." <i>IJCAI</i>.<br>3. Hastie, T., Tibshirani, R., &amp; Friedman, J. (2009). <i>The Elements of Statistical Learning</i> (2nd ed.). Springer.</p>
+</div>
+</body>
+</html>

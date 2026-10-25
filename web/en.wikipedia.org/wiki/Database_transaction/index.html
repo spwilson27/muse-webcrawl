@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Database transaction - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:24px}
+p{font-family:sans-serif;font-size:14px;line-height:1.6}
+.hero{clear:both;text-align:center;margin:16px 0}
+.hero div{display:inline-block;width:480px;height:270px;background:#eaecf0;border:1px dashed #72777d;color:#54595d;font-family:sans-serif;font-size:13px;line-height:270px}
+a{color:#0645ad;text-decoration:none}
+ul{font-family:sans-serif;font-size:14px;line-height:1.6}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Database transaction</h1>
+<p>A <b>database transaction</b> symbolises a unit of work performed within a database management system against a database, treated in a coherent and reliable way independent of other transactions. A transaction generally represents a change in state of the database, and provides an all-or-nothing proposition: either every part of the transaction succeeds, or none of it does.</p>
+<div class="hero"><div>[ Hero image: Diagram of a bank transfer executed as a single atomic transaction ]</div></div>
+<h2>ACID properties</h2>
+<ul>
+<li><b>Atomicity</b> — the transaction is indivisible; on failure, all its changes are rolled back.</li>
+<li><b>Consistency</b> — the transaction takes the database from one valid state to another, preserving all defined rules and constraints.</li>
+<li><b>Isolation</b> — concurrent transactions do not interfere with one another; the result is equivalent to some serial execution.</li>
+<li><b>Durability</b> — once committed, a transaction's effects survive system failures.</li>
+</ul>
+<h2>Control and isolation levels</h2>
+<p>In SQL a transaction begins implicitly or with BEGIN, and ends with COMMIT, making its changes permanent, or ROLLBACK, discarding them. Isolation levels — read uncommitted, read committed, repeatable read, and serializable — trade concurrency against anomalies such as dirty reads, non-repeatable reads, and phantom reads. Durability and atomicity are usually implemented with a write-ahead transaction log, while isolation is enforced by locking or multiversion concurrency control (MVCC).</p>
+<h2>Distributed transactions</h2>
+<p>When work spans multiple databases or services, protocols such as two-phase commit coordinate the participants, at the cost of availability during failures — the tension formalised by the CAP theorem and addressed in modern systems by patterns such as sagas and eventual consistency.</p>
+<p><i>See also:</i> <a href="../ACID/index.html">ACID</a>, <a href="../Two-phase_commit_protocol/index.html">Two-phase commit protocol</a>, <a href="../Concurrency_control/index.html">Concurrency control</a></p>
+</div>
+</body>
+</html>

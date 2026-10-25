@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Borg (cluster manager) - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff}
+#content{max-width:960px;margin:0 auto;padding:20px 28px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:400;font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:400;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.4em}
+p{line-height:1.6;margin:.5em 0}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:.85em;margin:0 0 12px 16px;padding:8px}
+.infobox caption{font-weight:bold;font-size:1.05em;padding:4px;text-align:center}
+.infobox th{text-align:left;vertical-align:top;padding:3px 6px;color:#54595d}
+.infobox td{padding:3px 6px}
+.hero{border:1px solid #a2a9b1;background:#eaecf0;text-align:center;padding:26px 10px;color:#54595d;font-style:italic;margin:10px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{line-height:1.6}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Borg (cluster manager)</h1>
+<table class="infobox">
+<caption>Borg</caption>
+<tr><th>Developer</th><td>Google</td></tr>
+<tr><th>Type</th><td>Cluster management / orchestration</td></tr>
+<tr><th>Successor</th><td>Kubernetes (inspired by Borg)</td></tr>
+</table>
+<p><b>Borg</b> is a cluster manager developed and used internally by <a href="../Google/index.html">Google</a>. It orchestrates the execution of hundreds of thousands of jobs, from thousands of different applications, across clusters each of tens of thousands of machines. Borg is the system that runs most Google services, and its design — described publicly in a 2015 paper — was the direct inspiration for the open-source <a href="../Kubernetes/index.html">Kubernetes</a> project.</p>
+<div class="hero">[ Image: Diagram of a Borg cell: a Borgmaster coordinating Borglet agents on worker machines ]</div>
+<h2>Architecture</h2>
+<p>Machines in a Borg deployment are grouped into <i>cells</i>. Each cell is run by a logically centralised controller, the <b>Borgmaster</b>, replicated for fault tolerance and elected via Paxos. A scheduler assigns tasks to machines according to resource requirements, priorities and quotas. On each machine an agent, the <b>Borglet</b>, starts and supervises tasks, restarting them if they fail. Work is submitted as <i>jobs</i> composed of <i>tasks</i>, described in a declarative configuration language.</p>
+<h2>Features</h2>
+<p>Borg packs tasks densely onto machines to achieve high utilisation, shares machine resources between production jobs and lower-priority batch work (with pre-emption), isolates tasks using Linux containers based on cgroups, and provides naming and monitoring services. Production jobs reserve resources and receive priority; quota and admission control prevent overcommitment.</p>
+<h2>Influence</h2>
+<p>Google engineers drew on Borg and its successor concepts (Omega) when designing Kubernetes, which generalises Borg's ideas — pods, labels, services — into an open, portable API. Other descendants and analogues include Apache Mesos and Docker Swarm.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Kubernetes/index.html">Kubernetes</a></li>
+<li><a href="../Cluster_manager/index.html">Cluster manager</a></li>
+<li><a href="../Data_center/index.html">Data center</a></li>
+</ul>
+</div>
+</body>
+</html>

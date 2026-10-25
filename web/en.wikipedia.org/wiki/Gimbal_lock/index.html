@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gimbal lock — Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;color:#202122;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a7d7f9;padding-bottom:.2em}
+h2{font-size:1.35em;border-bottom:1px solid #c8ccd1;padding-bottom:.15em;margin-top:1.4em}
+img.hero{display:block;max-width:420px;width:100%;height:auto;background:#f8f9fa;border:1px solid #c8ccd1;padding:.4em;margin:1em 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Gimbal lock</h1>
+<img class="hero" src="images/gimbal-lock.png" alt="Diagram of a three-gimbal system in gimbal lock, with two rotation axes aligned">
+<p><b>Gimbal lock</b> is the loss of one degree of freedom in a three-dimensional mechanism that uses three nested <a href="../Gimbal/index.html">gimbals</a> of rotation. It occurs when the axes of two of the gimbals become aligned ("locked" together), so that rotations about two different parameters produce rotation about the same physical axis and the system can no longer represent an arbitrary orientation smoothly.</p>
+<h2>Causes</h2>
+<p>In an Euler-angle representation — for example roll, pitch and yaw — gimbal lock occurs at singular configurations, classically when pitch reaches ±90°, where the roll and yaw axes coincide. The mapping from Euler angles to orientations then ceases to be locally invertible: infinitesimal changes in orientation may demand arbitrarily large changes in the angles, and one rotational direction becomes unavailable. This is a property of any three-parameter representation of rotations, not a mechanical failure.</p>
+<h2>Consequences and examples</h2>
+<p>Mechanical gimbals in gyroscope and inertial navigation platforms can genuinely lock, a hazard managed in spacecraft such as Apollo by warning indicators and manoeuvring constraints; the Apollo 11 mission famously had to work around the risk when its inertial measurement unit approached a lock condition, prompting Michael Collins's on-record concern about being sent "gimbal lock for Christmas".</p>
+<h2>Solutions</h2>
+<p>A fourth, redundant gimbal can be added and driven to keep the other three away from alignment. In computer graphics and robotics, the standard remedy is to represent rotations with <a href="../Quaternion/index.html">quaternions</a> or rotation matrices, which are non-singular; interpolation methods such as slerp avoid the jerky behaviour that Euler-angle interpolation shows near the singularity.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Gimbal/index.html">Gimbal</a></li>
+<li><a href="../Euler_angles/index.html">Euler angles</a></li>
+<li><a href="../Quaternions_and_spatial_rotation/index.html">Quaternions and spatial rotation</a></li>
+<li><a href="../Singularity_(mathematics)/index.html">Singularity (mathematics)</a></li>
+</ul>
+</body>
+</html>

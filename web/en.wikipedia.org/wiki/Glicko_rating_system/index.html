@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Glicko rating system - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#fff;color:#202122;margin:0 auto;max-width:900px;padding:20px;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+img.hero{display:block;max-width:320px;width:100%;border:1px solid #c8ccd1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;float:right}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Glicko rating system</h1>
+<img class="hero" src="images/glicko-rating-system.png" alt="Graph showing a player rating and its ratings deviation over time">
+<p>The <b>Glicko rating system</b> and its successor <b>Glicko-2</b> are methods for assessing the relative skill of players in competitor-versus-competitor games such as chess, developed by Mark Glickman of Boston University. The principal improvement over the <a href="../Elo_rating_system/index.html">Elo rating system</a> is the inclusion of a <i>ratings deviation</i> (RD), which quantifies the uncertainty of a player's rating.</p>
+<h2>Description</h2>
+<p>In Glicko, each player has a rating (conventionally centred on 1500) and a ratings deviation, initially 350. A high RD indicates an unreliable rating — for a new player, or one who has not played for a long time — while an active player's RD shrinks toward a minimum. Ratings are usually updated in batches over a rating period: a player's results in that period are combined with the RD-dependent expectations to produce a new rating and RD. A player's RD also increases over time when they are inactive, reflecting growing uncertainty.</p>
+<p>Roughly, a player's true skill is estimated to lie within two RDs of the rating with about 95% confidence. A rating of 1500 with RD 60, for example, implies a plausible skill range of about 1380–1620.</p>
+<h2>Glicko-2</h2>
+<p>Glicko-2 adds a third parameter, the rating volatility (σ), which measures the degree of expected fluctuation in a player's rating, allowing the system to adapt the rate at which RD changes for players whose performance is erratic as well as for consistently performing players. Glickman's published examples use the game of chess, but the system has been adopted in various online games and rating contexts; Glicko-2 underlies several matchmaking systems, and TrueSkill, developed at Microsoft, is a related Bayesian approach.</p>
+<h2>See also</h2>
+<p><a href="../Elo_rating_system/index.html">Elo rating system</a> · <a href="../TrueSkill/index.html">TrueSkill</a> · <a href="../Chess_rating_system/index.html">Chess rating system</a></p>
+<p class="small">Categories: Chess rating systems · Statistical ratings</p>
+</body>
+</html>

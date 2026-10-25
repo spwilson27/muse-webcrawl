@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cross entropy - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine",Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.topbar{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:8px 20px;font-family:sans-serif;font-size:13px;color:#54595d}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:4px;font-weight:normal}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px;font-weight:normal}
+h3{font-size:17px;margin-top:20px}
+p{margin:8px 0;font-size:15px}
+.infobox{float:right;width:280px;background:#f8f9fa;border:1px solid #a2a9b1;font-size:13px;font-family:sans-serif;margin:0 0 16px 20px;padding:0}
+.infobox th{background:#b0c4de;padding:6px;text-align:center;font-size:14px}
+.infobox td{padding:4px 8px;border-top:1px solid #eaecf0}
+.infobox .imgbox{text-align:center;background:#eaecf0;padding:10px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.formula{background:#f8f9fa;border:1px solid #eaecf0;padding:10px 16px;font-size:16px;text-align:center;margin:12px 0}
+.refs{font-size:13px}
+.toc{background:#f8f9fa;border:1px solid #a2a9b1;display:inline-block;padding:10px 20px;font-size:14px;font-family:sans-serif}
+</style>
+</head>
+<body>
+<div class="topbar">From Wikipedia, the free encyclopedia</div>
+<div class="wrap">
+<h1>Cross entropy</h1>
+<table class="infobox">
+<tr><th colspan="2">Cross entropy</th></tr>
+<tr><td colspan="2" class="imgbox"><img src="images/cross-entropy.png" alt="Hero image placeholder: two probability distributions whose cross entropy is being compared" width="240"><br><i>Hero image placeholder — distributions p and q</i></td></tr>
+<tr><td><b>Field</b></td><td><a href="../Information_theory/index.html">Information theory</a>, <a href="../Machine_learning/index.html">machine learning</a></td></tr>
+<tr><td><b>Definition</b></td><td>Average number of bits needed to identify an event drawn from p, using a coding scheme optimized for q</td></tr>
+<tr><td><b>Related</b></td><td><a href="../Entropy_(information_theory)/index.html">Entropy</a>, <a href="../Kullback–Leibler_divergence/index.html">Kullback–Leibler divergence</a>, perplexity</td></tr>
+<tr><td><b>Use in ML</b></td><td>Loss function for classification</td></tr>
+</table>
+<p>In <a href="../Information_theory/index.html">information theory</a>, the <b>cross-entropy</b> between two probability distributions p and q, over the same underlying set of events, measures the average number of bits needed to identify an event drawn from the set, if a coding scheme used for the set is optimized for an "unnatural" probability distribution q, rather than the "true" distribution p.</p>
+<p>The cross-entropy for the distributions p and q over a given set is defined as follows:</p>
+<div class="formula">H(p, q) = − Σ<sub>x</sub> p(x) log q(x)</div>
+<p>where the sum is over all possible events x. Cross-entropy is closely related to entropy and to the <a href="../Kullback–Leibler_divergence/index.html">Kullback–Leibler divergence</a>: H(p, q) = H(p) + D<sub>KL</sub>(p ‖ q). Because H(p) is fixed for a given dataset, minimizing cross-entropy with respect to a model q is equivalent to minimizing the KL divergence between the data distribution and the model.</p>
+<div class="toc"><b>Contents</b><br>1 Motivation<br>2 Estimation<br>3 Relation to maximum likelihood<br>4 Cross-entropy loss in machine learning<br>5 See also<br>6 References</div>
+<h2>Motivation</h2>
+<p>Suppose events occur with true probabilities p, and we design an optimal code for a distribution q that we believe (or our model predicts). Shannon's source-coding theorem says the expected code length is minimized when q = p, giving the entropy H(p). Using the wrong code costs extra bits on average; that expected length is the cross-entropy. By Gibbs' inequality, H(p, q) ≥ H(p), with equality only when the two distributions are identical almost everywhere.</p>
+<h2>Estimation</h2>
+<p>In practice the true distribution p is unknown, and cross-entropy is estimated from samples: the average negative log-probability that a model assigns to observed data. For language models this is often reported in exponentiated form as <b>perplexity</b>, which can be interpreted as the effective branching factor of the prediction problem.</p>
+<h2>Relation to maximum likelihood</h2>
+<p>Maximizing the likelihood of training data under a probabilistic model is mathematically equivalent to minimizing the cross-entropy between the empirical distribution of the data and the model distribution. This is why cross-entropy minimization underlies logistic regression, multinomial classification, and the training of modern neural networks.</p>
+<h2>Cross-entropy loss in machine learning</h2>
+<p>In machine learning, cross-entropy loss (also called log loss) is the standard loss function for classification. For a single example with a one-hot target vector and predicted probabilities from a softmax output layer, the loss reduces to the negative logarithm of the predicted probability of the correct class. It penalizes confident wrong predictions extremely heavily, and its gradient has a convenient form: for softmax outputs, the derivative of the loss with respect to the logits is simply (prediction − target).</p>
+<p>Variants include binary cross-entropy for two-class problems, categorical cross-entropy for multi-class problems, sparse categorical cross-entropy when labels are integers, and label-smoothed or focal losses used to address overconfidence and class imbalance.</p>
+<h2>See also</h2>
+<p><a href="../Cross-correlation/index.html">Cross-correlation</a> · <a href="../Entropy_(information_theory)/index.html">Entropy (information theory)</a> · <a href="../Kullback–Leibler_divergence/index.html">Kullback–Leibler divergence</a> · <a href="../Loss_function/index.html">Loss function</a> · <a href="../Softmax_function/index.html">Softmax function</a></p>
+<h2>References</h2>
+<p class="refs">1. Cover, T. M., &amp; Thomas, J. A. (2006). <i>Elements of Information Theory</i> (2nd ed.). Wiley.<br>2. Shannon, C. E. (1948). "A Mathematical Theory of Communication." <i>Bell System Technical Journal</i>.<br>3. Goodfellow, I., Bengio, Y., &amp; Courville, A. (2016). <i>Deep Learning</i>. MIT Press.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fundamental matrix (computer vision) - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:6px;margin-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:28px;font-weight:normal}
+p{line-height:1.6;margin:10px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.thumb{float:right;width:280px;margin:6px 0 16px 20px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;text-align:center}
+.thumb img{max-width:100%;height:auto;background:#eaecf0}
+.thumb .cap{font-size:0.82em;color:#54595d;margin-top:5px;text-align:left}
+.eq{background:#f8f9fa;border:1px solid #eaecf0;padding:10px 16px;margin:12px 0;font-family:'Courier New',monospace;font-size:0.95em}
+.small{font-size:0.85em;color:#54595d}
+ul,ol{line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Fundamental matrix (computer vision)</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+
+<div class="thumb">
+<img src="images/fundamental_matrix.png" alt="Epipolar geometry diagram with two cameras and epipolar lines">
+<div class="cap">Epipolar geometry: a point x in one image constrains its match x′ to lie on the epipolar line Fx in the other image.</div>
+</div>
+
+<p>In <a href="../Computer_vision/index.html">computer vision</a>, the <b>fundamental matrix</b> F is a 3×3 matrix of rank 2 which relates corresponding points in stereo images. In <a href="../Epipolar_geometry/index.html">epipolar geometry</a>, with homogeneous image coordinates x and x′ of a point in image 1 and image 2 respectively, Fx describes a line (an epipolar line) on which the corresponding point x′ on the other image must lie. That means, for all pairs of corresponding points:</p>
+
+<div class="eq">x′<sup>T</sup> F x = 0</div>
+
+<p>Being of rank two and determined only up to scale, the fundamental matrix can be estimated given at least seven point correspondences, though in practice the linear eight-point algorithm and its normalised variant are used, usually within a <a href="../RANSAC/index.html">RANSAC</a> framework to reject outliers.</p>
+
+<h2>Derivation and relation to the essential matrix</h2>
+<p>The fundamental matrix can be expressed in terms of the camera projection matrices P and P′ of the two views. When the cameras are calibrated, the corresponding object is the <b>essential matrix</b> E = K′<sup>T</sup> F K, where K and K′ are the intrinsic calibration matrices; the essential matrix encodes the relative rotation and translation between the cameras directly. The fundamental matrix generalises this to uncalibrated cameras.</p>
+
+<h2>Uses</h2>
+<ul>
+<li>Guiding the search for correspondences: matches need only be sought along epipolar lines, not the whole image.</li>
+<li><a href="../Structure_from_motion/index.html">Structure from motion</a> and 3D reconstruction pipelines, as an initial estimate of two-view geometry.</li>
+<li>Image rectification, stereo matching and camera calibration.</li>
+<li>Video analysis tasks such as motion segmentation and background modelling.</li>
+</ul>
+
+<h2>Computation</h2>
+<p>The standard approach solves x′<sup>T</sup>Fx = 0 as a linear system in the entries of F (eight-point algorithm), enforces rank 2 by <a href="../Singular_value_decomposition/index.html">singular value decomposition</a> (zeroing the smallest singular value), and refines with nonlinear minimisation of the Sampson or reprojection error. The seven-point algorithm, which enforces the rank constraint via a cubic equation in det F = 0, yields up to three solutions and is popular inside RANSAC loops.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Epipolar_geometry/index.html">Epipolar geometry</a></li>
+<li><a href="../Essential_matrix/index.html">Essential matrix</a></li>
+<li><a href="../Camera_matrix/index.html">Camera matrix</a></li>
+<li><a href="../Trifocal_tensor/index.html">Trifocal tensor</a></li>
+</ul>
+
+<p class="small">Categories: Computer vision · Geometry in computer vision · Matrices</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Consistent hashing - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#fff;color:#202122;margin:0;padding:0 2em;line-height:1.6}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;font-weight:normal;margin-top:1.2em}
+h3{font-size:1.15em;font-weight:bold}
+p{font-size:.95em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{border:1px dashed #72777d;background:#f8f9fa;text-align:center;padding:2em 1em;margin:1em 0;color:#54595d;font-size:.9em}
+</style>
+</head>
+<body>
+<h1>Consistent hashing</h1>
+<div class="hero">[Hero image placeholder: hash ring with nodes and keys distributed around a circle]</div>
+<p><b>Consistent hashing</b> is a special kind of hashing technique such that when a hash table is resized, only <i>n</i>/<i>m</i> keys need to be remapped on average, where <i>n</i> is the number of keys and <i>m</i> is the number of slots. In contrast, in most traditional hash tables, a change in the number of array slots causes nearly all keys to be remapped because the mapping between the keys and slots is defined by a modular operation.</p>
+<p>Consistent hashing was introduced by David Karger and colleagues at MIT in 1997, originally for use in distributed caching on the World Wide Web.</p>
+
+<h2>Technique</h2>
+<p>Consistent hashing is based on mapping each object and each cache node to a point on a circle (the hash ring). Both nodes and keys are hashed onto the same identifier space, typically using a function such as SHA-1. A key is assigned to the first node encountered walking clockwise around the ring from the key's position. When a node is added or removed, only the keys in the arc between that node and its predecessor change assignment; all other keys keep their nodes.</p>
+
+<h2>Virtual nodes</h2>
+<p>To balance load more evenly, each physical node is represented by many "virtual nodes" (replicas) scattered around the ring. This smooths out the statistical variance in key distribution and lets nodes take on load proportional to their capacity.</p>
+
+<h2>Uses</h2>
+<p>Consistent hashing is used in Amazon's Dynamo and its open-source derivatives Apache Cassandra and Voldemort, in distributed cache systems such as memcached (via the Ketama algorithm), in content delivery networks originating with Akamai, and in load balancers and peer-to-peer systems. A related technique, rendezvous hashing (highest random weight), achieves similar goals.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Hash_table/index.html">Hash table</a></li>
+<li><a href="../Distributed_hash_table/index.html">Distributed hash table</a></li>
+<li><a href="../Rendezvous_hashing/index.html">Rendezvous hashing</a></li>
+</ul>
+<p><i>Categories: Hashing; Distributed data storage</i></p>
+</body>
+</html>

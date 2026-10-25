@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Direct preference optimization - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{text-align:center;margin:12px 0}
+.hero img{max-width:480px;width:100%;border:1px solid #ccc}
+.cap{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Direct preference optimization</h1>
+<div class="hero"><img src="images/Direct_preference_optimization.png" alt="Diagram comparing RLHF and DPO training pipelines"><div class="cap">DPO fine-tunes a language model directly on preference pairs, without training a separate reward model.</div></div>
+<p><b>Direct preference optimization</b> (<b>DPO</b>) is a technique for fine-tuning <a href="../Large_language_model/index.html">large language models</a> to align with human preferences. It was introduced by Rafailov, Sharma, Mitchell and colleagues at Stanford in the 2023 paper "Direct Preference Optimization: Your Language Model is Secretly a Reward Model".</p>
+<h2>Background</h2>
+<p>The standard alignment method, reinforcement learning from human feedback (<a href="../Reinforcement_learning_from_human_feedback/index.html">RLHF</a>), first trains a separate reward model on human comparisons of model outputs, then optimises the language model against that reward model using reinforcement learning (typically PPO). The pipeline is complex, computationally expensive and can be unstable.</p>
+<h2>Method</h2>
+<p>DPO shows that the optimal policy for the RLHF objective has a closed-form relationship to the reward function. This allows the reward model to be eliminated entirely: given a dataset of prompts with a preferred ("winning") and a dispreferred ("losing") response, DPO directly increases the relative log-probability of the winning response under the policy, relative to a frozen reference model, through a simple classification-style loss based on the Bradley–Terry model of preferences. A hyperparameter β controls how strongly the tuned model is kept close to the reference model.</p>
+<h2>Adoption and variants</h2>
+<p>DPO proved simpler and more stable than PPO-based RLHF while achieving comparable or better results on tasks such as summarisation and dialogue, and it was rapidly adopted in open-source model development, including the Zephyr family of models. It has spawned many variants and successors, including IPO, KTO and ORPO, and forms part of the standard toolkit of preference-based fine-tuning.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Reinforcement_learning_from_human_feedback/index.html">Reinforcement learning from human feedback</a></li>
+<li><a href="../Large_language_model/index.html">Large language model</a></li>
+<li><a href="../AI_alignment/index.html">AI alignment</a></li>
+</ul>
+</div>
+</body>
+</html>

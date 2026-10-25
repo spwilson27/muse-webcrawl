@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cross-correlation - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine",Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.topbar{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:8px 20px;font-family:sans-serif;font-size:13px;color:#54595d}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:4px;font-weight:normal}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px;font-weight:normal}
+h3{font-size:17px;margin-top:20px}
+p{margin:8px 0;font-size:15px}
+.infobox{float:right;width:280px;background:#f8f9fa;border:1px solid #a2a9b1;font-size:13px;font-family:sans-serif;margin:0 0 16px 20px;padding:0}
+.infobox th{background:#b0c4de;padding:6px;text-align:center;font-size:14px}
+.infobox td{padding:4px 8px;border-top:1px solid #eaecf0}
+.infobox .imgbox{text-align:center;background:#eaecf0;padding:10px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.formula{background:#f8f9fa;border:1px solid #eaecf0;padding:10px 16px;font-family:serif;font-size:16px;text-align:center;margin:12px 0}
+.refs{font-size:13px}
+.toc{background:#f8f9fa;border:1px solid #a2a9b1;display:inline-block;padding:10px 20px;font-size:14px;font-family:sans-serif}
+</style>
+</head>
+<body>
+<div class="topbar">From Wikipedia, the free encyclopedia</div>
+<div class="wrap">
+<h1>Cross-correlation</h1>
+<table class="infobox">
+<tr><th colspan="2">Cross-correlation</th></tr>
+<tr><td colspan="2" class="imgbox"><img src="images/cross-correlation.png" alt="Hero image placeholder: graph of two signals and their cross-correlation function" width="240"><br><i>Hero image placeholder — cross-correlation of two time series</i></td></tr>
+<tr><td><b>Field</b></td><td><a href="../Signal_processing/index.html">Signal processing</a>, <a href="../Statistics/index.html">statistics</a></td></tr>
+<tr><td><b>Related concepts</b></td><td><a href="../Autocorrelation/index.html">Autocorrelation</a>, <a href="../Convolution/index.html">convolution</a>, <a href="../Covariance/index.html">covariance</a>, <a href="../Fourier_transform/index.html">Fourier transform</a></td></tr>
+<tr><td><b>Applications</b></td><td>Pattern recognition, time-delay estimation, <a href="../Radar/index.html">radar</a>, <a href="../Finance/index.html">finance</a></td></tr>
+</table>
+<p>In <a href="../Signal_processing/index.html">signal processing</a>, <b>cross-correlation</b> is a measure of similarity of two series as a function of the displacement of one relative to the other. This is also known as a sliding dot product or sliding inner-product. It is commonly used for searching a long signal for a shorter, known feature, and it has applications in pattern recognition, single particle analysis, electron tomography, cryptanalysis, and neurophysiology.</p>
+<p>The cross-correlation is similar in nature to the <a href="../Convolution/index.html">convolution</a> of two functions. In an <a href="../Autocorrelation/index.html">autocorrelation</a>, which is the cross-correlation of a signal with itself, there will always be a peak at a lag of zero, and its size will be the signal energy.</p>
+<div class="toc"><b>Contents</b><br>1 Definition<br>2 Notation<br>3 Explanation<br>4 Properties<br>5 Time series analysis<br>6 Applications<br>7 See also<br>8 References</div>
+<h2>Definition</h2>
+<p>For continuous functions <i>f</i> and <i>g</i>, the cross-correlation is defined as:</p>
+<div class="formula">(f ⋆ g)(τ) ≜ ∫<sub>−∞</sub><sup>∞</sup> f*(t) g(t + τ) dt</div>
+<p>where f* denotes the complex conjugate of f and τ is the displacement, also known as the lag. For discrete functions f<sub>i</sub> and g<sub>i</sub>, the cross-correlation is defined as:</p>
+<div class="formula">(f ⋆ g)[n] ≜ Σ<sub>m=−∞</sub><sup>∞</sup> f*<sub>m</sub> g<sub>m+n</sub></div>
+<p>Cross-correlation is also related to the cross-covariance. For two jointly distributed real-valued random variables X and Y with known standard deviations, the normalized form of the cross-correlation is the cross-correlation coefficient, widely used in statistics and in measuring the strength of a relationship between two variables.</p>
+<h2>Explanation</h2>
+<p>As an example, consider two real-valued functions f and g that differ only by an unknown shift along the x-axis. One can use the cross-correlation to find how much g must be shifted along the x-axis to make it identical to f. The formula essentially slides the g function along the x-axis, calculating the integral of their product at each position. When the functions match, the value of (f ⋆ g) is maximized. This is because when peaks (positive areas) are aligned, they make a large contribution to the integral, as do troughs (negative areas) aligned with other troughs.</p>
+<p>With complex-valued functions f and g, taking the conjugate of f ensures that aligned peaks or troughs with imaginary components contribute positively to the integral.</p>
+<h2>Properties</h2>
+<p>The cross-correlation of functions f(t) and g(t) is equivalent to the convolution of f*(−t) and g(t). Unlike convolution, cross-correlation is not commutative in general: (f ⋆ g)(t) = (g ⋆ f)*(−t). It is, however, closely tied to the Fourier domain through the cross-correlation theorem, which states that the Fourier transform of a cross-correlation is the product of the Fourier transforms of the individual signals, one of them conjugated. This allows cross-correlations to be computed efficiently using the <a href="../Fast_Fourier_transform/index.html">fast Fourier transform</a>.</p>
+<p>For real-valued signals, the cross-correlation at zero lag gives the inner product of the two signals. Cross-correlation is bounded above by the geometric mean of the two autocorrelations at zero lag — that is, by the square root of the product of the two signal energies.</p>
+<h2>Time series analysis</h2>
+<p>In time series analysis, as used in statistics and econometrics, the cross-correlation between two series is studied as a function of the lag of one relative to the other. It is useful for identifying the leading and lagging relationships between economic indicators, for example between money supply growth and inflation. The sample cross-correlation function can be plotted as a correlogram for paired lags.</p>
+<h2>Applications</h2>
+<p>Cross-correlation has numerous practical uses:</p>
+<ul>
+<li><b>Time delay estimation</b>: In <a href="../Radar/index.html">radar</a>, sonar, and GPS receivers, cross-correlating a received signal with a known transmitted code estimates propagation delay and hence distance.</li>
+<li><b>Pattern recognition</b>: Template matching in image processing locates a small template image within a larger image by computing normalized cross-correlation.</li>
+<li><b>Finance</b>: Cross-correlations between asset returns are used to study diversification, contagion, and lead–lag effects between markets.</li>
+<li><b>Neuroscience</b>: Cross-correlograms of spike trains reveal functional connectivity between neurons.</li>
+<li><b>Seismology and astronomy</b>: Cross-correlation stacks weak repeated signals, such as gravitational-wave detector outputs or seismic arrivals, to enhance detection sensitivity.</li>
+</ul>
+<h2>See also</h2>
+<p><a href="../Autocorrelation/index.html">Autocorrelation</a> · <a href="../Convolution/index.html">Convolution</a> · <a href="../Cross_entropy/index.html">Cross entropy</a> · <a href="../Matched_filter/index.html">Matched filter</a> · <a href="../Phase_correlation/index.html">Phase correlation</a> · <a href="../Signal_processing/index.html">Signal processing</a></p>
+<h2>References</h2>
+<p class="refs">1. Bracewell, R. (1965). <i>The Fourier Transform and Its Applications</i>. McGraw-Hill.<br>2. Papoulis, A. (1962). <i>The Fourier Integral and Its Applications</i>. McGraw-Hill.<br>3. Chatfield, C. (1989). <i>The Analysis of Time Series: An Introduction</i>. Chapman &amp; Hall.</p>
+</div>
+</body>
+</html>

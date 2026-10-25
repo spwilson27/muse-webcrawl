@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Distributed database - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;color:#202122;background:#fff}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px 40px}
+h1{font-size:28px;border-bottom:1px solid #a7d7f9;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal}
+p,li{font-size:15px;line-height:1.6}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;margin:0 0 12px 18px;padding:8px;font-size:13px}
+.infobox th{background:#b0c4de;text-align:center;padding:5px}
+.infobox td{padding:3px 6px;vertical-align:top}
+.placeholder{border:2px dashed #a2a9b1;background:#eef2f5;text-align:center;padding:24px 8px;margin:6px 0;color:#54595d;font-size:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Distributed database</h1>
+<p>A <b>distributed database</b> is a database in which data is stored across multiple computers located in different physical locations, connected by a network, while appearing to users as a single logical database. The software that manages it &mdash; a distributed database management system (DDBMS) &mdash; handles data fragmentation, replication, and transactions across sites.</p>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Distributed database</th></tr>
+<tr><td colspan="2"><div class="placeholder">[Image: diagram of database nodes connected over a network]</div></td></tr>
+<tr><td><b>Type</b></td><td>Database architecture</td></tr>
+<tr><td><b>Techniques</b></td><td>Fragmentation, replication, sharding</td></tr>
+<tr><td><b>Key trade-offs</b></td><td>Consistency, availability, partition tolerance (CAP)</td></tr>
+</table>
+</div>
+<h2>Architecture</h2>
+<p>Data may be <b>fragmented</b> (partitioned) across nodes &mdash; horizontally by rows or vertically by columns &mdash; or <b>replicated</b>, with copies maintained at several sites for fault tolerance and read performance. Systems may be homogeneous (same DBMS software everywhere) or heterogeneous (different systems integrated behind a common interface).</p>
+<h2>Transparency and transactions</h2>
+<p>A DDBMS aims to provide location, fragmentation, and replication transparency: users issue queries as if the data were local. Distributed transactions must preserve the ACID properties across sites, classically using the two-phase commit protocol, though this can harm availability. The <a href="../CAP_theorem/index.html">CAP theorem</a> formalises the trade-off between consistency and availability during network partitions, and many modern systems (including many NoSQL stores) adopt eventual consistency instead.</p>
+<h2>Advantages and drawbacks</h2>
+<p>Advantages include improved reliability, scalability, modular growth, and performance for geographically dispersed users. Drawbacks include greater complexity in design, concurrency control, security, and failure handling. Widely used distributed systems include Google Spanner, Apache Cassandra, Amazon DynamoDB, and CockroachDB.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../CAP_theorem/index.html">CAP theorem</a></li>
+<li><a href="../Replication_(computing)/index.html">Replication (computing)</a></li>
+<li><a href="../Shard_(database_architecture)/index.html">Shard (database architecture)</a></li>
+<li><a href="../Two-phase_commit_protocol/index.html">Two-phase commit protocol</a></li>
+</ul>
+</div>
+</body>
+</html>

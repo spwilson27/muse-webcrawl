@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bounding volume hierarchy - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff}
+#content{max-width:960px;margin:0 auto;padding:20px 28px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:400;font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:400;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.4em}
+p{line-height:1.6;margin:.5em 0}
+.hero{border:1px solid #a2a9b1;background:#eaecf0;text-align:center;padding:26px 10px;color:#54595d;font-style:italic;margin:10px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{line-height:1.6}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Bounding volume hierarchy</h1>
+<p>A <b>bounding volume hierarchy</b> (<b>BVH</b>) is a tree data structure in which geometric objects are enclosed in bounding volumes that are grouped into progressively larger volumes toward the root. BVHs are the standard acceleration structure for <a href="../Ray_tracing_(graphics)/index.html">ray tracing</a>, and are also used in collision detection, physics simulation and visibility culling: a query that misses a parent volume can skip its entire subtree without testing the individual objects inside.</p>
+<div class="hero">[ Image: Nested bounding boxes of a 3D scene arranged as a tree, from root volume to leaf primitives ]</div>
+<h2>Structure</h2>
+<p>Each node stores a bounding volume — most commonly an axis-aligned bounding box (AABB) — that encloses all geometry beneath it. Leaf nodes reference a small number of primitives, typically triangles. Building a good BVH usually proceeds top-down: objects are split at the median or by a cost heuristic such as the surface-area heuristic (SAH), which chooses splits minimising the expected cost of traversal. Bottom-up and insertion-based builders are also used, especially for dynamic scenes.</p>
+<h2>Traversal</h2>
+<p>For a ray query, the algorithm tests the ray against the root box; only children whose boxes are hit are visited, recursively, usually in front-to-back order, until leaf primitives are intersected exactly. Because whole subtrees are pruned, intersection cost grows roughly logarithmically with scene size rather than linearly. Modern ray-tracing APIs and GPUs (for example via DXR and Vulkan ray tracing) build and traverse BVHs in hardware.</p>
+<h2>Related structures</h2>
+<p>BVHs differ from space-subdivision structures such as octrees and kd-trees in that their volumes may overlap and are attached to objects rather than to space. Hybrid and multi-level schemes (such as two-level BVHs for instanced geometry) are standard in production renderers.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Ray_tracing_(graphics)/index.html">Ray tracing (graphics)</a></li>
+<li><a href="../Bounding_volume/index.html">Bounding volume</a></li>
+<li><a href="../Octree/index.html">Octree</a></li>
+<li><a href="../K-d_tree/index.html">K-d tree</a></li>
+</ul>
+</div>
+</body>
+</html>

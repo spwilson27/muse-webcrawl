@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HTTP/3 - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+p{line-height:1.6;margin:8px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{line-height:1.6}
+.small{font-size:0.85em;color:#54595d}
+.hero{margin:16px 0}
+.hero img{max-width:480px;width:100%;display:block;background:#e8e8e8}
+.hero figcaption{font-family:sans-serif;font-size:0.8em;color:#54595d;padding:6px 0}
+table.proto{border-collapse:collapse;font-family:sans-serif;font-size:0.9em;margin:12px 0}
+table.proto td,table.proto th{border:1px solid #a2a9b1;padding:5px 10px}
+table.proto th{background:#eaecf0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>HTTP/3</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<figure class="hero"><img src="images/http3-stack.png" alt="Diagram comparing the HTTP/2 over TCP protocol stack with the HTTP/3 over QUIC and UDP stack"><figcaption>Protocol stack comparison: HTTP/2 (over TCP/TLS) versus HTTP/3 (over QUIC/UDP).</figcaption></figure>
+<p><b>HTTP/3</b> is the third major version of the Hypertext Transfer Protocol used to exchange information on the World Wide Web. Unlike HTTP/1.1 and HTTP/2, which run over TCP, HTTP/3 uses <b>QUIC</b>, a transport protocol built on top of UDP, as its transport. HTTP/3 was standardised by the Internet Engineering Task Force (IETF) in RFC 9114, published in June 2022.</p>
+<h2>Motivation</h2>
+<p>HTTP/2 introduced multiplexing, allowing many requests to share a single TCP connection, but because TCP delivers a single ordered byte stream, the loss of one packet stalls all streams on the connection — a problem known as head-of-line blocking at the transport layer. HTTP/3 addresses this by running over QUIC, in which each request stream is independent: packet loss affects only the stream whose data was lost. QUIC also integrates the TLS 1.3 handshake into the transport handshake, reducing connection setup latency, and supports connection migration across network changes, such as switching from Wi-Fi to a mobile network.</p>
+<h2>History</h2>
+<p>HTTP/3 grew out of Google's experimental QUIC protocol (originally "gQUIC"), deployed in Chrome and Google's servers from about 2013. The IETF QUIC working group reworked the protocol, separating the transport (standardised as RFC 9000 in May 2021) from the HTTP mapping. The HTTP semantics over QUIC — originally drafted under the name "HTTP over QUIC" and renamed HTTP/3 in 2018 — were finalised as RFC 9114 alongside QPACK header compression (RFC 9204).</p>
+<h2>Adoption</h2>
+<p>Major browsers — Chrome, Firefox, Safari and Edge — support HTTP/3, and large content delivery networks and web platforms enabled it through the early 2020s. Servers negotiate HTTP/3 via the Alt-Svc response header or DNS HTTPS records, since initial browser requests still begin over TCP-based HTTP/1.1 or HTTP/2.</p>
+<h2>Comparison</h2>
+<table class="proto">
+<tr><th>Version</th><th>Transport</th><th>Key feature</th></tr>
+<tr><td>HTTP/1.1</td><td>TCP</td><td>Persistent connections, chunked transfer</td></tr>
+<tr><td>HTTP/2</td><td>TCP (+TLS)</td><td>Binary framing, multiplexing, header compression (HPACK)</td></tr>
+<tr><td>HTTP/3</td><td>QUIC over UDP</td><td>Independent streams, integrated TLS 1.3, connection migration</td></tr>
+</table>
+<h2>See also</h2>
+<ul>
+<li><a href="../../HTTP/2/index.html">HTTP/2</a></li>
+<li>QUIC</li>
+<li>Hypertext Transfer Protocol</li>
+<li>WebTransport</li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Forward secrecy - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header .site{font-family:sans-serif;font-size:14px;color:#54595d}
+main{max-width:960px;margin:0 auto;padding:20px 24px}
+h1{font-size:32px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+.hero{display:block;max-width:100%;height:auto;background:#eaecf0;border:1px solid #c8ccd1;padding:8px;text-align:center}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:13px;color:#54595d;font-family:sans-serif}
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia — The Free Encyclopedia</span></header>
+<main>
+<h1>Forward secrecy</h1>
+<p>In cryptography, <b>forward secrecy</b> (FS), also known as <b>perfect forward secrecy</b> (PFS), is a feature of specific key-agreement protocols that gives assurances that session keys will not be compromised even if long-term secrets used in the session key exchange are compromised in the future. For HTTPS, the long-term secret is typically the private key of the server. Forward secrecy protects past sessions against future compromises of keys or passwords.</p>
+<img class="hero" src="images/forward-secrecy.png" alt="Diagram showing ephemeral session keys protecting past sessions">
+<h2>How it works</h2>
+<p>Forward secrecy is typically achieved by generating a new, ephemeral key pair for each session — for example with ephemeral Diffie–Hellman (DHE) or elliptic-curve Diffie–Hellman (ECDHE) key exchange — and discarding the session key when the session ends. Because the long-term key is used only to authenticate the exchange, not to derive or transport the session key, an attacker who later obtains the long-term key and has recorded the encrypted traffic still cannot decrypt past sessions.</p>
+<h2>Adoption</h2>
+<p>Forward secrecy became standard practice on the web during the 2010s as browsers and large services enabled ECDHE cipher suites for TLS. TLS 1.3, published in 2018, made forward secrecy mandatory by removing static RSA and static Diffie–Hellman key exchange. Messaging protocols such as Signal additionally offer post-compromise security through key ratcheting.</p>
+<h2>Limitations</h2>
+<p>Forward secrecy does not protect sessions that are ongoing when a compromise occurs, nor does it help if the ephemeral keys or session keys themselves are retained or stolen. It also does not protect against real-time interception with an actively compromised key.</p>
+<h2>See also</h2>
+<p><a href="../Diffie%E2%80%93Hellman_key_exchange/index.html">Diffie–Hellman key exchange</a> · <a href="../Transport_Layer_Security/index.html">Transport Layer Security</a> · <a href="../Key_exchange/index.html">Key exchange</a></p>
+<p class="small">Categories: Cryptography · Key management · Transport Layer Security</p>
+</main>
+</body>
+</html>

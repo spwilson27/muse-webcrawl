@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gaussian process - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.85em;padding:8px;margin:0 0 12px 16px}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+.hero{display:block;max-width:100%;background:#eaecf0;border:1px dashed #72777d;padding:24px;text-align:center;color:#54595d}
+.eq{text-align:center;font-style:italic;margin:1em 0}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Gaussian process</h1>
+<div class="infobox">
+<img class="hero" src="images/Gaussian_process.png" alt="Sample functions drawn from a Gaussian process prior with confidence bands">
+<table>
+<tr><th>Field</th><td>Statistics, machine learning</td></tr>
+<tr><th>Related to</th><td>Bayesian inference, regression, kriging</td></tr>
+</table>
+</div>
+<p>In probability theory and statistics, a <b>Gaussian process</b> is a stochastic process (a collection of random variables indexed by time or space) such that every finite collection of those random variables has a multivariate normal distribution. A Gaussian process is completely specified by its mean function m(x) and its covariance function (kernel) k(x, x′):</p>
+<p class="eq">f(x) ~ GP(m(x), k(x, x′))</p>
+<p>Gaussian processes are widely used as a non-parametric Bayesian approach to regression and classification, and in spatial statistics, where the equivalent method is known as kriging.</p>
+<h2>Gaussian process regression</h2>
+<p>In Gaussian process regression, a Gaussian process prior is placed over unknown functions, and the posterior distribution over functions consistent with observed data is computed exactly, because the Gaussian distribution is closed under conditioning. The predictive distribution at new inputs is Gaussian, giving both a mean prediction and a principled measure of uncertainty, which grows away from the observed data.</p>
+<h2>Kernels</h2>
+<p>The covariance function, or kernel, encodes assumptions about the function being modelled, such as smoothness, periodicity, or length scale. Common choices include the squared exponential (radial basis function) kernel, the Matérn family, and periodic kernels. Kernel hyperparameters are typically learned by maximising the marginal likelihood.</p>
+<h2>Computation</h2>
+<p>Exact inference requires inverting an n × n covariance matrix, at a cost of O(n³) for n data points, which motivates sparse and approximate methods such as inducing-point approximations, the Nyström method, and structured kernel interpolation for large datasets.</p>
+<h2>Applications</h2>
+<p>Gaussian processes are used in geostatistics, robotics, Bayesian optimisation of expensive black-box functions, time-series forecasting, and as emulators for computer simulations.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Kriging/index.html">Kriging</a></li>
+<li><a href="../Kernel_method/index.html">Kernel method</a></li>
+<li><a href="../Bayesian_optimization/index.html">Bayesian optimization</a></li>
+<li><a href="../Gaussian_process_regression/index.html">Gaussian process regression</a></li>
+</ul>
+</div>
+</body>
+</html>

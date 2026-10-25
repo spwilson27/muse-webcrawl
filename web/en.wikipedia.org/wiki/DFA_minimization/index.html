@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DFA minimization - Wikipedia</title>
+<style>
+body{font-family:sans-serif;background:#f6f6f6;margin:0;color:#202122}
+#content{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px;line-height:1.6}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a7d7f9;padding-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #c8ccd1}
+.hero{text-align:center;margin:12px 0}
+.imgph{display:inline-block;border:1px dashed #72777d;background:#eaecf0;color:#54595d;padding:32px 48px;font-size:90%}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.ref{font-size:85%;color:#54595d}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>DFA minimization</h1>
+<p>In automata theory (a branch of theoretical computer science), <b>DFA minimization</b> is the task of transforming a given deterministic finite automaton (DFA) into a DFA that accepts the same regular language and has a minimum number of states. For every regular language there is a unique (up to isomorphism) minimal DFA, a consequence of the Myhill–Nerode theorem.</p>
+<div class="hero"><span class="imgph">[Image: A deterministic finite automaton before and after state minimization — placeholder]</span></div>
+<h2>Approach</h2>
+<p>Minimization typically proceeds in two steps. First, states that are unreachable from the start state are removed, since they can never participate in accepting a string. Second, states that are <i>indistinguishable</i> — meaning that no input string can lead from one to an accepting state and from the other to a non-accepting state — are merged into equivalence classes, and each class becomes a single state of the minimal machine.</p>
+<h2>Algorithms</h2>
+<p>Several algorithms solve the problem. The table-filling algorithm marks pairs of states as distinguishable in rounds until no further pairs can be marked. Moore's algorithm repeatedly refines a partition of the states. Hopcroft's algorithm, which maintains a partition while processing the "smallest half" of each splitting set, is the most efficient classical method, running in O(<i>n</i> log <i>n</i>) time for a DFA with <i>n</i> states. Brzozowski's algorithm obtains the minimal DFA by reversing the transitions, determinising via the subset construction, and repeating the process a second time.</p>
+<p class="ref">See also: <a href="../Deterministic_finite_automaton/index.html">Deterministic finite automaton</a>, <a href="../Myhill%E2%80%93Nerode_theorem/index.html">Myhill–Nerode theorem</a>, <a href="../Regular_language/index.html">Regular language</a>.</p>
+</div>
+</body>
+</html>

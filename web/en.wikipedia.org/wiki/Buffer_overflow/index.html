@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Buffer overflow - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+#content{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em;font-weight:normal}
+p{line-height:1.6;font-family:sans-serif;font-size:0.95em}
+ul{line-height:1.6;font-family:sans-serif;font-size:0.95em}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;font-size:0.85em;overflow-x:auto}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{float:right;width:280px;margin:0 0 12px 18px;text-align:center;font-family:sans-serif;font-size:0.8em;color:#54595d}
+.hero .ph{border:1px dashed #a2a9b1;background:#eaecf0;height:160px;display:flex;align-items:center;justify-content:center;padding:8px}
+.toc{background:#f8f9fa;border:1px solid #a2a9b1;display:inline-block;padding:10px 18px;font-family:sans-serif;font-size:0.9em}
+.small{font-size:0.85em;color:#54595d;font-family:sans-serif}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Buffer overflow</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+
+<div class="hero"><div class="ph">[Image placeholder: Diagram of a stack buffer overflowing into adjacent memory]</div><div>Data written past the end of a buffer overwrites adjacent memory</div></div>
+
+<p>In programming and information security, a <b>buffer overflow</b> or <b>buffer overrun</b> is an anomaly whereby a program writes data to a buffer beyond the buffer's allocated memory, overwriting adjacent memory locations. Because buffers are contiguous blocks of memory, the excess data can corrupt other variables, control data such as return addresses and saved pointers, and ultimately the flow of execution of the program.</p>
+
+<div class="toc"><b>Contents</b>
+<ol>
+<li>Technical description</li>
+<li>Exploitation</li>
+<li>Notable incidents</li>
+<li>Countermeasures</li>
+<li>See also</li>
+</ol>
+</div>
+
+<h2>Technical description</h2>
+<p>A buffer overflow occurs when data written to a buffer exceeds its capacity because the program fails to perform adequate bounds checking. Languages such as C and C++, which give programmers direct control over memory and do not automatically check array bounds, are particularly susceptible; classic unsafe library functions such as <code>strcpy()</code> and <code>gets()</code> copy data without verifying that the destination is large enough. Overflows may occur on the stack, the heap, or in static data areas, each with different consequences and exploitation techniques.</p>
+<pre>char buffer[8];
+strcpy(buffer, "this string is too long"); /* overflow */</pre>
+
+<h2>Exploitation</h2>
+<p>Attackers exploit buffer overflows by supplying carefully crafted input that overwrites a saved return address on the stack, redirecting execution to attacker-supplied machine code ("shellcode") or to existing code fragments, as in return-oriented programming. Successful exploitation can give the attacker control of the vulnerable process, often with its full privileges. Buffer overflows have historically been one of the most common and severe classes of software vulnerability, and are catalogued as CWE-120 and related weaknesses.</p>
+
+<h2>Notable incidents</h2>
+<p>The 1988 Morris worm, one of the first computer worms distributed via the Internet, exploited a buffer overflow in the Unix <code>fingerd</code> program. The Code Red (2001) and Slammer (2003) worms exploited buffer overflows in Microsoft server software, and numerous high-profile vulnerabilities since have had the same root cause.</p>
+
+<h2>Countermeasures</h2>
+<p>Defences operate at several levels. Programmers can use memory-safe languages or bounds-checked library functions and validate input lengths. Compilers add stack canaries that detect overwrites of return addresses, and mark the stack non-executable. Operating systems deploy address space layout randomisation (ASLR) and data execution prevention (DEP/NX) to make exploitation unreliable. Static analysis, fuzz testing, and code review are used to find overflows before deployment, but the class of bug remains a major concern in legacy C and C++ codebases.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Bump_mapping/index.html">Bump mapping</a></li>
+</ul>
+
+<p class="small">Categories: Computer security exploits | Software bugs | Memory safety</p>
+</div>
+</body>
+</html>

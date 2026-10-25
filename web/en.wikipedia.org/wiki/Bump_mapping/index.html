@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bump mapping - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+#content{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em;font-weight:normal}
+p{line-height:1.6;font-family:sans-serif;font-size:0.95em}
+ul{line-height:1.6;font-family:sans-serif;font-size:0.95em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{float:right;width:280px;margin:0 0 12px 18px;text-align:center;font-family:sans-serif;font-size:0.8em;color:#54595d}
+.hero .ph{border:1px dashed #a2a9b1;background:#eaecf0;height:160px;display:flex;align-items:center;justify-content:center;padding:8px}
+.toc{background:#f8f9fa;border:1px solid #a2a9b1;display:inline-block;padding:10px 18px;font-family:sans-serif;font-size:0.9em}
+.small{font-size:0.85em;color:#54595d;font-family:sans-serif}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Bump mapping</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+
+<div class="hero"><div class="ph">[Image placeholder: A smooth sphere rendered with bump mapping to appear rough and dimpled]</div><div>A sphere rendered with a bump map simulating an orange-peel surface</div></div>
+
+<p><b>Bump mapping</b> is a texture mapping technique in computer graphics for simulating bumps and wrinkles on the surface of an object. This is achieved by perturbing the surface normals of the object and using the perturbed normals during lighting calculations. The result is an apparently bumpy surface rather than a smooth one, although the underlying geometry is not changed. The technique was introduced by James Blinn in 1978.</p>
+
+<div class="toc"><b>Contents</b>
+<ol>
+<li>Principles</li>
+<li>Limitations</li>
+<li>Related techniques</li>
+<li>See also</li>
+</ol>
+</div>
+
+<h2>Principles</h2>
+<p>A bump map is a grayscale image in which the brightness of each texel encodes a height value above the surface. When rendering, the gradient of this height field is used to tilt the surface normal at each point, so that the lighting model responds as though the surface had real relief. Because only shading is affected, bump mapping is computationally cheap compared with adding geometric detail, and it became a standard feature of rendering software and games graphics hardware.</p>
+
+<h2>Limitations</h2>
+<p>Because the silhouette of the object is unchanged, bump-mapped detail disappears at grazing angles and at the object's outline. Bump maps also cannot produce self-shadowing or occlusion of one bump by another, and extreme viewing angles reveal the flatness of the underlying surface. These shortcomings motivated related methods that store normals directly or actually displace geometry.</p>
+
+<h2>Related techniques</h2>
+<p><b>Normal mapping</b>, widely adopted in video games in the 2000s, stores the perturbed normal itself in an RGB texture rather than a height field, giving more precise shading. <b>Displacement mapping</b> moves the actual geometry according to the height map, producing correct silhouettes at greater computational cost. <b>Parallax mapping</b> and its variants offset texture coordinates to fake depth, approximating the parallax that real relief would produce. Modern physically based rendering pipelines commonly combine these approaches.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Buffer_overflow/index.html">Buffer overflow</a></li>
+</ul>
+
+<p class="small">Categories: Computer graphics | Texture mapping</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Finite volume method - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:2em;font-weight:normal;border-bottom:1px solid #a2a9b1;margin:0 0 8px}
+h2{font-size:1.4em;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+p{line-height:1.6;font-family:sans-serif;font-size:0.95em}
+.imgbox{float:right;width:280px;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;text-align:center;font-size:0.8em;font-family:sans-serif}
+.imgbox img{max-width:100%;background:#eaecf0;min-height:120px;display:block;width:100%}
+.eq{background:#f8f9fa;border:1px solid #eaecf0;padding:8px 14px;font-family:'Courier New',monospace;overflow-x:auto}
+ul{font-family:sans-serif;font-size:0.95em;line-height:1.6}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Finite volume method</h1>
+<p>The <b>finite volume method</b> (FVM) is a method for representing and evaluating partial differential equations in the form of algebraic equations. It is the standard discretisation approach used in most <a href="../Computational_fluid_dynamics/index.html">computational fluid dynamics</a> (CFD) codes, as well as in computational electromagnetics, heat transfer, and many other fields governed by conservation laws.</p>
+<div class="imgbox"><img src="images/finite_volume_method.png" alt="Diagram of a finite volume mesh with control volumes and face fluxes"><br>A finite volume mesh: cell-centred control volumes with fluxes exchanged across faces.</div>
+<p>In the finite volume method, volume integrals in a partial differential equation that contain a divergence term are converted to surface integrals, using the divergence theorem. These terms are then evaluated as fluxes at the surfaces of each finite volume. Because the flux entering a given volume is identical to that leaving the adjacent volume, these methods are conservative. Another advantage of the finite volume method is that it is easily formulated to allow for unstructured meshes. The method is used in many computational fluid dynamics packages.</p>
+<p>"Finite volume" refers to the small volume surrounding each node point on a mesh. In the finite volume method, volume integrals in a partial differential equation that contain a divergence term are converted to surface integrals, using the divergence theorem. These terms are then evaluated as fluxes at the surfaces of each finite volume.</p>
+<h2>Formulation</h2>
+<p>Consider a generic conservation law for a scalar quantity <i>&phi;</i>:</p>
+<div class="eq">&part;&rho;&phi;/&part;t + &nabla; &middot; (&rho;<b>u</b>&phi;) = &nabla; &middot; (&Gamma;&nabla;&phi;) + S<sub>&phi;</sub></div>
+<p>Integrating this equation over a control volume <i>V</i> and applying the Gauss divergence theorem converts the volume integrals of the divergence terms into surface integrals of the fluxes across the control volume faces. The result is a balance of the fluxes through the faces of each cell, which leads directly to a discrete equation relating the cell value to those of its neighbours.</p>
+<p>The discretisation proceeds in three broad steps:</p>
+<ul>
+<li><b>Grid generation</b>: the domain is divided into a number of non-overlapping control volumes (cells), which may be structured or unstructured.</li>
+<li><b>Discretisation</b>: the governing equations are integrated over each control volume; interpolation schemes (such as upwind, central differencing, QUICK, or flux-limiter schemes) approximate face values and fluxes from cell values.</li>
+<li><b>Solution</b>: the resulting system of algebraic equations is solved, often iteratively, using methods such as the SIMPLE algorithm for pressure–velocity coupling in incompressible flow.</li>
+</ul>
+<h2>History</h2>
+<p>The finite volume approach has its roots in the work of Godunov (see Godunov's scheme, 1959), who introduced a conservative first-order upwind method for hyperbolic equations. Its development for flow problems was driven in the 1970s by researchers such as McDonald, MacCormack, Patankar and Spalding. Patankar's book <i>Numerical Heat Transfer and Fluid Flow</i> (1980) and the SIMPLE algorithm did much to popularise the method in engineering practice. Major commercial codes such as ANSYS Fluent and OpenFOAM (open source) are built on finite volume formulations.</p>
+<h2>Comparison with other methods</h2>
+<p>The finite volume method can be contrasted with the <a href="../Finite_difference_method/index.html">finite difference method</a>, which approximates derivatives at nodal points, and the <a href="../Finite_element_method/index.html">finite element method</a>, which uses variational formulations and weighted residuals. A particular one-dimensional finite volume scheme can be shown to coincide with certain finite difference schemes, but on general unstructured meshes the conservative flux-balance structure of FVM is distinctive.</p>
+<h2>See also</h2>
+<ul>
+<li>Flux limiter</li>
+<li>Godunov's scheme</li>
+<li>Finite element method</li>
+<li>Computational fluid dynamics</li>
+<li>MUSCL scheme</li>
+<li>Total variation diminishing</li>
+</ul>
+</div>
+</body>
+</html>

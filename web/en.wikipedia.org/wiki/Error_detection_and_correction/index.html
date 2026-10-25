@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Error detection and correction - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; line-height: 1.6; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a7d7f9; padding-bottom: 6px; margin-bottom: 4px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a7d7f9; padding-bottom: 4px; margin-top: 28px; }
+.tagline { color: #54595d; font-size: 0.9em; margin-bottom: 16px; }
+img.hero { display: block; margin: 12px auto; max-width: 640px; width: 100%; background: #eaecf0; border: 1px solid #c8ccd1; }
+.infobox { float: right; width: 260px; background: #f8f9fa; border: 1px solid #a2a9b1; padding: 10px 14px; margin: 0 0 16px 20px; font-size: 0.88em; }
+.infobox h3 { margin: 4px 0 10px; text-align: center; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul { margin: 6px 0 6px 20px; }
+.small { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Error detection and correction</h1>
+<div class="tagline">From Wikipedia, the free encyclopedia</div>
+<img class="hero" src="images/Error_detection_and_correction.png" alt="Diagram of a data block with redundant parity bits used to detect and correct transmission errors">
+<p><b>Error detection and correction</b> (EDAC) is a set of techniques that enable reliable delivery of digital data over unreliable communication channels. Many communication channels are subject to channel noise, and thus errors may be introduced during transmission from the source to a receiver. Error detection techniques allow detecting such errors, while <i>error correction</i> enables reconstruction of the original data in many cases.</p>
+<h2>Definitions</h2>
+<p><i>Error detection</i> is the detection of errors caused by noise or other impairments during transmission from the transmitter to the receiver. <i>Error correction</i> is the detection of errors and reconstruction of the original, error-free data. The general definitions of error detection and correction are as follows:</p>
+<ul>
+<li><b>Error detection</b>: the process by which a receiver determines whether received data contains errors.</li>
+<li><b>Error correction</b>: the process by which a receiver, after detecting errors, reconstructs the original error-free information.</li>
+</ul>
+<h2>History</h2>
+<p>The modern development of error detection and correction codes is credited to Richard Hamming. Hamming errors in punch-card teleprinter codes motivated his work. In 1950 he published the Hamming(7,4) code, a linear error-correcting code that adds three parity bits to four data bits. Around the same period, Claude Shannon's 1948 paper <i>A Mathematical Theory of Communication</i> established the theoretical limits of reliable communication over noisy channels.</p>
+<h2>Error detection schemes</h2>
+<h3>Repetition codes</h3>
+<p>A repetition code sends each data bit multiple times. If the channel flips some bits, the receiver takes a majority vote. Repetition codes are extremely inefficient and are mainly of theoretical interest, though they illustrate the basic principle of redundancy.</p>
+<h3>Parity bits</h3>
+<p>A parity bit is a bit appended to a string of binary code. It ensures that the total number of 1-bits in the string is even or odd. A single parity bit can detect any single-bit error but cannot correct it.</p>
+<h3>Checksums</h3>
+<p>A checksum is a modular arithmetic sum of message code words of a fixed word length, often transmitted along with the message. Checksums are used widely, for example in TCP/IP headers and file verification.</p>
+<h3>Cyclic redundancy checks</h3>
+<p>The cyclic redundancy check (CRC) treats data as a polynomial over a finite field and appends the remainder of a division by a generator polynomial. CRCs detect all burst errors up to the length of the remainder and are standard in Ethernet, storage devices, and many other systems.</p>
+<h3>Cryptographic hash functions</h3>
+<p>A cryptographic hash function produces a fixed-length digest of a message. Because it is computationally infeasible to find two messages with the same digest, hashes provide strong error (and tamper) detection, though they do not themselves correct errors.</p>
+<h2>Error correction</h2>
+<p>Error correction may generally be realized in two different ways:</p>
+<ul>
+<li><b>Automatic repeat request (ARQ)</b>: the receiver detects errors and requests retransmission of the corrupted data. Their combination is often called hybrid ARQ.</li>
+<li><b>Forward error correction (FEC)</b>: the sender encodes the data with an error-correcting code (ECC) that adds enough redundancy for the receiver to correct a limited number of errors without retransmission.</li>
+</ul>
+<h3>Error-correcting codes</h3>
+<p>Important families of error-correcting codes include:</p>
+<ul>
+<li><b>Hamming codes</b> — perfect single-error-correcting linear codes introduced by Richard Hamming in 1950.</li>
+<li><b>Reed–Solomon codes</b> — non-binary cyclic codes widely used in CDs, DVDs, QR codes, and deep-space communication.</li>
+<li><b>Convolutional codes</b> — codes whose parity bits depend on a sliding window of message bits, decoded with the Viterbi algorithm.</li>
+<li><b>Turbo codes</b> and <b>LDPC codes</b> — modern capacity-approaching codes used in mobile networks, Wi-Fi, and satellite links.</li>
+<li><b>BCH codes</b> — a class of cyclic codes generalising Hamming codes to multiple-error correction.</li>
+</ul>
+<h2>Applications</h2>
+<p>Error detection and correction are essential wherever data is stored or transmitted: computer memory (ECC RAM), hard disks and SSDs, optical discs, QR codes, deep-space probes, mobile telephony, and packet-switched networks. Without them, even a tiny bit-error rate would make modern digital systems unusable.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Coding_theory/index.html">Coding theory</a></li>
+<li><a href="../Channel_capacity/index.html">Channel capacity</a></li>
+<li><a href="../Hamming_code/index.html">Hamming code</a></li>
+<li><a href="../Reed%E2%80%93Solomon_error_correction/index.html">Reed–Solomon error correction</a></li>
+<li><a href="../Forward_error_correction/index.html">Forward error correction</a></li>
+</ul>
+<p class="small">This article is a recreation from memory for the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

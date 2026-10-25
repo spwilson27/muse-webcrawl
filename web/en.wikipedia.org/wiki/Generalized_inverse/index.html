@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Generalized inverse - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.4em}
+a{color:#36c;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:12px auto;max-width:640px;width:100%;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px}
+.small{font-size:0.9em;color:#54595d}
+.eq{font-family:"Times New Roman",serif;font-size:1.15em;text-align:center;margin:14px 0}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Generalized inverse</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/Generalized_inverse.png" alt="A non-square matrix, illustrating systems that have no ordinary inverse">
+<p>In mathematics, and in particular linear algebra, a <b>generalized inverse</b> (or <b>g-inverse</b>) of a matrix A is a matrix that has some, but not necessarily all, of the properties of an inverse matrix. Generalized inverses can be defined for any matrix, including rectangular matrices and singular square matrices, for which an ordinary inverse does not exist.</p>
+<h2>Motivation</h2>
+<p>Consider the linear system</p>
+<p class="eq">A<b>x</b> = <b>y</b></p>
+<p>where A is an m×n matrix. If A is square and nonsingular, the unique solution is <b>x</b> = A<sup>−1</sup><b>y</b>. When A is rectangular or singular, the system may have no solution or infinitely many; a generalized inverse provides a systematic way to obtain a solution, or a least-squares solution, in every case: for a suitable generalized inverse A<sup>g</sup>, the vector <b>x</b> = A<sup>g</sup><b>y</b> solves the system whenever a solution exists.</p>
+<h2>Types</h2>
+<p>Various classes of generalized inverse are defined by which of the four <b>Penrose conditions</b> they satisfy:</p>
+<ol>
+<li>A A<sup>g</sup> A = A</li>
+<li>A<sup>g</sup> A A<sup>g</sup> = A<sup>g</sup></li>
+<li>(A A<sup>g</sup>)* = A A<sup>g</sup></li>
+<li>(A<sup>g</sup> A)* = A<sup>g</sup> A</li>
+</ol>
+<ul>
+<li>A <b>{1}-inverse</b> (inner inverse) satisfies condition 1 only; such inverses always exist but are not unique.</li>
+<li>A <b>reflexive</b> inverse satisfies conditions 1 and 2.</li>
+<li>The <b>Moore–Penrose inverse</b>, denoted A<sup>+</sup>, satisfies all four conditions. It exists and is unique for every matrix. It can be constructed from the singular value decomposition: if A = UΣV*, then A<sup>+</sup> = VΣ<sup>+</sup>U*, where Σ<sup>+</sup> inverts the nonzero singular values and transposes the matrix.</li>
+<li>The <b>Drazin inverse</b> is used for singular square matrices, commuting with A and satisfying a form of condition 2 together with a power condition.</li>
+<li>The <b>Bott–Duffin inverse</b> arises in constrained problems, notably in electrical network theory.</li>
+</ul>
+<h2>History</h2>
+<p>The idea was introduced by E. H. Moore in 1920 and independently by Roger Penrose in 1955; Arne Bjerhammar had also arrived at the same object in 1951 in the context of least squares. Generalized inverses are now standard tools in statistics (estimation in linear models), numerical analysis, signal processing, and control theory.</p>
+<h2>Applications</h2>
+<p>The Moore–Penrose inverse gives the minimum-norm least-squares solution of a linear system, making it central to linear regression, pseudoinverse-based solvers, and the training of certain machine learning models. In inconsistent systems it yields the vector that minimises ||A<b>x</b> − <b>y</b>||, and among all minimisers the one of smallest norm.</p>
+<p class="small">See also: <a href="../Moore%E2%80%93Penrose_inverse/index.html">Moore–Penrose inverse</a> · <a href="../Singular_value_decomposition/index.html">Singular value decomposition</a> · <a href="../Least_squares/index.html">Least squares</a> · <a href="../Invertible_matrix/index.html">Invertible matrix</a></p>
+</div>
+</body>
+</html>

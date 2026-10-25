@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Deadlock - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:16px 24px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:24px}
+p{font-family:sans-serif;font-size:14px;line-height:1.6}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-family:sans-serif;font-size:12px;margin:0 0 12px 16px;padding:8px}
+.infobox th{text-align:left;padding:2px 6px;vertical-align:top}
+.infobox .hdr{background:#dcebff;text-align:center;font-size:13px;padding:4px}
+.hero{border:1px solid #a2a9b1;background:#eaecf0;text-align:center;padding:24px 8px;font-family:sans-serif;font-size:12px;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+ul,ol{font-family:sans-serif;font-size:14px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Deadlock</h1>
+<div class="hero">[Image: Resource allocation graph showing a circular wait between two processes]</div>
+<p>In concurrent computing, <b>deadlock</b> is any situation in which no member of some group of entities can proceed because each waits for another member, including itself, to take action, such as sending a message or, more commonly, releasing a lock. The classic problem arises with processes or threads that acquire multiple resources in inconsistent order.</p>
+<h2>Conditions</h2>
+<p>The four Coffman conditions must all hold simultaneously for a deadlock to occur:</p>
+<ol>
+<li><b>Mutual exclusion</b>: at least one resource is held in a non-shareable mode.</li>
+<li><b>Hold and wait</b>: a process holds at least one resource while waiting for others.</li>
+<li><b>No preemption</b>: resources can only be released voluntarily by the holder.</li>
+<li><b>Circular wait</b>: a chain of processes exists, each waiting for a resource held by the next.</li>
+</ol>
+<h2>Handling strategies</h2>
+<p>Operating systems typically use one of three strategies. <b>Prevention</b> designs the system so that one of the four conditions can never hold, for example by imposing a global ordering on lock acquisition. <b>Avoidance</b> uses runtime information, such as the Banker's algorithm, to grant requests only if the resulting state remains safe. <b>Detection and recovery</b> periodically checks for cycles in the resource allocation graph and breaks deadlocks by aborting or rolling back a victim process. Many general-purpose systems take the "ostrich approach": ignore the problem and rely on rarity and reboots.</p>
+<h2>Related problems</h2>
+<p><b>Livelock</b> is a situation in which processes continually change state in response to each other without making progress. <b>Starvation</b> occurs when a process is perpetually denied resources it needs, without necessarily being part of a cycle.</p>
+<h2>See also</h2>
+<ul>
+<li>Race condition</li>
+<li>Mutual exclusion</li>
+<li>Semaphore</li>
+<li>Dining philosophers problem</li>
+</ul>
+</div>
+</body>
+</html>

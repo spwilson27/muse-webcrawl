@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Envelope detector - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 960px; margin: 0 auto; padding: 20px; color: #202122; line-height: 1.6; background: #fff; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 8px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 14px 0; }
+.hero img { max-width: 420px; width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; }
+.caption { font-size: 0.85em; color: #54595d; }
+.small { font-size: 0.85em; color: #54595d; }
+.formula { text-align: center; font-style: italic; margin: 1em 0; }
+</style>
+</head>
+<body>
+<h1>Envelope detector</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+
+<p>An <b>envelope detector</b> (sometimes called a <b>peak detector</b>) is an electronic circuit that takes a relatively high-frequency signal as input and provides an output that is the <i>envelope</i> of the original signal — that is, a smooth curve tracing the extremes of the waveform. The circuit consists, in its simplest form, of a <a href="../Diode/index.html">diode</a> and a <a href="../Capacitor/index.html">capacitor</a>: the diode rectifies the signal and the capacitor charges to the peak of each cycle and discharges slowly through a load resistor between cycles.</p>
+
+<div class="hero">
+<img src="images/Envelope_detector.png" alt="Circuit diagram of a diode envelope detector with waveforms showing the recovered envelope">
+<div class="caption">A simple envelope detector: the output (red) follows the envelope of the modulated carrier.</div>
+</div>
+
+<h2>Operation</h2>
+<p>When the input signal rises above the voltage stored on the capacitor, the diode conducts and the capacitor charges rapidly to the input's peak value. When the input falls below the capacitor voltage, the diode becomes reverse-biased and the capacitor discharges slowly through the load resistance <i>R</i>. If the time constant <i>RC</i> is chosen correctly — long compared with the carrier period but short compared with the period of the modulating signal — the output voltage tracks the peaks of the input, reproducing the envelope.</p>
+
+<p>Envelope detectors are the standard means of <a href="../Demodulation/index.html">demodulating</a> <a href="../Amplitude_modulation/index.html">amplitude-modulated</a> (AM) signals: the audio information in an AM radio broadcast is carried in the envelope of the carrier wave, so recovering the envelope recovers the audio. Historically, the earliest radio receivers — <a href="../Crystal_radio/index.html">crystal radios</a> — used a crystal diode (such as a galena "cat's whisker") as an envelope detector, requiring no power supply.</p>
+
+<h2>Design considerations</h2>
+<p>If the <i>RC</i> time constant is too small, the output ripples excessively at the carrier frequency and modulation depth is lost. If it is too large, the capacitor cannot discharge fast enough to follow a rapidly falling envelope, causing <b>diagonal clipping</b> — a form of distortion in which the output decays along an exponential curve rather than tracing the signal's peaks, most severe at high modulation indices and high modulating frequencies. Practical designs choose <i>RC</i> as a compromise, roughly:</p>
+<p class="formula">RC ≈ 1 / (2π f<sub>m</sub>) · √(1 − m²) / m</p>
+<p>where <i>f</i><sub>m</sub> is the highest modulating frequency and <i>m</i> is the modulation index.</p>
+
+<h2>Applications</h2>
+<ul>
+<li>Demodulation in AM radio receivers</li>
+<li>Automatic gain control (AGC) circuits, where the envelope provides a measure of signal strength</li>
+<li>Music production, where envelope followers extract amplitude contours from audio signals to control filters and effects</li>
+<li>Radar and communications equipment for signal detection</li>
+</ul>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Detector_(radio)/index.html">Detector (radio)</a></li>
+<li><a href="../Precision_rectifier/index.html">Precision rectifier</a></li>
+<li><a href="../Product_detector/index.html">Product detector</a></li>
+<li><a href="../Single-sideband_modulation/index.html">Single-sideband modulation</a></li>
+</ul>
+
+<h2>References</h2>
+<ol>
+<li>Horowitz, Paul; Hill, Winfield (2015). <i>The Art of Electronics</i> (3rd ed.). Cambridge University Press.</li>
+<li>Millman, Jacob; Halkias, Christos C. (1972). <i>Integrated Electronics</i>. McGraw-Hill.</li>
+</ol>
+</body>
+</html>

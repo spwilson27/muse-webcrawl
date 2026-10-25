@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Common Intermediate Language - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#fff;color:#202122}
+.wrap{max-width:960px;margin:0 auto;padding:1em 1.5em}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+p,li{font-family:sans-serif;font-size:.92em;line-height:1.6}
+.hero{text-align:center;margin:1em 0}
+.hero img{max-width:420px;width:100%;border:1px solid #a2a9b1;background:#eef}
+.hero figcaption{font-family:sans-serif;font-size:.8em;color:#54595d}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.small{font-size:.8em;color:#54595d;font-family:sans-serif}
+code,pre{font-family:monospace;background:#f8f9fa}
+pre{padding:.6em;border:1px solid #eaecf0;overflow:auto;font-size:.85em}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Common Intermediate Language</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<figure class="hero"><img src="images/common_intermediate_language.png" alt="Diagram of source code compiled to CIL and executed by the CLR (image placeholder)"><figcaption>Compilers for .NET languages emit CIL, which the Common Language Runtime compiles to native code at run time. [Image placeholder]</figcaption></figure>
+<p><b>Common Intermediate Language</b> (<b>CIL</b>), formerly called <b>Microsoft Intermediate Language</b> (<b>MSIL</b>) or <b>Intermediate Language</b> (<b>IL</b>), is the intermediate language instruction set defined by the <a href="../Common_Language_Infrastructure/index.html">Common Language Infrastructure</a> (CLI) specification. CIL instructions are executed by a CLI environment such as the <a href="../Common_Language_Runtime/index.html">Common Language Runtime</a>. Languages that target the CLI compile into CIL, which is assembled into an object code format known as a <i>portable executable</i> (PE) assembly.</p>
+<h2>Design</h2>
+<p>CIL is a CPU- and platform-independent, stack-based bytecode, object-oriented in design: it has instructions for loading, storing, initializing, and calling methods on objects, as well as for arithmetic and logical operations, control flow, and exception handling. Unlike register-based virtual machines, operands are pushed onto and popped from an evaluation stack. CIL code is fully type-described through metadata carried in the assembly, enabling verification of type safety before execution.</p>
+<h2>Compilation and execution</h2>
+<p>At run time, a just-in-time (JIT) compiler translates CIL into native machine code. Ahead-of-time compilation is also possible, for example with .NET Native or NativeAOT, or via Microsoft's NGen tool. The disassembler <i>ILDASM</i> and assembler <i>ILASM</i> are distributed with the .NET SDK.</p>
+<h2>Example</h2>
+<pre>.method public static void Main() cil managed
+{
+  .entrypoint
+  ldstr "Hello, world!"
+  call void [System.Console]System.Console::WriteLine(string)
+  ret
+}</pre>
+<h2>Relationship to the CLI</h2>
+<p>CIL should not be confused with the <a href="../Common_Language_Infrastructure/index.html">Common Language Infrastructure</a> itself: the CLI is the overall specification (standardised as ECMA-335 and ISO/IEC 23271) for the runtime, type system, and libraries, of which CIL is the instruction-set component.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Common_Language_Infrastructure/index.html">Common Language Infrastructure</a></li>
+<li><a href="../Common_Language_Runtime/index.html">Common Language Runtime</a></li>
+<li><a href="../Java_bytecode/index.html">Java bytecode</a></li>
+<li><a href="../.NET/index.html">.NET</a></li>
+</ul>
+<p class="small">Categories: .NET | Intermediate languages | Stack-based virtual machines</p>
+</div>
+</body>
+</html>
