@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bayesian optimization - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 900px; padding: 0 1em; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em; margin: 0 0 1em 1em; width: 260px; font-size: 0.9em; }
+.infobox img { width: 100%; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.ref { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<h1>Bayesian optimization</h1>
+<table class="infobox">
+<tr><td><img src="images/bayesian_optimization.png" alt="Gaussian process surrogate fit to sample points with an acquisition function below"></td></tr>
+<tr><td><b>Class:</b> Global optimization, black-box optimization</td></tr>
+<tr><td><b>Typical surrogate:</b> Gaussian process</td></tr>
+</table>
+<p><b>Bayesian optimization</b> is a sequential design strategy for global optimization of black-box functions that does not assume any functional forms. It is usually employed to optimize expensive-to-evaluate functions. The method builds a probabilistic surrogate model of the objective function and uses an acquisition function to decide where to sample next, balancing exploration of uncertain regions against exploitation of promising ones.</p>
+<h2>Method</h2>
+<p>Bayesian optimization maintains a prior belief over the unknown objective function, typically a Gaussian process in the tradition of kriging and the work of Mockus and others. After each evaluation, the posterior is updated using Bayes' rule. An acquisition function — such as expected improvement, probability of improvement, or an upper confidence bound (GP-UCB) — is then maximised to select the next query point.</p>
+<h2>Applications</h2>
+<p>Because it is sample-efficient, Bayesian optimization is widely used for hyperparameter tuning of machine learning models, experimental design, robotics, sensor placement, materials and drug discovery, and the tuning of algorithms and simulations whose evaluations are costly in time or money. Implementations are available in libraries such as scikit-optimize, GPyOpt, BoTorch, and Spearmint.</p>
+<h2>History</h2>
+<p>The approach descends from Kushner's work in 1964 on locating the maximum of a function from noisy observations, Žilinskas's Bayesian approach of the 1970s, and Mockus's formalisation of expected improvement in 1978. It was popularised in machine learning in the 2010s, notably by Snoek, Larochelle and Adams (2012) for hyperparameter optimization.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Gaussian_process/index.html">Gaussian process</a></li>
+<li><a href="../Hyperparameter_optimization/index.html">Hyperparameter optimization</a></li>
+<li><a href="../Multi-armed_bandit/index.html">Multi-armed bandit</a></li>
+<li><a href="../Global_optimization/index.html">Global optimization</a></li>
+</ul>
+<p class="ref">From Wikipedia, the free encyclopedia.</p>
+</body>
+</html>

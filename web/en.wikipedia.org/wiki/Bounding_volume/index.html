@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bounding volume</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:24px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{border-bottom:1px solid #eaecf0;padding-bottom:4px}
+a{color:#0645ad;text-decoration:none}
+.hero{display:block;max-width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:12px;text-align:center;color:#54595d;margin:16px 0}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;width:240px;font-size:0.9em}
+</style>
+</head>
+<body>
+<h1>Bounding volume</h1>
+<img class="hero" src="images/bounding-volume.png" alt="A 3D model enclosed by a simple bounding box and sphere">
+<p>In computer graphics and computational geometry, a <b>bounding volume</b> (or <b>bounding region</b>) for a set of objects is a closed region that completely contains the union of the objects in the set. Bounding volumes are used to improve the efficiency of geometrical operations, such as collision detection and visibility culling, by using simple volumes that are cheaper to test than the objects themselves.</p>
+<div class="infobox"><b>Bounding volume</b><br>Field: Computer graphics<br>Types: Sphere, AABB, OBB, capsule<br>Uses: Collision detection, ray tracing, culling</div>
+<h2>Common types</h2>
+<p>The most common bounding volumes are the bounding sphere, the axis-aligned bounding box (AABB), the oriented bounding box (OBB), and convex hulls. Spheres are trivially cheap to test for overlap but fit shapes loosely; AABBs are fast to update and test but cannot rotate with an object; OBBs fit more tightly at the cost of slower intersection tests.</p>
+<h2>Hierarchies</h2>
+<p>A bounding volume hierarchy (BVH) nests objects in a tree of volumes, so that a ray or collider that misses a parent volume can skip an entire subtree. This makes ray tracing and physics simulation of complex scenes tractable, and BVHs are the standard acceleration structure in modern renderers and physics engines.</p>
+<h2>Trade-offs</h2>
+<p>Choosing a bounding volume balances tightness of fit against the cost of the intersection test and of updating the volume when objects move. Many systems combine types — for example, spheres at the top level of a hierarchy and boxes near the leaves.</p>
+</body>
+</html>

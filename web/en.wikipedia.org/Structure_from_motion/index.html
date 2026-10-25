@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Structure from motion - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+p{line-height:1.6;margin:10px 0}
+.thumb{float:right;width:300px;margin:0 0 12px 20px;background:#f8f9fa;border:1px solid #c8ccd1;padding:4px;font-family:sans-serif;font-size:0.85em;text-align:center}
+.thumb img{max-width:100%;background:#e8e8e8;min-height:120px;display:block;margin:0 auto}
+.thumb .cap{padding:6px 4px;color:#54595d;text-align:left}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.catlinks{border-top:1px solid #a2a9b1;margin-top:36px;padding-top:10px;font-family:sans-serif;font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Structure from motion</h1>
+<div class="thumb"><img src="images/structure_from_motion.png" alt="Sparse point cloud reconstructed from a set of photographs"><div class="cap">A sparse 3D point cloud of a building reconstructed from multiple 2D images.</div></div>
+<p><b>Structure from motion</b> (<b>SfM</b>) is a photogrammetric range imaging technique for estimating three-dimensional structures from two-dimensional image sequences that may be coupled with local motion signals. It is studied in the fields of <a href="../Computer_vision/index.html">computer vision</a> and visual perception. In biological vision, SfM refers to the phenomenon by which humans (and other living creatures) can recover 3D structure from the projected 2D (retinal) motion field of a moving object or scene.</p>
+<h2>Principle</h2>
+<p>Given a set of images of a static scene taken from different viewpoints, structure from motion simultaneously estimates the 3D positions of scene points and the camera poses (positions and orientations) for each image. Feature points are detected and matched across images, and a non-linear optimization known as <i>bundle adjustment</i> refines the reconstruction by minimizing the reprojection error between observed and predicted image points.</p>
+<h2>Pipeline</h2>
+<p>A typical SfM pipeline consists of feature detection (using algorithms such as SIFT or ORB), feature matching between image pairs, geometric verification using the essential or fundamental matrix within a RANSAC framework, incremental or global estimation of camera poses, triangulation of 3D points, and final bundle adjustment. The result is a sparse point cloud, which may be densified by multi-view stereo (MVS) algorithms to produce dense models, meshes and textured reconstructions.</p>
+<h2>Applications</h2>
+<p>SfM is widely used in aerial and terrestrial <a href="../Photogrammetry/index.html">photogrammetry</a>, drone mapping, cultural-heritage documentation, film and visual-effects production, robotics, and augmented reality. Popular software implementations include COLMAP, OpenMVG, Agisoft Metashape and Meshroom. Because it requires no specialized depth sensor, SfM can reconstruct scenes from casual photographs, including historical photographs and crowd-sourced image collections.</p>
+<h2>See also</h2>
+<p><a href="../Photogrammetry/index.html">Photogrammetry</a> · <a href="../Simultaneous_localization_and_mapping/index.html">Simultaneous localization and mapping</a> · <a href="../Bundle_adjustment/index.html">Bundle adjustment</a> · <a href="../3D_reconstruction/index.html">3D reconstruction</a></p>
+<div class="catlinks">Categories: Computer vision · Photogrammetry · 3D imaging</div>
+</div>
+</body>
+</html>

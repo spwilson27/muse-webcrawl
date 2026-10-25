@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Autoencoder - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 16px 20px;padding:8px}
+.infobox th{background:#c8e0e8;padding:6px;text-align:center}
+.infobox td{padding:4px 6px;border-bottom:1px solid #eaecf0}
+.hero{display:block;width:100%;height:auto;background:#eef;border:1px solid #ccc}
+a{color:#0645ad;text-decoration:none}
+.caption{font-size:12px;color:#54595d;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Autoencoder</h1>
+<table class="infobox">
+<tr><th colspan="2">Autoencoder</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/autoencoder.png" alt="Diagram of an autoencoder with encoder, bottleneck and decoder"><div class="caption">Schematic of a basic autoencoder.</div></td></tr>
+<tr><td><b>Type</b></td><td>Artificial neural network</td></tr>
+<tr><td><b>Learning</b></td><td>Unsupervised / self-supervised</td></tr>
+<tr><td><b>Components</b></td><td>Encoder, latent space (bottleneck), decoder</td></tr>
+<tr><td><b>Uses</b></td><td>Dimensionality reduction, denoising, anomaly detection, generation</td></tr>
+</table>
+<p>An <b>autoencoder</b> is a type of artificial neural network used to learn efficient codings of unlabeled data in an unsupervised manner. The network consists of an <b>encoder</b>, which compresses the input into a lower-dimensional latent representation (the bottleneck or code), and a <b>decoder</b>, which reconstructs the original input from that representation. Training minimises a reconstruction loss, forcing the network to capture the most salient features of the data rather than simply copying input to output.</p>
+<h2>Architecture and training</h2>
+<p>In the simplest form, both encoder and decoder are fully connected feedforward networks with one or more hidden layers. If the bottleneck is smaller than the input and only linear activations are used, the autoencoder learns the same subspace as principal component analysis (PCA). Non-linear activations allow more powerful compressions. Because the target output is the input itself, autoencoders are an example of self-supervised learning and require no labelled data.</p>
+<h2>Variants</h2>
+<p><b>Denoising autoencoders</b> are trained to reconstruct clean inputs from artificially corrupted versions, learning robust features. <b>Sparse autoencoders</b> penalise the number of active bottleneck units to encourage useful structure. <b>Contractive autoencoders</b> penalise sensitivity of the code to small input changes. <b>Variational autoencoders</b> (VAEs), introduced by Kingma and Welling in 2013, learn a probabilistic latent space from which new samples can be drawn, making them generative models used for image synthesis and interpolation. Convolutional, recurrent and transformer-based autoencoders adapt the idea to images, sequences and text.</p>
+<h2>Applications</h2>
+<p>Autoencoders are used for dimensionality reduction and visualisation, data compression, image denoising, anomaly and fraud detection (inputs unlike the training data reconstruct poorly), feature learning for downstream tasks, and — in their variational form — as components of generative systems.</p>
+<p>See also: <a href="../Variational_autoencoder/index.html">Variational autoencoder</a>, <a href="../Unsupervised_learning/index.html">Unsupervised learning</a>.</p>
+</div>
+</body>
+</html>

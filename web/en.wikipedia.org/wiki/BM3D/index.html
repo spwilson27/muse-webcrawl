@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>BM3D - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.hero{display:block;max-width:100%;margin:10px auto}
+ul{margin:0.3em 0 0.3em 1.6em;padding:0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>BM3D</h1>
+<img class="hero" src="images/bm3d.png" alt="Side-by-side comparison of a noisy photograph and the same image after BM3D denoising">
+<p><b>BM3D</b> (Block-Matching and 3D Filtering) is an image denoising algorithm introduced in 2007 by Kostadin Dabov, Alessandro Foi, Vladimir Katkovnik and Karen Egiazarian of Tampere University of Technology, Finland. For many years it was considered the state of the art in image denoising, and it remains a standard benchmark against which newer methods, including deep-learning approaches, are compared.</p>
+<h2>Method</h2>
+<p>BM3D exploits the self-similarity of natural images. In the first step, the image is divided into small blocks; for each block, similar blocks are located elsewhere in the image by block matching and stacked together into three-dimensional groups. Each group is filtered collaboratively in a 3D transform domain — for example by thresholding or Wiener filtering the transform coefficients — and the filtered blocks are returned to their original positions, where overlapping estimates are aggregated by weighted averaging.</p>
+<p>The algorithm runs in two successive stages: a first stage producing a basic estimate by hard thresholding, and a second stage using that estimate to guide empirical Wiener filtering, which yields the final denoised image.</p>
+<h2>Extensions</h2>
+<p>Variants of BM3D have been developed for colour images, video denoising (VBM3D), volumetric data and the removal of mixed noise types. The algorithm is widely cited in the image-processing literature and is frequently implemented as a reference method in research software.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Noise_reduction/index.html">Noise reduction</a></li>
+<li><a href="../Non-local_means/index.html">Non-local means</a></li>
+<li><a href="../Image_processing/index.html">Image processing</a></li>
+</ul>
+</div>
+</body>
+</html>

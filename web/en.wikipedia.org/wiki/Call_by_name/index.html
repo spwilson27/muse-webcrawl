@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Call by name - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine",Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:12px 24px;font-family:sans-serif}
+main{max-width:960px;margin:0 auto;padding:20px 24px}
+h1{font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-weight:normal;border-bottom:1px solid #c8ccd1;margin-top:1.2em}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-family:sans-serif;font-size:0.85em;margin:0 0 12px 16px;padding:8px}
+.infobox th{text-align:left;padding-right:8px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+figure{margin:0;text-align:center}
+figure img{max-width:100%;background:#eaecf0;border:1px dashed #a2a9b1;padding:24px 0;width:90%}
+figcaption{font-family:sans-serif;font-size:0.8em;color:#54595d}
+</style>
+</head>
+<body>
+<header>From Wikipedia, the free encyclopedia</header>
+<main>
+<h1>Call by name</h1>
+<div class="infobox">
+<figure><img src="images/Call_by_name.png" alt="Diagram of unevaluated arguments being substituted into a function body"><figcaption>Placeholder image: Call by name</figcaption></figure>
+<table>
+<tr><th>Field</th><td>Programming language semantics</td></tr>
+<tr><th>Category</th><td>Evaluation strategy / parameter passing</td></tr>
+<tr><th>Notable languages</th><td>ALGOL 60, Simula; related: Haskell (call by need)</td></tr>
+<tr><th>Contrasts with</th><td>Call by value, call by reference</td></tr>
+</table>
+</div>
+<p>In programming language theory, <b>call by name</b> is an evaluation strategy and parameter-passing mechanism in which an argument to a function is not evaluated before the function is called. Instead, the unevaluated argument expression is substituted directly into the function body (with care to avoid variable capture), so the expression is evaluated afresh every time the parameter is used inside the function — and not at all if the parameter is never used.</p>
+<h2>Implementation</h2>
+<p>Implementations traditionally pass each argument as a hidden parameterless procedure, a <i>thunk</i>, which is invoked whenever the formal parameter's value is needed. Because evaluation is repeated, an argument with side effects behaves differently under call by name than under <a href="../Call_by_value/index.html">call by value</a>: it may execute its side effects zero, one, or many times.</p>
+<h2>Uses and consequences</h2>
+<p>Call by name allows functions to define new control structures: in <a href="../ALGOL_60/index.html">ALGOL 60</a>, where it was the default mechanism, programmers exploited it in tricks such as <b>Jensen's device</b>, where a parameter used both as a variable and within an index expression implements summation constructs. It also permits working with infinite data structures and avoids the cost of computing arguments that a branch never needs — an advantage akin to short-circuit evaluation. The disadvantages are unpredictable performance and confusing side effects, which led most later languages to prefer call by value or call by reference.</p>
+<h2>Call by need</h2>
+<p>A close relative is <b>call by need</b> (lazy evaluation), used in Haskell: arguments are still passed unevaluated, but the result of the first evaluation is memoised and shared, so each argument is computed at most once. Scala (by-name parameters) and various macro systems retain true call-by-name behaviour in restricted form.</p>
+</main>
+</body>
+</html>

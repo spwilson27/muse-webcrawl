@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bell–LaPadula model</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;color:#202122;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:.15em}
+img.hero{width:100%;max-width:480px;height:220px;background:#eaecf0;border:1px solid #a2a9b1;display:flex;align-items:center;justify-content:center;color:#54595d;font-style:italic}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Bell–LaPadula model</h1>
+<img class="hero" src="images/bell-lapadula-model.png" alt="Diagram of read and write rules between security levels in the Bell-LaPadula model">
+<p>The <b>Bell–LaPadula model</b> (<b>BLP</b>) is a state machine model used for enforcing access control in government and military applications, developed by David Elliott Bell and Leonard J. LaPadula at MITRE Corporation in the 1970s for the United States Department of Defense. It focuses on data confidentiality and access to classified information, in contrast to the Biba model, which emphasises integrity.</p>
+<h2>Principles</h2>
+<p>The model assigns each subject (user or process) a security clearance and each object (file or resource) a security classification, forming a lattice of levels. It is defined by two mandatory access control properties:</p>
+<ul>
+<li><b>Simple security property</b> — "no read up": a subject can read an object only if the subject's clearance dominates the object's classification.</li>
+<li><b>Star (*) property</b> — "no write down": a subject can write to an object only if the object's classification dominates the subject's clearance, preventing information from flowing from high to low levels.</li>
+</ul>
+<p>A third, discretionary security property governs access via an access matrix. The Basic Security Theorem states that a system is secure if its initial state is secure and every state transition preserves these properties.</p>
+<h2>Limitations</h2>
+<p>The model does not address covert channels, integrity, or changes of classification (it assumes tranquillity — that labels do not change). Practical systems such as multilevel secure operating systems and the security modes of SELinux have nonetheless been strongly influenced by BLP.</p>
+<p>See also: <a href="../Biba_model/index.html">Biba model</a>, <a href="../Access_control/index.html">Access control</a>, <a href="../Multilevel_security/index.html">Multilevel security</a>.</p>
+</body>
+</html>

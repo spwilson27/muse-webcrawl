@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Backus–Naur form - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+#content{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.thumb{float:right;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;font-size:85%;max-width:240px;text-align:center}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;overflow:auto;font-size:90%}
+code{font-family:monospace}
+.small{color:#54595d;font-size:90%}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Backus–Naur form</h1>
+<p>In computer science, <b>Backus–Naur form</b> (<b>BNF</b>; <a href="../John_Backus/index.html">Backus</a> normal form or Backus form) is a notation used to describe the syntax of languages used in computing, such as computer programming languages, document formats, instruction sets and communication protocols. It is a formal metalanguage used to express context-free grammars that define those languages.</p>
+<div class="thumb"><img src="images/backus-naur.png" alt="A grammar production written in Backus-Naur form"></div>
+<p>BNF was introduced in the late 1950s by John Backus and Peter Naur for describing the syntax of the ALGOL 60 programming language. Variants of the notation are widely used as the basis for parser generators and for specifying languages in standards documents such as Internet RFCs.</p>
+<h2>Description</h2>
+<p>A BNF specification is a set of derivation rules, written as</p>
+<pre>&lt;symbol&gt; ::= __expression__</pre>
+<p>where <code>&lt;symbol&gt;</code> is a nonterminal, and the expression consists of one or more sequences of symbols separated by the vertical bar, <code>|</code>, indicating a choice. Symbols that never appear on the left side are terminals. The symbol <code>::=</code> means "is defined as". A production with multiple alternatives can be written on several lines for readability.</p>
+<h2>Example</h2>
+<p>A possible BNF description of a simple postal address might be:</p>
+<pre>&lt;postal-address&gt; ::= &lt;name-part&gt; &lt;street-address&gt; &lt;zip-part&gt;
+&lt;name-part&gt;      ::= &lt;personal-part&gt; &lt;last-name&gt; | &lt;personal-part&gt; &lt;name-part&gt;
+&lt;street-address&gt; ::= &lt;house-num&gt; &lt;street-name&gt; &lt;opt-apt-num&gt;
+&lt;zip-part&gt;       ::= &lt;zip-code&gt;</pre>
+<h2>Variants</h2>
+<p>Several variants extend or simplify the original notation. <b>Extended Backus–Naur form</b> (EBNF), standardized as ISO/IEC 14977, adds regular-expression-like operators for repetition, optionality, and grouping. <b>Augmented Backus–Naur form</b> (ABNF), defined in RFC 5234, is used to specify Internet protocols such as HTTP and email and uses character-string terminals and case-insensitive literals.</p>
+<h2>History</h2>
+<p>John Backus presented a notation based on Emil Post's production systems at a 1959 UNESCO conference on ALGOL. Peter Naur, editor of the ALGOL 60 report, simplified the notation and is credited with calling it Backus normal form; Donald Knuth later suggested that the name "Backus–Naur form" was more appropriate because the notation is not a normal form in the technical sense.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Context-free_grammar/index.html">Context-free grammar</a></li>
+<li><a href="../Extended_Backus–Naur_form/index.html">Extended Backus–Naur form</a></li>
+<li><a href="../Augmented_Backus–Naur_form/index.html">Augmented Backus–Naur form</a></li>
+<li><a href="../ALGOL/index.html">ALGOL</a></li>
+<li><a href="../John_Backus/index.html">John Backus</a></li>
+<li><a href="../Peter_Naur/index.html">Peter Naur</a></li>
+</ul>
+<p class="small">From Wikipedia, the free encyclopedia.</p>
+</div>
+</body>
+</html>

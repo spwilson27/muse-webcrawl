@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Viterbi algorithm - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#fff;color:#202122;margin:0;padding:0 2em 3em 2em;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-bottom:0.3em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em 1em;margin:0 0 1em 1.5em;font-size:0.88em;font-family:sans-serif;width:280px}
+.infobox th{padding:0.2em 0.5em;text-align:left;background:#e9ecef}
+.infobox td{padding:0.2em 0.5em}
+.hero{margin:1em 0}
+.hero img{max-width:480px;border:1px solid #a2a9b1;background:#eef}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:0.85em;color:#54595d}
+code{font-family:monospace;background:#f8f9fa;padding:0 0.2em}
+</style>
+</head>
+<body>
+<h1>Viterbi algorithm</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Viterbi algorithm</th></tr>
+<tr><th>Class</th><td>Dynamic programming algorithm</td></tr>
+<tr><th>Inventor</th><td>Andrew Viterbi</td></tr>
+<tr><th>Year</th><td>1967</td></tr>
+<tr><th>Used for</th><td>Maximum-likelihood decoding; hidden Markov models</td></tr>
+</table>
+</div>
+<div class="hero"><img src="images/viterbi-algorithm.png" alt="Trellis diagram showing the most likely state path through a hidden Markov model"></div>
+<p>The <b>Viterbi algorithm</b> is a dynamic programming algorithm for obtaining the maximum a posteriori probability estimate of the most likely sequence of hidden states — called the <b>Viterbi path</b> — that results in a sequence of observed events. It is especially used for Markov information sources and hidden Markov models (HMM).</p>
+<p>The algorithm was proposed by Andrew Viterbi in 1967 as a decoding method for convolutional codes over noisy digital communication links. It has since found wide application in decoding convolutional codes used in cellular telephony, satellite and deep-space communications, and in speech recognition, computational linguistics and bioinformatics.</p>
+<h2>Principle</h2>
+<p>The algorithm works on a trellis of states over time. For each state at each time step it keeps the probability of the most likely path reaching that state, computed recursively from the previous step: the probability of the best path to state <i>j</i> at time <i>t</i> is the maximum, over predecessor states <i>i</i>, of the best-path probability to <i>i</i>, multiplied by the transition probability from <i>i</i> to <i>j</i> and the emission probability of the observed symbol from <i>j</i>. Alongside each probability, a back-pointer records the winning predecessor; at the end, the path is recovered by backtracking from the most likely final state.</p>
+<h2>Applications</h2>
+<p>Beyond channel decoding — where Viterbi decoders were central to early CDMA cell phones and to missions such as Voyager — the algorithm is the standard inference step for part-of-speech tagging in natural language processing, gene finding and protein sequence analysis with profile HMMs, and handwriting and speech recognition.</p>
+<h2>See also</h2>
+<p><a href="../Hidden_Markov_model/index.html">Hidden Markov model</a> · <a href="../Convolutional_code/index.html">Convolutional code</a> · <a href="../Dynamic_programming/index.html">Dynamic programming</a> · <a href="../Andrew_Viterbi/index.html">Andrew Viterbi</a></p>
+</body>
+</html>

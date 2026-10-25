@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quicksort - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; line-height: 1.6; color: #202122; max-width: 960px; margin: 0 auto; padding: 20px; background: #fff; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; margin-bottom: 10px; }
+h2 { font-family: sans-serif; border-bottom: 1px solid #a2a9b1; margin-top: 1.5em; font-size: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 10px auto; max-width: 100%; }
+pre { background: #f8f9fa; border: 1px solid #a2a9b1; padding: 10px; overflow-x: auto; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<h1>Quicksort</h1>
+<p><b>Quicksort</b> is a divide-and-conquer sorting algorithm. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The sub-arrays are then sorted recursively. Developed by British computer scientist Tony Hoare in 1959 and published in 1961, quicksort is one of the most efficient general-purpose sorting algorithms in practice and is widely used in standard libraries.</p>
+<img src="images/Quicksort.png" alt="Visualisation of quicksort partitioning an array around a pivot" class="hero">
+<h2>Algorithm</h2>
+<p>The steps are:</p>
+<ol>
+<li>Pick an element, called a <b>pivot</b>, from the array.</li>
+<li><b>Partitioning</b>: reorder the array so that all elements with values less than the pivot come before it, and all elements greater than the pivot come after it. The pivot is then in its final sorted position.</li>
+<li><b>Recurse</b> on the sub-arrays of lesser and greater elements.</li>
+</ol>
+<p>Common partitioning schemes include the Lomuto scheme and Hoare's original scheme, which is more efficient on average. Pivot choice strongly affects performance: median-of-three sampling and random pivot selection are common defences against worst-case behaviour.</p>
+<h2>Complexity</h2>
+<p>Quicksort takes Θ(n log n) time on average, but Θ(n²) time in the worst case (e.g. with poor pivot choices on sorted input). With in-place partitioning it needs only O(log n) auxiliary stack space on average. It is not a stable sort. Variants such as introsort (switching to heapsort when recursion depth grows) and dual-pivot quicksort (used in Java) guarantee good worst-case performance while retaining quicksort's speed.</p>
+<h2>Popularity</h2>
+<p>Because of its cache efficiency and low constant factors, quicksort and its variants underpin many library sort routines, including those in C (qsort), C++, Java and Rust.</p>
+<p><i>See also: <a href="../Sorting_algorithm/index.html">Sorting algorithm</a> · <a href="../Tony_Hoare/index.html">Tony Hoare</a> · <a href="../Merge_sort/index.html">Merge sort</a></i></p>
+</body>
+</html>

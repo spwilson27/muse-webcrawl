@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RC4 - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; line-height: 1.6; color: #202122; max-width: 960px; margin: 0 auto; padding: 20px; background: #fff; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; margin-bottom: 10px; }
+h2 { font-family: sans-serif; border-bottom: 1px solid #a2a9b1; margin-top: 1.5em; font-size: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 10px auto; max-width: 100%; }
+pre { background: #f8f9fa; border: 1px solid #a2a9b1; padding: 10px; overflow-x: auto; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<h1>RC4</h1>
+<p>In cryptography, <b>RC4</b> (Rivest Cipher 4, also known as <b>ARC4</b> or <b>ARCFOUR</b>) is a stream cipher. While it is remarkable for its simplicity and speed in software, multiple vulnerabilities have been discovered in RC4, rendering it insecure. It is especially vulnerable when the beginning of the output keystream is not discarded, when nonrandom or related keys are used, or when the same key is reused. RC4 was widely used in protocols such as Transport Layer Security (TLS) and WEP, but its use in TLS was prohibited by RFC 7465 in 2015.</p>
+<img src="images/RC4.png" alt="Diagram of the RC4 stream cipher keystream generator" class="hero">
+<h2>History</h2>
+<p>RC4 was designed by Ron Rivest of RSA Security in 1987. It was initially a trade secret, but in September 1994 a description of it was anonymously posted to the Cypherpunks mailing list and then to the sci.crypt newsgroup, from where it spread widely. Because RSA Security had never officially released the algorithm, the leaked version was dubbed "ARCFOUR" to avoid trademark issues.</p>
+<h2>Algorithm</h2>
+<p>RC4 generates a pseudorandom stream of bits (a keystream) from a key of 1 to 256 bytes using two phases: a key-scheduling algorithm (KSA) that permutes a 256-byte state array <i>S</i> based on the key, and a pseudo-random generation algorithm (PRGA) that repeatedly swaps elements of <i>S</i> and outputs bytes. Encryption XORs the keystream with plaintext.</p>
+<h2>Security</h2>
+<p>Biases in the early keystream bytes (Fluhrer–Mantin–Shamir analysis, 2001) enabled the practical cracking of WEP Wi-Fi encryption. Later, increasingly strong statistical attacks against RC4 in TLS led the IETF to prohibit its use in TLS in 2015, and browsers and Microsoft removed support. RC4 survives in legacy systems and some malware, but it should not be used in new designs.</p>
+<p><i>See also: <a href="../Stream_cipher/index.html">Stream cipher</a> · <a href="../Ron_Rivest/index.html">Ron Rivest</a> · <a href="../Wired_Equivalent_Privacy/index.html">Wired Equivalent Privacy</a></i></p>
+</body>
+</html>

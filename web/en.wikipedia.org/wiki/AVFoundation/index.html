@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AVFoundation - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+ul { line-height: 1.6; font-size: 15px; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; padding: 24px; box-sizing: border-box; }
+.caption { font-size: 12px; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 13px; margin: 0 0 16px 16px; }
+.infobox th, .infobox td { padding: 5px 8px; text-align: left; vertical-align: top; }
+.infobox th { background: #eaecf0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>AVFoundation</h1>
+<table class="infobox">
+<tr><th colspan="2">AVFoundation</th></tr>
+<tr><th>Developer</th><td>Apple Inc.</td></tr>
+<tr><th>Initial release</th><td>2011 (iOS 4 / Mac OS X Lion era components from 2010)</td></tr>
+<tr><th>Operating system</th><td>iOS, macOS, tvOS, watchOS, visionOS</td></tr>
+<tr><th>Type</th><td>Multimedia framework</td></tr>
+<tr><th>License</th><td>Proprietary</td></tr>
+</table>
+<div class="hero"><img src="images/AVFoundation.png" alt="Diagram of AVFoundation classes for playback, editing and capture"><div class="caption">The AVFoundation class architecture</div></div>
+<p><b>AVFoundation</b> is a multimedia framework developed by Apple Inc. for working with time-based audiovisual media on iOS, macOS and related platforms. It provides a set of Objective-C and Swift interfaces for playing, creating, editing, and capturing audio and video, and it forms the foundation on which higher-level frameworks such as AVKit and Photos are built.</p>
+
+<h2>History</h2>
+<p>AVFoundation was introduced for iOS with iOS 4 in 2010, initially oriented toward playback and recording. On the Mac it arrived with Mac OS X Lion (10.7) in 2011 as Apple's designated successor to the ageing QuickTime framework (QTKit), which was deprecated with OS X Mavericks and later removed. Over successive releases the framework absorbed capabilities for media composition, video processing, metadata handling, speech synthesis (via AVSpeechSynthesizer), and camera capture, and it expanded to tvOS, watchOS, and visionOS.</p>
+
+<h2>Architecture</h2>
+<p>The framework is organized around a small number of central abstractions:</p>
+<ul>
+<li><b>AVAsset</b> — represents a media resource such as a movie file or a stream, exposing its tracks, duration, and metadata.</li>
+<li><b>AVPlayer</b> and <b>AVPlayerItem</b> — manage playback of assets, including HTTP Live Streaming content.</li>
+<li><b>AVMutableComposition</b> — allows tracks from multiple assets to be combined for non-linear editing.</li>
+<li><b>AVAssetExportSession</b> — exports composed or trimmed media to files in various formats.</li>
+<li><b>AVCaptureSession</b> — coordinates inputs from cameras and microphones and outputs such as photos, movies, and metadata (including QR code detection).</li>
+<li><b>AVAssetReader</b> and <b>AVAssetWriter</b> — provide low-level access to decoded samples and encoding pipelines.</li>
+</ul>
+<p>Time within AVFoundation is represented with the Core Media type <code>CMTime</code>, a rational number structure that allows frame-accurate editing without floating-point drift.</p>
+
+<h2>Use</h2>
+<p>Most Apple-platform media applications use AVFoundation directly or indirectly; the higher-level <a href="../AVKit">AVKit</a> framework supplies ready-made player user interfaces on top of it. With the introduction of Swift concurrency and the <a href="../Swift_(programming_language)">Swift</a> programming language, Apple has progressively added asynchronous APIs to the framework.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Core_Audio">Core Audio</a></li>
+<li><a href="../Core_Video">Core Video</a></li>
+<li><a href="../QuickTime">QuickTime</a></li>
+<li><a href="../DirectShow">DirectShow</a></li>
+</ul>
+</div>
+</body>
+</html>

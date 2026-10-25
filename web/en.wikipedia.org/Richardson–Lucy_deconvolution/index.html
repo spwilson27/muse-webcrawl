@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Richardson–Lucy deconvolution - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine",Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:920px;margin:0 auto;padding:20px 24px}
+h1{font-size:2em;font-weight:400;border-bottom:1px solid #a2a9b1;margin:0 0 .3em;padding-bottom:.15em}
+h2{font-weight:400;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+.lead{font-size:1.05em}
+img{max-width:100%}
+a{color:#36c;text-decoration:none}a:hover{text-decoration:underline}
+.eqn{font-family:"Courier New",monospace;background:#f8f9fa;border:1px solid #eaecf0;padding:12px;text-align:center}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Richardson–Lucy deconvolution</h1>
+<p class="lead">The <b>Richardson–Lucy algorithm</b>, also known as <b>Lucy–Richardson deconvolution</b>, is an iterative procedure for recovering an underlying image that has been blurred by a known point spread function. It was named after William H. Richardson and Leon B. Lucy, who described it independently in 1972 and 1974.</p>
+<img src="images/richardson-lucy.png" alt="An astronomical image before and after Richardson-Lucy deconvolution">
+<h2>The algorithm</h2>
+<p>The model assumes the observed image results from convolution of the true image with a point spread function, with photon counting (Poisson) noise. Starting from an initial estimate, each iteration updates the estimate by a multiplicative correction:</p>
+<div class="eqn">u<sup>(t+1)</sup> = u<sup>(t)</sup> · [ ( d / (u<sup>(t)</sup> ⊗ p) ) ⊗ p* ]</div>
+<p>where <i>d</i> is the observed image, <i>p</i> is the point spread function, <i>p*</i> is its adjoint (flipped version), and ⊗ denotes convolution. The method is derived from Bayes' theorem and is equivalent to the expectation–maximization algorithm for maximum-likelihood estimation under Poisson statistics.</p>
+<h2>Properties and applications</h2>
+<p>The algorithm preserves non-negativity and total flux, and concentrates intensity into sharper structures as iterations proceed, though excessive iteration amplifies noise. It became famous for restoring images from the Hubble Space Telescope before its corrective optics were installed, and is widely used in astronomy, microscopy (including fluorescence and confocal imaging), and medical imaging.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Deconvolution/index.html">Deconvolution</a></li>
+<li><a href="../Point_spread_function/index.html">Point spread function</a></li>
+<li><a href="../Expectation%E2%80%93maximization_algorithm/index.html">Expectation–maximization algorithm</a></li>
+</ul>
+<p class="small">From Wikipedia, the free encyclopedia (recreated from memory).</p>
+</div>
+</body>
+</html>

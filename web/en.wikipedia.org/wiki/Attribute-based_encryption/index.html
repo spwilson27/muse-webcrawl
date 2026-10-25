@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Attribute-based encryption - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.mw-body{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9;border-top:none}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin:0 0 8px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:24px}
+img.hero{display:block;max-width:100%;height:auto;background:#eaeef2;border:1px solid #c8ccd1;padding:12px;margin:12px 0;color:#54595d;font-family:sans-serif;font-size:13px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Attribute-based encryption</h1>
+<img class="hero" src="images/attribute-based-encryption.png" alt="Diagram showing ciphertext-policy attribute-based encryption with an access tree over user attributes">
+<p><b>Attribute-based encryption</b> (<b>ABE</b>) is a type of public-key encryption in which the secret key of a user and the ciphertext are dependent upon attributes (e.g. the country in which the user lives, or the kind of subscription they have). In such a system, the decryption of a ciphertext is possible only if the set of attributes of the user's secret key matches the attributes of the ciphertext, or satisfies the access policy embedded in it.</p>
+<h2>History and types</h2>
+<p>The concept grew out of identity-based encryption and was introduced by Amit Sahai and Brent Waters in 2005 as "fuzzy identity-based encryption". Two main variants were subsequently developed:</p>
+<ul>
+<li><b>Key-policy ABE (KP-ABE)</b>: ciphertexts are labelled with sets of attributes, and a user's private key embeds an access structure; the key can decrypt a ciphertext if its attribute set satisfies the structure.</li>
+<li><b>Ciphertext-policy ABE (CP-ABE)</b> (Bethencourt, Sahai and Waters, 2007): the encryptor specifies an access policy over attributes, and users' keys are associated with attribute sets; this variant more closely matches access control scenarios.</li>
+</ul>
+<h2>Security and properties</h2>
+<p>ABE schemes are typically built from bilinear pairings on elliptic curves, and are designed to be <b>collusion resistant</b>: combining keys from multiple users should not allow decryption beyond what each key permits individually. A central authority issues keys corresponding to users' attributes. Challenges include key revocation, efficient implementation, attribute management, and resistance to authority compromise, for which multi-authority schemes have been proposed.</p>
+<h2>Applications</h2>
+<p>ABE enables fine-grained, cryptographic access control over encrypted data, and is proposed for secure cloud storage, targeted broadcast encryption, electronic health records, and content distribution where data must be shared only with users satisfying a policy.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Identity-based_encryption">Identity-based encryption</a></li>
+<li><a href="../Public-key_cryptography">Public-key cryptography</a></li>
+<li><a href="../Attribute-based_access_control">Attribute-based access control</a></li>
+</ul>
+</div>
+</body>
+</html>

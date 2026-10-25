@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Porter–Duff compositing - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{border-bottom:1px solid #a2a9b1;padding:12px 24px;background:#f8f9fa}
+header h1{font-size:1.8em;margin:0;font-weight:normal}
+main{max-width:960px;margin:0 auto;padding:16px 24px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h3{font-size:1.15em;font-weight:bold}
+img.hero{max-width:320px;float:right;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px}
+code{font-family:monospace;background:#f8f9fa;padding:0 3px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+footer{border-top:1px solid #a2a9b1;padding:12px 24px;font-size:0.85em;color:#54595d;clear:both}
+</style>
+</head>
+<body>
+<header><h1>Porter–Duff compositing</h1></header>
+<main>
+<img class="hero" src="images/porter-duff.png" alt="Diagram of source-over alpha compositing">
+<p>In computer graphics, <b>Porter–Duff compositing</b> (also called the Porter–Duff operators) is a family of binary operations for combining two images using their alpha channels. It was described by Thomas Porter and Tom Duff in their landmark 1984 SIGGRAPH paper "Compositing Digital Images," written while both were at Lucasfilm.</p>
+<h2>The algebra</h2>
+<p>Porter and Duff treated images as having an alpha value at each pixel describing coverage, and premultiplied colour by alpha. Given a source and a destination image, the compositing operators are defined by how the source and destination contributions are weighted by the two alpha values. The twelve operators include <b>clear</b>, <b>src</b>, <b>dst</b>, <b>src-over</b>, <b>dst-over</b>, <b>src-in</b>, <b>dst-in</b>, <b>src-out</b>, <b>dst-out</b>, <b>src-atop</b>, <b>dst-atop</b>, and <b>xor</b>.</p>
+<p>The most familiar is <b>over</b>: the source is composited on top of the destination, each pixel's result being <code>C = Cs + Cd(1 − αs)</code> with premultiplied colours — the standard operation used whenever translucent layers are drawn over one another.</p>
+<h2>Influence</h2>
+<p>The Porter–Duff model underlies essentially all modern 2D rendering: window systems, web browsers (CSS compositing and Canvas), PDF transparency, and graphics APIs such as Cairo, Skia, and Java 2D all implement its operators.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Alpha_compositing">Alpha compositing</a></li>
+<li><a href="../Alpha_channel">Alpha channel</a></li>
+<li><a href="../Blend_modes">Blend modes</a></li>
+</ul>
+</main>
+<footer>From Wikipedia, the free encyclopedia. This page was recreated from memory.</footer>
+</body>
+</html>

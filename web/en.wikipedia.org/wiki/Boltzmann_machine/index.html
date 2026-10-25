@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Boltzmann machine — Wikipedia (recreated)</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;line-height:1.6;color:#202122;max-width:820px;margin:0 auto;padding:24px 16px;background:#fff}
+h1{font-size:2em;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px}
+h2{font-size:1.4em;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;text-align:center;margin:16px auto;max-width:420px}
+.hero img{width:100%;border:1px solid #c8ccd1;background:#f8f9fa;min-height:180px}
+.caption{font-size:.85em;color:#54595d;text-align:center}
+</style>
+</head>
+<body>
+<h1>Boltzmann machine</h1>
+<p>A <b>Boltzmann machine</b> is a type of stochastic recurrent neural network. It was invented by Geoffrey Hinton and Terry Sejnowski in 1985. Boltzmann machines can be seen as stochastic, generative counterparts of Hopfield networks, and they were among the first neural networks capable of learning internal representations — of learning interesting features — in a purely unsupervised way.</p>
+<figure class="hero"><img src="images/boltzmann-machine.png" alt="Diagram of a Boltzmann machine network of visible and hidden units"><figcaption class="caption">Architecture of a (restricted) Boltzmann machine: visible units connected to hidden units.</figcaption></figure>
+<h2>Structure</h2>
+<p>A Boltzmann machine consists of binary units divided into visible units, which represent data, and hidden units, which capture dependencies between the visible units. Units are connected by symmetric weighted connections, and each configuration of the network has an associated "energy". The probability of a global state follows the Boltzmann distribution familiar from statistical mechanics: low-energy states are exponentially more likely. Learning adjusts the weights so that the distribution over visible states matches the distribution of the training data, typically by gradient ascent on the log-likelihood using samples drawn from the model.</p>
+<h2>Restricted Boltzmann machines</h2>
+<p>Fully connected Boltzmann machines are slow to train. The <b>restricted Boltzmann machine</b> (RBM), introduced by Paul Smolensky in 1986 as the "harmonium" and popularised by Hinton in the 2000s, removes connections within each layer, making the hidden units conditionally independent given the visible ones (and vice versa). With the contrastive divergence training algorithm proposed by Hinton in 2002, RBMs became practical. In 2006, stacks of RBMs ("deep belief networks") trained layer by layer helped ignite the modern deep-learning revival. RBMs have been applied to collaborative filtering, dimensionality reduction and feature learning.</p>
+<h2>Variants</h2>
+<p>Deep Boltzmann machines extend the idea with multiple fully connected hidden layers, trained with more elaborate approximate inference. Gaussian–Bernoulli RBMs adapt the visible layer to real-valued data such as image pixels or audio.</p>
+<p>See also: <a href="../Hopfield_network/index.html">Hopfield network</a> · <a href="../Geoffrey_Hinton/index.html">Geoffrey Hinton</a> · <a href="../Deep_learning/index.html">Deep learning</a></p>
+</body>
+</html>

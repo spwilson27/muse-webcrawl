@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Automatic differentiation - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 16px 20px;padding:8px}
+.infobox th{background:#c8e0e8;padding:6px;text-align:center}
+.infobox td{padding:4px 6px;border-bottom:1px solid #eaecf0}
+.hero{display:block;width:100%;height:auto;background:#eef;border:1px solid #ccc}
+a{color:#0645ad;text-decoration:none}
+.caption{font-size:12px;color:#54595d;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Automatic differentiation</h1>
+<table class="infobox">
+<tr><th colspan="2">Automatic differentiation</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/automatic-differentiation.png" alt="Computational graph of a function with forward and reverse passes"><div class="caption">A computational graph traced during automatic differentiation.</div></td></tr>
+<tr><td><b>Also called</b></td><td>Autodiff, algorithmic differentiation, AD</td></tr>
+<tr><td><b>Modes</b></td><td>Forward mode; reverse mode (backpropagation)</td></tr>
+<tr><td><b>Accuracy</b></td><td>Exact to machine precision</td></tr>
+<tr><td><b>Key tools</b></td><td>PyTorch, TensorFlow, JAX, ADOL-C</td></tr>
+</table>
+<p><b>Automatic differentiation</b> (<b>AD</b>), also called <b>algorithmic differentiation</b> or <b>autodiff</b>, is a set of techniques for evaluating the derivative of a function specified by a computer program. AD exploits the fact that any program, however complex, executes a sequence of elementary arithmetic operations and functions (additions, multiplications, sines, exponentials, and so on) whose derivatives are known. By applying the chain rule repeatedly to these operations, AD computes derivatives exactly (to machine precision), avoiding both the truncation errors of numerical finite differences and the expression swell of symbolic differentiation.</p>
+<h2>Forward and reverse mode</h2>
+<p>In <b>forward mode</b>, the derivative of each intermediate value with respect to a chosen input is propagated alongside the computation itself, using dual numbers or a "tangent" computation; the cost scales with the number of inputs. In <b>reverse mode</b>, the program first records a graph of operations (the "tape" or Wengert list) during a forward pass, then propagates derivatives of the output backwards through the graph — this is the algorithm known in machine learning as backpropagation. Reverse mode computes the full gradient of a scalar output with respect to millions of inputs at a cost comparable to a few function evaluations, but requires storing the computational graph.</p>
+<h2>Implementation and use</h2>
+<p>AD is implemented by source-code transformation (as in ADOL-C or Tapenade) or by operator overloading and dynamic graph tracing (as in modern deep-learning frameworks). It underpins the training of neural networks, where gradients of a loss function with respect to model parameters drive optimisation, and is also used in scientific computing, inverse problems, optimal control, computational fluid dynamics and sensitivity analysis.</p>
+<h2>History</h2>
+<p>The foundations were laid in the 1960s and 1970s: Seppo Linnainmaa described reverse-mode differentiation in his 1970 master's thesis, and the technique was popularised in neural networks in the 1980s. The term "automatic differentiation" emphasises that the method is automatic rather than manual, and the community distinguishes it from both numerical and symbolic differentiation.</p>
+<p>See also: <a href="../Backpropagation/index.html">Backpropagation</a>, <a href="../Chain_rule/index.html">Chain rule</a>.</p>
+</div>
+</body>
+</html>

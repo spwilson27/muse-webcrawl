@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bus error - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+.hero{display:block;width:100%;max-width:640px;margin:12px 0;border:1px solid #c8ccd1;background:#eaecf0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:monospace;background:#f0f0f0;padding:0 3px}
+.ref{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Bus error</h1>
+<img class="hero" src="images/bus-error.png" alt="A terminal window showing a 'Bus error' message after a program crash on a Unix system">
+<p>In computing, a <b>bus error</b> is a fault raised by hardware, notifying an operating system that a process is trying to access memory that the CPU cannot physically address — an invalid address for the address bus — or memory whose access violates alignment restrictions. On POSIX systems, a bus error normally causes the operating system to deliver the signal <code>SIGBUS</code> to the offending process, usually terminating it with a core dump.</p>
+<h2>Causes</h2>
+<h3>Non-existent address</h3>
+<p>Software instructing the CPU to read or write a specific physical address that does not correspond to installed memory or a memory-mapped device can produce a bus error. This use of "bus" refers to the address bus of the system.</p>
+<h3>Unaligned access</h3>
+<p>Many CPU architectures require multi-byte data to be placed at addresses that are multiples of the data size (natural alignment). Reading a four-byte integer from an address not divisible by four raises a bus error on architectures such as SPARC and older ARM and 68000 processors; x86 generally tolerates unaligned access in user programs, though it may be slower.</p>
+<h3>Paging errors</h3>
+<p>Accessing a memory-mapped file beyond a page boundary, or mapping a file and then truncating it, can cause accesses to fail with SIGBUS where a segmentation fault might be expected: the virtual address is validly mapped, but the underlying storage no longer backs it.</p>
+<h2>Bus error vs. segmentation fault</h2>
+<p>A segmentation fault (<code>SIGSEGV</code>) indicates an access to a virtual address with no valid mapping or insufficient permissions, whereas a bus error indicates a problem at a lower level: an address that exists in the address space but cannot be physically satisfied or is improperly aligned.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Segmentation_fault/index.html">Segmentation fault</a></li>
+<li><a href="../SIGBUS/index.html">SIGBUS</a></li>
+<li><a href="../Data_structure_alignment/index.html">Data structure alignment</a></li>
+<li><a href="../Core_dump/index.html">Core dump</a></li>
+</ul>
+<p class="ref">This article is a recreation from memory of the Wikipedia article on bus errors.</p>
+</div>
+</body>
+</html>

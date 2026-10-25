@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Virtual function - Wikipedia</title>
+<style>body{font-family:Georgia,serif;margin:2em auto;max-width:760px;line-height:1.6;color:#202122}h1{font-size:2em;border-bottom:1px solid #a2a9b1}h2{border-bottom:1px solid #a2a9b1;margin-top:1.2em}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;width:250px;font-size:.9em}img.hero{width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:.4em;box-sizing:border-box}a{color:#0645ad}</style></head>
+<body>
+<h1>Virtual function</h1>
+<div class="infobox"><img class="hero" src="images/virtual-function.png" alt="A class hierarchy diagram with overridden methods">
+<b>Virtual function</b><br>Concept: object-oriented programming<br>Mechanism: dynamic dispatch, usually via a virtual method table (vtable)<br>Languages: C++, C#, Java (by default), and others</div>
+<p>In object-oriented programming, a <b>virtual function</b> or <b>virtual method</b> is a function whose behaviour can be overridden in a derived class, so that a call made through a base-class pointer or reference invokes the most-derived override at run time. This is the principal mechanism of runtime polymorphism.</p>
+<h2>Implementation</h2>
+<p>Compilers typically implement virtual functions with a per-class virtual method table (vtable): each object of a polymorphic class carries a hidden pointer to its class's vtable, and calls are indirected through the appropriate slot. This adds a small memory and time cost compared with statically bound calls.</p>
+<h2>Pure virtual functions</h2>
+<p>A <b>pure virtual function</b> (declared in C++ with <code>= 0</code>) has no implementation in the base class, making the class abstract: it cannot be instantiated, and derived classes must supply the function to be concrete. Pure virtual functions define interfaces. Related concepts include virtual destructors — needed so that deleting a derived object through a base pointer destroys it correctly — and the contrast with templates and static polymorphism, which resolve calls at compile time.</p>
+<h2>See also</h2>
+<p><a href="../Polymorphism_(computer_science)/index.html">Polymorphism</a> · <a href="../Dynamic_dispatch/index.html">Dynamic dispatch</a> · <a href="../Abstract_type/index.html">Abstract type</a></p>
+</body></html>

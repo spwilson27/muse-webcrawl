@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Arithmetic coding - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+header{background:#fff;border-bottom:1px solid #a7d7f9;padding:12px 24px}
+h1{font-size:1.9em;margin:0 0 4px}
+main{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #eaecf0;border-right:1px solid #eaecf0}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-size:1.4em}
+.thumb{float:right;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;width:220px;text-align:center;font-size:.85em}
+.thumb img{width:200px;height:130px;background:#dfe3e8}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+footer{max-width:960px;margin:0 auto;padding:16px 32px;font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<header><h1>Arithmetic coding</h1><div>From Wikipedia, the free encyclopedia</div></header>
+<main>
+<div class="thumb"><img src="images/arithmetic-coding.png" alt="Diagram of arithmetic coding interval subdivision"><br>Arithmetic coding narrows an interval on the number line with each symbol encoded.</div>
+<p><b>Arithmetic coding</b> (AC) is a form of entropy encoding used in lossless data compression. Normally, a string of characters is represented using a fixed number of bits per character, as in the ASCII code. When a string is converted to arithmetic encoding, frequently used characters will be stored with fewer bits and not-so-frequently occurring characters will be stored with more bits, resulting in fewer total bits used. Arithmetic coding differs from other forms of entropy encoding, such as Huffman coding, in that rather than separating the input into component symbols and replacing each with a code, arithmetic coding encodes the entire message into a single number, an arbitrary-precision fraction q where 0.0 ≤ q &lt; 1.0.</p>
+<h2>How it works</h2>
+<p>The encoder starts with an interval [0, 1). For each symbol in the message, the interval is subdivided into sub-intervals proportional to the symbol probabilities, and the sub-interval corresponding to the actual symbol becomes the new interval. When all symbols have been processed, any number within the final interval uniquely identifies the message. Because frequent symbols shrink the interval less, the final fraction needs fewer bits for common symbols, and the overall code length approaches the entropy of the source.</p>
+<h2>Precision and implementation</h2>
+<p>Practical implementations avoid infinite-precision fractions by using fixed-width integers with renormalization: as the interval narrows, its leading digits become fixed and are output, and the interval is rescaled. Adaptive models update symbol probabilities as data is processed, which makes arithmetic coding the core of many high-performance compressors.</p>
+<h2>Applications and history</h2>
+<p>Arithmetic coding underlies compression standards such as JPEG 2000, H.264/AVC and H.265/HEVC (in the form of CABAC, context-adaptive binary arithmetic coding), and DjVu. The basic ideas were developed from Shannon's and Elias's work on coding, with practical algorithms published in the 1970s and 1980s by Rissanen, Langdon, Pasco, and others. Historically, widespread adoption was slowed by patents, most of which have now expired.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Huffman_coding/index.html">Huffman coding</a></li>
+<li><a href="../Entropy_encoding/index.html">Entropy encoding</a></li>
+<li><a href="../Data_compression/index.html">Data compression</a></li>
+<li><a href="../Context-adaptive_binary_arithmetic_coding/index.html">CABAC</a></li>
+</ul>
+</main>
+<footer>Recreated from memory as part of the muse-webcrawl project.</footer>
+</body>
+</html>

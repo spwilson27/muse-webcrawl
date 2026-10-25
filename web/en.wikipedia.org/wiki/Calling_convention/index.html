@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Calling convention - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #c8ccd1;padding-bottom:2px;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:100%;margin:10px auto}
+.caption{text-align:center;font-size:0.85em;color:#54595d}
+code{background:#f8f9fa;padding:1px 4px;border:1px solid #eaecf0}
+</style>
+</head>
+<body>
+<h1>Calling convention</h1>
+<img class="hero" src="images/calling-convention.png" alt="Diagram of a stack frame showing arguments, return address and local variables">
+<p class="caption">A typical stack frame laid out according to a calling convention.</p>
+<p>In computer science, a <b>calling convention</b> is an implementation-level scheme for how subroutines or functions receive parameters from their caller and how they return a result. Calling conventions are usually part of a platform's application binary interface (ABI) and specify such details as which registers or stack locations hold arguments, which registers a callee must preserve, who is responsible for cleaning up the stack, and where return values are placed.</p>
+<h2>Elements of a calling convention</h2>
+<ul>
+<li><b>Argument passing:</b> the order and location (registers, stack, or both) in which arguments are passed.</li>
+<li><b>Return values:</b> the register or memory location used for results.</li>
+<li><b>Register preservation:</b> the division of registers into caller-saved (volatile) and callee-saved (non-volatile) sets.</li>
+<li><b>Stack maintenance:</b> whether the caller or the callee removes arguments from the stack after the call, and how the stack is aligned.</li>
+<li><b>Name decoration:</b> how function names are mangled in object files to encode the convention.</li>
+</ul>
+<h2>Examples</h2>
+<h3>x86 conventions</h3>
+<p>On 32-bit x86, several conventions coexist. In <code>cdecl</code>, arguments are pushed onto the stack right-to-left and the caller cleans the stack. In <code>stdcall</code>, used widely by the Windows API, the callee cleans the stack. <code>fastcall</code> passes the first arguments in registers (ECX and EDX). Microsoft's <code>thiscall</code> passes the <code>this</code> pointer in ECX for C++ member functions.</p>
+<h3>x86-64 conventions</h3>
+<p>The System V AMD64 ABI, used on Linux and most Unix-like systems, passes the first six integer or pointer arguments in RDI, RSI, RDX, RCX, R8 and R9. The Microsoft x64 convention instead uses RCX, RDX, R8 and R9, requires 32 bytes of "shadow space" on the stack, and designates different registers as non-volatile.</p>
+<h3>Other architectures</h3>
+<p>ARM's Procedure Call Standard passes the first arguments in registers R0–R3 (or X0–X7 on AArch64). RISC-V similarly uses registers a0–a7. Register-based conventions generally reduce memory traffic and improve performance compared with purely stack-based schemes.</p>
+<h2>Importance</h2>
+<p>Code compiled by different compilers, or written in different languages, can interoperate only if both sides agree on the calling convention. Mismatches cause crashes or silent stack corruption, so conventions are fixed by the platform ABI and documented for compiler writers.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Application_binary_interface/index.html">Application binary interface</a></li>
+<li><a href="../Call_stack/index.html">Call stack</a></li>
+<li><a href="../Name_mangling/index.html">Name mangling</a></li>
+</ul>
+</body>
+</html>

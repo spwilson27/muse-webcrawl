@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Camera matrix - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #c8ccd1;padding-bottom:2px;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:100%;margin:10px auto}
+.caption{text-align:center;font-size:0.85em;color:#54595d}
+code{background:#f8f9fa;padding:1px 4px;border:1px solid #eaecf0}
+</style>
+</head>
+<body>
+<h1>Camera matrix</h1>
+<img class="hero" src="images/camera-matrix.png" alt="Diagram of a pinhole camera projecting a 3D point onto a 2D image plane">
+<p class="caption">The pinhole camera model: the camera matrix maps 3D world points to 2D image points.</p>
+<p>In computer vision, the <b>camera matrix</b> (or camera projection matrix) is a 3×4 matrix that describes the mapping of a pinhole camera from 3D points in the world to 2D points in an image. If <b>x</b> is a homogeneous 3D point and <b>y</b> its homogeneous image projection, then <b>y</b> ≃ P<b>x</b>, where P is the camera matrix and ≃ denotes equality up to scale.</p>
+<h2>Decomposition</h2>
+<p>The camera matrix is conventionally factored as P = K [R | t], where:</p>
+<ul>
+<li><b>K</b> is the 3×3 <i>calibration matrix</i> of intrinsic parameters: focal lengths in pixel units (<i>f<sub>x</sub></i>, <i>f<sub>y</sub></i>), the principal point (<i>c<sub>x</sub></i>, <i>c<sub>y</sub></i>), and a skew parameter.</li>
+<li><b>R</b> is a 3×3 rotation matrix giving the camera's orientation.</li>
+<li><b>t</b> is a translation vector giving the camera's position; together R and t are the extrinsic parameters.</li>
+</ul>
+<h2>Properties</h2>
+<p>The camera matrix has 11 degrees of freedom. Its right null space is the camera centre — the 3D point through which all projection rays pass, which projects to no finite image point. A camera matrix is called <i>finite</i> if its left 3×3 submatrix is non-singular. Special forms arise for affine cameras, whose last row has the form (0, 0, 0, 1) and which model weak-perspective projection.</p>
+<h2>Estimation</h2>
+<p>Given correspondences between known 3D points and their images, the camera matrix can be estimated by the direct linear transformation (DLT) algorithm, followed by non-linear refinement that minimises reprojection error. This procedure, called camera resectioning, is a basic step in photogrammetry, augmented reality and structure-from-motion pipelines.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Pinhole_camera_model/index.html">Pinhole camera model</a></li>
+<li><a href="../Camera_resectioning/index.html">Camera resectioning</a></li>
+<li><a href="../Fundamental_matrix_(computer_vision)/index.html">Fundamental matrix</a></li>
+</ul>
+</body>
+</html>

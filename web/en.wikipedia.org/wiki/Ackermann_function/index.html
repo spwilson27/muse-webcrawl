@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ackermann function - Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:1em auto;max-width:420px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;text-align:center;color:#72777d;font-size:0.9em}
+.formula{font-family:serif;font-size:1.1em;text-align:center;margin:0.8em 0}
+table{border-collapse:collapse;margin:1em 0}
+td,th{border:1px solid #a2a9b1;padding:4px 10px}
+</style>
+</head>
+<body>
+<h1>Ackermann function</h1>
+<p>In computability theory, the <b>Ackermann function</b>, named after Wilhelm Ackermann, is one of the simplest and earliest-discovered examples of a total computable function that is not primitive recursive. It grows extremely rapidly: even for small inputs its values are enormous. Ackermann published the (three-argument) function in 1928; the now-standard two-argument version is due to Rózsa Péter and Raphael Robinson.</p>
+<img class="hero" src="images/ackermann-function.png" alt="Table of rapidly growing values of the Ackermann function">
+<h2>Definition</h2>
+<p class="formula">A(m, n) = n + 1 if m = 0; A(m − 1, 1) if m &gt; 0 and n = 0; A(m − 1, A(m, n − 1)) if m &gt; 0 and n &gt; 0</p>
+<table>
+<tr><th></th><th>n=0</th><th>n=1</th><th>n=2</th><th>n=3</th></tr>
+<tr><th>m=0</th><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+<tr><th>m=1</th><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+<tr><th>m=2</th><td>3</td><td>5</td><td>7</td><td>9</td></tr>
+<tr><th>m=3</th><td>5</td><td>13</td><td>29</td><td>61</td></tr>
+<tr><th>m=4</th><td>13</td><td>65533</td><td>2<sup>65536</sup> − 3</td><td>astronomical</td></tr>
+</table>
+<p>A(4, 2) is a tower of 2s 65,536 high minus 3 — a number with more than 19,000 decimal digits. The function can be understood in terms of hyperoperations: successive values of m correspond to addition, multiplication, exponentiation, tetration, and beyond (Knuth's up-arrow notation).</p>
+<h2>Significance</h2>
+<p>Ackermann showed that the function is computable — it terminates for every input — yet it eventually outgrows every primitive recursive function, disproving a conjecture in Hilbert's program that all computable functions might be primitive recursive. Its inverse, the inverse Ackermann function α(n), grows so slowly that it appears as an almost-constant factor in the analysis of algorithms such as the disjoint-set union data structure and in the Davenport–Schwartz theory of geometric algorithms.</p>
+<h2>See also</h2>
+<ul>
+<li>Computable function</li>
+<li>Primitive recursive function</li>
+<li>Tetration</li>
+<li>Wilhelm Ackermann</li>
+</ul>
+</body>
+</html>

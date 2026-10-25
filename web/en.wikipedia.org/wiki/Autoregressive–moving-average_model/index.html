@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Autoregressive–moving-average model - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 16px 20px;padding:8px}
+.infobox th{background:#c8e0e8;padding:6px;text-align:center}
+.infobox td{padding:4px 6px;border-bottom:1px solid #eaecf0}
+.hero{display:block;width:100%;height:auto;background:#eef;border:1px solid #ccc}
+a{color:#0645ad;text-decoration:none}
+.caption{font-size:12px;color:#54595d;text-align:center}
+code{font-family:monospace;background:#f8f9fa}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Autoregressive–moving-average model</h1>
+<table class="infobox">
+<tr><th colspan="2">ARMA model</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/arma-model.png" alt="Plot of a time series fitted with an ARMA model"><div class="caption">A stationary series and its ARMA fit.</div></td></tr>
+<tr><td><b>Notation</b></td><td>ARMA(p, q)</td></tr>
+<tr><td><b>Components</b></td><td>Autoregressive (AR) part; moving-average (MA) part</td></tr>
+<tr><td><b>Assumption</b></td><td>Weak stationarity</td></tr>
+<tr><td><b>Extensions</b></td><td>ARIMA, SARIMA, ARMAX, GARCH</td></tr>
+</table>
+<p>An <b>autoregressive–moving-average</b> (<b>ARMA</b>) model is a stochastic model used in time series analysis to describe and forecast a (weakly) stationary time series. It combines an autoregressive (AR) part, in which the current value is regressed on its own past values, with a moving-average (MA) part, in which the current value depends on past forecast errors (shocks). The model is usually written ARMA(p, q), where p is the order of the AR part and q the order of the MA part.</p>
+<h2>Definition</h2>
+<p>The AR part of order p expresses the value X<sub>t</sub> as a constant plus a linear combination of the p previous values plus white noise ε<sub>t</sub>. The MA part of order q expresses X<sub>t</sub> as a mean plus the current shock and a linear combination of the q previous shocks. Combining them gives the ARMA(p, q) equation, often written compactly with the backshift operator B. Pure AR(p) and MA(q) models are the special cases q = 0 and p = 0.</p>
+<h2>Fitting and use</h2>
+<p>The Box–Jenkins methodology popularised ARMA modelling in the 1970s: identify candidate orders from the autocorrelation (ACF) and partial autocorrelation (PACF) functions, estimate parameters by maximum likelihood, and check that residuals resemble white noise. A parsimonious ARMA model can capture the behaviour of processes that would need many terms of a pure AR or pure MA representation.</p>
+<h2>Limitations and extensions</h2>
+<p>ARMA models assume stationarity; series with trends or unit roots are first differenced, yielding the ARIMA (integrated) family, with SARIMA adding seasonal terms. Exogenous inputs give ARMAX, vector generalisations give VARMA, and coupling ARMA mean equations with GARCH variance equations extends the framework to volatility modelling in finance.</p>
+<p>See also: <a href="../Autoregressive_model/index.html">Autoregressive model</a>, <a href="../Moving-average_model/index.html">Moving-average model</a>, <a href="../ARIMA/index.html">ARIMA</a>.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CYK algorithm - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#f8f9fa;color:#202122;margin:0;line-height:1.6}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 60px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:2em;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-bottom:.3em}
+h2{font-size:1.4em;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1em}
+.thumb{float:right;width:240px;margin:0 0 10px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;font-size:.85em;font-family:sans-serif}
+.thumb img{width:100%;display:block}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>CYK algorithm</h1>
+<div class="thumb"><img src="images/CYK_algorithm.png" alt="The triangular parse table filled by the CYK algorithm"></div>
+<p>The <b>Cocke–Younger–Kasami algorithm</b> (alternatively called <b>CYK</b>, or <b>CKY</b>) is a parsing algorithm for context-free grammars published by Itiroo Sakai in 1961. The algorithm is named after some of its rediscoverers: John Cocke, Daniel Younger, Tadao Kasami, and Jacob T. Schwartz. It employs bottom-up parsing and dynamic programming.</p>
+<h2>Description</h2>
+<p>The standard version of CYK operates on context-free grammars given in <b>Chomsky normal form</b> (CNF), in which every production has the form A → BC or A → a. For an input string of length n, the algorithm fills a triangular table P[i, j] recording the set of nonterminals that can derive the substring spanning positions i through j. The base cells are filled from terminal productions; longer spans are computed by trying every split point k and every pair of nonterminals B ∈ P[i, k], C ∈ P[k+1, j], adding A whenever A → BC is a production. The string is in the language if the start symbol appears in the cell covering the whole string.</p>
+<h2>Complexity</h2>
+<p>The running time is O(n<sup>3</sup> · |G|) for grammar size |G|, and memory usage is O(n<sup>2</sup> · |V|). This made CYK, for decades, the asymptotically fastest general context-free parsing algorithm known; Valiant (1975) showed parsing can be reduced to Boolean matrix multiplication, enabling sub-cubic algorithms in theory.</p>
+<h2>Extensions</h2>
+<p>Probabilistic variants of CYK (the "inside algorithm") compute the most likely parse or the total probability of a string under a probabilistic context-free grammar, and are used in computational linguistics for parsing natural language and in bioinformatics for RNA secondary structure analysis. Converting a grammar to CNF is harmless for recognition purposes, though it may require care when the parse structure itself matters.</p>
+<h2>See also</h2>
+<p><a href="../Chomsky_normal_form/index.html">Chomsky normal form</a> &middot; <a href="../Earley_parser/index.html">Earley parser</a> &middot; <a href="../Context-free_grammar/index.html">Context-free grammar</a> &middot; <a href="../Dynamic_programming/index.html">Dynamic programming</a></p>
+</div>
+</body>
+</html>

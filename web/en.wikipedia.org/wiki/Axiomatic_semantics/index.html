@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Axiomatic semantics - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;margin:0;padding:0 1.5em;color:#202122;line-height:1.6;}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;}
+h2{font-family:Georgia,'Times New Roman',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:.85em;margin:0 0 1em 1em;padding:.5em;}
+.infobox th{text-align:left;background:#eaf3ff;padding:.3em;}
+.infobox td{padding:.3em;}
+.hero{display:block;max-width:300px;margin:.5em auto;border:1px solid #ccc;background:#eee;color:#555;text-align:center;padding:1em .5em;font-size:.8em;}
+a{color:#0645ad;text-decoration:none;}
+.small{font-size:.85em;color:#54595d;}
+code{background:#f8f9fa;padding:0 .2em;}
+</style>
+</head>
+<body>
+<h1>Axiomatic semantics</h1>
+<div class="infobox">
+<img class="hero" src="images/Axiomatic_semantics.png" alt="Hoare triple relating precondition, command and postcondition">
+<table>
+<tr><th>Field</th><td>Programming language semantics; formal verification</td></tr>
+<tr><th>Key figures</th><td>Robert W. Floyd; C. A. R. Hoare; Edsger W. Dijkstra</td></tr>
+<tr><th>Core notions</th><td>Hoare triples, preconditions, postconditions, weakest precondition, loop invariants</td></tr>
+</table>
+</div>
+<p><b>Axiomatic semantics</b> is an approach to defining the meaning of a programming language by means of logical assertions — axioms and inference rules — that describe the effects of program constructs on the state of a computation. Rather than specifying how a program executes step by step (operational semantics) or mapping it to mathematical objects (denotational semantics), axiomatic semantics characterizes programs by the propositions that hold before and after they run, making it the foundation of formal program verification.</p>
+<h2>Hoare logic</h2>
+<p>The best-known system is Hoare logic, introduced by C. A. R. Hoare in 1969, building on ideas of Robert W. Floyd. Its central construct is the Hoare triple <code>{P} C {Q}</code>, where <i>P</i> (the precondition) and <i>Q</i> (the postcondition) are assertions about program variables and <i>C</i> is a command. The triple states that if <i>P</i> holds before executing <i>C</i>, and <i>C</i> terminates, then <i>Q</i> holds afterwards (partial correctness). Axioms and rules give the semantics of each construct: the assignment axiom states that <code>{Q[x := E]} x := E {Q}</code>; composition, conditional, and consequence rules combine triples; and the while rule requires a loop invariant preserved by each iteration.</p>
+<h2>Weakest preconditions</h2>
+<p>Edsger W. Dijkstra recast the approach with predicate transformers, defining for each statement the weakest precondition <code>wp(C, Q)</code> — the weakest condition on the initial state guaranteeing that executing <i>C</i> establishes <i>Q</i> and terminates (total correctness), together with his guarded command language and the calculus of weakest preconditions.</p>
+<h2>Applications and extensions</h2>
+<p>Axiomatic methods underlie specification languages and verification tools such as JML for Java, ACSL for C (used with Frama-C), Dafny, and the verification-aware language designs of Eiffel (design by contract). Separation logic, developed in the early 2000s by John Reynolds, Peter O'Hearn and others, extends Hoare logic with a spatial conjunction to reason locally about heap-manipulating programs and is used in tools such as Facebook's Infer.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Hoare_logic/index.html">Hoare logic</a></li>
+<li><a href="../Formal_verification/index.html">Formal verification</a></li>
+<li><a href="../Denotational_semantics/index.html">Denotational semantics</a></li>
+<li><a href="../Operational_semantics/index.html">Operational semantics</a></li>
+<li><a href="../Separation_logic/index.html">Separation logic</a></li>
+</ul>
+<p class="small">Recreated from memory.</p>
+</body>
+</html>
