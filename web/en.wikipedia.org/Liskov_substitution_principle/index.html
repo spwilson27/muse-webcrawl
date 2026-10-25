@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Liskov substitution principle - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+p { line-height: 1.6; font-size: 15px; }
+img.hero { width: 100%; height: auto; display: block; margin: 12px auto; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.quote { margin: 16px 40px; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Liskov substitution principle</h1>
+<img class="hero" src="images/liskov-substitution.png" alt="Diagram showing a subtype object substituted where its base type is expected">
+<p>The <b>Liskov substitution principle</b> (LSP) is a principle of object-oriented programming concerning subtyping: objects of a superclass should be replaceable by objects of any of its subclasses without altering the correctness of the program. It was introduced by computer scientist Barbara Liskov in a 1987 conference keynote, and formulated with Jeannette Wing in a 1994 paper, "A behavioral notion of subtyping". Liskov's own informal statement was:</p>
+<p class="quote">"What is wanted here is something like the following substitution property: If for each object o1 of type S there is an object o2 of type T such that for all programs P defined in terms of T, the behavior of P is unchanged when o1 is substituted for o2, then S is a subtype of T."</p>
+<h2>Requirements</h2>
+<p>The formalised principle imposes behavioural conditions on a subtype: it must not strengthen preconditions or weaken postconditions of inherited methods (the contravariance/covariance rules for arguments and results), it must preserve the supertype's invariants, and it must satisfy the <i>history constraint</i> — a subtype may not permit state changes that the supertype forbids. Signatures must also be compatible: method argument types contravariant, return types covariant, and no new exceptions beyond those the base method allows.</p>
+<h2>Examples and violations</h2>
+<p>The classic violation is the <b>square–rectangle problem</b>: a Square class derived from Rectangle whose setters keep the sides equal breaks client code that assumes width and height can be changed independently. Other canonical examples include mutable points derived from immutable ones, and penguin subclasses of a Bird class with a <i>fly</i> method that must fail. Such violations indicate modelling errors: substitutability, not mere inheritance of code, is what makes a subtype.</p>
+<h2>SOLID</h2>
+<p>LSP forms the "L" of Robert C. Martin's <b>SOLID</b> mnemonic for five design principles, and underlies design-by-contract approaches. Violations can often be detected by type-checking tests that run a supertype's contract tests against all subclasses.</p>
+<p><i>See also:</i> <a href="../Linux/index.html">Linux</a> (a system whose kernel design discussions often invoke related principles).</p>
+</div>
+</body>
+</html>

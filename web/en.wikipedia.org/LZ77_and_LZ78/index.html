@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LZ77 and LZ78</title>
+<style>
+body { font-family: Georgia, "Times New Roman", serif; max-width: 820px; margin: 2em auto; padding: 0 1em; line-height: 1.55; color: #202122; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.35em; border-bottom: 1px solid #c8ccd1; padding-bottom: 0.15em; margin-top: 1.4em; }
+img.hero { max-width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; }
+.caption { font-size: 0.85em; color: #54595d; text-align: center; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>LZ77 and LZ78</h1>
+<img class="hero" src="images/lz77-lz78.png" alt="Diagram of sliding-window dictionary compression used by LZ77">
+<p class="caption">LZ77 encodes repeated text as back-references into a sliding window of already-seen data.</p>
+<p><b>LZ77</b> and <b>LZ78</b> are the two lossless data compression algorithms published by Abraham Lempel and Jacob Ziv in 1977 and 1978 respectively. They are the foundation of most dictionary-based compression used today, including the DEFLATE algorithm behind gzip, ZIP, and PNG, and variants such as LZSS, LZW, and LZMA.</p>
+
+<h2>LZ77</h2>
+<p>LZ77 maintains a <b>sliding window</b> of recently processed data. When the encoder finds a match between upcoming input and text in the window, it emits a reference — typically a triple or pair giving the distance back to the match, its length, and (in the original formulation) the next literal character — instead of the raw bytes. Because decompression simply copies from already-decoded output, the process mirrors encoding with very little memory. Many practical schemes (LZSS and DEFLATE) refine this by using lazy matching, hash chains to find matches quickly, and separate literals from length/distance codes that are then entropy-coded.</p>
+
+<h2>LZ78</h2>
+<p>LZ78 instead builds an explicit <b>dictionary</b> of phrases encountered in the input. Each new phrase that extends a dictionary entry is added to the dictionary and encoded as the pair (index of the longest matching entry, next character). The decoder rebuilds the identical dictionary on the fly, so it need not be transmitted. Terry Welch's 1984 refinement, LZW, initializes the dictionary with all single characters and outputs only indices; it powered the GIF image format and early Unix <i>compress</i>, though it was long encumbered by patents.</p>
+
+<h2>Legacy</h2>
+<p>The Lempel–Ziv family proved that dictionary methods achieve the entropy rate of any stationary source asymptotically, and their simplicity and speed made them ubiquitous: ZIP and gzip files, PNG images, HTTP compression, and countless file systems and archivers descend directly from the two papers.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../../Data_compression/index.html">Data compression</a></li>
+<li><a href="../../LZW/index.html">LZW</a></li>
+<li><a href="../../DEFLATE/index.html">DEFLATE</a></li>
+</ul>
+</body>
+</html>

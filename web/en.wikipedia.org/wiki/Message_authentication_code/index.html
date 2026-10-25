@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Message authentication code - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;max-width:960px;margin:0 auto;padding:20px;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.5em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+p{line-height:1.6;font-family:sans-serif;font-size:0.95em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:320px;margin:10px auto;background:#f0f0f0;border:1px solid #ccc;padding:20px;text-align:center;font-family:sans-serif;font-size:0.85em;color:#555}
+.refs{font-size:0.82em;font-family:sans-serif;color:#333}
+</style>
+</head>
+<body>
+<h1>Message authentication code</h1>
+<p>In cryptography, a <b>message authentication code</b> (<b>MAC</b>), sometimes known as an <b>authentication tag</b>, is a short piece of information used for authenticating and integrity-checking a message. In other words, it confirms that the message came from the stated sender (its authenticity) and has not been changed (its integrity). The MAC value protects a message's data integrity, as well as its authenticity, by allowing verifiers (who also possess the secret key) to detect any changes to the message content.</p>
+<img class="hero" src="images/message-authentication-code.png" alt="Diagram of MAC generation and verification with a shared secret key">
+<h2>Security properties</h2>
+<p>A MAC algorithm is considered secure if it is computationally infeasible, without knowledge of the key, to produce a valid tag for a new message — a property called existential unforgeability under chosen-message attack. Unlike digital signatures, MACs are symmetric: the same secret key is used to generate and verify the tag, so a MAC cannot provide non-repudiation, since any verifier could also have created the tag.</p>
+<h2>Constructions</h2>
+<ul>
+<li><b>HMAC</b> — a MAC built from a cryptographic hash function (e.g., HMAC-SHA256), standardized in FIPS 198 and RFC 2104.</li>
+<li><b>CMAC</b> — a block-cipher-based MAC derived from CBC-MAC, standardized by NIST (SP 800-38B).</li>
+<li><b>GMAC</b> — the authentication component of AES-GCM authenticated encryption.</li>
+<li><b>Poly1305</b> — a one-time MAC used with ChaCha20 in the ChaCha20-Poly1305 AEAD construction.</li>
+<li><b>KMAC</b> — a MAC based on the Keccak (SHA-3) permutation, specified in NIST SP 800-185.</li>
+</ul>
+<h2>Applications</h2>
+<p>MACs are used in network protocols such as TLS and IPsec, in financial messaging (e.g., ISO 8583 and SWIFT), in protecting the integrity of cookies and API tokens, and in authenticated encryption schemes. MACs are also related to checksums and hash functions, but differ in using a secret key: an unkeyed hash can be recomputed by an attacker who modifies the message.</p>
+<h2>See also</h2>
+<p><a href="../HMAC/index.html">HMAC</a> · <a href="../Digital_signature/index.html">Digital signature</a> · <a href="../Authenticated_encryption/index.html">Authenticated encryption</a> · <a href="../Cryptographic_hash_function/index.html">Cryptographic hash function</a></p>
+<h2>References</h2>
+<ol class="refs">
+<li>Bellare, M., Canetti, R., Krawczyk, H. (1996). "Keyed hash functions and message authentication." <i>CRYPTO '96</i>.</li>
+<li>NIST FIPS 198-1: <i>The Keyed-Hash Message Authentication Code (HMAC)</i>, 2008.</li>
+</ol>
+</body>
+</html>

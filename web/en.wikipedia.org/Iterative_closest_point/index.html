@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Iterative closest point</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 820px; margin: 2em auto; padding: 0 1em; line-height: 1.6; color: #222; }
+h1 { font-size: 2em; border-bottom: 2px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.2em; }
+img.hero { display: block; max-width: 100%; margin: 1em auto; border: 1px solid #ccc; background: #f4f4f4; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f4f4f4; padding: 0 0.3em; }
+</style>
+</head>
+<body>
+<h1>Iterative closest point</h1>
+<img class="hero" src="images/iterative_closest_point.png" alt="Labelled placeholder: two overlapping point clouds converging into alignment under ICP">
+<p><strong>Iterative closest point</strong> (<strong>ICP</strong>) is an algorithm employed to minimise the difference between two clouds of points. It is widely used to register 3D data — for example aligning successive scans from a lidar or depth camera — in robotics, computer vision, 3D reconstruction and medical imaging.</p>
+<h2>Overview</h2>
+<p>ICP was introduced independently by Besl and McKay (1992) and by Chen and Medioni (1992). Given a "model" point cloud and a "data" point cloud to be aligned to it, the algorithm repeatedly revises the rigid-body transformation (rotation and translation) that best maps one onto the other:</p>
+<ol>
+<li>For each point in the data cloud, find its closest point in the model cloud (typically with a k-d tree).</li>
+<li>Compute the transformation that minimises the mean squared distance between the matched pairs — solvable in closed form using singular value decomposition (SVD) or a quaternion method.</li>
+<li>Apply the transformation to the data cloud.</li>
+<li>Repeat until the change in error falls below a threshold, or a maximum number of iterations is reached.</li>
+</ol>
+<h2>Properties and limitations</h2>
+<p>ICP is guaranteed to converge monotonically to a local minimum of the mean squared error, but only to a local one: it therefore requires a reasonable initial alignment, often supplied by feature matching, odometry or a global registration algorithm. Performance degrades with heavy occlusion, partial overlap, noise and non-rigid deformation.</p>
+<h2>Variants</h2>
+<p>Many variants have been proposed. Point-to-plane ICP (after Chen and Medioni) minimises distance along surface normals and converges faster on structured surfaces. Generalized-ICP incorporates local surface covariance into a probabilistic model. Other refinements include trimming outlier correspondences, robust error kernels, weighted sampling, and global methods such as Go-ICP. Implementations are available in libraries such as PCL and Open3D, and ICP remains a standard building block of SLAM systems, in which consecutive sensor scans are registered to build maps.</p>
+<h2>See also</h2>
+<ul>
+<li>Point cloud</li>
+<li>SLAM (robotics)</li>
+<li>Kabsch algorithm</li>
+<li>3D reconstruction</li>
+</ul>
+</body>
+</html>

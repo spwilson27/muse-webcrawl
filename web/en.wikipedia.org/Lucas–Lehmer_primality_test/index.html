@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lucas–Lehmer primality test - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; line-height: 1.6; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 60px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 2em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.4em; }
+.infobox { float: right; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 16px 20px; font-size: 0.88em; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+.infobox caption { font-weight: bold; font-size: 1.05em; padding-bottom: 6px; }
+.hero { width: 100%; height: auto; background: #eaecf0; display: block; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.small { font-size: 0.85em; color: #54595d; }
+code { background: #f8f9fa; padding: 1px 4px; font-family: monospace; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Lucas–Lehmer primality test</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+
+<table class="infobox">
+<caption>Lucas–Lehmer test</caption>
+<tr><td colspan="2"><img class="hero" src="images/lucas-lehmer.png" alt="Diagram of the Lucas–Lehmer iteration for Mersenne numbers"></td></tr>
+<tr><th>Purpose</th><td>Deterministic primality test for Mersenne numbers</td></tr>
+<tr><th>Developed by</th><td>Édouard Lucas (1878); Derrick Lehmer (1930s)</td></tr>
+<tr><th>Applies to</th><td>Numbers of the form M<sub>p</sub> = 2<sup>p</sup> − 1</td></tr>
+</table>
+
+<p>In mathematics, the <b>Lucas–Lehmer test</b> (<b>LLT</b>) is a primality test for Mersenne numbers. The test was originally developed by Édouard Lucas in 1878 and improved by Derrick Henry Lehmer in the 1930s. Because of its speed and simplicity for Mersenne numbers, nearly all of the largest known prime numbers have been found using this test, most recently by the Great Internet Mersenne Prime Search (GIMPS).</p>
+
+<h2>The test</h2>
+<p>Let M<sub>p</sub> = 2<sup>p</sup> − 1 be the Mersenne number to test, with p an odd prime. Define a sequence {s<sub>i</sub>} by:</p>
+<p style="text-align:center;">s<sub>0</sub> = 4; &nbsp; s<sub>i</sub> = s<sub>i−1</sub><sup>2</sup> − 2 (mod M<sub>p</sub>) for i ≥ 1.</p>
+<p>Then M<sub>p</sub> is prime if and only if s<sub>p−2</sub> ≡ 0 (mod M<sub>p</sub>). The value s<sub>p−2</sub> mod M<sub>p</sub> is called the Lucas–Lehmer residue.</p>
+
+<h2>Example</h2>
+<p>Consider M<sub>5</sub> = 31. Starting with s<sub>0</sub> = 4: s<sub>1</sub> = 4² − 2 = 14; s<sub>2</sub> = 14² − 2 = 194 ≡ 8 (mod 31); s<sub>3</sub> = 8² − 2 = 62 ≡ 0 (mod 31). Since s<sub>p−2</sub> = s<sub>3</sub> ≡ 0, 31 is prime. For M<sub>11</sub> = 2047 = 23 × 89, the residue is nonzero (s<sub>9</sub> = 1736), correctly showing it is composite.</p>
+
+<h2>Why it works</h2>
+<p>The test's correctness can be proved using properties of Lucas sequences and quadratic reciprocity, exploiting the fact that the multiplicative order of the element 2 + √3 in an appropriate ring divides M<sub>p</sub> + 1. Lehmer's version of the test works in terms of the sequence above and is closely related to the Lucas primality test generalised by later authors.</p>
+
+<h2>Computational significance</h2>
+<p>The test is fast because arithmetic modulo a Mersenne number can be done with additions and shifts rather than general division, and because multiplication of very large integers is accelerated by FFT-based algorithms. Implemented in software such as Prime95, the test running on volunteer computers through GIMPS has discovered the largest known primes since 1996, including the 41-million-digit prime 2<sup>136279841</sup> − 1 announced in 2024. A double-check and error-detection ecosystem (proof files and the Lucas–Lehmer variant test by Robert Gerbicz) guards against hardware errors.</p>
+
+</div>
+</body>
+</html>

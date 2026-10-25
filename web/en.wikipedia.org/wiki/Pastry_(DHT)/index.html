@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pastry (DHT) - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.mw-body{max-width:960px;margin:0 auto;padding:16px 28px 40px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.imgbox{float:right;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:8px;font-size:13px;text-align:center;width:220px}
+.imgbox img{width:100%;height:140px;background:#eaecf0;display:block}
+.small{font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Pastry (DHT)</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="imgbox"><img src="images/pastry-dht.png" alt="Diagram of Pastry node identifiers arranged on a ring"></div>
+<p><b>Pastry</b> is an overlay network and routing substrate for the implementation of a distributed hash table (DHT) similar to <a href="../Chord_(peer-to-peer)/index.html">Chord</a>. The key–value pairs are stored in the peer machine that owns a specified key, and each machine is responsible for responding to requests for a pair of keys that it owns. Pastry was developed by researchers at Microsoft Research and Rice University, principally Antony Rowstron and Peter Druschel, and published in 2001.</p>
+<h2>Design</h2>
+<p>Each node in a Pastry network is assigned a randomly chosen 128-bit node identifier (nodeId) from a circular identifier space. NodeIds are uniformly distributed, so nodes with adjacent identifiers are spread across the network. Keys are likewise 128-bit values; a key is assigned to the live node whose nodeId is numerically closest to the key.</p>
+<h2>Routing</h2>
+<p>Each node maintains a routing table organised by the length of shared prefix, in digits, between its own nodeId and other nodes' identifiers, for a chosen base 2<sup>b</sup> (typically b = 4). Messages are routed in O(log<sub>2<sup>b</sup></sub> N) hops: at each hop the message is forwarded to a node sharing a longer prefix with the key than the current node. A leaf set of numerically nearest neighbours is also maintained, giving fault tolerance when nodes fail.</p>
+<h2>Locality</h2>
+<p>Pastry routes take account of network locality: in principle, depending on the selection of nodes within a routing-table cell, routing can be made to prefer physically near nodes, reducing delay. Pastry has been used as the routing layer for systems such as the SCRIBE multicast system and the PAST distributed file store.</p>
+<h2>See also</h2>
+<p><a href="../Distributed_hash_table/index.html">Distributed hash table</a> · <a href="../Kademlia/index.html">Kademlia</a> · <a href="../Content_addressable_network/index.html">Content addressable network</a> · <a href="../Peer-to-peer/index.html">Peer-to-peer</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dijkstra's algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:16px auto;max-width:420px;width:100%}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:12px;font-size:13px;overflow-x:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Dijkstra's algorithm</h1>
+<img class="hero" src="images/dijkstras-algorithm.png" alt="A graph with the shortest path between two nodes highlighted">
+<p><b>Dijkstra's algorithm</b> is an algorithm for finding the shortest paths between nodes in a weighted graph, which may represent, for example, a road network. It was conceived by Dutch computer scientist Edsger W. Dijkstra in 1956 and published three years later, in 1959.</p>
+<p>The algorithm exists in many variants. Dijkstra's original finding was to find the shortest path between two given nodes, but a more common variant fixes a single node as the "source" node and finds shortest paths from the source to all other nodes in the graph, producing a shortest-path tree.</p>
+<h2>Algorithm</h2>
+<p>The algorithm maintains a set of unvisited nodes and tentative distances from the source, initialised to zero for the source and infinity for all others. At each step it selects the unvisited node with the smallest tentative distance, marks it visited, and relaxes all edges from it: if the path through the current node is shorter than the neighbour's tentative distance, the distance is updated. A priority queue is normally used to select the next node efficiently.</p>
+<pre>
+dist[source] = 0
+for each vertex v: dist[v] = infinity, prev[v] = undefined
+while unvisited nodes remain:
+    u = unvisited node with smallest dist[u]
+    mark u visited
+    for each neighbour v of u:
+        alt = dist[u] + length(u, v)
+        if alt &lt; dist[v]: dist[v] = alt, prev[v] = u
+</pre>
+<h2>Complexity and uses</h2>
+<p>With a binary heap the algorithm runs in O((V + E) log V) time. It requires non-negative edge weights; graphs with negative edges require the Bellman–Ford algorithm instead. Dijkstra's algorithm underlies link-state routing protocols such as OSPF and IS-IS, and is widely used in mapping and navigation software to compute driving routes.</p>
+<p>See also: <a href="../A*_search_algorithm/index.html">A* search algorithm</a>, <a href="../Shortest_path_problem/index.html">Shortest path problem</a>, <a href="../Edsger_W._Dijkstra/index.html">Edsger W. Dijkstra</a></p>
+</div>
+</body>
+</html>

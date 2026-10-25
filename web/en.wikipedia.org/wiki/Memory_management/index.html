@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Memory management - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;max-width:960px;margin:0 auto;padding:20px;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.5em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+p{line-height:1.6;font-family:sans-serif;font-size:0.95em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:320px;margin:10px auto;background:#f0f0f0;border:1px solid #ccc;padding:20px;text-align:center;font-family:sans-serif;font-size:0.85em;color:#555}
+.refs{font-size:0.82em;font-family:sans-serif;color:#333}
+</style>
+</head>
+<body>
+<h1>Memory management</h1>
+<p><b>Memory management</b> is the act of managing computer memory at the system level. The essential requirement of memory management is to provide ways to dynamically allocate portions of memory to programs at their request, and free it for reuse when no longer needed. This is critical to any advanced computer system where more than a single process might be underway at any time.</p>
+<img class="hero" src="images/memory-management.png" alt="Diagram of virtual memory and paging">
+<h2>Overview</h2>
+<p>Several methods have been devised that increase the effectiveness of memory management. Virtual memory systems separate the memory addresses used by a process from actual physical addresses, allowing separation of processes and increasing the effectively available amount of RAM using disk space. The quality of the virtual memory manager can have an extensive effect on overall system performance. The operating system kernel manages memory using page tables maintained with the help of the memory management unit (MMU).</p>
+<h2>Allocation strategies</h2>
+<ul>
+<li><b>Static allocation</b> — memory assigned at compile time for the duration of the program.</li>
+<li><b>Stack allocation</b> — automatic storage for local variables, freed when a function returns.</li>
+<li><b>Heap allocation</b> — dynamic allocation of variable-sized blocks at run time, using allocators such as <code>malloc</code> in C.</li>
+<li><b>Arena/region allocation</b> — groups of objects freed together.</li>
+</ul>
+<h2>Manual vs automatic management</h2>
+<p>In manual memory management (C, C++), the programmer explicitly allocates and frees memory; errors include memory leaks, dangling pointers, and double frees. Automatic memory management, chiefly garbage collection (Java, C#, Python, Go), reclaims unreachable objects programmatically, trading some performance and predictability for safety. Intermediate approaches include reference counting (Swift, Python's primary mechanism), ownership and borrowing (Rust), and RAII-based smart pointers in C++.</p>
+<h2>Protection and fragmentation</h2>
+<p>Memory management also provides protection: each process's address space is isolated so one program cannot corrupt another's memory. Over time, allocation and deallocation can cause fragmentation — free memory split into small non-contiguous blocks — reducing the ability to satisfy large requests. Garbage collectors may compact the heap to mitigate this.</p>
+<h2>See also</h2>
+<p><a href="../Virtual_memory/index.html">Virtual memory</a> · <a href="../Paging/index.html">Paging</a> · <a href="../Memory_leak/index.html">Memory leak</a> · <a href="../Garbage_collection_(computer_science)/index.html">Garbage collection (computer science)</a></p>
+<h2>References</h2>
+<ol class="refs">
+<li>Tanenbaum, A. S. (2015). <i>Modern Operating Systems</i>, 4th ed. Pearson.</li>
+<li>Silberschatz, A., Galvin, P. B., Gagne, G. <i>Operating System Concepts</i>, 10th ed. Wiley, 2018.</li>
+</ol>
+</body>
+</html>

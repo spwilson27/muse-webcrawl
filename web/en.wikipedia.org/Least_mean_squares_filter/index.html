@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Least mean squares filter - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122;}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;box-sizing:border-box;}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em;}
+img.hero{width:100%;max-height:320px;object-fit:cover;background:#eaecf0;}
+a{color:#0645ad;text-decoration:none;}a:hover{text-decoration:underline;}
+.formula{text-align:center;font-style:italic;font-size:1.05em;margin:1em 0;}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Least mean squares filter</h1>
+<img class="hero" src="images/lms-filter.png" alt="Block diagram of an adaptive filter using the LMS algorithm">
+<p><b>Least mean squares</b> (<b>LMS</b>) algorithms are a class of adaptive filter used to mimic a desired filter by finding the filter coefficients that produce the least mean square of the error signal (the difference between the desired and the actual signal). They belong to the family of stochastic gradient descent methods. The LMS algorithm was devised by Bernard Widrow and Marcian Hoff in 1960 during their studies of the ADALINE adaptive neuron.</p>
+<h2>Algorithm</h2>
+<p>The filter output is a linear combination of the input samples: y(n) = <b>w</b><sup>T</sup>(n)<b>x</b>(n). After comparing the output with a desired response d(n) to form the error e(n) = d(n) &minus; y(n), the weights are updated in the direction that reduces the instantaneous squared error:</p>
+<p class="formula"><b>w</b>(n+1) = <b>w</b>(n) + &mu; e(n) <b>x</b>(n)</p>
+<p>where &mu; is the step size, which must be chosen small enough to guarantee stability and convergence yet large enough for a useful convergence speed. This simple update requires no matrix inversion or knowledge of signal statistics, in contrast to the Wiener filter solution.</p>
+<h2>Variants</h2>
+<p>The normalised LMS (NLMS) algorithm scales the step size by the power of the input vector, improving stability and convergence for signals of varying level. The sign-error LMS and other sign variants reduce computational cost. Leaky LMS adds a small decay term to the weights to prevent drift in the absence of excitation.</p>
+<h2>Applications</h2>
+<p>LMS filters are widely used in acoustic and line echo cancellation, adaptive equalisation of communication channels, noise cancellation in headsets and hearing aids, adaptive beamforming, and system identification. Their low computational complexity&mdash;proportional to the number of filter taps&mdash;makes them attractive for real-time digital signal processing.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Adaptive_filter/index.html">Adaptive filter</a></li>
+<li><a href="../Recursive_least_squares_filter/index.html">Recursive least squares filter</a></li>
+<li><a href="../Wiener_filter/index.html">Wiener filter</a></li>
+<li><a href="../Stochastic_gradient_descent/index.html">Stochastic gradient descent</a></li>
+</ul>
+</div>
+</body>
+</html>

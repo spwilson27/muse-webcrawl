@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Merge sort - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+p{line-height:1.6;font-size:15px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 12px 16px;padding:8px;font-family:sans-serif}
+.infobox th{background:#b0c4de;text-align:center;padding:4px}
+.infobox td{padding:3px 6px;vertical-align:top}
+img.hero{width:100%;height:auto;background:#eaecf0;border:1px solid #c8ccd1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:12px;color:#54595d}
+code{font-family:monospace;background:#f8f9fa}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;font-size:13px;overflow:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Merge sort</h1>
+<table class="infobox">
+<tr><th colspan="2">Merge sort</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/merge_sort.png" alt="Diagram showing an array being split and merged in sorted order"></td></tr>
+<tr><td><b>Class</b></td><td>Sorting algorithm</td></tr>
+<tr><td><b>Inventor</b></td><td>John von Neumann (1945)</td></tr>
+<tr><td><b>Worst-case time</b></td><td>O(n log n)</td></tr>
+<tr><td><b>Average time</b></td><td>O(n log n)</td></tr>
+<tr><td><b>Space</b></td><td>O(n) auxiliary (array version)</td></tr>
+<tr><td><b>Stable</b></td><td>Yes</td></tr>
+</table>
+<p>In computer science, <b>merge sort</b> (also commonly spelled <b>mergesort</b>) is an efficient, general-purpose, comparison-based sorting algorithm. Most implementations produce a stable sort, meaning that the order of equal elements is preserved. Merge sort is a divide-and-conquer algorithm invented by John von Neumann in 1945; a detailed description appeared in a report by Herman Goldstine and von Neumann in 1947.</p>
+
+<h2>Algorithm</h2>
+<p>Conceptually, merge sort works as follows: divide the unsorted list into n sublists, each containing one element (a list of one element is considered sorted); then repeatedly merge sublists to produce new sorted sublists until only one remains. In the more common top-down implementation, the list is recursively split in half until sublists of size one are reached, and the merge step combines two sorted halves by repeatedly taking the smaller of their front elements.</p>
+<pre>function merge_sort(list):
+    if length(list) &lt;= 1: return list
+    mid = length(list) / 2
+    left  = merge_sort(list[0 .. mid])
+    right = merge_sort(list[mid .. end])
+    return merge(left, right)</pre>
+
+<h2>Analysis</h2>
+<p>Merge sort performs Θ(n log n) comparisons in the worst, average, and best cases for arrays of random data, because the recursion tree always has log n levels and each level processes all n elements once. Its principal drawback for arrays is the Θ(n) auxiliary storage used during merging. For linked lists, merge sort can be implemented with only O(1) extra space (plus recursion stack) by relinking nodes, and it is a standard choice where sequential access dominates.</p>
+
+<h2>Variants and use</h2>
+<p>Variants include bottom-up (iterative) merge sort, natural merge sort, which exploits existing runs in the data, and in-place merging schemes. Merge sort is the basis of <b>Timsort</b>, the hybrid algorithm used in Python and Java's object sorting, and of external sorting methods for data too large to fit in memory, where its sequential access pattern is ideal. Because the two halves can be sorted independently, merge sort parallelizes readily, achieving O(n) time with enough processors on a CREW PRAM model.</p>
+
+<p class="small">See also: <a href="../Quicksort/index.html">Quicksort</a> · <a href="../Sorting_algorithm/index.html">Sorting algorithm</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Static program analysis - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;margin:0;color:#202122;background:#fff}
+header{border-bottom:1px solid #a7d7f9;padding:12px 24px}
+header h1{font-family:Georgia,serif;font-weight:normal;margin:0;font-size:28px}
+main{max-width:960px;margin:0 auto;padding:20px 24px;line-height:1.6}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+figure{margin:16px 0;text-align:center}
+figure img{max-width:640px;width:100%;height:auto;background:#f8f9fa;border:1px solid #a2a9b1}
+figcaption{font-size:13px;color:#54595d;padding:6px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px 12px;margin:0 0 16px 20px;font-size:13px}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+footer{border-top:1px solid #a2a9b1;color:#54595d;font-size:13px;padding:12px 24px;margin-top:24px}
+</style>
+</head>
+<body>
+<header><h1>Static program analysis</h1></header>
+<main>
+<figure><img src="images/static-program-analysis.png" alt="Diagram of a static analyser inspecting source code without executing it"><figcaption>A static analyser examines program source code or object code and reports potential defects without running the program.</figcaption></figure>
+<p><b>Static program analysis</b> (also simply referred to as <b>static analysis</b>, although that term is shared by other disciplines) is the analysis of computer programs performed without executing them, in contrast with <a href="../Dynamic_program_analysis/index.html">dynamic program analysis</a>, which is performed on programs during their execution.</p>
+<p>The term is usually used in contrast with dynamic analysis, in which the analysis is performed on a program as it runs, and it is possible to use information from the environment the program is running in. In most cases the analysis is performed on some version of a program's source code, and in other cases on some form of its object code. The sophistication of the analysis performed by tools varies from those that only consider the behaviour of individual statements and declarations, to those that include the complete source code of a program in their analysis.</p>
+<h2>Uses</h2>
+<p>Uses of the information obtained from static analysis include:</p>
+<ul>
+<li><b>Type checking</b> — a form of static analysis in which the program is checked to ensure that operations are applied to values of appropriate types.</li>
+<li><b>Style and programming errors</b> — detecting code that does not conform to a style guide or that contains suspicious constructs, such as unused variables.</li>
+<li><b>Program understanding</b> — helping developers understand large code bases by extracting documentation and relationships.</li>
+<li><b>Security review</b> — searching for vulnerabilities such as buffer overflows and injection flaws before deployment.</li>
+</ul>
+<h2>Data-flow analysis</h2>
+<p><a href="../Data-flow_analysis/index.html">Data-flow analysis</a> is a technique for gathering information about the possible set of values calculated at various points in a computer program. A program's control-flow graph (CFG) is used to determine those parts of a program to which a particular value assigned to a variable might propagate. The information gathered is often used by compilers when optimizing a program. A canonical example of a data-flow analysis is reaching definitions.</p>
+<h2>Abstract interpretation</h2>
+<p>A well-known approach to formal static analysis is <b>abstract interpretation</b>, developed in the late 1970s by Patrick Cousot and Radhia Cousot. It is based on the idea of executing the program over an abstract domain that safely over-approximates the concrete semantics, so that properties proven about the abstraction hold for the real program. Tools built on abstract interpretation, such as Astrée, have been used to prove the absence of run-time errors in safety-critical avionics software.</p>
+<h2>Limitations</h2>
+<p>By Rice's theorem, it is impossible for any static analyser to always correctly decide non-trivial semantic properties of arbitrary programs, such as whether a program terminates. Practical tools therefore trade off soundness (no false negatives) against completeness (no false positives), and analyses are typically either conservative approximations or bug-finding heuristics that may miss defects.</p>
+<h2>Tools</h2>
+<p>Well-known static analysis tools include Lint (one of the earliest, for C, originating at Bell Labs in 1978), Coverity, Klocwork, PVS-Studio, SonarQube, FindBugs/SpotBugs for Java, ESLint for JavaScript, and the analyzers built into compilers such as Clang and GCC.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Dynamic_program_analysis/index.html">Dynamic program analysis</a></li>
+<li><a href="../Formal_verification/index.html">Formal verification</a></li>
+<li><a href="../Code_review/index.html">Code review</a></li>
+<li><a href="../Program_analysis/index.html">Program analysis</a></li>
+</ul>
+</main>
+<footer>From Wikipedia, the free encyclopedia.</footer>
+</body>
+</html>

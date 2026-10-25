@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>G-code - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:12px 24px}
+header h1{font-size:1.8em;margin:0;font-weight:normal}
+main{max-width:900px;margin:0 auto;padding:20px 24px}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+img.hero{display:block;max-width:100%;margin:16px auto;border:1px solid #ccc;background:#f8f9fa;padding:8px}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;overflow:auto}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<header><h1>G-code</h1></header>
+<main>
+<img class="hero" src="images/g-code.png" alt="A CNC milling machine executing toolpaths generated from G-code">
+<p><b>G-code</b> (also <b>RS-274</b>) is the most widely used computer numerical control (CNC) and 3D printing programming language. It is used mainly in computer-aided manufacturing to control automated machine tools, as well as for 3D-printer firmware applications. The G stands for geometry. G-code has many variants.</p>
+<p>G-code instructions are provided to a machine controller (industrial computer) that tells the motors where to move, how fast to move, and what path to follow. The two most common situations are within a machine tool such as a lathe or mill, in which a cutting tool is moved according to these instructions through a toolpath cutting away material to leave only the finished workpiece; and a 3D printer, in which material is instead extruded layer by layer.</p>
+<h2>History</h2>
+<p>The language was developed at MIT in the 1950s for early numerically controlled machines and was standardized in the United States by the Electronic Industries Alliance as RS-274 in the early 1960s. The final revision, RS-274-D, was approved in February 1980. Dialects proliferated among machine builders such as Fanuc, Siemens, and Heidenhain, and G-code was later adopted by desktop 3D printing, notably in the RepRap project and firmware such as Marlin.</p>
+<h2>Syntax</h2>
+<p>A program consists of blocks (lines), each containing letter-addressed words. G-words specify preparatory (geometric) functions such as rapid move (G0), linear interpolation (G1), and circular interpolation (G2/G3); M-words specify miscellaneous functions such as spindle start (M3) and program end (M30). Coordinates use X, Y, Z (and additional axes), F sets the feed rate, and S the spindle speed.</p>
+<pre>G21          ; units in millimetres
+G90          ; absolute positioning
+G1 X50 Y25 F800   ; linear move
+M30          ; end of program</pre>
+<h2>Applications</h2>
+<p>G-code drives CNC mills, lathes, routers, laser and plasma cutters, and virtually all fused-filament 3D printers, where slicing software converts 3D models into layered toolpaths. Despite its age and dialects, it remains the lingua franca of digital fabrication.</p>
+<p class="small">See also: Numerical control; CAM; STEP-NC; RepRap project.</p>
+</main>
+</body>
+</html>

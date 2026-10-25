@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hockey-stick identity - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+img.hero{width:100%;max-height:320px;object-fit:cover;background:#eaecf0;display:block}
+.toc{background:#f8f9fa;border:1px solid #a2a9b1;padding:10px 20px;display:inline-block}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.eqn{text-align:center;font-family:'Times New Roman',serif;font-size:1.1em;margin:1em 0}
+.ref{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Hockey-stick identity</h1>
+<img class="hero" src="images/hockey-stick-identity.png" alt="Pascal's triangle with a hockey-stick pattern highlighted">
+<p>In combinatorics, the <b>hockey-stick identity</b> is an identity involving binomial coefficients. It states that a sum of binomial coefficients lying along a diagonal of Pascal's triangle equals a single binomial coefficient located below and to one side of the last term — so that the summed entries together with the result form a shape resembling a hockey stick.</p>
+<div class="toc"><b>Contents</b>
+<ol>
+<li>Statement</li>
+<li>Proofs</li>
+<li>Applications</li>
+</ol>
+</div>
+<h2>Statement</h2>
+<p>For natural numbers <i>r</i> and <i>n</i> with n ≥ r, the identity reads:</p>
+<p class="eqn">Σ<sub>i=r</sub><sup>n</sup> C(i, r) = C(n+1, r+1)</p>
+<p>where C(i, r) denotes the binomial coefficient "i choose r". In Pascal's triangle, the terms C(r, r), C(r+1, r), …, C(n, r) run down a diagonal (the "shaft" of the stick), and the value of the sum, C(n+1, r+1), sits at the "blade" of the stick. An equivalent form, summing along rows, is sometimes called the Christmas stocking identity.</p>
+<h2>Proofs</h2>
+<p><b>Algebraic proof (induction).</b> Start from Pascal's identity, C(m, k) + C(m, k+1) = C(m+1, k+1). Repeatedly applying Pascal's rule telescopes the sum: C(r, r) = C(r+1, r+1), so the sum C(r, r) + C(r+1, r) = C(r+1, r+1) + C(r+1, r) = C(r+2, r+1), and continuing in this way the partial sums successively become C(r+2, r+1), C(r+3, r+1), and finally C(n+1, r+1).</p>
+<p><b>Combinatorial proof.</b> Count the subsets of size r+1 of the set {1, 2, …, n+1} in two ways. On one hand there are C(n+1, r+1) such subsets. On the other hand, classify a subset by its largest element, say i+1, where i ranges from r to n. If i+1 is the largest element, the remaining r elements must be chosen from the i elements below it, which can be done in C(i, r) ways. Summing over all possible i gives C(n+1, r+1) = Σ C(i, r), proving the identity.</p>
+<h2>Applications</h2>
+<p>The identity is used to evaluate sums of polynomial sequences, since sums of binomial coefficients C(i, r) over i yield a closed form of degree r+1. For example, the familiar formulas for Σ i and Σ i² can be derived by writing i = C(i, 1) and i² in terms of binomial coefficients. The hockey-stick identity also appears in counting lattice paths, in the "stars and bars" arguments of enumerative combinatorics, and in computing cumulative binomial distributions. It generalises to sums of multinomial-like coefficients and to the q-analogues known as q-binomial coefficients.</p>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Subtyping - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;margin:0;color:#202122;background:#fff}
+header{border-bottom:1px solid #a7d7f9;padding:12px 24px}
+header h1{font-family:Georgia,serif;font-weight:normal;margin:0;font-size:28px}
+main{max-width:960px;margin:0 auto;padding:20px 24px;line-height:1.6}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+figure{margin:16px 0;text-align:center}
+figure img{max-width:640px;width:100%;height:auto;background:#f8f9fa;border:1px solid #a2a9b1}
+figcaption{font-size:13px;color:#54595d;padding:6px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px 12px;margin:0 0 16px 20px;font-size:13px}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+footer{border-top:1px solid #a2a9b1;color:#54595d;font-size:13px;padding:12px 24px;margin-top:24px}
+</style>
+</head>
+<body>
+<header><h1>Subtyping</h1></header>
+<main>
+<figure><img src="images/subtyping.png" alt="Type hierarchy diagram showing subtypes below their supertype"><figcaption>In subtyping, a subtype can be used wherever its supertype is expected — the Liskov substitution principle.</figcaption></figure>
+<p>In programming language theory, <b>subtyping</b> (also called <b>subtype polymorphism</b>) is a form of type polymorphism. A <b>subtype</b> is a datatype that is related to another datatype (the <b>supertype</b>) by some notion of substitutability: a program element written for the supertype can be used with a value of the subtype in its place. Formally, if S is a subtype of T, written S &lt;: T, then any term of type S can be safely used in any context where a term of type T is expected (Liskov substitution principle).</p>
+<h2>Origins</h2>
+<p>The notion of subtyping in programming languages dates back to the 1960s; it was introduced in Simula derivatives. The first formal treatments were developed by John C. Reynolds and later by Luca Cardelli in the 1980s, who systematised the subsumption rule and record subtyping. Barbara Liskov's 1987 keynote and her 1994 paper with Jeannette Wing gave the behavioural characterization — the Liskov substitution principle — widely used in object-oriented design.</p>
+<h2>Subsumption and coercion</h2>
+<p>If a value of type S can be used wherever a value of type T is expected, two implementation strategies exist. Under <i>subsumption</i>, the value is used directly, as no representation change is needed (e.g. passing an object of a subclass). Under <i>coercion</i>, the value is automatically converted, as when an integer is widened to a floating-point number in many languages. Subtyping is distinct from type conversion and from inheritance: a class may inherit implementation from another without being its behavioural subtype.</p>
+<h2>Variance</h2>
+<p>For composite types such as functions and containers, subtyping depends on <b>variance</b>:</p>
+<ul>
+<li><b>Covariant</b> — the subtyping relation is preserved: if A &lt;: B then List[A] &lt;: List[B].</li>
+<li><b>Contravariant</b> — the relation is reversed.</li>
+<li><b>Invariant</b> — no relation holds between the composite types.</li>
+</ul>
+<p>Function types are contravariant in their parameter types and covariant in their return type. Soundness questions around variance are famous: mutable arrays treated covariantly are unsound, which is why Java arrays (covariant) require run-time checks and throw ArrayStoreException, while Java generics are invariant.</p>
+<h2>Structural and nominal subtyping</h2>
+<p>In <b>nominal</b> subtyping, relations are declared explicitly (e.g. a class extends another) as in Java, C++ and C#. In <b>structural</b> subtyping, a type is a subtype if it provides all required components with compatible types, as in Go interfaces, OCaml objects and TypeScript. Width subtyping of records (a record with more fields is a subtype of one with fewer) and depth subtyping (fields themselves being subtypes) are basic structural rules.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Polymorphism/index.html">Polymorphism (computer science)</a></li>
+<li><a href="../Liskov_substitution_principle/index.html">Liskov substitution principle</a></li>
+<li><a href="../Covariance_and_contravariance_(computer_science)/index.html">Covariance and contravariance</a></li>
+<li><a href="../Type_theory/index.html">Type theory</a></li>
+</ul>
+</main>
+<footer>From Wikipedia, the free encyclopedia.</footer>
+</body>
+</html>

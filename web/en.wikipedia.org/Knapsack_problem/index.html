@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Knapsack problem - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #fff; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em; margin: 0 0 1em 1em; width: 260px; font-size: 88%; }
+.hero { width: 100%; background: #eaecf0; text-align: center; padding: 1em 0; color: #54595d; font-size: 90%; }
+.mono { font-family: monospace; background: #f8f9fa; padding: 0.5em; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Knapsack problem</h1>
+<div class="infobox"><div class="hero"><img src="images/knapsack-problem.png" alt="A knapsack being filled with items of different weights and values"></div><p>Combinatorial optimization problem; NP-hard in general; solvable in pseudo-polynomial time by dynamic programming.</p></div>
+<p>The <b>knapsack problem</b> is a classic problem in combinatorial optimization: given a set of items, each with a weight and a value, determine which items to include in a collection so that the total weight does not exceed a given capacity and the total value is as large as possible. It takes its name from the scenario of a traveller filling a knapsack of fixed capacity with the most useful items.</p>
+<h2>Definition</h2>
+<p class="mono">Maximise Σ v<sub>i</sub>x<sub>i</sub> subject to Σ w<sub>i</sub>x<sub>i</sub> ≤ W, with x<sub>i</sub> ∈ {0, 1}.</p>
+<p>where each item <i>i</i> has value <i>v<sub>i</sub></i> and weight <i>w<sub>i</sub></i>, the knapsack capacity is <i>W</i>, and the decision variable <i>x<sub>i</sub></i> indicates whether the item is taken.</p>
+<h2>Variants</h2>
+<ul>
+<li><b>0-1 knapsack:</b> each item may be taken at most once.</li>
+<li><b>Bounded knapsack:</b> each item type has a limited number of copies.</li>
+<li><b>Unbounded knapsack:</b> unlimited copies of each item type.</li>
+<li><b>Multiple knapsack:</b> several knapsacks with different capacities.</li>
+<li><b>Multi-dimensional knapsack:</b> several capacity constraints (e.g. weight and volume).</li>
+</ul>
+<h2>Computational complexity and algorithms</h2>
+<p>The decision version of the 0-1 knapsack problem is NP-complete, and the optimization problem is NP-hard. Nevertheless, it admits a well-known dynamic programming algorithm running in O(nW) time, which is pseudo-polynomial because it is polynomial in the numeric value of the capacity rather than in the input size. Fully polynomial-time approximation schemes (FPTAS) exist, and meet-in-the-middle and branch-and-bound methods handle moderate instances exactly. The greedy heuristic of sorting by value-to-weight ratio is optimal for the <i>fractional</i> knapsack problem, in which items may be divided.</p>
+<h2>Applications</h2>
+<p>Knapsack models arise in resource allocation, capital budgeting, cargo loading, cutting problems, and project selection. A knapsack-type trapdoor also underlay the Merkle–Hellman knapsack cryptosystem, one of the earliest public-key cryptosystems, later broken.</p>
+<p>See also: <a href="../Dynamic_programming/index.html">Dynamic programming</a>, <a href="../Bin_packing_problem/index.html">Bin packing problem</a>, <a href="../Subset_sum_problem/index.html">Subset sum problem</a>.</p>
+</div>
+</body>
+</html>

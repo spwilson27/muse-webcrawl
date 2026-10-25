@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Multiple dispatch - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 0 auto; padding: 24px; background: #fff; color: #202122; line-height: 1.6; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 28px; }
+img.hero { display: block; margin: 16px auto; max-width: 480px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 24px 0; text-align: center; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Multiple dispatch</h1>
+<img class="hero" src="images/multiple-dispatch.png" alt="Diagram showing a generic function selecting a method based on the types of two arguments">
+<p><b>Multiple dispatch</b> or <b>multimethods</b> is a feature of some programming languages in which a function or method can be dynamically dispatched based on the run-time type of more than one of its arguments. This is a generalization of single dispatch — the polymorphism found in most object-oriented languages, where a method call is dispatched only on the type of the object through which it is invoked (the implicit <i>this</i> or <i>self</i> argument). With multiple dispatch, a function such as <code>collide(a, b)</code> can select an implementation specialised for the pair of types (Asteroid, Spaceship), (Spaceship, Asteroid), and so on, without nested conditional logic or the visitor pattern.</p>
+<h2>Languages</h2>
+<p>Multiple dispatch is central to the Common Lisp Object System (CLOS), where generic functions dispatch on all required arguments, and to Dylan, Julia, and Fortress. In Julia, multiple dispatch is the core design paradigm: nearly all built-in functions are generic functions with many methods specialized on argument types. Languages without native support emulate multimethods with libraries — for example, C++ through the visitor pattern or double dispatch, Python through the <code>multimethod</code> and <code>singledispatch</code> (single-argument only) modules, and C# through the <code>dynamic</code> keyword, which performs run-time overload resolution.</p>
+<h2>Semantics</h2>
+<p>When several methods are applicable, the implementation typically selects the <i>most specific</i> one according to a precedence order over the argument types; ambiguous ties may be resolved by argument order (as in CLOS) or signalled as errors. Method combination rules, as in CLOS's standard method combination with <code>:before</code>, <code>:after</code>, and <code>:around</code> methods, can further structure dispatch.</p>
+<h2>Advantages and criticism</h2>
+<p>Supporters argue that multiple dispatch yields open, extensible code: new types and new operations can be added independently, addressing the "expression problem", and binary operations such as arithmetic between mixed numeric types become natural. Critics note potential performance costs, ambiguity errors, and reduced encapsulation compared with class-based single dispatch.</p>
+<h2>See also</h2>
+<p><a href="../Dynamic_dispatch/index.html">Dynamic dispatch</a> &middot; <a href="../Polymorphism_(computer_science)/index.html">Polymorphism</a> &middot; <a href="../Visitor_pattern/index.html">Visitor pattern</a> &middot; <a href="../Julia_(programming_language)/index.html">Julia</a> &middot; <a href="../Common_Lisp_Object_System/index.html">Common Lisp Object System</a></p>
+</body>
+</html>

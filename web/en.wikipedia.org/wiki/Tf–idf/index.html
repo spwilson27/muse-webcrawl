@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tf–idf - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 48px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; font-weight: normal; }
+p { line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 320px; float: right; margin: 0 0 12px 20px; border: 1px solid #c8ccd1; }
+ul { line-height: 1.6; }
+.mono { font-family: 'Courier New', monospace; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Tf–idf</h1>
+<img class="hero" src="images/tf_idf.png" alt="Graph showing term frequency weighted by inverse document frequency">
+<p>In information retrieval, <b>tf–idf</b> (also <b>TF*IDF</b>, <b>TFIDF</b>, <b>TF–IDF</b>, or <b>TfIdf</b>), short for <b>term frequency–inverse document frequency</b>, is a measure of the importance of a word to a document in a collection or corpus, adjusted for the fact that some words appear more frequently in general. It is often used as a weighting factor in searches of information retrieval, text mining, and user modeling.</p>
+<p>The tf–idf value increases proportionally to the number of times a word appears in the document and is offset by the number of documents in the corpus that contain the word, which helps to adjust for the fact that some words appear more frequently in general — terms such as "the" and "is" score low in any document, while a term concentrated in a few documents scores high there.</p>
+<h2>Definitions</h2>
+<p><b>Term frequency</b>, tf(t, d), is the number of times term t occurs in document d, often normalized by document length or transformed logarithmically. <b>Inverse document frequency</b> measures how much information a word provides:</p>
+<p class="mono">idf(t) = log( N / |{d : t ∈ d}| )</p>
+<p>where N is the total number of documents and the denominator is the number of documents containing t. The tf–idf score is the product tf(t, d) × idf(t).</p>
+<h2>History and use</h2>
+<p>The concept arose from work by Hans Peter Luhn in the 1950s, was developed as "term specificity" by Karen Spärck Jones in 1972, and was incorporated into the vector space model of information retrieval by Gerard Salton and colleagues. Tf–idf weighting remains a standard baseline in search engines, document classification, and stop-word detection, although modern systems often combine it with ranking schemes such as <a href="../Okapi_BM25/index.html">Okapi BM25</a> or neural embeddings.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Information_retrieval/index.html">Information retrieval</a></li>
+<li><a href="../Okapi_BM25/index.html">Okapi BM25</a></li>
+<li><a href="../Vector_space_model/index.html">Vector space model</a></li>
+</ul>
+</div>
+</body>
+</html>

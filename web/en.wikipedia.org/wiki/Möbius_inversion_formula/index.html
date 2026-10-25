@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Möbius inversion formula - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:24px 20px 60px}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:2em;border-bottom:1px solid #a7d7f9;padding-bottom:4px;margin-bottom:6px}
+h2{font-family:Georgia,serif;font-weight:normal;font-size:1.5em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.4em}
+h3{font-size:1.15em;margin-top:1.1em}
+a{color:#3366cc;text-decoration:none}a:hover{text-decoration:underline}
+.sub{color:#54595d;font-size:.85em;margin-bottom:16px}
+.hero{float:right;width:280px;margin:6px 0 14px 20px;background:#f8f9fa;border:1px solid #c8ccd1;padding:6px;text-align:center;font-size:.8em;color:#54595d}
+.hero img{width:100%;height:auto;background:#eaecf0}
+.formula{background:#f8f9fa;border:1px solid #eaecf0;padding:12px 16px;font-family:Georgia,serif;font-size:1.1em;text-align:center;margin:14px 0}
+ul,ol{margin:.4em 0 .8em 1.6em;padding:0}
+.ref{font-size:.85em;color:#3a3f44}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Möbius inversion formula</h1>
+<div class="sub">From Wikipedia, the free encyclopedia</div>
+<figure class="hero"><img src="images/mobius-inversion-formula.png" alt="Illustration of the Möbius function values and divisor sums"></figure>
+<p>In mathematics, the <strong>classical Möbius inversion formula</strong> is a relation between pairs of <a href="../Arithmetic_function/index.html">arithmetic functions</a>, each defined from the other by sums over divisors. It was introduced into <a href="../Number_theory/index.html">number theory</a> in 1832 by <a href="../August_Ferdinand_Möbius/index.html">August Ferdinand Möbius</a>.</p>
+<p>A large generalization of this formula applies to summation over an arbitrary locally finite partially ordered set, with Möbius' classical formula applying to the set of natural numbers ordered by divisibility: see <a href="../Incidence_algebra/index.html">incidence algebra</a>.</p>
+
+<h2>Statement of the formula</h2>
+<p>The classical version states that if <em>g</em>(<em>n</em>) and <em>f</em>(<em>n</em>) are arithmetic functions satisfying</p>
+<div class="formula">g(n) = Σ<sub>d | n</sub> f(d) &nbsp; for every integer n ≥ 1</div>
+<p>then</p>
+<div class="formula">f(n) = Σ<sub>d | n</sub> μ(d) g(n/d) &nbsp; for every integer n ≥ 1</div>
+<p>where μ is the <a href="../Möbius_function/index.html">Möbius function</a> and the sums extend over all positive divisors d of n (with the conventional notation that n/d is the quotient of n by d). Written in the notation of the <a href="../Dirichlet_convolution/index.html">Dirichlet convolution</a>, the first equation is often written as</p>
+<div class="formula">g = f ∗ 1</div>
+<p>where ∗ denotes the Dirichlet convolution, and 1 is the constant function 1(n) = 1. The second equation is then written as</p>
+<div class="formula">f = g ∗ μ.</div>
+<p>The equation shows that μ is the convolution inverse of 1, and in the ring of arithmetic functions under Dirichlet convolution these are the two most basic relations of this kind.</p>
+
+<h2>Series relations</h2>
+<p>Let</p>
+<div class="formula">a<sub>n</sub> = Σ<sub>d | n</sub> b<sub>d</sub> &nbsp; then &nbsp; b<sub>n</sub> = Σ<sub>d | n</sub> μ(d) a<sub>n/d</sub>.</div>
+<p>The transform is an involution: applying it twice returns the original sequence. The corresponding relation for <a href="../Dirichlet_series/index.html">Dirichlet series</a> follows by multiplication by 1/ζ(s), where ζ is the <a href="../Riemann_zeta_function/index.html">Riemann zeta function</a>.</p>
+
+<h2>Multiplicative functions</h2>
+<p>In the context of multiplicative functions, every completely multiplicative function f defines an arithmetic function by summation, and the inversion is still given by convolution with μ. An example is the relation between <a href="../Euler's_totient_function/index.html">Euler's totient function</a> φ and the identity function: n = Σ<sub>d | n</sub> φ(d), from which φ = id ∗ μ.</p>
+
+<h2>Proofs</h2>
+<p>The proof of the classical formula uses the fact that Σ<sub>d | n</sub> μ(d) equals 1 if n = 1 and 0 otherwise, together with rearrangement of the double sum. A slicker proof observes that the formula is equivalent to μ ∗ 1 = ε in the Dirichlet convolution ring, where ε is the multiplicative identity concentrated at n = 1.</p>
+
+<h2>Applications</h2>
+<ul>
+<li>Deriving the formula φ(n) = n Π<sub>p | n</sub> (1 − 1/p) for Euler's totient function.</li>
+<li>Counting the number of necklaces and aperiodic words in combinatorics.</li>
+<li>The inclusion–exclusion principle is a special case of Möbius inversion on the Boolean lattice of subsets.</li>
+<li>In physics and combinatorics, inversion on locally finite posets underlies Rota's theory of incidence algebras.</li>
+</ul>
+
+<h2>Generalizations</h2>
+<p>Other Möbius inversion formulas occur throughout mathematics: the <a href="../Weisner_theorem/index.html">Weisner theorem</a>, inversion in incidence algebras of partially ordered sets, and the <a href="../Fourier_transform/index.html">Fourier transform</a> viewed as a kind of inversion. The theory of <a href="../Umask/index.html">umbral calculus</a> also contains inversion formulas of this type.</p>
+
+<p class="ref">See also: <a href="../Möbius_function/index.html">Möbius function</a> · <a href="../Dirichlet_convolution/index.html">Dirichlet convolution</a> · <a href="../Inclusion–exclusion_principle/index.html">Inclusion–exclusion principle</a> · <a href="../Incidence_algebra/index.html">Incidence algebra</a></p>
+</div>
+</body>
+</html>

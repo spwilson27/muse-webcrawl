@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Particle swarm optimization - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.mw-body{max-width:960px;margin:0 auto;padding:16px 28px 40px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.imgbox{float:right;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:8px;font-size:13px;text-align:center;width:220px}
+.imgbox img{width:100%;height:140px;background:#eaecf0;display:block}
+.eq{font-family:'Times New Roman',serif;font-size:17px;background:#f8f9fa;border:1px solid #eaecf0;padding:8px 14px;display:inline-block}
+.small{font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Particle swarm optimization</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="imgbox"><img src="images/particle-swarm.png" alt="Swarm of particles converging on the minimum of a function"></div>
+<p>In computational science, <b>particle swarm optimization</b> (<b>PSO</b>) is a computational method that optimizes a problem by iteratively trying to improve a candidate solution with regard to a given measure of quality. It solves a problem by having a population of candidate solutions, called particles, and moving these particles around in the search-space according to simple mathematical formulae over the particle's position and velocity. Each particle's movement is influenced by its local best known position, but is also guided toward the best known positions in the search-space, which are updated as better positions are found by other particles.</p>
+<h2>History</h2>
+<p>PSO was developed in 1995 by James Kennedy and Russell Eberhart, inspired by the social behaviour of bird flocking and fish schooling, in part through the simulations of Frank Heppner. It was originally intended for simulating social behaviour as a stylized representation of the movement of organisms in a bird flock or fish school; the algorithm was simplified and it was realised that it was performing optimization.</p>
+<h2>Algorithm</h2>
+<p>Each particle <i>i</i> keeps track of its position <b>x</b><sub>i</sub>, its velocity <b>v</b><sub>i</sub>, and the best position it has personally found, <b>p</b><sub>i</sub>. The swarm as a whole knows the global best position <b>g</b>. At each step the velocity and position are updated:</p>
+<p><span class="eq"><b>v</b><sub>i</sub> ← ω<b>v</b><sub>i</sub> + φ<sub>p</sub> r<sub>p</sub> (<b>p</b><sub>i</sub> − <b>x</b><sub>i</sub>) + φ<sub>g</sub> r<sub>g</sub> (<b>g</b> − <b>x</b><sub>i</sub>)</span></p>
+<p><span class="eq"><b>x</b><sub>i</sub> ← <b>x</b><sub>i</sub> + <b>v</b><sub>i</sub></span></p>
+<p>where ω is an inertia weight, φ<sub>p</sub> and φ<sub>g</sub> are acceleration coefficients, and r<sub>p</sub>, r<sub>g</sub> are random numbers drawn uniformly from [0, 1] at each step. Variants introduce constriction factors (Clerc), local neighbourhood topologies (ring, von Neumann), and adaptations for discrete, multi-objective and constrained problems.</p>
+<h2>Applications</h2>
+<p>PSO needs only that the objective function be measurable; it does not require the problem to be differentiable. It has been applied to function optimization, neural network training, antenna design, clustering, scheduling and control problems, and is part of the broader family of swarm intelligence and metaheuristic methods alongside ant colony optimization and artificial bee colony algorithms.</p>
+<h2>See also</h2>
+<p><a href="../Swarm_intelligence/index.html">Swarm intelligence</a> · <a href="../Metaheuristic/index.html">Metaheuristic</a> · <a href="../Genetic_algorithm/index.html">Genetic algorithm</a> · <a href="../Ant_colony_optimization_algorithms/index.html">Ant colony optimization</a></p>
+</div>
+</body>
+</html>

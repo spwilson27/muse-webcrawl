@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Garbage collection (computer science) - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122}
+header{background:#fff;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header h1{font-size:28px;margin:0;font-weight:normal}
+main{max-width:920px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a2a9b1;border-right:1px solid #a2a9b1}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+p{line-height:1.6;font-size:15px}
+figure{float:right;margin:0 0 16px 20px;width:260px;background:#f8f9fa;border:1px solid #a2a9b1;padding:8px;font-size:12px;text-align:center}
+figure img{max-width:100%;background:#e8e8e8;min-height:140px;display:block;width:100%}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+footer{max-width:920px;margin:0 auto;padding:16px 32px;font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<header><h1>Garbage collection (computer science)</h1></header>
+<main>
+<figure><img src="images/garbage-collection.png" alt="Diagram of a heap with reachable and unreachable objects being reclaimed"><figcaption>Tracing garbage collection: unreachable objects are reclaimed</figcaption></figure>
+<p>In computer science, <b>garbage collection</b> (<b>GC</b>) is a form of automatic memory management. The garbage collector attempts to reclaim memory occupied by objects that are no longer in use by the program, freeing the programmer from manually allocating and deallocating memory and preventing many memory leaks and dangling-pointer bugs.</p>
+<h2>History</h2>
+<p>Garbage collection was invented around 1959 by John McCarthy for the Lisp programming language. It became widespread with object-oriented and managed languages such as Smalltalk, Java, C# and Go, while languages like C and C++ traditionally rely on manual management, sometimes supplemented by reference counting.</p>
+<h2>Strategies</h2>
+<p>The most common approach is tracing garbage collection, exemplified by mark-and-sweep: starting from roots (globals, stack references), the collector marks all reachable objects and sweeps away the rest. Copying collectors move live objects to a new region, compacting memory. Reference counting frees objects when their count of references falls to zero but cannot collect reference cycles on its own.</p>
+<h2>Generational collection</h2>
+<p>Because most objects die young, many collectors divide the heap into generations and collect the young generation most often, promoting survivors to older generations — a key optimisation in the Java HotSpot and .NET runtimes. Modern collectors such as G1, ZGC and Shenandoah aim for short, concurrent pauses on very large heaps.</p>
+<h2>Trade-offs</h2>
+<p>Automatic collection costs CPU time and memory headroom and can introduce pause times; it also does not manage non-memory resources such as file handles, which still need explicit handling or finalisation.</p>
+<h2>See also</h2>
+<p><a href="../Memory_management/index.html">Memory management</a> · <a href="../Reference_counting/index.html">Reference counting</a> · <a href="../Memory_leak/index.html">Memory leak</a> · <a href="../Java_virtual_machine/index.html">Java virtual machine</a></p>
+</main>
+<footer>From Wikipedia, the free encyclopedia — recreated from memory.</footer>
+</body>
+</html>

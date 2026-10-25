@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LU decomposition</title>
+<style>
+body { font-family: Georgia, "Times New Roman", serif; max-width: 820px; margin: 2em auto; padding: 0 1em; line-height: 1.55; color: #202122; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.35em; border-bottom: 1px solid #c8ccd1; padding-bottom: 0.15em; margin-top: 1.4em; }
+img.hero { max-width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; }
+.caption { font-size: 0.85em; color: #54595d; text-align: center; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; }
+</style>
+</head>
+<body>
+<h1>LU decomposition</h1>
+<img class="hero" src="images/lu-decomposition.png" alt="Diagram of a matrix factored into lower and upper triangular matrices L and U">
+<p class="caption">LU decomposition factors a matrix into a lower triangular L and an upper triangular U.</p>
+<p>In numerical analysis and linear algebra, <b>LU decomposition</b> (also called <b>LU factorization</b>) factors a matrix as the product of a lower triangular matrix and an upper triangular matrix: <i>A</i> = <i>LU</i>. It can be viewed as the matrix form of Gaussian elimination and is the standard method used by computers to solve systems of linear equations, invert matrices, and compute determinants. The factorization was developed in the context of work by Tadeusz Banachiewicz (1938) and others.</p>
+
+<h2>Definition</h2>
+<p>For a square matrix <i>A</i>, an LU decomposition is <i>A</i> = <i>LU</i>, where <i>L</i> is lower triangular with ones on its diagonal (unitriangular) and <i>U</i> is upper triangular. Not every matrix has such a decomposition; a sufficient condition is that all leading principal minors are nonzero. Because row exchanges are often required, in practice one uses <b>partial pivoting</b>: <i>PA</i> = <i>LU</i>, where <i>P</i> is a permutation matrix. Every nonsingular matrix admits such a decomposition. Symmetric positive-definite matrices admit the related Cholesky decomposition.</p>
+
+<h2>Applications</h2>
+<p>Once <i>A</i> = <i>LU</i> is computed (at a cost of about 2<i>n</i><sup>3</sup>/3 floating-point operations), solving <i>Ax</i> = <i>b</i> reduces to two cheap triangular solves: forward substitution for <i>Ly</i> = <i>Pb</i>, then back substitution for <i>Ux</i> = <i>y</i>. This makes LU ideal when many systems with the same matrix but different right-hand sides must be solved. The inverse of <i>A</i> follows by solving against unit vectors, and det(<i>A</i>) equals (up to the sign of the permutation) the product of the diagonal of <i>U</i>. Variants such as the Doolittle and Crout algorithms differ in which factor carries the unit diagonal, and rank-revealing and block versions are used in libraries such as LAPACK.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../../Gaussian_elimination/index.html">Gaussian elimination</a></li>
+<li><a href="../../Cholesky_decomposition/index.html">Cholesky decomposition</a></li>
+<li><a href="../../QR_decomposition/index.html">QR decomposition</a></li>
+</ul>
+</body>
+</html>

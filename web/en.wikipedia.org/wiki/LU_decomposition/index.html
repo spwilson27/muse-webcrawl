@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LU decomposition - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#fff;color:#202122;margin:0;padding:0 20px;line-height:1.6}
+#content{max-width:960px;margin:0 auto}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:12px 0;max-width:320px}
+.formula{background:#f8f9fa;border:1px solid #a2a9b1;padding:8px 14px;display:inline-block;font-family:'Courier New',monospace}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>LU decomposition</h1>
+<img class="hero" src="images/lu-decomposition.png" alt="Diagram showing a matrix factored into a lower triangular matrix L and an upper triangular matrix U">
+<p>In numerical analysis and linear algebra, <b>lower–upper (LU) decomposition</b> or <b>factorization</b> factors a matrix as the product of a lower triangular matrix and an upper triangular matrix (see matrix decomposition). The product sometimes includes a permutation matrix as well. LU decomposition can be viewed as the matrix form of <a href="../Gaussian_elimination/index.html">Gaussian elimination</a>. Computers usually solve square systems of linear equations using LU decomposition, and it is also a key step when inverting a matrix or computing the determinant of a matrix.</p>
+<h2>Definition</h2>
+<p>Let <i>A</i> be a square matrix. An LU factorization refers to the factorization of <i>A</i>, with proper row and/or column orderings or permutations, into two factors: a lower triangular matrix <i>L</i> and an upper triangular matrix <i>U</i>:</p>
+<p class="formula">A = LU</p>
+<p>In the lower triangular matrix, all elements above the diagonal are zero; in the upper triangular matrix, all elements below the diagonal are zero. For a 3×3 matrix this takes the explicit form of products of matrices with unit or non-unit diagonals. Variants include the Doolittle algorithm (unit diagonal in <i>L</i>) and the Crout algorithm (unit diagonal in <i>U</i>).</p>
+<h2>LU factorization with partial pivoting</h2>
+<p>Not every square matrix admits an LU decomposition in the simple form above — a zero on the diagonal can make the process break down even for invertible matrices. With row permutations the factorization becomes <i>PA</i> = <i>LU</i>, where <i>P</i> is a permutation matrix. Partial pivoting — swapping the largest-magnitude available pivot into place at each step — also greatly improves numerical stability and is the form used in practice by libraries such as LAPACK.</p>
+<h2>Applications</h2>
+<h3>Solving linear equations</h3>
+<p>Given <i>A</i><b>x</b> = <b>b</b>, once the factorization is known the system splits into two triangular systems, <i>L</i><b>y</b> = <i>P</i><b>b</b> and <i>U</i><b>x</b> = <b>y</b>, each solvable in O(<i>n</i>²) operations by forward and back substitution. The factorization itself costs about 2<i>n</i>³/3 floating-point operations, so it is especially efficient when many right-hand sides share the same coefficient matrix.</p>
+<h3>Inverting matrices and determinants</h3>
+<p>The inverse of <i>A</i> can be obtained by solving for each unit vector in turn. The determinant follows from det(<i>A</i>) = det(<i>P</i>)⁻¹ det(<i>L</i>) det(<i>U</i>), and since the determinant of a triangular matrix is the product of its diagonal entries, this is inexpensive once the factorization is available.</p>
+<h2>History</h2>
+<p>The method is commonly attributed to the Polish astronomer and mathematician Tadeusz Banachiewicz (1938), with related work by Prescott Durand Crout and others in the late 1930s and 1940s; the underlying elimination procedure descends from Gauss.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Gaussian_elimination/index.html">Gaussian elimination</a></li>
+<li><a href="../Cholesky_decomposition/index.html">Cholesky decomposition</a></li>
+<li><a href="../QR_decomposition/index.html">QR decomposition</a></li>
+<li><a href="../Triangular_matrix/index.html">Triangular matrix</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Burrows–Wheeler transform - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:24px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:100%;margin:12px 0;border:1px solid #ccc;background:#eee}
+.small{font-size:0.85em;color:#54595d}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Burrows–Wheeler transform</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/burrows-wheeler-transform.png" alt="Diagram of the Burrows–Wheeler transform sorting all rotations of a string">
+<p>The <b>Burrows–Wheeler transform</b> (BWT, also called <b>block-sorting compression</b>) is an algorithm used in data compression techniques such as bzip2. Invented by Michael Burrows and David Wheeler in 1994, it rearranges a string into runs of similar characters, which makes the result much more compressible by techniques such as move-to-front encoding and Huffman coding. The transform itself does not compress the data; it merely permutes it, in a fully reversible way.</p>
+<h2>How it works</h2>
+<p>To transform a string, all of its cyclic rotations are written out and sorted lexicographically; the last column of the resulting matrix forms the output, together with the index of the original string among the rotations. For example, transforming <code>^BANANA|</code> yields <code>BNN^AA|A</code>. Because similar characters are grouped together, repeated patterns in the input produce long runs in the output.</p>
+<h2>Inversion</h2>
+<p>The transform is invertible: from the output column alone, the full sorted matrix can be reconstructed by repeated sorting and prepending, recovering the original string exactly. Efficient inversion can be done using the LF-mapping, which also makes the BWT useful for searching.</p>
+<h2>Applications</h2>
+<p>Beyond bzip2, the transform underlies the FM-index, a compressed full-text index used in bioinformatics tools such as Bowtie and BWA for aligning DNA sequencing reads to reference genomes.</p>
+<p class="small">See also: <a href="../Bzip2/index.html">bzip2</a> · <a href="../Data_compression/index.html">Data compression</a> · <a href="../FM-index/index.html">FM-index</a></p>
+</div>
+</body>
+</html>

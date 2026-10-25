@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PID controller - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:24px 20px 60px}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:32px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:24px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+p{line-height:1.65;margin:10px 0}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:520px;width:100%;margin:16px auto;background:#f8f9fa;border:1px solid #c8ccd1;padding:10px;text-align:center;color:#72777d}
+.thumb{font-size:13px;color:#54595d}
+ul{line-height:1.6}
+code{background:#f8f9fa;padding:1px 4px;font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>PID controller</h1>
+<img class="hero" src="images/pid-controller.png" alt="Block diagram of a PID feedback control loop with setpoint, error and process variable">
+<p>A <b>proportional–integral–derivative controller</b> (<b>PID controller</b> or <b>three-term controller</b>) is a control loop feedback mechanism widely used in industrial control systems and many other applications requiring continuously modulated control. A PID controller continuously calculates an error value <i>e(t)</i> as the difference between a desired setpoint and a measured process variable, and applies a correction based on proportional, integral and derivative terms:</p>
+<p style="text-align:center"><code>u(t) = Kp·e(t) + Ki·∫e(τ)dτ + Kd·de(t)/dt</code></p>
+<h2>The three terms</h2>
+<p>The <b>proportional</b> term produces an output proportional to the current error; raising Kp makes the system respond faster but can cause overshoot and oscillation. The <b>integral</b> term integrates past error, eliminating steady-state offset but adding lag and, when the actuator saturates, integral windup (countered by anti-windup schemes). The <b>derivative</b> term responds to the rate of change of error, damping oscillations, but amplifies measurement noise and is subject to "derivative kick" when the setpoint changes, so it is often applied to the measurement rather than the error.</p>
+<h2>Tuning and use</h2>
+<p>PID parameters are tuned by methods ranging from manual trial and error to the classic Ziegler–Nichols rules (1942), relay-feedback autotuning and model-based design. Well over 90% of industrial control loops are estimated to be PID or simpler PI controllers; applications include temperature regulation, motor speed and position control, flight control, chemical process control and cruise control in vehicles. Where a PID controller is insufficient — for nonlinear, multivariable or strongly delayed processes — it may be combined with feedforward control, cascade loops or replaced by model predictive control.</p>
+<h2>History</h2>
+<p>Self-regulating feedback devices date to antiquity; Elmer Sperry's automatic ship steering (1911) and Nicolas Minorsky's 1922 theoretical analysis for naval steering pioneered the three-term form, which became standard in pneumatic industrial controllers in the 1930s and 1940s and later in electronic and software implementations.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Control_theory/index.html">Control theory</a></li>
+<li><a href="../Ziegler%E2%80%93Nichols_method/index.html">Ziegler–Nichols method</a></li>
+<li><a href="../Feed_forward_(control)/index.html">Feed forward (control)</a></li>
+<li><a href="../Bang%E2%80%93bang_control/index.html">Bang–bang control</a></li>
+</ul>
+<p class="thumb">From Wikipedia, the free encyclopedia (recreated from memory).</p>
+</div>
+</body>
+</html>

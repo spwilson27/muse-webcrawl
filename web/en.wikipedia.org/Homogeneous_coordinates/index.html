@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Homogeneous coordinates - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+img.hero{width:100%;max-height:320px;object-fit:cover;background:#eaecf0;display:block}
+.toc{background:#f8f9fa;border:1px solid #a2a9b1;padding:10px 20px;display:inline-block}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.eqn{text-align:center;font-family:'Times New Roman',serif;font-size:1.1em;margin:1em 0}
+.ref{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Homogeneous coordinates</h1>
+<img class="hero" src="images/homogeneous-coordinates.png" alt="Projective plane with points at infinity marked">
+<p>In mathematics, <b>homogeneous coordinates</b> or <b>projective coordinates</b>, introduced by August Ferdinand Möbius in his 1827 work <i>Der barycentrische Calcul</i>, are a system of coordinates used in projective geometry, as Cartesian coordinates are used in Euclidean geometry. They allow affine transformations and, in particular, projective transformations to be represented by matrices, and they make it possible to treat points at infinity as ordinary points.</p>
+<div class="toc"><b>Contents</b>
+<ol>
+<li>Definition</li>
+<li>Points at infinity</li>
+<li>Application to transformations</li>
+<li>Use in computer graphics</li>
+<li>Other applications</li>
+</ol>
+</div>
+<h2>Definition</h2>
+<p>A point in the projective plane is represented by a triple (x : y : w) of numbers, not all zero, where triples that are scalar multiples of each other represent the same point. If w ≠ 0, the corresponding point in the ordinary (affine) plane is (x/w, y/w). Conversely, the Euclidean point (X, Y) can be written in homogeneous coordinates as (X : Y : 1), or as any multiple (λX : λY : λ) with λ ≠ 0. Similarly, a point in three-dimensional space is given by (x : y : z : w) and corresponds to (x/w, y/w, z/w) when w ≠ 0. Homogeneous coordinates simplify many computations: for example, the intersection of two lines and the line through two points are both given by the cross product of their coordinate vectors.</p>
+<h2>Points at infinity</h2>
+<p>Triples with w = 0 have no Euclidean counterpart; they represent points at infinity, one for each direction in the plane. In homogeneous coordinates, parallel lines meet at their common point at infinity, so projective geometry has no exceptional cases of non-intersecting lines. The set of all points at infinity forms the line at infinity. This unification is the basis of duality in projective geometry, in which points and lines play perfectly symmetric roles.</p>
+<h2>Application to transformations</h2>
+<p>Because a projective transformation of the plane is represented by an invertible 3×3 matrix acting on homogeneous coordinate vectors, translations — which are not linear in Cartesian coordinates — become matrix operations. In three dimensions, every affine transformation (rotation, translation, scaling, shear) and every perspective projection is a 4×4 matrix in homogeneous coordinates, and composite transformations are formed simply by multiplying matrices. The extra coordinate w is sometimes called the "weight"; converting back to Euclidean coordinates requires the perspective divide by w.</p>
+<h2>Use in computer graphics</h2>
+<p>Homogeneous coordinates are fundamental to 3D computer graphics: rendering pipelines in OpenGL, DirectX and Vulkan carry vertices as four-component vectors (x, y, z, w), apply model, view and projection matrices, and then perform the perspective divide to obtain normalised device coordinates. The mechanism naturally produces perspective foreshortening — distant objects appearing smaller — and supports clipping in homogeneous space before division. Rational Bézier curves and NURBS also use homogeneous control points, where the w component acts as a weight controlling the curve's pull toward the point.</p>
+<h2>Other applications</h2>
+<p>Homogeneous coordinates appear in computer vision (camera models and epipolar geometry), robotics (rigid-body transformation matrices), and the theory of conic sections, where a conic is a symmetric 3×3 matrix and tangency conditions become algebraic. In weighted form they generalise to barycentric coordinates, Möbius's original motivation.</p>
+</body>
+</html>

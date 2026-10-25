@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Structure from motion - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;margin:0;color:#202122;background:#fff}
+header{border-bottom:1px solid #a7d7f9;padding:12px 24px}
+header h1{font-family:Georgia,serif;font-weight:normal;margin:0;font-size:28px}
+main{max-width:960px;margin:0 auto;padding:20px 24px;line-height:1.6}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+figure{margin:16px 0;text-align:center}
+figure img{max-width:640px;width:100%;height:auto;background:#f8f9fa;border:1px solid #a2a9b1}
+figcaption{font-size:13px;color:#54595d;padding:6px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px 12px;margin:0 0 16px 20px;font-size:13px}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+footer{border-top:1px solid #a2a9b1;color:#54595d;font-size:13px;padding:12px 24px;margin-top:24px}
+</style>
+</head>
+<body>
+<header><h1>Structure from motion</h1></header>
+<main>
+<figure><img src="images/structure-from-motion.png" alt="A sparse point cloud and camera positions reconstructed from photographs"><figcaption>Structure from motion recovers camera positions and a sparse 3D point cloud from overlapping 2D images.</figcaption></figure>
+<p><b>Structure from motion</b> (<b>SfM</b>) is a photogrammetric range imaging technique for estimating three-dimensional structures from two-dimensional image sequences that may be coupled with local motion signals. In computer vision, it refers to the process of reconstructing the 3D structure of a scene together with the positions and orientations of the camera from a set of images of that scene. It is studied in the fields of computer vision and visual perception, and is closely related to biological motion perception.</p>
+<h2>Principle</h2>
+<p>Humans recover 3D structure from a changing visual field: points that move coherently on the retina are grouped into rigid objects. SfM algorithms do the same computationally. Feature points — distinctive corners or blobs detected by methods such as SIFT — are matched across overlapping images. From these correspondences, epipolar geometry (encoded in the essential or fundamental matrix) constrains the relative camera poses, and triangulation converts corresponding rays into 3D points. A final non-linear refinement, <b>bundle adjustment</b>, jointly optimises camera parameters and point positions to minimise reprojection error.</p>
+<h2>Pipeline</h2>
+<ol>
+<li><b>Feature detection and matching</b> — find and match distinctive points across images, rejecting outliers with RANSAC.</li>
+<li><b>Geometric verification and pose estimation</b> — recover relative camera motion for image pairs.</li>
+<li><b>Incremental or global reconstruction</b> — add images one by one (or solve all poses at once) to grow the sparse point cloud.</li>
+<li><b>Bundle adjustment</b> — refine the whole reconstruction.</li>
+<li><b>Dense reconstruction</b> — multi-view stereo algorithms such as patch-based PMVS densify the sparse cloud, after which surfaces can be meshed and textured.</li>
+</ol>
+<h2>Software and applications</h2>
+<p>Well-known implementations include Bundler, VisualSFM, COLMAP, OpenMVG and Meshroom, along with commercial photogrammetry packages such as Agisoft Metashape and Pix4D. SfM is used in archaeology and heritage documentation, geology and topographic survey from drones, film visual effects and match-moving, robotics, and augmented reality. Because reconstruction is determined only up to scale, ground control points, GPS data or known distances are used to fix the absolute scale. When the camera is moving and location and mapping are estimated simultaneously, the related technique is called visual SLAM.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Photogrammetry/index.html">Photogrammetry</a></li>
+<li><a href="../Bundle_adjustment/index.html">Bundle adjustment</a></li>
+<li><a href="../Epipolar_geometry/index.html">Epipolar geometry</a></li>
+<li><a href="../Simultaneous_localization_and_mapping/index.html">Simultaneous localization and mapping</a></li>
+</ul>
+</main>
+<footer>From Wikipedia, the free encyclopedia.</footer>
+</body>
+</html>

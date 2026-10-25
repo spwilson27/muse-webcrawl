@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OS-level virtualization - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; margin-top: 28px; }
+.from { font-size: 13px; color: #54595d; margin-bottom: 16px; font-family: sans-serif; }
+.hero { float: right; margin: 0 0 16px 24px; max-width: 320px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 6px; font-family: sans-serif; font-size: 12px; text-align: center; }
+.hero img { width: 100%; height: 200px; object-fit: cover; background: #eaecf0; display: block; }
+p, li { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>OS-level virtualization</h1>
+<div class="from">From Wikipedia, the free encyclopedia</div>
+
+<div class="hero">
+<img src="images/OS-level_virtualization.png" alt="Diagram comparing containers sharing one kernel with virtual machines on a hypervisor">
+<div>Containers share the host kernel, unlike hypervisor-based virtual machines.</div>
+</div>
+
+<p><b>OS-level virtualization</b> is an operating system virtualization technique in which the kernel allows the existence of multiple isolated user-space instances, commonly called <b>containers</b>. All containers share the same host operating system kernel, but each has its own file system, process tree, network namespace and resource limits, so that from inside, a container appears much like a standalone operating system. The technique contrasts with hardware virtualization, in which a hypervisor runs complete guest operating systems, each with its own kernel, on virtual hardware.</p>
+
+<h2>History</h2>
+<p>The idea descends from the Unix <i>chroot</i> mechanism (1979), which isolates a process's view of the file system. FreeBSD jails (2000) extended the idea to processes, networking and users; Solaris Containers/Zones (2004) and OpenVZ (2005) developed it further. On Linux, the combination of <b>namespaces</b> (for isolation of processes, mounts, networking, users and more) and <b>cgroups</b> (for resource accounting and limits) provided the kernel primitives from which LXC (2008) and then Docker (2013) built practical container systems. Docker's image format and tooling popularised containers for application packaging and deployment, and orchestration systems such as Kubernetes made them a standard unit of cloud infrastructure.</p>
+
+<h2>Advantages and limitations</h2>
+<p>Because containers share the host kernel and contain no guest OS, they are lightweight: images are smaller, instances start in milliseconds to seconds, and many more can run on a host than full virtual machines. The trade-off is a weaker isolation boundary — a kernel vulnerability can compromise all containers — and the requirement that containers run the host's operating system family: a Linux host runs Linux containers natively, and other systems must be emulated or run in a lightweight VM. Security-conscious deployments therefore combine containers with sandboxing technologies such as gVisor or microVMs (e.g. Firecracker), or run containers inside virtual machines.</p>
+
+<h2>Implementations</h2>
+<ul>
+<li>Linux: Docker, Podman, LXC/LXD, containerd, CRI-O</li>
+<li>FreeBSD: jails</li>
+<li>Solaris/illumos: Zones</li>
+<li>Windows: Windows Containers (process and Hyper-V isolation modes)</li>
+</ul>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Docker_(software)/index.html">Docker (software)</a></li>
+<li><a href="../Virtual_machine/index.html">Virtual machine</a></li>
+<li><a href="../Hypervisor/index.html">Hypervisor</a></li>
+<li><a href="../Kubernetes/index.html">Kubernetes</a></li>
+</ul>
+
+</div>
+</body>
+</html>

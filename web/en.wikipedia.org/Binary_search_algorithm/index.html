@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Binary search algorithm – Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#fff;color:#202122;margin:0;padding:0 1.5em 3em;line-height:1.6}
+.mw-body{max-width:960px;margin:0 auto}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:1.9em;margin:0.6em 0 0.2em}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:1.4em;margin:1.2em 0 0.4em}
+p{margin:0.5em 0}
+code{font-family:monospace;background:#f8f9fa;padding:0 0.2em}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.6em;margin:0 0 1em 1.5em;font-size:0.88em;font-family:sans-serif}
+.infobox img{width:100%;height:140px;background:#e8eaf0;display:block;object-fit:cover}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.siteSub{font-size:0.85em;color:#54595d;font-family:sans-serif}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Binary search algorithm</h1>
+<div class="siteSub">From Wikipedia, the free encyclopedia</div>
+<div class="infobox">
+<img src="images/binary_search.png" alt="Diagram of binary search repeatedly halving a sorted array">
+<table>
+<tr><th>Class</th><td>Search algorithm</td></tr>
+<tr><th>Worst-case</th><td>O(log n)</td></tr>
+<tr><th>Best-case</th><td>O(1)</td></tr>
+<tr><th>Space</th><td>O(1) iterative</td></tr>
+</table>
+</div>
+<p>In computer science, <b>binary search</b>, also known as <b>half-interval search</b>, <b>logarithmic search</b>, or <b>binary chop</b>, is a search algorithm that finds the position of a target value within a sorted array. Binary search compares the target value to the middle element of the array. If they are not equal, the half in which the target cannot lie is eliminated and the search continues on the remaining half, again taking the middle element to compare to the target value, and repeating this until the target value is found. If the search ends with the remaining half being empty, the target is not in the array.</p>
+<h2>Procedure</h2>
+<p>Given a sorted array of <i>n</i> elements and a target value <i>T</i>, the algorithm maintains low and high bounds on the interval that may contain <i>T</i>. At each step it examines the middle element: if it equals <i>T</i>, its index is returned; if it is less than <i>T</i>, the search continues in the upper half; otherwise it continues in the lower half. The interval halves with each step, giving a running time proportional to the logarithm of the array size.</p>
+<h2>Complexity</h2>
+<p>Binary search runs in worst-case logarithmic time, making O(log n) comparisons, where n is the number of elements. It requires the array to be sorted and to support random access; for data structures without O(1) random access, such as linked lists, it offers no advantage over linear search.</p>
+<h2>History and pitfalls</h2>
+<p>Although the idea is simple, correct implementations are notoriously error-prone: details such as computing the midpoint without integer overflow and handling boundary conditions have caused bugs in widely used library implementations. The first published description of binary search appeared in 1946, and the first bug-free implementation was not published until 1962.</p>
+<h2>Applications</h2>
+<p>Beyond searching sorted arrays, the binary-search pattern underlies binary search trees, bisection methods for root finding, and software library routines such as C's <code>bsearch</code> and Java's <code>Arrays.binarySearch</code>.</p>
+<p><i>See also: <a href="../Search_algorithm/index.html">Search algorithm</a>, <a href="../Binary_search_tree/index.html">Binary search tree</a></i></p>
+</div>
+</body>
+</html>

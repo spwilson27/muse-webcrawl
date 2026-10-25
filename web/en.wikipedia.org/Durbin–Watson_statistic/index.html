@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Durbin–Watson statistic</title>
+<style>
+body{font-family:Georgia,serif;margin:2em auto;max-width:760px;line-height:1.6;color:#222;padding:0 1em}
+h1{border-bottom:2px solid #888;padding-bottom:.2em}
+h2{border-bottom:1px solid #ccc;padding-bottom:.15em}
+.hero{display:block;background:#e8e4da;border:1px solid #bbb;text-align:center;padding:2em 1em;color:#555;font-style:italic}
+a{color:#0645ad}
+.mono{font-family:monospace}
+</style>
+</head>
+<body>
+<h1>Durbin–Watson statistic</h1>
+<img class="hero" src="images/durbin-watson.png" alt="A plot of regression residuals over time showing serial correlation">
+<p>In statistics, the <b>Durbin–Watson statistic</b> is a test statistic used to detect the presence of autocorrelation at lag 1 in the residuals (prediction errors) from a regression analysis. It is named after James Durbin and Geoffrey Watson, who introduced it in papers of 1950 and 1951. Autocorrelated residuals violate the assumptions of ordinary least squares and can make standard errors misleading.</p>
+<h2>Definition</h2>
+<p>The statistic is computed from the residuals <span class="mono">e<sub>t</sub></span> as:</p>
+<p class="mono">d = Σ (e<sub>t</sub> − e<sub>t−1</sub>)² / Σ e<sub>t</sub>²</p>
+<p>The value of <i>d</i> always lies between 0 and 4. A value of 2 indicates no first-order autocorrelation; values substantially below 2 suggest positive autocorrelation, and values above 2 up to 4 suggest negative autocorrelation. Roughly, <i>d</i> ≈ 2(1 − <i>r</i>), where <i>r</i> is the sample autocorrelation of the residuals.</p>
+<h2>Testing</h2>
+<p>Unlike many test statistics, the Durbin–Watson statistic has no single critical value: Durbin and Watson derived upper and lower bounds (d<sub>L</sub> and d<sub>U</sub>) depending on sample size and number of regressors. Values below d<sub>L</sub> reject the null hypothesis of no autocorrelation; values above d<sub>U</sub> do not; values between them are inconclusive. The test is invalid when the regression includes a lagged dependent variable among the regressors, a case for which Durbin's h-test or the Breusch–Godfrey test is used instead.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Autocorrelation/index.html">Autocorrelation</a></li>
+<li><a href="../Regression_analysis/index.html">Regression analysis</a></li>
+<li><a href="../Breusch-Godfrey_test/index.html">Breusch–Godfrey test</a></li>
+<li><a href="../Ordinary_least_squares/index.html">Ordinary least squares</a></li>
+</ul>
+</body>
+</html>

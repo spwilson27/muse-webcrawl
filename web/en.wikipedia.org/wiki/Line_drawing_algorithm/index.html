@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Line drawing algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#fff;color:#202122;margin:0;padding:0 20px;line-height:1.6}
+#content{max-width:960px;margin:0 auto}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:12px 0;max-width:320px}
+pre{background:#f8f9fa;border:1px solid #a2a9b1;padding:10px;overflow-x:auto}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Line drawing algorithm</h1>
+<img class="hero" src="images/line-drawing-algorithm.png" alt="Grid of pixels approximating a diagonal line between two endpoints">
+<p>A <b>line drawing algorithm</b> is a graphical algorithm for approximating a line segment on a discrete graphical medium, such as pixel-based displays and printers. On such media, line drawing requires such an approximation (in non-trivial cases). Basic algorithms rasterise lines of one pixel in thickness; special algorithms may simulate anti-aliasing by shading pixels according to their distance from the ideal line.</p>
+<h2>The naive algorithm</h2>
+<p>The simplest approach evaluates the line equation <i>y</i> = <i>mx</i> + <i>b</i> for successive <i>x</i> values and plots the nearest pixel. This requires floating-point multiplication and addition per step, leaves gaps for steep lines (where |<i>m</i>| &gt; 1, unless the roles of <i>x</i> and <i>y</i> are swapped), and historically was too slow for interactive graphics.</p>
+<h2>Differential analysers and incremental methods</h2>
+<p>The digital differential analyser (DDA) algorithm generalises the evaluation by stepping along the longer axis and accumulating the fractional increment along the shorter one, replacing multiplication with a single addition per pixel. It still uses floating-point arithmetic and rounding.</p>
+<h2>Bresenham's line algorithm</h2>
+<p><a href="../Bresenham's_line_algorithm/index.html">Bresenham's line algorithm</a>, developed by Jack Elton Bresenham in 1962 at IBM, is the classic rasterisation method. Using only integer addition, subtraction, and bit shifting, it maintains an error term representing the deviation between the pixel centre and the true line, choosing at each step the pixel that keeps the error smallest. Its speed and simplicity made it a standard in graphics hardware, plotters, and libraries for decades, and it generalises to circles and other conic sections (the midpoint algorithms).</p>
+<h2>Anti-aliased lines</h2>
+<p>Simple rasterisation produces visible "jaggies". Xiaolin Wu's line algorithm (1991) draws each endpoint precisely and shades pairs of pixels straddling the line in proportion to coverage, producing smooth anti-aliased lines at modest cost. The Gupta–Sproull algorithm achieves anti-aliasing by computing each pixel's exact distance to the ideal line. Modern GPUs rasterise lines and triangles in hardware using related edge-function methods.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Bresenham's_line_algorithm/index.html">Bresenham's line algorithm</a></li>
+<li><a href="../Digital_differential_analyzer_(graphics_algorithm)/index.html">Digital differential analyzer (graphics algorithm)</a></li>
+<li><a href="../Xiaolin_Wu's_line_algorithm/index.html">Xiaolin Wu's line algorithm</a></li>
+<li><a href="../Rasterisation/index.html">Rasterisation</a></li>
+<li><a href="../Midpoint_circle_algorithm/index.html">Midpoint circle algorithm</a></li>
+</ul>
+</div>
+</body>
+</html>

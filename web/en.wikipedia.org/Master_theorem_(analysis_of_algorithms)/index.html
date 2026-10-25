@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Master theorem (analysis of algorithms)</title>
+<style>
+body{font-family:Georgia,serif;margin:40px auto;max-width:820px;padding:0 20px;line-height:1.6;color:#222}
+h1{border-bottom:2px solid #888;padding-bottom:6px}
+h2{border-bottom:1px solid #ccc;padding-bottom:4px;margin-top:28px}
+.hero{background:#eee;text-align:center;padding:20px;border:1px solid #ccc}
+a{color:#0645ad}
+.formula{background:#f9f9f9;border:1px solid #ddd;padding:10px;text-align:center;font-family:'Times New Roman',serif}
+</style>
+</head>
+<body>
+<h1>Master theorem (analysis of algorithms)</h1>
+<div class="hero"><img src="images/Master_theorem.png" alt="Recursion tree illustrating a divide-and-conquer recurrence"></div>
+<p>In the analysis of algorithms, the <b>master theorem</b> provides a recipe for solving recurrence relations of the form that arise from divide-and-conquer algorithms:</p>
+<p class="formula">T(n) = aT(n/b) + f(n)</p>
+<p>where a ≥ 1 is the number of subproblems, n/b is the size of each subproblem (the input is divided into b parts), and f(n) is the cost of the work done outside the recursive calls. The theorem determines the asymptotic behaviour of T(n) by comparing f(n) with n<sup>log<sub>b</sub> a</sup>, the rate at which the number of leaves in the recursion tree grows.</p>
+<h2>The three cases</h2>
+<p><b>Case 1:</b> If f(n) = O(n<sup>log<sub>b</sub> a − ε</sup>) for some ε &gt; 0, then the leaves dominate and T(n) = Θ(n<sup>log<sub>b</sub> a</sup>). Example: T(n) = 4T(n/2) + n gives T(n) = Θ(n²).</p>
+<p><b>Case 2:</b> If f(n) = Θ(n<sup>log<sub>b</sub> a</sup> log<sup>k</sup> n) for some k ≥ 0, then every level of the tree costs about the same and T(n) = Θ(n<sup>log<sub>b</sub> a</sup> log<sup>k+1</sup> n). Example: merge sort, T(n) = 2T(n/2) + Θ(n), gives T(n) = Θ(n log n).</p>
+<p><b>Case 3:</b> If f(n) = Ω(n<sup>log<sub>b</sub> a + ε</sup>) for some ε &gt; 0, and f(n) satisfies the regularity condition a·f(n/b) ≤ c·f(n) for some c &lt; 1, then the root dominates and T(n) = Θ(f(n)). Example: T(n) = 2T(n/2) + n² gives T(n) = Θ(n²).</p>
+<h2>Applications and limits</h2>
+<p>The theorem applies directly to binary search, merge sort, Strassen's matrix multiplication (a = 7, b = 2, yielding roughly Θ(n<sup>2.81</sup>)) and many other recursive algorithms. It does not cover recurrences with unequal subproblem sizes or non-polynomial gaps between f(n) and n<sup>log<sub>b</sub> a</sup>; the more general Akra–Bazzi theorem handles many of those cases.</p>
+<h2>See also</h2>
+<p><a href="../Akra–Bazzi_method/index.html">Akra–Bazzi method</a> · <a href="../Divide-and-conquer_algorithm/index.html">Divide-and-conquer algorithm</a> · <a href="../Recurrence_relation/index.html">Recurrence relation</a> · <a href="../Big_O_notation/index.html">Big O notation</a></p>
+</body>
+</html>

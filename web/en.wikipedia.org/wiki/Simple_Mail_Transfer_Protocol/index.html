@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Simple Mail Transfer Protocol - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:760px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{font-size:1.35em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.2em}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1.2em;font-size:.9em;width:240px}a{color:#0645ad}</style></head>
+<body>
+<h1>Simple Mail Transfer Protocol</h1>
+<div class="infobox"><b>SMTP</b><br>Ports: 25 (relay), 587 (submission), 465 (implicit TLS)<br>Standard: RFC 5321 (2008)<br>Layer: Application</div>
+<img src="images/smtp.png" alt="Diagram of email flowing between SMTP servers and clients">
+<p>The <b>Simple Mail Transfer Protocol</b> (<b>SMTP</b>) is the standard Internet protocol for sending electronic mail. Mail servers and other message transfer agents use SMTP to send and relay messages, while mail clients typically retrieve mail with IMAP or POP3. SMTP was first defined in 1982 (RFC 821) by Jon Postel and is currently specified by RFC 5321.</p>
+<h2>Operation</h2>
+<p>SMTP is a text-based, connection-oriented protocol over TCP. A sending host opens a connection, greets the server with HELO or EHLO, and issues commands such as MAIL FROM, RCPT TO, and DATA, followed by the message headers and body, terminated by a line containing a single dot. Servers reply with three-digit status codes. Messages are typically relayed through several servers, each adding a Received header.</p>
+<h2>Extensions and security</h2>
+<p>Extended SMTP (ESMTP) allows servers to advertise optional features negotiated at EHLO, including STARTTLS encryption, authentication (SMTP AUTH), pipelining, and size limits. Port 587 is designated for authenticated message submission by clients, and port 465 for submission over implicit TLS. Because SMTP originally lacked sender authentication, adjunct standards — SPF, DKIM, and DMARC — were developed to combat spoofing and spam.</p>
+<h2>History</h2>
+<p>SMTP replaced earlier mail transfer methods on the ARPANET and became the backbone of Internet email in the 1980s. Despite predictions of its decline, it remains the universal mechanism for mail transport between organisations.</p>
+<h2>See also</h2>
+<p><a href="../Email/index.html">Email</a> &middot; IMAP &middot; POP3 &middot; DKIM</p>
+</body></html>

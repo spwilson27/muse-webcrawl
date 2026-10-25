@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>cpio - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:24px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+code{background:#f8f9fa;border:1px solid #eaecf0;padding:0 3px;font-family:monospace}
+.hero{display:block;margin:16px auto;max-width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:12px;text-align:center;color:#54595d}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:.9em}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>cpio</h1>
+<div class="infobox"><b>cpio</b><br>Original author: Dick Haight<br>Developer: AT&amp;T Bell Laboratories / GNU Project<br>Initial release: 1977 (as part of PWB/UNIX)<br>Written in: C<br>Operating system: Unix, Unix-like<br>Type: Command</div>
+<img class="hero" src="images/Cpio.png" alt="Terminal window showing a cpio archive being created">
+<p><b>cpio</b> is a general file archiver utility and its associated file format. It is primarily installed on Unix-like computer operating systems. The software has its origins in the original AT&amp;T Unix and was included in the Programmer's Workbench (PWB/UNIX). Like the <a href="../Tar_(computing)/index.html">tar</a> utility, cpio reads and writes archive files, but it copies files into and out of archives rather than simply combining them, which is reflected in its name: <i>copy in, copy out</i>.</p>
+<h2>History</h2>
+<p>cpio was created by Dick Haight at AT&amp;T and first appeared in PWB/UNIX in the late 1970s. It was later standardised as part of POSIX.1-1988, although POSIX later removed the format in favour of the pax format. A free implementation, GNU cpio, is maintained by the GNU Project.</p>
+<h2>Operation</h2>
+<p>Unlike tar, cpio does not take the list of files to archive from its command-line arguments; instead it reads the list of filenames from standard input. It operates in three main modes:</p>
+<ul>
+<li><b>Copy-out mode</b> (<code>-o</code>): reads a list of filenames from standard input and copies the files into an archive written to standard output.</li>
+<li><b>Copy-in mode</b> (<code>-i</code>): reads an archive from standard input and extracts the files into the current directory.</li>
+<li><b>Pass-through mode</b> (<code>-p</code>): copies a directory tree from one location to another without creating an archive.</li>
+</ul>
+<h2>Archive format</h2>
+<p>The cpio archive format stores each file preceded by a header containing metadata such as the filename, permissions, ownership and timestamps. Two header variants exist: the older binary format and the newer portable ASCII ("newc") format, the latter used by the Linux kernel's initramfs and by the RPM Package Manager.</p>
+<p class="small">See also: <a href="../Tar_(computing)/index.html">tar (computing)</a>, <a href="../Ar_(Unix)/index.html">ar (Unix)</a>, <a href="../Initramfs/index.html">initramfs</a>.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>IEEE 802.1Q - Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; color: #202122; background: #fff; }
+.mw-body { max-width: 960px; margin: 0 auto; padding: 20px 24px 48px; }
+h1 { font-size: 28px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 8px; }
+h2 { font-size: 22px; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 24px; }
+p, li { font-size: 15px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; background: #f8f9fa; border: 1px solid #a2a9b1; }
+.caption { font-size: 12px; color: #54595d; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 13px; margin: 0 0 12px 16px; border-collapse: collapse; }
+.infobox th, .infobox td { border: 1px solid #a2a9b1; padding: 4px 8px; text-align: left; }
+.infobox th { background: #eaecf0; }
+table.pretty { border-collapse: collapse; margin: 12px 0; }
+table.pretty th, table.pretty td { border: 1px solid #a2a9b1; padding: 4px 10px; font-size: 14px; }
+table.pretty th { background: #eaecf0; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>IEEE 802.1Q</h1>
+<p><b>IEEE 802.1Q</b>, often referred to as <b>Dot1q</b>, is the networking standard that supports virtual local area networking (VLANs) on an IEEE 802.3 Ethernet network. The standard defines a system of VLAN tagging for Ethernet frames and the accompanying procedures to be used by bridges and switches in handling such frames. The standard also contains provisions for a quality-of-service prioritization scheme commonly known as IEEE 802.1p, which was originally a separate standard (802.1p) later incorporated into 802.1Q.</p>
+<div class="hero">
+<img src="images/IEEE_802.1Q.png" alt="Diagram of an Ethernet frame with a four-byte 802.1Q tag inserted after the source address">
+<div class="caption">An 802.1Q-tagged Ethernet frame: the 4-byte tag sits between the source MAC address and the EtherType field.</div>
+</div>
+<table class="infobox">
+<tr><th colspan="2">IEEE 802.1Q</th></tr>
+<tr><th>First published</th><td>1998</td></tr>
+<tr><th>Organization</th><td>IEEE 802.1 working group</td></tr>
+<tr><th>Purpose</th><td>VLAN tagging, traffic prioritization</td></tr>
+<tr><th>Tag size</th><td>4 bytes</td></tr>
+</table>
+<h2>Frame format</h2>
+<p>802.1Q adds a 32-bit field between the source MAC address and the EtherType field of the original frame. Two bytes are used for the tag protocol identifier (TPID), fixed at 0x8100, and two bytes for tag control information (TCI):</p>
+<table class="pretty">
+<tr><th>Field</th><th>Bits</th><th>Description</th></tr>
+<tr><td>Priority Code Point (PCP)</td><td>3</td><td>Priority from 0 (best effort) to 7 (highest)</td></tr>
+<tr><td>Drop Eligible Indicator (DEI)</td><td>1</td><td>Frame may be dropped under congestion (formerly CFI)</td></tr>
+<tr><td>VLAN Identifier (VID)</td><td>12</td><td>Identifies the VLAN; 0 and 4095 reserved, giving 4094 usable VLANs</td></tr>
+</table>
+<p>Because the tag changes the frame, the frame check sequence (FCS) is recalculated. Insertion of the tag raises the maximum frame size from 1518 to 1522 bytes, sometimes called a "baby giant" frame.</p>
+<h2>VLANs and trunking</h2>
+<p>By assigning switch ports to VLANs, a single physical network can be partitioned into multiple broadcast domains, separating departments, tenants or classes of traffic for security and manageability. Links carrying multiple VLANs between switches are called trunks; the native VLAN on a trunk is sent untagged. Switches learn which VLANs are needed on each trunk through protocols such as GVRP or MVRP, also defined within 802.1Q. Each VLAN typically corresponds to a separate <a href="../IP_address/index.html">IP</a> subnet.</p>
+<h2>Double tagging and related standards</h2>
+<p>Provider bridging (802.1ad, "QinQ") stacks a second, service-provider tag around the customer tag, enabling providers to carry many customer VLANs independently. Amendments to 802.1Q have also incorporated Shortest Path Bridging (802.1aq), time-sensitive networking features (802.1Qbv and others), and the Multiple Spanning Tree Protocol. The standard sits alongside the <a href="../IEEE_802.11/index.html">IEEE 802.11</a> wireless standards in the broader IEEE 802 family.</p>
+</div>
+</body>
+</html>

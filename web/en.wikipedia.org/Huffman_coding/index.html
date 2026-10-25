@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Huffman coding</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#fff;color:#202122;margin:0 auto;max-width:960px;padding:24px;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:6px;margin-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+img.hero{display:block;margin:16px auto;max-width:640px;width:100%;border:1px solid #c8ccd1;background:#f8f9fa}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Huffman coding</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/huffman-coding.png" alt="A Huffman tree built from symbol frequencies">
+<p><b>Huffman coding</b> is an algorithm for lossless data compression that assigns variable-length prefix codes to symbols according to their frequencies: frequent symbols receive short codewords and rare symbols receive longer ones. It was published by David A. Huffman in his 1952 paper &ldquo;A Method for the Construction of Minimum-Redundancy Codes&rdquo;, written while he was a graduate student at MIT.</p>
+<h2>Algorithm</h2>
+<p>The algorithm builds a binary tree from the bottom up. Each symbol starts as a leaf weighted by its frequency (or probability). The two nodes of lowest weight are repeatedly combined into a new internal node whose weight is their sum, until a single tree remains. Labelling each branch 0 or 1 gives each symbol a codeword read from root to leaf. Because no codeword is a prefix of another, the bit stream can be decoded unambiguously. Huffman&rsquo;s method yields an optimal prefix code &mdash; no other prefix code gives a shorter average length for the same frequencies.</p>
+<h2>Uses</h2>
+<p>Huffman coding is a component of many compression formats, including DEFLATE (used in ZIP, gzip and PNG), JPEG and MP3. Variants include canonical Huffman codes, which simplify codebook storage, and adaptive Huffman coding, which updates the tree as data is processed. In modern systems it is often combined with dictionary methods such as LZ77 or with arithmetic coding for still better compression.</p>
+</body>
+</html>

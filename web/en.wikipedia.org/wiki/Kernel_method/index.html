@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kernel method - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:2em auto;max-width:760px;line-height:1.6;color:#202122;padding:0 1em}
+h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em;margin:0 0 1em 1em;font-size:0.85em;width:250px}
+.infobox th{text-align:left;padding-right:0.5em}
+figure{margin:1em 0;text-align:center}
+figcaption{font-size:0.85em;color:#54595d}
+.math{font-style:italic;font-family:'Times New Roman',serif}
+</style>
+</head>
+<body>
+<h1>Kernel method</h1>
+<figure>
+<img src="images/kernel-method.png" alt="Data mapped by a kernel into a higher-dimensional space where it becomes linearly separable">
+<figcaption>The kernel trick: mapping data into a higher-dimensional feature space where a linear separator can be found.</figcaption>
+</figure>
+<p>In machine learning, <b>kernel methods</b> are a class of algorithms for pattern analysis, whose best-known member is the support vector machine (SVM). Kernel methods map input data into a higher-dimensional feature space via a (usually nonlinear) function, where linear algorithms can then find patterns such as decision boundaries, while computations are carried out efficiently in the original space through a <b>kernel function</b> that evaluates inner products in the feature space. This device is known as the <b>kernel trick</b>.</p>
+<h2>The kernel trick</h2>
+<p>Many learning algorithms require only inner products between pairs of input points. If the data are mapped by some function <span class="math">φ(x)</span> into a feature space, the algorithm needs <span class="math">⟨φ(x), φ(x′)⟩</span>. A kernel function <span class="math">k(x, x′) = ⟨φ(x), φ(x′)⟩</span> computes this inner product directly, without evaluating or even specifying <span class="math">φ</span> explicitly. The feature space may be extremely high-dimensional — for some kernels, infinite-dimensional — yet the computation remains cheap.</p>
+<h2>Valid kernels</h2>
+<p>By Mercer's theorem, a symmetric function <span class="math">k</span> corresponds to an inner product in some reproducing kernel Hilbert space if and only if it is positive semi-definite: every finite Gram matrix formed from it is positive semi-definite.</p>
+<h2>Common kernels</h2>
+<ul>
+<li><b>Linear:</b> <span class="math">k(x, x′) = ⟨x, x′⟩</span></li>
+<li><b>Polynomial:</b> <span class="math">k(x, x′) = (γ⟨x, x′⟩ + r)<sup>d</sup></span></li>
+<li><b>Gaussian / radial basis function (RBF):</b> <span class="math">k(x, x′) = exp(−γ‖x − x′‖²)</span>, corresponding to an infinite-dimensional feature space</li>
+<li><b>Laplacian, sigmoid, and string/graph kernels</b> for structured data</li>
+</ul>
+<h2>Applications</h2>
+<p>Kernel methods underlie support vector machines for classification and regression, kernel principal component analysis, kernel ridge regression, Gaussian processes, kernel Fisher discriminant analysis, and spectral clustering. Their popularity peaked in the 1990s and 2000s before deep learning became dominant, but they remain important for small and medium data sets, structured inputs (text, graphs, sequences), and theory, including connections to neural networks through the neural tangent kernel.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Support_vector_machine/index.html">Support vector machine</a></li>
+<li><a href="../Reproducing_kernel_Hilbert_space/index.html">Reproducing kernel Hilbert space</a></li>
+<li><a href="../Kernel_principal_component_analysis/index.html">Kernel principal component analysis</a></li>
+<li><a href="../Gaussian_process/index.html">Gaussian process</a></li>
+<li><a href="../Mercer%27s_theorem/index.html">Mercer's theorem</a></li>
+</ul>
+</body>
+</html>

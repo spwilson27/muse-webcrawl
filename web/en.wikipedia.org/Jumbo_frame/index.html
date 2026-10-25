@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Jumbo frame - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}h2{border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.4em}img.hero{width:100%;max-height:340px;object-fit:cover;background:#eaecf0}.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:.9em}a{color:#0645ad}</style>
+</head>
+<body>
+<img class="hero" src="images/jumbo-frame.png" alt="Diagram comparing a standard Ethernet frame with a jumbo frame">
+<h1>Jumbo frame</h1>
+<div class="infobox"><b>Jumbo frame</b><br>Standard Ethernet payload: 1,500 bytes<br>Typical jumbo payload: 9,000 bytes<br>Used in: Data centers, storage networks, high-performance computing</div>
+<p>In computer networking, a <b>jumbo frame</b> is an <a href="../Ethernet_frame/index.html">Ethernet frame</a> with a payload larger than the standard maximum transmission unit (MTU) of 1,500 bytes. Jumbo frames commonly carry up to 9,000 bytes of payload, although there is no single universally standardized size; sizes up to about 9,216 bytes are typical of vendor implementations.</p>
+<h2>Rationale</h2>
+<p>Every frame carries fixed per-packet overhead — headers, inter-frame gaps, and host processing for interrupts and protocol handling. Increasing the payload size amortizes that overhead over more data, improving throughput and reducing CPU utilization, particularly for bulk transfers such as backups, storage traffic, and virtual-machine migration. The trade-off is slightly higher latency per frame and a greater cost when a corrupted frame must be retransmitted.</p>
+<h2>Deployment</h2>
+<p>Because jumbo frames are not part of the original IEEE 802.3 standard, all devices on a network segment — hosts, switches, and routers — must be configured consistently; a mismatch causes frames to be dropped or fragmented. For this reason jumbo frames are usually confined to controlled environments such as data-center fabrics, iSCSI and Fibre Channel over Ethernet storage networks, and supercomputing clusters, rather than the public Internet, where the path MTU is generally 1,500 bytes or less.</p>
+<h2>Related concepts</h2>
+<p>Even larger "super jumbo frames" exceeding 9,000 bytes have been proposed for specialized links. Alternative approaches to the same overhead problem include TCP segmentation offload and large receive offload, which let host operating systems handle large buffers while the network itself keeps standard frame sizes.</p>
+</body>
+</html>

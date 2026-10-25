@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Maximum transmission unit - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a7d7f9; padding-bottom: 0.2em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #c8ccd1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 0.85em; margin: 0 0 1em 1em; padding: 0.5em; }
+.infobox th { text-align: left; padding: 2px 6px; }
+.infobox td { padding: 2px 6px; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 100%; background: #eaecf0; padding: 2em 1em; border: 1px solid #c8ccd1; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Maximum transmission unit</h1>
+<table class="infobox">
+<tr><th>Ethernet (standard)</th><td>1,500 bytes</td></tr>
+<tr><th>Ethernet jumbo frames</th><td>up to ~9,000 bytes</td></tr>
+<tr><th>IPv4 minimum</th><td>68 bytes (host must accept 576)</td></tr>
+<tr><th>IPv6 minimum</th><td>1,280 bytes</td></tr>
+</table>
+<div class="hero"><img src="images/maximum-transmission-unit.png" alt="Diagram of a network frame showing payload size limits"></div>
+<p>In computer networking, the <b>maximum transmission unit</b> (<b>MTU</b>) is the size of the largest protocol data unit that can be communicated in a single network layer transaction. The MTU is a property of a communications link and is related to, but distinct from, the maximum frame size of the underlying data link layer.</p>
+<h2>Significance</h2>
+<p>Larger MTUs allow more data to be sent in each packet relative to protocol header overhead, improving efficiency and throughput. However, large packets occupy a link for longer and, if lost, cost more to retransmit. Packets larger than the MTU of a link must be split by <b>fragmentation</b> (in IPv4) or dropped with an error message so that the sender can perform path MTU discovery — a common source of problems when ICMP messages are blocked by firewalls, producing "black hole" connections.</p>
+<h2>Typical values</h2>
+<p>Standard Ethernet uses an MTU of 1,500 bytes; many data-centre and campus networks support jumbo frames of about 9,000 bytes. Point-to-point links over PPPoE commonly use 1,492 bytes, and tunnels and VPNs reduce the effective MTU further, which is why TCP implementations clamp the maximum segment size (MSS) on such connections. IPv6 requires every link to support an MTU of at least 1,280 bytes and forbids fragmentation by routers.</p>
+<h2>Path MTU discovery</h2>
+<p>Hosts determine the smallest MTU along a path either by probing with the IPv4 "Don't Fragment" flag and processing ICMP "Fragmentation Needed" replies, or by packetization-layer probing (RFC 4821), which is more robust against filtered ICMP.</p>
+</div>
+</body>
+</html>

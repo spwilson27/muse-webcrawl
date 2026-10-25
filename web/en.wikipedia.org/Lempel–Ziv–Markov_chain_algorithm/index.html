@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lempel–Ziv–Markov chain algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122;}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;box-sizing:border-box;}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em;}
+img.hero{width:100%;max-height:320px;object-fit:cover;background:#eaecf0;}
+a{color:#0645ad;text-decoration:none;}a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Lempel–Ziv–Markov chain algorithm</h1>
+<img class="hero" src="images/lzma.png" alt="Diagram of dictionary matching and range coding in LZMA compression">
+<p>The <b>Lempel&ndash;Ziv&ndash;Markov chain algorithm</b> (<b>LZMA</b>) is a lossless data compression algorithm developed by Igor Pavlov and released in 1998&ndash;99 as part of the 7-Zip file archiver. It combines a large-window dictionary coder based on LZ77 with a range encoder driven by context models organised as Markov chains, achieving compression ratios typically better than bzip2 and the DEFLATE algorithm used in gzip and ZIP, at the cost of slower compression speed.</p>
+<h2>How it works</h2>
+<p>LZMA analyses the input as a sequence of literals and matches (length&ndash;distance pairs referring back to earlier data in a sliding dictionary of up to 4 GB). Each symbol is encoded by an adaptive binary range coder whose probability estimates are selected by context: the state of the match finder, the position in the stream, and the values of recently encoded bytes. This context modelling, which treats the recent history as a Markov state, is the source of the algorithm's name and much of its efficiency. Decompression is comparatively fast and requires modest memory, an asymmetry suited to software distribution and firmware.</p>
+<h2>Formats and uses</h2>
+<p>LZMA is the default and strongest compression method of the .7z format. Its successor, LZMA2, adds support for parallel compression and better handling of incompressible data, and is the basis of the .xz format widely used for distributing Linux kernel sources and packages. LZMA is also used in the Windows Imaging Format, in installers, in ROM and BIOS images, and in the Python (<i>lzma</i> module) and Java standard ecosystems.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../LZ77_and_LZ78/index.html">LZ77 and LZ78</a></li>
+<li><a href="../7z/index.html">7z</a></li>
+<li><a href="../Xz/index.html">xz</a></li>
+<li><a href="../Data_compression/index.html">Data compression</a></li>
+</ul>
+</div>
+</body>
+</html>
