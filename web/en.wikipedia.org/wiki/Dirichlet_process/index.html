@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dirichlet process - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:2em auto;max-width:760px;padding:0 1em;color:#202122;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.4em}
+.hero{display:block;margin:1em auto;max-width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:.5em;text-align:center;font-style:italic;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.math{font-style:italic}
+</style>
+</head>
+<body>
+<h1>Dirichlet process</h1>
+<span class="hero"><img src="images/Dirichlet_process.png" alt="Sample random measures drawn from a Dirichlet process at several concentration parameters"></span>
+<p>In probability theory, <b>Dirichlet processes</b> (after Peter Gustav Lejeune Dirichlet) are a family of stochastic processes whose realizations are probability distributions. In other words, a Dirichlet process is a probability distribution whose range is itself a set of probability distributions. It is often used in Bayesian inference to describe prior knowledge about the distribution of random variables — how likely it is that random variables are drawn from one distribution or another.</p>
+<h2>Definition</h2>
+<p>A Dirichlet process is specified by a base distribution <span class="math">H</span> and a positive real number <span class="math">α</span> called the concentration parameter. A random probability measure <span class="math">G</span> is distributed according to the Dirichlet process, written <span class="math">G ~ DP(α, H)</span>, if for every finite measurable partition of the sample space, the vector of probabilities assigned to the parts follows a <a href="../Dirichlet_distribution/index.html">Dirichlet distribution</a> with parameters given by <span class="math">α</span> times the base measure of each part.</p>
+<h2>Properties</h2>
+<p>Draws from a Dirichlet process are discrete probability distributions with probability one, even if the base distribution is continuous. This discreteness is what makes the Dirichlet process useful for clustering: repeated samples from a single draw <span class="math">G</span> can coincide, naturally grouping observations into clusters. The concentration parameter <span class="math">α</span> controls how strongly draws resemble the base distribution: larger <span class="math">α</span> gives draws closer to <span class="math">H</span> and more distinct values among samples.</p>
+<h2>Representations</h2>
+<p>Two constructive representations are widely used:</p>
+<ul>
+<li>The <b>stick-breaking process</b>, in which the weights of the atoms of <span class="math">G</span> are formed by repeatedly breaking fractions off a unit-length stick according to a beta distribution.</li>
+<li>The <b>Chinese restaurant process</b>, which describes the clustering of a sequence of samples marginally, without explicitly constructing <span class="math">G</span>: customers entering a restaurant sit at occupied tables with probability proportional to their occupancy, and at a new table with probability proportional to <span class="math">α</span>.</li>
+</ul>
+<h2>Applications</h2>
+<p>The Dirichlet process is the foundation of Dirichlet process mixture models, which allow mixture models with a potentially infinite number of components, and it plays a central role in Bayesian nonparametric statistics more generally. Extensions include the hierarchical Dirichlet process, used for sharing clusters across related groups of data, as in topic modeling.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Bayesian_nonparametric_statistics/index.html">Bayesian nonparametric statistics</a></li>
+<li><a href="../Chinese_restaurant_process/index.html">Chinese restaurant process</a></li>
+<li><a href="../Pitman%E2%80%93Yor_process/index.html">Pitman–Yor process</a></li>
+</ul>
+</body>
+</html>

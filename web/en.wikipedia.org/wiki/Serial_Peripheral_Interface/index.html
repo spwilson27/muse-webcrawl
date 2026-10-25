@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Serial Peripheral Interface - Wikipedia</title>
+<style>
+body{font-family:sans-serif;background:#f8f9fa;color:#202122;margin:0;padding:0 20px;}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:20px 30px;border:1px solid #a7d7f9;}
+h1{font-family:"Linux Libertine",Georgia,serif;font-size:1.9em;border-bottom:1px solid #a2a9b1;}
+h2{font-family:"Linux Libertine",Georgia,serif;border-bottom:1px solid #a2a9b1;font-size:1.4em;}
+a{color:#0645ad;text-decoration:none;}
+a:hover{text-decoration:underline;}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;margin:10px 0;font-size:0.88em;}
+.thumb img{width:100%;}
+table.wikitable{border-collapse:collapse;margin:12px 0;}
+table.wikitable th,table.wikitable td{border:1px solid #a2a9b1;padding:4px 10px;}
+table.wikitable th{background:#eaecf0;}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Serial Peripheral Interface</h1>
+<p>The <b>Serial Peripheral Interface</b> (<b>SPI</b>) is a synchronous <a href="../../wiki/Serial_communication/index.html">serial communication</a> interface specification used for short-distance communication, primarily in <a href="../../wiki/Embedded_system/index.html">embedded systems</a>. The interface was developed by <a href="../../wiki/Motorola/index.html">Motorola</a> in the mid-1980s and has become a de facto standard.</p>
+<div class="thumb"><img src="images/spi-bus.png" alt="Diagram of an SPI bus with one controller and three peripheral devices"></div>
+<h2>Operation</h2>
+<p>SPI devices communicate in full duplex mode using a controller–peripheral architecture (historically termed master–slave). The controller generates the clock and selects individual peripheral devices using dedicated select lines. A typical SPI bus uses four logic signals:</p>
+<table class="wikitable">
+<tr><th>Signal</th><th>Description</th></tr>
+<tr><td>SCLK</td><td>Serial clock, output from the controller</td></tr>
+<tr><td>MOSI</td><td>Controller out, peripheral in (data from controller)</td></tr>
+<tr><td>MISO</td><td>Controller in, peripheral out (data to controller)</td></tr>
+<tr><td>CS / SS</td><td>Chip select, active-low signal from the controller to select a peripheral</td></tr>
+</table>
+<p>During each clock cycle, the controller and each peripheral exchange one bit of data through shift registers. Data is usually shifted out with the most significant bit first. Because there is no formal standard, four clock polarity/phase combinations (modes 0–3, defined by CPOL and CPHA) are in common use, and devices must be configured to match.</p>
+<h2>Advantages and disadvantages</h2>
+<p>SPI offers high throughput, simple hardware interfacing and full-duplex operation, and peripherals require no unique addresses. Unlike <a href="../../wiki/I%C2%B2C/index.html">I²C</a>, however, it has no acknowledgment mechanism, no flow control, and requires a separate chip-select line for each peripheral, consuming more pins. It also has no error checking built into the basic protocol.</p>
+<h2>Applications</h2>
+<p>SPI is widely used to connect microcontrollers to sensors, analog-to-digital and digital-to-analog converters, flash memory (including SD cards in SPI mode), display controllers and radio transceivers.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../wiki/I%C2%B2C/index.html">I²C</a></li>
+<li><a href="../../wiki/Universal_asynchronous_receiver-transmitter/index.html">UART</a></li>
+<li><a href="../../wiki/Serial_communication/index.html">Serial communication</a></li>
+</ul>
+</div>
+</body>
+</html>

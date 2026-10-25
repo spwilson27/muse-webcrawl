@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kernel principal component analysis - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 20px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.figure { text-align: center; margin: 12px 0; }
+.figure img { width: 100%; height: 160px; background: #ddd; border: 1px solid #bbb; }
+.caption { font-size: 12px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Kernel principal component analysis</h1>
+<div class="figure"><img src="images/kernel-pca.png" alt="Diagram of data separable in a projected feature space using kernel PCA"><div class="caption">Kernel PCA can extract nonlinear structure from data</div></div>
+<p>In the field of multivariate statistics, <b>kernel principal component analysis (kernel PCA)</b> is an extension of <a href="../Principal_component_analysis/index.html">principal component analysis</a> (PCA) using techniques of kernel methods. Using a kernel, the originally linear operations of PCA are performed in a reproducing kernel Hilbert space, allowing the method to extract nonlinear features from the data.</p>
+<h2>Background</h2>
+<p>PCA finds orthogonal directions of maximum variance in the data, but can only capture linear relationships. Kernel PCA, introduced by Schölkopf, Smola, and Müller in 1998, works by implicitly mapping data into a higher-dimensional feature space via a kernel function — the same "kernel trick" used in <a href="../Support_vector_machine/index.html">support vector machines</a> — and then performing ordinary PCA there, using only inner products expressed through the kernel matrix.</p>
+<h2>Method</h2>
+<p>Given data points and a positive-definite kernel, one forms the centred Gram (kernel) matrix and computes its eigenvalues and eigenvectors. The principal components of a data point in feature space are obtained from the eigenvectors of the kernel matrix, without ever computing the feature map explicitly. Common kernel choices include the Gaussian (RBF) kernel and polynomial kernels; selecting the kernel and its parameters strongly affects the result.</p>
+<h2>Applications</h2>
+<p>Kernel PCA is used for nonlinear dimensionality reduction, feature extraction, denoising and novelty detection, and as a preprocessing step in machine learning pipelines.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Kernel_method/index.html">Kernel method</a></li>
+<li><a href="../Dimensionality_reduction/index.html">Dimensionality reduction</a></li>
+<li><a href="../Multidimensional_scaling/index.html">Multidimensional scaling</a></li>
+</ul>
+</div>
+</body>
+</html>

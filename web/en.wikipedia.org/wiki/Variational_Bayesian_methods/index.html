@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Variational Bayesian methods - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#f8f9fa;color:#202122;margin:0;padding:0}
+.container{max-width:960px;margin:0 auto;background:#fff;padding:24px 36px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-size:28px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-size:21px;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+code{background:#f8f9fa;font-size:14px}
+.hero{text-align:center;margin:20px 0}
+.hero img{max-width:420px;width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:12px;box-sizing:border-box}
+.caption{font-size:12px;color:#54595d;margin-top:6px;text-align:center}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Variational Bayesian methods</h1>
+<p><strong>Variational Bayesian methods</strong> are a family of techniques for approximating intractable integrals arising in Bayesian inference and machine learning. Rather than sampling from the true posterior distribution, as in Markov chain Monte Carlo, variational methods posit a tractable family of distributions and find the member of that family closest to the true posterior, turning inference into an optimization problem.</p>
+<div class="hero"><img src="images/Variational_Bayesian_methods.png" alt="Diagram comparing a true posterior distribution with its variational approximation"></div>
+<p class="caption">Variational inference approximates a complex posterior with a simpler, tractable distribution.</p>
+<h2>Mathematical formulation</h2>
+<p>Given observed data X and latent variables Z, Bayesian inference requires the posterior p(Z|X) = p(X,Z)/p(X), where the marginal likelihood p(X) is usually intractable. Variational inference introduces an approximate distribution q(Z) and minimizes the Kullback–Leibler divergence KL(q‖p) between q and the true posterior. Because the marginal likelihood is constant, this is equivalent to maximizing the <em>evidence lower bound</em> (ELBO): log p(X) ≥ E<sub>q</sub>[log p(X,Z)] − E<sub>q</sub>[log q(Z)]. The first term rewards fitting the data; the second, an entropy term, keeps q spread out.</p>
+<h2>Mean-field approximation</h2>
+<p>The most common variant assumes that q factorizes over groups of latent variables, q(Z) = Π q<sub>j</sub>(Z<sub>j</sub>) — the so-called mean-field assumption. Under this assumption, the optimal factor for each group can be computed in turn while holding the others fixed, giving a coordinate-ascent algorithm (coordinate ascent variational inference, CAVI) that monotonically increases the ELBO. For models in the conjugate exponential family, the updates have closed forms.</p>
+<h2>Stochastic variational inference</h2>
+<p>To scale to large datasets, stochastic variational inference (SVI) uses noisy gradients of the ELBO computed from minibatches, combined with Robbins–Monro step sizes. Later developments — reparameterization gradients, black-box variational inference, and automatic differentiation variational inference (ADVI) — extended the approach to a wide range of differentiable models, and underpin the variational autoencoder (VAE), in which the inference model is an amortized neural network.</p>
+<h2>Properties and limitations</h2>
+<p>Variational methods are typically much faster than MCMC and scale to millions of data points, but they introduce bias: mean-field approximations cannot capture posterior correlations and tend to underestimate posterior variance. The optimization may also converge to local optima, so multiple restarts and careful initialization are often used in practice.</p>
+</div>
+</body>
+</html>

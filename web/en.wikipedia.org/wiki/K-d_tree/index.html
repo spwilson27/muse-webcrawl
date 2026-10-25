@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>K-d tree - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; background: #f8f9fa; color: #202122; margin: 0; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 28px; }
+p, li { font-size: 15px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; max-width: 480px; width: 100%; margin: 12px auto; border: 1px solid #c8ccd1; background: #eaecf0; min-height: 120px; }
+.small { font-size: 12px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>K-d tree</h1>
+<p>In computer science, a <b>k-d tree</b> (short for k-dimensional tree) is a space-partitioning data structure for organizing points in a k-dimensional space. It is a binary tree in which every leaf node is a k-dimensional point, and every non-leaf node defines a splitting hyperplane that divides the space into two parts, known as half-spaces. K-d trees were introduced by Jon Bentley in 1975.</p>
+<img class="hero" src="images/K-d_tree.png" alt="A three-dimensional k-d tree splitting space into nested boxes">
+<h2>Construction</h2>
+<p>Construction of a balanced k-d tree from a set of points proceeds recursively: at each level, choose a splitting dimension — often by cycling through the dimensions or by selecting the one with greatest spread — and pick the median point along that dimension as the node. Points with smaller coordinates in the splitting dimension go to the left subtree, and the rest to the right subtree. Using a linear-time median selection, the whole structure can be built in O(n log n) time. The result is a binary search tree generalised to multiple dimensions, in which every node implicitly represents an axis-aligned region (cell) of space.</p>
+<h2>Operations</h2>
+<p>The most important operation is <b>nearest neighbour search</b>: given a query point, traverse the tree to find the leaf region containing it, keep the best candidate point found, and then backtrack, pruning any subtree whose region cannot contain a closer point. In low dimensions this runs in roughly logarithmic time on average, which makes k-d trees a popular choice for nearest-neighbour classification and clustering. Range searches, orthogonal range reporting, and approximate nearest-neighbour queries are also supported.</p>
+<h2>Limitations</h2>
+<p>K-d trees suffer from the curse of dimensionality: as the number of dimensions grows (roughly beyond 20–30), nearest-neighbour search may have to visit nearly all points, and alternative methods such as ball trees, locality-sensitive hashing, or graph-based approximate search become preferable. Insertions and deletions can also unbalance the tree, so implementations often rebuild it periodically or use relaxed variants.</p>
+<h2>Applications</h2>
+<p>K-d trees are used in computer graphics (ray tracing acceleration with photon mapping), robotics and motion planning, geographic information systems, machine learning (for example the scikit-learn implementations of nearest-neighbour algorithms), computer vision for feature matching, and databases for multidimensional indexing.</p>
+<p class="small">See also: <a href="../Nearest_neighbor_search/index.html">Nearest neighbor search</a> · <a href="../Ball_tree/index.html">Ball tree</a> · <a href="../Octree/index.html">Octree</a></p>
+</div>
+</body>
+</html>

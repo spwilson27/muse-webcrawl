@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>FLP impossibility - Wikipedia</title>
+<style>
+body{font-family:sans-serif;line-height:1.6;margin:2em auto;max-width:860px;padding:0 1em;color:#202122}
+h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{border-bottom:1px solid #a2a9b1}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.9em;width:250px}
+.hero{display:block;width:100%;background:#eaf3ff;border:1px dashed #72777d;color:#54595d;text-align:center;padding:2em 0;margin-bottom:.6em}
+a{color:#0645ad;text-decoration:none}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="infobox">
+<span class="hero"><img src="images/flp-impossibility.png" alt="Placeholder image representing the FLP impossibility result"></span>
+<b>FLP impossibility</b><br>
+Authors: Michael J. Fischer, Nancy Lynch, Michael S. Paterson<br>
+Paper: "Impossibility of Distributed Consensus with One Faulty Process" (JACM, 1985)<br>
+Result: No deterministic asynchronous consensus protocol tolerates even one crash failure
+</div>
+<h1>FLP impossibility</h1>
+<p>The <b>FLP impossibility</b> result, named for Michael J. <b>F</b>ischer, Nancy <b>L</b>ynch and Michael S. <b>P</b>aterson, is a landmark theorem in <a href="../Distributed_computing/index.html">distributed computing</a>. Published in the <i>Journal of the ACM</i> in 1985, it proves that in a fully asynchronous message-passing system, no deterministic protocol can guarantee consensus — agreement by all non-faulty processes on a common value — if even a single process may crash.</p>
+<h2>Statement and proof idea</h2>
+<p>Asynchrony means there is no bound on message delay or processing speed, so a slow process is indistinguishable from a crashed one. The proof shows that from a "bivalent" initial configuration — one from which both decisions 0 and 1 remain reachable — an adversarial scheduler can always delay the decisive message and steer the system to another bivalent configuration, indefinitely postponing decision while keeping every finite execution admissible.</p>
+<h2>Implications</h2>
+<p>The result does not make practical consensus impossible; instead it delineates what extra assumptions are needed. Real systems such as <a href="../Paxos_(computer_science)/index.html">Paxos</a> and Raft use timing assumptions and failure detectors for liveness (safety is preserved regardless), and other approaches use randomization or partial synchrony. The paper received the Dijkstra Prize in 2001 and is among the most cited works in distributed algorithms.</p>
+<p class="small">See also: <a href="../Consensus_(computer_science)/index.html">Consensus (computer science)</a>, <a href="../Byzantine_fault/index.html">Byzantine fault</a></p>
+</body>
+</html>

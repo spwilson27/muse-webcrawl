@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vector error correction model - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#f8f9fa;color:#202122;margin:0;padding:0}
+.container{max-width:960px;margin:0 auto;background:#fff;padding:24px 36px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-size:28px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-size:21px;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+.hero{text-align:center;margin:20px 0}
+.hero img{max-width:420px;width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:12px;box-sizing:border-box}
+.caption{font-size:12px;color:#54595d;margin-top:6px;text-align:center}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Vector error correction model</h1>
+<p>A <strong>vector error correction model</strong> (<strong>VECM</strong>) is a multivariate time series model used in econometrics when the variables are non-stationary but cointegrated — that is, some linear combination of them is stationary. The VECM is a restricted form of a vector autoregression (VAR) that builds the long-run equilibrium relationships between the variables directly into the dynamics of the system.</p>
+<div class="hero"><img src="images/Vector_error_correction_model.png" alt="Two cointegrated time series drifting together around a shared trend"></div>
+<p class="caption">Cointegrated series move together in the long run despite wandering individually.</p>
+<h2>Background</h2>
+<p>If two series are each integrated of order one, I(1), regressing one on the other can yield spurious results unless they are cointegrated. The Granger representation theorem, developed by Clive Granger and Robert Engle, shows that cointegrated variables can always be represented by an error correction model, and vice versa. Sargan had earlier introduced error correction in a single-equation setting, and Hendry popularised it.</p>
+<h2>Specification</h2>
+<p>For a vector y<sub>t</sub> of n I(1) variables, the VECM takes the form Δy<sub>t</sub> = Π y<sub>t−1</sub> + Σ Γ<sub>i</sub> Δy<sub>t−i</sub> + ε<sub>t</sub>. The matrix Π captures the long-run relationships and can be decomposed as Π = αβ′, where β contains the cointegrating vectors (the equilibrium relationships β′y that are stationary) and α contains the adjustment (loading) coefficients measuring how fast each variable responds to last period's disequilibrium. The rank r of Π is the number of independent cointegrating relationships, with 0 &lt; r &lt; n in the interesting case.</p>
+<h2>Estimation</h2>
+<p>The standard estimation procedure is that of Søren Johansen, which uses maximum likelihood based on canonical correlations to determine the cointegration rank (tested with trace and maximum-eigenvalue statistics) and to estimate α and β. A two-step alternative, the Engle–Granger method, estimates the long-run relation by static regression first; it is simpler but less efficient in systems with multiple cointegrating vectors.</p>
+<h2>Applications</h2>
+<p>VECMs are widely used in macroeconomics and finance to model systems such as money demand, purchasing power parity, the term structure of interest rates, and price discovery between linked markets — wherever theory predicts a long-run equilibrium but short-run dynamics are flexible.</p>
+</div>
+</body>
+</html>

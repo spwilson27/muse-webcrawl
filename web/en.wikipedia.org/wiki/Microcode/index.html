@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Microcode - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+main{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+p{line-height:1.6;font-size:15px}
+img.hero{max-width:320px;display:block;margin:12px 0;border:1px solid #c8ccd1;background:#eaecf0;padding:8px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.refs{font-size:13px}
+code{background:#f8f9fa;padding:1px 4px;font-size:13px}
+</style>
+</head>
+<body>
+<main>
+<h1>Microcode</h1>
+<img class="hero" src="images/microcode.png" alt="Diagram of a CPU control unit executing microcode">
+<p>In processor design, <b>microcode</b> is a technique for implementing the control logic of a central processing unit (CPU) using a layer of hardware-level instructions called <b>microinstructions</b>. Microcode resides in a special high-speed memory (the control store) and translates machine instructions into sequences of detailed circuit-level operations, allowing complex instruction sets to be implemented with relatively simple hardware.</p>
+<h2>History</h2>
+<p>The concept was pioneered by Maurice Wilkes in 1951 as an orderly method of designing the control section of the EDSAC 2 computer. Microprogramming became widespread in the 1960s and 1970s, notably in IBM's System/360 family, where a single architecture could be implemented across machines of very different performance by varying the underlying hardware and microcode. Minicomputers such as DEC's PDP-11 and VAX lines also relied heavily on microcode.</p>
+<h2>Operation</h2>
+<p>When the CPU fetches a machine instruction, the microprogram counter points to a routine in the control store. Each microinstruction specifies control signals — register enables, ALU operations, bus transfers — for one step, along with sequencing information for the next microinstruction. Horizontal microcode packs many control signals into wide words for maximum parallelism, while vertical microcode encodes them compactly and requires further decoding.</p>
+<h2>Modern usage</h2>
+<p>Modern x86 processors decode complex instructions into simpler micro-operations (µops), and manufacturers ship updatable microcode that can patch processor behaviour after sale — for example, to work around errata or mitigate security vulnerabilities such as Spectre. Microcode updates are typically distributed through BIOS/UEFI firmware or the operating system.</p>
+<p class="refs">See also: <a href="../Microprocessor/index.html">Microprocessor</a> &middot; <a href="../Control_unit/index.html">Control unit</a> &middot; <a href="../Firmware/index.html">Firmware</a></p>
+</main>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>RANSAC — Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:800px;margin:0 auto;padding:20px;color:#202122;line-height:1.6}h1{font-family:sans-serif;border-bottom:1px solid #a2a9b1}h2{font-family:sans-serif;border-bottom:1px solid #a2a9b1}a{color:#0645ad}img.hero{display:block;margin:16px auto;max-width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:24px;text-align:center}</style></head>
+<body>
+<h1>RANSAC</h1>
+<img class="hero" src="images/ransac.png" alt="A line fitted to data with outliers using the RANSAC algorithm">
+<p><b>Random sample consensus</b> (<b>RANSAC</b>) is an iterative method to estimate parameters of a mathematical model from a set of observed data that contains outliers, when outliers are to be accorded no influence on the values of the estimates. Therefore, it is also a non-deterministic algorithm in the sense that it produces a reasonable result only with a certain probability, and this probability increases as more iterations are allowed. The algorithm was first published by Fischler and Bolles at SRI International in 1981.</p>
+<h2>Overview</h2>
+<p>RANSAC repeatedly selects a random minimal subset of the data, fits a model to that subset, and counts how many other data points agree with the model within a tolerance (the <i>inliers</i>, or consensus set). The model with the largest consensus set is kept, and may be refitted using all of its inliers. The number of iterations required can be computed from the desired success probability, the estimated outlier fraction, and the size of the minimal sample.</p>
+<h2>Applications</h2>
+<p>RANSAC is widely used in computer vision, for example in estimating the fundamental matrix and homographies in stereo matching and image stitching, in fitting geometric primitives (lines, circles, planes) to noisy data, and in robotics and structure-from-motion pipelines. Variants such as MSAC, MLESAC, and PROSAC improve scoring or sampling strategies.</p>
+<h2>Advantages and limitations</h2>
+<p>RANSAC is robust to a large fraction of outliers — it can succeed when more than half the data is contaminated — but it can fail when the inlier structure is weak or the threshold is poorly chosen, and its runtime grows as the outlier ratio rises.</p>
+<p><i>See also: Outlier, Robust statistics, Least squares, Hough transform.</i></p>
+</body></html>

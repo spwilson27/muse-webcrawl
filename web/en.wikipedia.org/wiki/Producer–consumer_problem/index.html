@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Producer–consumer problem - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:960px;margin:0 auto;padding:20px;color:#202122;background:#fff;line-height:1.6}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.thumb{float:right;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:8px;text-align:center;font-size:0.85em;max-width:250px}
+.thumb img{max-width:230px;height:auto;background:#eaecf0}
+</style>
+</head>
+<body>
+<h1>Producer–consumer problem</h1>
+<p>In computing, the <b>producer–consumer problem</b> (also known as the <b>bounded-buffer problem</b>) is a classic example of a multi-process synchronization problem, first described by Edsger W. Dijkstra. The problem describes two processes, the producer and the consumer, who share a common, fixed-size buffer used as a queue. The producer's job is to generate data, put it into the buffer, and start again. At the same time, the consumer is consuming the data (i.e., removing it from the buffer), one piece at a time.</p>
+<div class="thumb"><img src="images/producer-consumer.png" alt="Diagram of a producer and consumer connected by a bounded buffer"><br>A bounded buffer mediates between producer and consumer.</div>
+<h2>The problem</h2>
+<p>The solution must ensure that the producer will not try to add data into the buffer if it is full, and that the consumer will not try to remove data from an empty buffer. It must also prevent race conditions in which both processes manipulate the buffer's state simultaneously, corrupting it.</p>
+<h2>Solutions</h2>
+<p>Dijkstra's solution uses semaphores: one counting semaphore tracks empty slots, another tracks filled slots, and a mutex protects the buffer itself. The producer waits on the "empty" semaphore before adding an item and signals "full" afterwards; the consumer does the reverse. Equivalent solutions can be built with monitors or message passing. Careless semaphore ordering can lead to deadlock, making the problem a standard teaching example in operating systems courses.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Semaphore_(programming)/index.html">Semaphore (programming)</a></li>
+<li><a href="../Readers–writer_lock/index.html">Readers–writer lock</a></li>
+<li><a href="../Deadlock/index.html">Deadlock</a></li>
+</ul>
+</body>
+</html>

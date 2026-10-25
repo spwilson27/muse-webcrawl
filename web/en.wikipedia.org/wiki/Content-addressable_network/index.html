@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Content-addressable network - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;margin:0;background:#f6f6f6;color:#202122;}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9;}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-size:1.9em;}
+h2{font-family:Georgia,'Times New Roman',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:1.2em;}
+p{line-height:1.6;margin:0.5em 0;}
+a{color:#0645ad;text-decoration:none;}a:hover{text-decoration:underline;}
+img.hero{display:block;max-width:100%;height:auto;margin:16px auto;background:#eaecf0;border:1px solid #a2a9b1;padding:12px;}
+ul{line-height:1.6;}
+.site-sub{color:#54595d;font-size:0.85em;margin-bottom:12px;}
+</style>
+</head>
+<body>
+<div class="content">
+<div class="site-sub">From Wikipedia, the free encyclopedia</div>
+<h1>Content-addressable network</h1>
+<img class="hero" src="images/content-addressable-network.png" alt="Diagram of a content-addressable network mapping keys to points in a virtual Cartesian coordinate space">
+<p>The <b>content-addressable network</b> (<b>CAN</b>) is a distributed, decentralised peer-to-peer infrastructure that provides hash table functionality on an Internet-like scale. CAN was one of the four original distributed hash table (DHT) proposals, introduced concurrently with Chord, Pastry and Tapestry, in a paper by Sylvia Ratnasamy, Paul Francis, Mark Handley, Richard Karp and Scott Shenker presented in 2001.</p>
+<h2>Design</h2>
+<p>CAN maps keys onto points in a virtual <i>d</i>-dimensional Cartesian coordinate space. The space is partitioned into zones, each owned by a participating node; a node stores the key–value pairs whose keys hash to points within its zone and keeps track of its immediate neighbours in the coordinate space. To retrieve a value, the requester hashes the key to a point and the query is routed greedily through neighbouring zones toward the destination point. Routing between arbitrary points takes on the order of <i>d·n</i><sup>1/d</sup> hops, and each node maintains only 2<i>d</i> neighbours, independent of the total number of nodes <i>n</i>.</p>
+<h2>Joins and departures</h2>
+<p>A new node joins by finding the zone containing a random point and splitting that zone with its current owner. When a node leaves, a neighbour takes over its zone or two zones are merged. Periodic background communication lets neighbours detect failures and trigger repairs.</p>
+<h2>Enhancements and influence</h2>
+<p>The original design described several refinements: multiple independent coordinate spaces ("realities"), multiple nodes per zone for redundancy, overloading zones, and more expressive routing metrics reflecting network latency. Like other DHTs, CAN influenced the design of scalable peer-to-peer storage and lookup systems, though systems such as Kademlia and Chord saw wider deployment in practice.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Distributed_hash_table/index.html">Distributed hash table</a></li>
+<li><a href="../Chord_(peer-to-peer)/index.html">Chord (peer-to-peer)</a></li>
+<li><a href="../Pastry_(DHT)/index.html">Pastry (DHT)</a></li>
+</ul>
+</div>
+</body>
+</html>

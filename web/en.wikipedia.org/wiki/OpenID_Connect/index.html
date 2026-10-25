@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OpenID Connect - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:24px}
+p,li{font-family:sans-serif;font-size:14px;line-height:1.6}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 18px;font-family:sans-serif;font-size:13px}
+.infobox img{width:100%;height:auto}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>OpenID Connect</h1>
+<div class="infobox">
+<img src="images/openid-connect.png" alt="OpenID Connect authentication flow diagram">
+<p><b>Developer:</b> OpenID Foundation</p>
+<p><b>Released:</b> February 2014</p>
+<p><b>Type:</b> Identity layer / authentication protocol</p>
+<p><b>Built on:</b> OAuth 2.0</p>
+</div>
+<p><b>OpenID Connect</b> (<b>OIDC</b>) is an authentication layer on top of the OAuth 2.0 authorization framework. It allows clients to verify the identity of an end user based on authentication performed by an authorization server, and to obtain basic profile information about the user in an interoperable, REST-like manner. OpenID Connect 1.0 is a finalized specification published by the OpenID Foundation in February 2014.</p>
+<h2>Overview</h2>
+<p>While OAuth 2.0 is designed for delegated authorization — granting applications access to resources — it does not itself define a standard way to authenticate users or represent their identity. OpenID Connect adds an identity layer: in addition to an OAuth access token, the authorization server returns an <b>ID token</b>, a JSON Web Token (JWT) containing claims about the authentication event and the user, such as the issuer (<code>iss</code>), subject identifier (<code>sub</code>), audience (<code>aud</code>), and expiration (<code>exp</code>).</p>
+<h2>Flows</h2>
+<p>The specification defines several flows. In the <b>authorization code flow</b>, the client receives a code after user authentication and exchanges it at the token endpoint for ID, access, and optionally refresh tokens; this is the recommended flow for most applications. The <b>implicit flow</b> returns tokens directly from the authorization endpoint and was designed for browser-based clients, though it is now discouraged. The <b>hybrid flow</b> combines elements of both.</p>
+<h2>Discovery and user information</h2>
+<p>OpenID Connect defines a Discovery mechanism by which clients retrieve provider metadata from a well-known URL (<code>/.well-known/openid-configuration</code>), including endpoints and signing keys, and a UserInfo endpoint that returns additional claims about the authenticated user. Standard claims include <code>name</code>, <code>email</code>, <code>picture</code>, and <code>locale</code>, requested via scopes such as <code>openid</code>, <code>profile</code>, and <code>email</code>.</p>
+<h2>Adoption</h2>
+<p>OpenID Connect is supported by major identity providers including Google, Microsoft (Entra ID), Okta, and many others, and underlies "Sign in with Google" and many enterprise single sign-on deployments. It succeeded the earlier OpenID 2.0 protocol, which was based on XML and a different extension model, and is distinct from it despite the similar name.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../OAuth/index.html">OAuth</a></li>
+<li><a href="../JSON_Web_Token/index.html">JSON Web Token</a></li>
+<li><a href="../Security_Assertion_Markup_Language/index.html">SAML</a></li>
+<li><a href="../Single_sign-on/index.html">Single sign-on</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Salsa20 - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #fff; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 24px; line-height: 1.6; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+figure { margin: 16px 0; text-align: center; }
+figcaption { font-size: 0.88em; color: #54595d; }
+a { color: #3366cc; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Salsa20</h1>
+<p><b>Salsa20</b> is a stream cipher developed by Daniel J. Bernstein and published in 2005. It builds a pseudorandom keystream from a 256-bit key, a 64-bit nonce and a 64-bit block counter, and encrypts by XORing the keystream with the plaintext. Salsa20 was selected as a finalist in the eSTREAM project's software portfolio in 2008 and is in the public domain. Its reduced-round variants are named Salsa20/8 and Salsa20/12 according to the number of rounds.</p>
+<figure>
+<img src="images/Salsa20.png" alt="Diagram of the Salsa20 quarter-round function applied across a 4 by 4 word matrix">
+<figcaption>The Salsa20 core applies quarter-round functions column-wise and row-wise over a 4×4 matrix of 32-bit words.</figcaption>
+</figure>
+<h2>Design</h2>
+<p>The Salsa20 core maps a 4×4 matrix of 32-bit words—containing the key, nonce, counter and the constants derived from the phrase "expand 32-byte k"—through repeated double rounds of an addition-rotation-XOR quarter-round function. The output is added word-wise to the input to produce each 64-byte keystream block. The design offers high speed in software, simple constant-time implementation, and random access to any keystream block via the counter.</p>
+<h2>Variants and adoption</h2>
+<p>Bernstein's later cipher <a href="../ChaCha_(cipher)/index.html">ChaCha</a>, a modification with improved diffusion per round, became far more widely deployed, including in TLS. Salsa20 itself is used in Bernstein's NaCl and in libsodium's default secret-stream constructions historically, and in the SUPERCOP benchmarking. No practical attack on the full 20-round Salsa20 is known; cryptanalysis has reached reduced-round versions, and the 8-round variant retains a comfortable security margin against known attacks.</p>
+<p>See also: <a href="../ChaCha_(cipher)/index.html">ChaCha</a> · <a href="../Stream_cipher/index.html">Stream cipher</a> · <a href="../Daniel_J._Bernstein/index.html">Daniel J. Bernstein</a></p>
+</div>
+</body>
+</html>

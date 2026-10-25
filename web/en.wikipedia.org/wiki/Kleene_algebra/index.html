@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kleene algebra - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}
+h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-family:sans-serif;font-size:1.25em;border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{display:block;margin:10px auto;max-width:100%;border:1px solid #ccc;padding:4px;background:#f8f9fa}
+.small{font-size:0.85em;color:#54595d}
+code{font-family:monospace;background:#f8f9fa;padding:0 3px}
+</style>
+</head>
+<body>
+<h1>Kleene algebra</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/kleene-algebra.png" alt="Diagram of a finite automaton labelled with a regular expression, the canonical model of a Kleene algebra">
+<p>In mathematics, a <b>Kleene algebra</b> (named after Stephen Cole Kleene) is an idempotent semiring endowed with a closure operator, the Kleene star. It generalises the operations known from regular expressions and provides the algebraic theory underlying regular languages, automata theory, and program semantics.</p>
+<h2>Definition</h2>
+<p>A Kleene algebra is a set <i>K</i> with two binary operations + : <i>K</i> × <i>K</i> → <i>K</i> and · : <i>K</i> × <i>K</i> → <i>K</i>, and two constants 0 and 1, such that (K, +, ·, 0, 1) forms an idempotent semiring (addition is idempotent: <i>a</i> + <i>a</i> = <i>a</i>), together with a unary operation * : <i>K</i> → <i>K</i> (star) satisfying:</p>
+<ul>
+<li>1 + <i>a</i>·<i>a</i>* ≤ <i>a</i>* and 1 + <i>a</i>*·<i>a</i> ≤ <i>a</i>*</li>
+<li><i>a</i>·<i>x</i> ≤ <i>x</i> implies <i>a</i>*·<i>x</i> ≤ <i>x</i>, and <i>x</i>·<i>a</i> ≤ <i>x</i> implies <i>x</i>·<i>a</i>* ≤ <i>x</i></li>
+</ul>
+<p>where ≤ is the natural order of the idempotent semiring, <i>a</i> ≤ <i>b</i> iff <i>a</i> + <i>b</i> = <i>b</i>. These axioms make * behave as reflexive transitive closure.</p>
+<h2>Examples</h2>
+<p>The standard model is the set of regular expressions over an alphabet, modulo the usual equivalences, with + as choice, · as concatenation, and * as repetition. Other models include the algebra of regular languages, the algebra of binary relations on a set with union, composition, and reflexive transitive closure, and the tropical semiring with its closure — in which the star computes shortest paths in a weighted graph, making Kleene algebra useful in routing algorithms and dynamic programming formulations.</p>
+<h2>History and applications</h2>
+<p>The axioms were distilled by Dexter Kozen in the early 1990s, building on work by Kleene (1956) on regular events and by John Horton Conway on regular algebra. Kozen proved that the equational theory of Kleene algebra is complete for regular-expression equivalence. Kleene algebras and their extension with tests (Kleene algebra with tests, KAT) are used in program analysis, compiler verification, and network programming languages such as NetKAT.</p>
+<p class="small">See also: <a href="../Regular_expression/index.html">Regular expression</a> · <a href="../Kleene_star/index.html">Kleene star</a> · <a href="../Semiring/index.html">Semiring</a> · <a href="../Stephen_Cole_Kleene/index.html">Stephen Cole Kleene</a></p>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Memory-mapped I/O - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#f8f9fa;color:#202122;margin:0}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 40px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:4px}
+h2{font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:90%;margin:0 0 12px 16px;padding:8px}
+.infobox caption{font-weight:bold;font-size:110%}
+.hero{width:100%;background:#eaecf0;border:1px solid #c8ccd1;text-align:center;padding:12px 0;color:#72777d}
+.ref{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Memory-mapped I/O</h1>
+<p>From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<caption>Memory-mapped I/O</caption>
+<tr><td><div class="hero"><img src="images/memory-mapped-io.png" alt="Diagram showing device registers mapped into the CPU address space"></div></td></tr>
+<tr><td>Same address bus used for memory and I/O devices.</td></tr>
+</table>
+<p><b>Memory-mapped I/O</b> (MMIO) is a method of performing input/output between the central processing unit and peripheral devices in a computer. It uses the same address bus to address both memory and I/O devices: the memory and registers of the I/O devices are mapped to (associated with) address values in the processor's address space, so ordinary memory load and store instructions can read and write device registers.</p>
+<h2>Overview</h2>
+<p>When a device is mapped, a range of physical addresses is decoded by the system's interconnect as belonging to the device rather than to RAM. Writing to a mapped control register might start a DMA transfer or send a byte out of a serial port; reading a mapped status register reports the device's state. Because devices are accessed with normal instructions, any addressing mode usable for memory is available for I/O, simplifying code compared with architectures that provide special I/O instructions.</p>
+<h2>Comparison with port-mapped I/O</h2>
+<p>The alternative, <b>port-mapped I/O</b> (PMIO), used extensively on the x86 architecture, places devices in a separate I/O address space reachable only through dedicated IN and OUT instructions. MMIO consumes part of the memory map — historically creating constraints such as the "640 KB barrier" and the PCI hole below 4 GB — but avoids a second address space and is used almost exclusively in RISC and embedded architectures such as ARM and RISC-V.</p>
+<h2>Practical concerns</h2>
+<p>Device accesses must not be cached, reordered, or optimized away by the compiler or CPU, so operating systems map MMIO regions as uncacheable and device drivers use volatile accesses, accessor functions (such as readl/writel in Linux), and memory barriers. With virtual memory, the kernel maps device physical addresses into its own address space, and user programs may access devices through facilities such as /dev/mem or UIO.</p>
+<h2>See also</h2>
+<p><a href="../Input/Kernel_(operating_system)/index.html">Kernel (operating system)</a> · Direct memory access · Address space · Peripheral</p>
+<p class="ref">References: Patterson &amp; Hennessy, "Computer Organization and Design".</p>
+</div>
+</body>
+</html>

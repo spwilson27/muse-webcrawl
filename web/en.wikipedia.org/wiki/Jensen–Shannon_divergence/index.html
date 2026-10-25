@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jensen–Shannon divergence - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.topbar{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:10px 24px;font-size:13px;color:#54595d}
+.wrap{max-width:960px;margin:0 auto;padding:24px 20px 60px}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:30px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin:0 0 6px}
+h2{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:28px}
+p,li{font-size:15px;line-height:1.6}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 16px 24px;padding:0}
+.infobox th{background:#eaecf0;padding:6px;text-align:center;font-size:14px}
+.infobox td{padding:5px 8px;vertical-align:top}
+.infobox .lbl{font-weight:bold;width:38%}
+.hero{margin:16px 0;text-align:center}
+.hero img{max-width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:24px;box-sizing:border-box}
+.caption{font-size:12.5px;color:#54595d;margin-top:4px}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;font-size:13.5px;overflow-x:auto;text-align:center}
+.cat{border-top:1px solid #a2a9b1;margin-top:36px;padding-top:8px;font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="topbar">From Wikipedia, the free encyclopedia</div>
+<div class="wrap">
+<h1>Jensen–Shannon divergence</h1>
+<div class="hero"><img src="images/jensen-shannon-divergence.png" alt="Graph comparing two probability distributions and their average, illustrating the Jensen-Shannon divergence"><div class="caption">The Jensen–Shannon divergence measures how different two distributions are from their mixture.</div></div>
+<p>In <a href="../Probability/index.html">probability theory</a> and statistics, the <b>Jensen–Shannon divergence</b> is a method of measuring the similarity between two <a href="../Probability_distribution/index.html">probability distributions</a>. It is based on the <a href="../Kullback–Leibler_divergence/index.html">Kullback–Leibler divergence</a>, but unlike that measure it is symmetric and always takes a finite value. The square root of the Jensen–Shannon divergence is a <a href="../Metric_(mathematics)/index.html">metric</a>, often called the Jensen–Shannon distance. The measure is named for the Danish mathematicians Johan Jensen and Claude Shannon.</p>
+<h2>Definition</h2>
+<p>Given two probability distributions <i>P</i> and <i>Q</i>, let <i>M</i> = &#189;(<i>P</i> + <i>Q</i>) be their average (mixture) distribution. The Jensen–Shannon divergence is:</p>
+<pre>JSD(P ‖ Q) = &#189; D(P ‖ M) + &#189; D(Q ‖ M)</pre>
+<p>where <i>D</i>(· ‖ ·) denotes the Kullback–Leibler divergence. Equivalently, it can be expressed in terms of Shannon entropy <i>H</i>:</p>
+<pre>JSD(P ‖ Q) = H(M) − &#189; H(P) − &#189; H(Q)</pre>
+<h2>Properties</h2>
+<p>The divergence is symmetric, JSD(<i>P</i> ‖ <i>Q</i>) = JSD(<i>Q</i> ‖ <i>P</i>), and it is zero only when <i>P</i> = <i>Q</i>. With base-2 logarithms it is bounded between 0 and 1; with natural logarithms the bound is ln 2. Unlike the Kullback–Leibler divergence, it remains well-defined and finite when one distribution assigns zero probability to an event the other supports. Its square root satisfies the triangle inequality, making it a true metric on the space of probability distributions.</p>
+<h2>Applications</h2>
+<p>The Jensen–Shannon divergence is used in <a href="../Machine_learning/index.html">machine learning</a> — notably as the quantity implicitly optimized by the original <a href="../Generative_adversarial_network/index.html">generative adversarial network</a> objective — as well as in bioinformatics and genomics for comparing profiles, in image registration, in natural language processing for comparing word and document distributions, and in ecology for comparing species-abundance distributions. Generalizations to more than two distributions (weighted by mixing proportions) are common in Bayesian model comparison and clustering.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Kullback–Leibler_divergence/index.html">Kullback–Leibler divergence</a></li>
+<li><a href="../F-divergence/index.html">f-divergence</a></li>
+<li><a href="../Total_variation_distance/index.html">Total variation distance</a></li>
+<li><a href="../Entropy_(information_theory)/index.html">Entropy (information theory)</a></li>
+</ul>
+<div class="cat">Categories: Information theory | Statistical distance | Probability theory</div>
+</div>
+</body>
+</html>

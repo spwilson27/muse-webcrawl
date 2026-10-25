@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vector space model - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; background: #fff; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 6px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+h3 { font-family: sans-serif; font-size: 16px; margin-top: 20px; }
+p, li { font-size: 15px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; font-family: sans-serif; font-size: 13px; margin: 4px 0 12px 16px; padding: 10px; }
+.infobox th { text-align: left; vertical-align: top; padding-right: 8px; }
+.hero { display: block; margin: 12px 0; background: #eaecf0; border: 1px solid #a2a9b1; padding: 24px; text-align: center; font-family: sans-serif; font-size: 13px; color: #54595d; }
+.small { font-size: 13px; color: #54595d; }
+code { background: #f8f9fa; padding: 0 3px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Vector space model</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<tr><th>Field</th><td>Information retrieval, natural language processing</td></tr>
+<tr><th>Key figure</th><td>Gerard Salton</td></tr>
+<tr><th>Core idea</th><td>Represent documents and queries as vectors in a term space</td></tr>
+<tr><th>Similarity</th><td>Cosine similarity</td></tr>
+<tr><th>Related</th><td>tf–idf, latent semantic analysis, word embeddings</td></tr>
+</table>
+<img class="hero" src="images/Vector_space_model.png" alt="Diagram of documents and a query as vectors in a three-term space">
+<p>The <b>vector space model</b> (also called the <b>term vector model</b>) is an algebraic model for representing text documents (or any objects) as vectors of identifiers, such as index terms. It is used in information filtering, <a href="../Information_retrieval/index.html">information retrieval</a>, indexing and relevancy ranking. Its first use was in the SMART Information Retrieval System, developed in the 1960s and 1970s under Gerard Salton.</p>
+<p>In the model, each document is represented as a vector whose components correspond to terms in the vocabulary. A component is zero if the term does not appear in the document and non-zero otherwise; the value typically reflects the importance of the term in the document. A query is represented as a vector in the same space, and documents are ranked by the similarity between their vectors and the query vector.</p>
+<h2>Term weighting</h2>
+<p>The most widely used weighting scheme is <a href="../Tf%E2%80%93idf/index.html">tf–idf</a> (term frequency–inverse document frequency): a term's weight increases with how often it occurs in the document (term frequency) but is offset by how common it is across the whole collection (inverse document frequency), so that distinctive terms count more than ubiquitous ones. Variants use logarithmic scaling, length normalization, or probabilistic models.</p>
+<h2>Similarity</h2>
+<p>Relevance is commonly scored by <a href="../Cosine_similarity/index.html">cosine similarity</a> — the cosine of the angle between the document and query vectors — which normalizes for document length. Documents with the highest scores are returned as the most relevant. Other measures, such as the dot product or Euclidean distance, are also used.</p>
+<h2>Advantages and limitations</h2>
+<p>The model's strengths are its simplicity, its basis in linear algebra, the way it allows partial matching and ranked output rather than exact Boolean matching, and its empirical effectiveness. Its limitations include very high dimensionality (one dimension per term), loss of word order and context (the "bag of words" assumption), the assumption that terms are independent, and difficulty capturing synonymy and polysemy.</p>
+<h2>Extensions</h2>
+<p><a href="../Latent_semantic_analysis/index.html">Latent semantic analysis</a> applies singular value decomposition to compress the term space into a smaller number of latent concepts, mitigating synonymy and sparsity. The generalized vector space model and the topic-based vector space model relax term independence. Dense neural representations such as <a href="../Word_embedding/index.html">word embeddings</a> (for example word2vec) and transformer-based encoders extend the same geometric intuition: texts are points in a vector space, and semantic closeness corresponds to geometric closeness.</p>
+<h2>Applications</h2>
+<ul>
+<li>Search engines and document ranking</li>
+<li>Document classification and clustering</li>
+<li>Recommender systems and information filtering</li>
+<li>Plagiarism and near-duplicate detection</li>
+</ul>
+<h2>See also</h2>
+<ul>
+<li><a href="../Information_retrieval/index.html">Information retrieval</a></li>
+<li><a href="../Tf%E2%80%93idf/index.html">tf–idf</a></li>
+<li><a href="../Cosine_similarity/index.html">Cosine similarity</a></li>
+<li><a href="../Latent_semantic_analysis/index.html">Latent semantic analysis</a></li>
+<li><a href="../Bag-of-words_model/index.html">Bag-of-words model</a></li>
+<li><a href="../Word_embedding/index.html">Word embedding</a></li>
+</ul>
+</div>
+</body>
+</html>

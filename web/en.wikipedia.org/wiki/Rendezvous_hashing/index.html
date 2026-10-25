@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rendezvous hashing - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { float: right; margin: 0 0 12px 16px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 6px; text-align: center; font-size: 12px; font-family: sans-serif; }
+.hero img { max-width: 260px; display: block; background: #eaecf0; }
+.small { font-size: 13px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Rendezvous hashing</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="hero"><img src="images/Rendezvous_hashing.png" alt="Diagram of clients scoring keys against servers to choose the highest-weighted node"><br>Clients pick the highest-scoring site</div>
+<p><b>Rendezvous</b> or <b>highest random weight (HRW) hashing</b> is an algorithm that allows clients to achieve distributed agreement on a set of <i>k</i> options out of a possible set of <i>n</i> options. A typical application is when clients need to agree on which sites (or proxies) objects are assigned to.</p>
+<p>Rendezvous hashing is more general than consistent hashing, which becomes a special case (for <i>k</i>=1) of rendezvous hashing. The algorithm was invented by David Thaler and Chinya Ravishankar at the University of Michigan in 1996 and independently described as "highest random weight" hashing by the Web proxy community.</p>
+<h2>Algorithm</h2>
+<p>Given a set of <i>n</i> sites and a key identifying an object, for each site the client computes a weight by hashing the site identifier together with the object identifier (for example, hash(site ‖ object)). The object is assigned to the site with the highest resulting weight. Because the hash functions produce effectively random values, loads are distributed uniformly, and only the objects assigned to a removed or added site need to be remapped — the expected fraction of keys remapped when a site changes is 1/<i>n</i>.</p>
+<h2>Properties and uses</h2>
+<p>The scheme requires no coordination among clients beyond sharing the same hash function and site list, and it provides minimal disruption when sites fail. Its main cost is computation: selecting a site takes O(<i>n</i>) hash evaluations, which is acceptable for moderate numbers of sites and can be improved with hierarchical variants. Rendezvous hashing is used in content delivery, distributed caching, load balancing and systems such as Microsoft's Cache Array Routing Protocol successors and various distributed hash tables.</p>
+<p class="small">See also: <a href="../Consistent_hashing/index.html">Consistent hashing</a> · <a href="../Distributed_hash_table/index.html">Distributed hash table</a> · <a href="../Hash_function/index.html">Hash function</a></p>
+</div>
+</body>
+</html>

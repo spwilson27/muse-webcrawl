@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kőnig's line coloring theorem - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; background: #f8f9fa; color: #202122; margin: 0; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 28px; }
+p, li { font-size: 15px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; max-width: 480px; width: 100%; margin: 12px auto; border: 1px solid #c8ccd1; background: #eaecf0; min-height: 120px; }
+.small { font-size: 12px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Kőnig's line coloring theorem</h1>
+<p>In graph theory, <b>Kőnig's line coloring theorem</b>, proved by Dénes Kőnig (1916), describes an equivalence between the edge-coloring problem and the matching problem on bipartite graphs. It states that any bipartite graph can be edge-colored using a number of colors equal to the maximum degree Δ of the graph.</p>
+<img class="hero" src="images/Konig_line_coloring.png" alt="Edge coloring of a bipartite graph using four colors">
+<h2>Statement</h2>
+<p>An edge coloring of a graph assigns a color to each edge so that no two edges sharing a vertex have the same color. The smallest number of colors needed is the chromatic index χ′(G). In any graph, at least Δ colors are necessary, because all the edges incident to a maximum-degree vertex must have different colors. Kőnig's theorem states that for bipartite graphs this lower bound is always achievable: χ′(G) = Δ for every bipartite graph G.</p>
+<h2>Example</h2>
+<p>Consider a schedule of meetings between teachers and classes: each requirement that a teacher meet a class is an edge in a bipartite graph. A coloring of the edges corresponds to an assignment of time slots to meetings in which no teacher or class is double-booked, and Kőnig's theorem guarantees a schedule whose length equals the largest number of meetings involving any single teacher or class — clearly the best possible.</p>
+<h2>Proof outline</h2>
+<p>The standard proof proceeds by induction on the number of edges. Given a bipartite graph with maximum degree Δ, one finds either a matching that covers all maximum-degree vertices — which can be colored with one color and removed, reducing to the case Δ − 1 — or, more directly, regularises the graph by adding dummy vertices and edges to make it Δ-regular, then repeatedly extracts perfect matchings (whose existence follows from Hall's marriage theorem) to serve as the color classes.</p>
+<h2>Relation to other results</h2>
+<p>The theorem is closely related to Kőnig's theorem on matchings and vertex covers in bipartite graphs (the Kőnig–Egerváry theorem), and indeed an edge coloring of a bipartite graph with Δ colors can be converted into a decomposition of the edge set into Δ matchings, each of which corresponds to a color class. For general (non-bipartite) graphs, the classification of graphs by chromatic index is governed instead by Vizing's theorem, which shows that Δ or Δ + 1 colors always suffice, and deciding which can be NP-complete.</p>
+<p class="small">See also: <a href="../Edge_coloring/index.html">Edge coloring</a> · <a href="../Kőnig's_theorem_(graph_theory)/index.html">Kőnig's theorem (graph theory)</a> · <a href="../Vizing's_theorem/index.html">Vizing's theorem</a></p>
+</div>
+</body>
+</html>

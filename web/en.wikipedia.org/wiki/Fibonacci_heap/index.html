@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fibonacci heap - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#222;background:#fff}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{text-align:center;margin:12px 0}
+.hero img{max-width:420px;border:1px solid #ccc;background:#eee}
+</style>
+</head>
+<body>
+<h1>Fibonacci heap</h1>
+<p>In computer science, a <b>Fibonacci heap</b> is a data structure for priority queue operations, consisting of a collection of heap-ordered trees. It has a better amortized running time than many other priority queue data structures including the binary heap and binomial heap. Michael L. Fredman and Robert E. Tarjan developed Fibonacci heaps in 1984 and published them in a scientific journal in 1987. Fibonacci heaps are named after the Fibonacci numbers, which are used in their running time analysis.</p>
+<div class="hero"><img src="images/fibonacci-heap.png" alt="Diagram of a Fibonacci heap as a forest of heap-ordered trees with a minimum pointer"></div>
+<h2>Structure</h2>
+<p>A Fibonacci heap is a collection of rooted trees that are min-heap ordered: each node's key is greater than or equal to its parent's key. The roots of all trees are linked in a circular doubly linked list, and a pointer keeps track of the root containing the minimum key. Unlike a binomial heap, the trees are unordered and unrestrained in shape; work is deferred lazily until an extract-min operation forces consolidation.</p>
+<h2>Operations</h2>
+<p>Insertion, find-minimum and union all take constant amortized time. Decrease-key also runs in constant amortized time, which makes Fibonacci heaps attractive for graph algorithms such as Dijkstra's shortest path algorithm and Prim's minimum spanning tree algorithm, whose running times improve when decrease-key is cheap. Delete and extract-min take O(log n) amortized time. The analysis bounds the maximum degree of any node by O(log n), using the fact that the size of a subtree grows at least exponentially — like the Fibonacci numbers — in the degree of its root.</p>
+<h2>Implementation</h2>
+<p>Despite their theoretical advantages, Fibonacci heaps have large constant factors and are complex to implement, so they are often slower in practice than optimized binary heaps except on very large inputs. Variants such as the relaxed heap and pairing heap seek similar performance with simpler structure.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Binomial_heap/index.html">Binomial heap</a></li>
+<li><a href="../Priority_queue/index.html">Priority queue</a></li>
+<li><a href="../Dijkstra%27s_algorithm/index.html">Dijkstra's algorithm</a></li>
+<li><a href="../Amortized_analysis/index.html">Amortized analysis</a></li>
+</ul>
+<h2>References</h2>
+<ol>
+<li>Fredman, M. L.; Tarjan, R. E. (1987). "Fibonacci heaps and their uses in improved network optimization algorithms". <i>Journal of the ACM</i>. 34 (3): 596–615.</li>
+<li>Cormen, T. H. et al. <i>Introduction to Algorithms</i>, chapter on Fibonacci heaps.</li>
+</ol>
+</body>
+</html>

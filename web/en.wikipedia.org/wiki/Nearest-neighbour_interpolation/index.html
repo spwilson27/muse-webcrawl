@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Nearest-neighbor interpolation - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; font-size: 30px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: sans-serif; font-size: 20px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+h3 { font-family: sans-serif; font-size: 16px; margin-top: 20px; }
+p, li { font-size: 14.5px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 270px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px 12px; margin: 0 0 14px 18px; font-family: sans-serif; font-size: 13px; }
+.infobox .ib-title { font-weight: bold; text-align: center; font-size: 15px; margin-bottom: 8px; }
+.infobox table { border-collapse: collapse; width: 100%; }
+.infobox td { padding: 3px 4px; vertical-align: top; }
+.infobox td.k { font-weight: bold; width: 38%; }
+.hero { text-align: center; margin: 10px 0; }
+.hero img { max-width: 240px; width: 100%; height: auto; background: #eaecf0; border: 1px solid #c8ccd1; }
+.hero .cap { font-size: 12px; color: #54595d; font-family: sans-serif; }
+.refs { font-size: 12.5px; }
+.mono { font-family: monospace; background: #f8f9fa; padding: 1px 4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Nearest-neighbor interpolation</h1>
+<div class="infobox">
+<div class="ib-title">Nearest-neighbour interpolation</div>
+<div class="hero"><img src="images/nearest-neighbour-interpolation.png" alt="A grid of coloured cells illustrating nearest-neighbour interpolation regions"><div class="cap">Voronoi cells define the nearest-neighbour regions</div></div>
+<table>
+<tr><td class="k">Type</td><td>Interpolation method</td></tr>
+<tr><td class="k">Field</td><td>Multivariate interpolation, image processing</td></tr>
+<tr><td class="k">Related</td><td>Voronoi diagram, zero-order hold, bilinear interpolation</td></tr>
+</table>
+</div>
+<p><b>Nearest-neighbor interpolation</b> (also known as <b>proximal interpolation</b> or, in some contexts, <b>point sampling</b>) is a simple method of multivariate interpolation in one or more dimensions. Interpolation is the problem of approximating the value of a function for a non-given point in some space when given the value of that function in points around (neighboring) that point. The nearest-neighbor algorithm selects the value of the nearest point and does not consider the values of neighboring points at all, yielding a piecewise-constant interpolant.</p>
+<h2>Definition</h2>
+<p>For a set of known data points, the nearest-neighbour interpolant assigns to any query point <i>x</i> the value of the data point closest to <i>x</i> under some metric, usually Euclidean distance. The regions of space assigned to each data point form a Voronoi diagram. In one dimension the method is equivalent to rounding the query position to the index of the nearest sample, and the interpolant is a step function whose jumps occur at midpoints between samples.</p>
+<h2>Applications</h2>
+<h3>Image scaling</h3>
+<p>Nearest-neighbour resampling is widely used in digital image processing to resize images. When an image is enlarged, each output pixel takes the colour of the nearest input pixel, producing the characteristic blocky, "pixelated" appearance. The method is fast and preserves the exact original colour values and hard edges, making it the preferred choice for pixel art and for data where values are categorical — such as label maps or indexed images — where averaging neighbouring values (as in <a href="../Bilinear_interpolation/index.html">bilinear</a> or bicubic interpolation) would create meaningless intermediate values.</p>
+<h3>Other uses</h3>
+<p>The same principle underlies nearest-neighbour classification in machine learning, nearest-neighbour resampling of geographic and scientific data, and the zero-order hold used to reconstruct signals in digital-to-analog conversion.</p>
+<h2>Advantages and disadvantages</h2>
+<p>Nearest-neighbour interpolation is the fastest and simplest interpolation method and never introduces new values outside the range of the data, which is essential for discrete data. Its disadvantages are the discontinuous, blocky output and poor approximation quality for smooth functions, where linear or higher-order methods are usually preferred.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Interpolation/index.html">Interpolation</a></li>
+<li><a href="../Nearest_neighbor_search/index.html">Nearest neighbor search</a></li>
+<li><a href="../Image_scaling/index.html">Image scaling</a></li>
+<li><a href="../Voronoi_diagram/index.html">Voronoi diagram</a></li>
+</ul>
+<h2>References</h2>
+<ol class="refs">
+<li>Key, R. "Cubic convolution interpolation for digital image processing." <i>IEEE Transactions on Acoustics, Speech, and Signal Processing</i>, 1981.</li>
+<li>Thévenaz, P., Blu, T. &amp; Unser, M. "Interpolation revisited." <i>IEEE Transactions on Medical Imaging</i>, 2000.</li>
+</ol>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Block cipher - Wikipedia</title>
+<style>
+body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff;line-height:1.6}
+#content{max-width:960px;margin:0 auto;padding:24px 20px 60px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px;font-weight:400}
+h2{font-size:1.35em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px;font-weight:400}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.85em;margin:0 0 16px 20px;padding:10px 14px}
+.infobox th{text-align:left;padding:2px 8px 2px 0;vertical-align:top}
+.infobox td{padding:2px 0}
+.infobox .title{font-weight:bold;font-size:1.05em;text-align:left;padding-bottom:6px}
+.hero{margin:14px 0}
+.hero img{max-width:420px;width:100%;background:#eaecf0;border:1px solid #a2a9b1}
+.caption{font-size:0.85em;color:#54595d}
+.small{font-size:0.9em;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Block cipher</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<tr><td class="title" colspan="2">Block cipher</td></tr>
+<tr><th>Type</th><td>Symmetric-key algorithm</td></tr>
+<tr><th>Block sizes</th><td>Typically 64 or 128 bits</td></tr>
+<tr><th>Key sizes</th><td>56–256 bits (cipher-dependent)</td></tr>
+<tr><th>Designs</th><td>Feistel network; substitution–permutation network</td></tr>
+<tr><th>Examples</th><td>AES, DES, Blowfish, Twofish, Serpent, IDEA</td></tr>
+</table>
+<div class="hero">
+<img src="images/Block_cipher.png" alt="Hero image: diagram of a block cipher encrypting a fixed-size block with a key">
+<p class="caption">A block cipher maps a fixed-size plaintext block to a ciphertext block under a key.</p>
+</div>
+<p>In cryptography, a <b>block cipher</b> is a deterministic algorithm that operates on fixed-length groups of bits, called blocks, and transforms them using a symmetric key. Block ciphers are fundamental building blocks of modern cryptography: with a <a href="../Block_cipher_mode_of_operation/index.html">mode of operation</a> they encrypt messages of arbitrary length, and they underpin protocols for confidentiality, integrity, and authentication.</p>
+<p>Unlike stream ciphers, which encrypt data bit by bit, a block cipher always maps the same plaintext block to the same ciphertext block under the same key. Secure use therefore requires a mode of operation (such as CBC, CTR, or the authenticated GCM) that randomizes or chains the blocks.</p>
+<h2>Design principles</h2>
+<p>Claude Shannon's principles of <b>confusion</b> (making the relationship between key and ciphertext as complex as possible) and <b>diffusion</b> (spreading plaintext influence over the whole ciphertext) guide all practical designs. Two structural families dominate:</p>
+<ul>
+<li><b>Feistel networks</b> split the block in two and iteratively mix one half into the other through a round function; decryption mirrors encryption. DES is the classic example.</li>
+<li><b>Substitution–permutation networks (SPNs)</b> alternate layers of S-boxes (substitution) with permutations that diffuse changes across the block; AES follows this pattern.</li>
+</ul>
+<p>Security is pursued through many rounds, strong S-boxes, and careful key schedules. Important cryptanalytic techniques include differential and linear cryptanalysis, against which modern designs are explicitly hardened.</p>
+<h2>History and notable ciphers</h2>
+<p>The Data Encryption Standard (<a href="../Data_Encryption_Standard/index.html">DES</a>), developed at IBM from Horst Feistel's Lucifer cipher and standardized in 1977, used a 64-bit block and an effective 56-bit key — eventually too short, leading to Triple DES as a stopgap. In 2001, NIST standardized the <a href="../Advanced_Encryption_Standard/index.html">Advanced Encryption Standard</a> (AES, the Rijndael cipher by Joan Daemen and Vincent Rijmen), with a 128-bit block and 128/192/256-bit keys; AES is now ubiquitous, often accelerated in hardware. Other influential designs include Blowfish and Twofish by Bruce Schneier and colleagues, Serpent, IDEA (used in early PGP), and lightweight ciphers such as PRESENT for constrained devices.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Advanced_Encryption_Standard/index.html">Advanced Encryption Standard</a></li>
+<li><a href="../Data_Encryption_Standard/index.html">Data Encryption Standard</a></li>
+<li><a href="../Stream_cipher/index.html">Stream cipher</a></li>
+<li><a href="../Block_cipher_mode_of_operation/index.html">Block cipher mode of operation</a></li>
+<li><a href="../Feistel_cipher/index.html">Feistel cipher</a></li>
+</ul>
+<p class="small">Categories: Block ciphers · Cryptography</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Reference counting - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:10px 20px}
+h1{font-size:1.8em;margin:0.2em 0;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+main{max-width:960px;margin:0 auto;padding:16px 20px}
+img.hero{float:right;margin:0 0 12px 16px;max-width:300px;border:1px solid #c8ccd1;background:#f8f9fa;padding:4px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+footer{border-top:1px solid #a2a9b1;margin-top:2em;padding:10px 20px;font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> — the free encyclopedia</header>
+<main>
+<h1>Reference counting</h1>
+<img class="hero" src="images/Reference_counting.png" alt="Diagram of objects with reference counts">
+<p>In computer science, <b>reference counting</b> is a programming technique of storing the number of references, pointers, or handles to a resource, such as an object, a block of memory, disk space, or other resource. It is a form of garbage collection: when an object's reference count reaches zero, the object becomes unreachable and is destroyed, reclaiming its memory.</p>
+
+<h2>How it works</h2>
+<p>Each object carries a counter. Creating a new reference increments the count; when a reference is destroyed or reassigned, the count decrements. When the count falls to zero, the object is deallocated — possibly triggering decrements on objects it references, which may cascade. Implementations exist in CPython (the primary memory-management mechanism), Objective-C and Swift (Automatic Reference Counting, ARC), C++ smart pointers (<code>std::shared_ptr</code>), and COM.</p>
+
+<h2>Advantages</h2>
+<ul>
+<li>Objects are reclaimed promptly and deterministically, which also manages non-memory resources such as file handles.</li>
+<li>Costs are distributed through program execution, avoiding long garbage-collection pauses.</li>
+<li>It is simple to implement and needs no special compiler support in its basic form.</li>
+</ul>
+
+<h2>Disadvantages</h2>
+<ul>
+<li><b>Cycles:</b> two objects referencing each other keep each other's counts above zero even when unreachable, leaking memory. Weak references or supplementary cycle detectors are used as remedies.</li>
+<li><b>Overhead:</b> every reference assignment costs increments/decrements, and in multithreaded programs these must be atomic, adding contention.</li>
+<li>Deleting a large structure can cascade into a long, unbounded chain of frees.</li>
+</ul>
+
+<h2>Variants</h2>
+<p>Deferred and coalesced reference counting reduce update costs; weighted reference counting distributes the count among references for distributed systems. Many modern runtimes combine reference counting with a tracing collector for cycles.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Garbage_collection_(computer_science)/index.html">Garbage collection</a></li>
+<li><a href="../Smart_pointer/index.html">Smart pointer</a></li>
+<li><a href="../Memory_management/index.html">Memory management</a></li>
+</ul>
+</main>
+<footer>From Wikipedia, the free encyclopedia.</footer>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>XML Signature - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:960px;line-height:1.6;color:#202122;padding:0 1em}
+h1{font-family:Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:Georgia,serif;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.88em}
+.infobox caption{font-weight:bold;background:#eaf3ff;padding:.3em}
+.hero{display:block;max-width:300px;margin:1em auto}
+.small{font-size:.9em;color:#54595d}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:.6em;overflow:auto;font-size:.88em}
+</style>
+</head>
+<body>
+<h1>XML Signature</h1>
+<table class="infobox"><caption>XML Signature</caption>
+<tr><td><b>Developed by</b></td><td>W3C and IETF</td></tr>
+<tr><td><b>Released</b></td><td>12 February 2002 (W3C Recommendation)</td></tr>
+<tr><td><b>Namespace</b></td><td>http://www.w3.org/2000/09/xmldsig#</td></tr>
+<tr><td><b>Companion standard</b></td><td>XML Encryption</td></tr>
+</table>
+<p><b>XML Signature</b> (also called <b>XMLDSig</b>, <b>XML-DSig</b> and <b>XML-Sig</b>) defines rules for digitally signing XML documents and, by reference, arbitrary data. It is a joint standard of the World Wide Web Consortium and the Internet Engineering Task Force. Unlike binary signature formats, an XML Signature is itself XML, so signatures can be embedded in, attached to, or used to envelop the data they sign.</p>
+<img class="hero" src="images/xml-signature.png" alt="Structure diagram of an XML Signature element">
+<h2>Structure</h2>
+<p>A signature is contained in a <code>&lt;Signature&gt;</code> element with three parts:</p>
+<ul>
+<li><b>SignedInfo</b> — identifies the canonicalisation method, the signature algorithm (such as RSA-SHA256), and one or more <code>&lt;Reference&gt;</code> elements, each identifying data by URI, applying transforms, and recording a digest value.</li>
+<li><b>SignatureValue</b> — the base64-encoded digital signature computed over the canonicalised SignedInfo.</li>
+<li><b>KeyInfo</b> — optional information identifying the verification key, such as an X.509 certificate.</li>
+</ul>
+<h2>Signature types</h2>
+<p>Three forms are distinguished: an <b>enveloped</b> signature is embedded within the document it signs; an <b>enveloping</b> signature contains the signed data within itself; and a <b>detached</b> signature stands apart from the data, referencing it externally. Because XML can be serialised in many equivalent ways, canonical XML (C14N) normalises a document's representation before digesting, so that superficial changes (attribute order, whitespace in tags) do not invalidate signatures.</p>
+<h2>Applications and security</h2>
+<p>XML Signature underpins WS-Security for SOAP web services, SAML assertions in single sign-on, signed Office Open XML and OpenDocument files, and many e-government and e-invoicing systems. Its flexibility has also led to serious vulnerabilities when implemented carelessly — notably XML signature wrapping attacks against identity systems — which has motivated restrictive processing profiles in modern deployments.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../XML/index.html">XML</a></li>
+<li><a href="../Digital_signature/index.html">Digital signature</a></li>
+<li><a href="../XML_Encryption/index.html">XML Encryption</a></li>
+<li><a href="../SAML/index.html">SAML</a></li>
+<li><a href="../Canonical_XML/index.html">Canonical XML</a></li>
+</ul>
+<p class="small">From Wikipedia, the free encyclopedia (recreated from memory).</p>
+</body>
+</html>

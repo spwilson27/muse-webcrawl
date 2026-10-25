@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Endianness - Wikipedia (recreated)</title>
+<style>body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:24px;color:#202122;line-height:1.6}h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}h2{border-bottom:1px solid #c8ccd1;font-size:1.4em;margin-top:1.2em}img.hero{display:block;width:100%;height:220px;background:#eaecf0;border:1px solid #c8ccd1;object-fit:cover}table{border-collapse:collapse}td,th{border:1px solid #a2a9b1;padding:4px 10px}a{color:#36c;text-decoration:none}</style></head>
+<body>
+<img class="hero" src="images/endianness.png" alt="Diagram comparing big-endian and little-endian byte order in memory">
+<h1>Endianness</h1>
+<p><b>Endianness</b> is the order in which the bytes of a multi-byte data element — such as a word or integer — are stored in computer memory or transmitted over a medium. In <b>big-endian</b> order the most significant byte is stored first (at the lowest address); in <b>little-endian</b> order the least significant byte is stored first.</p>
+<h2>Terminology</h2>
+<p>The whimsical terms derive from Jonathan Swift's <i>Gulliver's Travels</i> (1726), in which the Lilliputians argue over whether to crack a boiled egg at the big end or the little end. Danny Cohen's 1980 paper "On Holy Wars and a Plea for Peace" carried the terms into computing.</p>
+<h2>Examples</h2>
+<p>For the 32-bit value 0x0A0B0C0D stored at address 100:</p>
+<table><tr><th>Order</th><th>100</th><th>101</th><th>102</th><th>103</th></tr>
+<tr><td>Big-endian</td><td>0A</td><td>0B</td><td>0C</td><td>0D</td></tr>
+<tr><td>Little-endian</td><td>0D</td><td>0C</td><td>0B</td><td>0A</td></tr></table>
+<h2>Architectures</h2>
+<p>Intel x86 and most ARM implementations are little-endian; Motorola 68000 and many network protocols are big-endian. Internet protocols specify big-endian as the standard "network byte order". Some architectures, including ARM, PowerPC and RISC-V implementations, are bi-endian and can operate in either order. Endianness also applies, less commonly, to bit order within bytes and to the ordering of digits in written numerals.</p>
+<h2>File formats and data exchange</h2>
+<p>File formats specify an endianness explicitly — for example, TIFF supports both, flagged in its header — while formats such as PNG and JPEG are big-endian. Programming languages provide byte-swapping functions (such as <i>htons</i>/<i>ntohs</i> in C networking APIs) to convert between host and network order.</p>
+<h2>See also</h2>
+<ul><li><a href="../Byte">Byte</a></li><li><a href="../Word_(computer_architecture)">Word</a></li><li><a href="../Network_byte_order">Network byte order</a></li></ul>
+</body></html>

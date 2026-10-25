@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tower of Hanoi - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{max-width:100%;height:auto;display:block;margin:12px auto;border:1px solid #c8ccd1;background:#eaecf0}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:13px}
+.infobox th{text-align:left;padding:2px 6px}
+.infobox td{padding:2px 6px}
+.small{font-size:12px;color:#54595d}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;font-size:13px;overflow:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Tower of Hanoi</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/tower-of-hanoi.png" alt="A model of the Tower of Hanoi with five disks">
+<table class="infobox">
+<tr><th>Type</th><td>Mathematical puzzle</td></tr>
+<tr><th>Inventor</th><td>Édouard Lucas</td></tr>
+<tr><th>Year</th><td>1883</td></tr>
+<tr><th>Minimum moves</th><td>2<sup>n</sup> − 1 for n disks</td></tr>
+</table>
+<p>The <b>Tower of Hanoi</b> (also called the <b>Tower of Brahma</b> or <b>Lucas' Tower</b>) is a mathematical game or puzzle consisting of three rods and a number of disks of various diameters, which can slide onto any rod. The puzzle begins with the disks stacked on one rod in order of decreasing size, the smallest at the top, thus approximating a conical shape. The objective of the puzzle is to move the entire stack to one of the other rods, obeying the following rules:</p>
+<ol>
+<li>Only one disk may be moved at a time.</li>
+<li>Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack or on an empty rod.</li>
+<li>No disk may be placed on top of a disk that is smaller than it.</li>
+</ol>
+<h2>Origin</h2>
+<p>The puzzle was invented by the French mathematician Édouard Lucas in 1883. Numerous myths regarding the ancient and mystical nature of the puzzle popped up almost immediately, including one about an Indian temple at Kashi Vishwanath containing a large room with three time-worn posts in it, surrounded by 64 golden disks. According to the legend, Brahmin priests, acting out the command of an ancient prophecy, have been moving these disks in accordance with the immutable rules of Brahma since the beginning of time. When the last move of the puzzle is completed, the world will end.</p>
+<h2>Solution</h2>
+<p>The puzzle can be played with any number of disks, although many toy versions have around 7 to 9 of them. The minimal number of moves required to solve a Tower of Hanoi puzzle is 2<sup>n</sup> − 1, where n is the number of disks. For the legendary 64 disks, this is 18,446,744,073,709,551,615 moves — at one move per second, about 585 billion years.</p>
+<h3>Recursive solution</h3>
+<p>The key to solving the puzzle recursively is to note that moving a tower of n disks from one peg to another can be decomposed into: moving the top n − 1 disks to the spare peg, moving the largest disk to the target peg, and then moving the n − 1 disks onto it. This gives the recurrence T(n) = 2T(n − 1) + 1, whose solution is T(n) = 2<sup>n</sup> − 1.</p>
+<pre>
+procedure Hanoi(n, from, to, spare):
+    if n = 1: move disk from `from` to `to`; return
+    Hanoi(n - 1, from, spare, to)
+    move disk n from `from` to `to`
+    Hanoi(n - 1, spare, to, from)
+</pre>
+<h3>Iterative solution</h3>
+<p>An equivalent iterative solution exists: on alternate moves, move the smallest disk one peg in a fixed cyclic direction, and make the only legal move not involving the smallest disk. In binary counting, the binary representation of the move number determines which disk to move, giving the puzzle a close connection with the binary reflected Gray code and with the Sierpiński triangle, which emerges when the possible states of the puzzle are drawn as a graph.</p>
+<h2>Variations</h2>
+<p>Variants include the Reve's puzzle, a version with four pegs (the Frame–Stewart algorithm gives the presumed optimal solution, proved optimal for up to 30 disks in 2014), the Reve's and multi-peg generalisations, and the Tower of Babylon. The puzzle is used in computer science teaching to illustrate recursion, and psychologists have used modified versions to study problem solving.</p>
+<h2>In popular culture</h2>
+<p>The puzzle appears in the story "Now Inhale" by Eric Frank Russell, in the <i>Doctor Who</i> serial <i>The Celestial Toymaker</i> (as the Trilogic Game), in the film <i>Rise of the Planet of the Apes</i> (as the "Lucas Tower" intelligence test), and in numerous video games, including <i>Mass Effect</i> and <i>Star Wars: Knights of the Old Republic</i>.</p>
+<p class="small">Categories: Mathematical puzzles | Mechanical puzzles | Recursion | Édouard Lucas</p>
+</div>
+</body>
+</html>

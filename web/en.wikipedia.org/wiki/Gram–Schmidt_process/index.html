@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gram–Schmidt process</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:860px;margin:2em auto;padding:0 1.2em;color:#1a1a1a;line-height:1.6;background:#fdfdf8}
+h1{font-size:2em;border-bottom:2px solid #888;padding-bottom:.2em}
+h2{font-size:1.35em;border-bottom:1px solid #ccc;padding-bottom:.15em;margin-top:1.4em}
+.hero{display:block;width:100%;max-height:340px;object-fit:cover;background:#dde3e8;border:1px solid #aaa}
+.caption{font-size:.85em;color:#555;text-align:center;margin:.3em 0 1em}
+math{font-style:italic}
+.formula{text-align:center;font-size:1.1em;margin:.8em 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{margin:.4em 0}
+.small{font-size:.85em;color:#555}
+</style>
+</head>
+<body>
+<h1>Gram–Schmidt process</h1>
+<img class="hero" src="images/gram–schmidt_process.png" alt="Geometric illustration of successive projections in the Gram-Schmidt orthogonalisation process">
+<p class="caption">Each new orthogonal vector is obtained by subtracting from a given vector its projections onto the previous ones.</p>
+<p>In mathematics, particularly linear algebra and numerical analysis, the <b>Gram–Schmidt process</b> (or Gram–Schmidt orthogonalisation) is a method for orthonormalising a set of vectors in an inner product space, most commonly the Euclidean space <b>R</b><sup>n</sup> equipped with the standard inner product. It is named after the Danish mathematician Jørgen Pedersen Gram and the German mathematician Erhard Schmidt, though the method appeared earlier in the work of Laplace and Cauchy.</p>
+<h2>Definition</h2>
+<p>Given linearly independent vectors <i>v</i><sub>1</sub>, …, <i>v</i><sub>k</sub>, the projection operator is defined by</p>
+<p class="formula">proj<sub>u</sub>(v) = ( ⟨u, v⟩ / ⟨u, u⟩ ) u</p>
+<p>The Gram–Schmidt process then constructs orthogonal vectors <i>u</i><sub>1</sub>, …, <i>u</i><sub>k</sub> by</p>
+<p class="formula">u<sub>1</sub> = v<sub>1</sub>, &nbsp; u<sub>j</sub> = v<sub>j</sub> − Σ<sub>i&lt;j</sub> proj<sub>u<sub>i</sub></sub>(v<sub>j</sub>)</p>
+<p>Normalising each <i>u</i><sub>j</sub> to unit length, <i>e</i><sub>j</sub> = <i>u</i><sub>j</sub> / ‖<i>u</i><sub>j</sub>‖, yields an orthonormal set that spans the same subspace as the original vectors. If an input vector is linearly dependent on the previous ones, the procedure produces the zero vector, signalling that dependence.</p>
+<h2>Applications</h2>
+<p>The process underlies several standard constructions:</p>
+<ul>
+<li><b>QR decomposition</b> — factoring a matrix A = QR, where Q has orthonormal columns produced by applying Gram–Schmidt to the columns of A and R is upper triangular.</li>
+<li>Constructing orthonormal bases of polynomials (Legendre, Chebyshev and other orthogonal polynomials arise from applying Gram–Schmidt to monomials under suitable inner products).</li>
+<li>Orthogonalising wavefunctions and basis sets in quantum mechanics and computational chemistry.</li>
+<li>Algorithms in lattice reduction and in the theory of determinant calculations (the Gram determinant tests linear independence).</li>
+</ul>
+<h2>Numerical stability</h2>
+<p>The classical algorithm as written above is numerically unstable: rounding errors can cause the computed vectors to lose orthogonality badly when the input vectors are nearly parallel. The <b>modified Gram–Schmidt process</b>, which subtracts the projections one at a time and immediately uses each updated vector, is mathematically equivalent in exact arithmetic but far more stable in floating point, and is the version implemented in serious numerical software. Even more stable alternatives, such as Householder reflections and Givens rotations, are generally preferred for computing QR decompositions.</p>
+<p class="small">See also: QR decomposition; Orthonormal basis; Inner product space; Householder transformation; Orthogonalisation.</p>
+</body>
+</html>

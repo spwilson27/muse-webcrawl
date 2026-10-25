@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>RTP Control Protocol</title>
+<style>
+body{font-family:Georgia,serif;margin:2em auto;max-width:860px;padding:0 1em;line-height:1.6;color:#222}
+h1{border-bottom:2px solid #a7d7f9;padding-bottom:.2em}
+h2{border-bottom:1px solid #ccc;padding-bottom:.1em}
+img.hero{display:block;max-width:100%;margin:1em auto;background:#eee;border:1px solid #bbb;min-height:180px}
+.infobox{float:right;background:#f9f9f9;border:1px solid #aaa;padding:.6em;margin:0 0 1em 1em;font-size:.9em;width:280px}
+a{color:#0645ad}
+</style>
+</head>
+<body>
+<h1>RTP Control Protocol</h1>
+<img class="hero" src="images/RTP_Control_Protocol.png" alt="Diagram of RTCP packets exchanged between RTP sender and receiver">
+<p>The <b>RTP Control Protocol</b> (<b>RTCP</b>) is a binary-encoded out-of-band signaling protocol that functions alongside the <a href="../Real-time_Transport_Protocol/index.html">Real-time Transport Protocol</a> (RTP). Its basic functionality and packet structure is defined by <a href="../RFC_3550/index.html">RFC 3550</a>. RTCP provides statistics and control information for an RTP session, periodically transmitting control packets to the participants in a streaming multimedia session.</p>
+<div class="infobox">
+<b>Developer(s):</b> IETF<br>
+<b>Introduction:</b> July 2003 (RFC 3550)<br>
+<b>Supersedes:</b> RFC 1889<br>
+<b>OSI layer:</b> Transport layer (via UDP)
+</div>
+<h2>Functions</h2>
+<p>The primary function of RTCP is to provide feedback on the quality of service (QoS) being provided by the distribution of data in a multimedia session. This feedback includes the number of packets lost, the highest sequence number received, round-trip delay estimates and interarrival jitter. Applications can use this information to adapt the encoding of the media being sent, for example by lowering the bit rate when packet loss increases.</p>
+<p>RTCP also carries a persistent transport-level identifier for an RTP source called the canonical name (CNAME). Receivers use the CNAME to track participants across changes in the synchronization source (SSRC) identifier and to associate multiple data streams from a given participant in a set of related RTP sessions.</p>
+<h2>Packet types</h2>
+<p>RTCP defines several packet types, each identified by a packet type (PT) field:</p>
+<ul>
+<li><b>Sender Report (SR), PT=200</b> — sent by participants that are actively sending data, containing transmission and reception statistics.</li>
+<li><b>Receiver Report (RR), PT=201</b> — sent by participants that are not active senders, containing reception statistics.</li>
+<li><b>Source Description (SDES), PT=202</b> — carries items such as the CNAME and optional name, email address, or location of participants.</li>
+<li><b>Goodbye (BYE), PT=203</b> — indicates that one or more sources are no longer active.</li>
+<li><b>Application-defined (APP), PT=204</b> — intended for experimental use as new applications and features are developed.</li>
+</ul>
+<h2>Bandwidth usage</h2>
+<p>The interval between RTCP packets is randomized and scaled so that RTCP typically consumes no more than five percent of the session bandwidth. This prevents control traffic from overwhelming the media traffic and allows sessions to scale to large numbers of participants.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Real-time_Transport_Protocol/index.html">Real-time Transport Protocol</a></li>
+<li><a href="../RTSP/index.html">Real Time Streaming Protocol</a></li>
+<li><a href="../Session_Initiation_Protocol/index.html">Session Initiation Protocol</a></li>
+<li><a href="../SRTP/index.html">Secure Real-time Transport Protocol</a></li>
+</ul>
+<p><i>Categories: Internet protocols, VoIP protocols, Streaming</i></p>
+</body>
+</html>

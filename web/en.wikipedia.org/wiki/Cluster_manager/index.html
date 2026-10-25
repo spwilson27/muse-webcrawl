@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cluster manager - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 36px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-top: 4px; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+ul { line-height: 1.6; font-size: 15px; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 14px 18px; font-size: 13px; }
+.infobox img { width: 100%; background: #e8e8e8; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.small { font-size: 12px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Cluster manager</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="infobox">
+<img src="images/cluster-manager.png" alt="Diagram of a cluster manager coordinating multiple servers">
+<p>A cluster manager coordinates workloads and resources across a group of machines.</p>
+</div>
+<p>A <b>cluster manager</b> is software that manages a <a href="../Computer_cluster/index.html">computer cluster</a>—a set of linked computers that work together so that, in many respects, they can be viewed as a single system. Cluster managers allocate workloads to nodes, monitor node health, restart or migrate failed work, and present the pool of machines as a coherent resource to users and applications.</p>
+<h2>Functions</h2>
+<ul>
+<li><b>Scheduling:</b> deciding which node runs each job or service, subject to CPU, memory, and placement constraints.</li>
+<li><b>Resource management:</b> tracking capacity, enforcing quotas, and balancing load.</li>
+<li><b>Health monitoring and failover:</b> detecting node or process failure (often via heartbeats) and rescheduling work elsewhere.</li>
+<li><b>Service discovery and configuration:</b> keeping track of where services run and how to reach them.</li>
+<li><b>Scaling:</b> adding or removing replicas to match demand.</li>
+</ul>
+<h2>Examples</h2>
+<p>In high-performance computing, batch-oriented cluster managers and job schedulers such as Slurm, PBS, and HTCondor dominate. For containerized workloads, <a href="../Kubernetes/index.html">Kubernetes</a>, Apache Mesos, and Docker Swarm act as cluster managers for containers. High-availability clusters use managers such as Pacemaker and Corosync to keep services running through hardware failures, while cluster file systems and databases use their own coordination layers (for example ZooKeeper or etcd) for consensus.</p>
+<h2>Design issues</h2>
+<p>Cluster managers must solve hard distributed-systems problems: reaching consensus about cluster state, avoiding split-brain scenarios in which partitioned nodes act independently, fencing failed nodes so they cannot corrupt shared state, and making scheduling decisions quickly at scale. Many designs separate a control plane (decision-making) from a data plane (the workloads themselves).</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Computer_cluster/index.html">Computer cluster</a></li>
+<li><a href="../Job_scheduler/index.html">Job scheduler</a></li>
+<li><a href="../Kubernetes/index.html">Kubernetes</a></li>
+<li><a href="../High_availability/index.html">High availability</a></li>
+</ul>
+<p class="small">This page was recreated from memory as part of the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

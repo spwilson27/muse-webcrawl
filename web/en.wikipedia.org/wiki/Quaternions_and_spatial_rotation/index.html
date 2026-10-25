@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Quaternions and spatial rotation - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 960px; line-height: 1.6; color: #202122; padding: 0 1em; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+img.hero { float: right; margin: 0 0 1em 1em; max-width: 300px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em 1em; margin: 0 0 1em 1em; font-size: 0.9em; }
+code, .math { font-family: monospace; background: #f8f9fa; }
+</style>
+</head>
+<body>
+<h1>Quaternions and spatial rotation</h1>
+<img class="hero" src="images/quaternions-and-spatial-rotation.png" alt="Diagram of a unit quaternion rotating a vector in three-dimensional space">
+<p>In mathematics and computer graphics, <b>quaternions</b> are used to represent rotations and orientations in three-dimensional space. Unit quaternions, also known as <b>versors</b>, provide a convenient mathematical notation for representing spatial orientations and rotations of elements in three dimensional space. Specifically, they encode information about an axis-angle rotation about an arbitrary axis.</p>
+<p>In comparison to Euler angles they are simpler to compose and avoid the problem of gimbal lock. Compared to rotation matrices, they are more compact, more numerically stable, and more efficient. Quaternions have applications in computer graphics, computer vision, robotics, navigation, molecular dynamics, flight dynamics, orbital mechanics of satellites, and crystallographic texture analysis.</p>
+<h2>Using quaternion rotations</h2>
+<p>A spatial rotation about a fixed point through an angle <span class="math">&theta;</span> around an axis defined by a unit vector <span class="math"><b>u</b> = (u<sub>x</sub>, u<sub>y</sub>, u<sub>z</sub>)</span> can be represented by a quaternion:</p>
+<p class="math">q = cos(&theta;/2) + sin(&theta;/2)(u<sub>x</sub><b>i</b> + u<sub>y</sub><b>j</b> + u<sub>z</sub><b>k</b>)</p>
+<p>where <b>i</b>, <b>j</b>, <b>k</b> are the fundamental quaternion units satisfying <b>i</b><sup>2</sup> = <b>j</b><sup>2</sup> = <b>k</b><sup>2</sup> = <b>ijk</b> = &minus;1. A vector <b>v</b>, treated as a pure quaternion (with zero scalar part), is rotated to <b>v</b>&prime; by the conjugation:</p>
+<p class="math"><b>v</b>&prime; = q<b>v</b>q<sup>&minus;1</sup></p>
+<p>This operation corresponds to the double cover of the rotation group SO(3) by the three-sphere of unit quaternions: both q and &minus;q represent the same rotation.</p>
+<h2>Composition of rotations</h2>
+<p>One advantage of the quaternion formulation is that the composition of two rotations is again a rotation whose quaternion is the product of the two rotation quaternions. If q<sub>1</sub> and q<sub>2</sub> represent successive rotations, then applying q<sub>1</sub> first and then q<sub>2</sub> gives q<sub>2</sub>q<sub>1</sub>. This makes chaining rotations in animation and robotics straightforward. Interpolation between orientations is typically done with spherical linear interpolation (<a href="../Slerp/index.html">slerp</a>), which produces a constant-speed motion along the shortest arc.</p>
+<h2>Advantages over other representations</h2>
+<ul>
+<li><b>Compactness:</b> a quaternion stores a rotation in four numbers, versus nine for a rotation matrix.</li>
+<li><b>No gimbal lock:</b> unlike <a href="../Euler_angles/index.html">Euler angles</a>, quaternions do not lose a degree of freedom at particular configurations.</li>
+<li><b>Numerical stability:</b> drift can be corrected by simply re-normalizing the quaternion.</li>
+<li><b>Smooth interpolation:</b> slerp gives natural, torque-minimal orientation paths.</li>
+</ul>
+<h2>History</h2>
+<p>Quaternions were first described by the Irish mathematician William Rowan Hamilton in 1843, famously carved into Brougham Bridge in Dublin: <span class="math"><b>i</b><sup>2</sup> = <b>j</b><sup>2</sup> = <b>k</b><sup>2</sup> = <b>ijk</b> = &minus;1</span>. Their use for rotations was recognized later; the connection to axis-angle rotations and the "sandwich product" q<b>v</b>q<sup>&minus;1</sup> became central to aerospace attitude control in the twentieth century, including the Apollo program's guidance systems.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Quaternion/index.html">Quaternion</a></li>
+<li><a href="../Rotation_matrix/index.html">Rotation matrix</a></li>
+<li><a href="../Euler_angles/index.html">Euler angles</a></li>
+<li><a href="../Axis%E2%80%93angle_representation/index.html">Axis–angle representation</a></li>
+<li><a href="../Gimbal_lock/index.html">Gimbal lock</a></li>
+</ul>
+</body>
+</html>

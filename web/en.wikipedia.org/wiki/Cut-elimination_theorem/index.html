@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cut-elimination theorem - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #fff; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; font-family: sans-serif; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 480px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 40px 0; color: #72777d; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Cut-elimination theorem</h1>
+<div class="hero"><img src="images/cut-elimination.png" alt="A sequent calculus proof tree being transformed to remove a cut"></div>
+<p>The <b>cut-elimination theorem</b> (or <b>Gentzen's <i>Hauptsatz</i></b>) is the central result establishing the significance of the sequent calculus. It was originally proved by Gerhard Gentzen in his landmark 1934 paper "Investigations in Logical Deduction" for the systems LJ and LK, formalising intuitionistic and classical logic respectively.</p>
+<p>The theorem states that any judgement that has a proof in the sequent calculus making use of the <b>cut rule</b> also has a <b>cut-free</b> proof — a proof that does not use the cut rule at all.</p>
+<h2>The cut rule</h2>
+<p>In the sequent calculus, the cut rule allows one to use a lemma: from a proof of a sequent containing a formula A, and a proof of a sequent in which A appears as a hypothesis, one may conclude the combined sequent with A removed. It formalises the everyday mathematical practice of proving a lemma and then applying it. Cut elimination shows that this detour is never necessary in principle: every provable sequent has a direct, "analytic" proof.</p>
+<h2>Consequences</h2>
+<p>Cut-free proofs have the <b>subformula property</b>: every formula occurring in the proof is a subformula of a formula in the conclusion. This yields a range of important corollaries:</p>
+<p>· <b>Consistency:</b> the empty sequent has no cut-free proof, so the calculus — and the logic it formalises — is consistent. Gentzen used a related argument to prove the consistency of arithmetic.<br>
+· <b>Disjunction and existence properties:</b> for intuitionistic logic, if a disjunction or existence statement is provable, a specific disjunct or witness is provable.<br>
+· <b>Interpolation:</b> the Craig interpolation theorem can be derived from cut-free proofs.<br>
+· <b>Decidability:</b> proof search in cut-free systems is constrained, supporting decision procedures for fragments of logic.</p>
+<h2>Proof and complexity</h2>
+<p>Gentzen's proof proceeds by a double induction, systematically pushing cuts upward through the proof until they can be removed. Eliminating cuts can cause an enormous — in general non-elementary — blow-up in proof size: a short proof with cuts may expand into an astronomically longer cut-free proof. This is one reason cuts are so useful in practice even though they are eliminable in principle.</p>
+<h2>Generalizations</h2>
+<p>Cut elimination has been established for a wide range of systems, including modal, substructural, and higher-order logics, and it has proof-theoretic analogues in natural deduction (normalisation) and in category theory. It remains a benchmark property: a sequent calculus for a new logic is generally expected to admit cut elimination.</p>
+<h2>See also</h2>
+<p>Sequent calculus · Gerhard Gentzen · Proof theory · Craig interpolation</p>
+</div>
+</body>
+</html>

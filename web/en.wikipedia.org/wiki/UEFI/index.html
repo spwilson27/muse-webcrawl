@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>UEFI - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 36px 48px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 4px; }
+h2 { font-size: 1.35em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 0.98em; }
+img.hero { float: right; margin: 0 0 12px 18px; max-width: 300px; border: 1px solid #c8ccd1; background: #eaecf0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>UEFI</h1>
+<img class="hero" src="images/uefi.png" alt="A UEFI firmware setup screen">
+<p>The <b>Unified Extensible Firmware Interface</b> (<b>UEFI</b>) is a specification, maintained by the UEFI Forum, that defines the architecture of the platform firmware used for booting computers and its interface for interaction with the operating system. UEFI firmware provides several technical advantages over the traditional BIOS, including the ability to boot from drives larger than 2 tebibytes, support for the GUID Partition Table (GPT), a modular driver model, and a pre-boot environment that can include networking and a graphical interface.</p>
+<h2>History</h2>
+<p>UEFI originated as Intel's Extensible Firmware Interface (EFI), developed in the late 1990s for the Itanium architecture; the first specification, EFI 1.02, was released in 2000. In 2005 Intel transferred the specification to the newly formed UEFI Forum, whose members include AMD, Apple, Dell, HP, IBM, Lenovo, and Microsoft. Macintosh computers adopted EFI beginning in 2006, and UEFI became standard on Windows PCs following the launch of Windows 8 and Microsoft's Secure Boot requirement for certification in 2012.</p>
+<h2>Features</h2>
+<p>UEFI defines boot services and runtime services available to loaders and operating systems. A UEFI system boots by loading EFI application images — typically a boot loader stored as a .efi file in the EFI System Partition, a FAT32 partition on the boot disk. Firmware can include a Compatibility Support Module (CSM) that emulates legacy BIOS booting, though many vendors have removed it. Secure Boot uses digital signatures to ensure that only trusted boot software runs, a feature intended to block bootkits and rootkits but also criticized for complicating the installation of alternative operating systems.</p>
+<h2>Implementation</h2>
+<p>Most UEFI firmware is built on the TianoCore EDK II open-source codebase. The firmware executes in phases — security, pre-EFI initialization, driver execution, boot device selection, and runtime — and exposes variables stored in NVRAM for boot configuration shared between firmware and operating system.</p>
+<h2>See also</h2>
+<p><a href="../BIOS/index.html">BIOS</a> · <a href="../GUID_Partition_Table/index.html">GUID Partition Table</a> · <a href="../Secure_Boot/index.html">Secure Boot</a> · <a href="../Booting/index.html">Booting</a></p>
+</div>
+</body>
+</html>

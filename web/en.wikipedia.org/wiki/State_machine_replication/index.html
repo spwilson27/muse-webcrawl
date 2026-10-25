@@ -1,0 +1,9 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>State machine replication - Wikipedia</title><style>body{font-family:sans-serif;max-width:900px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em}img.hero{max-width:100%;border:1px solid #ccc}a{color:#0645ad}</style></head><body>
+<h1>State machine replication</h1>
+<img class="hero" src="images/state_machine_replication.png" alt="Diagram of replicas applying the same ordered commands to a state machine">
+<p><b>State machine replication</b> (SMR) is a general method for implementing a fault-tolerant service by replicating servers and coordinating client interactions with the replicas. Each replica executes the same deterministic sequence of commands, so all replicas pass through the same sequence of states.</p>
+<h2>Approach</h2>
+<p>The key requirement is that replicas agree on the order of incoming requests — a problem solved by consensus protocols such as Paxos and Raft — and that the service behaves deterministically given the same inputs. Clients send commands to the replicas, which agree an ordering, execute in that order, and return matching replies.</p>
+<h2>Applications</h2>
+<p>SMR underlies distributed coordination services and replicated databases such as ZooKeeper, etcd, and Chubby, and Byzantine-fault-tolerant variants are used in some blockchain systems.</p>
+</body></html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Quicksort - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 960px; line-height: 1.6; color: #202122; padding: 0 1em; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+img.hero { float: right; margin: 0 0 1em 1em; max-width: 300px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 1em; overflow-x: auto; }
+</style>
+</head>
+<body>
+<h1>Quicksort</h1>
+<img class="hero" src="images/quicksort-animation.png" alt="Visualization of quicksort partitioning an array around a pivot element">
+<p><b>Quicksort</b> is an efficient, general-purpose sorting algorithm. Quicksort was developed by British computer scientist Tony Hoare in 1959 and published in 1961. It is a divide-and-conquer algorithm that works by selecting a "pivot" element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The sub-arrays are then sorted recursively.</p>
+<h2>Algorithm</h2>
+<p>Quicksort operates in place on an array, using little additional memory. The main steps for a subarray are:</p>
+<ol>
+<li>Choose a pivot element.</li>
+<li><i>Partition:</i> reorder the array so that all elements less than the pivot come before it and all elements greater come after it. The pivot is then in its final position.</li>
+<li>Recursively sort the two sub-arrays on either side of the pivot.</li>
+</ol>
+<pre>
+algorithm quicksort(A, low, high) is
+    if low &lt; high then
+        p := partition(A, low, high)
+        quicksort(A, low, p - 1)
+        quicksort(A, p + 1, high)
+</pre>
+<h2>Complexity</h2>
+<p>On average, quicksort makes O(<i>n</i> log <i>n</i>) comparisons, and this average-case efficiency has made it one of the most widely used sorting algorithms in practice; it is the basis of the default sort in many standard libraries, including variants such as Introsort and the pattern-defeating pdqsort. In the worst case&mdash;for example, sorted input with a naive pivot choice&mdash;quicksort makes O(<i>n</i><sup>2</sup>) comparisons. Randomised pivot selection, median-of-three strategies, and switching to insertion sort for small subarrays make the worst case unlikely in practice.</p>
+<h2>Pivot selection and partitioning schemes</h2>
+<p>Named partition schemes include the <b>Lomuto</b> scheme, simple to implement but prone to more swaps, and <b>Hoare's</b> original scheme, which uses two pointers moving toward each other. Three-way partitioning (the "Dutch national flag" approach, due to Dijkstra) handles many duplicate keys efficiently.</p>
+<h2>History</h2>
+<p>Hoare developed quicksort in 1959 while working on machine translation in Moscow, needing to sort words so that sentences could be looked up in a dictionary. He published the algorithm in the <i>Computer Journal</i> in 1961. Robert Sedgewick's 1975 PhD thesis analysed and refined many implementation details, and Jon Bentley and M. Douglas McIlroy's 1993 "Engineering a Sort Function" influenced library implementations. Hoare received the Turing Award in 1980, in part for this work.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Merge_sort/index.html">Merge sort</a></li>
+<li><a href="../Heapsort/index.html">Heapsort</a></li>
+<li><a href="../Introsort/index.html">Introsort</a></li>
+<li><a href="../Tony_Hoare/index.html">Tony Hoare</a></li>
+<li><a href="../Divide-and-conquer_algorithm/index.html">Divide-and-conquer algorithm</a></li>
+</ul>
+</body>
+</html>

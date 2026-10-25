@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Strassen algorithm - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; padding: 0 1em; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #3366cc; text-decoration: none; }
+.thumb { border: 1px solid #a2a9b1; background: #f8f9fa; padding: 3px; margin: 0 0 1em 1em; width: 300px; font-size: 0.85em; }
+code { background: #f8f9fa; padding: 0 2px; }
+.clear { clear: both; }
+</style>
+</head>
+<body>
+<h1>Strassen algorithm</h1>
+<p>In linear algebra, the <b>Strassen algorithm</b>, named after Volker Strassen, is an algorithm for matrix multiplication. It is faster than the standard matrix multiplication algorithm for large matrices, with a better asymptotic complexity, although the naive algorithm is often better for smaller matrices. The Strassen algorithm is slower in practice than the Coppersmith–Winograd-type "galactic algorithms" for the largest matrices, but it remains practical for matrices of moderate size.</p>
+<div class="thumb"><img src="images/Strassen_recursion.png" alt="Diagram of the recursive block decomposition in Strassen's algorithm"><p>Recursive block decomposition in Strassen's algorithm.</p></div>
+<h2>History</h2>
+<p>Volker Strassen published the algorithm in 1969, showing that the naive O(n<sup>3</sup>) algorithm was not optimal. The result surprised the mathematical community and began the research field of fast matrix multiplication. Subsequent work, beginning with the Coppersmith–Winograd algorithm (1987), reduced the exponent further, to below 2.38 by the 2020s.</p>
+<h2>Description</h2>
+<p>The algorithm divides each matrix into four blocks and computes the product using seven multiplications of blocks instead of the eight required by the naive block approach, at the cost of extra additions. Recursively applying this reduction gives a complexity of O(n<sup>log<sub>2</sub> 7</sup>) ≈ O(n<sup>2.807</sup>). The seven products, conventionally denoted M<sub>1</sub> through M<sub>7</sub>, are cleverly chosen linear combinations of the blocks of the two input matrices; the blocks of the result are then assembled from additions and subtractions of these products.</p>
+<h2>Complexity and practical use</h2>
+<p>Because of larger constant factors and numerical-stability considerations, Strassen's algorithm typically becomes faster than naive multiplication only for matrices above a certain size (often a few hundred rows). Implementations switch between Strassen recursion and the naive method at a crossover point tuned to the hardware.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Matrix_multiplication_algorithm/index.html">Matrix multiplication algorithm</a></li>
+<li><a href="../Coppersmith–Winograd_algorithm/index.html">Coppersmith–Winograd algorithm</a></li>
+<li><a href="../Computational_complexity_of_matrix_multiplication/index.html">Computational complexity of matrix multiplication</a></li>
+</ul>
+<p class="clear"><i>From Wikipedia, the free encyclopedia (recreated from memory).</i></p>
+</body>
+</html>

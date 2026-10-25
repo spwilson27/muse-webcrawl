@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DEFLATE - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.mw-body { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-size: 1.9em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.2em; }
+p { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em 1em; margin: 0 0 1em 1em; font-size: 0.85em; width: 250px; }
+.infobox img { max-width: 100%; }
+.infobox th { text-align: left; padding-right: 0.5em; }
+.hatnote { font-style: italic; font-size: 0.9em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>DEFLATE</h1>
+<p class="hatnote">From Wikipedia, the free encyclopedia</p>
+<div class="infobox">
+<img src="images/deflate.png" alt="Diagram of the DEFLATE compression pipeline combining LZ77 and Huffman coding">
+<table>
+<tr><th>Type</th><td>Lossless data compression algorithm</td></tr>
+<tr><th>Designed by</th><td>Phil Katz (PKZIP)</td></tr>
+<tr><th>Specification</th><td>RFC 1951 (1996)</td></tr>
+<tr><th>Used in</th><td>ZIP, gzip, PNG, HTTP</td></tr>
+</table>
+</div>
+<p><b>DEFLATE</b> (stylised <b>Deflate</b>) is a lossless data compression file format and algorithm that uses a combination of LZ77 and Huffman coding. It was originally defined by Phil Katz for version 2 of his PKZIP archiving tool, and the format was later specified in RFC 1951 (1996). DEFLATE is the compression algorithm at the heart of the ZIP archive format, gzip, the PNG image format and the zlib library, and is also used in HTTP compression.</p>
+<h2>Algorithm</h2>
+<p>A DEFLATE stream consists of a series of blocks. Each block is compressed in two stages: first, the LZ77 algorithm replaces repeated substrings with references (a length and a backward distance into a 32 KB sliding window); second, the resulting literals and length/distance symbols are encoded with Huffman coding, either using fixed built-in code tables or dynamic tables transmitted in the block header. Data may also be stored uncompressed in a "stored" block. Because Huffman codes are packed starting with the least-significant bit, DEFLATE differs in bit order from many other formats.</p>
+<h2>Encoders</h2>
+<p>The best-known implementation is Jean-loup Gailly and Mark Adler's zlib library and the gzip tool; its compression levels (1 fastest to 9 best) trade speed for ratio by varying the match search. Other encoders include 7-Zip's more exhaustive optimiser and Google's Zopfli, which produces smaller (but fully compatible) output at much greater CPU cost. The format is in the public domain in the sense that it may be implemented freely; earlier patent concerns around LZ77 variants were a factor in the creation of the rival LZW-based GIF format's history and PNG's choice of DEFLATE.</p>
+<h2>See also</h2>
+<p><a href="../LZ77_and_LZ78/index.html">LZ77 and LZ78</a> · <a href="../Huffman_coding/index.html">Huffman coding</a> · <a href="../Gzip/index.html">Gzip</a> · <a href="../Zlib/index.html">Zlib</a></p>
+</div>
+</body>
+</html>

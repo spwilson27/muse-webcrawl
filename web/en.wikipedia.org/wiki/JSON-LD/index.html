@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JSON-LD - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #fff; color: #202122; }
+header { background: #f8f9fa; border-bottom: 1px solid #a2a9b1; padding: 12px 24px; }
+header .site { font-family: sans-serif; font-size: 13px; color: #72777d; letter-spacing: 1px; }
+main { max-width: 960px; margin: 0 auto; padding: 16px 24px 48px; }
+h1 { font-size: 32px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 8px; }
+h2 { font-size: 22px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+p, li { font-size: 15px; line-height: 1.6; }
+code, pre { font-family: monospace; font-size: 13px; background: #f8f9fa; }
+pre { border: 1px solid #a2a9b1; padding: 10px; overflow-x: auto; }
+.infobox { float: right; width: 270px; background: #f8f9fa; border: 1px solid #a2a9b1; padding: 10px; margin: 0 0 16px 16px; font-size: 13px; font-family: sans-serif; }
+.infobox .title { background: #eaecf0; text-align: center; font-weight: bold; padding: 4px; margin-bottom: 8px; }
+.infobox img { width: 100%; display: block; }
+.infobox table { width: 100%; border-collapse: collapse; }
+.infobox td { padding: 2px 4px; vertical-align: top; }
+.infobox td:first-child { font-weight: bold; width: 45%; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<header><span class="site">WIKIPEDIA — The Free Encyclopedia</span></header>
+<main>
+<h1>JSON-LD</h1>
+<div class="infobox">
+<div class="title">JSON-LD</div>
+<img src="images/JSON-LD.png" alt="Logo-style image for JSON-LD, linked data encoded in JSON">
+<table>
+<tr><td>Filename extension</td><td>.jsonld</td></tr>
+<tr><td>Internet media type</td><td>application/ld+json</td></tr>
+<tr><td>Developed by</td><td>W3C JSON for Linking Data Community Group</td></tr>
+<tr><td>Initial release</td><td>2010 (JSON-LD 1.0 Recommendation, 2014)</td></tr>
+<tr><td>Type of format</td><td>Semantic Web, data interchange</td></tr>
+<tr><td>Container for</td><td>Linked data / RDF data</td></tr>
+</table>
+</div>
+<p><b>JSON-LD</b> (JavaScript Object Notation for Linked Data) is a method of encoding <a href="../Linked_data/index.html">linked data</a> using <a href="../JSON/index.html">JSON</a>. One goal for JSON-LD was to require as little effort as possible from developers to transform their existing JSON to JSON-LD. JSON-LD allows data to be serialised in a way that is similar to traditional JSON.</p>
+<h2>Design</h2>
+<p>JSON-LD is based on the concept of a "context", which links object properties in a JSON document to concepts in an <a href="../Ontology_(information_science)/index.html">ontology</a>. The context maps property names to IRIs (internationalized resource identifiers), so that data from different sources can be unambiguously merged and interpreted as an <a href="../Resource_Description_Framework/index.html">RDF</a> graph. Special keywords — such as <code>@context</code>, <code>@id</code>, <code>@type</code> and <code>@graph</code> — are prefixed with an at sign.</p>
+<pre>
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jane Doe",
+  "jobTitle": "Professor",
+  "telephone": "(425) 123-4567",
+  "url": "http://www.janedoe.com"
+}
+</pre>
+<h2>Use</h2>
+<p>JSON-LD became a <a href="../World_Wide_Web_Consortium/index.html">W3C</a> Recommendation with the publication of JSON-LD 1.0 in January 2014; version 1.1 followed in 2020. It is widely used for embedding <a href="../Schema.org/index.html">Schema.org</a> structured data in web pages for search engines — Google recommends it as the preferred format for structured data — and it underlies the serialisation used by the <a href="../ActivityPub/index.html">ActivityPub</a> protocol.</p>
+<p>See also: <a href="../RDFa/index.html">RDFa</a>; <a href="../Microdata_(HTML)/index.html">Microdata (HTML)</a>; <a href="../Turtle_(syntax)/index.html">Turtle (syntax)</a>.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>π-calculus - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;color:#202122;background:#fff}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:10px 20px}
+main{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:88%;width:260px}
+.infobox th{text-align:left;padding-right:8px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+figure{margin:0 0 12px 0}
+figcaption{font-size:85%;color:#54595d}
+code{background:#f8f9fa;padding:0 3px}
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> — the free encyclopedia</header>
+<main>
+<h1>π-calculus</h1>
+<table class="infobox">
+<tr><th>Paradigm</th><td>Process calculus, concurrency</td></tr>
+<tr><th>Designed by</th><td>Robin Milner, Joachim Parrow, David Walker</td></tr>
+<tr><th>First appeared</th><td>1992</td></tr>
+</table>
+<figure><img src="images/pi-calculus.png" alt="Diagram of two processes exchanging a channel name"><figcaption>Processes communicate by passing channel names along channels, so the network topology itself can change.</figcaption></figure>
+<p>In theoretical computer science, the <b>π-calculus</b> (or <b>pi-calculus</b>) is a process calculus developed by Robin Milner, Joachim Parrow, and David Walker in the early 1990s as a continuation of work on the calculus of communicating systems (CCS). It is designed to describe concurrent systems whose configuration or topology changes during computation.</p>
+<h2>Overview</h2>
+<p>The defining feature of the π-calculus is <i>name mobility</i>: processes interact by sending and receiving names of communication channels along channels themselves. Because a process can receive a channel name it did not previously know, the set of connections between processes is dynamic — a property that lets the calculus model mobile telephony, internet protocols, and software with changing structure.</p>
+<h2>Syntax</h2>
+<p>Processes are built from a small grammar: the null process <code>0</code>; input <code>x(y).P</code>, which receives a name on channel <code>x</code> and continues as <code>P</code>; output <code>x̄⟨z⟩.P</code>, which sends name <code>z</code> along <code>x</code>; parallel composition <code>P | Q</code>; restriction <code>(νx)P</code>, which creates a fresh private name; replication <code>!P</code>; and choice <code>P + Q</code>.</p>
+<h2>Semantics and variants</h2>
+<p>The calculus is given meaning by structural congruence, reduction rules for communication, and labelled transition semantics with notions of bisimulation used to prove processes equivalent. Variants include the polyadic π-calculus, higher-order π-calculus, asynchronous π-calculus, and the spi calculus, which adds cryptographic primitives. The π-calculus is Turing complete, and fragments of it underpin the session-type theory of communication protocols.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Process_calculus/index.html">Process calculus</a></li>
+<li><a href="../Calculus_of_communicating_systems/index.html">Calculus of communicating systems</a></li>
+<li><a href="../Robin_Milner/index.html">Robin Milner</a></li>
+<li><a href="../Actor_model/index.html">Actor model</a></li>
+</ul>
+</main>
+</body>
+</html>

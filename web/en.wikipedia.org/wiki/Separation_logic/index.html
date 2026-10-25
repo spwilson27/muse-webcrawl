@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Separation logic - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#fff;color:#202122;margin:0;padding:0 1.5em;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-bottom:.2em}
+h2{font-size:1.35em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:100%;margin:.5em auto;border:1px solid #ccc;background:#eef;padding:2em;text-align:center;color:#555}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Separation logic</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/Separation_logic.png" alt="Diagram of two disjoint heap regions combined with the separating conjunction">
+<p><b>Separation logic</b> is an extension of Hoare logic devised by John C. Reynolds, Peter O'Hearn, Samin Ishtiaq and Hongseok Yang for reasoning about programs that manipulate pointer data structures and mutable heap memory. It is a substructural logic whose central connective, the <b>separating conjunction</b> (written <i>P * Q</i>), asserts that two claims hold of <i>disjoint</i> portions of the heap.</p>
+<h2>Key ideas</h2>
+<p>The basic assertion <i>x ↦ v</i> says that the heap consists of a single cell at address <i>x</i> holding value <i>v</i>. The <i>frame rule</i> allows a specification proved about a small piece of heap to be extended with any additional, untouched portion of the heap described by a frame assertion. This supports <b>local reasoning</b>: a procedure can be verified by examining only the memory it actually accesses, which makes proofs scale and has made separation logic a foundation for automated program verifiers.</p>
+<h2>Concurrent separation logic</h2>
+<p>O'Hearn's concurrent separation logic extends the discipline to shared-memory concurrency by enforcing that threads own disjoint resources, with ownership transferred at synchronisation points. For this work and for separation logic generally, Reynolds, O'Hearn and Yang shared key honours; O'Hearn later co-founded the Infer static analyser project at Facebook (Meta), which uses separation-logic-based techniques (bi-abduction) to find bugs in production code.</p>
+<h2>See also</h2>
+<p><a href="../Hoare_logic/index.html">Hoare logic</a> · <a href="../Formal_verification/index.html">Formal verification</a> · <a href="../Pointer_(computer_programming)/index.html">Pointer (computer programming)</a> · <a href="../Bunched_logic/index.html">Bunched logic</a></p>
+</body>
+</html>

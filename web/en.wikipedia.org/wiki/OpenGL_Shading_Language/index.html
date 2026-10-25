@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OpenGL Shading Language - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:24px}
+p,li{font-family:sans-serif;font-size:14px;line-height:1.6}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 18px;font-family:sans-serif;font-size:13px}
+.infobox img{width:100%;height:auto}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+code,pre{font-family:monospace;background:#f8f9fa}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>OpenGL Shading Language</h1>
+<div class="infobox">
+<img src="images/opengl-shading-language.png" alt="Example of geometry rendered with GLSL shaders">
+<p><b>Paradigm:</b> Imperative, procedural</p>
+<p><b>Developer:</b> Khronos Group (OpenGL ARB)</p>
+<p><b>First appeared:</b> 2004 (OpenGL 2.0)</p>
+<p><b>Typing:</b> Static, strong</p>
+<p><b>File extensions:</b> .vert, .frag, .geom, .comp, .glsl</p>
+</div>
+<p><b>OpenGL Shading Language</b> (<b>GLSL</b>) is a high-level shading language with a syntax based on the C programming language. It was created by the OpenGL Architecture Review Board (ARB) to give developers more direct control of the graphics pipeline without having to use ARB assembly language or hardware-specific languages. GLSL shaders are compiled and linked at runtime by the OpenGL driver and executed on the graphics processing unit (GPU).</p>
+<h2>History</h2>
+<p>Before GLSL, developers could use the fixed-function pipeline or assembly-level interfaces such as ARB_vertex_program and ARB_fragment_program. Following 3Dlabs' proposal of a C-like language integrated into OpenGL, GLSL 1.10 was made a core part of OpenGL 2.0 in 2004. Version 1.20 and 1.30 accompanied OpenGL 2.1 and 3.0; GLSL 1.40 and 1.50 arrived with OpenGL 3.1 and 3.2, adding geometry shaders. Subsequent versions are numbered to match OpenGL releases: GLSL 4.00 (OpenGL 4.0) added tessellation shaders, and GLSL 4.30 added compute shaders.</p>
+<h2>Language features</h2>
+<p>GLSL resembles C in control flow, functions, and preprocessor, but is designed around vector and matrix types central to graphics: <code>vec2</code>, <code>vec3</code>, <code>vec4</code>, and <code>mat3</code>/<code>mat4</code>, with component swizzling such as <code>color.rgb</code>. It provides built-in variables such as <code>gl_Position</code> and built-in functions for trigonometry, interpolation, and texture sampling.</p>
+<p>Programs are organized as shader stages: vertex, tessellation control and evaluation, geometry, fragment, and compute shaders. Data flows between stages via <code>in</code>/<code>out</code> variables, while uniforms supply constant parameters from the host application and attributes (in modern core-profile GLSL, <code>in</code> variables in the vertex shader) supply per-vertex data.</p>
+<h2>Variants</h2>
+<p><b>GLSL ES</b> is the shading language for OpenGL ES and WebGL, adapted for embedded and mobile devices with reduced precision qualifiers (<code>lowp</code>, <code>mediump</code>, <code>highp</code>). A related language, ESSL, is used in WebGL 1.0 and 2.0. Shaders written for Vulkan can use GLSL compiled to SPIR-V intermediate representation through tools such as glslangValidator.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../OpenGL/index.html">OpenGL</a></li>
+<li><a href="../Shader/index.html">Shader</a></li>
+<li><a href="../High-Level_Shading_Language/index.html">High-Level Shading Language</a></li>
+<li><a href="../SPIR-V/index.html">SPIR-V</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Spectral clustering - Wikipedia</title>
+<style>
+body{font-family:sans-serif;background:#f8f9fa;color:#202122;margin:0;padding:0}
+header{background:#fff;border-bottom:1px solid #a7d7f9;padding:1em 2em}
+main{max-width:960px;margin:0 auto;background:#fff;padding:1.5em 2.5em;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+img.hero{float:right;margin:0 0 1em 1em;max-width:280px;border:1px solid #c8ccd1;background:#eaecf0}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+footer{font-size:.8em;color:#54595d;padding:1em 2em;text-align:center}
+</style>
+</head>
+<body>
+<header><p><strong>Wikipedia</strong> — The Free Encyclopedia</p></header>
+<main>
+<h1>Spectral clustering</h1>
+<img class="hero" src="images/spectral-clustering.png" alt="Two intertwined crescent-shaped point clouds correctly separated by spectral clustering">
+<p>In multivariate statistics, <b>spectral clustering</b> techniques make use of the spectrum (eigenvalues) of a similarity matrix of the data to perform <a href="../Dimensionality_reduction">dimensionality reduction</a> before <a href="../Cluster_analysis">clustering</a> in fewer dimensions. Unlike centroid-based methods such as <a href="../K-means_clustering">k-means</a>, spectral clustering can recover clusters that are not convex or linearly separable in the original space, such as concentric rings or intertwined moons.</p>
+<h2>Algorithms</h2>
+<p>A widely used version, following Ng, Jordan, and Weiss (2002), proceeds as follows: from pairwise similarities form the affinity matrix, construct the normalized graph Laplacian, take its first <i>k</i> eigenvectors, normalize the rows of the resulting matrix, and cluster the rows with k-means, treating each row as a representative of one original point.</p>
+<p>Closely related is the unnormalized approach of Shi and Malik (2000), originally developed for image segmentation via normalized cuts, which partitions a graph so as to minimize the weight of edges cut between groups relative to the volume of each group. Spectral clustering can be interpreted as a continuous relaxation of such graph-partitioning problems.</p>
+<h2>Intuition and applications</h2>
+<p>The eigenvectors of the graph Laplacian encode the connectivity structure of the data: points in the same well-connected cluster map to similar coordinates in the spectral embedding, so a simple algorithm succeeds there even when the clusters are entangled in input space. Applications include image segmentation, community detection in networks, speech processing, and bioinformatics. Practical limitations include the cubic cost of eigendecomposition on large datasets (addressed by Nyström-type approximations and landmark methods) and sensitivity to the similarity graph and its scale parameters.</p>
+</main>
+<footer>From Wikipedia, the free encyclopedia — recreated from memory for the muse-webcrawl project.</footer>
+</body>
+</html>

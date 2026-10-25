@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Single-pixel camera - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header .site{font-size:0.85em;color:#54595d}
+main{max-width:960px;margin:0 auto;padding:16px 24px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:8px}
+h2{border-bottom:1px solid #c8ccd1;padding-bottom:2px;margin-top:28px}
+figure{float:right;margin:0 0 12px 16px;width:280px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;font-size:0.85em;text-align:center}
+figure img{width:100%;height:auto;background:#eaecf0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.ref{font-size:0.9em;color:#54595d}
+footer{border-top:1px solid #a2a9b1;margin-top:32px;padding:12px 24px;font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<header><span class="site">From Wikipedia, the free encyclopedia</span></header>
+<main>
+<h1>Single-pixel camera</h1>
+<figure>
+<img src="images/single-pixel-camera.png" alt="Schematic of a single-pixel camera using a digital micromirror device and one photodetector">
+<figcaption>A single-pixel camera records a scene by measuring its total light through a sequence of coded patterns.</figcaption>
+</figure>
+<p>A <b>single-pixel camera</b> is an imaging device that forms images using a single light-sensitive detector rather than the millions of sensor elements in a conventional <a href="../Image_sensor">image sensor</a>. Instead of measuring each pixel directly, the camera records a sequence of measurements, each being the total light collected from a scene modulated by a different spatial pattern. A computer then reconstructs the image computationally. The technique is a flagship application of <a href="../Compressed_sensing">compressed sensing</a>.</p>
+<h2>Principle</h2>
+<p>In the best-known implementation, developed at Rice University in the mid-2000s by Richard Baraniuk, Kevin Kelly and colleagues, light from the scene is reflected off a <a href="../Digital_micromirror_device">digital micromirror device</a> (DMD) — an array of tiny mirrors that can be flipped on or off. The mirrors direct light from randomly selected parts of the scene onto a single photodiode. Each measurement corresponds to the inner product of the scene with a pseudo-random pattern. Because natural images are sparse in some basis (such as wavelets), far fewer measurements than pixels are needed to reconstruct a recognisable image using optimisation algorithms such as basis pursuit or total-variation minimisation.</p>
+<h2>Advantages</h2>
+<p>Single-pixel cameras are attractive where conventional focal-plane arrays are expensive or unavailable. A single detector can be made from exotic materials sensitive to infrared, terahertz, or ultraviolet wavelengths where silicon sensors perform poorly, making the approach useful for short-wave infrared imaging, spectroscopy, microscopy, and remote sensing. The architecture also offers flexible resolution, inherent compression during acquisition, and the possibility of imaging through scattering media.</p>
+<h2>Limitations</h2>
+<p>The main drawback is speed: because measurements are taken sequentially, acquiring an image takes longer than a snapshot camera, and moving scenes are difficult to capture. Reconstruction is computationally demanding, and image quality depends on the scene being compressible. Research continues into faster modulators, learned reconstruction, and structured illumination variants.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Compressed_sensing">Compressed sensing</a></li>
+<li><a href="../Computational_photography">Computational photography</a></li>
+<li><a href="../Ghost_imaging">Ghost imaging</a></li>
+<li><a href="../Digital_micromirror_device">Digital micromirror device</a></li>
+</ul>
+<p class="ref">This article was recreated from memory for the muse-webcrawl project.</p>
+</main>
+<footer>Text is available under the Creative Commons Attribution-ShareAlike License.</footer>
+</body>
+</html>

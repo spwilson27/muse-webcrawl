@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Direct memory access - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:2em auto;max-width:760px;padding:0 1em;color:#202122;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.4em}
+.hero{display:block;margin:1em auto;max-width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:.5em;text-align:center;font-style:italic;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Direct memory access</h1>
+<span class="hero"><img src="images/Direct_memory_access.png" alt="Diagram showing a DMA controller transferring data between a peripheral and memory independently of the CPU"></span>
+<p><b>Direct memory access</b> (<b>DMA</b>) is a feature of computer systems that allows certain hardware subsystems to access main system memory (random-access memory) independently of the central processing unit (CPU).</p>
+<p>Without DMA, when the CPU is using programmed input/output, it is typically fully occupied for the entire duration of the read or write operation, and is thus unavailable to perform other work. With DMA, the CPU first initiates the transfer, then it does other operations while the transfer is in progress, and it finally receives an interrupt from the DMA controller (DMAC) when the operation is done. This feature is useful at any time that the CPU cannot keep up with the rate of data transfer, or when the CPU needs to perform work while waiting for a relatively slow I/O data transfer.</p>
+<h2>Principles</h2>
+<p>A DMA controller can generate memory addresses and initiate memory read or write cycles. It contains several processor registers that may be written and read by the CPU, including a memory address register, a byte count register, and one or more control registers. To carry out an input, output or memory-to-memory operation, the host processor initializes the DMA controller with a count of the number of words to transfer, and the memory address to use. The CPU then sends commands to a peripheral device to initiate transfer of data. The DMA controller then provides addresses and read/write control lines to the system memory. Each time a word of data is ready to be transferred between the peripheral device and memory, the DMA controller increments its internal address register until the full block of data is transferred.</p>
+<h2>Transfer types</h2>
+<ul>
+<li><b>Burst mode</b> — an entire block of data is transferred in one contiguous sequence. Once the DMA controller is granted access to the system bus by the CPU, it transfers all bytes of data in the data block before releasing control of the system buses back to the CPU, but renders the CPU inactive for relatively long periods of time.</li>
+<li><b>Cycle stealing mode</b> — the DMA controller obtains access to the system bus the same way as in burst mode, but after transferring one byte of data it releases control of the system buses back to the CPU, making the CPU wait less long.</li>
+<li><b>Transparent mode</b> — the DMAC transfers data only when the CPU is performing operations that do not use the system buses.</li>
+</ul>
+<h2>Cache coherency</h2>
+<p>DMA can lead to cache coherency problems when a CPU accesses memory through its cache: if the DMA engine writes data to memory that the CPU has cached, the cache may hold stale data, and vice versa. System designs address this either by hardware cache snooping or by software cache management in device drivers. Modern interconnects such as <a href="../PCI_Express/index.html">PCI Express</a> and the IOMMU machinery manage much of this automatically.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../DMA_attack/index.html">DMA attack</a></li>
+<li><a href="../Remote_direct_memory_access/index.html">Remote direct memory access</a></li>
+<li><a href="../Input%E2%80%93output_memory_management_unit/index.html">IOMMU</a></li>
+<li><a href="../Channel_I/O/index.html">Channel I/O</a></li>
+</ul>
+</body>
+</html>

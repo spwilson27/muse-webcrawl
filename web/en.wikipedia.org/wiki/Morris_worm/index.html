@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Morris worm - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.content{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+p{font-family:sans-serif;font-size:14px;line-height:1.6}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:12px;font-family:sans-serif;margin:0 0 12px 16px;padding:8px}
+.infobox th{text-align:left;background:#eaf3ff;padding:4px}
+.infobox td{padding:4px}
+.hero{display:block;margin:12px auto;max-width:400px;border:1px solid #ccc;background:#eee;padding:20px;text-align:center;font-family:sans-serif;font-size:12px;color:#555}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{font-family:sans-serif;font-size:14px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Morris worm</h1>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Morris worm</th></tr>
+<tr><td><b>Common name</b></td><td>Morris worm / Internet worm</td></tr>
+<tr><td><b>Author</b></td><td>Robert Tappan Morris</td></tr>
+<tr><td><b>Released</b></td><td>November 2, 1988</td></tr>
+<tr><td><b>Released from</b></td><td>MIT (to disguise its origin at Cornell)</td></tr>
+<tr><td><b>Platforms affected</b></td><td>DEC VAX and Sun-3 systems running BSD Unix</td></tr>
+<tr><td><b>Estimated impact</b></td><td>~6,000 machines (about 10% of the then Internet)</td></tr>
+</table>
+</div>
+<img class="hero" src="images/morris-worm.png" alt="A floppy disk containing the Morris worm source code, held at the Computer History Museum">
+<p>The <b>Morris worm</b>, sometimes called the <b>Internet worm</b>, was one of the first computer worms distributed via the Internet and the first to gain significant mainstream media attention. Released on November 2, 1988, by Robert Tappan Morris, a graduate student at Cornell University, it infected an estimated 6,000 machines — roughly ten percent of the computers then connected to the Internet — and caused widespread disruption. It also led to the first felony conviction in the United States under the Computer Fraud and Abuse Act of 1986.</p>
+<h2>Background and release</h2>
+<p>Morris said he intended the worm to gauge the size of the Internet by counting how many machines it could reach. He released it from a computer at the Massachusetts Institute of Technology to conceal that it came from Cornell. The worm was not designed to destroy data, but a flaw in its replication logic caused machines to be reinfected repeatedly even when they were already infected. Morris had intended the worm to copy itself only occasionally to machines reporting they were already infected, in order to defeat fake responses; instead, it copied at a rate that overwhelmed infected machines, loading them with processes until they became unusable.</p>
+<h2>How it spread</h2>
+<p>The worm exploited several vulnerabilities in Unix systems: a debug mode in the sendmail program that allowed arbitrary commands; a buffer overflow in the finger daemon (<code>fingerd</code>), among the earliest famous examples of that class of attack; and trusted-host mechanisms (<code>rsh</code> and <code>rexec</code>) combined with a built-in password-guessing routine that used a small dictionary of 432 candidate passwords plus the system dictionary. It targeted DEC VAX and Sun-3 computers running BSD Unix.</p>
+<h2>Response and consequences</h2>
+<p>System administrators across the United States worked for days to analyze and purge the worm, in some cases disconnecting from the Internet entirely. In the aftermath, DARPA funded the creation of the CERT Coordination Center at Carnegie Mellon University to coordinate responses to future computer emergencies. Morris was indicted in 1989 and, in 1990, became the first person convicted of a felony under the Computer Fraud and Abuse Act; he was sentenced to three years' probation, 400 hours of community service, and a fine of $10,050 plus the costs of his supervision. His appeal was rejected in 1991. Estimates of the damage ranged from $100,000 to millions of dollars in lost productivity and cleanup.</p>
+<h2>Legacy</h2>
+<p>Robert Morris went on to co-found the Viaweb startup (later Yahoo! Store) with Paul Graham, earn a PhD from Harvard, and become a tenured professor at MIT. The Morris worm is remembered as the event that awakened the Internet community to network security, and its source code is preserved on a floppy disk exhibited at the Computer History Museum in Mountain View, California.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Computer_worm/index.html">Computer worm</a></li>
+<li><a href="../Robert_Tappan_Morris/index.html">Robert Tappan Morris</a></li>
+<li><a href="../Buffer_overflow/index.html">Buffer overflow</a></li>
+<li><a href="../CERT_Coordinating_Center/index.html">CERT Coordination Center</a></li>
+</ul>
+</div>
+</body>
+</html>

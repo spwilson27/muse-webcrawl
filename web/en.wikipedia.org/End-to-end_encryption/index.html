@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>End-to-end encryption - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+.hero{display:block;max-width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:40px 0;text-align:center;color:#72777d;margin:12px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>End-to-end encryption</h1>
+<img class="hero" src="images/end-to-end-encryption.png" alt="Diagram showing a message encrypted on the sender's device and decrypted only on the recipient's device, unreadable to the server in between">
+<table class="infobox">
+<tr><th>Abbreviation</th><td>E2EE</td></tr>
+<tr><th>Field</th><td>Cryptography, computer security</td></tr>
+<tr><th>Key idea</th><td>Only communicating endpoints can read messages</td></tr>
+<tr><th>Examples</th><td>Signal Protocol, PGP, OMEMO</td></tr>
+</table>
+<p><b>End-to-end encryption</b> (<b>E2EE</b>) is a private communication system in which only the communicating users can participate and read the messages. It is intended to prevent potential eavesdroppers — including telecom providers, Internet providers, malicious actors, and even the provider of the communication service — from being able to access the cryptographic keys needed to decrypt the conversation.</p>
+<p>In an E2EE system, messages are encrypted on the sender's device and only decrypted on the recipient's device. The service relaying the messages handles only ciphertext. This contrasts with encryption in transit alone, where the service provider itself can read the content.</p>
+<h2>How it works</h2>
+<p>Modern E2EE systems typically combine an initial key agreement protocol — often based on Diffie–Hellman key exchange — with a ratcheting mechanism that continually derives fresh keys, providing forward secrecy (past messages stay safe if a key is later compromised) and post-compromise security. The Signal Protocol, used by applications such as Signal and WhatsApp, popularised the Double Ratchet algorithm combined with extended triple Diffie–Hellman (X3DH) key agreement.</p>
+<h2>Challenges and debate</h2>
+<p>E2EE protects confidentiality but complicates content moderation, spam and abuse detection, and lawful access by authorities, which has made it a recurring subject of policy debate. It also does not by itself protect metadata — information about who communicated with whom and when — and security depends on endpoint integrity and on users verifying keys where the application supports it.</p>
+<h2>History</h2>
+<p>The concept builds on public-key cryptography introduced in the 1970s. Phil Zimmermann's PGP (1991) brought end-to-end encryption to email, while Off-the-Record messaging (2004) added deniability and forward secrecy for instant messaging. See also: <a href="../Encryption/">Encryption</a>, <a href="../Public-key_cryptography/">Public-key cryptography</a>, <a href="../Signal_Protocol/">Signal Protocol</a>, <a href="../Pretty_Good_Privacy/">Pretty Good Privacy</a>.</p>
+</div>
+</body>
+</html>

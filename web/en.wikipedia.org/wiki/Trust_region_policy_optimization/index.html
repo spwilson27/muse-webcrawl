@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Trust region policy optimization</title>
+<style>
+body{font-family:Georgia,serif;max-width:900px;margin:0 auto;padding:20px;line-height:1.6;color:#222;background:#fff}
+h1{border-bottom:2px solid #a2a9b1;padding-bottom:5px;font-size:2em}
+h2{border-bottom:1px solid #a2a9b1;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{display:block;max-width:100%;border:1px solid #ccc;background:#eee;text-align:center;padding:20px 0}
+.small{font-size:0.85em;color:#555}
+.mono{font-family:monospace;background:#f4f4f4;padding:2px 5px}
+</style>
+</head>
+<body>
+<h1>Trust region policy optimization</h1>
+<p><b>Trust region policy optimization</b> (<b>TRPO</b>) is an algorithm for optimising policies in <a href="../../../Reinforcement_learning/index.html">reinforcement learning</a>, introduced by John Schulman and colleagues in 2015. TRPO is a policy gradient method that achieves stable, monotonic improvement by constraining each policy update so that the new policy does not deviate too far from the old one, measured by <a href="../../../Kullback–Leibler_divergence/index.html">Kullback–Leibler (KL) divergence</a>. The set of policies within the allowed KL distance forms the "trust region".</p>
+<img class="hero" src="images/trust-region-policy-optimization.png" alt="Hero image placeholder: Diagram of a policy update constrained within a KL trust region">
+<h2>Motivation</h2>
+<p>Ordinary policy gradient methods can be unstable: a single overly large step can move the policy into a poor region from which recovery is slow or impossible, because the data distribution depends on the policy itself. Trust region methods, long used in numerical optimisation, address this by restricting each step to a region where the local approximation of the objective is trustworthy.</p>
+<h2>Algorithm</h2>
+<p>TRPO maximises a surrogate objective — the expected advantage of the new policy over the old one, weighted by importance ratios — subject to the constraint that the expected KL divergence between the old and new policies stays below a threshold <span class="mono">δ</span>. In practice the constraint is imposed on the mean KL divergence, and the problem is solved approximately by linearising the objective, quadraticising the constraint, and using conjugate gradient steps with a backtracking line search, avoiding the need to form the Fisher information matrix explicitly.</p>
+<h2>Successors</h2>
+<p>TRPO demonstrated strong results on simulated robotic locomotion and Atari games, but its second-order computations are complex to implement. In 2017 Schulman and colleagues proposed <a href="../../../Proximal_policy_optimization/index.html">proximal policy optimization (PPO)</a>, which retains TRPO's stability with a simpler first-order clipped objective; PPO became the more widely used algorithm, while TRPO remains an important conceptual reference point in safe and stable policy learning.</p>
+<p class="small">Recreated from memory for the muse-webcrawl project.</p>
+</body>
+</html>

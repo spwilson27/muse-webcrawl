@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Virtual function - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+p{line-height:1.6;font-size:15px}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 12px 16px;padding:8px}
+.infobox th{text-align:left;background:#eaf3ff;padding:4px}
+.infobox td{padding:4px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{width:100%;display:block;margin-bottom:6px}
+.small{font-size:12px;color:#54595d}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;overflow:auto;font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Virtual function</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<tr><td colspan="2"><img class="hero" src="images/virtual-function.png" alt="Diagram of dynamic dispatch through a virtual table"></td></tr>
+<tr><th>Paradigm</th><td>Object-oriented programming</td></tr>
+<tr><th>Mechanism</th><td>Dynamic dispatch, typically via a virtual method table (vtable)</td></tr>
+<tr><th>Languages</th><td>C++, C#, D, Delphi, Java (implicit), Rust (via trait objects)</td></tr>
+</table>
+<p>In object-oriented programming, a <b>virtual function</b>, <b>virtual method</b>, <b>virtual procedure</b> or <b>virtual subroutine</b> is a function or method whose behaviour can be overridden within an inheriting class by a function with the same signature (name and parameters). This concept is an important part of the (runtime) polymorphism portion of object-oriented programming (OOP). That is, a variable of a base class type can reference an object of a derived class, and a call to a virtual function through that variable will invoke the derived class's version.</p>
+<h2>Example (C++)</h2>
+<p>In C++, a member function is declared virtual in the base class with the keyword <code>virtual</code>:</p>
+<pre>class Animal {
+public:
+    virtual ~Animal() = default;
+    virtual void speak() const { /* generic */ }
+};
+
+class Dog : public Animal {
+public:
+    void speak() const override { /* bark */ }
+};
+
+void makeItSpeak(const Animal&amp; a) {
+    a.speak();   // calls Dog::speak if a refers to a Dog
+}</pre>
+<p>A <b>pure virtual function</b>, declared with <code>= 0</code>, has no implementation in the base class and makes the class abstract; derived classes must override it to be instantiated. Virtual destructors ensure that destroying a derived object through a base pointer calls the correct destructor chain.</p>
+<h2>Implementation</h2>
+<p>Most compilers implement virtual dispatch using a <b>virtual method table</b> (vtable): a per-class array of function pointers. Each object of a polymorphic class contains a hidden pointer (vptr) to its class's vtable, and a virtual call indexes into the table at a fixed offset. This adds a small runtime cost (an indirection and inhibited inlining) compared with non-virtual calls, which is why some languages (Java, C#) make methods virtual by default while C++ requires the explicit keyword, and why performance-critical code sometimes uses templates (static polymorphism) instead.</p>
+<h2>Variations in other languages</h2>
+<p>In Java, all non-static, non-final instance methods are virtual by default. In C#, methods must be marked <code>virtual</code> and overrides declared with <code>override</code>. In Rust, dynamic dispatch is achieved through trait objects (<code>dyn Trait</code>), and in some languages (such as Python and Smalltalk) all method calls are dynamically dispatched, making the notion implicit.</p>
+<h2>See also</h2>
+<p><a href="../Polymorphism_(computer_science)/index.html">Polymorphism</a> · <a href="../Dynamic_dispatch/index.html">Dynamic dispatch</a> · <a href="../Virtual_method_table/index.html">Virtual method table</a> · <a href="../Abstract_type/index.html">Abstract type</a> · <a href="../Inheritance_(object-oriented_programming)/index.html">Inheritance</a></p>
+</div>
+</body>
+</html>

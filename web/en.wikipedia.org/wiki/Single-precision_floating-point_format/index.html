@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Single-precision floating-point format - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header .site{font-size:0.85em;color:#54595d}
+main{max-width:960px;margin:0 auto;padding:16px 24px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:8px}
+h2{border-bottom:1px solid #c8ccd1;padding-bottom:2px;margin-top:28px}
+figure{float:right;margin:0 0 12px 16px;width:300px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;font-size:0.85em;text-align:center}
+figure img{width:100%;height:auto;background:#eaecf0}
+code{background:#f8f9fa;padding:1px 4px;font-family:monospace}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.ref{font-size:0.9em;color:#54595d}
+footer{border-top:1px solid #a2a9b1;margin-top:32px;padding:12px 24px;font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<header><span class="site">From Wikipedia, the free encyclopedia</span></header>
+<main>
+<h1>Single-precision floating-point format</h1>
+<figure>
+<img src="images/single-precision-floating-point-format.png" alt="Bit layout of a 32-bit single-precision floating-point number: 1 sign bit, 8 exponent bits, 23 fraction bits">
+<figcaption>The 32-bit single-precision binary floating-point format.</figcaption>
+</figure>
+<p>The <b>single-precision floating-point format</b> (sometimes called <b>FP32</b> or <b>float32</b>) is a computer <a href="../Number_format">number format</a>, usually occupying 32 bits in computer memory, that represents a wide dynamic range of numeric values by using a floating radix point. It is specified by the <a href="../IEEE_754">IEEE 754</a> standard as <b>binary32</b>.</p>
+<p>A binary32 value is laid out as 1 sign bit, 8 exponent bits, and 23 fraction (significand) bits. The exponent is stored with a bias of 127. The format can represent numbers with an absolute value from about 1.18 × 10<sup>−38</sup> (smallest positive normal) up to about 3.40 × 10<sup>38</sup>, with roughly 6 to 9 significant decimal digits of precision (24 bits of significand, including the implicit leading bit).</p>
+<h2>Encoding</h2>
+<p>For a normal number, the value is given by (−1)<sup>sign</sup> × 1.fraction × 2<sup>exponent − 127</sup>, where the leading 1 is implicit. When the exponent field is all zeros, the value is either zero or a <i>subnormal number</i>, in which the implicit leading bit is 0, allowing gradual underflow. An exponent field of all ones encodes infinity (fraction zero) or NaN (fraction nonzero).</p>
+<h2>Uses</h2>
+<p>Single precision is the default <code>float</code> type in languages such as C and Java, and is used extensively in computer graphics, where GPUs historically performed most arithmetic in FP32, and in machine learning, where it remains a common training and inference format. It offers twice the throughput and half the memory footprint of <a href="../Double-precision_floating-point_format">double precision</a> at the cost of reduced range and precision.</p>
+<h2>Example</h2>
+<p>The decimal number 0.15625 is encoded as sign 0, exponent field 124 (2<sup>−3</sup> after removing the bias), and a fraction of 0.25 in binary terms, giving the hexadecimal representation <code>0x3E200000</code>. The value π is approximated as <code>0x40490FDB</code>, equal to 3.14159274101257324219…</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../IEEE_754">IEEE 754</a></li>
+<li><a href="../Double-precision_floating-point_format">Double-precision floating-point format</a></li>
+<li><a href="../Half-precision_floating-point_format">Half-precision floating-point format</a></li>
+<li><a href="../Bfloat16_floating-point_format">bfloat16 floating-point format</a></li>
+</ul>
+<p class="ref">This article was recreated from memory for the muse-webcrawl project.</p>
+</main>
+<footer>Text is available under the Creative Commons Attribution-ShareAlike License.</footer>
+</body>
+</html>

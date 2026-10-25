@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tate pairing - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 36px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:250px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:13px}
+.infobox th{text-align:left;padding-right:8px}
+.hero{display:block;width:100%;border:1px solid #ccc;background:#eef3f8;text-align:center;padding:40px 0;color:#54595d;font-style:italic}
+.small{font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Tate pairing</h1>
+<p>In mathematics, the <b>Tate pairing</b> is any of several closely related bilinear pairings involving elliptic curves or abelian varieties, usually over a finite field or local field. Introduced in work of John Tate and developed in the form used for cryptography by Gerhard Frey and others, it maps pairs of points on an elliptic curve to elements of a finite field, and underlies pairing-based cryptosystems.</p>
+<img class="hero" src="images/tate-pairing.png" alt="Schematic of two points on an elliptic curve mapping into a finite field element">
+<div class="infobox"><table>
+<tr><th colspan="2">Tate pairing</th></tr>
+<tr><th>Field</th><td>Algebraic geometry, number theory, cryptography</td></tr>
+<tr><th>Named after</th><td>John Tate</td></tr>
+<tr><th>Domain</th><td>Points on an elliptic curve over a finite field</td></tr>
+<tr><th>Codomain</th><td>Multiplicative group of a finite field</td></tr>
+<tr><th>Related</th><td>Weil pairing; Miller's algorithm; ate pairing</td></tr>
+</table></div>
+<h2>Definition</h2>
+<p>For an elliptic curve <i>E</i> over a finite field <b>F</b><sub>q</sub> and an integer <i>n</i> dividing <i>q</i> &minus; 1, the Tate pairing takes a point <i>P</i> of order <i>n</i> and a second point <i>Q</i>, and returns an element of <b>F</b><sub>q</sub>* obtained by evaluating at <i>Q</i> a rational function whose divisor is <i>n</i>(<i>P</i>) &minus; <i>n</i>(O). Well-defined modulo <i>n</i>-th powers, the pairing is bilinear and non-degenerate under suitable hypotheses.</p>
+<h2>Computation</h2>
+<p>Pairings are computed efficiently with Miller's algorithm, which evaluates the required function using a double-and-add loop over the bits of <i>n</i>. A final exponentiation produces the reduced Tate pairing used in practice. Variants such as the ate and optimal ate pairings shorten the Miller loop and are standard in implementations.</p>
+<h2>Applications</h2>
+<p>Together with the Weil pairing, the Tate pairing enables identity-based encryption (as in the Boneh–Franklin scheme), short signatures (BLS), and other pairing-based protocols. The MOV and Frey–R&uuml;ck attacks also use these pairings to reduce elliptic-curve discrete logarithms to finite-field discrete logarithms on weak curves.</p>
+<p class="small">See also: <a href="../Weil_pairing/index.html">Weil pairing</a> &middot; <a href="../Elliptic_curve/index.html">Elliptic curve</a> &middot; <a href="../Pairing-based_cryptography/index.html">Pairing-based cryptography</a></p>
+</div>
+</body>
+</html>

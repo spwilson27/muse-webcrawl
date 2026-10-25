@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Multicollinearity - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;min-height:100vh}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:6px;margin-top:0}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+.hero{text-align:center;margin:16px 0}
+.hero img{max-width:420px;width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:24px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:85%;color:#54595d}
+code{background:#eaecf0;padding:1px 5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Multicollinearity</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="hero"><img src="images/multicollinearity.png" alt="Scatterplot matrix showing strongly correlated predictor variables"></div>
+<p>In statistics, <b>multicollinearity</b> (also <b>collinearity</b>) is a phenomenon in which one predictor variable in a multiple <a href="../Regression_analysis/index.html">regression</a> model can be linearly predicted from the others with a substantial degree of accuracy. In this situation the coefficient estimates of the regression may change erratically in response to small changes in the model or the data.</p>
+<h2>Consequences</h2>
+<p>Multicollinearity does not bias the model's predictions or reduce its overall explanatory power, but it makes the estimates of individual coefficients unreliable: standard errors become large, coefficients can take implausible magnitudes or even the "wrong" sign, and statistically insignificant results can occur for variables that are in fact important. Because the effects of nearly redundant predictors cannot be separated, interpreting any single coefficient becomes hazardous.</p>
+<h2>Detection</h2>
+<p>A common diagnostic is the <b>variance inflation factor</b> (VIF), which for each predictor measures how much the variance of its estimated coefficient is inflated by correlation with the other predictors: VIF = 1 / (1 − R<sup>2</sup>), where R<sup>2</sup> comes from regressing that predictor on all the others. VIF values above 5 or 10 are commonly treated as evidence of problematic collinearity. Other diagnostics include pairwise correlations, the condition number of the design matrix, and tolerance statistics.</p>
+<h2>Remedies</h2>
+<p>Depending on the purpose of the analysis, remedies include collecting more data, dropping one of the redundant variables, combining correlated predictors (for example via principal components regression), or using penalised estimation such as ridge regression, which trades a small amount of bias for much more stable coefficients. When the goal is pure prediction rather than interpretation, collinearity may be left alone.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Variance_inflation_factor/index.html">Variance inflation factor</a></li>
+<li><a href="../Linear_regression/index.html">Linear regression</a></li>
+<li><a href="../Ridge_regression/index.html">Ridge regression</a></li>
+<li><a href="../Ill-posed_problem/index.html">Ill-posed problem</a></li>
+</ul>
+<p class="small">This article is a recreation written from memory.</p>
+</div>
+</body>
+</html>

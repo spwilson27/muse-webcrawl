@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Debug Adapter Protocol - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f6f6f6;color:#202122}
+#content{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px;line-height:1.6}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.thumb{float:right;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;font-size:12px;text-align:center;max-width:260px}
+.thumb img{max-width:248px;background:#eaecf0}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:13px;width:250px}
+.infobox th{text-align:left;padding-right:8px}
+code{background:#f8f9fa;border:1px solid #eaecf0;padding:0 3px;font-size:90%}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Debug Adapter Protocol</h1>
+<p>The <b>Debug Adapter Protocol</b> (DAP) is an abstract protocol developed by <a href="../Microsoft/index.html">Microsoft</a> that standardizes the communication between a development tool (such as an <a href="../Integrated_development_environment/index.html">integrated development environment</a> or text editor) and a debugger or runtime environment. It is the debugging analogue of the <a href="../Language_Server_Protocol/index.html">Language Server Protocol</a> (LSP), which standardized editor support for programming languages.</p>
+<div class="thumb"><img src="images/debug-adapter-protocol.png" alt="Diagram of a development tool communicating with a debug adapter"></div>
+<p>Before DAP, each development tool had to implement custom support for every debugger it wished to use, and each debugger had to be adapted to every tool. By introducing an intermediate component — the <i>debug adapter</i> — the protocol allows a single tool to work with many debuggers, and a single debugger implementation to serve many tools.</p>
+<h2>Architecture</h2>
+<p>In the DAP model, the development tool communicates with a debug adapter using JSON messages over a channel such as standard streams or a socket. The debug adapter is a separate process that translates the protocol's generic requests into the native commands of the actual debugger, for example <a href="../GNU_Debugger/index.html">GDB</a>, <a href="../LLDB_(debugger)/index.html">LLDB</a>, or a language runtime's built-in debugging facilities.</p>
+<p>The protocol distinguishes between <i>requests</i> (sent by the tool), <i>responses</i> (returned by the adapter), and <i>events</i> (asynchronous notifications, such as a breakpoint being hit or a thread stopping). Messages are framed with HTTP-like headers, including a <code>Content-Length</code> header, similar to the base protocol of LSP.</p>
+<h2>Capabilities</h2>
+<p>Typical operations covered by the protocol include:</p>
+<ul>
+<li>Launching and attaching to a debug session</li>
+<li>Setting and removing <a href="../Breakpoint/index.html">breakpoints</a>, including conditional and function breakpoints</li>
+<li>Stepping execution (step in, step over, step out, continue, pause)</li>
+<li>Inspecting threads, stack traces, scopes, and variables</li>
+<li>Evaluating expressions in the context of a stopped frame</li>
+<li>Reading and writing memory, and disassembly views</li>
+</ul>
+<p>Because debug adapters declare their capabilities during initialization, tools can adapt their user interface to the features a particular debugger supports, such as data breakpoints or restart-frame requests.</p>
+<h2>Adoption</h2>
+<p>DAP was created for <a href="../Visual_Studio_Code/index.html">Visual Studio Code</a>, whose debugging user interface is built entirely on the protocol. Debug adapters exist for many languages and platforms, including <a href="../Python_(programming_language)/index.html">Python</a>, <a href="../Go_(programming_language)/index.html">Go</a> (via Delve), <a href="../Java_(programming_language)/index.html">Java</a>, <a href="../C_(programming_language)/index.html">C</a> and <a href="../C%2B%2B/index.html">C++</a>, and <a href="../JavaScript/index.html">JavaScript</a>. Other editors and IDEs, including <a href="../Neovim/index.html">Neovim</a> and <a href="../Emacs/index.html">Emacs</a>, also support DAP through plugins.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Language_Server_Protocol/index.html">Language Server Protocol</a></li>
+<li><a href="../Debugger/index.html">Debugger</a></li>
+<li><a href="../Build_Server_Protocol/index.html">Build Server Protocol</a></li>
+</ul>
+</div>
+</body>
+</html>

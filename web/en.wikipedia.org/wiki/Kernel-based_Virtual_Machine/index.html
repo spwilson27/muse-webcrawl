@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kernel-based Virtual Machine - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 20px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px; margin: 0 0 12px 16px; font-size: 13px; }
+.infobox th { text-align: left; background: #e8e9ea; padding: 3px 6px; }
+.infobox td { padding: 3px 6px; }
+.figure { text-align: center; margin: 12px 0; }
+.figure img { width: 100%; height: 160px; background: #ddd; border: 1px solid #bbb; }
+.caption { font-size: 12px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Kernel-based Virtual Machine</h1>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Kernel-based Virtual Machine</th></tr>
+<tr><td>Original author</td><td>Qumranet</td></tr>
+<tr><td>Initial release</td><td>2006</td></tr>
+<tr><td>Operating system</td><td>Linux kernel</td></tr>
+<tr><td>Type</td><td>Hypervisor</td></tr>
+<tr><td>License</td><td>GPL / LGPL</td></tr>
+</table>
+</div>
+<div class="figure"><img src="images/kvm.png" alt="Diagram showing KVM virtual machines running on a Linux host"><div class="caption">Architecture of KVM</div></div>
+<p><b>Kernel-based Virtual Machine</b> (<b>KVM</b>) is a free and open-source virtualization module in the Linux kernel that allows the kernel to function as a hypervisor. It was merged into the mainline Linux kernel in version 2.6.20, released in February 2007. KVM requires a processor with hardware virtualization extensions, such as Intel VT-x or AMD-V.</p>
+<p>Using KVM, one can run multiple virtual machines running unmodified Linux or Windows images. Each virtual machine has private virtualized hardware: a network card, disk, graphics adapter, and so on. KVM itself provides only the virtualization of the CPU and memory via the <code>/dev/kvm</code> interface; in practice it is almost always combined with <a href="../QEMU/index.html">QEMU</a>, which emulates or paravirtualizes the remaining devices, and managed through tools such as libvirt and oVirt.</p>
+<h2>History</h2>
+<p>KVM was developed by Qumranet, which was acquired by Red Hat in 2008. It has since become the standard virtualization technology of the Linux ecosystem and underpins many cloud platforms.</p>
+<h2>Features</h2>
+<p>KVM supports live migration, memory overcommit, CPU and memory hotplug, paravirtualized drivers through VirtIO, and nested virtualization. Because virtual machines are ordinary Linux processes, they benefit from the kernel's scheduler, memory management, and security features.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Xen/index.html">Xen</a></li>
+<li><a href="../Hypervisor/index.html">Hypervisor</a></li>
+<li><a href="../Libvirt/index.html">libvirt</a></li>
+</ul>
+</div>
+</body>
+</html>

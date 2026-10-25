@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Digital filter - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:sans-serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:sans-serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.4em}
+p{line-height:1.6}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.tagline{font-size:0.85em;color:#54595d;font-style:italic}
+img.hero{display:block;margin:12px auto;max-width:100%}
+figure{text-align:center;font-size:0.85em;color:#54595d}
+.mono{font-family:monospace;background:#f0f0f0;padding:2px 6px}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Digital filter</h1>
+<p class="tagline">From Wikipedia, the free encyclopedia</p>
+<figure><img class="hero" src="images/digital-filter.png" alt="Frequency response plot of a digital low-pass filter"></figure>
+<p>A <b>digital filter</b> is a system that performs mathematical operations on a sampled, discrete-time signal to reduce or enhance certain aspects of that signal. Digital filters are used for signal separation (extracting a desired band from noise), signal restoration (removing interference or correcting distortion), and signal shaping. They are implemented in software or in hardware such as digital signal processors, FPGAs, and the signal-processing blocks of phones, radios, and medical devices.</p>
+<h2>Characterisation</h2>
+<p>A linear time-invariant digital filter is completely described by its impulse response or, equivalently, its transfer function in the z-domain. The general form of such a filter is a difference equation:</p>
+<p class="mono">y[n] = b<sub>0</sub>x[n] + b<sub>1</sub>x[n−1] + … − a<sub>1</sub>y[n−1] − a<sub>2</sub>y[n−2] − …</p>
+<p>The coefficients {b<sub>k</sub>} are the feedforward (numerator) coefficients and {a<sub>k</sub>} the feedback (denominator) coefficients. Filters whose output depends only on present and past inputs are non-recursive; those also using past outputs are recursive.</p>
+<h2>FIR and IIR</h2>
+<p>The two principal classes are:</p>
+<ul>
+<li><b>Finite impulse response (FIR)</b> filters, whose impulse response settles to zero in finite time. FIR filters can achieve exactly linear phase (no phase distortion) and are always stable, but may need many coefficients for sharp cut-offs. The moving-average filter is the simplest FIR example.</li>
+<li><b>Infinite impulse response (IIR)</b> filters, which use feedback and so can meet a specification with far fewer coefficients. Classical IIR designs — Butterworth (maximally flat), Chebyshev (equiripple), elliptic, and Bessel — are derived from analogue prototypes, often via the bilinear transform. IIR filters can become unstable if coefficients are poorly quantised and generally cannot have exactly linear phase.</li>
+</ul>
+<h2>Design and implementation</h2>
+<p>Design typically begins with specifications in the frequency domain: passband and stopband edges, allowable ripple, and attenuation. FIR designs use windowing, the Parks–McClellan (equiripple) algorithm, or least-squares optimisation. Realisation structures include direct form I and II, cascade (second-order sections), lattice, and polyphase forms for multirate systems. Practical concerns include coefficient quantisation, round-off noise, overflow, and computational cost — all reasons digital filters are usually prototyped and analysed with tools such as MATLAB or Python's SciPy before deployment.</p>
+<h2>Applications</h2>
+<p>Digital filters are everywhere: anti-aliasing and reconstruction in audio conversion, equalisation in communications receivers, noise removal in biomedical signals such as ECGs, image sharpening and blurring in photography, and guidance and control loops in aerospace systems.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Finite_impulse_response/index.html">Finite impulse response</a></li>
+<li><a href="../Infinite_impulse_response/index.html">Infinite impulse response</a></li>
+<li><a href="../Digital_signal_processing/index.html">Digital signal processing</a></li>
+<li><a href="../Z-transform/index.html">Z-transform</a></li>
+</ul>
+</div>
+</body>
+</html>

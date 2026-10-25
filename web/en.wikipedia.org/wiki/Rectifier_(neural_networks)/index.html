@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rectifier (neural networks) - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header h1{margin:0;font-size:28px;font-weight:normal}
+main{max-width:960px;margin:0 auto;padding:20px 24px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+img.hero{display:block;max-width:640px;width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:8px;margin:12px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+footer{border-top:1px solid #a2a9b1;padding:12px 24px;font-size:12px;color:#54595d;background:#f8f9fa}
+</style>
+</head>
+<body>
+<header><h1>Rectifier (neural networks)</h1></header>
+<main>
+<img class="hero" src="images/rectifier-relu.png" alt="Placeholder image: graph of the ReLU activation function">
+<p>In the context of artificial neural networks, the <b>rectifier</b> or <b>ReLU</b> (Rectified Linear Unit) activation function is an activation function defined as the non-negative part of its argument: f(x) = x⁺ = max(0, x), where x is the input to a neuron. It is analogous to half-wave rectification in electrical engineering.</p>
+<h2>Advantages</h2>
+<p>ReLU became the default activation function for many types of neural networks because it mitigates the vanishing gradient problem that afflicted the older sigmoid and hyperbolic tangent functions, allows models to train faster, and induces sparsity in activations. Its simplicity — a threshold at zero — makes it computationally cheap. ReLU was popularized for deep learning in work around 2010–2011 and was a key component of AlexNet (2012), which won the ImageNet competition.</p>
+<h2>Potential problems</h2>
+<p>A drawback is the "dying ReLU" problem: neurons whose inputs are always negative output zero and stop learning, because the gradient there is zero. Variants address this by allowing a small negative slope.</p>
+<h2>Variants</h2>
+<ul>
+<li><b>Leaky ReLU</b> — uses a small fixed slope (e.g. 0.01) for negative inputs.</li>
+<li><b>Parametric ReLU (PReLU)</b> — learns the negative slope during training.</li>
+<li><b>Exponential linear unit (ELU)</b> and <b>GELU</b> — smooth relatives used in many later architectures.</li>
+</ul>
+<h2>See also</h2>
+<ul>
+<li><a href="../Activation_function/index.html">Activation function</a></li>
+<li><a href="../Softmax_function/index.html">Softmax function</a></li>
+</ul>
+</main>
+<footer>Recreated from memory for the muse-webcrawl project.</footer>
+</body>
+</html>

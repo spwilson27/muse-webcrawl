@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Digital signal processor - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:sans-serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:sans-serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.4em}
+p{line-height:1.6}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:0.85em;font-family:sans-serif}
+.infobox th{background:#c9d6ea;text-align:center;padding:4px}
+.infobox td{padding:3px 6px;vertical-align:top}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.tagline{font-size:0.85em;color:#54595d;font-style:italic}
+img.hero{display:block;margin:12px auto;max-width:100%}
+figure{text-align:center;font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Digital signal processor</h1>
+<p class="tagline">From Wikipedia, the free encyclopedia</p>
+<figure><img class="hero" src="images/digital-signal-processor.png" alt="A digital signal processor chip on a circuit board"></figure>
+<p>A <b>digital signal processor</b> (<b>DSP</b>) is a specialised microprocessor chip with an architecture optimised for the operational needs of digital signal processing — typically the fast, repetitive multiply-accumulate operations on streams of samples that implement filters, transforms, and codecs. DSPs are used in audio and speech processing, telecommunications, radar and sonar, medical imaging, and motor control, wherever signals must be processed in real time with predictable latency.</p>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Digital signal processor</th></tr>
+<tr><td><b>First commercial parts</b></td><td>1979–1983 (NEC µPD7720, TI TMS32010)</td></tr>
+<tr><td><b>Key operation</b></td><td>Multiply–accumulate (MAC)</td></tr>
+<tr><td><b>Architectures</b></td><td>Fixed-point and floating-point; Harvard/modified Harvard</td></tr>
+<tr><td><b>Major vendors</b></td><td>Texas Instruments, Analog Devices, NXP, Qualcomm</td></tr>
+<tr><td><b>Applications</b></td><td>Audio, telecom, radar, imaging, control</td></tr>
+</table>
+</div>
+<h2>Architecture</h2>
+<p>DSPs differ from general-purpose CPUs in several ways. They use a Harvard or modified Harvard architecture with separate program and data memories (often two data buses), allowing an instruction and two operands to be fetched in one cycle. Hardware multiply-accumulate units compute a sum of products in a single cycle — the inner loop of FIR filters and FFTs. Specialised addressing modes (circular buffers, bit-reversed addressing for FFTs) are implemented in hardware, saturation arithmetic prevents wraparound overflow, and many DSPs include zero-overhead loops and DMA engines to keep the core fed with samples. Deterministic, cycle-exact execution is valued over the speculative features (caches, branch prediction) of desktop processors.</p>
+<h2>History</h2>
+<p>Early signal processing used hard-wired logic or general computers. In 1979–80 Bell Labs and NEC introduced single-chip devices (the Bell Labs DSP1 and NEC µPD7720); Texas Instruments' TMS32010 (1983) and the floating-point TMS320C30 (1988) established the dominant product families, carried forward in TI's C6000 series and Analog Devices' SHARC and Blackfin lines. DSP features have since been absorbed into mainstream chips — modern smartphone SoCs contain DSP blocks (such as Qualcomm's Hexagon) for audio, image, and AI workloads — but discrete DSPs remain common in professional audio, base stations, and embedded control.</p>
+<h2>Programming</h2>
+<p>DSPs are programmed in C with intrinsic functions, or in assembly for critical loops, using vendor toolchains. Algorithms are often developed first in MATLAB or Python and then ported, with fixed-point scaling chosen carefully to balance precision and overflow.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Digital_signal_processing/index.html">Digital signal processing</a></li>
+<li><a href="../Multiply%E2%80%93accumulate_operation/index.html">Multiply–accumulate operation</a></li>
+<li><a href="../Harvard_architecture/index.html">Harvard architecture</a></li>
+<li><a href="../Texas_Instruments/index.html">Texas Instruments</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Critical section - Wikipedia</title>
+<style>
+body { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: "Linux Libertine", Georgia, serif; font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-family: "Linux Libertine", Georgia, serif; font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; font-weight: normal; margin-top: 28px; }
+h3 { font-size: 17px; margin-top: 20px; }
+p, li { font-size: 14.5px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 480px; width: 100%; background: #eaecf0; border: 1px solid #c8ccd1; padding: 8px; }
+.caption { font-size: 12px; color: #54595d; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px 12px; margin: 0 0 16px 16px; font-size: 13px; }
+code { background: #f8f9fa; padding: 1px 4px; font-family: monospace; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Critical section</h1>
+<p>In concurrent programming, a <b>critical section</b> is a piece of code that accesses shared resources, such as device functions, data structures, or shared variables, and must not be concurrently executed by more than one thread of execution. Critical sections usually end in a fixed amount of time, and a thread, task, or process must have permission to enter a critical section before other threads that require the resource are allowed to run.</p>
+<div class="hero"><img src="images/critical-section-diagram.png" alt="Diagram of two threads competing to enter a critical section guarded by a lock"></div>
+<p>Because code in critical sections may access a shared resource, mutual exclusion is required. The process of entering a critical section is usually guarded by a synchronization primitive such as a mutex or a semaphore. While one thread is inside the critical section, other threads that attempt to enter must wait — either by blocking, spinning, or sleeping — until the first thread leaves.</p>
+<h2>Implementation</h2>
+<p>Implementing critical sections requires a synchronization mechanism that operates at the process level and ensures that no more than one process is executing within the critical region at any given time. Common mechanisms include:</p>
+<ul>
+<li><b>Mutexes</b> — locking primitives that allow only one thread to own the lock at a time.</li>
+<li><b>Semaphores</b> — signalling mechanisms generalised by Edsger Dijkstra, which can restrict access to a fixed number of concurrent users.</li>
+<li><b>Monitors</b> — high-level constructs, introduced by Per Brinch Hansen and C. A. R. Hoare, that bundle shared data with the procedures that operate on it.</li>
+<li><b>Interrupt disabling</b> — on single-processor systems, preventing the scheduler from pre-empting the running process.</li>
+</ul>
+<h2>Requirements</h2>
+<p>Any solution to the critical-section problem must satisfy three requirements, as formulated in operating-systems literature:</p>
+<ol>
+<li><b>Mutual exclusion</b>: if one process is executing in its critical section, no other process may be.</li>
+<li><b>Progress</b>: if no process is in the critical section and some processes wish to enter, only processes not in their remainder sections may participate in deciding who enters next, and this decision cannot be postponed indefinitely.</li>
+<li><b>Bounded waiting</b>: there is a limit on the number of times other processes may enter their critical sections after a process has requested entry and before that request is granted.</li>
+</ol>
+<h2>Kernel-level critical sections</h2>
+<p>Within an operating-system kernel, critical sections present special hazards: a process holding a lock may be pre-empted, may block on I/O, or may trigger a page fault, potentially deadlocking the system. For this reason kernels often use spinlocks, which busy-wait rather than sleep, on short critical paths, and disable pre-emption or interrupts while holding them.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Mutex/index.html">Mutex</a></li>
+<li><a href="../Semaphore_(programming)/index.html">Semaphore</a></li>
+<li><a href="../Race_condition/index.html">Race condition</a></li>
+<li><a href="../Deadlock/index.html">Deadlock</a></li>
+<li><a href="../Lock_(computer_science)/index.html">Lock (computer science)</a></li>
+</ul>
+<p class="caption">From Wikipedia, the free encyclopedia (recreated from memory).</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Limbo (programming language) - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; line-height: 1.6; }
+.header { background: #fff; border-bottom: 1px solid #a7d7f9; padding: 10px 30px; }
+.header h1 { font-size: 28px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 20px 40px; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; background: #eaecf0; border: 1px solid #a2a9b1; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; font-size: 13px; margin: 0 0 16px 16px; }
+.infobox th { text-align: left; background: #eaecf0; }
+pre { background: #f8f9fa; border: 1px solid #a2a9b1; padding: 10px; font-size: 13px; overflow-x: auto; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer { font-size: 12px; color: #54595d; border-top: 1px solid #a2a9b1; margin-top: 30px; padding-top: 10px; }
+</style>
+</head>
+<body>
+<div class="header"><h1>Limbo (programming language)</h1></div>
+<div class="content">
+<div class="infobox">
+<table>
+<tr><th colspan="2">Limbo</th></tr>
+<tr><th>Designed by</th><td>Sean Dorward, Phil Winterbottom, Rob Pike</td></tr>
+<tr><th>Developer</th><td>Bell Labs / Vita Nuova</td></tr>
+<tr><th>First appeared</th><td>1995</td></tr>
+<tr><th>Typing</th><td>Strong, static</td></tr>
+<tr><th>Influenced by</th><td>C, Pascal, CSP, Alef, Newsqueak</td></tr>
+<tr><th>Influenced</th><td>Go, Rust (partially)</td></tr>
+</table>
+</div>
+<p><b>Limbo</b> is a programming language for writing distributed systems and the language used to write applications for the Inferno operating system. It was designed at Bell Labs by Sean Dorward, Phil Winterbottom, and Rob Pike. The Limbo compiler generates architecture-independent object code which is then interpreted by the Dis virtual machine or compiled just before runtime to improve performance. Limbo has many features that are significant for concurrent programming and distributed systems, most notably channels as a form of inter-process communication modelled on Tony Hoare's CSP.</p>
+<div class="hero"><img src="images/limbo-programming-language.png" alt="Diagram of Limbo programs communicating through typed channels in the Inferno operating system"></div>
+<h2>Design</h2>
+<p>Limbo's syntax derives from C, but it has a powerful type system, garbage collection, and built-in support for concurrency. Concurrency is achieved through lightweight processes ("threads") that communicate over typed channels, following the communicating sequential processes model also seen in the earlier Newsqueak and Alef languages. Abstract data types, tuples, and first-class modules (loaded dynamically) are built into the language. Unlike many contemporaries, Limbo has no pointers accessible to the programmer in the usual sense; references are managed and memory is reference-counted with a garbage collector for cyclic data.</p>
+<pre>
+implement Hello;
+
+include "sys.m";
+include "draw.m";
+
+Hello: module { init: fn(nil: ref Draw-&gt;Context, nil: list of string); };
+
+init(nil: ref Draw-&gt;Context, nil: list of string)
+{
+    sys := load Sys Sys-&gt;PATH;
+    sys-&gt;print("Hello, world!\n");
+}
+</pre>
+<h2>Influence</h2>
+<p>Limbo's channel-based concurrency and its virtual-machine design influenced the Go programming language, created by Pike and others, and the Inferno system itself remains available from Vita Nuova Holdings.</p>
+<h2>See also</h2>
+<p><a href="../Limbo_(weapon)/index.html">Limbo (weapon)</a> · Inferno (operating system) · Go (programming language) · Alef (programming language)</p>
+<div class="footer">From Wikipedia, the free encyclopedia — article recreated from memory.</div>
+</div>
+</body>
+</html>

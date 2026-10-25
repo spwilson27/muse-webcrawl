@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Level-set method - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:16px auto;max-width:420px;width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:12px;text-align:center}
+.small{font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Level-set method</h1>
+<img class="hero" src="images/level-set-method.png" alt="A curve represented as the zero level set of a higher-dimensional function">
+<p>The <b>level-set method</b> is a conceptual framework for using level sets as a tool for numerical analysis of surfaces and shapes. Developed by Stanley Osher and James Sethian in 1988, it represents an evolving curve or surface implicitly as the zero level set of a higher-dimensional function, allowing topological changes such as merging and splitting to be handled naturally.</p>
+<h2>Overview</h2>
+<p>Rather than tracking marker points on a moving front, the method embeds the front in a function &phi;(x, t), usually a signed distance function. The front is the set where &phi; = 0. Its motion is governed by a Hamilton–Jacobi-type partial differential equation, &phi;<sub>t</sub> + F|&nabla;&phi;| = 0, where F is the speed of the front in its normal direction, which may depend on curvature, external forces, or image data.</p>
+<h2>Advantages and implementation</h2>
+<p>Because the front is implicit, cusps, corners, and changes in topology require no special bookkeeping, and geometric quantities such as normals and curvature are computed directly from &phi;. Numerical schemes use upwind finite differences and fast time-stepping methods; narrow-band techniques restrict computation to a tube around the front, and the fast marching method solves related static problems. Periodic reinitialisation keeps &phi; close to a signed distance function.</p>
+<h2>Applications</h2>
+<p>Level-set methods are used in image segmentation (including active contours), fluid dynamics (tracking interfaces between phases), computer graphics (water, fire, and smoke simulation), materials science (crystal growth, etching), and shape optimisation in engineering design.</p>
+<p class="small">See also: James Sethian &middot; Stanley Osher &middot; Hamilton–Jacobi equation &middot; Image segmentation</p>
+</div>
+</body>
+</html>

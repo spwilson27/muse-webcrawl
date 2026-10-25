@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Welch's method - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:16px 24px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+.hero{float:right;margin:0 0 12px 16px;max-width:300px;background:#f8f9fa;border:1px solid #c8ccd1;padding:6px;text-align:center;font-family:sans-serif;font-size:12px}
+.hero img{max-width:100%;background:#eaecf0}
+p{line-height:1.6}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.mono{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+.ref{font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Welch's method</h1>
+<div class="hero"><img src="images/welchs-method.png" alt="Diagram showing a signal divided into overlapping windowed segments whose periodograms are averaged"><br>Welch's method averages the periodograms of overlapping windowed segments.</div>
+<p><b>Welch's method</b>, named after Peter D. Welch, is a technique used in signal processing and spectral analysis for estimating the power spectral density (PSD) of a signal. It is an improvement on the standard periodogram method and on Bartlett's method, and it is widely used because it reduces the variance of the estimate at the cost of some frequency resolution.</p>
+<h2>Method</h2>
+<p>The signal is divided into segments that may overlap, commonly by 50%. Each segment is multiplied by a window function, such as a Hann window, and its modified periodogram is computed using the discrete Fourier transform. The periodograms of all segments are then averaged. Averaging reduces the noise in the estimate, while windowing reduces spectral leakage from finite segment lengths.</p>
+<h2>Advantages and trade-offs</h2>
+<p>Compared with a single periodogram of the whole record, Welch's method gives a much smoother, lower-variance spectral estimate. The trade-off is resolution: shorter segments cannot resolve closely spaced spectral features as well as the full-length transform. The choice of segment length, overlap, and window type lets the analyst balance variance against resolution. Welch's method is implemented in most signal-processing libraries, for example as <span class="mono">scipy.signal.welch</span> in SciPy and <span class="mono">pwelch</span> in MATLAB.</p>
+<p class="ref">See also: Periodogram; Bartlett's method; Power spectral density; Spectral density estimation.</p>
+</div>
+</body>
+</html>

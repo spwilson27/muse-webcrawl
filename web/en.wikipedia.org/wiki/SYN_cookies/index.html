@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SYN cookies - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122;line-height:1.6}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{text-align:center;margin:16px 0}
+.hero img{max-width:420px;width:100%;background:#eef3f8;border:1px solid #c8ccd1;padding:24px;box-sizing:border-box}
+.caption{font-size:85%;color:#54595d}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px 12px;margin:0 0 12px 16px;font-size:90%}
+.infobox th{text-align:left;background:#eaf3ff;padding:2px 6px}
+.infobox td{padding:2px 6px}
+code{font-family:monospace;background:#f8f9fa;padding:1px 3px}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>SYN cookies</h1>
+<p><b>SYN cookies</b> are a technique used to resist SYN flood attacks, a form of denial-of-service attack in which an attacker sends a large number of TCP SYN packets, often with forged source addresses, in order to exhaust the server's connection resources. The technique was invented by Daniel J. Bernstein in September 1996.</p>
+<div class="hero"><img src="images/SYN_cookies.png" alt="Diagram of a TCP three-way handshake protected by SYN cookies"><div class="caption">A server using SYN cookies encodes connection state in the SYN-ACK sequence number instead of storing it.</div></div>
+<h2>Background</h2>
+<p>In the normal TCP three-way handshake, a client sends a SYN packet, the server replies with SYN-ACK and allocates a data structure to remember the half-open connection, and the client completes the connection with an ACK. In a SYN flood, the attacker never sends the final ACK, so the server's backlog of half-open connections fills up and legitimate clients can no longer connect.</p>
+<h2>Operation</h2>
+<p>With SYN cookies enabled, the server does not allocate state when it receives a SYN. Instead, it computes a cookie: a carefully chosen initial sequence number for the SYN-ACK that encodes a hash of the client's IP address and port, the server's IP address and port, the timestamp, and a secret value known only to the server. If the client is legitimate, it replies with an ACK whose acknowledgement number is the cookie plus one. The server recomputes the hash and, if it matches, reconstructs the connection state from the acknowledgement number and establishes the connection at that point.</p>
+<h2>Limitations</h2>
+<p>Because the cookie has limited space, some TCP options cannot be fully negotiated under a SYN-cookie fallback; historically this meant the loss of features such as window scaling and SACK, although modern implementations encode a subset of options in the timestamp value. SYN cookies are therefore typically used only when the connection queue is under pressure, as a server-side defense of last resort rather than the normal path.</p>
+<h2>Implementations</h2>
+<p>SYN cookies are implemented in the Linux kernel (controlled by the <code>tcp_syncookies</code> sysctl), in FreeBSD, and in various other operating systems and network appliances. Bernstein also developed the related concept in the context of his work on high-performance network servers.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../SYN_flood/index.html">SYN flood</a></li>
+<li><a href="../Transmission_Control_Protocol/index.html">Transmission Control Protocol</a></li>
+<li><a href="../Denial-of-service_attack/index.html">Denial-of-service attack</a></li>
+</ul>
+</div>
+</body>
+</html>

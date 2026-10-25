@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>tar (computing) - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 36px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+p{line-height:1.6;font-size:15px}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:250px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:13px}
+.infobox th{text-align:left;padding-right:8px}
+.hero{display:block;width:100%;border:1px solid #ccc;background:#eef3f8;text-align:center;padding:40px 0;color:#54595d;font-style:italic}
+.small{font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>tar (computing)</h1>
+<p>In computing, <b>tar</b> (derived from <i>tape archive</i>) is a computer software utility for collecting many files into one archive file, often referred to as a <b>tarball</b>, for distribution or backup purposes. The archive normally retains the file structure, ownership and timestamps of the original files. The tar format itself does not compress data; archives are commonly compressed with programs such as <a href="../Gzip/index.html">gzip</a>, bzip2 or xz, producing files with extensions such as <code>.tar.gz</code> or <code>.tgz</code>.</p>
+<img class="hero" src="images/tar.png" alt="Terminal window showing a tar command combining files into a single archive">
+<div class="infobox"><table>
+<tr><th colspan="2">tar</th></tr>
+<tr><th>Filename extensions</th><td>.tar, .tar.gz, .tar.bz2, .tar.xz</td></tr>
+<tr><th>First release</th><td>1979 (Version 7 Unix)</td></tr>
+<tr><th>Type</th><td>Archive file format / utility</td></tr>
+<tr><th>Standard</th><td>POSIX.1-1988 (ustar), POSIX.1-2001 (pax)</td></tr>
+</table></div>
+<h2>History</h2>
+<p>The tar command first appeared in Version 7 Unix in 1979, designed to write archives onto sequential magnetic tape. Successive standardised formats — ustar (POSIX.1-1988) and the extended pax format (POSIX.1-2001) — added support for longer file names, larger files and additional metadata. GNU tar, BSD tar (libarchive) and other implementations remain standard tools on Unix-like systems.</p>
+<h2>Format</h2>
+<p>A tar archive is a sequence of 512-byte blocks. Each file is preceded by a header block recording its name, size, modification time, permissions and ownership, followed by the file's contents padded to a whole number of blocks. Two blocks of zeros mark the end of the archive.</p>
+<h2>Usage</h2>
+<p>Common invocations include <code>tar -cf archive.tar files</code> to create an archive, <code>tar -xf archive.tar</code> to extract one, and <code>tar -czf archive.tar.gz files</code> to create a gzip-compressed archive. Because source code for Unix software is traditionally distributed as tarballs, tar remains a ubiquitous part of software packaging and backup workflows.</p>
+<p class="small">See also: <a href="../Gzip/index.html">gzip</a> &middot; <a href="../Archive_file/index.html">Archive file</a> &middot; <a href="../Zip_(file_format)/index.html">ZIP (file format)</a></p>
+</div>
+</body>
+</html>

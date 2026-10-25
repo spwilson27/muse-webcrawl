@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Stochastic gradient descent - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:20px 24px 60px}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-size:1.9em}
+h2{font-family:Georgia,'Times New Roman',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+img.hero{display:block;max-width:420px;width:100%;height:220px;background:#eaecf0;border:1px solid #c8ccd1;color:#72777d;object-fit:cover;margin:12px 0}
+.small{font-size:.85em;color:#54595d}
+ul,ol{line-height:1.55} p{line-height:1.6}
+.eq{text-align:center;font-style:italic;margin:14px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Stochastic gradient descent</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/sgd.png" alt="Diagram showing noisy SGD steps converging toward a minimum">
+<p><b>Stochastic gradient descent</b> (often abbreviated <b>SGD</b>) is an iterative method for optimizing an objective function with suitable smoothness properties (e.g. differentiable or subdifferentiable). It can be regarded as a stochastic approximation of <a href="../Gradient_descent/index.html">gradient descent</a> optimization, since it replaces the actual gradient (calculated from the entire data set) by an estimate thereof (calculated from a randomly selected subset of the data). Especially in high-dimensional optimization problems this reduces the very high computational burden, achieving faster iterations in trade for a lower convergence rate.</p>
+<p>The basic idea behind stochastic approximation can be traced back to the Robbins–Monro algorithm of the 1950s. Today, stochastic gradient descent has become the core training method in <a href="../Machine_learning/index.html">machine learning</a>, and in particular for training <a href="../Neural_network/index.html">neural networks</a> by backpropagation.</p>
+<h2>Method</h2>
+<p>SGD works by repeatedly sampling a small batch of training examples (a "mini-batch"), computing the gradient of the loss with respect to the parameters on that batch, and updating the parameters by a step in the negative gradient direction:</p>
+<p class="eq">&theta;<sub>t+1</sub> = &theta;<sub>t</sub> &minus; &eta; &nabla;<sub>&theta;</sub> L(&theta;<sub>t</sub>; x<sub>i</sub>, y<sub>i</sub>)</p>
+<p>where &eta; is the learning rate, a hyperparameter controlling the step size. The data are typically shuffled each epoch so that successive batches are approximately independent.</p>
+<h2>Variations and extensions</h2>
+<p>Numerous variants improve on plain SGD, including momentum methods, Nesterov accelerated gradient, AdaGrad, RMSProp, and <a href="../Adam_(optimizer)/index.html">Adam</a>, which adapt the learning rate per parameter. Learning-rate schedules — decreasing the step size over time — are used to satisfy the conditions under which SGD provably converges to a local (or, for convex problems, global) minimum.</p>
+<h2>Applications</h2>
+<p>SGD is the standard optimizer for logistic regression, support vector machines trained on large data sets, and essentially all deep learning models, from image classifiers to large language models.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Gradient_descent/index.html">Gradient descent</a></li>
+<li><a href="../Backpropagation/index.html">Backpropagation</a></li>
+<li><a href="../Learning_rate/index.html">Learning rate</a></li>
+<li><a href="../Stochastic_optimization/index.html">Stochastic optimization</a></li>
+</ul>
+</div>
+</body>
+</html>

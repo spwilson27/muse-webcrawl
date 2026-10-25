@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>General-purpose computing on graphics processing units - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+a { color: #3366cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #a2a9b1; background: #eaecf0; }
+.caption { font-size: 0.85em; color: #54595d; }
+.small { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>General-purpose computing on graphics processing units</h1>
+<p><b>General-purpose computing on graphics processing units</b> (<b>GPGPU</b>, or less often <b>GPGP</b>) is the use of a graphics processing unit (GPU), which typically handles computation only for computer graphics, to perform computation in applications traditionally handled by the central processing unit (CPU). Because GPUs are massively parallel processors with thousands of arithmetic units optimized for throughput, they can accelerate data-parallel workloads — such as matrix operations, simulations, and machine learning — by orders of magnitude compared with general-purpose CPUs.</p>
+<div class="hero">
+<img src="images/gpgpu.png" alt="A modern graphics processing unit used for general-purpose computation">
+<div class="caption">Modern GPUs contain thousands of cores suited to parallel computation</div>
+</div>
+<h2>History</h2>
+<p>Researchers began exploiting programmable shaders for non-graphics computation in the early 2000s, expressing algorithms as texture operations despite awkward programming constraints. The field took off with NVIDIA's CUDA platform (2007), which exposed the GPU as a C-programmable parallel processor, followed by the vendor-independent OpenCL standard (2009) and APIs such as DirectCompute and Vulkan compute. Standard libraries and frameworks — cuBLAS, cuDNN, and later machine-learning libraries such as TensorFlow and PyTorch — made GPU acceleration mainstream in scientific computing and artificial intelligence.</p>
+<h2>Programming model</h2>
+<p>GPGPU programs typically consist of kernels: functions executed simultaneously by many threads organized into blocks and grids, each processing different data elements. Performance depends on keeping arithmetic units busy, coalescing memory accesses, and minimizing transfers between CPU (host) and GPU (device) memory. GPUs excel when the same operation is applied across large datasets (SIMT execution) but are less efficient for branchy, sequential code.</p>
+<h2>Applications</h2>
+<p>Applications include molecular dynamics, weather and fluid simulation, seismic processing, financial modeling, medical imaging, cryptography, video encoding, and the training of deep neural networks, where GPU (and later specialized tensor) acceleration underpins the modern deep-learning era in artificial intelligence.</p>
+<p class="small">See also: CUDA; OpenCL; Graphics processing unit; Parallel computing; Stream processing</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Merkle tree - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:900px;line-height:1.6;color:#202122;background:#fff}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a7d7f9;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+.hero{text-align:center;margin:1em 0}
+.hero img{width:300px;height:200px;background:#eaecf0;border:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 1em 1em;font-size:90%}
+</style>
+</head>
+<body>
+<h1>Merkle tree</h1>
+<div class="hero"><img src="images/merkle-tree.png" alt="A binary Merkle tree of hashes converging to a single root hash"></div>
+<p>In cryptography and computer science, a <b>hash tree</b> or <b>Merkle tree</b> is a tree in which every "leaf" node is labelled with the cryptographic hash of a data block, and every node that is not a leaf (called a <i>branch</i>, <i>inner node</i>, or <i>inode</i>) is labelled with the cryptographic hash of the labels of its child nodes. A hash tree allows efficient and secure verification of the contents of a large data structure. Hash trees are a generalization of hash lists and hash chains.</p>
+<h2>History</h2>
+<p>The concept was patented by Ralph Merkle in 1979 as part of his work on digital signatures. The Merkle signature scheme uses a hash tree whose root signs many one-time key pairs at once.</p>
+<h2>How it works</h2>
+<p>To prove that a particular data block belongs to a tree, one provides the block and the hash values along the path from its leaf to the root (a Merkle proof, or audit path). A verifier recomputes the hashes up the path and checks the result against a trusted root hash. This requires only a logarithmic number of hashes relative to the size of the data set, making verification efficient.</p>
+<h2>Uses</h2>
+<p>Hash trees are used in peer-to-peer file sharing protocols, the Git version control system (which structure is Merkle-tree-like), distributed databases such as Cassandra and DynamoDB, certificate transparency logs, and blockchains: Bitcoin organises the transactions in each block into a Merkle tree whose root is stored in the block header, enabling simplified payment verification (SPV) by light clients.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Cryptographic_hash_function/index.html">Cryptographic hash function</a></li>
+<li><a href="../Ralph_Merkle/index.html">Ralph Merkle</a></li>
+<li><a href="../Blockchain/index.html">Blockchain</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Container (virtualization) - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;margin:0;background:#f6f6f6;color:#202122;}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9;}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-size:1.9em;}
+h2{font-family:Georgia,'Times New Roman',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:1.2em;}
+p{line-height:1.6;margin:0.5em 0;}
+a{color:#0645ad;text-decoration:none;}a:hover{text-decoration:underline;}
+img.hero{display:block;max-width:100%;height:auto;margin:16px auto;background:#eaecf0;border:1px solid #a2a9b1;padding:12px;}
+ul{line-height:1.6;}
+.site-sub{color:#54595d;font-size:0.85em;margin-bottom:12px;}
+code{font-family:monospace;background:#f8f9fa;padding:1px 3px;}
+</style>
+</head>
+<body>
+<div class="content">
+<div class="site-sub">From Wikipedia, the free encyclopedia</div>
+<h1>Container (virtualization)</h1>
+<img class="hero" src="images/container-virtualization.png" alt="Diagram comparing containers, which share a host kernel, with virtual machines, which each run a guest operating system">
+<p>In computing, a <b>container</b> is a standard unit of software created by <b>OS-level virtualization</b> that packages code and all its dependencies so an application runs quickly and reliably from one computing environment to another. Unlike a virtual machine, which virtualises hardware and runs a full guest operating system under a hypervisor, containers share the host operating system's kernel and isolate processes from one another, making them much lighter in resource use and faster to start.</p>
+<h2>Technology</h2>
+<p>On Linux, container isolation is built principally from two kernel features: <b>namespaces</b>, which limit what a process can see (process IDs, network interfaces, mount points, users, and so on), and <b>control groups</b> (cgroups), which limit, account for and isolate resource usage such as CPU, memory and I/O. A container image is a file system snapshot containing the application and its runtime, libraries and settings; images are layered and shared between containers.</p>
+<h2>History</h2>
+<p>The concept developed through Unix <code>chroot</code> (1979), FreeBSD jails (2000), Solaris Containers/Zones (2004), OpenVZ, and Linux efforts including LXC (2008). Google's internal systems (Borg) shaped modern orchestration. Docker, released as open source in 2013, popularised containers by providing a developer-friendly image format, tooling and registry ecosystem. The Open Container Initiative (OCI), founded in 2015, standardised image and runtime specifications. Kubernetes, open-sourced by Google in 2014, became the dominant container orchestration platform for scheduling, scaling and self-healing containerised workloads.</p>
+<h2>Comparison with virtual machines</h2>
+<ul>
+<li><b>Overhead:</b> containers share the kernel and need no guest OS, so they start in seconds and use less memory.</li>
+<li><b>Isolation:</b> hypervisors provide a stronger hardware-level boundary; containers rely on kernel namespaces and are generally considered a weaker security boundary.</li>
+<li><b>Portability:</b> container images run on any host with a compatible kernel and runtime, while VMs package an entire machine image.</li>
+</ul>
+<h2>Use</h2>
+<p>Containers underpin microservices architectures, continuous integration and deployment pipelines, and much cloud-native computing. Popular tools include Docker Engine, containerd, Podman, and orchestration systems such as Kubernetes and Docker Swarm.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Docker_(software)/index.html">Docker (software)</a></li>
+<li><a href="../Kubernetes/index.html">Kubernetes</a></li>
+<li><a href="../OS-level_virtualization/index.html">OS-level virtualization</a></li>
+</ul>
+</div>
+</body>
+</html>

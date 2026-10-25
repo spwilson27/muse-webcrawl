@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Varnish (software) - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#f8f9fa;color:#202122;margin:0;padding:0}
+.container{max-width:960px;margin:0 auto;background:#fff;padding:24px 36px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-size:28px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-size:21px;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+code{background:#f8f9fa;font-size:14px}
+.hero{text-align:center;margin:20px 0}
+.hero img{max-width:420px;width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:12px;box-sizing:border-box}
+.caption{font-size:12px;color:#54595d;margin-top:6px;text-align:center}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Varnish (software)</h1>
+<p><strong>Varnish</strong> is an HTTP accelerator designed for content-heavy dynamic web sites as well as APIs. In contrast to general-purpose proxy caches such as Squid, which began as client-side proxies, Varnish was designed from the ground up as a server-side reverse proxy and web application accelerator. It is free and open-source software, released under a two-clause BSD licence.</p>
+<div class="hero"><img src="images/Varnish_(software).png" alt="Diagram of Varnish cache sitting between web clients and backend servers"></div>
+<p class="caption">Varnish serves cached responses from memory, shielding backend servers from repeated requests.</p>
+<h2>History</h2>
+<p>The project was initiated in 2005 by the Norwegian newspaper <em>Verdens Gang</em>, dissatisfied with the performance of existing caching software. The architecture and much of the code were designed by Danish programmer Poul-Henning Kamp, with the first release, Varnish 1.0, appearing in September 2006. The company Varnish Software was later formed to provide commercial support and extended versions.</p>
+<h2>Architecture</h2>
+<p>Varnish stores cached content in virtual memory, delegating to the operating system the decision of what to keep in RAM and what to page to disk. It is heavily threaded and designed to avoid the lock contention and context-switch overhead of process-per-connection models. Performance figures of hundreds of thousands of requests per second on commodity hardware are commonly cited.</p>
+<h2>Configuration: VCL</h2>
+<p>Varnish is configured in the <strong>Varnish Configuration Language</strong> (VCL), a small domain-specific language describing how requests are handled, which responses may be cached, and for how long. VCL is compiled into C code, then into a shared library loaded by the server, making policy extremely flexible and fast. VCL allows request rewriting, load balancing across backends (directors), grace mode (serving stale content while backends are slow or down), and Edge Side Includes (ESI) for assembling pages from cached fragments.</p>
+<h2>Use</h2>
+<p>Varnish is used by many high-traffic websites and content delivery setups, including news publishers and e-commerce sites, often in front of content management systems. Commercial offerings from Varnish Software add features such as a persistent cache, enhanced TLS support and administration tools.</p>
+</div>
+</body>
+</html>

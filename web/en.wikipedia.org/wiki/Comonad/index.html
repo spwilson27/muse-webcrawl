@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Comonad - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 30px 60px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 28px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; font-size: 22px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 480px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 40px 0; }
+.caption { font-size: 12px; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul { line-height: 1.6; font-size: 15px; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Comonad</h1>
+<div class="hero">
+<img src="images/comonad.png" alt="Diagram of a comonad's extract and duplicate operations">
+<div class="caption">A comonad provides extract and duplicate operations dual to a monad's return and join.</div>
+</div>
+<p>In category theory, a <b>comonad</b> is the dual notion of a monad. Where a monad describes computations that produce values with context, a comonad describes computations that consume values together with their context. In functional programming, comonads are used to model context-dependent computation, such as streams, cellular automata, and dataflow computations.</p>
+<h2>Definition</h2>
+<p>A comonad on a category consists of an endofunctor <i>W</i> together with two natural transformations: extract (or counit) <code>extract :: W a → a</code>, which obtains the value at the current focus, and duplicate (or comultiplication) <code>duplicate :: W a → W (W a)</code>, which produces a structure of all possible focused contexts. These must satisfy coassociativity and counit laws, dual to the monad laws.</p>
+<h2>In Haskell</h2>
+<p>In Haskell, comonads are captured by the <code>Comonad</code> type class in the <code>comonad</code> package, generalising <code>Functor</code> with <code>extract</code> and either <code>duplicate</code> or <code>extend</code>. Examples include:</p>
+<ul>
+<li><b>Store comonad</b> — pairs a lookup function with an index; models a value embedded in an addressable space.</li>
+<li><b>Env (Reader-like) comonad</b> — a value paired with an environment.</li>
+<li><b>Stream and zipper comonads</b> — infinite streams and list zippers, whose extract returns the focused element and duplicate yields all possible refocusings.</li>
+<li><b>Traced comonad</b> — accumulates a monoidal trace.</li>
+</ul>
+<h2>Applications</h2>
+<p>Comonads are used in image processing (each output pixel computed from a neighbourhood of inputs), cellular automata such as Conway's Game of Life, signal processing, and user-interface frameworks where widgets are context-dependent values.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Monad_(category_theory)/index.html">Monad (category theory)</a></li>
+<li><a href="../Monad_(functional_programming)/index.html">Monad (functional programming)</a></li>
+<li><a href="../Dual_(category_theory)/index.html">Dual (category theory)</a></li>
+</ul>
+</div>
+</body>
+</html>

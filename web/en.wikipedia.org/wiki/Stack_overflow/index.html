@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Stack overflow - Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.4em}
+img.hero{max-width:420px;width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:.5em;box-sizing:border-box}
+a{color:#0645ad;text-decoration:none}
+code{background:#f8f9fa;padding:0 .2em}
+</style>
+</head>
+<body>
+<h1>Stack overflow</h1>
+<img class="hero" src="images/stack-overflow.png" alt="Illustration of a call stack growing beyond its allocated memory region">
+<p>In software, a <b>stack overflow</b> occurs when the call stack pointer exceeds the stack bound. The call stack is a fixed-size region of memory that stores information about active subroutines — return addresses, local variables, and saved registers. If a program uses more stack space than is available, it overflows, typically crashing the program or corrupting adjacent memory.</p>
+<h2>Causes</h2>
+<p>The most common cause of stack overflow is recursion that is too deep or that never terminates: each recursive call pushes a new stack frame, and if the base case is missing, incorrect, or reached only after an enormous number of calls, the frames accumulate until the stack is exhausted. Other causes include allocating very large objects as local variables (for example, a megabyte-sized array declared inside a function) and deeply nested mutual recursion between functions.</p>
+<h2>Consequences</h2>
+<p>On modern operating systems, the stack is usually guarded by an inaccessible page; growth into the guard page triggers a segmentation fault or a dedicated exception (such as <code>STATUS_STACK_OVERFLOW</code> on Windows, or <code>StackOverflowError</code> in Java). In embedded and kernel contexts without such protection, an overflow can silently overwrite other data and produce arbitrary misbehavior.</p>
+<p>Historically, stack overflows have also been a security concern: classic buffer-overflow exploits overwrite the saved return address on the stack to redirect execution, though the phrase "stack overflow" more properly refers to exhaustion of stack space rather than the buffer overrun itself.</p>
+<h2>Prevention</h2>
+<p>Common mitigations include converting recursion to iteration, increasing the configured stack size, moving large allocations to the heap, adding explicit depth counters to recursive algorithms, and using tail-call optimization where the language provides it, which reuses the caller's frame for a call in tail position.</p>
+<h2>See also</h2>
+<p><a href="../Call_stack/index.html">Call stack</a> · <a href="../Buffer_overflow/index.html">Buffer overflow</a> · <a href="../Recursion_(computer_science)/index.html">Recursion</a></p>
+</body>
+</html>

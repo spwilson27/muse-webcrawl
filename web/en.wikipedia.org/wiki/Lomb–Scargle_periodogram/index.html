@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lomb–Scargle periodogram - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 48px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 1.35em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 1.4em; }
+p { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; border: 1px solid #a2a9b1; background: #eaecf0; padding: 40px 0; }
+.caption { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Lomb–Scargle periodogram</h1>
+<p>The <b>Lomb–Scargle periodogram</b> is a method of estimating a frequency spectrum, based on a least-squares fit of sinusoids to data samples, and is commonly used in astronomy for analysing unevenly spaced time-series data — such as measurements of variable stars, exoplanet radial velocities, and other observations that cannot be made at perfectly regular intervals.</p>
+<div class="hero"><img src="images/lomb-scargle-periodogram.png" alt="A Lomb-Scargle periodogram with a prominent peak">
+<p class="caption">A peak in the Lomb–Scargle periodogram indicates a candidate period in unevenly sampled data.</p></div>
+<h2>History</h2>
+<p>The method was developed by Nicholas Lomb in 1976 and refined by Jeffrey Scargle in 1982. Its popularity arises because, for evenly spaced data, it reduces to the classical periodogram, while for uneven data it can be evaluated at arbitrary frequencies and retains a well-understood statistical distribution, allowing false-alarm probabilities to be computed.</p>
+<h2>Method</h2>
+<p>At each trial frequency, the periodogram measures how well the data fit a sinusoid of that frequency, fitted by least squares. Scargle's formulation includes a time offset that makes the result invariant to time translation and equivalent to the least-squares spectral analysis. Peaks in the periodogram correspond to likely periodicities. Fast algorithms (such as the fast Lomb–Scargle implementation based on non-uniform FFTs) make it practical for the very large light curves produced by surveys such as Kepler and TESS, where it is a standard tool in exoplanet transit searches and stellar variability studies.</p>
+<h2>Statistical significance</h2>
+<p>Under the null hypothesis of Gaussian noise, periodogram values follow a known exponential distribution, so the probability that noise alone produces a peak of a given height — the false alarm probability — can be estimated analytically or by bootstrap resampling.</p>
+</div>
+</body>
+</html>

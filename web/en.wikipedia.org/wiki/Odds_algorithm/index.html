@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Odds algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 16px 16px;padding:10px}
+.hero{display:block;width:100%;height:150px;background:#e8eef2;border:1px solid #a2a9b1;margin-bottom:10px}
+.small{font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Odds algorithm</h1>
+<div class="infobox">
+<img class="hero" src="images/odds_algorithm.png" alt="Sequence of independent events with success probabilities">
+<p class="small">The odds algorithm gives an optimal stopping rule for selecting the last success in a sequence of independent trials.</p>
+</div>
+<p>The <b>odds algorithm</b> is a mathematical method for solving a class of optimal stopping problems. It was introduced by F. Thomas Bruss in 2000. The problem it solves is: given a sequence of independent events with known success probabilities, observed one after another, select the <i>last</i> success, stopping only once and never being able to return to a previous event.</p>
+<h2>The algorithm</h2>
+<p>For each event <i>i</i> with success probability <i>p<sub>i</sub></i>, define its odds <i>r<sub>i</sub></i> = <i>p<sub>i</sub></i> / (1 − <i>p<sub>i</sub></i>). Working backwards from the end of the sequence, sum the odds until the sum first reaches or exceeds 1; the index at which this happens is the threshold <i>s</i>. The optimal strategy is to skip all events before <i>s</i> and then stop at the first success from <i>s</i> onward. The probability of winning under this strategy equals the product of the failure probabilities from <i>s</i> onward, multiplied by the sum of the odds from <i>s</i> onward.</p>
+<h2>Applications</h2>
+<p>The odds algorithm unifies and generalises several classical problems, including the secretary problem, in which the strategy and the winning probability (approaching 1/e) emerge as special cases. Applications discussed in the literature include selling an asset at the last favourable opportunity, clinical trial stopping rules, and search problems.</p>
+<p class="small">See also: <a href="../Optimal_stopping/index.html">Optimal stopping</a>, <a href="../Secretary_problem/index.html">Secretary problem</a>, <a href="../Odds/index.html">Odds</a></p>
+</div>
+</body>
+</html>

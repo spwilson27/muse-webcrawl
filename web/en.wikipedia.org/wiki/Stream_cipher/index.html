@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Stream cipher - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; padding: 0 1em; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #3366cc; text-decoration: none; }
+.thumb { border: 1px solid #a2a9b1; background: #f8f9fa; padding: 3px; margin: 0 0 1em 1em; width: 300px; font-size: 0.85em; }
+.clear { clear: both; }
+</style>
+</head>
+<body>
+<h1>Stream cipher</h1>
+<p>A <b>stream cipher</b> is a symmetric key cipher where plaintext digits are combined with a pseudorandom cipher digit stream (keystream). In a stream cipher, each plaintext digit is encrypted one at a time with the corresponding digit of the keystream, to give a digit of the ciphertext stream. Since encryption of each digit is dependent on the current state of the cipher, it is also known as a <b>state cipher</b>.</p>
+<div class="thumb"><img src="images/Stream_cipher_keystream.png" alt="Diagram of a stream cipher combining plaintext with a keystream"><p>Encryption by XOR with a pseudorandom keystream.</p></div>
+<h2>Operation</h2>
+<p>A stream cipher generates successive elements of the keystream based on an internal state, initialised from the secret key (and usually an initialisation vector or nonce). The keystream is combined with the plaintext, most often with the XOR operation; decryption XORs the ciphertext with the same keystream. The one-time pad is the limiting case of a stream cipher with a truly random, never-reused keystream.</p>
+<h2>Types</h2>
+<ul>
+<li><b>Synchronous stream ciphers</b> generate the keystream independently of the message, e.g. RC4, Salsa20 and ChaCha20, and the A5/1 cipher formerly used in GSM.</li>
+<li><b>Self-synchronising stream ciphers</b> derive the keystream from previous ciphertext digits, so decryption can recover after transmission errors at the cost of error propagation.</li>
+</ul>
+<p>The eSTREAM project (2004–2008) selected a portfolio of recommended ciphers, including Salsa20 and the hardware-oriented Grain and Trivium. Many widely deployed systems historically relied on RC4, which is now deprecated after the discovery of statistical biases in its output.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Block_cipher/index.html">Block cipher</a></li>
+<li><a href="../One-time_pad/index.html">One-time pad</a></li>
+<li><a href="../ChaCha20/index.html">ChaCha20</a></li>
+<li><a href="../Linear-feedback_shift_register/index.html">Linear-feedback shift register</a></li>
+</ul>
+<p class="clear"><i>From Wikipedia, the free encyclopedia (recreated from memory).</i></p>
+</body>
+</html>

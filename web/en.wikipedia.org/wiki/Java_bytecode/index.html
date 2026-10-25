@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Java bytecode - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.topbar{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:10px 24px;font-size:13px;color:#54595d}
+.wrap{max-width:960px;margin:0 auto;padding:24px 20px 60px}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:30px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin:0 0 6px}
+h2{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:28px}
+h3{font-size:17px;margin-top:20px}
+p,li{font-size:15px;line-height:1.6}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 16px 24px;padding:0}
+.infobox th{background:#eaecf0;padding:6px;text-align:center;font-size:14px}
+.infobox td{padding:5px 8px;vertical-align:top}
+.infobox .lbl{font-weight:bold;width:40%}
+.hero{margin:16px 0;text-align:center}
+.hero img{max-width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:24px;box-sizing:border-box}
+.caption{font-size:12.5px;color:#54595d;margin-top:4px}
+code{background:#f8f9fa;padding:1px 4px;font-family:monospace;font-size:13.5px}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;font-size:13px;overflow-x:auto}
+table.data{border-collapse:collapse;margin:12px 0;font-size:13.5px}
+table.data th,table.data td{border:1px solid #a2a9b1;padding:5px 9px;text-align:left}
+table.data th{background:#eaecf0}
+.cat{border-top:1px solid #a2a9b1;margin-top:36px;padding-top:8px;font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="topbar">From Wikipedia, the free encyclopedia</div>
+<div class="wrap">
+<h1>Java bytecode</h1>
+<table class="infobox">
+<tr><th colspan="2">Java bytecode</th></tr>
+<tr><td class="lbl">Filename extension</td><td>.class</td></tr>
+<tr><td class="lbl">Internet media type</td><td>application/java-vm</td></tr>
+<tr><td class="lbl">Magic number</td><td>0xCAFEBABE</td></tr>
+<tr><td class="lbl">Developed by</td><td>Sun Microsystems (now Oracle)</td></tr>
+<tr><td class="lbl">Initial release</td><td>1995</td></tr>
+<tr><td class="lbl">Type of format</td><td>Executable / object code</td></tr>
+</table>
+<div class="hero"><img src="images/java-bytecode.png" alt="Diagram of Java source code being compiled into bytecode and executed by the Java Virtual Machine"><div class="caption">Java source is compiled to bytecode, which is then interpreted or just-in-time compiled by the JVM.</div></div>
+<p><b>Java bytecode</b> is the instruction set of the <a href="../Java_virtual_machine/index.html">Java virtual machine</a> (JVM), the <a href="../Intermediate_representation/index.html">intermediate representation</a> produced by compiling <a href="../Java_(programming_language)/index.html">Java</a> source code and other JVM languages. Bytecode is stored in <b>.class files</b>, each of which contains the compiled form of a single class or interface. Because the JVM is available on many platforms, Java programs are often described as "write once, run anywhere": the same bytecode can execute on any system with a compatible JVM implementation.</p>
+<h2>Relation to Java</h2>
+<p>A Java programmer does not usually need to know Java bytecode directly, but understanding it helps in analyzing program behavior, performance, and security. Compilers for the Java language translate source code into bytecode, and the JVM then executes it — historically by interpretation, and in modern implementations primarily through <a href="../Just-in-time_compilation/index.html">just-in-time (JIT) compilation</a> to native machine code. Other languages, including <a href="../Kotlin_(programming_language)/index.html">Kotlin</a>, <a href="../Scala_(programming_language)/index.html">Scala</a>, <a href="../Groovy_(programming_language)/index.html">Groovy</a>, and <a href="../Clojure/index.html">Clojure</a>, also compile to Java bytecode.</p>
+<h2>Instruction set</h2>
+<p>The JVM instruction set consists of 256 possible one-byte <a href="../Opcode/index.html">opcodes</a>, of which around 200 were in use in early versions. Instructions operate on an <a href="../Operand_stack/index.html">operand stack</a> rather than on general-purpose registers, making the JVM a <a href="../Stack_machine/index.html">stack machine</a>. Each method has its own operand stack and array of local variables. Instructions include:</p>
+<ul>
+<li>Load and store instructions (e.g. <code>iload</code>, <code>astore</code>)</li>
+<li>Arithmetic instructions (e.g. <code>iadd</code>, <code>fsub</code>, <code>dmul</code>)</li>
+<li>Type conversion instructions (e.g. <code>i2l</code>, <code>f2d</code>)</li>
+<li>Object creation and manipulation (e.g. <code>new</code>, <code>getfield</code>, <code>putfield</code>)</li>
+<li>Operand stack management (e.g. <code>pop</code>, <code>dup</code>, <code>swap</code>)</li>
+<li>Control transfer instructions (e.g. <code>ifeq</code>, <code>goto</code>, <code>tableswitch</code>)</li>
+<li>Method invocation and return (e.g. <code>invokevirtual</code>, <code>invokestatic</code>, <code>ireturn</code>)</li>
+</ul>
+<h2>Class file format</h2>
+<p>Every class file begins with the four-byte magic number <code>0xCAFEBABE</code>, followed by the minor and major version numbers of the class file format, a constant pool, access flags, references to this class and its superclass, interfaces, fields, methods, and attributes. The constant pool holds symbolic references — class names, method names and descriptors, strings, and numeric constants — that the JVM resolves at run time. Before execution, a <a href="../Bytecode_verification/index.html">bytecode verifier</a> checks the code for type safety and structural validity, a key part of Java's security model.</p>
+<h2>Example</h2>
+<p>A simple method such as:</p>
+<pre>int add(int a, int b) { return a + b; }</pre>
+<p>compiles to bytecode equivalent to:</p>
+<pre>iload_0
+iload_1
+iadd
+ireturn</pre>
+<h2>See also</h2>
+<ul>
+<li><a href="../Java_class_file/index.html">Java class file</a></li>
+<li><a href="../List_of_Java_bytecode_instructions/index.html">List of Java bytecode instructions</a></li>
+<li><a href="../Dalvik_(software)/index.html">Dalvik</a> and <a href="../Android_Runtime/index.html">Android Runtime</a></li>
+<li><a href="../Common_Intermediate_Language/index.html">Common Intermediate Language</a></li>
+</ul>
+<div class="cat">Categories: Java (programming language) | Instruction set architectures | Stack-based computer architectures</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Spinlock - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; background: #fff; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+img.hero { display: block; max-width: 320px; margin: 10px auto; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 10px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 1px 4px; font-family: monospace; }
+</style>
+</head>
+<body>
+<h1>Spinlock</h1>
+<img class="hero" src="images/Spinlock.png" alt="Threads busy-waiting on a shared lock variable">
+<p>In software engineering, a <b>spinlock</b> is a <a href="../Lock_(computer_science)/index.html">lock</a> that causes a thread trying to acquire it to simply wait in a loop ("spin") while repeatedly checking whether the lock is available. Because the thread remains active but performs no useful work, spinlocks are a form of <b>busy waiting</b>. They avoid the overhead of operating-system process rescheduling, but waste processor time when the lock is held for long.</p>
+<h2>Implementation</h2>
+<p>A spinlock is typically implemented with an atomic test-and-set or compare-and-swap instruction: a thread atomically reads the lock's state, sets it to "held" if it was free, and retries in a tight loop otherwise. Naive implementations suffer under contention, because every spinning processor continually hammers the same memory location, generating bus or cache-coherence traffic. Optimisations include test-and-test-and-set (spin on a normal read until the lock <i>looks</i> free), exponential backoff, and ticket locks, which grant the lock in fair first-come-first-served order by having each waiter spin on its own ticket number.</p>
+<h2>Appropriate use</h2>
+<p>Spinlocks are efficient when threads are likely to be blocked for only short periods — shorter than the cost of a context switch — which is why they are common inside <a href="../Kernel_(operating_system)/index.html">operating system kernels</a>, especially on multiprocessors, where the holder may be running concurrently on another core. In user-space applications facing long or unpredictable waits, a <a href="../Mutex/index.html">mutex</a> or semaphore that puts the waiter to sleep is usually preferred. On a single processor, a pure spinlock is dangerous: if the lock holder is preempted, the spinning thread can waste an entire scheduling quantum unless it yields, so uniprocessor kernels often simply disable preemption or interrupts instead. Priority inversion is another hazard if a low-priority holder is starved by spinning higher-priority waiters.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Lock_(computer_science)/index.html">Lock (computer science)</a></li>
+<li><a href="../Busy_waiting/index.html">Busy waiting</a></li>
+<li><a href="../Deadlock/index.html">Deadlock</a></li>
+<li><a href="../Semaphore_(programming)/index.html">Semaphore</a></li>
+</ul>
+</body>
+</html>

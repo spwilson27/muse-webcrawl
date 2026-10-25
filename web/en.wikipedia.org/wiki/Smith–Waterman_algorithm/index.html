@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Smith–Waterman algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:820px;margin:0 auto;padding:20px 28px;color:#202122;background:#fff;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+figure{float:right;margin:0 0 12px 18px;width:280px;background:#f8f9fa;border:1px solid #c8ccd1;padding:6px;font-size:0.85em;text-align:center}
+figure img{max-width:100%;background:#eaecf0;display:block;min-height:120px}
+figcaption{padding-top:5px;color:#54595d;text-align:left}
+ul,ol{padding-left:1.6em}
+.small{font-size:0.85em;color:#54595d}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;overflow:auto;font-size:0.9em}
+</style>
+</head>
+<body>
+<h1>Smith–Waterman algorithm</h1>
+<p>The <b>Smith–Waterman algorithm</b> performs local sequence alignment; that is, for determining similar regions between two strings of nucleic acid sequences or protein sequences. Instead of looking at the entire sequence, the Smith–Waterman algorithm compares segments of all possible lengths and optimises the similarity measure. The algorithm was first proposed by Temple F. Smith and Michael S. Waterman in 1981. Like the Needleman–Wunsch algorithm, of which it is a variation, Smith–Waterman is a dynamic programming algorithm and works by guaranteeing to find the optimal local alignment with respect to the scoring system being used.</p>
+<figure>
+<img src="images/smith-waterman.png" alt="A scoring matrix for two sequences with a traceback path showing the best local alignment">
+<figcaption>Scoring matrix and traceback used to recover the optimal local alignment.</figcaption>
+</figure>
+<h2>Explanation</h2>
+<p>A matrix H is built with rows and columns corresponding to the two sequences. Each cell receives the maximum of four quantities: zero (the key difference from the global-alignment algorithm — no negative scores are allowed, so an alignment may start anew at any cell), the diagonal score plus a match or mismatch score, and the top or left scores minus gap penalties. With gap costs the general recurrence is:</p>
+<pre>H(i,j) = max { 0,
+                 H(i-1,j-1) + s(a_i, b_j),
+                 H(i-1,j) - d,
+                 H(i,j-1) - d }</pre>
+<p>The highest-scoring cell gives the score of the best local alignment; traceback proceeds from that cell until a cell with score zero is reached.</p>
+<h2>Motivation and use</h2>
+<p>Local alignment is more useful than global alignment when comparing sequences that share only a conserved domain or motif, or sequences of very different lengths. Smith–Waterman is therefore fundamental in bioinformatics for database searching, though because it runs in quadratic time and memory it is usually approximated in practice by heuristic programs such as FASTA and BLAST, and by accelerated implementations for database search.</p>
+<h2>Complexity</h2>
+<p>For sequences of lengths m and n, the basic algorithm takes O(mn) time and can be reduced to O(n) space if only the score is required. Variants by Osamu Gotoh (1982) handle affine gap penalties efficiently, and many hardware and SIMD-accelerated implementations exist.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Needleman–Wunsch_algorithm/index.html">Needleman–Wunsch algorithm</a></li>
+<li><a href="../Sequence_alignment/index.html">Sequence alignment</a></li>
+<li><a href="../BLAST_(biotechnology)/index.html">BLAST (biotechnology)</a></li>
+<li><a href="../Dynamic_programming/index.html">Dynamic programming</a></li>
+</ul>
+<p class="small">Categories: Bioinformatics algorithms | Sequence alignment | Dynamic programming</p>
+</body>
+</html>

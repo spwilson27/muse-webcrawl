@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shard (database architecture) - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;min-height:100vh}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal;margin-top:1.2em}
+p{line-height:1.6}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{float:right;margin:0 0 12px 16px;max-width:300px;text-align:center;background:#f8f9fa;border:1px solid #a2a9b1;padding:6px}
+.hero img{max-width:100%}
+.hero figcaption{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Shard (database architecture)</h1>
+<figure class="hero"><img src="images/Shard_database.png" alt="Diagram of rows of a database table distributed horizontally across three shard servers"><figcaption>A database split into shards across servers</figcaption></figure>
+<p>A <b>database shard</b>, or simply a <b>shard</b>, is a horizontal partition of data in a database or search engine. Each shard is an independent database instance held on a separate server, so that the total data set and query load are distributed across many machines. <b>Sharding</b> is the architectural pattern of splitting one logical data set in this way.</p>
+<h2>How it works</h2>
+<p>Rows of a table are assigned to shards according to a shard key — for example a customer ID hashed or divided into ranges. A query that supplies the shard key can be routed to the single shard holding the data, while queries spanning all shards must be scattered and gathered. Systems such as Google's Spanner, MongoDB, Elasticsearch and Vitess (for MySQL) implement sharding with varying degrees of automation.</p>
+<h2>Advantages and disadvantages</h2>
+<p>Sharding provides horizontal scalability: capacity grows by adding servers rather than by buying a larger machine, and smaller per-shard indexes fit in memory, improving response times. The costs are operational complexity, difficulty of joins and transactions across shards, the need to rebalance data when shards grow unevenly, and reduced availability guarantees for queries that touch every shard. For these reasons sharding is often adopted only when a single-node or read-replica architecture can no longer cope.</p>
+<p>The term was popularised in part by its use in massively multiplayer online games, where separate copies of a game world are also called shards.</p>
+<h2>See also</h2>
+<p><a href="../Shared_lane_marking/index.html">Shared lane marking</a></p>
+</div>
+</body>
+</html>

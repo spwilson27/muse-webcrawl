@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Portable Network Graphics - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:2em auto;max-width:900px;color:#202122;line-height:1.6;padding:0 1em}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;width:260px;font-size:.9em}
+.infobox th{text-align:left;vertical-align:top;padding-right:.5em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:100%;margin:1em auto}
+.ref{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Portable Network Graphics</h1>
+<table class="infobox">
+<tr><th>Filename extension</th><td>.png</td></tr>
+<tr><th>Internet media type</th><td>image/png</td></tr>
+<tr><th>Magic number</th><td>89 50 4E 47 0D 0A 1A 0A</td></tr>
+<tr><th>Developed by</th><td>PNG Development Group</td></tr>
+<tr><th>Initial release</th><td>October 1, 1996</td></tr>
+<tr><th>Type of format</th><td>Lossless bitmap image format</td></tr>
+<tr><th>Standard</th><td>ISO/IEC 15948; RFC 2083</td></tr>
+</table>
+<img class="hero" src="images/Portable_Network_Graphics.png" alt="A PNG image with a transparent background showing its alpha channel">
+<p><b>Portable Network Graphics</b> (<b>PNG</b>, officially pronounced /pɪŋ/, sometimes "pee-en-gee") is a raster-graphics file format that supports lossless data compression. PNG was developed as an improved, non-patented replacement for Graphics Interchange Format (GIF) and is the most frequently used lossless image compression format on the Internet.</p>
+<p>PNG supports palette-based images (with palettes of 24-bit RGB or 32-bit RGBA colors), grayscale images (with or without an alpha channel for transparency) and full-color non-palette-based RGB or RGBA images. The PNG working group designed the format for transferring images on the Internet, not for professional-quality print graphics, and therefore does not support non-RGB color spaces such as CMYK.</p>
+
+<h2>History and development</h2>
+<p>The motivation for creating PNG arose in early 1995, after Unisys announced it would enforce its software patent on the Lempel–Ziv–Welch (LZW) data compression algorithm used in GIF. An informal group of developers on Usenet designed a patent-free successor, settling on DEFLATE compression. The specification was released in 1996 as RFC 2083, became a W3C Recommendation on 1 October 1996, and was adopted as ISO/IEC 15948 in 2004. The file signature and chunked structure allow decoders to detect errors and to extend the format with new chunks while remaining backward compatible.</p>
+
+<h2>File format</h2>
+<p>A PNG file begins with an eight-byte signature followed by a series of chunks, each with a four-letter type code, a length and a cyclic redundancy check. Critical chunks include IHDR (image header), PLTE (palette), IDAT (image data, compressed with DEFLATE) and IEND. Ancillary chunks store gamma (gAMA), ICC profiles (iCCP), textual metadata (tEXt, iTXt, zTXt), background color, physical pixel dimensions and timestamps.</p>
+<p>Pixels are filtered before compression: each row is transformed by one of five filters (None, Sub, Up, Average, Paeth) chosen to improve DEFLATE efficiency. PNG supports bit depths from 1 to 16 bits per channel and interlacing using the Adam7 algorithm, which allows a progressively refining display as data arrives.</p>
+
+<h2>Comparison with other formats</h2>
+<p>Compared with GIF, PNG offers better compression for most images, true alpha transparency instead of a single transparent color, 24-bit color, and gamma correction, but no animation in the core standard (the unofficial APNG extension adds animation and is widely supported by browsers). Compared with JPEG, PNG compression is lossless but produces much larger files for photographs. For line art, screenshots and images with sharp edges and text, PNG remains the standard choice on the web.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../GIF/index.html">GIF</a></li>
+<li><a href="../JPEG/index.html">JPEG</a></li>
+<li><a href="../WebP/index.html">WebP</a></li>
+<li><a href="../APNG/index.html">APNG</a></li>
+</ul>
+<p class="ref">This page is a recreation from memory of the Portable Network Graphics article.</p>
+</body>
+</html>

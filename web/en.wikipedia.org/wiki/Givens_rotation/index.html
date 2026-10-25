@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Givens rotation - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a7d7f9;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #c8ccd1;padding-bottom:2px;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:640px;width:100%;margin:16px auto;background:#eef3f8;border:1px solid #c8ccd1;padding:24px;text-align:center;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Givens rotation</h1>
+<img class="hero" src="images/givens-rotation.png" alt="A plane rotation applied to a two-dimensional coordinate plane">
+<p>In numerical linear algebra, a <b>Givens rotation</b> is a rotation in the plane spanned by two coordinate axes. It is named after Wallace Givens, who introduced the technique in the 1950s while working at Argonne National Laboratory. Unlike the Euler angles used in three-dimensional space, a Givens rotation represents a matrix whose entries are all zero except for the identity pattern and a 2×2 rotation block on two chosen diagonal positions.</p>
+<h2>Construction</h2>
+<p>Given a vector with two components <i>a</i> and <i>b</i>, a Givens rotation with cosine <i>c</i> and sine <i>s</i> can be chosen so that applying it to the vector zeroes out the <i>b</i> component, concentrating the vector's length onto the <i>a</i> axis. Concretely, with <i>r</i> = √(<i>a</i><sup>2</sup> + <i>b</i><sup>2</sup>), one takes <i>c</i> = <i>a</i>/<i>r</i> and <i>s</i> = <i>b</i>/<i>r</i>. Numerically stable variants avoid forming squares that may overflow or underflow.</p>
+<h2>Applications</h2>
+<p>Givens rotations are the standard tool for introducing selected zeros into matrices. A sequence of rotations can zero out the entries below the diagonal one at a time to compute a <a href="../QR_decomposition/index.html">QR decomposition</a>, and they are widely used in least-squares problems, eigenvalue algorithms (including the Jacobi-like QR iteration), and the updating of factorizations when rows are added or removed. Because each rotation affects only two rows, the rotations can often be applied in parallel and with excellent numerical stability, at the cost of somewhat more arithmetic than <a href="../Householder_transformation/index.html">Householder reflections</a>, which zero many entries at once.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../QR_decomposition/index.html">QR decomposition</a></li>
+<li><a href="../Householder_transformation/index.html">Householder transformation</a></li>
+<li><a href="../Jacobi_rotation/index.html">Jacobi rotation</a></li>
+</ul>
+</body>
+</html>

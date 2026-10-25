@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Needleman–Wunsch algorithm - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; font-size: 30px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: sans-serif; font-size: 20px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+h3 { font-family: sans-serif; font-size: 16px; margin-top: 20px; }
+p, li { font-size: 14.5px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 270px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px 12px; margin: 0 0 14px 18px; font-family: sans-serif; font-size: 13px; }
+.infobox .ib-title { font-weight: bold; text-align: center; font-size: 15px; margin-bottom: 8px; }
+.infobox table { border-collapse: collapse; width: 100%; }
+.infobox td { padding: 3px 4px; vertical-align: top; }
+.infobox td.k { font-weight: bold; width: 38%; }
+.hero { text-align: center; margin: 10px 0; }
+.hero img { max-width: 240px; width: 100%; height: auto; background: #eaecf0; border: 1px solid #c8ccd1; }
+.hero .cap { font-size: 12px; color: #54595d; font-family: sans-serif; }
+.refs { font-size: 12.5px; }
+.mono { font-family: monospace; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Needleman–Wunsch algorithm</h1>
+<div class="infobox">
+<div class="ib-title">Needleman–Wunsch algorithm</div>
+<div class="hero"><img src="images/needleman-wunsch-algorithm.png" alt="A dynamic programming scoring matrix with a traced alignment path"><div class="cap">Scoring matrix and traceback path</div></div>
+<table>
+<tr><td class="k">Class</td><td>Sequence alignment algorithm</td></tr>
+<tr><td class="k">Inventors</td><td>Saul B. Needleman, Christian D. Wunsch</td></tr>
+<tr><td class="k">Published</td><td>1970</td></tr>
+<tr><td class="k">Time complexity</td><td>O(NM)</td></tr>
+<tr><td class="k">Purpose</td><td>Global alignment of two sequences</td></tr>
+</table>
+</div>
+<p>The <b>Needleman–Wunsch algorithm</b> is an algorithm used in bioinformatics to align protein or nucleotide sequences. It was one of the first applications of dynamic programming to compare biological sequences. The algorithm was developed by Saul B. Needleman and Christian D. Wunsch and published in 1970. It divides a large problem (aligning the full sequences) into a series of smaller problems, and uses the solutions to the smaller problems to find an optimal solution to the larger problem. The Needleman–Wunsch algorithm is also referred to as the <b>optimal matching algorithm</b> and the <b>global alignment technique</b>: it aligns two sequences from end to end and is guaranteed to find the highest-scoring alignment for a given scoring scheme.</p>
+<h2>The algorithm</h2>
+<p>The algorithm constructs a matrix <i>F</i> indexed by positions in the two sequences A and B. The first row and column are initialised with cumulative gap penalties. Each cell is then filled with the maximum of three values: the score of aligning A<sub>i</sub> with B<sub>j</sub> (diagonal move, adding a match or mismatch score from a substitution matrix such as PAM or BLOSUM), the score of aligning A<sub>i</sub> with a gap (vertical move), or the score of aligning B<sub>j</sub> with a gap (horizontal move). After the matrix is complete, the optimal alignment is recovered by tracing back from the bottom-right cell to the top-left, following the moves that produced each score.</p>
+<h2>Scoring systems</h2>
+<p>The result depends on the scoring parameters: the scores assigned to matches and mismatches, and the penalty for introducing gaps. Early implementations used simple fixed values; later adaptations introduced affine gap penalties, in which opening a gap costs more than extending it, better modelling the biology of insertions and deletions.</p>
+<h2>Complexity and variants</h2>
+<p>Filling the matrix takes O(NM) time and memory for sequences of lengths N and M. The Hirschberg algorithm reduces the memory requirement for recovering the alignment to linear space. The related <a href="../Smith%E2%80%93Waterman_algorithm/index.html">Smith–Waterman algorithm</a> (1981) adapts the same dynamic-programming framework to local alignment, finding the best-matching subsequences rather than a global alignment.</p>
+<h2>Historical significance</h2>
+<p>Needleman and Wunsch's 1970 paper, "A general method applicable to the search for similarities in the amino acid sequence of two proteins", is a foundational citation in computational biology and helped establish sequence alignment as a central tool of molecular biology.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Sequence_alignment/index.html">Sequence alignment</a></li>
+<li><a href="../Smith%E2%80%93Waterman_algorithm/index.html">Smith–Waterman algorithm</a></li>
+<li><a href="../Dynamic_programming/index.html">Dynamic programming</a></li>
+<li><a href="../Edit_distance/index.html">Edit distance</a></li>
+</ul>
+<h2>References</h2>
+<ol class="refs">
+<li>Needleman, S. B. &amp; Wunsch, C. D. "A general method applicable to the search for similarities in the amino acid sequence of two proteins." <i>Journal of Molecular Biology</i> 48 (3): 443–453, 1970.</li>
+<li>Durbin, R. et al. <i>Biological Sequence Analysis</i>. Cambridge University Press, 1998.</li>
+</ol>
+</div>
+</body>
+</html>

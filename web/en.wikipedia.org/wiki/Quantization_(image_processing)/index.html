@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Quantization (image processing) - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.container{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+p{line-height:1.6;font-size:0.95em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:100%;margin:12px auto;border:1px solid #ccc}
+.caption{text-align:center;font-size:0.8em;color:#54595d;margin-top:2px}
+ul{line-height:1.6;font-size:0.95em}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Quantization (image processing)</h1>
+<img class="hero" src="images/quantization.png" alt="The same photograph shown at full colour depth and at progressively fewer quantised intensity levels">
+<p class="caption">An image at decreasing numbers of intensity levels.</p>
+<p><b>Quantization</b>, involved in image processing, is a lossy compression technique achieved by compressing a range of values to a single quantum value. When the number of discrete symbols in a given stream is reduced, the stream becomes more compressible. For example, reducing the number of colours required to represent a digital image makes it possible to greatly reduce its file size. Specific applications include discrete cosine transform (DCT) data quantization in JPEG and discrete wavelet transform (DWT) data quantization in JPEG 2000.</p>
+<h2>Colour quantization</h2>
+<p>Colour quantization reduces the number of colours used in an image while aiming to keep the result visually similar. This is essential for displaying images on devices supporting limited colours and for formats such as GIF, which permits at most 256 colours per image. Algorithms choose a palette — by popularity, median-cut, or octree methods — and map each original colour to the nearest palette colour. <a href="../Dithering/index.html">Dithering</a> can then distribute the quantization error among neighbouring pixels, producing gradients that appear smoother at the cost of added noise.</p>
+<h2>Frequency-domain quantization</h2>
+<p>In JPEG compression, each 8×8 block's DCT coefficients are divided by entries of a quantization matrix and rounded; high-frequency coefficients, to which human vision is less sensitive, are quantised more coarsely and often become zero, enabling efficient entropy coding. The quality setting of a JPEG encoder essentially scales this matrix.</p>
+<h2>Quantization error</h2>
+<p>The difference between the original and quantised value is the quantization error. Too coarse a step size produces visible artefacts: banding (false contours) in smooth gradients, posterization, and blockiness. Grayscale quantization from 256 levels down to a handful makes individual levels plainly visible as flat bands.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../JPEG/index.html">JPEG</a></li>
+<li><a href="../Color_quantization/index.html">Color quantization</a></li>
+<li><a href="../Dithering/index.html">Dithering</a></li>
+</ul>
+</div>
+</body>
+</html>

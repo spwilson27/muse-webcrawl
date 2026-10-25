@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Postfix (software) - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:2em auto;max-width:900px;color:#202122;line-height:1.6;padding:0 1em}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;width:260px;font-size:.9em}
+.infobox th{text-align:left;vertical-align:top;padding-right:.5em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:100%;margin:1em auto}
+.ref{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Postfix (software)</h1>
+<table class="infobox">
+<tr><th>Original author</th><td>Wietse Venema</td></tr>
+<tr><th>Initial release</th><td>December 1998</td></tr>
+<tr><th>Written in</th><td>C</td></tr>
+<tr><th>Operating system</th><td>Unix-like</td></tr>
+<tr><th>Type</th><td>Mail transfer agent</td></tr>
+<tr><th>License</th><td>IBM Public License / Eclipse Public License</td></tr>
+</table>
+<img class="hero" src="images/Postfix_(software).png" alt="Diagram of the Postfix mail system showing mail flowing between its separate daemon programs">
+<p><b>Postfix</b> is a free and open-source mail transfer agent (MTA) that routes and delivers electronic mail. It was created by Wietse Venema while at IBM's Thomas J. Watson Research Center and first released in December 1998 under the name VMailer, later IBM Secure Mailer. Intended as a faster, easier-to-administer and more secure alternative to the then-ubiquitous Sendmail program, Postfix became one of the most widely used MTAs on the Internet and the default MTA of many Linux distributions and of macOS Server.</p>
+
+<h2>Architecture</h2>
+<p>Where Sendmail is a single large monolithic program, Postfix consists of a cooperating set of small daemon programs, each performing a specific task and each running with the least privileges necessary: the <i>master</i> daemon supervises the system; <i>smtpd</i> receives mail by SMTP; <i>cleanup</i> and <i>trivial-rewrite</i> process headers and addresses; the queue manager <i>qmgr</i> schedules deliveries through agents such as <i>smtp</i>, <i>local</i>, <i>lmtp</i> and <i>pipe</i>. Mail is staged through several on-disk queues (incoming, active, deferred, hold, corrupt). This compartmentalized design was a principal reason for Postfix's strong security record.</p>
+
+<h2>Features</h2>
+<p>Postfix supports SMTP and LMTP, TLS encryption, SASL authentication, IPv6, virtual domains and mailboxes, address rewriting and canonicalization, content filtering via before- and after-queue filters and the milter protocol (shared with Sendmail), and policy delegation that underlies greylisting and SPF/DKIM checks. Configuration is through human-readable files such as <code>main.cf</code> and lookup tables in formats including hash, regexp, PCRE, LDAP, MySQL and PostgreSQL. Postfix is designed to be Sendmail-compatible at the command level (including a sendmail replacement binary and support for <code>/etc/aliases</code>), easing migration.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Sendmail/index.html">Sendmail</a></li>
+<li><a href="../Exim/index.html">Exim</a></li>
+<li><a href="../Mail_transfer_agent/index.html">Mail transfer agent</a></li>
+<li><a href="../Dovecot_(software)/index.html">Dovecot (software)</a></li>
+</ul>
+<p class="ref">This page is a recreation from memory of the Postfix (software) article.</p>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>XPath - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:960px;line-height:1.6;color:#202122;padding:0 1em}
+h1{font-family:Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:Georgia,serif;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.88em}
+.infobox caption{font-weight:bold;background:#eaf3ff;padding:.3em}
+.hero{display:block;max-width:300px;margin:1em auto}
+.small{font-size:.9em;color:#54595d}
+code{background:#f8f9fa;padding:.1em .3em}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:.6em;overflow:auto;font-size:.88em}
+</style>
+</head>
+<body>
+<h1>XPath</h1>
+<table class="infobox"><caption>XPath</caption>
+<tr><td><b>Developed by</b></td><td>W3C XPath Working Group</td></tr>
+<tr><td><b>First release</b></td><td>16 November 1999 (XPath 1.0)</td></tr>
+<tr><td><b>Latest version</b></td><td>XPath 3.1 (21 March 2017)</td></tr>
+<tr><td><b>Type</b></td><td>Query language for XML tree structures</td></tr>
+</table>
+<p><b>XPath</b> (<b>XML Path Language</b>) is an expression language designed to navigate and select nodes in an XML document. Defined by the W3C, it models a document as a tree of nodes (elements, attributes, text, namespaces, comments and processing instructions) and provides path expressions for addressing parts of that tree. XPath is a foundational component of XSLT, XPointer, XQuery and XML Schema identity constraints, and is also widely used from general-purpose programming languages to query XML and, by extension, HTML documents.</p>
+<img class="hero" src="images/xpath.png" alt="An XML tree diagram with a highlighted path expression">
+<h2>Syntax and axes</h2>
+<p>A location path is a sequence of steps separated by <code>/</code>; each step consists of an axis, a node test, and optional predicates in square brackets. Axes describe the direction of navigation relative to a context node: <code>child</code> (the default), <code>parent</code>, <code>ancestor</code>, <code>descendant</code>, <code>following-sibling</code>, <code>attribute</code> (abbreviated <code>@</code>), <code>self</code> and others. Abbreviated syntax is common in practice:</p>
+<pre>//book[@year &gt; 2000]/title</pre>
+<p>selects the titles of all <code>book</code> elements anywhere in the document whose <code>year</code> attribute exceeds 2000. Predicates may also use the built-in function library — over 100 functions in XPath 1.0 for strings, numbers, booleans and node-sets, such as <code>count()</code>, <code>contains()</code> and <code>position()</code>.</p>
+<h2>Versions</h2>
+<p>XPath 1.0 (1999) established the core model. XPath 2.0 (2007) introduced a richer type system aligned with XML Schema, sequences replacing node-sets, and regular expressions. XPath 3.0 added higher-order functions and dynamic function calls; XPath 3.1 (2017) added maps and arrays, chiefly to interoperate with JSON data. Implementations exist in virtually every XML toolchain and in web browsers, where XPath can be evaluated against the DOM alongside CSS selectors.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../XML/index.html">XML</a></li>
+<li><a href="../XSLT/index.html">XSLT</a></li>
+<li><a href="../XQuery/index.html">XQuery</a></li>
+<li><a href="../Document_Object_Model/index.html">Document Object Model</a></li>
+<li><a href="../CSS/index.html">CSS selectors</a></li>
+</ul>
+<p class="small">From Wikipedia, the free encyclopedia (recreated from memory).</p>
+</body>
+</html>

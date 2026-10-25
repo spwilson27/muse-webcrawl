@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fixed effects model - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:800px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:5px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+img.hero{display:block;max-width:400px;width:100%;margin:10px auto;border:1px solid #ccc;background:#f8f9fa;padding:20px;text-align:center}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.formula{text-align:center;font-style:italic;margin:1em 0}
+</style>
+</head>
+<body>
+<h1>Fixed effects model</h1>
+<img class="hero" src="images/fixed-effects-model.png" alt="Panel data diagram showing individual-specific intercepts in a fixed effects regression">
+<p>In statistics, a <b>fixed effects model</b> is a statistical model in which the model parameters are fixed or non-random quantities. This is in contrast to <a href="../Random_effects_model/">random effects models</a> and mixed models in which all or some of the model parameters are random variables. In many applications including econometrics and biostatistics a fixed effects model refers to a regression model in which the group means are fixed (non-random) as opposed to a random effects model in which the group means are a random sample from a population.</p>
+<p>In panel data analysis the term <b>fixed effects estimator</b> (also known as the <b>within estimator</b>) is used to refer to an estimator for the coefficients in the regression model including those fixed effects (one time-invariant intercept for each subject).</p>
+<h2>Qualitative description</h2>
+<p>Such models assist in controlling for omitted variable bias due to unobserved heterogeneity when this heterogeneity is constant over time. This heterogeneity can be removed from the data through differencing, for example by subtracting the group-level average over time, or by taking a first difference which will remove any time invariant components of the model.</p>
+<h2>Formal model</h2>
+<p>Consider the linear unobserved effects model for <i>N</i> observations and <i>T</i> time periods:</p>
+<p class="formula">y<sub>it</sub> = X<sub>it</sub>&beta; + &alpha;<sub>i</sub> + u<sub>it</sub>, &nbsp; t = 1, ..., T</p>
+<p>Where:</p>
+<ul>
+<li>y<sub>it</sub> is the dependent variable observed for individual <i> at time t</i></li>
+<li>X<sub>it</sub> is the time-variant regressor vector</li>
+<li>&beta; is the vector of coefficients</li>
+<li>&alpha;<sub>i</sub> is the unobserved time-invariant individual effect</li>
+<li>u<sub>it</sub> is the error term</li>
+</ul>
+<p>Unlike the random effects model where the unobserved &alpha;<sub>i</sub> is independent of X<sub>it</sub>, the fixed effects model allows &alpha;<sub>i</sub> to be correlated with the regressor matrix X. Strict exogeneity with respect to the idiosyncratic error term u<sub>it</sub> is still required.</p>
+<h2>Estimation</h2>
+<p>The fixed effects estimator can be obtained by including a dummy variable for each cross-sectional unit (least squares dummy variables), by demeaning the data within each group (the within transformation), or by first differencing. For models with more than two time periods, the demeaned and first-difference estimators are not identical, and the within estimator is more efficient under spherical errors.</p>
+<h2>See also</h2>
+<ul>
+<li>Random effects model</li>
+<li><a href="../Panel_data/">Panel data</a></li>
+<li>Hausman test</li>
+<li>Fixed-effect Poisson model</li>
+</ul>
+</body>
+</html>

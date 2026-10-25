@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Unscented transform - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 8px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+ul { line-height: 1.6; font-size: 15px; }
+.hero { float: right; margin: 0 0 12px 16px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 6px; text-align: center; width: 260px; }
+.hero img { max-width: 100%; background: #eaecf0; min-height: 150px; display: block; }
+.hero .cap { font-size: 12px; color: #54595d; margin-top: 6px; }
+a { color: #3366cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.math { font-style: italic; background: #f8f9fa; padding: 10px 14px; border: 1px solid #eaecf0; font-size: 15px; }
+.ref { font-size: 13px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Unscented transform</h1>
+<div class="hero"><img src="images/unscented-transform.png" alt="Sigma points sampled around a mean and propagated through a nonlinear function"><div class="cap">Sigma points capture the mean and covariance of a distribution</div></div>
+<p>The <b>unscented transform</b> (UT) is a mathematical function used to estimate the result of applying a given <a href="../Nonlinear_system/index.html">nonlinear</a> transformation to a <a href="../Probability_distribution/index.html">probability distribution</a> that is characterized only in terms of a finite set of statistics, most commonly its mean and covariance. "Unscented" refers, by the inventors' account, to the joking notion that the transform did not "stink" — unlike crude linearization — and the name stuck.</p>
+<h2>Motivation</h2>
+<p>Propagating a random variable through a nonlinear function is generally difficult: the exact transformed mean and covariance usually require intractable integrals. The classical remedy, used in the <a href="../Extended_Kalman_filter/index.html">extended Kalman filter</a> (EKF), is to linearize the function with a first-order Taylor series about the current estimate, which can introduce large errors when the nonlinearity is strong. The unscented transform instead takes a deterministic sampling approach summarized by its developers' slogan: "it is easier to approximate a probability distribution than it is to approximate an arbitrary nonlinear function or transformation."</p>
+<h2>Sigma points</h2>
+<p>Given an n-dimensional random variable with mean x̄ and covariance P, the UT deterministically selects a set of 2n + 1 <b>sigma points</b>:</p>
+<p class="math">χ<sub>0</sub> = x̄; &nbsp; χ<sub>i</sub> = x̄ + (√((n+λ)P))<sub>i</sub> for i = 1..n; &nbsp; χ<sub>i</sub> = x̄ − (√((n+λ)P))<sub>i−n</sub> for i = n+1..2n</p>
+<p>where λ is a scaling parameter determined by tuning constants α, β and κ, and the weights W<sub>i</sub> are chosen so the sample mean and covariance of the sigma points match those of the original distribution. Each sigma point is propagated through the nonlinear function, and the transformed mean and covariance are recovered as weighted averages of the propagated points. The resulting estimates are accurate to at least the second order of the Taylor series expansion for any nonlinearity, and to third order for Gaussian inputs, without computing any Jacobians.</p>
+<h2>Applications</h2>
+<p>The unscented transform is the core of the <b>unscented Kalman filter</b> (UKF), developed by Simon Julier and Jeffrey Uhlmann in the 1990s, and is widely used in navigation, target tracking, robotics, and control. Variants include the scaled unscented transform, square-root formulations, and spherical simplex sigma-point sets that use fewer points.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Kalman_filter/index.html">Kalman filter</a></li>
+<li><a href="../Ensemble_Kalman_filter/index.html">Ensemble Kalman filter</a></li>
+<li><a href="../Particle_filter/index.html">Particle filter</a></li>
+<li><a href="../Monte_Carlo_method/index.html">Monte Carlo method</a></li>
+</ul>
+<p class="ref">Based on Julier &amp; Uhlmann's foundational papers on the unscented Kalman filter (1995–2004).</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Monolithic application - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:900px;margin:0 auto;padding:20px;color:#202122;line-height:1.6}
+h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:16px auto;max-width:420px;border:1px solid #c8ccd1;background:#f8f9fa;padding:8px;text-align:center;font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Monolithic application</h1>
+<p>In software engineering, a <b>monolithic application</b> is a single, self-contained application in which the user interface, business logic and data access code are combined into one program from a single platform, deployed and run as a single unit. It is the traditional architecture for enterprise software and contrasts with distributed designs such as <a href="../Service-oriented_architecture/index.html">service-oriented architecture</a> and <a href="../Microservices/index.html">microservices</a>, in which functionality is split among independently deployable components communicating over a network.</p>
+<img class="hero" src="images/monolithic-application.png" alt="Diagram of a monolithic application with all components in one deployable unit">
+<h2>Characteristics</h2>
+<p>A monolith is developed, tested and deployed as one artefact: a single executable or a single web application archive. Internally it may be well modularised &mdash; a "modular monolith" &mdash; but all modules share one process and one database. Scaling is done by running multiple copies of the whole application behind a load balancer.</p>
+<h2>Advantages</h2>
+<ul>
+<li>Simpler development, debugging and deployment for small to medium systems.</li>
+<li>Straightforward cross-cutting concerns (transactions, logging, security) within one codebase and process.</li>
+<li>No network latency or partial-failure modes between components; refactoring across modules is easy.</li>
+</ul>
+<h2>Disadvantages</h2>
+<ul>
+<li>As the codebase grows, complexity and build/deploy times increase, and a fault can bring down the entire application.</li>
+<li>Scaling is coarse-grained: the whole application must scale even if only one feature is hot.</li>
+<li>Technology changes are all-or-nothing; large monoliths can impede team autonomy.</li>
+</ul>
+<h2>Versus microservices</h2>
+<p>The rise of microservices in the 2010s was largely a reaction to the pains of very large monoliths at web-scale companies. Practitioners such as Martin Fowler nonetheless advise starting with a monolith ("monolith first"), since the boundaries of a system are hard to get right in advance, and extracting services later from a modular monolith is usually cheaper than distributing prematurely.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Microservices/index.html">Microservices</a></li>
+<li><a href="../Service-oriented_architecture/index.html">Service-oriented architecture</a></li>
+<li><a href="../Software_architecture/index.html">Software architecture</a></li>
+<li><a href="../Monolithic_kernel/index.html">Monolithic kernel</a></li>
+</ul>
+</body>
+</html>

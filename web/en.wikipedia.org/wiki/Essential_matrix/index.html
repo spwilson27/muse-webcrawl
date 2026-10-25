@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Essential matrix - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header h1{font-size:1.8em;margin:0;font-weight:normal}
+main{max-width:900px;margin:0 auto;padding:20px 24px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+img.hero{max-width:60%;display:block;margin:12px auto}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.eq{text-align:center;font-style:italic;margin:16px 0}
+.ref{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<header><h1>Essential matrix</h1></header>
+<main>
+<img class="hero" src="images/essential_matrix.png" alt="Two cameras viewing the same point, illustrating epipolar geometry">
+<p>In computer vision, the <b>essential matrix</b> is a 3 × 3 matrix that relates corresponding points in stereo images assuming that the cameras satisfy the pinhole camera model. More specifically, if <i>x</i> and <i>x′</i> are homogeneous coordinates of image points in two views, then they satisfy the epipolar constraint</p>
+<p class="eq">x′ᵀ E x = 0</p>
+<p>where E is the essential matrix, defined as E = [t]<sub>×</sub> R, the product of the skew-symmetric matrix formed from the translation vector <i>t</i> between the two camera centres and the rotation matrix <i>R</i> describing the relative orientation of the cameras.</p>
+<h2>Properties</h2>
+<p>The essential matrix has five degrees of freedom: three for rotation and two for the direction (but not the magnitude) of translation. It has rank two, and its two non-zero singular values are equal. These constraints allow the essential matrix to be estimated from point correspondences and then decomposed to recover the relative camera motion up to scale.</p>
+<h2>Estimation and use</h2>
+<p>The essential matrix can be computed from corresponding points using the eight-point algorithm, or with as few as five points using the five-point algorithm of Nistér, which is widely used inside RANSAC for robust estimation. It is a fundamental tool in structure from motion, stereo vision, visual odometry and 3D reconstruction. Unlike the fundamental matrix, which applies to uncalibrated cameras, the essential matrix assumes calibrated cameras whose intrinsic parameters are known.</p>
+<h2>History</h2>
+<p>The concept was introduced by H. Christopher Longuet-Higgins in 1981 in the context of reconstructing a scene from two views taken by a calibrated camera.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Fundamental_matrix_(computer_vision)/index.html">Fundamental matrix (computer vision)</a></li>
+<li><a href="../Epipolar_geometry/index.html">Epipolar geometry</a></li>
+<li><a href="../Eight-point_algorithm/index.html">Eight-point algorithm</a></li>
+<li><a href="../Structure_from_motion/index.html">Structure from motion</a></li>
+</ul>
+<p class="ref">From Wikipedia, the free encyclopedia.</p>
+</main>
+</body>
+</html>

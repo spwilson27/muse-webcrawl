@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Image noise - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;color:#202122;line-height:1.6}
+h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{border-bottom:1px solid #a2a9b1;font-family:'Linux Libertine',Georgia,serif}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{text-align:center;margin:1em 0}
+.hero img{max-width:420px;border:1px solid #c8ccd1;background:#f8f9fa;padding:1em}
+.caption{font-size:.85em;color:#54595d}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.5em 1em;margin:0 0 1em 1em;font-size:.9em}
+</style>
+</head>
+<body>
+<h1>Image noise</h1>
+<div class="hero"><img src="images/Image_noise.png" alt="Photograph showing visible grain-like image noise in shadow areas"></div>
+<p class="caption">Image noise appears as random variation of brightness or colour in an image.</p>
+<p><b>Image noise</b> is random variation of brightness or color information in images, and is usually an aspect of electronic noise. It can be produced by the image sensor and circuitry of a scanner or digital camera. Image noise can also originate in film grain and in the unavoidable shot noise of an ideal photon detector. Image noise is an undesirable by-product of image capture that obscures the desired information. Typically, a noisy image is one in which many pixels show random speckle-like brightness or colour deviations from the average value expected for the scene.</p>
+<p>The term "image noise" is sometimes used to refer to the totality of all unwanted disturbances in an image, but more strictly it denotes the random component arising from the physics of detection itself. Understanding noise is fundamental to <a href="../Image_processing/index.html">image processing</a>, because most enhancement and restoration algorithms must trade noise suppression against loss of fine detail.</p>
+<h2>Types</h2>
+<h3>Gaussian noise</h3>
+<p>The principal sources of Gaussian noise in digital images are inherent to the acquisition process: thermal noise in the sensor and read noise in the amplifier circuitry. Each pixel's recorded value is perturbed by a random amount whose distribution is approximately Gaussian (normal), giving the noise a characteristic fine-grained, speckled appearance. Amplifier noise is a major part of the "read noise" of an image sensor.</p>
+<h3>Salt-and-pepper noise</h3>
+<p>Salt-and-pepper noise, also known as impulse noise, presents as randomly occurring white and black pixels scattered across the image, resembling grains of salt and pepper. It is typically caused by sharp and sudden disturbances in the image signal, such as faulty sensor elements or transmission errors. An image containing salt-and-pepper noise will have dark pixels in bright regions and bright pixels in dark regions. Median filtering is particularly effective at removing this type of noise.</p>
+<h3>Shot noise</h3>
+<p>Shot noise (or Poisson noise) arises from the discrete nature of light itself. Because photons arrive randomly, the number counted by any pixel fluctuates even when the illumination is perfectly steady. The signal-to-noise ratio for photon counting improves with the square root of the number of photons collected, which is why larger sensors and longer exposures produce cleaner images. Shot noise dominates in well-exposed regions, while read noise dominates in deep shadows.</p>
+<h3>Quantization noise</h3>
+<p>Quantization noise results from converting the continuous analog signal from a sensor into discrete digital values. Rounding to the nearest available level introduces a small error at every pixel, which becomes visible as banding in smooth gradients when the bit depth is low.</p>
+<h3>Film grain</h3>
+<p>In analog photography, film grain is the random optical texture of processed photographic film, caused by the presence of small particles of metallic silver developed from silver halide crystals. Grain size varies with film sensitivity: faster films use larger crystals and show coarser grain. Filmmakers and photographers sometimes exploit grain as an aesthetic device.</p>
+<h2>Noise in digital cameras</h2>
+<p>In digital cameras, noise increases with sensor temperature, exposure time, and ISO sensitivity setting. Raising the ISO amplifies the signal before or during digitization, which also amplifies the noise already present. Small sensors with high pixel density are generally noisier than large sensors, because each photosite collects fewer photons. Modern cameras apply on-chip noise reduction and sophisticated demosaicing algorithms; shooting in raw format lets photographers apply their own noise reduction later.</p>
+<h2>Noise removal</h2>
+<p>Noise reduction algorithms attempt to distinguish true image detail from random fluctuation. Spatial filters such as the Gaussian blur and the bilateral filter smooth noise while trying to preserve edges; wavelet-based and non-local means methods exploit redundancy across the image. Excessive noise reduction produces an artificial, "plastic" or watercolour-like appearance, so most tools allow the user to balance noise suppression against detail preservation.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Signal-to-noise_ratio/index.html">Signal-to-noise ratio</a></li>
+<li><a href="../Image_processing/index.html">Image processing</a></li>
+<li><a href="../Film_grain/index.html">Film grain</a></li>
+<li><a href="../Shot_noise/index.html">Shot noise</a></li>
+</ul>
+</body>
+</html>

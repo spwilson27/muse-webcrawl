@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Loadable kernel module - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+#wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal;margin-top:28px}
+h3{font-size:17px;font-weight:bold;margin-top:20px}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 16px 20px;font-size:13px;line-height:1.5}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+.hero{display:block;margin:16px auto;max-width:420px;width:100%}
+.caption{text-align:center;font-size:12px;color:#54595d;margin-top:-8px;margin-bottom:16px}
+ul{line-height:1.6;font-size:15px}
+.small{font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<div id="wrap">
+<h1>Loadable kernel module</h1>
+<p>In computing, a <b>loadable kernel module</b> (LKM) is an object file that contains code to extend the running kernel, or so-called base kernel, of an operating system. LKMs are typically used to add support for new hardware (as device drivers) and/or filesystems, or for adding system calls. When the functionality provided by an LKM is no longer required, it can be unloaded in order to free memory and other resources.</p>
+<img class="hero" src="images/Loadable_kernel_module.png" alt="Diagram of a kernel with loadable modules">
+<p class="caption">Modular extensions to a running kernel</p>
+
+<h2>Advantages and drawbacks</h2>
+<p>Without loadable modules, an operating system would have to include all functionality anticipated in the base kernel, wasting memory on features rarely used, and requiring a reboot whenever new hardware or functionality was added. Most modern monolithic and hybrid kernels — Linux, the BSDs, macOS (kernel extensions), Solaris, and Windows (dynamically loadable drivers) — support modules. The drawbacks include the risk that a buggy module compromises the whole kernel, version-matching requirements between module and kernel, and security concerns: the ability to load a module is equivalent to full control of the system, which is why module loading is restricted to privileged users and, in secure-boot configurations, to cryptographically signed modules.</p>
+
+<h2>Linux</h2>
+<p>Linux kernel modules are files with the <code>.ko</code> (kernel object) extension, managed with tools such as <code>insmod</code>, <code>rmmod</code>, <code>modprobe</code>, and <code>lsmod</code>; <code>modprobe</code> resolves dependencies between modules. A module loaded under a licence incompatible with the kernel's GPL "taints" the kernel, which is reported in logs and bug reports. Out-of-tree modules are commonly built with the DKMS framework so they are rebuilt automatically for new kernels. Since kernel 4.x–5.x, signed modules and lockdown mode under UEFI Secure Boot limit unsigned code in kernel space.</p>
+
+<h2>Licensing and other systems</h2>
+<p>Because modules link intimately with the kernel, their licensing status has been debated, particularly for proprietary graphics drivers on Linux. FreeBSD and other BSD systems provide a similar module system (<code>kldload</code>), and macOS historically used kernel extensions (kexts), now largely replaced by system extensions in user space for security.</p>
+
+<p class="small">See also: <a href="../Kernel_(operating_system)/index.html">Kernel</a> &middot; <a href="../Device_driver/index.html">Device driver</a> &middot; <a href="../Linux_kernel/index.html">Linux kernel</a></p>
+</div>
+</body>
+</html>

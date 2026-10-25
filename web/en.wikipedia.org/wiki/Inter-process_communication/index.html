@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Inter-process communication - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:20px;color:#202122;background:#fff;line-height:1.6}
+h1{font-family:sans-serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:sans-serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+img.hero{display:block;width:100%;max-width:640px;margin:12px 0;border:1px solid #ccc}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.note{font-size:13px;color:#54595d;font-style:italic}
+</style>
+</head>
+<body>
+<h1>Inter-process communication</h1>
+<img class="hero" src="images/Inter-process_communication.png" alt="Diagram of two processes exchanging messages through a shared channel">
+<p>In computer science, <b>inter-process communication</b> (<b>IPC</b>), also spelled <b>interprocess communication</b>, refers to the mechanisms an operating system provides to allow processes to exchange data and synchronize their actions. IPC is fundamental to building applications from cooperating processes, from simple pipelines to large distributed systems.</p>
+<h2>Approaches</h2>
+<p>The two broad models are <b>shared memory</b>, in which processes read and write a common region of memory (fast, but requiring semaphores or other synchronization to avoid race conditions), and <b>message passing</b>, in which data moves through explicit send and receive operations. Common mechanisms include:</p>
+<ul>
+<li><b>Pipes and FIFOs</b> — unidirectional byte streams, the basis of shell pipelines.</li>
+<li><b>Sockets</b> — endpoints that work between processes on the same machine or across a network.</li>
+<li><b>Message queues</b> — kernel-managed queues of discrete messages (POSIX and System V variants).</li>
+<li><b>Signals</b> — asynchronous notifications, limited to small amounts of information.</li>
+<li><b>Memory-mapped files</b> and <b>shared memory segments</b>.</li>
+<li><b>Remote procedure call (RPC)</b> and higher-level frameworks such as D-Bus, COM and gRPC, which give message passing the appearance of ordinary function calls.</li>
+</ul>
+<h2>Why it matters</h2>
+<p>IPC allows modular, isolated components to cooperate while retaining the fault isolation and security boundaries of separate processes — the design pattern behind web servers, database systems, microservice architectures and the client–server model generally. Its cost is overhead: context switches, copying and serialization, which is why high-performance systems often combine shared memory with message passing for control.</p>
+<p class="note">See also: Process (computing), Shared memory, Message passing, Socket, Pipe (computing).</p>
+</body>
+</html>

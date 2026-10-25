@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Session Description Protocol - Wikipedia</title>
+<style>
+body{font-family:sans-serif;background:#f8f9fa;color:#202122;margin:0;padding:0 20px;}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:20px 30px;border:1px solid #a7d7f9;}
+h1{font-family:"Linux Libertine",Georgia,serif;font-size:1.9em;border-bottom:1px solid #a2a9b1;}
+h2{font-family:"Linux Libertine",Georgia,serif;border-bottom:1px solid #a2a9b1;font-size:1.4em;}
+a{color:#0645ad;text-decoration:none;}
+a:hover{text-decoration:underline;}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;margin:10px 0;font-size:0.88em;}
+.thumb img{width:100%;}
+.mono{font-family:monospace;background:#f8f9fa;border:1px solid #eaecf0;padding:10px;white-space:pre;overflow-x:auto;}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Session Description Protocol</h1>
+<p>The <b>Session Description Protocol</b> (<b>SDP</b>) is a format for describing multimedia communication sessions for the purposes of announcement, invitation and other forms of session initiation. It is published by the IETF as RFC 8866 (which made obsolete RFC 4566 and the original RFC 2327) and is used in conjunction with protocols such as the <a href="../../wiki/Session_Initiation_Protocol/index.html">Session Initiation Protocol</a> (SIP), the Real-time Transport Protocol (RTP) and WebRTC.</p>
+<div class="thumb"><img src="images/sdp-negotiation.png" alt="Diagram of SDP offer and answer exchange between two endpoints"></div>
+<h2>Format</h2>
+<p>An SDP description is a text block of lines in the form <i>type</i>=<i>value</i>, divided into a session-level description and one or more media-level descriptions. Important fields include:</p>
+<div class="mono">v=0
+o=- 4611733050430603394 2 IN IP4 127.0.0.1
+s=-
+c=IN IP4 203.0.113.2
+t=0 0
+m=audio 49170 RTP/AVP 0
+a=rtpmap:0 PCMU/8000</div>
+<p>Here <b>v</b> is the protocol version, <b>o</b> the originator, <b>s</b> the session name, <b>c</b> connection data, <b>t</b> timing, <b>m</b> a media description (type, port, transport protocol and formats) and <b>a</b> attribute lines that carry most of the detail, such as codec parameters, RTP mappings, encryption keys and WebRTC ICE candidates.</p>
+<h2>Offer/answer model</h2>
+<p>SDP itself does not transport media or negotiate; it describes a session. In the offer/answer model (RFC 3264), one endpoint sends an SDP offer listing the media and codecs it supports, and the other replies with an answer selecting a compatible subset. This exchange is the basis of call setup in SIP-based VoIP and of peer connection negotiation in WebRTC.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../wiki/Session_Initiation_Protocol/index.html">Session Initiation Protocol</a></li>
+<li><a href="../../wiki/Real-time_Transport_Protocol/index.html">Real-time Transport Protocol</a></li>
+<li><a href="../../wiki/WebRTC/index.html">WebRTC</a></li>
+</ul>
+</div>
+</body>
+</html>

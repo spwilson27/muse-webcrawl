@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JSON-RPC - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #fff; color: #202122; }
+header { background: #f8f9fa; border-bottom: 1px solid #a2a9b1; padding: 12px 24px; }
+header .site { font-family: sans-serif; font-size: 13px; color: #72777d; letter-spacing: 1px; }
+main { max-width: 960px; margin: 0 auto; padding: 16px 24px 48px; }
+h1 { font-size: 32px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 8px; }
+h2 { font-size: 22px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+p, li { font-size: 15px; line-height: 1.6; }
+code, pre { font-family: monospace; font-size: 13px; background: #f8f9fa; }
+pre { border: 1px solid #a2a9b1; padding: 10px; overflow-x: auto; }
+.infobox { float: right; width: 270px; background: #f8f9fa; border: 1px solid #a2a9b1; padding: 10px; margin: 0 0 16px 16px; font-size: 13px; font-family: sans-serif; }
+.infobox .title { background: #eaecf0; text-align: center; font-weight: bold; padding: 4px; margin-bottom: 8px; }
+.infobox img { width: 100%; display: block; }
+.infobox table { width: 100%; border-collapse: collapse; }
+.infobox td { padding: 2px 4px; vertical-align: top; }
+.infobox td:first-child { font-weight: bold; width: 45%; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<header><span class="site">WIKIPEDIA — The Free Encyclopedia</span></header>
+<main>
+<h1>JSON-RPC</h1>
+<div class="infobox">
+<div class="title">JSON-RPC</div>
+<img src="images/JSON-RPC.png" alt="Diagram of a JSON-RPC request and response exchanged between client and server">
+<table>
+<tr><td>Type</td><td>Remote procedure call protocol</td></tr>
+<tr><td>Encoding</td><td>JSON</td></tr>
+<tr><td>Latest version</td><td>JSON-RPC 2.0 (2010, revised 2013)</td></tr>
+<tr><td>Transport</td><td>Transport-agnostic (HTTP, WebSocket, TCP, etc.)</td></tr>
+</table>
+</div>
+<p><b>JSON-RPC</b> is a stateless, light-weight <a href="../Remote_procedure_call/index.html">remote procedure call</a> (RPC) protocol. Primarily this specification defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in many various message passing environments. It uses <a href="../JSON/index.html">JSON</a> (RFC 4627) as data format.</p>
+<h2>History</h2>
+<p>JSON-RPC version 1.0 was published in 2005, inspired by earlier JSON messaging proposals. Version 2.0, published in 2010, added support for named parameters, notifications (requests without an id, to which no response is expected), and batch requests in which multiple calls are sent as a JSON array. The protocol is a close cousin of <a href="../XML-RPC/index.html">XML-RPC</a>, differing mainly in its use of JSON rather than XML.</p>
+<h2>Conventions</h2>
+<p>A request object contains a <code>jsonrpc</code> field (always <code>"2.0"</code> in version 2.0), a <code>method</code> name, an optional <code>params</code> array or object, and an <code>id</code>. The response echoes the id and carries either a <code>result</code> or an <code>error</code> object with standard error codes such as -32700 (parse error) and -32601 (method not found).</p>
+<pre>
+{"jsonrpc": "2.0", "method": "subtract", "params": [42, 23], "id": 1}
+{"jsonrpc": "2.0", "result": 19, "id": 1}
+</pre>
+<h2>Usage</h2>
+<p>JSON-RPC is used in cryptocurrency node interfaces (Bitcoin Core and Ethereum clients expose JSON-RPC APIs), language server tooling, blockchain data services, and numerous internal microservice systems, where its simplicity is preferred to heavier protocols such as SOAP.</p>
+<p>See also: <a href="../GRPC/index.html">gRPC</a>; <a href="../OpenRPC/index.html">OpenRPC</a>; <a href="../Representational_state_transfer/index.html">Representational state transfer</a>.</p>
+</main>
+</body>
+</html>

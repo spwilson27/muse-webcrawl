@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Double dispatch - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+header { background: #f8f9fa; border-bottom: 1px solid #a7d7f9; padding: 12px 24px; }
+header .site { font-family: sans-serif; font-size: 13px; color: #54595d; }
+main { max-width: 960px; margin: 0 auto; padding: 16px 24px 48px; line-height: 1.6; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 8px; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 640px; width: 100%; background: #eaecf0; border: 1px solid #c8ccd1; padding: 40px 0; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 12px; overflow-x: auto; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<header><span class="site">From Wikipedia, the free encyclopedia</span></header>
+<main>
+<h1>Double dispatch</h1>
+<div class="hero"><img src="images/double-dispatch.png" alt="Diagram of a double dispatch call: the receiver dispatches on the argument's type via a callback"></div>
+<p><b>Double dispatch</b> is a mechanism that dispatches a function call to different concrete functions depending on the runtime types of two objects involved in the call. In most object-oriented systems, the concrete function that is called from a message send depends only on the type of the receiver (single dispatch); double dispatch extends this so the choice also depends on the type of one argument.</p>
+<h2>Motivation</h2>
+<p>Double dispatch is useful where the behaviour of an operation depends on the combination of two types — for example, computing the intersection of two geometric shapes, rendering different element types in a document model, or resolving collisions between different kinds of game objects. It is the classic implementation technique behind the visitor pattern.</p>
+<h2>Example</h2>
+<p>A typical implementation passes <code>this</code> back into a method on the argument, so the second dispatch resolves the argument's actual type:</p>
+<pre>
+abstract class SpaceObject {
+    abstract void CollideWith(SpaceObject other);
+    abstract void CollideWithAsteroid(Asteroid asteroid);
+    abstract void CollideWithSpaceship(Spaceship ship);
+}
+class Asteroid : SpaceObject {
+    override void CollideWith(SpaceObject other) {
+        other.CollideWithAsteroid(this);  // second dispatch
+    }
+    ...
+}
+</pre>
+<p>The first virtual call selects the receiver's method; that method calls back a type-specific method on the argument, achieving dispatch on both runtime types.</p>
+<h2>Language support</h2>
+<p>Languages with multiple dispatch, such as Common Lisp (CLOS), Julia and Dylan, provide the mechanism directly. In single-dispatch languages like Java, C# and C++, double dispatch is simulated with the visitor pattern or with method overloading combined with virtual calls.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../Multiple_dispatch/index.html">Multiple dispatch</a></li>
+<li><a href="../../Visitor_pattern/index.html">Visitor pattern</a></li>
+<li><a href="../../Dynamic_dispatch/index.html">Dynamic dispatch</a></li>
+</ul>
+</main>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Core dump — Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:860px;margin:0 auto;padding:1em 1.5em;line-height:1.6;color:#202122;background:#fff}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.4em}
+img.hero{display:block;width:100%;max-height:280px;object-fit:cover;background:#eaecf0;border:1px solid #c8ccd1}
+.small{font-size:90%;color:#54595d}
+</style>
+</head>
+<body>
+<img class="hero" src="images/core-dump.png" alt="A debugger examining a core dump file">
+<h1>Core dump</h1>
+<p>In computing, a <b>core dump</b>, <b>memory dump</b>, <b>crash dump</b>, <b>storage dump</b>, <b>system dump</b>, or <b>ABEND dump</b> consists of the recorded state of the working memory of a computer program at a specific time, generally when the program has crashed or otherwise terminated abnormally. In addition to the program's memory image, a core dump may include program state such as processor registers, call stack, management information, and other operating system or processor information.</p>
+<h2>Origin of the term</h2>
+<p>The name derives from <b>magnetic-core memory</b>, the dominant form of random-access computer memory from the 1950s to the 1970s: to &quot;dump core&quot; was to copy the contents of the core memory store out to paper or disk for analysis. The term has survived the technology, and the verb &quot;to dump core&quot; remains idiomatic for a program crashing in a way that produces such a snapshot; Unix systems traditionally write a file simply named <code>core</code>.</p>
+<h2>Use in debugging</h2>
+<p>A core dump allows a programmer to perform a <i>post-mortem</i> debugging session: loading the file into a debugger such as GDB together with the executable (and, ideally, symbol files) reveals where the program crashed, the values of variables, and the call stack at the moment of failure. Common triggers are fatal signals such as SIGSEGV (invalid memory reference), SIGABRT, and SIGBUS; a user can also force a dump with <code>gcore</code> or by sending SIGQUIT. On Linux, the size of core files is controlled by the <code>ulimit -c</code> resource limit, and modern distributions often pipe dumps to a handler such as systemd-coredump or Apport, which store them centrally and can generate crash reports. On Windows the equivalent artifacts are minidumps analyzed by Windows Error Reporting and WinDbg.</p>
+<h2>Contents and formats</h2>
+<p>On Unix-like systems, core dumps are usually written in the ELF format as an additional object type (ET_CORE), containing program headers describing the process's memory segments, register state (in notes sections), thread information, and the list of mapped files. Embedded systems may write dumps in simpler formats. Because dumps can be as large as the process's address space in use, administrators often restrict them; dumps may also contain sensitive data such as passwords or keys, so they are treated as security-sensitive artifacts.</p>
+<h2>History</h2>
+<p>Storage dumps were standard diagnostic practice on mainframes from the 1960s — IBM operating systems produced formatted dumps and ABEND (abnormal end) reports printed on fanfold paper — and the concept carried into Unix from its earliest versions, where the kernel wrote an image of a faulting process to the current directory.</p>
+<h2>See also</h2>
+<ul>
+<li>Debugger</li>
+<li>Blue screen of death</li>
+<li>Kernel panic</li>
+<li>Dr. Watson (debugger)</li>
+</ul>
+<p class="small">Categories: Debugging · Computer memory · Operating system technology</p>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Check digit - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 0 auto; padding: 1.5em; line-height: 1.6; color: #202122; background: #fff; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; margin-bottom: 0.3em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.2em; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.8em; margin: 0 0 1em 1.5em; font-size: 0.85em; }
+.infobox th { text-align: left; padding-right: 0.6em; vertical-align: top; }
+.infobox caption { font-weight: bold; font-size: 1.1em; padding-bottom: 0.4em; }
+.hero { width: 100%; height: auto; border: 1px solid #c8ccd1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.refs { font-size: 0.85em; }
+</style>
+</head>
+<body>
+<h1>Check digit</h1>
+<div class="infobox">
+<img class="hero" src="images/check-digit.png" alt="A barcode number with its final check digit highlighted">
+<table>
+<caption>Check digit</caption>
+<tr><th>Purpose</th><td>Error detection in identification numbers</td></tr>
+<tr><th>Common algorithms</th><td>Luhn, mod 10, mod 11, Verhoeff, Damm</td></tr>
+<tr><th>Used in</th><td>ISBN, credit card numbers (PAN), IBAN, UPC/EAN barcodes, VINs, IMEI</td></tr>
+<tr><th>Detects</th><td>Single-digit errors and most adjacent transpositions (depending on algorithm)</td></tr>
+</table>
+</div>
+<p>A <b>check digit</b> is a form of redundancy check used for error detection on identification numbers, such as bank account numbers, which are used in an application where they are at least sometimes input manually. It consists of one or more digits computed by an algorithm from the other digits (or letters) in the sequence input. With a check digit, one can detect simple errors in the input of a series of characters (usually digits) such as a single mistyped digit or a transposition of two digits.</p>
+<h2>Design</h2>
+<p>Check digit algorithms are chosen to catch the most common human transcription errors: a single wrong digit (caught by virtually all schemes) and the swapping of adjacent digits (caught by most weighted schemes, though simple mod-10 schemes miss the 09 ↔ 90 transposition). More sophisticated designs such as the Verhoeff algorithm and the Damm algorithm use quasigroup operations to catch all single-digit errors and all adjacent transpositions.</p>
+<h2>Examples</h2>
+<p>The <b>Luhn algorithm</b> (mod 10), invented by IBM scientist Hans Peter Luhn, validates credit card numbers, IMEI numbers, and Canadian Social Insurance Numbers. Bookland ISBN-13 and retail barcodes (UPC-A, EAN-13) use a weighted mod-10 check; the older ISBN-10 used a mod-11 check in which the check character could be "X". International Bank Account Numbers (IBAN) use a mod-97 check with two check digits. Vehicle Identification Numbers in North America include a check digit computed with transliteration and weighted sums.</p>
+<h2>Limitations</h2>
+<p>A check digit detects accidental errors but offers no security against deliberate manipulation, since the algorithm is public and anyone can compute a valid digit. It also cannot correct errors, only signal that a number is invalid; correction requires re-entry or stronger error-correcting codes.</p>
+<h2>See also</h2>
+<p><a href="../Luhn_algorithm/index.html">Luhn algorithm</a> · <a href="../Verhoeff_algorithm/index.html">Verhoeff algorithm</a> · <a href="../Checksum/index.html">Checksum</a> · <a href="../Error_detection_and_correction/index.html">Error detection and correction</a> · <a href="../International_Bank_Account_Number/index.html">IBAN</a></p>
+<p class="refs">References: Luhn, H. P. U.S. Patent 2,950,048 (1960). Verhoeff, J. <i>Error Detecting Decimal Codes</i> (1969). ISO/IEC 7064, systems of check characters.</p>
+</body>
+</html>

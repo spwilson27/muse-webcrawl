@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Feistel cipher - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;margin-bottom:.4em}
+h2{font-size:1.4em;border-bottom:1px solid #eaecf0;padding-bottom:.15em}
+img.hero{display:block;max-width:420px;width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:6px;margin:1em 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Feistel cipher</h1>
+<img class="hero" src="images/Feistel_cipher.png" alt="Diagram of one round of a Feistel network, with the block split into two halves and a round function applied to the right half">
+<p>A <b>Feistel cipher</b> (or Feistel network) is a symmetric structure used in the construction of <a href="../Block_cipher/index.html">block ciphers</a>, named after the German-American cryptographer Horst Feistel, who pioneered the design at IBM in the early 1970s. It underlies the Data Encryption Standard (DES) and many other ciphers.</p>
+<h2>Structure</h2>
+<p>A Feistel network splits the block into two halves, conventionally L and R. In each round, a round function F — which takes a subkey derived from the main key — is applied to one half, and the result is combined with the other half using XOR; the halves are then swapped. Schematically, from (L<sub>i</sub>, R<sub>i</sub>) the next round computes L<sub>i+1</sub> = R<sub>i</sub> and R<sub>i+1</sub> = L<sub>i</sub> ⊕ F(R<sub>i</sub>, K<sub>i</sub>).</p>
+<h2>Properties</h2>
+<p>The structure's celebrated advantage is that encryption and decryption are nearly identical: the round function need not be invertible, because the XOR-and-swap arrangement reverses itself simply by running the subkeys in reverse order. This simplifies hardware and software implementation. The security of a Feistel cipher depends on the round count and the strength of F; theoretical work by Luby and Rackoff showed that a Feistel network with enough rounds of a good pseudorandom function is itself a strong pseudorandom permutation.</p>
+<h2>Examples</h2>
+<p>Notable Feistel ciphers include DES, its variant Triple DES, Blowfish, Twofish (in part), Camellia, CAST-128 and the GOST cipher. The Advanced Encryption Standard (AES) is not a Feistel cipher but uses a substitution–permutation network instead.</p>
+</body>
+</html>

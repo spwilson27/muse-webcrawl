@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Subpixel rendering - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+#content{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.hero{display:block;max-width:100%;margin:8px auto}
+.small{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Subpixel rendering</h1>
+<p><b>Subpixel rendering</b> is a technique used to increase the apparent resolution of a computer display by exploiting the physical structure of its pixels. On a typical LCD panel, each pixel consists of separate red, green, and blue subpixels arranged in vertical stripes. By lighting these subpixels individually, rendering software can position text edges at a fraction of a pixel, effectively tripling the horizontal resolution for monochrome content such as text.</p>
+<img class="hero" src="images/subpixel-rendering.png" alt="Magnified text showing individually lit red, green and blue subpixels">
+<h2>How it works</h2>
+<p>Conventional grayscale <a href="../Font_rasterization/index.html">font rasterization</a> treats each pixel as a single unit. Subpixel rendering instead renders the glyph at three times the horizontal resolution and maps each third to one color component of a pixel. Because the human eye is more sensitive to luminance (brightness) than to chrominance (color), the slight color fringing introduced is usually imperceptible at typical viewing distances, while the text appears noticeably sharper.</p>
+<h2>Implementations</h2>
+<p>The best-known implementation is Microsoft's <b>ClearType</b>, introduced with Windows XP and heavily promoted for LCD screens. Apple's macOS used subpixel antialiasing for many years but removed it in macOS Mojave (2018) as high-density "Retina" displays reduced its benefit. The open-source FreeType library implements subpixel rendering (often called LCD filtering) used on Linux desktops.</p>
+<h2>Limitations</h2>
+<p>Subpixel rendering depends on knowing the subpixel order (RGB vs. BGR) and orientation of the panel; it breaks down when a display is rotated, when pixels use non-stripe layouts such as PenTile, or when content is scaled or screenshotted and viewed on a different panel. At the very high pixel densities of modern displays, its advantage diminishes and many systems now prefer device-independent grayscale rendering.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../ClearType/index.html">ClearType</a></li>
+<li><a href="../Anti-aliasing/index.html">Anti-aliasing</a></li>
+<li><a href="../Pixel/index.html">Pixel</a></li>
+</ul>
+<p class="small">From Wikipedia, the free encyclopedia.</p>
+</div>
+</body>
+</html>

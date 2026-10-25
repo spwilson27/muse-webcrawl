@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Word embedding - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px 24px 60px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px;padding-bottom:3px}
+h3{margin-top:20px}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px 12px;margin:0 0 14px 18px;font-size:88%;font-family:sans-serif}
+.infobox th{text-align:left;vertical-align:top;padding:2px 6px 2px 0}
+.infobox caption{font-weight:bold;font-size:105%;padding-bottom:6px}
+.hero{display:block;max-width:100%;background:#eef;border:1px dashed #88a;padding:40px 0;text-align:center;color:#557;margin:12px 0}
+.small{font-size:88%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Word embedding</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/Word_embedding.png" alt="Projection of word vectors showing semantic clusters">
+<table class="infobox">
+<caption>Word embedding</caption>
+<tr><th>Field</th><td>Natural language processing</td></tr>
+<tr><th>Type</th><td>Vector representation of words</td></tr>
+<tr><th>Key models</th><td>Word2vec (2013), GloVe (2014), fastText (2016)</td></tr>
+<tr><th>Typical dimensions</th><td>50–1000</td></tr>
+<tr><th>Basis</th><td>Distributional hypothesis</td></tr>
+</table>
+<p>In natural language processing (NLP), a <b>word embedding</b> is a representation of a word as a vector of real numbers in a multi-dimensional space. Embeddings map words or phrases from a vocabulary to vectors such that words with similar meanings have similar representations. They are learned from large text corpora by models that exploit the distributional hypothesis — that words occurring in similar contexts tend to have similar meanings.</p>
+<h2>History</h2>
+<p>The idea of representing words by their contexts dates to the distributional semantics of the 1950s and to techniques such as latent semantic analysis (1990). Neural language models popularised learned dense embeddings: Bengio and colleagues (2003) trained embeddings jointly with a neural language model, and Collobert and Weston (2008) demonstrated their usefulness across NLP tasks. Interest surged with the release of <b>word2vec</b> by Mikolov and colleagues at Google in 2013, whose efficient CBOW and skip-gram architectures produced vectors exhibiting striking linear regularities (e.g., <i>king</i> − <i>man</i> + <i>woman</i> ≈ <i>queen</i>).</p>
+<h2>Approaches</h2>
+<h3>Predictive models</h3>
+<p>Word2vec trains a shallow neural network to predict a word from its context (CBOW) or context from a word (skip-gram), usually with negative sampling. FastText (Facebook, 2016) extends this by representing words as bags of character n-grams, enabling embeddings for out-of-vocabulary words.</p>
+<h3>Count-based models</h3>
+<p>GloVe (Stanford, 2014) factorises a global word–word co-occurrence matrix, combining the advantages of count-based methods with predictive training. Earlier methods such as LDA and LSA also produce dense topical representations of words and documents.</p>
+<h3>Contextual embeddings</h3>
+<p>Static embeddings assign one vector per word, conflating its senses. Contextual models — ELMo (2018), and the transformer-based BERT (2018) and its successors — compute a different representation for each occurrence of a word depending on its sentence, and largely superseded static embeddings in state-of-the-art systems.</p>
+<h2>Evaluation and applications</h2>
+<p>Embeddings are evaluated intrinsically (word similarity and analogy tasks) and extrinsically on downstream tasks such as sentiment analysis, named-entity recognition, parsing, and machine translation. Pre-trained embeddings from corpora such as Wikipedia and Common Crawl are widely distributed.</p>
+<h2>Bias</h2>
+<p>Word embeddings learned from human text absorb social biases present in the data — for instance, associating occupations with genders — which has motivated research on debiasing and on auditing models before deployment.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Word2vec/index.html">Word2vec</a></li>
+<li><a href="../GloVe/index.html">GloVe</a></li>
+<li><a href="../Distributional_semantics/index.html">Distributional semantics</a></li>
+<li><a href="../WordNet/index.html">WordNet</a></li>
+<li><a href="../BERT_(language_model)/index.html">BERT (language model)</a></li>
+</ul>
+</div>
+</body>
+</html>

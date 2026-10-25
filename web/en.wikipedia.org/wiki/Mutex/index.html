@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mutex - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:2em auto;max-width:760px;padding:0 1em;line-height:1.6;color:#202122}
+h1,h2{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h1{font-size:1.9em} h2{font-size:1.4em;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none} a:hover{text-decoration:underline}
+.hero{float:right;margin:.5em 0 1em 1.5em;width:300px;text-align:center;border:1px solid #c8ccd1;background:#f8f9fa;padding:.4em;font-size:.85em}
+.hero img{width:100%;height:180px;background:#eaecf0;display:block}
+.lede{font-size:1.02em}
+pre{background:#f8f9fa;border:1px solid #c8ccd1;padding:.6em;overflow:auto;font-size:.85em}
+</style>
+</head>
+<body>
+<h1>Mutex</h1>
+<div class="hero"><img src="images/mutex.png" alt="Diagram showing two threads contending for a single lock guarding a critical section"></div>
+<p class="lede">In concurrent programming, a <b>mutex</b> (short for <b>mutual exclusion</b>) is a synchronisation primitive that prevents state from being modified or accessed by multiple threads of execution at once. A mutex enforces a mutual exclusion policy: only one thread at a time may hold the lock, and thereby enter the critical section the mutex protects.</p>
+<h2>Operation</h2>
+<p>A thread acquires (locks) the mutex before entering a critical section and releases (unlocks) it on exit. If another thread attempts to acquire a mutex that is already held, it blocks — or spins — until the owner releases it. Mutexes are typically implemented with support from atomic hardware instructions such as compare-and-swap, and from the operating system scheduler, which can put waiting threads to sleep.</p>
+<h2>Variants</h2>
+<p>Common variants include the <b>recursive mutex</b>, which can be re-acquired by the thread that already owns it; the <b>reader–writer lock</b>, which permits many concurrent readers or a single writer; and the <b>spinlock</b>, which busy-waits and is suitable only for very short critical sections. The C++ and POSIX pthreads standards both provide mutex types, and most high-level languages expose them as lock objects.</p>
+<h2>Pitfalls</h2>
+<p>Incorrect use of mutexes leads to race conditions if critical sections are left unprotected, and to deadlock when threads acquire several locks in inconsistent orders and wait on each other forever. Priority inversion, in which a high-priority thread waits on a low-priority lock holder that is itself preempted, can be mitigated by priority inheritance protocols. A mutex differs from a semaphore in that it has an owner — the thread that locked it must be the one to unlock it — whereas a semaphore is a general signalling and counting mechanism.</p>
+<h2>See also</h2>
+<p>See also: <a href="../Lock_(computer_science)/index.html">Lock (computer science)</a>, <a href="../Semaphore_(programming)/index.html">Semaphore (programming)</a>, <a href="../Deadlock/index.html">Deadlock</a>, <a href="../Race_condition/index.html">Race condition</a>.</p>
+</body>
+</html>

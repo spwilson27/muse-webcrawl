@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>XML Schema (W3C) - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:960px;line-height:1.6;color:#202122;padding:0 1em}
+h1{font-family:Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:Georgia,serif;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.88em}
+.infobox caption{font-weight:bold;background:#eaf3ff;padding:.3em}
+.hero{display:block;max-width:300px;margin:1em auto}
+.small{font-size:.9em;color:#54595d}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:.6em;overflow:auto;font-size:.88em}
+</style>
+</head>
+<body>
+<h1>XML Schema (W3C)</h1>
+<table class="infobox"><caption>XML Schema</caption>
+<tr><td><b>Developed by</b></td><td>World Wide Web Consortium (W3C)</td></tr>
+<tr><td><b>Released</b></td><td>2 May 2001 (1.0); 5 April 2012 (1.1)</td></tr>
+<tr><td><b>Filename extension</b></td><td>.xsd</td></tr>
+<tr><td><b>Namespace</b></td><td>http://www.w3.org/2001/XMLSchema</td></tr>
+</table>
+<p><b>XML Schema</b>, published as a W3C recommendation, is a schema language for XML documents: it describes the structure and data types of elements and attributes that may appear in a document, enabling processors to validate documents against a formal definition. Files containing XML Schema definitions conventionally have the extension <code>.xsd</code> (XML Schema Definition) and are themselves written in XML. XML Schema was designed to overcome the limitations of DTDs, the earlier schema mechanism inherited from SGML.</p>
+<img class="hero" src="images/xml-schema.png" alt="An XML schema document shown in a text editor">
+<h2>Features</h2>
+<p>Compared with DTDs, XML Schema offers:</p>
+<ul>
+<li><b>XML syntax:</b> schemas are XML documents, so no separate notation must be learned or parsed.</li>
+<li><b>Namespace support:</b> elements from multiple vocabularies can be validated together.</li>
+<li><b>Rich data types:</b> built-in types such as <code>xs:string</code>, <code>xs:decimal</code>, <code>xs:date</code> and <code>xs:boolean</code>, plus the ability to derive new types by restriction (patterns, ranges, enumerations) and extension.</li>
+<li><b>Type derivation and substitution:</b> complex types can be extended or restricted, supporting a degree of schema reuse and object-oriented-style design.</li>
+</ul>
+<pre>&lt;xs:element name="note"&gt;
+  &lt;xs:complexType&gt;
+    &lt;xs:sequence&gt;
+      &lt;xs:element name="to" type="xs:string"/&gt;
+      &lt;xs:element name="body" type="xs:string"/&gt;
+    &lt;/xs:sequence&gt;
+  &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;</pre>
+<h2>History</h2>
+<p>XML Schema 1.0 became a W3C Recommendation in May 2001, drawing on proposals such as Microsoft's XML-Data and the DCD submission. Its complexity drew criticism, and simpler alternatives — notably RELAX NG and Schematron — gained followings, though XML Schema remained dominant in enterprise and web-service contexts (for example, in WSDL descriptions). Version 1.1, published in April 2012, added assertions (<code>xs:assert</code>), conditional type assignment, and other refinements.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../XML/index.html">XML</a></li>
+<li><a href="../Document_type_definition/index.html">Document type definition</a></li>
+<li><a href="../RELAX_NG/index.html">RELAX NG</a></li>
+<li><a href="../Schematron/index.html">Schematron</a></li>
+<li><a href="../JSON_Schema/index.html">JSON Schema</a></li>
+</ul>
+<p class="small">From Wikipedia, the free encyclopedia (recreated from memory).</p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Circular buffer - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine","Georgia",serif;margin:0;background:#f6f6f6;color:#202122;}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;}
+h1{font-size:1.9em;border-bottom:1px solid #a7d7f9;padding-bottom:4px;margin-bottom:8px;font-weight:normal;}
+h2{font-size:1.5em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em;font-weight:normal;}
+p{line-height:1.6;font-family:sans-serif;font-size:0.95em;}
+.imgbox{float:right;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;text-align:center;font-family:sans-serif;font-size:0.8em;max-width:260px;}
+.imgbox img{max-width:100%;display:block;background:#ddd;}
+a{color:#0645ad;text-decoration:none;}
+ul{font-family:sans-serif;font-size:0.95em;line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Circular buffer</h1>
+<div class="imgbox"><img src="images/circular-buffer.png" alt="Diagram of a circular buffer with read and write pointers chasing each other around a ring of storage cells"><div>A circular buffer with read and write positions.</div></div>
+<p>A <b>circular buffer</b>, <b>circular queue</b>, or <b>ring buffer</b> is a data structure that uses a single, fixed-size buffer as if it were connected end-to-end, forming a ring. It is a common implementation of a queue for streaming data: elements are written at a "tail" position and read from a "head" position, and both indices advance modulo the buffer size, wrapping around to the beginning when they reach the end. When the writer laps the reader, the oldest unread data is overwritten, so the structure naturally keeps the most recent items — the standard behaviour of a first-in, first-out buffer of bounded size.</p>
+<h2>Implementation</h2>
+<p>A circular buffer is typically implemented as an array together with read and write index variables. The buffer is empty when the indices are equal (or when a count is zero) and full when the write index is about to overtake the read index; implementations either keep an explicit element count, reserve one empty slot to distinguish full from empty, or use monotonically increasing sequence numbers. All operations are constant-time and require no memory allocation or data movement, which makes the structure attractive in embedded systems.</p>
+<h2>Uses</h2>
+<p>Circular buffers are used wherever producers and consumers of data run at different rates: audio and video streaming, keyboard and serial-port input buffers in operating systems, network packet queues, sensor logging, digital signal processing delay lines, and audio delay and reverb effects. Lock-free single-producer/single-consumer ring buffers are a standard mechanism for low-latency communication between threads and in high-frequency trading systems.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Queue_(abstract_data_type)/index.html">Queue (abstract data type)</a></li>
+<li><a href="../FIFO/index.html">FIFO</a></li>
+<li><a href="../Data_structure/index.html">Data structure</a></li>
+<li><a href="../Buffer_(computer_science)/index.html">Buffer (computer science)</a></li>
+</ul>
+</div>
+</body>
+</html>

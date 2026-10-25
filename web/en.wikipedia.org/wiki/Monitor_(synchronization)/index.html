@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Monitor (synchronization) - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:900px;margin:0 auto;padding:20px;color:#202122;line-height:1.6}
+h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:16px auto;max-width:420px;border:1px solid #c8ccd1;background:#f8f9fa;padding:8px;text-align:center;font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Monitor (synchronization)</h1>
+<p>In concurrent programming, a <b>monitor</b> is a synchronization construct that prevents threads from concurrently accessing a shared resource, while allowing them to wait for changes in the state of the resource. A monitor consists of a <a href="../Mutex/index.html">mutex</a> (lock) associated with a set of procedures and shared data, together with one or more <b>condition variables</b> on which threads can wait and be signalled. Only one thread may execute a monitor procedure at a time, guaranteeing mutual exclusion by construction.</p>
+<img class="hero" src="images/monitor-synchronization.png" alt="Diagram of threads entering a monitor with condition variables">
+<h2>History</h2>
+<p>The concept was developed in the early 1970s by Per Brinch Hansen and C. A. R. Hoare, drawing on earlier ideas by Edsger Dijkstra. Brinch Hansen implemented monitors in the Concurrent Pascal language, and Hoare's 1974 paper "Monitors: An Operating System Structuring Concept" gave the classic formal description. Hoare-style (signalling thread immediately hands over to the waiting thread) and Mesa-style (signal-and-continue) semantics differ in when a signalled thread resumes.</p>
+<h2>Condition variables</h2>
+<p>Condition variables support two operations:</p>
+<ul>
+<li><b>wait</b> &mdash; the calling thread releases the monitor lock and blocks until signalled; it must re-check its condition on waking, typically in a loop.</li>
+<li><b>signal</b> (notify) &mdash; wakes one waiting thread; <b>broadcast</b> (notifyAll) wakes all waiters.</li>
+</ul>
+<h2>Language support</h2>
+<p>Monitors are built into several languages: Java associates a monitor with every object and provides <code>synchronized</code> methods with <code>wait</code>/<code>notify</code>; C# offers <code>lock</code> and the <code>Monitor</code> class; POSIX threads and many other systems supply the equivalent primitives via mutexes and condition variables.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Mutex/index.html">Mutex</a></li>
+<li><a href="../Semaphore_(programming)/index.html">Semaphore (programming)</a></li>
+<li><a href="../Producer%E2%80%93consumer_problem/index.html">Producer&ndash;consumer problem</a></li>
+<li><a href="../Critical_section/index.html">Critical section</a></li>
+</ul>
+</body>
+</html>

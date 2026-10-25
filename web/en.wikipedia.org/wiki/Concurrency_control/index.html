@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Concurrency control - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122;}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 40px 60px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9;}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:6px;margin-bottom:4px;}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:28px;}
+p{line-height:1.6;font-size:15px;}
+a{color:#0645ad;text-decoration:none;}
+a:hover{text-decoration:underline;}
+.hero{text-align:center;margin:16px 0;}
+.hero img{max-width:520px;width:100%;border:1px solid #c8ccd1;background:#eaecf0;padding:8px;}
+.caption{font-size:12px;color:#54595d;margin-top:4px;}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Concurrency control</h1>
+<p>In information technology and computer science, especially in database systems and transactional processing, <b>concurrency control</b> ensures that concurrent operations are performed correctly while preserving data integrity. When multiple transactions execute simultaneously and access the same data, concurrency control mechanisms coordinate them so that the final result is equivalent to some serial execution — a property known as serializability.</p>
+<div class="hero"><img src="images/concurrency-control.png" alt="Diagram of concurrent transactions accessing a shared database under concurrency control"><div class="caption">Concurrency control coordinates simultaneous transactions so shared data remains consistent.</div></div>
+<h2>Techniques</h2>
+<p>The main categories of concurrency control are pessimistic and optimistic. Pessimistic methods, above all locking, prevent conflicts before they occur: two-phase locking (2PL) and its strict variant guarantee serializability by requiring transactions to acquire all locks before releasing any. Timestamp ordering assigns each transaction a timestamp and enforces access in timestamp order. Multiversion concurrency control (MVCC) maintains multiple versions of data items so readers need not block writers, and is used by systems such as PostgreSQL and Oracle. Optimistic concurrency control assumes conflicts are rare, lets transactions proceed without locking, and validates at commit time, aborting if a conflict is detected.</p>
+<h2>Problems addressed</h2>
+<p>Without control, concurrent transactions can produce lost updates, dirty reads, non-repeatable reads and phantom reads. Database systems expose isolation levels — from read uncommitted to serializable — that trade consistency for performance. Deadlocks, in which transactions wait indefinitely for one another's locks, must be detected or prevented by the system.</p>
+<h2>See also</h2>
+<p><a href="../Database_transaction/index.html">Database transaction</a> &middot; <a href="../ACID/index.html">ACID</a> &middot; <a href="../Isolation_(database_systems)/index.html">Isolation (database systems)</a> &middot; <a href="../Lock_(computer_science)/index.html">Lock (computer science)</a></p>
+</div>
+</body>
+</html>

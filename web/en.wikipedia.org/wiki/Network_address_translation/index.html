@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Network address translation - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;}
+.wrap{max-width:960px;margin:0 auto;padding:20px;}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal;}
+h2{font-size:20px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:24px;}
+p,li{line-height:1.6;font-size:15px;}
+a{color:#0645ad;text-decoration:none;}
+a:hover{text-decoration:underline;}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:13px;}
+.infobox th{background:#b0c4de;padding:4px;text-align:center;}
+.infobox td{padding:3px 4px;vertical-align:top;}
+.hero{width:100%;border:1px solid #ccc;}
+.ref{font-size:13px;color:#54595d;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Network address translation</h1>
+<p><b>Network address translation</b> (<b>NAT</b>) is a method of mapping an <a href="../IP_address/index.html">IP address</a> space into another by modifying network address information in the IP header of packets while they are in transit across a traffic routing device. The technique was originally used to bypass the need to assign a new address to every host when a network was moved or when the upstream Internet service provider was replaced, but it became a popular tool in dealing with <a href="../IPv4_address_exhaustion/index.html">IPv4 address exhaustion</a>.</p>
+<p><img class="hero" src="images/network-address-translation.png" alt="Diagram of a NAT router translating private addresses of home devices into one public address"></p>
+<table class="infobox">
+<tr><th colspan="2">Network address translation</th></tr>
+<tr><td><b>First described</b></td><td>RFC 1631 (1994)</td></tr>
+<tr><td><b>Purpose</b></td><td>Address remapping; conservation of public IPv4 addresses</td></tr>
+<tr><td><b>Common form</b></td><td>Port address translation (PAT / NAT overload)</td></tr>
+</table>
+<h2>Basic NAT</h2>
+<p>The simplest type of NAT provides a one-to-one translation of IP addresses. <i>Basic NAT</i> can be used to interconnect two IP networks that have incompatible addressing. In contrast, the most common form, often simply called NAT or IP masquerading, is <b>port address translation</b> (PAT), which maps many private addresses to a single public address by also translating port numbers, allowing an entire household or office to share one public IPv4 address.</p>
+<h2>Operation</h2>
+<p>When a packet from an internal host crosses the NAT device, its source address (and, in PAT, source port) is rewritten to the device's public address, and the mapping is recorded in a translation table. Reply packets arriving at the public address are matched against the table and forwarded to the correct internal host. Stateful mappings expire after a period of inactivity.</p>
+<h2>Applications and limitations</h2>
+<p>NAT is ubiquitous in home routers and mobile carrier networks (carrier-grade NAT). It complicates protocols that embed addresses in their payloads, and makes unsolicited inbound connections impossible without port forwarding, which is why techniques such as STUN, TURN, ICE, UPnP, and NAT-PMP were developed for peer-to-peer applications and voice over IP. NAT breaks the original end-to-end principle of the Internet, a point emphasised by its critics, although it also provides a degree of incidental inbound filtering.</p>
+<h2>IPv6</h2>
+<p>The enormous address space of IPv6 was designed to remove the need for NAT, restoring end-to-end connectivity; nevertheless, various IPv6 translation mechanisms (such as NAT64) exist for transition and special cases.</p>
+<p class="ref">See also: Private network; Port forwarding; Carrier-grade NAT; IPv4 address exhaustion; STUN.</p>
+</div>
+</body>
+</html>

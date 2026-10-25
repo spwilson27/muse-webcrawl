@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NTFS - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 40px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin:0 0 8px;padding-bottom:4px}
+h2{font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:90%}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+.hero{display:block;width:100%;max-width:420px;border:1px solid #c8ccd1;padding:4px;background:#fff;margin:12px 0}
+.small{font-size:85%;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>NTFS</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/ntfs.png" alt="Diagram showing the logical structure of an NTFS volume and its Master File Table">
+<table class="infobox">
+<tr><th>Developer</th><td>Microsoft</td></tr>
+<tr><th>Introduced</th><td>July 1993 (Windows NT 3.1)</td></tr>
+<tr><th>Partition IDs</th><td>0x07 (MBR); EBD0A0A2-B9E5-4433-87C0-68B6B72699C7 (GPT)</td></tr>
+<tr><th>Max volume size</th><td>256 TB − 64 KB (implementation)</td></tr>
+<tr><th>Max file size</th><td>16 TB − 64 KB (implementation)</td></tr>
+<tr><th>Features</th><td>Journaling, ACLs, compression, encryption, hard links, sparse files, alternate data streams</td></tr>
+</table>
+<p><b>NTFS</b> (New Technology File System) is a proprietary journaling file system developed by Microsoft. It is the default file system of the Windows NT family, starting with Windows NT 3.1 in 1993, and it supplanted the File Allocation Table (FAT) as the preferred file system on Windows.</p>
+<p>NTFS reading and writing support is provided by most modern operating systems: Linux and BSD include free and open-source NTFS drivers, and macOS supports read-only access natively, with write support available through third-party software.</p>
+<h2>History</h2>
+<p>In the mid-1980s, Microsoft and IBM formed a joint project to create the next generation of graphical operating system, OS/2. IBM's resulting High Performance File System (HPFS) included many features that later appeared in NTFS. When the Microsoft–IBM collaboration broke down, Microsoft's engineers, including Tom Miller, Gary Kimura, Brian Andrew, and David Goebel, developed NTFS for the new Windows NT platform, borrowing heavily from HPFS concepts, including the idea of treating file attributes as extensible metadata.</p>
+<p>Windows NT 3.1 shipped with NTFS 1.0 in 1993. Later versions added quotas (NTFS 3.0, with Windows 2000), the Encrypting File System, sparse files, reparse points, and distributed link tracking.</p>
+<h2>Design</h2>
+<p>Everything on an NTFS volume — file names, creation dates, access permissions, and even the file data itself — is stored as metadata in the <b>Master File Table</b> (MFT), a specialized relational database of file records. The first 16 records of the MFT are reserved for special metadata files, such as $MFT itself, $MFTMirr (a partial mirror), $LogFile (the journal), and $Bitmap (allocation status).</p>
+<p>NTFS uses B-trees to index file system data, supports disk quotas, hard links, symbolic links (from NTFS 3.1), file compression, and file-level encryption through EFS. Access control lists (ACLs) provide fine-grained security permissions.</p>
+<h2>Interoperability</h2>
+<p>Though some details of NTFS remain a trade secret, Linux supports NTFS through the in-kernel driver (read and limited write) and the userspace NTFS-3G driver (full read/write). Microsoft's exFAT has largely replaced FAT32 for removable media, but NTFS remains the standard for fixed Windows system volumes.</p>
+<p class="small">See also: <a href="../File_system/index.html">File system</a> &middot; <a href="../File_Allocation_Table/index.html">File Allocation Table</a> &middot; <a href="../ReFS/index.html">ReFS</a> &middot; <a href="../Windows_NT/index.html">Windows NT</a></p>
+</div>
+</body>
+</html>

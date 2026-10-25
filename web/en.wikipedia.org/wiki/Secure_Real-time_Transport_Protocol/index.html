@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Secure Real-time Transport Protocol - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 60px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Secure Real-time Transport Protocol</h1>
+<img src="images/srtp.png" alt="Diagram of SRTP packet structure with encrypted payload and authentication tag">
+<p>The <b>Secure Real-time Transport Protocol</b> (<b>SRTP</b>) is a profile for the Real-time Transport Protocol (RTP) intended to provide encryption, message authentication and integrity, and replay attack protection to the RTP data in both unicast and multicast applications. It was developed by a small team of Internet Protocol and cryptographic experts from Cisco and Ericsson, and was first published by the IETF in March 2004 as RFC 3711.</p>
+<h2>Features</h2>
+<p>SRTP provides confidentiality by encrypting the RTP payload, by default with the Advanced Encryption Standard (AES) in counter mode or segment integer counter mode, which allows parallel processing and low latency suitable for real-time media. Message authentication and integrity are provided using HMAC-SHA1, producing an authentication tag appended to each packet. A sliding window mechanism provides protection against replay attacks.</p>
+<p>The protocol defines a corresponding secure control protocol, SRTCP, for the Real-time Transport Control Protocol (RTCP). SRTP adds minimal overhead: the default authentication tag is 80 bits for SRTP and 32 bits for SRTCP, and the packet header is transmitted in the clear so that header compression and quality-of-service features continue to work.</p>
+<h2>Key management</h2>
+<p>SRTP itself does not provide key exchange; session keys are established by external protocols such as ZRTP, DTLS-SRTP (RFC 5764), MIKEY (RFC 3830), or SDES (RFC 4568), in which key material is exchanged in the Session Description Protocol during call setup.</p>
+<h2>Applications</h2>
+<p>SRTP is widely used in Voice over IP, videoconferencing, and WebRTC, in which DTLS-SRTP is mandatory for media transport.</p>
+<h2>See also</h2>
+<p><a href="../Real-time_Transport_Protocol/index.html">Real-time Transport Protocol</a> &middot; <a href="../ZRTP/index.html">ZRTP</a> &middot; <a href="../Datagram_Transport_Layer_Security/index.html">DTLS</a> &middot; <a href="../WebRTC/index.html">WebRTC</a></p>
+</div>
+</body>
+</html>

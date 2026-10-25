@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rootkit - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+figure{float:right;clear:right;margin:0 0 12px 16px;width:280px;border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;font-size:85%}
+figure img{width:100%;background:#eaecf0;min-height:120px;display:block}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.ref{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Rootkit</h1>
+<p>A <b>rootkit</b> is a collection of computer software, typically malicious, designed to enable access to a computer or an area of its software that is otherwise not allowed (for example, to an unauthorised user) while concealing its own existence or the existence of other software. The term combines "root" — the privileged administrator account on Unix-like systems — with "kit", the set of tools that makes up the software. Rootkits are a type of malware whose defining purpose is stealth.</p>
+<figure><img src="images/rootkit.png" alt="Diagram of privilege rings in an operating system, showing where different rootkit types operate"><figcaption>Rootkits may operate in user mode, kernel mode, or below the operating system in the bootloader or firmware.</figcaption></figure>
+<h2>Types</h2>
+<ul>
+<li><b>User-mode rootkits</b> modify applications or libraries (for example, by replacing system utilities such as <i>ls</i> or <i>ps</i>, or by API hooking) so that processes, files and network connections belonging to the attacker are hidden.</li>
+<li><b>Kernel-mode rootkits</b> run with operating-system privileges, modifying the kernel itself or loading malicious drivers; they can hide objects from every application at once and are correspondingly harder to detect.</li>
+<li><b>Bootkits</b> infect the master boot record or bootloader and load before the operating system, while <b>firmware rootkits</b> persist in device firmware, surviving reinstallation of the OS.</li>
+<li><b>Hypervisor-level rootkits</b> (research examples include SubVirt and "Blue Pill") place the victim operating system inside a virtual machine controlled by the attacker.</li>
+</ul>
+<h2>Detection and removal</h2>
+<p>Because a rootkit subverts the very mechanisms used to observe the system, detection often relies on behavioural analysis, integrity checking against known-good signatures, or examining the system from a trusted external environment (for example, booting from clean media). Well-known incidents include the 2005 Sony BMG copy-protection scandal, in which copy-protection software on music CDs installed a rootkit on customers' Windows PCs, and the LoJax UEFI rootkit attributed to state-sponsored attackers in 2018. Prevention emphasises patching, least-privilege operation, secure boot and firmware integrity measurement.</p>
+<p class="ref">See also: <a href="../Malware/index.html">Malware</a> · <a href="../Computer_security/index.html">Computer security</a> · <a href="../Sony_BMG_copy_protection_rootkit_scandal/index.html">Sony BMG copy protection rootkit scandal</a></p>
+</div>
+</body>
+</html>

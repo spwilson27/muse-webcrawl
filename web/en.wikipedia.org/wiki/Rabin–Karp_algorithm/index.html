@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rabin–Karp algorithm</title>
+<style>
+body{font-family:Georgia,serif;margin:2em auto;max-width:860px;padding:0 1em;line-height:1.6;color:#222}
+h1{border-bottom:2px solid #a7d7f9;padding-bottom:.2em}
+h2{border-bottom:1px solid #ccc;padding-bottom:.1em}
+img.hero{display:block;max-width:100%;margin:1em auto;background:#eee;border:1px solid #bbb;min-height:180px}
+.infobox{float:right;background:#f9f9f9;border:1px solid #aaa;padding:.6em;margin:0 0 1em 1em;font-size:.9em;width:280px}
+a{color:#0645ad}
+</style>
+</head>
+<body>
+<h1>Rabin–Karp algorithm</h1>
+<img class="hero" src="images/Rabin-Karp_algorithm.png" alt="Sliding window with rolling hash values moving across a text string">
+<p>The <b>Rabin–Karp algorithm</b> or <b>Karp–Rabin algorithm</b> is a string-searching algorithm created by Richard Karp and Michael O. Rabin in 1987 that uses <a href="../Hash_function/index.html">hashing</a> to find an exact match of a pattern string in a text. It uses a rolling hash to quickly filter out positions of the text that cannot match the pattern, and then verifies any candidate positions by direct comparison.</p>
+<div class="infobox">
+<b>Class:</b> String searching algorithm<br>
+<b>Worst-case performance:</b> O(nm)<br>
+<b>Average performance:</b> O(n + m)<br>
+<b>Creators:</b> Richard Karp, Michael O. Rabin (1987)
+</div>
+<h2>Overview</h2>
+<p>Naive string matching compares the pattern against every possible substring of the text, character by character. The Rabin–Karp algorithm instead computes a hash value for the pattern and for each successive window of the text of the same length. If the hash values differ, the window cannot contain the pattern; if they are equal, the algorithm checks the characters directly to confirm the match (or detect a hash collision).</p>
+<h2>Rolling hash</h2>
+<p>The key idea is the use of a rolling hash function: the hash of each new window can be computed from the hash of the previous window in constant time by removing the contribution of the character that leaves the window and adding the contribution of the character that enters it. A common choice treats the string as a number in a base-d numeral system computed modulo a large prime q, which makes the sliding update a simple arithmetic operation.</p>
+<h2>Uses</h2>
+<p>Rabin–Karp is especially useful for multiple pattern searching, such as detecting plagiarism by searching a document for many source strings at once: a single pass with several pattern hashes can find candidate matches for all patterns simultaneously. Its worst case, O(nm), arises when many hash matches occur spuriously, but with a well-chosen modulus this is rare in practice.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Knuth–Morris–Pratt_algorithm/index.html">Knuth–Morris–Pratt algorithm</a></li>
+<li><a href="../Boyer–Moore_string-search_algorithm/index.html">Boyer–Moore string-search algorithm</a></li>
+<li><a href="../Rolling_hash/index.html">Rolling hash</a></li>
+</ul>
+<p><i>Categories: String matching algorithms, Hash functions</i></p>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Thompson sampling - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:820px;margin:0 auto;padding:24px 20px 60px}
+h1{font-size:30px;border-bottom:1px solid #a2a9b1;padding-bottom:6px;margin-bottom:4px}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:28px}
+p{line-height:1.6;margin:10px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{margin:16px 0;background:#f8f9fa;border:1px solid #c8ccd1;padding:10px;text-align:center}
+.hero img{max-width:100%}
+.caption{font-size:13px;color:#54595d;margin-top:6px}
+.small{font-size:13px;color:#54595d}
+ol{line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Thompson sampling</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="hero"><img src="images/thompson-sampling.png" alt="Beta distributions for bandit arms"><div class="caption">Posterior distributions over each arm's reward probability</div></div>
+<p><b>Thompson sampling</b>, named after William R. Thompson, who proposed it in 1933, is a heuristic algorithm for balancing exploration and exploitation in the <a href="../Multi-armed_bandit/index.html">multi-armed bandit</a> problem. At each step the algorithm maintains a Bayesian posterior distribution over the expected reward of each action, draws one sample from each posterior, and plays the action whose sample is largest — thereby choosing each action with probability equal to the posterior probability that it is optimal (probability matching).</p>
+<h2>Algorithm</h2>
+<ol>
+<li>Initialise a prior distribution over each arm's reward parameter.</li>
+<li>At each round, sample a parameter value from each arm's posterior.</li>
+<li>Play the arm with the highest sampled value and observe the reward.</li>
+<li>Update that arm's posterior with the observation.</li>
+</ol>
+<p>For Bernoulli bandits, conjugacy with the beta distribution makes the updates trivial, and the method is often called beta–Bernoulli Thompson sampling. Long eclipsed by frequentist algorithms such as UCB, Thompson sampling saw a revival from about 2010, when empirical studies at technology companies showed excellent performance in practice and theorists proved near-optimal regret bounds. It is now widely used in online advertising, clinical trial adaptation, recommendation, and A/B testing.</p>
+<p class="small">Categories: Machine learning algorithms · Bayesian statistics · Sequential methods</p>
+</div>
+</body>
+</html>

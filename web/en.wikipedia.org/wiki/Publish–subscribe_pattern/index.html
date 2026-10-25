@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Publish–subscribe pattern - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:900px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.thumb{float:right;margin:0 0 12px 16px;border:1px solid #c8ccd1;padding:4px;background:#f8f9fa;text-align:center;font-size:0.85em;max-width:260px}
+.thumb img{max-width:250px;background:#e8e8e8}
+</style>
+</head>
+<body>
+<h1>Publish–subscribe pattern</h1>
+<div class="thumb"><img src="images/Publish–subscribe_pattern.png" alt="Diagram of publishers sending messages through a broker to subscribers"></div>
+<p>In software architecture, <b>publish–subscribe</b> (often abbreviated <b>pub/sub</b>) is a messaging pattern in which publishers categorise messages into classes or topics without knowledge of which subscribers, if any, there may be. Subscribers express interest in one or more topics and receive only messages matching that interest, without knowledge of the publishers. This decoupling of senders and receivers — in space, in time and in synchronisation — contrasts with the traditional client–server model of direct point-to-point queues.</p>
+<h2>Message filtering</h2>
+<p>Two main approaches choose which messages a subscriber receives:</p>
+<ul>
+<li><b>Topic-based</b> systems place messages on named logical channels (topics); subscribers receive all messages published to their topics.</li>
+<li><b>Content-based</b> systems deliver messages only if their attributes or content match constraints defined by the subscriber, increasing expressiveness at greater computational cost.</li>
+</ul>
+<p>Many implementations combine the two. A central component, the <b>message broker</b>, may store, route and filter messages, or the design may be brokerless, with subscribers filtering a broadcast stream themselves.</p>
+<h2>Advantages and disadvantages</h2>
+<p>Publish–subscribe gives loosely coupled, highly scalable systems: publishers and subscribers can be added independently, and the network topology can evolve. It underlies event-driven architectures, distributed systems middleware, streaming platforms such as Apache Kafka and MQTT (widely used in the Internet of things), and notification systems on the web. The looseness has costs: delivery guarantees are harder to reason about, brokers can become bottlenecks or single points of failure, and subscribers may be flooded with messages if filters or flow control are poorly designed.</p>
+<h2>History</h2>
+<p>The pattern's principles were described in early distributed systems and news-distribution software; the term gained currency with enterprise messaging products in the 1990s and with research on content-based routing. News groups and email mailing lists are non-real-time analogues, and RSS feeds implement a simple pull-based variant.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Message_queue/index.html">Message queue</a></li>
+<li><a href="../Observer_pattern/index.html">Observer pattern</a></li>
+<li><a href="../Event-driven_architecture/index.html">Event-driven architecture</a></li>
+</ul>
+</body>
+</html>

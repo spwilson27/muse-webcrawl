@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shannon–Fano coding - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;min-height:100vh}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal;margin-top:1.2em}
+p{line-height:1.6}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{float:right;margin:0 0 12px 16px;max-width:300px;text-align:center;background:#f8f9fa;border:1px solid #a2a9b1;padding:6px}
+.hero img{max-width:100%}
+.hero figcaption{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Shannon–Fano coding</h1>
+<figure class="hero"><img src="images/Shannon_Fano_coding.png" alt="Binary tree built by recursively splitting symbols into groups of near-equal probability"><figcaption>A Shannon–Fano code tree</figcaption></figure>
+<p>In the field of data compression, <b>Shannon–Fano coding</b> is a technique for constructing a prefix code based on a set of symbols and their probabilities (estimated or measured). It is named after Claude Shannon and Robert Fano, who described versions of the method in 1948 and 1949 respectively.</p>
+<h2>Method</h2>
+<p>The symbols are first arranged in order of decreasing probability. The list is then divided into two parts whose total probabilities are as nearly equal as possible; the symbols in one part are assigned the binary digit 0 as the first symbol of their codewords, and those in the other part the digit 1. Each part is subdivided recursively in the same way until every group contains a single symbol. The accumulated digits form a prefix-free code in which no codeword is a prefix of another.</p>
+<h2>Comparison with Huffman coding</h2>
+<p>Shannon–Fano coding is a top-down construction, whereas Huffman coding works bottom-up by repeatedly merging the two least probable symbols. Shannon–Fano coding does not always produce an optimal prefix code; it can yield average codeword lengths slightly longer than the source entropy and longer than Huffman's optimum. Nevertheless it was historically important as one of the first practical entropy-coding methods and remains a clear illustration of the principle that more frequent symbols should receive shorter codewords.</p>
+<p>A related but distinct technique, Shannon–Fano–Elias coding, is used in arithmetic coding and produces codewords directly from cumulative probabilities.</p>
+<h2>See also</h2>
+<p><a href="../Shannon_limit/index.html">Shannon limit</a></p>
+</div>
+</body>
+</html>

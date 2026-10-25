@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Temporal anti-aliasing - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0 auto; max-width: 960px; padding: 24px; color: #202122; background: #fff; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+p { line-height: 1.6; }
+a { color: #3366cc; text-decoration: none; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 480px; border: 1px solid #ccc; padding: 24px; background: #f8f9fa; }
+</style>
+</head>
+<body>
+<h1>Temporal anti-aliasing</h1>
+<div class="hero"><img src="images/temporal-anti-aliasing.png" alt="Comparison of an aliased edge with a temporally anti-aliased edge in motion"></div>
+<p><b>Temporal anti-aliasing</b> (<b>TAA</b>) is a spatial <a href="../Anti_aliasing/index.html">anti-aliasing</a> technique for computer-generated video in which pixels are sampled from past frames rather than from a single rendered frame. It has become the dominant anti-aliasing method in modern real-time rendering, particularly in video games using deferred rendering pipelines, where traditional multisample anti-aliasing (MSAA) is costly or ineffective.</p>
+<h2>Technique</h2>
+<p>TAA works by jittering the camera projection by a sub-pixel amount each frame, following a low-discrepancy sequence such as a Halton sequence. Each frame is rendered with its own jittered sample positions, and the results are accumulated over time: the previous frame's image is reprojected into the current frame using per-pixel motion vectors, then blended with the newly rendered frame using an exponential moving average or related filter. Over several frames, each pixel effectively receives many samples, smoothing edges and stabilizing fine detail.</p>
+<p>Because reprojected history can be wrong where objects move, appear, or become disoccluded, practical implementations use techniques such as neighbourhood clamping or clipping in colour space (often YCoCg) to reject stale samples, variance clipping, and velocity-based weighting. These safeguards trade some sharpness and stability for freedom from ghosting artefacts.</p>
+<h2>Advantages and drawbacks</h2>
+<p>TAA not only removes edge aliasing but also reduces specular shimmer and crawling on thin geometry, and its cost is roughly constant regardless of scene complexity. Its main drawbacks are a characteristic softness or blur, ghosting trails behind fast-moving objects, and artefacts on particles and transparent surfaces that lack reliable motion vectors. TAA forms the basis of several temporal upscaling technologies, including NVIDIA's DLSS and AMD's FSR 2, which reconstruct a higher-resolution image from lower-resolution temporally accumulated frames.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Multisample_anti-aliasing/index.html">Multisample anti-aliasing</a></li>
+<li><a href="../Fast_approximate_anti-aliasing/index.html">Fast approximate anti-aliasing</a></li>
+<li><a href="../Deep_learning_super_sampling/index.html">Deep learning super sampling</a></li>
+<li><a href="../Motion_vector/index.html">Motion vector</a></li>
+</ul>
+</body>
+</html>

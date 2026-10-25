@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Training, validation, and test data sets - Wikipedia</title>
+<style>
+body { font-family: -apple-system, "Helvetica Neue", Arial, sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 2em 2.5em; line-height: 1.6; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; margin-bottom: 0.3em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0 0 1em 1.5em; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 0.4em; font-size: 0.85em; text-align: center; max-width: 300px; }
+.thumb img { max-width: 100%; display: block; }
+.hatnote { font-size: 0.9em; color: #54595d; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Training, validation, and test data sets</h1>
+<p class="hatnote">From Wikipedia, the free encyclopedia</p>
+<div class="thumb"><img src="images/training-validation-test-sets.png" alt="Diagram showing a dataset split into training, validation and test subsets"></div>
+<p><b>Training, validation, and test data sets</b> are disjoint subsets into which a data sample is partitioned in <a href="../Machine_learning/index.html">machine learning</a>, particularly in <a href="../Supervised_learning/index.html">supervised learning</a>, in order to train a model, tune its hyperparameters, and estimate its performance on unseen data. Keeping the three subsets separate prevents the model from being evaluated on data it has already seen, which would give an optimistic and misleading estimate of how it generalises.</p>
+
+<h2>Definitions</h2>
+<p>A <b>training data set</b> is the subset used to fit the parameters of a model — for example, the weights of a <a href="../Neural_network/index.html">neural network</a> or the coefficients of a <a href="../Linear_regression/index.html">linear regression</a>. The model sees and learns from these data during training.</p>
+<p>A <b>validation data set</b> (also called a development set or dev set) provides an (approximately) unbiased evaluation of a model fitted on the training data, typically while tuning hyperparameters such as the learning rate, regularisation strength, or network architecture. Many candidate models may be compared on the validation set, and the best is selected.</p>
+<p>A <b>test data set</b> (also called a holdout set) is used only once, after training and selection are complete, to estimate the final performance of the chosen model. It should play no role in fitting or in model selection, precisely so that the final estimate is not biased by repeated adaptation to the evaluation data.</p>
+
+<h2>Why three sets?</h2>
+<p>If only a training and a test set are used, and hyperparameters are chosen to maximise test-set performance, the test set has effectively become part of model selection: the reported score no longer reflects performance on genuinely unseen data. This phenomenon is a form of <a href="../Overfitting/index.html">overfitting</a> — the model (or the researcher) adapts to idiosyncrasies of the test data. The three-way split isolates the final evaluation from every design decision.</p>
+<p>Typical proportions vary with the amount of data available. A common rule of thumb is 60–70% for training, 10–20% for validation and 10–20% for testing. With very large data sets (millions of examples), fractions as small as 98/1/1 or even 99.5/0.25/0.25 may suffice, since a small fraction still yields a large absolute number of examples.</p>
+
+<h2>How the split is performed</h2>
+<p>The partition should generally be random, so that each subset is <a href="../Statistical_sample/index.html">representative</a> of the whole. For <a href="../Classification_(machine_learning)/index.html">classification</a> tasks, <b>stratified</b> splitting preserves the class proportions in each subset. For <a href="../Time_series/index.html">time-series</a> data, random splitting is inappropriate because it leaks future information into the past; instead the data are split chronologically, with the test set taken from the most recent period.</p>
+<p>When data are scarce, <a href="../Cross-validation_(statistics)/index.html">cross-validation</a> provides a more efficient alternative: the data are repeatedly partitioned into training and validation folds, and the results are averaged. A separate test set can still be held out for a final check.</p>
+
+<h2>Common pitfalls</h2>
+<ul>
+<li><b>Data leakage</b>: information from the validation or test set influencing training, e.g. by performing feature normalisation or feature selection on the full data set before splitting.</li>
+<li><b>Duplicate or near-duplicate examples</b> appearing in both training and test sets, inflating measured performance.</li>
+<li><b>Test-set reuse</b>: repeatedly evaluating on a benchmark test set (as in public leaderboards) gradually overfits the community's models to it.</li>
+<li><b>Distribution shift</b>: the test data coming from a different distribution than the training data, so the split does not measure performance in the deployment environment.</li>
+</ul>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Cross-validation_(statistics)/index.html">Cross-validation (statistics)</a></li>
+<li><a href="../Overfitting/index.html">Overfitting</a></li>
+<li><a href="../Hyperparameter_(machine_learning)/index.html">Hyperparameter</a></li>
+<li><a href="../Supervised_learning/index.html">Supervised learning</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kernel (operating system) - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#f8f9fa;color:#202122;margin:0}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 40px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:4px}
+h2{font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:90%;margin:0 0 12px 16px;padding:8px}
+.infobox caption{font-weight:bold;font-size:110%}
+.hero{width:100%;background:#eaecf0;border:1px solid #c8ccd1;text-align:center;padding:12px 0;color:#72777d}
+.ref{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Kernel (operating system)</h1>
+<p>From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<caption>Kernel</caption>
+<tr><td><div class="hero"><img src="images/kernel.png" alt="Diagram of a kernel connecting applications to hardware"></div></td></tr>
+<tr><td>The core component of an operating system, mediating between applications and hardware.</td></tr>
+</table>
+<p>A <b>kernel</b> is a computer program at the core of a computer's operating system that always has complete control of everything in the system. It is the portion of the operating system code that is always resident in memory and facilitates interactions between hardware and software components. The kernel performs tasks such as running processes, managing hardware devices (through device drivers), handling interrupts, and managing memory and I/O.</p>
+<h2>Functions</h2>
+<p>Typically, the kernel is responsible for process management (scheduling and inter-process communication), memory management (virtual memory, paging, and protection), device management, and system call handling. User programs request services from the kernel through system calls, crossing from the unprivileged user mode into privileged kernel mode. This separation protects the system: application programs cannot directly access hardware or another process's memory.</p>
+<h2>Design approaches</h2>
+<p>In a <b>monolithic kernel</b>, such as the Linux kernel, most operating-system services run in kernel space within a single address space, favoring performance and simplicity of interaction between subsystems. A <b>microkernel</b>, as in MINIX 3 or the Mach-derived designs, keeps only the most basic services — scheduling, IPC, and basic memory management — in kernel space and runs drivers and file systems as user-space servers, favoring fault isolation and security at some cost in message-passing overhead. <b>Hybrid kernels</b>, such as the Windows NT kernel and Apple's XNU, combine elements of both. An <b>exokernel</b> exposes hardware resources almost directly to applications.</p>
+<h2>History</h2>
+<p>Early operating systems of the 1960s, including OS/360 and Multics, established the resident supervisor or monitor concept. Unix (1969) popularized a relatively small, portable kernel written in C. The 1990s saw debate over microkernel versus monolithic design, including the well-known Tanenbaum–Torvalds debate of 1992, as Linux grew rapidly while microkernel research systems such as Mach evolved.</p>
+<h2>See also</h2>
+<p><a href="../Operating_system/index.html">Operating system</a> · <a href="../Input/Operating_system/index.html">Input/Operating system</a> · <a href="../Input/Interrupt_handler/index.html">Interrupt handler</a> · System call · Linux kernel</p>
+<p class="ref">References: Tanenbaum, "Modern Operating Systems"; Bovet &amp; Cesati, "Understanding the Linux Kernel".</p>
+</div>
+</body>
+</html>

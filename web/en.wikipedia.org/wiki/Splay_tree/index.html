@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Splay tree - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; background: #fff; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+img.hero { display: block; max-width: 320px; margin: 10px auto; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 10px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Splay tree</h1>
+<img class="hero" src="images/Splay_tree.png" alt="Splaying bringing a node to the root by rotations">
+<p>A <b>splay tree</b> is a self-adjusting binary search tree with the additional property that recently accessed elements are quick to access again. It performs basic operations such as insertion, look-up, and removal in O(log n) <a href="../Amortized_analysis/index.html">amortized</a> time. For many sequences of non-uniformly distributed accesses, the splay tree can outperform other search trees, even after all accesses are counted, because it adapts its shape to the access pattern — an instance of the general principle of exploiting locality of reference.</p>
+<h2>Splaying</h2>
+<p>All normal operations on a splay tree are combined with a restructuring move called <b>splaying</b>: after accessing a node, a sequence of tree rotations moves it to the root. The rotations are organised in three cases applied bottom-up: <b>zig</b> (node is a child of the root — a single rotation), <b>zig-zig</b> (node and parent are both left children or both right children — rotate the grandparent, then the parent), and <b>zig-zag</b> (node and parent are opposite-side children — rotate the parent, then the grandparent). The zig-zig rule, in particular, is what distinguishes splaying from naively rotating the accessed node to the root, and is essential to the amortized bound.</p>
+<h2>Properties</h2>
+<p>Splay trees were introduced by Daniel Sleator and Robert Tarjan in 1985. They need no explicit bookkeeping of heights or balance colours, so each node stores no metadata beyond its pointers. Their performance is described by several celebrated results, including the static optimality theorem (they are as efficient as any fixed optimal search tree for a given access distribution, up to a constant factor) and the working set property (recently accessed items are fast to reach). Individual operations can, however, cost O(n) in the worst case, and splaying on every access makes the tree unsuitable where predictable latency or concurrent read access matters. A randomised alternative with similar aims is the <a href="../Treap/index.html">treap</a>.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Binary_search_tree/index.html">Binary search tree</a></li>
+<li><a href="../Amortized_analysis/index.html">Amortized analysis</a></li>
+<li><a href="../Treap/index.html">Treap</a></li>
+<li><a href="../AVL_tree/index.html">AVL tree</a></li>
+</ul>
+</body>
+</html>

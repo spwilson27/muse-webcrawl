@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Locality of reference - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 48px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 1.35em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 1.4em; }
+p { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; border: 1px solid #a2a9b1; background: #eaecf0; padding: 40px 0; }
+.caption { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Locality of reference</h1>
+<p><b>Locality of reference</b>, also known as the <b>principle of locality</b>, is the tendency of a processor to access the same set of memory locations repetitively over a short period of time. There are two basic types of reference locality: <b>temporal locality</b> and <b>spatial locality</b>.</p>
+<div class="hero"><img src="images/locality-of-reference.png" alt="Diagram showing temporal and spatial locality in memory accesses">
+<p class="caption">Programs tend to reuse data and instructions near those they have used recently.</p></div>
+<h2>Types</h2>
+<p><b>Temporal locality</b>: if a memory location is referenced, it will tend to be referenced again soon. Examples include data in loops and subroutine calls. <b>Spatial locality</b>: if a memory location is referenced, nearby locations will tend to be referenced soon; this applies to sequential instruction execution and to traversing arrays. A third form, <b>branch locality</b>, arises because programs spend much of their time in a few core routines with many local branches.</p>
+<h2>Importance</h2>
+<p>Locality is one of the cornerstones of computer system design. It is the phenomenon that makes <a href="../CPU_cache/index.html">caching</a> effective: a small, fast cache can serve most accesses because programs repeatedly touch a small working set. It also underlies virtual memory and the working-set model of Peter Denning, who introduced the concept in the 1960s, as well as disk prefetching, branch prediction, and the design of memory hierarchies generally.</p>
+<p>Locality is closely related to pointer locality of reference, the phenomenon whereby processors tend to use memory addresses that are near one another, and to the observation that a small fraction of a program's code accounts for most of its execution time.</p>
+<h2>Exploiting locality</h2>
+<p>Programmers can improve performance by restructuring code and data layouts for better locality — for example, by using blocking (tiling) in matrix multiplication so that blocks of a matrix fit in cache, or by storing related data together. Poor locality, as in pointer-chasing through scattered linked structures, defeats caches and can dominate running time.</p>
+</div>
+</body>
+</html>

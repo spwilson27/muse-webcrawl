@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cold start (recommender systems) - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+img.hero{display:block;width:100%;max-height:320px;object-fit:cover;background:#eaecf0;border:1px solid #c8ccd1}
+a{color:#0645ad;text-decoration:none}
+.small{color:#54595d;font-size:0.85em}
+</style>
+</head>
+<body>
+<h1>Cold start (recommender systems)</h1>
+<img class="hero" src="images/cold-start-recommender-systems.png" alt="Diagram showing a new user with no interaction history facing a recommender system">
+<p><b>Cold start</b> is a potential problem in recommender systems, concerning users, items, or entire systems about which the system has gathered insufficient information to make reliable recommendations. Because collaborative filtering depends on historical ratings and interactions, it struggles precisely where data are absent — a situation every new user and every newly launched service faces.</p>
+<h2>Types of cold start</h2>
+<ul>
+<li><b>New user problem</b> — a user has just registered and has rated nothing, so the system cannot personalise recommendations. Common mitigations include asking the user to rate a starter set of items, using demographic or registration data, and defaulting to popular or critically acclaimed items.</li>
+<li><b>New item problem</b> — a new item (film, product, article) has no interactions, so it is rarely recommended, creating a rich-get-richer bias toward established items. Content-based features (genre, text, attributes) let the system reason about unseen items.</li>
+<li><b>New system problem</b> — a service launched from scratch has neither users nor ratings, and must bootstrap with content-based methods, editorial curation, or imported data.</li>
+</ul>
+<h2>Approaches</h2>
+<p>Hybrid recommenders combine collaborative and content-based signals so that one can cover the other's cold spots. Active learning strategies deliberately elicit informative ratings from new users. Bandit algorithms, such as multi-armed bandits with exploration–exploitation trade-offs, treat the cold start as exploration: showing a new user diverse items to learn quickly what they like. Social-network information, cross-domain transfer learning, and meta-learning (learning to initialise models that adapt from few examples) are active research areas.</p>
+<h2>Related difficulties</h2>
+<p>Cold start is related to the sparsity problem (most user–item pairs are unobserved), the long-tail problem (most items attract few interactions), and concept drift, where an existing user's tastes change faster than the model updates. In practice, systems usually pass through a cold-start phase in which recommendations are generic, then sharpen as data accumulate.</p>
+<p class="small">See also: Recommender system · Collaborative filtering · Content-based filtering · Multi-armed bandit</p>
+</body>
+</html>

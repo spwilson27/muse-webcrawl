@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Phase correlation - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:960px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:5px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+img.hero{max-width:400px;display:block;margin:10px auto;background:#f8f9fa;border:1px solid #a2a9b1;padding:10px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<h1>Phase correlation</h1>
+<img class="hero" src="images/Phase_correlation.png" alt="Phase correlation surface showing a sharp peak at the translation offset between two images">
+<p><b>Phase correlation</b> is a method in signal and image processing for estimating the relative translation offset between two similar images or signals. It is implemented in the frequency domain using the Fourier transform and is widely used for image registration because it is robust to changes in illumination and noise.</p>
+<h2>Method</h2>
+<p>Given two images <i>f</i> and <i>g</i> that differ by a circular shift, their Fourier transforms <i>F</i> and <i>G</i> differ only by a phase factor that is a linear function of frequency, by the Fourier shift theorem. Forming the normalized cross-power spectrum,</p>
+<p><code>R = (F · conj(G)) / |F · conj(G)|</code>,</p>
+<p>whitens the spectrum so that only phase information remains. The inverse Fourier transform of R is then a delta function (a sharp peak of 1s and 0s) located exactly at the shift between the two images. In practice, with real images, the peak's location gives the translation and its height indicates the quality of the match; sub-pixel accuracy can be obtained by fitting the peak.</p>
+<h2>Properties and variants</h2>
+<p>Because the method discards amplitude information, phase correlation is insensitive to uniform brightness changes, offsets in pixel values, and frequency-dependent noise, which makes it valuable for aligning aerial photographs, microscopy images, document scans, and video frames. Extensions handle rotation and scale by combining phase correlation with a log-polar transformation of the magnitude spectra (the Fourier–Mellin transform), allowing registration of images that differ by rotation and uniform scaling as well as translation. Robust variants weight the cross-power spectrum to cope with partial occlusion and non-overlapping content.</p>
+<h2>Applications</h2>
+<p>Applications include image stitching and mosaicking, motion estimation and video stabilization, template matching, forensic image analysis, medical image registration, and digital watermarking. The technique was introduced by Kuglin and Hines in 1975.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../wiki/Image_registration/index.html">Image registration</a></li>
+<li><a href="../../wiki/Cross-correlation/index.html">Cross-correlation</a></li>
+<li><a href="../../wiki/Fourier_transform/index.html">Fourier transform</a></li>
+</ul>
+</body>
+</html>

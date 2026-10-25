@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Remote attestation - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { float: right; margin: 0 0 12px 16px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 6px; text-align: center; font-size: 12px; font-family: sans-serif; }
+.hero img { max-width: 260px; display: block; background: #eaecf0; }
+.small { font-size: 13px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Remote attestation</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="hero"><img src="images/Remote_attestation.png" alt="Diagram of a challenger verifying the software state of a remote computer"><br>A verifier checks a remote platform's state</div>
+<p><b>Remote attestation</b> is a method by which a host (the attestor or prover) authenticates its hardware and software configuration to a remote host (the verifier or challenger) in a way that the verifier can trust. Unlike simple authentication, which establishes <i>who</i> the remote party is, attestation seeks to establish <i>what</i> software is running on the remote machine — that is, its integrity state.</p>
+<p>Remote attestation is typically a core function in trusted computing. A common implementation uses a Trusted Platform Module (TPM), which records measurements (cryptographic hashes) of the boot firmware and software into Platform Configuration Registers (PCRs). The prover can then produce a signed quote of these registers, which the verifier compares against a list of known-good values.</p>
+<h2>Process</h2>
+<p>A typical attestation exchange proceeds as follows: the verifier sends a challenge (usually a fresh nonce) to the prover; the prover's TPM signs the PCR values together with the nonce using an attestation identity key (AIK) whose credential chains back to the TPM manufacturer; the prover also supplies the measurement log of events that produced those PCR values; and the verifier validates the signature, replays the log to confirm it matches the quoted values, and appraises each measurement against reference values.</p>
+<h2>Applications</h2>
+<p>Remote attestation underlies measured boot and features such as Windows Device Health Attestation, Android key attestation, and the WebAuthn/Play Integrity ecosystems in which servers verify that requests come from genuine, unmodified devices. It is also used in cloud computing so that customers can verify the integrity of confidential-computing enclaves, such as Intel SGX enclaves, before provisioning secrets to them.</p>
+<h2>Limitations</h2>
+<p>Attestation proves what was loaded, not that the software is free of vulnerabilities; a machine can attest to known-good but exploitable code. Time-of-check to time-of-use (TOCTOU) gaps can also allow an attacker to modify software after attestation. Privacy is a concern because detailed measurements can fingerprint a device.</p>
+<p class="small">See also: <a href="../Trusted_Platform_Module/index.html">Trusted Platform Module</a> · <a href="../Trusted_computing/index.html">Trusted computing</a> · <a href="../Confidential_computing/index.html">Confidential computing</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Raft (algorithm) - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{border-bottom:1px solid #a2a9b1;font-size:1.4em;margin-top:1.2em;font-weight:normal}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{background:#b0c4de;padding:4px;text-align:left}
+.hero{width:100%;border:1px solid #ccc}
+a{color:#0645ad;text-decoration:none}
+.caption{font-size:0.85em;color:#54595d;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Raft (algorithm)</h1>
+<table class="infobox">
+<tr><th colspan="2">Raft</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/Raft_(algorithm).png" alt="Diagram of Raft leader election and log replication"><div class="caption">A Raft cluster elects a leader that replicates a log to followers</div></td></tr>
+<tr><th>Type</th><td>Consensus algorithm</td></tr>
+<tr><th>Designed by</th><td>Diego Ongaro and John Ousterhout</td></tr>
+<tr><th>Introduced</th><td>2014</td></tr>
+</table>
+<p><b>Raft</b> is a consensus algorithm for managing a replicated log, designed as an alternative to Paxos. It was created by Diego Ongaro and John Ousterhout at Stanford University and described in the 2014 paper "In Search of an Understandable Consensus Algorithm". Raft produces results equivalent to Paxos and is equally efficient, but its structure is decomposed into separate sub-problems so that it is easier to understand and implement.</p>
+<h2>How it works</h2>
+<p>Raft achieves consensus via an elected leader. A server in a Raft cluster is in one of three states: leader, follower, or candidate. Time is divided into terms of arbitrary length. Leaders are elected by majority vote at the start of each term; a candidate that receives votes from a majority of servers becomes leader.</p>
+<p>The leader manages a replicated log: it accepts client commands, appends them to its own log, and replicates them to followers with AppendEntries messages. An entry is committed once the leader has replicated it to a majority of servers, after which it can be applied to the state machines of all servers. If a leader fails or becomes disconnected, a new leader is elected, and Raft's election restrictions guarantee that the new leader's log contains all committed entries.</p>
+<h2>Properties and adoption</h2>
+<p>Raft separates the key elements of consensus — leader election, log replication, and safety — and enforces a strong degree of coherency to reduce the number of states that must be considered. It has been implemented in many distributed systems, including etcd (used by Kubernetes), Consul, CockroachDB, and MongoDB's replication protocol draws on similar ideas.</p>
+</div>
+</body>
+</html>

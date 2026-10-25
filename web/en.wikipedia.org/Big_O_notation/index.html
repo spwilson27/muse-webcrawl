@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Big O notation - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; line-height: 1.6; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 6px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; font-size: 1.5em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.2em; }
+p { margin: 0.5em 0; font-size: 0.95em; }
+ul, table.classes { font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 270px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 0.85em; margin: 0 0 12px 18px; padding: 8px 10px; }
+.infobox th { text-align: left; vertical-align: top; padding-right: 8px; }
+.infobox caption { font-weight: bold; text-align: center; padding-bottom: 4px; }
+.hero { text-align: center; margin: 12px 0; }
+.hero img { max-width: 320px; border: 1px solid #a2a9b1; background: #eaecf0; padding: 6px; }
+.caption { font-size: 0.8em; color: #54595d; }
+.small { font-size: 0.85em; color: #54595d; }
+table.classes { border-collapse: collapse; margin: 10px 0; }
+table.classes th, table.classes td { border: 1px solid #a2a9b1; padding: 4px 10px; text-align: left; }
+code { background: #f8f9fa; padding: 0 3px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Big O notation</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<caption>Big O notation</caption>
+<tr><th>Field</th><td><a href="../Mathematics/index.html">Mathematics</a>, <a href="../Computer_science/index.html">computer science</a></td></tr>
+<tr><th>Purpose</th><td>Describing the limiting (asymptotic) behavior of a function</td></tr>
+<tr><th>Introduced by</th><td>Paul Bachmann (1894); popularized by Edmund Landau</td></tr>
+<tr><th>Family</th><td>O (big O), Ω (big Omega), Θ (big Theta), o (little o), ω (little omega)</td></tr>
+</table>
+<p><b>Big O notation</b> is a mathematical notation that describes the limiting behavior of a <a href="../Function_(mathematics)/index.html">function</a> when its argument tends towards a particular value or infinity. In <a href="../Computer_science/index.html">computer science</a>, it is used to classify <a href="../Algorithm/index.html">algorithms</a> according to how their run time or space requirements grow as the input size grows — the core tool of the <a href="../Analysis_of_algorithms/index.html">analysis of algorithms</a>. A function f(n) is said to be O(g(n)) if, for all sufficiently large n, |f(n)| is at most a constant multiple of g(n): formally, f(n) = O(g(n)) if there exist constants C &gt; 0 and n₀ such that |f(n)| ≤ C·g(n) for all n ≥ n₀.</p>
+<div class="hero"><img src="images/big-o-notation.png" alt="Growth curves of common complexity functions"><div class="caption">Growth rates: logarithmic, linear, n log n, quadratic and exponential</div></div>
+<h2>History</h2>
+<p>The notation was introduced by the German mathematician Paul Bachmann in the second volume of his number theory treatise <i>Die Analytische Zahlentheorie</i> (1894), and was spread by his student <a href="../Edmund_Landau/index.html">Edmund Landau</a>, after whom the family is sometimes called <b>Landau symbols</b> or Bachmann–Landau notation. Donald Knuth's <i>The Art of Computer Programming</i> (from 1968) and his 1976 article "Big Omicron and Big Omega and Big Theta" standardized the notation — and its Omega and Theta companions — throughout computer science.</p>
+<h2>Common classes</h2>
+<table class="classes">
+<tr><th>Notation</th><th>Name</th><th>Example</th></tr>
+<tr><td>O(1)</td><td>Constant</td><td>Array index access; hash table lookup (average)</td></tr>
+<tr><td>O(log n)</td><td>Logarithmic</td><td>Binary search</td></tr>
+<tr><td>O(n)</td><td>Linear</td><td>Scanning an unsorted list</td></tr>
+<tr><td>O(n log n)</td><td>Linearithmic</td><td>Efficient comparison sorts (merge sort, heapsort)</td></tr>
+<tr><td>O(n²)</td><td>Quadratic</td><td>Simple sorts (bubble sort, insertion sort worst case)</td></tr>
+<tr><td>O(2ⁿ)</td><td>Exponential</td><td>Naive recursive Fibonacci; brute-force subset problems</td></tr>
+<tr><td>O(n!)</td><td>Factorial</td><td>Enumerating all permutations (brute-force travelling salesman)</td></tr>
+</table>
+<h2>Related notations</h2>
+<p>Big O gives an asymptotic <i>upper</i> bound. Its companions complete the family: <b>big Omega</b>, Ω(g(n)), gives a lower bound; <b>big Theta</b>, Θ(g(n)), means the function is bounded both above and below by g(n) and is thus the exact growth rate; <b>little o</b> denotes a strictly smaller order (f grows more slowly than g, so the ratio tends to zero); and <b>little omega</b>, ω, denotes a strictly larger order. In algorithm analysis, statements are usually understood as worst-case unless an average-case or amortized analysis is specified; sloppily using O where Θ is meant is common in informal writing but discouraged in formal work.</p>
+<h2>Properties and use</h2>
+<p>Big O discards constant factors and lower-order terms, which is what makes it robust across machines and implementations but also means it does not by itself predict actual running times for small inputs. The notation is used well beyond time complexity: for memory consumption, communication complexity, error terms in analytic number theory (where it originated — for example in estimates of the <a href="../Prime_number_theorem/index.html">prime number theorem</a>), and approximations in physics. Formally, O(g) denotes a <i>set</i> of functions, so the conventional expression f = O(g) is an abuse of the equals sign, read as "f is big-O of g".</p>
+<h2>See also</h2>
+<p><a href="../Analysis_of_algorithms/index.html">Analysis of algorithms</a> · <a href="../Time_complexity/index.html">Time complexity</a> · <a href="../Computational_complexity_theory/index.html">Computational complexity theory</a> · <a href="../Asymptotic_analysis/index.html">Asymptotic analysis</a> · <a href="../Master_theorem_(analysis_of_algorithms)/index.html">Master theorem</a> · <a href="../Edmund_Landau/index.html">Edmund Landau</a></p>
+<p class="small">Categories: Mathematical notation · Asymptotic analysis · Analysis of algorithms</p>
+</div>
+</body>
+</html>

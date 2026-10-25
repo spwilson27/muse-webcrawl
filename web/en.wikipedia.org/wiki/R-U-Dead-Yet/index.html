@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>R-U-Dead-Yet — Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:800px;margin:0 auto;padding:20px;color:#202122;line-height:1.6}h1{font-family:sans-serif;border-bottom:1px solid #a2a9b1}h2{font-family:sans-serif;border-bottom:1px solid #a2a9b1}a{color:#0645ad}img.hero{display:block;margin:16px auto;max-width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:24px;text-align:center}</style></head>
+<body>
+<h1>R-U-Dead-Yet</h1>
+<img class="hero" src="images/r_u_dead_yet.png" alt="Diagram of the R-U-Dead-Yet denial of service attack exploiting HTTP headers">
+<p><b>R-U-Dead-Yet</b>, or <b>RUDY</b>, is a denial-of-service attack tool that aims to overwhelm a targeted server using long-form HTTP POST transmissions. The attack was first described in 2010 and works by opening connections to a web server and slowly submitting form data in very small chunks, keeping the connections open for long periods.</p>
+<h2>Mechanism</h2>
+<p>RUDY attacks exploit the way web servers handle POST requests. The tool discovers forms on a target website, then sends a POST request with an abnormally large declared Content-Length header. The actual data is transmitted extremely slowly — as little as one byte every several seconds — so the server holds resources waiting for the request body to complete. By opening many such connections, an attacker can exhaust the server's connection pool, preventing it from serving legitimate users. RUDY belongs to the class of "low and slow" application-layer (Layer 7) attacks, alongside tools such as Slowloris.</p>
+<h2>Mitigation</h2>
+<p>Defenses include setting timeouts on incomplete requests, limiting the number of connections per client IP address, configuring minimum data-rate thresholds, and deploying web application firewalls or reverse proxies that buffer requests before passing them to origin servers. Web servers such as Apache can be hardened with modules that drop connections whose bodies arrive too slowly.</p>
+<p><i>See also: Denial-of-service attack, Slowloris (computer security), HTTP POST.</i></p>
+</body></html>

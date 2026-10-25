@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cross-entropy - Wikipedia</title>
+<style>
+body { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: "Linux Libertine", Georgia, serif; font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-family: "Linux Libertine", Georgia, serif; font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; font-weight: normal; margin-top: 28px; }
+p, li { font-size: 14.5px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 480px; width: 100%; background: #eaecf0; border: 1px solid #c8ccd1; padding: 8px; }
+.caption { font-size: 12px; color: #54595d; }
+.formula { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px 14px; font-family: Georgia, serif; font-size: 16px; text-align: center; margin: 12px 0; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Cross-entropy</h1>
+<p>In information theory, the <b>cross-entropy</b> between two probability distributions <i>p</i> and <i>q</i> over the same underlying set of events measures the average number of bits needed to identify an event drawn from the set, if a coding scheme used for the set is optimised for an estimated probability distribution <i>q</i>, rather than the true distribution <i>p</i>.</p>
+<div class="hero"><img src="images/cross-entropy.png" alt="Graph comparing cross-entropy loss as predicted probability diverges from the true label"></div>
+<h2>Definition</h2>
+<p>The cross-entropy of the distribution <i>q</i> relative to a distribution <i>p</i> over a given set is defined as:</p>
+<div class="formula">H(p, q) = −Σ<sub>x</sub> p(x) log q(x)</div>
+<p>where the sum is over the possible events, and the logarithm is usually base 2 (giving units of bits) or base <i>e</i> (nats). Cross-entropy is related to the entropy H(p) and the Kullback–Leibler divergence D<sub>KL</sub>(p ‖ q) by:</p>
+<div class="formula">H(p, q) = H(p) + D<sub>KL</sub>(p ‖ q)</div>
+<p>Since the KL divergence is non-negative, cross-entropy is minimised when <i>q</i> equals <i>p</i>, in which case it equals the entropy of <i>p</i>.</p>
+<h2>Use in machine learning</h2>
+<p>Cross-entropy loss (log loss) is the standard loss function for classification problems in machine learning. A neural network trained with cross-entropy against one-hot target labels is, in effect, performing maximum-likelihood estimation of the class probabilities. For binary classification it reduces to the binary cross-entropy; combined with a softmax output layer it yields simple gradients that speed learning, and it underlies the training of large language models, where minimising cross-entropy over next-token predictions is equivalent to minimising perplexity.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Entropy_(information_theory)/index.html">Entropy (information theory)</a></li>
+<li><a href="../Kullback%E2%80%93Leibler_divergence/index.html">Kullback–Leibler divergence</a></li>
+<li><a href="../Loss_function/index.html">Loss function</a></li>
+<li><a href="../Softmax_function/index.html">Softmax function</a></li>
+</ul>
+<p class="caption">From Wikipedia, the free encyclopedia (recreated from memory).</p>
+</div>
+</body>
+</html>

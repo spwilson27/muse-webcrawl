@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Virtualization - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+p{line-height:1.6;font-size:15px}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 12px 16px;padding:8px}
+.infobox th{text-align:left;background:#eaf3ff;padding:4px}
+.infobox td{padding:4px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{width:100%;display:block;margin-bottom:6px}
+.small{font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Virtualization</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<tr><td colspan="2"><img class="hero" src="images/virtualization.png" alt="Diagram of multiple virtual machines running on one physical host"></td></tr>
+<tr><th>Key component</th><td>Hypervisor (virtual machine monitor)</td></tr>
+<tr><th>Forms</th><td>Hardware, OS-level (containers), desktop, network, storage, application</td></tr>
+<tr><th>Origins</th><td>IBM CP-40/CMS, 1960s; x86 revival, late 1990s (VMware)</td></tr>
+</table>
+<p>In computing, <b>virtualization</b> (sometimes abbreviated <b>v12n</b>, a numeronym) is a series of technologies that allow dividing of physical computing resources into a series of virtual machines, operating systems, processes or containers. Virtualization began in the 1960s on IBM mainframes as a method of logically dividing system resources between different applications, and it became mainstream on commodity x86 servers in the 2000s, forming the technical foundation of cloud computing.</p>
+<h2>Hardware virtualization</h2>
+<p>Hardware virtualization creates virtual machines (VMs) that act like physical computers with their own operating systems. The software that creates and runs VMs is called a hypervisor. <b>Type 1</b> ("bare-metal") hypervisors—such as VMware ESXi, Microsoft Hyper-V (in its server role), and the open-source Xen and KVM—run directly on hardware and dominate data centers. <b>Type 2</b> ("hosted") hypervisors—such as VirtualBox and VMware Workstation—run as applications on a host OS. Techniques include full virtualization (with binary translation or, nowadays, hardware assists such as Intel VT-x and AMD-V), paravirtualization (guests modified to cooperate with the hypervisor), and hardware-assisted virtualization, which with nested paging provides near-native performance.</p>
+<h2>OS-level virtualization</h2>
+<p>Operating-system-level virtualization, popularized by FreeBSD jails, Solaris Zones, and Linux containers (LXC, Docker), runs multiple isolated user-space instances ("containers") on a single kernel. Containers share the host kernel, so they start quickly and are lightweight, but they cannot run a different operating system kernel and their isolation is generally weaker than that of VMs. Containers became the standard packaging unit for microservices and are orchestrated by platforms such as Kubernetes.</p>
+<h2>Other forms</h2>
+<p>Desktop virtualization separates a user's desktop environment from the physical machine (VDI). Application virtualization packages software to run in an isolated layer without full installation. Network virtualization abstracts networking into virtual networks, VLANs, and software-defined networking, while storage virtualization pools physical storage into logical volumes. Memory and data virtualization apply the same abstraction principle in their domains.</p>
+<h2>Benefits and drawbacks</h2>
+<p>Virtualization improves hardware utilization, enables server consolidation and energy savings, provides isolation and security boundaries, simplifies backup, snapshotting, migration (including live migration of running VMs), testing, and disaster recovery, and allows legacy systems to run on modern hardware. Drawbacks include performance overhead (small with hardware assists), licensing complexity, VM sprawl, and the concentration of risk when many VMs share one host or hypervisor ("hyperjacking" attacks and side channels). Together with automation and self-service provisioning, virtualization underlies infrastructure as a service (IaaS) in cloud computing.</p>
+<h2>History</h2>
+<p>IBM's CP-40 and CP-67/CMS systems (1966–1967) and the IBM System/370 with VM/370 (1972) established time-sharing virtual machines on mainframes. On x86, VMware (founded 1998) overcame the architecture's virtualization obstacles, and Intel and AMD added hardware support in 2005–2006. Amazon Web Services' EC2 (2006) built its public cloud on Xen (later the Nitro hypervisor), cementing virtualization as the default computing substrate of the internet era.</p>
+<h2>See also</h2>
+<p><a href="../Hypervisor/index.html">Hypervisor</a> · <a href="../Virtual_machine/index.html">Virtual machine</a> · <a href="../VirtualBox/index.html">VirtualBox</a> · <a href="../OS-level_virtualization/index.html">OS-level virtualization</a> · <a href="../Cloud_computing/index.html">Cloud computing</a> · <a href="../Emulator/index.html">Emulator</a></p>
+</div>
+</body>
+</html>

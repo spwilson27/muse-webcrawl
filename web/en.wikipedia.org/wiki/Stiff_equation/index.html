@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Stiff equation - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+img.hero { float: right; margin: 0 0 12px 16px; max-width: 220px; border: 1px solid #c8ccd1; background: #eaecf0; padding: 4px; }
+p { line-height: 1.6; font-size: 15px; }
+.mono { font-family: 'Courier New', monospace; background: #f8f9fa; border: 1px solid #eaecf0; padding: 8px 12px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.small { font-size: 12px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Stiff equation</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/Stiff_equation.png" alt="Plot showing numerical instability when solving a stiff equation with large steps">
+<p>In mathematics, a <b>stiff equation</b> is a differential equation for which certain numerical methods are numerically unstable unless the step size is taken to be extremely small. Stiff equations arise in many areas, including chemical kinetics, control theory, electrical circuits, and mechanical systems with components operating on very different timescales.</p>
+<h2>Motivating example</h2>
+<p>Consider the initial value problem:</p>
+<p class="mono">y&prime; = &minus;15y, &nbsp; y(0) = 1</p>
+<p>whose exact solution, y = e<sup>&minus;15t</sup>, decays rapidly to zero. An explicit method such as Euler's method applied to this equation is stable only if the step size h satisfies h &lt; 2/15, even though the solution itself is smooth and slowly varying after the initial transient. Forcing a tiny step size because of stability rather than accuracy requirements is the hallmark of stiffness.</p>
+<h2>Origin and characterization</h2>
+<p>Stiffness typically occurs when a system contains processes with widely separated timescales: rapidly decaying components impose severe step-size restrictions on explicit methods even after those components have become negligible. For a linear system y&prime; = Ay, the ratio of the magnitudes of the largest and smallest eigenvalues of A (the stiffness ratio) is a rough measure of stiffness, though no single universally accepted definition exists. The term was introduced by Curtiss and Hirschfelder in 1952, motivated by chemical reaction kinetics.</p>
+<h2>Numerical methods</h2>
+<p>Stiff problems are generally solved with implicit methods, whose stability regions are much larger. Important classes include backward differentiation formulas (BDF), implicit Runge–Kutta methods such as Radau and Gauss methods, and Rosenbrock methods. Desirable stability properties are A-stability (stability for all steps in the left half-plane) and, for very stiff problems, L-stability, which damps fast components in a single step. Widely used software includes the BDF-based codes of the LSODE/VODE family and the Radau and TR-BDF2 methods. Solving stiff systems requires solving (often nonlinear) algebraic equations at each step, typically with a Newton iteration using the Jacobian of the system.</p>
+<p class="small">See also: <a href="../Backward_differentiation_formula/index.html">Backward differentiation formula</a> &middot; <a href="../Runge%E2%80%93Kutta_methods/index.html">Runge–Kutta methods</a> &middot; <a href="../Numerical_stability/index.html">Numerical stability</a></p>
+</div>
+</body>
+</html>

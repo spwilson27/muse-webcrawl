@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>K-means clustering - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; background: #f8f9fa; color: #202122; margin: 0; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 28px; }
+p, li { font-size: 15px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; max-width: 480px; width: 100%; margin: 12px auto; border: 1px solid #c8ccd1; background: #eaecf0; min-height: 120px; }
+.small { font-size: 12px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>K-means clustering</h1>
+<p><b>K-means clustering</b> is a method of vector quantization, originally from signal processing, that is popular for cluster analysis in data mining and machine learning. It aims to partition n observations into k clusters, in which each observation belongs to the cluster with the nearest mean (cluster centre, or centroid), which serves as a prototype of the cluster.</p>
+<img class="hero" src="images/K-means_clustering.png" alt="Scatter plot of points partitioned into three clusters by k-means">
+<h2>Problem definition</h2>
+<p>Given a set of observations (x<sub>1</sub>, x<sub>2</sub>, …, x<sub>n</sub>) in d-dimensional space, k-means clustering seeks a partition into k sets S<sub>1</sub>, …, S<sub>k</sub> minimising the within-cluster sum of squares — the sum, over all clusters, of the squared Euclidean distances of points to their cluster's centroid. This objective makes k-means equivalent to partitioning the data into Voronoi cells around the centroids. Finding the exact optimum is NP-hard in general, so heuristic iterative algorithms are used in practice.</p>
+<h2>Lloyd's algorithm</h2>
+<p>The standard algorithm, commonly called k-means and often known as Lloyd's algorithm (proposed by Stuart Lloyd in 1957 and published in 1982), alternates two steps:</p>
+<ul>
+<li><b>Assignment step:</b> assign each observation to the cluster whose centroid is nearest.</li>
+<li><b>Update step:</b> recompute each centroid as the mean of the observations assigned to its cluster.</li>
+</ul>
+<p>The steps repeat until assignments no longer change. The algorithm always converges (the objective decreases at every step), but possibly to a local optimum, so multiple restarts with different seeds are common. The choice of initial centroids matters greatly; the k-means++ seeding method (Arthur and Vassilvitskii, 2007) spreads initial centres apart and gives an expected O(log k) approximation guarantee.</p>
+<h2>Choosing k and limitations</h2>
+<p>The number of clusters k must be specified in advance. Heuristics for choosing it include the elbow method, silhouette scores, and information criteria. K-means assumes clusters are roughly spherical and comparably sized; it is sensitive to outliers and to the scaling of the features, and it imposes hard assignments of points to single clusters — soft alternatives are provided by Gaussian mixture models fitted with expectation–maximisation.</p>
+<h2>Applications</h2>
+<p>Applications include customer segmentation in marketing, image compression and colour quantization, document clustering, vector quantization in speech coding, and cell segmentation in biology and medical imaging.</p>
+<p class="small">See also: <a href="../Cluster_analysis/index.html">Cluster analysis</a> · <a href="../K-d_tree/index.html">K-d tree</a> · <a href="../Voronoi_diagram/index.html">Voronoi diagram</a></p>
+</div>
+</body>
+</html>

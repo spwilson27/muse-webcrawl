@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Direct2D - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:2em auto;max-width:760px;padding:0 1em;color:#202122;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.4em}
+.hero{display:block;margin:1em auto;max-width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:.5em;text-align:center;font-style:italic;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:250px;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.9em}
+.infobox th{text-align:left;padding-right:.5em}
+</style>
+</head>
+<body>
+<h1>Direct2D</h1>
+<span class="hero"><img src="images/Direct2D.png" alt="Diagram of the Direct2D rendering pipeline in the Windows graphics stack"></span>
+<p><b>Direct2D</b> is a 2D vector graphics application programming interface (API) designed by Microsoft and implemented as part of DirectX 11 and later versions. It was first introduced with Windows 7 and Windows Vista with Service Pack 2 (SP2) via the Platform Update, replacing GDI and GDI+ as the recommended way to render two-dimensional graphics on Windows.</p>
+<p>Direct2D provides hardware-accelerated rendering of aliased and anti-aliased 2D geometry, bitmaps, and text. It is built on top of Direct3D, which allows it to use the graphics processing unit (GPU) while still interoperating with GDI, GDI+, and Direct3D content.</p>
+<h2>Overview</h2>
+<p>Direct2D is a native-code API based on the Component Object Model (COM). Applications create a factory object, from which they obtain render targets and drawing resources such as brushes and geometries. Drawing is performed with an immediate-mode-style API, although under the hood commands are batched and sent to Direct3D for execution.</p>
+<p>The API is designed to be fast and to produce visually consistent results. It supports:</p>
+<ul>
+<li>Vector geometry rendering with per-primitive antialiasing</li>
+<li>Bitmap drawing, scaling, and effects</li>
+<li>Text rendering through integration with DirectWrite</li>
+<li>Printing support through the same drawing model</li>
+<li>Interoperability with Direct3D surfaces and GDI device contexts</li>
+</ul>
+<h2>Architecture</h2>
+<p>Direct2D render targets abstract the destination of drawing operations: a window (HwndRenderTarget), a Direct3D texture, a WIC bitmap, or a GDI device context. Resources created from one render target are generally specific to it, reflecting the underlying device-dependent nature of GPU resources.</p>
+<p><a href="../Direct3D/index.html">Direct3D</a> supplies the device and the rasterization pipeline, while <a href="../DirectWrite/index.html">DirectWrite</a> supplies font enumeration, text layout, and glyph rendering that Direct2D draws. In Windows 8, Direct2D 1.1 added an effects API, device contexts, and improved geometry realization; later versions continued to add features such as ink and SVG support.</p>
+<h2>Performance</h2>
+<p>Because most rendering work is offloaded to the GPU, Direct2D can outperform GDI significantly for complex scenes with many primitives, gradients, and transformed bitmaps, while using comparable or less CPU time. Where hardware acceleration is unavailable, Direct2D falls back to a highly optimized software rasterizer based on the WARP (Windows Advanced Rasterization Platform) Direct3D device.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../DirectX/index.html">DirectX</a></li>
+<li><a href="../Windows_Imaging_Component/index.html">Windows Imaging Component</a></li>
+<li><a href="../Quartz_(graphics_layer)/index.html">Quartz</a></li>
+<li><a href="../Cairo_(graphics)/index.html">Cairo</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fast approximate anti-aliasing - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;background:#fff;color:#202122;margin:0;padding:20px 5%;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-family:"Linux Libertine",Georgia,serif;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-family:"Linux Libertine",Georgia,serif;font-weight:normal}
+img.hero{display:block;margin:10px auto;max-width:320px;border:1px solid #ccc}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Fast approximate anti-aliasing</h1>
+<img class="hero" src="images/fxaa.png" alt="Comparison of jagged aliased edges and edges smoothed with FXAA">
+<p><b>Fast approximate anti-aliasing</b> (<b>FXAA</b>) is an anti-aliasing algorithm developed by Timothy Lottes at Nvidia. Unlike multisample anti-aliasing (MSAA), which samples geometry edges at higher resolution during rendering, FXAA is a post-processing shader applied to the finished image: it analyses the rendered frame for high-contrast edges and blends pixels along them to smooth "jaggies". It aims to be much faster than MSAA and to work with deferred rendering pipelines where MSAA is costly or unavailable.</p>
+<h2>How it works</h2>
+<p>FXAA operates on the final colour image (optionally using luminance as an input). It detects edges by looking for local contrast, determines each edge's orientation, and then samples along the edge to find its endpoints and compute a sub-pixel blend offset. Because it only sees the flattened image, it cannot distinguish geometric edges from edges inside textures — a key weakness, since it may blur texture detail and text. Successive versions (FXAA 1 through 3.11 and console variants) improved quality and performance, with quality presets trading speed for better edge handling.</p>
+<h2>Use and successors</h2>
+<p>FXAA became extremely popular in games of the early 2010s because it ran on modest hardware and integrated easily, being distributed as sample shader code. Its tendency to soften the whole image led to alternatives and successors: SMAA (enhanced subpixel morphological anti-aliasing) offered better quality at higher cost, and temporal anti-aliasing (TAA), which accumulates samples across frames, largely superseded FXAA in later game engines.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Anti-aliasing/index.html">Anti-aliasing</a></li>
+<li><a href="../Multisample_anti-aliasing/index.html">Multisample anti-aliasing</a></li>
+<li><a href="../Temporal_anti-aliasing/index.html">Temporal anti-aliasing</a></li>
+</ul>
+<p class="small">Category: Anti-aliasing &middot; Category: Computer graphics algorithms</p>
+</body>
+</html>

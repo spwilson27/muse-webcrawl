@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Poisson regression - Wikipedia</title>
+<style>body{font-family:sans-serif;margin:2em auto;max-width:800px;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a7d7f9;font-weight:normal}h2{border-bottom:1px solid #eaecf0;font-weight:normal}a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}</style>
+</head>
+<body>
+<h1>Poisson regression</h1>
+<img src="images/poisson-regression.png" alt="Fitted Poisson regression curve for count data">
+<p>In statistics, <b>Poisson regression</b> is a generalized linear model used to model count data and contingency tables. It assumes the response variable Y follows a Poisson distribution, and models the logarithm of its expected value as a linear combination of explanatory variables.</p>
+<h2>Model</h2>
+<p>Given predictor variables x, the model specifies</p>
+<p style="text-align:center">log(E(Y | x)) = α + β′x,</p>
+<p>so that the expected count is E(Y | x) = exp(α + β′x). The logarithmic link function ensures that predicted counts are always positive. Coefficients are interpreted multiplicatively: a one-unit increase in a predictor multiplies the expected count by e<sup>β</sup>, an <i>incidence rate ratio</i>.</p>
+<h2>Estimation</h2>
+<p>Parameters are estimated by maximum likelihood, typically using iteratively reweighted least squares. The Poisson distribution has the restrictive property that its mean equals its variance. When real count data exhibit variance greater than the mean — <b>overdispersion</b> — standard errors from ordinary Poisson regression will be too small. Common remedies include quasi-Poisson models, robust (sandwich) standard errors, and negative binomial regression.</p>
+<h2>Exposure and offset</h2>
+<p>If counts arise over different periods of time, population sizes, or areas, an <b>offset</b> term — the logarithm of the exposure — is included so that the model describes rates rather than raw counts. For example, disease counts in different cities can be modelled with log(population) as an offset.</p>
+<h2>Applications</h2>
+<p>Poisson regression is widely used in epidemiology (disease incidence), insurance (claim counts), criminology, ecology, and traffic safety analysis — any setting where the outcome is a non-negative integer count of events.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Poisson_distribution">Poisson distribution</a></li>
+<li><a href="../Generalized_linear_model">Generalized linear model</a></li>
+<li><a href="../Negative_binomial_regression">Negative binomial regression</a></li>
+</ul>
+</body>
+</html>

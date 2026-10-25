@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dangling pointer - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0 auto; max-width: 860px; padding: 20px; color: #202122; line-height: 1.6; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 12px 16px; font-size: 0.9em; }
+.infobox img { width: 100%; }
+a { color: #0645ad; text-decoration: none; }
+h2 { border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px; overflow-x: auto; }
+</style>
+</head>
+<body>
+<h1>Wild pointer</h1>
+<div class="infobox">
+<img src="images/wild-pointer.png" alt="Diagram of an uninitialised pointer pointing to an arbitrary memory location">
+<p><b>Field:</b> Computer programming</p>
+<p><b>Related:</b> Dangling pointer, use after free</p>
+</div>
+<p>A <b>wild pointer</b> is a pointer that has not been initialised prior to its first use. Such a pointer does not point to a valid object of the appropriate type; its value is whatever arbitrary bits happened to occupy its storage. Dereferencing a wild pointer produces undefined behavior and is a common source of crashes and security vulnerabilities in languages such as C and C++.</p>
+<p>The term is closely related to the <b>dangling pointer</b>, which is a pointer that initially pointed to valid memory but whose target has since been deallocated. Both classes of bug arise from manual memory management without automatic checks.</p>
+<h2>Causes</h2>
+<pre>int *p;   /* uninitialised: p is a wild pointer */
+*p = 42;  /* undefined behavior */</pre>
+<p>Wild pointers typically arise when a pointer variable is declared but never assigned a value before use, when a function returns a pointer to a local variable, or when pointer arithmetic moves a pointer outside the bounds of any valid object.</p>
+<h2>Prevention</h2>
+<p>Mitigations include initialising pointers to null, setting pointers to null after freeing their targets, using smart pointers and references in C++, static analysis tools, and memory-safe languages such as Rust, which eliminate the class of error by construction.</p>
+</body>
+</html>

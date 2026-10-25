@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Zero-copy - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:24px 20px 60px}
+h1{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+code{font-family:monospace;background:#f8f9fa}
+figure{margin:12px 0}
+figure img{max-width:100%;background:#eaecf0;border:1px solid #a2a9b1}
+figcaption{font-size:85%;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Zero-copy</h1>
+<figure><img src="images/Zero-copy.png" alt="Diagram comparing a traditional two-copy data path with a zero-copy transfer"><figcaption>Zero-copy techniques let hardware move data without the CPU copying it between buffers.</figcaption></figure>
+<p><b>Zero-copy</b> describes computer operations in which the CPU does not perform the task of copying data from one memory area to another, or in which unnecessary copies are avoided altogether. The term is most often used of input/output: when a program sends a file over a network, a naive implementation copies the data from the file buffer into kernel space, then into a user-space application buffer, then back into a kernel socket buffer. Zero-copy mechanisms eliminate the intermediate copies and context switches, reducing CPU usage and memory bandwidth and improving throughput — a decisive advantage for file servers, streaming systems and message brokers.</p>
+<h2>Techniques</h2>
+<p>Several mechanisms implement zero-copy transfer. Direct memory access (DMA) lets peripheral hardware read and write main memory without CPU involvement. Memory-mapped files (<code>mmap</code>) let the kernel and application share the same pages. On Linux, the <code>sendfile()</code> system call moves data from a file descriptor to a socket within the kernel; <code>splice()</code> and <code>vmsplice()</code> move data between pipes and sockets through page remapping, and <code>copy_file_range()</code> can offload copies to the filesystem or storage device. Some network interfaces support scatter-gather DMA, assembling packets from discontiguous buffers so headers can be prepended without copying the payload. RDMA (remote direct memory access) extends the idea across machines.</p>
+<h2>Software design</h2>
+<p>Beyond the operating system, zero-copy is a design principle in application code: passing references or views instead of duplicating buffers, using immutable data structures with shared storage, and laying out protocols so payloads need not be transformed. Message-queue systems such as Apache Kafka are built around the kernel page cache and <code>sendfile</code>, and Java's <code>java.nio</code> channels expose similar facilities.</p>
+<h2>Trade-offs</h2>
+<p>Zero-copy is not free: it can complicate buffer lifetime management, pin memory so it cannot be paged, interact awkwardly with data transformation (such as TLS encryption, though kernel TLS and NIC offload mitigate this), and yield little benefit for small transfers. Where the CPU must touch every byte anyway — compression, checksumming, encryption — copies may be unavoidable.</p>
+<p>See also: <a href="../Direct_memory_access/index.html">Direct memory access</a>, <a href="../Memory-mapped_file/index.html">Memory-mapped file</a>, <a href="../Sendfile/index.html">Sendfile</a>, <a href="../Remote_direct_memory_access/index.html">Remote direct memory access</a>.</p>
+</div>
+</body>
+</html>

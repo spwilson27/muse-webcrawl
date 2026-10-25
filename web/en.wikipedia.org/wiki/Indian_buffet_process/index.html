@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Indian buffet process - Wikipedia</title>
+<style>
+body{font-family:"Segoe UI",Helvetica,Arial,sans-serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.content{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-weight:normal}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:1.5em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:16px auto;max-width:640px;width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:40px 0;text-align:center;color:#54595d}
+.small{font-size:0.85em;color:#54595d}
+code{font-family:monospace;background:#f8f9fa}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Indian buffet process</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/indian-buffet-process.png" alt="Diagram of customers sampling dishes in the Indian buffet process metaphor">
+<p>In the mathematical theory of probability, the <b>Indian buffet process</b> (<b>IBP</b>) is a stochastic process that generates a random binary matrix with a countable number of columns (features) and a finite number of rows (objects), in which the number of non-zero entries in each row is drawn from a Poisson distribution. It was introduced by Thomas Griffiths and Zoubin Ghahramani in 2005 as the prior distribution used in nonparametric Bayesian latent feature models.</p>
+<h2>Metaphor</h2>
+<p>The process is described by an analogy with an Indian buffet restaurant with infinitely many dishes arranged in a line. The first customer takes a Poisson(&#945;) number of dishes. Each subsequent customer <i>n</i> takes each previously sampled dish <i>k</i> with probability <i>m<sub>k</sub>/n</i>, where <i>m<sub>k</sub></i> is the number of previous customers who took that dish, and then takes a further Poisson(&#945;/n) number of new dishes. The resulting binary matrix records which customers sampled which dishes.</p>
+<h2>Probability model</h2>
+<p>The IBP defines an exchangeable distribution over binary matrices: the probability of any particular matrix depends only on the number of rows, the number of non-empty columns, and the column sums, up to a factor accounting for the ordering of the columns. Formally, the probability of a binary matrix <b>Z</b> with <i>N</i> rows and <i>K</i> non-zero columns is proportional to <code>&#945;<sup>K</sup> exp(&#8722;&#945; H<sub>N</sub>) &#8721; (N &#8722; m<sub>k</sub>)! (m<sub>k</sub> &#8722; 1)! / N!</code>, where <i>H<sub>N</sub></i> is the <i>N</i>-th harmonic number and the sum runs over columns. Matrices that differ only by a permutation of columns that preserves the binary history are considered equivalent, giving rise to the notion of the "lof" (left-ordered form) of a matrix.</p>
+<h2>Relation to other processes</h2>
+<p>The Indian buffet process is the feature-allocation analogue of the <a href="../Chinese_restaurant_process/index.html">Chinese restaurant process</a>, which gives a distribution over partitions (clusters) rather than features. It can be constructed as the limit of a finite model in which each object belongs to each of <i>K</i> features independently with probability &#945;/K, as <i>K</i> tends to infinity. It is closely connected with the beta process, a completely random measure on the unit interval: if feature weights are drawn from a beta process, the Bernoulli process draws that generate the binary matrix yield the IBP as its marginal distribution.</p>
+<h2>Applications</h2>
+<p>The IBP is used as a prior in Bayesian nonparametric models where the number of latent features is unknown and is to be inferred from data, including infinite latent feature models for images, link prediction in networks, collaborative filtering, and sparse factor analysis. Inference is commonly performed with Gibbs sampling or variational methods.</p>
+</div>
+</body>
+</html>

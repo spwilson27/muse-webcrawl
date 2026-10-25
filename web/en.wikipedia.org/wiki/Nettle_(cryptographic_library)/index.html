@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Nettle (cryptographic library) - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;}
+.wrap{max-width:960px;margin:0 auto;padding:20px;}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal;}
+h2{font-size:20px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:24px;}
+p,li{line-height:1.6;font-size:15px;}
+a{color:#0645ad;text-decoration:none;}
+a:hover{text-decoration:underline;}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:13px;}
+.infobox th{background:#b0c4de;padding:4px;text-align:center;}
+.infobox td{padding:3px 4px;vertical-align:top;}
+.hero{width:100%;border:1px solid #ccc;}
+.ref{font-size:13px;color:#54595d;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Nettle (cryptographic library)</h1>
+<p><b>Nettle</b> is a cryptographic library designed to provide a low-level, toolkit-independent set of cryptographic routines for other applications. It is part of the <a href="../GNU_Project/index.html">GNU Project</a> and is best known as the cryptographic backend of <a href="../GnuTLS/index.html">GnuTLS</a>. Nettle emphasises a simple C interface in which each algorithm is exposed through small, object-oriented structures.</p>
+<p><img class="hero" src="images/nettle.png" alt="Diagram of the Nettle library layered beneath the GnuTLS and application layers"></p>
+<table class="infobox">
+<tr><th colspan="2">Nettle</th></tr>
+<tr><td><b>Developer</b></td><td>Niels Möller and contributors</td></tr>
+<tr><td><b>Initial release</b></td><td>2001</td></tr>
+<tr><td><b>Written in</b></td><td>C, assembly</td></tr>
+<tr><td><b>License</b></td><td>LGPLv3+ / GPLv2+ dual</td></tr>
+<tr><td><b>Website</b></td><td>nettle.gitlab.io (GNU)</td></tr>
+</table>
+<h2>Design</h2>
+<p>Unlike large cryptographic frameworks, Nettle deliberately implements only primitives: hash functions, block and stream ciphers, message authentication codes, public-key algorithms, and random number generation. It makes no decisions about protocols, key storage, or certificates, leaving those to the application. This separation allows programs to combine Nettle's routines freely and helped it serve as a foundation for GnuTLS from version 3 onwards.</p>
+<h2>Algorithms</h2>
+<p>Supported algorithms include AES, Camellia, ChaCha, and the legacy DES and RC4; hash functions MD5, RIPEMD-160, SHA-1, the SHA-2 family, SHA-3, and GOST; public-key algorithms RSA, DSA, ECDSA, EdDSA (including Ed25519), and GOST DSA; and modes of operation such as CBC, CTR, GCM, and CCM. Performance-critical routines are hand-optimised in assembly for common architectures including x86-64, ARM, and PowerPC.</p>
+<h2>History</h2>
+<p>Nettle was started by Swedish programmer Niels Möller, originally in connection with the LSH implementation of the Secure Shell protocol. It was adopted as a GNU package and gradually accumulated algorithms, with major releases adding elliptic-curve cryptography (2.7/3.0), ChaCha-Poly1305, and SHA-3. The related "hogweed" library contains the public-key routines that depend on the GMP multiple-precision arithmetic library.</p>
+<h2>Usage</h2>
+<p>Beyond GnuTLS, Nettle is used by a variety of free-software projects requiring lightweight cryptography, and it is distributed with all major Linux distributions.</p>
+<p class="ref">See also: GnuTLS; GNU Project; Cryptography; OpenSSL.</p>
+</div>
+</body>
+</html>

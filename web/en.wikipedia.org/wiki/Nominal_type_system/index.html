@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Nominal type system - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.content{max-width:960px;margin:0 auto;padding:20px 28px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+.hero{display:block;max-width:100%;margin:10px auto}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:0.85em;color:#54595d}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Nominal type system</h1>
+<img class="hero" src="images/Nominal_type_system.png" alt="Diagram of a class inheritance hierarchy, the basis of nominal subtyping">
+<p>In computer science, a <b>nominal</b> or <b>nominative type system</b> (or name-based type system) is a type system in which compatibility and equivalence of data types are determined by explicit declarations and/or by the names of the types. Nominal systems are used to determine whether types are equivalent, and whether a type is a subtype of another.</p>
+<p>Nominal typing stands in contrast to <a href="../Structural_type_system/index.html">structural type systems</a>, in which compatibility is based solely on the structure (the members and layout) of the types involved.</p>
+<h2>Nominal typing</h2>
+<p>Under nominal typing, two types are the same only if they are declared to be so, or if one is declared as an alias of the other. For example, in C, two <code>struct</code> types with identical members but different names are different, incompatible types. Likewise, in languages such as Java and C#, a class is a subtype of an interface only if it explicitly declares that it implements it; a class that merely happens to define the same methods is not a subtype.</p>
+<h2>Nominal subtyping</h2>
+<p>Nominal subtyping means that one type is a subtype of another only if it is explicitly declared to be. This is the dominant approach in mainstream object-oriented languages: Java, C++, C#, Scala, and Rust (for trait implementations) all use declared inheritance or implementation relationships to establish subtyping.</p>
+<h2>Comparison with structural typing</h2>
+<p>Nominal typing makes type relationships explicit and self-documenting, and prevents accidental compatibility between types that look alike but mean different things (for example, a <code>Temperature</code> and a <code>Pressure</code> class both wrapping a floating-point number). Structural typing, used in languages such as Go (for interfaces), OCaml, and TypeScript, is more flexible: a value automatically satisfies an interface if it has the required members, which can ease interoperability but risks unintentional conformance. TypeScript's system is largely structural, though it uses nominal behaviour in a few places (such as with <code>private</code> members).</p>
+<p class="small">See also: <a href="../Structural_type_system/index.html">Structural type system</a> · <a href="../Duck_typing/index.html">Duck typing</a> · <a href="../Type_system/index.html">Type system</a></p>
+</div>
+</body>
+</html>

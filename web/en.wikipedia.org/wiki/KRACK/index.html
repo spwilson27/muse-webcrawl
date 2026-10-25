@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>KRACK - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; background: #f8f9fa; color: #202122; margin: 0; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 28px; }
+p, li { font-size: 15px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; max-width: 480px; width: 100%; margin: 12px auto; border: 1px solid #c8ccd1; background: #eaecf0; min-height: 120px; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; margin: 0 0 16px 20px; padding: 10px; font-size: 13px; }
+.infobox th { text-align: left; }
+.small { font-size: 12px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>KRACK</h1>
+<table class="infobox">
+<tr><th>Name</th><td>KRACK (Key Reinstallation Attack)</td></tr>
+<tr><th>Discovered</th><td>2016 – 2017</td></tr>
+<tr><th>Disclosed</th><td>16 October 2017</td></tr>
+<tr><th>Discoverer</th><td>Mathy Vanhoef (KU Leuven)</td></tr>
+<tr><th>Affected</th><td>WPA and WPA2 implementations (Wi-Fi)</td></tr>
+</table>
+<p><b>KRACK</b> (short for <b>Key Reinstallation Attack</b>) is a class of replay attacks against the Wi-Fi Protected Access (WPA and WPA2) protocols, exploiting weaknesses in the four-way handshake by which a client device and an access point negotiate the session encryption key. The vulnerabilities were discovered by Mathy Vanhoef of KU Leuven and publicly disclosed on 16 October 2017.</p>
+<img class="hero" src="images/KRACK.png" alt="Diagram of a key reinstallation attack against the WPA2 four-way handshake">
+<h2>Details of the attack</h2>
+<p>During the WPA2 four-way handshake, the client installs the negotiated pairwise key after receiving message 3 of the handshake. If that message is lost, the access point retransmits it — and many implementations reinstall the same key upon retransmission, resetting the associated nonce (the packet counter used by the encryption algorithm) to its initial value. An attacker in radio range can collect and replay message 3 to force this reinstallation, causing nonce reuse. Reused nonces break the guarantees of the encryption: with CCMP they permit decryption and replay of packets, and with the already-weak GCMP they permit recovery of the authentication key and bidirectional forgery.</p>
+<p>Variants of the attack targeted group keys, the Fast BSS Transition (802.11r) handshake, and PeerKey handshakes. The Linux and Android implementation, wpa_supplicant versions 2.4+, was especially severely affected: because it accepted a retransmitted message 3 with a zeroed key in some configurations, an attacker could install an all-zero encryption key, making interception trivial.</p>
+<h2>Impact and response</h2>
+<p>Because the flaw lay in the Wi-Fi standard itself rather than in any single vendor's product, effectively every Wi-Fi device implementing WPA2 correctly was potentially vulnerable. Exploitation requires the attacker to be within radio range, and encrypted higher-layer traffic (such as HTTPS) remained protected, but unencrypted traffic could be read or manipulated. Following coordinated disclosure, vendors released patches for operating systems, routers, and embedded devices throughout late 2017. The Wi-Fi Alliance subsequently required testing against the attacks for certification, and the vulnerability was an important motivation for the stronger handshake design (SAE and mandatory protected management frames) adopted in WPA3, announced in 2018.</p>
+<p class="small">See also: <a href="../Wi-Fi_Protected_Access/index.html">Wi-Fi Protected Access</a> · <a href="../WPA3/index.html">WPA3</a> · <a href="../Replay_attack/index.html">Replay attack</a></p>
+</div>
+</body>
+</html>

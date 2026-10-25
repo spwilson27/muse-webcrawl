@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Marching tetrahedra - Wikipedia</title>
+<style>body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}header{background:#fff;border-bottom:1px solid #a7d7f9;padding:12px 24px}h1{font-size:1.9em;margin:0}main{max-width:900px;margin:0 auto;padding:24px;background:#fff}h2{border-bottom:1px solid #a2a9b1;padding-bottom:4px}img.hero{width:100%;height:auto;background:#eaecf0}a{color:#0645ad}.hero-wrap{max-width:400px;margin:0 auto}</style></head>
+<body><header><h1>Marching tetrahedra</h1></header><main>
+<div class="hero-wrap"><img class="hero" src="images/marching-tetrahedra.png" alt="A cube divided into tetrahedra with surface triangles generated inside"></div>
+<p><b>Marching tetrahedra</b> is an algorithm in computer graphics for extracting a polygonal mesh of an isosurface from a three-dimensional scalar field (voxel grid). It is a variant of the <a href="../Marching_cubes/index.html">marching cubes</a> algorithm, published in 1991 by Doi and Koide, which avoids the ambiguities of the cube-based method by decomposing each cube into tetrahedra.</p>
+<h2>Algorithm</h2>
+<p>Each cube of the grid is split into five or six tetrahedra. Within a tetrahedron, the surface's intersection is simple: the signs of the scalar values at the four vertices give only a few distinct cases, producing either no triangle, one triangle, or a quadrilateral formed of two triangles. Vertex positions along edges are found by linear interpolation, as in marching cubes.</p>
+<h2>Comparison with marching cubes</h2>
+<p>Because the tetrahedron cases are unambiguous, marching tetrahedra cannot produce the holes that marching cubes generates when its ambiguous face configurations are resolved inconsistently. The cost is a larger number of triangles for the same grid resolution, since each cube is subdivided. The algorithm is widely used in scientific visualisation of medical and volumetric data.</p>
+</main></body></html>

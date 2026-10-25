@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Paxos (computer science) - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 36px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; }
+.tagline { font-size: 0.85em; color: #54595d; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 12px 16px; font-size: 0.88em; }
+.infobox th { text-align: left; background: #b0c4de; padding: 4px 6px; }
+.infobox td { padding: 3px 6px; vertical-align: top; }
+img.hero { display: block; width: 100%; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.caption { font-size: 0.8em; color: #54595d; text-align: center; }
+.refs { font-size: 0.85em; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Paxos (computer science)</h1>
+<p class="tagline">From Wikipedia, the free encyclopedia</p>
+
+<div class="infobox">
+<img class="hero" src="images/paxos-algorithm.png" alt="Diagram of the Paxos consensus protocol between proposer and acceptors">
+<p class="caption">Message flow in basic Paxos</p>
+<table>
+<tr><th>Field</th><td>Distributed computing</td></tr>
+<tr><th>Type</th><td>Consensus algorithm</td></tr>
+<tr><th>Designed by</th><td>Leslie Lamport</td></tr>
+<tr><th>Published</th><td>1998 (conceived 1989)</td></tr>
+</table>
+</div>
+
+<p><b>Paxos</b> is a family of protocols for solving <a href="../Consensus_(computer_science)">consensus</a> in a network of unreliable or fallible processors. Consensus is the process of agreeing on one result among a group of participants — a fundamental problem in distributed computing, since the participants or the network connecting them may fail. Paxos algorithms provide safety (never returning a wrong result) under a wide range of conditions, while progress is guaranteed only when a majority of processors are functioning and the network is sufficiently stable.</p>
+
+<h2>History</h2>
+<p>The protocol derives from work by Leslie Lamport, who described it in a 1989 technical report framed as a parable about a fictional parliament on the Greek island of Paxos. Because reviewers found the story confusing, the paper was not published until 1998, as "The Part-Time Parliament." A plainer restatement, "Paxos Made Simple" (2001), followed. Paxos became the reference standard for fault-tolerant replication, underpinning systems such as Google's Chubby lock service and Spanner, and influencing later protocols such as Raft.</p>
+
+<h2>Protocol overview</h2>
+<p>In basic Paxos, processes act in three roles: <b>proposers</b>, which advocate values; <b>acceptors</b>, which vote on them; and <b>learners</b>, which learn the chosen value. Consensus proceeds in two phases. In the <i>prepare</i> phase, a proposer selects a proposal number <i>n</i> and asks acceptors to promise not to accept proposals numbered less than <i>n</i>; each acceptor replies with its promise and any value it has already accepted at the highest number below <i>n</i>. In the <i>accept</i> phase, if a majority of acceptors promised, the proposer asks them to accept a value — its own, unless an acceptor reported a previously accepted value, in which case it must adopt the most recently reported one. A value is chosen when a majority of acceptors accept it. This rule guarantees that all correct learners eventually agree on a single value.</p>
+
+<h2>Variants and implementations</h2>
+<p><b>Multi-Paxos</b> amortises the prepare phase across many consensus instances under a stable leader, forming the basis of practical state machine replication. Other variants include Cheap Paxos, Fast Paxos, and Flexible Paxos. Because Paxos is notoriously difficult to implement correctly, simpler-to-understand alternatives such as Raft have also achieved wide adoption; comparative surveys have found many published Paxos implementations to be subtly incorrect.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Consensus_(computer_science)">Consensus (computer science)</a></li>
+<li><a href="../Raft_(computer_science)">Raft (computer science)</a></li>
+<li><a href="../Leslie_Lamport">Leslie Lamport</a></li>
+<li><a href="../State_machine_replication">State machine replication</a></li>
+</ul>
+
+<h2>References</h2>
+<ol class="refs">
+<li>Lamport, L. (1998). "The Part-Time Parliament." <i>ACM Transactions on Computer Systems</i>, 16(2), 133–169.</li>
+<li>Lamport, L. (2001). "Paxos Made Simple." <i>ACM SIGACT News</i>, 32(4), 51–58.</li>
+</ol>
+</div>
+</body>
+</html>

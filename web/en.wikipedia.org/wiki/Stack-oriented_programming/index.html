@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Stack-oriented programming - Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.4em}
+img.hero{max-width:420px;width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:.5em;box-sizing:border-box}
+.infobox{float:right;background:#f8f9fa;border:1px solid #a2a9b1;padding:.6em;margin:0 0 1em 1em;font-size:.9em;max-width:260px}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>Stack-oriented programming</h1>
+<img class="hero" src="images/stack-oriented-programming.png" alt="Diagram of a data stack with values being pushed and popped">
+<p><b>Stack-oriented programming</b> is a programming paradigm that relies on a stack machine model for passing parameters. In a stack-oriented language, nearly all operations work by manipulating values on an implicit operand stack: arguments are pushed onto the stack, operators consume values from the top of the stack, and results are left on the stack for subsequent operations.</p>
+<h2>Characteristics</h2>
+<p>Stack-oriented languages characteristically use postfix (reverse Polish) notation, so that an expression such as <code>3 4 +</code> pushes 3 and 4 and then applies the addition operator, leaving 7 on the stack. Because the data flow is implicit, programs tend to be extremely concatenative: the output stack of one word (subroutine) becomes the input stack of the next, and words can be composed without explicit variable declarations or argument lists.</p>
+<p>Defining a new word typically consists of giving a name to a sequence of existing words. The programmer must keep track of the "stack effect" of each word — how many items it consumes and produces — which is often documented in a stack-effect comment such as <code>( a b -- sum )</code>.</p>
+<h2>Examples</h2>
+<p>The best-known stack-oriented language is <a href="../Forth/index.html">Forth</a>, designed by Charles H. Moore in the 1970s and long used in embedded systems, astronomy, and control applications. Other examples include PostScript, the page-description language whose stack model also underlies much of PDF rendering; Factor, a modern concatenative language; Joy; and early HP calculators' RPL. The Java Virtual Machine and the .NET Common Language Runtime are also stack machines at the bytecode level, though their source languages are not usually written in stack-oriented style.</p>
+<h2>Advantages and disadvantages</h2>
+<p>Advocates point to conceptual simplicity: there is a single uniform mechanism for data flow, interpreters are tiny, and interactive testing is natural because any word can be exercised directly from the stack. Critics note that tracking stack contents mentally becomes difficult in large programs, that deep stack manipulation can obscure intent compared with named variables, and that errors in stack depth may only surface at run time.</p>
+<h2>See also</h2>
+<p><a href="../Concatenative_programming_language/index.html">Concatenative programming language</a> · <a href="../Stack_machine/index.html">Stack machine</a> · <a href="../Reverse_Polish_notation/index.html">Reverse Polish notation</a></p>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Unsolved problems in cryptography - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 8px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+ul { line-height: 1.6; font-size: 15px; }
+.hero { float: right; margin: 0 0 12px 16px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 6px; text-align: center; width: 260px; }
+.hero img { max-width: 100%; background: #eaecf0; min-height: 150px; display: block; }
+.hero .cap { font-size: 12px; color: #54595d; margin-top: 6px; }
+a { color: #3366cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.ref { font-size: 13px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Unsolved problems in cryptography</h1>
+<div class="hero"><img src="images/unsolved-problems-cryptography.png" alt="Abstract diagram of cryptographic primitives and open questions"><div class="cap">Open questions span foundations, constructions, and cryptanalysis</div></div>
+<p>There are a number of <b>unsolved problems in <a href="../Cryptography/index.html">cryptography</a></b>, ranging from deep foundational questions about the existence of basic primitives to concrete challenges about the security of widely deployed systems. Many of these problems underpin the security of the modern internet, and progress on them would reshape both the theory and practice of secure computation.</p>
+<h2>Foundational questions</h2>
+<ul>
+<li><b>One-way functions.</b> Do one-way functions exist? This is arguably the central open question of theoretical cryptography; their existence is necessary for most of modern cryptography, including digital signatures and pseudorandom generators, and would imply P ≠ NP, though the converse is not known.</li>
+<li><b>Black-box separations and "Cryptomania" vs "Minicrypt".</b> Which primitives imply which others? While public-key encryption is known to follow from trapdoor permutations, whether it follows from one-way functions alone remains open in full generality, and many black-box separation results limit the possible routes.</li>
+<li><b>Indistinguishability obfuscation.</b> General-purpose program obfuscation was long thought impossible in strong senses; candidate constructions for indistinguishability obfuscation (iO) emerged from multilinear maps and later from well-founded assumptions, but its foundations and efficiency remain active research problems.</li>
+</ul>
+<h2>Hardness assumptions and cryptanalysis</h2>
+<ul>
+<li><b>Integer factorization and discrete logarithms.</b> No polynomial-time classical algorithm is known for factoring large integers or computing discrete logarithms, the assumptions underlying <a href="../RSA_(cryptosystem)/index.html">RSA</a> and Diffie–Hellman, but neither problem is known to be NP-hard, and both fall to Shor's quantum algorithm.</li>
+<li><b>Lattice problems.</b> The worst-case hardness of problems such as the shortest vector problem at the approximation factors used in <a href="../Lattice-based_cryptography/index.html">lattice-based cryptography</a> is still not completely settled, even though these schemes are leading candidates for post-quantum standardization.</li>
+<li><b>Hash functions.</b> There are no proofs that practical hash functions such as SHA-2 and SHA-3 are collision resistant; attacks on MD5 and SHA-1 were found long before theory predicted them, and constructing hash functions with tight provable security remains open.</li>
+<li><b>AES.</b> The best known attacks on the full <a href="../Advanced_Encryption_Standard/index.html">AES</a> improve only marginally on brute force; whether substantially faster cryptanalysis exists is unknown.</li>
+</ul>
+<h2>Open construction problems</h2>
+<ul>
+<li><b>Fully homomorphic encryption</b> is known to be possible since Gentry's 2009 breakthrough, but making it efficient enough for routine use is an ongoing challenge.</li>
+<li><b>Multiparty computation</b> with optimal fairness, minimal round complexity, and security against adaptive adversaries in all settings is only partially resolved.</li>
+<li><b>Post-quantum cryptography:</b> building signatures and key-establishment schemes that are simultaneously efficient, small, and based on well-understood assumptions — and proving their security in the quantum random-oracle model — remains incomplete.</li>
+<li><b>SNARKs and proof systems:</b> transparent (setup-free), plausibly post-quantum succinct arguments with fast provers are an active frontier.</li>
+</ul>
+<h2>See also</h2>
+<ul>
+<li><a href="../Unsolved_problems_in_computer_science/index.html">Unsolved problems in computer science</a></li>
+<li><a href="../P_versus_NP_problem/index.html">P versus NP problem</a></li>
+<li><a href="../Post-quantum_cryptography/index.html">Post-quantum cryptography</a></li>
+</ul>
+<p class="ref">Summarized from the standard open-problem literature in theoretical cryptography.</p>
+</div>
+</body>
+</html>

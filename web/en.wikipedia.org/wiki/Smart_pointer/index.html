@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Smart pointer - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:820px;margin:0 auto;padding:20px 28px;color:#202122;background:#fff;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+figure{float:right;margin:0 0 12px 18px;width:280px;background:#f8f9fa;border:1px solid #c8ccd1;padding:6px;font-size:0.85em;text-align:center}
+figure img{max-width:100%;background:#eaecf0;display:block;min-height:120px}
+figcaption{padding-top:5px;color:#54595d;text-align:left}
+ul,ol{padding-left:1.6em}
+.small{font-size:0.85em;color:#54595d}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;overflow:auto;font-size:0.9em}
+</style>
+</head>
+<body>
+<h1>Smart pointer</h1>
+<p>In computer science, a <b>smart pointer</b> is an abstract data type that simulates a pointer while providing added features, such as automatic memory management or bounds checking. Such features are intended to reduce bugs caused by the misuse of pointers, while retaining efficiency. Smart pointers typically keep track of the memory they point to, and may also be used to manage other resources, such as network connections and file handles. Smart pointers were first popularized in the programming language C++ during the first half of the 1990s as a rebuttal to criticisms of C++'s lack of garbage collection.</p>
+<figure>
+<img src="images/smart-pointer.png" alt="Diagram of a reference-counted smart pointer shared between two variables">
+<figcaption>Reference counting: a control block counts how many smart pointers share an object.</figcaption>
+</figure>
+<h2>Ownership semantics</h2>
+<p>Smart pointers are usually implemented as class templates whose instances have the semantics of pointers, but also manage the lifetime of the pointed-to object through the RAII (resource acquisition is initialization) idiom. The C++ standard library defines several types in the <code>&lt;memory&gt;</code> header:</p>
+<ul>
+<li><code>std::unique_ptr</code> — sole, exclusive ownership; the object is destroyed when the unique pointer goes out of scope. Introduced in C++11.</li>
+<li><code>std::shared_ptr</code> — shared ownership via reference counting; the object is destroyed when the last shared pointer is destroyed or reset.</li>
+<li><code>std::weak_ptr</code> — a non-owning observer of a shared_ptr-managed object, used to break reference cycles; must be converted to a shared_ptr to access the object.</li>
+<li><code>std::auto_ptr</code> — an early design with transfer-of-ownership copy semantics, deprecated in C++11 and removed in C++17.</li>
+</ul>
+<pre>std::unique_ptr&lt;Widget&gt; p = std::make_unique&lt;Widget&gt;();
+std::shared_ptr&lt;Widget&gt; q = std::make_shared&lt;Widget&gt;();
+std::weak_ptr&lt;Widget&gt;   w = q;   // does not extend lifetime</pre>
+<h2>In other languages</h2>
+<p>Rust's ownership system is built around smart-pointer types in its standard library, notably <code>Box&lt;T&gt;</code> (unique ownership on the heap), <code>Rc&lt;T&gt;</code> (single-threaded reference counting) and <code>Arc&lt;T&gt;</code> (thread-safe reference counting). Managed languages such as C# and Java incorporate some smart-pointer-like behaviour (such as weak references) on top of tracing garbage collection.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Pointer_(computer_programming)/index.html">Pointer (computer programming)</a></li>
+<li><a href="../Reference_counting/index.html">Reference counting</a></li>
+<li><a href="../Resource_acquisition_is_initialization/index.html">Resource acquisition is initialization</a></li>
+<li><a href="../Garbage_collection_(computer_science)/index.html">Garbage collection</a></li>
+</ul>
+<p class="small">Categories: Data types | C++ | Memory management</p>
+</body>
+</html>

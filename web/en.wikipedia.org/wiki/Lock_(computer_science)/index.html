@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lock (computer science) - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 48px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 1.35em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 1.4em; }
+p { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; border: 1px solid #a2a9b1; background: #eaecf0; padding: 40px 0; }
+.caption { font-size: 0.85em; color: #54595d; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 0.92em; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Lock (computer science)</h1>
+<p>In computer science, a <b>lock</b> or <b>mutex</b> (from mutual exclusion) is a synchronization primitive: a mechanism that enforces limits on access to a resource when there are many threads of execution. A lock enforces a mutual exclusion concurrency control policy: only one thread may hold the lock at a time, and other threads attempting to acquire it must wait until it is released.</p>
+<div class="hero"><img src="images/lock-computer-science.png" alt="Diagram of threads contending for a single lock">
+<p class="caption">Threads queue to acquire a lock protecting a critical section.</p></div>
+<h2>Types of locks</h2>
+<p><b>Spinlocks</b> cause a waiting thread to busy-wait (loop repeatedly checking the lock), which is efficient for very short waits on multiprocessors but wasteful otherwise. <b>Sleeping locks</b> (often just called mutexes) put a waiting thread to sleep and wake it on release. <b>Reader–writer locks</b> allow many concurrent readers or a single writer. <b>Recursive locks</b> can be acquired multiple times by the same thread. <b>Futexes</b> (fast user-space mutexes) in Linux combine a user-space fast path with a kernel wait queue.</p>
+<h2>Problems</h2>
+<p>Locks can introduce <a href="../Deadlock/index.html">deadlock</a>, where threads each hold resources the other needs; livelock; priority inversion, in which a low-priority thread holding a lock blocks a high-priority one (famously affecting the Mars Pathfinder mission in 1997); and convoying, where performance collapses because threads queue behind a slow lock holder. Holding locks longer than necessary limits scalability, which motivates fine-grained locking, lock-free and wait-free algorithms, and transactional memory.</p>
+<h2>Granularity</h2>
+<p>Designers choose a locking granularity — from a single coarse lock guarding a whole data structure to fine locks per object or per bucket. Coarse locks are simpler and less error-prone; fine locks allow more concurrency but risk subtle races and deadlocks.</p>
+</div>
+</body>
+</html>

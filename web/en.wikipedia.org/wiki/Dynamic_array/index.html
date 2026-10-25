@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dynamic array - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:60em;margin:0 auto;padding:1em 1.5em}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{text-align:center;margin:1em 0}
+.hero img{max-width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:1em;box-sizing:border-box}
+code{font-family:monospace;background:#f8f9fa;padding:.1em .3em}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Dynamic array</h1>
+<div class="hero"><img src="images/dynamic-array.png" alt="Diagram of a dynamic array growing by doubling its capacity"></div>
+<p>In computer science, a <b>dynamic array</b>, <b>growable array</b>, <b>resizable array</b>, <b>dynamic table</b>, <b>mutable array</b>, or <b>array list</b> is a random access, variable-size list data structure that allows elements to be added or removed. It overcomes the fixed-size limitation of static arrays by maintaining spare capacity in an underlying fixed array.</p>
+<h2>Implementation</h2>
+<p>A dynamic array stores its elements in a contiguous block of memory of a certain <i>capacity</i>, together with a count of the elements actually in use (its <i>size</i>). Appending an element normally just writes into the next free slot. When the array is full, a new, larger block is allocated — commonly twice the size — the elements are copied across, and the old block is freed. Geometric expansion ensures that although a single append occasionally costs linear time, the amortised cost of appending remains constant.</p>
+<p>Shrinking is handled symmetrically: to avoid rapid alternation between growing and shrinking ("thrashing"), implementations typically shrink the underlying array only when the load factor falls well below the growth threshold.</p>
+<h2>Language support</h2>
+<p>Dynamic arrays are provided as <code>std::vector</code> in C++, <code>ArrayList</code> in Java, <code>List&lt;T&gt;</code> in C#, the built-in list type in Python, and arrays in languages such as JavaScript and Ruby. Bounds checking, iterators and generic element types are usually built in.</p>
+<h2>Performance</h2>
+<p>Random access and appends are O(1) (amortised for appends), insertion or deletion in the middle costs O(n) because elements must be shifted, and searching an unsorted dynamic array costs O(n). Dynamic arrays have good cache locality but may waste up to half their allocated capacity.</p>
+<p><i>See also: <a href="../Array_(data_structure)/index.html">Array (data structure)</a>, <a href="../Linked_list/index.html">Linked list</a>, <a href="../Amortized_analysis/index.html">Amortized analysis</a></i></p>
+</div>
+</body>
+</html>

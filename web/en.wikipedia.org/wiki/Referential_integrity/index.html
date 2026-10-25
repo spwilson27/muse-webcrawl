@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Referential integrity - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:10px 20px}
+h1{font-size:1.8em;margin:0.2em 0;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+main{max-width:960px;margin:0 auto;padding:16px 20px}
+img.hero{float:right;margin:0 0 12px 16px;max-width:300px;border:1px solid #c8ccd1;background:#f8f9fa;padding:4px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+footer{border-top:1px solid #a2a9b1;margin-top:2em;padding:10px 20px;font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> — the free encyclopedia</header>
+<main>
+<h1>Referential integrity</h1>
+<img class="hero" src="images/Referential_integrity.png" alt="Diagram of two tables linked by a foreign key">
+<p><b>Referential integrity</b> is a property of data stating that all its references are valid. In relational databases, it means that if a value of one attribute (column) of a relation (table) references a value of another attribute (either in the same or a different relation), then the referenced value must exist. It is enforced through <b>foreign key constraints</b>.</p>
+
+<h2>Formal definition</h2>
+<p>For referential integrity to hold in a relational database, any field in a table declared as a foreign key must contain only values from a parent table's primary key or a candidate key. Inserting a row with a foreign key value that has no matching parent row, or deleting a parent row still referenced by children, would violate the constraint.</p>
+
+<h2>Declarative enforcement in SQL</h2>
+<p>SQL lets designers declare referential actions that the database management system applies automatically when a referenced row is updated or deleted:</p>
+<ul>
+<li><b>CASCADE</b> — propagate the update/delete to referencing rows.</li>
+<li><b>SET NULL</b> / <b>SET DEFAULT</b> — replace the foreign key with null or a default value.</li>
+<li><b>RESTRICT</b> / <b>NO ACTION</b> — reject the operation if references exist.</li>
+</ul>
+<p>Constraints may be checked immediately or deferred until the end of a transaction, which allows temporary inconsistencies within multi-step operations.</p>
+
+<h2>Importance</h2>
+<p>Referential integrity prevents "orphan" records — such as order lines pointing to a deleted customer — and is one of the integrity types in Codd's model of relational databases, alongside entity integrity and domain integrity.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Foreign_key/index.html">Foreign key</a></li>
+<li><a href="../Relational_database/index.html">Relational database</a></li>
+<li><a href="../Data_integrity/index.html">Data integrity</a></li>
+</ul>
+</main>
+<footer>From Wikipedia, the free encyclopedia.</footer>
+</body>
+</html>

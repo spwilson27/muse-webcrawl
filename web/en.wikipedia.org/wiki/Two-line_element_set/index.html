@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Two-line element set - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#fff;color:#202122;margin:0;padding:0 1em 2em;line-height:1.6}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:1.8em;padding-bottom:.2em}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:1.4em;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:1em auto;max-width:480px;width:100%;border:1px solid #c8ccd1;background:#f8f9fa}
+pre{font-family:monospace;background:#f8f9fa;border:1px solid #c8ccd1;padding:.5em;overflow-x:auto;font-size:.8em}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Two-line element set</h1>
+<img class="hero" src="images/Two-line_element_set.png" alt="Example two-line element set for a satellite, shown as fixed-width lines of numbers">
+<p>A <b>two-line element set</b> (<b>TLE</b>, or more generally an <b>element set</b>) is a data format encoding a list of orbital elements of an Earth-orbiting object for a given point in time, the <i>epoch</i>. Using suitable prediction models (most importantly the SGP4/SDP4 family), the state (position and velocity) of the object at any point in the past or future can be estimated. TLEs are produced by the United States Space Force's 18th Space Defense Squadron and were historically distributed by NORAD; they are the standard means by which satellite catalogues, amateur satellite trackers, and software libraries describe the orbits of artificial satellites and space debris.</p>
+<h2>Format</h2>
+<p>Despite the name — a survival from the era of 80-column punched cards — a TLE now usually consists of three lines of exactly 69 characters: a title line with the satellite's name (line 0), followed by lines 1 and 2, which begin with the digits "1" and "2". Line 1 gives the satellite catalogue number, classification, international designator, epoch, the first derivative of mean motion, the ballistic drag term, ephemeris type, element set number and a checksum. Line 2 gives the catalogue number, inclination, right ascension of the ascending node, eccentricity (with an implied leading decimal point), argument of perigee, mean anomaly, mean motion, and revolution number at epoch, plus a final checksum digit. All angles are in degrees and mean motion in revolutions per day.</p>
+<pre>ISS (ZARYA)
+1 25544U 98067A   24001.50000000  .00016717  00000-0  10270-3 0  9000
+2 25544  51.6400 208.9163 0006703  69.9862  25.2906 15.72125391    10</pre>
+<p><i>(Illustrative example format.)</i></p>
+<h2>Accuracy and use</h2>
+<p>TLEs are fitted to observed data and are moderately accurate — typically within about a kilometre at epoch, degrading with time as perturbations and drag accumulate, so they must be refreshed regularly. They are consumed by satellite-tracking programs such as those maintained by CelesTrak and by amateur radio operators predicting passes, and are routinely used in conjunction with the SGP4 propagation model. Because of their limited precision, TLEs are not suitable for precise orbit determination or close-approach manoeuvres, and replacement formats (such as the Orbit Mean-elements Message, OMM) have been introduced in professional practice, though the TLE remains ubiquitous.</p>
+<p class="small">See also: <a href="../Orbital_elements/index.html">Orbital elements</a> · SGP4 · CelesTrak · Satellite Catalog Number</p>
+</body>
+</html>

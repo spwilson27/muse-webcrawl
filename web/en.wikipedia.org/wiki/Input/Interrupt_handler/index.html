@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Interrupt handler - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#f8f9fa;color:#202122;margin:0}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 40px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:4px}
+h2{font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:90%;margin:0 0 12px 16px;padding:8px}
+.infobox caption{font-weight:bold;font-size:110%}
+.hero{width:100%;background:#eaecf0;border:1px solid #c8ccd1;text-align:center;padding:12px 0;color:#72777d}
+.ref{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Interrupt handler</h1>
+<p>From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<caption>Interrupt handler</caption>
+<tr><td><div class="hero"><img src="images/interrupt-handler.png" alt="Diagram of a CPU responding to a hardware interrupt"></div></td></tr>
+<tr><td>Also called an interrupt service routine (ISR).</td></tr>
+</table>
+<p>In computer systems programming, an <b>interrupt handler</b>, also known as an <b>interrupt service routine</b> (<b>ISR</b>), is a special block of code associated with a specific interrupt condition. Interrupt handlers are initiated by hardware interrupts, software interrupt instructions, or software exceptions, and are used for dealing with high-priority, low-latency events such as input from peripheral devices.</p>
+<h2>Operation</h2>
+<p>When a device requires attention it asserts an interrupt request. The processor suspends the currently executing program, saves enough of its state (typically the program counter and status registers) to resume it later, and transfers control to the handler registered for that interrupt vector. The handler performs the urgent work — for example, reading a character from a keyboard controller or acknowledging a timer tick — then issues an end-of-interrupt signal and returns, allowing the interrupted program to continue. Interrupt handlers are usually kept short, deferring longer processing to ordinary threads or "bottom half" mechanisms such as softirqs and tasklets in Linux or deferred procedure calls in Windows.</p>
+<h2>Interrupt context</h2>
+<p>Code running in interrupt context faces restrictions: it generally cannot sleep or block, may not access user-space memory directly, and must be careful about locking, since it can preempt almost any other code. Nested interrupts and interrupt priorities allow more urgent events to preempt less urgent handlers. Reentrancy and race conditions with the interrupted code are central design concerns.</p>
+<h2>First-level and second-level handlers</h2>
+<p>Many systems split handling into a fast first-level interrupt handler (FLIH), which does the minimal time-critical work, and second-level handlers that perform the bulk of the processing later, at lower priority. This division bounds interrupt latency while keeping total throughput high.</p>
+<h2>See also</h2>
+<p><a href="../Interrupt/index.html">Interrupt</a> · <a href="../Input/Kernel_(operating_system)/index.html">Kernel (operating system)</a> · Device driver · Exception handling</p>
+<p class="ref">References: standard operating-systems textbooks (Silberschatz et al.; Tanenbaum).</p>
+</div>
+</body>
+</html>

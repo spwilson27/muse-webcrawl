@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Column-oriented DBMS - Wikipedia</title>
+<style>
+body{font-family:'Segoe UI',Arial,sans-serif;margin:0;background:#f6f6f6;color:#202122}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.header{background:#fff;border-bottom:1px solid #a7d7f9;padding:12px 24px}
+.header h1{margin:0;font-size:1.6em;font-weight:normal;font-family:Georgia,serif}
+.body{display:flex;max-width:1100px;margin:0 auto;padding:20px;gap:24px}
+.content{background:#fff;padding:28px 36px;border:1px solid #a7d7f9;flex:1}
+.content h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:0;padding-bottom:6px}
+.content h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;margin:0 0 14px 18px;padding:10px;font-size:.88em}
+.infobox h3{text-align:center;margin:0 0 8px;background:#ceeefa;padding:5px}
+.infobox img{width:100%;display:block;margin-bottom:8px}
+.meta{color:#54595d;font-size:.85em;margin-bottom:14px}
+p{line-height:1.6;margin:.6em 0}
+ul{line-height:1.6}
+</style>
+</head>
+<body>
+<div class="header"><h1>Wikipedia</h1></div>
+<div class="body"><div class="content">
+<h1>Column-oriented DBMS</h1>
+<p class="meta">From Wikipedia, the free encyclopedia</p>
+<div class="infobox"><h3>Column-oriented DBMS</h3>
+<img src="images/column-store-diagram.png" alt="Diagram comparing row-oriented and column-oriented storage">
+</div>
+<p>A <b>column-oriented DBMS</b> (or columnar database management system) is a database management system (DBMS) that stores data tables by column rather than by row. In a column store, the values of each column are stored contiguously on disk, whereas in a conventional row store the values of each row are stored together.</p>
+<h2>Benefits</h2>
+<p>Columnar storage is well suited to analytical (OLAP) workloads such as data warehouses, where queries typically read a few columns of many rows and compute aggregates. Because only the referenced columns need to be read, I/O is reduced. Values within a column are of the same type and often highly similar, enabling very effective compression — run-length encoding, dictionary encoding and delta encoding can shrink storage substantially. These properties also allow efficient vectorized query execution.</p>
+<h2>Drawbacks</h2>
+<p>The layout is poorly suited to transactional (OLTP) workloads involving frequent inserts, updates and single-row retrieval, since writing one logical row requires accessing many separate column segments. Column stores therefore often use staging areas, batch loading and specialized structures such as write-optimized stores merged into read-optimized main stores.</p>
+<h2>History and examples</h2>
+<p>One of the earliest columnar products was Sybase IQ in the 1990s. Research systems such as MonetDB and C-Store (commercialized as Vertica) popularized the architecture in the 2000s. Widely used modern columnar systems and formats include Apache Cassandra (a wide-column store), Google BigQuery, Amazon Redshift, ClickHouse, Apache Parquet and Apache ORC, and columnar features in MariaDB (ColumnStore) and PostgreSQL extensions.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Column_space/index.html">Column space</a></li>
+<li>Data warehouse</li>
+<li>OLAP</li>
+</ul>
+</div></div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Greedy randomized adaptive search procedure - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.35em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+img.hero{max-width:320px;float:right;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.footer{font-size:0.85em;color:#54595d;border-top:1px solid #a2a9b1;margin-top:2em;padding-top:8px}
+</style>
+</head>
+<body>
+<h1>Greedy randomized adaptive search procedure</h1>
+<img class="hero" src="images/grasp.png" alt="Diagram of the construction and local search phases of GRASP">
+<p>The <b>greedy randomized adaptive search procedure</b> (<b>GRASP</b>) is a metaheuristic for combinatorial optimization problems, originally proposed by Thomas A. Feo and Mauricio G. C. Resende in the late 1980s. It is an iterative multi-start method in which each iteration constructs a solution greedily but with randomization, then improves it by local search.</p>
+
+<h2>Algorithm</h2>
+<p>In the construction phase, a solution is built element by element. At each step, candidate elements are ranked by a greedy function, and instead of always taking the best, the algorithm forms a <i>restricted candidate list</i> (RCL) of the best few candidates and selects one at random from it. The quality threshold for the RCL is often controlled by a parameter α between 0 (purely greedy) and 1 (purely random). The greedy values are "adaptive" because they are recomputed as the partial solution grows. The constructed solution is then passed to a local search phase, which moves to a locally optimal solution. The best solution found over all iterations is returned.</p>
+
+<h2>Variants and applications</h2>
+<p>Important extensions include <b>reactive GRASP</b>, which adjusts α adaptively based on the quality of solutions previously obtained, and <b>path relinking</b>, which intensifies the search by exploring trajectories between elite solutions. GRASP has been applied to vehicle routing, scheduling, facility location, set covering, graph problems, and many other NP-hard optimization tasks.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Metaheuristic/index.html">Metaheuristic</a></li>
+<li><a href="../Greedy_algorithm/index.html">Greedy algorithm</a></li>
+<li><a href="../Local_search_(optimization)/index.html">Local search (optimization)</a></li>
+<li><a href="../Combinatorial_optimization/index.html">Combinatorial optimization</a></li>
+</ul>
+
+<p class="footer">From Wikipedia, the free encyclopedia.</p>
+</body>
+</html>

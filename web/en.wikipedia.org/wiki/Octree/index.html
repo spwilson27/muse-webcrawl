@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Octree - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 16px 16px;padding:10px}
+.hero{display:block;width:100%;height:150px;background:#e8eef2;border:1px solid #a2a9b1;margin-bottom:10px}
+.small{font-size:12px;color:#54595d}
+code{font-family:monospace;background:#f0f0f0;padding:1px 4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Octree</h1>
+<div class="infobox">
+<img class="hero" src="images/octree.png" alt="Recursive subdivision of a cube into octants">
+<p class="small">An octree subdivides a cube into eight octants, recursively, until a stopping condition is met.</p>
+</div>
+<p>An <b>octree</b> is a tree data structure in which each internal node has exactly eight children. Octrees are used to partition three-dimensional space by recursively subdividing it into eight octants. They are the three-dimensional analogue of the <a href="../Quadtree/index.html">quadtree</a>, which subdivides two-dimensional space into four quadrants.</p>
+<h2>Structure</h2>
+<p>The root node of an octree represents a cubic volume of space. Subdivision proceeds by splitting the cube at its centre along the three coordinate planes, producing eight child cubes of equal size. Subdivision continues only where more detail is needed — for example, where a cell is neither entirely empty nor entirely full of an object — so homogeneous regions are represented by large cells and complex regions by small ones.</p>
+<h2>Applications</h2>
+<p>Octrees are widely used in 3D computer graphics for spatial indexing, collision detection, and efficient rendering of voxel data; in finite element analysis for mesh generation; in robotics and point-cloud processing for organising sensor data; and in N-body simulations, where the Barnes–Hut algorithm uses an octree to approximate gravitational forces. Sparse voxel octrees extend the technique to very large volumetric datasets by storing only occupied cells.</p>
+<h2>Colour quantisation</h2>
+<p>Octrees are also used for colour quantisation of images: the colour space is treated as a three-dimensional cube (red, green, blue), pixels are inserted as points, and the tree is reduced to a palette of the desired size by merging the deepest, least-populated nodes.</p>
+<p class="small">See also: <a href="../Quadtree/index.html">Quadtree</a>, <a href="../Voxel/index.html">Voxel</a>, <a href="../Barnes–Hut_simulation/index.html">Barnes–Hut simulation</a></p>
+</div>
+</body>
+</html>

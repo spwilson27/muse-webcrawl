@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cooley–Tukey FFT algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px 40px}
+header{border-bottom:1px solid #a2a9b1;padding:12px 0 6px}
+h1{font-size:30px;font-weight:normal;margin:0 0 4px}
+h2{font-size:22px;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+.hero{float:right;width:280px;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;font-size:12px;text-align:center}
+.hero img{width:100%;height:auto}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{line-height:1.6;font-size:15px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><h1>Cooley–Tukey FFT algorithm</h1></header>
+<div class="hero"><img src="images/cooley-tukey-fft.png" alt="Butterfly diagram of a radix-2 fast Fourier transform"></div>
+<p>The <b>Cooley–Tukey algorithm</b>, named after J. W. Cooley and John Tukey, is the most common <a href="../Fast_Fourier_transform/index.html">fast Fourier transform</a> (FFT) algorithm. It re-expresses the <a href="../Discrete_Fourier_transform/index.html">discrete Fourier transform</a> (DFT) of a composite size N = N<sub>1</sub>N<sub>2</sub> as smaller DFTs of sizes N<sub>1</sub> and N<sub>2</sub>, recursively, reducing the computation from O(N<sup>2</sup>) operations to O(N log N).</p>
+<h2>Radix-2 case</h2>
+<p>The best-known form is the radix-2 decimation-in-time algorithm, which splits a DFT of even size into two half-size DFTs of the even-indexed and odd-indexed samples, combined using complex roots of unity called twiddle factors. The recursive data flow is often drawn as a "butterfly" diagram. When N is a power of two, repeated halving yields the classic O(N log N) procedure with in-place implementations and bit-reversed input ordering.</p>
+<h2>History</h2>
+<p>Cooley and Tukey published the algorithm in 1965, motivated by a request to analyze seismic data for detecting nuclear tests. The underlying idea had been used earlier, notably by Carl Friedrich Gauss around 1805 for computing asteroid orbits, and in various 20th-century formulations, but the 1965 paper, together with the spread of digital computers, made the FFT a cornerstone of digital signal processing, spectral analysis, fast convolution, and partial differential equation solvers.</p>
+<h2>Variants</h2>
+<p>Generalizations include mixed-radix, split-radix, and prime-factor algorithms, as well as decimation-in-frequency forms. Modern libraries such as FFTW combine Cooley–Tukey decompositions with other algorithms and machine-optimized code.</p>
+</div>
+</body>
+</html>

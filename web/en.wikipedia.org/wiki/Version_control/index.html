@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Version control - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; background: #fff; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 6px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+h3 { font-family: sans-serif; font-size: 16px; margin-top: 20px; }
+p, li { font-size: 15px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; font-family: sans-serif; font-size: 13px; margin: 4px 0 12px 16px; padding: 10px; }
+.infobox th { text-align: left; vertical-align: top; padding-right: 8px; }
+.hero { display: block; margin: 12px 0; background: #eaecf0; border: 1px solid #a2a9b1; padding: 24px; text-align: center; font-family: sans-serif; font-size: 13px; color: #54595d; }
+.small { font-size: 13px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Version control</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<tr><th>Also called</th><td>Revision control, source control, SCM</td></tr>
+<tr><th>First systems</th><td>SCCS (1972), RCS (1982)</td></tr>
+<tr><th>Major systems</th><td>Git, CVS, Subversion, Mercurial, Perforce</td></tr>
+<tr><th>Models</th><td>Centralized, distributed</td></tr>
+<tr><th>Core operations</th><td>Commit, branch, merge, checkout, diff</td></tr>
+</table>
+<img class="hero" src="images/Version_control.png" alt="Diagram of a branching and merging revision history graph">
+<p><b>Version control</b> (also known as <b>revision control</b>, <b>source control</b>, or <b>source code management</b>) is the software engineering practice of controlling, organizing, and tracking different versions in history of computer files, primarily source code text files, but generally any type of file. Version control is a component of software configuration management.</p>
+<p>A <b>version control system</b> (<b>VCS</b>) records changes to files over time so that specific versions can be recalled later. It allows multiple developers to work on the same files simultaneously, keeps a complete history of who changed what and why, and makes it possible to revert files or whole projects to earlier states, compare changes across time, and experiment safely on separate lines of development.</p>
+<h2>History</h2>
+<p>Early tools managed single files locally: SCCS (Source Code Control System, 1972) and RCS (Revision Control System, 1982) stored successive versions as interleaved deltas. CVS (Concurrent Versions System, 1990) extended RCS to whole directory trees over a network, becoming the dominant open-source system of the 1990s. <a href="../Apache_Subversion/index.html">Subversion</a> (2000) was designed as a modernized CVS with atomic commits, directory versioning, and branching by copying. In 2005, <a href="../Linus_Torvalds/index.html">Linus Torvalds</a> created <a href="../Git/index.html">Git</a> for development of the Linux kernel, and distributed systems such as Git and <a href="../Mercurial/index.html">Mercurial</a> became the industry standard; by the 2010s Git, hosted by services such as <a href="../GitHub/index.html">GitHub</a>, was overwhelmingly dominant.</p>
+<h2>Models</h2>
+<h3>Centralized</h3>
+<p>In a centralized model, a single server holds the canonical repository and clients check out working copies, committing changes back to the server. CVS, Subversion, and Perforce follow this model. It offers simple administration and access control but creates a single point of failure and requires network access for most history operations.</p>
+<h3>Distributed</h3>
+<p>In a distributed version control system (DVCS), every client mirrors the full repository, including its complete history. Developers commit locally and synchronize with peers by pushing and pulling changes. Git, Mercurial, and Darcs are distributed systems; the model supports offline work, cheap branching, and flexible collaboration topologies.</p>
+<h2>Core concepts</h2>
+<ul>
+<li><b>Repository</b> — the database storing files and their complete change history.</li>
+<li><b>Working copy</b> — the checked-out files a developer edits.</li>
+<li><b>Commit</b> (or revision) — a recorded snapshot of changes, with a message, author, and timestamp; commits form a history graph.</li>
+<li><b>Branch</b> — an independent line of development within the repository.</li>
+<li><b>Merge</b> — combining changes from different branches; overlapping edits can produce merge conflicts that must be resolved manually.</li>
+<li><b>Tag</b> — a named marker attached to a specific revision, typically a release.</li>
+<li><b>Diff</b> — a display of the differences between two versions of a file or project.</li>
+<li><b>Blame/annotate</b> — showing which author and commit last modified each line of a file.</li>
+</ul>
+<h2>Beyond source code</h2>
+<p>The same techniques are applied to documents, configuration files, infrastructure definitions ("infrastructure as code"), datasets, and collaborative writing. Modern wikis and document platforms include simplified built-in revision histories, and content-addressable storage designs borrowed from systems like Git underlie many backup and synchronization tools.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Git/index.html">Git</a></li>
+<li><a href="../Apache_Subversion/index.html">Apache Subversion</a></li>
+<li><a href="../Mercurial/index.html">Mercurial</a></li>
+<li><a href="../Software_configuration_management/index.html">Software configuration management</a></li>
+<li><a href="../Branching_(version_control)/index.html">Branching (version control)</a></li>
+<li><a href="../Merge_(version_control)/index.html">Merge (version control)</a></li>
+<li><a href="../GitHub/index.html">GitHub</a></li>
+</ul>
+</div>
+</body>
+</html>

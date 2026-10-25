@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Generalized additive model - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+a { color: #3366cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #a2a9b1; background: #eaecf0; }
+.caption { font-size: 0.85em; color: #54595d; }
+.mono { font-family: monospace; }
+.small { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Generalized additive model</h1>
+<p>In statistics, a <b>generalized additive model</b> (<b>GAM</b>) is a generalized linear model in which the linear response variable depends linearly on unknown smooth functions of some predictor variables, and interest focuses on inference about these smooth functions. GAMs were developed by Trevor Hastie and Robert Tibshirani in the 1980s, blending the properties of generalized linear models with additive models.</p>
+<div class="hero">
+<img src="images/gam-smooths.png" alt="Plot of smooth functions of predictors estimated by a generalized additive model">
+<div class="caption">Estimated smooth functions of two predictors in a GAM</div>
+</div>
+<h2>Model specification</h2>
+<p>A GAM has the form <span class="mono">g(E(Y)) = β₀ + f₁(x₁) + f₂(x₂) + … + fₘ(xₘ)</span>, where <span class="mono">g</span> is a link function, <span class="mono">Y</span> follows an exponential-family distribution, and the <span class="mono">fⱼ</span> are unspecified smooth functions, commonly represented as penalized regression splines. Because each predictor enters through its own smooth curve, GAMs can capture nonlinear effects while remaining more interpretable than fully nonparametric models; the additivity assumption excludes general interactions, though pairwise smooths can be added.</p>
+<h2>Estimation</h2>
+<p>Early GAMs were fitted by the local scoring algorithm using scatterplot smoothers such as loess. Modern implementations represent smooths with spline bases and estimate smoothing parameters by generalized cross-validation (GCV), AIC, or restricted maximum likelihood (REML), balancing fit against wiggliness via quadratic penalties. Simon Wood's <span class="mono">mgcv</span> package in R is a widely used implementation, handling large datasets, random effects (GAMMs), and many response distributions.</p>
+<h2>Applications</h2>
+<p>GAMs are widely used in ecology (species distribution modelling), epidemiology (time-series studies of air pollution and health), fisheries, and actuarial and environmental statistics, wherever flexible dose–response curves are needed without imposing a parametric form.</p>
+<p class="small">See also: Generalized linear model; Additive model; Regression splines; <a href="../Generalized_cohomology_theory/index.html">Generalized cohomology theory</a></p>
+</div>
+</body>
+</html>

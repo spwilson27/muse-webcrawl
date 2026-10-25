@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Policy gradient method - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:24px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:2px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:420px;margin:16px auto;background:#f8f9fa;border:1px solid #c8ccd1;padding:8px;text-align:center}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Policy gradient method</h1>
+<img class="hero" src="images/policy-gradient.png" alt="Diagram of an agent updating a parametrised policy by gradient ascent">
+<p><b>Policy gradient methods</b> are a class of reinforcement learning algorithms that optimise a parametrised policy directly, by performing gradient ascent on a measure of expected return. Unlike value-based methods such as Q-learning, policy gradient methods represent the policy explicitly and update its parameters in the direction that increases the probability of actions that lead to higher rewards.</p>
+<h2>The policy gradient theorem</h2>
+<p>The policy gradient theorem gives an expression for the gradient of the expected return with respect to the policy parameters that does not require differentiating the state distribution. In its common form, the gradient is proportional to the expected product of the return (or advantage) and the gradient of the logarithm of the policy's action probability — the "score function". The REINFORCE algorithm (Williams, 1992) is the classic Monte Carlo policy gradient method.</p>
+<h2>Variants</h2>
+<p>Because plain policy gradients suffer from high variance, practical algorithms subtract a baseline or use an actor–critic architecture in which a learned value function estimates the advantage. Later methods constrain the size of policy updates for stability: Trust Region Policy Optimization (TRPO) uses a KL-divergence constraint, and Proximal Policy Optimization (PPO) achieves a similar effect with a clipped surrogate objective and became a widely used default.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Reinforcement_learning/index.html">Reinforcement learning</a></li>
+<li><a href="../Markov_decision_process/index.html">Markov decision process</a></li>
+</ul>
+<p class="small">Recreated from memory as part of the muse-webcrawl project.</p>
+</body>
+</html>

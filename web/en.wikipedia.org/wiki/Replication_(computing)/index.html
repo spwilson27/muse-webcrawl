@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Replication (computing) - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{float:right;margin:0 0 12px 16px;max-width:300px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;font-size:85%;text-align:center}
+.hero img{max-width:100%}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Replication (computing)</h1>
+<figure class="hero"><img src="images/replication-computing.png" alt="Diagram of a primary database server replicating to several replica servers"><figcaption>Primary–replica database replication</figcaption></figure>
+<p><b>Replication</b> in computing involves sharing information so as to ensure consistency between redundant resources, such as software or hardware components, to improve reliability, fault-tolerance, or accessibility. Replication is widely used in databases, file systems and distributed systems, where copies of data are maintained on multiple machines.</p>
+<h2>Types</h2>
+<p>In <b>active replication</b> (state machine replication), every replica processes every request, so replicas stay identical if they start from the same state and process requests in the same order. In <b>passive replication</b>, a primary replica processes requests and sends state updates to backup replicas. <b>Multi-primary</b> (multi-master) schemes allow updates at several replicas and require conflict resolution; <b>leader-based</b> schemes funnel writes through one node and propagate them to followers.</p>
+<h2>Consistency models</h2>
+<p>Replication forces trade-offs captured by results such as the CAP theorem. <b>Synchronous</b> replication can offer strong consistency, in which all replicas appear as a single up-to-date copy, at the cost of latency and availability. <b>Asynchronous</b> replication improves performance but may lose recent updates on failure or serve stale reads, giving eventual consistency. Consensus algorithms such as Paxos and Raft keep replicated logs consistent in the presence of failures.</p>
+<h2>Database replication</h2>
+<p>Database systems support replication through transaction logs: a primary ships log records to replicas that replay them. Implementations include primary–replica replication in MySQL and PostgreSQL, multi-master systems such as Galera, and globally distributed services using quorum protocols.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../CAP_theorem/index.html">CAP theorem</a></li>
+<li><a href="../Consensus_(computer_science)/index.html">Consensus (computer science)</a></li>
+<li><a href="../Database/index.html">Database</a></li>
+</ul>
+</div>
+</body>
+</html>

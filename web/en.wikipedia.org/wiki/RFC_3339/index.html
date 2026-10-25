@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>RFC 3339 — Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:800px;margin:0 auto;padding:20px;color:#202122;line-height:1.6}h1{font-family:sans-serif;border-bottom:1px solid #a2a9b1}h2{font-family:sans-serif;border-bottom:1px solid #a2a9b1}a{color:#0645ad}img.hero{display:block;margin:16px auto;max-width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:24px;text-align:center}code{font-family:monospace;background:#f8f9fa;padding:1px 4px}</style></head>
+<body>
+<h1>RFC 3339</h1>
+<img class="hero" src="images/rfc_3339.png" alt="Example text of an RFC 3339 date and time timestamp">
+<p><b>RFC 3339</b>, titled <i>Date and Time on the Internet: Timestamps</i>, is a Request for Comments published by the Internet Engineering Task Force in July 2002, authored by Graham Klyne and Chris Newman. It defines a profile of the ISO 8601 standard for representing dates and times in Internet protocols, aiming to resolve ambiguities in ISO 8601 by fixing specific choices for interoperability.</p>
+<h2>Format</h2>
+<p>An RFC 3339 timestamp consists of a full date in the form <code>YYYY-MM-DD</code>, the letter <code>T</code> as a separator, a time of day in 24-hour notation <code>HH:MM:SS</code> with optional fractional seconds, and a mandatory time offset — either <code>Z</code> for UTC or a numeric offset such as <code>+05:30</code>. An example is <code>1996-12-19T16:39:57-08:00</code>. Unlike full ISO 8601, RFC 3339 does not permit week dates, ordinal dates, or omitted components. The grammar is expressed in ABNF in the document.</p>
+<h2>Usage</h2>
+<p>RFC 3339 timestamps are used extensively in Internet standards and APIs, including Atom feeds, the JSON-based protocols of many web services, logging formats, and as the date-time format in JSON Schema and OpenAPI. Many programming languages expose RFC 3339 parsing and formatting directly, and the format is a de facto standard for machine-readable timestamps because it is unambiguous, sortable when normalized, and always carries explicit offset information.</p>
+<h2>Relation to ISO 8601</h2>
+<p>RFC 3339 is a strict subset of ISO 8601 with a few additional constraints; every conforming RFC 3339 timestamp is a valid ISO 8601 timestamp, but not vice versa. It also discusses handling of leap seconds and the special offset <code>-00:00</code>, which indicates an unknown local offset.</p>
+<p><i>See also: ISO 8601, Unix time, Request for Comments.</i></p>
+</body></html>

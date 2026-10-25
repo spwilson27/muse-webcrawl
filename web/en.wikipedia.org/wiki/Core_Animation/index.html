@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Core Animation — Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:860px;margin:0 auto;padding:1em 1.5em;line-height:1.6;color:#202122;background:#fff}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.4em}
+img.hero{display:block;width:100%;max-height:280px;object-fit:cover;background:#eaecf0;border:1px solid #c8ccd1}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em 1em;margin:0 0 1em 1em;font-size:90%;width:250px}
+.small{font-size:90%;color:#54595d}
+</style>
+</head>
+<body>
+<img class="hero" src="images/core-animation.png" alt="Layered interface windows animated with Core Animation">
+<h1>Core Animation</h1>
+<div class="infobox">
+<p><b>Developer:</b> Apple Inc.</p>
+<p><b>Initial release:</b> 2007 (Mac OS X Leopard)</p>
+<p><b>Operating system:</b> macOS, iOS, iPadOS, watchOS, tvOS</p>
+<p><b>Type:</b> Graphics animation framework</p>
+<p><b>Framework:</b> QuartzCore</p>
+</div>
+<p><b>Core Animation</b> is a graphics compositing framework used by macOS, iOS, and their derived operating systems. It was first shown publicly by Steve Jobs during Macworld 2007 as a feature of Mac OS X 10.5 Leopard, though its origins lie in Layer Kit software developed at Apple. Core Animation allows developers to create animated user interfaces while producing much of the code needed to do so automatically, delegating compositing and animation to the GPU-accelerated render server.</p>
+<h2>Overview</h2>
+<p>In Core Animation, most of what appears on screen is backed by a <b>layer</b> (an instance of <code>CALayer</code>), which manages bitmap content and geometry much like a sprite. Layers are arranged in a tree, and the system composites them in a separate process, so an application can change layer properties — position, bounds, opacity, transform, shadow — and have them animate smoothly without redrawing. Many property changes are <b>implicitly animated</b>: altering an animatable property automatically interpolates from its old to its new value over a default duration. Developers can also attach explicit animation objects (<code>CAAnimation</code> and subclasses such as <code>CABasicAnimation</code> and <code>CAKeyframeAnimation</code>) to control timing, keyframes, and timing functions (easing curves).</p>
+<h2>Use in Apple software</h2>
+<p>Core Animation underpins many signature effects of Apple's interfaces, including the iPhone's springy scrolling and transitions, macOS features such as Mission Control, Spaces, Time Machine, and the Dock, and the layered interfaces of the Apple TV and Apple Watch. On iOS, every <code>UIView</code> is backed by a <code>CALayer</code>, so UIKit animations are built on top of it. Because compositing happens out of process and on the GPU, interfaces can maintain 60 (or 120) frames per second while the main thread remains free for application logic.</p>
+<h2>Related technologies</h2>
+<p>Core Animation sits within the Quartz technologies alongside Core Graphics (Quartz 2D) and Core Image. In the rendering stack it communicates with the render server (in the WindowServer process) over an interprocess pipeline, and layer contents are ultimately drawn by Metal or OpenGL in earlier systems. SceneKit and SpriteKit are higher-level Apple frameworks whose presentation likewise relies on layers.</p>
+<h2>See also</h2>
+<ul>
+<li>Quartz (graphics layer)</li>
+<li>Core Graphics</li>
+<li>Core Image</li>
+<li>UIKit</li>
+</ul>
+<p class="small">Categories: Apple Inc. software · Application programming interfaces · Graphics software</p>
+</body>
+</html>

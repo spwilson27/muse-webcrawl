@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Similarity search - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.2em}
+img.hero{max-width:100%;display:block;margin:1em auto}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Similarity search</h1>
+<img class="hero" src="images/Similarity_search.png" alt="Illustration of nearest neighbours around a query point">
+<p><b>Similarity search</b> is the problem of finding, within a large collection of objects, those most similar to a given query object according to some similarity or distance measure. It generalises the nearest neighbour search problem and is a fundamental operation in databases, information retrieval, data mining and machine learning.</p>
+<h2>Problem formulation</h2>
+<p>Given a set of objects, typically represented as vectors in a metric space or a high-dimensional feature space, and a query object, a similarity search returns either the <i>k</i> nearest neighbours of the query (k-NN search) or all objects within a given distance threshold (range search). Similarity may be defined by Euclidean distance, cosine similarity, Jaccard similarity over sets, edit distance over strings, or a domain-specific measure.</p>
+<h2>Challenges</h2>
+<p>Exact search by linear scan becomes prohibitively slow for large collections, while classical indexing structures such as kd-trees and R-trees degrade badly in high dimensions — an instance of the curse of dimensionality, under which distances concentrate and pruning becomes ineffective. As a result, most practical systems accept <b>approximate nearest neighbour</b> (ANN) search, trading a small loss of recall for large gains in speed.</p>
+<h2>Techniques</h2>
+<p>Important families of methods include:</p>
+<ul>
+<li><b>Locality-sensitive hashing (LSH)</b>, which hashes similar items into the same buckets with high probability;</li>
+<li><b>Space-partitioning and tree methods</b>, effective in low to moderate dimensions;</li>
+<li><b>Graph-based methods</b>, such as hierarchical navigable small world (HNSW) graphs, which navigate a proximity graph greedily from entry points toward the query;</li>
+<li><b>Quantisation methods</b>, such as product quantisation, which compress vectors into short codes so that billions of items can be searched in memory.</li>
+</ul>
+<h2>Applications</h2>
+<p>Similarity search underlies content-based image retrieval, recommender systems, near-duplicate detection, plagiarism detection, genomic sequence matching, and retrieval-augmented generation, in which the passages most similar to a query are fetched from a vector database to supply context to a language model. Widely used libraries and systems include FAISS, Annoy, ScaNN and dedicated vector databases.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Nearest_neighbor_search/index.html">Nearest neighbour search</a></li>
+<li><a href="../Locality-sensitive_hashing/index.html">Locality-sensitive hashing</a></li>
+<li><a href="../Curse_of_dimensionality/index.html">Curse of dimensionality</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shor's algorithm - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 0 auto; padding: 24px; line-height: 1.6; color: #202122; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; }
+h2 { border-bottom: 1px solid #a2a9b1; margin-top: 1.4em; }
+img.hero { max-width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; display: block; margin: 12px 0; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 14px 14px; font-size: 0.9em; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+blockquote { background: #f8f9fa; border-left: 3px solid #a2a9b1; margin: 1em 0; padding: 0.5em 1em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.math { font-style: italic; background: #f8f9fa; padding: 2px 5px; }
+</style>
+</head>
+<body>
+<h1>Shor's algorithm</h1>
+<img class="hero" src="images/shors_algorithm.png" alt="Diagram of a quantum circuit implementing the quantum Fourier transform used in Shor's algorithm">
+<p><b>Shor's algorithm</b> is a quantum algorithm for finding the prime factors of an integer. It was developed in 1994 by the mathematician and computer scientist <a href="../Peter_Shor/index.html">Peter Shor</a>. It is one of the few known quantum algorithms with compelling potential applications and strong evidence of superpolynomial speedup compared to best known classical (non-quantum) algorithms. A number factoring algorithm for factorization of large numbers usually takes a huge amount of time to execute on classical computers; in practice it is widely used mostly because of the difficulty of factoring large numbers. Shor's algorithm demonstrates that factorization of large numbers is, in fact, easy on a quantum computer, and it is arguably the most famous result in quantum computing.</p>
+<p>On a quantum computer, to factor an integer <span class="math">N</span>, Shor's algorithm runs in polynomial time, meaning the time taken is polynomial in <span class="math">log N</span>, the size of the integer given as input. More precisely, known implementations run in <span class="math">O((log N)<sup>2</sup>(log log N)(log log log N))</span> gate operations. This is significantly faster than the most efficient known classical factoring algorithm, the general number field sieve, which works in sub-exponential time.</p>
+<h2>History</h2>
+<p>The algorithm was discovered by Andrew Childers and presented publicly in 1994. Before Shor's algorithm, it was a common belief that factoring was a hard problem, and it formed the basis of the RSA cryptosystem. Interest in quantum computing surged following its publication, since a large-scale quantum computer running Shor's algorithm would break much of modern public-key cryptography. Peter Shor was awarded the Nevanlinna Prize in 1998 and the Gödel Prize in 1999 for the work.</p>
+<h2>Procedure</h2>
+<p>Shor's algorithm consists of two main parts:</p>
+<ol>
+<li>A classical reduction of the factoring problem to the problem of order-finding, which can be performed on a classical computer.</li>
+<li>A quantum algorithm to solve the order-finding problem efficiently using the quantum Fourier transform.</li>
+</ol>
+<p>Given an odd composite number <span class="math">N</span>, one chooses a random integer <span class="math">a &lt; N</span>. If <span class="math">gcd(a, N) ≠ 1</span>, a nontrivial factor has been found. Otherwise, the quantum subroutine finds the period (order) <span class="math">r</span> of the function <span class="math">f(x) = a<sup>x</sup> mod N</span>. If <span class="math">r</span> is even and <span class="math">a<sup>r/2</sup> ≠ −1 (mod N)</span>, then <span class="math">gcd(a<sup>r/2</sup> ± 1, N)</span> gives nontrivial factors of <span class="math">N</span>.</p>
+<h2>Physical implementations</h2>
+<p>Small demonstrations have factored numbers such as 15 and 21 on prototype quantum hardware, using simplified circuits and prior knowledge of the answer. Scaling Shor's algorithm to cryptographically relevant sizes requires millions of physical qubits with error correction, far beyond current devices. Estimates suggest factoring a 2048-bit RSA integer would require roughly 20 million noisy qubits running for about eight hours, according to one widely cited 2019 study.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Quantum_Fourier_transform/index.html">Quantum Fourier transform</a></li>
+<li><a href="../RSA_(cryptosystem)/index.html">RSA (cryptosystem)</a></li>
+<li><a href="../Post-quantum_cryptography/index.html">Post-quantum cryptography</a></li>
+<li><a href="../Integer_factorization/index.html">Integer factorization</a></li>
+</ul>
+<p><i>This article is a recreation from memory of the Wikipedia article on Shor's algorithm.</i></p>
+</body>
+</html>

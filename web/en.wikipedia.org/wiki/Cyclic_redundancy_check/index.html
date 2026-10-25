@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cyclic redundancy check - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #fff; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; font-family: sans-serif; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 480px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 40px 0; color: #72777d; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Cyclic redundancy check</h1>
+<div class="hero"><img src="images/cyclic-redundancy-check.png" alt="Diagram of CRC computation over a data stream"></div>
+<p>A <b>cyclic redundancy check</b> (<b>CRC</b>) is an error-detecting code commonly used in digital networks and storage devices to detect accidental changes to digital data. Blocks of data entering these systems get a short <i>check value</i> attached, based on the remainder of a polynomial division of their contents. On retrieval, the calculation is repeated and, if the check values do not match, corrective action can be taken.</p>
+<h2>Principle</h2>
+<p>CRC computation treats the data as a large binary polynomial and divides it by a fixed generator polynomial over GF(2), keeping the remainder as the check value. Because polynomial division has strong algebraic properties, a CRC detects all single-bit errors, all double-bit errors within its designed span, and all burst errors no longer than the check value. The mathematics was set out by W. Wesley Peterson in 1961.</p>
+<h2>Common variants</h2>
+<p>The most widely used variant is <b>CRC-32</b> (the IEEE 802.3 polynomial), used in Ethernet, ZIP and PNG files, and many other formats. CRC-16 variants serve in protocols such as Modbus and USB, and CRC-64 in some storage systems. Each specification defines not only the polynomial but also the initial value, bit reflection, and final XOR, which is why implementations are catalogued in detailed "CRC revues".</p>
+<h2>Applications</h2>
+<p>CRCs are cheap to implement in hardware with a linear feedback shift register, making them ideal for link layers and storage media. They are error-detecting, not security, codes: anyone can recompute a CRC after deliberately modifying data, so cryptographic hash functions are used where tampering must be detected.</p>
+<h2>See also</h2>
+<p><a href="../Cyclic_GMP/index.html">Cyclic GMP</a> · Checksum · Error detection and correction · Hash function</p>
+</div>
+</body>
+</html>

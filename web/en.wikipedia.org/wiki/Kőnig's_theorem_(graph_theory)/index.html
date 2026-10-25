@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kőnig's theorem (graph theory) - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; background: #f8f9fa; color: #202122; margin: 0; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 28px; }
+p, li { font-size: 15px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; max-width: 480px; width: 100%; margin: 12px auto; border: 1px solid #c8ccd1; background: #eaecf0; min-height: 120px; }
+.small { font-size: 12px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Kőnig's theorem (graph theory)</h1>
+<p>In the mathematical area of graph theory, <b>Kőnig's theorem</b>, proved by Dénes Kőnig (1931), describes an equivalence between the maximum matching problem and the minimum vertex cover problem in bipartite graphs. It was discovered independently, also in 1931, by Hungarian mathematician Jenő Egerváry in the more general case of weighted graphs; for this reason the result is also called the <b>Kőnig–Egerváry theorem</b>.</p>
+<img class="hero" src="images/Konig_theorem.png" alt="A bipartite graph with a maximum matching and a minimum vertex cover of equal size">
+<h2>Statement of the theorem</h2>
+<p>A matching in a graph is a set of edges no two of which share a vertex; a vertex cover is a set of vertices that touches every edge of the graph. In any graph, the size of a maximum matching is at most the size of a minimum vertex cover: each edge of the matching needs a distinct vertex of the cover. Kőnig's theorem states that in a bipartite graph the two quantities are equal:</p>
+<p style="text-align:center"><i>size of maximum matching = size of minimum vertex cover.</i></p>
+<h2>Example</h2>
+<p>In the accompanying illustration, the green vertices form a vertex cover and the blue edges form a matching; both have size six, and by the theorem both are optimal: no matching can have more than six edges and no vertex cover fewer than six vertices.</p>
+<h2>Proof</h2>
+<p>One proof constructs the vertex cover from a maximum matching. Let U be the set of unmatched vertices on the left side of the bipartition, and let Z be the set of vertices reachable from U by alternating paths (paths alternating between edges outside and inside the matching). The set K = (L \ Z) ∪ (R ∩ Z) is a vertex cover, and it has exactly one endpoint of each matched edge, hence size equal to the matching. Modern proofs often derive the theorem from the max-flow min-cut theorem by modelling the bipartite graph as a flow network: a maximum matching corresponds to a maximum flow, and a minimum vertex cover to a minimum cut.</p>
+<h2>Applications and related results</h2>
+<p>The theorem implies Hall's marriage theorem and is equivalent to several other min-max relations in combinatorics, including the Dilworth decomposition and the Birkhoff–von Neumann theorem on doubly stochastic matrices. Applications include scheduling, assignment problems, and the analysis of bipartite networks. The theorem fails in general graphs: in a triangle, the maximum matching has size one while the minimum vertex cover has size two.</p>
+<p class="small">See also: <a href="../Kőnig's_line_coloring_theorem/index.html">Kőnig's line coloring theorem</a> · <a href="../Matching_(graph_theory)/index.html">Matching</a> · <a href="../Vertex_cover/index.html">Vertex cover</a> · <a href="../Hall's_marriage_theorem/index.html">Hall's marriage theorem</a></p>
+</div>
+</body>
+</html>

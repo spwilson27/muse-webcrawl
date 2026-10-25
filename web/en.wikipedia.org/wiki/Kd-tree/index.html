@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kd-tree - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;max-width:860px;margin:0 auto;padding:20px 24px;color:#202122;line-height:1.6;background:#fff}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-size:1.9em}
+h2{font-family:Georgia,'Times New Roman',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:1.4em;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.hero{display:block;max-width:420px;width:100%;margin:12px auto;border:1px solid #c8ccd1;background:#f8f9fa;padding:8px}
+.caption{text-align:center;font-size:0.85em;color:#54595d;margin-bottom:12px}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.88em}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+ul{margin:0.3em 0 0.3em 1.4em;padding:0}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Kd-tree</h1>
+<img class="hero" src="images/kd-tree.png" alt="Diagram of a two-dimensional kd-tree recursively partitioning a set of points">
+<p class="caption">A 2-dimensional kd-tree partitioning points by alternating vertical and horizontal splits.</p>
+<p>In computer science, a <b>k-d tree</b> (short for <i>k-dimensional tree</i>) is a space-partitioning data structure for organising points in a k-dimensional space. Introduced by Jon Bentley in 1975, it is a generalisation of the binary search tree in which each node stores a point and splits the space along one dimension, cycling through dimensions by depth.</p>
+<h2>Construction</h2>
+<p>A k-d tree is built by selecting, at each level, a splitting dimension and choosing the median point along that dimension as the node, so the resulting tree is balanced. Construction takes O(n log n) time. Points in the left subtree lie on one side of the splitting hyperplane and points in the right subtree on the other.</p>
+<h2>Operations</h2>
+<ul>
+<li><b>Nearest-neighbour search</b> — the tree supports efficient approximate and exact nearest-neighbour queries, traversing branches and pruning subtrees whose bounding regions cannot contain a closer point.</li>
+<li><b>Range search</b> — reporting all points within a query rectangle or ball.</li>
+<li><b>Insertion and deletion</b> — possible, though deletions are awkward and trees are often rebuilt periodically.</li>
+</ul>
+<h2>Applications</h2>
+<p>K-d trees are used in nearest-neighbour classification, computer graphics (ray tracing, photon mapping), geographic information systems, robotics and databases. Their efficiency degrades in high dimensions, a manifestation of the curse of dimensionality, where approximate methods such as best-bin-first search are preferred.</p>
+<p class="small">Recreated from memory.</p>
+</body>
+</html>
