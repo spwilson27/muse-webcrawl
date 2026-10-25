@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sum type - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:900px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}
+h1{font-family:sans-serif;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{font-family:sans-serif;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;overflow-x:auto}
+img.hero{width:100%;height:auto;background:#eee;display:block}
+.caption{font-size:0.85em;color:#54595d;text-align:center}
+</style>
+</head>
+<body>
+<h1>Sum type</h1>
+<img class="hero" src="images/sum-type.png" alt="Diagram of a tagged union with two variants">
+<p class="caption">A sum type combines values from several types, each tagged with its origin</p>
+<p>In type theory and programming languages, a <b>sum type</b> (also called a <b>tagged union</b>, <b>variant type</b> or <b>discriminated union</b>) is a data type whose values can be one of several fixed variants, each carrying data of possibly different types. A value of a sum type can only be used safely by checking which variant it holds, typically through pattern matching.</p>
+
+<h2>Definition</h2>
+<p>Formally, given types <i>A</i> and <i>B</i>, their sum type <i>A</i> + <i>B</i> contains all values of <i>A</i> and all values of <i>B</i>, kept distinct even if the underlying representations coincide. Each value carries a <i>tag</i> indicating which side of the sum it came from. Sum types are dual to <a href="../Product_type/index.html">product types</a>: the number of possible values of a sum is the sum of the numbers of values of its components, whereas for products it is the product.</p>
+
+<h2>Examples</h2>
+<p>Sum types are central in functional languages such as Haskell, ML and Rust. In Haskell:</p>
+<pre>data Shape = Circle Float | Rectangle Float Float</pre>
+<p>Here <code>Circle</code> and <code>Rectangle</code> are <i>constructors</i>; a <code>Shape</code> is either a circle with a radius or a rectangle with two side lengths. In Rust, the same idea appears as <code>enum</code>s, and in TypeScript as discriminated unions of object types.</p>
+<p>The option type (<code>Option&lt;T&gt;</code> / <code>Maybe T</code>) and the result type (<code>Result&lt;T, E&gt;</code>) are ubiquitous sum types used to represent optional and fallible computations without null references or exceptions.</p>
+
+<h2>Relation to untagged unions</h2>
+<p>Unlike the untagged <code>union</code> of C, a sum type always knows which variant is active, making it type-safe: reading the wrong variant is a compile-time error rather than undefined behaviour. Languages without native sum types often simulate them with class hierarchies (the visitor pattern) or with a tag field plus casts, at the cost of safety or ergonomics.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Algebraic_data_type/index.html">Algebraic data type</a></li>
+<li><a href="../Product_type/index.html">Product type</a></li>
+<li><a href="../Pattern_matching/index.html">Pattern matching</a></li>
+<li><a href="../Type_theory/index.html">Type theory</a></li>
+</ul>
+</body>
+</html>

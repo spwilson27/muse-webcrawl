@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hamming code - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:24px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+img.hero{display:block;max-width:420px;width:100%;height:auto;background:#f8f9fa;border:1px solid #a2a9b1;padding:6px;margin:12px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:0.85em;color:#54595d}
+.eq{font-style:italic;text-align:center;margin:0.8em 0}
+</style>
+</head>
+<body>
+<h1>Hamming code</h1>
+<img class="hero" src="images/Hamming_code.png" alt="Diagram of the (7,4) Hamming code with parity bits">
+<p>In computer science and telecommunication, <b>Hamming codes</b> are a family of linear error-correcting codes that can detect up to two simultaneous bit errors and correct single-bit errors. They were introduced by Richard Hamming in 1950, in his landmark paper "Error detecting and error correcting codes", written while he was working at Bell Telephone Laboratories on early relay computers whose calculations were repeatedly ruined by undetected errors.</p>
+
+<h2>Construction</h2>
+<p>A Hamming code is specified by two integers <i>r</i> ≥ 2 (the number of parity bits) and is a block code of length <i>n</i> = 2<sup><i>r</i></sup> − 1 containing <i>k</i> = 2<sup><i>r</i></sup> − <i>r</i> − 1 data bits. Parity bits are placed at positions that are powers of two (1, 2, 4, 8, ...); each parity bit checks those positions whose binary index has a 1 in the corresponding place, enforcing even parity over its group. The minimum Hamming distance of the code is 3, so it corrects any single-bit error and detects two-bit errors. Adding one overall parity bit gives the <b>extended Hamming code</b> with distance 4, widely used in the SECDED (single-error-correcting, double-error-detecting) form in computer memory.</p>
+
+<h2>The (7,4) code</h2>
+<p>The best-known example encodes four data bits (d<sub>1</sub>d<sub>2</sub>d<sub>3</sub>d<sub>4</sub>) into seven bits by adding three parity bits. On receiving a word, the decoder computes the syndrome — the pattern of parity-check failures — which, read as a binary number, directly identifies the position of a single error (or is zero if no error occurred). Hamming's insight was that the parity bits could overlap so that the syndrome pinpoints the error rather than merely signalling its existence.</p>
+
+<h2>History and legacy</h2>
+<p>Hamming codes are perfect codes: they achieve the Hamming (sphere-packing) bound with equality, so no other code of the same length and minimum distance can have more codewords. Although modern systems favour more powerful families such as Reed–Solomon, turbo and LDPC codes for high-noise channels, Hamming codes and their extended SECDED versions remain in everyday use in ECC memory, and they are a standard teaching example in information theory. Hamming generalised his work to non-binary (q-ary) alphabets, and the Hamming distance, Hamming window and other concepts from the same period of his work bear his name.</p>
+
+<p class="small">See also: <a href="../Hamming_distance/index.html">Hamming distance</a> · Error detection and correction · Richard Hamming</p>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mesh analysis - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:960px;padding:0 1em;line-height:1.6;color:#202122;background:#fff}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-bottom:.2em}
+h2{font-family:sans-serif;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.9em}
+.infobox th{text-align:left}
+.hatnote{font-style:italic;font-size:.9em;color:#54595d}
+.ref{font-size:.85em}
+img.hero{display:block;margin:1em 0;max-width:100%}
+</style>
+</head>
+<body>
+<h1>Mesh analysis</h1>
+<p class="hatnote">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/mesh-analysis.png" alt="Circuit diagram divided into meshes (window panes) for mesh current analysis">
+<p><b>Mesh analysis</b> (or the <b>mesh current method</b>) is a circuit analysis method for planar circuits. Mesh analysis is usually used when a circuit contains no current sources, or when current sources can be converted into voltage sources using source transformation. The method finds the mesh currents that flow around each mesh (window pane) of a planar circuit graph, after which all branch currents and voltages follow from Ohm's law and Kirchhoff's laws.</p>
+<p>The technique is a specialization of the more general <a href="../Nodal_analysis/index.html">nodal analysis</a> and is related to <a href="../Kirchhoff's_circuit_laws/index.html">Kirchhoff's circuit laws</a>. It is most effective when the circuit has more nodes than meshes, in which case fewer simultaneous equations are needed than with nodal analysis.</p>
+<h2>Basic concepts</h2>
+<p>A <b>mesh</b> is a loop in a planar circuit that contains no other loops inside it. Each mesh is assigned a fictitious <b>mesh current</b>, conventionally taken to circulate clockwise. A branch shared by two meshes carries a current equal to the algebraic sum (difference, if the mesh currents circulate in the same rotational sense) of the two mesh currents; a branch belonging to only one mesh carries that mesh current alone.</p>
+<p>Applying Kirchhoff's voltage law (KVL) around each mesh yields one linear equation per mesh. For a circuit with <i>m</i> meshes the equations form an <i>m</i> × <i>m</i> system that can be written in matrix form as <b>R i = v</b>, where <b>R</b> is the mesh resistance matrix, <b>i</b> the vector of mesh currents, and <b>v</b> the vector of net voltage sources in each mesh.</p>
+<h2>Procedure</h2>
+<ol>
+<li>Draw the circuit as a planar graph and identify each mesh.</li>
+<li>Assign a clockwise mesh current to each mesh.</li>
+<li>For each mesh, write KVL: the sum of resistance-times-current terms around the mesh equals the sum of voltage source rises in the direction of the mesh current. Self-resistance terms (the sum of all resistances in the mesh) multiply the mesh's own current; mutual-resistance terms (shared resistances, taken negative) multiply the neighbouring mesh currents.</li>
+<li>Solve the simultaneous equations, typically with <a href="../Gaussian_elimination/index.html">Gaussian elimination</a> or matrix inversion.</li>
+<li>Compute each branch current as the algebraic sum of the mesh currents passing through it, then find voltages with Ohm's law.</li>
+</ol>
+<h2>Supermesh</h2>
+<p>When a current source lies on the perimeter of a mesh or is shared between two meshes, the voltage across it is unknown, so ordinary KVL cannot be written directly. The meshes sharing the current source are then combined into a <b>supermesh</b>, and a constraint equation relating the two mesh currents to the current source is added. Alternatively, a current source on the outside of the circuit fixes one mesh current outright.</p>
+<h2>Planarity limitation</h2>
+<p>Mesh analysis in its elementary form applies only to planar circuits — circuits that can be drawn on a plane without crossing branches. Non-planar circuits are handled with the more general loop analysis (tree and link method) or with nodal analysis.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Nodal_analysis/index.html">Nodal analysis</a></li>
+<li><a href="../Kirchhoff's_circuit_laws/index.html">Kirchhoff's circuit laws</a></li>
+<li><a href="../Network_analysis_(electrical_circuits)/index.html">Network analysis (electrical circuits)</a></li>
+<li><a href="../Loop_analysis/index.html">Loop analysis</a></li>
+</ul>
+<p class="ref">Categories: Circuit theorems · Electrical circuit analysis</p>
+</body>
+</html>

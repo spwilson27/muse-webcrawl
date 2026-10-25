@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Register allocation - Wikipedia</title>
+<style>body{font-family:sans-serif;line-height:1.6;margin:2em auto;max-width:50em;padding:0 1em;color:#202122}h1{border-bottom:1px solid #a2a9b1;font-weight:normal}h2{border-bottom:1px solid #a2a9b1;font-weight:normal}img.hero{display:block;background:#f8f9fa;border:1px solid #c8ccd1;padding:2em;text-align:center;width:100%;box-sizing:border-box;color:#72777d}a{color:#0645ad}</style>
+</head>
+<body>
+<h1>Register allocation</h1>
+<img class="hero" src="images/Register_allocation.png" alt="Interference graph used for register allocation">
+<p>In compiler optimisation, <b>register allocation</b> is the process of assigning a large number of target program variables onto a small number of CPU registers. Register allocation can happen over a basic block (<i>local register allocation</i>), over a whole function/procedure (<i>global register allocation</i>), or across function boundaries traversed via call-graph (<i>interprocedural register allocation</i>).</p>
+<h2>Problem</h2>
+<p>Most computer architectures have far fewer registers than a program has variables. Values that cannot be held in registers must be "spilled" to memory, which is much slower to access. The allocator must decide which values stay in registers at each point in the program, taking into account which values are live simultaneously and therefore cannot share a register.</p>
+<h2>Graph colouring</h2>
+<p>A classic approach models the problem as graph colouring: each variable is a node, edges connect variables that interfere (are live at the same time), and registers correspond to colours. The problem is NP-complete in general, so compilers use heuristics such as the Chaitin–Briggs algorithm. Alternatives include linear scan allocation, used in just-in-time compilers, and allocation via puzzle solving or integer programming.</p>
+<h2>See also</h2>
+<ul><li><a href="../Register_(computer)/index.html">Register (computer)</a></li><li><a href="../Compiler/index.html">Compiler</a></li></ul>
+</body>
+</html>

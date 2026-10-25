@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gradient descent</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:760px;margin:2em auto;padding:0 1em;line-height:1.6;color:#222;background:#fff}
+h1{font-size:2em;border-bottom:2px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.4em}
+.hero{display:block;margin:1em auto;max-width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:1.5em;text-align:center;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+pre{background:#f8f9fa;border:1px solid #c8ccd1;padding:.7em;overflow-x:auto}
+</style>
+</head>
+<body>
+<h1>Gradient descent</h1>
+<span class="hero"><img src="images/gradient-descent.png" alt="Illustration placeholder: a path descending a curved error surface toward its minimum"></span>
+<p><b>Gradient descent</b> is a first-order iterative optimisation algorithm for finding a local minimum of a differentiable function. The idea is to take repeated steps in the opposite direction of the gradient of the function at the current point, because this is the direction of steepest descent. Conversely, <b>gradient ascent</b> follows the gradient toward a local maximum. First proposed by Augustin-Louis Cauchy in 1847, gradient descent is now the workhorse of machine learning, where it is used — usually in its stochastic form and with gradients computed by <a href="../Backpropagation/">backpropagation</a> — to train models from linear regression to deep neural networks.</p>
+
+<h2>Algorithm</h2>
+<p>Starting from an initial guess <i>x</i><sub>0</sub>, the iteration is:</p>
+<pre>x(n+1) = x(n) &#8722; &#951; &#8711;f(x(n))</pre>
+<p>The step size, or <b>learning rate</b> &#951;, is crucial: too small and convergence is slow; too large and the iterates may overshoot, oscillate or diverge. For convex functions with suitable step sizes, gradient descent converges to the global minimum; for non-convex functions it can settle in local minima or saddle points.</p>
+
+<h2>Variants</h2>
+<ul>
+<li><b>Batch gradient descent</b> computes the gradient over the entire training set for each update — accurate but slow for large data.</li>
+<li><b>Stochastic gradient descent</b> (SGD) updates using a single randomly chosen example, adding noise that speeds computation and can help escape shallow minima.</li>
+<li><b>Mini-batch gradient descent</b>, the usual compromise, updates using small random subsets of the data.</li>
+</ul>
+
+<h2>Extensions</h2>
+<p>Many refinements adapt the step size or direction: momentum accumulates a velocity term; Nesterov accelerated gradient looks ahead before stepping; and adaptive methods such as Adagrad, RMSProp and Adam scale the learning rate per parameter using running averages of gradients and squared gradients. These variants underpin most modern large-scale learning systems.</p>
+</body>
+</html>

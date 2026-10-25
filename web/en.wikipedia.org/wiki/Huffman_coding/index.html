@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Huffman coding - Wikipedia</title>
+<style>
+body{font-family:"Helvetica Neue",Arial,sans-serif;margin:0 auto;max-width:960px;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-family:Georgia,serif;font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{display:block;max-width:100%;border:1px solid #c8ccd1;background:#eaecf0;padding:6px}
+.caption{font-size:0.85em;color:#54595d}
+ul{margin-top:0.3em}
+code{background:#f8f9fa;padding:1px 4px;font-size:0.95em}
+</style>
+</head>
+<body>
+<h1>Huffman coding</h1>
+<img class="hero" src="images/huffman-coding.png" alt="A Huffman coding tree built from symbol frequencies">
+<p class="caption">A Huffman tree: frequent symbols sit near the root and receive short codes.</p>
+<p>In computer science and information theory, <b>Huffman coding</b> is a widely used algorithm for lossless data compression. It assigns variable-length binary codes to input symbols such that more frequent symbols receive shorter codes, and no code is a prefix of any other (a prefix-free code), allowing unambiguous decoding. The algorithm was developed by David A. Huffman and published in his 1952 paper "A Method for the Construction of Minimum-Redundancy Codes", written while he was a graduate student at MIT in Robert Fano's information theory class.</p>
+<h2>Algorithm</h2>
+<p>Given symbols and their frequencies, the algorithm repeatedly combines the two least frequent nodes into a new internal node whose weight is the sum of the two, building a binary tree from the bottom up. When one node remains, the path from the root to each symbol's leaf — left and right branches read as 0 and 1 — spells out that symbol's code. The greedy construction provably yields an optimal prefix-free code, minimising the average code length for the given frequencies; its expected length lies within one bit per symbol of the source's entropy.</p>
+<h2>Variants and uses</h2>
+<p>Canonical Huffman codes allow the code to be transmitted compactly by specifying only code lengths. Adaptive Huffman coding updates the tree as data is processed, and length-limited variants cap the maximum code length for practical decoders. Huffman coding is a component of many compression formats, including DEFLATE (ZIP, gzip, PNG), JPEG and MP3, where it encodes quantised coefficients after other transforms have concentrated the data.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../David_A._Huffman/index.html">David A. Huffman</a></li>
+<li><a href="../Arithmetic_coding/index.html">Arithmetic coding</a></li>
+<li><a href="../Shannon–Fano_coding/index.html">Shannon–Fano coding</a></li>
+<li><a href="../Data_compression/index.html">Data compression</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Schnorr signature</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#222}
+h1{font-size:2em;border-bottom:2px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.4em}
+img.hero{display:block;margin:1em auto;max-width:100%;border:1px solid #ccc;background:#f4f4f4}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.9em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Schnorr signature</h1>
+<img class="hero" src="images/schnorr-signature.png" alt="Diagram of the Schnorr signature protocol over an elliptic curve group">
+<p>A <b>Schnorr signature</b> is a digital signature produced by the Schnorr signature algorithm, a simple and efficient scheme whose security rests on the intractability of the discrete logarithm problem. It was described by Claus Schnorr in 1989 and patented (the patent, now expired, is widely blamed for slowing its adoption while the less elegant DSA and ECDSA spread instead).</p>
+<h2>The algorithm</h2>
+<p>Working in a group of prime order with generator g, the signer with secret key x and public key y = g<sup>x</sup> picks a random nonce k, computes the commitment r = g<sup>k</sup>, forms the challenge e = H(r ‖ M) as a hash of the commitment and message, and answers s = k − xe. The signature is the pair (s, e). A verifier reconstructs r′ = g<sup>s</sup> y<sup>e</sup> and checks that e equals H(r′ ‖ M). The scheme admits a clean security proof in the random oracle model assuming discrete logarithms are hard.</p>
+<h2>Advantages and use</h2>
+<p>Schnorr signatures are notable for their linearity: public keys and signatures can be aggregated, so an n-of-n multisignature can be a single ordinary-looking signature (the basis of the MuSig protocol), and signature verification can be batched. After Schnorr's patent expired in 2008, the scheme gained prominence through cryptocurrencies: <a href="../Bitcoin/index.html">Bitcoin</a> adopted Schnorr signatures (BIP 340, using the secp256k1 curve) in the Taproot upgrade activated in November 2021, and the scheme was standardized for Ed25519-style use as the basis of EdDSA variants.</p>
+</body>
+</html>

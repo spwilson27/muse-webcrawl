@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Public key infrastructure</title>
+<style>body{font-family:Georgia,serif;max-width:760px;margin:2em auto;padding:0 1em;line-height:1.6;color:#222}h1{font-size:1.9em;border-bottom:1px solid #a2a9b1}h2{font-size:1.3em;border-bottom:1px solid #c8ccd1}.hero{display:block;max-width:100%;border:1px solid #c8ccd1;background:#eaecf0;text-align:center;padding:2em 0;color:#54595d;font-style:italic}</style></head>
+<body>
+<h1>Public key infrastructure</h1>
+<img class="hero" src="images/pki.png" alt="Diagram of a certificate authority hierarchy with root and intermediate CAs">
+<p>A <b>public key infrastructure</b> (<b>PKI</b>) is the set of roles, policies, hardware and software needed to create, distribute, use and revoke digital certificates that bind public keys to identities in public-key cryptography. The most widely deployed example is the X.509 infrastructure securing TLS on the web; others include national e-ID systems, code signing, and secure email.</p>
+<h2>Components</h2>
+<p>A <b>certificate authority</b> (CA) verifies identity and issues certificates; a <b>registration authority</b> handles enrolment. Hierarchies begin at a self-signed root CA, whose key is embedded in browsers and operating systems as a trust anchor. Certificates contain the subject name, public key, issuer, serial number and validity period. Revocation is published via certificate revocation lists (CRLs) or checked in real time with OCSP. End entities — servers, users, devices — hold private keys, ideally in hardware security modules or smart cards.</p>
+<h2>Trust and its failures</h2>
+<p>In the web PKI, any of several hundred trusted CAs can issue for any domain, a weakness addressed by Certificate Transparency logs, which make mis-issuance public, and by CAA DNS records restricting which CAs may issue. The 2011 compromise of the Dutch CA DigiNotar, which led to fraudulent certificates for major sites and the company's collapse, is the canonical failure case. Alternative trust models include the PGP web of trust, DANE, and SPKI.</p>
+<h2>Uses</h2>
+<p>Beyond HTTPS, PKI underpins document and code signing, smart-card logon, passport chips (ICAO PKI), payment systems and device identity in industrial and automotive networks. Standards come from the IETF (RFC 5280), the CA/Browser Forum baseline requirements, and ETSI.</p>
+<p><i>See also:</i> <a href="../X.509/index.html">X.509</a>, <a href="../Certificate_authority/index.html">Certificate authority</a>, <a href="../Public-key_cryptography/index.html">Public-key cryptography</a>.</p>
+</body></html>

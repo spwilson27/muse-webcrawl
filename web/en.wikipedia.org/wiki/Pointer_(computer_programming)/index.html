@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pointer (computer programming) - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; line-height: 1.6; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 1.9em; }
+h2 { font-family: sans-serif; font-size: 1.35em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.4em; }
+p { margin: 0.6em 0; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 8px; }
+.caption { font-size: 0.85em; color: #54595d; text-align: center; }
+.infobox { float: right; width: 250px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 0.85em; margin: 0 0 1em 1.5em; padding: 8px 12px; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+code { background: #f8f9fa; padding: 0 3px; font-family: monospace; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px; overflow-x: auto; font-size: 0.9em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul, ol { margin: 0.5em 0 0.5em 1.6em; padding: 0; }
+.small { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Pointer (computer programming)</h1>
+<p>In computer science, a <b>pointer</b> is an object in many programming languages that stores a memory address, usually the location of another value in computer memory. A pointer <i>references</i> a location in memory, and obtaining the value stored there — <i>dereferencing</i> the pointer — is a fundamental operation in low-level programming. Pointers are a central feature of the C and C++ languages, where they support dynamic memory allocation, arrays, strings, data structures such as linked lists and trees, and efficient passing of large data to functions.</p>
+<div class="hero"><img src="images/pointer.png" alt="Diagram of memory cells with a pointer variable holding the address of an integer"></div>
+<p class="caption">A pointer variable holds the memory address of the value it points to.</p>
+<div class="infobox">
+<table>
+<tr><th>Concept</th><td>Memory address stored as a value</td></tr>
+<tr><th>Key operations</th><td>Address-of (&amp;), dereference (*)</td></tr>
+<tr><th>Typical languages</th><td>C, C++, Pascal, Go, assembly</td></tr>
+<tr><th>Null value</th><td>NULL / nullptr / nil</td></tr>
+</table>
+</div>
+<h2>Basic use in C</h2>
+<pre>
+int x = 42;
+int *p = &amp;x;   /* p holds the address of x */
+printf("%d", *p); /* dereferencing p prints 42 */
+*p = 7;           /* writes through the pointer: x is now 7 */
+</pre>
+<p>Pointer arithmetic — adding or subtracting integers scaled by the size of the pointed-to type — underlies array handling in C, where arrays and pointers are closely related. Function pointers store the address of executable code and are used for callbacks, dispatch tables, and implementing polymorphism in C.</p>
+<h2>Special kinds of pointers</h2>
+<ul>
+<li><b>Null pointer:</b> a pointer value (NULL, nullptr) that points to nothing; dereferencing it is an error, called "the billion-dollar mistake" by its inventor, Tony Hoare.</li>
+<li><b>Dangling pointer:</b> a pointer to memory that has been freed or has gone out of scope; using it causes undefined behaviour.</li>
+<li><b>Void pointer:</b> a generic pointer (<code>void *</code>) to an object of unspecified type.</li>
+<li><b>Smart pointers:</b> in C++, objects such as <code>std::unique_ptr</code> and <code>std::shared_ptr</code> that manage the lifetime of the pointed-to object automatically.</li>
+<li><b>References:</b> safer, restricted pointer-like aliases in languages such as C++, Java, and Rust, which generally cannot be null or reassigned.</li>
+</ul>
+<h2>Safety and security</h2>
+<p>Because pointers allow unrestricted access to memory, pointer errors — buffer overflows, use-after-free, double-free, and uninitialised pointers — are a leading source of crashes and of exploitable security vulnerabilities. Many high-level languages therefore hide pointers entirely behind references and garbage collection, while newer systems languages such as Rust retain explicit pointers within a compile-time-checked ownership system.</p>
+<h2>History</h2>
+<p>Indirect addressing existed in machine architecture from the earliest stored-program computers; pointers as a language construct appeared in the 1950s–60s (for example in PL/I) and were made central by C (1972), whose design reflected the memory model of the PDP-11. The concept contrasts with the GUI "pointer" (see <a href="../Pointer_(user_interface)/index.html">Pointer (user interface)</a>) and with the typographic unit discussed under <a href="../Point_(typography)/index.html">Point (typography)</a>.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Reference_(computer_science)/index.html">Reference</a></li>
+<li><a href="../Dangling_pointer/index.html">Dangling pointer</a></li>
+<li><a href="../Smart_pointer/index.html">Smart pointer</a></li>
+<li><a href="../Memory_management/index.html">Memory management</a></li>
+</ul>
+<p class="small">This page was last edited from memory-based reconstruction.</p>
+</div>
+</body>
+</html>

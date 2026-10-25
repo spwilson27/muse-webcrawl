@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ybus matrix - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:24px;line-height:1.6;color:#222}h1{border-bottom:2px solid #a2a9b1;padding-bottom:6px}h2{border-bottom:1px solid #ccc;padding-bottom:4px}.hero{display:block;max-width:100%;height:auto;background:#eaecf0;border:1px dashed #999;padding:28px 0;text-align:center;color:#555}a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}</style>
+</head>
+<body>
+<h1>Ybus matrix</h1>
+<img class="hero" src="images/ybus_matrix.png" alt="A sparse matrix grid representing the bus admittance matrix of a power network">
+<p>In power engineering, the <b>bus admittance matrix</b>, usually written <b>Y<sub>bus</sub></b>, is the nodal admittance matrix of an electrical power system. It relates injected bus currents to bus voltages through the relation <b>I = Y<sub>bus</sub> V</b> and is the central data structure in power-flow (load-flow) studies, short-circuit analysis, and many other network computations.</p>
+<h2>Construction</h2>
+<p>Each diagonal entry Y<sub>ii</sub> is the sum of the admittances of all elements connected to bus <i>i</i>, including transmission lines, transformers, shunt capacitors and reactors. Each off-diagonal entry Y<sub>ij</sub> is the negative of the admittance of the branch directly connecting buses <i>i</i> and <i>j</i>, and is zero when no such branch exists. Because each bus connects to only a few others, real-world Y<sub>bus</sub> matrices are extremely sparse, and practical software stores and factorizes them using sparse-matrix techniques and near-optimal node ordering to limit fill-in.</p>
+<h2>Use in power flow</h2>
+<p>Substituting the current relation into the complex-power expression S = V I* gives the nonlinear power-flow equations solved by the <a href="../Newton_method/index.html">Newton–Raphson</a>, Gauss–Seidel, and fast-decoupled methods: each bus's real and reactive power injection is a sum over all buses of terms involving |V<sub>i</sub>||V<sub>j</sub>| and the magnitude and angle of Y<sub>ij</sub>. The Jacobian used in Newton–Raphson iterations is built from partial derivatives of these expressions and inherits much of the sparsity of Y<sub>bus</sub>.</p>
+<h2>Related matrices</h2>
+<p>The inverse of Y<sub>bus</sub> (or of its reduced form) is the bus impedance matrix Z<sub>bus</sub>, used in fault analysis; methods exist to build Z<sub>bus</sub> branch by branch without full inversion. In short-circuit studies, fault currents are obtained directly from Z<sub>bus</sub> diagonal (Thévenin) impedances.</p>
+<p><i>Categories: Electric power engineering; Matrices; Power systems</i></p>
+</body>
+</html>

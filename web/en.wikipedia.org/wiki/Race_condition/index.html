@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Race condition - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; background: #f6f6f6; color: #202122; margin: 0; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 24px 32px 48px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+h3 { font-size: 17px; margin-top: 20px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; background: #eaecf0; border: 1px solid #c8ccd1; padding: 40px 0; }
+.caption { font-size: 12px; color: #54595d; }
+ul { line-height: 1.6; font-size: 15px; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 14px; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Race condition</h1>
+<div class="hero"><img src="images/race-condition-timeline.png" alt="Timeline diagram showing two threads accessing shared data in different orders"><div class="caption">Placeholder image: two threads interleaving accesses to shared data.</div></div>
+<p>A <b>race condition</b> or <b>race hazard</b> is the condition of an electronics, software, or other system where the system's substantive behavior is dependent on the sequence or timing of other uncontrollable events, leading to inconsistent or unpredictable results. It becomes a bug when one or more of the possible behaviors is undesirable.</p>
+<p>The term originates with the idea of two signals racing each other to influence the output first. Race conditions can occur especially in multithreaded applications, in distributed systems, and in digital logic circuits.</p>
+<h2>Types</h2>
+<h3>Read–modify–write</h3>
+<p>In a read–modify–write race, two processes read a shared value, modify it, and write it back; if the operations interleave, one update can be lost. A classic example is two threads incrementing the same counter, producing a final value one less than expected.</p>
+<h3>Check-then-act</h3>
+<p>In a check-then-act race (also called time-of-check to time-of-use, or TOCTOU, in security contexts), a program checks a condition and then acts on it, but state changes between the check and the act — for example, checking that a file does not exist and then creating it, which an attacker may exploit with a symbolic link.</p>
+<h2>Avoidance</h2>
+<p>Race conditions are commonly prevented by mutual exclusion (locks and mutexes), atomic operations, semaphores, monitors, and by designing with immutable data or message passing so that shared mutable state is avoided. In synchronous digital circuits, hazards are managed by careful design and static timing analysis. Concurrency bugs caused by races are notoriously hard to reproduce and debug because they depend on scheduling; tools such as thread sanitizers can detect some classes of data race at runtime.</p>
+<h2>Notable incidents</h2>
+<p>The Therac-25 radiation therapy machine accidents of the 1980s were attributed in part to race conditions in its control software. The 2003 Northeast blackout in North America was worsened by a race condition in an alarm system that prevented operators from being alerted to failing power lines.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Concurrency_(computer_science)/index.html">Concurrency</a></li>
+<li>Deadlock</li>
+<li>Mutex</li>
+<li>Time-of-check to time-of-use</li>
+</ul>
+</div>
+</body>
+</html>

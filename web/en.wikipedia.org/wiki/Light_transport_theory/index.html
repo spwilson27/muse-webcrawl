@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Light transport theory - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:0}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:2px}
+.hero{display:block;max-width:100%;height:auto;background:#eaecf0;border:1px solid #c8ccd1;padding:8px;margin:12px 0}
+a{color:#0645ad;text-decoration:none}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Light transport theory</h1>
+<img class="hero" src="images/Light_transport_theory.png" alt="Rays of light bouncing through a scene toward a camera">
+<p><b>Light transport theory</b> deals with the mathematics behind calculating the energy transfers between media that affect visibility in a scene. It is the theoretical foundation of physically based rendering in computer graphics: nearly all realistic rendering algorithms — ray tracing, path tracing, radiosity and photon mapping — are numerical methods for solving the light transport problem.</p>
+<h2>The rendering equation</h2>
+<p>The central result is the <b>rendering equation</b>, introduced by James Kajiya in 1986. It states that the light outgoing from a point in a direction equals the light emitted from that point plus the light reflected from all incoming directions, integrated over the hemisphere above the surface, weighted by the surface's bidirectional reflectance distribution function (BRDF) and the cosine of the incidence angle. The equation is recursive: incoming light at one point is outgoing light from another, so solving it requires tracing paths of light through the scene.</p>
+<h2>Approaches</h2>
+<ul>
+<li><b>Forward (light) tracing</b>: follow rays from light sources to the camera; inefficient because most paths never reach the camera</li>
+<li><b>Backward (eye) tracing</b>: follow rays from the camera into the scene (classic ray tracing)</li>
+<li><b>Bidirectional methods</b>: build paths from both ends and connect them, as in bidirectional path tracing and Metropolis light transport</li>
+<li><b>Radiosity</b>: a finite-element method for diffuse interreflection, adapted from thermal engineering</li>
+</ul>
+<h2>Participating media</h2>
+<p>Extended formulations account for light scattering and absorption within volumes such as fog, smoke and skin (subsurface scattering), described by the radiative transfer equation long used in astrophysics and atmospheric science, on which light transport theory in graphics builds.</p>
+<p class="small">See also: <a href="../Rendering_equation/index.html">Rendering equation</a> · <a href="../Path_tracing/index.html">Path tracing</a> · <a href="../Radiosity_(computer_graphics)/index.html">Radiosity (computer graphics)</a> · <a href="../Global_illumination/index.html">Global illumination</a></p>
+</div>
+</body>
+</html>

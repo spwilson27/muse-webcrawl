@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sampling (signal processing) - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine",Georgia,serif;margin:0 auto;max-width:960px;padding:0 1.5em;color:#202122;line-height:1.6}
+h1{font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{display:block;max-width:320px;width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:6px;margin:0 0 1em 1em;float:right}
+.small{font-size:90%;color:#54595d}
+.clear{clear:both}
+</style>
+</head>
+<body>
+<h1>Sampling (signal processing)</h1>
+<img class="hero" src="images/sampling.png" alt="A continuous signal and the discrete samples taken from it at regular intervals">
+<p>In <a href="../Signal_processing/index.html">signal processing</a>, <b>sampling</b> is the reduction of a <a href="../Continuous_signal/index.html">continuous-time signal</a> to a <a href="../Discrete-time_signal/index.html">discrete-time signal</a>. A common example is the conversion of a sound wave to a sequence of "samples". A <b>sample</b> is a value of the signal at a point in time and/or space; this definition differs from the term's usage in statistics, which refers to a set of such values.</p>
+<p>A <b>sampler</b> is a subsystem or operation that extracts samples from a continuous signal. A theoretical ideal sampler produces samples equivalent to the instantaneous value of the continuous signal at the desired points. The original signal can be reconstructed from a sequence of samples, up to the limit set by the <a href="../Nyquist_rate/index.html">Nyquist rate</a>, by passing the sequence of samples through a type of low-pass filter called a reconstruction filter.</p>
+<h2>Theory</h2>
+<p>Sampling can be done for functions varying in space, time, or any other dimension, and similar results are obtained in two or more dimensions. For functions that vary with time, let s(t) be a continuous function (or "signal") to be sampled, and let sampling be performed by measuring the value of the continuous function every T seconds, which is called the <b>sampling interval</b> or <b>sampling period</b>. Then the sampled function is given by the sequence s(nT), for integer values of n. The <b>sampling frequency</b> or <b>sampling rate</b>, f<sub>s</sub>, is the average number of samples obtained in one second, thus f<sub>s</sub> = 1/T, with units of samples per second, sometimes referred to as hertz.</p>
+<h2>Nyquist–Shannon sampling theorem</h2>
+<p>The <a href="../Nyquist%E2%80%93Shannon_sampling_theorem/index.html">Nyquist–Shannon sampling theorem</a> states that a band-limited signal can be perfectly reconstructed from its samples if the sampling rate is more than twice the highest frequency present in the signal. Frequencies above half the sampling rate — the <a href="../Nyquist_frequency/index.html">Nyquist frequency</a> — cannot be distinguished and fold back into lower frequencies, an effect known as <a href="../Aliasing/index.html">aliasing</a>. Practical systems use an <a href="../Anti-aliasing_filter/index.html">anti-aliasing filter</a> before sampling to limit the signal's bandwidth.</p>
+<h2>Types of sampling</h2>
+<h3>Periodic sampling</h3>
+<p>Periodic sampling is the regular, uniform sampling used in most digital audio and image systems. The compact disc, for example, samples audio at 44,100 samples per second.</p>
+<h3>Oversampling and undersampling</h3>
+<p><a href="../Oversampling/index.html">Oversampling</a> samples a signal at a rate significantly higher than the Nyquist rate, easing the requirements on filters and improving resolution when combined with quantization noise shaping. <a href="../Undersampling/index.html">Undersampling</a> samples a bandpass signal at a rate below its Nyquist rate yet still allows reconstruction, exploiting the signal's limited bandwidth.</p>
+<h2>Applications</h2>
+<p>Sampling is fundamental to <a href="../Analog-to-digital_converter/index.html">analog-to-digital conversion</a>, digital audio, digital video, digital photography, and software-defined radio. In audio, typical sample rates are 44.1 kHz for compact discs and 48 kHz for video production.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Quantization_(signal_processing)/index.html">Quantization (signal processing)</a></li>
+<li><a href="../Downsampling_(signal_processing)/index.html">Downsampling</a></li>
+<li><a href="../Digital_signal_processing/index.html">Digital signal processing</a></li>
+</ul>
+<p class="small">This article is a recreation from memory of the corresponding encyclopedia entry.</p>
+<div class="clear"></div>
+</body>
+</html>

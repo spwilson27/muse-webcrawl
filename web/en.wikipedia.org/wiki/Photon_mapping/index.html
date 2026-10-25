@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Photon mapping - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:860px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{font-family:sans-serif;border-bottom:1px solid #a7d7f9;padding-bottom:.2em}h2{font-family:sans-serif;border-bottom:1px solid #ccc}.infobox{float:right;width:260px;border:1px solid #aaa;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.9em}img.hero{width:100%;background:#eef;height:140px;object-fit:cover}.ref{font-size:.85em;color:#555}</style></head>
+<body>
+<h1>Photon mapping</h1>
+<div class="infobox"><img class="hero" src="images/Photon_mapping.png" alt="Image rendered with photon mapping, showing caustics"><br><b>Photon mapping</b> is a two-pass global illumination rendering algorithm developed by Henrik Wann Jensen in the 1990s, especially effective for caustics.</div>
+<p>In computer graphics, <b>photon mapping</b> is a two-pass global illumination algorithm developed by Henrik Wann Jensen between 1995 and 2001. It approximates the rendering equation by simulating the transport of light using discrete particles called photons.</p>
+<h2>The two passes</h2>
+<p><b>First pass — photon tracing.</b> Photons are emitted from light sources, traced through the scene with Russian-roulette decisions for absorption, reflection and refraction, and stored in a data structure (the photon map, typically a kd-tree) whenever they strike a non-specular surface. Jensen's method uses separate maps for caustics — light focused through specular surfaces, such as the patterns at the bottom of a swimming pool — and for diffuse global illumination.</p>
+<p><b>Second pass — rendering.</b> The scene is rendered with distributed ray tracing; at each visible point, radiance is estimated by gathering the nearest stored photons and applying a density estimation kernel. Direct illumination and specular reflections are computed by ray tracing, while the photon maps contribute caustics and indirect light.</p>
+<h2>Properties</h2>
+<p>Photon mapping is a consistent biased estimator: estimates converge to the true solution as the number of photons grows, though finite photon counts cause blurring and bias. It handles effects in participating media and through specular chains that path tracing samples inefficiently, and variants such as progressive photon mapping have reduced its memory and bias problems. It has been implemented in renderers including Mental Ray and used for film and architectural visualisation.</p>
+<p class="ref">See also: <a href="../Global_illumination/index.html">Global illumination</a> · <a href="../Path_tracing/index.html">Path tracing</a> · <a href="../Caustic_(optics)/index.html">Caustics</a></p>
+</body></html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Moving average - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 60px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 6px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 0.95em; }
+.hero { float: right; margin: 0 0 14px 18px; width: 300px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 6px; font-size: 0.8em; text-align: center; color: #54595d; }
+.hero img { width: 100%; height: auto; display: block; background: #eaecf0; min-height: 150px; }
+a { color: #0645ad; text-decoration: none; }
+.formula { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px 14px; font-family: monospace; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Moving average</h1>
+<p class="small" style="font-size:0.85em;color:#54595d;">From Wikipedia, the free encyclopedia</p>
+<div class="hero"><img src="images/Moving_average.png" alt="Chart of a data series with simple and exponential moving average lines">A time series with its 10-day simple moving average and exponential moving average.</div>
+<p>In <a href="../Statistics/index.html">statistics</a>, a <b>moving average</b> (also called a <b>rolling average</b> or <b>running average</b>) is a calculation used to analyze data points by creating a series of averages of different selections of the full data set. It is also called a <b>moving mean</b> or <b>rolling mean</b> and is a type of finite impulse response filter. Variations include the simple, cumulative, and weighted forms.</p>
+<p>Given a series of numbers and a fixed subset size, the first element of the moving average sequence is obtained by taking the average of the initial fixed subset of the number series. Then the subset is modified by "shifting forward"; that is, excluding the first number of the series and including the next value in the subset.</p>
+<p>A moving average is commonly used with <a href="../Time_series/index.html">time series</a> data to smooth out short-term fluctuations and highlight longer-term trends or cycles. The threshold between short-term and long-term depends on the application, and the parameters of the moving average are set accordingly. It is often used in technical analysis of financial data, like stock prices, returns, or trading volumes, and in signal processing and economics to identify trends, for example in the form of moving-average crossover strategies.</p>
+<h2>Simple moving average</h2>
+<p>In financial applications a <b>simple moving average</b> (SMA) is the unweighted mean of the previous <i>k</i> data points. A simple moving average of length <i>k</i> can be calculated as:</p>
+<p class="formula">SMA = (p<sub>1</sub> + p<sub>2</sub> + &hellip; + p<sub>k</sub>) / k</p>
+<p>For a day-by-day sequence, efficiently updated values can be computed by subtracting the value exiting the window and adding the value entering it. The SMA lags behind the latest price by an amount depending on the window length.</p>
+<h2>Exponential moving average</h2>
+<p>An <b>exponential moving average</b> (EMA) is a weighted moving average in which the weights decrease exponentially into the past, so recent observations contribute more than older ones. The weighting factor for each older datum decreases exponentially, never reaching zero. The EMA is computed recursively: today's value is a weighted combination of today's observation and yesterday's EMA, with the smoothing factor &alpha; = 2/(N+1) commonly used for an N-day EMA.</p>
+<h2>Other types</h2>
+<p>Other forms include the <b>weighted moving average</b> (linearly decreasing weights), the <b>cumulative moving average</b> (mean of all data up to the current point), and the <b>média móvel</b> or centre-weighted variants used in demography and seasonal adjustment. In forecasting, a moving-average model (the MA part of ARMA and ARIMA models) is a different but related concept describing a time series whose value depends on past forecast errors.</p>
+<h2>See also</h2>
+<p><a href="../Exponential_smoothing/index.html">Exponential smoothing</a> &middot; <a href="../Kernel_smoothing/index.html">Kernel smoothing</a> &middot; <a href="../Technical_analysis/index.html">Technical analysis</a> &middot; <a href="../Moving_average_convergence_divergence/index.html">MACD</a></p>
+</div>
+</body>
+</html>

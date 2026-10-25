@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Type safety - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 64px; }
+h1 { font-size: 32px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 4px; }
+h2 { font-size: 24px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 32px; }
+p, li { font-size: 15px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 480px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 24px 0; color: #72777d; }
+.caption { font-size: 12px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Type safety</h1>
+<p><b>Type safety</b> is the extent to which a programming language discourages or prevents <b>type errors</b> — errors caused by applying an operation to a value of a type for which that operation is not defined, such as treating a string as a number or jumping to an arbitrary memory address. A language is described as <i>type-safe</i> if well-typed programs cannot "go wrong" in this sense at runtime; Robin Milner's slogan for the ML language summarised the ideal: "Well-typed programs cannot go wrong."</p>
+<div class="hero">
+<img src="images/type-safety.png" alt="A shield-like diagram showing a type checker preventing a string value from being passed where a number is required">
+<div class="caption">A type-safe language guarantees that operations are only applied to values of appropriate types.</div>
+</div>
+<h2>Definitions</h2>
+<p>In programming language theory, type safety is typically proved through two properties of the type system: <b>preservation</b> (if an expression has a type and evaluates one step, the result has the same type) and <b>progress</b> (a well-typed expression is either a value or can take an evaluation step). Together they imply that well-typed programs never get "stuck" on account of a type mismatch.</p>
+<p>In practice the term is graded and somewhat contentious. A language may be statically type-safe (violations caught at compile time) or dynamically type-safe (violations caught at runtime before an invalid operation occurs, as in Lisp, Smalltalk, or Python). Memory safety is closely related: languages such as C and C++ permit type errors through unchecked casts, unions, and pointer arithmetic that can corrupt memory, whereas languages like Java, Rust, ML, and C# rule most such errors out by construction (subject to escape hatches such as Java's native methods or Rust's <code>unsafe</code> blocks).</p>
+<h2>Type safety versus expressiveness</h2>
+<p>Strong guarantees come at a cost. Features such as unrestricted reflection, dynamic loading, or low-level systems programming can conflict with a purely static discipline, and type systems differ in the class of errors they can express and prevent. Designers trade off: gradual typing systems, as in TypeScript or Typed Racket, allow typed and untyped code to interoperate, retaining safety within the typed portion at some cost in soundness guarantees.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Type_system/index.html">Type system</a></li>
+<li><a href="../Memory_safety/index.html">Memory safety</a></li>
+<li><a href="../Strong_and_weak_typing/index.html">Strong and weak typing</a></li>
+<li><a href="../Type_inference/index.html">Type inference</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Thread (computing) - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:12px 24px}
+header h1{font-size:1.8em;margin:0;font-weight:normal}
+main{max-width:960px;margin:0 auto;padding:20px 24px}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.4em}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 18px;width:250px;font-size:0.9em}
+.infobox th{text-align:left;padding-right:8px}
+img.hero{width:100%;height:auto;border:1px solid #c8ccd1;background:#eef}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:0.85em;color:#54595d}
+code{background:#f8f9fa;padding:1px 4px;font-family:monospace}
+</style>
+</head>
+<body>
+<header><h1>Thread (computing)</h1></header>
+<main>
+<table class="infobox">
+<tr><th>Type</th><td>Unit of execution within a process</td></tr>
+<tr><th>Context</th><td>Operating systems, concurrent programming</td></tr>
+<tr><th>Related concepts</th><td>Process, multitasking, scheduler, mutex</td></tr>
+</table>
+<img class="hero" src="images/thread-computing.png" alt="Diagram-style illustration of multiple threads executing within a single process">
+<p>In computer science, a <b>thread of execution</b> is the smallest sequence of programmed instructions that can be managed independently by a scheduler, which is typically a part of the operating system. In many cases, a thread is a component of a process. The multiple threads of a given process may be executed concurrently (via multithreading capabilities), sharing resources such as memory, while different processes do not share these resources. In particular, the threads of a process share its executable code and the values of its dynamically allocated variables and non-thread-local global variables at any given moment.</p>
+<h2>Threads versus processes</h2>
+<p>A process is an instance of a program in execution with its own address space. Threads exist within a process: each process has at least one (the "main") thread, and all of its threads share the process's memory, open files and other resources, while each thread has its own stack, registers and program counter. Creating and switching between threads is therefore typically cheaper than creating or switching between processes, but sharing imposes costs: threads must coordinate access to shared data with synchronisation primitives such as mutexes, semaphores and condition variables, and programming errors can produce race conditions, deadlocks and other concurrency bugs.</p>
+<h2>Models and implementations</h2>
+<p>Threads may be implemented in the kernel (kernel-level threads scheduled by the operating system), in user space (user-level or "green" threads managed by a runtime library), or by hybrid (M:N) models mapping many user threads onto fewer kernel threads. Standard programming interfaces include POSIX Threads (pthreads) on Unix-like systems, the Windows API thread functions, Java threads in the JVM, and higher-level constructs such as thread pools, futures and async/await. On multicore processors threads can run truly in parallel; on a single core they are interleaved by time-slicing. Simultaneous multithreading (Intel's Hyper-Threading) exposes multiple logical processors per physical core.</p>
+<h2>Single-threaded and multithreaded programs</h2>
+<p>Threading is used to keep user interfaces responsive while work proceeds in the background, to overlap computation with input/output, and to exploit parallel hardware — in servers handling many clients, in games, and in scientific computing. Languages and frameworks increasingly offer safer concurrency models — actors, message passing, software transactional memory, and structured concurrency — to tame the difficulty of shared-memory multithreading.</p>
+<p class="small">From Wikipedia, the free encyclopedia (recreated from memory).</p>
+</main>
+</body>
+</html>

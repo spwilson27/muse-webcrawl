@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Secure boot - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.header{border-bottom:1px solid #a7d7f9;padding:10px 24px;background:#f6f6f6}
+h1{font-size:1.9em;margin:0.3em 0;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+.content{max-width:960px;margin:0 auto;padding:16px 24px}
+img.hero{max-width:60%;display:block;margin:8px auto}
+.caption{text-align:center;font-size:0.85em;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="header"><strong>Wikipedia</strong> — The Free Encyclopedia</div>
+<div class="content">
+<h1>Secure boot</h1>
+<img class="hero" src="images/secure-boot.png" alt="Diagram of the UEFI secure boot chain of trust">
+<div class="caption">Secure boot builds a chain of trust from firmware to the operating system.</div>
+<p><b>Secure boot</b> is a security standard to ensure that a device boots using only software that is trusted by the original equipment manufacturer (OEM). When a computer starts, the firmware checks the signature of the UEFI boot loader and other early boot software; if the signatures are valid, the PC boots, and the firmware gives control to the operating system. Secure boot is part of the <a href="../UEFI/index.html">Unified Extensible Firmware Interface</a> (UEFI) specification, introduced in the UEFI 2.3.1 specification, and is intended to prevent malware such as <a href="../Rootkit/index.html">rootkits</a> and <a href="../Bootkit/index.html">bootkits</a> from loading before the operating system's own defences are running.</p>
+<h2>How it works</h2>
+<p>Secure boot relies on a hierarchy of cryptographic keys stored in firmware variables. A platform key (PK), controlled by the OEM or the machine's owner, authorises changes to key exchange keys (KEKs); KEKs authorise updates to the signature database (db), which contains certificates and hashes of trusted boot loaders, and the forbidden-signature database (dbx), which revokes compromised or malicious loaders. Before executing a boot image, the firmware verifies its digital signature against these databases; unsigned or revoked images are refused. Each stage in the boot chain in turn verifies the next, extending a "chain of trust" into the operating system kernel.</p>
+<h2>Adoption and controversy</h2>
+<p>Microsoft required secure boot capability on PCs certified for Windows 8 (2012) and later made it mandatory for new Windows 11 installations as part of its platform security requirements. The requirement attracted criticism from free-software advocates concerned that locked-down machines would prevent users from installing alternative operating systems. In practice, most x86 PCs allow secure boot to be disabled or custom keys enrolled, and major Linux distributions boot under secure boot using a small signed shim loader endorsed by Microsoft's signing service. Vulnerabilities such as BlackLotus (2023), the first UEFI bootkit found in the wild to bypass secure boot, have led to large-scale revocation updates through dbx.</p>
+<h2>Related technologies</h2>
+<p>Secure boot verifies software <i>before</i> it runs; related "measured boot" technology records hashes of boot components into a <a href="../Trusted_Platform_Module/index.html">Trusted Platform Module</a> (TPM) so that the system's integrity can later be attested. Similar verified-boot schemes exist on Android devices and Apple platforms.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../UEFI/index.html">UEFI</a></li>
+<li><a href="../Trusted_Platform_Module/index.html">Trusted Platform Module</a></li>
+<li><a href="../Booting/index.html">Booting</a></li>
+<li><a href="../Rootkit/index.html">Rootkit</a></li>
+</ul>
+</div>
+</body>
+</html>

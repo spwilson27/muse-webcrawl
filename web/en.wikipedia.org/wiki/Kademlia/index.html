@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kademlia - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;margin:0 0 .3em;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+p{font-family:sans-serif;font-size:.92em;line-height:1.6}
+.hero{text-align:center;margin:1em 0}
+.hero img{max-width:480px;width:100%;background:#eaecf0;padding:40px 0;color:#72777d}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px 14px;margin:0 0 12px 16px;font-family:sans-serif;font-size:.85em}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Kademlia</h1>
+<div class="hero"><img src="images/kademlia.png" alt="Diagram of a Kademlia XOR-distance routing tree"></div>
+<p><b>Kademlia</b> is a distributed hash table (DHT) for decentralized peer-to-peer computer networks designed by Petar Maymounkov and David Mazières in 2002. It specifies the structure of the network and the exchange of information through node lookups. Kademlia nodes communicate among themselves using UDP.</p>
+<h2>Design</h2>
+<p>A Kademlia network is formed by nodes, each identified by a unique node ID, typically a 160-bit number. Distances between nodes are computed with the exclusive or (XOR) operation on their IDs, interpreted as integers. This XOR metric gives Kademlia a key property: the distance is symmetric, satisfies the triangle inequality, and allows nodes to learn useful routing information from every message they receive.</p>
+<p>Each node maintains a routing table of <i>k</i>-buckets: lists of contact information for nodes at progressively greater XOR distances. Lookups proceed iteratively, querying the &alpha; closest known nodes (commonly &alpha; = 3) in parallel and refining the set of candidates until the closest nodes to the target key are found. Values are stored at the <i>k</i> nodes closest to the key, giving redundancy against churn.</p>
+<h2>Protocol messages</h2>
+<p>The protocol defines four remote procedure calls: <b>PING</b> (probe a node to see if it is online), <b>STORE</b> (instruct a node to store a key–value pair), <b>FIND_NODE</b> (return the <i>k</i> nodes closest to a target ID) and <b>FIND_VALUE</b> (like FIND_NODE but returns the stored value if the recipient holds it).</p>
+<h2>Uses</h2>
+<p>Kademlia underpins several large peer-to-peer systems, including the <a href="../BitTorrent">BitTorrent</a> Mainline DHT used for trackerless torrents, the Kad network of <a href="../EMule">eMule</a>, and node discovery in <a href="../Ethereum">Ethereum</a>. Its popularity stems from its provable efficiency — lookups require O(log n) messages — and its resistance to certain denial-of-service attacks through its preference for long-lived nodes in routing tables.</p>
+<h2>See also</h2>
+<p><a href="../Distributed_hash_table">Distributed hash table</a> &middot; <a href="../Chord_(peer-to-peer)">Chord</a> &middot; <a href="../Pastry_(DHT)">Pastry</a> &middot; <a href="../Content-addressable_network">Content-addressable network</a></p>
+</div>
+</body>
+</html>

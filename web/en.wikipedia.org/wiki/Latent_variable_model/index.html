@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Latent variable model - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; background: #fff; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 14px 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #eef; padding: 30px 10px; }
+.caption { font-size: 12px; color: #54595d; font-family: sans-serif; }
+ul { margin-top: 4px; }
+</style>
+</head>
+<body>
+<h1>Latent variable model</h1>
+<p>A <b>latent variable model</b> is a statistical model that relates a set of observable variables (the "manifest variables") to a set of <a href="../Latent_variable/index.html">latent variables</a>, which are not directly observed but are inferred from the observed data. The model specifies a joint distribution over the observed and latent variables, usually under the assumption that the observed variables are conditionally independent given the latent variables — so that the latent variables explain all the associations among the observations. Latent variable models are used for measurement, classification, dimensionality reduction, and prediction, and they form one of the foundational model families of modern statistics and machine learning.</p>
+<div class="hero"><img src="images/Latent_variable_model.png" alt="Graphical model plate diagram showing latent variables generating observed data"><p class="caption">A probabilistic graphical model with latent variables <i>z</i> generating observations <i>x</i>.</p></div>
+<h2>Types</h2>
+<p>Latent variable models are commonly classified by whether the latent variable (and the observed variables) are continuous or categorical:</p>
+<ul>
+<li><b>Continuous latent, continuous observed:</b> factor analysis, probabilistic principal component analysis, and the <a href="../Latent_factor_model/index.html">latent factor model</a>.</li>
+<li><b>Categorical latent, categorical observed:</b> latent class analysis.</li>
+<li><b>Categorical latent, continuous observed:</b> latent profile analysis and Gaussian mixture models.</li>
+<li><b>Continuous latent, categorical observed:</b> item response theory models, in which an examinee's latent ability generates item responses.</li>
+</ul>
+<p>Sequential and structured variants include hidden Markov models (a latent state evolving over time), state-space models, and topic models such as latent Dirichlet allocation, in which each document's topic proportions are latent. In deep learning, generative models such as variational autoencoders and generative adversarial networks are also latent variable models: a low-dimensional latent code is mapped to complex data such as images.</p>
+<h2>Estimation</h2>
+<p>The defining computational problem of latent variable models is that the likelihood of the observed data requires summing or integrating over the unknown latent variables, which is often intractable in closed form. Standard approaches include:</p>
+<ul>
+<li><b>Expectation–maximisation (EM):</b> alternately estimating the expected values of the latent variables given current parameters and maximising the expected complete-data likelihood.</li>
+<li><b>Bayesian inference:</b> Markov chain Monte Carlo sampling or variational inference to approximate the posterior distribution over latent variables and parameters.</li>
+<li><b>Direct gradient methods:</b> optimising a lower bound (the evidence lower bound, or ELBO) on the marginal likelihood, as in variational autoencoders.</li>
+</ul>
+<h2>Applications</h2>
+<p>Latent variable models underpin psychometric testing, market segmentation (latent classes of consumers), medical diagnosis without a gold standard, natural language processing (topic models), speech recognition (hidden Markov models), and generative modelling of images and molecules. In causal inference, latent variables also appear as unmeasured confounders, whose presence threatens the identification of causal effects.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Latent_variable/index.html">Latent variable</a></li>
+<li><a href="../Latent_factor_model/index.html">Latent factor model</a></li>
+<li><a href="../Mixture_model/index.html">Mixture model</a></li>
+<li><a href="../Hidden_Markov_model/index.html">Hidden Markov model</a></li>
+<li><a href="../Expectation–maximization_algorithm/index.html">Expectation–maximization algorithm</a></li>
+<li><a href="../Graphical_model/index.html">Graphical model</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Nearest neighbor search - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;}
+header{border-bottom:1px solid #a2a9b1;padding:10px 20px;background:#f8f9fa;}
+header .site{font-family:sans-serif;font-size:14px;color:#54595d;}
+main{max-width:960px;margin:0 auto;padding:20px;}
+h1{font-size:32px;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-weight:normal;}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal;margin-top:28px;}
+p{line-height:1.6;font-size:15px;}
+a{color:#0645ad;text-decoration:none;}
+a:hover{text-decoration:underline;}
+.hero{text-align:center;margin:16px 0;}
+.hero img{max-width:520px;width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:40px 0;}
+.caption{font-size:12px;color:#54595d;font-family:sans-serif;}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-family:sans-serif;font-size:13px;}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top;}
+ul{line-height:1.6;font-size:15px;}
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia, the free encyclopedia</span></header>
+<main>
+<h1>Nearest neighbor search</h1>
+<div class="hero"><img src="images/nearest-neighbor-search.png" alt="Diagram of points in a plane with the nearest neighbor of a query point highlighted"><div class="caption">A query point and its nearest neighbors among a set of data points.</div></div>
+<p><b>Nearest neighbor search</b> (NNS), also known as <b>proximity search</b>, <b>similarity search</b> or <b>closest point search</b>, is an optimization problem for finding the point in a given set that is closest (or most similar) to a given point. Closeness is typically expressed in terms of a dissimilarity function: the less similar the objects, the larger the function values.</p>
+<p>Formally, the nearest-neighbor search problem is defined as follows: given a set <i>S</i> of points in a space <i>M</i> and a query point <i>q</i> in <i>M</i>, find the point in <i>S</i> that is closest to <i>q</i>. Donald Knuth called it the <b>post-office problem</b> in his 1973 book <i>The Art of Computer Programming</i>, referring to an application of assigning a residence to the post office closest to it.</p>
+<h2>Variations</h2>
+<p>Several variations of the problem are commonly studied. In <b>k-nearest neighbor search</b>, the goal is to find the <i>k</i> closest points to the query. In <b>approximate nearest neighbor search</b>, the algorithm is allowed to return points whose distance from the query is within a factor (1 + <i>&epsilon;</i>) of the true nearest neighbor, which can dramatically reduce running time in high dimensions. <b>Radius search</b> returns all points within a specified distance of the query, and the <b>closest pair of points problem</b> seeks the two closest points in a set.</p>
+<h2>Methods</h2>
+<p>The naive approach, linear search, computes the distance from the query point to every other point in the dataset, keeping track of the "best so far"; this costs <i>O(dN)</i> for <i>N</i> points in <i>d</i> dimensions and is sometimes called the brute-force method.</p>
+<p>Space-partitioning data structures such as the <a href="../Kd-tree">k-d tree</a>, ball tree, cover tree, and R-tree recursively divide the search space and prune branches that cannot contain a closer point. Hashing-based schemes such as locality-sensitive hashing (LSH) achieve approximate answers in high dimensions. Graph-based methods, including navigable small-world graphs and hierarchical navigable small world (HNSW) graphs, are widely used in modern vector databases.</p>
+<h2>Applications</h2>
+<p>Nearest neighbor search underlies the <a href="../K-nearest_neighbors_algorithm">k-nearest neighbors algorithm</a> in classification and regression, content-based image and audio retrieval, recommender systems, pattern recognition, document clustering, spell checking, and plagiarism detection. It is also used in geographic information systems and in matching records in record linkage.</p>
+<h2>Curse of dimensionality</h2>
+<p>As the number of dimensions increases, most exact data structures degrade toward linear search, a phenomenon associated with the <a href="../Curse_of_dimensionality">curse of dimensionality</a>: distances concentrate, so the ratio between the nearest and farthest points tends toward 1, making discrimination between near and far neighbors nearly meaningless.</p>
+<p><i>See also: <a href="../Similarity_search">Similarity search</a> &middot; <a href="../Metric_space">Metric space</a> &middot; <a href="../Voronoi_diagram">Voronoi diagram</a></i></p>
+</main>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SAT solver - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine','Georgia',serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 0.3em; }
+h2 { border-bottom: 1px solid #a2a9b1; font-size: 1.4em; margin-top: 1.4em; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 0.95em; }
+.infobox { float: right; width: 280px; background: #f8f9fa; border: 1px solid #a2a9b1; padding: 8px; margin: 0 0 12px 16px; font-size: 0.85em; font-family: sans-serif; }
+.infobox th { background: #b0c4de; padding: 4px; text-align: center; }
+.infobox td { padding: 3px 6px; vertical-align: top; }
+img.hero { width: 100%; height: auto; background: #eaecf0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>SAT solver</h1>
+<table class="infobox">
+<tr><th colspan="2">SAT solver</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/sat-solver.png" alt="Tree diagram of a backtracking search through variable assignments"></td></tr>
+<tr><td><b>Problem</b></td><td>Boolean satisfiability problem (SAT)</td></tr>
+<tr><td><b>Input format</b></td><td>Conjunctive normal form (DIMACS CNF)</td></tr>
+<tr><td><b>Output</b></td><td>SAT with assignment, or UNSAT (with proof in proof-producing solvers)</td></tr>
+</table>
+<p>A <b>SAT solver</b> is a computer program that solves the Boolean satisfiability problem: given a propositional formula, usually in conjunctive normal form (CNF), it determines whether there is an assignment of truth values to the variables making the formula true, and if so produces one. SAT was the first problem shown to be NP-complete (the Cook–Levin theorem), yet modern solvers routinely decide industrial instances with millions of variables and clauses.</p>
+<h2>Algorithms</h2>
+<p>Most modern solvers implement <b>conflict-driven clause learning</b> (CDCL), an evolution of the DPLL backtracking algorithm. CDCL solvers repeatedly pick an unassigned variable (using heuristics such as VSIDS), propagate forced assignments by unit propagation with watched literals, and, upon reaching a conflict, analyse the implication graph to learn a new clause that prevents similar conflicts, then backjump non-chronologically. Restarts, clause deletion policies, and randomisation further improve performance.</p>
+<p>Alternative approaches include stochastic local search methods such as WalkSAT, which flip variables to minimise unsatisfied clauses and excel on random instances but cannot prove unsatisfiability, and parallel portfolio solvers that run many strategies concurrently.</p>
+<h2>Applications</h2>
+<p>SAT solvers are workhorses of hardware and software verification (bounded model checking, equivalence checking of circuits), electronic design automation, planning and scheduling in artificial intelligence, cryptanalysis, bioinformatics, and software package dependency resolution. Extensions of the same technology address satisfiability modulo theories (SMT), MaxSAT, and quantified Boolean formulas. Annual SAT competitions and the standard DIMACS CNF input format have driven steady improvements since the 1990s; notable solvers include MiniSat, Glucose, CaDiCaL, and Kissat.</p>
+</div>
+</body>
+</html>

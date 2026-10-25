@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Spanner (database) - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#f6f6f6;color:#202122;margin:0}
+#content{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px;line-height:1.6}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:88%;width:260px}
+.infobox th{text-align:left;background:#eaf3ff;padding:2px 6px}
+.infobox td{padding:2px 6px}
+.hero{display:block;margin:12px auto;max-width:420px;border:1px solid #c8ccd1;padding:4px;background:#f8f9fa}
+.caption{text-align:center;font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Spanner (database)</h1>
+<img class="hero" src="images/spanner.png" alt="Diagram of Spanner's globally distributed architecture, with data replicated across data centers in multiple continents">
+<p class="caption">Spanner replicates data synchronously across regions</p>
+<table class="infobox">
+<tr><th colspan="2">Cloud Spanner</th></tr>
+<tr><td>Developer</td><td>Google</td></tr>
+<tr><td>Initial release</td><td>2012 (internal); 2017 (public cloud)</td></tr>
+<tr><td>Type</td><td>Distributed relational database (NewSQL)</td></tr>
+<tr><td>Consistency</td><td>External consistency (linearizability)</td></tr>
+</table>
+<p><b>Spanner</b> is a distributed SQL database management and storage service developed by Google. It provides features such as global transactions, strongly consistent reads, and automatic multi-shard replication and failover. Spanner is used internally for services including Google Ads and Google Play, and is offered publicly as <b>Cloud Spanner</b> on Google Cloud Platform. It is the database that underpins the claim that a system can be both globally distributed and strongly consistent — a landmark counterexample to loose readings of the CAP theorem.</p>
+<h2>TrueTime and external consistency</h2>
+<p>Spanner's defining idea is the <b>TrueTime</b> API, which exposes clock uncertainty explicitly. Google equips its data centers with GPS receivers and atomic clocks so that servers know the time with a bounded error interval (typically a few milliseconds). By waiting out the uncertainty interval before committing ("commit wait"), Spanner assigns timestamps that guarantee <i>external consistency</i>: if transaction T1 commits before T2 starts in real time, T1 receives the smaller timestamp. This makes Spanner the first system to offer globally consistent, lock-free snapshot reads at scale.</p>
+<h2>Architecture</h2>
+<p>Data is stored in tables sharded into "splits", each replicated across zones with the Paxos consensus algorithm; two-phase commit across Paxos groups provides global ACID transactions. Spanner was described in a 2012 OSDI paper and an expanded 2017 SIGMOD paper, "Spanner: Becoming a SQL System", which added a full SQL interface. Its design strongly influenced open-source successors such as CockroachDB and TiDB.</p>
+<p><i>See also:</i> <a href="../Bigtable/index.html">Bigtable</a>, <a href="../NewSQL/index.html">NewSQL</a>, <a href="../CAP_theorem/index.html">CAP theorem</a></p>
+</div>
+</body>
+</html>

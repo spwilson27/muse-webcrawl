@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>reddit.com: search results</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "IBM Plex Sans", Verdana, Geneva, sans-serif; background: #dae0e6; color: #1a1a1b; }
+  header { background: #ffffff; border-bottom: 1px solid #ccc; padding: 8px 16px; display: flex; align-items: center; gap: 16px; position: sticky; top: 0; }
+  .logo { color: #ff4500; font-size: 26px; font-weight: bold; text-decoration: none; }
+  .logo span { color: #1a1a1b; font-weight: normal; }
+  .searchbox { flex: 1; max-width: 640px; display: flex; }
+  .searchbox input { flex: 1; padding: 9px 14px; border: 1px solid #edeff1; background: #f6f7f8; border-radius: 20px; font-size: 14px; }
+  .login { background: #fff; border: 1px solid #0079d3; color: #0079d3; border-radius: 20px; padding: 6px 18px; font-weight: bold; text-decoration: none; font-size: 14px; }
+  .signup { background: #0079d3; color: #fff; border-radius: 20px; padding: 7px 18px; font-weight: bold; text-decoration: none; font-size: 14px; }
+  .tabs { background: #fff; border-bottom: 1px solid #ccc; padding: 10px 16px; }
+  .tabs a { color: #1a1a1b; text-decoration: none; font-size: 14px; font-weight: 600; margin-right: 22px; padding-bottom: 8px; }
+  .tabs a.active { border-bottom: 3px solid #0079d3; }
+  .sort { background: #fff; margin: 16px auto 0; max-width: 980px; padding: 8px 16px; border: 1px solid #ccc; border-radius: 4px; font-size: 13px; color: #7c7c7c; }
+  .sort b { color: #1a1a1b; }
+  main { max-width: 980px; margin: 16px auto; padding: 0 8px; }
+  .result { background: #fff; border: 1px solid #ccc; border-radius: 4px; padding: 12px 16px; margin-bottom: 12px; }
+  .result:hover { border-color: #898989; }
+  .meta { font-size: 12px; color: #7c7c7c; margin-bottom: 6px; }
+  .meta a.sub { color: #1a1a1b; font-weight: bold; text-decoration: none; }
+  .meta a.user { color: #7c7c7c; text-decoration: none; }
+  .result h2 { font-size: 17px; margin-bottom: 6px; }
+  .result h2 a { color: #1a1a1b; text-decoration: none; }
+  .result h2 a:visited { color: #7c7c7c; }
+  .flair { display: inline-block; background: #edeff1; border-radius: 10px; padding: 1px 8px; font-size: 11px; margin-left: 6px; vertical-align: middle; }
+  .snippet { font-size: 13px; color: #4a4a4a; line-height: 1.45; margin-bottom: 8px; }
+  .actions { font-size: 12px; color: #818384; font-weight: bold; }
+  .actions span { margin-right: 16px; }
+  .thumb { float: right; width: 140px; height: 105px; background: #f6f7f8; border: 1px solid #edeff1; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-left: 12px; }
+  .thumb img { max-width: 100%; max-height: 100%; }
+  .community { display: flex; align-items: center; gap: 12px; }
+  .community .avatar { width: 44px; height: 44px; border-radius: 50%; background: #0079d3; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 18px; }
+  .community h2 { font-size: 16px; margin: 0; }
+  .community p { font-size: 12px; color: #7c7c7c; }
+  .join { margin-left: auto; background: #0079d3; color: #fff; border: none; border-radius: 20px; padding: 6px 20px; font-weight: bold; cursor: pointer; }
+  footer { max-width: 980px; margin: 24px auto; padding: 0 8px 32px; font-size: 12px; color: #7c7c7c; text-align: center; }
+  .hero { background: #fff; border: 1px solid #ccc; border-radius: 4px; padding: 16px; margin-bottom: 16px; text-align: center; }
+  .hero img { max-width: 320px; }
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="../index.html">&#9679;<span>reddit</span></a>
+  <form class="searchbox" action="index.html" method="get">
+    <input type="text" name="q" value="how do plants make oxygen" aria-label="Search Reddit">
+  </form>
+  <a class="login" href="#">Log In</a>
+  <a class="signup" href="#">Sign Up</a>
+</header>
+<nav class="tabs">
+  <a href="#" class="active">Posts</a>
+  <a href="#">Communities</a>
+  <a href="#">Comments</a>
+  <a href="#">Media</a>
+  <a href="#">People</a>
+  <a href="#">Profiles</a>
+</nav>
+<div class="sort">Sort by <b>Relevance</b> &nbsp;|&nbsp; Safe search: <b>on</b> &nbsp;|&nbsp; Results for: <b>"how do plants make oxygen"</b></div>
+<main>
+  <div class="hero">
+    <img src="images/search-hero.png" alt="Illustration of a magnifying glass over leafy green plants, representing a Reddit search about how plants produce oxygen">
+  </div>
+
+  <article class="result community">
+    <div class="avatar">s</div>
+    <div>
+      <h2><a href="../r/science/index.html">r/science</a></h2>
+      <p>The latest scientific findings, explained and discussed. 31.2M members &middot; 4.1K online</p>
+    </div>
+    <button class="join">Join</button>
+  </article>
+
+  <article class="result">
+    <div class="thumb"><img src="images/thumb-leaf.png" alt="Close-up photo placeholder of a green leaf backlit by sunlight"></div>
+    <p class="meta"><a class="sub" href="../r/science/index.html">r/science</a> &middot; Posted by <a class="user" href="#">u/curious_sprout42</a> 6 hours ago</p>
+    <h2><a href="#">New study maps how a common houseplant adjusts oxygen release through the day</a><span class="flair">Biology</span></h2>
+    <p class="snippet">Researchers tracked gas exchange in a popular indoor plant over several weeks and found its oxygen output peaked in the late morning, dipping when light levels stayed flat for too long. The thread has a plain-language summary of the methods in the top comment.</p>
+    <p class="actions"><span>&#9650; 4.2k</span><span>312 Comments</span><span>Share</span><span>Save</span></p>
+  </article>
+
+  <article class="result">
+    <p class="meta"><a class="sub" href="../r/askscience/index.html">r/askscience</a> &middot; Posted by <a class="user" href="#">u/homework_helper99</a> 2 days ago</p>
+    <h2><a href="#">How do plants make oxygen if they also use it to breathe?</a><span class="flair">Biology</span></h2>
+    <p class="snippet">Panelists explain the balance between photosynthesis and respiration: during daylight the plant releases more oxygen than it consumes, while at night it only respires. Includes a simple diagram described in text and links to the subreddit wiki.</p>
+    <p class="actions"><span>&#9650; 8.7k</span><span>956 Comments</span><span>Share</span><span>Save</span></p>
+  </article>
+
+  <article class="result">
+    <p class="meta"><a class="sub" href="../r/explainlikeimfive/index.html">r/explainlikeimfive</a> &middot; Posted by <a class="user" href="#">u/pocket_explainer</a> 4 days ago</p>
+    <h2><a href="#">ELI5: Where does the oxygen from plants actually come from &mdash; the air or the water?</a><span class="flair">Chemistry</span></h2>
+    <p class="snippet">The accepted answer uses a kitchen analogy: the plant splits water molecules with sunlight, keeps the hydrogen for making sugar, and lets the oxygen drift away as a leftover. Commenters add the isotope experiments that proved it.</p>
+    <p class="actions"><span>&#9650; 12.3k</span><span>1.4k Comments</span><span>Share</span><span>Save</span></p>
+  </article>
+
+  <article class="result community">
+    <div class="avatar" style="background:#46d160;">p</div>
+    <div>
+      <h2><a href="../r/plants/index.html">r/plants</a></h2>
+      <p>A place to share plant care tips, identification help, and greenhouse projects. 890K members &middot; 620 online</p>
+    </div>
+    <button class="join">Join</button>
+  </article>
+
+  <article class="result">
+    <div class="thumb"><img src="images/thumb-algae.png" alt="Photo placeholder of green algae growing in a clear laboratory flask"></div>
+    <p class="meta"><a class="sub" href="../r/technology/index.html">r/technology</a> &middot; Posted by <a class="user" href="#">u/gadget_gardener</a> 1 week ago</p>
+    <h2><a href="#">Desktop algae bioreactor claims to freshen a small room &mdash; engineers in the thread weigh the numbers</a><span class="flair">Prototype</span></h2>
+    <p class="snippet">A startup's countertop device uses fast-growing algae and LED panels to cycle air in a bedroom-sized space. Commenters with fluid-dynamics backgrounds estimate the real exchange rate and compare it with simply opening a window.</p>
+    <p class="actions"><span>&#9650; 2.1k</span><span>488 Comments</span><span>Share</span><span>Save</span></p>
+  </article>
+
+  <article class="result">
+    <p class="meta"><a class="sub" href="../r/todayilearned/index.html">r/todayilearned</a> &middot; Posted by <a class="user" href="#">u/fact_collector7</a> 2 weeks ago</p>
+    <h2><a href="#">TIL most of the oxygen in the atmosphere built up long before forests existed</a></h2>
+    <p class="snippet">Ocean microbes were producing oxygen for hundreds of millions of years before land plants appeared; the discussion walks through the Great Oxidation Event and how rusty-red rock layers record it.</p>
+    <p class="actions"><span>&#9650; 21.9k</span><span>1.9k Comments</span><span>Share</span><span>Save</span></p>
+  </article>
+
+  <article class="result">
+    <p class="meta"><a class="sub" href="../r/worldnews/index.html">r/worldnews</a> &middot; Posted by <a class="user" href="#">u/daily_briefing_bot</a> 3 weeks ago</p>
+    <h2><a href="#">Coastal city announces large seagrass restoration project to support marine oxygen levels</a><span class="flair">Environment</span></h2>
+    <p class="snippet">The city council voted to fund a multi-year replanting effort in the bay, citing benefits for fish nurseries and water clarity. The thread collects the council's published summary and local reaction.</p>
+    <p class="actions"><span>&#9650; 3.6k</span><span>274 Comments</span><span>Share</span><span>Save</span></p>
+  </article>
+
+  <p style="text-align:center; padding: 12px; font-size: 14px;"><a href="#">Next &rsaquo;</a></p>
+</main>
+<footer>
+  <p>Reddit search &mdash; results are a community-curated index of posts, comments and communities. Content here is a recreated sample for archival purposes.</p>
+</footer>
+</body>
+</html>

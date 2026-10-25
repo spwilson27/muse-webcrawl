@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Myerson lemma - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+main{max-width:860px;margin:0 auto;background:#fff;padding:28px 36px 48px}
+h1{font-size:30px;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal;margin-top:28px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{max-width:100%;border:1px solid #c8ccd1;background:#eaecf0}
+.caption{font-size:13px;color:#54595d}
+.lead{font-size:16px;line-height:1.6}
+p{line-height:1.65}
+code{font-family:ui-monospace,monospace;background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<main>
+<h1>Myerson lemma</h1>
+<img class="hero" src="images/Myerson_lemma.png" alt="Diagram of an allocation rule and the payment identity it determines">
+<p class="caption">The lemma ties truthful payments to the allocation rule.</p>
+<p class="lead">The <b>Myerson lemma</b> is a fundamental result in auction theory and mechanism design, due to Roger Myerson (1981). It characterises incentive-compatible (truthful) mechanisms in single-parameter environments — such as single-item auctions — in which each agent's private information is a single number, her value. The lemma states that an allocation rule can be implemented truthfully if and only if it is monotone, and that the payment rule is then essentially unique, given by an integral formula.</p>
+
+<h2>Statement</h2>
+<p>Let <code>x(v)</code> be the probability that an agent reporting value <code>v</code> receives the item. The lemma says:</p>
+<ul>
+<li><b>Monotonicity:</b> The allocation rule is implementable in dominant strategies if and only if <code>x</code> is non-decreasing in <code>v</code> — a higher bid never lowers the chance of winning.</li>
+<li><b>Payment identity:</b> If the agent with value 0 pays 0, then the expected payment of an agent with value <code>v</code> is <code>p(v) = v·x(v) − ∫₀ᵛ x(z) dz</code>.</li>
+</ul>
+<p>For a deterministic allocation in which the agent wins exactly when her bid exceeds a threshold <code>t</code>, the formula reduces to the familiar rule that the winner pays the threshold — the smallest bid at which she would still have won. This is why, in a second-price auction, the winner pays the second-highest bid. Combined with the revenue equivalence theorem, the lemma underlies Myerson's celebrated result on optimal auctions, including "virtual value" maximisation and reserve prices. See also <a href="../Mechanism_design/index.html">mechanism design</a> and <a href="../Vickrey_auction/index.html">Vickrey auction</a>.</p>
+</main>
+</body>
+</html>

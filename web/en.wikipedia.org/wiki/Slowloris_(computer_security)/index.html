@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Slowloris (computer security) - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 0 auto; padding: 1.5em; color: #202122; line-height: 1.6; background: #fff; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; font-weight: normal; margin-top: 1.2em; }
+img.hero { max-width: 320px; float: right; margin: 0 0 1em 1.5em; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0.8em; overflow-x: auto; font-size: 0.9em; }
+.small { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<h1>Slowloris (computer security)</h1>
+<img class="hero" src="images/Slowloris_(computer_security).png" alt="Diagram of a Slowloris attack holding many web server connections open with partial HTTP requests">
+<p><b>Slowloris</b> is a type of <a href="../Denial-of-service_attack/index.html">denial of service</a> attack tool which allows a single machine to take down another machine's <a href="../Web_server/index.html">web server</a> with minimal bandwidth and side effects on unrelated services and ports.</p>
+<p>Slowloris tries to keep many connections to the target web server open and hold them open as long as possible. It accomplishes this by opening connections to the target web server and sending a partial request. Periodically, it will send subsequent <a href="../Hypertext_Transfer_Protocol/index.html">HTTP</a> headers, adding to — but never completing — the request. Affected servers will keep these connections open, filling their maximum concurrent connection pool, eventually denying additional connection attempts from clients.</p>
+<h2>History</h2>
+<p>The program and the attack technique were created by Robert "RSnake" Hansen, who first discussed it in 2009. The name "Slowloris" is a pun on the <a href="../Slow_loris/index.html">slow loris</a>, a primate known for its slow movement and large eyes. The attack gained wider notice when tools using the same technique, such as those built into later frameworks, were used in real attacks against large websites.</p>
+<h2>How it works</h2>
+<p>Traditional denial-of-service attacks flood a server with traffic. Slowloris instead exploits the behaviour of threaded web servers: many servers allocate a connection thread to each HTTP request and hold it until a complete request has been received or a timeout expires. By sending a syntactically valid but <i>incomplete</i> HTTP request — for example, a request line and a few headers, but never the blank line that terminates the headers — the attacker causes the server to wait. By periodically sending one more header line, the attacker keeps each connection alive indefinitely while consuming almost no bandwidth.</p>
+<p>Hundreds of such connections exhaust the server's connection pool. Legitimate users are then unable to connect, even though the server is otherwise idle and network bandwidth is unconsumed. Because the attack uses valid HTTP traffic at very low rates, it can be difficult to detect with conventional rate-based intrusion detection.</p>
+<h2>Affected servers</h2>
+<p>Threaded servers that wait for complete requests, such as older configurations of the <a href="../Apache_HTTP_Server/index.html">Apache HTTP Server</a>, were notably vulnerable. Servers using event-driven architectures, or those which time out incomplete requests aggressively, are much less affected. The similar "Slow POST" variant sends a complete header with a declared body length, then transmits the body extremely slowly.</p>
+<h2>Mitigation</h2>
+<ul>
+<li>Configure minimum data rates and short timeouts for incomplete requests and headers.</li>
+<li>Limit the number of connections per IP address.</li>
+<li>Place the web server behind a <a href="../Reverse_proxy/index.html">reverse proxy</a> or load balancer that absorbs incomplete requests.</li>
+<li>Use modules such as Apache's mod_reqtimeout or mod_qos.</li>
+<li>Prefer event-based server architectures (e.g. <a href="../Nginx/index.html">nginx</a>) for public-facing endpoints.</li>
+</ul>
+<h2>See also</h2>
+<ul>
+<li><a href="../Denial-of-service_attack/index.html">Denial-of-service attack</a></li>
+<li><a href="../Low_Orbit_Ion_Cannon/index.html">Low Orbit Ion Cannon</a></li>
+<li><a href="../R-U-Dead-Yet/index.html">R-U-Dead-Yet</a></li>
+</ul>
+<p class="small">This article is a recreation written from memory.</p>
+</body>
+</html>

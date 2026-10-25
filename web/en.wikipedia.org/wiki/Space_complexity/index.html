@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Space complexity - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#f6f6f6;color:#202122;margin:0}
+#content{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px;line-height:1.6}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:12px auto;max-width:420px;border:1px solid #c8ccd1;padding:4px;background:#f8f9fa}
+.caption{text-align:center;font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Space complexity</h1>
+<img class="hero" src="images/space-complexity.png" alt="Diagram of a Turing machine tape showing the work space used by an algorithm as a function of input size">
+<p class="caption">Space is measured by the work tape cells an algorithm uses</p>
+<p>In computational complexity theory, the <b>space complexity</b> of an algorithm or problem is the amount of memory space it requires to solve an instance of the computational problem as a function of characteristics of the input. It is the memory required by an algorithm until its execution is complete. Closely related is <a href="../Time_complexity/index.html">time complexity</a>; together the two resources define the classic complexity classes studied in the field.</p>
+<h2>Definitions</h2>
+<p>Formally, for a Turing machine, DSPACE(<i>f</i>(<i>n</i>)) is the set of problems solvable using O(<i>f</i>(<i>n</i>)) cells of a work tape on inputs of size <i>n</i>; the input and output tapes are conventionally not counted, so that sublinear space bounds remain meaningful. NSPACE(<i>f</i>(<i>n</i>)) is the corresponding class for nondeterministic machines. Important classes include:</p>
+<ul>
+<li><b>L</b> — logarithmic space, DSPACE(O(log <i>n</i>))</li>
+<li><b>NL</b> — nondeterministic logarithmic space</li>
+<li><b>PSPACE</b> — polynomial space, the union of DSPACE(<i>n<sup>k</i></i>) for all <i>k</i></li>
+<li><b>EXPSPACE</b> — exponential space</li>
+</ul>
+<h2>Key theorems</h2>
+<p><b>Savitch's theorem</b> (1970) states that NSPACE(<i>f</i>(<i>n</i>)) ⊆ DSPACE(<i>f</i>(<i>n</i>)²) for <i>f</i>(<i>n</i>) ≥ log <i>n</i>; a famous corollary is that PSPACE = NPSPACE, and that NL ⊆ DSPACE(log² <i>n</i>). The <b>space hierarchy theorem</b> shows that strictly more space permits strictly more problems to be solved when the bound is space-constructible. The <b>Immerman–Szelepcsényi theorem</b> (1987–88) shows that nondeterministic space classes are closed under complement, so NL = coNL.</p>
+<p>Space-bounded computation exhibits behaviour strikingly different from time: space can be <i>reused</i>, so polynomial space can simulate exponential time in some cases, and it remains unknown whether P = PSPACE — one of complexity theory's central open problems. Every problem in PSPACE can be solved in exponential time, so P ⊆ PSPACE ⊆ EXPTIME.</p>
+<h2>Auxiliary space</h2>
+<p>In practical algorithm analysis, "space complexity" often means auxiliary space — the extra memory beyond the input itself — and is reported in big-O notation: a mergesort uses O(<i>n</i>) auxiliary space, while an in-place heapsort uses O(1).</p>
+<p><i>See also:</i> <a href="../PSPACE/index.html">PSPACE</a>, <a href="../Savitch's_theorem/index.html">Savitch's theorem</a>, <a href="../L_(complexity)/index.html">L (complexity)</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Latent factor model - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; background: #fff; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 14px 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #eef; padding: 30px 10px; }
+.caption { font-size: 12px; color: #54595d; font-family: sans-serif; }
+ul { margin-top: 4px; }
+</style>
+</head>
+<body>
+<h1>Latent factor model</h1>
+<p>A <b>latent factor model</b> is a statistical model that explains observed data in terms of a smaller number of unobserved ("latent") factors. Instead of treating every measured variable as independent, the model supposes that the correlations among the observed variables arise because they are jointly influenced by a few latent factors, plus variable-specific noise. In matrix form, an observation vector <i>x</i> is modelled as <i>x</i> = Λ<i>f</i> + ε, where <i>f</i> is the vector of latent factors, Λ is a matrix of factor loadings describing how strongly each observed variable depends on each factor, and ε is an error term. Latent factor models are a central form of <a href="../Latent_variable_model/index.html">latent variable model</a> and are used for dimensionality reduction, measurement, and prediction across the social sciences, finance, and machine learning.</p>
+<div class="hero"><img src="images/Latent_factor_model.png" alt="Diagram of observed variables connected to a smaller set of latent factors"><p class="caption">Observed variables (squares) generated from latent factors (circles).</p></div>
+<h2>Examples</h2>
+<ul>
+<li><b>Factor analysis:</b> the classical latent factor model, in which measured test scores or questionnaire items are explained by underlying traits such as general intelligence (the <i>g</i> factor of Charles Spearman).</li>
+<li><b>Item response theory:</b> a respondent's answers are modelled as depending on a latent ability, which is a one-dimensional factor.</li>
+<li><b>Matrix factorisation in recommender systems:</b> users and items are each embedded in a low-dimensional latent factor space, and a predicted rating is the inner product of the user and item factor vectors. This technique rose to prominence during the Netflix Prize competition.</li>
+<li><b>Probabilistic principal component analysis and autoencoders:</b> linear and nonlinear generalisations in which the factors are compressed representations of the data.</li>
+<li><b>Asset pricing models:</b> returns on securities are explained by exposure (loadings) to a few common risk factors, in the tradition of the capital asset pricing model and the Fama–French factor models.</li>
+</ul>
+<h2>Estimation and identification</h2>
+<p>Because the factors are not observed, they must be inferred from the data. Classical approaches use maximum likelihood on the covariance structure implied by the model; modern approaches use expectation–maximisation, variational inference, or gradient-based optimisation of a reconstruction objective. Factor models are identifiable only up to transformations of the factor space (for example, rotation of the factors), so additional constraints — such as orthogonality of factors, sparsity of loadings, or a fixed scaling — are imposed, and in exploratory factor analysis the analyst chooses an interpretable rotation such as varimax.</p>
+<h2>Relation to other models</h2>
+<p>Latent factor models differ from latent class models, in which the latent variable is categorical, and from mixture models generally. When the latent factor fully accounts for the associations among the observed variables, the observations are said to be conditionally (locally) independent given the factor. The choice of the number of factors is a key modelling decision, addressed with criteria such as scree plots, parallel analysis, cross-validation, or information criteria.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Factor_analysis/index.html">Factor analysis</a></li>
+<li><a href="../Latent_variable/index.html">Latent variable</a></li>
+<li><a href="../Latent_variable_model/index.html">Latent variable model</a></li>
+<li><a href="../Recommender_system/index.html">Recommender system</a></li>
+<li><a href="../Dimensionality_reduction/index.html">Dimensionality reduction</a></li>
+</ul>
+</body>
+</html>

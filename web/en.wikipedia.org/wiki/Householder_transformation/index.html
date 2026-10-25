@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Householder transformation</title>
+<style>body{font-family:Georgia,serif;max-width:760px;margin:2em auto;padding:0 1em;color:#222;line-height:1.6}h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #eaecf0}a{color:#0645ad}img.ph{display:block;background:#eaecf0;border:1px dashed #aaa;padding:2em 1em;text-align:center;color:#54595d;margin:1em 0}</style></head>
+<body>
+<h1>Householder transformation</h1>
+<img class="ph" src="images/householder.png" alt="Geometric diagram of a vector reflected across a hyperplane">
+<p>In linear algebra, the <b>Householder transformation</b> (also known as a Householder reflection or elementary reflector) is a linear transformation that describes a reflection about a plane or hyperplane containing the origin. It was introduced by Alston Scott Householder in 1958.</p>
+<h2>Definition</h2>
+<p>Given a nonzero vector v, the Householder matrix is</p>
+<p style="text-align:center"><i>H</i> = <i>I</i> − 2 vv<sup>T</sup> / (v<sup>T</sup>v)</p>
+<p>where I is the identity matrix. H is symmetric and orthogonal (H<sup>T</sup> = H<sup>−1</sup> = H), has determinant −1, and maps v to −v while fixing every vector orthogonal to v.</p>
+<h2>Applications</h2>
+<p>Householder reflectors are the standard tool for introducing zeros into vectors and matrices in numerical linear algebra. Successive reflectors reduce a matrix to Hessenberg or tridiagonal form, and they form the basis of the most stable method for computing the <a href="../QR_decomposition/index.html">QR decomposition</a>: choosing v so that Hx is a multiple of a unit vector annihilates all but the first component of x. They are likewise used in least-squares solvers and eigenvalue algorithms, where their perfect orthogonality confers backward stability.</p>
+</body></html>

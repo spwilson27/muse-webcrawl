@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Modified discrete cosine transform - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:32px 40px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:6px;margin-top:0}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:28px}
+.hero{display:block;margin:16px auto;max-width:420px;width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:24px 0;text-align:center;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:.85em;color:#54595d}
+.mono{font-family:monospace;background:#f8f9fa;padding:2px 4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Modified discrete cosine transform</h1>
+<img class="hero" src="images/modified-discrete-cosine-transform.png" alt="Overlapping windowed blocks of an audio signal transformed by the MDCT">
+<p>The <b>modified discrete cosine transform</b> (<b>MDCT</b>) is a transform based on the type-IV discrete cosine transform (DCT-IV), with the additional property of being lapped: it is designed to be performed on consecutive blocks of a larger dataset, where subsequent blocks are overlapped so that the last half of one block coincides with the first half of the next block. This overlapping, in addition to the energy-compaction qualities of the DCT, makes the MDCT especially attractive for signal compression applications, since it helps to avoid artefacts stemming from the block boundaries.</p>
+
+<h2>Definition and properties</h2>
+<p>The MDCT transforms 2N real numbers into N real numbers; its inverse (IMDCT) performs the reverse, and — uniquely — simply adding the overlapping halves of consecutive inverse-transformed blocks reconstructs the original signal exactly, a property called <b>time-domain aliasing cancellation</b> (TDAC). Although quantisation errors introduced in compression alias within each block, the aliasing cancels between overlapping blocks. The transform was developed by Princen, Johnson and Bradley in 1986–87, building on Princen and Bradley's work on TDAC, and analysis/synthesis window functions such as the sine window and the Kaiser–Bessel-derived (KBD) window are chosen to satisfy the Princen–Bradley condition for perfect reconstruction.</p>
+
+<h2>Applications</h2>
+<p>The MDCT is the core transform of nearly all modern perceptual audio codecs: MP3 uses a hybrid filter bank in which a polyphase filter bank feeds an MDCT; AAC is based purely on the MDCT and supports switching between long (2048/1920-point) and short (256/240-point) windows to balance frequency resolution against transient response; and Vorbis, Opus (in its CELT layer, combined with the SILK speech coder), Dolby Digital (AC-3), ATRAC and LDAC all employ MDCT variants. By concentrating signal energy into few coefficients within each overlapped block without producing blocking artefacts, the MDCT lets psychoacoustic models discard inaudible information efficiently.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Discrete_cosine_transform/index.html">Discrete cosine transform</a></li>
+<li><a href="../Advanced_Audio_Coding/index.html">Advanced Audio Coding</a></li>
+<li><a href="../MP3/index.html">MP3</a></li>
+<li><a href="../Opus_(audio_format)/index.html">Opus (audio format)</a></li>
+</ul>
+<p class="small">Recreated from memory for the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

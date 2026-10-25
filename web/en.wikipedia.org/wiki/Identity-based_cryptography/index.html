@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Identity-based cryptography - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+main{max-width:880px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+a{color:#0645ad;text-decoration:none}
+.hero{display:block;margin:12px auto;max-width:520px;width:100%;background:#eef3f8;border:1px solid #a2a9b1;padding:40px 0;text-align:center;color:#54595d}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<main>
+<h1>Identity-based cryptography</h1>
+<img class="hero" src="images/identity-based-cryptography.png" alt="Diagram showing an email address used directly as a public key">
+<p><b>Identity-based cryptography</b> is a type of public-key cryptography in which a user's public key is derived directly from a unique identity string — such as an email address, a telephone number, or a name — rather than from a randomly generated key published in a digital certificate. A trusted third party called the <b>Private Key Generator</b> (PKG) holds a master secret and issues each user the private key corresponding to their identity. This eliminates the need for certificate directories and lets senders encrypt a message for a recipient before that recipient has even obtained their private key.</p>
+<h2>History</h2>
+<p>The concept was proposed by Adi Shamir in 1984, who constructed an identity-based signature scheme but was unable to realize identity-based encryption. Practical identity-based encryption (IBE) was achieved only in 2001, when Dan Boneh and Matthew Franklin built a secure scheme from the Weil pairing on elliptic curves, and Clifford Cocks independently developed a scheme based on quadratic residues that had been devised earlier at GCHQ. Boneh and Franklin's work sparked extensive research into pairing-based cryptography.</p>
+<h2>How it works</h2>
+<p>A typical IBE system has four algorithms: <b>Setup</b>, in which the PKG generates public parameters and a master secret; <b>Extract</b>, in which the PKG computes a user's private key from their identity string; <b>Encrypt</b>, which uses the identity string itself as the public key; and <b>Decrypt</b>, which uses the issued private key. Identity-based signature (IBS) schemes follow the same pattern for signing.</p>
+<h2>Advantages and drawbacks</h2>
+<p>Because public keys are self-describing, identity-based systems simplify key management in closed environments such as enterprises, and naturally support features like key expiry by embedding dates in identity strings (e.g., "alice@example.com|2026"). However, the PKG can compute every user's private key, an inherent <b>key escrow</b> problem that makes the PKG a high-value target and removes non-repudiation for signatures. Revocation is also awkward: a compromised identity generally cannot be revoked without changing the identity string itself. Techniques such as hierarchical IBE and distributed PKGs mitigate but do not eliminate these issues.</p>
+<h2>Applications</h2>
+<p>Identity-based encryption has been deployed in enterprise email encryption products and standardized in IEEE 1363.3 and in IETF RFCs 5091 and 5408–5410. Related primitives include certificateless cryptography and attribute-based encryption, which generalize the notion of identity to sets of attributes.</p>
+<p class="small">See also: <a href="../Public-key_cryptography/index.html">Public-key cryptography</a> &middot; <a href="../Pairing-based_cryptography/index.html">Pairing-based cryptography</a> &middot; <a href="../Attribute-based_encryption/index.html">Attribute-based encryption</a></p>
+</main>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HAProxy — Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:820px;margin:0 auto;padding:24px;color:#202122;background:#fff;line-height:1.55}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-size:1.35em;border-bottom:1px solid #c8ccd1;padding-bottom:3px;margin-top:1.2em}
+p{margin:0.55em 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:14px auto;max-width:420px;width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:10px;text-align:center;color:#72777d}
+.infobox{float:right;margin:0 0 12px 16px;width:260px;background:#f8f9fa;border:1px solid #a2a9b1;padding:8px 10px;font-size:0.88em}
+.infobox th{text-align:left;background:#eaecf0;padding:3px 5px}
+.infobox td{padding:3px 5px}
+ul{margin:0.4em 0 0.4em 1.3em;padding:0}
+code{font-family:monospace;background:#f8f9fa;padding:1px 3px}
+</style>
+</head>
+<body>
+<h1>HAProxy</h1>
+<img class="hero" src="images/haproxy.png" alt="HAProxy logo and a diagram of traffic being load-balanced across backend servers">
+<div class="infobox">
+<table>
+<tr><th colspan="2">HAProxy</th></tr>
+<tr><th>Original author</th><td>Willy Tarreau</td></tr>
+<tr><th>Initial release</th><td>2001</td></tr>
+<tr><th>Written in</th><td>C</td></tr>
+<tr><th>Operating system</th><td>Linux, BSD, Solaris, others</td></tr>
+<tr><th>Type</th><td>Load balancer, reverse proxy</td></tr>
+<tr><th>Licence</th><td>GPLv2 (community edition)</td></tr>
+</table>
+</div>
+<p><b>HAProxy</b> is a free and open-source software that provides a high-availability load balancer and reverse proxy for TCP- and HTTP-based applications, spreading requests across multiple servers. Written in C by Willy Tarreau, it is known for its speed, efficiency and reliability, and is used by many high-traffic websites and by major cloud platforms and Linux distributions as part of their infrastructure. The name derives from "High Availability Proxy".</p>
+<h2>History</h2>
+<p>Tarreau wrote the first version of HAProxy in 2000–2001 to meet load-balancing needs that existing hardware and software solutions handled poorly, releasing version 1.0 in 2001. Development has continued steadily ever since, with the single-process, event-driven architecture progressively gaining features such as SSL/TLS termination, HTTP/2 and HTTP/3 support, a runtime API, dynamic configuration through the Data Plane API, and extensive observability. The company HAProxy Technologies, founded around the project, sells an enterprise edition (HAProxy Enterprise) and a hardware/virtual appliance (ALOHA), while the community edition remains open source under the GNU General Public License version 2.</p>
+<h2>Features</h2>
+<p>HAProxy operates at layer 4 (TCP) or layer 7 (HTTP). Its main capabilities include:</p>
+<ul>
+<li><b>Load-balancing algorithms</b> — round-robin, least-connections, source-IP hash, URI hash, and weighted variants.</li>
+<li><b>Health checking</b> — active TCP and HTTP checks that automatically remove failed servers from rotation.</li>
+<li><b>Session persistence</b> — stickiness based on cookies, which HAProxy can insert, rewrite or learn.</li>
+<li><b>TLS termination and pass-through</b>, with SNI-based routing.</li>
+<li><b>Access control lists (ACLs)</b> and a rich configuration language for content switching and request/response rewriting.</li>
+<li><b>Statistics and monitoring</b> via a built-in stats page, socket API and Prometheus exporter.</li>
+<li><b>Rate limiting, queuing and connection management</b> for protecting backends.</li>
+</ul>
+<h2>Architecture and performance</h2>
+<p>HAProxy uses an event-driven, non-blocking design historically built around a single process (with optional multi-threading added in later versions), which minimises context switching and memory use. It can typically handle tens of thousands of concurrent connections and saturate multi-gigabit network links on commodity hardware, which has made it a common component in front of large web applications and inside platforms such as OpenStack and Kubernetes ingress setups.</p>
+<h2>Users</h2>
+<p>Well-known users of HAProxy have included GitHub, Twitter (X), Reddit, Stack Overflow, Tumblr and Amazon Web Services, whose classic Elastic Load Balancer was reported to be based on HAProxy. It is packaged in essentially all major Linux distributions.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Load_balancing_(computing)/index.html">Load balancing (computing)</a></li>
+<li><a href="../Reverse_proxy/index.html">Reverse proxy</a></li>
+<li><a href="../Nginx/index.html">Nginx</a></li>
+<li><a href="../Envoy_(software)/index.html">Envoy</a></li>
+<li><a href="../Varnish_(software)/index.html">Varnish</a></li>
+</ul>
+</body>
+</html>

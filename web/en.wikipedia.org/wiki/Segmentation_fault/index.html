@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Segmentation fault - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.header{border-bottom:1px solid #a7d7f9;padding:10px 24px;background:#f6f6f6}
+h1{font-size:1.9em;margin:0.3em 0;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+.content{max-width:960px;margin:0 auto;padding:16px 24px}
+img.hero{max-width:60%;display:block;margin:8px auto}
+.caption{text-align:center;font-size:0.85em;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+code{background:#f8f9fa;padding:1px 4px;font-size:0.95em}
+</style>
+</head>
+<body>
+<div class="header"><strong>Wikipedia</strong> — The Free Encyclopedia</div>
+<div class="content">
+<h1>Segmentation fault</h1>
+<img class="hero" src="images/segmentation-fault.png" alt="Terminal showing a segmentation fault error message">
+<div class="caption">A shell reporting "Segmentation fault (core dumped)" on a Unix-like system.</div>
+<p>A <b>segmentation fault</b> (often shortened to <b>segfault</b>) is a specific kind of error caused by accessing memory that "does not belong" to the running program. When a program attempts to read from or write to an illegal memory location — for example dereferencing a <a href="../Null_pointer/index.html">null pointer</a> or an uninitialised or freed pointer, or overrunning a buffer — the operating system's memory protection hardware detects the fault and terminates the program. On <a href="../Unix/index.html">Unix</a>-like systems the process receives the signal SIGSEGV, and a shell may report "Segmentation fault (core dumped)"; on Windows the equivalent event is an access violation (exception code 0xC0000005).</p>
+<h2>Causes</h2>
+<p>Common causes in languages with manual memory management, such as C and C++, include:</p>
+<ul>
+<li>Dereferencing a null, wild or dangling pointer</li>
+<li>Buffer overflows and out-of-bounds array indexing</li>
+<li>Use of a pointer after its memory has been freed (use-after-free)</li>
+<li>Stack overflow, usually from unbounded recursion</li>
+<li>Attempting to write to read-only memory, such as a string literal</li>
+<li>Passing incorrectly formatted arguments to library functions, for example a non-pointer where <code>printf</code> expects an address</li>
+</ul>
+<p>Languages with automatic memory management and bounds checking (such as Java, Python and Rust in safe code) are designed to prevent segfaults in ordinary code, converting such errors into catchable exceptions instead.</p>
+<h2>Handling and debugging</h2>
+<p>By default the operating system terminates a faulting process, optionally writing a core dump that records its memory state for post-mortem analysis. Debuggers such as <a href="../GDB/index.html">GDB</a> can run a program and stop at the exact instruction that faulted, showing the offending address and backtrace; tools such as <a href="../Valgrind/index.html">Valgrind</a> and the compiler sanitizers (AddressSanitizer and related tools) detect invalid accesses earlier and with better diagnostics. Because memory corruption can also be a security vulnerability, a segfault may indicate an exploitable bug, not merely a crash.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Virtual_memory/index.html">Virtual memory</a></li>
+<li><a href="../Memory_protection/index.html">Memory protection</a></li>
+<li><a href="../Buffer_overflow/index.html">Buffer overflow</a></li>
+<li><a href="../Bus_error/index.html">Bus error</a></li>
+<li><a href="../Core_dump/index.html">Core dump</a></li>
+</ul>
+</div>
+</body>
+</html>

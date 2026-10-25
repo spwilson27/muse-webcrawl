@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ant colony optimization algorithms — Wikipedia (recreated)</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:820px;margin:0 auto;padding:24px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:1.4em}
+.hero{display:block;margin:16px auto;max-width:420px;width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:24px 0;text-align:center;color:#72777d}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;overflow-x:auto;font-size:.9em}
+</style>
+</head>
+<body>
+<h1>Ant colony optimization algorithms</h1>
+<img class="hero" src="images/ant-colony-optimization.png" alt="Illustration: artificial ants laying pheromone trails on a graph">
+<p><strong>Ant colony optimization</strong> (ACO) is a class of metaheuristic algorithms for solving combinatorial optimization problems, inspired by the foraging behaviour of real ant colonies. First proposed by Marco Dorigo in the early 1990s, ACO algorithms use a population of simple agents — "artificial ants" — that construct solutions step by step, communicating indirectly through a shared memory of artificial pheromone values.</p>
+<h2>Biological inspiration</h2>
+<p>Many ant species deposit pheromone on the ground as they travel. When foraging, ants initially wander at random; when an ant finds food it returns to the nest laying a pheromone trail. Other ants tend to follow stronger trails, reinforcing them, while pheromone on unused paths evaporates. This positive feedback, called <em>stigmergy</em>, lets the colony converge on short paths between nest and food, as dramatically shown in the double-bridge experiment.</p>
+<h2>Algorithm</h2>
+<p>In ACO, the problem is modelled as a graph. Each ant builds a complete solution by repeatedly choosing the next component with a probability influenced by (a) the pheromone value on the candidate edge and (b) a heuristic desirability (such as the inverse of distance). After all ants have built solutions, pheromone evaporates by a fixed fraction and is then deposited in proportion to solution quality:</p>
+<pre>τ(i,j) ← (1 − ρ) · τ(i,j) + Σ Δτ(i,j)</pre>
+<p>where ρ is the evaporation rate and Δτ is larger for edges used in better solutions. The balance between pheromone and heuristic influence is controlled by parameters α and β.</p>
+<h2>Variants</h2>
+<p>The original <strong>Ant System</strong> (1991) was demonstrated on the <a href="../Travelling_salesman_problem/index.html">travelling salesman problem</a>. Later variants include <strong>Ant Colony System</strong>, which adds a local pheromone update and pseudo-random proportional choice; the <strong>MAX–MIN Ant System</strong>, which bounds pheromone values and lets only the best ant deposit; and rank-based systems in which ants deposit in proportion to their ranking.</p>
+<h2>Applications</h2>
+<p>ACO has been applied to vehicle routing, job-shop scheduling, network routing (notably the AntNet protocol), protein folding, sequential ordering, and assignment problems. It belongs to the broader family of <a href="../Swarm_intelligence/index.html">swarm intelligence</a> methods, alongside particle swarm optimization and artificial bee colony algorithms.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Metaheuristic/index.html">Metaheuristic</a></li>
+<li><a href="../Swarm_intelligence/index.html">Swarm intelligence</a></li>
+<li><a href="../Travelling_salesman_problem/index.html">Travelling salesman problem</a></li>
+</ul>
+</body>
+</html>

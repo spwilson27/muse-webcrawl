@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HL7 — Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:820px;margin:0 auto;padding:24px;color:#202122;background:#fff;line-height:1.55}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-size:1.35em;border-bottom:1px solid #c8ccd1;padding-bottom:3px;margin-top:1.2em}
+p{margin:0.55em 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:14px auto;max-width:420px;width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:10px;text-align:center;color:#72777d}
+.infobox{float:right;margin:0 0 12px 16px;width:250px;background:#f8f9fa;border:1px solid #a2a9b1;padding:8px 10px;font-size:0.88em}
+.infobox th{text-align:left;background:#eaecf0;padding:3px 5px}
+.infobox td{padding:3px 5px}
+ul{margin:0.4em 0 0.4em 1.3em;padding:0}
+code{font-family:monospace;background:#f8f9fa;padding:1px 3px}
+pre{font-family:monospace;background:#f8f9fa;padding:8px;border:1px solid #c8ccd1;font-size:0.85em;overflow-x:auto}
+</style>
+</head>
+<body>
+<h1>HL7</h1>
+<img class="hero" src="images/hl7.png" alt="An example HL7 version 2 message with its segments separated by carriage returns">
+<div class="infobox">
+<table>
+<tr><th colspan="2">Health Level Seven (HL7)</th></tr>
+<tr><th>Founded</th><td>1987</td></tr>
+<tr><th>Type</th><td>Standards development organisation</td></tr>
+<tr><th>Focus</th><td>Healthcare information interoperability</td></tr>
+<tr><th>Headquarters</th><td>Ann Arbor, Michigan, US</td></tr>
+<tr><th>Key standards</th><td>HL7 v2, v3, CDA, FHIR</td></tr>
+</table>
+</div>
+<p><b>Health Level Seven</b> or <b>HL7</b> refers to a set of international standards for the transfer of clinical and administrative data between software applications used by various healthcare providers, and by extension to the not-for-profit standards development organisation that produces them, Health Level Seven International. The name refers to the seventh ("application") layer of the OSI model. HL7 standards are the most widely used healthcare interoperability standards in the world.</p>
+<h2>HL7 version 2</h2>
+<p>HL7 version 2, first published in the late 1980s and refined through many revisions (2.1 to 2.9), is the most widely implemented healthcare messaging standard in existence. Messages are human-readable text composed of segments, each identified by a three-letter code and divided into fields by the pipe character. An admission message, for example, contains an MSH (message header) segment, an EVN (event) segment and a PID (patient identification) segment:</p>
+<pre>MSH|^~\&amp;|ADT1|HOSPITAL|LAB|HOSPITAL|202401011030||ADT^A01|MSG00001|P|2.5
+PID|1||123456^^^HOSPITAL^MR||DOE^JOHN||19800101|M|||123 MAIN ST^^ANYTOWN^CA^90210</pre>
+<p>Version 2 is famously flexible — fields are optional, sites routinely add custom "Z-segments", and two nominally conformant systems often cannot interoperate without site-specific mapping in an interface engine. This flexibility explains both its ubiquity and the large integration industry built around it.</p>
+<h2>HL7 version 3 and CDA</h2>
+<p>Version 3, developed from the late 1990s, attempted to replace v2's informal approach with a rigorous model-based methodology built on a Reference Information Model (RIM). Its complexity limited adoption for messaging, but its document architecture offshoot, the Clinical Document Architecture (CDA), became widely used for exchanging clinical documents such as discharge summaries and, in the United States, the Consolidated CDA (C-CDA) templates mandated by federal health IT certification.</p>
+<h2>FHIR</h2>
+<p>Fast Healthcare Interoperability Resources (<a href="../FHIR/index.html">FHIR</a>, pronounced "fire"), first drafted in 2011 and published as a standard in 2014, is HL7's modern standard built on web technologies: modular "resources" (Patient, Observation, MedicationRequest and so on), RESTful APIs, and JSON and XML representations. FHIR has seen rapid global adoption, driven by smartphone health apps, vendor APIs and regulation such as the US 21st Century Cures Act rules requiring certified health IT to expose FHIR APIs. Argonaut, SMART on FHIR and bulk-data ("Flat FHIR") specifications build on it.</p>
+<h2>The organisation</h2>
+<p>Health Level Seven International, founded in 1987 and headquartered in Ann Arbor, Michigan, is an ANSI-accredited standards development organisation with affiliated organisations in more than 30 countries. Its standards are developed by volunteer work groups and balloted by its membership of providers, vendors, consultants and governments. Until 2013 HL7 standards were available only to members or for purchase; they are now freely licensed.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../FHIR/index.html">FHIR</a></li>
+<li><a href="../DICOM/index.html">DICOM</a></li>
+<li><a href="../Electronic_health_record/index.html">Electronic health record</a></li>
+<li><a href="../Clinical_Document_Architecture/index.html">Clinical Document Architecture</a></li>
+<li><a href="../Health_informatics/index.html">Health informatics</a></li>
+</ul>
+</body>
+</html>

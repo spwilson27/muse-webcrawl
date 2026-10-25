@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Petri net - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:10px 20px}
+header h1{font-size:1.6em;margin:0;font-weight:normal}
+main{max-width:960px;margin:0 auto;padding:20px;line-height:1.6}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 10px 15px;width:260px;font-size:0.9em}
+.hero{width:100%;height:auto;background:#eaecf0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.ref{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<header><h1>Petri net</h1></header>
+<main>
+<div class="infobox">
+<img class="hero" src="images/petri-net.png" alt="Diagram of a Petri net: circles (places) holding tokens connected by arrows to rectangles (transitions)">
+<p><b>Devised by:</b> Carl Adam Petri (1962)</p>
+<p><b>Field:</b> Concurrency theory, formal methods</p>
+<p><b>Components:</b> Places, transitions, arcs, tokens</p>
+</div>
+<p>A <b>Petri net</b>, also known as a <b>place/transition (PT) net</b>, is a mathematical modelling language for distributed, concurrent systems. It was invented by the German mathematician <a href="../Carl_Adam_Petri/index.html">Carl Adam Petri</a> in his 1962 doctoral dissertation, <i>Kommunikation mit Automaten</i> ("Communication with Automata").</p>
+<h2>Structure</h2>
+<p>A Petri net is a directed bipartite graph whose nodes are <b>places</b> (drawn as circles), representing conditions or resources, and <b>transitions</b> (drawn as bars or rectangles), representing events. Directed <b>arcs</b> connect places to transitions and transitions to places, never two nodes of the same kind. Places may hold <b>tokens</b> (dots); the distribution of tokens over the places is called a <b>marking</b> and represents the current state of the system.</p>
+<p>A transition is <i>enabled</i> when every input place holds at least as many tokens as the weight of the connecting arc. Firing an enabled transition removes tokens from its input places and adds tokens to its output places, modelling a local change of state. Firing is nondeterministic and asynchronous, which makes Petri nets well suited to describing concurrency, synchronisation, resource sharing, deadlock and mutual exclusion.</p>
+<h2>Analysis and extensions</h2>
+<p>Key questions about a net include reachability (can a given marking occur?), boundedness (can any place accumulate tokens without limit?) and liveness (can every transition always eventually fire?). The reachability problem was shown decidable in 1981 and is now known to be Ackermann-complete. Extensions such as coloured Petri nets, timed Petri nets and stochastic Petri nets attach data, time or probabilities to the basic model; Petri nets are widely used in workflow management, protocol verification, manufacturing systems and systems biology.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../State_diagram/index.html">State diagram</a></li>
+<li><a href="../Finite-state_machine/index.html">Finite-state machine</a></li>
+<li><a href="../Concurrency_(computer_science)/index.html">Concurrency</a></li>
+</ul>
+<p class="ref">From Wikipedia, the free encyclopedia. Recreated from memory.</p>
+</main>
+</body>
+</html>

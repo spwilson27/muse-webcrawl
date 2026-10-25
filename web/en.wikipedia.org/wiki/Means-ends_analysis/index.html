@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Means-ends analysis - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:2em auto;max-width:820px;padding:0 1em;color:#202122;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a7d7f9;padding-bottom:.2em}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.4em}
+img.hero{display:block;max-width:100%;margin:1em auto;background:#f8f9fa;border:1px solid #a2a9b1;padding:2em;text-align:center;color:#72777d}
+table.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;margin:0 0 1em 1em;padding:.5em;font-size:.9em}
+a{color:#0645ad}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Means-ends analysis</h1>
+<p><b>Means-ends analysis</b> (<b>MEA</b>) is a problem-solving technique used in artificial intelligence and cognitive psychology for limiting search in artificial intelligence programs. It works by detecting the difference between the current state and the goal state, then selecting an operator (action) known to reduce that difference. It was a central component of the <a href="#">General Problem Solver</a> (GPS), the influential 1959 program by <a href="#">Allen Newell</a>, J. C. Shaw, and <a href="#">Herbert A. Simon</a>.</p>
+<img class="hero" src="images/means-ends-analysis.png" alt="Placeholder image: flow diagram comparing current state and goal state with an operator bridging them">
+<h2>How it works</h2>
+<p>The solver maintains a "difference table" linking differences to operators that reduce them. The process proceeds recursively:</p>
+<ol>
+<li>Compare the current state with the goal state and identify the most important difference.</li>
+<li>Select an operator relevant to reducing that difference.</li>
+<li>If the operator's preconditions are not met in the current state, set a new subgoal of satisfying them, and solve that subgoal (again by means-ends analysis).</li>
+<li>Apply the operator and repeat until the goal state is reached.</li>
+</ol>
+<p>This recursive goal stacking allows problems to be decomposed: when an obstacle blocks progress toward the main goal, the solver works on the obstacle as a subgoal, then returns to the main task.</p>
+<h2>History and influence</h2>
+<p>GPS demonstrated that a single, domain-general heuristic could solve puzzles such as the Tower of Hanoi, logic proofs, and mission-and-cannibals problems. Newell and Simon argued in <i>Human Problem Solving</i> (1972) that human protocol data showed people using the same strategy, making MEA an early bridge between AI and cognitive psychology. Means-ends analysis underlies later systems including STRIPS planners, Soar, and many hierarchical task network planners, and the idea of working backward from goal differences appears in domains from route planning to instructional design ("backward design").</p>
+<h2>Limitations</h2>
+<p>Interacting subgoals can defeat simple means-ends analysis: an operator may reduce one difference while increasing another (the classic example being the Sussman anomaly in block stacking). Pure MEA also relies on having an adequate difference–operator table, which may be difficult to construct for real-world domains.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="#">General Problem Solver</a></li>
+<li><a href="#">Heuristic</a></li>
+<li><a href="#">STRIPS</a></li>
+<li><a href="#">Problem solving</a></li>
+</ul>
+<p class="small">Recreated from memory as part of the muse-webcrawl project.</p>
+</body>
+</html>

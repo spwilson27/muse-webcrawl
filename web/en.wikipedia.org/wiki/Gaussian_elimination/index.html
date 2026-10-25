@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gaussian elimination - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;margin:0 0 4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+.eq{font-family:'Latin Modern Math',Georgia,serif;background:#f8f9fa;border:1px solid #eaecf0;padding:10px 14px;margin:10px 0;overflow-x:auto}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.hero{display:block;margin:12px auto;max-width:420px;width:100%}
+.caption{text-align:center;font-size:.85em;color:#54595d}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Gaussian elimination</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/gaussian-elimination.png" alt="A matrix being reduced step by step to upper triangular row echelon form">
+<p class="caption">Successive row operations reduce a matrix to row echelon form.</p>
+<p><b>Gaussian elimination</b>, also known as <b>row reduction</b>, is an algorithm for solving systems of linear equations. It consists of a sequence of operations performed on the corresponding matrix of coefficients. This method can also be used to compute the rank of a matrix, the determinant of a square matrix, and the inverse of an invertible matrix. The method is named after Carl Friedrich Gauss (1777–1855), although a version of it was described in the Chinese mathematical text <i>The Nine Chapters on the Mathematical Art</i> many centuries earlier.</p>
+<h2>Overview</h2>
+<p>To perform row reduction on a matrix, one uses a sequence of elementary row operations to modify the matrix until the lower left-hand corner of the matrix is filled with zeros, as much as possible. There are three types of elementary row operations: swapping two rows, multiplying a row by a nonzero number, and adding a multiple of one row to another row. Using these operations, a matrix can always be transformed into an upper triangular matrix, and in fact into row echelon form. Once all of the leading coefficients (the leftmost nonzero entry in each row, called a pivot) are 1, and every column containing a leading coefficient has zeros elsewhere, the matrix is said to be in reduced row echelon form.</p>
+<h2>Example</h2>
+<p>Suppose the goal is to find and describe the set of solutions to the following system of linear equations:</p>
+<div class="eq">2x + y − z = 8; &nbsp; −3x − y + 2z = −11; &nbsp; −2x + y + 2z = −3.</div>
+<p>Writing the coefficients as an augmented matrix and applying row operations produces a triangular system, from which back-substitution gives the unique solution x = 2, y = 3, z = −1.</p>
+<h2>History</h2>
+<p>The method appears in Chapter Eight of the Chinese text <i>The Nine Chapters on the Mathematical Art</i>, dating to roughly the second century CE, where it is applied to problems with up to five equations. In Europe, Isaac Newton described the method in lecture notes of 1670 that were published posthumously in 1707. Carl Friedrich Gauss developed the method further in connection with least squares and astronomical orbit calculations, and it became standard in geodesy and numerical analysis during the nineteenth century. The variant producing reduced row echelon form is associated with Wilhelm Jordan (1888), though it was also described by Bernard Clasen in the same year.</p>
+<h2>Applications and efficiency</h2>
+<p>Gaussian elimination is a fundamental tool of <a href="../Linear_algebra/index.html">linear algebra</a>. It is closely related to LU decomposition, in which a matrix is factored into lower and upper triangular factors; this is the form used in most numerical software because the factorisation can be reused for many right-hand sides. In exact arithmetic the algorithm requires roughly n³/3 arithmetic operations for an n × n system. For large sparse systems, iterative methods are usually preferred. Numerical stability is improved by partial pivoting — interchanging rows so that the largest available pivot is used at each step — and this is the standard practice in floating-point implementations. The method also underlies the solution of systems in <a href="../Ordinary_least_squares/index.html">ordinary least squares</a> regression via the normal equations.</p>
+<p class="small">See also: <a href="../System_of_linear_equations/index.html">System of linear equations</a> · <a href="../LU_decomposition/index.html">LU decomposition</a> · <a href="../Gauss%E2%80%93Jordan_elimination/index.html">Gauss–Jordan elimination</a></p>
+</div>
+</body>
+</html>

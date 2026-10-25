@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Word2vec - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; background: #fff; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; margin-top: 1.2em; }
+img.hero { display: block; max-width: 300px; margin: 10px auto; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 4px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Word2vec</h1>
+<img class="hero" src="images/word2vec.png" alt="Diagram of word vectors showing semantic relationships in vector space">
+<p><b>Word2vec</b> is a technique in natural language processing (NLP) for obtaining vector representations of words. These vectors capture semantic relationships: words with similar meanings are located close to one another in vector space, and analogies can be computed with vector arithmetic — famously, <i>king − man + woman ≈ queen</i>.</p>
+<h2>History</h2>
+<p>Word2vec was developed by a team of researchers led by Tomáš Mikolov at Google and published in two papers in 2013. Google subsequently released a model pre-trained on roughly 100 billion words of Google News, containing 300-dimensional vectors for 3 million words and phrases.</p>
+<h2>Models</h2>
+<p>Two model architectures were proposed:</p>
+<ul>
+<li><b>Continuous bag-of-words (CBOW)</b> — predicts the current word from a window of surrounding context words.</li>
+<li><b>Skip-gram</b> — predicts surrounding words given the current word; works well with small training data and represents rare words better.</li>
+</ul>
+<p>Both models are shallow, two-layer neural networks trained with techniques such as negative sampling or hierarchical softmax to make training efficient on large corpora.</p>
+<h2>Parameters</h2>
+<p>Important hyperparameters include the dimensionality of the vectors (typically 100–300), the size of the context window, the number of training epochs, the minimum word count, and the downsampling of frequent words.</p>
+<h2>Applications</h2>
+<p>Word embeddings from word2vec have been used for machine translation, sentiment analysis, named entity recognition, information retrieval, and recommender systems. The approach influenced later embedding methods such as GloVe and fastText, and more broadly the field of representation learning in NLP.</p>
+</body>
+</html>

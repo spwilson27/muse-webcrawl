@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Longest common subsequence - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 960px; padding: 0 1em; color: #202122; line-height: 1.6; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.5em; }
+a { color: #0645ad; text-decoration: none; }
+.hero { display: block; margin: 1em auto; max-width: 100%; }
+.formula { text-align: center; font-style: italic; }
+code { background: #f8f9fa; padding: 0 0.3em; }
+</style>
+</head>
+<body>
+<h1>Longest common subsequence</h1>
+<img class="hero" src="images/longest_common_subsequence.png" alt="A dynamic programming table aligning two sequences with the common subsequence highlighted">
+<p>The <b>longest common subsequence</b> (<b>LCS</b>) problem is the problem of finding the longest subsequence common to all sequences in a set of sequences (often just two sequences). A subsequence is obtained by deleting some or no elements of a sequence without changing the order of the remaining elements; unlike substrings, subsequences need not occupy consecutive positions. For example, the longest common subsequence of "ABCBDAB" and "BDCABA" is "BCBA", of length 4.</p>
+<h2>Dynamic programming solution</h2>
+<p>For two sequences of lengths m and n the classic dynamic programming solution fills an (m+1) × (n+1) table using the recurrence: if the current characters match, LCS(i,j) = LCS(i−1, j−1) + 1; otherwise LCS(i,j) = max(LCS(i−1, j), LCS(i, j−1)). This runs in O(mn) time, and the subsequence itself is recovered by backtracking through the table. Memory can be reduced to O(min(m, n)) if only the length is needed. Hunt–Szymanski and Hirschberg's algorithm give improvements for special cases and for reconstructing the answer in linear space.</p>
+<h2>Applications</h2>
+<p>The LCS problem underlies the <code>diff</code> utility for comparing files, revision control systems, and DNA sequence comparison in bioinformatics, where it is related to sequence alignment and edit distance. The problem becomes NP-hard for an arbitrary number of sequences over a general alphabet.</p>
+<h2>See also</h2>
+<ul>
+<li>Longest increasing subsequence</li>
+<li>Edit distance</li>
+<li>Sequence alignment</li>
+</ul>
+</body>
+</html>

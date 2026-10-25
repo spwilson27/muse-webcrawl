@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LR parser - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:2px;font-weight:normal;margin-top:28px}
+.hero{display:block;width:100%;max-width:640px;height:220px;background:#eaecf0;border:1px solid #c8ccd1;margin:12px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.ref{font-size:12px;color:#54595d}
+code{font-family:'Courier New',monospace;background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>LR parser</h1>
+<img class="hero" src="images/LR_parser.png" alt="Diagram of a bottom-up LR parser with input buffer, stack and parse table">
+<p>An <b>LR parser</b> is a type of bottom-up parser for deterministic context-free languages, named for its method: it reads input from <b>L</b>eft to right, and constructs a <b>R</b>ightmost derivation in reverse. LR parsers are driven by a finite-state control and a parse table, operate in linear time, and can detect a syntax error as soon as it is impossible for the input to continue into a valid sentence. They underlie parser generators such as yacc, Bison and many compiler front ends.</p>
+<h2>How it works</h2>
+<p>The parser maintains a stack of states and grammar symbols and an input buffer. At each step it consults the ACTION table for the current state and next input token: <b>shift</b> pushes the token and a new state onto the stack; <b>reduce</b> pops the symbols of the right-hand side of a production, pushes the left-hand-side nonterminal, and follows the GOTO table. Parsing succeeds when an <b>accept</b> action is reached for the end-of-input marker.</p>
+<h2>Variants</h2>
+<p>Variants differ in how much lookahead and context the table construction uses. <b>LR(0)</b> tables use no lookahead and handle only a small class of grammars. <b>SLR</b> (simple LR) improves on LR(0) using FOLLOW sets. <b>LALR(1)</b> merges LR(1) states with identical cores — this is the method yacc implements, balancing power with modest table size. <b>Canonical LR(1)</b>, introduced in Donald Knuth's 1965 paper "On the translation of languages from left to right", is the most powerful and generates the largest tables; practical refinements include IELR and the GLR algorithm, which handles ambiguous grammars by forking the parse. The languages accepted by deterministic LR parsers (the DCFLs) properly include those handled by LL parsers, which is why LR methods dominate programming-language parsing where generated parsers are acceptable.</p>
+<p class="ref">See also: <a href="../LINPACK/index.html">LINPACK</a> (unrelated); Yacc; LALR parser; Bottom-up parsing; Context-free grammar.</p>
+</div>
+</body>
+</html>

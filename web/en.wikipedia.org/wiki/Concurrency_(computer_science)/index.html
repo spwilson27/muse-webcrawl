@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Concurrency (computer science) - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 1.2em; font-weight: normal; }
+h3 { font-size: 1.15em; margin-top: 1em; }
+p { line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 16px 20px; width: 240px; font-size: 0.9em; }
+.infobox img { max-width: 100%; }
+code { background: #f0f0f0; padding: 1px 4px; font-size: 0.95em; }
+ul { line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Concurrency (computer science)</h1>
+<p>In computer science, <b>concurrency</b> is the ability of different parts or units of a program, algorithm, or problem to be executed out-of-order or in partial order, without affecting the final outcome. This allows for parallel execution of the concurrent units, which can significantly improve overall speed of the execution in multi-processor and multi-core systems. In more technical terms, concurrency refers to the decomposability of a program, algorithm, or problem into order-independent or partially-ordered components or units of computation.</p>
+<div class="infobox"><img src="images/concurrency.png" alt="Diagram of concurrent threads interleaving on a processor"><p>Concurrent computations may execute sequentially by interleaving on a single processor, or in true parallel on multiple cores. (placeholder image)</p></div>
+<p>According to Rob Pike, concurrency is the composition of independently executing computations, and concurrency is not parallelism: concurrency is about dealing with lots of things at once, while parallelism is about doing lots of things at once. Concurrency is a property of a program's structure; parallelism is a property of its execution.</p>
+<h2>History</h2>
+<p>The study of concurrent systems dates to the 1960s, with Edsger W. Dijkstra credited with the first paper in the field, &quot;Cooperating Sequential Processes&quot; (1965), which introduced the mutual exclusion problem and the semaphore. The development of operating systems, time-sharing, and later multi-core processors made concurrency a central concern of computer science. C. A. R. Hoare's Communicating Sequential Processes (CSP, 1978) and Robin Milner's Calculus of Communicating Systems (CCS) provided formal calculi for reasoning about concurrent behaviour.</p>
+<h2>Concepts</h2>
+<h3>Processes and threads</h3>
+<p>A process is an instance of a program in execution with its own memory space, while threads are units of execution within a process that share memory. Concurrent programs may use several processes (multiprocessing) or several threads (multithreading). Because shared memory introduces the possibility of interference, concurrent programming requires coordination mechanisms.</p>
+<h3>Race conditions</h3>
+<p>A race condition occurs when the behaviour of a program depends on the relative timing of concurrent operations &mdash; for example, when two threads read and update a shared variable and the final value depends on the order in which their accesses interleave. A sequence of operations that must be executed atomically relative to other threads is called a critical section.</p>
+<h3>Synchronization</h3>
+<p>Synchronization primitives include <b>locks</b> (mutexes), <b>semaphores</b>, <b>monitors</b>, condition variables, barriers, and atomic operations. Higher-level approaches include message passing, in which processes communicate by exchanging messages, as in the actor model and CSP-style channels; this avoids shared state and the locks it requires.</p>
+<h3>Deadlock</h3>
+<p>A deadlock is a state in which each member of a group of processes is waiting for another member to release a resource. The four Coffman conditions &mdash; mutual exclusion, hold and wait, no preemption, and circular wait &mdash; must all hold simultaneously for deadlock to occur; breaking any one of them prevents deadlock.</p>
+<h2>Models and theory</h2>
+<p>Formal models of concurrency include process calculi (CSP, CCS, the &pi;-calculus), Petri nets, the actor model, and dataflow models. A fundamental theoretical question is the notion of consistency or memory model: sequential consistency, proposed by Leslie Lamport, requires that the result of any execution be the same as if operations of all processors were executed in some sequential order.</p>
+<h2>Performance limits</h2>
+<p>Amdahl's law bounds the speedup obtainable from parallelising a program: if a fraction <i>p</i> of the work can be parallelised, the maximum speedup is 1 / ((1&minus;p) + p/n) for <i>n</i> processors. Gustafson's law gives a more optimistic accounting for scaled workloads. Concurrency also underlies techniques such as asynchronous I/O, event loops, and reactive programming, where a single thread juggles many tasks by never blocking.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Parallel_computing/index.html">Parallel computing</a></li>
+<li><a href="../Multithreading_(computer_architecture)/index.html">Multithreading</a></li>
+<li><a href="../Deadlock/index.html">Deadlock</a></li>
+<li><a href="../Mutex/index.html">Mutex</a></li>
+</ul>
+</div>
+</body>
+</html>

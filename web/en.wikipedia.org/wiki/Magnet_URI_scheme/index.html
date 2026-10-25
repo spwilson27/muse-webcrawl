@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Magnet URI scheme - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a2a9b1;border-right:1px solid #a2a9b1}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-weight:normal}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal;margin-top:28px}
+p{font-family:sans-serif;font-size:14px;line-height:1.6}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:16px auto;max-width:420px;border:1px solid #c8ccd1;background:#eaecf0;padding:12px;text-align:center;font-family:sans-serif;font-size:12px;color:#54595d}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-family:sans-serif;font-size:12px;margin:0 0 16px 16px;padding:8px}
+.infobox th{text-align:left;padding:2px 6px}
+.infobox td{padding:2px 6px}
+ul{font-family:sans-serif;font-size:14px;line-height:1.6}
+code{font-size:12px;word-break:break-all}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Magnet URI scheme</h1>
+<img class="hero" src="images/magnet-uri-scheme.png" alt="Diagram of a magnet link identifying a file by its cryptographic hash">
+<div class="infobox">
+<table>
+<tr><th>Type</th><td>URI scheme / de facto standard</td></tr>
+<tr><th>Introduced</th><td>2002</td></tr>
+<tr><th>Identifies</th><td>Content by cryptographic hash rather than location</td></tr>
+<tr><th>Primary use</th><td>BitTorrent and other peer-to-peer networks</td></tr>
+</table>
+</div>
+<p>The <b>magnet URI scheme</b> defines a format for links that identify a resource — typically a file available through a peer-to-peer network — by its content, using a cryptographic hash value, rather than by its location on a server. Clicking a <b>magnet link</b> (beginning <code>magnet:?xt=urn:btih:…</code>) tells a client application what content to look for; the client then discovers sources for that content through mechanisms such as distributed hash tables and peer exchange.</p>
+<h2>Format</h2>
+<p>A magnet link is a query string of parameters. The essential one is <code>xt</code> ("exact topic"), whose value is a URN containing the content hash — for BitTorrent, the SHA-1 hash of the torrent's info dictionary (<code>urn:btih:</code>), encoded in hexadecimal or base32, with newer v2 torrents using SHA-256 (<code>urn:btihm:</code>). Optional parameters add a display name (<code>dn</code>), file length (<code>xl</code>), tracker addresses (<code>tr</code>) and keyword or source hints.</p>
+<h2>History and significance</h2>
+<p>The scheme was developed from work by Bram Cohen and others in 2002, drawing on earlier hash-based linking proposals in the Gnutella community. Magnet links rose to prominence as torrent index sites moved away from hosting .torrent files: in 2012 The Pirate Bay replaced most hosted torrents with magnet links, dramatically shrinking the site's data footprint and making indexes harder to suppress, since a magnet link contains no copyrighted data itself and the actual metadata is fetched from the swarm via protocols such as µTP and the metadata exchange extension (BEP 9). Magnet links are supported by all major BitTorrent clients and also underpin "trackerless" operation through the Mainline DHT.</p>
+<p>See also: <a href="../BitTorrent/index.html">BitTorrent</a>, <a href="../Distributed_hash_table/index.html">Distributed hash table</a>, <a href="../The_Pirate_Bay/index.html">The Pirate Bay</a>, <a href="../Uniform_Resource_Identifier/index.html">Uniform Resource Identifier</a>.</p>
+</div>
+</body>
+</html>

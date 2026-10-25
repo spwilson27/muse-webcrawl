@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Late binding - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; background: #fff; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 14px 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #eef; padding: 30px 10px; }
+.caption { font-size: 12px; color: #54595d; font-family: sans-serif; }
+ul { margin-top: 4px; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px; overflow-x: auto; font-size: 13px; }
+</style>
+</head>
+<body>
+<h1>Late binding</h1>
+<p>In computer programming, <b>late binding</b> — also called <b>dynamic binding</b> or <b>dynamic linkage</b> — is a mechanism in which the method, function, or property being called on an object is looked up by name at run time rather than being fixed at compile time. Late binding is closely associated with dynamic typing, polymorphism, and object-oriented programming, where the same message sent to objects of different classes can invoke different implementations. By contrast, in <b>early binding</b> (or static binding) the association between a name and its implementation is determined when the code is compiled or linked.</p>
+<div class="hero"><img src="images/Late_binding.png" alt="Diagram showing a method call being resolved to different implementations at run time"><p class="caption">With late binding, the implementation invoked is selected when the program runs.</p></div>
+<h2>Uses</h2>
+<p>Late binding enables behaviour such as:</p>
+<ul>
+<li><b>Polymorphism:</b> a variable declared with a base type can hold objects of any subclass, and calls to an overridden (virtual) method dispatch to the subclass implementation at run time, typically via a virtual method table.</li>
+<li><b>Duck typing:</b> in dynamically typed languages such as Python, Ruby, and JavaScript, any object with the right method can be used, regardless of its class.</li>
+<li><b>Reflection and plug-ins:</b> programs can load classes or components unknown at compile time and invoke their members by name, as in COM Automation, where <i>IDispatch</i> calls are resolved at run time.</li>
+<li><b>Dynamic libraries:</b> functions in shared libraries may be linked when the program starts or even when first called (lazy binding), rather than at compile time.</li>
+</ul>
+<h2>Trade-offs</h2>
+<p>Late binding offers flexibility and extensibility, and supports features such as hot-swapping components and scripting, but it generally carries a run-time cost: method lookups add overhead, and the compiler cannot perform some optimisations or type checks, so errors that early binding would catch at compile time may surface only when the program runs. In practice, many languages and platforms mix both strategies — for example, C++ uses early binding by default and late binding for <i>virtual</i> functions, while Java binds instance methods dynamically by default and resolves overloaded methods at compile time.</p>
+<h2>History</h2>
+<p>The term "late binding" gained currency with the rise of object-oriented languages such as Smalltalk in the 1970s, in which all message sends are dynamically dispatched. It was widely popularised in the 1990s through Microsoft's Component Object Model (COM) and Visual Basic documentation, where late binding described creating and calling objects (for example, through <i>CreateObject</i> and <i>IDispatch</i>) without a compile-time reference to their type libraries.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Dynamic_dispatch/index.html">Dynamic dispatch</a></li>
+<li><a href="../Virtual_method_table/index.html">Virtual method table</a></li>
+<li><a href="../Polymorphism_(computer_science)/index.html">Polymorphism (computer science)</a></li>
+<li><a href="../Duck_typing/index.html">Duck typing</a></li>
+<li><a href="../Reflection_(computer_programming)/index.html">Reflection (computer programming)</a></li>
+<li><a href="../Linker_(computing)/index.html">Linker (computing)</a></li>
+</ul>
+</body>
+</html>

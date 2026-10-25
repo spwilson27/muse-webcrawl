@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Postfix - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+p{line-height:1.6}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:16px auto;max-width:420px;width:100%}
+.caption{text-align:center;font-size:.85em;color:#54595d;margin-top:-8px;margin-bottom:16px}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px 14px;margin:0 0 16px 20px;font-size:.9em}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+ul{line-height:1.6}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Postfix</h1>
+<img class="hero" src="images/postfix.png" alt="Diagram of mail flowing through a Postfix server">
+<p class="caption">Postfix routes and delivers electronic mail between servers</p>
+<div class="infobox">
+<table>
+<tr><th>Developer</th><td>Wietse Venema</td></tr>
+<tr><th>Initial release</th><td>1998</td></tr>
+<tr><th>Written in</th><td>C</td></tr>
+<tr><th>Type</th><td>Mail transfer agent</td></tr>
+<tr><th>Licence</th><td>IBM Public License / Eclipse Public License</td></tr>
+</table>
+</div>
+<p><b>Postfix</b> is a free and open-source mail transfer agent (MTA) that routes and delivers electronic mail. It was written by Wietse Venema at the IBM Thomas J. Watson Research Center and first released in 1998 under the name <i>VMailer</i>, later IBM Secure Mailer, before being renamed Postfix. It was designed as a faster, easier to administer, and more secure alternative to the then-dominant Sendmail program, and it has become one of the most widely deployed mail servers on the internet, running on a large share of surveyed mail servers together with Exim.</p>
+<h2>Architecture</h2>
+<p>Unlike monolithic mail programs, Postfix is built from many small cooperating daemon processes, each performing a specific task with the least privilege necessary: the <code>smtpd</code> daemon receives mail over <a href="../Simple_Mail_Transfer_Protocol/index.html">SMTP</a>, the queue manager (<code>qmgr</code>) schedules deliveries, <code>smtp</code> sends mail to other servers, and <code>local</code> delivers to local mailboxes. The master daemon starts and supervises these processes. This design limits the damage from any single compromised component and makes the system notably robust under load.</p>
+<h2>Features</h2>
+<ul>
+<li>Compatibility with Sendmail-style configuration, aliases, and mailbox formats, easing migration</li>
+<li>Extensive anti-spam controls, address rewriting, and support for external content filters ("milters")</li>
+<li>Support for SMTPUTF8, TLS encryption, DANE, and multiple databases for lookup tables (LDAP, MySQL, PostgreSQL, SQLite)</li>
+<li>Virtual domain hosting and per-domain transport routing</li>
+</ul>
+<p>Postfix runs on most Unix-like operating systems and is the default mail transfer agent on several Linux distributions and on macOS Server. It is often paired with the Dovecot IMAP/POP3 server to provide a complete mail system.</p>
+<p class="small">See also: <a href="../Mail_transfer_agent/index.html">Mail transfer agent</a> · <a href="../Sendmail/index.html">Sendmail</a> · <a href="../Simple_Mail_Transfer_Protocol/index.html">Simple Mail Transfer Protocol</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Direct memory access - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;font-size:1.4em;margin-top:1.2em}
+.hero{display:block;margin:16px auto;max-width:480px;width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:40px 0;text-align:center;color:#54595d;font-style:italic}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Direct memory access</h1>
+<img class="hero" src="images/direct-memory-access.png" alt="Diagram of a DMA controller transferring data between a peripheral and main memory">
+<p><b>Direct memory access</b> (<b>DMA</b>) is a feature of computer systems that allows certain hardware subsystems to access main system memory independently of the central processing unit (CPU). Without DMA, when the CPU uses programmed input/output, it is typically fully occupied for the entire duration of the read or write operation, and is thus unavailable to perform other work.</p>
+<h2>Principle</h2>
+<p>With DMA, the CPU first initiates the transfer, then it does other operations while the transfer is in progress, and it finally receives an <a href="../Interrupt/index.html">interrupt</a> from the DMA controller (DMAC) when the operation is done. This feature is useful at any time that the CPU cannot keep up with the rate of data transfer, or when the CPU needs to perform work while waiting for a relatively slow I/O data transfer.</p>
+<p>Many hardware systems use DMA, including disk drive controllers, graphics cards, network cards and sound cards. DMA is also used for intra-chip data transfer in multicore processors. Computers that have DMA channels can transfer data to and from devices with much less CPU overhead than computers without DMA channels. Similarly, a processing element inside a multicore processor can transfer data to and from its local scratchpad memory without occupying its processor time, allowing computation and data transfer to proceed in parallel.</p>
+<h2>Modes of operation</h2>
+<p>Common DMA transfer modes include <b>burst mode</b>, in which the controller takes over the bus until the whole block is transferred; <b>cycle stealing mode</b>, in which the controller transfers one byte or word per bus cycle interleaved with CPU access; and <b>transparent mode</b>, in which transfers occur only when the CPU is not using the bus. In modern systems, peripherals often perform "bus mastering" DMA themselves rather than relying on a central controller.</p>
+<h2>Cache coherency</h2>
+<p>Because DMA writes bypass the CPU cache, systems must ensure cache coherency — either through hardware snooping or by software flushing and invalidating cache lines around DMA buffers. IOMMU hardware can additionally remap and protect DMA addresses, isolating devices for security and virtualisation.</p>
+<p><i>See also: <a href="../Device_driver/index.html">Device driver</a>, <a href="../Interrupt/index.html">Interrupt</a>, <a href="../Memory-mapped_I/O/index.html">Memory-mapped I/O</a></i></p>
+</body>
+</html>

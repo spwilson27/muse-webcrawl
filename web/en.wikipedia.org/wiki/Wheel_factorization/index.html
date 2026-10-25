@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wheel factorization - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:760px;margin:2em auto;padding:0 1em;color:#222}h1{border-bottom:2px solid #333}h2{border-bottom:1px solid #aaa}img.hero{display:block;width:320px;height:180px;background:#ddd;object-fit:cover}small{color:#666}a{color:#0645ad}</style>
+</head>
+<body>
+<h1>Wheel factorization</h1>
+<p><b>Wheel factorization</b> is a method for generating integers that are not divisible by a given set of small primes, used to speed up trial division and prime sieving. It is a generalisation of the simple observation that, after 2, every prime is odd, so when searching for primes one need only test odd numbers.</p>
+<img class="hero" src="images/Wheel_factorization.png" alt="Diagram of a wheel with spokes marking residues modulo 30">
+<h2>How it works</h2>
+<p>Given the first few primes, say 2, 3 and 5, every integer coprime to 30 must be congruent to one of 1, 7, 11, 13, 17, 19, 23 or 29 modulo 30. These residues repeat with period 30, forming a "wheel" of spokes: one turns the wheel by adding the successive gaps (6, 4, 2, 4, 2, 4, 6, 2) to generate candidates. All primes greater than 5 appear among these candidates, though many composites do too — the wheel merely eliminates multiples of 2, 3 and 5 without any division.</p>
+<p>A wheel based on the first <i>k</i> primes has φ(<i>p</i><sub>1</sub>…<i>p<sub>k</sub></i>) spokes, where φ is Euler's totient function. Larger wheels eliminate more composites but need more memory for the gap pattern: the wheel for 2, 3, 5, 7 has 48 spokes with period 210, and the wheel for 2, 3, 5, 7, 11 has 480 spokes with period 2310.</p>
+<h2>Uses</h2>
+<p>Wheel factorization is used inside segmented sieves and in the initial trial-division stage of primality tests and integer factorisation routines. It is a simple, division-free pre-filter that removes a large fraction of composite candidates before more expensive tests are applied.</p>
+</body>
+</html>

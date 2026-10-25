@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nyquist–Shannon sampling theorem - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0 auto; max-width: 960px; padding: 20px; color: #202122; background: #fff; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+figure { text-align: center; margin: 1em auto; }
+figure img { max-width: 420px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 8px; box-sizing: border-box; }
+figcaption { font-size: 0.85em; color: #54595d; margin-top: 4px; }
+.formula { text-align: center; font-size: 1.2em; background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px; margin: 1em 0; }
+p { line-height: 1.6; }
+</style>
+</head>
+<body>
+<h1>Nyquist–Shannon sampling theorem</h1>
+<figure>
+<img src="images/Nyquist–Shannon_sampling_theorem.png" alt="A smooth analog waveform with sample points marked, and the same waveform reconstructed from the samples">
+<figcaption>Sampling a bandlimited signal: at or above the Nyquist rate, the original waveform is recovered exactly.</figcaption>
+</figure>
+<p>The <b>Nyquist–Shannon sampling theorem</b> is a fundamental result of information theory and signal processing that links continuous-time (analog) signals to discrete-time (digital) samples. It states that a signal whose frequency content is entirely below some maximum frequency <i>B</i> (a <i>bandlimited</i> signal) can be perfectly reconstructed from samples taken at a rate of at least <b>2<i>B</i> samples per second</b>.</p>
+<div class="formula">f<sub>s</sub> &gt; 2B</div>
+<p>The threshold rate 2<i>B</i> is called the <b>Nyquist rate</b>, and half the sampling rate is the <b>Nyquist frequency</b>. The theorem is named for Harry Nyquist, whose 1928 work on telegraph transmission laid the groundwork, and <a href="../Claude_Shannon/index.html">Claude Shannon</a>, who published the definitive formulation in 1949; closely related results were developed independently by Edmund Whittaker and Vladimir Kotelnikov.</p>
+<h2>Aliasing</h2>
+<p>If a signal is sampled below its Nyquist rate, high-frequency components masquerade as lower frequencies, a distortion called <a href="../Aliasing/index.html">aliasing</a>. Aliasing is visible as the wagon-wheel effect in film and as moiré patterns in images. Practical converters therefore filter out frequencies above half the sampling rate with an anti-aliasing filter before sampling.</p>
+<h2>Reconstruction</h2>
+<p>Shannon's proof reconstructs the continuous signal by summing sinc functions centred on each sample (the Whittaker–Shannon interpolation formula). Real digital-to-analog converters approximate this ideal.</p>
+<h2>Applications</h2>
+<p>The theorem underlies all digital audio, video, and communications. Compact discs, for example, sample audio at 44.1 kHz because human hearing extends to about 20 kHz, so a rate comfortably above 40 kHz is required to capture the audible band without aliasing.</p>
+</body>
+</html>

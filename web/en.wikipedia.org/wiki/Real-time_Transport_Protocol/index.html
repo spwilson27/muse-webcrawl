@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Real-time Transport Protocol - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;box-shadow:0 0 6px rgba(0,0,0,.08)}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em;font-weight:normal}
+p{line-height:1.6;font-size:.95em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+figure{float:right;margin:0 0 16px 20px;width:280px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;font-size:.8em;text-align:center}
+figure img{width:100%;height:180px;background:#e8eaed;display:block}
+figcaption{padding:6px 2px 2px;color:#54595d}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 16px 20px;width:250px;font-size:.85em}
+.infobox th{text-align:left;padding:2px 6px 2px 0;vertical-align:top}
+.infobox td{padding:2px 0}
+ul{line-height:1.6;font-size:.95em}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Real-time Transport Protocol</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+
+<figure>
+<img src="images/rtp.png" alt="Diagram of RTP packets carrying voice data over a UDP/IP network between two endpoints">
+<figcaption>RTP streams media over UDP, with RTCP providing feedback on quality.</figcaption>
+</figure>
+
+<table class="infobox">
+<tr><th>Abbreviation</th><td>RTP</td></tr>
+<tr><th>Purpose</th><td>Streaming audio and video</td></tr>
+<tr><th>Developer(s)</th><td>Audio/Video Transport Working Group, IETF</td></tr>
+<tr><th>Introduction</th><td>January 1996</td></tr>
+<tr><th>Based on</th><td>UDP</td></tr>
+<tr><th>RFC</th><td>RFC 3550 (obsoletes RFC 1889)</td></tr>
+</table>
+
+<p>The <b>Real-time Transport Protocol</b> (<b>RTP</b>) is a network protocol for delivering audio and video over IP networks. RTP is used in communication and entertainment systems that involve streaming media, such as telephony, video teleconference applications including WebRTC, television services and web-based push-to-talk features. It typically runs over the User Datagram Protocol (UDP).</p>
+
+<h2>Overview</h2>
+<p>RTP was designed by the Audio/Video Transport Working Group of the IETF, principally Henning Schulzrinne, Stephen Casner, Ron Frederick and Steve McCanne, and first published in 1996 as RFC 1889, superseded by RFC 3550 in 2003. Each RTP packet carries a payload type identifying the media encoding, a sequence number allowing receivers to detect loss and reorder packets, a timestamp reflecting the sampling instant of the media, and a synchronisation source identifier (SSRC) distinguishing streams within a session. RTP itself provides no guarantee of delivery or quality of service; those functions are left to lower layers and to the application.</p>
+
+<h2>RTCP and companion protocols</h2>
+<p>RTP is ordinarily paired with the <b>RTP Control Protocol</b> (RTCP), which periodically exchanges statistics — packets lost, jitter, round-trip time — and canonical names for participants, enabling adaptive encoding and lip synchronisation between separate audio and video streams. Session setup is usually handled by signalling protocols such as SIP or RTSP. SRTP (Secure RTP, RFC 3711) adds encryption and authentication and is mandatory in WebRTC, where RTP carries virtually all browser voice and video.</p>
+
+<h2>Profiles and payload formats</h2>
+<p>RTP separates the transport from media encoding: profiles (such as the audio/video profile RTP/AVP) and payload format specifications define how codecs — G.711, Opus, H.264, VP8, AV1 and many others — are packetised, including fragmentation of video frames and retransmission or forward-error-correction schemes.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../RTP_Control_Protocol/index.html">RTP Control Protocol</a></li>
+<li><a href="../Session_Initiation_Protocol/index.html">Session Initiation Protocol</a></li>
+<li><a href="../WebRTC/index.html">WebRTC</a></li>
+<li><a href="../Secure_Real-time_Transport_Protocol/index.html">Secure Real-time Transport Protocol</a></li>
+</ul>
+
+<p class="small">This article is a recreation written from memory for the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

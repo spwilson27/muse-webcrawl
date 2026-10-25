@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Heartbleed - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 0 auto; padding: 20px; color: #202122; line-height: 1.6; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.2em; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 12px 16px; font-size: 0.9em; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+img.hero { display: block; max-width: 100%; border: 1px solid #ccc; background: #eef; padding: 6px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Heartbleed</h1>
+<img class="hero" src="images/Heartbleed.png" alt="The Heartbleed logo: a red heart with a drip of blood, designed to publicise the OpenSSL vulnerability">
+<p><b>Heartbleed</b> is a security bug in the OpenSSL cryptography library, a widely used implementation of the Transport Layer Security (TLS) protocol. It was introduced into the software in 2012 and publicly disclosed in April 2014. The bug, catalogued as CVE-2014-0160, allowed attackers to read the memory of servers and clients protected by vulnerable versions of OpenSSL, potentially exposing passwords, private keys and other sensitive data — undetectably.</p>
+<h2>The bug</h2>
+<p>The flaw lay in OpenSSL's implementation of the TLS "heartbeat" extension, which lets one endpoint send a short message and receive the same message back to confirm the connection is alive. The heartbeat request contains a declared payload length, but the vulnerable code did not verify that the payload actually matched that length. An attacker could claim a payload of up to 64 kilobytes while sending almost nothing; the server would respond with the requested message plus whatever happened to occupy the adjacent memory — a buffer over-read.</p>
+<h2>Discovery and disclosure</h2>
+<p>The bug was discovered independently by Neel Mehta of Google's security team and by engineers at the Finnish firm Codenomicon, who named it Heartbleed and created a distinctive logo and website — an unusually polished publicity effort credited with speeding remediation. It had been present in OpenSSL versions 1.0.1 through 1.0.1f. At disclosure, an estimated half a million web servers, about 17% of the internet's secure web servers, were believed vulnerable.</p>
+<h2>Response and impact</h2>
+<p>Fixing the bug required more than patching: because private keys might already have been stolen without trace, administrators were advised to revoke and reissue certificates and to force password changes. The Canada Revenue Agency halted online services after a theft of social insurance numbers — the first confirmed major data breach attributed to Heartbleed. CloudFlare's challenge offering a reward for extracting a server's private key was solved within hours, proving key theft was practical.</p>
+<p>Heartbleed exposed the fragile funding of critical open-source infrastructure: OpenSSL was maintained by a tiny, under-resourced team. In response, the Linux Foundation launched the Core Infrastructure Initiative to fund such projects, and Google forked OpenSSL as BoringSSL while the OpenBSD project created LibreSSL.</p>
+</body>
+</html>

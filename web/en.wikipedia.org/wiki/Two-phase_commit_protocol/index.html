@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Two-phase commit protocol - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; line-height: 1.6; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a7d7f9; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #c8ccd1; padding-bottom: 3px; font-weight: normal; margin-top: 1.4em; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 640px; width: 100%; background: #eaf3fb; border: 1px solid #c8ccd1; padding: 8px; box-sizing: border-box; }
+.caption { font-size: 0.85em; color: #54595d; }
+.small { font-size: 0.9em; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Two-phase commit protocol</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="hero">
+<img src="images/two-phase_commit_protocol.png" alt="Placeholder image: message diagram of the two-phase commit protocol between a coordinator and participants">
+<div class="caption">The voting phase and the commit phase of 2PC</div>
+</div>
+<p>In transaction processing and distributed databases, the <b>two-phase commit protocol</b> (<b>2PC</b>) is a distributed algorithm that coordinates all the processes participating in a distributed atomic transaction, ensuring that either all of them commit or all of them abort &mdash; preserving atomicity even in the presence of failures.</p>
+<h2>How it works</h2>
+<p>The protocol involves one <b>coordinator</b> and several participants (cohorts). In the first phase, the <b>commit-request (voting) phase</b>, the coordinator asks each participant whether it is prepared to commit. Each participant writes the transaction's updates to a stable log and replies "yes" (vote commit) only if it can guarantee it will be able to commit later; otherwise it votes "abort", which unilaterally decides the outcome. In the second phase, the <b>commit phase</b>, if and only if every participant voted yes, the coordinator records the decision and instructs all participants to commit; otherwise all are told to roll back.</p>
+<h2>Properties and variants</h2>
+<p>2PC is a <b>blocking</b> protocol: if the coordinator fails after participants have voted yes but before announcing the decision, participants must wait (holding locks) until it recovers, because they cannot safely decide alone. Optimisations such as "presumed abort" and "presumed commit" reduce logging in common cases. The non-blocking <b>three-phase commit</b> adds an extra round to tolerate certain failures, at the cost of complexity and vulnerability to network partitions. Two-phase commit underlies the XA standard for distributed transactions across heterogeneous databases, though many modern large-scale systems instead favour looser consistency models.</p>
+<p class="small">See also: <a href="../Systems_engineering/index.html">Systems engineering</a> and <a href="../Unsupervised_learning/index.html">Unsupervised learning</a></p>
+</div>
+</body>
+</html>

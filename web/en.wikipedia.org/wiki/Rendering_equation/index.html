@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rendering equation - Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:800px;margin:2em auto;padding:0 1em;line-height:1.6;color:#222}
+h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{border-bottom:1px solid #a2a9b1}
+img.hero{display:block;max-width:100%;height:auto;background:#f8f9fa;border:1px solid #c8ccd1;padding:1em;text-align:center;color:#72777d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Rendering equation</h1>
+<img class="hero" src="images/rendering-equation.png" alt="Diagram of light transport described by the rendering equation">
+<p>The <b>rendering equation</b> is an integral equation in computer graphics that describes the equilibrium distribution of light in a scene. Introduced by David Immel and colleagues and by James Kajiya in 1986, it is the central theoretical result of physically based rendering: the outgoing light from a point in a given direction equals the light emitted from that point plus the light reflected from all incoming directions, weighted by the surface's bidirectional reflectance distribution function (BRDF) and the cosine of the incidence angle.</p>
+<h2>Formulation</h2>
+<p>In one common form: L<sub>o</sub>(x, ω<sub>o</sub>) = L<sub>e</sub>(x, ω<sub>o</sub>) + ∫<sub>Ω</sub> f<sub>r</sub>(x, ω<sub>i</sub>, ω<sub>o</sub>) L<sub>i</sub>(x, ω<sub>i</sub>) (ω<sub>i</sub> · n) dω<sub>i</sub>, where the integral is over the hemisphere of incoming directions at surface point x.</p>
+<h2>Solving the equation</h2>
+<p>The equation cannot be solved analytically for general scenes, because the incoming light at a point depends on the outgoing light of every other point. Numerical techniques include Monte Carlo path tracing, radiosity (which discretises surfaces into patches), photon mapping and Metropolis light transport. A <a href="../Render_farm/index.html">render farm</a> may be used to evaluate these methods over many frames.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Path_tracing/index.html">Path tracing</a></li>
+<li><a href="../Radiosity_(computer_graphics)/index.html">Radiosity</a></li>
+<li><a href="../Bidirectional_reflectance_distribution_function/index.html">BRDF</a></li>
+</ul>
+</body>
+</html>

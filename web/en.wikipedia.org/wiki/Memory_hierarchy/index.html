@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Memory hierarchy - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:760px;margin:2em auto;padding:0 1em;line-height:1.6;color:#222}h1{border-bottom:1px solid #aaa}h2{border-bottom:1px solid #ddd}.infobox{float:right;border:1px solid #aaa;background:#f8f9fa;padding:0.8em;margin:0 0 1em 1em;width:240px;font-size:0.9em}img{max-width:100%}</style></head>
+<body>
+<h1>Memory hierarchy</h1>
+<p>In computer architecture, the <b>memory hierarchy</b> is the organisation of storage in a computer system into levels with different speeds, costs and capacities. Because fast memory is expensive per bit and slow memory is cheap, systems use small amounts of fast memory close to the processor (<a href="../CPU_cache/index.html">cache</a>) backed by progressively larger, slower levels — main memory (RAM) and secondary storage (SSDs and hard disks). Programs perform well on this hierarchy because of locality of reference: recently used and nearby data are likely to be needed again.</p>
+<div class="infobox"><b>Memory hierarchy</b><br><img src="images/memory_hierarchy.png" alt="Pyramid diagram of the memory hierarchy"><br><i>The memory hierarchy pyramid</i><br><br><b>Levels:</b> registers → cache → RAM → SSD/HDD → archival<br><b>Principle:</b> locality of reference</div>
+<h2>Levels</h2>
+<ul>
+<li><b>Registers</b> — inside the CPU; a few dozen to a few hundred words; access in a fraction of a cycle.</li>
+<li><b>Cache (L1, L2, L3)</b> — SRAM; kilobytes to tens of megabytes; access in ~1–40 cycles. L1 is split into instruction and data caches.</li>
+<li><b>Main memory</b> — DRAM; gigabytes; access in ~100 cycles (~100 ns).</li>
+<li><b>Secondary storage</b> — SSDs (microseconds) and magnetic disks (milliseconds); hundreds of gigabytes to terabytes.</li>
+<li><b>Tertiary/offline storage</b> — tape and optical archives for rarely accessed data.</li>
+</ul>
+<h2>Why it works</h2>
+<p>Cache performance depends on hit rates, which are high in practice because programs exhibit temporal locality (reusing data soon) and spatial locality (using nearby addresses). Hardware prefetching and compiler optimisations exploit these patterns. The growing gap between processor speed and memory speed — the "memory wall" — has made cache behaviour one of the dominant concerns in software performance engineering.</p>
+<h2>See also</h2>
+<ul><li><a href="../CPU_cache/index.html">CPU cache</a></li><li><a href="../Virtual_memory/index.html">Virtual memory</a></li><li><a href="../Locality_of_reference/index.html">Locality of reference</a></li></ul>
+</body></html>

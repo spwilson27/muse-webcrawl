@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rosetta (software) - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0 auto; max-width: 960px; padding: 1em 2em; color: #202122; line-height: 1.6; background: #fff; }
+h1 { font-family: Georgia, 'Times New Roman', serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, 'Times New Roman', serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+.infobox { float: right; width: 22em; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em 1em; margin: 0 0 1em 1em; font-size: 90%; }
+.infobox th { text-align: left; vertical-align: top; padding-right: 0.5em; }
+img.hero { display: block; width: 100%; max-width: 320px; margin: 0.5em auto; border: 1px solid #ccc; background: #eef; min-height: 120px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.caption { font-size: 85%; color: #54595d; text-align: center; }
+</style>
+</head>
+<body>
+<h1>Rosetta (software)</h1>
+<div class="infobox">
+<table>
+<tr><th>Developer</th><td>Apple Inc.</td></tr>
+<tr><th>Initial release</th><td>2006 (Rosetta); 2020 (Rosetta 2)</td></tr>
+<tr><th>Operating system</th><td>macOS</td></tr>
+<tr><th>Type</th><td>Binary translation / emulator layer</td></tr>
+</table>
+</div>
+<img class="hero" src="images/Rosetta_(software).png" alt="Diagram of Rosetta translating application binaries between processor architectures">
+<p><b>Rosetta</b> is a dynamic binary translator developed by Apple Inc. for <a href="../MacOS/index.html">macOS</a>, designed to allow applications built for one processor architecture to run on Macintosh computers using a different architecture. It has been released twice: the original <b>Rosetta</b> in 2006 supported the transition from PowerPC processors to Intel x86 processors, and <b>Rosetta 2</b> in 2020 supported the transition from Intel processors to <a href="../Apple_silicon/index.html">Apple silicon</a> (ARM64).</p>
+<h2>Original Rosetta (2006)</h2>
+<p>When Apple announced at the Worldwide Developers Conference in June 2005 that the Macintosh would move from PowerPC to Intel processors, it introduced Rosetta as the translation layer that would let most existing PowerPC applications run, unmodified, on the new Intel-based Macs. Rosetta shipped with Mac OS X 10.4.4 "Tiger" in January 2006 alongside the first Intel iMac and MacBook Pro.</p>
+<p>The technology was based on the QuickTransit software of Transitive Corporation. Unlike the earlier 68k emulator used during the 1990s transition, Rosetta translated PowerPC code to x86 code at runtime, caching the translated blocks. It supported most applications written for Mac OS X on PowerPC, but not Classic (Mac OS 9) applications, code requiring a PowerPC G5, or kernel extensions. Performance was generally adequate for productivity software but noticeably slower than native code, and Apple presented Rosetta as a stopgap while developers shipped Universal binaries.</p>
+<p>Rosetta became an optional install in Mac OS X 10.6 "Snow Leopard" (2009) and was removed entirely in Mac OS X 10.7 "Lion" (2011), ending support for PowerPC applications.</p>
+<h2>Rosetta 2 (2020)</h2>
+<p>At WWDC in June 2020 Apple announced a second transition, from Intel x86-64 to its own ARM-based Apple silicon, beginning with the <a href="../Apple_M1/index.html">M1</a> chip. Rosetta 2 translates x86-64 application binaries so they can run on Apple silicon Macs. In addition to just-in-time translation at runtime, Rosetta 2 can translate an application ahead of time, at installation, producing an optimized ARM64 version of much of the code.</p>
+<p>Translated applications often perform surprisingly well because of the speed of Apple silicon, though software that relies on newer x86 vector instructions (such as AVX-512) or just-in-time compilers of its own may not work. Rosetta 2 does not translate kernel extensions or virtual-machine software that virtualizes x86-64 platforms. It is installed automatically the first time a user launches an Intel-only application on an Apple silicon Mac.</p>
+<p>With Rosetta 2 and the <a href="../Universal_binary/index.html">Universal 2 binary</a> format, Apple repeated the pattern of its earlier transitions: emulation first, native binaries as developers recompiled their software.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Apple_silicon/index.html">Apple silicon</a></li>
+<li><a href="../Universal_binary/index.html">Universal binary</a></li>
+<li><a href="../Mac_transition_to_Intel_processors/index.html">Mac transition to Intel processors</a></li>
+<li><a href="../Mac_transition_to_Apple_silicon/index.html">Mac transition to Apple silicon</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Type safety - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-size:1.35em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+p,li{line-height:1.55}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:12px 0;max-width:420px;width:100%;background:#eee;border:1px solid #ccc}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Type safety</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/Type_safety.png" alt="A type checker rejecting a program that applies an operation to the wrong type of value">
+<p>In computer science, <b>type safety</b> is the extent to which a programming language discourages or prevents type errors — errors that arise when an operation is applied to a value of a type for which it is not defined, or when memory is accessed in a way inconsistent with the types of the objects stored there. A language is often described as <i>type-safe</i> if well-typed programs cannot "go wrong" in specified ways, a formulation associated with Robin Milner's famous dictum: "Well-typed programs can't go wrong."</p>
+
+<h2>Static and dynamic enforcement</h2>
+<p>Type safety may be enforced at compile time (<a href="../Static_type_checking/index.html">static typing</a>), at run time (<a href="../Dynamic_typing/index.html">dynamic typing</a>), or through a combination of both. Statically typed languages such as Java, Rust, Haskell, and C# reject type errors before execution, though they differ in how complete their guarantees are: the presence of null references, unchecked casts, or unsafe code blocks can create loopholes. Dynamically typed languages such as Python and JavaScript check types as operations execute and raise errors (or coerce values) at run time; they are still considered type-safe in the memory-safety sense if their implementations prevent arbitrary memory reinterpretation.</p>
+
+<h2>Memory safety and unsafe features</h2>
+<p>Type safety is closely related to but distinct from memory safety. Languages like C and C++ are described as type-unsafe because pointer arithmetic, manual memory management, and unrestricted casts allow programs to violate their own type structure, leading to undefined behaviour and security vulnerabilities such as buffer overflows. Many languages provide explicit escape hatches — Rust's <code>unsafe</code> blocks, Java's native interfaces, C#'s <code>unsafe</code> code — confining unsafety to auditable regions while keeping the rest of the language safe.</p>
+
+<h2>Theoretical foundations</h2>
+<p>In <a href="../Type_theory/index.html">type theory</a>, type safety of a language is typically proved through the properties of <i>progress</i> (a well-typed term is never stuck) and <i>preservation</i> (evaluation preserves typing). These results anchor the design of modern type systems, including generics, variance rules, and null-safety features in recent languages.</p>
+
+<h2>See also</h2>
+<p><a href="../Type_system/index.html">Type system</a> · <a href="../Memory_safety/index.html">Memory safety</a> · <a href="../Strong_and_weak_typing/index.html">Strong and weak typing</a> · <a href="../Type_theory/index.html">Type theory</a></p>
+<p class="small">Categories: Type safety · Type theory · Programming language theory</p>
+</div>
+</body>
+</html>

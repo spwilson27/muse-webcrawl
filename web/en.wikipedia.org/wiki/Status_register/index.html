@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Status register - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+header { background: #f8f9fa; border-bottom: 1px solid #a7d7f9; padding: 12px 24px; }
+header .site { font-family: sans-serif; font-size: 13px; color: #54595d; }
+main { max-width: 960px; margin: 0 auto; padding: 16px 24px 48px; }
+h1 { font-size: 28px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 21px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+p, li { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { float: right; margin: 0 0 12px 16px; width: 300px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; text-align: center; font-family: sans-serif; font-size: 12px; color: #54595d; }
+.hero img { width: 100%; height: 180px; object-fit: cover; background: #eaecf0; display: block; }
+table { border-collapse: collapse; font-size: 14px; margin: 12px 0; }
+td, th { border: 1px solid #a2a9b1; padding: 5px 10px; }
+th { background: #eaecf0; }
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia, the free encyclopedia</span></header>
+<main>
+<h1>Status register</h1>
+<div class="hero"><img src="images/Status_register.png" alt="Diagram of a processor status register showing individual condition flag bits">A typical status register with its condition flags.</div>
+<p>A <b>status register</b>, also called a <b>flag register</b> or <b>condition code register</b> (CCR), is a collection of status flag bits within a processor. It is a hardware register whose individual bits are set or cleared automatically by the arithmetic logic unit (ALU) as a side effect of arithmetic and logical operations, recording information about the outcome for use by subsequent conditional instructions, especially conditional branches.</p>
+<h2>Common flags</h2>
+<table>
+<tr><th>Flag</th><th>Meaning</th></tr>
+<tr><td>Zero (Z)</td><td>The result of the last operation was zero</td></tr>
+<tr><td>Carry (C)</td><td>The operation produced a carry out of (or borrow into) the most significant bit</td></tr>
+<tr><td>Negative / Sign (N)</td><td>The result is negative (most significant bit set, in two's complement)</td></tr>
+<tr><td>Overflow (V)</td><td>Signed overflow occurred — the result cannot be represented in the destination width</td></tr>
+<tr><td>Parity (P)</td><td>The result has even (or odd) parity</td></tr>
+<tr><td>Half-carry / Auxiliary carry (H/AC)</td><td>A carry occurred between the lower and upper nibbles; used for BCD adjustment</td></tr>
+</table>
+<h2>Examples</h2>
+<p>In the Intel x86 architecture the flags live in the FLAGS/EFLAGS register, including CF, PF, AF, ZF, SF, TF, IF, DF, and OF. The ARM architecture provides the CPSR (and in AArch64 the NZCV condition flags), and designs such as the MOS 6502 and Motorola 68000 maintain a compact processor status word. Not all architectures expose flags: RISC designs such as MIPS historically avoided a condition register in favor of explicit compare-and-branch instructions, reducing pipeline hazards.</p>
+<p>Because flags are implicit results, they affect instruction scheduling and register renaming in out-of-order processors, but they remain central to writing efficient loops, comparisons, and multi-precision arithmetic.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Status_Quo_(band)/index.html">Status Quo (band)</a></li>
+</ul>
+</main>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Shift-and-add — Wikipedia (recreated)</title>
+<style>body{font-family:Georgia,serif;max-width:760px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #a2a9b1}img.hero{max-width:100%;border:1px solid #c8ccd1;background:#f8f9fa}.note{color:#54595d;font-size:.9em}</style></head>
+<body>
+<h1>Shift-and-add</h1>
+<img class="hero" src="images/Shift-and-add.png" alt="Diagram of a shift-and-add multiplier in digital logic">
+<p><b>Shift-and-add</b> is a class of algorithms used in computer arithmetic to perform operations such as multiplication and division using only bit shifts and additions. Along with its close relative <b>shift-and-subtract</b>, it formed the basis of arithmetic in many early computers and remains widely used in hardware multipliers, dividers, and software routines on processors that lack fast multiplication instructions.</p>
+<h2>Multiplication</h2>
+<p>In binary shift-and-add multiplication, the multiplicand is examined bit by bit. For each set bit in the multiplier, a copy of the multiplicand shifted left by the bit position is added to an accumulator. The process mirrors long multiplication in decimal: each partial product is either zero or a shifted copy of the multiplicand. After processing all bits, the accumulator holds the product. The algorithm requires at most <i>n</i> additions for two <i>n</i>-bit operands.</p>
+<h2>Division</h2>
+<p>Shift-and-subtract division inverts the process. The divisor is aligned with the most significant bits of the dividend and subtracted if the result is non-negative, setting the corresponding quotient bit to 1; otherwise the quotient bit is 0 and the divisor is shifted right by one position. Repeating this for each bit position yields the quotient and remainder.</p>
+<h2>Variants and improvements</h2>
+<p>Several refinements reduce the number of steps or the latency. <b>Booth's algorithm</b> recodes the multiplier to skip runs of ones, reducing additions. Non-restoring division avoids a separate restore step after an over-subtraction. Higher-radix variants process two or more bits per cycle, trading additional hardware for speed.</p>
+<h2>Applications</h2>
+<p>Shift-and-add techniques appear in digital signal processors, floating-point unit implementations, CORDIC algorithms for trigonometric functions, and exponential/logarithmic approximations. They also underlie the classic "Russian peasant multiplication" method, which doubles and halves numbers instead of shifting bits.</p>
+<p class="note">See also: <a href="../Booth%27s_multiplication_algorithm/index.html">Booth's multiplication algorithm</a>, <a href="../Binary_number/index.html">Binary number</a>, <a href="../CORDIC/index.html">CORDIC</a>.</p>
+</body></html>

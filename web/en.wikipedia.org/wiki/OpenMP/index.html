@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>OpenMP - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#fff;color:#202122;margin:0;padding:0 2em 3em 2em;line-height:1.6}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-size:1.8em}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.4em}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 1em 1em;width:260px;font-size:0.85em}
+.infobox img{max-width:100%}
+.caption{font-size:0.85em;color:#54595d}
+.small{font-size:0.85em;color:#54595d}
+code{background:#f8f9fa;padding:1px 4px;font-size:0.9em}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:8px;font-size:0.85em;overflow-x:auto}
+table{border-collapse:collapse}
+td{border:1px solid #a2a9b1;padding:4px 8px;font-size:0.9em}
+</style>
+</head>
+<body>
+<h1>OpenMP</h1>
+<div class="infobox"><img src="images/openmp.png" alt="Hero image: diagram of a master thread forking into a team of worker threads"><div class="caption">The fork–join model: a master thread spawns a team, then rejoins.</div>
+<table>
+<tr><td>Developer</td><td>OpenMP Architecture Review Board</td></tr>
+<tr><td>Initial release</td><td>1997 (Fortran), 1998 (C/C++)</td></tr>
+<tr><td>Type</td><td>API for shared-memory parallel programming</td></tr>
+</table></div>
+<p><b>OpenMP</b> (Open Multi-Processing) is an application programming interface (API) that supports multi-platform shared-memory multiprocessing programming in C, C++ and Fortran, on most platforms and operating systems. It consists of compiler directives, library routines and environment variables that together implement a portable, scalable model for developing parallel applications, from laptops to supercomputers.</p>
+<h2>Model</h2>
+<p>OpenMP uses a <b>fork–join</b> model: a program begins as a single master thread, which forks a team of threads at parallel regions and joins them again afterwards. In C and C++, parallelism is requested through pragmas such as <code>#pragma omp parallel for</code>, which distributes the iterations of a loop among the team; clauses control data sharing (shared, private, reduction), scheduling and synchronisation. Because directives can be ignored by a non-OpenMP compiler, the same source remains a valid serial program.</p>
+<h2>History</h2>
+<p>The OpenMP Architecture Review Board (ARB) published the first specification, for Fortran, in October 1997; a C/C++ specification followed in 1998. Major milestones included tasking in version 3.0 (2008), SIMD and accelerator (device) offloading in 4.0 (2013), and metadirectives and improved device support in 5.x. Compilers supporting OpenMP include GCC, Clang/LLVM, Intel's compilers and Microsoft Visual C++.</p>
+<h2>Comparison</h2>
+<p>OpenMP targets shared-memory (including NUMA) machines and is frequently combined with MPI, which handles distributed-memory communication between nodes, in a hybrid model. For accelerators it competes and overlaps with OpenACC and with GPU-specific models such as CUDA.</p>
+<p class="small">See also: <a href="../Open_MPI/index.html">Open MPI</a> · POSIX Threads · Parallel computing · Message Passing Interface</p>
+</body>
+</html>

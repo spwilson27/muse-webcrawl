@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Spatial anti-aliasing - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { margin: 16px 0; text-align: center; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; min-height: 180px; }
+.caption { font-size: 0.85em; color: #54595d; }
+table.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; margin: 0 0 12px 16px; font-size: 0.9em; border-collapse: collapse; }
+table.infobox th, table.infobox td { padding: 4px 8px; border: 1px solid #a2a9b1; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Spatial anti-aliasing</h1>
+<p><b>Spatial anti-aliasing</b> is a technique for minimizing the distortion artifacts known as <a href="../Aliasing/index.html">aliasing</a> when representing a high-resolution image or signal at a lower resolution. In computer graphics, aliasing most visibly appears as jagged, stair-stepped edges — often called "jaggies" — on diagonal lines and curves, because a raster display can only approximate a continuous shape with discrete pixels.</p>
+<div class="hero"><img src="images/spatial-anti-aliasing.png" alt="Comparison of an aliased diagonal edge and its anti-aliased version"></div>
+<p class="caption">Left: an aliased edge showing stair-stepping. Right: the same edge after spatial anti-aliasing.</p>
+<h2>Principle</h2>
+<p>Aliasing arises when a signal is sampled below the <a href="../Nyquist_rate/index.html">Nyquist rate</a> required to reconstruct it. A pixel-based display samples the ideal image at the pixel grid; sharp edges contain arbitrarily high spatial frequencies and therefore always alias to some degree. Spatial anti-aliasing reduces the visibility of these artifacts by computing the average color of the area covered by each pixel, so that a pixel only partially covered by an edge is drawn in an intermediate shade. The result is a smoother apparent edge at the cost of some sharpness.</p>
+<h2>Methods</h2>
+<h3>Supersampling</h3>
+<p><b>Supersampling anti-aliasing (SSAA)</b>, also called full-scene anti-aliasing, renders the image at a higher resolution — for example four samples per pixel — and then averages (downsamples) the samples to produce the final pixel color. It gives high quality results but is computationally expensive because the entire scene is rendered at the higher resolution.</p>
+<h3>Multisampling</h3>
+<p><b>Multisample anti-aliasing (MSAA)</b>, popularized by graphics hardware in the early 2000s, evaluates the pixel shader only once per pixel but takes multiple depth and coverage samples, so geometric edges are anti-aliased while texture interiors are not. This greatly reduces the cost compared with supersampling.</p>
+<h3>Post-processing methods</h3>
+<p>Morphological methods such as MLAA and shader-based methods such as <a href="../Fast_approximate_anti-aliasing/index.html">FXAA</a> and SMAA analyze the final rendered image to detect edges and blend them, avoiding the memory and fill-rate costs of multisampling and working well with deferred rendering pipelines.</p>
+<h2>History</h2>
+<p>Anti-aliasing was an important problem in early computer graphics research in the 1970s; the painter's algorithm-era flight simulators already used prefiltered lines. Franklin Crow's 1977 paper "The aliasing problem in computer-generated shaded images" is a classic treatment. Hardware support became widespread in consumer GPUs around 1999–2001.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Anti-aliasing_filter/index.html">Anti-aliasing filter</a></li>
+<li><a href="../Temporal_anti-aliasing/index.html">Temporal anti-aliasing</a></li>
+<li><a href="../Anisotropic_filtering/index.html">Anisotropic filtering</a></li>
+<li><a href="../Rasterisation/index.html">Rasterisation</a></li>
+</ul>
+</div>
+</body>
+</html>

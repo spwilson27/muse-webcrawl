@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OAuth - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0 auto; max-width: 960px; padding: 20px; color: #202122; background: #fff; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+figure { text-align: center; margin: 1em auto; }
+figure img { max-width: 420px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 8px; box-sizing: border-box; }
+figcaption { font-size: 0.85em; color: #54595d; margin-top: 4px; }
+p { line-height: 1.6; }
+</style>
+</head>
+<body>
+<h1>OAuth</h1>
+<figure>
+<img src="images/OAuth.png" alt="Flow diagram of the OAuth authorisation grant between a user, a client application, an authorisation server and a resource server">
+<figcaption>The abstract OAuth 2.0 authorisation flow.</figcaption>
+</figure>
+<p><b>OAuth</b> (short for "Open Authorization") is an open standard for access delegation, commonly used to grant websites or applications access to a user's information on another service without sharing the user's password. Instead of credentials, the user authorises the third party to act with limited scope, and the service issues access tokens. OAuth underlies the familiar "Sign in with Google" and "Log in with Facebook" buttons, though identity itself is layered on top by protocols such as <a href="../OpenID_Connect/index.html">OpenID Connect</a>.</p>
+<h2>History</h2>
+<p>OAuth began in 2006–2007, when developers from Twitter, Ma.gnolia, and Google sought a common way to let third-party clients access APIs on a user's behalf. <b>OAuth 1.0</b> was published as RFC 5849 in 2010 and relied on cryptographic request signing. <b>OAuth 2.0</b>, published in October 2012 as RFC 6749, replaced the signing scheme with bearer tokens sent over HTTPS and defined several "grant types" (flows) for different client situations, becoming far more widely adopted — and frequently criticised as more of a framework than a strict protocol.</p>
+<h2>How it works</h2>
+<p>Four roles take part: the <b>resource owner</b> (the user), the <b>client</b> (the third-party application), the <b>authorization server</b> (which issues tokens after user consent), and the <b>resource server</b> (the API hosting the data). In the most common flow, the authorization code grant, the client redirects the user to the authorization server; after the user consents, the server returns a short-lived code which the client exchanges — authenticated with its own client secret — for an access token. Later extensions such as PKCE (Proof Key for Code Exchange) secure the flow for mobile and browser-based applications, and OAuth 2.1 consolidates these best practices.</p>
+</body>
+</html>

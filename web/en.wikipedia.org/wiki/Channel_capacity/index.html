@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Channel capacity - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.mw-body{background:#fff;max-width:960px;margin:0 auto;padding:1.5em 2em;line-height:1.6}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a7d7f9;padding-bottom:0.2em}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em;margin:0 0 1em 1em;font-size:88%;width:22em}
+.infobox th{background:#b0c4de;padding:0.3em;text-align:center}
+.infobox td{padding:0.2em 0.4em}
+img.hero{max-width:100%}
+.caption{font-size:85%;color:#54595d;text-align:center}
+.small{font-size:90%;color:#54595d}
+.formula{font-style:italic;text-align:center;font-size:110%}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Channel capacity</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<tr><th colspan="2">Channel capacity</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/channel-capacity.png" alt="Diagram of a noisy communication channel with input, noise source and output"><div class="caption">A communication channel model</div></td></tr>
+<tr><th>Field</th><td>Information theory</td></tr>
+<tr><th>Defined by</th><td>Claude Shannon (1948)</td></tr>
+<tr><th>Units</th><td>Bits per channel use; bits per second</td></tr>
+</table>
+<p><b>Channel capacity</b>, in electrical engineering, computer science, and information theory, is the tight upper bound on the rate at which information can be reliably transmitted over a communication channel. By the noisy-channel coding theorem, for any rate below the capacity there exist encoding and decoding schemes that achieve an arbitrarily low probability of error; for rates above capacity, the probability of error is bounded away from zero.</p>
+<h2>Definition</h2>
+<p>For a discrete memoryless channel with input alphabet <i>X</i> and output alphabet <i>Y</i>, the capacity is the maximum mutual information between input and output, maximised over all input distributions:</p>
+<p class="formula">C = max<sub>p(x)</sub> I(X; Y)</p>
+<p>When the channel is used once per unit time, the capacity is expressed in bits per second.</p>
+<h2>Shannon–Hartley theorem</h2>
+<p>For a bandlimited channel corrupted by additive white Gaussian noise, Claude Shannon and Ralph Hartley derived the capacity in bits per second as:</p>
+<p class="formula">C = B log<sub>2</sub>(1 + S/N)</p>
+<p>where <i>B</i> is the bandwidth in hertz, <i>S</i> is the average received signal power, and <i>N</i> is the average noise power. This formula shows that capacity grows linearly with bandwidth but only logarithmically with signal-to-noise ratio.</p>
+<h2>Noisy-channel coding theorem</h2>
+<p>Shannon's 1948 theorem states that if the transmission rate <i>R</i> is less than the capacity <i>C</i>, there exists a sequence of codes with block length tending to infinity whose maximal probability of error tends to zero. Conversely, if <i>R</i> &gt; <i>C</i>, the probability of error is bounded away from zero for any code. The theorem is an existence result proved by random coding; practical codes such as turbo codes and LDPC codes approach capacity closely.</p>
+<h2>Examples</h2>
+<ul>
+<li>A binary symmetric channel with crossover probability <i>p</i> has capacity 1 − H<sub>2</sub>(<i>p</i>) bits per use.</li>
+<li>A binary erasure channel with erasure probability ε has capacity 1 − ε bits per use.</li>
+<li>A telephone channel with 3 kHz bandwidth and 30 dB signal-to-noise ratio has a capacity of roughly 30 kbit/s.</li>
+</ul>
+<h2>See also</h2>
+<ul>
+<li><a href="../Information_theory/index.html">Information theory</a></li>
+<li><a href="../Shannon–Hartley_theorem/index.html">Shannon–Hartley theorem</a></li>
+<li><a href="../Claude_Shannon/index.html">Claude Shannon</a></li>
+<li><a href="../Error_correction_code/index.html">Error correction code</a></li>
+</ul>
+</div>
+</body>
+</html>

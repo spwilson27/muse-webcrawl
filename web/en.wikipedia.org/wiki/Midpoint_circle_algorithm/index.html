@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Midpoint circle algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:0}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{background:#eaf3ff;text-align:left;padding:4px}
+.infobox td{padding:4px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:12px auto;max-width:100%}
+code,pre{font-family:monospace;background:#f6f6f6}
+pre{padding:10px;overflow-x:auto;border:1px solid #ddd}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Midpoint circle algorithm</h1>
+<p>The <b>midpoint circle algorithm</b> is an algorithm used in computer graphics to determine the points needed for rasterizing a circle. It is a generalization of <a href="../Bresenham%27s_line_algorithm/index.html">Bresenham's line algorithm</a>. The algorithm can be further generalized to conic sections.</p>
+<img class="hero" src="images/midpoint-circle.png" alt="Rasterized circle produced by the midpoint circle algorithm, showing pixels selected in the first octant">
+<div class="infobox">
+<table>
+<tr><th colspan="2">Midpoint circle algorithm</th></tr>
+<tr><td><b>Class</b></td><td>Rasterization algorithm</td></tr>
+<tr><td><b>Related</b></td><td>Bresenham's line algorithm</td></tr>
+</table>
+</div>
+<h2>History</h2>
+<p>The algorithm was conceived by Pitteway and popularized by van Aken and Novak, in two publications from the mid-1970s and early 1980s. Like Bresenham's line algorithm, it works entirely with integer arithmetic in its most common form, making it well suited to implementation in hardware and in low-level graphics code.</p>
+<h2>Algorithm summary</h2>
+<p>A circle of radius <i>r</i> centered at the origin is defined implicitly by the equation <i>x</i><sup>2</sup> + <i>y</i><sup>2</sup> − <i>r</i><sup>2</sup> = 0. Because of the eightfold symmetry of the circle, it is sufficient to compute the points in a single octant — conventionally the second octant from <i>x</i> = 0 to <i>x</i> = <i>y</i> — and then reflect them into the other seven octants.</p>
+<p>At each step, starting from the point (0, <i>r</i>), the algorithm must choose between the pixel directly to the right and the pixel diagonally down and to the right. It does so by evaluating the circle function at the midpoint between the two candidate pixels. If the midpoint lies inside the circle, the right-hand pixel is chosen; if it lies outside, the diagonal pixel is chosen. An incremental decision variable tracks this evaluation using only integer additions and subtractions.</p>
+<h2>Integer-based algorithm</h2>
+<p>One common integer formulation maintains a decision parameter <i>d</i>, initialized to 1 − <i>r</i>. While <i>x</i> &lt; <i>y</i>, the eight symmetric points are plotted. If <i>d</i> &lt; 0, then <i>d</i> is increased by 2<i>x</i> + 3 and only <i>x</i> advances; otherwise <i>d</i> is increased by 2(<i>x</i> − <i>y</i>) + 5, <i>x</i> advances, and <i>y</i> decreases by one.</p>
+<pre>
+x = 0
+y = r
+d = 3 - 2*r
+while y >= x:
+    draw_points(x, y)
+    x = x + 1
+    if d > 0:
+        y = y - 1
+        d = d + 4*(x - y) + 10
+    else:
+        d = d + 4*x + 6
+</pre>
+<h2>Variants</h2>
+<p>The same midpoint strategy can be applied to ellipses, giving the <b>midpoint ellipse algorithm</b>, and more generally to other conic sections. The algorithm is closely related to the midpoint <a href="../Line_drawing_algorithm/index.html">line drawing</a> methods and remains a standard topic in introductory computer graphics courses.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Bresenham%27s_line_algorithm/index.html">Bresenham's line algorithm</a></li>
+<li><a href="../Rasterisation/index.html">Rasterisation</a></li>
+<li><a href="../Circle/index.html">Circle</a></li>
+</ul>
+<p class="small">Recreated from memory for the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

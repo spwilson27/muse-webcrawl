@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SuperCollider - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:900px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}
+h1{font-family:sans-serif;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{font-family:sans-serif;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;overflow-x:auto}
+img.hero{width:100%;height:auto;background:#eee;display:block}
+.caption{font-size:0.85em;color:#54595d;text-align:center}
+</style>
+</head>
+<body>
+<h1>SuperCollider</h1>
+<img class="hero" src="images/supercollider.png" alt="SuperCollider IDE with code and server meters">
+<p class="caption">The SuperCollider IDE, showing code and audio server output</p>
+<p><b>SuperCollider</b> is a free and open-source programming language and environment for real-time audio synthesis and algorithmic composition. Originally developed by James McCartney and released in 1996, it has become one of the most widely used platforms for computer music research, live coding and sound art. SuperCollider is available for macOS, Windows and Linux under the GNU General Public License.</p>
+
+<h2>Architecture</h2>
+<p>The system has two main components. The language, <b>sclang</b>, is a dynamic, object-oriented language in the Smalltalk tradition, with garbage collection, closures and a large class library for musical structures, patterns and GUI building. The audio server, <b>scsynth</b>, is a separate application that performs all sound generation in real time; the language (and other clients) control it via Open Sound Control (OSC) messages. Unit generators (<i>UGens</i>) — oscillators, filters, envelopes and delays — are connected into <i>SynthDefs</i> on the server, allowing efficient graphs of thousands of sound sources.</p>
+
+<pre>// a simple synth definition and pattern
+SynthDef(\ping, { |freq=440|
+  Out.ar(0, SinOsc.ar(freq) * EnvGen.kr(Env.perc, doneAction: 2) * 0.2)
+}).add;
+Pbind(\instrument, \ping, \degree, Pseq([0,2,4,7], inf)).play;</pre>
+
+<h2>Use</h2>
+<p>SuperCollider is used in academia for research in synthesis and human–computer interaction, by live coders who perform by writing and modifying code on stage, and in installations and games. Its pattern library, which streams musical events with precise timing, and its support for multichannel and spatial audio make it a standard tool in electroacoustic composition. A large community maintains extensions ("Quarks") and the scsynth server has been embedded in other environments.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Live_coding/index.html">Live coding</a></li>
+<li><a href="../Pure_Data/index.html">Pure Data</a></li>
+<li><a href="../Max_(software)/index.html">Max</a></li>
+<li><a href="../Open_Sound_Control/index.html">Open Sound Control</a></li>
+</ul>
+</body>
+</html>

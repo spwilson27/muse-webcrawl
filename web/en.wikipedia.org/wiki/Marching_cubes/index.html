@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Marching cubes - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;color:#202122;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.35em;border-bottom:1px solid #a2a9b1;margin-top:1.4em}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.85em;width:250px}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.caption{font-size:.85em;color:#54595d;text-align:center}
+</style>
+</head>
+<body>
+<h1>Marching cubes</h1>
+<div class="infobox">
+<img src="images/marching-cubes.png" alt="Diagram of the 15 fundamental marching cubes configurations" style="width:100%">
+<div class="caption">The 15 unique polygon configurations, reduced from 256 by symmetry</div>
+</div>
+<p><b>Marching cubes</b> is a computer graphics algorithm, published in the 1987 SIGGRAPH proceedings by William E. Lorensen and Harvey E. Cline, for extracting a polygonal mesh of an isosurface from a three-dimensional discrete scalar field (sometimes called a voxel field). The applications of this algorithm are mainly concerned with medical visualizations such as CT and MRI scan data images, and special effects or general three-dimensional modelling with what is usually called metaballs or other metasurfaces.</p>
+<h2>Basic idea</h2>
+<p>The algorithm proceeds through the scalar field, taking eight neighbor locations at a time (thus forming an imaginary cube), then determining the polygon(s) needed to represent the part of the isosurface that passes through this cube. The individual polygons are then fused into the desired surface. Each of the eight vertices of a cube is classified as inside or outside the surface according to whether its scalar value is above or below the chosen isovalue, giving 2<sup>8</sup> = 256 possible configurations. By rotational and reflective symmetry these reduce to 15 fundamental cases, which can be precomputed in a lookup table. Vertex positions along the cube edges are found by linear interpolation of the scalar values.</p>
+<h2>Ambiguity and holes</h2>
+<p>Certain configurations are ambiguous: neighbouring cubes can be triangulated in ways that leave holes in the resulting mesh. The asymptotic decider, introduced by Nielson and Hamann in 1991, resolves these cases by examining the bilinear interpolation on the shared face. Extensions such as marching tetrahedra avoid ambiguity by dividing each cube into tetrahedra, at the cost of producing more triangles.</p>
+<h2>Patent and use</h2>
+<p>The algorithm was covered by a software patent held by General Electric (US Patent 4,710,876), which led some developers to prefer alternatives such as marching tetrahedra during its term; the patent has since expired. Marching cubes remains the standard approach in volume visualization packages and game engines for terrain and implicit-surface rendering.</p>
+<p><i>See also: <a href="../Isosurface/index.html">Isosurface</a>, <a href="../Marching_tetrahedra/index.html">Marching tetrahedra</a>, <a href="../Voxel/index.html">Voxel</a></i></p>
+</body>
+</html>

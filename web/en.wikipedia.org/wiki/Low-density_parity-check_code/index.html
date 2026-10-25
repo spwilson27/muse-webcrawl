@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Low-density parity-check code - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#f6f6f6;color:#202122;margin:0;padding:0}
+main{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:1.8em;margin-bottom:0.25em}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:1.4em;margin-top:1.2em}
+p{line-height:1.6;font-size:0.95em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:0.85em}
+.infobox img{width:100%;height:auto;background:#eaecf0;display:block}
+.infobox th{text-align:left;padding:2px 6px;vertical-align:top}
+.infobox td{padding:2px 6px}
+.infobox .caption{font-size:0.8em;text-align:center;padding:4px 0}
+code{font-family:monospace;background:#f8f9fa}
+</style>
+</head>
+<body>
+<main>
+<h1>Low-density parity-check code</h1>
+<p>In information theory, a <b>low-density parity-check</b> (<b>LDPC</b>) code is a linear error-correcting code, a method of transmitting a message over a noisy transmission channel. An LDPC code is constructed using a sparse Tanner graph (a subgraph of a bipartite graph). LDPC codes are capacity-approaching codes, which means that practical constructions exist that allow the noise threshold to be set very close to the theoretical maximum (the <a href="../Shannon_limit/index.html">Shannon limit</a>) for a symmetric memoryless channel.</p>
+
+<div class="infobox">
+<img src="images/ldpc-tanner-graph.png" alt="A Tanner graph representing an LDPC code">
+<div class="caption">Tanner graph of an LDPC code</div>
+<table>
+<tr><th>Classification</th><td>Linear block code; forward error correction</td></tr>
+<tr><th>Invented</th><td>Robert G. Gallager, 1960</td></tr>
+<tr><th>Decoding</th><td>Iterative belief propagation (sum-product)</td></tr>
+<tr><th>Uses</th><td>5G NR, Wi-Fi (802.11n/ac/ax), DVB-S2, 10GBASE-T Ethernet, deep-space links</td></tr>
+</table>
+</div>
+
+<h2>History</h2>
+<p>LDPC codes were first developed by Robert G. Gallager in his doctoral dissertation at MIT in 1960. Because the computational demands of implementing the encoders and decoders were far beyond the hardware of the time, they were largely forgotten for three decades. They were rediscovered in the mid-1990s, in the wake of the excitement over <a href="../Turbo_code/index.html">turbo codes</a>, notably through the work of David MacKay and Radford Neal, who showed that Gallager's codes performed as well as or better than turbo codes. LDPC codes have since been adopted in a wide range of communications standards.</p>
+
+<h2>Construction and decoding</h2>
+<p>An LDPC code is defined by a parity-check matrix <i>H</i> containing mostly zeros and relatively few ones — hence "low-density." A codeword is a vector <i>c</i> satisfying <i>Hc</i><sup>T</sup> = 0. The structure of <i>H</i> is conveniently drawn as a bipartite (Tanner) graph connecting variable nodes to check nodes. Codes whose parity-check matrix has a constant number of ones per row and column are called <i>regular</i>; carefully optimised varying degrees give <i>irregular</i> LDPC codes with still better performance.</p>
+<p>Decoding is performed iteratively by message passing — belief propagation, or the sum-product algorithm — on the Tanner graph: variable and check nodes exchange estimates of the transmitted bits until a valid codeword is found or a maximum number of iterations is reached. Simplified variants such as min-sum decoding are used in hardware.</p>
+
+<h2>Applications</h2>
+<p>LDPC codes are used in the DVB-S2 satellite television standard, Wi-Fi standards from 802.11n onward, 10GBASE-T Ethernet, WiMAX, DOCSIS 3.1 cable, and the data channel of the <a href="../5G_NR/index.html">5G NR</a> mobile standard. They are also widely studied for data storage in flash memory and hard drives.</p>
+
+<h2>See also</h2>
+<p><a href="../Turbo_code/index.html">Turbo code</a> &middot; <a href="../Forward_error_correction/index.html">Forward error correction</a> &middot; <a href="../Polar_code_(coding_theory)/index.html">Polar code</a> &middot; <a href="../Shannon_limit/index.html">Shannon limit</a></p>
+</main>
+</body>
+</html>

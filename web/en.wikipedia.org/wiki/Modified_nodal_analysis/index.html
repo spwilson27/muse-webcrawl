@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Modified nodal analysis - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:32px 40px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:6px;margin-top:0}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:28px}
+.hero{display:block;margin:16px auto;max-width:420px;width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:24px 0;text-align:center;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Modified nodal analysis</h1>
+<img class="hero" src="images/modified-nodal-analysis.png" alt="An MNA matrix system for a small circuit with a voltage source">
+<p>In electrical engineering, <b>modified nodal analysis</b> (<b>MNA</b>) is an extension of nodal analysis that not only determines the circuit's node voltages but also some branch currents. It is the standard formulation used by circuit simulators such as SPICE, because plain nodal analysis cannot directly handle voltage sources or other elements whose branch current is not expressible in terms of node voltages.</p>
+
+<h2>Method</h2>
+<p>In ordinary nodal analysis, Kirchhoff's current law is written at every non-reference node, with branch currents expressed through element conductances and node voltages. Voltage-defined elements — independent and dependent voltage sources, and (in most implementations) inductors — break this scheme, because their currents are unknown. MNA solves the problem by adding the currents through voltage-defined branches as extra unknowns, and adding the corresponding branch voltage equations as extra rows and columns of the linear system. The result is a sparse matrix equation of the form <span style="font-family:monospace">A x = z</span>, where <i>x</i> contains the node voltages followed by the extra branch currents. Each element contributes a characteristic "stamp" of entries to the matrix, which makes the method easy to automate.</p>
+
+<h2>History and extensions</h2>
+<p>The method was formalised in the 1970s, notably by Chung-Wen Ho, Albert Ruehli and Paul Brennan of IBM in their 1975 paper "The modified nodal approach to network analysis," as SPICE-style simulators were being developed. Nonlinear devices are handled by linearising around an operating point within a Newton–Raphson iteration; dynamic elements in transient analysis are handled by companion models derived from numerical integration formulas such as trapezoidal or Gear methods. MNA's matrices are sparse and are solved with sparse LU factorisation and pivoting strategies that preserve sparsity.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Nodal_analysis/index.html">Nodal analysis</a></li>
+<li><a href="../SPICE/index.html">SPICE</a></li>
+<li><a href="../Kirchhoffs_circuit_laws/index.html">Kirchhoff's circuit laws</a></li>
+</ul>
+<p class="small">Recreated from memory for the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

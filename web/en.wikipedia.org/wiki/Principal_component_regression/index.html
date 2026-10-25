@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Principal component regression - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;font-size:1.4em;margin-top:1.2em}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{text-align:left;background:#eaecf0;padding:4px}
+.infobox td{padding:4px}
+a{color:#0645ad;text-decoration:none}
+.imgph{border:1px solid #a2a9b1;background:#f0f0f0;text-align:center;padding:24px;color:#666}
+.small{font-size:0.85em;color:#555}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Principal component regression</h1>
+<div class="imgph"><img src="images/principal_component_regression.png" alt="Placeholder chart of principal component scores"></div>
+<p class="small">Placeholder image: regression on principal component scores</p>
+<p>In statistics, <b>principal component regression</b> (PCR) is a regression analysis technique based on <a href="../Principal_component_analysis/index.html">principal component analysis</a> (PCA). The method regresses the response variable on a subset of the principal components of the predictor variables, typically those with the largest eigenvalues, which can mitigate the effects of multicollinearity.</p>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Principal component regression</th></tr>
+<tr><th>Type</th><td>Regression analysis / dimensionality reduction</td></tr>
+<tr><th>Based on</th><td>Principal component analysis</td></tr>
+<tr><th>Related methods</th><td>Partial least squares regression; ridge regression</td></tr>
+</table>
+</div>
+<h2>Overview</h2>
+<p>PCR proceeds in three steps: first, PCA is performed on the (usually standardised) design matrix; second, ordinary least squares regression is fitted using only the first <i>k</i> principal components as predictors; third, the resulting coefficients are transformed back into the space of the original variables. Because the principal components are mutually orthogonal, the regression is numerically stable even when the original predictors are highly correlated.</p>
+<h2>Use in chemometrics</h2>
+<p>PCR has been widely used in chemometrics and spectroscopy, where predictors are absorbance readings at hundreds of wavelengths. It is closely related to partial least squares regression, which instead chooses components that also maximise covariance with the response.</p>
+<h2>Properties</h2>
+<p>Unlike ridge regression, which shrinks all directions smoothly, PCR performs a hard selection of directions: components in the retained set are unshrunk, and the rest are discarded entirely. The choice of <i>k</i> is often made by cross-validation. A known caveat is that the highest-variance components need not be the most predictive, so the response-blind step of PCA can sometimes discard useful low-variance directions.</p>
+<p class="small">See also: <a href="../Multicollinearity/index.html">Multicollinearity</a>; <a href="../Kernel_principal_component_analysis/index.html">Kernel PCA</a></p>
+</div>
+</body>
+</html>

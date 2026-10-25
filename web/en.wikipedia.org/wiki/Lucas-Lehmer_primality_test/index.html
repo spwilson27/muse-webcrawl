@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lucas-Lehmer primality test - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:12px;margin:0 0 16px 16px;font-size:0.9em}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{width:100%;height:auto;display:block;margin-bottom:8px}
+.caption{font-size:0.85em;color:#54595d;text-align:center}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;overflow:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Lucas-Lehmer primality test</h1>
+<table class="infobox">
+<tr><td colspan="2"><img class="hero" src="images/lucas-lehmer.png" alt="Diagram of the Lucas-Lehmer sequence modulo a Mersenne number"></td></tr>
+<tr><td colspan="2" class="caption">The Lucas–Lehmer iteration</td></tr>
+<tr><th>Type</th><td>Deterministic primality test</td></tr>
+<tr><th>Applies to</th><td>Mersenne numbers</td></tr>
+</table>
+<p>In mathematics, the <b>Lucas-Lehmer test</b> (LLT) is a primality test for Mersenne numbers. The test was originally developed by Édouard Lucas in 1876 and subsequently improved by Derrick Henry Lehmer in the 1930s. It has been used to find most of the largest known prime numbers.</p>
+<h2>The test</h2>
+<p>Let M<sub>p</sub> = 2<sup>p</sup> − 1 be the Mersenne number to test, with p an odd prime. Define a sequence by s<sub>0</sub> = 4 and s<sub>i</sub> = s<sub>i−1</sub><sup>2</sup> − 2 for i ≥ 1, computed modulo M<sub>p</sub>. Then M<sub>p</sub> is prime if and only if s<sub>p−2</sub> ≡ 0 (mod M<sub>p</sub>).</p>
+<pre>
+Lucas–Lehmer(p):
+  s := 4
+  M := 2^p − 1
+  repeat p − 2 times:
+    s := (s*s − 2) mod M
+  if s == 0 return PRIME else return COMPOSITE
+</pre>
+<h2>Significance</h2>
+<p>Because the test is efficient and conclusive, it powers the Great Internet Mersenne Prime Search (GIMPS), a distributed computing project that has discovered the largest known prime numbers, all of them Mersenne primes verified with the Lucas-Lehmer test.</p>
+<p><i>See also: Mersenne prime; GIMPS; Primality test.</i></p>
+</div>
+</body>
+</html>

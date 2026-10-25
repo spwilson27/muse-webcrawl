@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sequent calculus - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.mw-body { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; font-size: 0.95em; }
+.mono { font-family: monospace; background: #f8f9fa; border: 1px solid #eaecf0; padding: 0.5em 1em; font-size: 0.95em; }
+.thumb { float: right; margin: 0 0 1em 1.5em; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; text-align: center; font-size: 0.8em; width: 260px; }
+.thumb img { width: 250px; height: 160px; background: #eaecf0; display: block; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul { line-height: 1.6; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Sequent calculus</h1>
+<div class="thumb"><img src="images/sequent-calculus.png" alt="A derivation tree in sequent calculus"><div>A proof tree built from sequent rules.</div></div>
+<p><b>Sequent calculus</b> is a style of formal logical argumentation in which every inference line is a conditional tautology called a <b>sequent</b>. It was introduced by the German logician <b>Gerhard Gentzen</b> in the mid-1930s, in his landmark investigations into the foundations of logic, alongside his system of <b>natural deduction</b>. Sequent calculus is one of the principal frameworks of <b>proof theory</b>, valued because its symmetries make the structure of proofs amenable to mathematical analysis.</p>
+<h2>Sequents</h2>
+<p>A sequent has the form</p>
+<div class="mono">&Gamma; &rarr; &Delta;</div>
+<p>where &Gamma; (the antecedent) and &Delta; (the succedent) are finite sequences or multisets of formulas. The intended reading is that the conjunction of the formulas in &Gamma; implies the disjunction of the formulas in &Delta;: "if everything on the left holds, then at least one thing on the right holds." A proof of a formula A is a derivation of the sequent with empty antecedent and A alone in the succedent.</p>
+<h2>The systems LK and LJ</h2>
+<p>Gentzen presented two systems: <b>LK</b> (<i>Logistische Klassische Kalkül</i>), for classical logic, in which succedents may contain several formulas, and <b>LJ</b>, for intuitionistic logic, obtained by restricting succedents to at most one formula. Rules divide into <b>logical rules</b>, which introduce a connective on the left or right of the arrow, and <b>structural rules</b> — weakening, contraction, and exchange — which manipulate the arrangement of formulas. The identity axiom and the <b>cut rule</b>, which combines a proof of a formula with a proof that uses it, complete the system.</p>
+<h2>Cut elimination</h2>
+<p>Gentzen's central result, the <b>cut-elimination theorem</b> (his <i>Hauptsatz</i>, "main theorem"), states that any derivation using the cut rule can be transformed into one that does not. Cut-free proofs have the <b>subformula property</b>: every formula appearing in the proof is a subformula of the conclusion. This yields proofs of consistency for the systems concerned — Gentzen applied the method to give a consistency proof for arithmetic — and underlies the use of sequent calculi in automated theorem proving, where proof search can proceed by working upward from the goal sequent without having to guess intermediate "cut" formulas.</p>
+<h2>Variants and influence</h2>
+<p>Sequent-style systems have been devised for modal, temporal, linear, relevance, and substructural logics, typically by adjusting the structural rules: linear logic, for instance, drops unrestricted weakening and contraction. Proof-theoretic semantics and the Curry–Howard correspondence connect sequent derivations with computation; the calculus also influenced the design of logic programming and proof assistants. Its left–right symmetry contrasts with Hilbert-style systems, which have many axioms and few rules, and with natural deduction, where the symmetry is less explicit.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Natural_deduction/index.html">Natural deduction</a></li>
+<li><a href="../Cut-elimination_theorem/index.html">Cut-elimination theorem</a></li>
+<li><a href="../Gerhard_Gentzen/index.html">Gerhard Gentzen</a></li>
+<li><a href="../Proof_theory/index.html">Proof theory</a></li>
+<li><a href="../Hilbert_system/index.html">Hilbert system</a></li>
+</ul>
+</div>
+</body>
+</html>

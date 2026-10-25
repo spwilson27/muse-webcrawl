@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nyquist stability criterion - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0 auto; max-width: 960px; padding: 20px; color: #202122; background: #fff; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+figure { text-align: center; margin: 1em auto; }
+figure img { max-width: 400px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 8px; box-sizing: border-box; }
+figcaption { font-size: 0.85em; color: #54595d; margin-top: 4px; }
+.formula { text-align: center; font-size: 1.2em; background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px; margin: 1em 0; }
+p { line-height: 1.6; }
+</style>
+</head>
+<body>
+<h1>Nyquist stability criterion</h1>
+<figure>
+<img src="images/Nyquist_stability_criterion.png" alt="A Nyquist plot curving around the critical point minus one on the complex plane">
+<figcaption>A Nyquist plot of an open-loop transfer function.</figcaption>
+</figure>
+<p>The <b>Nyquist stability criterion</b> is a graphical technique in <a href="../Control_theory/index.html">control theory</a> for determining the stability of a feedback system from the frequency response of its open-loop transfer function. It was proposed by the Swedish-American engineer <a href="../Harry_Nyquist/index.html">Harry Nyquist</a> in 1932 while he was working on feedback amplifiers at Bell Telephone Laboratories.</p>
+<h2>Principle</h2>
+<p>One plots the open-loop transfer function <i>G</i>(<i>s</i>)<i>H</i>(<i>s</i>) as the complex variable <i>s</i> traverses a contour enclosing the right half of the complex plane (the Nyquist contour). By the argument principle of complex analysis, the number of times the resulting Nyquist plot encircles the critical point (−1, 0) reveals how many poles the closed-loop system has in the right half-plane.</p>
+<h2>The criterion</h2>
+<p>Let <i>P</i> be the number of unstable (right half-plane) poles of the open-loop transfer function, and let <i>N</i> be the number of clockwise encirclements of the point −1. Then the number of unstable closed-loop poles is</p>
+<div class="formula">Z = N + P</div>
+<p>The closed-loop system is stable if and only if <i>Z</i> = 0, i.e. when the number of counterclockwise encirclements of −1 equals the number of unstable open-loop poles. For the common case of an open-loop stable plant (<i>P</i> = 0), the closed loop is stable precisely when the Nyquist plot does not encircle −1 at all.</p>
+<h2>Advantages</h2>
+<p>The criterion remains fundamental because it works directly with measured frequency-response data, handles systems with time delays and non-minimum-phase behaviour, and yields quantitative robustness measures — <b>gain margin</b> and <b>phase margin</b> — read straight from the plot. Together with <a href="../Bode_plot/index.html">Bode plots</a> and the <a href="../Routh%E2%80%93Hurwitz_stability_criterion/index.html">Routh–Hurwitz criterion</a>, it forms the classical core of feedback design, applied today in everything from process control to flight-control systems.</p>
+</body>
+</html>

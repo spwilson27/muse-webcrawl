@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Semaphore (programming) - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+p, li { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 12px 16px; font-size: 13px; }
+.infobox img { width: 100%; height: auto; }
+code, pre { font-family: monospace; background: #f8f9fa; }
+pre { border: 1px solid #eaecf0; padding: 10px; overflow-x: auto; }
+.small { font-size: 13px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Semaphore (programming)</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="infobox">
+<img src="images/semaphore-programming.png" alt="Diagram of processes waiting on and signalling a semaphore guarding a shared resource">
+<p><b>Semaphore</b> — a synchronization primitive used to control access to a common resource by multiple processes in a concurrent system.</p>
+</div>
+<p>In <a href="../Computer_programming/index.html">computer programming</a>, a <b>semaphore</b> is a variable or abstract data type used to control access to a common resource by multiple <a href="../Process_(computing)/index.html">processes</a> and to avoid <a href="../Critical_section/index.html">critical section</a> problems in a <a href="../Concurrency_(computer_science)/index.html">concurrent</a> system such as a multitasking operating system. Semaphores are a type of synchronization primitive and were introduced by the Dutch computer scientist <a href="../Edsger_W._Dijkstra/index.html">Edsger W. Dijkstra</a> in the mid-1960s.</p>
+<p>A semaphore is a record of how many units of a particular resource are available, coupled with operations to safely adjust that record as units are acquired or released, and, if necessary, to wait until a unit becomes available.</p>
+<h2>History</h2>
+<p>Dijkstra developed the semaphore concept while working on an early multiprogramming system at the Mathematisch Centrum in Amsterdam. He introduced the operations <i>P</i> and <i>V</i>, named after the Dutch words <i>proberen</i> ("to test") and <i>verhogen</i> ("to raise, increment"), in his 1965 paper describing the THE multiprogramming system. Semaphores became one of the foundational tools of concurrent programming and remain built into most modern operating systems and threading libraries.</p>
+<h2>Semantics and operations</h2>
+<p>The classic semaphore supports two atomic operations:</p>
+<ul>
+<li><b>wait</b> (P): decrements the value of the semaphore. If the value would become negative, the calling process is blocked and placed in a queue until the semaphore can be decremented.</li>
+<li><b>signal</b> (V): increments the value of the semaphore. If any processes are waiting, one of them is unblocked and allowed to proceed.</li>
+</ul>
+<p>Because the test-and-decrement must be indivisible, semaphore operations are implemented with the help of the operating system kernel or hardware atomic instructions, so that no race condition can occur between checking the value and changing it.</p>
+<h2>Types of semaphores</h2>
+<p>A <b>binary semaphore</b> can take only the values 0 and 1 and behaves much like a <a href="../Lock_(computer_science)/index.html">lock</a> or <a href="../Mutex/index.html">mutex</a>, although the two are not identical: a mutex typically has an owner that must release it, whereas a semaphore may be signalled by a different thread than the one that waited on it. A <b>counting semaphore</b> can take any non-negative integer value and is used to manage a pool of identical resources, such as a fixed number of database connections.</p>
+<h2>Uses</h2>
+<p>Semaphores are commonly used to solve the <a href="../Producer–consumer_problem/index.html">producer–consumer problem</a>, to implement bounded buffers, to limit the number of threads simultaneously executing a section of code, and to signal events between cooperating threads. Misuse can lead to <a href="../Deadlock/index.html">deadlock</a>, priority inversion, and other concurrency bugs, so higher-level constructs such as <a href="../Monitor_(synchronization)/index.html">monitors</a> and condition variables are often preferred in application code.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Mutex/index.html">Mutex</a></li>
+<li><a href="../Monitor_(synchronization)/index.html">Monitor (synchronization)</a></li>
+<li><a href="../Dining_philosophers_problem/index.html">Dining philosophers problem</a></li>
+<li><a href="../Spinlock/index.html">Spinlock</a></li>
+</ul>
+</div>
+</body>
+</html>

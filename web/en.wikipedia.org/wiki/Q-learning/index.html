@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Q-learning - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.mw-body { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em; margin: 0 0 1em 1em; font-size: 0.9em; }
+.infobox th { text-align: left; padding-right: 0.5em; }
+.hero { width: 100%; height: auto; display: block; margin-bottom: 0.5em; }
+.small { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Q-learning</h1>
+<div class="infobox">
+<img class="hero" src="images/q-learning.png" alt="Diagram of a Q-table being updated in Q-learning">
+<table>
+<tr><th>Type</th><td>Reinforcement learning algorithm</td></tr>
+<tr><th>Introduced</th><td>1989 (Chris Watkins)</td></tr>
+<tr><th>Class</th><td>Model-free, value-based, off-policy</td></tr>
+</table>
+</div>
+<p><b>Q-learning</b> is a model-free <a href="../Reinforcement_learning/index.html">reinforcement learning</a> algorithm for learning the value of an action in a particular state. It seeks an <i>action-value function</i> Q(s, a) — the expected cumulative reward of taking action a in state s and following an optimal policy thereafter. Because it learns the value of the optimal action independently of the policy being followed, Q-learning is an <b>off-policy</b> method. It was introduced by Chris Watkins in his 1989 doctoral thesis and became one of the foundational algorithms of reinforcement learning.</p>
+
+<h2>Algorithm</h2>
+<p>The algorithm maintains a table (or function approximator) of Q-values, initialised arbitrarily, and updates it after each observed transition using the Bellman optimality equation:</p>
+<p style="text-align:center">Q(s, a) ← Q(s, a) + α [ r + γ · max<sub>a′</sub> Q(s′, a′) − Q(s, a) ]</p>
+<p>where α is the learning rate, r the observed reward, γ the discount factor, and s′ the resulting state. Watkins and Dayan proved in 1992 that Q-learning converges to the optimal action-value function provided every state–action pair is visited infinitely often and the learning rate satisfies standard stochastic-approximation conditions. Exploration is commonly handled with an ε-greedy strategy.</p>
+
+<h2>Variants and applications</h2>
+<p>For state spaces too large for a table, Q-values can be approximated with neural networks. This idea underlies <b><a href="../Deep_reinforcement_learning/index.html">deep Q-networks</a> (DQN)</b>, used by DeepMind in 2015 to learn Atari 2600 games from raw pixels. Other variants include Double Q-learning (which reduces maximisation bias), SARSA (the on-policy counterpart) and various dueling and distributional architectures.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Reinforcement_learning/index.html">Reinforcement learning</a></li>
+<li><a href="../Markov_decision_process/index.html">Markov decision process</a></li>
+<li><a href="../Temporal_difference_learning/index.html">Temporal difference learning</a></li>
+<li><a href="../Deep_reinforcement_learning/index.html">Deep reinforcement learning</a></li>
+</ul>
+<p class="small">From Wikipedia, the free encyclopedia.</p>
+</div>
+</body>
+</html>

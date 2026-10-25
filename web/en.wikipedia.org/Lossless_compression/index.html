@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lossless compression - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:820px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:28px}
+h3{font-size:17px;margin-top:20px}
+.hero{display:block;margin:16px auto;max-width:400px;background:#f8f9fa;border:1px solid #c8ccd1;padding:6px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:13px;color:#54595d}
+ul{margin:8px 0}
+</style>
+</head>
+<body>
+<h1>Lossless compression</h1>
+<img class="hero" src="images/lossless-compression.png" alt="Illustration of redundant data being compacted without information loss">
+<p><b>Lossless compression</b> is a class of data compression that allows the original data to be perfectly reconstructed from the compressed data with no loss of information. Lossless compression is possible because most real-world data exhibits statistical redundancy. By contrast, <a href="../Lossy_compression/">lossy compression</a> permits reconstruction only of an approximation of the original data, in exchange for improved compression rates.</p>
+<p>Lossless data compression is used in many applications, including the ZIP file format and the GNU tool gzip. It is also used in components of other formats: PNG uses lossless compression of images, and audio formats such as FLAC and Apple Lossless compress sound without discarding any samples. It is essential wherever the original and decompressed data must be identical, for example in executable files, text, financial records and medical images.</p>
+
+<h2>Theory</h2>
+<p>Shannon's source coding theorem establishes that the expected code length of a lossless encoding cannot be less than the entropy of the source. A simple counting argument (the pigeonhole principle) shows that no lossless algorithm can compress every possible input: some files must grow. Practical compressors therefore exploit structure — repeated strings, skewed symbol frequencies and predictable patterns — present in real data.</p>
+
+<h2>Techniques</h2>
+<h3>Statistical methods</h3>
+<p>Entropy encoding assigns shorter codewords to more probable symbols. Huffman coding (1952) generates an optimal prefix code for a known symbol distribution, while arithmetic coding represents an entire message as a single fraction, approaching the entropy bound more closely. Modern systems such as zstd and brotli refine these ideas using finite-state entropy coding.</p>
+<h3>Dictionary methods</h3>
+<p>The LZ77 and LZ78 algorithms, published by Abraham Lempel and Jacob Ziv in 1977 and 1978, replace repeated substrings with references to earlier occurrences. Phil Katz's DEFLATE combines LZ77 with Huffman coding and underlies ZIP, gzip and PNG. The Lempel–Ziv–Welch (LZW) variant powered early GIF images and the Unix compress utility.</p>
+<h3>Other methods</h3>
+<ul>
+<li><b>Run-length encoding</b> stores runs of repeated symbols as a count plus a value; effective for simple graphics and fax images.</li>
+<li><b>Burrows–Wheeler transform</b>, used by bzip2, reversibly reorders data to group similar symbols for subsequent encoding.</li>
+<li><b>Prediction</b> techniques, such as context mixing in PAQ and the delta filters of PNG, predict each symbol from its context and encode only the error.</li>
+</ul>
+
+<h2>Formats and applications</h2>
+<p>Common lossless formats include ZIP, 7z, gzip, bzip2 and xz for general files; PNG, WebP lossless and TIFF for images; FLAC, ALAC and Monkey's Audio for sound; and losslessly compressed video in professional editing workflows. Cryptographic systems compress before encrypting, since ciphertext is essentially random and incompressible.</p>
+
+<p class="small">See also: <a href="../Data_compression/">Data compression</a> · <a href="../Lossy_compression/">Lossy compression</a> · Huffman coding · Information theory</p>
+</body>
+</html>

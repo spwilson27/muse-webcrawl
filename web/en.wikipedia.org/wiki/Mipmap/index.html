@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mipmap - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{max-width:100%;border:1px solid #c8ccd1;background:#eef}
+.small{font-size:90%;color:#54595d}
+code{font-family:monospace;background:#f0f0f0;padding:0 2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Mipmap</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/mipmap.png" alt="Illustration placeholder: a texture shown at successively halved resolutions forming a mipmap pyramid">
+<p>In computer graphics, a <b>mipmap</b> is a pre-calculated, optimized sequence of images accompanying a main <a href="../Texture_mapping/index.html">texture</a>, in which each successive image is a lower-resolution representation of the previous one. The term comes from the Latin phrase <i>multum in parvo</i>, meaning "much in a small space". Mipmaps are widely used in real-time 3D rendering to improve image quality and performance when textured surfaces are viewed at a distance or at glancing angles.</p>
+<h2>How it works</h2>
+<p>A mipmap chain stores the base texture followed by versions reduced by a factor of two in each dimension — for example 256×256, 128×128, 64×64, down to 1×1. The whole chain requires about one third more memory than the base texture alone. During rendering, the graphics hardware estimates how large a texture element (texel) appears on screen and samples the level whose resolution best matches. Trilinear filtering interpolates between the two nearest levels as well as within them, removing the shimmering and aliasing (moiré patterns) that occur when a single high-resolution texture is minified.</p>
+<h2>Origins and use</h2>
+<p>Mipmapping was described by Lance Williams in his 1983 paper "Pyramidal Parametrics", which grew out of work on texture representation at NYIT. The technique is now built into graphics APIs such as OpenGL and Direct3D, and most game engines generate mipmaps automatically when textures are imported. Its main limitation is that a single square, isotropically filtered level performs poorly on surfaces seen at very oblique angles; anisotropic filtering extends the idea to address this.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Texture_mapping/index.html">Texture mapping</a></li>
+<li><a href="../Anisotropic_filtering/index.html">Anisotropic filtering</a></li>
+<li><a href="../Anti-aliasing/index.html">Anti-aliasing</a></li>
+<li><a href="../Level_of_detail_(computer_graphics)/index.html">Level of detail</a></li>
+</ul>
+<p class="small">This page was recreated from memory for the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Linear-feedback shift register - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;min-height:100vh}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 16px 16px;font-size:0.88em}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+.hero{display:block;max-width:100%;margin:12px auto}
+.small{color:#54595d;font-size:0.85em}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Linear-feedback shift register</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/linear-feedback-shift-register.png" alt="A 16-bit Fibonacci LFSR circuit diagram">
+<table class="infobox">
+<tr><th>Type</th><td>Shift register circuit / algorithm</td></tr>
+<tr><th>Output</th><td>Pseudorandom bit sequence</td></tr>
+<tr><th>Key parameter</th><td>Feedback (characteristic) polynomial</td></tr>
+<tr><th>Max period</th><td>2<sup>n</sup> − 1 for an n-bit register</td></tr>
+</table>
+<p>A <b>linear-feedback shift register</b> (LFSR) is a shift register whose input bit is a linear function — in practice, the XOR — of its previous state. Starting from a non-zero seed, the register cycles through a sequence of states that appears random and is used to generate pseudorandom binary sequences.</p>
+<h2>Operation</h2>
+<p>The positions of the register that feed the XOR are called taps, and the tap pattern is described by a feedback polynomial over GF(2). In the <i>Fibonacci</i> configuration the XOR of the tapped bits feeds the input; in the <i>Galois</i> configuration the output bit is XORed with selected bits as they shift. The two forms generate equivalent sequences with different implementations. If the feedback polynomial is primitive, the LFSR attains its maximum period of 2<sup>n</sup> − 1 states before repeating.</p>
+<h2>Applications</h2>
+<p>LFSRs are cheap to implement in hardware and fast in software, so they appear in cyclic redundancy checks (CRCs), stream ciphers (such as the A5/1 and A5/2 ciphers formerly used in GSM, and the E0 cipher in Bluetooth), spread-spectrum and scrambling systems, built-in self-test of circuits, and as counters and pseudo-noise sequence generators in communications. Because their output is linear, a raw LFSR sequence is predictable — the Berlekamp–Massey algorithm can recover the polynomial from a short stretch of output — so cryptographic designs combine several registers or filter their outputs nonlinearly.</p>
+</div>
+</body>
+</html>

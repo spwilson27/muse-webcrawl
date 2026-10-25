@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Structural type system - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 50em; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 2em; box-sizing: border-box; }
+code { background: #f8f9fa; padding: 0.1em 0.3em; }
+</style>
+</head>
+<body>
+<h1>Structural type system</h1>
+<div class="hero"><img src="images/structural-type-system.png" alt="Diagram comparing structural and nominal typing"></div>
+<p>A <b>structural type system</b> (or <b>property-based type system</b>) is a major class of type system in which type compatibility and equivalence are determined by the type's actual structure or definition and not by other characteristics such as its name or place of declaration. Structural systems are used to determine if types are equivalent and whether a type is a subtype of another.</p>
+<p>Structural type systems contrast with <a href="../Nominal_type_system/index.html">nominal type systems</a>, where comparisons are based on explicit declarations or names of types. In a nominal system, two types are equivalent only if they are declared to be so (or share the same name), whereas in a structural system, two types are equivalent if they have the same structure — for example, if they expose the same set of fields or methods with compatible types.</p>
+<h2>Structural subtyping</h2>
+<p>In structural subtyping, one type is considered a subtype of another if it provides at least all of the members of the supertype. For example, a record type with fields <code>x</code> and <code>y</code> is a subtype of a record type with only field <code>x</code>, because any value of the wider type can be used wherever a value of the narrower type is expected. This is sometimes called <i>width subtyping</i>.</p>
+<h2>Languages</h2>
+<p>Languages that use structural typing, wholly or in part, include:</p>
+<ul>
+<li><b>Go</b> — interfaces are satisfied implicitly by any type implementing the required methods.</li>
+<li><b>TypeScript</b> — object types are compared structurally.</li>
+<li><b>OCaml</b> — object types and polymorphic variants are structural.</li>
+<li><b>Haskell</b> — type classes resemble structural interfaces, though they are resolved by instance declarations.</li>
+<li><b>Elm</b> and <b>Flow</b> also employ structural typing for records and objects.</li>
+</ul>
+<h2>Relation to duck typing</h2>
+<p>Structural typing is related to <a href="../Duck_typing/index.html">duck typing</a>, in which compatibility is determined by the presence of methods and properties. The difference is that structural typing is checked statically, at compile time, while duck typing is typically a dynamic, runtime concept.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Type_system/index.html">Type system</a></li>
+<li><a href="../Nominal_type_system/index.html">Nominal type system</a></li>
+<li><a href="../Subtyping/index.html">Subtyping</a></li>
+<li><a href="../Duck_typing/index.html">Duck typing</a></li>
+</ul>
+</body>
+</html>

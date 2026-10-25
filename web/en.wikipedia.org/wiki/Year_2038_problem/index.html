@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Year 2038 problem - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:24px;line-height:1.6;color:#222}h1{border-bottom:2px solid #a2a9b1;padding-bottom:6px}h2{border-bottom:1px solid #ccc;padding-bottom:4px}.hero{display:block;max-width:100%;height:auto;background:#eaecf0;border:1px dashed #999;padding:28px 0;text-align:center;color:#555}a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}</style>
+</head>
+<body>
+<h1>Year 2038 problem</h1>
+<img class="hero" src="images/year_2038_problem.png" alt="A digital counter rolling over from its maximum value to a negative number">
+<p>The <b>Year 2038 problem</b> (also called Y2038, Y2K38, or the Epochalypse) is a time-formatting bug in computer systems that store time as a signed 32-bit integer count of seconds since the Unix epoch (00:00:00 UTC on 1 January 1970). Such integers overflow at 03:14:07 UTC on 19 January 2038, after which the stored value wraps around to a negative number, interpreted as a date in December 1901.</p>
+<h2>Cause</h2>
+<p>The largest value representable in a signed 32-bit integer is 2<sup>31</sup> − 1 = 2,147,483,647 seconds, which corresponds to the overflow moment above. Systems using the traditional C <i>time_t</i> type on 32-bit platforms — long standard in Unix-like systems and embedded devices — are affected, as are file systems, databases, protocols, and data formats that embed 32-bit timestamps. Consequences of the wraparound can include incorrect dates, crashed schedulers, expired-certificate errors, and corrupted records in long-lived equipment such as industrial controllers, vehicles, and infrastructure expected to remain in service past 2038.</p>
+<h2>Mitigations</h2>
+<p>The general solution is to move to 64-bit time representations, whose overflow lies hundreds of billions of years in the future. Most 64-bit operating systems already use 64-bit <i>time_t</i>; Linux added support for 64-bit time on 32-bit architectures in kernel 5.6 (2020), and OpenBSD adopted 64-bit time_t in 2014. Remediation is nevertheless complicated for embedded and legacy systems that cannot easily be updated, and for stored data and on-disk formats. The problem is frequently compared with the <a href="../Year_2000_problem/index.html">Year 2000 problem</a>, though its long lead time has allowed a quieter, more gradual fix.</p>
+<p><i>Categories: Year 2038 problem; Time formatting and storage bugs; Unix</i></p>
+</body>
+</html>

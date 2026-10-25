@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SYN flood - Wikipedia</title>
+<style>
+body{font-family:'Helvetica Neue',Arial,sans-serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:6px;margin-top:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+.hero{display:block;margin:16px auto;max-width:420px;width:100%;background:#e8f0e8;border:2px dashed #72777d;color:#54595d;text-align:center;padding:48px 0;font-size:14px}
+p{line-height:1.6;font-size:15px}
+ul{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>SYN flood</h1>
+<img class="hero" src="images/syn-flood.png" alt="Diagram of a SYN flood: many half-open connections exhaust the server's backlog queue">
+<p>A <b>SYN flood</b> is a form of denial-of-service attack in which an attacker rapidly initiates a large number of TCP connections to a target without completing the connection handshake. The attack exploits the state that a server allocates when it receives the initial SYN packet of the TCP three-way handshake.</p>
+<h2>Mechanism</h2>
+<p>Under normal operation, a server that receives a SYN responds with a SYN-ACK and reserves an entry in its connection backlog queue, waiting briefly for the client's final ACK. In a SYN flood, the attacker sends SYNs — often with spoofed source addresses that never reply — faster than the server can time the half-open connections out. The backlog fills, and legitimate connection requests are rejected or ignored, rendering the service unavailable. Because a single SYN packet is small, the attack can be highly asymmetric: little attacker bandwidth can deny service on a much better-provisioned target.</p>
+<h2>Countermeasures</h2>
+<ul>
+<li><b>SYN cookies:</b> the server encodes connection state in the sequence number of its SYN-ACK and allocates no memory until the client returns a valid ACK, defeating spoofed floods.</li>
+<li><b>Increasing the backlog</b> and shortening half-open timeouts.</li>
+<li><b>Filtering and scrubbing:</b> firewalls, load balancers and upstream providers detect and drop anomalous SYN traffic or complete handshakes on the server's behalf (SYN proxying).</li>
+<li><b>Micro-blocks and RST cookies</b>, older techniques that reduce per-connection state.</li>
+</ul>
+<p>SYN floods were first widely publicised in 1996, when attacks knocked the New York ISP Panix offline; they remain a common component of distributed denial-of-service campaigns.</p>
+<p><i>See also: <a href="../Denial-of-service_attack/index.html">Denial-of-service attack</a>; <a href="../Transmission_Control_Protocol/index.html">Transmission Control Protocol</a>; <a href="../SYN_cookies/index.html">SYN cookies</a>.</i></p>
+</div>
+</body>
+</html>

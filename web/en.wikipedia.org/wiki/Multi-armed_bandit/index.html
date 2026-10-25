@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Multi-armed bandit - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 60px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 6px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 0.95em; }
+.hero { float: right; margin: 0 0 14px 18px; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 6px; font-size: 0.8em; text-align: center; color: #54595d; }
+.hero img { width: 100%; height: auto; display: block; background: #eaecf0; min-height: 150px; }
+a { color: #0645ad; text-decoration: none; }
+.small { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Multi-armed bandit</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="hero"><img src="images/Multi-armed_bandit.png" alt="A slot machine with multiple arms illustrating the bandit problem">The problem is named for a gambler choosing among slot machines ("one-armed bandits").</div>
+<p>The <b>multi-armed bandit problem</b> is a classic problem in probability theory, statistics, and machine learning that models the trade-off between exploration and exploitation. A gambler must choose repeatedly among <i>K</i> slot machines ("one-armed bandits"), each with an unknown reward distribution, and aims to maximize total reward. Playing an arm reveals information about its payoff (exploration) but may yield less than the currently best-looking arm (exploitation). The problem was formalized by Herbert Robbins in 1952 and has become a foundational model for sequential decision-making under uncertainty.</p>
+<h2>Formulation</h2>
+<p>In the stochastic bandit, each arm <i>i</i> yields rewards drawn independently from a fixed unknown distribution with mean μ<sub>i</sub>. A strategy's performance is measured by its <b>regret</b>: the expected difference between the reward obtainable by always playing the best arm and the reward the strategy actually accumulates. Good strategies achieve regret growing only logarithmically with the number of rounds, which is provably optimal.</p>
+<h2>Algorithms</h2>
+<p>Well-known strategies include <b>ε-greedy</b> (play the empirical best arm except for a small random fraction of explorations), <b>softmax/Boltzmann exploration</b>, <b>upper confidence bound</b> methods (UCB1 and its descendants, which play the arm with the highest optimistic estimate), and <b>Thompson sampling</b>, a Bayesian method dating to 1933 that samples each arm's mean from its posterior distribution. Gittins indices give an optimal solution for the discounted infinite-horizon version of the problem.</p>
+<h2>Variants and applications</h2>
+<p>Important variants include contextual bandits (each round presents side information, as in personalized recommendation), adversarial bandits (rewards chosen by an adversary, addressed by the EXP3 algorithm), restless bandits, and bandits with many or infinitely many arms. Applications range from clinical trial design and A/B testing of websites to online advertising, recommender systems, dynamic pricing, and hyperparameter tuning.</p>
+<h2>See also</h2>
+<p><a href="../Reinforcement_learning/index.html">Reinforcement learning</a> &middot; <a href="../Thompson_sampling/index.html">Thompson sampling</a> &middot; <a href="../Exploration-exploitation_dilemma/index.html">Exploration–exploitation dilemma</a> &middot; <a href="../Gittins_index/index.html">Gittins index</a></p>
+</div>
+</body>
+</html>

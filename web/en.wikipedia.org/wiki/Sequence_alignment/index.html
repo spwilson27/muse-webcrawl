@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sequence alignment - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.mw-body { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; font-size: 0.95em; }
+.mono { font-family: monospace; background: #f8f9fa; border: 1px solid #eaecf0; padding: 0.5em 1em; white-space: pre; font-size: 0.9em; }
+.thumb { float: right; margin: 0 0 1em 1.5em; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; text-align: center; font-size: 0.8em; width: 260px; }
+.thumb img { width: 250px; height: 160px; background: #eaecf0; display: block; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul { line-height: 1.6; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Sequence alignment</h1>
+<div class="thumb"><img src="images/sequence-alignment.png" alt="Two DNA sequences aligned with matching bases highlighted"><div>Aligned sequences with matches and a gap.</div></div>
+<p>In <b>bioinformatics</b>, a <b>sequence alignment</b> is a way of arranging the sequences of DNA, RNA, or protein to identify regions of similarity that may be a consequence of functional, structural, or evolutionary relationships between the sequences. Aligned sequences of nucleotide or amino acid residues are typically represented as rows within a matrix; gaps are inserted between residues so that identical or similar characters are aligned in successive columns.</p>
+<div class="mono">GCATGCU
+G-ATTACAGCATGCU</div>
+<p>If two sequences in an alignment share a common ancestor, mismatches can be interpreted as point mutations and gaps as insertion or deletion mutations (indels) introduced in one or both lineages since they diverged. Alignment similarity is the basis for searching sequence databases, inferring protein structure and function, reconstructing phylogenies, and identifying conserved motifs and functional sites.</p>
+<h2>Pairwise alignment</h2>
+<p><b>Pairwise sequence alignment</b> compares two sequences. <b>Global alignment</b>, exemplified by the Needleman–Wunsch algorithm (1970), aligns sequences along their entire length and suits sequences of similar length expected to be homologous throughout. <b>Local alignment</b>, exemplified by the Smith–Waterman algorithm (1981), finds the best-aligning subsequences and is suited to detecting a shared domain within otherwise dissimilar sequences. Both use dynamic programming with a <b>scoring system</b>: substitution matrices such as PAM and BLOSUM score residue matches and mismatches, and gap penalties — often affine, with separate costs for opening and extending a gap — score indels.</p>
+<p>Because exhaustive dynamic programming is too slow for database searches, heuristic methods were developed, most famously <b>BLAST</b> (1990), which rapidly finds high-scoring local matches and reports their statistical significance (expectation values). Dot-matrix plots provide a simple visual method for comparing two sequences.</p>
+<h2>Multiple sequence alignment</h2>
+<p>A <b>multiple sequence alignment</b> extends pairwise alignment to three or more sequences. Exact dynamic programming becomes computationally prohibitive, so progressive methods such as <b>Clustal</b> build alignments by successively aligning sequences and profiles along a guide tree; iterative methods such as MUSCLE and consistency-based methods such as T-Coffee refine the result. Multiple alignments reveal conserved residues and motifs, underpin profile hidden Markov models used by databases such as Pfam, and supply the data from which phylogenetic trees are inferred.</p>
+<h2>Structural and genome alignment</h2>
+<p>Where sequences have diverged beyond easy recognition, <b>structural alignment</b> of experimentally determined or predicted protein structures can reveal relationships invisible at the sequence level. At the genomic scale, whole-genome alignment methods compare chromosomes across species to identify conserved synteny and regulatory elements, while short-read aligners map sequencing reads to a reference genome — a core step in genomics pipelines.</p>
+<h2>Interpretation</h2>
+<p>An alignment is a hypothesis of positional homology, not a direct observation. Results depend on the scoring scheme and gap penalties chosen, and regions of an alignment may be ambiguous or unreliable, particularly where identity is low (the "twilight zone" below roughly 25–30% protein identity). Statistical measures and alignment-quality assessment tools are used to judge which parts of an alignment can support evolutionary conclusions.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../BLAST_(biotechnology)/index.html">BLAST</a></li>
+<li><a href="../Multiple_sequence_alignment/index.html">Multiple sequence alignment</a></li>
+<li><a href="../Needleman%E2%80%93Wunsch_algorithm/index.html">Needleman–Wunsch algorithm</a></li>
+<li><a href="../Smith%E2%80%93Waterman_algorithm/index.html">Smith–Waterman algorithm</a></li>
+<li><a href="../BLOSUM/index.html">BLOSUM</a></li>
+<li><a href="../Bioinformatics/index.html">Bioinformatics</a></li>
+</ul>
+</div>
+</body>
+</html>

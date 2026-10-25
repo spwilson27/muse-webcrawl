@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Void pointer - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:3px;}
+.hero{display:block;text-align:center;margin:16px 0;}
+.hero img{max-width:420px;width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:30px 0;}
+a{color:#0645ad;text-decoration:none;}
+a:hover{text-decoration:underline;}
+code,pre{font-family:monospace;background:#f8f9fa;}
+pre{padding:10px;border:1px solid #a2a9b1;overflow:auto;}
+</style>
+</head>
+<body>
+<h1>Void pointer</h1>
+<p>A <b>void pointer</b> is a pointer that has no associated data type, written <code>void *</code> in the C and C++ programming languages. Because it lacks a type, a void pointer can hold the address of an object of any type, and it can be converted to and from pointers to other object types. It is known as a <i>generic pointer</i>, and it is the principal mechanism for generic programming in C.</p>
+<span class="hero"><img src="images/void-pointer.png" alt="Diagram of a void pointer holding the address of objects of different types"></span>
+<h2>Properties</h2>
+<p>A void pointer cannot be dereferenced directly, because the compiler does not know the size or type of the object it points to; it must first be cast to a typed pointer. For the same reason, pointer arithmetic on void pointers is not permitted by the ISO C standard (although some compilers, notably GCC, allow it as an extension, treating the pointed-to size as one byte). In C, conversions between <code>void *</code> and other object pointers are implicit; C++ requires explicit casts.</p>
+<h2>Usage</h2>
+<p>Void pointers underlie many standard library interfaces. Memory allocation functions such as <code>malloc</code> return <code>void *</code> because the block they allocate may hold any type:</p>
+<pre>int *p = malloc(10 * sizeof *p);  /* void * converted to int * */</pre>
+<p>Generic functions receive void pointers together with size information: <code>qsort</code> and <code>bsearch</code> operate on arrays of any element type by taking a <code>void *</code> base address, an element size and a comparison callback. Library and operating-system APIs use void pointers as opaque "handles" and to pass user data through callbacks — for example, the argument pointers of POSIX threads (<code>pthread_create</code>) and the data pointers of many event-driven frameworks.</p>
+<h2>Function pointers and limitations</h2>
+<p>Strictly, the C standard guarantees round-trip conversion between <code>void *</code> and pointers to object types only; function pointers may have a different representation, though POSIX guarantees their convertibility as well (as required by <code>dlsym</code>). Because void pointers discard type information, misuse can cause undefined behaviour, and in modern C++ they are largely supplanted by templates, <code>std::any</code>, <code>std::variant</code> and smart pointers, which provide type-safe genericity. They remain indispensable at C interfaces and ABI boundaries.</p>
+</body>
+</html>

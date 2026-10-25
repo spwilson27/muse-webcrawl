@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shader - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.6;color:#202122}
+h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{border-bottom:1px solid #a2a9b1;font-size:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:6px;text-align:center;font-size:.85em}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<h1>Shader</h1>
+<div class="hero"><img src="images/shader.png" alt="A 3D rendered scene demonstrating vertex and fragment shader effects"></div>
+<p>In computer graphics, a <b>shader</b> is a computer program that calculates the appropriate levels of light, darkness, and color during the rendering of a 3D scene — a process known as <i>shading</i>. Shaders have evolved to perform a variety of specialized functions in special effects and video post-processing, and have also been adapted for general-purpose computing on graphics processing units (GPGPU).</p>
+<p>Most shaders are written for, and run on, a GPU, which executes the same program in parallel across many elements — every vertex of a mesh or every pixel of an image — making them extremely fast for rendering. Modern graphics APIs such as OpenGL, Vulkan, Direct3D, and Metal all structure their rendering pipelines around shaders.</p>
+<h2>History</h2>
+<p>The term "shader" was introduced to the public by Pixar's RenderMan system in the 1988 RenderMan Interface Specification, where shaders were software routines executed per surface point on the CPU. As graphics hardware became programmable in the early 2000s — notably with NVIDIA's GeForce 3 (2001) — the term came to denote the small programs running on dedicated GPU stages. High-level shading languages such as GLSL (OpenGL), HLSL (Direct3D), and Cg made shaders accessible to application developers; more recently SPIR-V serves as a portable intermediate representation.</p>
+<h2>Types of shaders</h2>
+<h3>Vertex shaders</h3>
+<p>A vertex shader runs once for each vertex of a mesh. It typically transforms vertex positions from object space to screen space using the model-view-projection matrix, and passes data such as normals, colors, and texture coordinates down the pipeline to be interpolated.</p>
+<h3>Fragment (pixel) shaders</h3>
+<p>A fragment shader runs once for each fragment (roughly, each pixel covered by a primitive). It computes the final color of the pixel, sampling textures and applying lighting models — from simple Lambertian diffuse to physically based rendering — as well as effects such as fog, reflections, and transparency.</p>
+<h3>Geometry, tessellation, and mesh shaders</h3>
+<p>Geometry shaders can generate or discard primitives; tessellation shaders subdivide surfaces for finer detail; mesh shaders (introduced in Vulkan extensions and Direct3D 12) combine vertex and primitive processing into a more flexible model.</p>
+<h3>Compute shaders</h3>
+<p>Compute shaders run outside the graphics pipeline proper and are used for general computations such as physics simulation, image processing, and machine learning kernels.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Rendering_(computer_graphics)/index.html">Rendering (computer graphics)</a></li>
+<li><a href="../Graphics_processing_unit/index.html">Graphics processing unit</a></li>
+<li><a href="../OpenGL_Shading_Language/index.html">OpenGL Shading Language</a></li>
+<li><a href="../Rasterisation/index.html">Rasterisation</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Type inference - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 64px; }
+h1 { font-size: 32px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 4px; }
+h2 { font-size: 24px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 32px; }
+p, li { font-size: 15px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 480px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 24px 0; color: #72777d; }
+.caption { font-size: 12px; color: #54595d; }
+code { font-family: monospace; background: #f8f9fa; padding: 0 3px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Type inference</h1>
+<p><b>Type inference</b>, sometimes called <b>type reconstruction</b>, is the ability of a compiler or interpreter to automatically deduce the type of an expression from its context, partly or fully, rather than requiring the programmer to annotate every declaration explicitly. It is a defining feature of the ML family of languages and is central to languages such as Haskell, OCaml, F#, Rust, and Scala, as well as appearing in more limited forms in C++ (<code>auto</code>), C# (<code>var</code>), Swift, and Kotlin.</p>
+<div class="hero">
+<img src="images/type-inference.png" alt="Diagram of a compiler inferring types of expressions by propagating constraints through a program">
+<div class="caption">Constraints gathered from how values are used are solved to assign types to every expression.</div>
+</div>
+<h2>Hindley–Milner type system</h2>
+<p>The classic and most studied form of type inference is that of the <b>Hindley–Milner (HM) type system</b>, developed from work by J. Roger Hindley (1969) and Robin Milner (1978). HM supports <i>parametric polymorphism</i>: a function such as the identity can be given the type scheme ∀a. a → a, usable at any type. Milner's Algorithm W showed that a program's <b>principal type</b> — its most general type — can be computed by generating equations between type variables and solving them by <a href="../Unification_(computer_science)/index.html">unification</a>, with the <i>let</i>-generalisation rule allowing polymorphic use of locally defined values. Luis Damas completed the formalisation in his 1982 thesis.</p>
+<p>Because inference in HM is complete, programmers can omit nearly all annotations; typical code declares few or no types yet remains statically and strongly typed. However, unification errors can point to locations far from the actual mistake, and extensions such as subtyping, type classes with overlapping instances, higher-rank polymorphism, and mutable references complicate or restrict inference (the <i>value restriction</i> in ML is one famous compromise). Type inference for richer systems, such as full System F, is undecidable.</p>
+<h2>Local inference in mainstream languages</h2>
+<p>Many languages adopt only <b>local</b> inference: the type of a variable is deduced from its initialiser (<code>var x = 5;</code> in C#, <code>auto</code> in C++), while function parameters and return types must still be declared. Languages with global inference engines, by contrast, propagate constraints across function boundaries, letting entire programs be written without annotations.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Hindley–Milner_type_system/index.html">Hindley–Milner type system</a></li>
+<li><a href="../Type_system/index.html">Type system</a></li>
+<li><a href="../Polymorphism_(computer_science)/index.html">Polymorphism (computer science)</a></li>
+<li><a href="../Unification_(computer_science)/index.html">Unification (computer science)</a></li>
+</ul>
+</div>
+</body>
+</html>

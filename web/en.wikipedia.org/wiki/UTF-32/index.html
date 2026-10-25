@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>UTF-32 - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0 auto;max-width:960px;padding:20px;line-height:1.6;color:#202122}
+h1{font-family:sans-serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{font-family:sans-serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;width:280px;font-size:90%}
+.infobox th{background:#b0c4de;text-align:center;padding:4px}
+img{max-width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:4px}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>UTF-32</h1>
+<table class="infobox">
+<tr><th colspan="2">UTF-32</th></tr>
+<tr><td colspan="2"><img src="images/utf-32.png" alt="Diagram showing a Unicode code point stored as a fixed 32-bit value in UTF-32"></td></tr>
+<tr><td><b>Type</b></td><td>Unicode transformation format</td></tr>
+<tr><td><b>Code unit size</b></td><td>32 bits (fixed)</td></tr>
+<tr><td><b>Variants</b></td><td>UTF-32BE, UTF-32LE</td></tr>
+</table>
+<p><b>UTF-32</b> (32-bit Unicode Transformation Format), sometimes called UCS-4, is a fixed-length encoding used to encode Unicode code points, in which each code point is represented by exactly one 32-bit code unit. The code unit value is simply the code point itself, zero-extended. Because Unicode defines codespace up to U+10FFFF, the high-order bits are always zero.</p>
+<h2>Advantages</h2>
+<p>The principal advantage of UTF-32 is simplicity: the <i>n</i>th character of a string is found at a fixed offset, so indexing is O(1), and individual code points can be inserted, deleted, or accessed without scanning. This makes it convenient as an internal in-memory representation in some software, particularly in older Unix systems and libraries that used fixed-width wide characters.</p>
+<h2>Disadvantages</h2>
+<p>UTF-32 is space-inefficient: it uses four bytes for every character, even plain ASCII text, which costs four times the storage of UTF-8. No common file format or network protocol uses UTF-32 as its primary encoding, and the Unicode Consortium notes that "the use of UTF-32 as an encoding form for the interchange of text is discouraged". Its fixed width also no longer buys grapheme-level indexing, since user-perceived characters may consist of multiple code points, just as with UTF-8 and UTF-16.</p>
+<h2>Variants</h2>
+<p>UTF-32 comes in big-endian (UTF-32BE) and little-endian (UTF-32LE) forms. Unlabelled "UTF-32" in Unicode data streams uses big-endian byte order by default unless a byte order mark (U+FEFF) indicates otherwise. Programming languages such as Python used UTF-32 internally for strings in some configurations before adopting a flexible representation.</p>
+<h2>See also</h2>
+<ul>
+<li>UTF-8</li>
+<li>UTF-16</li>
+<li>Unicode</li>
+</ul>
+</body>
+</html>

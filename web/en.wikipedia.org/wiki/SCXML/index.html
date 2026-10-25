@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SCXML - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine','Georgia',serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 0.3em; }
+h2 { border-bottom: 1px solid #a2a9b1; font-size: 1.4em; margin-top: 1.4em; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 0.95em; }
+.infobox { float: right; width: 280px; background: #f8f9fa; border: 1px solid #a2a9b1; padding: 8px; margin: 0 0 12px 16px; font-size: 0.85em; font-family: sans-serif; }
+.infobox th { background: #b0c4de; padding: 4px; text-align: center; }
+.infobox td { padding: 3px 6px; vertical-align: top; }
+img.hero { width: 100%; height: auto; background: #eaecf0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px; font-size: 0.85em; overflow-x: auto; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>SCXML</h1>
+<table class="infobox">
+<tr><th colspan="2">SCXML</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/scxml.png" alt="Statechart diagram of states and transitions expressed in SCXML"></td></tr>
+<tr><td><b>Full name</b></td><td>State Chart XML: State Machine Notation for Control Abstraction</td></tr>
+<tr><td><b>Developer</b></td><td>World Wide Web Consortium (W3C)</td></tr>
+<tr><td><b>Status</b></td><td>W3C Recommendation, 1 September 2015</td></tr>
+<tr><td><b>Based on</b></td><td>Harel statecharts, CCXML</td></tr>
+</table>
+<p><b>SCXML</b> (State Chart XML: State Machine Notation for Control Abstraction) is an XML-based markup language that provides a generic state-machine environment based on Harel statecharts. It became a W3C Recommendation in September 2015. SCXML defines how state machines — with nested states, parallel regions, history pseudostates, and event-driven transitions — can be described in an executable, platform-independent way.</p>
+<h2>Features</h2>
+<p>An SCXML document declares states and the transitions between them, triggered by events and guarded by conditions. Executable content can be attached to transitions and to state entry and exit, including raising events, assigning data-model variables, logging, and invoking external services or other state machines. The default data model uses ECMAScript expressions, though other expression languages may be bound. A standard algorithm for interpretation — microsteps and macrosteps over an event queue — gives documents a precise, portable semantics.</p>
+<pre>&lt;scxml version="1.0" datamodel="ecmascript"&gt;
+  &lt;state id="operational"&gt;
+    &lt;transition event="error" target="failed"/&gt;
+  &lt;/state&gt;
+  &lt;state id="failed"/&gt;
+&lt;/scxml&gt;</pre>
+<h2>Applications</h2>
+<p>SCXML grew out of voice applications: it was designed to underpin CCXML call control and multimodal interaction frameworks, generalising the state logic used in VoiceXML dialogs. It has since been used in workflow and business-process modelling, user-interface logic, robotics control, and embedded systems. Implementations include Apache Commons SCXML in Java, the Qt SCXML module in C++/QML, and SCION in JavaScript.</p>
+</div>
+</body>
+</html>

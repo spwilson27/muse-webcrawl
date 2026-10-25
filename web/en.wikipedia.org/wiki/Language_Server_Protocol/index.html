@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Language Server Protocol - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:2em auto;max-width:860px;padding:0 1em;color:#202122;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+figure{float:right;margin:0 0 1em 1.5em;width:280px;background:#f8f9fa;border:1px solid #c8ccd1;padding:.5em;font-size:.85em}
+figure img{width:100%;height:180px;background:#eaecf0;display:block}
+figcaption{margin-top:.4em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Language Server Protocol</h1>
+<figure><img src="images/language-server-protocol.png" alt="Diagram showing one editor communicating with several language servers over the Language Server Protocol"><figcaption>The LSP allows one language server to serve many editors and IDEs, replacing one-to-one integrations.</figcaption></figure>
+<p>The <b>Language Server Protocol</b> (<b>LSP</b>) is an open, JSON-RPC-based protocol for use between a text editor or integrated development environment (IDE) and servers that provide "language intelligence" features: auto-completion, go-to-definition, find-all-references, hover information, diagnostics, renaming, formatting and similar functionality. It was designed and open-sourced by <a href="../Microsoft/index.html">Microsoft</a> and announced in June 2016, together with Red Hat and Codenvy.</p>
+<h2>Motivation</h2>
+<p>Before the LSP, each combination of a programming language and a development tool required a separate, bespoke integration: with M languages and N tools, up to M×N integrations were needed. The protocol replaces this with an M+N model: a language community maintains a single <i>language server</i> implementing the protocol, and each editor needs only a single generic LSP <i>client</i>.</p>
+<h2>Design</h2>
+<p>Communication between client and server uses <a href="../JSON-RPC/index.html">JSON-RPC 2.0</a> messages, conventionally transported over stdio or a socket. After an <code>initialize</code> handshake in which the two sides exchange <i>capabilities</i>, the client sends notifications and requests as the user edits: for example <code>textDocument/didOpen</code>, <code>textDocument/didChange</code>, <code>textDocument/completion</code>, <code>textDocument/hover</code> and <code>textDocument/definition</code>. The server may publish diagnostics (errors and warnings) back to the client. Positions are given as zero-based line and character offsets in the document.</p>
+<h2>Adoption</h2>
+<p>The protocol originated in <a href="../Visual_Studio_Code/index.html">Visual Studio Code</a> and was subsequently adopted by most major editors and IDEs, including Eclipse, Emacs, Vim and Neovim, Sublime Text, JetBrains IDEs, Atom and many others. Well-known language servers include TypeScript's tsserver-based implementations, the Eclipse JDT Language Server for Java, Microsoft's Pylance/Pyright for Python, rust-analyzer for Rust, clangd for C and C++, and gopls for Go. Extensions of the basic idea include the Debug Adapter Protocol (DAP), also pioneered by Microsoft, which standardizes debugger communication in the same style.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Visual_Studio_Code/index.html">Visual Studio Code</a></li>
+<li><a href="../JSON-RPC/index.html">JSON-RPC</a></li>
+<li><a href="../Integrated_development_environment/index.html">Integrated development environment</a></li>
+<li><a href="../Debug_Adapter_Protocol/index.html">Debug Adapter Protocol</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Viterbi algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:3px;}
+.hero{display:block;text-align:center;margin:16px 0;}
+.hero img{max-width:420px;width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:30px 0;}
+a{color:#0645ad;text-decoration:none;}
+a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+<h1>Viterbi algorithm</h1>
+<p>The <b>Viterbi algorithm</b> is a dynamic programming algorithm for obtaining the maximum a posteriori probability estimate of the most likely sequence of hidden states — called the <b>Viterbi path</b> — that results in a sequence of observed events. It is used especially in the context of Markov information sources and hidden Markov models (HMMs). The algorithm was proposed by <b>Andrew Viterbi</b> in 1967 as a decoding method for convolutional codes in digital communications.</p>
+<span class="hero"><img src="images/viterbi-trellis.png" alt="Trellis diagram showing the survival paths of the Viterbi algorithm"></span>
+<h2>History</h2>
+<p>Viterbi published the algorithm in his 1967 paper "Error bounds for convolutional codes and an asymptotically optimum decoding algorithm". G. David Forney and others subsequently established its optimality and popularised the trellis representation. The algorithm became the standard method for decoding convolutional codes and was later recognised as an instance of dynamic programming closely related to the forward–backward algorithm and to shortest-path algorithms on graphs.</p>
+<h2>Algorithm</h2>
+<p>Given an HMM with states, transition probabilities, emission probabilities and an observed sequence, the algorithm proceeds in stages. For each time step and each state, it computes the probability of the most likely path ending in that state, extending the best predecessor path by the transition and emission probabilities for the current observation, and stores a backpointer to that predecessor. At the final step, the best terminal state is selected and the backpointers are traced to reconstruct the single most probable state sequence.</p>
+<p>The running time is proportional to the length of the observation sequence times the square of the number of states, a great improvement over enumerating all paths, which grows exponentially. In practice, probabilities are handled in the log domain to avoid numerical underflow.</p>
+<h2>Applications</h2>
+<p>The algorithm is used to decode convolutional codes in mobile telephony and satellite links, in speech recognition to align observations with word models, in bioinformatics for gene prediction and sequence analysis with profile HMMs, and in computational linguistics for part-of-speech tagging. The related max-product belief propagation generalises the same idea to graphical models.</p>
+<h2>Example</h2>
+<p>A classic tutorial example models a patient who visits a doctor on three days, reporting feeling normal, cold or dizzy, while the hidden states are "Healthy" and "Fever". The Viterbi algorithm computes the most likely health sequence given the observations and the model's transition and emission probabilities.</p>
+</body>
+</html>

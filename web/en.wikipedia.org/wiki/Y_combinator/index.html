@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Y combinator - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:24px;line-height:1.6;color:#202122}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:1.2em}
+img.hero{max-width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:8px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Y combinator</h1>
+<img class="hero" src="images/y-combinator.png" alt="Lambda calculus notation illustrating the Y combinator fixed-point formula">
+<p>In lambda calculus, the <b>Y combinator</b> is a fixed-point combinator: a higher-order function that, given a function, returns a fixed point of that function. It allows anonymous functions to refer to themselves, thereby enabling recursion in languages (or calculi) without named function definitions. It was discovered by Haskell Curry and is commonly written:</p>
+<p style="text-align:center"><i>Y = λf. (λx. f (x x)) (λx. f (x x))</i></p>
+<h2>How it works</h2>
+<p>Applying Y to a function g yields Y g, which satisfies the fixed-point equation Y g = g (Y g). The "generator" g describes one step of a recursive definition in terms of a not-yet-recursive argument; Y ties the knot, supplying g's own output as that argument. Under call-by-value evaluation, direct application of Y loops forever, so practical strict languages use the variant known as the Z combinator, which inserts an extra lambda to delay evaluation.</p>
+<h2>Significance</h2>
+<p>The Y combinator demonstrates that recursion can be derived from pure function abstraction and application alone, a foundational result for computability theory and programming language semantics. Fixed-point combinators exist in many forms (Curry's Y, Turing's Θ combinator) and the concept generalizes to recursive types. The startup accelerator Y Combinator, founded by Paul Graham, took its name from this construct.</p>
+<p>See also: <a href="../Xterm/index.html">Xterm</a> — an unrelated topic in computing history.</p>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ordinary least squares - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;margin:0 0 4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+.eq{font-family:'Latin Modern Math',Georgia,serif;background:#f8f9fa;border:1px solid #eaecf0;padding:10px 14px;margin:10px 0;overflow-x:auto}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.hero{display:block;margin:12px auto;max-width:420px;width:100%}
+.caption{text-align:center;font-size:.85em;color:#54595d}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Ordinary least squares</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/ordinary-least-squares.png" alt="A scatter plot of data points with the least squares regression line drawn through them">
+<p class="caption">The OLS estimator fits the line minimising the sum of squared vertical distances to the data.</p>
+<p><b>Ordinary least squares</b> (<b>OLS</b>) is a type of linear least squares method for choosing the unknown parameters in a linear regression model by minimising the sum of the squares of the differences between the observed dependent variable and the values predicted by the linear function of the independent variables. Geometrically, these squared differences are the squared distances between each data point and the regression line, and minimising them is the defining operation of the method.</p>
+<h2>Model and estimator</h2>
+<p>The linear regression model assumes a linear relationship between a dependent variable y and a set of regressors x, together with an unobserved error term. In matrix notation the model is written y = Xβ + ε. Provided the design matrix X has full column rank, the OLS estimator has the closed form:</p>
+<div class="eq">β̂ = (X<sup>T</sup>X)<sup>−1</sup> X<sup>T</sup>y</div>
+<p>These are the <i>normal equations</i>, obtained by setting the gradient of the sum of squared residuals to zero. Numerically, software packages usually compute β̂ by QR decomposition or related factorisations rather than by forming X<sup>T</sup>X explicitly, and the underlying systems are solved by methods related to <a href="../Gaussian_elimination/index.html">Gaussian elimination</a>.</p>
+<h2>Assumptions and properties</h2>
+<p>Under the classical assumptions — linearity in parameters, random sampling, no perfect collinearity, exogeneity of the regressors (zero conditional mean of the errors), and spherical error variance (homoskedasticity and no autocorrelation) — the Gauss–Markov theorem states that OLS is the best linear unbiased estimator (BLUE): among all linear unbiased estimators it has the smallest variance. If the errors are additionally normally distributed, OLS coincides with the maximum likelihood estimator and standard inference procedures — t-tests, confidence intervals and F-tests — are exact in finite samples.</p>
+<h2>Violations and remedies</h2>
+<p>Common problems in applied work include heteroskedasticity, which leaves OLS unbiased but invalidates conventional standard errors (handled with heteroskedasticity-robust standard errors); autocorrelation in time-series data; multicollinearity, which inflates the variance of individual coefficients; and endogeneity, where correlation between regressors and errors biases the estimates and motivates instrumental-variables methods such as two-stage least squares. Generalised least squares relaxes the assumption of spherical errors.</p>
+<h2>History</h2>
+<p>The method of least squares was published by Adrien-Marie Legendre in 1805 and independently by Carl Friedrich Gauss in 1809, who reported having used it since 1795 in astronomical calculations — including the recovery of the orbit of the asteroid Ceres. The resulting priority dispute was one of the famous controversies of nineteenth-century science. Least squares became the standard estimation technique in astronomy and geodesy before spreading, in the twentieth century, to economics and the social sciences as econometrics developed.</p>
+<p class="small">See also: <a href="../Linear_regression/index.html">Linear regression</a> · <a href="../Gauss%E2%80%93Markov_theorem/index.html">Gauss–Markov theorem</a> · <a href="../Least_squares/index.html">Least squares</a></p>
+</div>
+</body>
+</html>

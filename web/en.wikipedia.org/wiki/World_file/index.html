@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>World file - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #fff; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; margin-top: 1.4em; }
+.infobox { float: right; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; margin: 0 0 1em 1em; padding: 8px; font-size: 0.9em; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+.hero { width: 100%; background: #eaecf0; text-align: center; padding: 10px 0; }
+a { color: #0645ad; text-decoration: none; }
+pre { background: #f8f9fa; border: 1px solid #a2a9b1; padding: 10px; overflow-x: auto; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>World file</h1>
+<div class="infobox">
+<table>
+<tr><th>Type</th><td>Sidecar plain-text georeferencing file</td></tr>
+<tr><th>Introduced by</th><td>Esri (ArcView GIS)</td></tr>
+<tr><th>File extensions</th><td>.tfw, .jgw, .pgw, .gfw, .wld</td></tr>
+<tr><th>Contains</th><td>Six affine transformation parameters</td></tr>
+</table>
+</div>
+<div class="hero"><img src="images/world-file.png" alt="A raster image with its world file parameters displayed beside it"></div>
+<p>A <b>world file</b> is a six-line plain-text sidecar file used in geographic information systems (<a href="../Geographic_information_system/index.html">GIS</a>) to georeference a raster image such as a scanned map or aerial photograph. It specifies the location, scale, and rotation of the image's pixels in real-world coordinates, allowing software to position the image correctly on a map without embedding georeferencing data in the image itself.</p>
+<h2>Format</h2>
+<p>The six lines define an affine transformation from pixel coordinates to map coordinates:</p>
+<pre>32.0
+0.0
+0.0
+-32.0
+447520.0
+3734640.0</pre>
+<p>The values are, in order: the pixel width in map units (x-scale), a rotation term, a second rotation term, the negative pixel height in map units (y-scale), and the map coordinates of the center of the upper-left pixel. With these six parameters, any pixel's position in the image can be converted to a real-world coordinate.</p>
+<h2>Naming</h2>
+<p>The world file takes its name from the image it accompanies, using an extension derived from the image format: <i>.tfw</i> for TIFF images, <i>.jgw</i> for JPEG, and <i>.pgw</i> for PNG. A generic extension, <i>.wld</i>, is also recognized. The convention was introduced by Esri for ArcView GIS and is supported by nearly all raster GIS software.</p>
+<h2>Limitations</h2>
+<p>A world file does not record the coordinate reference system (that is usually stored separately, for example in a .prj file), and it can only express an affine transformation, so it cannot describe warped or non-uniformly distorted imagery.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Georeferencing/index.html">Georeferencing</a></li>
+<li><a href="../GeoTIFF/index.html">GeoTIFF</a></li>
+<li><a href="../Raster_graphics/index.html">Raster graphics</a></li>
+</ul>
+</div>
+</body>
+</html>

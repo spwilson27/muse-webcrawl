@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>QEMU - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.mw-body { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em; margin: 0 0 1em 1em; font-size: 0.9em; }
+.infobox th { text-align: left; padding-right: 0.5em; }
+.hero { width: 100%; height: auto; display: block; margin-bottom: 0.5em; }
+.small { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>QEMU</h1>
+<div class="infobox">
+<img class="hero" src="images/qemu.png" alt="QEMU logo and a virtual machine window running a guest operating system">
+<table>
+<tr><th>Developer</th><td>Fabrice Bellard; QEMU community</td></tr>
+<tr><th>Initial release</th><td>2003</td></tr>
+<tr><th>Written in</th><td>C</td></tr>
+<tr><th>Type</th><td>Hypervisor / emulator</td></tr>
+<tr><th>License</th><td>GPL-2.0</td></tr>
+</table>
+</div>
+<p><b>QEMU</b> (short for "Quick Emulator") is a free and open-source emulator and <a href="../Hypervisor/index.html">hypervisor</a>. It emulates the hardware of one computer system on another, allowing operating systems and programs compiled for one machine architecture (for example ARM) to run on a different one (such as x86). It was originally written by <a href="../Fabrice_Bellard/index.html">Fabrice Bellard</a> and is now maintained by a large open-source community.</p>
+
+<h2>Modes of operation</h2>
+<p>QEMU operates in several modes. In <b>full system emulation</b> it models an entire machine — processor, memory and peripheral devices — and can boot unmodified guest operating systems. In <b>user-mode emulation</b> (on Linux and BSD hosts) it runs individual executables compiled for a different CPU, translating system calls to the host. When the guest and host architectures match, QEMU can use hardware virtualisation through accelerators such as <a href="../Kernel-based_Virtual_Machine/index.html">KVM</a> on Linux or Hypervisor.framework on macOS, achieving near-native speed; in this role it provides the machine model for much of the Linux virtualisation stack, managed by tools such as <a href="../Libvirt/index.html">libvirt</a>.</p>
+
+<h2>Emulation technology</h2>
+<p>For cross-architecture emulation QEMU uses dynamic binary translation: its Tiny Code Generator (TCG) converts guest instructions into host instructions at run time, caching translated blocks. QEMU emulates a very wide range of CPUs and boards and supports features including live migration of running virtual machines, disk image formats such as qcow2, snapshotting, and device passthrough.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Kernel-based_Virtual_Machine/index.html">Kernel-based Virtual Machine</a></li>
+<li><a href="../VirtualBox/index.html">VirtualBox</a></li>
+<li><a href="../Xen/index.html">Xen</a></li>
+<li><a href="../Bochs/index.html">Bochs</a></li>
+</ul>
+<p class="small">From Wikipedia, the free encyclopedia.</p>
+</div>
+</body>
+</html>

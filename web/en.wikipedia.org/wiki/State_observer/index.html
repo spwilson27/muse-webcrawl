@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>State observer - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:47em;margin:0 auto;padding:1.2em;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;font-weight:normal}
+h2{font-size:1.35em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+.hero{display:block;max-width:100%;margin:1em 0}
+.small{font-size:.85em;color:#54595d}
+.eqn{font-family:'Courier New',monospace;background:#f8f9fa;border:1px solid #eaecf0;padding:.5em 1em;display:block;margin:.6em 0}
+</style>
+</head>
+<body>
+<h1>State observer</h1>
+<img class="hero" src="images/state-observer.png" alt="Block diagram of a Luenberger observer estimating system states">
+<p>In control theory, a <b>state observer</b> or <b>state estimator</b> is a system that provides an estimate of the internal state of a given real system, from measurements of its inputs and outputs. Knowing the state is necessary to solve many control problems — for example, stabilising a system using state feedback — yet in practice not all internal states are directly measurable, sensors may be expensive or noisy, and some quantities (such as internal temperatures or concentrations) cannot be instrumented at all. An observer reconstructs the full state so that output-feedback control can approximate the performance of state feedback.</p>
+<h2>Luenberger observer</h2>
+<p>For a linear system with dynamics ẋ = Ax + Bu and measured output y = Cx, the Luenberger observer (introduced by David Luenberger in the 1960s) is a copy of the plant model corrected by the output error:</p>
+<span class="eqn">x̂̇ = A x̂ + B u + L (y − C x̂)</span>
+<p>The estimation error e = x − x̂ then obeys ė = (A − LC) e, so by choosing the gain matrix L the designer can place the observer's error poles — typically several times faster than the controller poles — and drive the error to zero. The observer can be designed if and only if the system is <i>observable</i>. The <b>separation principle</b> guarantees that a stabilising state-feedback controller and a convergent observer can be designed independently and combined without destroying stability.</p>
+<h2>Other estimators</h2>
+<p>The <a href="../Kalman_filter/index.html">Kalman filter</a> is the optimal observer for linear systems subject to Gaussian process and measurement noise, choosing the gain to minimise the error covariance; its nonlinear generalisations include the extended and unscented Kalman filters. Other approaches include sliding-mode observers, high-gain observers for nonlinear systems, and unknown-input observers that decouple disturbances. Observers are used ubiquitously in aerospace flight control, motor drives, chemical process control, robotics and battery management systems (estimating state of charge), where they also serve fault-detection and sensor-fusion functions.</p>
+<p class="small">See also: <a href="../State-space_representation/index.html">State-space representation</a> · <a href="../Observability/index.html">Observability</a> · <a href="../Kalman_filter/index.html">Kalman filter</a> · <a href="../Control_theory/index.html">Control theory</a></p>
+</body>
+</html>

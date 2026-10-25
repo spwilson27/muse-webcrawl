@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Poly1305 - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:2em auto;max-width:820px;line-height:1.6;color:#202122;background:#fff;padding:0 1em}
+h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.4em}
+img.hero{display:block;max-width:320px;margin:1em auto;background:#eaecf0;border:1px solid #a2a9b1;padding:2em 1em;text-align:center;color:#54595d}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+code{font-family:monospace;background:#f8f9fa;padding:0 .2em}
+</style>
+</head>
+<body>
+<h1>Poly1305</h1>
+<img class="hero" src="images/poly1305.png" alt="Schematic of the Poly1305 one-time authenticator computation">
+<p><b>Poly1305</b> is a one-time message authentication code (MAC) designed by Daniel J. Bernstein, first presented in 2004–2005. It takes a 32-byte one-time key and a message and produces a 16-byte authentication tag. The name reflects its arithmetic: polynomial evaluation modulo the prime 2<sup>130</sup> − 5.</p>
+<h2>Construction</h2>
+<p>The key is split into two 16-byte halves, <i>r</i> and <i>s</i>. After "clamping" (clearing certain bits of <i>r</i>), the message is divided into 16-byte blocks; each block, with an appended 1 bit, is added to an accumulator that is multiplied by <i>r</i> modulo 2<sup>130</sup> − 5. Finally <i>s</i> is added modulo 2<sup>128</sup> to produce the tag. Because the key may be used only once, Poly1305 is normally paired with a stream cipher that generates a fresh key per message.</p>
+<h2>Use</h2>
+<p>Poly1305 is best known in the <a href="../ChaCha20-Poly1305/index.html">ChaCha20-Poly1305</a> authenticated encryption construction, standardised in RFC 8439 and widely deployed in TLS 1.3, the WireGuard VPN protocol, SSH and numerous libraries. Its design offers provable security bounds (forgery probability on the order of 2<sup>−128</sup> when used correctly) and fast software implementation without lookup tables, avoiding cache-timing side channels. See also <a href="../Message_authentication_code/index.html">message authentication code</a>.</p>
+</body>
+</html>

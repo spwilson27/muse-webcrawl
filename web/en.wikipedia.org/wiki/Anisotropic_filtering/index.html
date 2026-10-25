@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Anisotropic filtering - Wikipedia (recreated from memory)</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.4em}
+img.hero{display:block;max-width:320px;width:100%;height:200px;background:#eef3f8;border:1px solid #a2a9b1;object-fit:cover}
+.infobox{float:right;width:250px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:88%;margin:0 0 12px 16px;padding:8px}
+.infobox th{text-align:left;background:#eaf3ff;padding:2px 4px}
+.infobox td{padding:2px 4px}
+a{color:#0645ad;text-decoration:none}
+.small{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Anisotropic filtering</h1>
+<p class="small">From Wikipedia, the free encyclopedia (recreated from memory)</p>
+<img class="hero" src="images/anisotropic-filtering.png" alt="A receding textured corridor shown with and without anisotropic filtering, the far texture staying sharp with filtering enabled">
+<p><b>Anisotropic filtering</b> (commonly abbreviated <b>AF</b>) is a method of enhancing the image quality of textures on surfaces of computer graphics where the geometry is viewed at oblique angles, particularly where the surface recedes into the distance. Unlike isotropic filtering methods — bilinear and trilinear filtering applied with mipmaps — which sample a square region of the texture, anisotropic filtering samples a region whose shape matches the projected footprint of the pixel in texture space, typically a long, thin trapezoid.</p>
+<h2>Problem addressed</h2>
+<p>When a textured surface is viewed at a grazing angle, a single screen pixel may correspond to a long stretch of texture along the direction of view but a short stretch across it. Standard mipmapping selects a smaller, blurrier mipmap level based on the most compressed axis, which throws away detail along the other axis and makes floors, roads and runways appear smeared. Anisotropic filtering compensates by taking multiple samples along the elongated axis.</p>
+<h2>Degrees of anisotropy</h2>
+<p>Filtering strength is expressed as a ratio — 2×, 4×, 8× or 16× — indicating the maximum elongation of the sampling footprint and roughly the number of samples taken. Higher settings preserve texture sharpness at steeper angles at some cost in graphics hardware performance and memory bandwidth. The technique is supported by all modern GPUs and exposed in graphics APIs such as Direct3D and OpenGL; it became widely available on consumer hardware in the early 2000s with cards such as the ATI Radeon 8500 and NVIDIA GeForce 3.</p>
+<h2>Implementation</h2>
+<p>Implementations approximate the projected pixel footprint as a parallelogram and probe the texture along its major axis, sometimes using rip-mapping (rectangular mipmaps) as a cheaper approximation. Quality varies among hardware vendors because exact sampling patterns are proprietary.</p>
+<p class="small">Categories: Computer graphics algorithms · Texture filtering · 3D computer graphics</p>
+</div>
+</body>
+</html>

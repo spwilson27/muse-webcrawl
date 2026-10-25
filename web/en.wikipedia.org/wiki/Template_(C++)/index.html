@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Template (C++) - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header .site{font-size:1.4em;font-weight:bold}
+main{max-width:960px;margin:0 auto;padding:16px 24px}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #eaecf0;padding-bottom:2px;margin-top:1.2em}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:8px;overflow:auto;font-size:0.9em}
+figure.hero{margin:0 0 12px 0;text-align:center}
+figure.hero img{max-width:100%;border:1px solid #c8ccd1;background:#eaecf0;padding:24px 0;width:60%}
+figcaption{font-size:0.85em;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia</span> — The Free Encyclopedia</header>
+<main>
+<h1>Template (C++)</h1>
+<figure class="hero"><img src="images/template_cpp.png" alt="Code placeholder showing a C++ function template declaration"><figcaption>A C++ function template</figcaption></figure>
+<p><b>Templates</b> are a feature of the C++ programming language that allow functions and classes to operate with generic types. This allows a function or class declaration to reference a set of values directly defined by parameters, enabling type-safe generic programming without duplication of code. Templates are a major component of the C++ Standard Library, which includes the Standard Template Library (STL) containers and algorithms.</p>
+<h2>Kinds of templates</h2>
+<ul>
+<li><b>Function templates</b> — e.g. <code>template &lt;typename T&gt; T max(T a, T b)</code>, instantiated for each argument type used.</li>
+<li><b>Class templates</b> — e.g. <code>std::vector&lt;T&gt;</code>; support full and partial specialisation.</li>
+<li><b>Variable templates</b> (C++14) and <b>alias templates</b> (C++11).</li>
+<li><b>Variadic templates</b> (C++11) accepting arbitrary numbers of type arguments.</li>
+</ul>
+<h2>How templates work</h2>
+<p>C++ templates are instantiated at compile time: the compiler generates a concrete function or class for each set of template arguments. This "monomorphisation" yields fast code at the cost of larger binaries and longer compile times. Template metaprogramming exploits the fact that the instantiation mechanism is Turing-complete, and modern C++ constrains templates with <i>concepts</i> (C++20) to improve error messages and expressiveness.</p>
+<h2>Example</h2>
+<pre>template &lt;typename T&gt;
+T const&amp; max(T const&amp; a, T const&amp; b) {
+    return a &lt; b ? b : a;
+}</pre>
+<h2>See also</h2>
+<ul>
+<li><a href="../Generic_programming/index.html">Generic programming</a></li>
+<li><a href="../Standard_Template_Library/index.html">Standard Template Library</a></li>
+<li><a href="../C++/index.html">C++</a></li>
+</ul>
+</main>
+</body>
+</html>

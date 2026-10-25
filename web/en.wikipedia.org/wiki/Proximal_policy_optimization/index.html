@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Proximal policy optimization - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a7d7f9;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 16px 16px;font-size:90%}
+.infobox th{background:#d6e6f2;padding:4px}
+.hero{width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:24px 0;text-align:center;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+code{background:#f8f9fa;border:1px solid #eaecf0;padding:1px 4px;font-family:monospace}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Proximal policy optimization</h1>
+<div class="infobox">
+<div class="hero"><img src="images/proximal-policy-optimization.png" alt="Diagram of the PPO clipped surrogate objective"></div>
+<table>
+<tr><th colspan="2">Proximal policy optimization</th></tr>
+<tr><td>Class</td><td>Reinforcement learning algorithm</td></tr>
+<tr><td>Introduced</td><td>2017</td></tr>
+<tr><td>Authors</td><td>Schulman, Wolski, Dhariwal, Radford, Klimov</td></tr>
+<tr><td>Organisation</td><td>OpenAI</td></tr>
+<tr><td>Predecessor</td><td>Trust region policy optimization (TRPO)</td></tr>
+</table>
+</div>
+<p><b>Proximal policy optimization</b> (<b>PPO</b>) is a family of policy gradient methods for reinforcement learning introduced by researchers at OpenAI in 2017. PPO methods alternate between sampling data by interacting with the environment and optimising a "surrogate" objective function using stochastic gradient ascent. They were designed to retain the stability and reliability of trust region policy optimization (TRPO) while being much simpler to implement and better suited to general-purpose use with large, complex models.</p>
+<h2>Background</h2>
+<p>Policy gradient methods estimate the gradient of expected return with respect to the parameters of a stochastic policy and update the policy in the direction of improvement. A persistent difficulty is that a single update step can change the policy too much, destroying performance — a problem that is costly to reverse because fresh data must be collected under the new policy. TRPO addressed this by constraining updates with a KL-divergence trust region, but required second-order optimisation machinery that made it awkward to combine with other objectives or architectures such as recurrent networks and parameter sharing.</p>
+<h2>Clipped surrogate objective</h2>
+<p>PPO's best-known variant replaces the trust-region constraint with <i>clipping</i>. Let r(θ) be the probability ratio between the new policy and the policy that generated the data, and Â an estimate of the advantage function. The objective is</p>
+<p><code>L^CLIP(θ) = E[ min( r(θ)Â, clip(r(θ), 1−ε, 1+ε)Â ) ]</code></p>
+<p>where ε is a small hyperparameter, typically 0.1–0.3. The clipping removes the incentive to move r(θ) far outside the interval [1−ε, 1+ε], producing pessimistic, conservative updates. The full training objective usually adds a value-function regression loss and an entropy bonus to encourage exploration.</p>
+<h2>Adaptive KL penalty</h2>
+<p>The original paper also proposed an alternative in which a penalty coefficient on the KL divergence between old and new policies is adapted during training: the coefficient is increased when the measured divergence exceeds a target and decreased when it falls below it. The clipped objective generally performed better and became the standard form of the algorithm.</p>
+<h2>Implementation details</h2>
+<p>Reference implementations of PPO rely on a collection of code-level optimisations — orthogonal initialisation, learning-rate annealing, reward scaling, advantage normalisation, minibatch shuffling over multiple epochs of collected data, and generalised advantage estimation (GAE) — whose individual effects on performance were documented in later empirical studies. These details proved important: different codebases implementing the "same" algorithm can differ substantially in results.</p>
+<h2>Applications</h2>
+<p>PPO has been applied to simulated robotics, Atari and video-game agents (including OpenAI Five for Dota 2 and work on humanoid control), and became the default algorithm in reinforcement learning from human feedback (RLHF) pipelines used to fine-tune large language models such as InstructGPT and ChatGPT.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Reinforcement_learning/index.html">Reinforcement learning</a></li>
+<li><a href="../Policy_gradient_method/index.html">Policy gradient method</a></li>
+<li><a href="../Trust_region_policy_optimization/index.html">Trust region policy optimization</a></li>
+<li><a href="../Reinforcement_learning_from_human_feedback/index.html">Reinforcement learning from human feedback</a></li>
+</ul>
+<p><i>Categories: Reinforcement learning, Machine learning algorithms</i></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Message passing - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:960px;padding:0 1em;line-height:1.6;color:#202122;background:#fff}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-bottom:.2em}
+h2{font-family:sans-serif;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.hatnote{font-style:italic;font-size:.9em;color:#54595d}
+.ref{font-size:.85em}
+img.hero{display:block;margin:1em 0;max-width:100%}
+</style>
+</head>
+<body>
+<h1>Message passing</h1>
+<p class="hatnote">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/message-passing.png" alt="Diagram of processes exchanging discrete messages rather than sharing memory">
+<p>In computer science, <b>message passing</b> is a technique for invoking behaviour (for example, running a program, producing output, or updating state) on a computer through the sending of discrete messages to a system rather than by direct manipulation of shared memory. The implementing system selects, from its own store of procedures, the procedure whose name and arguments match the message, and runs it. Message passing differs from conventional programming where a process, subroutine, or function is directly invoked by name.</p>
+<p>Message passing is a core abstraction in <a href="../Concurrent_computing/index.html">concurrent</a> and <a href="../Distributed_computing/index.html">distributed</a> systems and in <a href="../Object-oriented_programming/index.html">object-oriented programming</a>, where objects communicate by sending messages to one another.</p>
+<h2>Overview</h2>
+<p>Message passing may be implemented by hardware primitives such as channels, by operating-system inter-process communication (pipes, sockets, signals), or by language-level constructs. It may be <b>synchronous</b>, where the sender blocks until the receiver is ready (as in CSP-style channel communication), or <b>asynchronous</b>, where messages are buffered and the sender continues immediately (as in the <a href="../Actor_model/index.html">actor model</a>).</p>
+<h2>Language and system support</h2>
+<ul>
+<li><b>Erlang</b> and the actor model: processes share nothing and communicate only by asynchronous messages, supporting fault-tolerant distributed systems.</li>
+<li><b>Go</b>: goroutines communicate over typed channels, following the maxim "share memory by communicating".</li>
+<li><b>MPI</b> (Message Passing Interface): the standard for high-performance computing clusters, with send/receive primitives such as MPI_Send and MPI_Recv.</li>
+<li><b>Smalltalk</b> and Objective-C: method invocation itself is framed as sending messages to objects.</li>
+<li><b>Microkernel</b> operating systems such as Mach and QNX pass messages between servers implementing system services.</li>
+</ul>
+<h2>Comparison with shared memory</h2>
+<p>Message passing avoids the race conditions and locking hazards of shared-memory concurrency and maps naturally onto machines without common memory, including clusters and networks. The cost is copying and serialisation overhead and potentially more complex control flow. Modern frameworks often combine both models.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Actor_model/index.html">Actor model</a></li>
+<li><a href="../Communicating_sequential_processes/index.html">Communicating sequential processes</a></li>
+<li><a href="../Message_Passing_Interface/index.html">Message Passing Interface</a></li>
+<li><a href="../Inter-process_communication/index.html">Inter-process communication</a></li>
+<li><a href="../Publish–subscribe_pattern/index.html">Publish–subscribe pattern</a></li>
+</ul>
+<p class="ref">Categories: Inter-process communication · Concurrency (computer science) · Distributed computing</p>
+</body>
+</html>

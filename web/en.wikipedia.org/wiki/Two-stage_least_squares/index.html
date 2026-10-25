@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Two-stage least squares - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 64px; }
+h1 { font-size: 32px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 4px; }
+h2 { font-size: 24px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 32px; }
+p, li { font-size: 15px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 480px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 24px 0; color: #72777d; }
+.caption { font-size: 12px; color: #54595d; }
+code { font-family: monospace; background: #f8f9fa; padding: 0 3px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Two-stage least squares</h1>
+<p><b>Two-stage least squares</b> (<b>2SLS</b>) is an econometric estimation technique used to estimate the parameters of a structural equation model when the explanatory variables are correlated with the error term — that is, when regressors are <a href="../Endogeneity_(econometrics)/index.html">endogenous</a>. It is an extension of the ordinary least squares (OLS) method and belongs to the family of instrumental variables estimators.</p>
+<div class="hero">
+<img src="images/2sls.png" alt="Flow diagram of two-stage least squares: regress endogenous variables on instruments first, then use the fitted values in the main regression">
+<div class="caption">In the first stage the endogenous regressors are projected onto the instruments; in the second stage the fitted values are used as regressors.</div>
+</div>
+<h2>Method</h2>
+<p>Consider a structural equation <i>y</i> = <i>Xβ</i> + <i>u</i> in which some columns of <i>X</i> are correlated with <i>u</i>, so OLS is inconsistent. Suppose there is a matrix of instruments <i>Z</i> — variables correlated with <i>X</i> but uncorrelated with <i>u</i>, and excluded from the structural equation. Estimation proceeds in two stages:</p>
+<ol>
+<li><b>First stage:</b> regress each endogenous variable in <i>X</i> on all instruments <i>Z</i> by OLS and retain the fitted values <i>X̂</i>. These fitted values are the component of <i>X</i> explained by the (exogenous) instruments.</li>
+<li><b>Second stage:</b> regress <i>y</i> on the fitted values <i>X̂</i> by OLS. The resulting coefficient estimates are consistent, though the standard errors produced by the second-stage OLS routine must be corrected because they are computed from the fitted rather than the actual regressors.</li>
+</ol>
+<p>The 2SLS estimator can be written in closed form as β̂ = (X′P<sub>Z</sub>X)<sup>−1</sup>X′P<sub>Z</sub>y, where P<sub>Z</sub> = Z(Z′Z)<sup>−1</sup>Z′ is the projection matrix onto the column space of the instruments.</p>
+<h2>History and properties</h2>
+<p>The method was independently introduced by Henri Theil and Robert Basmann in the 1950s. 2SLS is consistent and asymptotically normal under standard conditions: the instruments must be relevant (correlated with the endogenous regressors) and valid (excluded from and uncorrelated with the structural error). With exactly as many instruments as endogenous regressors (exact identification), 2SLS coincides with the indirect least squares estimator. In the presence of heteroskedasticity, the generalised method of moments (GMM) estimator is more efficient, though 2SLS remains widely used.</p>
+<p>A practical concern is the problem of <b>weak instruments</b>: if the instruments explain little of the variation in the endogenous variables, 2SLS estimates can be badly biased toward OLS and conventional inference unreliable. First-stage F-statistics are commonly reported to assess instrument strength.</p>
+<h2>Applications</h2>
+<p>Two-stage least squares is a workhorse of applied microeconometrics, used wherever randomised assignment is impossible — for example in estimating the returns to schooling using compulsory-schooling laws or quarter of birth as instruments, and in demand estimation using cost shifters as instruments for price.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Instrumental_variables_estimation/index.html">Instrumental variables estimation</a></li>
+<li><a href="../Ordinary_least_squares/index.html">Ordinary least squares</a></li>
+<li><a href="../Endogeneity_(econometrics)/index.html">Endogeneity (econometrics)</a></li>
+<li><a href="../Generalized_method_of_moments/index.html">Generalized method of moments</a></li>
+</ul>
+</div>
+</body>
+</html>

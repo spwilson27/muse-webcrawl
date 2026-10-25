@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>STUN - Wikipedia</title>
+<style>
+body{font-family:'Helvetica Neue',Arial,sans-serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:6px;margin-top:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+.hero{display:block;margin:16px auto;max-width:420px;width:100%;background:#e8f0e8;border:2px dashed #72777d;color:#54595d;text-align:center;padding:48px 0;font-size:14px}
+.infobox{float:right;width:280px;background:#f8f9fa;border:1px solid #a2a9b1;margin:0 0 16px 20px;font-size:13px}
+.infobox th{background:#eaf3ff;text-align:left;padding:4px 8px}
+.infobox td{padding:4px 8px;vertical-align:top}
+.infobox .cap{text-align:center;background:#cee0f2;font-weight:bold;padding:6px}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>STUN</h1>
+<img class="hero" src="images/stun.png" alt="Diagram of a client behind NAT learning its public address from a STUN server">
+<table class="infobox">
+<tr><td class="cap" colspan="2">STUN</td></tr>
+<tr><th>Full name</th><td>Session Traversal Utilities for NAT</td></tr>
+<tr><th>Standard</th><td>RFC 8489 (obsoletes RFC 5389)</td></tr>
+<tr><th>Port</th><td>3478 (UDP/TCP); 5349 (TLS)</td></tr>
+<tr><th>Purpose</th><td>NAT traversal; discovering public IP address and port</td></tr>
+</table>
+<p><b>STUN</b> (<b>Session Traversal Utilities for NAT</b>) is a standardised set of methods and a network protocol that allows an end host to discover its public IP address and port as allocated by a network address translator (NAT), and to determine restrictions on how that mapping can be used. It is defined by the IETF in RFC 8489.</p>
+<h2>Operation</h2>
+<p>A client behind a NAT sends a Binding request to a STUN server on the public Internet. The server replies with the client's "server-reflexive" address — the address and port as seen from the public side. By comparing this with its local address, the client can tell whether it is behind NAT and can advertise the reflexive address to peers so that media or data can flow directly between them. STUN also provides keep-alive and connectivity-check mechanisms.</p>
+<h2>Role in ICE and WebRTC</h2>
+<p>STUN is a core component of the <a href="../Interactive_Connectivity_Establishment/index.html">ICE</a> framework used by <a href="../WebRTC/index.html">WebRTC</a>, SIP telephony and online games to establish peer-to-peer connections. Where direct connectivity fails — for example behind symmetric NATs — ICE falls back on TURN servers, which relay traffic and use STUN's message format and authentication mechanisms.</p>
+<h2>History</h2>
+<p>The original protocol, "Simple Traversal of UDP through NATs", was published as RFC 3489 in 2003. Experience showed that classifying NAT types was unreliable, so RFC 5389 (2008) redefined STUN as a toolbox of traversal utilities and backronymed the name to its present form; RFC 8489 (2020) is the current revision.</p>
+<p><i>See also: <a href="../Network_address_translation/index.html">Network address translation</a>; <a href="../Traversal_Using_Relays_around_NAT/index.html">TURN</a>.</i></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shellshock (software bug) - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 1.4em; }
+p, li { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #ccc; background: #eee; }
+.caption { font-size: 12px; color: #54595d; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 12px 16px; font-size: 13px; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px; font-size: 13px; overflow-x: auto; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Shellshock (software bug)</h1>
+<div class="infobox">
+<table>
+<tr><th>CVE identifier(s)</th><td>CVE-2014-6271 (original); CVE-2014-7169 and others</td></tr>
+<tr><th>Date discovered</th><td>September 2014 (reported 12 September; disclosed 24 September 2014)</td></tr>
+<tr><th>Affected software</th><td>GNU Bash through version 4.3</td></tr>
+<tr><th>Discoverer</th><td>Stéphane Chazelas</td></tr>
+</table>
+</div>
+<p><b>Shellshock</b>, also known as <b>Bashdoor</b>, is a family of security bugs in the Unix Bash shell, the first of which was disclosed on 24 September 2014. Shellshock could enable an attacker to gain unauthorised access to a computer system: versions of Bash up to 4.3 improperly executed trailing commands stored in environment variables, a feature intended to pass function definitions between shell processes. Because Bash is widely used to run programs on behalf of web servers, DHCP clients, SSH servers, and mail servers, the bug exposed a huge fraction of Internet-connected systems — comparable in scale to the Heartbleed bug disclosed earlier in 2014.</p>
+<div class="hero"><img src="images/shellshock.png" alt="Placeholder image: terminal testing for the Shellshock Bash vulnerability"></div>
+<p class="caption">Testing a system for Shellshock with a crafted environment variable.</p>
+<h2>Background</h2>
+<p>The flaw was introduced into Bash around 1989 and reported by Unix specialist Stéphane Chazelas to the maintainer, Chet Ramey, on 12 September 2014. Because many programs pass attacker-influenced data (such as HTTP headers, User-Agent strings, or DHCP options) into a child process's environment and then invoke Bash indirectly — for example through CGI scripts executed via <code>/bin/sh</code> — the bug could be triggered remotely without any credentials.</p>
+<h2>Exploitation and response</h2>
+<p>A vulnerable shell could be detected with a test of the form:</p>
+<pre>env x='() { :;}; echo vulnerable' bash -c "echo test"</pre>
+<p>Exploitation in the wild began within hours of disclosure, including botnet-driven scanning and attempts to build DDoS armies. The first patch was incomplete, leading to a series of follow-on CVEs (7169, 6277, 6278, 7186, 7187) addressed over the following days. Vendors of Linux distributions, macOS, and embedded devices issued updates; the US National Vulnerability Database rated the original bug 10.0, the maximum severity.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Shell_script/index.html">Shell script</a></li>
+<li>Bash (Unix shell)</li>
+<li>Heartbleed</li>
+<li>Remote code execution</li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Nominative type system - Wikipedia</title>
+<style>
+body{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;margin:0;background:#f8f9fa;color:#202122}
+main{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border:1px solid #a7d7f9;border-top:none}
+h1{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.4em}
+img.hero{max-width:320px;width:100%;float:right;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#eaecf0;min-height:120px}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<main>
+<h1>Nominative type system</h1>
+<img class="hero" src="images/nominative-type-system.png" alt="Diagram placeholder of named types and declared subtyping relationships">
+<p>A <b>nominative type system</b> (also called a <b>nominal type system</b>) is a major class of type system in programming languages, in which compatibility and equivalence of data types is determined by explicit declarations and by type names, rather than by the internal structure of the types. It contrasts with <b>structural type systems</b>, where types are compatible if their structures match.</p>
+<h2>Characteristics</h2>
+<p>In a nominative system, two types with identical structure but different names are distinct and incompatible unless a relationship between them has been explicitly declared. Subtyping likewise holds only where declared — typically through class inheritance or interface implementation. For example, in Java or C#, a class <code>Point</code> with fields <code>x</code> and <code>y</code> is not interchangeable with an unrelated class <code>Coordinate</code> having the same fields; one must be declared to extend or implement the other, or both must share a common declared supertype.</p>
+<h2>Advantages and trade-offs</h2>
+<p>Nominative typing lets names carry semantic intent: a <code>UserId</code> and an <code>OrderId</code> may both wrap an integer yet be kept deliberately incompatible, catching mix-ups at compile time. It also supports encapsulation and abstraction boundaries and simplifies some compiler error messages. The cost is reduced flexibility: structurally identical types cannot be substituted for one another without intermediate declarations, which structural systems (as in OCaml, Go interfaces, or TypeScript) permit. Many languages mix the two approaches — nominal classes with structural interfaces, for instance.</p>
+<h2>Languages</h2>
+<p>Predominantly nominative languages include Java, C#, C++, and Scala. Rust's trait system is largely nominative for types though trait bounds are checked structurally. The debate between nominal and structural typing is a recurring theme in programming-language design.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Structural_type_system/index.html">Structural type system</a></li>
+<li><a href="../Type_system/index.html">Type system</a></li>
+<li><a href="../Duck_typing/index.html">Duck typing</a></li>
+<li><a href="../Subtyping/index.html">Subtyping</a></li>
+</ul>
+</main>
+</body>
+</html>

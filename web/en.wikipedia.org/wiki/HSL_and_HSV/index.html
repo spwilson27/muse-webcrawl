@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HSL and HSV - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;color:#202122;background:#fff}
+.top{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:10px 24px;font-family:sans-serif}
+.top b{font-size:1.4em}
+.wrap{max-width:880px;margin:0 auto;padding:16px 24px 60px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.35em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal}
+p{line-height:1.6;font-size:0.98em}
+.infobox{float:right;width:250px;border:1px solid #a2a9b1;background:#f8f9fa;margin:0 0 12px 16px;padding:8px;font-size:0.85em;font-family:sans-serif}
+.infobox img{width:100%;height:120px;object-fit:cover;background:#ddd;display:block}
+.infobox th{text-align:left;background:#cef2e0;padding:3px}
+.infobox td{padding:3px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.note{font-size:0.85em;color:#54595d}
+ul{line-height:1.55}
+.mono{font-family:monospace;font-size:0.9em;background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<div class="top"><b>Wikipedia</b> — The Free Encyclopedia</div>
+<div class="wrap">
+<h1>HSL and HSV</h1>
+<p class="note">From Wikipedia, the free encyclopedia</p>
+<div class="infobox">
+<img src="images/hsl-hsv.png" alt="Cylindrical colour models showing hue around the circle and lightness vertically">
+<table>
+<tr><th colspan="2">HSL and HSV</th></tr>
+<tr><td><b>Type</b></td><td>Colour models (transformations of RGB)</td></tr>
+<tr><td><b>Components</b></td><td>Hue, saturation, lightness (HSL) or value (HSV)</td></tr>
+<tr><td><b>Devised</b></td><td>1970s (computer graphics)</td></tr>
+</table>
+</div>
+<p><b>HSL</b> (hue, saturation, lightness) and <b>HSV</b> (hue, saturation, value) are alternative representations of the RGB colour model, designed in the 1970s by computer graphics researchers to more closely align with the way human vision perceives colour-making attributes. In these models, colours of each <i>hue</i> are arranged in a radial slice, around a central axis of neutral colours which ranges from black at the bottom to white at the top.</p>
+<p>The HSV representation models how colours appear under light. The HSL representation models how different paints mix to create colour in the real world — its <i>lightness</i> dimension resembles varying amounts of black or white paint in a mixture.</p>
+<h2>Geometry</h2>
+<p>HSV is commonly pictured as a cone or a cylinder: hue is the angle around the central axis (0° for red, 120° for green, 240° for blue), saturation is the distance from the axis, and value is the distance along the axis, with black at the apex or base. HSL is pictured as a double cone or a cylinder in which pure hues sit at half lightness, with white at one end and black at the other. In both models, fully saturated colours lie on the outer surface and unsaturated greys toward the centre axis.</p>
+<h2>Conversion from RGB</h2>
+<p>Given RGB components in the range 0–1, let <span class="mono">max</span> and <span class="mono">min</span> be the largest and smallest components, and <span class="mono">C = max − min</span> the chroma. Hue is computed from which component is maximal, expressed in degrees from 0 to 360. For HSV, value <span class="mono">V = max</span> and saturation <span class="mono">S = C / V</span>. For HSL, lightness <span class="mono">L = (max + min) / 2</span> and saturation <span class="mono">S = C / (1 − |2L − 1|)</span>. If C = 0 the colour is achromatic and hue is undefined.</p>
+<h2>Uses</h2>
+<p>HSL and HSV are used in colour pickers in virtually all image editing and drawing software, because adjusting hue, saturation, and lightness is more intuitive than mixing red, green, and blue channels. HSL is a standard colour notation in web design via the CSS <span class="mono">hsl()</span> function. The models are also used in computer vision for colour-based segmentation, since they partly separate chromatic information from brightness. Their chief disadvantage is that neither is perceptually uniform: colours with the same numerical lightness or value may appear very different in brightness.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../RGB_color_model/index.html">RGB color model</a></li>
+<li><a href="../Munsell_color_system/index.html">Munsell color system</a></li>
+<li><a href="../CIELAB_color_space/index.html">CIELAB color space</a></li>
+<li><a href="../Hue/index.html">Hue</a></li>
+</ul>
+</div>
+</body>
+</html>

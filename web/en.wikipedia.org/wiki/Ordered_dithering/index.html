@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ordered dithering - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;line-height:1.6;margin:0;background:#f8f9fa;color:#202122}
+article{max-width:960px;margin:0 auto;background:#fff;padding:2em 2.5em}
+h1{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+figure{margin:1em 0;text-align:center}
+figure img{max-width:100%;border:1px solid #c8ccd1;background:#eaecf0;padding:1em}
+figcaption{font-size:.85em;color:#54595d}
+code{font-family:monospace;background:#eaecf0;padding:.1em .3em}
+</style>
+</head>
+<body>
+<article>
+<h1>Ordered dithering</h1>
+<p><b>Ordered dithering</b> is an image dithering algorithm used to display a continuous image on a display of smaller color depth. It converts an image by applying a threshold map — a fixed pattern of thresholds, commonly a <b>Bayer matrix</b> — tiled across the image. For each pixel, its value is compared with the corresponding threshold in the map; the pattern of output pixels creates the illusion of intermediate shades.</p>
+<figure>
+<img src="images/ordered-dithering.png" alt="Gradient rendered in black and white using ordered Bayer dithering">
+<figcaption>A smooth gradient simulated with only black and white pixels using an ordered threshold matrix.</figcaption>
+</figure>
+<h2>The Bayer matrix</h2>
+<p>The classic threshold matrices, described by Bryce Bayer in 1973, are constructed recursively for sizes 2×2, 4×4, 8×8 and so on. The 4×4 matrix spreads thresholds in a dispersed pattern so that, at each gray level, the "on" pixels are distributed as evenly as possible, avoiding visible clumps.</p>
+<h2>Algorithm</h2>
+<p>For an input pixel value <i>v</i> (normalized to [0,1)) and a threshold <i>t</i> taken from the matrix position corresponding to the pixel's coordinates, the output is 1 if <i>v</i> &gt; <i>t</i>, otherwise 0. The operation is purely local and pointwise — unlike error-diffusion methods such as Floyd–Steinberg dithering — which makes ordered dithering fast, parallelizable and stable for animation, at the cost of a visible crosshatch or checkerboard texture.</p>
+<h2>Applications</h2>
+<p>Ordered dithering was widely used in early computer graphics, printers, and GIF/Web images with limited palettes, and remains common in shaders and retro-style games for its characteristic patterned look and low computational cost.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Dither/index.html">Dither</a></li>
+<li><a href="../Floyd%E2%80%93Steinberg_dithering/index.html">Floyd–Steinberg dithering</a></li>
+<li><a href="../Halftone/index.html">Halftone</a></li>
+<li><a href="../Color_quantization/index.html">Color quantization</a></li>
+</ul>
+</article>
+</body>
+</html>

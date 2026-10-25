@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Polar code (coding theory) - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;padding:20px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.thumb{float:right;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;font-size:.85em;text-align:center;width:250px}
+.thumb img{max-width:100%;background:#eaecf0;display:block;height:150px;object-fit:cover}
+.small{font-size:.85em;color:#54595d}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Polar code (coding theory)</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="thumb"><img src="images/polar-code.png" alt="Factor graph of a polar code showing recursive polarisation stages"></div>
+<p>In information theory, a <b>polar code</b> is a linear block error-correcting code. The code construction is based on a multiple recursive concatenation of a short kernel code which transforms the physical channel into virtual outer channels. When the number of recursions becomes large, the virtual channels tend to either have high reliability or low reliability (in other words, they polarize or become sparse), and the data bits are allocated to the most reliable channels. Polar codes were proposed by Erdal Arıkan in 2008 and were the first class of codes with an explicit construction able to provably achieve the symmetric capacity of binary-input discrete memoryless channels, with encoding and decoding complexity of <i>O</i>(<i>N</i> log <i>N</i>) for block length <i>N</i>.</p>
+<h2>Channel polarisation</h2>
+<p>The central idea is to apply a linear transform recursively so that a set of identical copies of a channel split into subchannels whose capacities polarise: as the block length grows, the fraction of subchannels whose capacity approaches 1 or 0 tends toward the original channel's capacity and its complement respectively. Information bits are sent over the "good" subchannels while the positions of the "bad" subchannels are filled with <i>frozen bits</i> known to both encoder and decoder.</p>
+<h2>Decoding</h2>
+<p>The natural decoder for polar codes is the successive-cancellation (SC) decoder, which decodes bits one at a time using likelihood information propagated through the polarisation graph. Later refinements — successive-cancellation list (SCL) decoding with a CRC check — substantially improved finite-length performance and made polar codes competitive with LDPC and turbo codes at short and moderate block lengths.</p>
+<h2>Applications</h2>
+<p>In 2016, polar codes were adopted as the channel coding scheme for the control channels of the 5G NR (New Radio) standard by 3GPP, while LDPC codes were chosen for the data channels. Polar codes are also used in certain deep-space and storage applications where short block lengths and provable performance are valuable.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Error_correction_code/index.html">Error correction code</a></li>
+<li><a href="../Low-density_parity-check_code/index.html">Low-density parity-check code</a></li>
+<li><a href="../Turbo_code/index.html">Turbo code</a></li>
+<li><a href="../Channel_capacity/index.html">Channel capacity</a></li>
+<li><a href="../Erdal_Ar%C4%B1kan/index.html">Erdal Arıkan</a></li>
+</ul>
+<p class="small">Categories: Error detection and correction | Capacity-achieving codes | 5G (telecommunications)</p>
+</div>
+</body>
+</html>

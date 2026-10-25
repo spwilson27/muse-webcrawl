@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Byzantine fault - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:900px;margin:2em auto;padding:0 1em;color:#202122;line-height:1.6;background:#fff}
+h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;font-weight:normal}
+h2{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.hero{display:block;margin:1em auto;max-width:520px;width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:2.5em 0;text-align:center;color:#54595d;font-style:italic}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Byzantine fault</h1>
+<img class="hero" src="images/Byzantine_fault.png" alt="Diagram of generals exchanging contradictory messages, illustrating the Byzantine generals problem">
+<p>A <b>Byzantine fault</b> is any fault presenting different symptoms to different observers, including arbitrary and even malicious behaviour by a component. A system is <b>Byzantine fault tolerant</b> if it can continue to operate correctly despite such faults. The concept is named after the <b>Byzantine generals problem</b>, an allegory posed by Leslie Lamport, Robert Shostak and Marshall Pease in 1982.</p>
+<h2>The Byzantine generals problem</h2>
+<p>In the allegory, several generals of the Byzantine army must agree on a common plan of attack, communicating only by messenger, but some generals may be traitors who send contradictory orders to prevent agreement. Translated to computing, replicated processes must reach consensus even when some replicas behave arbitrarily — crashing, lying, or sending different values to different peers.</p>
+<h2>Key results</h2>
+<p>Lamport, Shostak and Pease proved that with oral (unsigned) messages, agreement is possible only if fewer than one third of the participants are faulty: consensus among <i>n</i> nodes tolerates at most <i>f</i> Byzantine faults where <i>n</i> ≥ 3<i>f</i> + 1. With unforgeable digital signatures the bound can be relaxed. The 1999 Practical Byzantine Fault Tolerance (PBFT) algorithm of Miguel Castro and Barbara Liskov showed that Byzantine replication could be efficient enough for real systems.</p>
+<h2>Applications</h2>
+<p>Byzantine fault tolerance is required where failures may be adversarial or erratic rather than simple crashes: aircraft and spacecraft flight-control systems, replicated databases across administrative domains, and blockchains. Nakamoto consensus in Bitcoin provides probabilistic Byzantine agreement among anonymous participants, while permissioned ledgers such as Hyperledger Fabric typically use PBFT-style protocols.</p>
+<p class="small">See also: <a href="../Consensus_(computer_science)/index.html">Consensus</a> · <a href="../Byzantine_fault_tolerance/index.html">Byzantine fault tolerance</a> · <a href="../Fault_tolerance/index.html">Fault tolerance</a></p>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Manycore processor - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:88%;margin:0 0 12px 18px;padding:8px}
+.infobox th{background:#b0c4de;text-align:center;font-size:110%;padding:4px}
+.infobox td{padding:3px 6px;vertical-align:top}
+.hero{display:block;max-width:100%;margin:6px auto}
+.small{font-size:85%;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Manycore processor</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<tr><th colspan="2">Manycore processor</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/manycore-processor.png" alt="Die layout of a manycore processor with a grid of small cores"></td></tr>
+<tr><td><b>Type</b></td><td>Multi-core central processing unit</td></tr>
+<tr><td><b>Core count</b></td><td>Tens to thousands</td></tr>
+<tr><td><b>Contrast</b></td><td>Multi-core processors (few powerful cores)</td></tr>
+</table>
+<p>A <b>manycore processor</b> is a type of microprocessor that integrates a large number of comparatively simple processing cores — from dozens to thousands — on a single chip, optimised for aggregate throughput on highly parallel workloads rather than for the single-thread performance of each individual core. The term is conventionally contrasted with "multi-core," which describes chips with a small number (two to a few dozen) of powerful, full-featured cores.</p>
+<h2>Characteristics</h2>
+<p>Manycore designs typically feature:
+</p>
+<ul>
+<li><b>Simple cores</b> — often in-order designs with small caches and sometimes no floating-point unit, saving silicon area and power so that more cores fit on the die.</li>
+<li><b>A network on a chip (NoC)</b> — cores communicate over an on-die mesh or ring network instead of a shared bus, which does not scale to hundreds of endpoints.</li>
+<li><b>Emphasis on throughput</b> — performance comes from executing many threads concurrently, suiting tasks such as graphics, signal processing, network packet handling, and machine learning.</li>
+</ul>
+<h2>Examples</h2>
+<p>Graphics processing units (GPUs) are the most widespread manycore devices, containing thousands of lightweight arithmetic units grouped into multiprocessors. Other examples include Intel's Xeon Phi line (derived from the Larrabee project), Tilera's TILE processors with up to 100 cores, the Sunway SW26010 used in the Sunway TaihuLight supercomputer (260 cores per chip), and research chips such as the MIT RAW and the University of California, Davis KiloCore with 1,000 independent cores.</p>
+<h2>Challenges</h2>
+<p>Programming manycore hardware is difficult: Amdahl's law limits the benefit of parallelism for partially serial workloads, and memory bandwidth, cache coherence, and inter-core communication often constrain real performance well below peak. Programming models such as CUDA, OpenCL, and single-program multiple-data (SPMD) styles were developed to exploit manycore architectures.</p>
+<p class="small">See also: <a href="../Multi-core_processor/index.html">Multi-core processor</a> &middot; <a href="../Graphics_processing_unit/index.html">Graphics processing unit</a> &middot; <a href="../Xeon_Phi/index.html">Xeon Phi</a></p>
+</div>
+</body>
+</html>

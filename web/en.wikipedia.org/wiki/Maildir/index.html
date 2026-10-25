@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Maildir - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:880px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122;background:#fff}
+h1{font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.5em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;width:100%;max-width:640px;background:#eef;border:1px solid #a2a9b1;padding:2em 0;text-align:center;color:#555;margin:1em 0}
+.small{font-size:.85em;color:#555}
+</style>
+</head>
+<body>
+<h1>Maildir</h1>
+<img class="hero" src="images/maildir.png" alt="Directory listing showing the tmp, new and cur subdirectories of a Maildir">
+<p><b>Maildir</b> is a widely used format for storing electronic mail messages, in which each message is kept in a separate file with a unique name. It was designed by Daniel J. Bernstein for the qmail mail transfer agent as an alternative to the older mbox format, which stores all messages of a folder in a single file.</p>
+<h2>Structure</h2>
+<p>A Maildir directory (often <code>~/Maildir</code>) contains three subdirectories: <code>tmp</code>, <code>new</code> and <code>cur</code>. A delivering program writes a new message to a uniquely named file in <code>tmp</code>, then moves it to <code>new</code> once writing is complete, ensuring that readers never see a partial message. When a mail reader accesses the folder, messages are moved to <code>cur</code> and information about their state — such as whether they have been seen, replied to or flagged — is encoded by suffixes appended to the filename after a colon.</p>
+<h2>Advantages</h2>
+<p>Because every message is a separate file and delivery is done by atomic renames, Maildir requires no file locking, making it robust on network filesystems and safe against corruption when processes access the mailbox concurrently — a chronic weakness of mbox. Individual messages can also be backed up, searched and deleted as ordinary files. Its main drawbacks are poorer performance on very large folders on some filesystems and less efficient storage than single-file formats.</p>
+<h2>Use</h2>
+<p>Maildir is supported by mail servers and delivery agents including qmail, Postfix, Dovecot, Courier and procmail, and by many mail user agents; the related Maildir++ variant adds support for subfolders and quotas.</p>
+<p class="small">Recreated from memory.</p>
+</body>
+</html>

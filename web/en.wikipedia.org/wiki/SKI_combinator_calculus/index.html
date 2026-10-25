@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SKI combinator calculus - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine','Georgia',serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 0.3em; }
+h2 { border-bottom: 1px solid #a2a9b1; font-size: 1.4em; margin-top: 1.4em; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 0.95em; }
+.infobox { float: right; width: 280px; background: #f8f9fa; border: 1px solid #a2a9b1; padding: 8px; margin: 0 0 12px 16px; font-size: 0.85em; font-family: sans-serif; }
+.infobox th { background: #b0c4de; padding: 4px; text-align: center; }
+.infobox td { padding: 3px 6px; vertical-align: top; }
+img.hero { width: 100%; height: auto; background: #eaecf0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 1px 4px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>SKI combinator calculus</h1>
+<table class="infobox">
+<tr><th colspan="2">SKI combinator calculus</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/ski-combinator-calculus.png" alt="Reduction tree of a combinator expression built from S, K and I"></td></tr>
+<tr><td><b>Field</b></td><td>Mathematical logic, theory of computation</td></tr>
+<tr><td><b>Introduced by</b></td><td>Moses Schönfinkel (1920s); Haskell Curry</td></tr>
+<tr><td><b>Basis</b></td><td>Combinators S, K, I</td></tr>
+<tr><td><b>Power</b></td><td>Turing complete</td></tr>
+</table>
+<p>The <b>SKI combinator calculus</b> is a system of computation based on combinatory logic, in which all computation is expressed using just three primitive combinators — <b>S</b>, <b>K</b>, and <b>I</b> — applied to one another. It is equivalent in power to the lambda calculus (any lambda term can be translated into SKI by "bracket abstraction"), and hence is Turing complete, yet it has no variables, no functions in the usual sense, and only function application.</p>
+<h2>The combinators</h2>
+<p>The combinators are defined by their reduction rules:</p>
+<p><code>I x = x</code> — the identity combinator.</p>
+<p><code>K x y = x</code> — the constant combinator, discarding its second argument.</p>
+<p><code>S x y z = x z (y z)</code> — the substitution combinator, applying x and y to z and combining the results.</p>
+<p>In fact <code>I</code> is redundant, since <code>I = SKK</code> (indeed <code>SK</code> applied to any two arguments yields the identity), so S and K alone form a complete basis. Every computable function can be encoded this way; for example, boolean logic, arithmetic, and recursion via fixed-point combinators expressible in S and K.</p>
+<h2>History and significance</h2>
+<p>Combinatory logic was introduced by Moses Schönfinkel in a 1920 lecture (published 1924) and developed by Haskell Curry from the late 1920s; it predates and parallels Church's lambda calculus. SKI and its descendants are important in the theory and implementation of functional programming languages: compilers have translated functional programs into combinator graphs (as in David Turner's SASL and Miranda implementations), and the system provides one of the simplest possible models in which to study evaluation strategies, reduction, and the foundations of computation.</p>
+</div>
+</body>
+</html>

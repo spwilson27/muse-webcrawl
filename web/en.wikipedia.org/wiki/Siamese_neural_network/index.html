@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Siamese neural network - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;color:#202122;background:#fff;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:10px 20px}
+header h1{font-size:28px;margin:0;font-weight:normal}
+.content{max-width:960px;margin:0 auto;padding:20px}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal}
+img.hero{max-width:420px;width:100%;display:block;margin:10px 0}
+a{color:#0645ad;text-decoration:none}
+.small{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<header><h1>Siamese neural network</h1></header>
+<div class="content">
+<img class="hero" src="images/siamese-network.png" alt="Diagram of a Siamese neural network with two identical subnetworks sharing weights">
+<p>A <b>Siamese neural network</b> (sometimes called a <b>twin neural network</b>) is an <a href="../Artificial_neural_network/index.html">artificial neural network</a> architecture that uses two or more identical subnetworks — identical configuration, parameters, and weights — to process separate input vectors and produce comparable output vectors, typically embeddings. By comparing these outputs with a distance or similarity function, the network learns a metric under which similar inputs lie close together and dissimilar inputs far apart.</p>
+<h2>History</h2>
+<p>The architecture was introduced in the early 1990s for signature verification by researchers at AT&T Bell Laboratories, including Jane Bromley and Yann LeCun, who trained two identical networks with shared weights and a contrastive energy function to decide whether two signatures came from the same person. The approach later powered face verification systems, most famously the DeepFace and FaceNet line of work, where a triplet variant — processing an anchor, a positive example, and a negative example — was trained with the triplet loss introduced by Google researchers in 2015.</p>
+<h2>Training</h2>
+<p>Siamese networks are typically trained with pairs or triplets rather than class labels. The <b>contrastive loss</b> pulls together embeddings of matching pairs and pushes non-matching pairs apart by at least a margin. <b>Triplet loss</b> requires the anchor–positive distance to be smaller than the anchor–negative distance by a margin, making mining of informative ("hard") triplets a central practical concern. Because only relative similarity must be learned, Siamese networks are well suited to <b>one-shot learning</b>, in which a class is represented by a single example and new inputs are classified by nearest-neighbour comparison in the embedding space.</p>
+<h2>Applications</h2>
+<p>Applications include face and signature verification, fingerprint and speaker recognition, visual object tracking (SiamFC and successors), near-duplicate detection, sentence-pair similarity and question answering in natural language processing, drug discovery (matching molecular structures), and entity resolution in databases. Modern <a href="../Sentence_embedding/index.html">sentence embedding</a> models such as Sentence-BERT are direct descendants of the Siamese architecture.</p>
+<p class="small">Recreated article. Weight sharing between the twin subnetworks is the defining property of the architecture.</p>
+</div>
+</body>
+</html>

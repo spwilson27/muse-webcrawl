@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Two Generals' Problem - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 64px; }
+h1 { font-size: 32px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 4px; }
+h2 { font-size: 24px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 32px; }
+p, li { font-size: 15px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 480px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 24px 0; color: #72777d; }
+.caption { font-size: 12px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Two Generals' Problem</h1>
+<p>The <b>Two Generals' Problem</b>, also known as the <b>Two Armies Problem</b> or the <b>coordinated attack problem</b>, is a classic thought experiment in computer science and logic. It demonstrates that two parties communicating over an unreliable channel cannot guarantee reaching agreement, and it establishes fundamental limits on distributed consensus when messages may be lost. The problem was formulated by E. A. Akkoyunlu, K. Ekanadham, and R. V. Huber in 1975 in the context of communication between computer processes, and popularised by Jim Gray.</p>
+<div class="hero">
+<img src="images/two-generals.png" alt="Two armies on opposite hillsides sending a messenger across an enemy-held valley to agree on an attack time">
+<div class="caption">Messengers must cross hostile territory, so any message — and any acknowledgement — may be captured.</div>
+</div>
+<h2>The problem</h2>
+<p>Two armies, led by generals, occupy hills on opposite sides of a valley in which a third army is encamped. The two allied armies can defeat the enemy only if they attack simultaneously; if either attacks alone it will be destroyed. The generals can communicate only by sending messengers through the valley, and any messenger may be captured or lost, so no message is guaranteed to arrive.</p>
+<p>General A sends a message: "Attack at dawn." General B receives it and sends an acknowledgement, knowing A will not attack unless he knows B received the plan. But B cannot be sure the acknowledgement arrived, so A must acknowledge the acknowledgement — and so on, without end. Each level of confirmation requires another message whose delivery is itself uncertain.</p>
+<h2>Impossibility result</h2>
+<p>The key result is that <b>no finite protocol can guarantee agreement</b>. Suppose some protocol of fixed length worked; consider its final message. If that message is lost, the sender cannot tell, yet the protocol supposedly still guarantees coordination — which means the final message was unnecessary. Removing it repeatedly reduces the protocol to zero messages, which plainly cannot coordinate anything. Hence guaranteed common knowledge of the plan is unattainable over a lossy channel. More formally, the problem shows that common knowledge cannot be created by exchanging messages over an unreliable medium.</p>
+<h2>Implications</h2>
+<p>The problem frames practical design choices in distributed systems and networking. Protocols such as TCP do not solve the problem — they cannot — but they manage uncertainty pragmatically, using acknowledgements, timeouts, and retries to make failure improbable and detectable rather than impossible. The result is related to, but distinct from, the <a href="../Byzantine_fault/index.html">Byzantine generals problem</a>, in which the concern is not lost messages but traitorous participants who may send conflicting information; that problem, unlike the two generals problem, does have solutions when fewer than one third of participants are faulty.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Byzantine_fault/index.html">Byzantine fault</a></li>
+<li><a href="../Common_knowledge_(logic)/index.html">Common knowledge (logic)</a></li>
+<li><a href="../Transmission_Control_Protocol/index.html">Transmission Control Protocol</a></li>
+<li><a href="../Consensus_(computer_science)/index.html">Consensus (computer science)</a></li>
+</ul>
+</div>
+</body>
+</html>

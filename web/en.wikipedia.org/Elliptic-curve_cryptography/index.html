@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Elliptic-curve cryptography - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.hero{display:block;max-width:55%;margin:8px auto}
+.small{font-size:90%;color:#54595d}
+code{background:#f8f9fa;border:1px solid #eaecf0;padding:0 3px;font-size:92%}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Elliptic-curve cryptography</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/elliptic-curve.png" alt="An elliptic curve with point addition illustrated by a chord and tangent">
+<p><b>Elliptic-curve cryptography</b> (<b>ECC</b>) is an approach to public-key cryptography based on the algebraic structure of elliptic curves over finite fields. ECC allows smaller keys to provide equivalent security, compared to cryptosystems based on modular exponentiation in Galois fields, such as the RSA cryptosystem and ElGamal cryptosystem.</p>
+<p>Elliptic curves are applicable for key agreement, digital signatures, pseudo-random generators and other tasks. Indirectly, they can be used for encryption by combining the key agreement with a symmetric encryption scheme. They are also used in several integer factorization algorithms that have applications in cryptography, such as the Lenstra elliptic-curve factorization.</p>
+<h2>History</h2>
+<p>The use of elliptic curves in cryptography was suggested independently by Neal Koblitz and Victor S. Miller in 1985. Elliptic curve cryptography algorithms entered wide use in 2004 to 2005. The influential Dual EC DRBG random-number generator, later shown to be vulnerable to a suspected backdoor, slowed trust in some standardised parameters, and prompted a shift toward independently generated curves such as Curve25519, designed by Daniel J. Bernstein.</p>
+<h2>Theory</h2>
+<p>An elliptic curve over a finite field forms a finite abelian group in which the discrete logarithm problem appears to be hard: given points P and Q = dP (d-fold point multiplication of a generator), finding d is infeasible for well-chosen curves. The security of ECC protocols — ECDH key agreement and ECDSA signatures — rests on this elliptic-curve discrete logarithm problem (ECDLP). Because the best known attacks are exponential in half the key length, a 256-bit elliptic-curve key offers security roughly comparable to a 3072-bit RSA key, a decisive advantage for bandwidth, storage and computation on small devices.</p>
+<h2>Implementation and standards</h2>
+<p>Widely used curves include the NIST curves P-256 and P-384, Curve25519 and Ed25519 (used for the EdDSA signature scheme), and secp256k1, used in Bitcoin and Ethereum. ECC underlies modern TLS (ECDHE key exchange), secure messaging protocols such as the Signal protocol, and many smart cards and embedded systems. Implementers must guard against invalid-curve and side-channel attacks and against nonce reuse in ECDSA, which can leak the private key. Like other discrete-logarithm and factoring-based systems, ECC would be broken by a large-scale quantum computer running Shor's algorithm, motivating the transition to post-quantum cryptography.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Elliptic_curve/index.html">Elliptic curve</a></li>
+<li><a href="../Public-key_cryptography/index.html">Public-key cryptography</a></li>
+<li><a href="../Elliptic_Curve_Digital_Signature_Algorithm/index.html">Elliptic Curve Digital Signature Algorithm</a></li>
+<li><a href="../Curve25519/index.html">Curve25519</a></li>
+<li><a href="../RSA_(cryptosystem)/index.html">RSA (cryptosystem)</a></li>
+</ul>
+<p class="small">Categories: Elliptic curve cryptography · Public-key cryptography</p>
+</div>
+</body>
+</html>

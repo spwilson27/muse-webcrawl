@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Multiple dispatch - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 60px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 6px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 0.95em; }
+.hero { float: right; margin: 0 0 14px 18px; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 6px; font-size: 0.8em; text-align: center; color: #54595d; }
+.hero img { width: 100%; height: auto; display: block; background: #eaecf0; min-height: 150px; }
+a { color: #0645ad; text-decoration: none; }
+.small { font-size: 0.85em; color: #54595d; }
+code { background: #f8f9fa; padding: 0 3px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Multiple dispatch</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="hero"><img src="images/Multiple_dispatch.png" alt="Table showing method selection by the types of two arguments">Multiple dispatch selects a method based on the runtime types of several arguments at once.</div>
+<p><b>Multiple dispatch</b>, also called <b>multimethods</b>, is a feature of some programming languages in which a function or method can be dynamically dispatched based on the run-time types of more than one of its arguments. It generalizes the familiar <b>single dispatch</b> of object-oriented languages, in which a method call is selected only by the class of the object on which it is invoked (the "receiver"), as with virtual methods in C++, Java, or Python.</p>
+<h2>Motivation</h2>
+<p>Single dispatch handles operations on two objects awkwardly: a binary operation such as <code>collide(asteroid, spaceship)</code> may need different code for every combination of argument types, forcing patterns like double dispatch or long conditional chains in one class. With multiple dispatch, the programmer simply defines one method per type combination, and the language selects the most specific applicable method for the actual argument types at run time. This keeps code open for extension in both dimensions — new types and new operations — mitigating the expression problem.</p>
+<h2>Languages</h2>
+<p>Multiple dispatch is a central feature of the Common Lisp Object System (CLOS, where the functions are called generic functions), Dylan, and Julia, in which essentially all functions are generic and method selection on all arguments drives the language's design and performance model. Multimethods are also available in Clojure, in R (S4 classes), in Groovy, and in libraries for languages without native support (e.g. Python's <code>multipledispatch</code> package; Python itself offers only single dispatch via <code>functools.singledispatch</code>). Method resolution rules, and the handling of ambiguous combinations, differ between languages.</p>
+<h2>See also</h2>
+<p><a href="../Dynamic_dispatch/index.html">Dynamic dispatch</a> &middot; <a href="../Double_dispatch/index.html">Double dispatch</a> &middot; <a href="../Visitor_pattern/index.html">Visitor pattern</a> &middot; <a href="../Julia_(programming_language)/index.html">Julia (programming language)</a> &middot; <a href="../Common_Lisp_Object_System/index.html">Common Lisp Object System</a></p>
+</div>
+</body>
+</html>

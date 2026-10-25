@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Patience sorting - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:24px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:1.4em}
+img.hero{display:block;max-width:100%;height:auto;background:#f8f9fa;border:1px solid #c8ccd1;padding:12px;text-align:center;color:#72777d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;overflow:auto}
+</style>
+</head>
+<body>
+<h1>Patience sorting</h1>
+<img class="hero" src="images/patience-sorting.png" alt="Diagram of cards dealt into piles during patience sorting">
+<p><b>Patience sorting</b> is a sorting algorithm inspired by, and named after, a card game patience (solitaire). It takes its name from a simplified version of the patience game Klondike: cards are dealt one at a time into piles, and the algorithm efficiently both sorts the cards and finds the length of the longest increasing subsequence of the original sequence.</p>
+<h2>Algorithm</h2>
+<p>Given an input sequence, the algorithm deals each element, in order, onto the leftmost pile whose top element is greater than or equal to it; if no such pile exists, a new pile is started to the right. Each pile thereby holds a decreasing sequence. Because the pile tops are in increasing order, binary search can locate the correct pile, giving an efficient dealing phase.</p>
+<p>To produce sorted output, the smallest top card is repeatedly removed from among the piles — efficiently done with a priority queue. The total running time is O(<i>n</i> log <i>n</i>) in the worst case.</p>
+<h2>Longest increasing subsequence</h2>
+<p>A notable property is that the number of piles at the end of the dealing phase equals the length of the longest increasing subsequence (LIS) of the input. By recording, for each card placed, a pointer to the top card of the pile to its left, an actual longest increasing subsequence can be recovered by backtracking. This application was described by C. L. Mallows and was analysed in the context of the "patience sorting" literature of the 1990s, including work connected to the Ulam problem on longest increasing subsequences of random permutations.</p>
+<h2>History</h2>
+<p>The algorithm was named by C. L. Mallows in the early 1960s and later popularised in discussions by Donald Knuth and others. It is closely related to Dilworth's decomposition and the Robinson–Schensted correspondence.</p>
+<p>See also: <a href="../Sorting_algorithm/index.html">Sorting algorithm</a> · <a href="../Longest_increasing_subsequence/index.html">Longest increasing subsequence</a> · <a href="../Klondike_(solitaire)/index.html">Klondike (solitaire)</a></p>
+</body>
+</html>

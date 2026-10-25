@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Virtual method table - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:24px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;font-size:1.4em;margin-top:28px}
+figure{float:right;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;font-size:0.85em;text-align:center;max-width:260px}
+figure img{width:240px;height:160px;object-fit:cover;background:#eaecf0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:monospace;background:#f8f9fa;padding:0 3px}
+</style>
+</head>
+<body>
+<h1>Virtual method table</h1>
+<figure><img src="images/virtual-method-table.png" alt="Diagram of an object whose vptr points to a vtable array of function pointers"><figcaption>Object layout with a vtable pointer (vptr)</figcaption></figure>
+<p>In computer programming, a <b>virtual method table</b> (<b>VMT</b>), <b>virtual function table</b>, <b>vtable</b>, or <b>dispatch table</b> is a mechanism used in a programming language to support dynamic dispatch (run-time method binding). It is the most common implementation of polymorphism in object-oriented languages such as C++, Java, and C#.</p>
+<h2>Mechanism</h2>
+<p>For each class that declares or inherits virtual functions, the compiler builds a table of pointers to the most-derived implementations of those functions. Each object of such a class contains a hidden pointer (the <i>vptr</i>) to its class's vtable. A virtual call then consists of loading the vptr, indexing into the table at a fixed offset, and calling through the resulting pointer — a small constant overhead regardless of where the overriding method sits in the inheritance hierarchy.</p>
+<h2>Details and complications</h2>
+<p>With multiple inheritance an object may contain several vptrs, and calling code may need to adjust the implicit <code>this</code> pointer. Compilers may devirtualize calls whose target is provably known, and language runtimes may cache lookups. Because vtables are writable data in many implementations, corrupting a vptr is a classic exploitation technique in memory-safety attacks.</p>
+<p>See also: <a href="../Dynamic_dispatch/index.html">Dynamic dispatch</a>, <a href="../Polymorphism_(computer_science)/index.html">Polymorphism</a>, <a href="../Virtual_function/index.html">Virtual function</a>.</p>
+</body>
+</html>

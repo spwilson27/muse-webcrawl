@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ridge regression - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:24px}
+h1{font-size:32px;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-weight:normal}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal;margin-top:32px}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:420px;width:100%;margin:16px auto;background:#f8f9fa;border:1px solid #c8ccd1;padding:8px}
+.small{font-size:13px;color:#54595d}
+ul,ol{line-height:1.6;font-size:15px}
+.eq{text-align:center;font-family:'Times New Roman',serif;font-size:17px;margin:14px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Ridge regression</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/ridge-regression.png" alt="Diagram showing shrinkage of regression coefficients under ridge regression">
+<p><b>Ridge regression</b> is a method of estimating the coefficients of multiple-regression models in scenarios where the independent variables are highly correlated. It is a type of regularized least squares, also known as <b>Tikhonov regularization</b>. It has been used in many fields including econometrics, chemistry, and engineering. The method trades a small increase in bias for a potentially large decrease in variance, and is particularly useful for mitigating the problem of multicollinearity in least-squares regression.</p>
+<h2>Theory</h2>
+<p>Suppose the linear model is <i>y</i> = <i>Xβ</i> + <i>ε</i>. Ordinary least squares estimates β by minimizing the residual sum of squares. Ridge regression adds an L2 penalty on the size of the coefficients, minimizing:</p>
+<p class="eq">|| y − Xβ ||² + λ || β ||²</p>
+<p>where λ ≥ 0 is a tuning (regularization) parameter controlling the strength of the penalty. The closed-form estimate is:</p>
+<p class="eq">β̂ = (XᵀX + λI)<sup>−1</sup> Xᵀy</p>
+<p>Adding λ to the diagonal of XᵀX — the "ridge" from which the method takes its name — makes the matrix invertible even when XᵀX is singular or nearly so, stabilizing the estimates.</p>
+<h2>History</h2>
+<p>The technique was developed independently in several fields. Andrey Tikhonov proposed related regularization methods in the 1940s. Arthur E. Hoerl and Robert W. Kennard introduced ridge regression in statistics in a pair of papers in 1970, motivating it as a remedy for multicollinearity.</p>
+<h2>Choice of the penalty parameter</h2>
+<p>When λ = 0 the estimator reduces to ordinary least squares; as λ grows the coefficients shrink toward zero. In practice λ is chosen by cross-validation, generalized cross-validation, or information criteria. Graphical "ridge traces" — plots of coefficient estimates against λ — were an early diagnostic for selecting λ.</p>
+<h2>Bayesian interpretation</h2>
+<p>Ridge regression is equivalent to Bayesian linear regression with a Gaussian prior on the coefficients, β ~ N(0, σ²/λ I): the ridge estimate is the posterior mean (and mode) under that prior.</p>
+<h2>Related methods</h2>
+<p>Ridge regression is closely related to the lasso (which uses an L1 penalty and can set coefficients exactly to zero) and to the elastic net, which combines both penalties. Ridge regression is also connected to principal component regression and to shrinkage estimators such as the James–Stein estimator.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Ring_theory/index.html">Regularization (mathematics)</a></li>
+<li>Least squares</li>
+<li>Multicollinearity</li>
+</ul>
+<p class="small">Categories: Regression analysis · Estimation theory · Machine learning</p>
+</div>
+</body>
+</html>
