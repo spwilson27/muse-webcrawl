@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Quirks mode - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+.infobox { float: right; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; margin: 0 0 16px 16px; padding: 8px; font-size: 13px; font-family: sans-serif; }
+.infobox th { text-align: left; padding: 2px 6px; }
+.infobox td { padding: 2px 6px; }
+.infobox .title { background: #dde8f0; text-align: center; font-weight: bold; padding: 6px; }
+img.hero { width: 100%; }
+.ref { font-size: 13px; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+code { background: #f0f0f0; padding: 1px 4px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Quirks mode</h1>
+<p><i>From Wikipedia, the free encyclopedia</i></p>
+<table class="infobox">
+<tr><td class="title" colspan="2">Quirks mode</td></tr>
+<tr><td colspan="2"><img class="hero" src="images/quirks-mode.png" alt="Legacy web page rendering"></td></tr>
+<tr><th>Type:</th><td>Browser compatibility technique</td></tr>
+<tr><th>Triggered by:</th><td>Missing or legacy DOCTYPE</td></tr>
+</table>
+<p>In computing, <b>quirks mode</b> is a technique used by some web browsers for the sake of maintaining backward compatibility with web pages designed for old browsers, instead of strictly complying with W3C and IETF standards in standards mode.</p>
+<p>The concept was introduced in Internet Explorer 5 for Macintosh and adopted by all major browsers thereafter: a page with no document type declaration (DOCTYPE), or an old one, is rendered with legacy behaviours, while a page with a modern DOCTYPE triggers standards mode (and, in Internet Explorer, various intermediate "almost standards" modes).</p>
+<h2>Behaviour differences</h2>
+<p>Quirks mode emulates the bugs and non-standard behaviour of late-1990s browsers, particularly Netscape Navigator 4 and Internet Explorer 5. Differences include:</p>
+<ul>
+<li>The CSS box model follows the old Internet Explorer model, in which <code>width</code> includes padding and borders.</li>
+<li>Some CSS properties, such as unitless length values, are accepted where standards mode would reject the declaration.</li>
+<li>Fonts inside tables do not inherit sizes in the standard way; percentage-based heights and certain table layouts behave differently.</li>
+<li>Parsing of HTML tolerates different errors, and certain JavaScript behaviours differ.</li>
+</ul>
+<h2>Triggering</h2>
+<p>Browsers choose the rendering mode by "DOCTYPE sniffing". The simplest trigger for standards mode is the HTML5 doctype, <code>&lt;!DOCTYPE html&gt;</code>; documents without a doctype are always rendered in quirks mode. Some older doctypes trigger quirks or limited-quirks ("almost standards") modes depending on their exact public and system identifiers.</p>
+<p>Modern web development practice is to always include the HTML5 doctype so that pages render in standards mode.</p>
+<p class="ref">See also: DOCTYPE, Web standards, Browser engine.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Simultaneous multithreading - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; color: #202122; background: #fff; }
+header { background: #f8f9fa; border-bottom: 1px solid #a2a9b1; padding: 12px 24px; }
+header .site { font-family: sans-serif; font-size: 0.85em; color: #54595d; }
+main { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #eaecf0; padding-bottom: 4px; font-weight: normal; margin-top: 1.4em; }
+p { line-height: 1.6; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; margin: 0 0 16px 20px; font-size: 0.85em; font-family: sans-serif; }
+.infobox th { background: #b0c4de; padding: 6px; text-align: center; }
+.infobox td { padding: 4px 8px; border-top: 1px solid #eaecf0; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #a2a9b1; background: #eaecf0; }
+.caption { font-size: 0.85em; color: #54595d; font-family: sans-serif; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia, the free encyclopedia</span></header>
+<main>
+<h1>Simultaneous multithreading</h1>
+<table class="infobox">
+<tr><th colspan="2">Simultaneous multithreading</th></tr>
+<tr><td><b>Type</b></td><td>Processor design technique</td></tr>
+<tr><td><b>Purpose</b></td><td>Issue instructions from multiple threads in the same clock cycle</td></tr>
+<tr><td><b>Commercial forms</b></td><td>Intel Hyper-Threading; IBM POWER SMT; AMD Zen SMT</td></tr>
+<tr><td><b>First proposed</b></td><td>Research of the 1990s (Tullsen, Eggers, Levy)</td></tr>
+</table>
+<p><b>Simultaneous multithreading</b> (<b>SMT</b>) is a processor design technique that allows instructions from more than one thread to be issued in a single clock cycle on a superscalar processor. By sharing the execution resources of one physical core among several hardware threads, SMT improves total throughput: when one thread stalls — for example, waiting on a cache miss — the core can execute instructions from another thread instead of idling.</p>
+<div class="hero"><img src="images/simultaneous-multithreading.png" alt="Diagram of a processor core issuing instructions from two threads in the same cycle"><div class="caption">SMT lets a single core fill its issue slots with instructions drawn from two (or more) threads simultaneously.</div></div>
+<h2>How it differs from other parallelism</h2>
+<p>SMT is distinct from time-sliced (temporal) multithreading, in which a core switches between threads on stalls or at intervals, and from chip multiprocessing (multiple independent cores). In SMT all hardware threads genuinely execute in the same cycle, dynamically sharing functional units, caches, and branch predictors, with each thread keeping its own architectural state such as registers and program counter.</p>
+<h2>Implementations</h2>
+<p>The technique was developed in academic research in the mid-1990s, notably by Dean Tullsen, Susan Eggers, and Henry Levy at the University of Washington. Intel commercialized a two-way form as <b>Hyper-Threading Technology</b> in the Pentium 4 (2002) and later Core processors; IBM's POWER processors support up to eight threads per core; AMD added two-way SMT with its Zen architecture (2017). Typical throughput gains are often quoted in the range of 10–30% on multithreaded workloads, at a small cost in die area.</p>
+<h2>Drawbacks and security</h2>
+<p>Because threads share microarchitectural resources, one thread can slow another, and shared caches and predictors create timing side channels. Research attacks such as TLBleed (2018) and the MDS/ZombieLoad family of vulnerabilities exploited or were worsened by SMT sharing, leading some security-sensitive environments (notably OpenBSD) to disable SMT by default.</p>
+<h2>See also</h2>
+<p><a href="../Hyper-threading/index.html">Hyper-threading</a> · <a href="../Multithreading_(computer_architecture)/index.html">Multithreading (computer architecture)</a> · <a href="../Superscalar/index.html">Superscalar processor</a> · <a href="../Thread_(computing)/index.html">Thread (computing)</a></p>
+</main>
+</body>
+</html>

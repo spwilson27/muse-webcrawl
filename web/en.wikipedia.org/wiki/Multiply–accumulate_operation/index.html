@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Multiply–accumulate operation - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 60px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; margin-top: 1.4em; font-weight: normal; }
+p { line-height: 1.6; font-size: 0.95em; }
+.hero { text-align: center; margin: 12px 0; }
+.hero img { max-width: 420px; background: #eaecf0; border: 1px solid #a2a9b1; padding: 30px; }
+ul { line-height: 1.6; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Multiply–accumulate operation</h1>
+<div class="hero"><img src="images/multiply-accumulate-operation.png" alt="Diagram of a multiply-accumulate unit"></div>
+<p>In computing, especially digital signal processing, the <b>multiply–accumulate</b> (<b>MAC</b>) or <b>multiply-add</b> (<b>MAD</b>) operation computes the product of two numbers and adds that product to an accumulator:</p>
+<p style="text-align:center;">a ← a + (b × c)</p>
+<p>The operation is performed by a hardware block called a <b>multiplier–accumulator</b>. When implemented as a single fused floating-point operation — computing b × c with full precision and rounding only once after the addition — it is called a <b>fused multiply-add</b> (<b>FMA</b>).</p>
+<h2>Applications</h2>
+<p>MAC operations are the core arithmetic of signal processing and machine learning: FIR and IIR filters, convolutions, discrete Fourier transforms, dot products, matrix multiplication, and neural network inference all reduce to long sequences of multiply–accumulates. The performance of DSPs, GPUs, and AI accelerators is often quoted in MACs per second (or equivalent FLOPS, counting one MAC as two operations).</p>
+<h2>Implementation</h2>
+<p>In a classic digital signal processor, a MAC unit can execute the operation in a single clock cycle, fetching operands from dedicated registers and memory banks and accumulating in an extra-wide accumulator register to avoid overflow and precision loss during long sums. The fused multiply-add, standardized in IEEE 754-2008, improves accuracy in dot products and polynomial evaluation and speeds up algorithms such as Newton's method for division and square root; it is supported by modern CPU instruction sets including x86 FMA3/FMA4, ARM, and POWER.</p>
+<h2>Variants</h2>
+<p>Related operations include multiply–subtract accumulation, saturating MACs in fixed-point DSPs, and the vectorized multiply-add instructions of SIMD architectures. Low-precision MAC arrays (INT8, FP16, BF16) form the computational heart of tensor processors used for training and inference in deep learning.</p>
+</div>
+</body>
+</html>

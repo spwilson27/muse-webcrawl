@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Paging - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 0 auto; padding: 20px; color: #202122; line-height: 1.6; background: #fff; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 0.3em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.2em; }
+h3 { font-size: 1.15em; margin-top: 1em; }
+figure { float: right; margin: 0 0 1em 1.5em; text-align: center; max-width: 300px; }
+figcaption { font-size: 0.85em; color: #54595d; }
+img.hero { max-width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 1em 1.5em; font-size: 0.9em; width: 260px; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+.refs { font-size: 0.85em; }
+</style>
+</head>
+<body>
+<h1>Paging</h1>
+<figure>
+<img class="hero" src="images/Paging.png" alt="Illustration of a virtual address being translated to a physical address through a page table">
+<figcaption>Address translation via a page table in a paging system.</figcaption>
+</figure>
+<p>In computer operating systems, <b>paging</b> is a memory management scheme by which a computer stores and retrieves data from secondary storage for use in main memory. In this scheme, the operating system retrieves data from secondary storage in same-size blocks called <i>pages</i>. Paging is an important part of virtual memory implementations in modern operating systems, using secondary storage to let programs exceed the size of available physical memory.</p>
+<p>For simplicity, main memory is called "RAM" and secondary storage is called "disk" in this article. The hardware implementation of this scheme is the memory management unit (MMU) between the CPU and the RAM, and the software implementation is part of the operating system.</p>
+<h2>History</h2>
+<p>In the 1960s, swapping was an early virtual memory technique. An entire program would be "swapped out" (or "rolled out") from RAM to disk, and another one would be swapped in to replace it. A swapped-out program would be current but its execution would be suspended while its RAM was in use by another program.</p>
+<p>The Manchester Atlas, completed in 1962, is generally credited as the first system to implement paging. Its "one-level store" treated main memory and a magnetic drum as a single level of storage, dividing addresses into pages handled automatically by hardware. Other early systems implementing paging-like schemes included the Burroughs B5000 and later the IBM System/360 family with dynamic address translation.</p>
+<p>An important aspect of early swapping is the possibility to swap one program in its entirety. This simplifies memory management somewhat, because each program uses the same amount of RAM, and the same contiguous region of it. With paging, a thrashing operating system is able to keep only the most frequently used parts of each program in RAM, swapping out the rest as needed.</p>
+<h2>Page faults</h2>
+<p>When a process tries to reference a page not currently present in RAM, the MMU interrupts the CPU and the operating system handles the resulting page fault. The operating system searches for the page in secondary storage, allocates a free page frame in RAM, loads the data, updates the page table, and resumes the interrupted instruction. If no frames are free, a page must first be evicted, and if it has been modified, its contents are written back to disk before reuse.</p>
+<h2>Page replacement algorithms</h2>
+<p>Demand paging, as opposed to anticipatory paging (also known as "prepaging"), loads pages into memory only when needed by the executing program. Page replacement algorithms decide which page to evict when a new page must be loaded. Common approaches include least recently used (LRU) approximation, the clock algorithm (a FIFO-based approximation of LRU), and various working-set strategies. Poor replacement choices can cause thrashing, where the system spends more time moving pages than executing useful instructions.</p>
+<h2>Page tables</h2>
+<p>Operating systems maintain a page table for each process, mapping virtual pages to physical page frames. To avoid walking the entire table on every memory access, processors cache recent translations in a translation lookaside buffer (TLB). Large address spaces typically require multi-level (hierarchical) page tables so that tables for unused address ranges need not be allocated.</p>
+<h2>Sharing and protection</h2>
+<p>Because page tables are maintained per process, the same physical frame can be mapped into several address spaces, enabling efficient sharing of libraries and inter-process communication through shared memory. Page table entries also carry permission bits (read, write, execute, user/supervisor), so the MMU can enforce memory protection on every access.</p>
+<p class="refs">See also: Virtual memory; Memory management unit; Segmentation (memory); Swapping (computer memory).</p>
+</body>
+</html>

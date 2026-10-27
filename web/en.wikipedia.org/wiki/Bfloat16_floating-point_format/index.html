@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Bfloat16 floating-point format - Wikipedia</title>
+<style>body{font-family:sans-serif;margin:2em auto;max-width:960px;color:#202122;line-height:1.6}h1{font-family:serif;border-bottom:1px solid #a2a9b1}h2{font-family:serif;border-bottom:1px solid #a2a9b1}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em;margin:0 0 1em 1em;font-size:90%;width:280px}.hero{display:block;margin:1em auto;max-width:600px;background:#eaecf0;text-align:center;padding:2em 0;color:#54595d}a{color:#0645ad}</style></head>
+<body>
+<h1>Bfloat16 floating-point format</h1>
+<img class="hero" src="images/bfloat16.png" alt="Bit layout of the bfloat16 floating-point format">
+<table class="infobox"><tr><th colspan="2">bfloat16</th></tr>
+<tr><td><b>Bits</b></td><td>16 total: 1 sign, 8 exponent, 7 mantissa</td></tr>
+<tr><td><b>Exponent bias</b></td><td>127</td></tr>
+<tr><td><b>Developed by</b></td><td>Google Brain</td></tr>
+<tr><td><b>Relation</b></td><td>Truncation of <a href="../Single-precision_floating-point_format/index.html">IEEE 754 binary32</a></td></tr></table>
+<p>The <b>bfloat16</b> (brain floating point) <b>floating-point format</b> is a computer number format occupying 16 bits in computer memory; it represents a wide dynamic range of numeric values by using a floating radix point. This format is a truncated (16-bit) version of the 32-bit IEEE 754 single-precision floating-point format (binary32) with the intent of accelerating machine learning and near-sensor computing.</p>
+<h2>Definition</h2>
+<p>The bfloat16 format keeps the full 8-bit exponent of binary32, giving it roughly the same dynamic range as single precision, while reducing the explicit significand (mantissa) from 23 bits to 7 bits. Conversion between bfloat16 and binary32 is therefore simple: a bfloat16 value is just the high 16 bits of the corresponding binary32 value, rounded or truncated.</p>
+<h2>Usage</h2>
+<p>Because deep learning workloads are relatively insensitive to reduced mantissa precision but benefit greatly from reduced memory bandwidth and increased arithmetic throughput, bfloat16 became a standard format for training neural networks. It is supported natively by Google's Tensor Processing Units (TPUs), Intel processors and accelerators, NVIDIA GPUs (Ampere generation and later), AMD accelerators, and ARM architectures. It is widely used in frameworks such as <a href="../TensorFlow/index.html">TensorFlow</a> and <a href="../PyTorch/index.html">PyTorch</a>.</p>
+<h2>Comparison with fp16</h2>
+<p>Compared to the IEEE half-precision format (fp16), which has a 5-bit exponent, bfloat16 offers a much larger range at the cost of precision, making it suitable for gradient values during training without loss scaling.</p>
+<p><i>See also: <a href="../Half-precision_floating-point_format/index.html">Half-precision floating-point format</a>, <a href="../Tensor_Processing_Unit/index.html">Tensor Processing Unit</a></i></p>
+</body></html>

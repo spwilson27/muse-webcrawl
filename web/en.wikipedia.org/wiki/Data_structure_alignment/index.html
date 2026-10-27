@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Data structure alignment - Wikipedia</title><style>body{font-family:sans-serif;line-height:1.6;margin:2em auto;max-width:50em;padding:0 1em;color:#202122}h1{border-bottom:1px solid #a2a9b1;font-weight:normal}img.hero{display:block;width:100%;max-height:220px;object-fit:cover;background:#eaecf0}figure.hero{margin:0 0 1em;border:1px solid #a2a9b1;background:#f8f9fa;padding:4px;text-align:center;font-size:.85em}a{color:#36c;text-decoration:none}</style></head>
+<body>
+<figure class="hero"><img class="hero" src="images/data_structure_alignment.png" alt="Memory layout of a padded struct"><figcaption>Image placeholder: Data structure alignment</figcaption></figure>
+<h1>Data structure alignment</h1>
+<p><b>Data structure alignment</b> is the way data is arranged and accessed in computer memory. It consists of two related issues: <b>data alignment</b>, the requirement that a datum's memory address be a multiple of its size (a datum is then said to be <i>naturally aligned</i>), and <b>data structure padding</b>, the insertion of unused bytes between members of a structure so that each member satisfies its alignment requirement.</p>
+<h2>Motivation</h2>
+<p>Computer memory is accessed in machine words; reading a value that straddles word boundaries may require two memory accesses instead of one, and on some architectures (such as older ARM and SPARC) an unaligned access raises a hardware fault. Modern x86 processors tolerate unaligned access but with a performance penalty, especially when a datum crosses a cache line. Compilers therefore pad structures — for example, in C a <code>struct { char c; int i; }</code> typically occupies 8 bytes with three padding bytes after the char — and programmers can reorder members to minimise wasted space.</p>
+<h2>Rules and control</h2>
+<p>Typical alignment requirements equal the size of the type: 2-byte types on 2-byte boundaries, 4-byte types on 4-byte boundaries, and so on, up to the machine's maximum alignment. Languages and compilers expose control through directives such as <code>#pragma pack</code>, C11's <code>_Alignas</code>, and attributes requesting packed structures for matching external file or network formats at the cost of slower access.</p>
+<h2>See also</h2>
+<ul><li><a href="../Word_(computer_architecture)/index.html">Word (computer architecture)</a></li><li><a href="../Struct_(C_programming_language)/index.html">Struct (C programming language)</a></li><li><a href="../Page_size/index.html">Page size</a></li></ul>
+</body></html>

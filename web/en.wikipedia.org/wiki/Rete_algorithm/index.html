@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Rete algorithm - Wikipedia</title>
+<style>body{font-family:sans-serif;margin:2em auto;max-width:52em;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em;font-weight:normal}h2{border-bottom:1px solid #a2a9b1;font-weight:normal}.hero{display:block;margin:1em auto;max-width:400px}</style></head>
+<body><h1>Rete algorithm</h1>
+<img class="hero" src="images/rete-algorithm.png" alt="Rete algorithm illustration">
+<p>The <b>Rete algorithm</b> (usually pronounced "REET-ee", from the Latin <i>rete</i> for net, or network) is a pattern matching algorithm for implementing rule-based systems. The algorithm was developed by Charles Forgy of Carnegie Mellon University, first published in a working paper in 1974, later elaborated in his 1979 Ph.D. thesis and a 1982 paper.</p>
+<h2>Overview</h2>
+<p>A naive implementation of an expert system might check each rule against the known facts in a knowledge base, executing the rule if applicable, then perhaps re-checking all rules against the updated facts. This forward-chaining process can be highly inefficient, because most rules are unaffected by small changes to the fact base. The Rete algorithm overcomes this inefficiency by caching the results of partial matches in a network of nodes: when a fact is added or removed, only a small part of the network needs to be re-evaluated.</p>
+<h2>Network structure</h2>
+<p>The Rete network is a directed acyclic graph divided into an <i>alpha network</i>, which tests individual facts against constant conditions, and a <i>beta network</i>, which joins partial matches and checks variable consistency across conditions. Tokens representing partial matches propagate through the network, and complete matches reach terminal nodes corresponding to rules whose left-hand sides are satisfied.</p>
+<h2>Use</h2>
+<p>Rete and its successors (Rete II, Rete III, ReteNT) underlie many production rule engines, including CLIPS, Jess, Drools, and commercial systems derived from the OPS5 tradition.</p>
+</body></html>

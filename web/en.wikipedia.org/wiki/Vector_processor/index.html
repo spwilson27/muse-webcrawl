@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vector processor - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header h1{margin:0;font-size:1.8em;font-weight:normal}
+main{max-width:960px;margin:0 auto;padding:16px 24px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+.hero{display:block;margin:16px auto;max-width:480px;width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:40px 0;text-align:center;color:#72777d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<header><h1>Vector processor</h1></header>
+<main>
+<img class="hero" src="images/vector-processor.png" alt="Diagram of a vector processor pipeline operating on an array of data (placeholder image)">
+<p>A <b>vector processor</b> or <b>array processor</b> is a central processing unit (CPU) that implements an instruction set where its instructions are designed to operate efficiently and effectively on large one-dimensional arrays of data called <i>vectors</i>. This is in contrast to scalar processors, whose instructions operate on only single data items at a time, and in contrast to some of those same scalar processors having additional single instruction, multiple data (SIMD) or SWAR operations which can only do short vectors.</p>
+<p>Vector processors can greatly improve performance on certain workloads, notably numerical simulation and similar tasks. The technique first appeared in the Cray-1 supercomputer of 1976 and dominated high-performance computing through the 1980s and early 1990s.</p>
+<h2>How it works</h2>
+<p>A vector processor has large vector registers, each holding dozens of elements, and deep pipelines that stream elements through functional units one per cycle. A single instruction such as "add vector A to vector B" initiates the addition of all element pairs, amortising instruction fetch and decode over the whole array. Memory systems provide high bandwidth loads and stores, sometimes with strided and gather/scatter addressing.</p>
+<h2>History</h2>
+<p>Early designs included the STAR-100 and the TI ASC, but the Cray-1 made the architecture commercially successful. Subsequent machines included the Cray X-MP and Cray-2, the Japanese NEC SX series, and Fujitsu VP machines. As commodity microprocessors added SIMD extensions (MMX, SSE, AVX on x86; Neon and SVE on ARM), and GPUs took over massively parallel workloads, dedicated vector mainframes declined, though vector ideas survive in the RISC-V vector extension and ARM's scalable SVE2.</p>
+<h2>Programming</h2>
+<p>Compilers for vector machines automatically vectorise loops when dependencies allow. Programmers can assist with directives and by structuring code to use long, regular loops over arrays.</p>
+</main>
+</body>
+</html>

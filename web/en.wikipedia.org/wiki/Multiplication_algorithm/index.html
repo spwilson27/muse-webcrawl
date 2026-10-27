@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Multiplication algorithm - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 60px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; margin-top: 1.4em; font-weight: normal; }
+p { line-height: 1.6; font-size: 0.95em; }
+.hero { text-align: center; margin: 12px 0; }
+.hero img { max-width: 420px; background: #eaecf0; border: 1px solid #a2a9b1; padding: 30px; }
+ul { line-height: 1.6; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Multiplication algorithm</h1>
+<div class="hero"><img src="images/multiplication-algorithm.png" alt="Worked example of long multiplication"></div>
+<p>A <b>multiplication algorithm</b> is an algorithm (or method) to multiply two numbers. Depending on the size of the numbers, different algorithms are more efficient than others. The complexity of multiplying two n-digit numbers is a fundamental question in computer science and computational number theory, with applications in cryptography and computer algebra.</p>
+<h2>Long multiplication</h2>
+<p>The schoolbook method, <b>long multiplication</b>, multiplies every digit of one number by every digit of the other and adds the shifted partial products. It requires O(n²) single-digit operations. Variants include lattice (gelosia) multiplication, grid multiplication, and the ancient Egyptian method of doubling and addition, which underlies the binary ("peasant") multiplication algorithm and binary exponentiation.</p>
+<h2>Fast algorithms</h2>
+<ul>
+<li><b>Karatsuba algorithm</b> (1960): splits each number in two and computes the product with three half-size multiplications instead of four, giving complexity O(n<sup>log<sub>2</sub>3</sup>) ≈ O(n<sup>1.585</sup>). It was the first algorithm to break the quadratic barrier.</li>
+<li><b>Toom–Cook multiplication</b>: generalizes Karatsuba by splitting into more parts and evaluating at points, approaching O(n<sup>1+ε</sup>) as the split grows.</li>
+<li><b>Schönhage–Strassen algorithm</b> (1971): uses fast Fourier transforms over suitable rings to multiply in O(n log n log log n) bit operations; long the fastest practical method for huge integers.</li>
+<li><b>Fürer's algorithm</b> (2007) and the <b>Harvey–van der Hoeven algorithm</b> (2019): achieved O(n log n) bit complexity, proving a decades-old conjecture that such an algorithm exists, though these are "galactic" algorithms practical only at enormous sizes.</li>
+</ul>
+<h2>Hardware multiplication</h2>
+<p>Digital circuits multiply binary numbers using arrays of adders or tree structures such as Wallace and Dadda trees, often with Booth encoding to reduce the number of partial products. Floating-point units apply analogous algorithms to mantissas while adding exponents. The choice of algorithm in software libraries (e.g., GMP) switches between schoolbook, Karatsuba, Toom–Cook, and FFT methods as operand size increases.</p>
+</div>
+</body>
+</html>

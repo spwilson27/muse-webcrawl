@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Secant method - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #fff; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 30px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p, li { font-size: 15px; line-height: 1.6; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 24px 0; }
+.caption { font-size: 12px; color: #54595d; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 13px; }
+.formula { font-size: 17px; text-align: center; margin: 12px 0; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Secant method</h1>
+<div class="hero"><img src="images/secant-method.png" alt="Graph showing secant lines converging on the root of a function"><div class="caption">Successive secant lines approaching a root</div></div>
+<p>In numerical analysis, the <b>secant method</b> is a root-finding algorithm that uses a succession of roots of secant lines to better approximate a root of a function <i>f</i>. It can be thought of as a finite difference approximation of Newton's method, in which the derivative is replaced by a difference quotient, so it does not require the derivative of the function to be known or computed.</p>
+<h2>Description</h2>
+<p>Given two initial approximations x<sub>0</sub> and x<sub>1</sub>, the method constructs the line through the points (x<sub>0</sub>, f(x<sub>0</sub>)) and (x<sub>1</sub>, f(x<sub>1</sub>)) — a secant line — and takes its x-intercept as the next approximation:</p>
+<p class="formula">x<sub>n+1</sub> = x<sub>n</sub> − f(x<sub>n</sub>) · (x<sub>n</sub> − x<sub>n−1</sub>) / (f(x<sub>n</sub>) − f(x<sub>n−1</sub>))</p>
+<p>The process repeats until a sufficiently accurate value is reached or a stopping criterion (such as a small residual or small step) is met.</p>
+<h2>Convergence</h2>
+<p>If the initial values are close enough to the root and the function is smooth with a non-zero derivative there, the secant method converges superlinearly with order equal to the golden ratio, φ ≈ 1.618. This is slightly slower than Newton's method (quadratic convergence) but each iteration needs only one new function evaluation, so the secant method is often faster in practice when derivatives are expensive or unavailable. Unlike bracketing methods such as the bisection method or regula falsi, the secant method does not keep the root bracketed and can diverge if the starting values are poorly chosen.</p>
+<h2>Comparison and variants</h2>
+<p>The secant method generalises the older method of false position (regula falsi), which uses the same interpolation formula but retains a sign-changing bracket. It is a quasi-Newton method, and its multivariate generalisation is Broyden's method. Brent's method combines secant/inverse quadratic interpolation with bisection to gain both speed and guaranteed convergence.</p>
+<h2>History</h2>
+<p>The underlying interpolation idea is ancient — variants appear in Babylonian mathematics and in the work of medieval Chinese and Islamic scholars — while the modern iterative form developed alongside Newton's method in the 17th and 18th centuries. The name derives from the Latin <i>secare</i>, "to cut", referring to the line cutting the curve at two points.</p>
+</div>
+</body>
+</html>

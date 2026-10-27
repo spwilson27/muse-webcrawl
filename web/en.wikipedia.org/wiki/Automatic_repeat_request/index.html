@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Automatic repeat request - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+main{max-width:960px;margin:0 auto;padding:16px 24px}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin:0 0 4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:90%;margin:0 0 16px 16px;border-collapse:collapse}
+.infobox th,.infobox td{border:1px solid #a2a9b1;padding:4px 8px;text-align:left}
+.infobox caption{font-weight:bold;background:#e9edf1;padding:6px;border:1px solid #a2a9b1}
+.hero{display:block;max-width:100%;background:#e9edf1;border:1px solid #a2a9b1;padding:24px;text-align:center;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> — The Free Encyclopedia</header>
+<main>
+<h1>Automatic repeat request</h1>
+<p><b>Automatic repeat request</b> (<b>ARQ</b>), also known as <b>automatic repeat query</b>, is an error-control method for data transmission that uses acknowledgements (messages sent by the receiver indicating that it has correctly received a packet) and timeouts (specified periods of time allowed to elapse before an acknowledgment is to be received) to achieve reliable data transmission over an unreliable communication channel. If the sender does not receive an acknowledgment before the timeout, it retransmits the packet until the sender receives an acknowledgment or exceeds a predefined number of retransmissions.</p>
+<img class="hero" src="images/Automatic_repeat_request.png" alt="Illustration placeholder: sequence diagram of packets, acknowledgements and a retransmission">
+<table class="infobox">
+<caption>Automatic repeat request</caption>
+<tr><th>Purpose</th><td>Reliable data transmission</td></tr>
+<tr><th>Mechanism</th><td>Acknowledgements, sequence numbers, timeouts, retransmission</td></tr>
+<tr><th>Main variants</th><td>Stop-and-wait, Go-Back-N, Selective Repeat</td></tr>
+<tr><th>Used in</th><td>TCP, HDLC, radio links, satellite links</td></tr>
+</table>
+<h2>Variants</h2>
+<h3>Stop-and-wait ARQ</h3>
+<p>In the simplest scheme, the sender transmits one frame and waits for an acknowledgement before sending the next. It is reliable but inefficient on links with a high bandwidth-delay product, because the channel sits idle during each round trip.</p>
+<h3>Go-Back-N ARQ</h3>
+<p>Go-Back-N allows the sender to have several frames outstanding within a sliding window. If a frame is lost or received in error, the receiver discards it and all subsequent frames, so the sender retransmits from the lost frame onward.</p>
+<h3>Selective Repeat ARQ</h3>
+<p>Selective Repeat avoids retransmitting correctly received frames: the receiver buffers out-of-order frames and requests only the missing ones. It is the most efficient of the three but requires more complex buffering and bookkeeping at both ends.</p>
+<h2>Hybrid ARQ</h2>
+<p>Hybrid ARQ (HARQ) combines ARQ with forward error correction: instead of discarding an erroneous packet, the receiver stores it and combines it with retransmissions, which may carry additional redundancy (incremental redundancy). HARQ is used in HSPA, LTE and 5G NR radio interfaces, where it operates at the physical layer with very short turnaround times.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Forward_error_correction/index.html">Forward error correction</a></li>
+<li><a href="../Transmission_Control_Protocol/index.html">Transmission Control Protocol</a></li>
+<li><a href="../Error_detection_and_correction/index.html">Error detection and correction</a></li>
+<li><a href="../Hybrid_automatic_repeat_request/index.html">Hybrid automatic repeat request</a></li>
+</ul>
+</main>
+</body>
+</html>

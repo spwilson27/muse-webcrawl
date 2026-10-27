@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Binary search - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 50em; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+img.hero { float: right; margin: 0 0 1em 1em; max-width: 220px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; }
+a { color: #0645ad; text-decoration: none; }
+code { background: #f8f9fa; padding: 0 0.2em; }
+</style>
+</head>
+<body>
+<h1>Binary search</h1>
+<img class="hero" src="images/Binary_search.png" alt="Visualization of binary search on a sorted array">
+<p>In computer science, <b>binary search</b>, also known as half-interval search, logarithmic search, or binary chop, is a search algorithm that finds the position of a target value within a sorted array. Binary search compares the target value to the middle element of the array. If they are not equal, the half in which the target cannot lie is eliminated and the search continues on the remaining half, again taking the middle element to compare to the target value, and repeating this until the target value is found. If the search ends with the remaining half being empty, the target is not in the array.</p>
+<h2>Performance</h2>
+<p>Binary search runs in logarithmic time in the worst case, making O(log n) comparisons, where n is the number of elements in the array. It is much faster than linear search for large arrays, though the array must be sorted and must support random access. Binary search uses constant (O(1)) additional space in its iterative form.</p>
+<h2>Procedure</h2>
+<p>Given an array A of n elements with values sorted in ascending order and a target value T, the algorithm maintains low and high indices bounding the candidate interval. At each step it computes the midpoint m and compares A[m] with T: if equal, the search succeeds; if A[m] &lt; T the search continues in the upper half; if A[m] &gt; T it continues in the lower half. The interval halves at every step.</p>
+<h2>History and pitfalls</h2>
+<p>The idea of binary search is ancient — a form of it appears in Babylonian tablets — but it was first published in its modern form by Hermann Bottenbruch in 1962. Famously, correct implementations are subtle: a bug in the midpoint calculation (overflow of (low + high) / 2) survived for years in widely used library code, including Java's <code>Arrays.binarySearch</code>, as noted by Joshua Bloch in 2006.</p>
+<h2>Applications</h2>
+<p>Beyond searching sorted arrays, binary search underlies B-trees and binary search trees, numerical root-finding by bisection, debugging by bisection (as in "git bisect"), and searching on the answer in optimisation problems where a predicate is monotone.</p>
+<p>See also: <a href="../Search_algorithm/index.html">Search algorithm</a>, <a href="../Linear_search/index.html">Linear search</a>, <a href="../Binary_search_tree/index.html">Binary search tree</a>, <a href="../Big_O_notation/index.html">Big O notation</a></p>
+</body>
+</html>

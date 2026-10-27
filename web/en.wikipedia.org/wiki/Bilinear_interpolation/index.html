@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bilinear interpolation - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+header{background:#fff;border-bottom:1px solid #a7d7f9;padding:10px 20px}
+h1{font-size:28px;margin:10px 0}
+main{max-width:960px;margin:0 auto;padding:20px;background:#fff;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h2{border-bottom:1px solid #a2a9b1;font-size:22px;margin-top:24px}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:13px}
+.infobox th{text-align:left;background:#eef2f5;padding:4px}
+.infobox td{padding:4px}
+.hero{text-align:center;margin:16px 0}
+.hero img{max-width:420px;width:100%;background:#eef2f5;border:1px solid #a2a9b1;padding:8px}
+.caption{font-size:12px;color:#54595d}
+footer{font-size:12px;color:#54595d;padding:16px 20px;text-align:center}
+code{font-family:monospace;background:#f0f0f0;padding:0 3px}
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> — the free encyclopedia</header>
+<main>
+<h1>Bilinear interpolation</h1>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Bilinear interpolation</th></tr>
+<tr><th>Field</th><td>Numerical analysis, computer graphics</td></tr>
+<tr><th>Inputs</th><td>Values at four corners of a rectangle</td></tr>
+<tr><th>Generalizes</th><td>Linear interpolation (performed in both directions)</td></tr>
+<tr><th>3D analogue</th><td>Trilinear interpolation</td></tr>
+</table>
+</div>
+<p>In mathematics, <b>bilinear interpolation</b> is a method of multivariable <a href="../Interpolation/index.html">interpolation</a> on a regular rectilinear grid in two dimensions. It generalizes <a href="../Linear_interpolation/index.html">linear interpolation</a> by performing it first in one direction and then in the other. Despite its name, the resulting interpolant is not linear in the coordinates but is a product of linear functions — a quadratic polynomial of the form a + bx + cy + dxy — and it reproduces the known values exactly at the four grid corners.</p>
+<div class="hero"><img src="images/bilinear-interpolation.png" alt="Diagram of bilinear interpolation over the four corners of a unit square"><div class="caption">Bilinear interpolation on the unit square: the value at the red point is computed from the four corner values.</div></div>
+<h2>Method</h2>
+<p>Suppose the function values f are known at the four corners of a rectangle: Q<sub>11</sub> = (x<sub>1</sub>, y<sub>1</sub>), Q<sub>12</sub> = (x<sub>1</sub>, y<sub>2</sub>), Q<sub>21</sub> = (x<sub>2</sub>, y<sub>1</sub>), and Q<sub>22</sub> = (x<sub>2</sub>, y<sub>2</sub>). To estimate f at a point (x, y) inside the rectangle, one first linearly interpolates along x at the lower and upper edges, then linearly interpolates between those two results along y. The order of the two steps does not matter.</p>
+<p>On the unit square the formula simplifies to a weighted average of the four corner values, with weights (1−x)(1−y), x(1−y), (1−x)y, and xy, which are the areas of the sub-rectangles opposite each corner.</p>
+<h2>Properties</h2>
+<p>The interpolated surface is continuous across cell boundaries, but its derivative is generally not: gradients can jump at grid lines. Bilinear interpolation preserves monotonicity roughly but can blur sharp features. Because it is cheap and simple, it is widely used in <a href="../Image_scaling/index.html">image scaling</a>, <a href="../Texture_mapping/index.html">texture mapping</a> in computer graphics, digital terrain models, and resampling of gridded data such as weather fields.</p>
+<h2>Extensions</h2>
+<p>The same construction in three dimensions is trilinear interpolation, and the approach generalizes to n-linear interpolation on hyperrectangles. Smoother alternatives include bicubic interpolation, which uses derivatives or a larger stencil to achieve continuous gradients, and bilinear interpolation is also the basis of the bilinear transform used in digital filter design.</p>
+<p>See also: <a href="../Bicubic_interpolation/index.html">Bicubic interpolation</a>, <a href="../Trilinear_interpolation/index.html">Trilinear interpolation</a>, <a href="../Nearest-neighbor_interpolation/index.html">Nearest-neighbor interpolation</a>.</p>
+</main>
+<footer>From Wikipedia, the free encyclopedia. This page was recreated from memory.</footer>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>State-space representation - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#fff;color:#202122}
+.content{max-width:960px;margin:0 auto;padding:20px 28px;line-height:1.6}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:90%}
+.infobox th{text-align:left;background:#eaf3ff;padding:4px}
+.infobox td{padding:4px}
+.hero{display:block;max-width:100%;border:1px solid #a2a9b1;background:#f8f9fa;padding:6px;margin:12px 0;text-align:center;color:#54595d}
+a{color:#36c;text-decoration:none}
+.math{font-family:serif;font-style:italic}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>State-space representation</h1>
+<p>In <a href="../Control_theory/index.html">control engineering</a>, a <b>state-space representation</b> is a mathematical model of a physical system as a set of input, output and state variables related by first-order <a href="../Differential_equation/index.html">differential equations</a> or difference equations. State variables are variables whose values evolve over time in a way that depends on the values they have at any given time and on the externally imposed values of input variables. Output variables' values depend on the values of the state variables.</p>
+<div class="hero"><img src="images/State-space_representation.png" alt="Diagram of a state-space model with input, state, and output signals"></div>
+<h2>Formulation</h2>
+<p>The general state-space model can be written as two equations:</p>
+<p><span class="math">ẋ(t) = f(t, x(t), u(t))</span><br><span class="math">y(t) = g(t, x(t), u(t))</span></p>
+<p>where <i>x</i> is the state vector, <i>u</i> is the input (or control) vector, and <i>y</i> is the output vector.</p>
+<h2>Linear systems</h2>
+<p>The most commonly studied state-space models are <a href="../Linear_system/index.html">linear</a> systems, which can be written in matrix form:</p>
+<p><span class="math">ẋ(t) = A(t)x(t) + B(t)u(t)</span><br><span class="math">y(t) = C(t)x(t) + D(t)u(t)</span></p>
+<p>Here <i>A</i> is the state (or system) matrix, <i>B</i> the input matrix, <i>C</i> the output matrix, and <i>D</i> the feedthrough (or feedforward) matrix. In the time-invariant case the matrices are constant and the system is referred to as an LTI system.</p>
+<h2>Controllability and observability</h2>
+<p>A state-space model is <b>controllable</b> if it is possible, by means of an admissible control input, to transfer the system from any initial state to any other state in a finite time interval. It is <b>observable</b> if the current state can be determined in finite time using only the outputs. These concepts, developed by <a href="../Rudolf_E._K%C3%A1lm%C3%A1n/index.html">Rudolf E. Kálmán</a>, are fundamental to modern control theory and underlie tools such as the <a href="../Kalman_filter/index.html">Kalman filter</a> and <a href="../Linear%E2%80%93quadratic_regulator/index.html">linear–quadratic regulator</a>.</p>
+<h2>Relation to transfer functions</h2>
+<p>For a single-input, single-output linear system, the <a href="../Transfer_function/index.html">transfer function</a> can be derived from the state-space model as <i>G</i>(<i>s</i>) = <i>C</i>(<i>sI</i> − <i>A</i>)<sup>−1</sup><i>B</i> + <i>D</i>. Unlike transfer functions, state-space models naturally handle multiple-input multiple-output (MIMO) systems and can incorporate initial conditions.</p>
+<h2>Applications</h2>
+<p>State-space methods are used throughout aerospace guidance, robotics, chemical process control, economics (see <a href="../State-space_models/index.html">state-space models</a> in statistics), and signal processing. In statistics and machine learning, related latent-variable formulations include <a href="../Hidden_Markov_model/index.html">hidden Markov models</a>.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Control_theory/index.html">Control theory</a></li>
+<li><a href="../Dynamical_system/index.html">Dynamical system</a></li>
+<li><a href="../Phase_space/index.html">Phase space</a></li>
+<li><a href="../System_identification/index.html">System identification</a></li>
+</ul>
+</div>
+</body>
+</html>

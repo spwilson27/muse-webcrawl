@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Foreign key - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:1em 1.5em 3em}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-bottom:.4em;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.1em;font-weight:normal;margin-top:1.2em}
+p{font-family:sans-serif;font-size:.95em;line-height:1.6}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{text-align:center;margin:1em 0}
+.hero img{max-width:420px;width:100%;border:1px solid #c8ccd1;background:#f8f9fa;padding:1em}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.5em;margin:0 0 1em 1em;font-family:sans-serif;font-size:.85em}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Foreign key</h1>
+<p>From Wikipedia, the free encyclopedia</p>
+<div class="hero"><img src="images/Foreign_key.png" alt="Illustration of a foreign key relationship between two database tables"></div>
+<p>A <b>foreign key</b> is a set of attributes in a <a href="../Relational_database">relational database</a> table that refers to the <a href="../Primary_key">primary key</a> of another table, or to a set of attributes that can be uniquely identified in another table. The foreign key links the two tables by establishing a parent-child relationship: rows in the referencing (child) table must match a row in the referenced (parent) table.</p>
+<p>Foreign keys are the mechanism by which <a href="../Referential_integrity">referential integrity</a> is enforced in a relational database. The database management system prevents any operation that would create a foreign key value with no corresponding primary key value in the referenced table.</p>
+<h2>Definition</h2>
+<p>Formally, a foreign key is a set of columns in one table whose values are required to match the values of a candidate key — usually the primary key — in another (or occasionally the same) table. A table may have multiple foreign keys, and each foreign key may reference a different table.</p>
+<h2>Example</h2>
+<p>Consider a database with a <i>Department</i> table, whose primary key is DepartmentID, and an <i>Employee</i> table. Each employee row may include a DepartmentID column declared as a foreign key referencing the Department table. This guarantees that every employee is assigned to a department that actually exists.</p>
+<h2>Referential actions</h2>
+<p>When a referenced row is updated or deleted, the database can take several actions on the referencing rows, specified when the constraint is declared: <b>RESTRICT</b> or <b>NO ACTION</b> forbids the change; <b>CASCADE</b> propagates the change to the child rows; <b>SET NULL</b> and <b>SET DEFAULT</b> replace the foreign key values with null or a default value.</p>
+<h2>See also</h2>
+<p><a href="../Primary_key">Primary key</a> · <a href="../Candidate_key">Candidate key</a> · <a href="../Referential_integrity">Referential integrity</a> · <a href="../Database_normalization">Database normalization</a></p>
+</div>
+</body>
+</html>

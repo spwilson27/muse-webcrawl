@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shift-and-add algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.6;color:#202122;background:#fff}
+h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-weight:normal}
+h2{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal;margin-top:1.4em}
+.hero{display:block;margin:16px auto;max-width:320px;background:#f8f9fa;border:1px solid #c8ccd1;color:#54595d;text-align:center;padding:32px 8px;font-family:sans-serif;font-size:13px}
+code{font-family:monospace;background:#f8f9fa}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>Shift-and-add algorithm</h1>
+<p>The <b>shift-and-add algorithm</b> is a method used in astronomy and image processing to combine a series of short-exposure images into a single sharper image, compensating for image motion caused by atmospheric turbulence or imperfect telescope tracking. It is a simple form of speckle imaging and is closely related to the <i>lucky imaging</i> technique. Variants of the algorithm are widely used by amateur astronomers, including in the popular stacking software used for planetary and lunar imaging.</p>
+<span class="hero"><img src="images/Shift-and-add_algorithm.png" alt="Placeholder diagram: alignment and stacking of short-exposure frames"></span>
+<h2>Principle</h2>
+<p>A long-exposure astronomical image is blurred because atmospheric seeing causes the image of a star to wander rapidly and randomly by more than the diffraction limit of the telescope. However, individual short exposures (typically 10–100 ms) "freeze" the turbulence: each frame is distorted, but contains high-resolution information. In the shift-and-add method, a bright reference feature — often the brightest speckle of a star or a point on a planet — is located in every frame, each frame is shifted so that the reference features coincide, and the shifted frames are co-added. The random wander is thereby removed, and the resulting image is considerably sharper than a single long exposure, approaching the quality of the best individual frames.</p>
+<h2>Lucky imaging</h2>
+<p>In the lucky imaging refinement, only the sharpest fraction of frames — selected by a quality criterion such as the peak brightness of the reference star — is combined. The probability of obtaining a near-diffraction-limited frame rises sharply for small apertures; with high-speed cameras recording thousands of frames, even large telescopes can select rare moments of excellent seeing. Modern implementations use cross-correlation or centroiding to determine the shift, and drizzle-like algorithms to resample the data onto a finer grid.</p>
+<h2>Applications</h2>
+<p>Shift-and-add stacking is standard practice in amateur planetary, lunar, and solar imaging, where software such as RegiStax and AutoStakkert implements it. Professionally, the method has been used with instruments such as the Cambridge Lucky Imaging camera and on telescopes including the Palomar 5-metre Hale telescope, achieving visible-light resolutions rivalling the Hubble Space Telescope for bright targets. Analogous registration-and-summing approaches are used in medical imaging, microscopy, and computational photography.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Speckle_imaging/index.html">Speckle imaging</a></li>
+<li><a href="../Lucky_imaging/index.html">Lucky imaging</a></li>
+<li><a href="../Astronomical_seeing/index.html">Astronomical seeing</a></li>
+<li><a href="../Adaptive_optics/index.html">Adaptive optics</a></li>
+</ul>
+<p><i>Categories: Astronomical imaging | Image processing | Speckle imaging</i></p>
+</body>
+</html>

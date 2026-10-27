@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vector database - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header h1{margin:0;font-size:1.8em;font-weight:normal}
+main{max-width:960px;margin:0 auto;padding:16px 24px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+.hero{display:block;margin:16px auto;max-width:480px;width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:40px 0;text-align:center;color:#72777d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<header><h1>Vector database</h1></header>
+<main>
+<img class="hero" src="images/vector-database.png" alt="Visualisation of high-dimensional vectors clustered in embedding space (placeholder image)">
+<p>A <b>vector database</b>, <b>vector store</b>, or <b>vector search engine</b> is a database that can store vectors (fixed-length lists of numbers) along with other data items. Vector databases typically implement one or more approximate nearest neighbor (ANN) algorithms, so that one can search the database with a query vector to retrieve the closest matching database records.</p>
+<p>Vectors are mathematical representations of data in a high-dimensional space. In this space, each dimension corresponds to a feature of the data, with the number of dimensions ranging from a few hundred to tens of thousands, depending on the complexity of the data being represented. A data point's position in this space represents its characteristics. Words, phrases, or entire documents, as well as images, audio, and other data, can be vectorised by machine learning models into embeddings.</p>
+<h2>Applications</h2>
+<p>Vector databases are used to build semantic search, recommendation systems, and retrieval-augmented generation (RAG) pipelines for large language models, in which documents are stored as embeddings and the most semantically similar passages are supplied to the model as context. Other applications include image and video similarity search, fraud detection, and molecular similarity in drug discovery.</p>
+<h2>Indexing algorithms</h2>
+<p>Because exact nearest-neighbour search in high dimensions is expensive, vector databases rely on approximate methods, including:</p>
+<ul>
+<li><b>HNSW</b> (Hierarchical Navigable Small World) — graph-based indexes offering high recall at low latency.</li>
+<li><b>IVF</b> (Inverted File Index) — clusters vectors and searches only the nearest clusters.</li>
+<li><b>Product quantization</b> — compresses vectors into short codes to save memory.</li>
+<li><b>Locality-sensitive hashing (LSH)</b> — hashes similar vectors into the same buckets.</li>
+</ul>
+<h2>Similarity measures</h2>
+<p>Common distance and similarity functions include cosine similarity, Euclidean (L2) distance, and inner product. The choice of metric should usually match the one used when training the embedding model.</p>
+<h2>Examples</h2>
+<p>Dedicated vector databases include Milvus, Pinecone, Weaviate, Qdrant, and Chroma. General-purpose systems have also added vector search, for example PostgreSQL with the pgvector extension, and libraries such as Faiss and Annoy provide in-process indexing.</p>
+</main>
+</body>
+</html>

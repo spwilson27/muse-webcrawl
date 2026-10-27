@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Schema theorem - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:1em 1.5em}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;margin-top:1.4em}
+figure{margin:1em 0;text-align:center}
+figure img{background:#eaecf0;border:1px solid #a2a9b1;padding:2em;width:60%}
+figcaption{font-size:.85em;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:.85em;color:#54595d}
+.mono{font-family:monospace;background:#f8f9fa;padding:.1em .3em}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Schema theorem</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+
+<figure>
+<img src="images/schema-theorem.png" alt="A binary chromosome with a schema pattern highlighting fixed positions">
+<figcaption>A schema such as 1*0*1 is a template matching all binary strings with 1s in the first and fifth positions and 0 in the third.</figcaption>
+</figure>
+
+<p>The <b>schema theorem</b> (also called <b>Holland's schema theorem</b> or the <b>fundamental theorem of genetic algorithms</b>) is a result in the theory of <a href="../Genetic_algorithm/index.html">genetic algorithms</a>, formulated by <a href="../John_Henry_Holland/index.html">John Holland</a> in the 1970s. It describes how short, low-order, above-average schemata—patterns within chromosomes—receive exponentially increasing numbers of trials in successive generations.</p>
+
+<h2>Definitions</h2>
+<p>For binary strings of length <span class="mono">l</span>, a <b>schema</b> is a template over the alphabet {0, 1, *}, where * is a wildcard. The <b>order</b> of a schema, o(H), is the number of fixed positions; the <b>defining length</b>, δ(H), is the distance between the first and last fixed positions. A population of strings implicitly samples many schemata at once—a property Holland called <i>implicit parallelism</i>; a population of n strings processes on the order of n³ schemata.</p>
+
+<h2>Statement</h2>
+<p>The theorem gives a lower bound on the expected number of representatives m(H, t+1) of a schema H in the next generation, in terms of its current number m(H, t), its average fitness f(H) relative to the population average f̄, and the probabilities that crossover (rate p<sub>c</sub>) and mutation (rate p<sub>m</sub>) disrupt it: roughly, m(H, t+1) ≥ m(H, t) · [f(H)/f̄] · [1 − p<sub>c</sub>·δ(H)/(l−1) − o(H)·p<sub>m</sub>]. Thus schemata that are short, low-order, and fitter than average tend to proliferate. The associated <b>building-block hypothesis</b> holds that genetic algorithms work by combining such short, fit schemata into progressively better solutions.</p>
+
+<h2>Criticism and status</h2>
+<p>The schema theorem has been criticized because it is an inequality about a single generation and ignores the constructive effects of crossover and the creation of new schemata; it therefore does not, by itself, prove that genetic algorithms converge to good solutions. Alternative theoretical frameworks—including Markov chain models, exact dynamical models, and the <a href="../No_free_lunch_in_search_and_optimization/index.html">no free lunch theorems</a>—have since supplemented schema-based analysis, but the theorem remains historically central to the field.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Genetic_algorithm/index.html">Genetic algorithm</a></li>
+<li><a href="../John_Henry_Holland/index.html">John Henry Holland</a></li>
+<li><a href="../Evolutionary_computation/index.html">Evolutionary computation</a></li>
+</ul>
+
+<p class="small">Categories: Genetic algorithms · Theorems in computer science · Evolutionary computation</p>
+</div>
+</body>
+</html>

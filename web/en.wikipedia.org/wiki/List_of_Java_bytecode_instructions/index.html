@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>List of Java bytecode instructions - Wikipedia</title>
+<style>
+body { font-family: 'Courier New', monospace; margin: 0; background: #fff; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 20px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+.hero { text-align: center; background: #eef0ea; border: 1px solid #ccc; padding: 16px; margin: 12px 0; color: #555; }
+a { color: #0645ad; text-decoration: none; }
+table.wikitable { border-collapse: collapse; margin: 12px 0; font-size: 90%; }
+table.wikitable th, table.wikitable td { border: 1px solid #a2a9b1; padding: 4px 8px; }
+table.wikitable th { background: #eaecf0; }
+p { font-family: Georgia, serif; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>List of Java bytecode instructions</h1>
+<p>Java bytecode is the instruction set of the Java virtual machine (JVM). Each instruction is represented by a one-byte opcode (hence "bytecode"), possibly followed by operand bytes stored in the method's Code attribute in the class file. There are 256 possible opcodes, of which around 200 are in use.</p>
+<div class="hero"><img src="images/java-bytecode-instructions.png" alt="Java bytecode mnemonics and hexadecimal opcodes"></div>
+<h2>Selected instructions</h2>
+<table class="wikitable">
+<tr><th>Opcode (hex)</th><th>Mnemonic</th><th>Description</th></tr>
+<tr><td>00</td><td>nop</td><td>Do nothing</td></tr>
+<tr><td>01</td><td>aconst_null</td><td>Push null reference</td></tr>
+<tr><td>02–08</td><td>iconst_m1 … iconst_5</td><td>Push int constant −1 to 5</td></tr>
+<tr><td>10</td><td>bipush</td><td>Push byte value as int</td></tr>
+<tr><td>11</td><td>sipush</td><td>Push short value as int</td></tr>
+<tr><td>12</td><td>ldc</td><td>Push item from constant pool</td></tr>
+<tr><td>15</td><td>iload</td><td>Load int from local variable</td></tr>
+<tr><td>19</td><td>aload</td><td>Load reference from local variable</td></tr>
+<tr><td>36</td><td>istore</td><td>Store int into local variable</td></tr>
+<tr><td>3a</td><td>astore</td><td>Store reference into local variable</td></tr>
+<tr><td>57</td><td>pop</td><td>Pop top operand stack value</td></tr>
+<tr><td>59</td><td>dup</td><td>Duplicate top operand stack value</td></tr>
+<tr><td>60</td><td>iadd</td><td>Add two ints</td></tr>
+<tr><td>64</td><td>isub</td><td>Subtract two ints</td></tr>
+<tr><td>68</td><td>imul</td><td>Multiply two ints</td></tr>
+<tr><td>6c</td><td>idiv</td><td>Divide two ints</td></tr>
+<tr><td>84</td><td>iinc</td><td>Increment local variable by constant</td></tr>
+<tr><td>99–a6</td><td>ifeq … if_acmpne</td><td>Conditional branches</td></tr>
+<tr><td>a7</td><td>goto</td><td>Unconditional branch</td></tr>
+<tr><td>aa</td><td>tableswitch</td><td>Jump table by index (dense)</td></tr>
+<tr><td>ab</td><td>lookupswitch</td><td>Jump table by key (sparse)</td></tr>
+<tr><td>ac</td><td>ireturn</td><td>Return int from method</td></tr>
+<tr><td>b0</td><td>areturn</td><td>Return reference from method</td></tr>
+<tr><td>b1</td><td>return</td><td>Return void from method</td></tr>
+<tr><td>b2</td><td>getstatic</td><td>Get static field of a class</td></tr>
+<tr><td>b3</td><td>putstatic</td><td>Set static field of a class</td></tr>
+<tr><td>b4</td><td>getfield</td><td>Get field of an object</td></tr>
+<tr><td>b5</td><td>putfield</td><td>Set field of an object</td></tr>
+<tr><td>b6</td><td>invokevirtual</td><td>Invoke instance method (virtual dispatch)</td></tr>
+<tr><td>b7</td><td>invokespecial</td><td>Invoke constructor, private or superclass method</td></tr>
+<tr><td>b8</td><td>invokestatic</td><td>Invoke static method</td></tr>
+<tr><td>b9</td><td>invokeinterface</td><td>Invoke interface method</td></tr>
+<tr><td>ba</td><td>invokedynamic</td><td>Invoke dynamically-computed call site (Java 7+)</td></tr>
+<tr><td>bb</td><td>new</td><td>Create new object</td></tr>
+<tr><td>bc</td><td>newarray</td><td>Create new primitive array</td></tr>
+<tr><td>bd</td><td>anewarray</td><td>Create new reference array</td></tr>
+<tr><td>be</td><td>arraylength</td><td>Get length of array</td></tr>
+<tr><td>bf</td><td>athrow</td><td>Throw exception</td></tr>
+<tr><td>c0</td><td>checkcast</td><td>Check whether object is of given type</td></tr>
+<tr><td>c1</td><td>instanceof</td><td>Determine if object is of given type</td></tr>
+<tr><td>c2</td><td>monitorenter</td><td>Enter monitor for object</td></tr>
+<tr><td>c3</td><td>monitorexit</td><td>Exit monitor for object</td></tr>
+<tr><td>c4</td><td>wide</td><td>Extend local variable index width</td></tr>
+<tr><td>ca</td><td>breakpoint</td><td>Reserved for debuggers; not in class files</td></tr>
+</table>
+<h2>Notes</h2>
+<p>Instruction families follow systematic patterns: loads, stores and arithmetic exist in variants for int (i), long (l), float (f), double (d) and references (a). Opcodes fe and ff (impdep1, impdep2) are reserved for implementation-specific purposes.</p>
+</div>
+</body>
+</html>

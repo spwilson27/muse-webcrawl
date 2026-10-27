@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Signaling System No. 7 - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:420px;width:100%;margin:12px auto;border:1px solid #c8ccd1;background:#eaecf0;padding:8px;text-align:center;font-size:.85em;color:#54595d}
+table.infobox{float:right;width:300px;margin:0 0 12px 16px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:.88em;border-collapse:collapse}
+table.infobox th,table.infobox td{border:1px solid #a2a9b1;padding:4px 6px;text-align:left;vertical-align:top}
+table.infobox th{background:#b0c4de}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Signaling System No. 7</h1>
+<p><b>Signaling System No. 7</b> (<b>SS7</b>) is a set of telephony signalling protocols developed by the ITU-T from 1975 onwards and standardised in the Q.700 series of recommendations. It provides out-of-band signalling for the public switched telephone network (PSTN) and mobile networks: setting up and tearing down calls, routing, number translation, billing, and supporting services such as caller ID, call forwarding, roaming and SMS. In North America the closely related variant is often called <b>CCS7</b> (Common Channel Signaling 7). SS7 remains the backbone signalling system of the world's telephone networks, though it is gradually being displaced in mobile cores by Diameter (4G) and HTTP/2-based signalling (5G).</p>
+<img class="hero" src="images/Signaling_System_No._7.png" alt="Placeholder image: diagram of SS7 network elements — SSPs, STPs and SCPs linked by signalling channels">
+<table class="infobox">
+<tr><th colspan="2">Signaling System No. 7</th></tr>
+<tr><th>Developed by</th><td>ITU-T (formerly CCITT)</td></tr>
+<tr><th>Standard</th><td>ITU-T Q.700 series (from 1980); ANSI variants in North America</td></tr>
+<tr><th>Signalling mode</th><td>Common-channel, out-of-band</td></tr>
+<tr><th>Key components</th><td>MTP, SCCP, TCAP, ISUP, MAP, INAP</td></tr>
+</table>
+
+<h2>Architecture</h2>
+<p>SS7 separates the signalling path from the voice path. Telephone switches acting as <b>Service Switching Points</b> (SSPs) originate and terminate signalling messages; <b>Signal Transfer Points</b> (STPs) route messages through the network in redundant pairs; and <b>Service Control Points</b> (SCPs) are databases queried for services such as freephone (800-number) translation, calling-card validation and local number portability. Links between nodes traditionally run at 56 or 64 kbit/s; the SIGTRAN protocols carry SS7 over IP networks.</p>
+
+<h2>Protocol stack</h2>
+<p>The lower layers are the Message Transfer Part (MTP levels 1–3), which ensures reliable message delivery, and the Signaling Connection Control Part (SCCP), which adds global-title addressing and connectionless/connection-oriented services. Above these, TCAP supports database transactions, and application parts include ISUP (ISDN User Part) for call control, MAP (Mobile Application Part) for GSM/UMTS mobility management, roaming and SMS, and INAP/CAP for intelligent-network services such as prepaid charging.</p>
+
+<h2>Security issues</h2>
+<p>SS7 was designed for a small club of trusted national carriers and incorporates essentially no authentication: any node able to inject messages is trusted by the rest. As access widened through leased global titles and IP interconnection, researchers publicly demonstrated from 2008 onwards — and dramatically in 2014 — attacks enabling interception of calls and texts, location tracking of subscribers, and fraud. Criminal exploitation has been documented, including the redirection of SMS-based banking codes. Mitigations include SS7 firewalls and message screening at network borders, and migration to newer protocols, but the system's openness remains a widely discussed vulnerability so long as 2G/3G interconnection persists.</p>
+<p class="small">Categories: Telecommunications standards | ITU-T recommendations | Telephone signaling | Network protocols</p>
+</div>
+</body>
+</html>

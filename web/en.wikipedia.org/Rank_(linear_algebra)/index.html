@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rank (linear algebra) - Wikipedia</title>
+<style>
+body{font-family:sans-serif;font-size:14px;line-height:1.6;color:#202122;margin:0;padding:0 1em;max-width:960px}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal;font-size:28px}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal;font-size:21px;margin-top:1.2em}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em;margin:0 0 1em 1em;font-size:88%;width:260px}
+.infobox th{background:#eaecf0;text-align:left;padding:2px 6px}
+.infobox td{padding:2px 6px}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;font-size:88%;margin:0.5em 0;width:280px}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+ul{margin:0.3em 0}
+.small{font-size:85%;color:#54595d}
+.tex{font-style:italic}
+</style>
+</head>
+<body>
+<h1>Rank (linear algebra)</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="thumb"><img src="images/Rank_(linear_algebra).png" alt="Matrix reduced to row echelon form showing three pivot rows"></div>
+<p>In <a href="../Linear_algebra/index.html">linear algebra</a>, the <b>rank</b> of a matrix <span class="tex">A</span> is the dimension of the <a href="../Vector_space/index.html">vector space</a> generated (spanned) by its columns. This corresponds to the maximal number of linearly independent columns of <span class="tex">A</span>. Equivalently, it equals the dimension of the row space of <span class="tex">A</span>, since the column rank always equals the row rank — one of the fundamental facts of linear algebra. The rank also equals the dimension of the image of the associated <a href="../Linear_map/index.html">linear map</a>, and it enters the <a href="../Rank%E2%80%93nullity_theorem/index.html">rank–nullity theorem</a>: for an <span class="tex">m × n</span> matrix, rank + nullity = <span class="tex">n</span>.</p>
+<table class="infobox">
+<tr><th colspan="2">Rank</th></tr>
+<tr><th>Definition</th><td>Dimension of the column space</td></tr>
+<tr><th>Notation</th><td>rank(A), rk(A), rg(A)</td></tr>
+<tr><th>Maximum</th><td>min(m, n) for an m × n matrix</td></tr>
+<tr><th>Full rank</th><td>rank = min(m, n)</td></tr>
+</table>
+<h2>Equivalent definitions</h2>
+<p>The rank can be characterised in several ways: (1) the dimension of the column space; (2) the dimension of the row space; (3) the size of the largest nonzero minor (determinant of a square submatrix); (4) the number of pivots in row echelon form; and (5) the number of nonzero singular values in a <a href="../Singular_value_decomposition/index.html">singular value decomposition</a>. A matrix is said to have <b>full rank</b> if its rank equals the smaller of its numbers of rows and columns; a square matrix is invertible if and only if it has full rank (rank <span class="tex">n</span>).</p>
+<h2>Properties</h2>
+<ul>
+<li>rank(<span class="tex">A</span>) ≤ min(<span class="tex">m, n</span>).</li>
+<li>rank(<span class="tex">AB</span>) ≤ min(rank <span class="tex">A</span>, rank <span class="tex">B</span>); Sylvester's rank inequality gives a lower bound for products.</li>
+<li>Rank is unchanged by multiplication by invertible matrices, and by elementary row or column operations.</li>
+<li>rank(<span class="tex">A</span>) + dim(null <span class="tex">A</span>) = <span class="tex">n</span> (rank–nullity theorem).</li>
+<li>A system <span class="tex">Ax = b</span> is consistent if and only if rank(<span class="tex">A</span>) = rank([<span class="tex">A | b</span>]) (Rouché–Capelli theorem).</li>
+</ul>
+<h2>Computing the rank</h2>
+<p>In practice, rank is computed by <a href="../Gaussian_elimination/index.html">Gaussian elimination</a> to row echelon form, counting pivots. For floating-point computation the singular value decomposition is preferred, since the rank is notoriously sensitive to small numerical perturbations: matrices that are exactly rank-deficient are dense in the space of all matrices, so a numerical "rank" is usually defined by thresholding singular values.</p>
+<h2>Applications</h2>
+<p>Rank measures the effective number of independent variables or equations in a system. It is used in control theory (controllability and observability), statistics (the rank of design and covariance matrices), computer vision (the rank-2 fundamental matrix), and data science, where low-rank approximation underlies recommender systems and <a href="../Principal_component_analysis/index.html">principal component analysis</a>.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Rank%E2%80%93nullity_theorem/index.html">Rank–nullity theorem</a></li>
+<li><a href="../Linear_independence/index.html">Linear independence</a></li>
+<li><a href="../Matrix_(mathematics)/index.html">Matrix</a></li>
+<li><a href="../Singular_value_decomposition/index.html">Singular value decomposition</a></li>
+<li><a href="../Determinant/index.html">Determinant</a></li>
+</ul>
+<p class="small">Categories: Linear algebra | Matrices</p>
+</body>
+</html>

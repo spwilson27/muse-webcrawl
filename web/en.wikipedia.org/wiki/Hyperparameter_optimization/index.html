@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hyperparameter optimization - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:1em 1.5em}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:1em auto;max-width:400px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;text-align:center;font-style:italic;color:#54595d}
+.lead{font-size:1.02em;line-height:1.6}
+p{line-height:1.6}
+</style>
+</head>
+<body><div class="wrap">
+<h1>Hyperparameter optimization</h1>
+<div class="hero"><img src="images/hyperparameter-optimization.png" alt="Visualisation of a hyperparameter search space with evaluated configurations"></div>
+<p class="lead"><b>Hyperparameter optimization</b> or tuning is the problem of choosing a set of optimal <a href="../Hyperparameter_(machine_learning)">hyperparameters</a> for a learning algorithm. A hyperparameter is a parameter whose value is used to control the learning process, and its optimisation strongly affects the resulting model's performance.</p>
+<h2>Methods</h2>
+<p><b>Grid search</b> exhaustively evaluates a manually specified set of values for each hyperparameter. <b>Random search</b> samples configurations at random and is often more efficient when only a few hyperparameters matter. <b>Bayesian optimization</b> builds a probabilistic surrogate model of performance and chooses the most promising configurations to evaluate next. Other approaches include gradient-based methods, evolutionary algorithms, and bandit-based methods such as Hyperband, which allocate resources adaptively and stop unpromising runs early.</p>
+<h2>Challenges</h2>
+<p>Each evaluation usually requires training a model, making optimisation expensive, especially for large neural networks. The search space can be high-dimensional and mixed (continuous, discrete and categorical variables), and care is needed to avoid overfitting the validation set through excessive tuning. Successive halving and multi-fidelity methods address the cost problem by first evaluating many configurations cheaply.</p>
+<h2>Software</h2>
+<p>Popular tools include Optuna, Ray Tune, Hyperopt, Keras Tuner and the hyperparameter search functions of scikit-learn (GridSearchCV and RandomizedSearchCV).</p>
+</div></body>
+</html>

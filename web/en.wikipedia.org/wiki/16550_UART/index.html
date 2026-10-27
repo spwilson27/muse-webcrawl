@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>16550 UART - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+#content{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.9em;margin:0 0 1em 1em;padding:8px}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+a{color:#0645ad;text-decoration:none}
+.hero{max-width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:12px;text-align:center;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>16550 UART</h1>
+<p>The <b>16550 UART</b> (universal asynchronous receiver-transmitter) is an integrated circuit designed for implementing the interface for serial communications, developed by National Semiconductor. It became the standard serial-port chip of the IBM PC compatible world, used for RS-232 ports connecting modems, mice and other peripherals. Its defining improvement over the earlier 8250 and 16450 was a pair of 16-byte FIFO buffers.</p>
+<div class="hero"><img src="images/16550-uart.png" alt="16550 UART integrated circuit"></div>
+<div class="infobox">
+<table>
+<tr><th>Manufacturer</th><td>National Semiconductor</td></tr>
+<tr><th>Predecessor</th><td>16450 / 8250</td></tr>
+<tr><th>FIFO</th><td>16 bytes (transmit and receive)</td></tr>
+<tr><th>Max. speed</th><td>115.2 kbit/s (typical use)</td></tr>
+</table>
+</div>
+<h2>History and the FIFO fix</h2>
+<p>At the higher baud rates arriving with fast modems, the single-byte buffering of the 8250/16450 forced the CPU to service an interrupt for every character, and characters were lost when the processor was busy. The original 16550 (1987) had a bug in its FIFO; the revised <b>16550A</b> fixed it, and the 16550A became ubiquitous in 1990s PCs. The FIFOs let the chip accumulate up to 16 characters (with programmable trigger levels of 1, 4, 8 or 14 bytes) before interrupting, dramatically reducing overruns and CPU load.</p>
+<h2>Legacy</h2>
+<p>Later variants (16650, 16750, 16950) enlarged the FIFOs to 32, 64 and 128 bytes and raised maximum speeds. The 16550A's register set became a de facto standard: operating systems and virtual machines still present emulated 16550-compatible UARTs, and its I/O-port assignments for COM1–COM4 remain a fixture of PC architecture even though physical serial ports have largely vanished from consumer machines.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Universal_asynchronous_receiver-transmitter/index.html">UART</a></li>
+<li><a href="../RS-232/index.html">RS-232</a></li>
+<li><a href="../Serial_port/index.html">Serial port</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Two-phase commit protocol - Wikipedia (recreated)</title>
+<style>body{font-family:Georgia,serif;max-width:860px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1;font-weight:normal}h2{border-bottom:1px solid #a2a9b1;font-weight:normal}.hero{display:block;max-width:100%;border:1px solid #ccc;background:#eef;padding:2em;text-align:center;color:#555;margin:1em 0}</style>
+</head><body>
+<h1>Two-phase commit protocol</h1>
+<img class="hero" src="images/two-phase-commit.png" alt="Hero placeholder: sequence diagram of prepare and commit phases between a coordinator and participants">
+<p>In transaction processing and distributed databases, the <b>two-phase commit protocol</b> (2PC) is a distributed algorithm that coordinates all the processes participating in an atomic transaction so that all either commit or abort it together. It is the classic solution to the atomic commitment problem.</p>
+<h2>Protocol</h2>
+<p>One process acts as coordinator; the others are participants (cohorts). In the <b>voting (prepare) phase</b>, the coordinator asks every participant to prepare to commit and to write the transaction durably to its log; each participant replies YES (prepared) or NO. In the <b>decision (commit) phase</b>, if all voted YES the coordinator logs and broadcasts COMMIT; otherwise it broadcasts ABORT. Participants apply the decision, log it, and acknowledge.</p>
+<h2>Properties and limitations</h2>
+<p>2PC guarantees atomicity — all-or-nothing — even when individual nodes crash, provided they recover with their logs intact. Its main weakness is that it is a <i>blocking</i> protocol: if the coordinator fails after participants have prepared, the participants must hold locks and wait, unable to resolve the transaction unilaterally. This motivated variants such as three-phase commit (which only partially addresses the problem) and, in modern distributed systems, consensus-based approaches built on Paxos or Raft, and looser models such as sagas.</p>
+<h2>Implementations</h2>
+<p>Two-phase commit underlies the XA interface of the X/Open Distributed Transaction Processing model and the transaction managers of Java EE/Jakarta EE, as well as distributed transactions in many relational database systems.</p>
+<h2>See also</h2>
+<p>Three-phase commit &middot; Atomic commitment &middot; XA &middot; Paxos (algorithm) &middot; Distributed transaction</p>
+</body></html>

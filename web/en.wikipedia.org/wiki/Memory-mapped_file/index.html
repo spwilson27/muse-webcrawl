@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Memory-mapped file - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; padding: 0; color: #202122; background: #f8f9fa; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+.hero { text-align: center; margin: 12px 0; }
+.hero img { max-width: 380px; background: #eaecf0; border: 1px solid #c8ccd1; padding: 8px; }
+.caption { font-size: 12px; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Memory-mapped file</h1>
+<div class="hero"><img src="images/memory-mapped-file.png" alt="Diagram of a file mapped into a process address space"><div class="caption">A memory-mapped file links file contents to virtual memory pages</div></div>
+<p>A <b>memory-mapped file</b> is a segment of virtual memory that has been assigned a direct byte-for-byte correlation with some portion of a file or file-like resource. This resource is typically a file that is physically present on disk, but can also be a device, shared memory object, or other resource that the operating system can reference through a file descriptor. Once present, this correlation between the file and the memory space permits applications to treat the mapped portion as if it were primary memory.</p>
+<h2>Benefits</h2>
+<p>The primary benefit of memory mapping a file is increasing I/O performance, especially when used on large files. Accessing memory mapped files is faster than using direct read and write operations for two reasons: a system call such as read or write is not needed to access data, and the file data need not be copied into a user-space buffer, because the operating system's page cache serves both purposes. Memory-mapped files also enable lazy loading — pages are read from disk only when accessed — and efficient inter-process communication when processes map the same file.</p>
+<h2>Implementation</h2>
+<p>On Unix-like systems, the <code>mmap</code> system call maps a file into a process's address space; on Windows, the equivalent is provided by <code>CreateFileMapping</code> and <code>MapViewOfFile</code>. When a program accesses a mapped page that is not yet in memory, a page fault occurs and the operating system loads the page from the file. Changes to mapped pages are written back to the file by the operating system, either on request (via <code>msync</code>) or when the pages are evicted.</p>
+<h2>Drawbacks</h2>
+<p>Memory mapping can be slower than conventional I/O for small files or purely sequential access because of page fault overhead, and errors such as disk-full conditions may be reported as signals rather than return codes. Files larger than the available address space cannot be mapped whole on 32-bit systems.</p>
+</div>
+</body>
+</html>

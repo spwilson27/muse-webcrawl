@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Reverse Address Resolution Protocol - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.mw-body { max-width: 960px; margin: 0 auto; padding: 24px 20px 60px; }
+h1 { font-family: Georgia, 'Times New Roman', serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 4px; }
+h2 { font-family: Georgia, 'Times New Roman', serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 0.88em; margin: 0 0 16px 16px; padding: 10px; }
+.infobox th { text-align: left; vertical-align: top; padding: 2px 6px 2px 0; }
+.infobox td { padding: 2px 0; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; }
+.caption { font-size: 0.85em; color: #54595d; }
+p { line-height: 1.6; }
+ul { line-height: 1.6; }
+.tagline { color: #54595d; font-size: 0.85em; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Reverse Address Resolution Protocol</h1>
+<div class="tagline">From Wikipedia, the free encyclopedia</div>
+<div class="infobox">
+<table>
+<tr><th colspan="2">RARP</th></tr>
+<tr><th>Full name</th><td>Reverse Address Resolution Protocol</td></tr>
+<tr><th>Defined in</th><td>RFC 903 (1984)</td></tr>
+<tr><th>Layer</th><td>Link layer / network layer boundary</td></tr>
+<tr><th>EtherType</th><td>0x8035</td></tr>
+<tr><th>Superseded by</th><td>BOOTP, DHCP</td></tr>
+</table>
+</div>
+<p>The <b>Reverse Address Resolution Protocol</b> (<b>RARP</b>) is an obsolete computer networking protocol used by a client computer to request its Internet Protocol (<a href="../IPv4/index.html">IPv4</a>) address from a computer network, when all it has is its link layer or hardware address, such as a <a href="../MAC_address/index.html">MAC address</a>. The client broadcasts its hardware address and asks for its IP address to be assigned; a RARP server on the local network, which holds a static table of MAC-to-IP mappings, replies with the address. RARP was defined in RFC 903 in 1984.</p>
+<p>RARP is the converse of the <a href="../Address_Resolution_Protocol/index.html">Address Resolution Protocol</a> (ARP), which maps a known IP address to a hardware address. Both use the same packet format; RARP uses distinct operation codes (3 for request, 4 for reply) and EtherType 0x8035.</p>
+<div class="hero"><img src="images/Reverse_Address_Resolution_Protocol.png" alt="RARP request and reply diagram"><div class="caption">A diskless client broadcasts its MAC address; the RARP server replies with the client's assigned IP address.</div></div>
+<h2>Use case</h2>
+<p>RARP served diskless workstations, which powered on with no stored configuration: the machine knew its network interface's burned-in hardware address but nothing else. A RARP reply gave it an IP address, after which it typically downloaded a boot image with TFTP. Because RARP works by broadcast, a server had to be present on every subnet.</p>
+<h2>Limitations and obsolescence</h2>
+<p>RARP could deliver only an IP address — no subnet mask, default gateway, or other configuration. It required a server on each physical network and manual maintenance of its mapping table. These limits led to its replacement by BOOTP (1985) and then the <a href="../Dynamic_Host_Configuration_Protocol/index.html">Dynamic Host Configuration Protocol</a> (DHCP), which provides complete, dynamically leased configuration over UDP/IP. RARP is no longer in practical use.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Address_Resolution_Protocol/index.html">Address Resolution Protocol</a></li>
+<li><a href="../Dynamic_Host_Configuration_Protocol/index.html">Dynamic Host Configuration Protocol</a></li>
+<li><a href="../BOOTP/index.html">BOOTP</a></li>
+<li><a href="../MAC_address/index.html">MAC address</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gaussian mixture model — Wikipedia</title>
+<style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:960px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1;padding-bottom:4px}h2{border-bottom:1px solid #a2a9b1}img{max-width:100%;border:1px solid #c8ccd1;padding:4px;background:#f8f9fa}a{color:#36c;text-decoration:none}a:hover{text-decoration:underline}</style>
+</head>
+<body>
+<h1>Gaussian mixture model</h1>
+<img src="images/Gaussian_mixture_model.png" alt="Gaussian mixture model — hero image placeholder">
+<p>A <b>Gaussian mixture model</b> (GMM) is a probabilistic model that assumes all the data points are generated from a mixture of a finite number of Gaussian distributions with unknown parameters. One can think of mixture models as generalizing k-means clustering to incorporate information about the covariance structure of the data as well as the centers of the latent Gaussians.</p>
+<h2>Definition</h2>
+<p>A Gaussian mixture model is a weighted sum of K component Gaussian densities:</p>
+<p style="text-align:center">p(x) = Σₖ πₖ N(x | μₖ, Σₖ), with Σₖ πₖ = 1, πₖ ≥ 0</p>
+<p>where μₖ is the mean and Σₖ the covariance matrix of component k, and πₖ is its mixing weight. The model is a standard approach for density estimation and for clustering in pattern recognition and machine learning.</p>
+<h2>Parameter estimation</h2>
+<p>Parameters are usually estimated by maximum likelihood using the expectation–maximization (EM) algorithm. In the expectation step, the algorithm computes the posterior probabilities ("responsibilities") of each component for each data point; in the maximization step, it updates the weights, means, and covariances using those responsibilities. The procedure is iterated until convergence, though it may reach only a local optimum.</p>
+<h2>Applications</h2>
+<ul>
+<li>Clustering and unsupervised learning</li>
+<li>Speaker recognition and voice activity detection in speech processing</li>
+<li>Image segmentation and background subtraction in computer vision</li>
+<li>Anomaly detection and density estimation</li>
+<li>Modelling of astronomical and biological data distributions</li>
+</ul>
+<h2>Relation to k-means</h2>
+<p>K-means clustering can be viewed as a limiting case of a Gaussian mixture model with equal, spherical covariances whose variance tends to zero; the GMM's "soft" assignments generalize k-means' hard assignments.</p>
+<h2>Model selection</h2>
+<p>The number of components K is usually chosen by criteria such as the Bayesian information criterion (BIC) or cross-validation. Bayesian nonparametric extensions, such as Dirichlet process mixture models, allow the number of components to be inferred from data.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Expectation%E2%80%93maximization_algorithm/index.html">Expectation–maximization algorithm</a></li>
+<li><a href="../Mixture_model/index.html">Mixture model</a></li>
+<li><a href="../K-means_clustering/index.html">K-means clustering</a></li>
+<li><a href="../Multivariate_normal_distribution/index.html">Multivariate normal distribution</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Monolithic kernel - Wikipedia</title>
+<style>
+body { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; margin: 0; color: #202122; background: #f8f9fa; }
+main { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: Georgia, "Times New Roman", serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, "Times New Roman", serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+figure { text-align: center; margin: 1em 0; }
+img.hero { width: 300px; height: 200px; background: #eaecf0; border: 1px solid #a2a9b1; }
+footer { font-size: 0.8em; color: #54595d; border-top: 1px solid #a2a9b1; margin-top: 2em; padding-top: 0.5em; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<main>
+<h1>Monolithic kernel</h1>
+<figure><img class="hero" src="images/monolithic-kernel.png" alt="Diagram contrasting a monolithic kernel with a microkernel architecture"></figure>
+<p>A <b>monolithic kernel</b> is an operating system architecture where the entire operating system kernel runs in supervisor mode (kernel space) as a single program. Unlike a microkernel, in which core services are minimal and most functions run as user-space servers, a monolithic kernel provides the virtual machine abstractions — process management, memory management, device drivers, file systems, and networking — within the single kernel address space.</p>
+<h2>Advantages and disadvantages</h2>
+<p>Because services share one address space, communication between kernel subsystems is a simple and fast function call, avoiding the message-passing overhead of microkernel designs. The disadvantages are size and fault isolation: a bug in any driver can crash the whole system, and the kernel's large codebase can be harder to maintain and secure. Loadable kernel modules mitigate some of this by allowing functionality to be added or removed at runtime, leading to "modular monolithic" designs.</p>
+<h2>Examples</h2>
+<p>Classic Unix kernels, MS-DOS (with its TSRs and drivers), and the Linux kernel are prominent examples; Linux is monolithic but highly modular. The BSD kernels (FreeBSD, NetBSD, OpenBSD) are also broadly monolithic with modules. The design contrast between monolithic and microkernel architectures was the subject of the famous Tanenbaum–Torvalds debate of 1992, in which Andrew Tanenbaum argued Linux's monolithic design was a step backwards compared with MINIX's microkernel.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Microkernel">Microkernel</a></li>
+<li><a href="../Hybrid_kernel">Hybrid kernel</a></li>
+<li><a href="../Linux_kernel">Linux kernel</a></li>
+<li><a href="../Tanenbaum%E2%80%93Torvalds_debate">Tanenbaum–Torvalds debate</a></li>
+</ul>
+<footer>From Wikipedia, the free encyclopedia.</footer>
+</main>
+</body>
+</html>

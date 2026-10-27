@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SPIR-V - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.6;color:#202122}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:1.4em}
+.hero{display:block;max-width:100%;height:220px;background:#f8f9fa;border:1px solid #c8ccd1;color:#72777d;text-align:center;line-height:220px;font-style:italic;margin:16px 0}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:12px;margin:0 0 12px 16px;width:250px;font-size:0.9em}
+.infobox th{text-align:left;padding-right:8px}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>SPIR-V</h1>
+<img class="hero" src="images/spir-v.png" alt="Diagram of shader compilation to SPIR-V and target devices">
+<p><b>Standard Portable Intermediate Representation</b> (<b>SPIR</b>) is an intermediate language for parallel computing and graphics by the Khronos Group, originally developed for use with OpenCL. <b>SPIR-V</b>, its current universal form announced in 2015, is the standard binary intermediate language for representing graphical shaders and compute kernels in the Vulkan API and in OpenCL 2.1 and later.</p>
+<p>Instead of implementing a full high-level language compiler in every graphics driver, developers compile GLSL or HLSL shaders (for example with the <i>glslang</i> reference compiler) into portable SPIR-V modules ahead of time. Drivers then only need a simpler SPIR-V-to-native compiler, improving portability and reducing shader compile times and inconsistencies between vendors.</p>
+<div class="infobox">
+<table>
+<tr><th>Developer</th><td>Khronos Group</td></tr>
+<tr><th>Released</th><td>2015</td></tr>
+<tr><th>Type</th><td>Intermediate representation (binary)</td></tr>
+<tr><th>Used by</th><td>Vulkan, OpenCL, SYCL</td></tr>
+<tr><th>License</th><td>Open standard</td></tr>
+</table>
+</div>
+<h2>Design</h2>
+<p>SPIR-V is a binary format based on single static assignment (SSA) form, with explicit control flow and a rich decoration system that records information needed by graphics pipelines (such as descriptor bindings and built-in variables) that plain compute IRs lack. It supports both graphics shader stages (vertex, fragment, geometry, tessellation, mesh, ray tracing) and general-purpose compute kernels.</p>
+<h2>Ecosystem</h2>
+<p>The Khronos Group maintains SPIRV-Tools (assembler, disassembler, validator and optimizer) and SPIRV-Cross, which translates SPIR-V back into GLSL, HLSL, and Metal Shading Language. SPIR-V also serves as an interchange format in machine-learning and heterogeneous-computing frameworks, and projects such as LLVM-based compilers can target it.</p>
+</body>
+</html>

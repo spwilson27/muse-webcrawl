@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Upsampling - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,sans-serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.mw-body{max-width:960px;margin:0 auto;padding:24px 32px}
+h1{font-family:Georgia,serif;font-size:1.9em;font-weight:normal;border-bottom:1px solid #a7d7f9;padding-bottom:4px;margin-bottom:8px}
+h2{font-family:Georgia,serif;font-size:1.4em;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:24px}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 16px 20px;font-size:0.9em}
+.infobox th{background:#eaecf0;padding:4px;text-align:left}
+.infobox td{padding:4px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+figure{text-align:center;margin:16px 0}
+figcaption{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Upsampling</h1>
+<p>In <a href="../../Digital_signal_processing/index.html">digital signal processing</a>, <b>upsampling</b>, <b>expansion</b> and <b>interpolation</b> refer to the process of increasing the sampling rate of a signal. Upsampling by an integer factor L is typically performed in two steps: expansion, in which L − 1 zero-valued samples are inserted between each pair of original samples, followed by a low-pass interpolation filter that smooths the result and suppresses spectral images created by the expansion.</p>
+<figure><img src="images/upsampling.png" alt="Diagram of upsampling by a factor of three followed by interpolation filtering"><figcaption>Upsampling by 3, followed by an interpolation filter</figcaption></figure>
+<h2>Theory</h2>
+<p>Inserting zeros leaves the original spectrum intact but adds periodic copies ("images") at multiples of the original sampling frequency. An ideal low-pass filter with cutoff at the original Nyquist frequency removes these images, producing samples consistent with a higher-rate sampling of the same underlying continuous-time signal. In practice filters such as polyphase implementations are used to avoid computing outputs that would be discarded. Upsampling is the dual of <a href="../../Decimation_(signal_processing)/index.html">decimation</a>, and the two are combined in rational-factor sample rate conversion.</p>
+<h2>Applications</h2>
+<p>Upsampling is used in digital audio (for example, oversampling converters and sample-rate conversion between 44.1 kHz and 48 kHz), in communications transmitters to ease analogue filtering requirements, in image scaling, and in machine learning, where transposed convolutions perform a form of learned upsampling in generative and segmentation networks.</p>
+<h2>Fractional interpolation</h2>
+<p>When the desired new samples fall between original samples, interpolation filters such as windowed sinc, cubic or Lagrange interpolators are used, for example in the Farrow structure for arbitrary fractional delays.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../Downsampling_(signal_processing)/index.html">Downsampling</a></li>
+<li><a href="../../Sample_rate_conversion/index.html">Sample rate conversion</a></li>
+<li><a href="../../Interpolation/index.html">Interpolation</a></li>
+<li><a href="../../Nyquist–Shannon_sampling_theorem/index.html">Nyquist–Shannon sampling theorem</a></li>
+</ul>
+</div>
+</body>
+</html>

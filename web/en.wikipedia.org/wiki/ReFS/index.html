@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ReFS - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 60px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; height: auto; background: #eaecf0; border: 1px solid #c8ccd1; padding: 8px; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 12px 18px; font-size: 13px; }
+.infobox th { text-align: left; padding-right: 8px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>ReFS</h1>
+<div class="hero"><img src="images/refs.png" alt="Diagram of ReFS data-integrity and resilience features"></div>
+<p><b>ReFS</b> (<b>Resilient File System</b>), codenamed "Protogon", is a proprietary file system developed by Microsoft, introduced with Windows Server 2012. It was designed to succeed NTFS for large-scale, data-intensive workloads, emphasizing data integrity, scalability, and resilience against corruption.</p>
+<div class="infobox">
+<table>
+<tr><th>Developer</th><td>Microsoft</td></tr>
+<tr><th>Introduced</th><td>2012 (Windows Server 2012 / Windows 8)</td></tr>
+<tr><th>Predecessor</th><td>NTFS (complementary)</td></tr>
+<tr><th>Max volume size</th><td>1 yottabyte (design target)</td></tr>
+</table>
+</div>
+<h2>Features</h2>
+<p>ReFS uses B+ tree structures for metadata and files, checksums for metadata (and optionally for file data via integrity streams), copy-on-write ("allocate-on-write") semantics that avoid in-place metadata updates, and integration with Storage Spaces so that corrupted data can be detected and repaired from a mirror copy. It also supports very large files and volumes, block cloning for fast virtual-machine operations, and sparse VDL.</p>
+<h2>Limitations and deployment</h2>
+<p>ReFS cannot be used as a boot volume in most configurations and historically lacked some NTFS features such as file compression, encryption (EFS), disk quotas, and named streams in early versions. Microsoft positions ReFS for servers, backup targets, and virtualization; from Windows 10 Fall Creators Update, the ability to create new ReFS volumes was restricted to Pro for Workstations and Enterprise editions.</p>
+</div>
+</body>
+</html>

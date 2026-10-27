@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Powerset construction - Wikipedia</title>
+<style>body{font-family:-apple-system,'Segoe UI',Roboto,sans-serif;max-width:960px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1;padding-bottom:4px}h2{border-bottom:1px solid #a2a9b1}img.hero{max-width:320px;float:right;margin:0 0 12px 16px;border:1px solid #c8ccd1;padding:4px;background:#f8f9fa}a{color:#0645ad}</style></head>
+<body>
+<h1>Powerset construction</h1>
+<img class="hero" src="images/Powerset_construction.png" alt="Diagram of an NFA and the equivalent DFA produced by the powerset construction">
+<p>In the theory of computation, the <b>powerset construction</b> or <b>subset construction</b> is a standard method for converting a nondeterministic finite automaton (NFA) into a deterministic finite automaton (DFA) which recognizes the same formal language. It is important in theory because it establishes that NFAs recognize exactly the set of regular languages. It is also important in practice for generating parsers, lexical analysers, and pattern-matching engines from regular expressions.</p>
+<h2>The construction</h2>
+<p>Let an NFA have states Q, alphabet Σ, transition function δ, start state q<sub>0</sub>, and accept states F. The equivalent DFA has as its states the power set of Q — that is, each DFA state is a set of NFA states. Its transition on a symbol a from a set S is the union of δ(q, a) over all q in S, extended with ε-closures when the NFA has ε-transitions. The start state of the DFA is the ε-closure of {q<sub>0</sub>}, and a DFA state is accepting if it contains at least one state from F.</p>
+<h2>Complexity</h2>
+<p>Because a DFA state is a subset of the n NFA states, the constructed DFA can have up to 2<sup>n</sup> states, and this exponential blow-up is sometimes unavoidable: there are languages recognized by n-state NFAs whose smallest DFA requires 2<sup>n</sup> states. In practice, however, only a small fraction of subsets is often reachable, and implementations generate DFA states lazily, on demand.</p>
+<h2>History</h2>
+<p>The construction is associated with Michael O. Rabin and Dana Scott, whose 1959 paper "Finite Automata and Their Decision Problems" introduced it and proved the equivalence of NFAs and DFAs; the authors received the Turing Award in part for this work.</p>
+<p><i>See also:</i> <a href="../Nondeterministic_finite_automaton/index.html">Nondeterministic finite automaton</a>, <a href="../Deterministic_finite_automaton/index.html">Deterministic finite automaton</a>, <a href="../Power_set/index.html">Power set</a></p>
+</body></html>

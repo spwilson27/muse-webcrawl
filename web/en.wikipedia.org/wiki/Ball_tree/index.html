@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Ball tree - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;color:#202122;line-height:1.6}h1{font-size:2em;border-bottom:1px solid #a2a9b1}h2{border-bottom:1px solid #a2a9b1}table.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:6px;margin:0 0 12px 16px;font-size:0.9em}a{color:#0645ad}</style></head>
+<body>
+<h1>Ball tree</h1>
+<img src="images/Ball_tree.png" alt="Nested hyperspheres of a ball tree data structure">
+<p>A <b>ball tree</b> is a binary tree data structure used in computer science to organise points in a multi-dimensional space. Each internal node defines a hypersphere (an n-ball) containing a subset of the points; the root sphere contains all points, and children partition their parent's points into two smaller spheres. Ball trees are a type of metric tree.</p>
+<h2>Construction</h2>
+<p>A common construction picks the point farthest from the node's centroid, then the point farthest from that, and assigns each point to the nearer of these two pivots, recursively splitting until leaves hold a small number of points. Other heuristics split along the dimension of greatest spread. Construction costs roughly O(n log n) comparisons for typical data.</p>
+<h2>Applications</h2>
+<p>Ball trees accelerate nearest-neighbour search: a query can prune whole subtrees whose bounding spheres cannot contain a closer point than the best found so far, using the triangle inequality. They are used in machine learning libraries such as scikit-learn for k-nearest neighbours classification, kernel density estimation, and clustering, and are often preferred over k-d trees for high-dimensional or non-Euclidean metric data, though performance degrades with the curse of dimensionality.</p>
+<h2>History</h2>
+<p>The structure was described in a 1989 technical report by Stephen Omohundro as part of work on learning algorithms. Variants include the vantage-point tree and M-tree.</p>
+<p>See also: <a href="../K-d_tree/index.html">K-d tree</a>, <a href="../Nearest_neighbor_search/index.html">Nearest neighbor search</a>, <a href="../Metric_tree/index.html">Metric tree</a></p>
+</body></html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Sendfile - Wikipedia</title>
+<style>body{font-family:sans-serif;max-width:860px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{font-family:serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{font-family:serif;border-bottom:1px solid #a2a9b1}.hero{display:block;max-width:320px;margin:1em auto;background:#f8f9fa;border:1px solid #c8ccd1;padding:2em;text-align:center;color:#72777d}a{color:#0645ad}code{background:#f8f9fa}</style></head>
+<body>
+<h1>Sendfile</h1>
+<img class="hero" src="images/Sendfile.png" alt="Illustration placeholder for Sendfile">
+<p><b><code>sendfile</code></b> is a system call in Unix-like operating systems that transfers data between two file descriptors within the kernel, avoiding the overhead of copying data between kernel space and user space. It is widely used by web servers and file servers to serve static content efficiently.</p>
+<h2>Motivation</h2>
+<p>In the traditional approach, a server reads a file into a user-space buffer with <code>read()</code> and then writes it to a socket with <code>write()</code>, causing multiple context switches and redundant copies of the same data. With <code>sendfile()</code>, the kernel transfers the data directly—often using DMA from disk into the page cache and then gathering it to the network interface—so the data never passes through user space. This "zero-copy" technique substantially improves throughput for static file serving.</p>
+<h2>Implementations</h2>
+<p>The call originated in the form of <code>sendfile()</code> in Linux 2.2 and similar facilities in FreeBSD (developed for the Apache and thttpd servers), HP-UX and Solaris. Web servers such as nginx and Apache httpd expose sendfile support as a configuration option; it is typically disabled when serving from network filesystems or when TLS encryption must be performed in user space (kernel TLS can preserve the benefit).</p>
+</body></html>

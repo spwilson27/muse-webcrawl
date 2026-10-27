@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>init - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#fff;color:#202122}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px 40px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+p{font-family:sans-serif;font-size:14px;line-height:1.65}
+a{color:#0645ad;text-decoration:none}
+.hero{display:block;margin:16px auto;max-width:420px;width:100%;background:#f8f9fa;border:1px solid #a2a9b1;padding:8px;text-align:center;font-family:sans-serif;font-size:12px;color:#54595d}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>init</h1>
+<img class="hero" src="images/Init.png" alt="A Unix boot screen showing init starting system services in sequence">
+<p>In Unix-based computer operating systems, <b>init</b> (short for <i>initialisation</i>) is the first process started during booting of the operating system. Init is a daemon process that continues running until the system is shut down. It is the direct or indirect ancestor of all other processes and automatically adopts orphaned processes. On Unix systems it traditionally has process identifier 1 (PID 1).</p>
+<h2>Styles of init</h2>
+<p>The two major styles are <b>SysV init</b>, descended from AT&amp;T System V Unix, which starts processes sequentially according to runlevels and scripts in directories such as <code>/etc/rc.d</code>, configured by <code>/etc/inittab</code>; and <b>BSD init</b>, which uses a simpler set of shell scripts, chiefly <code>/etc/rc</code>. SysV-style runlevels (0–6) conventionally encode halt, single-user mode, multi-user modes and reboot.</p>
+<h2>Modern replacements</h2>
+<p>Because sequential startup wastes time on modern hardware, several event-driven replacements have been developed: Upstart (formerly used by Ubuntu), OpenRC, runit, and — most widely adopted on Linux — <b>systemd</b>, which parallelises service startup, manages dependencies and supervises daemons. The choice of init system has been a notable controversy within the Linux community. If the init process is killed or crashes, the kernel typically panics, since PID 1 is responsible for reaping zombie processes and maintaining the process tree.</p>
+<p>See also: <a href="../Systemd/index.html">systemd</a>, <a href="../Booting/index.html">Booting</a>, <a href="../Daemon_(computing)/index.html">Daemon</a>, <a href="../Kernel_(operating_system)/index.html">Kernel (operating system)</a>.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Translation lookaside buffer - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;min-height:100vh}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:6px;margin-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;font-size:1.4em;margin-top:28px}
+.sub{color:#54595d;font-size:.9em;margin-bottom:16px}
+.hero{display:block;max-width:480px;width:100%;height:240px;object-fit:cover;background:#eaecf0;margin:16px 0}
+a{color:#0645ad}
+code{background:#f8f9fa;padding:1px 4px;font-family:monospace}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Translation lookaside buffer</h1>
+<div class="sub">From Wikipedia, the free encyclopedia</div>
+<img class="hero" src="images/Translation_lookaside_buffer.png" alt="Illustrative placeholder image for Translation lookaside buffer">
+<p>A <b>translation lookaside buffer</b> (<b>TLB</b>) is a memory cache that stores the recent translations of virtual memory to physical memory. It is used to reduce the time taken to access a user memory location. The TLB stores the recent translations of virtual memory to physical memory and can be called an address-translation cache. It is a part of the chip's memory-management unit (MMU). A TLB may reside between the CPU and the CPU cache, between CPU cache and the main memory or between the different levels of the multi-level cache.</p>
+<h2>Overview</h2>
+<p>Modern processors use virtual memory: every memory access goes through address translation from a virtual address to a physical address. Without a TLB, each access would require walking the page table in memory — potentially several memory references per access. Because programs exhibit locality of reference, a small cache of recent translations serves the great majority of accesses. Typical TLBs hold from a few dozen to a few thousand entries and are implemented as content-addressable memory (CAM), allowing a virtual page number to be looked up in parallel across all entries in a single cycle.</p>
+<h2>TLB hits and misses</h2>
+<p>When the CPU generates a virtual address, the MMU checks the TLB. If a matching entry is present (a <i>TLB hit</i>), the physical frame number is obtained immediately. If not (a <i>TLB miss</i>), the hardware or operating system walks the page table to find the translation, installs it in the TLB, and retries the access. A miss where the page table entry itself is invalid — because the page is not resident — raises a page fault, handled by the operating system.</p>
+<h2>Address-space identifiers</h2>
+<p>Because each process has its own virtual address space, TLBs must handle context switches. Older designs flushed the entire TLB on every switch. Most modern processors tag entries with an <i>address space identifier</i> (ASID) — called a PCID (process-context identifier) on x86 — so entries from several processes can coexist and a switch need not flush the cache. Some entries may be marked <i>global</i>, shared by all processes, typically for kernel pages.</p>
+<h2>Multi-level TLBs</h2>
+<p>Like data caches, TLBs are often split into levels: a small, fast first-level TLB (sometimes separate instruction and data TLBs) backed by a larger, slower second-level TLB. Some architectures add page-walk caches that accelerate the page-table walk itself on a miss. TLB <i>reach</i> — the amount of memory mappable through cached entries — can be increased with large pages (huge pages), which map megabytes or gigabytes per entry.</p>
+<h2>Software-managed TLBs</h2>
+<p>Some architectures, notably classic MIPS and SPARC designs, leave TLB refill to software: on a miss, the CPU traps to a handler that computes the translation and writes the TLB entry. This gives the operating system freedom in page-table format at the cost of miss-handling overhead.</p>
+<h2>See also</h2>
+<ul>
+<li>Memory management unit</li>
+<li>Paging</li>
+<li>Virtual memory</li>
+<li>Page table</li>
+<li>Cache (computing)</li>
+</ul>
+<p class="small">Categories: Virtual memory | Computer memory | CPU cache</p>
+</div>
+</body>
+</html>

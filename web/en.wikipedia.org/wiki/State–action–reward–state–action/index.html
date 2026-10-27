@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>State–action–reward–state–action - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1;font-weight:normal}h2{border-bottom:1px solid #a2a9b1;font-weight:normal}.hero{background:#f8f9fa;border:1px solid #a2a9b1;padding:10px;text-align:center;color:#72777d}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 10px 15px;font-size:90%;max-width:260px}</style></head>
+<body>
+<h1>State–action–reward–state–action (SARSA)</h1>
+<div class="hero"><img src="images/SARSA.png" alt="Placeholder image for the SARSA algorithm"></div>
+<p><b>State–action–reward–state–action</b> (<b>SARSA</b>) is an algorithm for learning a Markov decision process policy, used in reinforcement learning. It was proposed by G. A. Rummery and M. Niranjan in 1994 (as "modified connectionist Q-learning") and named for the quintuple of quantities (s, a, r, s′, a′) that defines each update: the current <i>state</i>, the <i>action</i> taken, the <i>reward</i> received, the next <i>state</i>, and the next <i>action</i>.</p>
+<h2>The update rule</h2>
+<p>SARSA is an on-policy temporal-difference algorithm. After taking action a in state s, observing reward r and the successor state s′, and choosing the next action a′ according to the current policy (for example ε-greedy), the action-value estimate is updated:</p>
+<p style="text-align:center"><i>Q</i>(s, a) ← <i>Q</i>(s, a) + α [ r + γ <i>Q</i>(s′, a′) − <i>Q</i>(s, a) ],</p>
+<p>where α is the learning rate and γ the discount factor. Because the update uses the action actually taken next, SARSA learns the value of the policy it follows, including its exploratory steps — in contrast to off-policy Q-learning, which updates toward the greedy maximum action.</p>
+<h2>Properties and variants</h2>
+<p>This on-policy character makes SARSA more conservative in environments with risky states: in the classic "cliff walking" example, SARSA learns a safer path away from the cliff because it accounts for its own occasional exploratory missteps. With a suitable decay of exploration (GLIE conditions), SARSA converges to the optimal action-value function. Variants include Expected SARSA, which replaces the sampled next-action value with its expectation under the policy, and multi-step forms such as SARSA(λ) using eligibility traces.</p>
+</body></html>

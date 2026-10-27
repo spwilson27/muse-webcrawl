@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>XML Encryption - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 36px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+p{line-height:1.6;font-size:0.95em}
+ul{line-height:1.6;font-size:0.95em}
+code{background:#f8f9fa;border:1px solid #eaecf0;padding:1px 4px;font-size:0.9em}
+.hero{display:block;margin:16px auto;max-width:480px;width:100%;height:220px;background:#eaecf0;border:1px solid #c8ccd1;text-align:center;line-height:220px;color:#54595d;font-style:italic}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>XML Encryption</h1>
+<img class="hero" src="images/XML_Encryption.png" alt="XML Encryption element structure (placeholder)">
+<p><b>XML Encryption</b>, also known as <b>XML-Enc</b>, is a specification governed by a World Wide Web Consortium (W3C) Recommendation that defines how to encrypt the content of an XML element and represent the result in XML. It became a W3C Recommendation on 10 December 2002.</p>
+<h2>Overview</h2>
+<p>Unlike transport-level encryption such as TLS, XML Encryption allows only parts of a document to be encrypted, so that different recipients can read different portions, and encrypted content can persist while stored. When an element is encrypted, it is replaced in the document by an <code>EncryptedData</code> element containing a <code>CipherData</code> element with the ciphertext (usually base64-encoded) and an <code>EncryptionMethod</code> element naming the algorithm. Content keys are typically carried in an <code>EncryptedKey</code> element, itself encrypted with the recipient's public key, and the key information structures are shared with XML Signature (XML-DSig).</p>
+<h2>Algorithms</h2>
+<p>The specification supports block ciphers including Triple DES and AES with various key lengths, and key transport using RSA. Later maintenance work addressed weaknesses in the common CBC mode of operation; in 2011 researchers demonstrated a practical padding oracle attack against XML Encryption in CBC mode as deployed in several web-service frameworks, prompting recommendations to prefer authenticated modes and updated algorithm profiles in XML Encryption 1.1.</p>
+<h2>Applications</h2>
+<p>XML Encryption is used in WS-Security for SOAP messages and in SAML assertions, where portions of an assertion can be encrypted for a specific relying party. It is closely related to XML Signature, with which it was developed as part of the W3C's XML security work.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>umask - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:860px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #a2a9b1;padding-bottom:.15em}a{color:#0645ad}code{background:#f0f0f0;padding:.05em .3em}</style>
+</head><body>
+<h1>umask</h1>
+<img src="images/umask.png" alt="Illustration of Unix file permission bits being masked by a umask value">
+<p>In computing, <b>umask</b> is a Unix command and system call that sets and determines the <b>file mode creation mask</b>: a per-process mask of permission bits that are turned <i>off</i> when a new file or directory is created. When a program creates a file requesting mode 0666, or a directory requesting 0777, the kernel clears any bits set in the process's umask, so the actual permissions are the requested mode ANDed with the bitwise complement of the umask.</p>
+<h2>How it works</h2>
+<p>For example, with the common umask 022, a new file created with mode 666 becomes 644 (<code>rw-r--r--</code>) and a new directory created with mode 777 becomes 755 (<code>rwxr-xr-x</code>). A umask of 027 yields files of 640 and directories of 750, typical for stricter shared systems; a umask of 077 yields 600/700, private to the owner. Executable files are only created executable if the creating program explicitly requests it; the umask can never add permission bits, only remove them.</p>
+<h2>Usage</h2>
+<p>The shell builtin <code>umask</code> displays or changes the current mask, e.g. <code>umask 022</code>. It is normally set in login scripts or by <code>pam_umask</code>. Programmatically, the POSIX <code>umask()</code> system call sets the mask and returns the previous value. Because the mask is inherited across <code>fork</code> and <code>exec</code>, parent processes and system services (via systemd's <code>UMask=</code> setting) can control the default permissions of everything they create. Choosing an overly permissive umask (such as 000) is a common security concern on multi-user systems.</p>
+</body></html>

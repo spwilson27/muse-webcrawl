@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Cache coherence - Wikipedia</title>
+<style>body{font-family:sans-serif;margin:2em auto;max-width:52em;line-height:1.6;color:#202122}h1{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}h2{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.5em;margin:0 0 1em 1em;width:16em;font-size:.9em}img.hero{display:block;width:100%;max-width:400px;background:#eaecf0;border:1px solid #a2a9b1;padding:2em 0;text-align:center;color:#54595d}</style></head>
+<body>
+<h1>Cache coherence</h1>
+<img class="hero" src="images/Cache_coherence.png" alt="Diagram of a multiprocessor cache coherence system">
+<p><b>Cache coherence</b> is the uniformity of shared resource data that ends up stored in multiple local caches in a <a href="../Multiprocessing/index.html">multiprocessor</a> computer system. When clients in a system maintain caches of a common memory resource, problems may arise with incoherent data, which is particularly the case with <a href="../Central_processing_unit/index.html">CPUs</a> in a multiprocessing system.</p>
+<h2>Overview</h2>
+<p>In a shared memory multiprocessor system with a separate cache memory for each processor, it is possible to have many copies of shared data: one copy in the main memory and one in the local cache of each processor that requested it. When one of the copies of data is changed, the other copies must reflect that change. Cache coherence is the discipline which ensures that the changes in the values of shared operands are propagated throughout the system in a timely fashion.</p>
+<h2>Coherence requirements</h2>
+<p>The following are the requirements for cache coherence:</p>
+<ul><li><b>Write propagation:</b> Changes to the data in any cache must be propagated to other copies (in other caches) of the corresponding cache line.</li>
+<li><b>Transaction serialization:</b> Reads and writes to a single memory location must be seen by all processors in the same order.</li></ul>
+<h2>Mechanisms</h2>
+<p>The two most common mechanisms of ensuring coherence are <i>snooping</i> and <i>directory-based</i>, each having their own merits and demerits. Snooping protocols broadcast requests to all processors, while directory protocols send requests only to the processors holding relevant blocks, scaling better to large systems.</p>
+<h2>Protocols</h2>
+<p>Well-known protocols include the <a href="../MESI_protocol/index.html">MESI protocol</a> and its variants MSI, MOSI, MOESI and MESIF, which track cache line states such as Modified, Exclusive, Shared and Invalid. Coherence is also a concern in distributed file systems and software distributed shared memory.</p>
+</body></html>

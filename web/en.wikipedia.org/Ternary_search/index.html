@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ternary search</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 860px; color: #202122; line-height: 1.6; padding: 0 1em; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+pre { background: #f8f9fa; border: 1px solid #a2a9b1; padding: 0.6em; overflow-x: auto; }
+figure { text-align: center; }
+</style>
+</head>
+<body>
+<h1>Ternary search</h1>
+<figure><img src="images/ternary_search.png" alt="Graph of a unimodal function with ternary search narrowing the interval"></figure>
+<p>A <b>ternary search</b> is a divide-and-conquer technique in computer science for finding the minimum or maximum of a unimodal function. The method repeatedly evaluates the function at two interior points, discarding the third of the interval that cannot contain the extremum, and is closely related to the golden-section search.</p>
+<h2>Algorithm</h2>
+<p>For a unimodal function f on [a, b], pick two points m1 and m2 dividing the interval into thirds. If f(m1) &lt; f(m2) when seeking a maximum, the extremum cannot lie in the rightmost third, so the search continues on [a, m2]; otherwise it continues on [m1, b]. Each iteration reduces the interval by a factor of 2/3.</p>
+<pre>while b - a &gt; epsilon:
+    m1 = a + (b - a) / 3
+    m2 = b - (b - a) / 3
+    if f(m1) &lt; f(m2): a = m1
+    else: b = m2</pre>
+<h2>Applications and analysis</h2>
+<p>Ternary search suits problems over real-valued domains where derivatives are unavailable, and a related discrete form finds peaks in unimodal arrays. It converges linearly; the golden-section search reuses one function evaluation per step and converges slightly faster, making it generally preferred in numerical optimization.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Golden-section_search/index.html">Golden-section search</a></li>
+<li><a href="../Binary_search/index.html">Binary search</a></li>
+<li><a href="../Unimodal_function/index.html">Unimodal function</a></li>
+<li><a href="../Divide-and-conquer_algorithm/index.html">Divide-and-conquer algorithm</a></li>
+</ul>
+</body>
+</html>

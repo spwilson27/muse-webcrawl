@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ChaCha20 - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f6f6f6; color: #202122; }
+.mw-body { max-width: 960px; margin: 0 auto; background: #fff; padding: 20px 30px; }
+h1 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+table.infobox { float: right; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 0.9em; margin: 0 0 1em 1em; border-collapse: collapse; }
+table.infobox th, table.infobox td { border-bottom: 1px solid #eaecf0; padding: 4px 8px; text-align: left; }
+table.infobox th.caption { text-align: center; background: #e6eef7; font-size: 1.05em; }
+figure.hero { text-align: center; margin: 1em 0; }
+figure.hero img { max-width: 100%; border: 1px solid #a2a9b1; background: #f8f9fa; }
+figcaption { font-size: 0.85em; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>ChaCha20</h1>
+<p><b>ChaCha20</b> is the most widely used member of the <a href="../Salsa20/index.html">ChaCha family</a> of <a href="../Stream_cipher/index.html">stream ciphers</a>, designed by <a href="../Daniel_J._Bernstein/index.html">Daniel J. Bernstein</a> and published in 2008. It operates on a 256-bit key, a 96-bit nonce and a 64-bit block counter in its standardised form, generating a keystream in 64-byte blocks that is combined with the plaintext by <a href="../Exclusive_or/index.html">XOR</a>. ChaCha20 is the cipher at the heart of the <a href="../ChaCha20-Poly1305/index.html">ChaCha20-Poly1305</a> authenticated encryption construction used by <a href="../Transport_Layer_Security/index.html">TLS</a>, <a href="../WireGuard/index.html">WireGuard</a>, <a href="../Secure_Shell/index.html">SSH</a> and many other protocols.</p>
+
+<figure class="hero"><img src="images/ChaCha20.png" alt="Diagram of the ChaCha quarter-round function"></figure>
+
+<table class="infobox">
+<tr><th class="caption" colspan="2">ChaCha20</th></tr>
+<tr><th>Designer</th><td>Daniel J. Bernstein</td></tr>
+<tr><th>First published</th><td>2008</td></tr>
+<tr><th>Derived from</th><td>Salsa20</td></tr>
+<tr><th>Key size</th><td>256 bits</td></tr>
+<tr><th>Nonce size</th><td>96 bits (IETF variant)</td></tr>
+<tr><th>Block size</th><td>512 bits (64 bytes)</td></tr>
+<tr><th>Rounds</th><td>20</td></tr>
+</table>
+
+<h2>Design</h2>
+<p>ChaCha20's internal state consists of sixteen 32-bit words: four constant words ("expand 32-byte k"), eight key words, one counter word and three nonce words in the IETF variant. The cipher applies twenty rounds — ten column rounds and ten diagonal rounds — each built from the <i>quarter-round</i> function, which uses only additions, XORs and fixed rotations (by 16, 12, 8 and 7 bits). After the rounds, the original state is added back word-by-word, and the result is serialised to produce a 64-byte keystream block. The counter is then incremented for the next block.</p>
+<p>Compared with its predecessor <a href="../Salsa20/index.html">Salsa20</a>, ChaCha improves diffusion per round, which increases resistance to cryptanalysis while remaining fast in software — particularly on processors without AES hardware instructions.</p>
+
+<h2>Standardisation and adoption</h2>
+<p>In 2014 the IETF published RFC 7539 (later superseded by RFC 8439) defining the ChaCha20 stream cipher together with the Poly1305 authenticator. Google adopted ChaCha20-Poly1305 in Chrome and Android for TLS connections on devices lacking AES acceleration, and the cipher suite was added to TLS 1.3 as one of only five permitted suites. The cipher is also the sole symmetric cipher of the WireGuard VPN protocol, and OpenSSH implements a chacha20-poly1305 construction for its transport encryption.</p>
+<p>Variants with fewer rounds — ChaCha8 and ChaCha12 — are used where higher throughput is required, for example in some random-number generators; the Linux kernel's <i>getrandom</i> implementation uses ChaCha20.</p>
+
+<h2>Security</h2>
+<p>No practical attack against full ChaCha20 is known. The best published cryptanalysis reaches reduced-round versions of about seven rounds with complexities far above brute force for the 20-round cipher. Because the cipher relies only on ARX operations (add-rotate-XOR), it is naturally resistant to timing side channels that exploit table lookups in software implementations of AES.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Salsa20/index.html">Salsa20</a></li>
+<li><a href="../ChaCha20-Poly1305/index.html">ChaCha20-Poly1305</a></li>
+<li><a href="../Stream_cipher/index.html">Stream cipher</a></li>
+<li><a href="../Poly1305/index.html">Poly1305</a></li>
+</ul>
+</div>
+</body>
+</html>

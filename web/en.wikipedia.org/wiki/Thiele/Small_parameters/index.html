@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thiele/Small parameters</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:920px;margin:0 auto;padding:28px 22px 48px;line-height:1.62;color:#202122;background:#fff}h1{font-size:2.25rem;border-bottom:1px solid #a2a9b1;padding-bottom:.25em;margin-bottom:.4em}h2{border-bottom:1px solid #c8ccd1;margin-top:1.6em;padding-bottom:.15em}.hero{display:block;max-width:100%;min-height:180px;background:#eef3f7;border:1px solid #a7d7f9;text-align:center;padding:56px 12px;box-sizing:border-box;color:#3366cc}.infobox{float:right;width:290px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px 14px;margin:0 0 14px 18px;font-size:.92rem}.infobox th{text-align:left;vertical-align:top;padding-right:8px} @media(max-width:700px){.infobox{float:none;width:auto;margin-left:0}}
+</style>
+</head>
+<body>
+<h1>Thiele/Small parameters</h1>
+<img class="hero" src="images/Small_parameters.png" alt="Placeholder graph of loudspeaker impedance used to derive Thiele/Small parameters">
+<aside class="infobox"><table><tr><th>Named for</th><td>Neville Thiele and Richard H. Small</td></tr><tr><th>Purpose</th><td>Predict low-frequency loudspeaker driver and enclosure behaviour</td></tr><tr><th>Core parameters</th><td>F<sub>s</sub>, Q<sub>ts</sub>, V<sub>as</sub>, R<sub>e</sub>, L<sub>e</sub>, Sd, X<sub>max</sub>, sensitivity</td></tr><tr><th>Model</th><td>Small-signal lumped electromechanical equivalent circuit</td></tr></table></aside>
+<p><strong>Thiele/Small parameters</strong> (often abbreviated T/S parameters) are a standardized set of electromechanical measurements that describe how a loudspeaker driver behaves at low frequencies and small signal levels. They allow designers to model woofers in sealed, ported (bass-reflex), band-pass and other enclosures before building them. The approach derives from the work of Australian engineer Neville Thiele and American physicist Richard H. Small, whose papers in the 1960s and 1970s adapted vented-box filter theory to practical loudspeaker design.</p>
+<h2>Principal parameters</h2>
+<p><strong>F<sub>s</sub></strong> is the free-air resonance frequency of the driver, where the moving mass and suspension compliance resonate. <strong>Q</strong> values describe damping: Q<sub>ms</sub> is mechanical damping, Q<sub>es</sub> is electrical damping through the voice coil and amplifier, and Q<sub>ts</sub> combines them. Low Q<sub>ts</sub> drivers are tightly controlled and often suit vented boxes; higher Q<sub>ts</sub> drivers may be easier to use in sealed or open-baffle systems, though no single rule replaces simulation.</p>
+<p><strong>V<sub>as</sub></strong> is the volume of air whose compliance equals the driver suspension compliance. <strong>R<sub>e</sub></strong> is the DC resistance of the voice coil; <strong>L<sub>e</sub></strong> is its inductance, increasingly modelled with frequency-dependent terms. <strong>Sd</strong> is effective cone area and <strong>X<sub>max</sub></strong> is the one-way linear excursion limit. Together with enclosure volume and tuning, these values predict response, impedance, cone excursion and port velocity.</p>
+<h2>Measurement</h2>
+<p>Parameters are extracted from an impedance sweep around resonance, often with an added known mass or a known test volume to solve compliance. Modern analyzers fit the impedance curve automatically, but results depend on signal level, temperature, driver break-in and mounting. Voice-coil heating changes R<sub>e</sub> and shifts the operating point; suspensions stiffen or soften with excursion and age. Published data sheets are therefore starting points, and production variation can be significant.</p>
+<h2>Use in enclosure design</h2>
+<p>In Thiele’s filter-theory formulation, a vented loudspeaker is analogous to a high-pass filter whose alignment—such as Butterworth-like or Chebyshev-like responses—depends on box volume, port tuning and driver Q and resonance. Small’s synthesis made those relationships computable for designers. Sealed boxes are simpler: enclosure air stiffness raises resonance and total Q, trading low-frequency extension for transient control and excursion protection.</p>
+<p>Simulation software uses T/S parameters to estimate frequency response and maximum output, but the model assumes linearity. At high excursion, force factor (Bl), compliance and inductance vary with position and current, causing distortion and compression not captured by small-signal parameters. Large-signal measurements such as Klippel analysis complement, rather than abolish, the Thiele/Small method.</p>
+<h2>Legacy</h2>
+<p>Before T/S parameters, bass enclosure design depended heavily on cut-and-try craft. Their publication helped turn loudspeaker engineering into a reproducible discipline shared by manufacturers and hobbyists. The parameters remain printed on woofer specification sheets and embedded in design programs, a compact example of how an equivalent circuit can domesticate a complex physical device—provided its limits are remembered.</p>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fat binary - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 760px; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+img.hero { display: block; margin: 1em auto; max-width: 400px; background: #f8f9fa; border: 1px solid #a2a9b1; padding: 1em; text-align: center; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<h1>Fat binary</h1>
+<img class="hero" src="images/Fat_binary.png" alt="Diagram of a fat binary file containing code for multiple architectures">
+<p>A <b>fat binary</b> (or <b>multiarchitecture binary</b>) is a computer executable program or library which has been expanded (or "fattened") with code native to multiple instruction set architectures (ISAs), which can consequently be run on multiple processor types. In the Apple ecosystem such files are called <b>Universal binaries</b>.</p>
+<h2>History</h2>
+<p>The technique originated with NeXTSTEP, which supported Motorola 68k, Intel x86, SPARC, and HP PA-RISC architectures in a single "Multi-Architecture Binary," enabling software distribution on one medium during an architecture transition. Apple adopted the concept when moving Macintosh from 68k to PowerPC in 1994, again for the PowerPC-to-Intel transition in 2006 (Universal binary), and again for the Intel-to-Apple silicon transition in 2020 (Universal 2, combining x86-64 and ARM64).</p>
+<h2>Implementation</h2>
+<p>A fat binary contains a header identifying separate embedded executable images — one per architecture — and the operating system's loader selects the image matching the host processor. The trade-off is larger file size, since machine code is duplicated for each supported ISA. Tools such as Apple's <code>lipo</code> can inspect, merge, and split fat binaries.</p>
+<p>Similar techniques include Android application packages containing native libraries for several ABIs, and "fat JAR" files in Java distribution.</p>
+<p>See also: <a href="../Universal_binary/index.html">Universal binary</a>, <a href="../Mach-O/index.html">Mach-O</a>, <a href="../Cross-platform_software/index.html">Cross-platform software</a>, <a href="../Apple_silicon/index.html">Apple silicon</a>.</p>
+</body>
+</html>

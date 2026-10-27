@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shortest path problem - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#202122;margin:0;background:#fff;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:24px 20px 60px}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:2em;border-bottom:1px solid #a2a9b1;margin:0 0 4px;padding-bottom:4px}
+h2{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:1.5em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+h3{font-size:1.15em;margin-top:1em}
+.tagline{font-size:.85em;color:#54595d;margin-bottom:14px}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:.85em;margin:0 0 14px 18px;border-collapse:collapse}
+.infobox caption{background:#eaecf0;font-weight:bold;padding:6px}
+.infobox th{text-align:left;padding:4px 8px;background:#f0f1f3;vertical-align:top}
+.infobox td{padding:4px 8px}
+.figure{float:right;margin:0 0 12px 18px;text-align:center;font-size:.8em;color:#54595d}
+.figure img{border:1px solid #c8ccd1;background:#f8f9fa;width:240px;height:160px}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+ul{margin:.3em 0 .8em}
+.lead{font-size:1.02em}
+.math{font-style:italic}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Shortest path problem</h1>
+<div class="tagline">From Wikipedia, the free encyclopedia</div>
+<table class="infobox">
+<caption>Shortest path problem</caption>
+<tr><th>Classification</th><td>Graph theory problem</td></tr>
+<tr><th>Input</th><td>Weighted graph, source vertex (and target vertex)</td></tr>
+<tr><th>Output</th><td>Path of minimum total edge weight</td></tr>
+<tr><th>Classical algorithm</th><td>Dijkstra's algorithm (1956)</td></tr>
+<tr><th>Complexity</th><td>Polynomial; O(|E| + |V| log |V|) with a Fibonacci heap</td></tr>
+</table>
+<div class="figure"><img src="images/shortest_path_problem.png" alt="Diagram of a weighted graph with its shortest path highlighted"></div>
+<p class="lead">In graph theory, the <b>shortest path problem</b> is the problem of finding a path between two vertices (or nodes) in a graph such that the sum of the weights of its constituent edges is minimized. The problem of finding the shortest path between two intersections on a road map may be modeled as a special case of the shortest path problem in graphs, where the vertices correspond to intersections and the edges correspond to road segments, each weighted by the length of the segment.</p>
+<p>The shortest path problem can be defined for graphs whether undirected, directed, or mixed. It is defined here for undirected graphs; for directed graphs the definition of path requires that consecutive vertices be connected by an appropriate directed edge.</p>
+<h2>Definition</h2>
+<p>The shortest path problem can be defined either for graphs with weighted edges or for unweighted graphs. In the unweighted case, the goal is to minimize the number of edges traversed. More generally, each edge is assigned a real-valued weight, and the weight of a path is the sum of the weights of its edges. A shortest path between two vertices <span class="math">s</span> and <span class="math">t</span> is a path from <span class="math">s</span> to <span class="math">t</span> whose weight is minimum among all <span class="math">s</span>–<span class="math">t</span> paths. Problems in this family include the single-source shortest path problem, the single-destination problem, and the all-pairs shortest path problem.</p>
+<h2>Algorithms</h2>
+<p>The most important algorithms for solving the shortest path problem are:</p>
+<ul>
+<li><b>Dijkstra's algorithm</b>, which solves the single-source problem for graphs with nonnegative edge weights, producing a shortest-path tree.</li>
+<li>The <b>Bellman–Ford algorithm</b>, which solves the single-source problem in the general case in which edge weights may be negative. It can also detect negative-weight cycles.</li>
+<li>The <b>Floyd–Warshall algorithm</b>, which solves the all-pairs problem by dynamic programming.</li>
+<li><b>Johnson's algorithm</b>, which solves the all-pairs problem more efficiently on sparse graphs by combining Bellman–Ford and Dijkstra.</li>
+<li>The <b>A* search algorithm</b>, which solves the single-pair problem using heuristics to speed up the search.</li>
+<li><b>Breadth-first search</b>, which solves the problem for unweighted graphs.</li>
+</ul>
+<h2>Applications</h2>
+<p>Shortest path algorithms are applied to automatically find directions between physical locations, such as driving directions on web mapping websites. In computer networking, they underpin routing protocols such as OSPF, which is based on Dijkstra's algorithm. Variants of the problem also model problems in operations research, robotics, transportation engineering, and VLSI design, where a "path" may be a sequence of decisions rather than a physical route.</p>
+<h2>Generalizations and related problems</h2>
+<p>Related problems include the traveling salesman problem, which asks for the shortest path that visits every vertex; the K shortest path problem, which asks for the K shortest paths between two vertices; and the widest path problem, which maximizes the capacity of the minimum-capacity edge along a path. In stochastic or time-dependent networks, edge weights may vary with time or with probability, giving rise to further generalizations used in transportation science.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Graph_theory/index.html">Graph theory</a></li>
+<li><a href="../Dijkstra's_algorithm/index.html">Dijkstra's algorithm</a></li>
+<li><a href="../Travelling_salesman_problem/index.html">Travelling salesman problem</a></li>
+<li><a href="../Network_routing/index.html">Network routing</a></li>
+</ul>
+</div>
+</body>
+</html>

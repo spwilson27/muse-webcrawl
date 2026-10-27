@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Simultaneous localization and mapping - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#fff;color:#202122;margin:0;padding:0;line-height:1.6}
+#content{max-width:960px;margin:0 auto;padding:20px 30px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:28px;margin-bottom:5px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:22px;margin-top:28px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 15px 20px;border-collapse:collapse}
+.infobox th,.infobox td{border:1px solid #a2a9b1;padding:4px 8px;text-align:left;vertical-align:top}
+.infobox .ib-title{background:#b0c4de;text-align:center;font-weight:bold;font-size:15px}
+.hero{margin:10px 0}
+.hero img{max-width:100%;border:1px solid #a2a9b1;background:#eaecf0}
+.caption{font-size:12px;color:#54595d}
+.small{font-size:13px}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Simultaneous localization and mapping</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<tr><th colspan="2" class="ib-title">SLAM</th></tr>
+<tr><th>Field</th><td>Robotics, computer vision</td></tr>
+<tr><th>Function</th><td>Build a map of an unknown environment while localizing within it</td></tr>
+<tr><th>Sensors</th><td>Lidar, cameras, sonar, inertial measurement units</td></tr>
+<tr><th>Key algorithms</th><td>EKF-SLAM, FastSLAM, ORB-SLAM, graph SLAM</td></tr>
+</table>
+<div class="hero"><img src="images/Simultaneous_localization_and_mapping.png" alt="A robot building a map of its surroundings while tracking its own position"><p class="caption">A robot estimating its trajectory and a map of landmarks simultaneously.</p></div>
+<p><b>Simultaneous localization and mapping</b> (SLAM) is the computational problem of constructing or updating a map of an unknown environment while simultaneously keeping track of an agent's location within it. It is central to autonomous robotics: a robot dropped into an unfamiliar place has no map and does not know where it is, yet must solve for both at once — a chicken-and-egg problem resolved by probabilistic estimation.</p>
+<h2>Approaches</h2>
+<p>Early solutions used extended Kalman filters (EKF-SLAM) to jointly estimate robot pose and landmark positions. Particle-filter methods such as FastSLAM factored the problem differently. Modern systems often formulate SLAM as a graph optimization: poses and landmarks are nodes whose constraints are minimized together, and revisiting a known place ("loop closure") corrects accumulated drift.</p>
+<h2>Visual SLAM</h2>
+<p>Visual SLAM uses cameras — monocular, stereo, or RGB-D — instead of lidar. Systems such as ORB-SLAM track distinctive image features to estimate camera motion and build sparse 3D maps in real time. Visual-inertial odometry, fusing camera data with inertial sensors, underlies the tracking in smartphones and AR headsets.</p>
+<h2>Applications</h2>
+<p>SLAM powers self-driving cars, warehouse and domestic robots (including robot vacuum cleaners that map homes), drones, underwater vehicles, augmented-reality devices, and planetary rovers.</p>
+<h2>See also</h2>
+<p><a href="../Robotic_mapping/index.html">Robotic mapping</a> &middot; <a href="../Kalman_filter/index.html">Kalman filter</a> &middot; <a href="../Computer_vision/index.html">Computer vision</a> &middot; <a href="../Lidar/index.html">Lidar</a></p>
+</div>
+</body>
+</html>

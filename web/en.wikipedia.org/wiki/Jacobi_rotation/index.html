@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Jacobi rotation - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:800px;padding:0 1em;color:#222;line-height:1.6}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+img.hero{background:#f8f9fa;border:1px solid #a2a9b1;padding:2em;display:block;text-align:center;color:#72777d;margin:1em auto;max-width:400px}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>Jacobi rotation</h1>
+<p>In <a href="../../Numerical_linear_algebra/index.html">numerical linear algebra</a>, a <b>Jacobi rotation</b> is a <a href="../../Rotation_(mathematics)/index.html">rotation</a> of a two-dimensional linear subspace of an <i>n</i>-dimensional inner product space, chosen to zero out a symmetric pair of off-diagonal entries of an <i>n</i> × <i>n</i> real matrix. It is named after the German mathematician <a href="../../Carl_Gustav_Jacob_Jacobi/index.html">Carl Gustav Jacob Jacobi</a>.</p>
+<img class="hero" src="images/Jacobi_rotation.png" alt="Diagram of a Jacobi rotation">
+<h2>Definition</h2>
+<p>A Jacobi rotation matrix <i>J</i>(<i>p</i>, <i>q</i>, θ) is an identity matrix except in rows and columns <i>p</i> and <i>q</i>, where a 2×2 rotation appears. Applying the similarity transformation <i>A</i>′ = <i>J</i><sup>T</sup><i>AJ</i> with the rotation angle chosen appropriately makes the (<i>p</i>, <i>q</i>) and (<i>q</i>, <i>p</i>) entries of <i>A</i>′ vanish. The angle is computed from the entries of the matrix; a numerically stable formulation uses the quantity τ = (a<sub>qq</sub> − a<sub>pp</sub>) / (2a<sub>pq</sub>) and t = sign(τ) / (|τ| + √(1 + τ²)).</p>
+<h2>Applications</h2>
+<p>Jacobi rotations are the basis of the <b>Jacobi eigenvalue algorithm</b>, which iteratively applies rotations to drive all off-diagonal entries of a symmetric matrix to zero, converging to a diagonal matrix whose entries are the eigenvalues, while the accumulated rotations give the eigenvectors. They are also used in computing the singular value decomposition and in the classical Jacobi method for solving linear systems. Although superseded for large dense problems by the QR algorithm, the Jacobi method is highly accurate for certain matrix classes and is well suited to parallel computation.</p>
+</body>
+</html>

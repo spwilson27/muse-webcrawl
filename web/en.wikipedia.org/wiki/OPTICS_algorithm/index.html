@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OPTICS algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;box-shadow:0 0 6px rgba(0,0,0,.1)}
+h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-weight:normal}
+h2{font-family:sans-serif;border-bottom:1px solid #a2a9b1;font-size:1.25em;margin-top:1.2em}
+p{line-height:1.6;font-size:0.95em}
+.hero{display:block;margin:16px auto;max-width:420px;width:100%;height:220px;background:#e8eef4;border:1px solid #a2a9b1;text-align:center;line-height:220px;color:#54595d;font-family:sans-serif}
+a{color:#0645ad;text-decoration:none}
+ul{line-height:1.6;font-size:0.95em}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>OPTICS algorithm</h1>
+<img class="hero" src="images/optics_algorithm.png" alt="A reachability plot produced by the OPTICS clustering algorithm, with valleys indicating clusters">
+<p><b>OPTICS</b> (<b>Ordering Points To Identify the Clustering Structure</b>) is a density-based clustering algorithm for finding clusters in spatial and other multivariate data. It was introduced by Mihael Ankerst, Markus Breunig, Hans-Peter Kriegel and Jörg Sander in a 1999 paper. OPTICS is closely related to DBSCAN but addresses one of its main weaknesses: detecting meaningful clusters in data of varying density.</p>
+<h2>Method</h2>
+<p>Instead of producing a single clustering for a fixed radius parameter, OPTICS computes an ordering of the points together with their "reachability distances". Two quantities are central:</p>
+<ul>
+<li>The <b>core distance</b> of a point: the distance to its MinPts-th nearest neighbour, if the point is a core point.</li>
+<li>The <b>reachability distance</b> of a point with respect to a core point: the maximum of the core distance and the actual distance between them.</li>
+</ul>
+<p>The algorithm processes points in an order such that spatially close points become neighbours in the ordering. Plotting reachability distance against this order gives a <b>reachability plot</b>, in which clusters appear as valleys: clusters of different densities can be recognised simultaneously, and a DBSCAN-like clustering for any radius up to the chosen maximum can be extracted from the ordering. Like DBSCAN, OPTICS classifies points in sparse regions as noise and does not require the number of clusters in advance.</p>
+<h2>Complexity and use</h2>
+<p>With a spatial index, OPTICS runs in roughly O(n log n) time; without one, in quadratic time. The algorithm is implemented in libraries such as ELKI, scikit-learn, Weka and R packages, and is used in data mining, astronomy, and anomaly detection where clusters of varying density occur.</p>
+</div>
+</body>
+</html>

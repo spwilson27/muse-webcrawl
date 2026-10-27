@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Confused deputy problem - Wikipedia</title>
+<style>
+body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; color: #202122; }
+h1 { border-bottom: 1px solid #a2a9b1; font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; }
+h2 { border-bottom: 1px solid #a2a9b1; font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; }
+img.hero { max-width: 300px; display: block; margin: 10px 0; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 10px; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<h1>Confused deputy problem</h1>
+<img class="hero" src="images/Confused_deputy_problem.png" alt="Diagram of a confused deputy attack">
+<p>In information security, a <b>confused deputy</b> is a <a href="../Computer_program/index.html">computer program</a> that is tricked by another program (or user) into misusing its authority on the third party's behalf. It is a specific type of <a href="../Privilege_escalation/index.html">privilege escalation</a>. The term and the classic example were set out by Norm Hardy in 1988.</p>
+
+<h2>The classic example</h2>
+<p>Hardy described a compiler program on a timesharing system that also wrote billing statistics to a file it alone was authorized to access. Users could specify the name of an output file for debugging information; by naming the billing file, a user could trick the compiler — the "deputy" holding special privileges — into overwriting it. The compiler was "confused" because it could not distinguish its own authority from the authority the user asked it to exercise.</p>
+
+<h2>General pattern</h2>
+<p>The problem arises whenever a privileged program acts on designations (such as file names) supplied by a less privileged party without checking that the party has the corresponding rights. Familiar examples include cross-site request forgery on the web, setuid programs misled by arguments or environment, and cloud services that act on attacker-supplied resource identifiers. </p>
+
+<h2>Solutions</h2>
+<p>The <a href="../Capability-based_security/index.html">capability-based security</a> model addresses the problem by designating resources with unforgeable tokens that themselves convey authority, so designation and authorization cannot come apart. Other mitigations include careful separation of privileges and validating that the requester is authorized for each requested resource.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Cross-site_request_forgery/index.html">Cross-site request forgery</a></li>
+<li><a href="../Object-capability_model/index.html">Object-capability model</a></li>
+<li><a href="../Time-of-check_to_time-of-use/index.html">Time-of-check to time-of-use</a></li>
+</ul>
+</body>
+</html>

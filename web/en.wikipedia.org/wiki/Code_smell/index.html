@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Code smell - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine','Georgia',serif;max-width:960px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.5em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 15px 15px;font-size:0.9em;font-family:sans-serif}
+.infobox img{max-width:100%}
+.caption{font-size:0.85em;color:#54595d;text-align:center}
+</style>
+</head>
+<body>
+<h1>Code smell</h1>
+<div class="infobox">
+<img src="images/Code_smell.png" alt="Illustration of a developer sensing a code smell">
+<div class="caption">A code smell hints at a deeper design problem</div>
+<p><b>Coined by:</b> Kent Beck (popularised by Martin Fowler, <i>Refactoring</i>, 1999)</p>
+<p><b>Related:</b> Anti-pattern, technical debt</p>
+</div>
+<p>In computer programming, a <b>code smell</b> is any characteristic in the source code of a program that possibly indicates a deeper problem. The term was coined by Kent Beck and popularised by Martin Fowler in the 1999 book <i>Refactoring</i>. A smell is not necessarily a bug — the code may work correctly — but a surface symptom that usually corresponds to a weakness in design that can slow development, increase the risk of future bugs, and make the code harder to understand and change. Determining what counts as a smell is subjective and varies by language, project and reviewer.</p>
+<h2>Common code smells</h2>
+<p>Fowler's catalogue, expanded in the book's second edition (2018), includes:</p>
+<p><b>Bloaters</b> — code that has grown too large to work with comfortably: Long Method, Large Class, Long Parameter List, and Primitive Obsession (using primitive types where a small class would do).</p>
+<p><b>Change preventers</b> — structures that make a change in one place require many changes elsewhere: Divergent Change and Shotgun Surgery.</p>
+<p><b>Dispensables</b> — things that can be removed without harm: Duplicated Code, Dead Code, Lazy Class, Speculative Generality, and excessive Comments used to deodorise confusing code.</p>
+<p><b>Couplers</b> — excessive coupling between classes: Feature Envy, Inappropriate Intimacy, Message Chains, and Middle Man.</p>
+<p><b>Object-orientation abusers</b> — Switch Statements used in place of polymorphism, Refused Bequest (a subclass that does not use inherited behaviour), and Temporary Fields.</p>
+<h2>Treatment</h2>
+<p>The standard remedy for smells is <a href="../Code_refactoring/index.html">refactoring</a> — small, behaviour-preserving transformations such as Extract Method for a long function or replacing duplicated logic with a shared abstraction. Automated static-analysis tools can detect some smells (duplicate blocks, excessive complexity, overly long methods) and are often wired into code review pipelines, though many smells remain matters of engineering judgement.</p>
+<p><i>See also: <a href="../Code_refactoring/index.html">Code refactoring</a>, <a href="../Anti-pattern/index.html">Anti-pattern</a>, <a href="../Technical_debt/index.html">Technical debt</a></i></p>
+</body>
+</html>

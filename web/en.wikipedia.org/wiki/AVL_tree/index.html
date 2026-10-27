@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AVL tree - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:52em;line-height:1.6;color:#202122}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1}
+.infobox{float:right;width:16em;border:1px solid #a2a9b1;background:#f8f9fa;padding:.5em;margin:0 0 1em 1em;font-size:.9em}
+.infobox th{text-align:left}
+img.hero{display:block;margin:1em 0;max-width:100%}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>AVL tree</h1>
+<table class="infobox">
+<tr><th>Type</th><td>Tree (self-balancing binary search tree)</td></tr>
+<tr><th>Invented</th><td>1962</td></tr>
+<tr><th>Invented by</th><td>Georgy Adelson-Velsky, Evgenii Landis</td></tr>
+<tr><th>Search / insert / delete</th><td>O(log n)</td></tr>
+</table>
+<img class="hero" src="images/AVL_tree.png" alt="AVL tree rotation diagram placeholder">
+<p>In computer science, an <b>AVL tree</b> (named after inventors <b>Adelson-Velsky</b> and <b>Landis</b>) is a self-balancing <a href="../Binary_search_tree/index.html">binary search tree</a>, and the first such data structure to be invented. In an AVL tree, the heights of the two child subtrees of any node differ by at most one; if they differ by more than one, rebalancing is performed to restore the property. Lookup, insertion, and deletion all take O(log n) time in both the average and worst cases.</p>
+<h2>Balance factor</h2>
+<p>Each node stores a balance factor equal to the height of its right subtree minus the height of its left subtree. A node with balance factor 1, 0, or −1 is considered balanced. Insertions and deletions that push a node's factor to 2 or −2 are repaired with single or double rotations — the so-called left-left, left-right, right-right, and right-left cases.</p>
+<h2>Comparison</h2>
+<p>AVL trees are more strictly balanced than <a href="../Red–black_tree/index.html">red–black trees</a>, so they provide faster lookups at the cost of somewhat slower insertion and deletion due to more frequent rotations. The height of an AVL tree with n nodes is bounded by about 1.44 log<sub>2</sub>(n+2), guaranteeing that the tree never degenerates into a linked list. AVL trees are used where search dominates, and they also appear in teaching as the canonical example of rotation-based balancing.</p>
+<h2>History</h2>
+<p>Adelson-Velsky and Landis published the structure in a 1962 Soviet paper, "An algorithm for the organization of information." It predates the red–black tree by a decade and established the paradigm of maintaining a height-balance invariant under updates.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Red–black_tree/index.html">Red–black tree</a></li>
+<li><a href="../Binary_search_tree/index.html">Binary search tree</a></li>
+<li><a href="../B-tree/index.html">B-tree</a></li>
+</ul>
+</body>
+</html>

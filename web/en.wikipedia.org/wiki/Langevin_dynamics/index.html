@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Langevin dynamics - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; margin-top: 28px; }
+.tagline { font-size: 0.85em; color: #54595d; margin-bottom: 16px; }
+p { line-height: 1.6; margin: 0.5em 0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 270px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 0.85em; margin: 0 0 12px 16px; padding: 8px; }
+.infobox th { text-align: left; padding: 2px 6px; vertical-align: top; }
+.infobox td { padding: 2px 6px; }
+.infobox .title { background: #e8e8e8; text-align: center; font-weight: bold; font-size: 1.05em; }
+.hero { text-align: center; margin: 8px 0; }
+.hero img { max-width: 240px; background: #eaecf0; }
+.caption { font-size: 0.8em; color: #54595d; }
+ul { line-height: 1.6; }
+.eq { font-family: 'Courier New', monospace; background: #f8f9fa; border: 1px solid #eaecf0; padding: 8px 12px; margin: 12px 0; overflow-x: auto; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Langevin dynamics</h1>
+<div class="tagline">From Wikipedia, the free encyclopedia</div>
+
+<div class="infobox">
+<div class="title">Langevin dynamics</div>
+<div class="hero"><img src="images/langevin-dynamics.png" alt="Brownian motion trajectory"></div>
+<div class="caption" style="text-align:center;">Simulated Brownian trajectory from Langevin dynamics</div>
+<table>
+<tr><th>Field</th><td>Statistical mechanics, molecular simulation</td></tr>
+<tr><th>Named after</th><td>Paul Langevin</td></tr>
+<tr><th>Governing equation</th><td>Langevin equation (stochastic differential equation)</td></tr>
+</table>
+</div>
+
+<p><b>Langevin dynamics</b> is an approach to the mathematical modelling of the dynamics of molecular systems. It was originally developed by French physicist Paul Langevin. The approach is characterized by the use of simplified models while accounting for omitted degrees of freedom by the use of stochastic differential equations. Langevin dynamics simulations are a form of Monte Carlo and molecular dynamics simulation in which solvent effects are treated implicitly.</p>
+
+<h2>The Langevin equation</h2>
+<p>A particle of mass M with position X subject to a potential U(X) obeys the Langevin equation:</p>
+<div class="eq">M d²X/dt² = −∇U(X) − γ (dX/dt) + √(2γk<sub>B</sub>T) R(t)</div>
+<p>Here γ is a friction (damping) coefficient, k<sub>B</sub> is Boltzmann's constant, T is the temperature, and R(t) is a delta-correlated Gaussian random process — the "noise" representing collisions with solvent molecules. The friction and noise terms are linked by the fluctuation–dissipation theorem, so the dynamics sample the correct canonical (Boltzmann) distribution at temperature T. A Langevin dynamics simulation therefore acts as a thermostat, maintaining constant temperature in molecular dynamics.</p>
+
+<h2>Applications</h2>
+<p>Langevin dynamics is widely used to simulate polymers, proteins, and colloids in implicit solvent, to enhance sampling of rare events, and as the basis of stochastic gradient Langevin dynamics in machine learning for Bayesian sampling of neural network parameters. In the overdamped (high-friction) limit, inertial terms are neglected and the equation reduces to Brownian dynamics. Numerical integration schemes include the Euler–Maruyama method and more accurate splittings such as BAOAB, designed to preserve equilibrium distributions with large time steps.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Langevin_equation/index.html">Langevin equation</a></li>
+<li><a href="../Molecular_dynamics/index.html">Molecular dynamics</a></li>
+<li><a href="../Brownian_motion/index.html">Brownian motion</a></li>
+</ul>
+</div>
+</body>
+</html>

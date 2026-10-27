@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Shared library</title>
+<style>body{font-family:Georgia,serif;max-width:760px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{border-bottom:2px solid #a2a9b1}h2{border-bottom:1px solid #c8ccd1}.hero{background:#eaecf0;border:1px solid #a2a9b1;text-align:center;padding:2em 1em;color:#54595d;font-style:italic}</style></head>
+<body>
+<h1>Shared library</h1>
+<div class="hero"><img src="images/shared-library.png" alt="Multiple programs loading a single shared library into memory"></div>
+<p>In computing, a <b>shared library</b> (or <b>shared object</b>) is a file containing machine code that can be loaded and used by multiple programs at run time, rather than being copied into each program at compile time as with a static library. Shared libraries are the foundation of dynamic linking on modern operating systems.</p>
+<h2>How it works</h2>
+<p>A shared library is compiled as position-independent code and stored in a standard file — <code>.so</code> files on Linux and other Unix-like systems, <code>.dll</code> (dynamic-link library) files on Windows, and <code>.dylib</code> files on macOS. When a program starts, the operating system's dynamic loader maps the library into the process's address space and resolves its symbols. Because the code pages are shared between processes, memory usage is reduced and a library can be updated once to benefit all its users.</p>
+<h2>Advantages and drawbacks</h2>
+<p>Shared libraries save disk space and RAM, allow security fixes to be deployed centrally, and let programs use common system services uniformly. Their drawbacks include dependency management problems — famously "DLL hell" on Windows — version incompatibilities when an updated library breaks older programs, and a small run-time overhead for dynamic symbol resolution and position-independent code. Techniques such as symbol versioning, the <code>soname</code> convention on Linux, and prelinking mitigate these issues.</p>
+<h2>See also</h2>
+<p>Library (computing) · Dynamic linker · Static library · DLL hell</p>
+</body></html>

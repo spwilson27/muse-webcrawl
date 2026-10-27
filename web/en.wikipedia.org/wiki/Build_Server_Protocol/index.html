@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Build Server Protocol - Wikipedia</title>
+<style>
+body{font-family:sans-serif;line-height:1.6;max-width:900px;margin:0 auto;padding:1em;color:#202122}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:.3em}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+img.hero{display:block;max-width:300px;margin:0 auto .5em auto}
+.caption{font-size:.85em;color:#54595d;text-align:center}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Build Server Protocol</h1>
+<p><img class="hero" src="images/Build_Server_Protocol.png" alt="Diagram of an editor communicating with a build server over the Build Server Protocol"><span class="caption">An editor communicating with a build server over BSP</span></p>
+<p>The <b>Build Server Protocol</b> (<b>BSP</b>) is an open protocol for communication between development tools — such as editors and IDEs — and build servers, analogous to the <a href="../Language_Server_Protocol/index.html">Language Server Protocol</a> (LSP) for language intelligence. It was created by the Scala Center and first published in 2018.</p>
+<h2>Purpose</h2>
+<p>Build tools such as sbt, Bazel, Gradle and Mill already know how a project is structured: its targets, dependencies, source directories and compilation settings. Before BSP, every editor had to reimplement integration with each build tool, or duplicate its logic. BSP standardises the interface so that any editor can ask any build server for project structure, compile targets, run tests, and receive diagnostics and build events.</p>
+<h2>How it works</h2>
+<p>BSP is based on JSON-RPC, like LSP, and can run over standard input/output, sockets, or other transports. A client first sends an <code>initialize</code> request, then queries the server for build targets and their capabilities. The server reports compilation status, diagnostics, and task progress, and the client can request compilation, testing, and running of targets. BSP deliberately complements LSP: LSP handles editing features such as completion and hover, while BSP handles build concerns such as compilation and classpath.</p>
+<h2>Adoption</h2>
+<p>BSP is supported by sbt, Mill, Bazel (via rules and plugins), and build servers for Scala, Java, Kotlin and other JVM languages. Editors including IntelliJ IDEA, VS Code (via the Metals extension), Neovim and Emacs can connect to BSP servers, giving developers a consistent experience across build tools.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Language_Server_Protocol/index.html">Language Server Protocol</a></li>
+<li><a href="../Sbt_(software)/index.html">Sbt (software)</a></li>
+<li><a href="../Integrated_development_environment/index.html">Integrated development environment</a></li>
+</ul>
+</body>
+</html>

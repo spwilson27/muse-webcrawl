@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Datalog - Wikipedia</title><style>body{font-family:sans-serif;line-height:1.6;margin:2em auto;max-width:50em;padding:0 1em;color:#202122}h1{border-bottom:1px solid #a2a9b1;font-weight:normal}img.hero{display:block;width:100%;max-height:220px;object-fit:cover;background:#eaecf0}figure.hero{margin:0 0 1em;border:1px solid #a2a9b1;background:#f8f9fa;padding:4px;text-align:center;font-size:.85em}a{color:#36c;text-decoration:none}</style></head>
+<body>
+<figure class="hero"><img class="hero" src="images/datalog.png" alt="Example Datalog rules"><figcaption>Image placeholder: Datalog</figcaption></figure>
+<h1>Datalog</h1>
+<p><b>Datalog</b> is a declarative logic programming language that is a subset of <a href="../Prolog/index.html">Prolog</a>. It is particularly suited for expressing queries over relational databases: a Datalog program consists of facts and rules (Horn clauses without function symbols), and evaluation computes all facts derivable from the program, guaranteeing termination because the set of possible conclusions is finite.</p>
+<h2>Syntax and semantics</h2>
+<p>A rule such as <code>ancestor(X,Y) :- parent(X,Z), ancestor(Z,Y)</code> states that X is an ancestor of Y if X is a parent of some Z who is an ancestor of Y. Semantics are given by the least fixed point (least Herbrand model) of the program, which can be computed bottom-up by repeatedly applying rules until no new facts appear, or top-down with memoisation. Stratified negation allows <code>not</code> in rule bodies provided dependencies are not cyclic.</p>
+<h2>History and use</h2>
+<p>Datalog emerged from research on deductive databases in the late 1970s and 1980s. Interest revived in the 2000s with systems such as Soufflé and LogicBlox applying it to program analysis, points-to analysis for compilers, security policies, networking, and as the query language of graph and RDF databases. Its combination of recursion and declarative queries exceeds the expressiveness of basic relational algebra while remaining decidable and efficiently evaluable.</p>
+<h2>See also</h2>
+<ul><li><a href="../Prolog/index.html">Prolog</a></li><li><a href="../Logic_programming/index.html">Logic programming</a></li><li><a href="../Relational_algebra/index.html">Relational algebra</a></li></ul>
+</body></html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Network Time Protocol - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; line-height: 1.6; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 1.9em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 12px; }
+.caption { font-size: 0.85em; color: #54595d; }
+ul { padding-left: 1.6em; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Network Time Protocol</h1>
+<p>The <b>Network Time Protocol</b> (<b>NTP</b>) is a networking protocol for clock synchronization between computer systems over packet-switched, variable-latency data networks. In operation since before 1985, NTP is one of the oldest Internet protocols in current use. NTP was designed by David L. Mills of the University of Delaware.</p>
+<div class="hero"><img src="images/network-time-protocol.png" alt="Diagram of NTP stratum hierarchy from reference clocks to client computers"><div class="caption">NTP uses a hierarchy of time servers organized into strata.</div></div>
+<h2>Operation</h2>
+<p>NTP is intended to synchronize all participating computers to within a few milliseconds of Coordinated Universal Time (UTC). It uses the intersection algorithm, a modified version of Marzullo's algorithm, to select accurate time servers and is designed to mitigate the effects of variable network latency. NTP can usually maintain time to within tens of milliseconds over the public Internet, and can achieve better than one millisecond accuracy in local area networks under ideal conditions.</p>
+<p>Servers are organized in a hierarchy of <i>strata</i>: stratum 0 devices are reference clocks such as atomic clocks or GPS receivers; stratum 1 servers are directly attached to them; and each successive layer is one degree of separation further from the reference source. NTP uses UDP on port 123. The current version, NTPv4, is specified in RFC 5905.</p>
+<h2>Clock strata and timestamps</h2>
+<p>NTP timestamps count seconds from 1 January 1900 with a 32-bit seconds field and a 32-bit fractional field, giving a rollover roughly every 136 years; the first era rollover occurs in 2036. Clients exchange timestamps with servers and compute both offset and round-trip delay, adjusting their local clocks by slewing or stepping.</p>
+<h2>Security issues</h2>
+<p>Historically, unauthenticated NTP was abused for reflection and amplification DDoS attacks, notably via the monlist command. Network Time Security (NTS), standardized in RFC 8915, adds cryptographic authentication for NTP.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Precision_Time_Protocol/index.html">Precision Time Protocol</a></li>
+<li><a href="../Coordinated_Universal_Time/index.html">Coordinated Universal Time</a></li>
+<li><a href="../David_L._Mills/index.html">David L. Mills</a></li>
+</ul>
+</div>
+</body>
+</html>

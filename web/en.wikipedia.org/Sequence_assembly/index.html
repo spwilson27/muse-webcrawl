@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sequence assembly - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:16px 24px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+p,li{line-height:1.6;font-size:15px}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px 12px;margin:0 0 12px 16px;font-size:13px}
+.infobox th{text-align:left;padding:2px 6px 2px 0;vertical-align:top}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.note{font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Sequence assembly</h1>
+<img class="hero" src="images/Sequence_assembly.png" alt="Overlapping DNA reads being assembled into a contig">
+<div class="infobox">
+<table>
+<tr><th>Field</th><td>Bioinformatics, genomics</td></tr>
+<tr><th>Input</th><td>Short DNA sequence reads</td></tr>
+<tr><th>Output</th><td>Contigs, scaffolds, genome assembly</td></tr>
+<tr><th>Key algorithms</th><td>Overlap–layout–consensus; de Bruijn graphs</td></tr>
+<tr><th>Notable tools</th><td>SPAdes, Velvet, SOAPdenovo, Flye, Canu</td></tr>
+</table>
+</div>
+<p><b>Sequence assembly</b> refers to aligning and merging fragments from a longer DNA sequence in order to reconstruct the original sequence. Because current <a href="../DNA_sequencing/index.html">DNA sequencing</a> technologies cannot read whole chromosomes in one pass, genomes are sequenced as millions of short <i>reads</i> (from tens to tens of thousands of bases long), which assembly software then stitches together into longer contiguous sequences called <b>contigs</b>, and ultimately into scaffolds approximating whole chromosomes.</p>
+<h2>Approaches</h2>
+<p>Two broad strategies dominate. <b>Overlap–layout–consensus (OLC)</b> finds overlaps between all pairs of reads, arranges them into a layout, and derives a consensus sequence; it was used for Sanger-sequenced genomes and remains standard for long reads (Canu, Flye, hifiasm). <b>De Bruijn graph</b> methods break reads into short k-mers and build a graph in which k-mers are nodes or edges; an Eulerian path through the graph yields the assembly. This approach powers short-read assemblers such as SPAdes, Velvet and SOAPdenovo, which were essential to projects like the 1000 Genomes Project.</p>
+<h2>Challenges</h2>
+<p>Assembly is complicated by sequencing errors, repetitive DNA (repeats longer than the read length cannot be resolved), heterozygosity in diploid genomes, and uneven coverage. Assembly quality is commonly summarised by metrics such as <b>N50</b> (the contig length at which contigs of that length or longer cover half the assembly) and by completeness measures such as BUSCO. Long-read technologies (PacBio HiFi, Oxford Nanopore) have dramatically improved assemblies, enabling the first complete telomere-to-telomere human genome in 2022.</p>
+<h2>De novo vs. reference-guided</h2>
+<p>In <i>de novo</i> assembly, reads are assembled without any prior template. In reference-guided (mapping) assembly, reads are aligned to a known reference genome, which is faster but can miss novel sequences and structural variants. Many modern pipelines combine both strategies. Sequence assembly is a foundational step in genomics, metagenomics, transcriptomics (e.g. Trinity for RNA-seq) and pathogen surveillance.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Bioinformatics/index.html">Bioinformatics</a></li>
+<li><a href="../Human_Genome_Project/index.html">Human Genome Project</a></li>
+<li><a href="../De_Bruijn_graph/index.html">De Bruijn graph</a></li>
+<li><a href="../Shotgun_sequencing/index.html">Shotgun sequencing</a></li>
+</ul>
+<p class="note">References: Miller, Koren &amp; Sutton, "Assembly algorithms for next-generation sequencing data", <i>Genomics</i> (2010); Nurk et al., "The complete sequence of a human genome", <i>Science</i> (2022).</p>
+</div>
+</body>
+</html>

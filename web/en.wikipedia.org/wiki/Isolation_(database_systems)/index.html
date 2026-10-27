@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Isolation (database systems) - Wikipedia</title>
+<style>
+body{font-family:sans-serif;line-height:1.6;margin:0;padding:20px;color:#222;max-width:900px;margin-left:auto;margin-right:auto}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:5px;margin-bottom:10px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:25px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{margin:15px 0;text-align:center}
+.hero img{max-width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:10px;min-height:120px;display:block;margin:0 auto;width:80%}
+.caption{font-size:0.85em;color:#54595d;margin-top:5px}
+</style>
+</head>
+<body>
+<h1>Isolation (database systems)</h1>
+<p>In <a href="../Database/index.html">database systems</a>, <b>isolation</b> is one of the four <a href="../ACID/index.html">ACID</a> properties of transactions. It determines how and when changes made by one <a href="../Database_transaction/index.html">transaction</a> become visible to concurrent transactions, ensuring that concurrently executing transactions do not interfere with each other and that the database remains consistent.</p>
+<div class="hero"><img src="images/isolation.png" alt="Concurrent transactions diagram"><div class="caption">Isolation controls the visibility of concurrent transactions.</div></div>
+<h2>Isolation levels</h2>
+<p>The <a href="../SQL/index.html">SQL</a> standard defines four isolation levels, in increasing order of strictness: <b>read uncommitted</b>, <b>read committed</b>, <b>repeatable read</b> and <b>serializable</b>. Weaker levels allow phenomena such as dirty reads, non-repeatable reads and phantom reads, but offer better concurrency and performance; serializable isolation guarantees that concurrent transactions produce the same result as some serial execution.</p>
+<h2>Implementation</h2>
+<p>Isolation is typically implemented with <a href="../Lock_(computer_science)/index.html">locking</a> (two-phase locking) or with <a href="../Multiversion_concurrency_control/index.html">multiversion concurrency control</a> (MVCC), in which readers access snapshots of the data. Many modern systems default to read committed or snapshot isolation.</p>
+</body>
+</html>

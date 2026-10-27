@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Stack overflow</title>
+<style>body{font-family:Georgia,serif;max-width:860px;margin:2em auto;padding:0 1em;color:#202122;line-height:1.6}h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{font-size:1.35em;border-bottom:1px solid #eaecf0;padding-bottom:.15em;margin-top:1.2em}.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.9em}.infobox th{text-align:left;vertical-align:top;padding-right:.5em}a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}img.hero{display:block;max-width:100%;background:#eaecf0;min-height:180px}</style></head>
+<body>
+<h1>Stack overflow</h1>
+<div class="infobox"><table>
+<tr><th>Type</th><td>Runtime error / software bug</td></tr>
+<tr><th>Cause</th><td>Excessive call-stack usage</td></tr>
+<tr><th>Common trigger</th><td>Unbounded recursion</td></tr>
+<tr><th>Typical outcome</th><td>Program crash (segmentation fault)</td></tr>
+</table></div>
+<img class="hero" src="images/stack-overflow.png" alt="Diagram of a call stack growing beyond its allocated limit">
+<p>In software, a <b>stack overflow</b> occurs when a program uses more memory than is available on the call stack. The result is usually a program crash, and in some runtimes the condition is raised as a catchable error or exception.</p>
+<h2>Causes</h2>
+<p>The most common cause is excessive or infinite recursion: each nested function call pushes a new stack frame, and if recursion has no reachable base case — or a base case that requires too deep a call chain — the stack grows until it exceeds its limit. Very deep but finite recursion, large local variables declared on the stack, and unbounded mutual recursion can produce the same failure.</p>
+<h2>Behaviour by platform</h2>
+<p>In C and similar languages the overflow typically manifests as a segmentation fault when the stack grows into an unmapped guard page. Managed runtimes make the condition explicit: the Java Virtual Machine throws a <code>StackOverflowError</code>, and .NET raises a <code>StackOverflowException</code> which, in modern versions, cannot be caught and terminates the process.</p>
+<h2>Mitigations</h2>
+<p>Programmers avoid stack overflows by converting recursion to iteration, using explicit heap-allocated stacks, adding depth limits, or relying on tail-call optimisation where the language guarantees it. The stack overflow should not be confused with the buffer overflow, a different vulnerability in which a program writes beyond the bounds of a buffer; a stack buffer overflow is a specific security-relevant subtype.</p>
+<h2>See also</h2>
+<p><a href="../Call_stack/index.html">Call stack</a> · <a href="../Recursion_(computer_science)/index.html">Recursion</a> · <a href="../Buffer_overflow/index.html">Buffer overflow</a> · <a href="../Stack_Overflow/index.html">Stack Overflow (website)</a></p>
+</body></html>

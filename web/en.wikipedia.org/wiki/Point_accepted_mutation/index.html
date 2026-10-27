@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Point accepted mutation - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 28px; }
+img.hero { display: block; margin: 16px auto; max-width: 420px; background: #eaecf0; padding: 40px 0; text-align: center; }
+p { line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+table { border-collapse: collapse; margin: 12px 0; }
+td, th { border: 1px solid #a2a9b1; padding: 4px 8px; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Point accepted mutation</h1>
+<img class="hero" src="images/point-accepted-mutation.png" alt="Part of a PAM substitution matrix">
+<p>A <b>point accepted mutation</b> — also known as a PAM — is the replacement of a single amino acid in the primary structure of a protein with another amino acid, where the change has been accepted by natural selection. The term is most widely encountered in the <b>PAM matrices</b>, a series of amino acid substitution matrices developed by Margaret Dayhoff and co-workers in the 1970s, which were among the first tools used to score sequence alignments in bioinformatics.</p>
+
+<h2>Construction</h2>
+<p>Dayhoff and her colleagues compiled an atlas of protein sequences and counted substitutions among closely related proteins (at least 85% identical), so that each observed change could be treated as a single evolutionary step with little chance of multiple substitutions or reversals at the same site. From these counts they built a Markov chain model of protein evolution: the PAM1 matrix gives the probability of one amino acid changing into another over a short evolutionary distance, defined so that an average of 1 accepted point mutation occurs per 100 residues — i.e. 1 PAM unit of evolutionary divergence.</p>
+
+<h2>Higher PAM matrices</h2>
+<p>Longer evolutionary distances are modelled by multiplying the PAM1 transition matrix by itself: PAM100, for example, corresponds to the matrix raised to the 100th power. Commonly used scoring matrices are log-odds matrices derived from these probabilities, comparing the likelihood of a substitution under the evolutionary model with the likelihood expected by chance. PAM250, corresponding to a fairly large divergence (roughly 20% sequence identity remaining), was widely used for aligning distantly related sequences.</p>
+
+<h2>Comparison with BLOSUM</h2>
+<p>The PAM matrices have largely been supplemented by the BLOSUM matrices, which are derived directly from conserved blocks in the BLOCKS database rather than by extrapolating from close relatives. BLOSUM62 is the default scoring matrix in many search programs such as BLAST, though PAM matrices remain in use and are conceptually important as an early, explicit evolutionary model of sequence change.</p>
+
+<p><i>See also: BLOSUM, Sequence alignment, Substitution matrix, Margaret Oakley Dayhoff.</i></p>
+</div>
+</body>
+</html>

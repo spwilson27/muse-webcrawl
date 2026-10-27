@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Barnes–Hut simulation - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:90%}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+a{color:#0645ad;text-decoration:none}
+.hero{border:1px solid #c8ccd1;background:#eaecf0;text-align:center;padding:30px 10px;color:#54595d;font-style:italic}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Barnes–Hut simulation</h1>
+<table class="infobox">
+<tr><th>Developed by</th><td>Josh Barnes and Piet Hut (1986)</td></tr>
+<tr><th>Class</th><td>N-body simulation algorithm</td></tr>
+<tr><th>Time complexity</th><td>O(n log n)</td></tr>
+<tr><th>Data structure</th><td>Octree (3D), quadtree (2D)</td></tr>
+</table>
+<div class="hero"><img src="images/barnes-hut-simulation.png" alt="An octree subdivision used in a Barnes–Hut simulation (image placeholder)"></div>
+<p>The <b>Barnes–Hut simulation</b> is an approximation algorithm for performing an n-body simulation. It is notable for having order O(n log n) complexity, compared with a direct-sum algorithm which would be O(n²). The algorithm is named after Josh Barnes and Piet Hut, who described it in a 1986 paper in <i>Nature</i>.</p>
+<h2>Algorithm</h2>
+<p>The simulation volume is usually divided into cubic cells via an octree (in three dimensions); in two dimensions a quadtree is used. Only nearby particles interact directly; distant groups of particles are treated as a single large particle located at the group's center of mass. If a cell is sufficiently far from a particle, all particles in the cell are approximated by one pseudo-particle, dramatically reducing the number of force calculations.</p>
+<h2>The opening-angle criterion</h2>
+<p>Whether a cell can be treated as a single particle is decided by the multipole acceptance criterion. If <i>s</i> is the width of a cell and <i>d</i> is the distance from the particle to the cell's center of mass, the cell is "opened" and its children examined individually when s/d exceeds a threshold θ (theta), commonly around 0.5 to 1.0. Smaller θ gives more accurate but slower calculations; θ = 0 recovers the direct-sum method.</p>
+<h2>Applications</h2>
+<p>The Barnes–Hut algorithm is widely used in astrophysics to simulate galaxy collisions, star clusters, and structure formation in cosmology, and variants of the tree method underpin many gravitational simulation codes. The same idea of hierarchical grouping is used for fast multipole methods and for layout algorithms such as t-SNE in machine learning.</p>
+</div>
+</body>
+</html>

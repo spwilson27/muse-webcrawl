@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Matrix multiplication algorithm</title>
+<style>body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;color:#202122;line-height:1.6}h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #c8ccd1;font-size:1.4em;margin-top:1.2em}.hero{display:block;margin:1em auto;max-width:420px;background:#eef;border:1px dashed #88a;padding:2.5em 1em;text-align:center;color:#446}a{color:#0645ad}code{background:#f8f9fa;padding:0 .2em}</style></head>
+<body>
+<h1>Matrix multiplication algorithm</h1>
+<img class="hero" src="images/matrix-multiplication.png" alt="Illustration of matrix multiplication">
+<p>Because matrix multiplication is such a central operation in many fields, various <b>algorithms</b> have been developed to multiply matrices efficiently. The naive algorithm, following the definition, multiplies two n×n matrices in Θ(n<sup>3</sup>) arithmetic operations. Faster algorithms reduce the exponent ω of matrix multiplication, defined as the infimum of exponents k such that two n×n matrices can be multiplied in O(n<sup>k</sup>) operations.</p>
+<h2>Strassen's algorithm</h2>
+<p>In 1969, Volker Strassen published the first algorithm faster than O(n<sup>3</sup>), achieving approximately O(n<sup>2.807</sup>) operations by using seven multiplications instead of eight when recursively multiplying 2×2 block matrices. Strassen's algorithm is of practical value for moderately large matrices.</p>
+<h2>Coppersmith–Winograd and later algorithms</h2>
+<p>The Coppersmith–Winograd algorithm (1990) achieved O(n<sup>2.376</sup>). Subsequent improvements by Stothers, Vassilevska Williams, Le Gall, and others brought the exponent down progressively; in the 2020s, work by Duan, Wu, Zhou, and by Alman, Duan, Vassilevska Williams, Xu, Xu, and Zhou reduced ω below 2.372. These "galactic" algorithms have large hidden constants and are not used in practice.</p>
+<h2>Practical considerations</h2>
+<p>In practice, cache-efficient blocking, the BLAS libraries, and hardware acceleration (such as GPUs and tensor cores) dominate real-world performance. Algorithms also exploit sparsity, structure, and parallelism. For rectangular matrices and chains of multiplications, the order of operations (matrix chain multiplication) further affects cost.</p>
+</body></html>

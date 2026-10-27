@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SIGBUS - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.6;color:#202122}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:1.4em}
+.hero{display:block;max-width:100%;height:220px;background:#f8f9fa;border:1px solid #c8ccd1;color:#72777d;text-align:center;line-height:220px;font-style:italic;margin:16px 0}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:12px;margin:0 0 12px 16px;width:250px;font-size:0.9em}
+.infobox th{text-align:left;padding-right:8px}
+a{color:#0645ad;text-decoration:none}
+code{background:#f8f9fa;padding:1px 4px;border:1px solid #eaecf0}
+</style>
+</head>
+<body>
+<h1>SIGBUS</h1>
+<img class="hero" src="images/sigbus.png" alt="Diagram of a processor generating a bus error signal">
+<p><b>SIGBUS</b> is a signal in computer programming, sent by an operating system to a process when it causes a <b>bus error</b>. On POSIX systems, SIGBUS is typically generated when a process attempts a memory access that the hardware cannot complete — for example, accessing a memory-mapped file beyond its end, or performing an unaligned memory access on an architecture that requires alignment.</p>
+<p>The symbolic constant for SIGBUS is defined in the header file <code>signal.h</code>. Its signal number varies across platforms; on Linux on x86-64 it is 7. The name is an abbreviation of "bus error".</p>
+<div class="infobox">
+<table>
+<tr><th>Signal</th><td>SIGBUS</td></tr>
+<tr><th>Number (Linux x86-64)</th><td>7</td></tr>
+<tr><th>Default action</th><td>Terminate with core dump</td></tr>
+<tr><th>Domain</th><td>Unix and Unix-like operating systems</td></tr>
+</table>
+</div>
+<h2>Causes</h2>
+<p>Common causes of a bus error include:</p>
+<ul>
+<li><b>Accessing beyond the end of a memory-mapped file</b> — for example, using <code>mmap</code> on a file and reading or writing past the region backed by the file's size.</li>
+<li><b>Unaligned access</b> — attempting to read or write a multi-byte value at an address not aligned to its size, on architectures (such as SPARC and some ARM configurations) that require natural alignment.</li>
+<li><b>Accessing a hole in a truncated file or device mapping</b> that has been shrunk after mapping.</li>
+</ul>
+<h2>Comparison with SIGSEGV</h2>
+<p>SIGBUS is often confused with SIGSEGV (segmentation fault). Generally, SIGSEGV is raised when a process accesses a virtual address that has no valid mapping at all, whereas SIGBUS is raised when the address is mapped but the access cannot be physically completed or violates architectural constraints such as alignment.</p>
+<h2>Handling</h2>
+<p>Like other signals, SIGBUS can be caught with a handler installed via <code>sigaction</code>, although recovery is often impractical. By default, the process is terminated and a core dump is produced, allowing the failure to be debugged post-mortem.</p>
+</body>
+</html>

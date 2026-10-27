@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Covariance and contravariance (computer science) - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#fff;color:#202122}
+#content{max-width:960px;margin:0 auto;padding:1.5em 2em}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+p,li{line-height:1.6;font-size:.95em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+code{background:#f8f9fa;border:1px solid #eaecf0;padding:0 .2em}
+.hero{display:block;margin:1em auto;max-width:420px;width:100%;border:1px solid #c8ccd1;background:#eef;padding:2em 0;text-align:center;color:#555}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Covariance and contravariance (computer science)</h1>
+<img class="hero" src="images/Covariance_and_contravariance_(computer_science).png" alt="Diagram showing variance relationships between types">
+<p>In <a href="../Type_theory/index.html">type theory</a>, a <a href="../Type_system/index.html">type system</a> is said to have <b>variance</b> if it describes how a type constructor's subtyping relationship changes depending on whether its type parameters are subtypes or supertypes of one another. A type constructor (such as a generic collection type or a function type) can be:</p>
+<ul>
+<li><b>Covariant</b> — if it preserves the ordering of types: if <code>A</code> is a subtype of <code>B</code>, then <code>F&lt;A&gt;</code> is a subtype of <code>F&lt;B&gt;</code>.</li>
+<li><b>Contravariant</b> — if it reverses the ordering: if <code>A</code> is a subtype of <code>B</code>, then <code>F&lt;B&gt;</code> is a subtype of <code>F&lt;A&gt;</code>.</li>
+<li><b>Invariant</b> — if neither relationship holds: <code>F&lt;A&gt;</code> and <code>F&lt;B&gt;</code> are unrelated unless <code>A</code> and <code>B</code> are the same type.</li>
+<li><b>Bivariant</b> — if both relationships hold, making the types interchangeable (rare and generally unsound or used for compatibility).</li>
+</ul>
+<h2>Examples</h2>
+<p>A read-only collection of <code>Cat</code> values can safely be treated as a read-only collection of <code>Animal</code> values, so a read-only list is covariant in its element type. Conversely, a "consumer" of <code>Animal</code> values (such as a function accepting an <code>Animal</code>) can be used where a consumer of <code>Cat</code> values is expected, because it can accept any animal, including cats; this makes function parameter types contravariant, while return types are covariant.</p>
+<p>A mutable array or list is typically invariant: allowing a <code>List&lt;Cat&gt;</code> to be used as a <code>List&lt;Animal&gt;</code> would let a program insert a <code>Dog</code> into it, breaking type safety. Java famously made arrays covariant, which can produce a runtime <code>ArrayStoreException</code> and is now widely regarded as an unsound design choice mitigated by generics.</p>
+<h2>Language support</h2>
+<p>Languages such as <a href="../C_Sharp_(programming_language)/index.html">C#</a>, Scala, Kotlin and TypeScript support declaration-site variance annotations (<code>out</code>/<code>in</code>, <code>+</code>/<code>-</code>), while Java uses use-site variance through wildcards such as <code>? extends T</code> (covariant) and <code>? super T</code> (contravariant), guided by the mnemonic <i>PECS</i>: "producer extends, consumer super".</p>
+<p>See also: <a href="../Subtyping/index.html">Subtyping</a> · <a href="../Liskov_substitution_principle/index.html">Liskov substitution principle</a> · <a href="../Parametric_polymorphism/index.html">Parametric polymorphism</a></p>
+</div>
+</body>
+</html>

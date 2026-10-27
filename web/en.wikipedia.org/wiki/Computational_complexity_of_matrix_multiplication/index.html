@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Computational complexity of matrix multiplication - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f6f6f6;color:#202122}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;min-height:100vh}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+img.hero{max-width:320px;float:right;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:4px}
+a{color:#0645ad;text-decoration:none}
+.math{font-style:italic;background:#f8f9fa;padding:8px 14px;display:inline-block;margin:6px 0}
+.ref{font-size:90%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Computational complexity of matrix multiplication</h1>
+<img class="hero" src="images/Computational_complexity_of_matrix_multiplication.png" alt="Computational complexity of matrix multiplication">
+<p>In <a href="../Theoretical_computer_science/">theoretical computer science</a>, the <b>computational complexity of matrix multiplication</b> asks how many arithmetic operations are needed to multiply two matrices. The naive algorithm, following the definition of <a href="../Matrix_multiplication/">matrix multiplication</a>, computes the product of two n×n matrices in Θ(n<sup>3</sup>) operations. The central question is the value of the <b>matrix multiplication exponent</b> ω, defined as the infimum of all real numbers ω such that two n×n matrices can be multiplied in O(n<sup>ω</sup>) operations. It is known that 2 ≤ ω &lt; 2.372, and determining whether ω = 2 remains a major open problem.</p>
+<h2>Strassen's algorithm</h2>
+<p>In 1969, <a href="../Volker_Strassen/">Volker Strassen</a> published the first algorithm faster than n<sup>3</sup>, multiplying two 2×2 matrices with only seven multiplications (instead of eight) at the cost of more additions. Recursing gives <a href="../Strassen_algorithm/">Strassen's algorithm</a> with complexity O(n<sup>log<sub>2</sub> 7</sup>) ≈ O(n<sup>2.807</sup>), proving ω &lt; 2.807. Strassen's algorithm is of practical use for moderately large matrices.</p>
+<h2>Subsequent improvements</h2>
+<p>A long line of work improved the exponent: the Coppersmith–Winograd algorithm (1990) reached ω &lt; 2.376; refinements by Stothers (2010), Virginia Vassilevska Williams (2012), and Le Gall (2014) brought it to about 2.3729. In 2020, Josh Alman and Vassilevska Williams announced ω &lt; 2.37286, and subsequent improvements by Duan, Wu, and Zhou (2022) and by Vassilevska Williams and collaborators (2023–2024) have lowered the bound further, to roughly 2.3716 or below. These highly optimized "galactic algorithms" involve enormous constant factors and crossover points far beyond practical matrix sizes, so they are not used in practice.</p>
+<h2>Fast matrix multiplication in practice</h2>
+<p>Practical high-performance libraries implement the naive algorithm with heavy optimization (blocking, vectorization, GPU tensor cores), with Strassen's algorithm used for large inputs. Related problems include multiplying rectangular matrices (relevant to its applications in graph algorithms), lower bounds in restricted models, and the complexity of other linear-algebra operations, most of which are reducible to matrix multiplication.</p>
+<h2>Applications and connections</h2>
+<p>Fast matrix multiplication underlies fast algorithms for <a href="../Matrix_inversion/">matrix inversion</a>, determinant computation, <a href="../Transitive_closure/">transitive closure</a>, distance products, and triangle detection in graphs. The value of ω also appears in the complexity of parsing context-free grammars (Valiant's algorithm) and other combinatorial problems.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Strassen_algorithm/">Strassen algorithm</a></li>
+<li><a href="../Coppersmith–Winograd_algorithm/">Coppersmith–Winograd algorithm</a></li>
+<li><a href="../Matrix_multiplication_algorithm/">Matrix multiplication algorithm</a></li>
+<li><a href="../Freivalds'_algorithm/">Freivalds' algorithm</a></li>
+</ul>
+<p class="ref">This article is a recreation from memory of the Wikipedia article "Computational complexity of matrix multiplication".</p>
+</div>
+</body>
+</html>

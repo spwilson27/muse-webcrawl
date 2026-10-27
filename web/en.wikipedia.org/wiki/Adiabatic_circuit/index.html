@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Adiabatic circuit - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;color:#202122;background:#fff}
+.mw-body{max-width:960px;margin:0 auto;padding:1em 1.5em}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal;font-size:1.9em;margin-bottom:.2em}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+a{color:#36c;text-decoration:none}
+a:hover{text-decoration:underline}
+figure.thumb{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.4em;margin:0 0 1em 1em;width:240px;font-size:.85em;text-align:center}
+figure.thumb img{width:100%;background:#e0e0e0;display:block;min-height:140px}
+.ref{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Adiabatic circuit</h1>
+<p><b>Adiabatic circuits</b> are low-power electronic circuits which use "reversible logic" to conserve energy. The term originates from the <a href="../Adiabatic_process/index.html">adiabatic process</a> in thermodynamics, in which a system changes state without exchanging heat with its surroundings; by analogy, adiabatic circuits change the voltages on their nodes slowly enough that most of the energy stored on capacitances can be returned to the power supply rather than dissipated as heat. Unlike traditional <a href="../CMOS/index.html">CMOS</a> circuits, which dissipate energy during every switching event, adiabatic circuits reduce energy loss by controlling the transistor switching process.</p>
+<figure class="thumb"><img src="images/adiabatic-circuit.png" alt="Schematic of an adiabatic logic gate with a sinusoidal power clock"><figcaption>An adiabatic logic family uses a slowly varying "power clock" to charge and discharge nodes with minimal dissipation.</figcaption></figure>
+<h2>Principles</h2>
+<p>In a conventional CMOS gate, charging a load capacitance <i>C</i> to the supply voltage dissipates ½<i>CV</i>² of energy in the resistance of the charging path, and the stored ½<i>CV</i>² is dumped to ground on discharge. If instead the voltage is ramped slowly over a time <i>T</i>, the energy dissipated falls in proportion to 1/<i>T</i> — formally about (<i>RC</i>/<i>T</i>)<i>CV</i>² — and, crucially, the charge can be returned to the supply on the way down. Adiabatic circuits therefore use a time-varying power supply (the <i>power clock</i>), avoid ever turning on a transistor with a large voltage across it, and avoid ever turning off a transistor carrying current. These constraints make adiabatic logic closely related to <a href="../Reversible_computing/index.html">reversible computing</a> and to charge-recovery logic families.</p>
+<h2>Logic families</h2>
+<p>Several adiabatic and quasi-adiabatic families have been proposed, including ECRL (efficient charge recovery logic), PFAL (positive feedback adiabatic logic), 2N-2N2P, and various "stepwise charging" schemes that use a staircase of supply voltages to approximate a smooth ramp. Quasi-adiabatic families simplify the design by allowing small non-adiabatic losses in exchange for simpler gates and conventional clocking, and are the most practical for real designs.</p>
+<h2>Applications and limitations</h2>
+<p>Adiabatic techniques are attractive for extremely energy-constrained devices — implantable electronics, RFID tags, and sensor nodes — where energy per operation matters more than speed. However, they are slower than conventional logic (because transitions must be gradual), require complex multi-phase power clocks and resonant energy-recovery supplies, and their energy advantage shrinks as leakage and the overhead of the power-clock generator are accounted for. Consequently, adiabatic circuits remain largely a research topic and a niche solution rather than a mainstream replacement for CMOS.</p>
+<p class="ref">See also: <a href="../Reversible_computing/index.html">Reversible computing</a>; <a href="../Low-power_electronics/index.html">Low-power electronics</a>; <a href="../Landauer%27s_principle/index.html">Landauer's principle</a>.</p>
+</div>
+</body>
+</html>

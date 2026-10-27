@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Small-step semantics - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#f6f6f6;color:#202122;margin:0;padding:0}
+main{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border:1px solid #a7d7f9}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:6px;margin-bottom:12px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:28px}
+img.hero{max-width:100%;height:auto;display:block;margin:16px auto;border:1px solid #c8ccd1;background:#eef;padding:8px}
+p{line-height:1.6}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<main>
+<h1>Small-step semantics</h1>
+<img class="hero" src="images/Small-step_semantics.png" alt="Reduction steps of an arithmetic expression evaluated one step at a time">
+<p>In programming language theory, <b>small-step semantics</b>, also known as <b>structural operational semantics</b> or <b>reduction semantics</b>, is a style of operational semantics that describes how the individual steps of a computation are performed. Rather than mapping a program directly to its final result, a small-step semantics defines a one-step reduction relation between program configurations, typically written <code>e → e′</code>, and a full execution is a sequence of such steps ending in a value (or diverging).</p>
+<h2>Contrast with big-step semantics</h2>
+<p>Small-step semantics contrasts with <b>big-step semantics</b> (natural semantics), which relates a program directly to the value it evaluates to, written <code>e ⇓ v</code>. Because big-step judgements only describe terminating computations that produce values, they cannot readily distinguish between a program that loops forever and one that gets stuck on an error. Small-step semantics makes intermediate states explicit, so it can model divergence, stuck states, interleaving of concurrent threads, and interactive or reactive behaviour step by step.</p>
+<h2>Form and rules</h2>
+<p>A small-step semantics is usually presented as a set of inference rules over configurations, which may pair an expression with a state, store, environment, or continuation. Congruence rules specify which subterm is reduced next, thereby fixing an evaluation strategy such as call-by-value or call-by-name. The approach originates in Gordon Plotkin's 1981 lecture notes on structural operational semantics (SOS), which provided a uniform framework for defining the behaviour of programming constructs.</p>
+<h2>Applications</h2>
+<p>Structural operational semantics is a standard tool in the formal study of programming languages. It is used to prove type soundness (through progress and preservation lemmas), to define abstract machines, to reason about program equivalence, and to give precise specifications of real languages — most famously the Definition of Standard ML, which uses a related style. Small-step relations also support reasoning about non-termination and are the natural setting for labelled transition systems and bisimulation in process calculi.</p>
+</main>
+</body>
+</html>

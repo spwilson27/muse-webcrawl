@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Simultaneous localization and mapping - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; color: #202122; background: #fff; }
+header { background: #f8f9fa; border-bottom: 1px solid #a2a9b1; padding: 12px 24px; }
+header .site { font-family: sans-serif; font-size: 0.85em; color: #54595d; }
+main { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #eaecf0; padding-bottom: 4px; font-weight: normal; margin-top: 1.4em; }
+p { line-height: 1.6; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; margin: 0 0 16px 20px; font-size: 0.85em; font-family: sans-serif; }
+.infobox th { background: #b0c4de; padding: 6px; text-align: center; }
+.infobox td { padding: 4px 8px; border-top: 1px solid #eaecf0; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #a2a9b1; background: #eaecf0; }
+.caption { font-size: 0.85em; color: #54595d; font-family: sans-serif; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia, the free encyclopedia</span></header>
+<main>
+<h1>Simultaneous localization and mapping</h1>
+<table class="infobox">
+<tr><th colspan="2">SLAM</th></tr>
+<tr><td><b>Field</b></td><td>Robotics, computer vision</td></tr>
+<tr><td><b>Problem</b></td><td>Build a map of an unknown environment while tracking the agent's position within it</td></tr>
+<tr><td><b>Typical sensors</b></td><td>Lidar, cameras, sonar, IMU, wheel odometry</td></tr>
+<tr><td><b>Key methods</b></td><td>EKF SLAM, FastSLAM, graph-based SLAM, visual SLAM (e.g. ORB-SLAM)</td></tr>
+</table>
+<p><b>Simultaneous localization and mapping</b> (<b>SLAM</b>) is the computational problem of constructing or updating a map of an unknown environment while simultaneously keeping track of an agent's location within it. It is a foundational capability for autonomous robots, self-driving cars, drones, and augmented-reality devices, which must navigate places for which no accurate map exists beforehand.</p>
+<div class="hero"><img src="images/slam.png" alt="A robot building an occupancy-grid map of a room while estimating its own trajectory"><div class="caption">SLAM output: a floor-plan map (right) built while the robot's path is estimated along the way.</div></div>
+<h2>The problem</h2>
+<p>SLAM is a "chicken-and-egg" problem: an accurate map is needed to localize, but an accurate pose estimate is needed to build the map. Sensor measurements are noisy, and odometry errors accumulate without bound unless the robot recognizes previously visited places — <b>loop closure</b> — and uses those recognitions to correct its whole trajectory. The problem was formulated probabilistically in the late 1980s and 1990s by researchers including Hugh Durrant-Whyte, John J. Leonard, Randall Smith, and Peter Cheeseman.</p>
+<h2>Approaches</h2>
+<p>Early practical systems used the extended Kalman filter (EKF SLAM) to jointly estimate robot pose and landmark positions; Rao-Blackwellized particle filters (FastSLAM) later scaled the method to larger maps. Modern systems are typically organized as a front end (feature extraction and data association from lidar or camera data) and a back end that optimizes a graph of poses and constraints. Visual SLAM systems such as ORB-SLAM use camera imagery alone and run in real time; lidar SLAM dominates in self-driving vehicles and warehouse robots, while products like robot vacuum cleaners use simpler variants for home mapping.</p>
+<h2>Applications</h2>
+<p>SLAM is used in autonomous vehicles, planetary rovers, underwater and aerial robots, warehouse automation, handheld 3D scanning, and the inside-out tracking of virtual- and augmented-reality headsets.</p>
+<h2>See also</h2>
+<p><a href="../Mobile_robot/index.html">Mobile robot</a> · <a href="../Monte_Carlo_localization/index.html">Monte Carlo localization</a> · <a href="../Kalman_filter/index.html">Kalman filter</a> · <a href="../Structure_from_motion/index.html">Structure from motion</a></p>
+</main>
+</body>
+</html>

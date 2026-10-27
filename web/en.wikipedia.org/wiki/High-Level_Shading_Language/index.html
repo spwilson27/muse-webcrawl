@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>High-Level Shading Language - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:960px;margin:0 auto;padding:20px;background:#fff;color:#202122;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-family:'Linux Libertine',Georgia,serif}
+h2{font-size:1.5em;border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;margin:0 0 1em 1em;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;width:270px;font-size:.9em}
+.infobox th{text-align:left;padding:2px 6px}
+.infobox td{padding:2px 6px}
+.imgbox{text-align:center;margin:1em 0;background:#f8f9fa;border:1px solid #a2a9b1;padding:12px}
+pre{background:#f8f9fa;border:1px solid #a2a9b1;padding:10px;overflow:auto}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>High-Level Shading Language</h1>
+<table class="infobox">
+<tr><th>Paradigm</th><td>Imperative, C-like</td></tr>
+<tr><th>Developer</th><td>Microsoft</td></tr>
+<tr><th>First appeared</th><td>2002 (DirectX 9)</td></tr>
+<tr><th>File extension</th><td>.hlsl, .fx</td></tr>
+</table>
+<p>The <b>High-Level Shading Language</b> (<b>HLSL</b>) is a proprietary shading language developed by Microsoft for use with the Direct3D API. It is analogous to the GLSL language used by OpenGL and Vulkan, but specific to the Microsoft platform. HLSL programs come in several forms: vertex shaders, pixel (fragment) shaders, geometry shaders, compute shaders, and, with DirectX Raytracing, ray tracing shaders.</p>
+<div class="imgbox"><img src="images/High-Level_Shading_Language.png" alt="Screenshot of a scene rendered with HLSL shaders in Direct3D"></div>
+<h2>History</h2>
+<p>HLSL was introduced with DirectX 9 in 2002, replacing hand-written assembly shaders. Microsoft developed it in collaboration with Nvidia, whose parallel Cg language shared much of its syntax. Later versions of the language added support for Shader Model 4.0 (DirectX 10), tessellation shaders (Shader Model 5.0, DirectX 11) and compute, and the open-source DirectX Shader Compiler (DXC), based on LLVM/Clang, which compiles HLSL to DXIL and, through SPIR-V output, enables use with Vulkan.</p>
+<h2>Language features</h2>
+<p>HLSL is syntactically similar to C, with built-in vector and matrix types (such as <code>float4</code> and <code>float4x4</code>), swizzling and masking operators, intrinsic functions for common graphics operations, and semantics (such as <code>SV_Position</code>) that bind shader inputs and outputs to pipeline stages. Programs are compiled offline or at runtime into an intermediate bytecode.</p>
+<pre>float4 main(float4 pos : SV_POSITION) : SV_TARGET
+{
+    return float4(1.0f, 0.0f, 0.0f, 1.0f);
+}</pre>
+<h2>See also</h2>
+<p><a href="../GLSL/index.html">GLSL</a> · <a href="../Direct3D/index.html">Direct3D</a> · <a href="../Shader/index.html">Shader</a> · <a href="../Cg_(programming_language)/index.html">Cg</a></p>
+<p class="small">From Wikipedia, the free encyclopedia.</p>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Google File System - Wikipedia</title>
+<style>body{font-family:Georgia,serif;margin:2em auto;max-width:820px;padding:0 1em;line-height:1.6;color:#202122}h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;font-weight:normal}h2{border-bottom:1px solid #a2a9b1;font-weight:normal}a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}.hero{display:block;margin:1em auto;max-width:480px;width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:2em 0;text-align:center;color:#72777d}</style>
+</head><body>
+<h1>Google File System</h1>
+<img class="hero" src="images/Google_File_System.png" alt="Google File System architecture diagram">
+<p><b>Google File System</b> (<b>GFS</b> or <b>GoogleFS</b>, not to be confused with the GFS Linux file system) is a proprietary distributed file system developed by Google to provide efficient, reliable access to data using large clusters of commodity hardware. It was designed to meet Google's escalating data processing needs in the early 2000s and was described in a 2003 paper by Sanjay Ghemawat, Howard Gobioff and Shun-Tak Leung.</p>
+<h2>Design</h2>
+<p>Files are divided into fixed-size 64-megabyte chunks, each replicated at least three times across chunkservers. A single master maintains all metadata and coordinates operations such as leasing chunks for mutation. GFS assumes component failures are routine rather than exceptional, optimises for large streaming reads and appends rather than small random writes, and relaxes consistency in favour of throughput. It underpinned services such as Bigtable and MapReduce workloads.</p>
+<h2>Legacy</h2>
+<p>GFS strongly influenced open-source systems: the Hadoop Distributed File System (HDFS) was modelled on the published GFS design. Google later replaced it internally with a successor system known as Colossus, which distributes the master role and supports far greater scale.</p>
+</body></html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Compiler correctness - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f6f6f6;color:#202122}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;min-height:100vh}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+img.hero{max-width:320px;float:right;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:4px}
+a{color:#0645ad;text-decoration:none}
+.ref{font-size:90%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Compiler correctness</h1>
+<img class="hero" src="images/Compiler_correctness.png" alt="Compiler correctness">
+<p>In <a href="../Computer_science/">computer science</a>, <b>compiler correctness</b> is the discipline concerned with proving that a <a href="../Compiler/">compiler</a> correctly implements the <a href="../Semantics_(computer_science)/">semantics</a> of the language it compiles: informally, that the compiled program behaves as prescribed by the source program. Because compilers are complex pieces of software, miscompilation bugs can silently introduce errors or security vulnerabilities into otherwise correct programs, so establishing correctness is a significant goal of <a href="../Formal_verification/">formal verification</a> research.</p>
+<h2>Approaches</h2>
+<h3>Formal verification of a compiler</h3>
+<p>The most rigorous approach is to construct the compiler itself together with a machine-checked proof of its correctness, typically using a <a href="../Proof_assistant/">proof assistant</a> such as Coq. The best-known example is <b><a href="../CompCert/">CompCert</a></b>, a formally verified optimizing compiler for a large subset of the <a href="../C_(programming_language)/">C</a> programming language, developed by Xavier Leroy and collaborators at Inria. CompCert's correctness theorem states that the observable behaviour of the generated assembly code is one of the behaviours allowed by the source program's semantics. Evaluations have found that CompCert's generated code performs comparably to GCC at moderate optimization levels, and controlled experiments (such as the Csmith random-testing study of Yang et al., 2011) found no miscompilation bugs in CompCert's verified components, unlike the many found in mainstream compilers.</p>
+<h3>Translation validation</h3>
+<p><b>Translation validation</b> checks, for each individual compilation run, that the output program refines the input program. Rather than verifying the compiler once and for all, a separate validator — itself much simpler than the compiler — verifies the equivalence or refinement of each translation, so any existing, unverified compiler can be used.</p>
+<h3>Testing</h3>
+<p>In practice, most compiler correctness assurance comes from extensive testing: conformance suites, regression tests, differential testing between compilers, and randomized program generation with fuzzers such as <b>Csmith</b>, which generates random C programs and compares the outputs of different compilers to find discrepancies revealing bugs.</p>
+<h2>Challenges</h2>
+<p>Correctness proofs require formal semantics for both the source language and the target architecture; memory models, undefined behaviour, and floating-point semantics are especially subtle. Verified compilation has also been extended to verified compilation toolchains that include assemblers and linkers, as in the CakeML project for a dialect of ML.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../CompCert/">CompCert</a></li>
+<li><a href="../Formal_verification/">Formal verification</a></li>
+<li><a href="../Compiler/">Compiler</a></li>
+<li><a href="../Refinement_(computing)/">Refinement (computing)</a></li>
+</ul>
+<p class="ref">This article is a recreation from memory of the Wikipedia article "Compiler correctness".</p>
+</div>
+</body>
+</html>

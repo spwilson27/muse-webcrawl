@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Denormalization - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:900px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:5px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{text-align:center;margin:20px 0}
+.hero img{max-width:400px;background:#f8f9fa;border:1px solid #eaecf0;padding:10px}
+</style>
+</head>
+<body>
+<h1>Denormalization</h1>
+<p><b>Denormalization</b> is a strategy used on a previously-normalized <a href="../Database/index.html">database</a> to increase performance. In computing, denormalization is the process of trying to improve the read performance of a database, at the expense of losing some write performance, by adding redundant copies of data or by grouping data.</p>
+<div class="hero"><img src="images/Denormalization.png" alt="Schema diagram showing redundant data added to a normalized database"></div>
+<h2>Motivation</h2>
+<p>A normalized design often requires joins between many tables to answer a query. When queries are frequent and joins expensive, database designers may deliberately reintroduce redundancy — for example, storing a customer's name on each order record — so that common read operations avoid joins. Denormalization is typically applied after <a href="../Database_normalization/index.html">database normalization</a> has produced a clean logical design, and only where performance measurements justify it.</p>
+<h2>Techniques</h2>
+<ul>
+<li>Adding redundant columns duplicated from another table</li>
+<li>Storing derived or precomputed values, such as totals</li>
+<li>Joining tables together into a single wide table</li>
+<li>Maintaining summary tables and materialized views</li>
+</ul>
+<h2>Trade-offs</h2>
+<p>Denormalized databases can suffer from update anomalies: if a copied value changes, every copy must be updated consistently. Write operations become slower and the design is harder to modify. Denormalization is therefore a deliberate trade-off of data integrity risk and write cost for read speed, and is common in data warehousing, reporting systems, and NoSQL designs.</p>
+<p><i>See also: <a href="../Database_normalization/index.html">Database normalization</a>, <a href="../Materialized_view/index.html">Materialized view</a></i></p>
+</body>
+</html>

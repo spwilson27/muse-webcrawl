@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pitman–Yor process - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; max-width: 860px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 8px; }
+.caption { font-size: 0.85em; color: #54595d; }
+a { color: #3366cc; text-decoration: none; }
+</style>
+</head>
+<body>
+<h1>Pitman–Yor process</h1>
+<div class="hero"><img src="images/pitman-yor.png" alt="Illustration of a two-parameter Chinese restaurant process seating arrangement"><div class="caption">The two-parameter Chinese restaurant process: customers join occupied tables with probability proportional to occupancy minus the discount parameter.</div></div>
+<p>In probability theory, a <b>Pitman–Yor process</b> (also called the <b>two-parameter Poisson–Dirichlet process</b>) is a stochastic process that generalises the Dirichlet process. It was introduced by Jim Pitman and Marc Yor. The Pitman–Yor process is a distribution over distributions: samples from it are random probability measures, making it a useful prior in Bayesian nonparametric statistics.</p>
+<h2>Definition</h2>
+<p>A Pitman–Yor process is parameterised by a discount parameter 0 ≤ d &lt; 1, a concentration parameter θ &gt; −d, and a base distribution H over a probability space. It can be constructed through a stick-breaking representation: successive weights are drawn from Beta(1 − d, θ + kd) distributions for k = 0, 1, 2, …, each new weight taking a fraction of the remaining stick length. When d = 0 the construction reduces to the stick-breaking construction of the Dirichlet process with concentration θ.</p>
+<h2>Properties</h2>
+<p>The key distinguishing property of the Pitman–Yor process is its power-law behaviour: the number of distinct clusters in n samples grows roughly like n<sup>d</sup>, rather than the logarithmic growth of the Dirichlet process. The exchangeable partition probability function associated with the process is the two-parameter Ewens–Pitman sampling formula. In the corresponding Chinese restaurant process metaphor, a new customer sits at an occupied table with probability proportional to (n<sub>k</sub> − d), where n<sub>k</sub> is the number of customers already seated there, and at a new table with probability proportional to (θ + Kd), where K is the number of occupied tables.</p>
+<h2>Applications</h2>
+<p>Because many real-world datasets — notably word frequencies in natural language — exhibit power-law (Zipfian) behaviour, the Pitman–Yor process is widely used in language modelling, including hierarchical Pitman–Yor language models that smooth n-gram counts more effectively than Dirichlet-based models. It is also used in topic modelling, species sampling problems in ecology and population genetics, and other clustering applications where the number of clusters grows as a power of the sample size.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Dirichlet_process/index.html">Dirichlet process</a></li>
+<li><a href="../Chinese_restaurant_process/index.html">Chinese restaurant process</a></li>
+<li><a href="../Bayesian_nonparametric_statistics/index.html">Bayesian nonparametric statistics</a></li>
+</ul>
+</body>
+</html>

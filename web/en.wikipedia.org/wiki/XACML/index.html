@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>XACML - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 36px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+p{line-height:1.6;font-size:0.95em}
+ul{line-height:1.6;font-size:0.95em}
+code{background:#f8f9fa;border:1px solid #eaecf0;padding:1px 4px;font-size:0.9em}
+.hero{display:block;margin:16px auto;max-width:480px;width:100%;height:220px;background:#eaecf0;border:1px solid #c8ccd1;text-align:center;line-height:220px;color:#54595d;font-style:italic}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>XACML</h1>
+<img class="hero" src="images/XACML.png" alt="XACML policy decision point architecture diagram (placeholder)">
+<p><b>XACML</b> (eXtensible Access Control Markup Language) is a standard that defines a declarative fine-grained access control policy language implemented in XML, and a processing model describing how to evaluate access requests according to the rules defined in policies. It is an OASIS standard, first ratified in February 2003.</p>
+<h2>Architecture</h2>
+<p>XACML follows the classic policy-based access control reference architecture with four main components:</p>
+<ul>
+<li><b>Policy Enforcement Point (PEP)</b> — intercepts access requests and enforces decisions.</li>
+<li><b>Policy Decision Point (PDP)</b> — evaluates requests against policies and returns a decision.</li>
+<li><b>Policy Administration Point (PAP)</b> — where policies are written and stored.</li>
+<li><b>Policy Information Point (PIP)</b> — supplies attribute values about subjects, resources and the environment.</li>
+</ul>
+<h2>Policies</h2>
+<p>A policy is built from rules, each of which has a target (the subjects, resources and actions it applies to), a condition, and an effect of either <code>Permit</code> or <code>Deny</code>. Policies are combined into policy sets using combining algorithms such as deny-overrides and permit-overrides. Decisions returned by a PDP are Permit, Deny, Not Applicable or Indeterminate. XACML supports attribute-based access control (ABAC), in which decisions depend on attributes of the requester, the resource, the action and the context.</p>
+<h2>Versions</h2>
+<p>Version 2.0 was ratified in 2005, and version 3.0 in January 2013, adding features such as multiple decision requests, obligations and advice expressions, and improved support for delegation. Profiles have been published for use cases including SAML integration, multiple decision requests, and a JSON representation of the request format.</p>
+<h2>Use</h2>
+<p>XACML was widely adopted in enterprise and government systems in the 2000s, and several open-source and commercial implementations exist. Interest later shifted toward simpler policy engines and languages, though XACML remains in use in regulated industries requiring fine-grained, auditable authorisation.</p>
+</div>
+</body>
+</html>

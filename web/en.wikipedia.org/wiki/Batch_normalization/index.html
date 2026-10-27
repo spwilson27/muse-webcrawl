@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Batch normalization - Wikipedia</title>
+<style>body{font-family:sans-serif;max-width:960px;margin:0 auto;padding:16px;color:#202122;line-height:1.6}h1{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}h2{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:88%;width:260px}.infobox th{background:#eaecf0;text-align:left}a{color:#0645ad}.hero{display:block;background:#eaecf0;border:1px dashed #72777d;text-align:center;padding:24px;margin:12px 0;color:#54595d}</style>
+</head><body>
+<h1>Batch normalization</h1>
+<p><b>Batch normalization</b> is a technique for training deep neural networks that standardizes the inputs to each layer for each mini-batch. Introduced by Sergey Ioffe and Christian Szegedy in 2015, it stabilises the distribution of layer inputs during training, allowing higher learning rates, faster convergence, and reduced sensitivity to weight initialisation, and it also has a mild regularising effect.</p>
+<img class="hero" src="images/batch-normalization.png" alt="Hero image placeholder: diagram of batch normalization in a neural network">
+<table class="infobox"><tr><th colspan="2">Batch normalization</th></tr>
+<tr><th>Field</th><td>Deep learning</td></tr>
+<tr><th>Introduced</th><td>2015, by Sergey Ioffe and Christian Szegedy</td></tr>
+<tr><th>Purpose</th><td>Stabilise and accelerate network training</td></tr>
+<tr><th>Parameters</th><td>Learnable scale (γ) and shift (β) per feature</td></tr></table>
+<h2>Method</h2>
+<p>For each feature in a mini-batch, batch normalization computes the batch mean and variance, normalises the activations to zero mean and unit variance, then applies a learned affine transformation with scale γ and shift β so the layer can recover the original representation if optimal. During training the statistics come from the current mini-batch while running averages are accumulated; at inference time the running averages are used instead, making the transformation deterministic for single examples.</p>
+<h2>Effects and debate</h2>
+<p>The original paper attributed the benefit to reducing "internal covariate shift". Later research argued the main effect is a smoother loss landscape, making gradients more predictive and optimisation easier. Batch normalization can interact poorly with very small batch sizes, motivating alternatives such as layer normalization, instance normalization, and group normalization, which normalise within each example rather than across the batch.</p>
+<h2>See also</h2>
+<ul><li><a href="../Layer_normalization/index.html">Layer normalization</a></li><li><a href="../Deep_learning/index.html">Deep learning</a></li><li><a href="../Activation_function/index.html">Activation function</a></li><li><a href="../Regularization_(mathematics)/index.html">Regularization</a></li></ul>
+</body></html>

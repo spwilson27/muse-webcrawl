@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NAT traversal - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 40px auto; max-width: 860px; padding: 0 20px; line-height: 1.6; color: #202122; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 8px; }
+.caption { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<h1>NAT traversal</h1>
+<p><b>Network address translation traversal</b> is a computer networking technique of establishing and maintaining Internet Protocol connections across gateways that implement network address translation (NAT). NAT breaks the end-to-end connectivity principle on which the Internet was originally designed, making it difficult for hosts behind NAT devices — such as home routers — to accept incoming connections. NAT traversal techniques allow peer-to-peer applications, voice over IP, online gaming, and remote access to work despite NAT.</p>
+<div class="hero"><img src="images/nat_traversal.png" alt="Diagram of two hosts behind NAT routers establishing a peer-to-peer connection with server assistance"></div>
+<p class="caption">A rendezvous server helps two NATted hosts discover each other's public endpoints so they can communicate directly.</p>
+<h2>The problem</h2>
+<p>A NAT device rewrites the source address and port of outgoing packets, creating a temporary mapping that lets replies return. An external host, however, cannot initiate a connection to a private address it cannot even route to, and the NAT will normally drop unsolicited inbound packets. Symmetric NATs, which use a different external port for each destination, make prediction especially difficult.</p>
+<h2>Techniques</h2>
+<ul>
+<li><b>Port forwarding</b> — manual or automatic (via UPnP IGD or NAT-PMP/PCP) static configuration of the NAT to forward specific ports to an internal host.</li>
+<li><b>STUN</b> (Session Traversal Utilities for NAT) — a protocol letting a host discover its public (server-reflexive) address and port mapping from a server on the open Internet.</li>
+<li><b>UDP hole punching</b> — both peers send packets to each other's discovered public endpoints, creating NAT mappings that admit the peer's traffic, enabling direct connection.</li>
+<li><b>TURN</b> (Traversal Using Relays around NAT) — when direct connection fails, traffic is relayed through a public server.</li>
+<li><b>ICE</b> (Interactive Connectivity Establishment) — a framework, standardised by the IETF, that combines STUN and TURN, gathering candidate addresses and testing connectivity pairs; it is used by WebRTC, SIP, and other real-time protocols.</li>
+<li><b>Application-level gateways and tunnelling</b> — proxies such as SOCKS, and techniques like NAT64 or Teredo that encapsulate IPv6 within IPv4 UDP.</li>
+</ul>
+<h2>Applications</h2>
+<p>NAT traversal underpins VoIP (SIP and H.323 historically struggled badly with NAT), WebRTC video calls, peer-to-peer file sharing, multiplayer gaming, and remote-desktop tools. Its importance persists because IPv4 address exhaustion keeps NAT — including carrier-grade NAT — ubiquitous, though widespread IPv6 deployment would largely remove the problem.</p>
+</body>
+</html>

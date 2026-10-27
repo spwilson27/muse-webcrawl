@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Baum–Welch algorithm - Wikipedia</title>
+<style>
+body{font-family:sans-serif;font-size:15px;line-height:1.6;color:#202122;max-width:960px;margin:0 auto;padding:16px;background:#fff}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;width:280px;font-size:13px}
+.infobox th{background:#b0c4de;padding:4px;text-align:center}
+.infobox td{padding:2px 4px;vertical-align:top}
+.hero{display:block;margin:12px 0;max-width:420px}
+</style>
+</head>
+<body>
+<h1>Baum–Welch algorithm</h1>
+<img class="hero" src="images/Baum–Welch_algorithm.png" alt="Diagram of the forward–backward recursions used by the Baum–Welch algorithm">
+<p>The <b>Baum–Welch algorithm</b> is a method for estimating the parameters of a <a href="../Hidden_Markov_model/index.html">hidden Markov model</a> (HMM) from observed data. It is a special case of the <a href="../Expectation%E2%80%93maximization_algorithm/index.html">expectation–maximization (EM) algorithm</a>, and is named after Leonard E. Baum and Lloyd R. Welch, who developed it at the Institute for Defense Analyses in the late 1960s.</p>
+<h2>Overview</h2>
+<p>Given an HMM with unknown transition and emission probabilities and a sequence of observations, the algorithm iteratively adjusts the parameters so as to increase the likelihood of the observations. Each iteration consists of an expectation step, which computes the expected state occupancies and transitions using the forward–backward algorithm, and a maximization step, which re-estimates the parameters from those expected counts. The likelihood is guaranteed not to decrease, though the procedure converges only to a local optimum, so results depend on initialisation.</p>
+<h2>Forward and backward variables</h2>
+<p>The forward variable α records the probability of the partial observation sequence up to a given time together with being in a particular state; the backward variable β records the probability of the remaining observations given that state and time. Combining α and β yields the posterior state probabilities γ and the pairwise transition posteriors ξ, from which the updated initial distribution, transition matrix and emission distributions are computed in closed form.</p>
+<h2>Applications</h2>
+<p>Baum–Welch training made HMMs practical in speech recognition, where models of phonemes are trained on large corpora of labelled or unlabelled audio. It has also been applied in bioinformatics (profile HMMs for protein families), part-of-speech tagging, cryptanalysis, finance and gesture recognition.</p>
+<h2>Limitations</h2>
+<p>Because the algorithm climbs to the nearest local maximum of the likelihood surface, practitioners typically restart from multiple initial parameter settings. Numerical underflow in the forward–backward recursions is handled by scaling or by working in log space.</p>
+<p><i>See also: <a href="../Hidden_Markov_model/index.html">Hidden Markov model</a>; <a href="../Forward%E2%80%93backward_algorithm/index.html">Forward–backward algorithm</a>; <a href="../Viterbi_algorithm/index.html">Viterbi algorithm</a>; <a href="../Expectation%E2%80%93maximization_algorithm/index.html">Expectation–maximization algorithm</a></i></p>
+</body>
+</html>

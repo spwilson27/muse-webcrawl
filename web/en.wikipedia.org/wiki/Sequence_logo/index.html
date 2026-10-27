@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sequence logo - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 960px; margin: 0 auto; padding: 20px; color: #202122; background: #fff; line-height: 1.6; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 12px 16px; font-size: 0.9em; }
+.infobox th { text-align: left; background: #eaecf0; padding: 4px; }
+.infobox td { padding: 4px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { display: block; margin: 12px auto; max-width: 100%; }
+.caption { font-size: 0.85em; color: #54595d; text-align: center; }
+</style>
+</head>
+<body>
+<h1>Sequence logo</h1>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Sequence logo</th></tr>
+<tr><td><b>Type</b></td><td>Data visualisation, bioinformatics</td></tr>
+<tr><td><b>Introduced</b></td><td>1990 (Schneider &amp; Stephens)</td></tr>
+<tr><td><b>Data</b></td><td>Multiple sequence alignment</td></tr>
+<tr><td><b>Measures</b></td><td>Letter height proportional to frequency; stack height in bits of information</td></tr>
+</table>
+</div>
+<img class="hero" src="images/sequence-logo.png" alt="Example sequence logo with stacked letters of varying heights">
+<p class="caption">A sequence logo displays the conservation of residues at each position of an alignment.</p>
+<p>In <a href="../Bioinformatics">bioinformatics</a>, a <b>sequence logo</b> is a graphical method used to display the pattern of sequence conservation in a <a href="../Multiple_sequence_alignment">multiple sequence alignment</a> of DNA, RNA, or protein sequences. It was introduced by Tom Schneider and R. Michael Stephens in 1990, building on information-theoretic ideas about molecular binding sites.</p>
+
+<h2>Construction</h2>
+<p>A sequence logo consists of a stack of letters (nucleotides or amino acids) at each position of the alignment. Within each stack, the letters are ordered from most to least frequent, and the height of each letter is proportional to its frequency at that position. The total height of the stack equals the information content (sequence conservation) at that position, measured in <a href="../Bit">bits</a>: for nucleic acids the maximum is 2 bits per position (one of four bases fully specified), and for proteins just over 4.32 bits (log<sub>2</sub> 20).</p>
+<p>Mathematically, the height of the stack at position <i>l</i> is R(l) = log<sub>2</sub>(s) − (H(l) + e(n)), where s is the number of distinct symbols, H(l) is the Shannon entropy of the position, and e(n) is a small-sample correction. The height of an individual letter is its frequency multiplied by R(l).</p>
+
+<h2>Interpretation and uses</h2>
+<p>Sequence logos make conserved motifs immediately visible: positions under strong functional constraint (such as transcription factor binding sites, splice junctions, or enzyme active sites) appear as tall stacks dominated by one letter, while variable positions appear as low, mixed stacks. Logos are widely used to present DNA binding motifs (e.g. from ChIP-seq experiments), ribosome binding sites, the −10 and −35 boxes of bacterial promoters, and conserved domains in protein families.</p>
+
+<h2>Software</h2>
+<p>Popular tools for generating sequence logos include WebLogo, Seq2Logo, Skylign (used for Pfam and other family databases), and ggseqlogo for R. Variants of the method include logos that display statistically significant enrichments or depletions relative to a background model.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Consensus_sequence">Consensus sequence</a></li>
+<li><a href="../Sequence_motif">Sequence motif</a></li>
+<li><a href="../Position_weight_matrix">Position weight matrix</a></li>
+<li><a href="../Information_theory">Information theory</a></li>
+</ul>
+</body>
+</html>

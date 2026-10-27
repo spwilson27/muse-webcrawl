@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ensemble Kalman filter - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;color:#202122;background:#fff}
+#content{max-width:960px;margin:0 auto;padding:1em 1.5em}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{display:block;border:1px solid #c8ccd1;background:#eaecf0;padding:.5em;margin:.5em auto}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Ensemble Kalman filter</h1>
+<p>The <b>ensemble Kalman filter</b> (<b>EnKF</b>) is a recursive filter suitable for problems with a large number of variables, such as discretisations of partial differential equations in geophysical models. The EnKF originated as a version of the <a href="../Kalman_filter/index.html">Kalman filter</a> for large problems (essentially, the covariance matrix is replaced by the sample <a href="../Covariance_matrix/index.html">covariance</a> matrix from an ensemble of forecasts), and it is now an important <a href="../Data_assimilation/index.html">data assimilation</a> component of many <a href="../Numerical_weather_prediction/index.html">numerical weather prediction</a> systems.</p>
+<img class="hero" src="images/Ensemble_Kalman_filter.png" alt="Placeholder image: Diagram of ensemble forecasts being updated by observations">
+<p>The EnKF was introduced by Geir Evensen in 1994 for ocean modelling, drawing on the <a href="../Monte_Carlo_method/index.html">Monte Carlo</a> approximation of the forecast error covariance. Instead of propagating a full covariance matrix — infeasible when the state has millions of components — an ensemble of model states (typically tens to a few hundred members) is integrated forward; their spread estimates the forecast uncertainty. When observations become available, each ensemble member is updated using the Kalman gain computed from the ensemble statistics plus perturbed or deterministically adjusted observations.</p>
+<h2>Variants</h2>
+<p>Two main families exist. <b>Stochastic (perturbed-observation) filters</b>, following Burgers, van Leeuwen and Evensen (1998), assimilate observations randomised with noise consistent with observation error statistics. <b>Deterministic or square-root filters</b>, such as the ensemble transform Kalman filter (ETKF) and the local ensemble transform Kalman filter (LETKF), transform the forecast ensemble into an analysis ensemble with the correct mean and covariance without perturbing the observations, sometimes giving better performance for small ensembles.</p>
+<h2>Practical issues</h2>
+<p>Small ensembles cause sampling error in the covariances, producing spurious long-distance correlations and underestimating spread. Standard remedies are <b>covariance localisation</b> (tapering correlations with distance), <b>covariance inflation</b> (artificially increasing the ensemble spread), and hybrid schemes combining the ensemble covariance with a static climatological covariance. EnKF methods have been applied in atmospheric and oceanic modelling, hydrology, reservoir engineering and land-surface data assimilation, and underpin ensemble systems at several operational weather centres.</p>
+<p class="small">See also: <a href="../Kalman_filter/index.html">Kalman filter</a> · <a href="../Data_assimilation/index.html">Data assimilation</a> · <a href="../Ensemble_forecasting/index.html">Ensemble forecasting</a></p>
+</div>
+</body>
+</html>

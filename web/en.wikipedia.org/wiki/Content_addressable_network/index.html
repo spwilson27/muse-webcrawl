@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Content addressable network - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; padding: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-family: "Linux Libertine", Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 300px; float: right; margin: 0 0 12px 16px; border: 1px solid #c8ccd1; padding: 4px; background: #f8f9fa; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Content addressable network</h1>
+<img class="hero" src="images/Content_addressable_network.png" alt="CAN multidimensional coordinate space">
+<p>The <b>content addressable network</b> (<b>CAN</b>) is a distributed, decentralised P2P infrastructure that provides <a href="../Hash_table/index.html">hash table</a> functionality on an Internet-like scale. CAN was one of the four original <a href="../Distributed_hash_table/index.html">distributed hash table</a> (DHT) proposals, introduced concurrently with Chord, Pastry and Tapestry, in a paper by Sylvia Ratnasamy, Paul Francis, Mark Handley, Richard Karp and Scott Shenker published in 2001.</p>
+<h2>Design</h2>
+<p>CAN is built around a virtual multi-dimensional Cartesian coordinate space — conceptually, a d-dimensional torus. This coordinate space is completely virtual and bears no relation to physical geography. The space is dynamically partitioned among all peers in the system, so that every peer "owns" a contiguous zone of the space. A key is hashed to a point in the space, and the value is stored at whichever peer owns the zone containing that point. To retrieve an entry, any peer can apply the same hash function to determine the point and then route a query across the coordinate space, using greedy forwarding to neighbouring zones, until it reaches the responsible peer. Routing takes on the order of d·n<sup>1/d</sup> hops for n peers, and each peer maintains only O(d) neighbours regardless of system size.</p>
+<h2>Joining, leaving and design parameters</h2>
+<p>A new peer joins by choosing a random point in the space, routing to the owner of that point, and splitting that peer's zone in half, taking over one half. Departures require a neighbour to take over the orphaned zone, sometimes after zone merging. The design allows several optimisations: multiple independent coordinate spaces ("realities"), multiple peers per zone for redundancy, overloading zones, and caching and replication of hot entries. CAN influenced subsequent DHT and peer-to-peer research, though in practice systems such as Kademlia became more widely deployed.</p>
+<p><i>See also:</i> <a href="../Peer-to-peer/index.html">Peer-to-peer</a>, <a href="../Chord_(peer-to-peer)/index.html">Chord (peer-to-peer)</a></p>
+</div>
+</body>
+</html>

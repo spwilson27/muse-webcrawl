@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Watershed (image processing) - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:760px;margin:2em auto;padding:0 1em;line-height:1.6;color:#222}h1{border-bottom:1px solid #aaa}h2{border-bottom:1px solid #ddd}img{max-width:100%}</style>
+</head>
+<body>
+<h1>Watershed (image processing)</h1>
+<img src="images/watershed-image-processing.png" alt="A topographic surface with catchment basins separated by watershed lines">
+<p>In image processing, the <b>watershed transform</b> is a region-based segmentation method that treats a grayscale image as a topographic relief: bright pixels are high elevations and dark pixels are valleys. Flooding the relief from its minima and marking where floodwaters from different minima meet produces a set of watershed lines that partition the image into catchment basins, each corresponding to a segmented region.</p>
+<h2>Algorithm</h2>
+<p>The classic algorithm proceeds by sorting pixels by intensity and progressively "flooding" the image. When two catchment basins are about to merge, a dam (watershed line) is built. The most widely used variant is the immersion-based algorithm of Vincent and Soille (1991). A common refinement is marker-based watershed segmentation, in which user-supplied or automatically detected markers define the flooding sources, greatly reducing the over-segmentation that results from flooding every local minimum.</p>
+<h2>Applications</h2>
+<p>Watershed segmentation is used in medical imaging (for example, separating touching cells in microscopy and segmenting organs in MRI), in remote sensing, and in industrial inspection. It is frequently combined with preprocessing steps such as smoothing, gradient computation, and morphological operations to suppress noise-induced minima.</p>
+<h2>Over-segmentation</h2>
+<p>The principal drawback of the naive watershed is over-segmentation: every small local minimum creates its own basin, yielding thousands of tiny regions. Hierarchical watershed methods and marker control are the standard remedies.</p>
+</body>
+</html>

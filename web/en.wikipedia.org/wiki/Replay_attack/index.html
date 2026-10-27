@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Replay attack - Wikipedia</title>
+<style>body{font-family:sans-serif;max-width:800px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{font-family:serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{font-family:serif;border-bottom:1px solid #a2a9b1}</style></head>
+<body>
+<h1>Replay attack</h1>
+<p>A <b>replay attack</b> (also known as a <b>playback attack</b>) is a form of network attack in which valid data transmission is maliciously or fraudulently repeated or delayed. It is carried out either by the originator or by an adversary who intercepts the data and re-transmits it, possibly as part of a spoofing attack by Internet Protocol (IP) packet substitution.</p>
+<img src="images/replay-attack.png" alt="Diagram of an attacker capturing and retransmitting a message">
+<h2>Example</h2>
+<p>Suppose a user authenticates to a server by sending a hash of their password. An attacker who eavesdrops on the exchange cannot recover the password from the hash, but can simply replay the same hash in a new connection and the server will accept it — unless the protocol adds freshness. This is why static credentials alone cannot prevent replay.</p>
+<h2>Countermeasures</h2>
+<p>Common defences include:</p>
+<ul>
+<li><b>Nonces</b> — one-time random values included in each exchange, so a replayed message is recognised as already used.</li>
+<li><b>Timestamps and session tokens</b> — messages are valid only within a short window or a single session.</li>
+<li><b>Sequence numbers</b> — each message carries a monotonically increasing number, as in the Kerberos authentication protocol, which combines timestamps with authenticators.</li>
+<li><b>Challenge–response authentication</b> — the verifier issues a fresh random challenge that the prover must incorporate into its response.</li>
+</ul>
+<h2>Related attacks</h2>
+<p>Replay attacks are related to man-in-the-middle attacks, reflection attacks and session hijacking. Protocols such as TLS provide replay protection within a connection by sequencing records, though application-level tokens (for example, anti-CSRF tokens in web forms) are still needed to prevent resubmission of valid requests.</p>
+</body></html>

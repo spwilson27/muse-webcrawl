@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Variadic function - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; line-height: 1.6; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; margin-top: 28px; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; background: #eaecf0; border: 1px solid #a2a9b1; min-height: 180px; }
+.caption { font-size: 85%; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+code { font-family: monospace; background: #f8f9fa; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Variadic function</h1>
+<p>In mathematics and computer programming, a <b>variadic function</b> is a function of indefinite arity — that is, one which accepts a variable number of arguments. Support for variadic functions differs widely among programming languages. The term <i>variadic</i> is a neologism, dating to the 1970s, formed from <i>variable</i> and <i>-adic</i> as in monadic and dyadic.</p>
+<div class="hero"><img src="images/variadic.png" alt="Diagram of a function accepting a variable number of arguments"><div class="caption">A variadic function can be called with any number of arguments.</div></div>
+
+<h2>Examples and implementation</h2>
+<p>The classic example is C's <code>printf</code>, declared with an ellipsis (<code>int printf(const char *format, ...)</code>); the function retrieves arguments with the <code>va_list</code>, <code>va_start</code>, <code>va_arg</code> and <code>va_end</code> macros from <code>&lt;stdarg.h&gt;</code>, relying on the format string to know their number and types — a source of format-string vulnerabilities when input is unchecked. C++ adds type-safe variadic templates (parameter packs), while languages such as Python (<code>*args</code>), JavaScript (rest parameters and the <code>arguments</code> object), Java (<code>Type...</code>) and Go (<code>...Type</code>) collect extra arguments into a tuple, array or slice, enabling functions like summing an arbitrary list of numbers or composing logging wrappers.</p>
+
+<h2>Related concepts</h2>
+<p>Variadic functions should be distinguished from functions taking a single list argument and from function overloading, where several fixed-arity definitions share a name. In functional languages, the same effect is often achieved with lists, folds, or — in languages with variadic polymorphism, such as Typed Racket — dedicated type machinery.</p>
+</div>
+</body>
+</html>

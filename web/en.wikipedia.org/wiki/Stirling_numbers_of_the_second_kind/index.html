@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Stirling numbers of the second kind - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+.hero{text-align:center;background:#f8f9fa;border:1px solid #a2a9b1;padding:12px;margin:16px 0}
+.hero img{max-width:100%;height:auto;background:#eaecf0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:0.85em;color:#54595d}
+code{background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<h1>Stirling numbers of the second kind</h1>
+<p>In mathematics, particularly in combinatorics, a <b>Stirling number of the second kind</b> (or <b>Stirling partition number</b>) is the number of ways to partition a set of <i>n</i> labelled objects into <i>k</i> non-empty unlabelled subsets. It is denoted <i>S(n, k)</i> or by the bracket notation &#123;n &#59; k&#125;. Stirling numbers of the second kind occur in many counting problems and in the expansion of falling factorials.</p>
+<div class="hero"><img src="images/stirling-numbers.png" alt="Table of Stirling numbers of the second kind (placeholder)"></div>
+<h2>Definition and recurrence</h2>
+<p>The numbers satisfy the boundary conditions <i>S(n, 0) = 0</i> for <i>n &gt; 0</i>, <i>S(0, 0) = 1</i>, and <i>S(n, k) = 0</i> for <i>k &gt; n</i>. They obey the recurrence</p>
+<p style="text-align:center"><i>S(n + 1, k) = k · S(n, k) + S(n, k − 1),</i></p>
+<p>because the (n+1)-th element either forms a singleton block in a partition counted by <i>S(n, k−1)</i>, or joins one of the <i>k</i> existing blocks of a partition counted by <i>S(n, k)</i>.</p>
+<h2>Examples</h2>
+<p>For example, <i>S(4, 2) = 7</i>: the set {1, 2, 3, 4} has seven partitions into two blocks — 123|4, 124|3, 134|2, 12|34, 13|24, 14|23, and 1|234. The first few rows of the triangle are: n=1: 1; n=2: 1, 1; n=3: 1, 3, 1; n=4: 1, 7, 6, 1; n=5: 1, 15, 25, 10, 1. Summing a row gives the Bell number <i>B<sub>n</sub></i>, the total number of partitions of an n-set: <i>B<sub>5</sub></i> = 52.</p>
+<h2>Explicit formula</h2>
+<p>By inclusion–exclusion, the number of onto functions from an n-set to a k-set is k!<i>S(n, k)</i>, giving the explicit formula</p>
+<p style="text-align:center"><i>S(n, k) = (1/k!) Σ<sub>j=0</sub><sup>k</sup> (−1)<sup>j</sup> C(k, j) (k − j)<sup>n</sup>.</i></p>
+<h2>Applications</h2>
+<p>Stirling numbers of the second kind convert between ordinary powers and falling factorials: <i>x<sup>n</sup> = Σ<sub>k</sub> S(n, k) (x)<sub>k</sub></i>, where (x)<sub>k</sub> = x(x−1)…(x−k+1). This identity underlies computations of power sums, the moments of the Poisson distribution, and finite-difference calculus. They are named after the Scottish mathematician James Stirling, who introduced them in his <i>Methodus Differentialis</i> (1730). Closely related are the Stirling numbers of the first kind, which count permutations by number of cycles.</p>
+<p class="small">This article is a recreation from memory for the muse-webcrawl project.</p>
+</body>
+</html>

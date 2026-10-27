@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Remote procedure call - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,sans-serif;max-width:960px;margin:0 auto;padding:1em 1.5em;line-height:1.6;color:#202122}
+h1{font-family:Georgia,serif;border-bottom:1px solid #a7d7f9;padding-bottom:.2em}
+h2{font-family:Georgia,serif;border-bottom:1px solid #c8ccd1}
+img.hero{display:block;max-width:480px;width:100%;height:200px;object-fit:cover;background:#f8f9fa;border:1px solid #c8ccd1;margin:1em 0}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+code{background:#f8f9fa;padding:0 .2em}
+</style>
+</head>
+<body>
+<h1>Remote procedure call</h1>
+<img class="hero" src="images/remote-procedure-call.png" alt="Client and server exchanging an RPC request and response">
+<p>In distributed computing, a <b>remote procedure call</b> (<b>RPC</b>) is an inter-process communication (IPC) in which a computer program causes a procedure (subroutine) to execute in a different address space (commonly on another computer on a shared network), which is written as if it were a normal (local) procedure call, without the programmer explicitly coding the details for the remote interaction.</p>
+<h2>History</h2>
+<p>The idea dates to work by Bruce Jay Nelson at Xerox PARC in the late 1970s and early 1980s; his 1981 PhD thesis and the 1984 paper by Andrew Birrell and Nelson, "Implementing Remote Procedure Calls", set out the classic design of client stubs, marshalling, and a runtime that carries requests over the network. Sun Microsystems&apos; RPC (later ONC RPC), documented in RFC 1057 and RFC 5531, became widely used with the Network File System (NFS).</p>
+<h2>Mechanism</h2>
+<p>An RPC system generates a client <i>stub</i> for each remote procedure. When the client calls the procedure, the stub packs (marshals) the arguments into a message, the runtime sends it to the server, and a server stub unpacks the arguments and calls the actual procedure. The return values travel back the same way. Interface definition languages (IDLs) are used to describe the procedures so that stubs can be generated for different programming languages and platforms; data is represented in a neutral format such as XDR, Protocol Buffers or JSON.</p>
+<h2>Systems and successors</h2>
+<p>Major RPC frameworks include ONC RPC, DCE/RPC (the basis of Microsoft RPC and COM/DCOM), CORBA, Java RMI, XML-RPC, SOAP, Thrift, and gRPC, which uses HTTP/2 and Protocol Buffers. RPC semantics raise issues not present in local calls: the call may fail after the server executes it, latency is orders of magnitude higher, and partial failures must be handled by the application, leading to the observation (popularised by Sun engineers) that distributed computing cannot simply be treated as local computing.</p>
+<p><i>See also: gRPC; ONC RPC; DCE/RPC; Marshalling (computer science); Distributed computing; Microservices.</i></p>
+</body>
+</html>

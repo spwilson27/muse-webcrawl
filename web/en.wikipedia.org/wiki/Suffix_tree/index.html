@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Suffix tree - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.4em}
+.hero{display:block;margin:1em auto;max-width:480px;width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:2em 0;text-align:center;color:#72777d}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>Suffix tree</h1>
+<img class="hero" src="images/Suffix_tree.png" alt="Suffix tree for the string BANANA, showing all its suffixes">
+<p>In computer science, a <b>suffix tree</b> (also called a PAT tree) is a compressed trie that contains all the suffixes of a given text as keys, with their starting positions as values. It is a fundamental data structure for string algorithms, because many problems that appear to require scanning the whole text can be answered in time proportional only to the length of the pattern being searched.</p>
+
+<h2>Properties</h2>
+<p>For a text of length n, a suffix tree uses O(n) space and can be constructed in O(n) time. Once built, it supports substring search in O(m) time for a pattern of length m, finding the longest repeated substring, the longest common substring of two strings, and pattern matching with mismatches, among many other operations. Edges are labelled with substrings (stored as index ranges into the text), and internal nodes are connected by <i>suffix links</i> that shortcut between nodes representing suffixes of one another.</p>
+
+<h2>History and construction</h2>
+<p>Peter Weiner introduced the structure in 1973 — the first linear-time construction — followed by Edward McCreight's more space-economical algorithm in 1976. Esko Ukkonen's 1995 algorithm is the most widely taught: an online, left-to-right construction using suffix links and the "skip/count" trick, building the tree in a single pass. Farach's algorithm (1997) extended linear construction to integer alphabets.</p>
+
+<h2>Applications</h2>
+<p>Suffix trees are used in bioinformatics for genome analysis and sequence alignment, in data compression (the Lempel–Ziv family), in text editors' find functions, and as the conceptual basis for suffix arrays and the Burrows–Wheeler transform, which offer similar capabilities with smaller memory footprints and have largely supplanted suffix trees in practice.</p>
+</body>
+</html>

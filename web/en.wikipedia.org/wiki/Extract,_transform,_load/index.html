@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Extract, transform, load - Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:760px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}
+h1{border-bottom:1px solid #a2a9b1}h2{border-bottom:1px solid #a2a9b1}
+a{color:#06c;text-decoration:none}a:hover{text-decoration:underline}
+figure{float:right;margin:0 0 1em 1em;text-align:center}
+figcaption{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Extract, transform, load</h1>
+<figure><img src="images/Extract,_transform,_load.png" alt="Diagram of the extract, transform, load process"><figcaption>Overview of the ETL process</figcaption></figure>
+<p><b>Extract, transform, load</b> (<b>ETL</b>) is a three-phase computing process where data is <i>extracted</i> from an input source, <i>transformed</i> (including cleaning), and <i>loaded</i> into an output destination, most commonly a <a href="../Data_warehouse/index.html">data warehouse</a>. Data finally loaded is typically used for <a href="../Business_intelligence/index.html">business intelligence</a>, reporting, and analysis.</p>
+<h2>The three phases</h2>
+<p><b>Extract:</b> data is read from one or more source systems — operational databases, files, APIs, or streaming feeds — and copied into a staging area.</p>
+<p><b>Transform:</b> the data is cleaned, validated, deduplicated, joined, aggregated, and converted into a consistent format and schema suitable for the target system. This stage enforces data-quality and business rules.</p>
+<p><b>Load:</b> the transformed data is written into the destination, historically a data warehouse, replacing or appending to existing data.</p>
+<h2>ETL versus ELT</h2>
+<p>With the rise of powerful cloud data warehouses and data lakes, the <b>ELT</b> pattern — extract, load, then transform in place — has become popular, because raw data can be stored cheaply and transformed on demand using the warehouse's compute. ETL tools include Informatica, Talend, Apache NiFi, SSIS, and cloud services such as AWS Glue and Azure Data Factory.</p>
+<h2>Challenges</h2>
+<p>ETL processes must handle schema drift, data quality problems, incremental loading, idempotency, and error recovery. Orchestration tools such as Apache Airflow schedule and monitor complex pipelines.</p>
+</body>
+</html>

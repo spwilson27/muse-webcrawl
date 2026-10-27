@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heston model - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:960px;margin:0 auto;padding:20px;background:#fff;color:#202122;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-family:'Linux Libertine',Georgia,serif}
+h2{font-size:1.5em;border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.eq{background:#f8f9fa;border:1px solid #a2a9b1;padding:12px;text-align:center;font-style:italic;margin:1em 0}
+.imgbox{text-align:center;margin:1em 0;background:#f8f9fa;border:1px solid #a2a9b1;padding:12px}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Heston model</h1>
+<p>The <b>Heston model</b> is a mathematical model that describes the evolution of the volatility of an underlying asset. It is a stochastic volatility model: such a model assumes that the volatility of the asset is not constant, nor even deterministic, but follows a random process.</p>
+<p>The model was proposed by Steven Heston in his 1993 paper "A Closed-Form Solution for Options with Stochastic Volatility with Applications to Bond and Currency Options". It is widely used in the pricing of financial derivatives, particularly European options.</p>
+<div class="imgbox"><img src="images/Heston_model.png" alt="Illustration of simulated Heston model price and variance paths"></div>
+<h2>Basic framework</h2>
+<p>In the Heston model the asset price S<sub>t</sub> and its instantaneous variance v<sub>t</sub> follow the coupled stochastic differential equations</p>
+<div class="eq">dS<sub>t</sub> = μ S<sub>t</sub> dt + √v<sub>t</sub> S<sub>t</sub> dW<sub>t</sub><sup>S</sup></div>
+<div class="eq">dv<sub>t</sub> = κ(θ − v<sub>t</sub>) dt + ξ √v<sub>t</sub> dW<sub>t</sub><sup>v</sup></div>
+<p>where κ is the rate of mean reversion of the variance, θ is the long-run variance, ξ is the volatility of volatility, and the two Wiener processes are correlated with correlation parameter ρ. The variance process is a square-root (CIR-type) diffusion, so the variance is always non-negative; the condition 2κθ ≥ ξ², known as the Feller condition, ensures it stays strictly positive.</p>
+<h2>Valuation</h2>
+<p>The key advantage of the Heston model over the Black–Scholes model is that it admits a semi-analytic solution for the price of a European call option, expressed through Fourier inversion of a known characteristic function. This makes calibration to market option prices fast and practical. The model can reproduce the volatility smile and skew observed in equity option markets, in particular through a negative correlation ρ between asset returns and volatility changes.</p>
+<h2>Variants and extensions</h2>
+<p>Extensions include the double Heston model, in which two variance factors are used, and models combining stochastic volatility with jumps in the asset price.</p>
+<h2>See also</h2>
+<p><a href="../Black%E2%80%93Scholes_model/index.html">Black–Scholes model</a> · <a href="../Stochastic_volatility/index.html">Stochastic volatility</a> · <a href="../Volatility_smile/index.html">Volatility smile</a> · <a href="../Option_(finance)/index.html">Option (finance)</a></p>
+<p class="small">From Wikipedia, the free encyclopedia.</p>
+</body>
+</html>

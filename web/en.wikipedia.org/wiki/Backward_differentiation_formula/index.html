@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Backward differentiation formula - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+.hero{display:block;width:100%;max-width:400px;background:#eaecf0;border:1px solid #a2a9b1;padding:40px 0;text-align:center;color:#54595d;margin:12px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Backward differentiation formula</h1>
+<img class="hero" src="images/bdf.png" alt="Stability regions of BDF methods">
+<p>The <b>backward differentiation formula</b> (<b>BDF</b>) is a family of implicit methods for the numerical integration of ordinary differential equations. They are linear multistep methods that, for a given number of steps, achieve the highest possible order of accuracy while maintaining good stability properties. BDF methods are especially valued for solving <a href="../Stiff_equation/index.html">stiff equations</a>, for which explicit methods require impractically small time steps.</p>
+<h2>Formulation</h2>
+<p>A BDF method approximates the derivative at a new time point by a finite-difference combination of the solution values at that point and several previous points, setting the result equal to the function value at the new point. Because the new solution value appears on both sides, each step requires solving an algebraic (generally nonlinear) system, typically by Newton iteration. The one-step BDF is the implicit (backward) Euler method; the two-step BDF is second-order accurate and A-stable.</p>
+<h2>Stability</h2>
+<p>BDF methods of order 1 and 2 are A-stable. Methods of orders 3 to 6 are not A-stable but are "stiffly stable", with stability regions containing almost all of the left half-plane apart from a small region near the imaginary axis; methods of order 7 and higher are unstable and are not used. Practical codes therefore cap the order at 5 or 6.</p>
+<h2>Implementations</h2>
+<p>Variable-order, variable-step BDF implementations are standard tools for stiff problems and differential-algebraic equations. Well-known codes include CVODE and IDA in the SUNDIALS suite, the DASSL family of codes, and the BDF option in MATLAB's ode15s solver.</p>
+<p>See also: <a href="../Stiff_equation/index.html">Stiff equation</a>, <a href="../Linear_multistep_method/index.html">Linear multistep method</a>, <a href="../Backward_Euler_method/index.html">Backward Euler method</a>, <a href="../Numerical_methods_for_ordinary_differential_equations/index.html">Numerical methods for ordinary differential equations</a>.</p>
+</div>
+</body>
+</html>

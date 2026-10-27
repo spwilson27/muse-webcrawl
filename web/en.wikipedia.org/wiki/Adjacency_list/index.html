@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Adjacency list - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;color:#202122;background:#fff}
+.mw-body{max-width:960px;margin:0 auto;padding:1em 1.5em}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal;font-size:1.9em;margin-bottom:.2em}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+a{color:#36c;text-decoration:none}
+a:hover{text-decoration:underline}
+figure.thumb{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.4em;margin:0 0 1em 1em;width:240px;font-size:.85em;text-align:center}
+figure.thumb img{width:100%;background:#e0e0e0;display:block;min-height:140px}
+.ref{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Adjacency list</h1>
+<p>In <a href="../Graph_theory/index.html">graph theory</a> and computer science, an <b>adjacency list</b> is a collection of unordered lists used to represent a finite <a href="../Graph_(discrete_mathematics)/index.html">graph</a>. Each list describes the set of neighbors of a vertex in the graph. This is one of several commonly used representations of graphs for use in computer programs, alongside the <a href="../Adjacency_matrix/index.html">adjacency matrix</a> and the <a href="../Incidence_matrix/index.html">incidence matrix</a>.</p>
+<figure class="thumb"><img src="images/adjacency-list.png" alt="Graph with its adjacency list representation"><figcaption>An undirected graph together with its adjacency list representation.</figcaption></figure>
+<h2>Implementation details</h2>
+<p>An adjacency list representation for a graph associates each vertex in the graph with the collection of its neighboring vertices or edges. There are many variations of this idea, differing in details of how they implement the association between vertices and collections, in how they implement the collections, in whether they include both directions of an edge or only one, and in what kinds of objects may be used as vertices and edge objects. In many implementations, the collection for each vertex is a <a href="../Linked_list/index.html">linked list</a> or a dynamic array; in languages such as Python, adjacency lists are often dictionaries mapping each vertex to a list or set of neighbors.</p>
+<h2>Operations</h2>
+<p>The main operation performed by an adjacency list is to report a list of the neighbors of a given vertex; this takes time proportional to the number of neighbors reported (the degree of the vertex). With adjacency lists, testing whether an edge exists between two given vertices can be done by scanning the shorter of their two neighbor lists, and can be accelerated with <a href="../Hash_table/index.html">hash sets</a> or sorted lists. Traversals such as <a href="../Breadth-first_search/index.html">breadth-first search</a> and <a href="../Depth-first_search/index.html">depth-first search</a> run in time O(|V| + |E|) with this representation.</p>
+<h2>Tradeoffs</h2>
+<p>Adjacency lists require space proportional to the number of edges plus vertices, O(|V| + |E|), making them far more space-efficient than adjacency matrices, which need Θ(|V|²) space, for the sparse graphs that arise in most applications. Conversely, adjacency matrices answer edge-existence queries in constant time and better suit dense graphs and matrix-based algorithms. For weighted graphs, adjacency lists store the weight alongside each neighbor entry.</p>
+<p class="ref">See also: <a href="../Adjacency_matrix/index.html">Adjacency matrix</a>; <a href="../Graph_(abstract_data_type)/index.html">Graph (abstract data type)</a>; <a href="../Edge_list/index.html">Edge list</a>.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Entropy encoding - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.mw-body{max-width:960px;margin:0 auto;padding:20px 28px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;font-size:2em;border-bottom:1px solid #a2a9b1;margin-bottom:0.2em}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.thumb{float:right;margin:0 0 1em 1.5em;padding:6px;border:1px solid #c8ccd1;background:#f8f9fa;font-size:0.85em;text-align:center}
+.thumb img{max-width:250px;display:block;background:#eaecf0}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Entropy encoding</h1>
+<p>In <a href="../Information_theory/index.html">information theory</a>, <b>entropy encoding</b> (or <b>entropy coding</b>) is any lossless data compression scheme that assigns codewords to symbols such that the codeword lengths are based on the probabilities of the symbols. The most frequent symbols are given the shortest codewords, so that the average length approaches the <a href="../Entropy_(information_theory)/index.html">entropy</a> of the source, the theoretical lower bound established by <a href="../Shannon%27s_source_coding_theorem/index.html">Shannon's source coding theorem</a>.</p>
+<div class="thumb"><img src="images/Entropy_encoding.png" alt="Diagram of variable-length codewords assigned by symbol probability"></div>
+<h2>Techniques</h2>
+<p>The principal families of entropy encoding are:</p>
+<ul>
+<li><b><a href="../Huffman_coding/index.html">Huffman coding</a></b> — builds an optimal prefix code from symbol frequencies; used in formats such as <a href="../DEFLATE/index.html">DEFLATE</a> (ZIP, gzip, PNG).</li>
+<li><b><a href="../Arithmetic_coding/index.html">Arithmetic coding</a></b> — encodes the entire message into a single number in the interval [0, 1), achieving compression closer to the entropy limit than Huffman coding.</li>
+<li><b><a href="../Asymmetric_numeral_systems/index.html">Asymmetric numeral systems</a></b> (ANS) — a newer family that combines the compression ratio of arithmetic coding with speeds comparable to Huffman coding; widely used in modern compressors such as zstd.</li>
+<li><b><a href="../Range_coding/index.html">Range coding</a></b> — closely related to arithmetic coding.</li>
+</ul>
+<h2>Applications</h2>
+<p>Entropy encoding forms the final stage of most lossy compression pipelines as well: in <a href="../JPEG/index.html">JPEG</a> image compression, quantised transform coefficients are entropy-coded (with Huffman or arithmetic coding), and video codecs such as <a href="../H.264/MPEG-4_AVC/index.html">H.264</a> use context-adaptive schemes (CAVLC and CABAC) built on the same principles.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Data_compression/index.html">Data compression</a></li>
+<li><a href="../Huffman_coding/index.html">Huffman coding</a></li>
+<li><a href="../Arithmetic_coding/index.html">Arithmetic coding</a></li>
+<li><a href="../Prefix_code/index.html">Prefix code</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Istio - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:900px;padding:0 1em;line-height:1.6;color:#202122}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1}
+img.hero{float:right;margin:0 0 1em 1em;max-width:300px;border:1px solid #ccc;background:#f8f9fa;padding:4px}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>Istio</h1>
+<img class="hero" src="images/Istio.png" alt="Istio service mesh architecture diagram (placeholder image)">
+<p><b>Istio</b> is an open-source <a href="../Service_mesh/index.html">service mesh</a> platform that provides a uniform way to connect, secure, control, and observe microservices. It is most commonly deployed on <a href="../Kubernetes/index.html">Kubernetes</a>, where it manages traffic between services using sidecar proxies based on the Envoy proxy.</p>
+<h2>History</h2>
+<p>Istio was announced in May 2017, developed by Google and IBM in collaboration with the Envoy team from Lyft. Version 1.0 was released in July 2018. In 2022 Google transferred the project to the <a href="../Cloud_Native_Computing_Foundation/index.html">Cloud Native Computing Foundation</a> (CNCF); Istio graduated from the CNCF in July 2023. Newer releases introduced an "ambient mesh" mode that can operate without per-pod sidecars.</p>
+<h2>Architecture</h2>
+<p>Istio divides into a data plane and a control plane:</p>
+<ul>
+<li>The <b>data plane</b> consists of Envoy proxies deployed alongside services (as sidecars) or, in ambient mode, as per-node proxies, intercepting all network traffic between microservices.</li>
+<li>The <b>control plane</b>, centred on the <i>istiod</i> daemon, configures the proxies, distributes security certificates, and aggregates telemetry (metrics, logs, and traces).</li>
+</ul>
+<h2>Features</h2>
+<p>Istio provides traffic management (retries, timeouts, load balancing, traffic shifting for canary releases), security (mutual TLS authentication, authorisation policies), and observability, without requiring changes to application code.</p>
+</body>
+</html>

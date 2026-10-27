@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Triplet loss - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; max-width: 820px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; background: #fff; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #c8ccd1; padding-bottom: 3px; margin-top: 1.4em; }
+.hero { display: block; margin: 16px auto; max-width: 420px; border: 1px solid #c8ccd1; padding: 6px; background: #f8f9fa; text-align: center; }
+.mono { font-family: monospace; background: #f8f9fa; padding: 2px 4px; }
+.formula { text-align: center; font-family: monospace; background: #f8f9fa; padding: 10px; margin: 12px 0; }
+</style>
+</head>
+<body>
+<h1>Triplet loss</h1>
+<div class="hero"><img src="images/triplet_loss.png" alt="Diagram showing anchor, positive and negative samples arranged by triplet loss"></div>
+<p><b>Triplet loss</b> is a loss function for machine learning algorithms where a baseline (anchor) input is compared to a positive input and a negative input. The distance from the baseline (anchor) input to the positive input is minimized, and the distance from the baseline (anchor) input to the negative input is maximized. An early formulation of the idea was introduced in metric learning for face recognition by researchers at Google, and the method was popularized by the FaceNet system described by Schroff, Kalenichenko and Philbin in 2015.</p>
+<h2>Definition</h2>
+<p>Let <span class="mono">f(x)</span> be an embedding function mapping an input into a d-dimensional Euclidean space. For a triplet consisting of an anchor <span class="mono">a</span>, a positive example <span class="mono">p</span> (same class as the anchor) and a negative example <span class="mono">n</span> (different class), the triplet loss is:</p>
+<div class="formula">L = max( d(a, p) − d(a, n) + α, 0 )</div>
+<p>where <span class="mono">d</span> is typically the squared Euclidean distance and α is a margin enforced between positive and negative pairs. The goal of training is that, after optimization, the anchor is closer to the positive than to the negative by at least the margin α.</p>
+<h2>Triplet selection</h2>
+<p>The effectiveness of triplet loss depends heavily on how triplets are sampled. Random triplets often produce near-zero loss early in training, so practitioners use mining strategies:</p>
+<ul>
+<li><b>Hard negatives</b>: negatives closer to the anchor than the positive, giving the largest loss but sometimes causing instability or collapse.</li>
+<li><b>Semi-hard negatives</b>: negatives that are farther than the positive but still within the margin; these were used in FaceNet and tend to train more stably.</li>
+<li><b>Easy negatives</b>: negatives already farther than the positive by more than the margin, contributing zero loss.</li>
+</ul>
+<p>Online mining, in which triplets are formed within each mini-batch, is common in modern implementations.</p>
+<h2>Applications</h2>
+<p>Triplet loss has been applied to face recognition and verification, person re-identification, image retrieval, signature verification, speaker recognition, and learning embeddings for recommendation systems. Variants and related contrastive objectives include the contrastive loss of Chopra, Hadsell and LeCun, the N-pair loss, lifted structured loss, and quadruplet loss, which adds a second negative constraint.</p>
+<h2>See also</h2>
+<ul>
+<li>Contrastive learning</li>
+<li>Siamese neural network</li>
+<li>Metric learning</li>
+<li>FaceNet</li>
+</ul>
+</body>
+</html>

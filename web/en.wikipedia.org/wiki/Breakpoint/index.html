@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Breakpoint - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.mw-body{max-width:960px;margin:0 auto;padding:24px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.5em;border-bottom:1px solid #a2a9b1;padding-bottom:2px;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{text-align:center;margin:16px 0}
+.hero img{max-width:480px;border:1px solid #a2a9b1;background:#f8f9fa;padding:12px}
+.caption{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Breakpoint</h1>
+<p>In <a href="../Software_development/index.html">software development</a>, a <b>breakpoint</b> is an intentional stopping or pausing place in a program, put in place for <a href="../Debugging/index.html">debugging</a> purposes. When execution reaches a breakpoint, the program halts and control passes to the programmer, who can inspect variables, memory, and the call stack, and then resume execution, step through subsequent instructions, or terminate the run. Breakpoints are the central feature of a <a href="../Debugger/index.html">debugger</a> and are used far more commonly than older techniques of stopping programs with inserted print statements or manual halts.</p>
+<div class="hero"><img src="images/breakpoint.png" alt="Breakpoint markers in a code editor margin"><div class="caption">Red dots in the gutter of an IDE mark breakpoints in source code</div></div>
+<h2>Types</h2>
+<ul>
+<li><b>Line breakpoints</b> pause execution when a specified line of code (or machine address) is reached.</li>
+<li><b>Conditional breakpoints</b> pause only when a given expression evaluates to true, sparing the programmer from stepping through many irrelevant iterations of a loop.</li>
+<li><b>Watchpoints</b> (data breakpoints) pause when a variable or memory location is read or written, helping to find where a value is corrupted.</li>
+<li><b>Exception breakpoints</b> pause when the program throws or is about to throw an exception.</li>
+<li><b>Function breakpoints</b> pause on entry to a named function, regardless of where it is called from.</li>
+<li><b>Logpoints</b> print a message to the debug console when reached without pausing execution.</li>
+</ul>
+<h2>Implementation</h2>
+<p>Early debuggers implemented breakpoints by inserting a special instruction into the program. On x86 processors the canonical mechanism is the INT 3 instruction (opcode 0xCC), a single byte that replaces the first byte of the target instruction; when executed it raises a breakpoint exception caught by the debugger, which restores the original byte and presents the stopped program. Because instruction replacement is impractical in read-only memory or when many watchpoints are needed, processors also provide hardware breakpoint registers (such as the x86 debug registers DR0–DR3) that compare addresses without modifying code. Software breakpoints are effectively unlimited in number; hardware breakpoints are few but can monitor data accesses as well as execution.</p>
+<h2>History</h2>
+<p>The concept dates to the earliest days of computing: operators of machines such as ENIAC and the early stored-program computers could set switches to halt execution at a chosen instruction and inspect the machine's state. The term and the debugger-based workflow became standard with interactive computing and integrated development environments from the 1970s onward, popularised by tools such as Unix's dbx, Microsoft's CodeView, and modern debugger front ends built on GDB and LLDB.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Debugger/index.html">Debugger</a></li>
+<li><a href="../Debugging/index.html">Debugging</a></li>
+<li><a href="../Tracing_(software)/index.html">Tracing (software)</a></li>
+</ul>
+</div>
+</body>
+</html>

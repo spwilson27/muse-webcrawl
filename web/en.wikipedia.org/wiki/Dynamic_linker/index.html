@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Dynamic linker - Wikipedia</title>
+<style>body{font-family:sans-serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#222}h1{border-bottom:1px solid #aaa;padding-bottom:.2em}h2{border-bottom:1px solid #ccc;padding-bottom:.15em}a{color:#0645ad}img.hero{max-width:100%;background:#eee;display:block;padding:2em;text-align:center}</style></head>
+<body><h1>Dynamic linker</h1>
+<img class="hero" src="images/Dynamic_linker.png" alt="Placeholder image for Dynamic linker">
+<p>In computing, a <b>dynamic linker</b> is the part of an operating system that loads and links the shared libraries needed by an executable when it is executed (at "run-time"), by copying the content of libraries from persistent storage into RAM, filling jump tables and relocating pointers. It contrasts with a static linker, which performs linking at compile time.</p>
+<h2>Operation</h2>
+<p>When a dynamically linked program is started, the operating system loads the dynamic linker (specified, for example, in the ELF interpreter field, <i>PT_INTERP</i>, commonly <code>ld.so</code> on Unix-like systems). The linker then finds the required shared objects, maps them into memory, resolves symbol references, performs relocations, and runs library initializers before transferring control to the program.</p>
+<p>Lazy binding, in which function addresses are resolved on first call through the Procedure Linkage Table (PLT) and Global Offset Table (GOT), reduces start-up time. Environment variables such as <code>LD_LIBRARY_PATH</code> and <code>LD_PRELOAD</code> influence library search paths and preloading on many systems, with security implications for setuid programs.</p>
+<p>On Microsoft Windows, the equivalent functionality is provided by the loader in <code>ntdll.dll</code> resolving DLL imports at load time.</p>
+</body></html>

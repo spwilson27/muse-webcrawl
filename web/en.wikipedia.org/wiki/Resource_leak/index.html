@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Resource leak - Wikipedia</title>
+<style>body{font-family:sans-serif;max-width:800px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{font-family:serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{font-family:serif;border-bottom:1px solid #a2a9b1}</style></head>
+<body>
+<h1>Resource leak</h1>
+<p>A <b>resource leak</b> is a type of resource consumption by a computer program in which the program fails to release resources it has acquired. Typically arising from a bug, a resource leak gradually depletes the available supply of a resource — such as memory, file handles, sockets or database connections — until the program or system degrades or crashes. Recovering the resources usually requires restarting the affected process, since most operating systems reclaim a process's resources only when it terminates.</p>
+<img src="images/resource-leak.png" alt="Graph showing resource consumption rising over time due to a leak">
+<h2>Types</h2>
+<ul>
+<li><b>Memory leak</b> — the best-known type, in which allocated memory is no longer referenced but never freed.</li>
+<li><b>Handle/descriptor leaks</b> — files, sockets or database connections opened but never closed, eventually exhausting system limits.</li>
+<li><b>Other resources</b> — leaks of locks, GPU memory, temporary files, or entries in finite system tables.</li>
+</ul>
+<h2>Causes and prevention</h2>
+<p>Leaks commonly occur when cleanup code is skipped on error paths, when ownership of a resource is ambiguous, or when data structures grow without bound. Prevention strategies include clear ownership conventions, idioms such as RAII in C++, try-with-resources and <code>using</code> blocks, garbage collection (which addresses memory but not other resources), and detection tools such as Valgrind, sanitizers and static analysers. In long-running servers even a small leak is serious, because resource consumption grows without limit over the process's lifetime.</p>
+</body></html>

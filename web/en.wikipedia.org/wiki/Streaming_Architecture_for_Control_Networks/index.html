@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Streaming Architecture for Control Networks - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{font-family:sans-serif;border-bottom:1px solid #a7d7f9;padding-bottom:.2em}h2{font-family:sans-serif;border-bottom:1px solid #eaecf0}.infobox{float:right;background:#f8f9fa;border:1px solid #a2a9b1;padding:.6em;margin:0 0 1em 1em;font-size:.9em;width:250px}img.hero{display:block;width:100%;max-width:480px;background:#eef;border:1px dashed #88a;padding:2em 1em;text-align:center;margin:1em auto}a{color:#0645ad}</style>
+</head>
+<body>
+<h1>Streaming Architecture for Control Networks</h1>
+<img class="hero" src="images/sacn.png" alt="Placeholder image: stage lighting rig controlled over an Ethernet network">
+<p><b>Streaming Architecture for Control Networks</b> (<b>sACN</b>), standardised as <b>ANSI E1.31</b>, is a protocol for sending DMX512 lighting-control data over IP networks using the ACN (Architecture for Control Networks) family of standards. It is the dominant method of distributing lighting data in theatres, concert touring and architectural installations, replacing long runs of dedicated DMX cable.</p>
+<div class="infobox"><b>sACN / ANSI E1.31</b><br>Full name: Streaming Architecture for Control Networks<br>Standard: ANSI E1.31 (ESTA/PLASA)<br>Transport: UDP over Ethernet/IP, usually multicast<br>Data: DMX512 packets ("universes")</div>
+<h2>Operation</h2>
+<p>sACN wraps DMX512 frames in UDP packets and sends them, by default, to well-defined multicast addresses — one per "universe" of 512 channels — so that dimmers, moving lights and other receivers simply join the multicast groups they need. Each packet carries a universe number, a sequence number, a source name and priority, and the channel levels. If two consoles send the same universe, receivers follow the higher-priority source; a per-channel variant (per-channel priority) is handled by an extension. Because it rides on ordinary Ethernet, sACN traffic can traverse standard switches and structured cabling, and can be carried alongside its predecessor protocol Art-Net.</p>
+<h2>History</h2>
+<p>The Entertainment Services and Technology Association (ESTA) published E1.31 in 2009 as the streaming component of the broader ACN standard (ANSI E1.17), whose full session and device-management layers saw little adoption. The simple streaming protocol, by contrast, became near-universal in professional lighting: major console, dimmer and fixture manufacturers support it, and free diagnostic tools such as sACNView are standard in technicians' kits. A 2016 revision (E1.31-2016) added synchronisation features; later work has addressed operation over IPv6 and security.</p>
+<h2>See also</h2>
+<ul><li><a href="../DMX512/index.html">DMX512</a></li><li><a href="../Architecture_for_Control_Networks/index.html">Architecture for Control Networks</a></li><li><a href="../Art-Net/index.html">Art-Net</a></li></ul>
+</body>
+</html>

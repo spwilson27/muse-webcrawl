@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Starvation (computer science) - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1;font-weight:normal}h2{border-bottom:1px solid #a2a9b1;font-weight:normal}.hero{background:#f8f9fa;border:1px solid #a2a9b1;padding:10px;text-align:center;color:#72777d}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 10px 15px;font-size:90%;max-width:260px}</style></head>
+<body>
+<h1>Starvation (computer science)</h1>
+<div class="hero"><img src="images/Starvation_computer_science.png" alt="Placeholder image for starvation in computer science"></div>
+<p>In computer science, <b>starvation</b> is a problem encountered in concurrent computing where a process is perpetually denied necessary resources to process its work. Starvation may be caused by errors in scheduling (resource allocation) algorithms, where resource leaks could prompt starvation, or by mutual exclusion algorithms designed to be deadlock-free that nevertheless allow some processes to wait indefinitely.</p>
+<h2>Starvation and scheduling</h2>
+<p>Starvation is related to, but distinct from, deadlock: in a deadlock, two or more processes wait forever for each other; in starvation, the system as a whole keeps making progress, but one process never gets its turn. A classic example is a scheduling algorithm that always favors short or high-priority jobs — under a continuous stream of such jobs, a long or low-priority job may never run. Priority inversion, where a low-priority process holding a resource blocks a high-priority one, can produce a similar effect.</p>
+<h2>Prevention</h2>
+<p>The standard remedy is <b>aging</b>: gradually increasing the priority of waiting processes so that even the lowest-priority process eventually becomes the most eligible. Fair queueing disciplines, such as first-come-first-served allocation of locks and round-robin scheduling, also bound waiting times. The dining philosophers problem, posed by Edsger Dijkstra, is the canonical illustration of synchronization designs that may deadlock or starve individual participants, and of the care needed to guarantee fairness.</p>
+<h2>In distributed systems</h2>
+<p>In distributed and real-time systems, starvation can arise from network scheduling, lock contention across nodes, or retry storms in which unlucky clients repeatedly lose contention. Liveness properties in formal verification are often stated precisely to rule out starvation — every request is eventually served.</p>
+</body></html>

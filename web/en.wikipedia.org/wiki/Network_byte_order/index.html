@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Network byte order - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; line-height: 1.6; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 1.9em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 12px; }
+.caption { font-size: 0.85em; color: #54595d; }
+ul { padding-left: 1.6em; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Network byte order</h1>
+<p>The term <b>network byte order</b> refers to the convention in the Internet protocol suite that multi-byte numeric values in protocol headers are transmitted most significant byte first &mdash; that is, in <a href="../Endianness/index.html">big-endian</a> order. Because computer architectures store numbers in memory in different orders (little-endian on x86, big-endian on some other architectures), a single agreed convention is needed so that any two hosts can interpret data the same way.</p>
+<div class="hero"><img src="images/network-byte-order.png" alt="Diagram showing a 32-bit value stored most significant byte first"><div class="caption">In network byte order, the most significant byte is sent first.</div></div>
+<h2>Conversion functions</h2>
+<p>On Unix-like systems and Windows, the socket API provides the functions <code>htons</code> and <code>htonl</code> to convert 16-bit and 32-bit values from host byte order to network byte order, and <code>ntohs</code> and <code>ntohl</code> for the reverse direction. On machines that are already big-endian, these functions are no-ops. Header fields of IP, TCP, and UDP packets, along with many other Internet protocols, use network byte order.</p>
+<h2>History</h2>
+<p>The convention dates to the earliest ARPANET protocol specifications in the 1970s and was formalized in RFC 1700, "Assigned Numbers". The choice plausibly followed the convention used by IBM mainframes and the Xerox Networking Systems protocols. Danny Cohen's 1980 paper "On Holy Wars and a Plea for Peace" discusses the endian debate from which the terms big-endian and little-endian derive.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Endianness/index.html">Endianness</a></li>
+<li><a href="../Internet_protocol_suite/index.html">Internet protocol suite</a></li>
+<li><a href="../Berkeley_sockets/index.html">Berkeley sockets</a></li>
+</ul>
+</div>
+</body>
+</html>

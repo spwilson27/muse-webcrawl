@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Android Runtime - Wikipedia</title>
+<style>
+body{font-family:sans-serif;background:#f8f9fa;color:#202122;margin:0;padding:0 1em;}
+main{max-width:960px;margin:0 auto;background:#fff;padding:1.5em 2em;border:1px solid #a7d7f9;}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal;}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em;}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em;margin:0 0 1em 1em;font-size:0.9em;}
+.infobox th{background:#b0c4de;text-align:center;padding:0.3em;}
+.infobox td{padding:0.2em 0.4em;vertical-align:top;}
+.hero{display:block;max-width:300px;margin:1em auto;border:1px solid #a2a9b1;}
+a{color:#0645ad;text-decoration:none;}
+a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+<main>
+<h1>Android Runtime</h1>
+<img class="hero" src="images/Android_Runtime.png" alt="Diagram of the Android software stack showing ART">
+<p><b>Android Runtime</b> (<b>ART</b>) is the managed runtime used by the Android operating system for executing applications. It replaced the earlier Dalvik virtual machine as Android's default runtime with the release of Android 5.0 "Lollipop" in 2014. ART compiles application bytecode into native machine code, originally using ahead-of-time (AOT) compilation at install time, and in later versions using a hybrid of interpretation, just-in-time (JIT) compilation and profile-guided AOT.</p>
+<table class="infobox">
+<tr><th colspan="2">Android Runtime (ART)</th></tr>
+<tr><td><b>Developer</b></td><td>Google</td></tr>
+<tr><td><b>Initial release</b></td><td>2013 (preview); default from Android 5.0 (2014)</td></tr>
+<tr><td><b>Predecessor</b></td><td>Dalvik</td></tr>
+<tr><td><b>Type</b></td><td>Managed runtime environment</td></tr>
+<tr><td><b>License</b></td><td>Apache License 2.0</td></tr>
+</table>
+<h2>Background</h2>
+<p>Android applications are typically written in Java or Kotlin and compiled to DEX (Dalvik Executable) bytecode contained in APK files. Under Dalvik, bytecode was interpreted and compiled just-in-time by a virtual machine process per application. ART was introduced as an experimental option in Android 4.4 "KitKat" in 2013 and became the sole runtime in Android 5.0.</p>
+<h2>Compilation model</h2>
+<p>Originally, ART used the <code>dex2oat</code> tool to compile the entire application to a native ELF executable at installation time. This improved execution speed and battery life but increased install times and storage use. In Android 7.0 "Nougat", Google reintroduced a JIT compiler working alongside AOT: code is interpreted at first, frequently executed ("hot") methods are JIT-compiled, and during device idle and charging periods the collected profiles guide AOT compilation of hot code into a base profile compiled image. Android 9 added cloud-sourced profiles for faster first-run performance of popular apps.</p>
+<h2>Features</h2>
+<p>ART includes an improved garbage collector with fewer and shorter pauses, better allocation performance, enhanced debugging and profiling support (including a dedicated profiler), and support for 64-bit architectures. Since Android 12, ART is delivered as a Mainline module (APEX) that can be updated through the Google Play system updates independently of the device manufacturer.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Android_(operating_system)/index.html">Android (operating system)</a></li>
+<li><a href="../Dalvik_(software)/index.html">Dalvik (software)</a></li>
+<li><a href="../Java_virtual_machine/index.html">Java virtual machine</a></li>
+</ul>
+</main>
+</body>
+</html>

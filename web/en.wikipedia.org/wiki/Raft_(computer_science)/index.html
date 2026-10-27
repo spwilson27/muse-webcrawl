@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Raft (computer science) — Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine",Georgia,serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:0 1.5em 3em}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;margin-bottom:.3em;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em;font-weight:normal}
+p,li{line-height:1.6;font-size:.95em}
+.hero{display:block;width:100%;max-width:400px;background:#eef;padding:.5em;text-align:center;border:1px solid #a2a9b1;margin:1em 0}
+a{color:#0645ad;text-decoration:none}
+.small{font-size:.8em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Raft (computer science)</h1>
+<span class="hero"><img src="images/raft.png" alt="Diagram of Raft leader election and log replication"></span>
+<p><b>Raft</b> is a consensus algorithm for managing a replicated log, designed as an alternative to the Paxos family of algorithms. It was developed by Diego Ongaro and John Ousterhout at Stanford University and published in the 2014 paper "In Search of an Understandable Consensus Algorithm," with understandability as its primary design goal.</p>
+<h2>How it works</h2>
+<p>Raft decomposes consensus into three subproblems:</p>
+<ul>
+<li><b>Leader election</b>: servers are leaders, followers, or candidates. If a follower receives no heartbeat within an election timeout, it becomes a candidate and requests votes; a candidate with a majority becomes leader for a new term.</li>
+<li><b>Log replication</b>: the leader accepts client commands, appends them to its log, and replicates entries to followers via AppendEntries RPCs, committing an entry once a majority store it.</li>
+<li><b>Safety</b>: election restrictions and log-matching rules ensure that only a server with an up-to-date log can win an election and that committed entries are never lost (the Leader Completeness property).</li>
+</ul>
+<h2>Cluster membership</h2>
+<p>Raft originally used joint consensus for changing cluster membership and later adopted a simpler single-server membership change protocol. A cluster of 2f+1 servers tolerates f crash failures.</p>
+<h2>Adoption</h2>
+<p>Raft is implemented in systems such as etcd, Consul, CockroachDB, and TiKV, and in libraries across many languages; it is widely used to teach distributed consensus because of its relative simplicity.</p>
+<p class="small">See also: Paxos (algorithm) · Consensus (computer science) · State machine replication</p>
+</div>
+</body>
+</html>

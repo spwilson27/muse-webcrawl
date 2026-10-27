@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Knuth–Plass line-breaking algorithm - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:20px;border-bottom:1px solid #a2a9b1;padding-bottom:2px;font-weight:normal;margin-top:28px}
+p{font-family:sans-serif;font-size:14px;line-height:1.6}
+.hero{text-align:center;margin:12px 0}
+.hero img{max-width:420px;width:100%;background:#eaecf0;border:1px solid #a2a9b1}
+.caption{font-size:12px;color:#54595d;font-family:sans-serif}
+a{color:#0645ad;text-decoration:none}
+ul{font-family:sans-serif;font-size:14px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Knuth–Plass line-breaking algorithm</h1>
+<div class="hero"><img src="images/knuth-plass-line-breaking.png" alt="A paragraph set with globally optimal line breaks by the Knuth–Plass algorithm"></div>
+<p class="caption">The algorithm chooses line breaks for a whole paragraph at once, minimising total badness.</p>
+<p>The <b>Knuth–Plass line-breaking algorithm</b> is a method for breaking paragraphs into lines, published by Donald Knuth and Michael Plass in 1981 and used in the TeX typesetting system. Unlike greedy line breaking, which fills each line one at a time (as in most word processors), Knuth–Plass examines the whole paragraph and chooses break points that minimise a global cost, producing more even spacing throughout the paragraph.</p>
+<h2>Model: boxes, glue and penalties</h2>
+<p>TeX models a paragraph as a sequence of <b>boxes</b> (words or characters, of fixed width), <b>glue</b> (inter-word spaces, which have a natural width plus stretch and shrink), and <b>penalties</b> (desirable or undesirable break points, such as hyphenation points). For any candidate line, the algorithm computes the adjustment ratio — how much the glue must stretch or shrink to justify the line — and converts it into a <b>badness</b>, approximately 100 × |ratio|³. Lines that are too loose, too tight, or infeasible are penalised or excluded.</p>
+<h2>Optimisation</h2>
+<p>The algorithm assigns each candidate break a cost ("demerits") combining the line's badness, penalties for hyphenation, and penalties for adjacent lines of very different tightness (which look ugly together). It then uses dynamic programming to find the sequence of breaks with minimum total demerits in essentially linear time, keeping only a small set of "active" candidate breaks. If no feasible solution exists, TeX can fall back to allowing overfull lines or an extra pass with emergency stretch.</p>
+<h2>Influence</h2>
+<p>The algorithm is a landmark of algorithm design applied to typography and is widely regarded as producing the highest-quality paragraph composition of any mainstream system. It has been reimplemented in typesetting and layout software including Adobe InDesign (as the "Adobe Paragraph Composer") and various libraries for CSS and PDF generation, though many implementations simplify the full demerits model.</p>
+<ul>
+<li>TeX</li>
+<li>Donald Knuth</li>
+<li>Line breaking</li>
+<li>Word wrap</li>
+<li>Hyphenation algorithm</li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Oklab color space - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; padding: 1em 2em; line-height: 1.6; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; }
+img.hero { width: 100%; max-width: 500px; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 2em 0; text-align: center; display: block; }
+code { background: #f8f9fa; padding: 0 0.3em; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Oklab color space</h1>
+<img class="hero" src="images/oklab-color-space.png" alt="Slices through the Oklab color space">
+<p>The <b>Oklab color space</b> is a color space for representing colors, designed by Björn Ottosson in 2020. It is intended to be perceptually uniform, meaning that a change of the same amount in a color value should produce a change of about the same visual importance. Oklab has been included in web standards: CSS Color Level 4 defines the <code>oklab()</code> and <code>oklch()</code> notations, the latter being the cylindrical (polar) form of Oklab using chroma and hue in place of the Cartesian a and b components.</p>
+<h2>Coordinates</h2>
+<p>Oklab has three components: L (perceptual lightness), a (roughly green–red) and b (roughly blue–yellow). The a and b axes are unbounded, but in practice are usually in the range of about −0.4 to +0.4. The cylindrical form, Oklch, uses L, chroma C and hue angle h.</p>
+<h2>Conversion</h2>
+<p>Conversion from CIE XYZ to Oklab proceeds via an intermediate LMS cone-response space: XYZ values are transformed with a matrix to LMS, a cube root is applied to each component, and a second matrix produces the L, a, b values. Colors converted from sRGB first require linearisation of the sRGB values. Compared with CIELAB, Oklab offers improved hue linearity, so that, for example, blue colors do not shift toward purple when their lightness is changed.</p>
+<h2>Adoption</h2>
+<p>Oklab and Oklch are supported by all major web browsers and are increasingly used in design tools and color-gradient generation because interpolating colors in Oklab avoids the muddy midpoints that can occur when interpolating in sRGB.</p>
+</div>
+</body>
+</html>

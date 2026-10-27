@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Canonical XML - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:900px;margin:0 auto;padding:20px;color:#202122;line-height:1.6}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:28px}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 14px 18px;padding:8px}
+.infobox th{background:#e8e9ea;text-align:left;padding:4px 8px}
+.infobox td{padding:4px 8px}
+.hero{display:block;margin:12px 0;max-width:420px;background:#eaecf0;border:1px solid #c8ccd1;padding:40px 10px;text-align:center;color:#54595d;font-size:13px}
+a{color:#0645ad;text-decoration:none}
+.lead{font-size:16px}
+</style>
+</head>
+<body>
+<h1>Canonical XML</h1>
+<p class="lead"><b>Canonical XML</b> is a W3C specification that defines a canonical form of an XML document — a normalized serialization such that any two documents with the same canonical form are logically equivalent for purposes such as digital signatures. Because superficially different XML serializations can represent the same content, canonicalization is essential to XML Signature, where a hash is computed over the document.</p>
+<img class="hero" src="images/Canonical_XML.png" alt="Example of an XML document before and after canonicalization">
+<div class="infobox">
+<table>
+<tr><th colspan="2">Canonical XML</th></tr>
+<tr><td><b>Status</b></td><td>W3C Recommendation</td></tr>
+<tr><td><b>Version 1.0</b></td><td>March 15, 2001</td></tr>
+<tr><td><b>Version 1.1</b></td><td>May 2, 2008</td></tr>
+<tr><td><b>Abbreviation</b></td><td>C14N</td></tr>
+<tr><td><b>Use case</b></td><td>XML digital signatures</td></tr>
+</table>
+</div>
+<h2>Normalizations applied</h2>
+<p>Canonicalization converts the document to UTF-8, normalizes line endings to the line-feed character, replaces character and parsed entity references with their referenced character data, removes the XML declaration and document type declaration, converts empty elements to start–end tag pairs, sorts attributes and namespace declarations lexicographically, and removes redundant namespace declarations. Attribute values are normalized as in a validating parser, and whitespace in the document prolog and epilog is stripped.</p>
+<h2>Variants</h2>
+<p>The specification defines inclusive canonicalization, which retains namespace declarations from ancestors, and <b>Exclusive XML Canonicalization</b>, which includes only the namespaces actually used in the document content — important when a signed fragment is moved into a different document context, as in SOAP messages. Version 1.1 revised the handling of the <i>xml:id</i> attribute and inherited attributes from the XML namespace.</p>
+<h2>Applications</h2>
+<p>Canonical XML underpins XML Signature (XMLDSig) and is used in SAML assertions, WS-Security, and other protocols where signed XML fragments are processed by intermediaries. Implementation subtleties in canonicalization have been a recurring source of signature-verification vulnerabilities, and a working group produced "Canonical XML 2.0" as a non-normative streamlining of the algorithm.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../XML_Signature/index.html">XML Signature</a></li>
+<li><a href="../XML/index.html">XML</a></li>
+<li><a href="../Canonicalization/index.html">Canonicalization</a></li>
+</ul>
+</body>
+</html>

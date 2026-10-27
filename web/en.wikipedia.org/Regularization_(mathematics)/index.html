@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Regularization (mathematics) - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;padding:0;background:#fff;color:#202122;font-size:14px;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:10px 20px}
+header h1{font-family:serif;font-weight:normal;font-size:28px;margin:0;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+main{max-width:960px;margin:0 auto;padding:16px 20px}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:12px}
+.infobox th{background:#e5e9ec;text-align:left;padding:3px 6px}
+.infobox td{padding:3px 6px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+.hero{text-align:center;margin:12px 0}
+.hero img{max-width:420px;width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:24px 0}
+</style>
+</head>
+<body>
+<header><h1>Regularization (mathematics)</h1></header>
+<main>
+<table class="infobox">
+<tr><th colspan="2">Regularization</th></tr>
+<tr><td><b>Field</b></td><td>Machine learning, statistics, inverse problems</td></tr>
+<tr><td><b>Purpose</b></td><td>Prevent overfitting; stabilise ill-posed problems</td></tr>
+<tr><td><b>Common forms</b></td><td>L1 (Lasso), L2 (ridge), elastic net, dropout</td></tr>
+<tr><td><b>Key concept</b></td><td>Penalty term added to a loss function</td></tr>
+</table>
+<p><b>Regularization</b> is a technique used in mathematics, statistics, computer science and machine learning to prevent <a href="../Overfitting/index.html">overfitting</a> and to make ill-posed problems solvable by introducing additional information or constraints. In learning problems, regularization is typically implemented by adding a penalty term to the loss function being minimised, discouraging overly complex models that fit noise in the training data rather than the underlying pattern.</p>
+<div class="hero"><img src="images/regularization-mathematics.png" alt="Diagram showing bias-variance trade-off curves for different regularization strengths"></div>
+<h2>Overview</h2>
+<p>Many problems in data analysis take the form of minimising a loss function that measures how well a model fits observed data. Without constraints, a sufficiently flexible model can fit the training data exactly while generalising poorly to new data. Regularization modifies the objective to a sum of the data-fitting loss and a regularizer that penalises complexity — for example, the magnitude of the model's coefficients. A hyperparameter, often denoted λ (lambda), controls the trade-off between fitting the data and keeping the model simple.</p>
+<h2>Tikhonov regularization</h2>
+<p>One of the oldest and most widely used forms is <a href="../Tikhonov_regularization/index.html">Tikhonov regularization</a>, developed for solving ill-posed integral equations and least-squares problems. For a linear system, the regularized solution minimises ‖Ax − b‖² + λ‖Γx‖², where Γ is a matrix (often the identity) that encodes prior assumptions about the solution. When Γ is the identity, the method reduces to ridge regression.</p>
+<h2>L1 and L2 regularization</h2>
+<p>In statistics and machine learning, the two most common penalties are the L2 norm (ridge regression), which shrinks coefficients smoothly toward zero, and the L1 norm (the <a href="../Lasso_(statistics)/index.html">lasso</a>), which can drive some coefficients exactly to zero and thereby performs feature selection. The <b>elastic net</b> combines both penalties. These methods are closely connected to Bayesian inference: an L2 penalty corresponds to a Gaussian prior on the parameters, and an L1 penalty to a Laplace prior.</p>
+<h2>Other forms</h2>
+<p>Regularization also appears in many other guises: early stopping of iterative training, dropout and weight decay in neural networks, smoothing splines, total variation denoising in image processing, and constraints in optimisation. In each case the aim is the same — to trade a small increase in bias for a large reduction in variance, improving prediction on unseen data.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Regularization_(physics)/index.html">Regularization (physics)</a></li>
+<li><a href="../Bias%E2%80%93variance_tradeoff/index.html">Bias–variance tradeoff</a></li>
+<li><a href="../Cross-validation_(statistics)/index.html">Cross-validation</a></li>
+<li><a href="../Shrinkage_estimator/index.html">Shrinkage estimator</a></li>
+</ul>
+</main>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rendering equation - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;padding:0;background:#fff;color:#202122;font-size:14px;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:10px 20px}
+header h1{font-family:serif;font-weight:normal;font-size:28px;margin:0;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+main{max-width:960px;margin:0 auto;padding:16px 20px}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:12px}
+.infobox th{background:#e5e9ec;text-align:left;padding:3px 6px}
+.infobox td{padding:3px 6px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+.hero{text-align:center;margin:12px 0}
+.hero img{max-width:420px;width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:24px 0}
+.eq{text-align:center;font-family:serif;font-size:16px;margin:12px 0}
+</style>
+</head>
+<body>
+<header><h1>Rendering equation</h1></header>
+<main>
+<table class="infobox">
+<tr><th colspan="2">Rendering equation</th></tr>
+<tr><td><b>Field</b></td><td>Computer graphics</td></tr>
+<tr><td><b>Introduced</b></td><td>1986, by James Kajiya; independently David Immel et al.</td></tr>
+<tr><td><b>Describes</b></td><td>Equilibrium distribution of light in a scene</td></tr>
+<tr><td><b>Solved by</b></td><td><a href="../Path_tracing/index.html">Path tracing</a>, radiosity, photon mapping</td></tr>
+</table>
+<p>In computer graphics, the <b>rendering equation</b> is an integral equation describing the balance of light energy in a scene: the light leaving a point in a given direction equals the light emitted from that point plus the light reflected from all incoming directions. Introduced by James Kajiya in 1986 (and derived independently by David Immel and colleagues from heat-transfer theory), it provides the theoretical foundation for physically based rendering and global illumination algorithms.</p>
+<div class="hero"><img src="images/rendering-equation.png" alt="Diagram of light arriving at and leaving a surface point"></div>
+<h2>The equation</h2>
+<p class="eq">L<sub>o</sub>(x, ω<sub>o</sub>) = L<sub>e</sub>(x, ω<sub>o</sub>) + ∫<sub>Ω</sub> f<sub>r</sub>(x, ω<sub>i</sub>, ω<sub>o</sub>) L<sub>i</sub>(x, ω<sub>i</sub>) (ω<sub>i</sub> · n) dω<sub>i</sub></p>
+<p>Here L<sub>o</sub> is the outgoing radiance from point x in direction ω<sub>o</sub>; L<sub>e</sub> is the emitted radiance; the integral sums over the hemisphere of incoming directions ω<sub>i</sub>; f<sub>r</sub> is the bidirectional reflectance distribution function (BRDF), describing how the surface reflects light; L<sub>i</sub> is the incoming radiance; and the cosine term accounts for foreshortening. Because the incoming light at one point is the outgoing light from another, the equation is recursive and self-referential.</p>
+<h2>Solving the equation</h2>
+<p>The rendering equation cannot be solved analytically for general scenes, so rendering algorithms approximate it numerically. <a href="../Path_tracing/index.html">Path tracing</a> uses Monte Carlo integration, following random light paths through the scene. The radiosity method discretises surfaces into patches and solves for diffuse-only transport. Photon mapping, bidirectional path tracing and Metropolis light transport are other strategies, each with different strengths for caustics, glossy reflections and complex indirect light. Kajiya's original paper also introduced path tracing as a solution method.</p>
+<h2>Limitations</h2>
+<p>The classical rendering equation models geometric optics: it assumes light travels in straight lines, interacts instantaneously, and is not polarised or subject to wave effects such as diffraction and interference. It also ignores fluorescence and phosphorescence (wavelength shifting over time) and subsurface scattering must be added with a more general formulation, the radiative transfer equation, of which the rendering equation is a special case.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Global_illumination/index.html">Global illumination</a></li>
+<li><a href="../Path_tracing/index.html">Path tracing</a></li>
+<li><a href="../Bidirectional_reflectance_distribution_function/index.html">Bidirectional reflectance distribution function</a></li>
+<li><a href="../Radiosity_(computer_graphics)/index.html">Radiosity (computer graphics)</a></li>
+</ul>
+</main>
+</body>
+</html>

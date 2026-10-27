@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Network switch - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+#content{max-width:960px;margin:0 auto;padding:20px 30px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.4em;font-weight:normal}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 14px 18px;font-size:0.88em}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+.infobox .ib-title{font-size:1.1em;font-weight:bold;text-align:center;background:#e8eaf0;padding:6px}
+figure.hero{margin:14px 0}
+figure.hero img{max-width:420px;width:100%;border:1px solid #a2a9b1;background:#f8f9fa}
+figcaption{font-size:0.85em;color:#54595d}
+.lead{font-size:1.02em}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Network switch</h1>
+<figure class="hero"><img src="images/Network_switch.png" alt="A rack-mounted 24-port Ethernet network switch"></figure>
+<table class="infobox">
+<tr><td colspan="2" class="ib-title">Network switch</td></tr>
+<tr><th>OSI layer</th><td>Layer 2 (data link); multilayer switches also Layer 3</td></tr>
+<tr><th>Function</th><td>Forwards frames between devices on a LAN using MAC addresses</td></tr>
+<tr><th>Forwards by</th><td>Destination MAC address (CAM table)</td></tr>
+<tr><th>Predecessor</th><td>Network hub, bridge</td></tr>
+<tr><th>Common speeds</th><td>100 Mbit/s, 1 Gbit/s, 10–400 Gbit/s (data center)</td></tr>
+</table>
+<p class="lead">A <b>network switch</b> is a networking device that connects devices on a local area network (LAN) and forwards data frames between them based on hardware (MAC) addresses. Unlike a hub, which broadcasts every frame to all ports, a switch learns which devices are attached to which ports and delivers each frame only where it is addressed, greatly improving efficiency and creating separate collision domains per port. Switches are the standard building blocks of modern wired Ethernet networks in homes, offices, and data centers.</p>
+
+<h2>Operation</h2>
+<p>When a frame arrives, the switch reads its source MAC address and records the association between that address and the port in a forwarding table (CAM table). It then looks up the destination MAC: if known, the frame is forwarded only to that port; if unknown, it is flooded to all ports in the VLAN; broadcast and multicast frames are flooded or selectively forwarded. Forwarding may be store-and-forward (buffering the whole frame, checking its error-detecting CRC) or cut-through (forwarding as soon as the destination is read, at lower latency). Redundant links are managed by the Spanning Tree Protocol (STP/RSTP), which blocks loops that would otherwise cause broadcast storms.</p>
+
+<h2>Features</h2>
+<p>Managed switches offer virtual LANs (VLANs, IEEE 802.1Q) to segment networks, link aggregation (802.1AX/LACP) to combine ports, Quality of Service prioritization, port security, mirroring for monitoring, and Power over Ethernet (PoE) to power phones, cameras, and wireless access points. "Layer 3" or multilayer switches also route between IP subnets at hardware speed. Consumer unmanaged switches simply forward frames with no configuration.</p>
+
+<h2>History</h2>
+<p>Multiport bridges of the late 1980s evolved into dedicated switches when Kalpana introduced the EtherSwitch in 1990; through the 1990s, switching displaced shared hubs as prices fell and full-duplex links eliminated collisions, enabling the scaling of Ethernet from offices to vast data-center fabrics with top-of-rack and spine switches.</p>
+
+<h2>See also</h2>
+<p><a href="../Ethernet/index.html">Ethernet</a> · <a href="../MAC_address/index.html">MAC address</a> · <a href="../Router_(computing)/index.html">Router</a> · <a href="../Network_hub/index.html">Network hub</a> · <a href="../Virtual_LAN/index.html">Virtual LAN</a> · <a href="../Network_protocol/index.html">Network protocol</a></p>
+</div>
+</body>
+</html>

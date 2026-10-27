@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Memory management unit - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; padding: 0; color: #202122; background: #f8f9fa; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+.hero { text-align: center; margin: 12px 0; }
+.hero img { max-width: 380px; background: #eaecf0; border: 1px solid #c8ccd1; padding: 8px; }
+.caption { font-size: 12px; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Memory management unit</h1>
+<div class="hero"><img src="images/mmu.png" alt="Diagram of virtual address translation by an MMU"><div class="caption">The MMU translates virtual addresses to physical addresses</div></div>
+<p>A <b>memory management unit</b> (<b>MMU</b>), sometimes called a <b>paged memory management unit</b> (PMMU), is a computer hardware unit that examines all memory references on the memory bus, translating these requests, known as virtual memory addresses, into physical addresses in main memory.</p>
+<h2>Functions</h2>
+<p>In modern systems an MMU performs three basic functions: address translation (virtual to physical), memory protection (checking that a process may access a region with the requested permissions), and cache control. By translating addresses, the MMU allows each process to run in its own virtual address space, isolated from other processes, and enables paging, in which pages of memory can be moved between RAM and disk storage on demand. If an access violates protection rules or references an unmapped page, the MMU raises a page fault or protection fault for the operating system to handle.</p>
+<h2>Translation lookaside buffer</h2>
+<p>Because consulting page tables in memory on every access would be slow, MMUs include a translation lookaside buffer (TLB), a cache of recent virtual-to-physical translations. A TLB hit supplies the physical address immediately; on a miss, the MMU (or software, on some architectures) walks the page tables to find the mapping and fill the TLB.</p>
+<h2>History</h2>
+<p>Early systems such as the Atlas computer pioneered paging hardware in the 1960s. As microprocessors developed, MMUs moved from separate chips — such as the Motorola 68851 used with the 68020 — to being integrated on the processor die, as in the Intel 80386 and all subsequent mainstream CPUs. Small microcontrollers and embedded processors may include a simpler memory protection unit (MPU) that provides protection without full virtual memory translation.</p>
+</div>
+</body>
+</html>

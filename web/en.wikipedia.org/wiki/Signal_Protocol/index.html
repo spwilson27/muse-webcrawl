@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Signal Protocol - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:420px;width:100%;margin:12px auto;border:1px solid #c8ccd1;background:#eaecf0;padding:8px;text-align:center;font-size:.85em;color:#54595d}
+table.infobox{float:right;width:300px;margin:0 0 12px 16px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:.88em;border-collapse:collapse}
+table.infobox th,table.infobox td{border:1px solid #a2a9b1;padding:4px 6px;text-align:left;vertical-align:top}
+table.infobox th{background:#b0c4de}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Signal Protocol</h1>
+<p>The <b>Signal Protocol</b> (formerly known as the <b>TextSecure Protocol</b>) is a non-federated cryptographic protocol that provides end-to-end encryption for voice and video calls and instant messaging conversations. It was developed by Open Whisper Systems (the predecessor of the Signal Technology Foundation) and introduced in the TextSecure app in 2013–2014. The protocol has become the de facto standard for encrypted messaging, powering Signal itself and the end-to-end encryption of WhatsApp, Facebook Messenger's encrypted chats, Google Messages' RCS encryption and Skype's private conversations, among others.</p>
+<img class="hero" src="images/Signal_Protocol.png" alt="Placeholder image: diagram of the Double Ratchet key exchange between two messaging devices">
+<table class="infobox">
+<tr><th colspan="2">Signal Protocol</th></tr>
+<tr><th>Developer</th><td>Open Whisper Systems / Signal Foundation (Moxie Marlinspike, Trevor Perrin and contributors)</td></tr>
+<tr><th>Introduced</th><td>2013 (as TextSecure Protocol); renamed 2016</td></tr>
+<tr><th>Components</th><td>X3DH key agreement; Double Ratchet algorithm; Sesame session management; (formerly) Axolotl ratchet</td></tr>
+<tr><th>Used by</th><td>Signal, WhatsApp, Google Messages, Facebook Messenger, Skype (private conversations)</td></tr>
+</table>
+
+<h2>Properties</h2>
+<p>The protocol is designed to give confidentiality, integrity, authentication, participant consistency, forward secrecy and "future secrecy" (post-compromise security), while supporting asynchronous messaging — messages can be delivered through servers even when the recipient is offline — and minimising the metadata and trust placed in servers. Its guarantees were examined in formal security analyses, including a 2016 academic study that found no major flaws in the design.</p>
+
+<h2>How it works</h2>
+<h3>X3DH</h3>
+<p>Session setup uses the <b>Extended Triple Diffie–Hellman</b> (X3DH) key agreement. Each user publishes a signed identity key, a medium-term signed prekey and a batch of one-time prekeys on the server. A sender combines several Diffie–Hellman exchanges between her identity and ephemeral keys and the recipient's published keys to derive a shared secret, optionally with a post-quantum component (the PQXDH upgrade, announced 2023, adds the ML-KEM/Kyber key encapsulation mechanism).</p>
+<h3>Double Ratchet</h3>
+<p>Once the session exists, the <b>Double Ratchet</b> algorithm continually rekeys it. A Diffie–Hellman ratchet installs fresh root keys whenever a new ratchet public key is received, and a symmetric-key ratchet (key derivation function chains) produces a fresh message key for every individual message. Old keys are deleted, so compromise of a device does not reveal earlier messages, and the protocol "self-heals" after compromise when new ratchet steps occur. Out-of-order and skipped message keys are stored temporarily to handle asynchronous delivery.</p>
+<h3>Group messaging and later additions</h3>
+<p>For groups, Signal historically used "sender keys" (a symmetric ratchet per sender distributed over pairwise sessions); MLS (Messaging Layer Security, standardised as RFC 9420 in 2023) was developed elsewhere as an alternative group protocol but Signal retains its own design. Sesame handles session management across a user's multiple devices.</p>
+<p class="small">Categories: Cryptographic protocols | End-to-end encryption | Signal (software) | Instant messaging</p>
+</div>
+</body>
+</html>

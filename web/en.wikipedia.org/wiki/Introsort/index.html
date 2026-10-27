@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Introsort - Wikipedia</title>
+<style>body{font-family:sans-serif;max-width:860px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1;font-weight:normal}h2{border-bottom:1px solid #a2a9b1;font-weight:normal}a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}.thumb{color:#555;font-size:0.9em}code{background:#f8f9fa;padding:0 0.2em}</style>
+</head>
+<body>
+<h1>Introsort</h1>
+<p><b>Introsort</b> or <b>introspective sort</b> is a hybrid <a href="../Sorting_algorithm/index.html">sorting algorithm</a> that provides both fast average performance and optimal asymptotic worst-case performance. It begins with <a href="../Quicksort/index.html">quicksort</a>, switches to <a href="../Heapsort/index.html">heapsort</a> when the recursion depth exceeds a level based on the logarithm of the number of elements being sorted, and switches to <a href="../Insertion_sort/index.html">insertion sort</a> for small partitions.</p>
+<div class="thumb"><img src="images/Introsort.png" alt="Flow diagram of the introsort hybrid algorithm"></div>
+<h2>Overview</h2>
+<p>Introsort was invented by David Musser in 1997. Its design addresses quicksort's vulnerability to worst-case O(n²) behaviour on adversarial or degenerate inputs: once recursion depth passes 2⌊log₂ n⌋, the algorithm finishes the partition with heapsort, guaranteeing O(n log n) worst-case running time while retaining quicksort's speed and cache behaviour in the common case. Subarrays below a small threshold (often 16 elements) are left unsorted and finished with a single insertion sort over the whole array at the end.</p>
+<h2>Use</h2>
+<p>Introsort is best known as the implementation of <code>std::sort</code> in many C++ standard libraries, including GNU libstdc++, and variants are used in other language runtimes. Related hybrids include pdqsort, which is not an introsort but shares the goal of robust practical performance.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Quicksort/index.html">Quicksort</a></li>
+<li><a href="../Heapsort/index.html">Heapsort</a></li>
+<li><a href="../Sorting_algorithm/index.html">Sorting algorithm</a></li>
+</ul>
+</body>
+</html>

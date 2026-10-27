@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Substitution matrix - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.4em}
+.hero{display:block;margin:1em auto;max-width:480px;width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:2em 0;text-align:center;color:#72777d}
+a{color:#0645ad;text-decoration:none}
+pre{background:#f8f9fa;border:1px solid #c8ccd1;padding:1em;overflow:auto}
+</style>
+</head>
+<body>
+<h1>Substitution matrix</h1>
+<img class="hero" src="images/Substitution_matrix.png" alt="Part of the BLOSUM62 substitution matrix used in protein sequence alignment">
+<p>In bioinformatics, a <b>substitution matrix</b> assigns a score to each possible pair of residues that may be aligned in a protein or DNA sequence alignment. The score reflects the likelihood that one residue is substituted for the other through evolutionary change, relative to the probability of the pairing occurring by chance. Positive scores indicate substitutions observed more often than expected in related sequences; negative scores indicate unlikely or deleterious substitutions.</p>
+
+<h2>Construction</h2>
+<p>Most substitution matrices are log-odds matrices: each entry is (a scaling of) the logarithm of the ratio between the observed frequency of the aligned pair in trusted alignments of related sequences and the frequency expected from the background abundances of the two residues. Because chemically similar amino acids replace one another more readily in evolution, conservative substitutions — such as leucine for isoleucine — receive favourable scores, while radical changes receive penalties.</p>
+
+<h2>PAM and BLOSUM</h2>
+<p>The two classic families are the <b>PAM</b> matrices, derived by Margaret Dayhoff in the 1970s from a Markov model of evolution extrapolated from closely related proteins, and the <b>BLOSUM</b> matrices, derived by Steven and Jorja Henikoff in 1992 by counting substitutions in conserved blocks of aligned protein families. In PAM nomenclature a higher number denotes greater evolutionary distance; in BLOSUM the number denotes the percentage identity used to cluster sequences, so BLOSUM62 — the default in BLAST — is built from blocks clustered at 62% identity.</p>
+
+<h2>Use in alignment</h2>
+<p>Substitution matrices are used in dynamic-programming alignments such as Needleman–Wunsch global alignment and Smith–Waterman local alignment, and in database search tools such as BLAST, where they determine alignment scores and statistical significance. For nucleotide sequences, simpler matrices (for example, +1 for a match and −1 for a mismatch) or transition/transversion-weighted schemes are often used.</p>
+</body>
+</html>

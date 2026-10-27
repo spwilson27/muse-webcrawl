@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Feature scaling - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;color:#202122;line-height:1.55}
+h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:sans-serif;font-size:1.15em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:1em auto;max-width:420px;width:100%}
+pre{background:#f8f9fa;border:1px solid #a2a9b1;padding:.6em;overflow-x:auto}
+</style>
+</head>
+<body>
+<h1>Feature scaling</h1>
+<img class="hero" src="images/Feature_scaling.png" alt="Feature scaling">
+<p><b>Feature scaling</b> is a method used to normalise the range of independent variables or features of data. In <a href="../Data_processing/index.html">data processing</a>, it is also known as data normalisation and is generally performed during the data preprocessing step of <a href="../Machine_learning/index.html">machine learning</a>. Scaling is important because features measured on very different scales otherwise dominate distance calculations and gradient-based optimisation, so algorithms such as <a href="../K-nearest_neighbors_algorithm/index.html">k-nearest neighbours</a>, <a href="../Support-vector_machine/index.html">support vector machines</a> and <a href="../Neural_network/index.html">neural networks</a> usually perform better after scaling.</p>
+<h2>Rescaling (min-max normalisation)</h2>
+<p>Rescaling transforms values to a fixed range, commonly [0, 1], using the minimum and maximum of the feature:</p>
+<pre>x' = (x − min(x)) / (max(x) − min(x))</pre>
+<h2>Standardisation (z-score normalisation)</h2>
+<p>Standardisation rescales a feature to have a mean of zero and a standard deviation of one:</p>
+<pre>x' = (x − μ) / σ</pre>
+<p>where μ is the mean and σ the standard deviation of the feature in the training data.</p>
+<h2>Other methods</h2>
+<p>Other approaches include mean normalisation, scaling to unit length (making each sample a unit vector), robust scaling using the median and interquartile range to reduce the effect of outliers, and non-linear transformations. The same transformation fitted on the training set must be applied to validation and test data to avoid data leakage.</p>
+<p><i>This page is a recreation from memory.</i></p>
+</body>
+</html>

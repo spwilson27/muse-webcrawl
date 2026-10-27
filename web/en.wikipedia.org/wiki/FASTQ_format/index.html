@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>FASTQ format - Wikipedia</title>
+<style>body{font-family:sans-serif;max-width:900px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1;font-weight:normal}h2{border-bottom:1px solid #a2a9b1;font-weight:normal}a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}pre{background:#f8f9fa;border:1px solid #a2a9b1;padding:0.5em;overflow-x:auto}</style>
+</head><body>
+<h1>FASTQ format</h1>
+<p><b>FASTQ format</b> is a text-based format for storing both a biological sequence (usually a nucleotide sequence) and its corresponding quality scores. Both the sequence letter and quality score are each encoded with a single ASCII character for brevity. It was originally developed at the Wellcome Trust Sanger Institute to bundle a FASTA sequence with its quality data, and has become the de facto standard for storing output from high-throughput sequencing instruments such as Illumina genome analysers.</p>
+<img src="images/FASTQ_format.png" alt="Example of a FASTQ record showing sequence and quality lines">
+<h2>Format</h2>
+<p>A FASTQ file normally uses four lines per sequence:</p>
+<pre>@SEQ_ID
+GATTTGGGGTTCAAAGCAGTATCGATCAAATAGTAAATCCATTTGTTCAACTCACAGTTT
++
+!''*((((***+))%%%++)(%%%%).1***-+*''))**55CCF&gt;&gt;&gt;&gt;&gt;CCCCCCC65</pre>
+<p>Line 1 begins with '@' followed by a sequence identifier; line 2 is the raw sequence; line 3 begins with '+' and optionally repeats the identifier; line 4 encodes the quality values for the sequence in line 2.</p>
+<h2>Quality encoding</h2>
+<p>Quality scores are Phred scores encoded as ASCII characters. Several variants exist: the original Sanger format (Phred+33), the Solexa format, and Illumina versions using Phred+64 offsets. Modern pipelines have largely converged on the Sanger Phred+33 encoding.</p>
+<h2>Files and compression</h2>
+<p>FASTQ files from whole-genome sequencing runs can be tens to hundreds of gigabytes, and are routinely stored gzip-compressed with the extension <code>.fastq.gz</code>. Related formats include SAM/BAM for aligned reads and FASTA for sequences without quality scores.</p>
+<p>See also: <a href="../FASTA_format/index.html">FASTA format</a> · <a href="../DNA_sequencing/index.html">DNA sequencing</a></p>
+</body></html>

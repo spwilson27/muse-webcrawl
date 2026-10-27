@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Variational autoencoder - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; line-height: 1.6; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; margin-top: 28px; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; background: #eaecf0; border: 1px solid #a2a9b1; min-height: 180px; }
+.caption { font-size: 85%; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Variational autoencoder</h1>
+<p>In machine learning, a <b>variational autoencoder</b> (<b>VAE</b>) is an artificial neural network architecture introduced by Diederik P. Kingma and Max Welling in 2013. It belongs to the families of probabilistic graphical models and variational Bayesian methods. Unlike a standard autoencoder, which encodes each input to a fixed point in latent space, a VAE encodes it to a probability distribution — usually a Gaussian parameterised by a mean and variance — and is trained by maximising a lower bound on the data likelihood, so that sampling from the latent distribution and decoding produces new, plausible data.</p>
+<div class="hero"><img src="images/vae.png" alt="Diagram of a variational autoencoder with encoder, latent space and decoder"><div class="caption">Architecture of a VAE: an encoder, a probabilistic latent space, and a decoder.</div></div>
+
+<h2>Training</h2>
+<p>Training optimises the evidence lower bound (ELBO), which combines a reconstruction term (how well samples decoded from the encoded distribution reproduce the input) with a Kullback–Leibler divergence term that regularises the encoded distributions toward a prior, usually a standard normal. The <b>reparameterisation trick</b> — writing a sample as the mean plus the standard deviation times noise drawn from a fixed distribution — lets gradients flow through the sampling step so the network can be trained with backpropagation.</p>
+
+<h2>Applications and variants</h2>
+<p>VAEs are used for generative modelling of images, text and molecules, for representation learning, anomaly detection and data imputation. Well-known variants include the β-VAE, which weights the KL term to encourage disentangled latent factors; conditional VAEs, which condition generation on labels; and vector-quantised VAEs (VQ-VAE), which use a discrete codebook of latent embeddings.</p>
+</div>
+</body>
+</html>

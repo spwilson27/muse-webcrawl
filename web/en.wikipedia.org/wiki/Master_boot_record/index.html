@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Master boot record - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#fff;color:#202122;margin:0 auto;max-width:960px;padding:20px;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;margin-bottom:0.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+.hero{text-align:center;background:#f8f9fa;border:1px solid #a2a9b1;padding:16px;margin:14px 0}
+.hero img{max-width:100%;height:auto;background:#eaecf0;padding:40px 20px}
+figure{margin:0}
+figcaption{font-size:0.85em;color:#54595d;margin-top:6px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{padding-left:1.6em}
+table.data{border-collapse:collapse;margin:10px 0}
+table.data th,table.data td{border:1px solid #a2a9b1;padding:4px 10px;font-size:0.92em}
+table.data th{background:#eaecf0}
+.tagline{font-size:0.85em;color:#54595d}
+code{font-family:monospace;background:#f8f9fa;padding:0 3px}
+</style>
+</head>
+<body>
+<h1>Master boot record</h1>
+<p class="tagline">From Wikipedia, the free encyclopedia</p>
+<figure class="hero"><img src="images/master-boot-record.png" alt="Diagram of the first sector of a hard disk showing boot code, the partition table and the boot signature"><figcaption>Layout of the 512-byte master boot record</figcaption></figure>
+<p>The <b>master boot record</b> (<b>MBR</b>) is the first sector of a partitioned mass-storage device, such as a hard disk drive, containing the initial code executed when the system boots and the table describing the disk's partitions. It occupies the very first 512 bytes of the device (logical block address 0) and is used by the BIOS firmware of IBM PC compatible computers to start the boot process.</p>
+<h2>Structure</h2>
+<p>The classic MBR layout divides its 512 bytes as follows:</p>
+<table class="data">
+<tr><th>Offset</th><th>Size</th><th>Contents</th></tr>
+<tr><td>0x000</td><td>446 bytes</td><td>Bootstrap code</td></tr>
+<tr><td>0x1B8</td><td>4 bytes</td><td>Disk signature (Windows NT family)</td></tr>
+<tr><td>0x1BE</td><td>64 bytes</td><td>Partition table — four 16-byte entries</td></tr>
+<tr><td>0x1FE</td><td>2 bytes</td><td>Boot signature <code>0x55AA</code></td></tr>
+</table>
+<p>Each partition table entry describes a primary partition with its status (bootable flag), starting and ending CHS addresses, partition type identifier, first LBA sector and total number of sectors. Because the table holds only four entries, at most four primary partitions can be described; one entry may instead point to an extended partition containing a chain of logical drives.</p>
+<h2>Boot process</h2>
+<p>On power-up, the BIOS loads the MBR into memory at address 0x7C00, checks the trailing <code>0x55AA</code> signature, and transfers control to the bootstrap code. That code locates the partition marked active (bootable), loads its first sector — the volume boot record — and jumps to it, which in turn loads the operating system kernel or a fuller boot loader such as GRUB or the Windows Boot Manager.</p>
+<h2>Limitations and successors</h2>
+<p>The MBR scheme uses 32-bit sector addresses, limiting addressable disk size to 2 TiB with 512-byte sectors, and imposes the four-primary-partition limit. It has been largely superseded on modern systems by the GUID Partition Table (GPT) used with UEFI firmware, which supports far larger disks, more partitions and redundant copies of the partition table, although MBR partitioning remains widespread on removable media and older systems. MBR code has also been a target of malware known as bootkits, which infect the bootstrap area to load before the operating system.</p>
+<h2>See also</h2>
+<ul>
+<li>GUID Partition Table</li>
+<li>Volume boot record</li>
+<li>Booting</li>
+<li>BIOS</li>
+<li>Disk partitioning</li>
+</ul>
+</body>
+</html>

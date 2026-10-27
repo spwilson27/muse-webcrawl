@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Matching pursuit - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#fff;color:#202122;margin:0 auto;max-width:960px;padding:20px;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;margin-bottom:0.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+.hero{text-align:center;background:#f8f9fa;border:1px solid #a2a9b1;padding:16px;margin:14px 0}
+.hero img{max-width:100%;height:auto;background:#eaecf0;padding:40px 20px}
+figure{margin:0}
+figcaption{font-size:0.85em;color:#54595d;margin-top:6px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{padding-left:1.6em}
+.tagline{font-size:0.85em;color:#54595d}
+.math{font-style:italic}
+</style>
+</head>
+<body>
+<h1>Matching pursuit</h1>
+<p class="tagline">From Wikipedia, the free encyclopedia</p>
+<figure class="hero"><img src="images/matching-pursuit.png" alt="Diagram showing a signal being approximated by successive projections onto dictionary atoms"><figcaption>Iterative greedy approximation of a signal from a dictionary of atoms</figcaption></figure>
+<p><b>Matching pursuit</b> (MP) is a greedy algorithm for finding a sparse approximation of a signal using an overcomplete dictionary of functions ("atoms"). It was introduced by Stéphane Mallat and Zhifeng Zhang in 1993. The algorithm represents a signal as a linear combination of a small number of dictionary elements chosen one at a time, each step selecting the atom that best matches the current residual.</p>
+<h2>Algorithm</h2>
+<p>Given a signal <span class="math">f</span> in a Hilbert space and a redundant dictionary of unit-norm atoms, matching pursuit proceeds as follows:</p>
+<ol>
+<li>Initialise the residual <span class="math">R⁰f = f</span>.</li>
+<li>At each step, select the atom <span class="math">g</span> from the dictionary that maximises the magnitude of the inner product with the current residual.</li>
+<li>Subtract the projection of the residual onto that atom, updating the residual.</li>
+<li>Repeat until the residual is sufficiently small or a chosen number of atoms has been selected.</li>
+</ol>
+<p>After <span class="math">m</span> steps the signal is approximated by the sum of the selected projections, and the residual decays monotonically; for dictionaries that span the space, the approximation converges to the signal. Because each step makes the locally best choice, the resulting decomposition is generally not the globally sparsest possible, but it is computationally tractable where exact sparse solutions are not.</p>
+<h2>Variants and applications</h2>
+<p><b>Orthogonal matching pursuit</b> (OMP) improves the method by re-orthogonalising: at each step the coefficients of all atoms selected so far are recomputed by least squares, so the residual is orthogonal to the span of the chosen atoms, guaranteeing that no atom is selected twice and that the algorithm terminates in at most as many steps as the signal dimension for finite signals. Many further variants exist, including weak, stagewise and kernel matching pursuit.</p>
+<p>Matching pursuit and its variants are used in signal and image compression, denoising, feature extraction, audio coding, and in compressed sensing, where OMP is a standard reconstruction method for recovering sparse signals from few measurements.</p>
+<h2>See also</h2>
+<ul>
+<li>Sparse approximation</li>
+<li>Compressed sensing</li>
+<li>Greedy algorithm</li>
+<li>Basis pursuit</li>
+<li>Wavelet</li>
+</ul>
+</body>
+</html>

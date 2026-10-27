@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PID controller - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; line-height: 1.6; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 60px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 2em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.4em; }
+.hero { display: block; margin: 12px 0; max-width: 420px; width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.small { font-size: 0.9em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>PID controller</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/pid-controller.png" alt="Block diagram of a PID controller in a feedback loop with setpoint, process variable, and output">
+<p>A <b>proportional–integral–derivative controller</b> (<b>PID controller</b> or <b>three-term controller</b>) is a control loop feedback mechanism widely used in industrial control systems and a variety of other applications requiring continuously modulated control. A PID controller continuously calculates an error value <i>e(t)</i> as the difference between a desired setpoint and a measured process variable, and applies a correction based on proportional, integral, and derivative terms (denoted P, I, and D respectively), hence the name.</p>
+<h2>Control law</h2>
+<p>The controller output is the sum of three terms: the <b>proportional</b> term, proportional to the current error, which provides an immediate response but by itself typically leaves a steady-state offset; the <b>integral</b> term, proportional to the accumulated past error, which eliminates steady-state offset but can cause overshoot; and the <b>derivative</b> term, proportional to the rate of change of the error, which anticipates future error and adds damping. The relative weights — the gains Kp, Ki, and Kd — are adjusted in the process known as <b>tuning</b>.</p>
+<h2>Tuning</h2>
+<p>Tuning methods range from manual trial-and-error to systematic rules such as the Ziegler–Nichols method (1942), in which the integral and derivative gains are set to zero, the proportional gain is raised until the loop oscillates steadily, and gains are then computed from that ultimate gain and oscillation period. Software tools and auto-tuning functions in modern controllers can perform the identification automatically. Poor tuning can cause oscillation, sluggish response, or instability; integral <b>windup</b> — the integral term accumulating during actuator saturation — is a common practical problem addressed by anti-windup schemes.</p>
+<h2>History</h2>
+<p>Proportional control with manual integral adjustment appeared in early governors and ship steering gear; Elmer Sperry's company developed early PID-type autopilots, and Nicolas Minorsky published a theoretical analysis of three-term control in 1922 for automatic ship steering. Pneumatic industrial controllers of the 1930s made PID standard in process industries. Today the algorithm is most often implemented digitally in programmable logic controllers, distributed control systems, and embedded devices, and remains the most common feedback controller in industry.</p>
+<h2>Applications</h2>
+<p>PID controllers regulate temperature, pressure, flow, speed, and position in chemical plants, power stations, HVAC systems, motor drives, robotics, and consumer products from ovens to drones. Many practical installations use only some of the terms — PI control is especially common where derivative action would amplify measurement noise.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Control_theory/index.html">Control theory</a></li>
+<li><a href="../Ziegler–Nichols_method/index.html">Ziegler–Nichols method</a></li>
+<li><a href="../Feedback/index.html">Feedback</a></li>
+<li><a href="../Bang–bang_control/index.html">Bang–bang control</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Loop invariant - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 900px; padding: 0 1em; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+img.hero { display: block; margin: 1em auto; max-width: 400px; border: 1px solid #ccc; padding: 0.5em; background: #f8f9fa; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<h1>Loop invariant</h1>
+<img class="hero" src="images/loop_invariant.png" alt="Flowchart showing a loop invariant holding before, during and after a loop">
+<p>In computer science, a <b>loop invariant</b> is a property of a program loop that is true before (and after) each iteration. It is a logical assertion, sometimes checked within the code by means of an assertion call. Knowing its invariant(s) is essential in understanding the effect of a loop.</p>
+<p>In formal program verification, particularly the Floyd–Hoare approach, loop invariants are used to reason about the correctness of loops: if a property (1) holds before the loop starts (<i>initiation</i>), (2) is preserved by every iteration assuming the loop condition (<i>maintenance</i>), and (3) together with the negation of the loop condition implies the desired postcondition (<i>termination</i> step, along with a variant showing progress), then the loop is partially correct and achieves its goal when it exits.</p>
+<h2>Example</h2>
+<p>For a simple loop that computes the maximum of an array <code>a[0..n-1]</code> by scanning indices <code>i</code> and keeping a running maximum <code>m</code>, a suitable invariant is: "<code>m</code> equals the maximum of <code>a[0..i-1]</code>". It holds initially (empty range, with <code>m</code> initialised to the first element), is preserved by each step, and at exit gives <code>m</code> as the maximum of the whole array.</p>
+<h2>Language support</h2>
+<p>The Eiffel programming language includes explicit <code>invariant</code> clauses for loops as part of its design-by-contract features. Loop invariants also appear in specification languages such as JML for Java and ACSL for C, and in deductive verification tools (e.g. Dafny, Frama-C).</p>
+<p><i>See also: <a href="../Hoare_logic/index.html">Hoare logic</a>, <a href="../Invariant_(computer_science)/index.html">Invariant (computer science)</a>, <a href="../Design_by_contract/index.html">Design by contract</a></i></p>
+</body>
+</html>

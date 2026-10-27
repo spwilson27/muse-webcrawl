@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wired Equivalent Privacy - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #fff; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; padding: 16px 24px 48px; line-height: 1.6; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px 12px; font-size: 0.85em; margin: 0 0 12px 16px; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Wired Equivalent Privacy</h1>
+<p><b>Wired Equivalent Privacy</b> (<b>WEP</b>) is a security algorithm for IEEE 802.11 wireless networks, introduced in 1997 as part of the original Wi-Fi standard. It was designed to give wireless links confidentiality comparable to a wired connection, but serious cryptographic flaws made it breakable within minutes, and it was formally deprecated in 2004 in favor of <a href="../Wi-Fi_Protected_Access/index.html">WPA</a> and WPA2.</p>
+<div class="infobox">
+<table>
+<tr><th>Introduced</th><td>1997 (IEEE 802.11)</td></tr>
+<tr><th>Cipher</th><td>RC4 stream cipher</td></tr>
+<tr><th>Key sizes</th><td>40-bit ("64-bit WEP") or 104-bit ("128-bit")</td></tr>
+<tr><th>Status</th><td>Deprecated 2004; insecure</td></tr>
+</table>
+</div>
+<div class="hero"><img src="images/wired-equivalent-privacy.png" alt="Diagram of WEP encryption using RC4 and a 24-bit initialization vector"></div>
+<h2>Design</h2>
+<p>WEP encrypts each packet with the RC4 stream cipher, using a key formed by concatenating a static shared secret with a 24-bit initialization vector (IV) sent in cleartext. A CRC-32 checksum provided data integrity. Export restrictions of the era encouraged the short 40-bit version of the key.</p>
+<h2>Weaknesses</h2>
+<p>The tiny 24-bit IV space guarantees reuse after a few thousand packets, and RC4 key-scheduling weaknesses — publicized by the Fluhrer, Mantin, and Shamir attack in 2001 — let passive listeners recover the key from captured traffic. Later improvements reduced cracking to under a minute with tools such as Aircrack-ng. The CRC-32 integrity check is linear and permits undetected packet modification. The Wi-Fi Alliance retired WEP in 2004, and its use is prohibited under the PCI DSS payment-card standard.</p>
+<h2>Legacy</h2>
+<p>WEP remains a canonical classroom example of cryptographic design failure: short IVs, key reuse, unauthenticated encryption, and reliance on secrecy of a widely shared static key. It was replaced by WPA (TKIP as an interim measure) and then WPA2 with AES.</p>
+<p><i>See also: <a href="../Wi-Fi/index.html">Wi-Fi</a>, <a href="../RC4/index.html">RC4</a>, <a href="../IEEE_802.11/index.html">IEEE 802.11</a>.</i></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Type inference - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:24px;color:#202122;background:#fff;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{font-size:1.35em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px 14px;margin:0 0 12px 18px;font-size:0.88em;max-width:260px}
+.infobox th{text-align:left;padding-right:10px;vertical-align:top}
+.hero{display:block;margin:16px 0;border:1px solid #ccc;background:#f0f0f0;padding:28px;text-align:center;color:#666;font-style:italic}
+</style>
+</head>
+<body>
+<h1>Type inference</h1>
+<div class="infobox"><table>
+<tr><th>Field</th><td>Programming language theory</td></tr>
+<tr><th>Key algorithm</th><td>Hindley–Milner (Algorithm W)</td></tr>
+<tr><th>Used in</th><td>ML, Haskell, OCaml, Rust, TypeScript (partial)</td></tr>
+</table></div>
+<img class="hero" src="images/type_inference.png" alt="Type inference diagram placeholder">
+<p><b>Type inference</b> is the automatic detection of the type of an expression in a formal language, most commonly by a compiler in a statically typed programming language. Rather than requiring programmers to annotate every variable, the compiler deduces types from how values are used, combining concision with static safety.</p>
+<h2>Hindley–Milner inference</h2>
+<p>The classic algorithm, developed independently by J. Roger Hindley and Robin Milner, underlies the ML family of languages. It generates type equations from expressions and solves them by unification, yielding the <i>principal type</i> — the most general type consistent with the program. Milner's Algorithm W (1978) gave a practical formulation, extended with let-polymorphism so that generic functions can be used at several types.</p>
+<h2>Local and partial inference</h2>
+<p>Many mainstream languages infer only local types: Java and C# infer the types of variables declared with <code>var</code>, C++ uses <code>auto</code>, and TypeScript infers types from initialisers while still accepting annotations. Full global inference can become undecidable for richer type systems, so practical languages mix inference with explicit declarations, especially at function boundaries.</p>
+<h2>Benefits and trade-offs</h2>
+<p>Inference reduces boilerplate and keeps types consistent during refactoring, but inferred types can obscure an interface and sometimes produce cryptic error messages when unification fails far from the actual mistake.</p>
+<p>See also: <a href="../Hindley–Milner_type_system/index.html">Hindley–Milner type system</a>, <a href="../Type_system/index.html">Type system</a>, <a href="../Unification_(computer_science)/index.html">Unification</a>.</p>
+</body>
+</html>

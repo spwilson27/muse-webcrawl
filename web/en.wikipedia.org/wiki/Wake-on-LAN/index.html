@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wake-on-LAN</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;color:#222;line-height:1.6}
+h1{border-bottom:2px solid #a2a9b1;padding-bottom:.2em}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:.15em}
+img.hero{display:block;max-width:100%;height:auto;background:#eee;border:1px solid #ccc;padding:2em;text-align:center;color:#666}
+a{color:#0645ad}
+.infobox{float:right;margin:0 0 1em 1em;border:1px solid #a2a9b1;background:#f8f9fa;padding:.5em 1em;font-size:.9em;max-width:260px}
+</style>
+</head>
+<body>
+<img class="hero" src="images/Wake_on_LAN.png" alt="Placeholder image of a computer network interface card">
+<h1>Wake-on-LAN</h1>
+<div class="infobox">
+<p><b>Abbreviation:</b> WoL</p>
+<p><b>Type:</b> Ethernet networking standard</p>
+<p><b>Mechanism:</b> "Magic packet" addressed to the target's MAC address</p>
+</div>
+<p><b>Wake-on-LAN</b> (WoL) is an Ethernet networking standard that allows a computer to be switched on or awakened remotely by a specially formed network message. The message, called a <b>magic packet</b>, is usually sent by a program on another device on the same local area network, though it can also be routed from another subnet or, with suitable configuration, from the internet. The capability is used by system administrators to power up machines for maintenance, updates and remote access without being physically present.</p>
+<h2>The magic packet</h2>
+<p>The magic packet is a frame containing six bytes of all 255 (FF FF FF FF FF FF in hexadecimal) followed by sixteen repetitions of the target computer's 48-bit MAC address. It is normally broadcast over the LAN — historically as a UDP datagram to port 7 or 9 — so that it reaches the sleeping machine's network interface. Because the powered-down computer cannot process ordinary network traffic, the listening is done by the network interface card (NIC), which remains supplied with standby power.</p>
+<h2>Requirements</h2>
+<p>Wake-on-LAN requires support in the computer's firmware (BIOS/UEFI) and NIC, a power supply that provides standby current, and configuration in the operating system driver. The feature works most reliably over wired Ethernet; the related Wake on Wireless LAN (WoWLAN) standard extends the concept to Wi-Fi adapters but is less widely supported. Variants include SecureOn, which appends a password to the packet, and Wake-on-LAN is commonly grouped with other remote power-management features in ACPI sleep states.</p>
+<h2>History</h2>
+<p>The technology was promoted in the 1990s by AMD (whose "Magic Packet" architecture became the de facto standard) and Intel, whose motherboards and adapters shipped with WoL headers and firmware support. It subsequently became a standard feature of business desktops, servers and many consumer machines.</p>
+</body>
+</html>

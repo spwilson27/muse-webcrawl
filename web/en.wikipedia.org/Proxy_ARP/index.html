@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Proxy ARP - Wikipedia</title>
+<style>
+body{font-family:sans-serif;background:#f8f9fa;color:#202122;margin:0;padding:0;}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9;}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin:0 0 12px;padding-bottom:4px;}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px;}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:88%;margin:0 0 16px 20px;border-collapse:collapse;}
+.infobox th{background:#e6e6e6;text-align:center;padding:6px;}
+.infobox td{padding:4px 8px;vertical-align:top;}
+.hero{display:block;margin:16px auto;max-width:640px;width:100%;background:#e6e6e6;border:1px solid #a2a9b1;min-height:180px;text-align:center;color:#54595d;font-size:90%;line-height:180px;}
+a{color:#0645ad;text-decoration:none;} a:hover{text-decoration:underline;}
+p{line-height:1.6;} li{line-height:1.6;}
+.small{font-size:88%;color:#54595d;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Proxy ARP</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<tr><th colspan="2">Proxy ARP</th></tr>
+<tr><td><b>Standard</b></td><td>RFC 925 (1984); described in RFC 1027 (1987)</td></tr>
+<tr><td><b>Layer</b></td><td>Link layer / network layer boundary</td></tr>
+<tr><td><b>Protocol</b></td><td>Address Resolution Protocol (ARP)</td></tr>
+</table>
+<img class="hero" src="images/proxy-arp.png" alt="Network diagram showing a router answering ARP requests on behalf of another subnet">
+<p><b>Proxy ARP</b> is a technique by which a device on a network, typically a router, answers Address Resolution Protocol (ARP) requests intended for another device that is not on the same physical network segment. When a host broadcasts an ARP request for an IP address that lies elsewhere, the proxy device replies with its own hardware (MAC) address, and then forwards the traffic it receives to the true destination.</p>
+<h2>Uses</h2>
+<p>Proxy ARP was first described in RFC 925 (1984) for use with transparent subnet gateways, letting a network be subnetted without reconfiguring hosts. It remains useful for connecting devices that cannot be configured with a default gateway, for some dial-up and VPN configurations in which remote clients appear to be on the local subnet, and for certain firewall and redundancy arrangements.</p>
+<h2>Disadvantages and security</h2>
+<p>The technique hides the real topology of a network, increases ARP traffic and cache sizes, can fail confusingly when misconfigured, and complicates fault-finding. Because it depends on hosts trusting unauthenticated ARP replies, it interacts badly with network security: gratuitous and spoofed ARP responses can be used for ARP spoofing attacks and man-in-the-middle interception, and proxy ARP can inadvertently extend such vulnerabilities across segments. Modern network design generally prefers explicit routing or DHCP configuration over proxy ARP.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Address_Resolution_Protocol/index.html">Address Resolution Protocol</a></li>
+<li><a href="../ARP_spoofing/index.html">ARP spoofing</a></li>
+<li><a href="../Proton_Mail/index.html">Proton Mail</a></li>
+<li><a href="../Router_(computing)/index.html">Router (computing)</a></li>
+</ul>
+</div>
+</body>
+</html>

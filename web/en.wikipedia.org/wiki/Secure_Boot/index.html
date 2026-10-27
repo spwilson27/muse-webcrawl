@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Secure Boot - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:820px;margin:0 auto;padding:24px;line-height:1.6;color:#202122}
+h1{font-family:sans-serif;font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{font-family:sans-serif;font-size:1.35em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:1.4em}
+.hero{border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;text-align:center;color:#54595d;font-size:.9em}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>Secure Boot</h1>
+<div class="hero"><img src="images/Secure_Boot.png" alt="Hero image placeholder: diagram of the UEFI Secure Boot verification chain"></div>
+<p><b>Secure Boot</b> is a security feature of the Unified Extensible Firmware Interface (UEFI) specification designed to ensure that a device boots only software trusted by the manufacturer. When the computer starts, the firmware verifies the digital signature of each piece of boot software — including firmware drivers, EFI applications, and the operating system bootloader — against a database of authorised keys stored in firmware. If a component's signature is not recognised or has been revoked, the boot process stops.</p>
+<h2>How it works</h2>
+<p>Secure Boot relies on a hierarchy of keys. A Platform Key (PK), controlled by the device manufacturer, anchors trust. Key Exchange Keys (KEK) authorise updates to the signature databases: the allowed-signature database (db) and the forbidden-signature database (dbx), which records compromised or revoked bootloaders. Each stage of boot verifies the next before executing it, forming a chain of trust from firmware to operating system kernel. Revocations via dbx updates are how known-vulnerable bootloaders (for example during the BootHole and BlackLotus vulnerabilities) are blocked.</p>
+<h2>Adoption and controversy</h2>
+<p>Secure Boot shipped with UEFI 2.2 and was widely deployed with Windows 8 PCs from 2012, when Microsoft required it enabled by default on certified x86 machines while requiring that users be able to disable it; on ARM Windows devices it initially could not be disabled, drawing criticism from free-software advocates concerned about vendor lock-in. Linux distributions typically boot under Secure Boot using a small signed "shim" bootloader verified against Microsoft's signing service, which in turn loads their own kernels and modules. The feature defends against bootkits and rootkits that load before the operating system, though it does not protect against attacks after a trusted system is running.</p>
+<h2>See also</h2>
+<p><a href="../UEFI/index.html">UEFI</a> · <a href="../Trusted_Platform_Module/index.html">Trusted Platform Module</a> · <a href="../Bootkit/index.html">Bootkit</a></p>
+</body>
+</html>

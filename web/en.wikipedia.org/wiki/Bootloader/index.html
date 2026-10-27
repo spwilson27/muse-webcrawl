@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bootloader - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;background:#f8f9fa;color:#202122;margin:0;padding:0}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;margin:0 0 16px 16px;padding:8px;font-size:14px}
+.infobox th{text-align:left;background:#eaecf0;padding:4px}
+.infobox td{padding:4px}
+.hero{display:block;max-width:100%;height:auto;margin:12px 0;background:#eaecf0;border:1px solid #a2a9b1;padding:24px;text-align:center;font-family:sans-serif;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Bootloader</h1>
+<img class="hero" src="images/Bootloader.png" alt="A bootloader menu screen offering a choice of operating systems to start">
+<p>A <b>bootloader</b> (also spelled boot loader) is a computer program that is responsible for <a href="../Booting/index.html">booting</a> a computer: it completes hardware initialisation handed over by the firmware and loads the operating system kernel into memory so that the system can start. Bootloaders range from a few hundred bytes of code in the master boot record of a disk to full-featured programs offering menus of operating systems, recovery tools, and configuration options.</p>
+
+<table class="infobox">
+<tr><th colspan="2">Bootloader</th></tr>
+<tr><td>Type</td><td>System software</td></tr>
+<tr><td>Function</td><td>Loads the operating system kernel at startup</td></tr>
+<tr><td>Examples</td><td>GRUB, systemd-boot, Windows Boot Manager, U-Boot</td></tr>
+<tr><td>Runs after</td><td>BIOS or UEFI firmware</td></tr>
+</table>
+
+<h2>Boot process</h2>
+<p>On a traditional PC, the BIOS firmware runs power-on self tests and then loads the first sector of the boot disk — the master boot record (MBR) — into memory. Because 512 bytes is too small for a full loader, the MBR code typically loads a larger second stage, which reads a configuration, presents a boot menu if configured, loads the kernel and initial ramdisk, and transfers control to the kernel. Under UEFI, the firmware can itself load bootloader applications (such as GRUB's EFI image or the Windows Boot Manager) stored as files on the EFI system partition. Many bootloaders are "chain-loaded" in sequence, and multiboot setups use a single loader such as <a href="../GNU_GRUB/index.html">GNU GRUB</a> to offer a choice among several installed operating systems.</p>
+
+<h2>Security</h2>
+<p>Because a bootloader runs with full control before the operating system starts, it is a critical point for security. UEFI Secure Boot requires bootloaders to be cryptographically signed, protecting against bootkits and other malware that persist below the operating system. Conversely, locked bootloaders on phones and game consoles are a focus of debate over owners' ability to install alternative software; unlocking a phone's bootloader is often the first step in installing a custom Android ROM.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Booting/index.html">Booting</a></li>
+<li><a href="../GNU_GRUB/index.html">GNU GRUB</a></li>
+<li><a href="../UEFI/index.html">UEFI</a></li>
+<li><a href="../Master_boot_record/index.html">Master boot record</a></li>
+</ul>
+</div>
+</body>
+</html>

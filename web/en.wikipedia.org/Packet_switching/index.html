@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Packet switching - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 30px 60px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.4em; }
+h3 { font-size: 1.15em; font-weight: bold; margin-top: 1.1em; }
+p { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px 14px; margin: 0 0 14px 20px; font-size: 0.85em; }
+.infobox caption { font-weight: bold; font-size: 1.05em; padding-bottom: 6px; }
+.infobox th { text-align: left; vertical-align: top; padding: 2px 6px 2px 0; }
+.infobox td { padding: 2px 0; }
+figure.hero { margin: 10px 0; text-align: center; }
+figure.hero img { max-width: 420px; width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; }
+figcaption { font-size: 0.82em; color: #54595d; margin-top: 4px; }
+ul { line-height: 1.6; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Packet switching</h1>
+<table class="infobox">
+<caption>Packet switching</caption>
+<tr><th>Type</th><td>Network communication method</td></tr>
+<tr><th>Key concepts</th><td>Packets, routers, store-and-forward, statistical multiplexing</td></tr>
+<tr><th>Pioneers</th><td>Paul Baran, Donald Davies, Leonard Kleinrock</td></tr>
+<tr><th>First networks</th><td><a href="../ARPANET/index.html">ARPANET</a>, <a href="../NPL_network/index.html">NPL network</a></td></tr>
+<tr><th>Used by</th><td>The <a href="../Internet/index.html">Internet</a></td></tr>
+</table>
+<figure class="hero"><img src="images/packet-switching.png" alt="Illustration of packets travelling between nodes in a packet-switched network"><figcaption>Data divided into packets that traverse independent paths through a network.</figcaption></figure>
+<p><b>Packet switching</b> is a method of grouping data into <i>packets</i> that are transmitted over a digital network. Each packet consists of a header, which carries addressing and control information, and a payload containing the data itself. Packets from many different communications are interleaved (statistically multiplexed) over shared links and are routed independently through the network, where they may arrive out of order and be reassembled at the destination.</p>
+<p>Packet switching is the dominant basis for data communications worldwide and underlies the <a href="../Internet/index.html">Internet</a>. It contrasts with traditional <b>circuit switching</b>, in which a dedicated end-to-end path is reserved for the duration of a communication, as in the classic telephone network.</p>
+<h2>History</h2>
+<p>The concept was developed independently in the early 1960s. Paul Baran at the RAND Corporation proposed a distributed, survivable communications network for the United States Air Force, publishing his work in 1964. Donald Davies at the United Kingdom's National Physical Laboratory developed a similar design and coined the term "packet" in 1965; his <a href="../NPL_network/index.html">NPL network</a> became operational in 1969. Leonard Kleinrock contributed the queueing-theory analysis of message switching that informed the design of the <a href="../ARPANET/index.html">ARPANET</a>, which began operation in 1969 and adopted packet switching throughout.</p>
+<p>In the 1970s, packet-switched public data networks such as <a href="../Telenet/index.html">Telenet</a> and the <a href="../X.25/index.html">X.25</a> standard spread the technology commercially, while the work of Vint Cerf and Bob Kahn on <a href="../Transmission_Control_Protocol/index.html">TCP/IP</a> created the protocols that knit packet networks together into the Internet.</p>
+<h2>How it works</h2>
+<p>A sending host divides a message or data stream into packets. Each packet's header contains a source and destination address and, in connection-oriented protocols such as <a href="../Transmission_Control_Protocol/index.html">TCP</a>, sequence numbers that allow the receiver to reorder packets and detect losses. Intermediate nodes called <a href="../Router_(computing)/index.html">routers</a> examine each packet's destination and forward it along the best available path, a process known as store-and-forward switching.</p>
+<p>Because links are shared statistically, packet switching uses bandwidth far more efficiently than circuit switching for bursty data traffic. The trade-off is that delay and throughput can vary as network load changes, a property managed by congestion control and quality-of-service mechanisms.</p>
+<h2>Modes</h2>
+<p>Packet switching is implemented in two broad modes. In <b>connectionless</b> (datagram) service, exemplified by the <a href="../Internet_Protocol/index.html">Internet Protocol</a>, each packet is routed independently with no prior setup. In <b>connection-oriented</b> service, exemplified by X.25, <a href="../Frame_Relay/index.html">Frame Relay</a> and <a href="../Asynchronous_Transfer_Mode/index.html">ATM</a>, a virtual circuit is established first and packets follow the same path in order.</p>
+<h2>Advantages and disadvantages</h2>
+<ul>
+<li><b>Efficiency:</b> network resources are shared among many users.</li>
+<li><b>Resilience:</b> traffic can be rerouted around failed links or nodes.</li>
+<li><b>Flexibility:</b> a single network carries many kinds of traffic.</li>
+<li><b>Variable delay:</b> jitter and packet loss must be handled by higher-layer protocols, which matters for real-time voice and video.</li>
+</ul>
+<p>See also: <a href="../Circuit_switching/index.html">Circuit switching</a>, <a href="../OSI_model/index.html">OSI model</a>, <a href="../Network_packet/index.html">Network packet</a>.</p>
+</div>
+</body>
+</html>

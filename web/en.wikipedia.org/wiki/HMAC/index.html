@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HMAC - Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:900px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none} a:hover{text-decoration:underline}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:10px;text-align:center;margin:10px 0;color:#54595d}
+</style>
+</head>
+<body>
+<h1>HMAC</h1>
+<div class="thumb"><img src="images/HMAC.png" alt="HMAC construction diagram"></div>
+<p>In cryptography, an <b>HMAC</b> (sometimes expanded as <b>hash-based message authentication code</b> or <b>keyed-hash message authentication code</b>) is a specific type of message authentication code involving a cryptographic hash function and a secret cryptographic key. It is used to verify both the data integrity and the authenticity of a message.</p>
+<h2>Construction</h2>
+<p>HMAC is defined in RFC 2104 and FIPS 198-1. Given a hash function H, a secret key K and a message m, the HMAC is computed by hashing twice with the key padded and XORed with two distinct constants, the inner pad (ipad, 0x36 repeated) and the outer pad (opad, 0x5c repeated): HMAC = H( (K ⊕ opad) ‖ H( (K ⊕ ipad) ‖ m ) ). This nested construction protects against length-extension attacks to which a naive prefix key–message hash would be vulnerable, and its security can be formally reduced to the security of the underlying hash function.</p>
+<p>HMAC may be used with any iterated hash function, most commonly in modern practice HMAC-SHA-256. Applications include IPsec, TLS, JSON Web Tokens, challenge–response authentication and verifying downloaded files.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Message_authentication_code/index.html">Message authentication code</a></li>
+<li><a href="../Cryptographic_hash_function/index.html">Cryptographic hash function</a></li>
+<li><a href="../SHA-2/index.html">SHA-2</a></li>
+</ul>
+</body>
+</html>

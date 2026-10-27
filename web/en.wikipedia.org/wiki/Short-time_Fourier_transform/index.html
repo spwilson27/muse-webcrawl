@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Short-time Fourier transform</title>
+<style>body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;color:#202122;line-height:1.6}h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #a2a9b1;font-size:1.4em}img.hero{max-width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:1em;display:block}code{font-family:monospace}</style></head>
+<body>
+<h1>Short-time Fourier transform</h1>
+<img class="hero" src="images/Short-time_Fourier_transform.png" alt="Spectrogram produced by a short-time Fourier transform">
+<p>The <b>short-time Fourier transform</b> (<b>STFT</b>) is a Fourier-related transform used to determine the frequency content of local sections of a signal as it changes over time. It is computed by sliding a window function along the signal and taking the discrete Fourier transform of each windowed segment:</p>
+<p><code>STFT{x(t)}(τ, ω) = ∫ x(t) w(t − τ) e<sup>−jωt</sup> dt</code></p>
+<p>where <i>w(t)</i> is a window such as the Hann window centred at time τ.</p>
+<h2>Spectrograms</h2>
+<p>The squared magnitude of the STFT is the <b>spectrogram</b>, a two-dimensional plot of frequency versus time with intensity showing magnitude — widely used to visualise speech, music, animal vocalisations and other non-stationary signals.</p>
+<h2>Resolution trade-off</h2>
+<p>The STFT's fixed window imposes a trade-off governed by the uncertainty principle: a short window gives good time resolution but poor frequency resolution, while a long window resolves frequencies finely but smears events in time. This limitation motivates alternatives such as wavelet transforms and the Wigner–Ville distribution. Dennis Gabor's 1946 formulation, using Gaussian-windowed "logons", is an early special case.</p>
+<h2>Applications</h2>
+<p>Applications include speech recognition and synthesis, audio effects such as time-stretching and pitch-shifting (via the phase vocoder), radar and sonar processing, and medical signal analysis.</p>
+</body></html>

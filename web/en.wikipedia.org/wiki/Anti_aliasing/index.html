@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Anti-aliasing - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; line-height: 1.6; }
+#content { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.4em; }
+h3 { font-size: 1.15em; font-weight: bold; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 0.85em; margin: 0 0 12px 16px; padding: 8px 10px; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+.hero { display: block; margin: 12px 0; max-width: 320px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 6px; }
+.hero img { max-width: 100%; }
+.caption { font-size: 0.85em; color: #54595d; }
+ul { margin: 0.3em 0 0.3em 1.4em; padding: 0; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Anti-aliasing</h1>
+<p><b>Anti-aliasing</b> refers to a number of techniques in digital signal processing, computer graphics, and related fields used to reduce <a href="../Aliasing/index.html">aliasing</a> — the distortion that occurs when a high-resolution signal is represented at a lower resolution. In images, aliasing most visibly appears as jagged, stair-step edges (often called "jaggies") along diagonal lines and curves, and as shimmering or moiré patterns in fine detail.</p>
+<figure class="hero"><img src="images/Anti_aliasing.png" alt="Diagonal line rendered with and without anti-aliasing"><figcaption class="caption">Left: aliased diagonal line. Right: the same line anti-aliased by blending edge pixels.</figcaption></figure>
+<h2>Background</h2>
+<p>According to the Nyquist–Shannon sampling theorem, a signal can be perfectly reconstructed only if it is sampled at more than twice its highest frequency. Raster displays sample the ideal image on a fixed grid of pixels, so any detail finer than the grid cannot be represented exactly. Anti-aliasing techniques either filter the signal before sampling (pre-filtering) or blend pixel colours near edges so that the result better approximates the true coverage of each pixel.</p>
+<h2>Techniques in computer graphics</h2>
+<h3>Supersampling</h3>
+<p>Supersampling anti-aliasing (SSAA) renders the image at a higher resolution and then downsamples it, averaging several sub-samples per output pixel. It produces high quality but is computationally expensive, since the whole frame is rendered at multiplied cost.</p>
+<h3>Multisampling</h3>
+<p>Multisampling anti-aliasing (MSAA), widely implemented in graphics hardware, takes multiple samples of depth and stencil information per pixel but shades each pixel only once. It smooths polygon edges at much lower cost than supersampling, though it does not by itself anti-alias textures or shader effects.</p>
+<h3>Post-process methods</h3>
+<p>Post-processing techniques such as FXAA (Fast Approximate Anti-Aliasing) and MLAA analyse the finished image and blend pixels along detected edges. They are cheap and apply to every part of the image, including textures and transparency, but can soften fine detail. Temporal anti-aliasing (TAA) accumulates samples across successive frames, exploiting the fact that the camera moves slightly between frames, at the risk of ghosting artefacts.</p>
+<h2>Font rendering</h2>
+<p>Text renderers use anti-aliasing extensively: glyph edges are drawn in intermediate shades of grey (or, in subpixel rendering systems such as ClearType, in colour fringes that exploit the RGB stripe structure of LCD panels) so that letterforms appear smooth at small sizes.</p>
+<h2>Signal processing</h2>
+<p>In audio and other one-dimensional signals, an anti-aliasing filter is a low-pass filter applied before analogue-to-digital conversion to remove frequencies above half the sampling rate, which would otherwise fold back into the recorded band as false low-frequency components.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Aliasing/index.html">Aliasing</a></li>
+<li><a href="../Nyquist%E2%80%93Shannon_sampling_theorem/index.html">Nyquist–Shannon sampling theorem</a></li>
+<li><a href="../Raster_graphics/index.html">Raster graphics</a></li>
+<li><a href="../Spatial_anti-aliasing/index.html">Spatial anti-aliasing</a></li>
+<li><a href="../Moir%C3%A9_pattern/index.html">Moiré pattern</a></li>
+</ul>
+</div>
+</body>
+</html>

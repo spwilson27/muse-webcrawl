@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Template (C++)</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 860px; color: #202122; line-height: 1.6; padding: 0 1em; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+pre { background: #f8f9fa; border: 1px solid #a2a9b1; padding: 0.6em; overflow-x: auto; }
+figure { text-align: center; }
+</style>
+</head>
+<body>
+<h1>Template (C++)</h1>
+<figure><img src="images/template_cpp.png" alt="Diagram illustrating generic programming with C++ templates"></figure>
+<p><b>Templates</b> are a feature of the C++ programming language that allows functions and classes to operate with generic types. This allows a function or class declaration to reference, via a generic variable or placeholder, types that are evaluated at compile time rather than being fixed in the source code, a form of generic programming.</p>
+<h2>Function templates</h2>
+<p>A function template defines the behavior of a family of functions. For example:</p>
+<pre>template &lt;typename T&gt;
+T max(T a, T b) { return a &gt; b ? a : b; }</pre>
+<p>When the compiler encounters a call with concrete argument types, it instantiates the template, generating a specific function for those types.</p>
+<h2>Class templates</h2>
+<p>Class templates — such as the containers of the Standard Template Library (vector, list, map) — define families of classes parameterized by type. Class templates support partial specialization, allowing special behavior for particular argument patterns.</p>
+<h2>Advanced features</h2>
+<p>Template metaprogramming uses templates to perform computations at compile time; the template system is Turing-complete. Later standards added variadic templates (C++11), concepts (C++20) to constrain template arguments, and modules and constexpr facilities that partially supersede older idioms. Template instantiation can lengthen compile times and produce large error messages, trade-offs widely discussed in the C++ community.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../C%2B%2B/index.html">C++</a></li>
+<li><a href="../Generic_programming/index.html">Generic programming</a></li>
+<li><a href="../Standard_Template_Library/index.html">Standard Template Library</a></li>
+<li><a href="../Template_metaprogramming/index.html">Template metaprogramming</a></li>
+</ul>
+</body>
+</html>

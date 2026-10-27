@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Operand stack - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #a2a9b1}img.hero{display:block;max-width:320px;background:#f8f9fa;border:1px solid #c8ccd1;padding:1em;text-align:center;color:#72777d}a{color:#0645ad}</style></head>
+<body>
+<h1>Operand stack</h1>
+<img class="hero" src="images/operand-stack.png" alt="Diagram of values being pushed and popped on an operand stack">
+<p>An <b>operand stack</b> is the stack used by stack-based virtual machines and processors to hold the operands and results of instructions. Instructions typically take their inputs from the top of the stack and push their results back onto it, so instructions need no explicit operand addresses — an encoding scheme used by the Java Virtual Machine, the .NET Common Language Runtime, WebAssembly and stack machines such as the Burroughs large systems.</p>
+<h2>Operation</h2>
+<p>For example, to add two numbers, a program pushes both values onto the stack and executes an <i>add</i> instruction, which pops the two operands and pushes their sum. In the JVM each method frame has an operand stack of a fixed maximum depth declared in the class file, and bytecode verification checks that the stack is used consistently — never underflowing and holding matching types at each point.</p>
+<h2>Advantages and trade-offs</h2>
+<p>Stack code is compact and simple to generate and verify, but the serial dependence on the stack top can limit instruction-level parallelism compared with register machines, so production runtimes typically map stack slots to registers when compiling to native code.</p>
+<h2>See also</h2>
+<p><a href="../Stack_machine/index.html">Stack machine</a> · <a href="../Java_virtual_machine/index.html">Java virtual machine</a> · <a href="../Call_stack/index.html">Call stack</a></p>
+</body></html>

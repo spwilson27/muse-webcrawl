@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rasterisation - Wikipedia</title>
+<style>
+body{font-family:sans-serif;font-size:14px;line-height:1.6;color:#202122;margin:0;padding:0 1em;max-width:960px}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal;font-size:28px}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal;font-size:21px;margin-top:1.2em}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em;margin:0 0 1em 1em;font-size:88%;width:260px}
+.infobox th{background:#eaecf0;text-align:left;padding:2px 6px}
+.infobox td{padding:2px 6px}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;font-size:88%;margin:0.5em 0;width:280px}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+ul{margin:0.3em 0}
+.small{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Rasterisation</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="thumb"><img src="images/Rasterisation.png" alt="A triangle being converted into individual pixels on a grid"></div>
+<p><b>Rasterisation</b> (or <b>rasterization</b>) is the process of converting a description of shapes — vector graphics, text, or three-dimensional geometry — into a <a href="../Raster_graphics/index.html">raster image</a> made of pixels, for display on a screen, printing, or storage in a bitmap file. It is the central operation of most real-time <a href="../3D_computer_graphics/index.html">3D computer graphics</a>: in the graphics pipeline, primitives (usually triangles) that survive projection and clipping are rasterised into <i>fragments</i> — candidate pixels — whose colours are computed by <a href="../Shader/index.html">shaders</a>, tested against the depth buffer, and blended into the frame buffer. Modern <a href="../Graphics_processing_unit/index.html">GPUs</a> perform rasterisation in dedicated fixed-function hardware at billions of triangles per second.</p>
+<table class="infobox">
+<tr><th colspan="2">Rasterisation</th></tr>
+<tr><th>Input</th><td>Vector primitives (points, lines, triangles)</td></tr>
+<tr><th>Output</th><td>Pixel grid (raster image)</td></tr>
+<tr><th>Used in</th><td>GPU rendering, printing, font rendering</td></tr>
+<tr><th>Alternative</th><td>Ray tracing</td></tr>
+</table>
+<h2>Basic algorithms</h2>
+<p>For two-dimensional graphics, classic algorithms include Bresenham's line algorithm for drawing lines, scan-line fill algorithms for polygons, and analytic conversion of curve outlines (as in font rendering, where glyph outlines are rasterised with techniques such as signed distance fields). For triangles, the standard approach computes edge equations, walks the pixels inside the triangle's bounding box, and uses barycentric coordinates to interpolate attributes — depth, texture coordinates, normals and colours — across the surface, with perspective correction. Sampling at pixel centres causes aliasing ("jaggies"), which is mitigated by anti-aliasing methods including supersampling, multisample anti-aliasing (MSAA) and post-process approximations such as FXAA and temporal anti-aliasing.</p>
+<h2>In the 3D pipeline</h2>
+<p>Rasterisation sits between vertex processing and fragment shading in APIs such as <a href="../OpenGL/index.html">OpenGL</a>, <a href="../Vulkan_(API)/index.html">Vulkan</a> and <a href="../Direct3D/index.html">Direct3D</a>. Hardware rasterisers cull back faces, perform early depth testing (early-z) to avoid shading hidden fragments, and generate derivatives used for texture filtering and level-of-detail selection. Techniques layered on top include shadow mapping, deferred shading and tile-based rendering on mobile GPUs. Although real-time <a href="../Ray_tracing_(graphics)/index.html">ray tracing</a> is increasingly used for reflections and global illumination, hybrid pipelines still rely on rasterisation for primary visibility because of its efficiency.</p>
+<h2>Printing and fonts</h2>
+<p>In printing, the raster image processor (RIP) rasterises page-description languages such as PostScript and PDF into the bitmap actually printed, at resolutions of 600 dpi and above; word processors and web browsers similarly rasterise text and vector artwork (SVG) for display.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Raster_graphics/index.html">Raster graphics</a></li>
+<li><a href="../Vector_graphics/index.html">Vector graphics</a></li>
+<li><a href="../Rendering_(computer_graphics)/index.html">Rendering</a></li>
+<li><a href="../Aliasing/index.html">Aliasing</a></li>
+<li><a href="../Graphics_pipeline/index.html">Graphics pipeline</a></li>
+</ul>
+<p class="small">Categories: Computer graphics | Image processing</p>
+</body>
+</html>

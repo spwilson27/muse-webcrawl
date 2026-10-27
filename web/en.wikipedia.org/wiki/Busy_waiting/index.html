@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Busy waiting - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+#content{max-width:960px;margin:0 auto;padding:24px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em;font-weight:normal}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;width:250px;font-size:0.9em}
+.infobox th{text-align:left;padding:2px 6px}
+.infobox td{padding:2px 6px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{text-align:center;margin:16px 0}
+.hero img{max-width:100%;border:1px solid #ccc;background:#eee}
+.caption{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Busy waiting</h1>
+<div class="infobox">
+<table>
+<tr><th>Field</th><td><a href="../Computer_science/index.html">Computer science</a>, concurrent computing</td></tr>
+<tr><th>Also called</th><td>Spinning</td></tr>
+<tr><th>Implemented by</th><td><a href="../Spinlock/index.html">Spinlocks</a></td></tr>
+<tr><th>Alternative</th><td>Blocking / sleeping waits</td></tr>
+</table>
+</div>
+<div class="hero"><img src="images/busy-waiting.png" alt="Diagram of a processor repeatedly polling a flag variable in a busy-wait loop"></div>
+<p class="caption">In busy waiting, a process repeatedly checks a condition without yielding the processor.</p>
+<p><b>Busy waiting</b>, also called <b>spinning</b>, is a technique in which a process repeatedly checks to see whether a condition is true, such as whether a lock has been released or input is available, without relinquishing the processor. The waiting process consumes CPU cycles while doing no useful work.</p>
+<h2>Uses</h2>
+<p>Busy waiting is appropriate when the expected wait is very short — shorter than the cost of a context switch — as in <a href="../Spinlock/index.html">spinlocks</a> on multiprocessor systems, where another processor is expected to release the lock almost immediately. It is also used in low-level device drivers polling hardware status registers, and in precise timing loops in embedded systems where no operating system scheduler exists.</p>
+<h2>Drawbacks</h2>
+<p>On a single processor, busy waiting wastes cycles that the process being awaited could have used, and can even cause deadlock-like stalls if priorities are mismatched. It increases power consumption and heat, a serious concern in laptops and data centres. Most programming environments therefore provide blocking primitives — sleeps, condition variables, and interrupts — and modern spinlocks are often "spin-then-block" hybrids or include processor hints such as the x86 PAUSE instruction to reduce contention and power draw.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Spinlock/index.html">Spinlock</a></li>
+<li><a href="../Polling_(computer_science)/index.html">Polling (computer science)</a></li>
+<li><a href="../Sleep_(system_call)/index.html">Sleep (system call)</a></li>
+</ul>
+</div>
+</body>
+</html>

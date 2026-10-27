@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Service mesh - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:24px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+img.hero{max-width:100%;border:1px solid #c8ccd1;background:#f8f9fa}
+a{color:#0645ad;text-decoration:none}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Service mesh</h1>
+<img class="hero" src="images/service_mesh.png" alt="Illustration placeholder for Service mesh">
+<p>A <b>service mesh</b> is a dedicated infrastructure layer for facilitating service-to-service communications between services or microservices, using a proxy. In a microservices architecture, applications are decomposed into many small, independently deployable services that communicate over a network; a service mesh manages the complexity of that communication — routing, load balancing, security, and observability — without requiring changes to application code.</p>
+<h2>Architecture</h2>
+<p>A service mesh typically consists of two parts:</p>
+<ul>
+<li>A <b>data plane</b> composed of lightweight network proxies deployed alongside each service instance (the "sidecar" pattern). The proxies intercept all inbound and outbound traffic for their service and handle routing, retries, timeouts, circuit breaking, encryption, and metrics collection.</li>
+<li>A <b>control plane</b> that configures the proxies, distributes routing and security policies, collects telemetry, and manages certificates for mutual authentication.</li>
+</ul>
+<h2>Features</h2>
+<p>Common capabilities include traffic management (canary deployments, A/B testing, traffic splitting), service discovery, load balancing, automatic retries and timeouts, mutual TLS (mTLS) encryption and identity-based authentication between services, and rich observability in the form of metrics, distributed tracing, and access logs for every request.</p>
+<h2>Implementations</h2>
+<p>Well-known service mesh implementations include <b>Istio</b> (launched by Google, IBM, and Lyft in 2017, and built on the Envoy proxy), <b>Linkerd</b> (created by Buoyant, one of the earliest meshes and a Cloud Native Computing Foundation project), and <b>Consul Connect</b> from HashiCorp. The Envoy proxy, originally developed at Lyft, is the most widely used data-plane proxy. Newer "ambient" or sidecarless designs aim to reduce the resource overhead and operational complexity of per-pod proxies.</p>
+<h2>History</h2>
+<p>The term was popularised around 2016–2017 as organisations adopted Kubernetes and microservices at scale and found that embedding networking logic in application libraries — in the style of Netflix's Hystrix or Twitter's Finagle — did not scale across polyglot environments. Moving that logic into infrastructure managed centrally by platform teams became the defining idea of the service mesh.</p>
+<h2>See also</h2>
+<p><a href="../Microservices/index.html">Microservices</a> · <a href="../Kubernetes/index.html">Kubernetes</a> · <a href="../Envoy_(software)/index.html">Envoy (software)</a> · <a href="../Sidecar_(container_pattern)/index.html">Sidecar pattern</a></p>
+</div>
+</body>
+</html>

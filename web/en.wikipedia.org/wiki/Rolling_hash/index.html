@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Rolling hash - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #a2a9b1;margin-top:1.4em}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.88em;max-width:260px}img.hero{display:block;width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:2em 0;text-align:center;color:#72777d}</style></head>
+<body>
+<h1>Rolling hash</h1>
+<div class="infobox"><img class="hero" src="images/Rolling_hash.png" alt="A sliding window moving across a data stream (placeholder)"><br><b>Type:</b> Hash function<br><b>Key property:</b> O(1) update when the window slides<br><b>Applications:</b> Pattern matching, data deduplication, rsync</div>
+<p>A <b>rolling hash</b> (also known as a recursive hashing or rolling checksum) is a hash function where the input is hashed in a window that moves through the input. A few sequences of output values are easy to compute — in particular, the hash of the next window can be computed from the hash of the previous window in constant time, by removing the contribution of the character that leaves the window and adding the contribution of the character that enters it.</p>
+<h2>Polynomial rolling hash</h2>
+<p>The Rabin–Karp string search algorithm uses a polynomial hash: a window of length <i>k</i> over an alphabet is treated as a number in some base <i>B</i>, usually reduced modulo a large prime. Dropping the leading character requires subtracting its weighted value and multiplying the remainder by <i>B</i> before adding the new trailing character — all constant-time operations. When window hashes match the pattern hash, the algorithm verifies the candidate match character by character to rule out collisions.</p>
+<h2>Content-defined chunking</h2>
+<p>Rolling hashes are central to data deduplication. In the rsync algorithm, a weak rolling checksum (based on Adler-32) quickly identifies blocks of a file that match blocks of an older version, so only differences need to be transferred. In backup and storage systems, a rolling hash such as Buzhash or the Rabin fingerprint is used for <i>content-defined chunking</i>: a chunk boundary is declared whenever the hash of a sliding window satisfies a condition (for example, its low bits are all zero), so chunk boundaries follow the content and resist shifting when bytes are inserted or deleted.</p>
+<h2>Examples</h2>
+<ul><li><b>Rabin–Karp</b> — polynomial rolling hash for substring search.</li>
+<li><b>Buzhash</b> — based on a table of random values XORed and rotated as the window slides.</li>
+<li><b>Adler-32</b> — used as the rolling checksum in rsync.</li>
+<li><b>Gear hash</b> — a fast rolling hash used in modern chunking research.</li></ul>
+</body></html>

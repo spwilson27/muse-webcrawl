@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>systemd - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 960px; padding: 0 1em; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a7d7f9; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+img.hero { float: right; margin: 0 0 1em 1em; max-width: 300px; background: #f0f0f0; border: 1px solid #a2a9b1; padding: 4px; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em 1em; margin: 0 0 1em 1em; width: 260px; font-size: 90%; }
+.infobox th { text-align: left; }
+</style>
+</head>
+<body>
+<h1>systemd</h1>
+<img class="hero" src="images/systemd.png" alt="systemd — boot diagram showing parallel activation of unit files during system startup">
+<table class="infobox">
+<tr><th>Original author(s)</th><td>Lennart Poettering, Kay Sievers, et al.</td></tr>
+<tr><th>Initial release</th><td>30 March 2010</td></tr>
+<tr><th>Written in</th><td>C</td></tr>
+<tr><th>Operating system</th><td>Linux</td></tr>
+<tr><th>Type</th><td>Init system, system and service manager</td></tr>
+<tr><th>License</th><td>GNU LGPL 2.1+</td></tr>
+</table>
+<p><b>systemd</b> is a software suite that provides an array of system components for Linux operating systems. Its main aim is to unify service configuration and behaviour across Linux distributions; systemd's primary component is a "system and service manager" — an init system used to bootstrap user space and manage user processes. It also provides replacements for various daemons and utilities, including device management, login management, network connection management, and event logging.</p>
+<p>The name systemd adheres to the Unix convention of making daemons' names end with the letter <i>d</i>. It also plays on the term "System D". The software is written by Lennart Poettering and many other contributors, and is published as free and open-source software under the terms of the GNU Lesser General Public License.</p>
+<h2>Design</h2>
+<p>systemd organises system resources into <b>units</b>, described by declarative unit files: service units, socket units, device units, mount units, timer units, targets (groups of units) and others. Dependencies between units are expressed declaratively, allowing extensive parallelisation of the boot process through socket-based and D-Bus-based activation. Processes are tracked using Linux cgroups. Components include <i>journald</i> for logging, <i>logind</i> for login sessions, <i>networkd</i> and <i>resolved</i> for networking, and <i>udevd</i>-derived device management.</p>
+<h2>Adoption</h2>
+<p>Following its release in 2010, systemd was adopted by Fedora in 2011 and subsequently became the default init system of most major Linux distributions, including Red Hat Enterprise Linux 7, Debian 8, Ubuntu 15.04, SUSE and Arch Linux. Its adoption was controversial: critics argued that its scope violated the Unix philosophy of small, single-purpose tools and that absorbing other system functions created excessive interdependence, while supporters praised its consistent management interface, fast parallel boot, and modern features. The controversy led to forks and alternatives such as Devuan (a Debian fork without systemd), OpenRC, runit and s6.</p>
+<h2>See also</h2>
+<ul>
+<li>Init</li>
+<li>Upstart</li>
+<li>OpenRC</li>
+<li>cgroups</li>
+</ul>
+</body>
+</html>

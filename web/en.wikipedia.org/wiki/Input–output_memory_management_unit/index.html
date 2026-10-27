@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Input–output memory management unit - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#fff;color:#202122}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px 40px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+p{font-family:sans-serif;font-size:14px;line-height:1.65}
+a{color:#0645ad;text-decoration:none}
+.hero{display:block;margin:16px auto;max-width:420px;width:100%;background:#f8f9fa;border:1px solid #a2a9b1;padding:8px;text-align:center;font-family:sans-serif;font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Input–output memory management unit</h1>
+<img class="hero" src="images/Input–output_memory_management_unit.png" alt="Diagram of an IOMMU translating device DMA addresses into physical memory addresses">
+<p>An <b>input–output memory management unit</b> (<b>IOMMU</b>) is a memory management unit (MMU) connecting a direct-memory-access–capable (DMA-capable) I/O bus to the main memory. Like a traditional MMU, which translates CPU-visible virtual addresses to physical addresses, the IOMMU maps device-visible virtual addresses (called device addresses or I/O addresses in this context) to physical addresses.</p>
+<h2>Purposes</h2>
+<p>The IOMMU serves several purposes. It allows a device that can only address a limited range of memory (for example, a legacy 32-bit DMA device) to access buffers anywhere in a larger physical address space, by remapping. It enables scatter-gather DMA without requiring physically contiguous buffers. Most importantly, it provides protection: a malfunctioning or malicious device can be restricted to only the memory regions granted to it, preventing rogue DMA from corrupting the rest of the system. This protection is what makes safe direct device assignment to virtual machines possible in hardware virtualisation (Intel VT-d and AMD-Vi are the best-known implementations).</p>
+<h2>Implementations</h2>
+<p>Examples include the graphics address remapping table (GART) on AGP systems, Intel's VT-d, AMD's AMD-Vi (formerly simply IOMMU), and ARM's System Memory Management Unit (SMMU). Operating systems use IOMMU translation both for virtualisation passthrough and, increasingly, as a security boundary for Thunderbolt- and USB4-attached peripherals.</p>
+<p>See also: <a href="../Memory_management_unit/index.html">Memory management unit</a>, <a href="../Direct_memory_access/index.html">Direct memory access</a>, <a href="../X86_virtualization/index.html">x86 virtualization</a>.</p>
+</div>
+</body>
+</html>

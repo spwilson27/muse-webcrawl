@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Logic programming - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 900px; padding: 0 1em; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+img.hero { display: block; margin: 1em auto; max-width: 400px; border: 1px solid #ccc; padding: 0.5em; background: #f8f9fa; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em 1em; margin: 0 0 1em 1em; font-size: 0.9em; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<h1>Logic programming</h1>
+<img class="hero" src="images/logic_programming.png" alt="Diagram of a logic program evaluation">
+<p><b>Logic programming</b> is a programming paradigm which is based largely on formal logic. Any program written in a logic programming language is a set of sentences in logical form, expressing facts and rules about some problem domain. Major logic programming language families include <a href="../Prolog/index.html">Prolog</a>, Answer Set Programming (ASP) and Datalog. In all of these languages, rules are written in the form of <i>clauses</i>:</p>
+<p style="text-align:center;"><code>H :- B<sub>1</sub>, ..., B<sub>n</sub>.</code></p>
+<p>and are read declaratively as logical implications:</p>
+<p style="text-align:center;"><code>H if B<sub>1</sub> and ... and B<sub>n</sub>.</code></p>
+<p><i>H</i> is called the <i>head</i> of the rule and <i>B<sub>1</sub>, ..., B<sub>n</sub></i> is called the <i>body</i>. Facts are rules that have no body, and are written in the simplified form:</p>
+<p style="text-align:center;"><code>H.</code></p>
+<p>In the simplest case in which <i>H</i>, <i>B<sub>1</sub>, ..., B<sub>n</sub></i> are all atomic formulae, these clauses are called definite clauses or Horn clauses. However, there are many extensions of this simple case, the most important of which is the case in which the condition of a clause can also be the negation of atomic formulae, as in:</p>
+<p style="text-align:center;"><code>H :- B<sub>1</sub>, ..., B<sub>n</sub>, not C<sub>1</sub>, ..., not C<sub>m</sub>.</code></p>
+<h2>History</h2>
+<p>The use of mathematical logic to represent and execute computer programs is also a feature of the lambda calculus, developed by Alonzo Church in the 1930s. However, the first proposal that the clausal form of logic should be used to represent computer programs was by Cordell Green. The use of the Horn clausal form of logic as a proposed basis for a programming language was first proposed by Robert Kowalski in collaboration with Alain Colmerauer in Marseille. This led to the development of Prolog, first implemented in 1972.</p>
+<p>Logic programming can be viewed as controlled deduction. An important concept in logic programming is the separation of programs into a logic component and a control component. With pure logic programming languages, the logic component alone determines the solutions produced. The control component can be varied to provide alternative ways of executing a logic program.</p>
+<h2>Concepts</h2>
+<h3>Logic variables</h3>
+<p>Unlike other programming languages, in a logic language logical variables do not denote a location in memory but a logical relationship between data values.</p>
+<h3>Backtracking</h3>
+<p>Most logic programming systems provide a means of searching for solutions by backtracking: when a goal fails, the system returns to an earlier choice point and tries an alternative.</p>
+<h2>Languages and implementations</h2>
+<ul>
+<li>Prolog — the best-known logic programming language</li>
+<li>Datalog — a declarative subset oriented toward databases</li>
+<li>Answer set programming — for combinatorial search problems</li>
+<li>Mercury — a strongly typed logic/functional language</li>
+</ul>
+<p><i>See also: <a href="../Prolog/index.html">Prolog</a>, <a href="../Datalog/index.html">Datalog</a></i></p>
+</body>
+</html>

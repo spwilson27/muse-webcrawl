@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Part-of-speech tagging - Wikipedia</title>
+<style>
+body{font-family:sans-serif;font-size:14px;line-height:1.6;color:#202122;background:#fff;margin:0 auto;max-width:960px;padding:0 16px;}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:1.2em;}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:13px;}
+.infobox th{text-align:left;background:#eaecf0;padding:3px 6px;}
+.infobox td{padding:3px 6px;vertical-align:top;}
+.hero{display:block;max-width:320px;background:#f8f9fa;border:1px solid #c8ccd1;padding:6px;font-size:12px;text-align:center;margin:8px 0;}
+a{color:#0645ad;text-decoration:none;}
+a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+<h1>Part-of-speech tagging</h1>
+<figure class="hero"><img src="images/Part-of-speech_tagging.png" alt="A sentence annotated with part-of-speech tags"></figure>
+<p>In <a href="../Corpus_linguistics/index.html">corpus linguistics</a>, <b>part-of-speech tagging</b> (<b>POS tagging</b> or <b>PoS tagging</b>, also called <b>grammatical tagging</b>) is the process of marking up a word in a text (<a href="../Text_corpus/index.html">corpus</a>) as corresponding to a particular <a href="../Part_of_speech/index.html">part of speech</a> — noun, verb, adjective, and so on — based on both its definition and its context. It is a foundational step in <a href="../Natural_language_processing/index.html">natural language processing</a>, feeding downstream tasks such as parsing, named-entity recognition, word-sense disambiguation, and information extraction. For example, in "The quick brown fox jumps," the tags are roughly DET ADJ ADJ NOUN VERB.</p>
+<table class="infobox">
+<tr><th colspan="2">Part-of-speech tagging</th></tr>
+<tr><th>Field</th><td>Natural language processing, corpus linguistics</td></tr>
+<tr><th>Input</th><td>Tokenised text</td></tr>
+<tr><th>Output</th><td>A tag for each token from a fixed tagset</td></tr>
+<tr><th>Reference tagsets</th><td>Penn Treebank (45 tags); Universal Dependencies (17 tags)</td></tr>
+</table>
+<h2>Tagssets and corpora</h2>
+<p>Tagging presupposes a <b>tagset</b>: an inventory of labels and guidelines for their use. The Brown Corpus (1960s) used 87 tags; the Penn Treebank tagset of 45 tags became the de-facto standard for English; the Universal Dependencies project defines 17 universal categories used across many languages. The difficulty of the task depends on the language: morphologically rich languages may need tags encoding case, number, tense and other features.</p>
+<h2>Approaches</h2>
+<h3>Rule-based tagging</h3>
+<p>Early systems, such as the TAGGIT programme for the Brown Corpus and the ENGTWOL tagger, used dictionaries plus hand-written rules about context — for instance, that a word following a determiner and an adjective is likely a noun.</p>
+<h3>Stochastic tagging</h3>
+<p>From the late 1980s, statistical methods came to dominate: hidden Markov models choose the tag sequence maximising the product of word-likelihood and tag-transition probabilities, decoded with the Viterbi algorithm. Later discriminative models — maximum-entropy taggers, conditional random fields, and transformation-based learning (Brill's tagger) — improved accuracy to around 97% on Penn Treebank English, close to human agreement.</p>
+<h3>Neural tagging</h3>
+<p>Modern taggers use bidirectional LSTMs, often combined with character-level models and CRF output layers, and more recently pre-trained transformer language models, achieving state-of-the-art results and robust handling of out-of-vocabulary words.</p>
+<h2>Difficulties</h2>
+<p>Ambiguity is the central problem: many words belong to several classes ("book" as noun or verb; "that" as determiner, pronoun, or complementiser), and correct choice depends on context. Other difficulties include unknown words, multiword expressions, disagreements between tagsets, and the fact that some decisions require world knowledge. Errors in tagging propagate to later stages of an NLP pipeline.</p>
+<h2>Applications</h2>
+<p>Beyond linguistics research, POS tagging underlies text-to-speech pronunciation, search indexing, machine translation pipelines, grammar checking, and preprocessing for large language corpora used in lexicography.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Part_of_speech/index.html">Part of speech</a></li>
+<li><a href="../Hidden_Markov_model/index.html">Hidden Markov model</a></li>
+<li><a href="../Penn_Treebank/index.html">Penn Treebank</a></li>
+<li><a href="../Natural_language_processing/index.html">Natural language processing</a></li>
+</ul>
+</body>
+</html>

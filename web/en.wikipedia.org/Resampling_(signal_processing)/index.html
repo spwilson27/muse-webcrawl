@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Resampling (signal processing) - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;padding:0;background:#fff;color:#202122;font-size:14px;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:10px 20px}
+header h1{font-family:serif;font-weight:normal;font-size:28px;margin:0;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+main{max-width:960px;margin:0 auto;padding:16px 20px}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:12px}
+.infobox th{background:#e5e9ec;text-align:left;padding:3px 6px}
+.infobox td{padding:3px 6px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+.hero{text-align:center;margin:12px 0}
+.hero img{max-width:420px;width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:24px 0}
+</style>
+</head>
+<body>
+<header><h1>Resampling (signal processing)</h1></header>
+<main>
+<table class="infobox">
+<tr><th colspan="2">Resampling</th></tr>
+<tr><td><b>Field</b></td><td>Signal processing</td></tr>
+<tr><td><b>Operation</b></td><td>Changing the sampling rate of a discrete signal</td></tr>
+<tr><td><b>Types</b></td><td>Upsampling (interpolation); downsampling (decimation)</td></tr>
+<tr><td><b>Key requirement</b></td><td>Anti-aliasing / anti-imaging filtering</td></tr>
+</table>
+<p>In signal processing, <b>resampling</b> is the process of changing the sampling rate of a discrete signal — creating a new representation of the same underlying continuous signal at a different rate. Increasing the rate is called <b>upsampling</b> or interpolation, and decreasing it is called <b>downsampling</b> or decimation. Resampling is essential whenever signals recorded or generated at one rate must be used in a system working at another, as in converting audio from 44.1 kHz (CD) to 48 kHz (video and broadcast).</p>
+<div class="hero"><img src="images/resampling-signal-processing.png" alt="Waveform being converted between two sampling rates"></div>
+<h2>Theory</h2>
+<p>According to the <a href="../Nyquist%E2%80%93Shannon_sampling_theorem/index.html">Nyquist–Shannon sampling theorem</a>, a sampled signal can perfectly represent a band-limited continuous signal if the sampling rate exceeds twice its highest frequency. Resampling exploits this: the discrete samples are conceptually converted back into the underlying continuous waveform and then re-sampled at the new rate. In practice this is done digitally, most directly with an ideal (sinc) interpolation filter, approximated in real systems by finite impulse response filters.</p>
+<h2>Methods</h2>
+<p><b>Upsampling</b> by an integer factor L inserts L − 1 zeros between samples and then applies a low-pass anti-imaging filter to remove spectral copies created by the zero insertion. <b>Downsampling</b> by a factor M first applies an anti-aliasing low-pass filter with cutoff below the new Nyquist frequency, then discards M − 1 of every M samples. A <b>rational-factor</b> conversion (such as 44.1 → 48 kHz, a ratio of 160/147) combines both steps, and efficient polyphase filter structures avoid computing samples that would be thrown away. For arbitrary, non-rational rate changes — as when correcting clock drift — techniques based on polynomial or windowed-sinc interpolation evaluate the reconstructed signal at arbitrary positions.</p>
+<h2>Applications</h2>
+<p>Resampling is ubiquitous: sample-rate conversion in audio production and playback, image scaling (the two-dimensional analogue), software-defined radio channelisation, speech and telecommunications systems, and synchronising media streams whose clocks disagree. Poor resampling produces aliasing (false low-frequency content) or imaging artefacts, so filter design quality strongly affects fidelity.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Sampling_rate/index.html">Sampling rate</a></li>
+<li><a href="../Decimation_(signal_processing)/index.html">Decimation (signal processing)</a></li>
+<li><a href="../Upsampling/index.html">Upsampling</a></li>
+<li><a href="../Anti-aliasing_filter/index.html">Anti-aliasing filter</a></li>
+</ul>
+</main>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kleisli category - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:20px;border-bottom:1px solid #a2a9b1;padding-bottom:2px;font-weight:normal;margin-top:28px}
+p{font-family:sans-serif;font-size:14px;line-height:1.6}
+.hero{text-align:center;margin:12px 0}
+.hero img{max-width:420px;width:100%;background:#eaecf0;border:1px solid #a2a9b1}
+.caption{font-size:12px;color:#54595d;font-family:sans-serif}
+a{color:#0645ad;text-decoration:none}
+ul{font-family:sans-serif;font-size:14px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Kleisli category</h1>
+<div class="hero"><img src="images/kleisli-category.png" alt="Diagram showing composition of arrows in a Kleisli category via monadic bind"></div>
+<p class="caption">Composition in the Kleisli category uses the monad's multiplication to chain effectful functions.</p>
+<p>In category theory, a <b>Kleisli category</b> is a category naturally associated to any monad T on a category C. It is named after the Swiss mathematician Heinrich Kleisli, who originally introduced it to study homological invariants of AT-algebras. Equivalently, the Kleisli category can be seen as a category whose objects are the objects of C but whose morphisms are maps from an object X to T(Y): a morphism X → Y in the Kleisli category is a morphism X → T Y in C.</p>
+<h2>Definition</h2>
+<p>Let ⟨T, η, μ⟩ be a monad on a category C. The Kleisli category C<sub>T</sub> has the same objects as C. A morphism f : X ⇢ Y in C<sub>T</sub> is a morphism f : X → T Y in C. Composition uses the monad multiplication: given f : X → T Y and g : Y → T Z, their composite is μ<sub>Z</sub> ∘ T(g) ∘ f : X → T Z. The identity morphism on X is the unit η<sub>X</sub> : X → T X. The monad laws ensure associativity and the identity laws.</p>
+<h2>Kleisli triples</h2>
+<p>An equivalent formulation, often used in computer science, is the <i>Kleisli triple</i> ⟨T, η, (–)*⟩, in which T is an operation on objects, η is a family of "return" maps, and (–)* extends a map f : X → T Y to f* : T X → T Y (the "bind" operation). The Kleisli category can be built directly from a Kleisli triple, and every monad arises this way.</p>
+<h2>Adjunction</h2>
+<p>Every monad arises from an adjunction. The Kleisli category gives the <i>initial</i> such adjunction: there is an adjunction between C and C<sub>T</sub> whose induced monad is T, and any other adjunction inducing T factors through it. The other canonical choice is the Eilenberg–Moore category of algebras, which is terminal among such adjunctions.</p>
+<h2>Use in computer science</h2>
+<p>In functional programming, Kleisli arrows are the effectful functions X → T Y for a monad T (for example, partial functions for the maybe monad, or nondeterministic functions for the powerset monad). Composition of Kleisli arrows is the Kleisli composition operator, written &gt;=&gt; in Haskell, and underlies do-notation and monadic programming generally.</p>
+<ul>
+<li>Monad (category theory)</li>
+<li>Eilenberg–Moore category</li>
+<li>Heinrich Kleisli</li>
+<li>Category theory</li>
+</ul>
+</div>
+</body>
+</html>

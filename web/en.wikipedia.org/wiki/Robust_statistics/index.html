@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Robust statistics - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+.hero{display:block;margin:16px auto;max-width:400px;background:#f8f9fa;border:1px solid #c8ccd1;padding:12px;text-align:center;color:#54595d;font-style:italic}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.ref{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Robust statistics</h1>
+<img class="hero" src="images/robust-statistics.png" alt="Diagram comparing the mean and median under outliers (placeholder image)">
+<table class="infobox">
+<tr><th>Key figures</th><td>Peter J. Huber, Frank Hampel, John Tukey, Peter Rousseeuw</td></tr>
+<tr><th>Core concepts</th><td>Breakdown point, influence function, M-estimators</td></tr>
+<tr><th>Example methods</th><td>Median, MAD, Huber loss, trimmed mean, RANSAC</td></tr>
+</table>
+<p><b>Robust statistics</b> are statistical methods designed to remain reliable when the data deviate from the assumptions of classical models — especially the assumption of normality — for example when the data contain outliers or come from heavy-tailed distributions. A robust procedure performs well under a range of distributions, sacrificing only a little efficiency at the ideal model in exchange for insensitivity to contamination.</p>
+<h2>Motivation</h2>
+<p>Classical estimators such as the sample mean and standard deviation are highly sensitive to a single extreme observation: one outlier can move the mean arbitrarily far. The sample median, by contrast, resists up to 50% contamination. Real data sets routinely contain errors and anomalous points, motivating estimators whose behavior changes only modestly under small departures from model assumptions.</p>
+<h2>Key concepts</h2>
+<ul>
+<li><b>Breakdown point:</b> the smallest fraction of contaminated observations that can drive an estimator to arbitrarily bad values. The mean has breakdown point 0; the median, 50%, the maximum possible.</li>
+<li><b>Influence function:</b> measures the effect of an infinitesimal contamination at a point on the estimator; bounded influence functions characterize robust procedures (Hampel).</li>
+<li><b>M-estimators:</b> a general class defined by minimizing a sum of a loss function of residuals; least squares is a (non-robust) special case, while Huber's loss and Tukey's biweight bound the effect of large residuals.</li>
+</ul>
+<h2>Common robust methods</h2>
+<p>Robust measures of location include the median, trimmed and Winsorized means, and the Hodges–Lehmann estimator; robust scale measures include the median absolute deviation (MAD) and Rousseeuw's S<sub>n</sub> and Q<sub>n</sub> estimators. Robust regression methods include least absolute deviations (L1), Huber regression, least median of squares, least trimmed squares, and MM-estimators; RANSAC is a widely used robust fitting scheme in computer vision. Robust analogues of covariance estimation, such as the Minimum Covariance Determinant, support robust principal component analysis and outlier detection.</p>
+<h2>History</h2>
+<p>Although robust ideas appear in earlier work (e.g., by Eddington and Daniell), the modern theory was founded by Peter J. Huber's 1964 paper on robust estimation of a location parameter and developed by Frank Hampel, who introduced the influence function and qualitative robustness in his 1968 dissertation. Peter Rousseeuw introduced high-breakdown regression and scale estimators in the 1980s.</p>
+<p class="ref">See also: Outlier; M-estimator; Breakdown point; Median absolute deviation; Huber loss.</p>
+</body>
+</html>

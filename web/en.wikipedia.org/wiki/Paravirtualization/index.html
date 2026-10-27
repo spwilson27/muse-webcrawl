@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Paravirtualization - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;margin:0;color:#202122;background:#fff;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:24px 20px 48px}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px;font-weight:normal}
+h2{font-family:Georgia,'Times New Roman',serif;font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.4em;font-weight:normal}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 16px 20px;font-size:0.88em}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+.hero{display:block;margin:10px 0;max-width:320px;width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:18px 0;text-align:center;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul,ol{padding-left:1.6em}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Paravirtualization</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/paravirtualization.png" alt="Diagram of a paravirtualized guest communicating with a hypervisor via hypercalls">
+<p>In computing, <b>paravirtualization</b> or <b>para-virtualization</b> is a virtualization technique that presents a software interface to the virtual machines which is similar, yet not identical, to the underlying hardware–software interface.</p>
+<p>The intent of the modified interface is to reduce the portion of the guest's execution time spent performing operations which are substantially more difficult to run in a virtual environment compared to a non-virtualized environment. The paravirtualization provides specially defined "hooks" to allow the guest(s) and host to request and acknowledge these tasks, which would otherwise be executed in the virtual domain (where execution performance is worse). A successful paravirtualized platform may allow the virtual machine monitor (VMM) to be simpler (by relocating execution of critical tasks from the virtual domain to the host domain), and/or reduce the overall performance degradation of machine execution inside the virtual guest.</p>
+<p>Paravirtualization requires the guest operating system to be explicitly ported for the para-API; a conventional OS distribution that is not paravirtualization-aware cannot be run on top of a paravirtualizing VMM. However, even in cases where the operating system cannot be modified, components may be available that enable many of the significant performance advantages of paravirtualization. For example, the Windows paravirtualization drivers in Xen and virtio drivers for KVM provide high-performance paravirtual I/O.</p>
+<h2>History</h2>
+<p>The term "paravirtualization" was first used in the research literature in association with the Denali virtual machine monitor. The concept has older roots: IBM's VM operating system provided a "DIAGNOSE" hypercall facility from the 1970s. The Xen hypervisor, described in a 2003 paper, popularised paravirtualization on x86 hardware, which lacked efficient hardware support for full virtualization at the time.</p>
+<h2>Hypercalls and interfaces</h2>
+<p>Instead of executing privileged instructions that must be trapped and emulated, a paravirtual guest issues <i>hypercalls</i> — analogous to system calls — directly to the hypervisor. Paravirtual interfaces have also been defined for device I/O: the virtio standard defines paravirtual network, block and other devices used by KVM and other hypervisors, while Xen uses split device drivers with front-end drivers in the guest and back-end drivers in a privileged domain.</p>
+<h2>Relation to full virtualization</h2>
+<p>With the spread of hardware virtualization extensions (Intel VT-x and AMD-V, and later nested paging), full virtualization became more efficient, reducing the advantage of paravirtual CPUs; paravirtual I/O interfaces nevertheless remain widely used because emulated hardware devices are slow. Linux's <i>paravirt ops</i> infrastructure allows a single kernel to run either natively, fully virtualized, or paravirtualized.</p>
+<h2>Examples</h2>
+<ul>
+<li>Xen (paravirtual guests, "PV" and later "PVH" modes)</li>
+<li>Linux paravirt ops and virtio</li>
+<li>VMware paravirtual SCSI and VMXNET adapters</li>
+<li>Hyper-V enlightenments for guest operating systems</li>
+</ul>
+<h2>See also</h2>
+<ul>
+<li>Full virtualization</li>
+<li>Hardware-assisted virtualization</li>
+<li>Hypervisor</li>
+<li>Operating-system-level virtualization</li>
+</ul>
+</div>
+</body>
+</html>

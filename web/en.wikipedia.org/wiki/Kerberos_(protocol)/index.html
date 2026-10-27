@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kerberos (protocol) - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;color:#202122;background:#fff;margin:0;padding:20px 40px;line-height:1.6;max-width:960px}
+h1{font-family:Georgia,'Linux Libertine',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px}
+h2{font-family:Georgia,'Linux Libertine',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+a{color:#3366cc;text-decoration:none}a:hover{text-decoration:underline}
+.hero{display:block;margin:16px auto;max-width:400px;width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:20px;text-align:center;color:#72777d;min-height:120px}
+.refs{font-size:90%;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Kerberos (protocol)</h1>
+<img class="hero" src="images/Kerberos_(protocol).png" alt="Kerberos authentication protocol diagram">
+<p><b>Kerberos</b> is a computer-network authentication protocol that works on the basis of <i>tickets</i> to allow nodes communicating over a non-secure network to prove their identity to one another in a secure manner. Its designers aimed it primarily at a client–server model, and it provides mutual authentication — both the user and the server verify each other's identity. Kerberos protocol messages are protected against eavesdropping and replay attacks.</p>
+<h2>History and design</h2>
+<p>Kerberos was developed at the Massachusetts Institute of Technology (MIT) as part of Project Athena in the 1980s, and is named after Cerberus, the three-headed dog of Greek mythology guarding the gates of Hades. The protocol builds on earlier work on the Needham–Schroeder protocol and uses strong symmetric-key cryptography. The current version, Kerberos 5, is specified in RFC 4120.</p>
+<h2>How it works</h2>
+<p>Kerberos uses a trusted third party, the Key Distribution Center (KDC), which consists of an Authentication Server and a Ticket Granting Server. When a user logs in, the Authentication Server issues a Ticket Granting Ticket (TGT) encrypted with the user's password-derived key. To access a specific service, the client presents the TGT to the Ticket Granting Server to obtain a service ticket, which it then presents to the service. Tickets have limited lifetimes, reducing the window for misuse. Kerberos requires loosely synchronised clocks between participants.</p>
+<h2>Deployment</h2>
+<p>Kerberos is the default authentication method in Microsoft Windows domains (Active Directory) and is widely used in Unix and Linux environments (including the MIT and Heimdal implementations) and in single sign-on systems. It underpins authentication in many enterprise networks, though it has known limitations, including the KDC as a single point of failure and vulnerability to offline password-guessing attacks against ticket requests in some configurations.</p>
+<p class="refs">See also: Active Directory; Single sign-on; Needham–Schroeder protocol; Project Athena.</p>
+</body>
+</html>

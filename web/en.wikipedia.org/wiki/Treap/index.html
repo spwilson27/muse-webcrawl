@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Treap - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;min-height:100vh}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:6px;margin-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;font-size:1.4em;margin-top:28px}
+.sub{color:#54595d;font-size:.9em;margin-bottom:16px}
+.hero{display:block;max-width:480px;width:100%;height:240px;object-fit:cover;background:#eaecf0;margin:16px 0}
+a{color:#0645ad}
+code{background:#f8f9fa;padding:1px 4px;font-family:monospace}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Treap</h1>
+<div class="sub">From Wikipedia, the free encyclopedia</div>
+<img class="hero" src="images/Treap.png" alt="Illustrative placeholder image for Treap">
+<p>A <b>treap</b> is a data structure that combines a binary search tree and a binary heap — the name is a portmanteau of <i>tree</i> and <i>heap</i>. It was introduced by Raimund Seidel and Cecilia R. Aragon in 1989. Each node stores a key and is assigned a random <i>priority</i>. The tree is ordered by key as in a binary search tree (an inorder traversal yields the keys in sorted order) and simultaneously heap-ordered by priority (each parent has higher priority — conventionally a smaller value — than its children).</p>
+<h2>Properties</h2>
+<p>For a given set of keys and priorities, the treap's shape is uniquely determined: it is exactly the tree obtained by inserting the keys one by one in decreasing order of priority into an ordinary binary search tree. Because the priorities are random, the expected height is O(log n), so searches, insertions, and deletions run in expected logarithmic time, without the explicit rebalancing machinery of AVL or red–black trees. A treap is also the same structure as a Cartesian tree built on the sequence of (key, priority) pairs.</p>
+<h2>Operations</h2>
+<p>Search proceeds as in any binary search tree. Insertion adds the new node as a leaf in search-tree position and then rotates it upward until heap order is restored. Deletion rotates the node downward — always toward its higher-priority child — until it becomes a leaf, then removes it. Two operations unique to treaps make many algorithms elegant:</p>
+<ul>
+<li><b>Split</b>: divide a treap into two treaps containing the keys less than and greater than a given key.</li>
+<li><b>Merge</b> (join): combine two treaps in which all keys of one precede all keys of the other.</li>
+</ul>
+<p>Split and merge are each expected O(log n), and together they implement insert and delete, as well as set operations such as union, intersection, and difference in O(m log (n/m)) time.</p>
+<h2>Variants and applications</h2>
+<p>An <i>implicit treap</i> uses a node's position (index) as its key, maintained via subtree sizes, giving a sequence structure supporting splits and merges by position — insertions, deletions, and reversals of array segments in expected logarithmic time. Treaps are used in randomized algorithms courses as the simplest balanced-tree structure, in some standard libraries and databases, and as a basis for persistent (functional) balanced trees, since updates create only O(log n) new nodes along the modified path. A related structure, the randomized binary search tree of Martínez and Roura, has the same distribution of shapes.</p>
+<h2>See also</h2>
+<ul>
+<li>Binary search tree</li>
+<li>Heap (data structure)</li>
+<li>Cartesian tree</li>
+<li>Randomized algorithm</li>
+<li>Skip list</li>
+</ul>
+<p class="small">Categories: Binary trees | Heaps (data structures) | Randomized algorithms</p>
+</div>
+</body>
+</html>

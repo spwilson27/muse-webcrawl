@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Event-driven architecture - Wikipedia</title>
+<style>
+body { font-family: sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; }
+h1 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; }
+h2 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 15px 0; }
+.hero img { max-width: 100%; background: #eaecf0; padding: 20px; color: #54595d; }
+</style>
+</head>
+<body>
+<h1>Event-driven architecture</h1>
+<p><b>Event-driven architecture</b> (EDA) is a <a href="../Software_architecture/index.html">software architecture</a> pattern promoting the production, detection, consumption of, and reaction to <b>events</b>. An event is a significant change in state — for example, "an order was placed", "a payment was received" or "a sensor reading exceeded a threshold". In an event-driven system, components communicate by emitting and receiving event notifications rather than by making direct requests of one another, which produces loosely coupled systems that are easier to extend and scale.</p>
+<div class="hero"><img src="images/Event-driven_architecture.png" alt="Diagram of producers, an event broker, and consumers in an event-driven architecture"></div>
+<h2>Concepts</h2>
+<p>The basic building blocks of EDA are:</p>
+<ul>
+<li><b>Event producers</b> (or emitters) — sources that detect or cause state changes and publish events describing them.</li>
+<li><b>Event consumers</b> — components that subscribe to events and react when they receive them, by updating data, triggering workflows, or emitting further events.</li>
+<li><b>Event channels and brokers</b> — middleware, such as message brokers and streaming platforms, that route events from producers to consumers (e.g. Apache Kafka, RabbitMQ, Amazon EventBridge).</li>
+<li><b>Events</b> — immutable records of facts, typically carrying a timestamp, a type, and a payload describing what happened.</li>
+</ul>
+<h2>Styles of event processing</h2>
+<p><b>Simple event processing</b> reacts to individual events as they occur. <b>Event stream processing</b> analyses flows of events, often with continuous queries. <b>Complex event processing</b> (CEP) detects patterns and correlations across multiple events — for example, inferring a fraud attempt from a sequence of transactions. EDA is closely related to, but distinct from, the publish–subscribe pattern, message-driven architecture, and <a href="../Reactive_programming/index.html">reactive programming</a>.</p>
+<h2>Advantages and challenges</h2>
+<p>Advantages of EDA include loose coupling (producers need not know who consumes their events), scalability (consumers can be added and scaled independently), responsiveness to real-time data, and extensibility — new behaviour can often be added by subscribing a new consumer without modifying existing components. Challenges include the difficulty of tracing and debugging asynchronous flows, ensuring ordering and exactly-once delivery, handling failures and duplicate events, schema evolution, and a loss of the simple mental model of synchronous request–response interactions.</p>
+<h2>Applications</h2>
+<p>Event-driven designs are widely used in <a href="../Microservices/index.html">microservices</a> architectures, e-commerce order processing, financial trading and fraud detection, <a href="../Internet_of_things/index.html">Internet of Things</a> systems, user interfaces (which are inherently event-driven), and data pipelines. Related patterns include <a href="../Event_sourcing/index.html">event sourcing</a>, in which state is derived from a log of events, and CQRS (command query responsibility segregation).</p>
+<p><i>See also: <a href="../Publish–subscribe_pattern/index.html">Publish–subscribe pattern</a>, <a href="../Event_sourcing/index.html">Event sourcing</a>, <a href="../Message_queue/index.html">Message queue</a>, <a href="../Apache_Kafka/index.html">Apache Kafka</a></i></p>
+</body>
+</html>

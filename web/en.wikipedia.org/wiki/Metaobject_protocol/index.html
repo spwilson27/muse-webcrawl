@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Metaobject protocol - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+p{line-height:1.6;margin:0.6em 0}
+ul{line-height:1.6}
+code{font-family:monospace;background:#f0f0f0;padding:0 3px}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;margin:8px auto;text-align:center;font-size:0.85em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.ref{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Metaobject protocol</h1>
+<p>In computer science, a <b>metaobject protocol</b> (MOP) is an interpreter of the semantics of a program that is open and extensible. Rather than treating the language's object system as a fixed black box, a metaobject protocol exposes the objects that implement the language itself — classes, methods, generic functions, and slots — as objects that the programmer can inspect and modify. This allows programmers to adjust the semantics of the language, for example to implement new kinds of inheritance, method combination, or persistence, without modifying the underlying implementation.</p>
+<div class="thumb"><img src="images/metaobject-protocol.png" alt="Layered diagram of a metaobject protocol beneath the base-level object system"><br>Layered diagram of a metaobject protocol beneath the base-level object system</div>
+<h2>History</h2>
+<p>The term and the canonical design were presented in the 1991 book <i>The Art of the Metaobject Protocol</i> by Gregor Kiczales, Jim des Rivières, and Daniel G. Bobrow, which described the metaobject protocol of the Common Lisp Object System (CLOS). The CLOS MOP defines metaobjects such as <code>standard-class</code>, <code>standard-method</code>, and <code>standard-generic-function</code>, together with generic functions like <code>compute-slots</code> and <code>slot-value-using-class</code> that programmers can specialise.</p>
+<h2>Design principles</h2>
+<ul>
+<li><b>Open implementation</b> — language designers expose selected implementation decisions as a protocol rather than hiding them.</li>
+<li><b>Incremental extension</b> — new behaviour is added by subclassing metaobjects and specialising protocol functions, keeping default behaviour intact.</li>
+<li><b>Reflectivity</b> — the system can be used to describe and modify itself.</li>
+</ul>
+<h2>Examples</h2>
+<p>Besides CLOS, metaobject protocols or related reflective facilities appear in Smalltalk (where classes are objects manipulated through the class library), Ruby, Python (metaclasses and descriptors), Objective-C's runtime, and various research languages. Java's reflection API is sometimes contrasted with a true MOP because it is largely read-only: it permits inspection but limited modification of program semantics.</p>
+<p class="ref">See also: Common Lisp Object System, Reflection (computer programming), Gregor Kiczales, Aspect-oriented programming.</p>
+</div>
+</body>
+</html>

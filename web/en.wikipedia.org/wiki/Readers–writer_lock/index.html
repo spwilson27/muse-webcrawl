@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Readers–writer lock - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 60px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; height: auto; background: #eaecf0; border: 1px solid #c8ccd1; padding: 8px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Readers–writer lock</h1>
+<div class="hero"><img src="images/readers-writer-lock.png" alt="Diagram of multiple readers sharing a lock while a writer waits for exclusive access"></div>
+<p>In computer science, a <b>readers–writer lock</b> (also called a shared–exclusive lock, multi-reader lock, or push lock) is a synchronization primitive that allows concurrent access for read-only operations while requiring exclusive access for write operations. Because reading shared data does not modify it, many threads may hold the lock simultaneously in read (shared) mode, improving performance over a simple mutex when reads greatly outnumber writes.</p>
+<h2>Policies and fairness</h2>
+<p>Implementations differ in scheduling policy. A reader-preferring lock lets new readers in even while a writer waits, maximizing concurrency but risking writer starvation. A writer-preferring lock blocks new readers once a writer is queued, guaranteeing the writer access but potentially delaying readers. Fair or phase-fair variants alternate between reader batches and writers. The classic readers–writers problem, one of the canonical synchronization problems, studies these trade-offs.</p>
+<h2>Implementations</h2>
+<p>Readers–writer locks are widely provided: POSIX threads offer <code>pthread_rwlock</code>, C++17 provides <code>std::shared_mutex</code>, Java offers <code>ReentrantReadWriteLock</code>, and Windows has Slim Reader/Writer (SRW) locks. Writers typically may not upgrade a read lock to a write lock atomically, so designs must take care to avoid deadlock when an upgrade is needed. Downgrading a write lock to a read lock is often supported and useful for publishing updates atomically.</p>
+</div>
+</body>
+</html>

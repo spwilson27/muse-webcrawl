@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Memory debugger - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; padding: 0; color: #202122; background: #f8f9fa; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+.hero { text-align: center; margin: 12px 0; }
+.hero img { max-width: 380px; background: #eaecf0; border: 1px solid #c8ccd1; padding: 8px; }
+.caption { font-size: 12px; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Memory debugger</h1>
+<div class="hero"><img src="images/memory-debugger.png" alt="Screenshot of a memory debugging tool report"><div class="caption">A memory debugger reports leaks and invalid accesses</div></div>
+<p>A <b>memory debugger</b> is a programming tool for finding memory leaks and buffer overflows in programs written in languages with manual memory management, such as C and C++. A memory leak occurs when a program allocates memory on the heap but fails to release it after it is no longer needed; a buffer overflow occurs when a program writes data beyond the bounds of an allocated buffer. Both classes of bugs can cause crashes, data corruption, and security vulnerabilities.</p>
+<h2>How memory debuggers work</h2>
+<p>Memory debuggers typically work either by instrumenting the program at compile time or by intercepting calls to allocation functions at runtime. Instrumented code checks each memory access against shadow metadata describing valid regions, reporting accesses to freed, unallocated, or out-of-bounds memory. Runtime tools may also track every allocation and report, at program exit, which blocks were never freed, together with the stack traces that allocated them.</p>
+<h2>Notable tools</h2>
+<p>Valgrind's Memcheck is one of the most widely used memory debuggers for Linux, detecting leaks, use of uninitialized memory, and invalid accesses. AddressSanitizer, supported by GCC and Clang, provides fast compile-time instrumentation. Commercial and historical tools include Purify, BoundsChecker, and Electric Fence, and sanitizers bundled with development environments. Some tools, called memory profilers, focus instead on measuring a program's memory consumption over time.</p>
+<h2>Limitations</h2>
+<p>Instrumentation imposes significant runtime overhead — programs may run several times slower under a memory debugger — and multithreaded race-related memory errors may require specialized tools. Garbage-collected languages reduce leak risk but do not eliminate it, since objects can remain reachable but unused.</p>
+</div>
+</body>
+</html>

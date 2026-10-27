@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Okapi BM25 - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; padding: 1em 2em; line-height: 1.6; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; }
+img.hero { width: 100%; max-width: 500px; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 2em 0; text-align: center; display: block; }
+code { background: #f8f9fa; padding: 0 0.3em; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Okapi BM25</h1>
+<img class="hero" src="images/okapi-bm25.png" alt="Diagram of term-frequency saturation in BM25 scoring">
+<p>In information retrieval, <b>Okapi BM25</b> (BM stands for <i>Best Matching</i>) is a ranking function used by search engines to estimate the relevance of documents to a given search query. It is based on the probabilistic retrieval framework developed in the 1970s and 1980s by Stephen E. Robertson, Karen Spärck Jones, and others.</p>
+<p>BM25 is a bag-of-words retrieval function that ranks a set of documents based on the query terms appearing in each document, regardless of their proximity within the document. It is not a single function, but a family of scoring functions with slightly different components and parameters. One common instantiation is described below.</p>
+<h2>Ranking function</h2>
+<p>Given a query Q containing keywords q<sub>1</sub>, ..., q<sub>n</sub>, the BM25 score of a document D is:</p>
+<p style="text-align:center;"><i>score(D, Q) = Σ<sub>i</sub> IDF(q<sub>i</sub>) · [ f(q<sub>i</sub>, D) · (k<sub>1</sub> + 1) ] / [ f(q<sub>i</sub>, D) + k<sub>1</sub> · (1 − b + b · |D| / avgdl) ]</i></p>
+<p>where f(q<sub>i</sub>, D) is the frequency of term q<sub>i</sub> in document D, |D| is the length of the document in words, avgdl is the average document length in the collection, and k<sub>1</sub> and b are free parameters, usually chosen as k<sub>1</sub> = 1.2 to 2.0 and b = 0.75.</p>
+<h2>History</h2>
+<p>The function was developed as part of the Okapi information retrieval system at City, University of London, which was used in the TREC (Text Retrieval Conference) evaluations in the 1990s. BM25 and its variants are widely used in practice, including in open-source search engines such as Lucene, Elasticsearch and Solr, where BM25 became the default similarity function.</p>
+<h2>Variants</h2>
+<p>Variants include BM25+, which addresses the issue that long documents can be unfairly penalised, and BM25F, which extends the model to documents composed of multiple fields such as title, body and anchor text.</p>
+</div>
+</body>
+</html>

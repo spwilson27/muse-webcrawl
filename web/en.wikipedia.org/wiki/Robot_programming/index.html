@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Robot programming - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+.hero{display:block;margin:16px auto;max-width:400px;background:#f8f9fa;border:1px solid #c8ccd1;padding:12px;text-align:center;color:#54595d;font-style:italic}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.ref{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Robot programming</h1>
+<img class="hero" src="images/robot-programming.png" alt="An industrial robot arm being programmed with a teach pendant (placeholder image)">
+<table class="infobox">
+<tr><th>Methods</th><td>Teach pendant, offline programming, lead-through, textual programming</td></tr>
+<tr><th>Common languages</th><td>RAPID, KRL, Karel, VAL, Python/C++ with ROS</td></tr>
+<tr><th>Applications</th><td>Manufacturing, logistics, surgery, research</td></tr>
+</table>
+<p><b>Robot programming</b> is the process of developing control software and instructions that direct a <a href="../Robot/index.html">robot</a> to perform desired tasks — moving its joints and end effectors through sequences of positions, responding to sensor inputs, and interacting with its environment. Programs define not only motion paths but speeds, tool operations (such as welding or gripping), and logic for handling errors and external signals.</p>
+<h2>Methods</h2>
+<h3>Teach pendant programming</h3>
+<p>The traditional online method: an operator uses a handheld teach pendant to jog the robot to each desired position and records ("teaches") the points, building a program step by step. It is intuitive but takes the robot out of production while programming.</p>
+<h3>Lead-through (guiding) programming</h3>
+<p>The operator physically moves the robot arm by hand — possible with gravity-compensated or collaborative robots — while the system records poses and trajectories. This underlies programming by demonstration and imitation learning.</p>
+<h3>Offline programming</h3>
+<p>Programs are created in simulation software using a 3D model of the robot and workcell (a "digital twin"), then downloaded to the real controller. This minimizes downtime and allows reachability and collision checks in advance. CAD geometry can be converted automatically into toolpaths for processes such as welding, painting, or machining.</p>
+<h2>Languages and frameworks</h2>
+<p>Most manufacturers provide proprietary textual languages: ABB's RAPID, KUKA's KRL, FANUC's Karel and teach-pendant programs, and Yaskawa's INFORM. Historically significant languages include VAL (Unimation) and AML. In research and increasingly in industry, general-purpose languages are used with middleware such as the Robot Operating System (ROS), MoveIt for motion planning, and vendor APIs in Python or C++. Graphical and block-based interfaces (such as Blockly-style editors) are common in education.</p>
+<h2>Concepts</h2>
+<p>Key concepts include frames of reference (world, base, tool, and user frames), joint-space versus Cartesian motion, linear and circular interpolation, forward and inverse kinematics, singularity avoidance, and I/O handling. Safety programming — speed limits, safety-rated monitored stop, and workspace zones — is central for collaborative applications under standards such as ISO 10218.</p>
+<p class="ref">See also: Industrial robot; Robot Operating System; Teach pendant; Cobot; Inverse kinematics.</p>
+</body>
+</html>

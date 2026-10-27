@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Variance inflation factor - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; line-height: 1.6; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; margin-top: 28px; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; background: #eaecf0; border: 1px solid #a2a9b1; min-height: 180px; }
+.caption { font-size: 85%; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Variance inflation factor</h1>
+<p>In statistics, the <b>variance inflation factor</b> (<b>VIF</b>) is the ratio of the variance of a parameter estimate when fitting a full model containing other parameters to the variance of the parameter estimate if the model were estimated with only that parameter. It quantifies how much the variance of a regression coefficient is increased because of multicollinearity — correlation among the predictor variables — in an ordinary least squares regression analysis.</p>
+<div class="hero"><img src="images/vif.png" alt="Plot illustrating multicollinearity inflating coefficient variance"><div class="caption">Collinear predictors inflate the variance of estimated coefficients.</div></div>
+
+<h2>Definition</h2>
+<p>For predictor <i>j</i>, the VIF is defined as VIF<sub><i>j</i></sub> = 1 / (1 − <i>R</i><sub><i>j</i></sub><sup>2</sup>), where <i>R</i><sub><i>j</i></sub><sup>2</sup> is the coefficient of determination from regressing predictor <i>j</i> on all the other predictors. The reciprocal, 1 − <i>R</i><sub><i>j</i></sub><sup>2</sup>, is called <i>tolerance</i>. A VIF of 1 indicates no correlation with the other predictors; values above 5 or 10 are commonly taken as evidence of problematic multicollinearity, though the thresholds are rules of thumb.</p>
+
+<h2>Interpretation and remedies</h2>
+<p>Large VIFs signal that a coefficient's standard error is inflated, so its estimate is imprecise even though overall prediction may remain good. Remedies include removing redundant predictors, combining them (for example into an index or principal components), centring variables, collecting more data, or using penalised methods such as ridge regression. VIFs can be generalised to sets of predictors (generalised variance inflation factors) for categorical variables represented by several dummy terms.</p>
+</div>
+</body>
+</html>

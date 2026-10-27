@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Schematron - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 60px; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; font-weight: normal; margin-top: 1.4em; }
+p { line-height: 1.6; font-size: 0.95em; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; background: #eaecf0; border: 1px solid #c8ccd1; padding: 40px 20px; color: #72777d; }
+.caption { font-size: 0.8em; color: #54595d; }
+ul { line-height: 1.6; font-size: 0.95em; }
+.infobox { float: right; width: 250px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 12px 16px; font-size: 0.85em; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Schematron</h1>
+<div class="hero"><img src="images/Schematron.png" alt="Schematron assertion-based validation of an XML document"><div class="caption">Schematron validates XML by testing assertions about its structure</div></div>
+<table class="infobox">
+<tr><th>Original author</th><td>Rick Jelliffe</td></tr>
+<tr><th>Initial release</th><td>1999</td></tr>
+<tr><th>Standard</th><td>ISO/IEC 19757-3</td></tr>
+<tr><th>Type</th><td>XML schema language</td></tr>
+</table>
+<p><b>Schematron</b> is a rule-based validation language for making assertions about the presence or absence of patterns in XML documents. It was created by Rick Jelliffe in 1999 and standardised as ISO/IEC 19757-3 within the Document Schema Definition Languages (DSDL) family.</p>
+<h2>Approach</h2>
+<p>Where grammar-based schema languages such as XML Schema (XSD) and RELAX NG define permissible structures, Schematron expresses constraints as <i>assertions</i> written in XPath, organised into rules and patterns. Each rule selects nodes by context and then states assertions (which should hold) and reports (conditions that should be flagged when true). Failed assertions produce human-readable diagnostic messages written by the schema author, making Schematron particularly valued for business-rule validation and user-friendly error reporting.</p>
+<pre>
+&lt;rule context="invoice"&gt;
+  &lt;assert test="total = sum(item/price)"&gt;
+    The invoice total must equal the sum of item prices.
+  &lt;/assert&gt;
+&lt;/rule&gt;
+</pre>
+<h2>Features</h2>
+<ul>
+<li><b>Phases</b> — different subsets of patterns can be activated for different validation scenarios</li>
+<li><b>Abstract patterns</b> — reusable rule templates parameterised for different contexts</li>
+<li><b>Query language binding</b> — XPath 1.0, XPath 2.0, or XSLT bindings, allowing progressively richer tests</li>
+<li><b>Diagnostics and properties</b> — detailed, localisable messages and machine-readable metadata attached to failures</li>
+</ul>
+<h2>Implementation</h2>
+<p>Schematron schemas are often "compiled" into XSLT stylesheets in a multi-step pipeline: the schema is expanded, abstract patterns resolved, and XPath expressions embedded into a validator stylesheet, which outputs results in SVRL (Schematron Validation Report Language). Schematron is widely used in publishing, government, and finance — for example in the validation of UBL invoices and European e-procurement documents — frequently as a complement to grammar-based schemas.</p>
+</div>
+</body>
+</html>

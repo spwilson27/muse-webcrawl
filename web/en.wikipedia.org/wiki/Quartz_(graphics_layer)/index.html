@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Quartz (graphics layer)</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0 auto;max-width:960px;padding:0 1em;color:#202122;background:#fff}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:1em auto;max-width:400px;background:#f8f9fa;border:1px solid #c8ccd1;padding:1em;text-align:center;font-style:italic;color:#54595d}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:.85em;margin:0 0 1em 1em;padding:.5em}
+.infobox th{background:#eaf3ff;text-align:left}
+p{line-height:1.6}
+</style>
+</head>
+<body>
+<h1>Quartz (graphics layer)</h1>
+<div class="infobox"><table><tr><th>Developer</th><td>Apple Inc.</td></tr>
+<tr><th>Operating system</th><td>macOS</td></tr>
+<tr><th>Type</th><td>Graphics layer</td></tr>
+<tr><th>Components</th><td>Quartz 2D, Quartz Compositor</td></tr></table></div>
+<div class="hero"><img src="images/quartz.png" alt="Quartz graphics layer diagram placeholder"></div>
+<p><b>Quartz</b> is the graphics layer of Apple's macOS operating system. It consists of two core components: <b>Quartz 2D</b>, a two-dimensional drawing library based on the PDF imaging model, and the <b>Quartz Compositor</b>, the window server that composites window buffers to the screen.</p>
+<h2>Quartz 2D</h2>
+<p>Quartz 2D provides a vector-based drawing environment for rendering text, images, and shapes with anti-aliasing, transparency, and resolution independence. Applications draw into graphics contexts that can target the screen, printers, or PDF files identically. The API is part of the Core Graphics framework.</p>
+<h2>Quartz Compositor</h2>
+<p>The Quartz Compositor manages each window as an off-screen buffer and composes the final display, enabling effects such as drop shadows, transparency, Exposé, and smooth window animation. It is accessed indirectly through system services rather than by applications directly. Historically it leveraged OpenGL acceleration ("Quartz Extreme"); more recent macOS versions render through Metal.</p>
+<h2>Quartz in other contexts</h2>
+<p>The same Core Graphics technologies underlie iOS drawing, where UIKit builds on Quartz 2D. Related technologies include Quartz Composer, a visual programming environment for graphics processing (deprecated), and Core Image and Core Animation, which sit above the basic layer.</p>
+<p><i>See also: Core Graphics, Aqua (user interface), Core Animation.</i></p>
+</body>
+</html>

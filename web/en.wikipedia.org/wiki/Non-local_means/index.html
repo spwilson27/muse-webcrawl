@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Non-local means - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;color:#202122;background:#fff}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:10px 24px}
+h1{font-size:1.8em;margin:0;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+main{max-width:960px;margin:0 auto;padding:16px 24px;line-height:1.6}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:2px}
+img.hero{display:block;max-width:320px;margin:12px auto;padding:24px;background:#eaecf0;border:1px dashed #72777d;text-align:center}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> — The Free Encyclopedia</header>
+<main>
+<h1>Non-local means</h1>
+<img class="hero" src="images/non-local-means.png" alt="Image denoising example showing patches used by the non-local means algorithm">
+<p><b>Non-local means</b> is an algorithm in image processing for image denoising. Unlike "local" methods such as Gaussian smoothing or anisotropic diffusion, which compute the new value of a pixel from its immediate neighbourhood, non-local means takes a weighted average of pixels across the whole image — or a large search window — weighting each pixel by the similarity between the patch around it and the patch around the target pixel.</p>
+<h2>Principle</h2>
+<p>Natural images contain many repeated structures: textures, edges, and patterns recur in many places. The algorithm, introduced by Antoni Buades, Bartomeu Coll, and Jean-Michel Morel in 2005, exploits this redundancy. The restored value of a pixel is a weighted mean of all pixels in the image, with weights decaying exponentially with the squared Euclidean distance between the corresponding image patches and a filtering parameter h controlling the strength of smoothing.</p>
+<h2>Performance and variants</h2>
+<p>Non-local means preserves edges and fine texture far better than local filters, at the cost of high computational complexity, since every pair of patches in a search window must be compared. Many accelerations and variants have been proposed, including integral-image implementations, blockwise versions, and adaptations to video and volumetric data. The method helped inspire later patch-based and learning-based denoising algorithms such as BM3D.</p>
+<h2>See also</h2>
+<p><a href="../Noise_reduction/index.html">Noise reduction</a> · <a href="../Bilateral_filter/index.html">Bilateral filter</a> · <a href="../BM3D/index.html">BM3D</a></p>
+</main>
+</body>
+</html>

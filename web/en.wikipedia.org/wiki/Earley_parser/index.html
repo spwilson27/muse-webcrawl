@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Earley parser - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:900px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}h1{font-family:sans-serif;border-bottom:1px solid #a2a9b1;padding-bottom:4px}h2{font-family:sans-serif;border-bottom:1px solid #a2a9b1}img.hero{display:block;max-width:600px;width:100%;background:#eee;border:1px solid #a2a9b1;padding:40px 0;text-align:center;margin:16px auto}a{color:#0645ad}</style>
+</head>
+<body>
+<h1>Earley parser</h1>
+<img class="hero" src="images/Earley_parser.png" alt="Earley item sets for a short input">
+<p>The <b>Earley parser</b> is an algorithm for parsing strings that belong to a given context-free grammar. It was invented by Jay Earley in his 1968 PhD thesis and 1970 paper. The algorithm uses dynamic programming and is notable because it can parse <i>all</i> context-free grammars, including ambiguous ones, in a top-down manner driven by the input.</p>
+<h2>Algorithm</h2>
+<p>The parser processes the input left to right, building a sequence of "item sets" (state sets), one per input position. Each item is a production rule with a dot marking how much of the right-hand side has been matched, together with an origin position. Three operations manipulate the items: <b>prediction</b> adds items for nonterminals that could start at the current position, <b>scanning</b> consumes an input token matching the next terminal, and <b>completion</b> advances items whose awaited nonterminal has been finished. A successful parse is recorded by a completed item for the start symbol spanning the whole input.</p>
+<h2>Complexity</h2>
+<p>Earley parsing runs in O(n³) time in the worst case for general context-free grammars, O(n²) for unambiguous grammars, and O(n) for a large class of deterministic grammars (including LR(k) grammars). This combination of generality and efficiency makes it attractive for natural-language processing and for domain-specific languages with highly ambiguous grammars, though practical implementations must handle its potentially large memory use and the extraction of parse forests carefully.</p>
+<p>See also: <a href="../Parsing/index.html">Parsing</a>, <a href="../CYK_algorithm/index.html">CYK algorithm</a></p>
+</body>
+</html>

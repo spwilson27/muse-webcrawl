@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Fletcher's checksum - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:760px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #a2a9b1}a{color:#0645ad;text-decoration:none}.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:.4em;text-align:center;font-size:.85em;color:#54595d}</style></head>
+<body>
+<h1>Fletcher's checksum</h1>
+<div class="thumb"><img src="images/Fletcher's_checksum.png" alt="Diagram of the Fletcher checksum accumulation process"></div>
+<p><b>Fletcher's checksum</b> is an error-detection code invented by John G. Fletcher of Lawrence Livermore Laboratory in the late 1970s. It is a checksum algorithm whose properties are similar to a cyclic redundancy check but with a lower computational cost.</p>
+<h2>Algorithm</h2>
+<p>The Fletcher checksum divides the input into blocks and maintains two running sums. For the common 16-bit variant, the data is processed in bytes, and two 8-bit sums, sum1 and sum2, are accumulated modulo 255: sum1 is the simple sum of the data bytes, and sum2 is the sum of the running values of sum1. The two sums are concatenated to form the 16-bit check value. 32-bit and 64-bit variants process data in larger words for efficiency.</p>
+<h2>Properties</h2>
+<p>Because the second sum depends on the order of the data, Fletcher's checksum can detect errors such as swapped words that a simple additive checksum would miss. It is used in protocols and formats including OSI transport protocols and the Adler-32 variant is a simplified relative used in the zlib compression format.</p>
+<h2>See also</h2>
+<ul><li><a href="../Checksum/index.html">Checksum</a></li>
+<li><a href="../Adler-32/index.html">Adler-32</a></li>
+<li><a href="../Cyclic_redundancy_check/index.html">Cyclic redundancy check</a></li></ul>
+</body></html>

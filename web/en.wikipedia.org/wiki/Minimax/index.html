@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Minimax - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin:0 0 8px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:12px auto;max-width:420px;width:100%}
+.fig{text-align:center;font-size:85%;color:#54595d}
+.small{font-size:88%}
+.mono{font-family:monospace;background:#f8f9fa;padding:12px;border:1px solid #eaecf0;white-space:pre;overflow-x:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Minimax</h1>
+<p><b>Minimax</b> (sometimes <b>MinMax</b> or <b>MM</b>) is a decision rule used in artificial intelligence, decision theory, game theory, statistics, and philosophy for minimising the possible loss for a worst case (maximum loss) scenario. When dealing with gains, it is referred to as "maximin" — to maximise the minimum gain. Originally formulated for several-player zero-sum game theory, covering both the cases where players take alternate moves and where they make simultaneous moves, it has also been extended to more complex games and to general decision-making in the presence of uncertainty.</p>
+<figure class="fig"><img class="hero" src="images/minimax.png" alt="A game tree labelled with minimax values propagated from the leaves to the root"><figcaption>A game tree evaluated with the minimax rule</figcaption></figure>
+<h2>Game theory</h2>
+<p>In zero-sum games, the minimax solution is the same as the Nash equilibrium. The minimax theorem, proved by John von Neumann in 1928, states that for every finite two-player zero-sum game with perfect information or with mixed strategies allowed, there exists a value V and a mixed strategy for each player such that (a) given player 2's strategy, the best payoff possible for player 1 is V, and (b) given player 1's strategy, the best payoff possible for player 2 is −V.</p>
+<h2>Combinatorial game theory and computer play</h2>
+<p>For sequential games that can be represented as a game tree, the minimax algorithm recursively evaluates positions: at the maximising player's nodes it takes the maximum of the child values, and at the minimising player's nodes it takes the minimum. A heuristic evaluation function supplies values for positions at the search depth limit. Improvements include alpha–beta pruning, which discards branches that cannot affect the result, and the negamax formulation.</p>
+<div class="mono">function minimax(node, depth, maximizingPlayer):
+    if depth == 0 or node is terminal:
+        return heuristic value of node
+    if maximizingPlayer:
+        value := -infinity
+        for each child of node:
+            value := max(value, minimax(child, depth-1, FALSE))
+        return value
+    else:
+        value := +infinity
+        for each child of node:
+            value := min(value, minimax(child, depth-1, TRUE))
+        return value</div>
+<h2>Applications</h2>
+<p>Minimax search underpins classic game-playing programs for chess, checkers, tic-tac-toe, and other two-player perfect-information games, and variants such as expectiminimax handle chance events. In statistics, minimax estimators minimise the maximum risk over a parameter space.</p>
+<p class="small">See also: Alpha–beta pruning, Negamax, Nash equilibrium, Zero-sum game, Expectiminimax.</p>
+</div>
+</body>
+</html>

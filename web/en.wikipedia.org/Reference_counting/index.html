@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Reference counting - Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:960px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{display:block;max-width:400px;border:1px solid #a2a9b1;padding:4px;background:#f8f9fa}
+.caption{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Reference counting</h1>
+<p>In computer science, <b>reference counting</b> is a technique for automatic memory management in which each object keeps a count of the number of references (pointers) to it held by other objects or variables. When the count reaches zero, the object is no longer reachable and can be deallocated. It is one of the principal forms of garbage collection, alongside tracing collectors.</p>
+<img class="hero" src="images/reference-counting.png" alt="Diagram of objects and their reference counts">
+<p class="caption">Each object tracks how many references point to it.</p>
+
+<h2>Operation</h2>
+<p>Creating a reference increments the target's count; destroying or reassigning a reference decrements it. When a count falls to zero, the object's resources are released and the counts of any objects it referenced are decremented in turn, which may cascade. Deallocation is incremental and predictable — objects are freed as soon as they become unreachable — which makes reference counting attractive for managing non-memory resources such as file handles (as in COM and many C++ idioms).</p>
+
+<h2>Advantages and disadvantages</h2>
+<p>Advantages include prompt reclamation, locality of overhead, and deterministic destruction. The central disadvantage is the inability to collect <b>reference cycles</b>: structures that reference each other (directly or in a loop) keep each other's counts above zero even when unreachable from the program. Remedies include weak references (which do not increment the count), cycle detectors run alongside, or programmer discipline. Multithreaded programs must update counts atomically, adding overhead; Swift, CPython, Objective-C, Rust's <i>Rc</i>/<i>Arc</i>, and C++ <i>shared_ptr</i> all rely on reference counting in some form.</p>
+
+<h2>History</h2>
+<p>Reference counting was described by George E. Collins in 1960 for LISP, and refined for distributed systems in the following decades. CPython, the reference implementation of Python, uses reference counting as its primary mechanism, supplemented by a generational cycle collector.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Garbage_collection_(computer_science)">Garbage collection (computer science)</a></li>
+<li><a href="../Smart_pointer">Smart pointer</a></li>
+<li><a href="../Weak_reference">Weak reference</a></li>
+<li><a href="../Memory_management">Memory management</a></li>
+</ul>
+</body>
+</html>

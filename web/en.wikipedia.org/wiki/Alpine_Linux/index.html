@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Alpine Linux - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;}
+.wrap{max-width:960px;margin:0 auto;padding:20px 28px 60px;}
+h1{font-size:28px;border-bottom:1px solid #a7d7f9;padding-bottom:4px;font-weight:normal;}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px;}
+h3{font-size:17px;font-weight:bold;margin-top:20px;}
+p{line-height:1.6;font-size:15px;}
+a{color:#0645ad;text-decoration:none;}
+a:hover{text-decoration:underline;}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px 14px;margin:0 0 14px 18px;font-size:13px;line-height:1.5;}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top;font-family:sans-serif;}
+.infobox td{font-family:sans-serif;}
+.infobox .cap{font-weight:bold;text-align:center;font-size:14px;padding-bottom:6px;font-family:sans-serif;}
+.hero{display:block;margin:14px auto;max-width:520px;width:100%;border:1px solid #c8ccd1;background:#f8f9fa;}
+ul,ol{line-height:1.6;font-size:15px;}
+.small{font-size:12px;color:#54595d;font-family:sans-serif;}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Alpine Linux</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/alpine-linux.png" alt="Placeholder image: a terminal showing the Alpine Linux logo and apk package manager">
+<div class="infobox">
+<div class="cap">Alpine Linux</div>
+<table>
+<tr><th>Developer</th><td>Alpine Linux development team</td></tr>
+<tr><th>OS family</th><td>Linux (Unix-like)</td></tr>
+<tr><th>Initial release</th><td>August 2005</td></tr>
+<tr><th>Package manager</th><td>apk (Alpine Package Keeper)</td></tr>
+<tr><th>C library</th><td>musl</td></tr>
+<tr><th>Userland</th><td>BusyBox</td></tr>
+<tr><th>Init system</th><td>OpenRC</td></tr>
+<tr><th>Licence</th><td>GPL-2.0 and others</td></tr>
+</table>
+</div>
+<p><b>Alpine Linux</b> is a lightweight <a href="../Linux_distribution/index.html">Linux distribution</a> designed around security, simplicity, and small size. Built on the <a href="../Musl/index.html">musl</a> C library and <a href="../BusyBox/index.html">BusyBox</a> utilities rather than the more common glibc and GNU coreutils, its base system is only a few megabytes. These qualities made it the most popular base image for <a href="../Docker_(software)/index.html">Docker</a> containers, where minimal image size and attack surface are prized.</p>
+<h2>History</h2>
+<p>Alpine began around 2005, growing out of the LEAF (Linux Embedded Appliance Framework) project; its original purpose was a firewall/router distribution that could run from RAM and read-only media, managed through the Alpine Configuration Framework (ACF). For many years releases used hardened kernels (grsecurity/PaX patches) and compiled all packages as position-independent executables with stack-smashing protection. Although the patched-kernel edition was discontinued in 2017, the other hardening defaults remain.</p>
+<h2>Design</h2>
+<ul>
+<li><b>Size:</b> a container base image of roughly 5–8 MB, and a full install under 200 MB excluding the kernel.</li>
+<li><b>musl libc:</b> a compact, standards-focused C library; some glibc-linked binaries need compatibility shims (gcompat).</li>
+<li><b>BusyBox:</b> a single compact binary providing most Unix utilities.</li>
+<li><b>apk:</b> Alpine's own package manager, noted for speed and for supporting atomic, scriptable system configuration; packages are indexed in the aports repository tree.</li>
+<li><b>OpenRC</b> init system by default, with run-from-RAM and diskless modes for appliances.</li>
+</ul>
+<h2>Use</h2>
+<p>Alpine is widely used in container images for web services, language runtimes, and microservices; as an embedded and router system; on virtual machines where small footprints matter; and as the basis of postmarketOS, a distribution for smartphones. Docker's official images for many popular projects publish Alpine variants alongside Debian-based ones.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Musl/index.html">musl</a></li>
+<li><a href="../BusyBox/index.html">BusyBox</a></li>
+<li><a href="../Docker_(software)/index.html">Docker</a></li>
+<li><a href="../Linux_distribution/index.html">Linux distribution</a></li>
+<li><a href="../PostmarketOS/index.html">postmarketOS</a></li>
+</ul>
+</div>
+</body>
+</html>

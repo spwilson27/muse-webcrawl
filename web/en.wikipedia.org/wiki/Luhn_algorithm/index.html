@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Luhn algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+img.hero{width:100%;max-height:320px;object-fit:cover;background:#eaecf0;border:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.ref{font-size:0.85em;color:#54595d}
+.mono{font-family:monospace;background:#f8f9fa;padding:2px 4px}
+</style>
+</head>
+<body>
+<h1>Luhn algorithm</h1>
+<img class="hero" src="images/luhn.png" alt="A payment card number with its check digit highlighted">
+<p>The <b>Luhn algorithm</b>, also known as the <b>modulus 10</b> or <b>mod 10</b> algorithm, is a simple check-digit formula used to validate a variety of identification numbers, most famously payment card numbers. It was created by IBM scientist Hans Peter Luhn, described in a patent filed in 1954 and granted in 1960, and is now specified in ISO/IEC 7812-1.</p>
+<h2>Description</h2>
+<p>To verify a number against its included check digit:</p>
+<ol>
+<li>Starting from the rightmost digit (the check digit), move left and double the value of every second digit.</li>
+<li>If doubling a digit gives a two-digit number, add its digits (equivalently, subtract 9).</li>
+<li>Sum all the resulting digits together with the undoubled digits.</li>
+<li>The number is valid if the total is a multiple of 10.</li>
+</ol>
+<h2>Strengths and weaknesses</h2>
+<p>The algorithm detects any single-digit error and almost all transpositions of adjacent digits, except the pair 09 ↔ 90. It is not a cryptographic function and cannot protect against deliberate fraud; it is designed only to catch accidental errors in transcription or data entry. It is used for credit and debit card numbers, IMEI numbers, and various national identification numbers.</p>
+<h2>Example</h2>
+<p>The classic test number <span class="mono">79927398713</span> sums to 70 under the algorithm, a multiple of 10, so it is valid; its final digit 3 is the check digit for the payload <span class="mono">7992739871</span>.</p>
+<h2>See also</h2>
+<ul>
+<li>Check digit</li>
+<li>Verhoeff algorithm</li>
+<li>Bank card number</li>
+</ul>
+<h2>References</h2>
+<p class="ref">Luhn, Hans Peter (1960). "Computer for Verifying Numbers". US Patent 2,954,701.</p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Inverse transform sampling - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:2em auto;max-width:52em;line-height:1.6;color:#202122;padding:0 1em}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.hero{display:block;margin:1em auto;max-width:420px;border:1px solid #c8ccd1;padding:.5em;text-align:center;background:#f8f9fa}
+.thumb{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Inverse transform sampling</h1>
+<div class="hero"><img src="images/Inverse_transform_sampling.png" alt="Graph of a cumulative distribution function and its inverse"><div class="thumb">Inverse transform sampling generates random numbers from a distribution using its inverse CDF.</div></div>
+<p><b>Inverse transform sampling</b> (also known as <b>inversion sampling</b>, the <b>inverse probability integral transform</b>, the <b>inverse transformation method</b>, or the <b>Smirnov transform</b>) is a basic method for <a href="../Pseudo-random_number_sampling/index.html">pseudo-random number sampling</a>, i.e., for generating sample numbers at random from any <a href="../Probability_distribution/index.html">probability distribution</a> given its <a href="../Cumulative_distribution_function/index.html">cumulative distribution function</a> (CDF).</p>
+<h2>Method</h2>
+<p>The method works as follows. Let <i>X</i> be a random variable with CDF <i>F</i>. Generate a uniform random number <i>U</i> on the interval (0, 1). Then <i>X = F<sup>−1</sup>(U)</i> has distribution <i>F</i>. Intuitively, one samples a point uniformly along the vertical axis of the CDF graph and reads off the corresponding horizontal value.</p>
+<h2>Proof</h2>
+<p>Because <i>U</i> is uniform, P(<i>F<sup>−1</sup>(U) ≤ x</i>) = P(<i>U ≤ F(x)</i>) = <i>F(x)</i>, which is exactly the statement that <i>F<sup>−1</sup>(U)</i> has CDF <i>F</i>.</p>
+<h2>Applications and alternatives</h2>
+<p>Inverse transform sampling is conceptually simple and efficient when the inverse CDF is available in closed form, as for the <a href="../Exponential_distribution/index.html">exponential</a> and <a href="../Cauchy_distribution/index.html">Cauchy</a> distributions. When the inverse is not tractable, alternatives such as <a href="../Rejection_sampling/index.html">rejection sampling</a>, the <a href="../Box%E2%80%93Muller_transform/index.html">Box–Muller transform</a>, or the <a href="../Ziggurat_algorithm/index.html">ziggurat algorithm</a> are used.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Probability_integral_transform/index.html">Probability integral transform</a></li>
+<li><a href="../Monte_Carlo_method/index.html">Monte Carlo method</a></li>
+</ul>
+</body>
+</html>

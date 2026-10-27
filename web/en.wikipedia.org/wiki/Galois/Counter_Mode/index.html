@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Galois/Counter Mode - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:860px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{font-size:2em;border-bottom:1px solid #a7d7f9;padding-bottom:.2em}h2{border-bottom:1px solid #a2a9b1;font-size:1.4em}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;width:240px;font-size:.9em}a{color:#0645ad}</style></head>
+<body>
+<h1>Galois/Counter Mode</h1>
+<div class="infobox"><img src="images/Galois_Counter_Mode.png" alt="Diagram of Galois/Counter Mode operation (image placeholder)"><br><b>Galois/Counter Mode (GCM)</b> is an authenticated encryption mode for block ciphers.</div>
+<p>In cryptography, <b>Galois/Counter Mode</b> (<b>GCM</b>) is a mode of operation for symmetric-key block ciphers that is widely adopted for its speed and authenticated-encryption properties. GCM combines counter mode (CTR) encryption with authentication based on a universal hash function evaluated over a Galois field, providing both confidentiality and integrity (AEAD — authenticated encryption with associated data).</p>
+<h2>Operation</h2>
+<p>The plaintext is encrypted using the block cipher in counter mode: successive values of a counter are encrypted and XORed with the plaintext blocks. Authentication uses <b>GHASH</b>, a polynomial hash defined over the finite field GF(2<sup>128</sup>): the ciphertext blocks (and any additional authenticated data, plus a length block) are multiplied by a hash key H — derived by encrypting the zero block — and powers of H in the field. The final GHASH output is masked with the encrypted initial counter block to produce the authentication tag.</p>
+<h2>Properties and use</h2>
+<p>GCM is parallelizable, can be implemented efficiently in hardware (Intel processors provide the PCLMULQDQ instruction for carry-less multiplication), and requires no padding beyond a final partial block. It was standardized by NIST in SP 800-38D (2007). GCM is used in TLS 1.2 and 1.3 cipher suites (AES-GCM), in IPsec, SSH, and in IEEE 802.11ad. Care is required with nonce uniqueness: reusing a nonce with the same key destroys authenticity and exposes the hash key, which motivated misuse-resistant variants such as AES-GCM-SIV. See also <a href="../Block_cipher_mode_of_operation/index.html">block cipher mode of operation</a> and <a href="../Advanced_Encryption_Standard/index.html">AES</a>.</p>
+</body></html>

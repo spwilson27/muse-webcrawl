@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Stochastic programming - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+.hero{text-align:center;background:#f8f9fa;border:1px solid #a2a9b1;padding:12px;margin:16px 0}
+.hero img{max-width:100%;height:auto;background:#eaecf0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Stochastic programming</h1>
+<p><b>Stochastic programming</b> is a framework in mathematical optimisation for modelling problems that involve uncertainty. Whereas deterministic optimisation problems are formulated with known parameters, real-world problems in finance, energy, transportation, and supply-chain management contain parameters — future prices, demands, inflows, travel times — that are unknown when decisions must be made. Stochastic programming incorporates probabilistic descriptions of these quantities, typically as random variables with known or estimated distributions.</p>
+<div class="hero"><img src="images/stochastic-programming.png" alt="Scenario tree diagram for a stochastic program (placeholder)"></div>
+<h2>Two-stage problems</h2>
+<p>The canonical model is the <i>two-stage stochastic linear program with recourse</i>. In the first stage, some decisions must be taken "here and now", before the uncertainty is revealed. In the second stage, after a random event occurs, further corrective ("recourse") decisions can be made at some cost. The objective is to choose first-stage decisions that minimise the immediate cost plus the <i>expected</i> second-stage cost. The classic illustrative example is the farmer problem of Birge and Louveaux: a farmer chooses crop acreages before knowing the weather, then buys or sells produce after yields are known.</p>
+<h2>Multi-stage problems and scenario trees</h2>
+<p>When decisions and revelations of information alternate over time, the model becomes multi-stage. Uncertainty is commonly represented by a <i>scenario tree</i>, whose nodes encode the information available at each point in time, with non-anticipativity constraints enforcing that decisions depend only on information revealed so far. The number of scenarios explodes combinatorially with stages, which motivates decomposition methods.</p>
+<h2>Solution methods</h2>
+<p>Replacing the distribution by a finite sample of scenarios yields a large deterministic equivalent problem. Key solution techniques include the L-shaped method (Benders decomposition applied to the recourse structure), stochastic decomposition, progressive hedging, and sample average approximation, in which the true expectation is replaced by a sample mean and statistical guarantees are obtained by replication. Related frameworks include chance-constrained programming (pioneered by Charnes and Cooper), robust optimisation, and distributionally robust optimisation, which hedge against misspecification of the distribution itself.</p>
+<h2>History and applications</h2>
+<p>The field originated in the 1950s with the work of George Dantzig on linear programming under uncertainty and of Abraham Charnes and William W. Cooper on chance constraints. Today stochastic programming is used for power-system unit commitment under renewable generation uncertainty, portfolio selection, airline fleet assignment, humanitarian logistics, and water reservoir management.</p>
+<p class="small">This article is a recreation from memory for the muse-webcrawl project.</p>
+</body>
+</html>

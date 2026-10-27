@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Netlist - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; line-height: 1.6; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 1.9em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 12px; }
+.caption { font-size: 0.85em; color: #54595d; }
+pre { background: #f8f9fa; border: 1px solid #c8ccd1; padding: 10px; overflow-x: auto; font-size: 0.88em; }
+ul { padding-left: 1.6em; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Netlist</h1>
+<p>In electronic design, a <b>netlist</b> is a description of the connectivity of an electronic circuit. In its simplest form, it consists of a list of the electronic components in a circuit and a list of the nodes they are connected to. A network (net) is a collection of two or more interconnected components.</p>
+<div class="hero"><img src="images/netlist.png" alt="Circuit schematic and an equivalent netlist representation"><div class="caption">A netlist describes the components of a circuit and how they connect.</div></div>
+<h2>Types</h2>
+<p>Netlists can be <b>structural</b>, describing a circuit in terms of component instances and their interconnections, or <b>behavioral</b>, describing what a circuit does rather than how it is built. Netlists are typically classified by abstraction level: a <i>transistor-level</i> (or device-level) netlist lists individual transistors and passive components, as used by SPICE simulators, while a <i>gate-level</i> netlist is made of logic gates and is the typical output of logic synthesis.</p>
+<h2>Example</h2>
+<pre>* Example SPICE netlist
+Vcc 1 0 DC 5
+R1 1 2 1k
+Q1 3 2 0 QN2222
+C1 3 0 10n
+.model QN2222 NPN
+.end</pre>
+<h2>Uses</h2>
+<p>Netlists are the interchange format between schematic capture, simulation, and layout tools in electronic design automation (EDA). They are used for circuit simulation (e.g., SPICE netlists), for printed circuit board layout, where the netlist defines which component pins must be wired together, and for layout-versus-schematic (LVS) verification in integrated circuit design. Common formats include SPICE, EDIF, and various vendor-specific text formats; gate-level netlists are commonly written in Verilog or VHDL.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../SPICE/index.html">SPICE</a></li>
+<li><a href="../Electronic_design_automation/index.html">Electronic design automation</a></li>
+<li><a href="../Logic_synthesis/index.html">Logic synthesis</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Blossom algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#f6f6f6;color:#222;margin:0;padding:0}
+.content{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin:0 0 8px;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:24px}
+p{line-height:1.6;margin:8px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:90%}
+.infobox th{background:#cedff2;padding:4px;text-align:center}
+.infobox td{padding:2px 4px;vertical-align:top}
+.hero{display:block;max-width:320px;margin:12px 0;border:1px solid #ccc;background:#eee;padding:4px}
+.caption{font-size:85%;color:#555}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Blossom algorithm</h1>
+<img class="hero" src="images/Blossom_algorithm.png" alt="Diagram of a blossom being contracted in a graph">
+<p class="caption">Contraction of an odd cycle, the key step of the algorithm (placeholder).</p>
+<table class="infobox">
+<tr><th colspan="2">Blossom algorithm</th></tr>
+<tr><td><b>Devised by</b></td><td>Jack Edmonds (1965)</td></tr>
+<tr><td><b>Problem</b></td><td>Maximum matching in general graphs</td></tr>
+<tr><td><b>Complexity</b></td><td>Polynomial time</td></tr>
+</table>
+<p>The <b>blossom algorithm</b> is an algorithm in graph theory for constructing maximum matchings on general graphs. It was developed by Jack Edmonds in 1965 and published in the paper "Paths, Trees, and Flowers". Unlike the matching problem on bipartite graphs, general graphs may contain odd cycles — "blossoms" — which defeat naive augmenting-path search; Edmonds' insight was to shrink each blossom into a single vertex, solve the smaller problem recursively, and then expand the blossom to recover the matching.</p>
+<h2>Description</h2>
+<p>The algorithm searches for an augmenting path with respect to the current matching. During the search it maintains a forest of alternating trees rooted at free vertices. When an edge closes an odd cycle within a tree, that cycle is a blossom and is contracted. When an augmenting path is found in the contracted graph, the matching is augmented, and blossoms along the path are expanded by choosing the appropriate alternating path through each one. Extensions by Edmonds and others solved the maximum-weight matching problem in polynomial time as well.</p>
+<h2>Significance</h2>
+<p>The blossom algorithm is regarded as a landmark in combinatorial optimisation: it was one of the first polynomial-time algorithms for a major combinatorial problem and helped motivate Edmonds' influential association of polynomial time with computational tractability, foreshadowing the formal theory of P and NP. Efficient implementations, notably the Blossom V code by Vladimir Kolmogorov, are widely used in computer vision and operations research.</p>
+<h2>See also</h2>
+<p><a href="../Matching_(graph_theory)/">Matching</a> · <a href="../Jack_Edmonds/">Jack Edmonds</a> · <a href="../Hopcroft–Karp_algorithm/">Hopcroft–Karp algorithm</a></p>
+</div>
+</body>
+</html>

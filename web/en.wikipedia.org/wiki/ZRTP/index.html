@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ZRTP - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:860px;margin:0 auto;padding:24px 20px 60px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:1.4em}
+p{line-height:1.6}
+.hero{display:block;margin:14px auto;max-width:420px;width:100%;border:1px solid #ccc;background:#eef1f4;padding:26px 0;text-align:center;color:#666}
+.mono{font-family:monospace}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>ZRTP</h1>
+<p><b>ZRTP</b> is a cryptographic key-agreement protocol for negotiating the keys for encryption between two end points in a Voice over Internet Protocol (VoIP) phone telephony call, based on the Real-time Transport Protocol (RTP). It is described in RFC 6189. ZRTP uses Diffie–Hellman key exchange and the Secure Real-time Transport Protocol (SRTP) for encryption, and was designed so that no signalling-layer key exchange, public key infrastructure or prior shared secrets are required.</p>
+<img class="hero" src="images/zrtp.png" alt="Two phones performing an encrypted key exchange">
+<h2>Design</h2>
+<p>ZRTP was developed by Phil Zimmermann, the creator of Pretty Good Privacy (PGP), together with Jon Callas and Alan Johnston, and was unveiled in 2006. The protocol runs in the media stream itself, in the same UDP path as the RTP voice data, rather than in the signalling channel. Endpoints discover each other's ZRTP capability through special hello packets, perform a Diffie–Hellman exchange, and then switch the call to SRTP encryption.</p>
+<h2>Authentication and the Short Authentication String</h2>
+<p>Because the Diffie–Hellman exchange is unauthenticated, ZRTP protects against man-in-the-middle attacks by deriving a Short Authentication String (SAS) — typically two words from the PGP word list — from the shared secret, which the two callers read aloud and compare over the voice channel, authenticating the exchange with the recognisability of the human voice. Key continuity is provided by retained shared secrets: each endpoint caches secrets from previous calls and mixes them into new sessions, so an attacker must be present on the very first call to remain undetected.</p>
+<h2>Implementations</h2>
+<p>ZRTP was first shipped in the Zfone software developed by Zimmermann's company. Open-source libraries such as GNU ZRTP (used in the GNU project and by applications such as Jitsi, Linphone and CSipSimple) and support in softphones and in the FreeSWITCH and Asterisk ecosystems have made it one of the best-known end-to-end VoIP encryption protocols, although built-in support by major consumer services remained limited.</p>
+<h2>See also</h2>
+<p>Phil Zimmermann; SRTP; Voice over IP security; Diffie–Hellman key exchange; PGP word list.</p>
+<p style="font-size:.85em;color:#555">Recreated from memory for the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

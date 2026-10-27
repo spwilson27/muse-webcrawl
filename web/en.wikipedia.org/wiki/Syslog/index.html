@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Syslog - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 960px; padding: 0 1em; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a7d7f9; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+img.hero { float: right; margin: 0 0 1em 1em; max-width: 300px; background: #f0f0f0; border: 1px solid #a2a9b1; padding: 4px; }
+code { background: #f8f9fa; padding: 0.1em 0.3em; }
+table { border-collapse: collapse; }
+td, th { border: 1px solid #a2a9b1; padding: 0.2em 0.6em; }
+</style>
+</head>
+<body>
+<h1>Syslog</h1>
+<img class="hero" src="images/syslog.png" alt="Syslog — diagram of applications and network devices sending log messages to a central syslog server">
+<p>In computing, <b>syslog</b> is a standard for message logging. It allows separation of the software that generates messages, the system that stores them, and the software that reports and analyses them. Each message is labelled with a <b>facility code</b>, indicating the type of system that generated it, and assigned a <b>severity level</b>. Computer system designers may use syslog for system management and security auditing as well as general informational, analysis, and debugging messages.</p>
+<h2>History</h2>
+<p>Syslog was developed in the 1980s by Eric Allman as part of the Sendmail project, and became the de facto standard logging facility on Unix and Unix-like systems. The network protocol was documented informally in RFC 3164 (2001), and a standardised version was published as RFC 5424 in 2009, with transport mappings including TLS-protected transmission in RFC 5425. On Linux systems, traditional implementations such as sysklogd have largely been supplemented or replaced by rsyslog, syslog-ng and the systemd journal.</p>
+<h2>Severity levels</h2>
+<table>
+<tr><th>Value</th><th>Severity</th><th>Meaning</th></tr>
+<tr><td>0</td><td>Emergency</td><td>System is unusable</td></tr>
+<tr><td>1</td><td>Alert</td><td>Action must be taken immediately</td></tr>
+<tr><td>2</td><td>Critical</td><td>Critical conditions</td></tr>
+<tr><td>3</td><td>Error</td><td>Error conditions</td></tr>
+<tr><td>4</td><td>Warning</td><td>Warning conditions</td></tr>
+<tr><td>5</td><td>Notice</td><td>Normal but significant condition</td></tr>
+<tr><td>6</td><td>Informational</td><td>Informational messages</td></tr>
+<tr><td>7</td><td>Debug</td><td>Debug-level messages</td></tr>
+</table>
+<p>Facilities include <code>auth</code>, <code>authpriv</code>, <code>cron</code>, <code>daemon</code>, <code>kern</code>, <code>mail</code>, <code>user</code> and eight <code>local0</code>–<code>local7</code> codes for custom use.</p>
+<h2>Protocol</h2>
+<p>Syslog messages are traditionally sent over UDP port 514, or over TCP for reliability. A classic message contains a priority value (facility times eight plus severity, in angle brackets), a header with timestamp and hostname, and the message body beginning with a tag identifying the program. RFC 5424 adds structured data elements and a more rigorous timestamp format.</p>
+<h2>See also</h2>
+<ul>
+<li>rsyslog</li>
+<li>syslog-ng</li>
+<li>Log management</li>
+<li>Windows Event Log</li>
+</ul>
+</body>
+</html>

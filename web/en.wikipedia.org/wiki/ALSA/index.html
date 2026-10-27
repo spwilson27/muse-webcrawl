@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ALSA - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:52em;line-height:1.6;color:#202122}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1}
+.infobox{float:right;width:16em;border:1px solid #a2a9b1;background:#f8f9fa;padding:.5em;margin:0 0 1em 1em;font-size:.9em}
+.infobox th{text-align:left}
+img.hero{display:block;margin:1em 0;max-width:100%}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>ALSA</h1>
+<table class="infobox">
+<tr><th>Developer(s)</th><td>ALSA team (Jaroslav Kysela et al.)</td></tr>
+<tr><th>Initial release</th><td>1998</td></tr>
+<tr><th>Written in</th><td>C</td></tr>
+<tr><th>Operating system</th><td>Linux</td></tr>
+<tr><th>Type</th><td>Audio framework</td></tr>
+<tr><th>License</th><td>GPL / LGPL</td></tr>
+</table>
+<img class="hero" src="images/ALSA.png" alt="ALSA architecture diagram placeholder">
+<p><b>Advanced Linux Sound Architecture</b> (<b>ALSA</b>) is a software framework and part of the <a href="../Linux_kernel/index.html">Linux kernel</a> that provides an application programming interface (API) for <a href="../Sound_card/index.html">sound card</a> device drivers. It was designed to replace the older <a href="../Open_Sound_System/index.html">Open Sound System</a> (OSS) in the Linux kernel, adding support for features such as automatic configuration of sound-card hardware, software mixing of multiple audio streams, and full-duplex playback and capture.</p>
+<h2>History</h2>
+<p>The ALSA project was started in 1998 by Jaroslav Kysela, originally to write a Linux driver for the Gravis Ultrasound sound card. It was developed separately from the kernel for some time before being merged into the mainline kernel during the 2.5 development series, and it became the default sound architecture in Linux 2.6, displacing OSS (which was deprecated, though an emulation layer was retained).</p>
+<h2>Architecture</h2>
+<p>ALSA consists of kernel-space drivers for a wide range of audio hardware and a user-space library, <i>alsa-lib</i>, which presents a higher-level API to applications. Its design supports features including a modular driver structure, SMP and thread-safe operation, and a plugin system allowing resampling, channel conversion, and software mixing (via the dmix plugin). A sequencer interface supports <a href="../MIDI/index.html">MIDI</a> hardware and software synthesizers.</p>
+<p>Because ALSA operates at a low level, most desktop Linux systems layer an audio server such as <a href="../PulseAudio/index.html">PulseAudio</a> or <a href="../PipeWire/index.html">PipeWire</a> on top of it to provide per-application volume control, network transparency, and convenient device routing, while ALSA continues to handle the actual hardware.</p>
+<h2>Tools</h2>
+<p>The <i>alsa-utils</i> package provides command-line utilities including <code>alsamixer</code>, a terminal mixer program; <code>aplay</code> and <code>arecord</code>, for playback and capture of raw and WAV audio; and <code>alsactl</code>, which stores and restores mixer settings.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../JACK_Audio_Connection_Kit/index.html">JACK Audio Connection Kit</a></li>
+<li><a href="../PipeWire/index.html">PipeWire</a></li>
+<li><a href="../PulseAudio/index.html">PulseAudio</a></li>
+</ul>
+</body>
+</html>

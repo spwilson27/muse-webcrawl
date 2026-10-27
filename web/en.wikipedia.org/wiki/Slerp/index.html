@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Slerp - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{font-size:1.4em;border-bottom:1px solid #eaecf0}.hero{display:block;max-width:100%;border:1px solid #c8ccd1;background:#eaecf0;padding:2em;text-align:center;color:#54595d;margin:1em 0}pre{background:#f8f9fa;border:1px solid #eaecf0;padding:.8em;overflow-x:auto}</style></head>
+<body>
+<h1>Slerp</h1>
+<span class="hero"><img src="images/slerp.png" alt="Geometric illustration of spherical linear interpolation"></span>
+<p>In computer graphics, <b>slerp</b> is shorthand for <b>spherical linear interpolation</b>, introduced by Ken Shoemaker in the context of quaternion interpolation for animating 3D rotation. It refers to constant-speed motion along a unit-radius great arc, given the ends and an interpolation parameter between 0 and 1.</p>
+<h2>Formula</h2>
+<p>For unit quaternions q<sub>0</sub> and q<sub>1</sub> separated by angle θ, slerp is:</p>
+<pre>slerp(q₀, q₁; t) = sin((1−t)θ)/sin θ · q₀ + sin(tθ)/sin θ · q₁</pre>
+<p>The result is a unit quaternion, so orientations interpolated this way follow the shortest great arc between the endpoints at constant angular velocity — properties that naive linear interpolation (lerp) followed by normalisation lacks, since normalised lerp travels the same path but with non-constant speed.</p>
+<h2>Geometric generalisation</h2>
+<p>The construction generalises to points on a sphere in any dimension: the interpolation path is the great-circle arc, and the same sine-weighted combination applies. When endpoints are nearly identical, implementations fall back to ordinary linear interpolation to avoid division by sin θ ≈ 0.</p>
+<h2>Uses</h2>
+<p>Slerp is the standard way to interpolate rotations in animation systems, game engines and robotics, where quaternions represent orientation. Ken Shoemaker presented the method in his 1985 SIGGRAPH paper "Animating Rotation with Quaternion Curves".</p>
+<h2>See also</h2>
+<p>Quaternion · Interpolation · Euler angles · Shoemake</p>
+</body></html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GUID Partition Table - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; padding: 8px; }
+.caption { font-size: 12px; color: #54595d; }
+ul { line-height: 1.6; font-size: 15px; }
+table { border-collapse: collapse; font-size: 14px; margin: 12px 0; }
+th, td { border: 1px solid #a2a9b1; padding: 5px 9px; text-align: left; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>GUID Partition Table</h1>
+<p>The <b>GUID Partition Table</b> (<b>GPT</b>) is a standard for the layout of partition tables on a physical computer storage device, such as a hard disk drive or solid-state drive, using globally unique identifiers (GUIDs). As part of the <a href="../UEFI/index.html">Unified Extensible Firmware Interface</a> (UEFI) standard, GPT provides a more flexible mechanism for partitioning disks than the older <a href="../Master_boot_record/index.html">master boot record</a> (MBR) partitioning scheme.</p>
+<div class="hero"><img src="images/GUID_Partition_Table.png" alt="GUID Partition Table layout diagram"></div>
+<p class="caption">Layout of a GPT disk, with the protective MBR in LBA 0.</p>
+<h2>Features</h2>
+<p>GPT uses 64-bit logical block addressing, allowing a maximum disk size of 8 zebibytes with 512-byte sectors, far beyond the 2.2 TB limit of MBR. It stores a backup of the partition table at the end of the disk, protects its structures with CRC32 checksums, and by default defines 128 partition entries. Each partition has a type GUID and a unique partition GUID, plus a 36-character Unicode name.</p>
+<table>
+<tr><th>Offset</th><th>Contents</th></tr>
+<tr><td>LBA 0</td><td>Protective MBR</td></tr>
+<tr><td>LBA 1</td><td>Primary GPT header</td></tr>
+<tr><td>LBA 2–33</td><td>Partition entry array</td></tr>
+<tr><td>End of disk</td><td>Backup partition entries and header</td></tr>
+</table>
+<h2>Protective MBR</h2>
+<p>For compatibility with older tools, GPT disks retain a "protective MBR" in the first sector, which marks the whole disk (or the maximum representable size) as a single partition of type 0xEE, preventing legacy utilities from treating the disk as empty.</p>
+<h2>Adoption</h2>
+<p>GPT is required for booting Windows in UEFI mode on disks larger than 2 TB, and is supported by Linux, macOS, FreeBSD, and other modern operating systems.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Master_boot_record/index.html">Master boot record</a></li>
+<li><a href="../UEFI/index.html">UEFI</a></li>
+<li><a href="../Disk_partitioning/index.html">Disk partitioning</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Continuation - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; padding: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-family: "Linux Libertine", Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 300px; float: right; margin: 0 0 12px 16px; border: 1px solid #c8ccd1; padding: 4px; background: #f8f9fa; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Continuation</h1>
+<img class="hero" src="images/Continuation.png" alt="Diagram of control flow with a continuation">
+<p>In computer science, a <b>continuation</b> is an abstract representation of the control state of a computer program. A continuation implements the program state — essentially, "the rest of the computation" from a given point — as a data structure accessible to the program itself. Continuations are useful for encoding control mechanisms such as exceptions, backtracking, the <a href="../Generator_(computer_programming)/index.html">generator</a> pattern (yield), and coroutines, and they can be used to implement concurrency and web-server session handling.</p>
+<h2>First-class continuations</h2>
+<p>A <b>first-class continuation</b> is an entity that can be created, stored, composed and invoked like any other value in the language. The classic operator is <code>call-with-current-continuation</code> (abbreviated <code>call/cc</code>) in the <a href="../Scheme_(programming_language)/index.html">Scheme</a> programming language: it captures the current continuation as a procedure of one argument; invoking that procedure abandons the current computation and resumes the captured one with the supplied value. Because a captured continuation can be invoked multiple times, it can model backtracking search; because it can be invoked later, it can model threads and coroutines. Continuations are foundational in the semantics of programming languages: any program can be rewritten in <a href="../Continuation-passing_style/index.html">continuation-passing style</a> (CPS), in which functions never return but instead pass results to an explicit continuation, and denotational semantics uses continuations to give meaning to jumps and exceptions.</p>
+<h2>Delimited continuations</h2>
+<p>Full (undelimited) continuations capture the entire remaining computation, which can be difficult to compose. <b>Delimited continuations</b> capture only up to a specified boundary, marked in languages or libraries by operators such as <code>shift</code> and <code>reset</code> (introduced by Olivier Danvy and Andrzej Filinski). Delimited continuations underlie many implementations of algebraic effects and effect handlers, async/await-style concurrency, and probabilistic programming constructs.</p>
+<h2>Practical languages</h2>
+<p>Scheme, some ML dialects, and Ruby (<code>callcc</code>) expose first-class continuations directly. Other platforms provide restricted versions: C's <code>setjmp/longjmp</code>, Java's Project Loom virtual threads, and the promises and generators of Python and JavaScript can be understood as more limited continuation mechanisms. Stackless implementations of Python and certain web servers have used continuations to suspend and resume a computation across HTTP requests.</p>
+<p><i>See also:</i> <a href="../Control_flow/index.html">Control flow</a>, <a href="../Coroutine/index.html">Coroutine</a>, <a href="../Tail_call/index.html">Tail call</a></p>
+</div>
+</body>
+</html>

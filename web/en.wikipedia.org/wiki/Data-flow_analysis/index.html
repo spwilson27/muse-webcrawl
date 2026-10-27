@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Data-flow analysis - Wikipedia</title><style>body{font-family:sans-serif;line-height:1.6;margin:2em auto;max-width:50em;padding:0 1em;color:#202122}h1{border-bottom:1px solid #a2a9b1;font-weight:normal}img.hero{display:block;width:100%;max-height:220px;object-fit:cover;background:#eaecf0}figure.hero{margin:0 0 1em;border:1px solid #a2a9b1;background:#f8f9fa;padding:4px;text-align:center;font-size:.85em}a{color:#36c;text-decoration:none}</style></head>
+<body>
+<figure class="hero"><img class="hero" src="images/data_flow_analysis.png" alt="Control-flow graph used in data-flow analysis"><figcaption>Image placeholder: Data-flow analysis</figcaption></figure>
+<h1>Data-flow analysis</h1>
+<p><b>Data-flow analysis</b> is a technique for gathering information about the possible set of values calculated at various points in a computer program. It is a form of <a href="../Static_program_analysis/index.html">static program analysis</a> performed by <a href="../Compiler/index.html">compilers</a> to enable optimisations and program verification. The analysis typically operates on the program's <a href="../Control-flow_graph/index.html">control-flow graph</a>.</p>
+<h2>Principles</h2>
+<p>A data-flow analysis associates with each program point a data-flow value representing an abstraction of the set of possible program states. Analyses are classified as <i>forward</i> (information flows in the direction of execution, as in reaching definitions) or <i>backward</i> (as in live-variable analysis). Each basic block has a transfer function describing how it transforms input information, and information from multiple predecessors or successors is combined with a meet (or join) operator. The equations are solved iteratively until a fixed point is reached; termination is guaranteed when the values form a lattice of finite height and the transfer functions are monotone.</p>
+<h2>Common analyses</h2>
+<ul><li><b>Reaching definitions</b> — which definitions of a variable may reach a given point.</li>
+<li><b>Live-variable analysis</b> — which variables may be used before being redefined.</li>
+<li><b>Available expressions</b> — which expressions have already been computed and not invalidated.</li>
+<li><b>Very busy expressions</b> — which expressions will be evaluated along every path from a point.</li></ul>
+<h2>Applications</h2>
+<p>Data-flow results underpin compiler optimisations such as constant propagation, common subexpression elimination, dead-code elimination and register allocation, as well as bug-finding tools that detect uninitialised variables or null-pointer dereferences.</p>
+<h2>See also</h2>
+<ul><li><a href="../Abstract_interpretation/index.html">Abstract interpretation</a></li><li><a href="../Control-flow_graph/index.html">Control-flow graph</a></li><li><a href="../Static_single_assignment_form/index.html">Static single assignment form</a></li></ul>
+</body></html>

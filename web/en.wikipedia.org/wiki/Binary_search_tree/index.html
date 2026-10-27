@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Binary search tree - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+header{background:#fff;border-bottom:1px solid #a7d7f9;padding:10px 20px}
+h1{font-size:28px;margin:10px 0}
+main{max-width:960px;margin:0 auto;padding:20px;background:#fff;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h2{border-bottom:1px solid #a2a9b1;font-size:22px;margin-top:24px}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:13px}
+.infobox th{text-align:left;background:#eef2f5;padding:4px}
+.infobox td{padding:4px}
+.hero{text-align:center;margin:16px 0}
+.hero img{max-width:420px;width:100%;background:#eef2f5;border:1px solid #a2a9b1;padding:8px}
+.caption{font-size:12px;color:#54595d}
+footer{font-size:12px;color:#54595d;padding:16px 20px;text-align:center}
+code{font-family:monospace;background:#f0f0f0;padding:0 3px}
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> — the free encyclopedia</header>
+<main>
+<h1>Binary search tree</h1>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Binary search tree</th></tr>
+<tr><th>Type</th><td>Tree data structure</td></tr>
+<tr><th>Search (average)</th><td>O(log n)</td></tr>
+<tr><th>Insert / delete (average)</th><td>O(log n)</td></tr>
+<tr><th>Worst case</th><td>O(n) if unbalanced</td></tr>
+<tr><th>Invented</th><td>c. 1960</td></tr>
+</table>
+</div>
+<p>In computer science, a <b>binary search tree</b> (<b>BST</b>), also called an ordered or sorted binary tree, is a rooted <a href="../Binary_tree/index.html">binary tree</a> data structure whose internal nodes each store a key, and in which every node's key is greater than all keys in its left subtree and less than all keys in its right subtree. This <i>binary search tree property</i> allows algorithms akin to <a href="../Binary_search_algorithm/index.html">binary search</a> to locate, insert, and delete elements efficiently.</p>
+<div class="hero"><img src="images/binary-search-tree.png" alt="A binary search tree with keys arranged so left subtrees hold smaller values"><div class="caption">A binary search tree of size 9 and depth 3.</div></div>
+<h2>Operations</h2>
+<p><b>Searching</b> begins at the root: if the target key equals the node's key, the search succeeds; if it is smaller, the search continues in the left subtree; if larger, in the right subtree. <b>Insertion</b> follows the same descent and attaches the new key as a leaf where the search falls off the tree. <b>Deletion</b> has three cases: a leaf is simply removed; a node with one child is replaced by that child; a node with two children is replaced by its in-order successor (or predecessor), which is then deleted. An in-order traversal of a BST visits the keys in sorted order — a standard way to implement sorting.</p>
+<h2>Performance</h2>
+<p>The cost of BST operations is proportional to the tree's height. For randomly built trees the expected height is O(log n), giving logarithmic average-case performance. However, inserting keys in sorted order degenerates the tree into a linked list with O(n) operations. This weakness motivates <i>self-balancing</i> binary search trees — such as <a href="../AVL_tree/index.html">AVL trees</a>, <a href="../Red-black_tree/index.html">red–black trees</a>, and splay trees — which restructure themselves during updates to guarantee a logarithmic height.</p>
+<h2>Uses</h2>
+<p>Binary search trees underlie implementations of associative arrays (maps and sets) in many programming libraries, are used in database indexing (in generalized form, as B-trees), and appear in graphics, networking, and operating systems wherever ordered dynamic sets are needed.</p>
+<p>See also: <a href="../Binary_tree/index.html">Binary tree</a>, <a href="../Tree_traversal/index.html">Tree traversal</a>, <a href="../Self-balancing_binary_search_tree/index.html">Self-balancing binary search tree</a>, <a href="../Binary_heap/index.html">Binary heap</a>.</p>
+</main>
+<footer>From Wikipedia, the free encyclopedia. This page was recreated from memory.</footer>
+</body>
+</html>

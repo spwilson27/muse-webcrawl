@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Locality-sensitive hashing - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+.hero{display:block;max-width:100%;background:#eaecf0;border:1px dashed #72777d;padding:40px 0;text-align:center;color:#54595d;margin:16px 0}
+</style>
+</head>
+<body>
+<h1>Locality-sensitive hashing</h1>
+<img class="hero" src="images/locality-sensitive-hashing.png" alt="Labelled placeholder: Similar vectors falling into the same hash buckets under random projections">
+<p><b>Locality-sensitive hashing</b> (<b>LSH</b>) is an algorithmic technique that hashes input items so that similar items map to the same "buckets" with high probability. Unlike cryptographic hashes, which aim to make outputs for slightly different inputs unrelated, LSH deliberately maximises collisions for similar inputs. It was introduced by Piotr Indyk and Rajeev Motwani in 1998 to give sub-linear-time approximate solutions to the nearest neighbour problem in high dimensions.</p>
+<h2>Definition</h2>
+<p>A family of hash functions is called (r, cr, p₁, p₂)-sensitive if points within distance r collide with probability at least p₁, while points farther than cr apart collide with probability at most p₂. By concatenating several functions and using several hash tables, the gap between p₁ and p₂ is amplified so that a query point retrieves mostly true near neighbours, which can then be checked exactly.</p>
+<h2>Hash families</h2>
+<ul>
+<li><b>Random projections (SimHash)</b> for cosine similarity — the sign of the dot product with a random hyperplane.</li>
+<li><b>MinHash</b> for Jaccard similarity of sets.</li>
+<li><b>Stable-distribution projections</b> for Euclidean (L<sub>p</sub>) distances.</li>
+<li><b>Bit sampling</b> for Hamming distance.</li>
+</ul>
+<h2>Applications</h2>
+<p>LSH is used in near-duplicate detection for web pages and documents, plagiarism detection, image and audio fingerprinting, genome sequence matching, and large-scale recommendation and search systems.</p>
+<h2>See also</h2>
+<p><a href="../MinHash/index.html">MinHash</a> · <a href="../Nearest_neighbor_search/index.html">Nearest neighbor search</a> · <a href="../Hash_function/index.html">Hash function</a></p>
+</body>
+</html>

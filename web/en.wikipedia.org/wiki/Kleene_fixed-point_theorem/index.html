@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kleene fixed-point theorem - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:20px;border-bottom:1px solid #a2a9b1;padding-bottom:2px;font-weight:normal;margin-top:28px}
+p{font-family:sans-serif;font-size:14px;line-height:1.6}
+.hero{text-align:center;margin:12px 0}
+.hero img{max-width:420px;width:100%;background:#eaecf0;border:1px solid #a2a9b1}
+.caption{font-size:12px;color:#54595d;font-family:sans-serif}
+a{color:#0645ad;text-decoration:none}
+.math{font-style:italic;background:#f8f9fa;border:1px solid #eaecf0;padding:10px 14px;font-family:serif;font-size:15px}
+ul{font-family:sans-serif;font-size:14px;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Kleene fixed-point theorem</h1>
+<div class="hero"><img src="images/kleene-fixed-point.png" alt="Diagram of an ascending chain in a complete partial order converging to a least fixed point"></div>
+<p class="caption">The ascending Kleene chain starting from the bottom element converges to the least fixed point.</p>
+<p>In the mathematical areas of order and lattice theory, the <b>Kleene fixed-point theorem</b>, named after American mathematician Stephen Cole Kleene, states the following:</p>
+<div class="math">Let (L, ⊑) be a directed complete partial order (dcpo) with a least element ⊥, and let f : L → L be a Scott-continuous function. Then f has a least fixed point, which is given by the supremum of the ascending Kleene chain of f: ⊥ ⊑ f(⊥) ⊑ f(f(⊥)) ⊑ ⋯ ⊑ f<sup>n</sup>(⊥) ⊑ ⋯</div>
+<p>Hence, the least fixed point of f is sup<sub>n∈ℕ</sub> f<sup>n</sup>(⊥). The theorem is a foundational result in denotational semantics, where it justifies defining the meaning of recursive programs as least fixed points of continuous functionals on domains of information.</p>
+<h2>Proof sketch</h2>
+<p>First, the sequence formed by iterating f from ⊥ is an ascending chain: ⊥ ⊑ f(⊥) because ⊥ is the least element, and monotonicity of f (which follows from Scott continuity) propagates the inequality through each iterate. Since L is a dcpo, the chain has a supremum x. Continuity of f then gives f(x) = sup f(f<sup>n</sup>(⊥)) = x, so x is a fixed point. Finally, any fixed point y of f satisfies f<sup>n</sup>(⊥) ⊑ y for all n by induction, so x ⊑ y, proving x is the least fixed point.</p>
+<h2>Related results</h2>
+<p>The Kleene fixed-point theorem should not be confused with Kleene's recursion theorem in computability theory. It is closely related to the Knaster–Tarski theorem, which guarantees a complete lattice of fixed points for a monotone map on a complete lattice, but without the continuity and constructivity of Kleene's result. Tarski's theorem applies more generally, whereas Kleene's theorem additionally supplies an iterative construction of the least fixed point, which is what makes it suitable for semantics of programming languages.</p>
+<h2>Applications</h2>
+<p>The theorem underlies the fixed-point semantics of recursive definitions: in domain theory, the meaning of a recursive procedure is defined as the least fixed point of an associated continuous functional, computed as the limit of successive finite approximations. The same iteration pattern appears in abstract interpretation and in dataflow analysis over finite-height lattices.</p>
+<ul>
+<li>Fixed-point theorem</li>
+<li>Knaster–Tarski theorem</li>
+<li>Domain theory</li>
+<li>Denotational semantics</li>
+<li>Stephen Cole Kleene</li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Eight-point algorithm - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; max-width: 960px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; }
+h1 { border-bottom: 1px solid #a2a9b1; font-weight: normal; }
+h2 { border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.5em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; max-width: 300px; margin: 10px auto; border: 1px solid #ccc; padding: 4px; background: #f8f9fa; }
+</style>
+</head>
+<body>
+<img class="hero" src="images/Eight-point_algorithm.png" alt="Diagram of two camera views used in the eight-point algorithm">
+<h1>Eight-point algorithm</h1>
+<p>The <b>eight-point algorithm</b> is an algorithm used in <a href="../Computer_vision/index.html">computer vision</a> to estimate the <a href="../Essential_matrix/index.html">essential matrix</a> or the <a href="../Fundamental_matrix_(computer_vision)/index.html">fundamental matrix</a> related to a pair of cameras from a set of corresponding image points. It was introduced by Christopher Longuet-Higgins in 1981 for the case of the essential matrix. In principle the algorithm can be used for the fundamental matrix as well, as generalised by <a href="../Richard_Hartley_(scientist)/index.html">Richard Hartley</a>.</p>
+<h2>Principle</h2>
+<p>Each pair of corresponding points in two images satisfies the epipolar constraint, which can be written as a linear equation in the entries of the fundamental (or essential) matrix. With eight or more point correspondences, the resulting homogeneous system of linear equations can be solved, typically by <a href="../Singular_value_decomposition/index.html">singular value decomposition</a>, to obtain the matrix up to scale. Because a fundamental matrix must be singular (of rank 2), an additional step enforces this constraint by projecting the estimated matrix onto the set of rank-2 matrices.</p>
+<h2>Normalised eight-point algorithm</h2>
+<p>The basic algorithm performs poorly with raw pixel coordinates because the equations are badly conditioned. Hartley showed in 1997 that a simple normalisation — translating and scaling the points in each image so that their centroid is at the origin and their mean distance from the origin is √2 — dramatically improves accuracy. The normalised eight-point algorithm consists of normalising the points, estimating the matrix, enforcing the rank constraint, and then denormalising. It remains a standard method, often used as the inner step of robust estimation procedures such as <a href="../RANSAC/index.html">RANSAC</a>.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Fundamental_matrix_(computer_vision)/index.html">Fundamental matrix</a></li>
+<li><a href="../Essential_matrix/index.html">Essential matrix</a></li>
+<li><a href="../Epipolar_geometry/index.html">Epipolar geometry</a></li>
+<li><a href="../Five-point_algorithm/index.html">Five-point algorithm</a></li>
+</ul>
+</body>
+</html>

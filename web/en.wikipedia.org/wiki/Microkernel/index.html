@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Microkernel - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 800px; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; }
+img.hero { max-width: 300px; float: right; margin: 0 0 1em 1em; border: 1px solid #c8ccd1; padding: 4px; background: #f8f9fa; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Microkernel</h1>
+<img class="hero" src="images/Microkernel.png" alt="Diagram-style illustration of a microkernel architecture">
+<p>In computer science, a <b>microkernel</b> (often abbreviated as μ-kernel) is the near-minimum amount of software that can provide the mechanisms needed to implement an operating system (OS). These mechanisms include low-level address space management, thread management, and inter-process communication (IPC). Services that a monolithic kernel would provide internally — such as device drivers, file systems, and network stacks — run instead as separate user-mode processes (servers) that communicate via IPC.</p>
+<h2>Design</h2>
+<p>The microkernel approach aims to improve reliability and security: because most OS services run in unprivileged mode, a crash or compromise in a driver or file system need not bring down the whole system, and faulty components can often be restarted. The main disadvantage historically was performance, since operations that are simple function calls in a monolithic kernel require message passing and context switches in a microkernel design. Second-generation microkernels such as L4 greatly reduced IPC overhead through careful design.</p>
+<h2>History and examples</h2>
+<p>Early microkernel systems included Carnegie Mellon's Mach (used as the basis of NeXTSTEP and, in hybrid form, Apple's macOS and iOS kernels), the University of Amsterdam's Amoeba, and Chorus. The MINIX operating system, written by Andrew S. Tanenbaum for teaching, is a well-known microkernel design; the debate between Tanenbaum and Linus Torvalds in 1992 over microkernel versus monolithic design became famous. Production microkernels include QNX (widely used in embedded and automotive systems), the L4 family (including seL4, which has been formally verified), and the kernel of the GNU Hurd. Zircon, the kernel of Google's Fuchsia OS, is also microkernel-based.</p>
+<h2>Hybrid kernels</h2>
+<p>Some operating systems combine elements of both designs and are described as hybrid kernels: the XNU kernel of macOS integrates Mach with a BSD layer in the same address space, and the Windows NT kernel runs many services in user mode while keeping core executive services in kernel mode.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Monolithic_kernel/index.html">Monolithic kernel</a></li>
+<li><a href="../Kernel_(operating_system)/index.html">Kernel (operating system)</a></li>
+<li><a href="../Mach_(kernel)/index.html">Mach (kernel)</a></li>
+<li><a href="../SeL4/index.html">seL4</a></li>
+</ul>
+</body>
+</html>

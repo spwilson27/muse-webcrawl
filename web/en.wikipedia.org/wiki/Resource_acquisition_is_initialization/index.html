@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Resource acquisition is initialization - Wikipedia</title>
+<style>body{font-family:sans-serif;max-width:800px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{font-family:serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{font-family:serif;border-bottom:1px solid #a2a9b1}</style></head>
+<body>
+<h1>Resource acquisition is initialization</h1>
+<p><b>Resource acquisition is initialization</b> (<b>RAII</b>) is a programming idiom used in several object-oriented, statically typed languages, most prominently C++, in which the life cycle of a resource — memory, a file handle, a database connection, a lock — is bound to the lifetime of an object. The resource is acquired in the object's constructor and released in its destructor, so that release is guaranteed to occur when the object goes out of scope, including when an exception is thrown.</p>
+<img src="images/raii.png" alt="Diagram of a resource being acquired in a constructor and released in a destructor">
+<h2>Origin and name</h2>
+<p>The idiom was developed by Bjarne Stroustrup, the creator of C++, during the 1980s. The name, which emphasises acquisition rather than release, is often remarked on as unintuitive; Stroustrup has noted that "resource release is destruction" would describe the mechanism more directly.</p>
+<h2>Examples and uses</h2>
+<p>Standard C++ library facilities embody RAII: <code>std::unique_ptr</code> and <code>std::shared_ptr</code> manage dynamically allocated memory, <code>std::lock_guard</code> releases a mutex at the end of a scope, and file stream objects close their files on destruction. Analogous deterministic-cleanup mechanisms exist in other languages — Rust's ownership system generalises the pattern, while languages with garbage collection typically add constructs such as Java's try-with-resources or Python's <code>with</code> statement for non-memory resources.</p>
+<h2>Benefits</h2>
+<p>RAII prevents resource leaks and double-release errors, makes code exception-safe, and localises resource management in the class that owns the resource rather than scattering cleanup code across clients.</p>
+</body></html>

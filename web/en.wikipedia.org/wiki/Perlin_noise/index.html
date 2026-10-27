@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perlin noise - Wikipedia</title>
+<style>
+body{font-family:-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.6;color:#202122;margin:0;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:1.2em 1.5em 3em}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-bottom:.4em;font-weight:normal}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.1em;margin-top:1.2em;font-weight:normal}
+h3{font-size:1.15em;margin-top:1em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:1em auto;max-width:420px;width:100%;min-height:180px;background:#f8f9fa;border:1px solid #c8ccd1;text-align:center;color:#72777d;font-size:.85em}
+.infobox{float:right;width:270px;margin:.3em 0 .8em 1.2em;border:1px solid #a2a9b1;background:#f8f9fa;font-size:.85em;border-collapse:collapse}
+.infobox th{background:#eaf3ff;padding:.4em;text-align:center;font-size:1.05em}
+.infobox td{padding:.3em .5em;border-top:1px solid #e5e5e5;vertical-align:top}
+.infobox td:first-child{font-weight:bold;width:40%}
+ul,ol{margin-left:1.4em}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Perlin noise</h1>
+<img class="hero" src="images/perlin-noise.png" alt="A greyscale image generated from two-dimensional Perlin noise">
+<table class="infobox">
+<tr><th colspan="2">Perlin noise</th></tr>
+<tr><td>Type</td><td>Gradient noise function</td></tr>
+<tr><td>Inventor</td><td>Ken Perlin</td></tr>
+<tr><td>Year</td><td>1983 (published 1985)</td></tr>
+<tr><td>Developed for</td><td><i>Tron</i> (1982 film) visual effects</td></tr>
+<tr><td>Successor</td><td>Simplex noise (2001)</td></tr>
+</table>
+<p><b>Perlin noise</b> is a type of gradient noise developed by Ken Perlin in 1983 as a result of his frustration with the "machine-like" look of computer-generated imagery of the time. He formally described his findings in a SIGGRAPH paper in 1985 called "An Image Synthesizer". Perlin developed the algorithm while working at the Mathematical Applications Group on the film <i>Tron</i>.</p>
+<p>Perlin noise is a procedural texture primitive, a type of gradient noise used by visual effects artists to increase the appearance of realism in computer graphics. The function has a pseudo-random appearance, yet all of its visual details are of equal size. This property allows it to be readily controllable; multiple scaled copies of Perlin noise can be inserted into mathematical expressions to create a great variety of procedural textures.</p>
+<h2>Algorithm detail</h2>
+<p>Perlin noise most commonly is implemented in two, three, or four dimensions. The basic idea is to define a grid of pseudo-random gradient vectors. To evaluate the noise at a point, the surrounding grid cell is found; the dot product of the offset vector from each corner of the cell with that corner's gradient gives a value at each corner; the values are then interpolated smoothly across the cell using a fade (smootherstep) curve. Stacking several octaves of noise at increasing frequency and decreasing amplitude produces fractal noise (fractional Brownian motion, or fBm), which resembles natural patterns such as clouds and terrain.</p>
+<h2>Uses</h2>
+<p>Perlin noise is widely used in computer graphics to generate textures resembling marble, wood, fire, smoke, and clouds, and to create terrain heightmaps in games. Notable uses include the procedural terrain generation in the game <i>Minecraft</i>. Ken Perlin received an Academy Award for Technical Achievement in 1997 for inventing the algorithm.</p>
+<h2>Simplex noise</h2>
+<p>In 2001 Perlin introduced simplex noise, an improved method designed to address several shortcomings of his original algorithm: reduced computational complexity in higher dimensions (O(n<sup>2</sup>) instead of exponential in the number of dimensions), fewer directional artifacts, and a better-defined gradient. The original algorithm is nonetheless often called "classic Perlin noise" and remains ubiquitous.</p>
+<h2>Complexity</h2>
+<p>Because classic Perlin noise evaluates 2<sup>n</sup> grid corners in n dimensions, its cost grows quickly with dimension, which is one of the principal motivations for the simplex formulation. A patent on simplex noise for dimensions of five and higher expired in 2022; the original Perlin noise algorithm was never restricted in general use.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Simplex_noise/index.html">Simplex noise</a></li>
+<li><a href="../Gradient_noise/index.html">Gradient noise</a></li>
+<li><a href="../Value_noise/index.html">Value noise</a></li>
+<li><a href="../Procedural_generation/index.html">Procedural generation</a></li>
+<li><a href="../Ken_Perlin/index.html">Ken Perlin</a></li>
+<li><a href="../Worley_noise/index.html">Worley noise</a></li>
+</ul>
+</div>
+</body>
+</html>

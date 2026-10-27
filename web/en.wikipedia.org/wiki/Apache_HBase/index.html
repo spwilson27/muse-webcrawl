@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Apache HBase - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; line-height: 1.6; }
+#content { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.4em; }
+h3 { font-size: 1.15em; font-weight: bold; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 0.85em; margin: 0 0 12px 16px; padding: 8px 10px; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+.hero { display: block; margin: 12px 0; max-width: 320px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 6px; }
+.hero img { max-width: 100%; }
+.caption { font-size: 0.85em; color: #54595d; }
+ul { margin: 0.3em 0 0.3em 1.4em; padding: 0; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Apache HBase</h1>
+<p><b>Apache HBase</b> is a free and open-source, distributed, scalable, non-relational (NoSQL) database modelled after Google's Bigtable and run on top of the Hadoop Distributed File System (HDFS). Developed as part of the Apache Software Foundation's Hadoop project, HBase provides random, real-time read/write access to very large datasets — billions of rows and millions of columns — on clusters of commodity hardware, with strong consistency and automatic sharding.</p>
+<figure class="hero"><img src="images/Apache_HBase.png" alt="Diagram of HBase architecture with master, region servers, and HDFS"><figcaption class="caption">HBase architecture: an HMaster coordinates RegionServers storing data in HDFS</figcaption></figure>
+<div class="infobox">
+<table>
+<tr><th>Original author</th><td>Powerset (initial contribution)</td></tr>
+<tr><th>Developer</th><td>Apache Software Foundation</td></tr>
+<tr><th>Initial release</th><td>2008</td></tr>
+<tr><th>Written in</th><td>Java</td></tr>
+<tr><th>Type</th><td>Wide-column store, NoSQL database</td></tr>
+<tr><th>Licence</th><td>Apache License 2.0</td></tr>
+<tr><th>Data model</th><td>Sorted map of rows, column families, timestamped cells</td></tr>
+</table>
+</div>
+<h2>History</h2>
+<p>HBase began in 2006 as a contribution by the company Powerset to the Hadoop project, inspired by Google's 2006 Bigtable paper. It became a subproject of Hadoop and shipped its first usable release in 2008; in May 2010 it graduated to an Apache top-level project. Michael Stack was a long-serving project chair. Facebook famously adopted HBase in 2010 to store its Messages data, and it was widely deployed at companies including Yahoo, Adobe, and many others for large-scale storage.</p>
+<h2>Data model and architecture</h2>
+<p>HBase stores data in tables of rows identified by a row key. Columns are grouped into column families fixed at schema definition; individual cells are versioned by timestamp. Tables are automatically split into regions, each served by a RegionServer. Writes go first to a write-ahead log and an in-memory store (MemStore), which is periodically flushed to immutable files (HFiles) on HDFS; reads merge these sources, aided by Bloom filters and block caches. Coordination uses Apache ZooKeeper, while an HMaster assigns regions and handles schema changes. The design favours high write throughput and point lookups/scans by row key; it provides no built-in secondary indexes or SQL, though projects such as Apache Phoenix add a SQL layer.</p>
+<h2>Features</h2>
+<ul>
+<li>Linear, modular scalability across commodity servers</li>
+<li>Strongly consistent reads and writes (unlike many eventually consistent stores)</li>
+<li>Automatic failover and region splitting</li>
+<li>Block cache and Bloom filters for read performance</li>
+<li>Inter-cluster replication for backup and availability</li>
+<li>Integration with MapReduce and other Hadoop ecosystem tools; Java API plus REST and Thrift gateways and a shell</li>
+</ul>
+<h2>Limitations</h2>
+<p>HBase is optimised for a particular access pattern — key-based reads and writes of sparse, wide tables. It is less suitable for complex queries, joins, or small datasets, and its dependence on HDFS and JVM tuning makes operations relatively demanding. Interest has declined somewhat as cloud-native wide-column services and other stores have matured, but HBase remains in production at very large scale.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Apache_Hadoop/index.html">Apache Hadoop</a></li>
+<li><a href="../Bigtable/index.html">Bigtable</a></li>
+<li><a href="../NoSQL/index.html">NoSQL</a></li>
+<li><a href="../Apache_Cassandra/index.html">Apache Cassandra</a></li>
+<li><a href="../Wide-column_store/index.html">Wide-column store</a></li>
+</ul>
+</div>
+</body>
+</html>

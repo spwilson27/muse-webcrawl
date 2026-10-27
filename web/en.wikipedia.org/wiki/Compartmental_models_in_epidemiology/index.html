@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Compartmental models in epidemiology - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f6f6f6;color:#202122}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;min-height:100vh}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+img.hero{max-width:320px;float:right;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:4px}
+a{color:#0645ad;text-decoration:none}
+.math{font-style:italic;background:#f8f9fa;padding:8px 14px;display:inline-block;margin:6px 0}
+.ref{font-size:90%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Compartmental models in epidemiology</h1>
+<img class="hero" src="images/Compartmental_models_in_epidemiology.png" alt="Compartmental models in epidemiology">
+<p><b>Compartmental models</b> are a very general modelling technique often applied to the <a href="../Mathematical_model/">mathematical modelling</a> of <a href="../Infectious_disease/">infectious diseases</a>. The population is assigned to compartments with labels – for example, <b>S</b> (susceptible), <b>I</b> (infectious) and <b>R</b> (recovered). People may progress between compartments in a specified order. Compartmental models allow epidemiologists to estimate quantities such as the <a href="../Basic_reproduction_number/">basic reproduction number</a>, the course of an <a href="../Epidemic/">epidemic</a>, and the total number of people ultimately infected.</p>
+<p>The ordering of the labels usually shows the flow patterns between the compartments; for example SEIS means susceptible, exposed, infectious, then susceptible again. The origins of such models go back to the early 20th century, with important early work by Anderson Gray McKendrick and William Ogilvy Kermack in a series of papers beginning in 1927 (the Kermack–McKendrick theory), and by Ronald Ross in the context of malaria transmission.</p>
+<h2>The SIR model</h2>
+<p>The SIR model divides the population into three compartments: those susceptible to the disease (<i>S</i>), those infected and infectious (<i>I</i>), and those who have recovered (or died) and are immune (<i>R</i>). The flows between compartments are described by the system of <a href="../Ordinary_differential_equation/">ordinary differential equations</a>:</p>
+<p><span class="math">dS/dt = −βSI/N, &nbsp; dI/dt = βSI/N − γI, &nbsp; dR/dt = γI</span></p>
+<p>where β is the transmission rate and γ is the recovery rate (so that 1/γ is the mean infectious period). The basic reproduction number is R<sub>0</sub> = β/γ. The model assumes a well-mixed population and that recovered individuals gain lasting immunity.</p>
+<h2>Variations</h2>
+<ul>
+<li><b>SIS model</b> – recovered individuals return directly to the susceptible class, appropriate for diseases that do not confer lasting immunity, such as the common cold.</li>
+<li><b>SEIR model</b> – adds an "exposed" compartment <i>E</i> for individuals who have been infected but are not yet infectious, modelling the latent or <a href="../Incubation_period/">incubation period</a>.</li>
+<li><b>SEIS model</b> – combines the exposed compartment with loss of immunity.</li>
+<li><b>MSIR model</b> – adds a compartment <i>M</i> for infants passively immune through maternal antibodies.</li>
+<li><b>SIRD model</b> – separates recovered from deceased individuals.</li>
+<li><b>SIRV model</b> – adds a vaccinated compartment.</li>
+</ul>
+<h2>Deterministic and stochastic models</h2>
+<p>Compartmental models can be formulated deterministically, typically as systems of ordinary differential equations, or stochastically, using continuous-time Markov chains or agent-based simulation. Stochastic versions are especially useful for small populations and for modelling the probability that an outbreak dies out by chance.</p>
+<h2>Applications</h2>
+<p>Compartmental models are used by public-health agencies for forecasting and planning, and were used extensively during the <a href="../COVID-19_pandemic/">COVID-19 pandemic</a> to project hospital demand under different intervention scenarios. Extensions include age-structured mixing, spatial metapopulation models, and models coupled to behavioural responses.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Basic_reproduction_number/">Basic reproduction number</a></li>
+<li><a href="../Mathematical_modelling_of_infectious_disease/">Mathematical modelling of infectious disease</a></li>
+<li><a href="../Kermack–McKendrick_theory/">Kermack–McKendrick theory</a></li>
+</ul>
+<p class="ref">This article is a recreation from memory of the Wikipedia article "Compartmental models in epidemiology".</p>
+</div>
+</body>
+</html>

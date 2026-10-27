@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Binomial heap - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+header{background:#fff;border-bottom:1px solid #a7d7f9;padding:10px 20px}
+h1{font-size:28px;margin:10px 0}
+main{max-width:960px;margin:0 auto;padding:20px;background:#fff;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h2{border-bottom:1px solid #a2a9b1;font-size:22px;margin-top:24px}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:13px}
+.infobox th{text-align:left;background:#eef2f5;padding:4px}
+.infobox td{padding:4px}
+.hero{text-align:center;margin:16px 0}
+.hero img{max-width:420px;width:100%;background:#eef2f5;border:1px solid #a2a9b1;padding:8px}
+.caption{font-size:12px;color:#54595d}
+footer{font-size:12px;color:#54595d;padding:16px 20px;text-align:center}
+code{font-family:monospace;background:#f0f0f0;padding:0 3px}
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> — the free encyclopedia</header>
+<main>
+<h1>Binomial heap</h1>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Binomial heap</th></tr>
+<tr><th>Type</th><td>Heap (priority queue)</td></tr>
+<tr><th>Invented</th><td>Jean Vuillemin, 1978</td></tr>
+<tr><th>Insert (amortized)</th><td>O(1)</td></tr>
+<tr><th>Merge</th><td>O(log n)</td></tr>
+<tr><th>Delete-min</th><td>O(log n)</td></tr>
+</table>
+</div>
+<p>In computer science, a <b>binomial heap</b> is a data structure that acts as a <a href="../Priority_queue/index.html">priority queue</a> while also supporting fast merging of two heaps. It was introduced by Jean Vuillemin in 1978. A binomial heap is implemented as a collection of <i>binomial trees</i>, each of which satisfies the heap property, and it can be viewed as the heap analogue of the binary number system: just as a binary number has at most one 1-bit per position, a binomial heap has at most one binomial tree of each order.</p>
+<div class="hero"><img src="images/binomial-heap.png" alt="A binomial heap made of several binomial trees of different orders"><div class="caption">A binomial heap: a set of heap-ordered binomial trees, at most one of each order.</div></div>
+<h2>Binomial trees</h2>
+<p>A binomial tree of order 0 is a single node. A binomial tree of order k is formed by linking two binomial trees of order k−1, making the root of one the child of the other. Such a tree has exactly 2<sup>k</sup> nodes, and the number of nodes at each depth follows the binomial coefficients — hence the name. The root of a tree of order k has k children, which are the roots of binomial trees of orders 0 through k−1.</p>
+<h2>Operations</h2>
+<p><b>Merging</b> two heaps proceeds like binary addition: trees of equal order are linked into one tree of the next order, with the smaller root on top to preserve the heap property. <b>Insertion</b> is a merge with a one-node heap, costing O(1) amortized time. <b>Finding the minimum</b> requires scanning the O(log n) tree roots. <b>Deleting the minimum</b> removes its tree, promotes that tree's children (themselves a binomial heap) into the collection, and merges — all in O(log n). <b>Decrease-key</b> bubbles a key upward through its tree, also in O(log n).</p>
+<h2>Comparison</h2>
+<p>Binomial heaps support the full priority-queue operation set with amortized bounds comparable to binary heaps, while adding an efficient union operation that binary heaps lack. The <a href="../Fibonacci_heap/index.html">Fibonacci heap</a> can be seen as a "lazy" generalization of the binomial heap that improves decrease-key to amortized constant time, at the price of more complex bookkeeping.</p>
+<p>See also: <a href="../Heap_(data_structure)/index.html">Heap</a>, <a href="../Binary_heap/index.html">Binary heap</a>, <a href="../Fibonacci_heap/index.html">Fibonacci heap</a>, <a href="../Priority_queue/index.html">Priority queue</a>.</p>
+</main>
+<footer>From Wikipedia, the free encyclopedia. This page was recreated from memory.</footer>
+</body>
+</html>

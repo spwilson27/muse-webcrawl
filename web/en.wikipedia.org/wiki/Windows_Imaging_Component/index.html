@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Windows Imaging Component - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;padding:0;background:#fff;color:#202122;line-height:1.6}
+.mw-body{max-width:960px;margin:0 auto;padding:20px 24px 60px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;font-size:28.8px;border-bottom:1px solid #a2a9b1;margin:0 0 4px;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;font-size:22px;border-bottom:1px solid #a2a9b1;margin:24px 0 8px;padding-bottom:2px}
+h3{font-size:17px;margin:18px 0 6px}
+p{margin:8px 0;font-size:15px}
+ul{font-size:15px}
+.thumb{float:right;margin:4px 0 14px 18px;width:274px;font-size:12px;color:#54595d;background:#f8f9fa;border:1px solid #c8ccd1;padding:4px;text-align:center}
+.thumb img{width:264px;height:160px;object-fit:cover;background:#eaecf0;display:block}
+.infobox{float:right;width:280px;margin:4px 0 14px 18px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;border-collapse:collapse}
+.infobox th,.infobox td{padding:4px 8px;border-bottom:1px solid #eaecf0;text-align:left;vertical-align:top}
+.infobox th{background:#eaecf0}
+.refs{font-size:13px;color:#202122}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Windows Imaging Component</h1>
+<div class="thumb"><img src="images/windows-imaging-component.png" alt="Diagram of the Windows Imaging Component codec architecture"><div>Architecture of the Windows Imaging Component codec pipeline</div></div>
+<table class="infobox">
+<tr><th colspan="2" style="text-align:center">Windows Imaging Component</th></tr>
+<tr><th>Developer(s)</th><td>Microsoft</td></tr>
+<tr><th>Initial release</th><td>2006 (with Windows Vista)</td></tr>
+<tr><th>Operating system</th><td>Microsoft Windows</td></tr>
+<tr><th>Type</th><td>Image codec framework</td></tr>
+<tr><th>License</th><td>Proprietary</td></tr>
+</table>
+<p>The <b>Windows Imaging Component</b> (WIC) is a Component Object Model based imaging codec framework introduced in Windows Vista and Windows XP Service Pack 3 that makes it possible to work with and process images and image metadata. WIC enables application developers to perform image processing operations on any image format through a single set of common interfaces, without needing to be aware of the individual image formats. The component provides a standard framework for image codecs (encoders and decoders), pixel formats, and metadata formats, including Exif and IPTC metadata.</p>
+<p>Because the framework is extensible, software vendors, camera manufacturers, and independent developers can write their own image codecs for novel image formats and have them integrate with the rest of the platform in the same way as the native image formats. The most prominent example is support for camera raw image formats: camera manufacturers supply WIC codecs for their proprietary raw formats, after which any WIC-enabled application, including Windows Explorer and Windows Photo Gallery, can read those images.</p>
+<h2>Features</h2>
+<p>Windows Imaging Component provides an extensible architecture for image codecs, pixel formats, and metadata, with automatic discovery of run-time installed codecs. It supports reading and writing of metadata embedded in image files, and preserves that metadata during encoding, decoding, and transcoding operations. The component works with standard image formats in Windows Vista, including JPEG, BMP, PNG, GIF, TIFF, and the HD Photo format (later standardized as JPEG XR). Arbitrary image formats can be supported by supplying codec plug-ins.</p>
+<p>WIC codecs consist of two components: a decoder, which converts a stored image into a bitmap in memory, and an encoder, which converts an in-memory bitmap into a stored image. The framework exposes interfaces such as IWICImagingFactory, which applications use to create components, IWICBitmapDecoder and IWICBitmapEncoder, which perform the conversions, and IWICMetadataQueryReader and IWICMetadataQueryWriter for accessing metadata blocks.</p>
+<h2>Formats</h2>
+<p>Windows Vista shipped with built-in codecs for the standard web and document formats, as well as for HD Photo. Microsoft distributed an updated set of codecs over time, and third-party vendors released codecs for formats including camera raw files from Canon and Nikon, as well as formats such as DjVu and JPEG 2000 variants. Windows 10 added native support for the WebP format and later releases continued to extend the codec set available through the Microsoft Store.</p>
+<h2>Usage</h2>
+<p>WIC is used by several Microsoft technologies. WPF imaging classes are built on top of it, Direct2D uses WIC for loading bitmap images, and Windows Explorer uses it to generate thumbnails for any image format with an installed codec. The Windows Photo Viewer and the earlier Windows Photo Gallery likewise depend on WIC codecs.</p>
+<h2>See also</h2>
+<ul>
+<li>JPEG XR</li>
+<li>Windows Presentation Foundation</li>
+<li>Direct2D</li>
+<li>Camera raw</li>
+</ul>
+</div>
+</body>
+</html>

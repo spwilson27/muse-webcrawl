@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Memoization - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; padding: 0; color: #202122; background: #f8f9fa; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+.hero { text-align: center; margin: 12px 0; }
+.hero img { max-width: 380px; background: #eaecf0; border: 1px solid #c8ccd1; padding: 8px; }
+.caption { font-size: 12px; color: #54595d; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px; overflow-x: auto; font-size: 13px; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Memoization</h1>
+<div class="hero"><img src="images/memoization.png" alt="Diagram of a memoized recursive function with a lookup table"><div class="caption">Memoization stores results of function calls in a table</div></div>
+<p>In computing, <b>memoization</b> or <b>memoisation</b> is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls to pure functions and returning the cached result when the same inputs occur again. Memoization has also been used in other contexts, such as in simple mutually recursive descent parsing.</p>
+<h2>Etymology</h2>
+<p>The term "memoization" was coined by Donald Michie in 1968 and is derived from the Latin word <i>memorandum</i> ("to be remembered"). Although "memoization" might be confused with "memorization" (because of their similar spellings), "memoization" has a distinct meaning in computing. It is a specific form of caching that involves a function call.</p>
+<h2>How it works</h2>
+<p>A memoized function "remembers" the results corresponding to some set of specific inputs. Subsequent calls with remembered inputs return the remembered result rather than recalculating it, eliminating the primary cost of a call with given parameters from all but the first such call. The technique trades memory for speed, and it is a classic example of a space–time tradeoff.</p>
+<pre>
+function factorial(n)
+    if n is in lookup table then
+        return lookup table value for n
+    else
+        let x = factorial(n - 1) * n
+        store x in lookup table for n
+        return x
+</pre>
+<h2>Applications</h2>
+<p>Memoization is fundamental to dynamic programming: problems with overlapping subproblems, such as computing Fibonacci numbers or finding optimal sequence alignments, can be solved efficiently by caching subproblem results. It is also used in parsers (packrat parsing), in automatic differentiation, and in functional programming languages, where language features or libraries — for example Python's <code>functools.lru_cache</code> — make it easy to apply to pure functions.</p>
+</div>
+</body>
+</html>

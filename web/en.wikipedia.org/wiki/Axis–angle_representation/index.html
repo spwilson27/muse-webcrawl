@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Axis–angle representation - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:16px 24px}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px 12px;margin:0 0 12px 16px;font-size:90%;width:260px}
+.infobox th{text-align:left;background:#eaecf0;padding:2px 6px}
+.infobox td{padding:2px 6px}
+.hero{display:block;margin:12px auto;max-width:420px;background:#f8f9fa;border:1px solid #a2a9b1;padding:20px;text-align:center;color:#54595d}
+.small{font-size:90%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Axis–angle representation</h1>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Axis–angle representation</th></tr>
+<tr><th>Parameters</th><td>Unit vector <b>e</b>, angle θ</td></tr>
+<tr><th>Dimension</th><td>3 degrees of freedom</td></tr>
+<tr><th>Key formula</th><td>Rodrigues' rotation formula</td></tr>
+<tr><th>Related</th><td>Euler angles, quaternions, rotation matrix</td></tr>
+</table>
+</div>
+<img class="hero" src="images/Axis–angle_representation.png" alt="A rotation about an axis e through an angle θ">
+<p>In mathematics, the <b>axis–angle representation</b> of a <a href="../Rotation_(mathematics)/index.html">rotation</a> in three-dimensional space parameterises the rotation by two quantities: a <a href="../Unit_vector/index.html">unit vector</a> <b>e</b> indicating the direction of the rotation axis, and an angle θ describing the magnitude of the rotation about that axis. The equivalence of every rotation to a single axis–angle pair is guaranteed by <a href="../Euler's_rotation_theorem/index.html">Euler's rotation theorem</a>. Only two of the three components of <b>e</b> are independent, since its length is fixed at one, so a rotation is described by three degrees of freedom in total.</p>
+<h2>Rotation vector</h2>
+<p>Multiplying the unit axis by the angle gives the <i>rotation vector</i> θ<b>e</b>, whose direction is the rotation axis and whose magnitude is the angle. Rotation vectors are widely used in computer vision, robotics and physics because of this compactness, though they are singular and multi-valued: adding 2π to θ, or negating both axis and angle, yields the same rotation.</p>
+<h2>Rodrigues' rotation formula</h2>
+<p>Given a vector <b>v</b>, the rotated vector can be computed directly by <b>Rodrigues' rotation formula</b>, named after Olinde Rodrigues (1840):</p>
+<p style="text-align:center"><b>v</b><sub>rot</sub> = <b>v</b> cos θ + (<b>e</b> × <b>v</b>) sin θ + <b>e</b>(<b>e</b> · <b>v</b>)(1 − cos θ).</p>
+<p>The same formula generates the corresponding <a href="../Rotation_matrix/index.html">rotation matrix</a> R = I cos θ + (sin θ)[<b>e</b>]<sub>×</sub> + (1 − cos θ)<b>e</b><b>e</b><sup>T</sup>, where [<b>e</b>]<sub>×</sub> is the cross-product matrix of the axis.</p>
+<h2>Relation to other representations</h2>
+<p>The axis–angle pair converts directly to a unit <a href="../Quaternion/index.html">quaternion</a> via q = (cos(θ/2), <b>e</b> sin(θ/2)), and to <a href="../Euler_angles/index.html">Euler angles</a> through the rotation matrix. The matrix exponential of a skew-symmetric matrix built from the rotation vector gives the rotation (via the exponential map of the Lie group SO(3), whose Lie algebra so(3) consists of rotation vectors); conversely the matrix logarithm recovers the axis and angle, with θ = arccos((trace(R) − 1)/2).</p>
+<h2>Applications</h2>
+<p>Axis–angle parameters appear in rigid-body dynamics and attitude control of spacecraft, in crystallography, in robotics for specifying end-effector orientation, and in computer graphics as an alternative to Euler angles that avoids <a href="../Gimbal_lock/index.html">gimbal lock</a> in interpolation tasks, though quaternions are generally preferred for composing rotations.</p>
+<p class="small">Categories: Rotation in three dimensions · Mathematical representations</p>
+</div>
+</body>
+</html>

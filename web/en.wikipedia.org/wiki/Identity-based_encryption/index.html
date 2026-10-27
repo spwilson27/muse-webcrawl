@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Identity-based encryption - Wikipedia</title>
+<style>
+body { font-family: "Helvetica Neue", Arial, sans-serif; margin: 0; color: #202122; background: #fff; }
+header { background: #f8f9fa; border-bottom: 1px solid #a7d7f9; padding: 12px 24px; }
+header .site { font-size: 1.4em; font-weight: bold; color: #000; }
+main { max-width: 960px; margin: 0 auto; padding: 24px; line-height: 1.6; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+figure.hero { float: right; margin: 0 0 12px 16px; width: 280px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 6px; font-size: 0.85em; text-align: center; }
+figure.hero img { width: 100%; background: #eaecf0; min-height: 140px; display: block; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia</span> — The Free Encyclopedia</header>
+<main>
+<h1>Identity-based encryption</h1>
+<figure class="hero"><img src="images/identity-based-encryption.png" alt="Diagram of identity-based encryption using an email address as a public key"><figcaption>In identity-based encryption, any string — such as an email address — can serve as a public key.</figcaption></figure>
+<p><b>Identity-based encryption</b> (<b>IBE</b>), also called identity-based cryptography, is a type of <a href="../Public-key_cryptography/index.html">public-key cryptography</a> in which a publicly known string representing an individual or organization is used as a <a href="../Public_key/index.html">public key</a>. The public string could include an email address, domain name, or a physical IP address.</p>
+<h2>History</h2>
+<p>The concept was proposed by <a href="../Adi_Shamir/index.html">Adi Shamir</a> in 1984, but he was able only to give an instantiation of identity-based <i>signatures</i>; identity-based encryption remained an open problem for nearly twenty years. The first practical solutions were given in 2001 by <a href="../Dan_Boneh/index.html">Dan Boneh</a> and <a href="../Matthew_K._Franklin/index.html">Matthew Franklin</a>, using bilinear pairings on <a href="../Elliptic_curve/index.html">elliptic curves</a>, and independently by Clifford Cocks, whose scheme relied on quadratic residues.</p>
+<h2>Usage</h2>
+<p>IBE uses a trusted <i>private key generator</i> (PKG), which holds a master secret and issues each user a private key derived from their identity string. A sender can encrypt a message to "bob@example.com" before Bob has even obtained his private key, eliminating the need for certificate directories required by conventional <a href="../Public_key_infrastructure/index.html">public key infrastructure</a>. The central drawback is that the PKG can decrypt all messages (key escrow), so IBE is most suitable within organizations that already trust a central authority.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Attribute-based_encryption/index.html">Attribute-based encryption</a></li>
+<li><a href="../Identity-based_cryptography/index.html">Identity-based cryptography</a></li>
+<li><a href="../Certificateless_cryptography/index.html">Certificateless cryptography</a></li>
+</ul>
+</main>
+</body>
+</html>
