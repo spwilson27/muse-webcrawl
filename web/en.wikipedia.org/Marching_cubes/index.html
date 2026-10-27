@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Marching cubes - Wikipedia</title>
+<style>body{font-family:sans-serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.55;color:#202122}h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em}img.hero{display:block;width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:2em 0;text-align:center;color:#54595d}a{color:#0645ad}code{background:#f8f9fa;padding:0 .2em}</style></head>
+<body><h1>Marching cubes</h1>
+<img class="hero" src="images/Marching_cubes.png" alt="Isosurface extracted by marching cubes placeholder">
+<p><b>Marching cubes</b> is a computer graphics algorithm, published in 1987 by William E. Lorensen and Harvey E. Cline, for extracting a polygonal mesh of an isosurface from a three-dimensional discrete scalar field (a voxel grid). It is one of the most widely used methods for visualising medical scan data such as CT and MRI volumes, as well as meteorological and engineering simulations.</p>
+<h2>How it works</h2>
+<p>The algorithm proceeds cell by cell ("marching") through the volume. Each cell is a cube whose eight corners carry scalar values. Comparing each corner's value with the target iso-value classifies it as inside or outside the surface, giving one of 256 possible configurations; by symmetry these reduce to 15 unique patterns. For each configuration a precomputed table lists which cube edges the surface intersects and how the intersection points are joined into triangles. Vertex positions along edges are found by linear interpolation of the corner values.</p>
+<h2>Ambiguity and variants</h2>
+<p>Some configurations are ambiguous: the same corner pattern can be triangulated in two topologically different ways, which in the original table could leave holes. Later work (the "asymptotic decider" and extended tables of 33 cases) resolves these ambiguities. The two-dimensional analogue is marching squares; a tetrahedral variant, marching tetrahedra, avoids ambiguity at the cost of more triangles.</p>
+<h2>Patent and legacy</h2>
+<p>The algorithm was covered by a software patent filed by the General Electric Company, which expired in 2005; during its life the patent encouraged alternatives such as surface nets. Marching cubes remains a standard step in volume rendering pipelines and 3D printing from scan data.</p>
+<p><i>Categories: Computer graphics algorithms, 3D computer graphics, Image processing</i></p>
+</body></html>

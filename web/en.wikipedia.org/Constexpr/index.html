@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>constexpr - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:52em;padding:0 1em;color:#202122;line-height:1.6}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:.5em;text-align:center;color:#54595d;font-size:.9em;margin:1em 0}
+code{background:#f8f9fa;padding:0 .2em;font-family:monospace}
+</style>
+</head>
+<body>
+<h1>constexpr</h1>
+<div class="thumb"><img src="images/constexpr.png" alt="Example C++ code declaring a constexpr function evaluated at compile time"></div>
+<p><code><b>constexpr</b></code> is a keyword in the C++ programming language, introduced in C++11, that declares that the value of a variable or the return value of a function is a constant expression capable of being evaluated at compile time. It is a central feature of modern C++ compile-time computation and metaprogramming.</p>
+<h2>Semantics</h2>
+<p>A <code>constexpr</code> variable must be initialized with a constant expression and is implicitly <code>const</code>. A <code>constexpr</code> function may be evaluated at compile time when called with constant-expression arguments — for example in array sizes or template arguments — but can also be called at run time with ordinary arguments, in which case it behaves like a normal function. In C++11 such functions were restricted to a single return statement; C++14 relaxed this to permit loops, local variables, and most ordinary statements. Later standards extended compile-time evaluation further: C++17 added <code>if constexpr</code> for compile-time conditional compilation; C++20 added <code>consteval</code> (functions guaranteed to be evaluated only at compile time), <code>constinit</code>, and virtual functions and dynamic allocation in constant expressions; C++23 continued the expansion.</p>
+<h2>Uses</h2>
+<p>Compile-time evaluation lets programs compute lookup tables, parse data, and validate constants before the program ever runs, improving performance and catching errors earlier. Libraries use <code>constexpr</code> throughout modern C++: much of the standard library (containers, algorithms, string views, chrono) has become usable in constant expressions in recent standards.</p>
+<p>See also: <a href="../C%2B%2B/index.html">C++</a>, <a href="../Constant_expression/index.html">Constant expression</a>, <a href="../Template_metaprogramming/index.html">Template metaprogramming</a>.</p>
+</body>
+</html>

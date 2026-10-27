@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Collision domain - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; color: #202122; background: #fff; }
+header { background: #f8f9fa; border-bottom: 1px solid #a2a9b1; padding: 10px 20px; }
+header .site { font-family: sans-serif; font-size: 13px; color: #54595d; }
+main { max-width: 960px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 20px; border-bottom: 1px solid #eaecf0; padding-bottom: 3px; font-weight: normal; }
+img.hero { display: block; max-width: 320px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 6px; margin: 0 0 12px 16px; float: right; font-family: sans-serif; font-size: 12px; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+footer { border-top: 1px solid #a2a9b1; padding: 12px 20px; font-family: sans-serif; font-size: 12px; color: #54595d; }
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia, the free encyclopedia</span></header>
+<main>
+<h1>Collision domain</h1>
+<img class="hero" src="images/collision-domain.png" alt="Network diagram showing devices connected through a hub in one collision domain">
+<p>A <b>collision domain</b> is a network segment in computer networking in which data packets can "collide" with one another when sent on a shared medium, in particular in early <a href="../Ethernet/index.html">Ethernet</a> networks. Only one device in a collision domain may transmit at a time if collisions are to be avoided, and all devices in the domain compete for the medium.</p>
+<h2>How collisions are handled</h2>
+<p>In classic half-duplex Ethernet, collisions are managed by the CSMA/CD protocol: a device listens before transmitting, and if two devices transmit simultaneously and a collision is detected, both stop, wait a random backoff interval, and retry. As more devices are added to a shared segment, collisions increase and effective throughput falls.</p>
+<h2>Segmentation</h2>
+<p>Network devices divide collision domains differently. Repeaters and hubs forward everything and therefore extend a single collision domain across all their ports. Bridges and switches, by contrast, create a separate collision domain on each port, because they forward frames only where needed; a switch port connected to a single device running full-duplex Ethernet effectively eliminates collisions altogether. Routers separate both collision domains and broadcast domains. Modern switched, full-duplex networks have largely made collision domains a historical concept, though the term remains standard in networking education.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Broadcast_domain/index.html">Broadcast domain</a></li>
+<li><a href="../CSMA/CD/index.html">CSMA/CD</a></li>
+<li><a href="../Network_switch/index.html">Network switch</a></li>
+</ul>
+</main>
+<footer>This page was recreated from memory as part of the muse-webcrawl project.</footer>
+</body>
+</html>

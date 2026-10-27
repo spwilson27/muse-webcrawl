@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Edmonds–Karp algorithm - Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:800px;margin:0 auto;padding:20px;color:#202122;line-height:1.6}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;padding-bottom:2px}
+img.hero{width:100%;max-width:400px;background:#eaecf0;display:block;padding:40px 10px;text-align:center;color:#72777d;border:1px solid #c8ccd1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+code{background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<h1>Edmonds–Karp algorithm</h1>
+<img class="hero" src="images/edmonds-karp.png" alt="Diagram of a flow network illustrating augmenting paths">
+<p>In computer science, the <b>Edmonds–Karp algorithm</b> is an implementation of the Ford–Fulkerson method for computing the maximum flow in a flow network. It was published in 1970 by Yefim Dinitz in the Soviet Union and independently in 1972 by Jack Edmonds and Richard Karp.</p>
+<h2>Description</h2>
+<p>The algorithm is identical to the <a href="../Ford-Fulkerson_algorithm/index.html">Ford–Fulkerson algorithm</a>, except that the search order used to find augmenting paths is defined so that the paths found are the shortest (in terms of number of edges). This is achieved by finding each augmenting path with a breadth-first search of the residual graph, treating all edges as having unit weight.</p>
+<h2>Complexity</h2>
+<p>Because each augmentation saturates at least one edge and the length of the shortest augmenting path increases monotonically, the number of augmentations is bounded by O(VE), giving an overall running time of O(VE<sup>2</sup>), where V is the number of vertices and E the number of edges. Importantly, this bound is independent of the value of the maximum flow, which makes Edmonds–Karp strongly polynomial, unlike naive implementations of Ford–Fulkerson with irrational capacities, which may never terminate.</p>
+<h2>Example</h2>
+<p>Given a network of seven nodes, source A and sink G, with capacities as commonly illustrated in textbooks, the algorithm successively augments flow along shortest paths such as A–D–F–G, then A–D–E–G, then A–C–D–E–G, and finally A–C–E–D–F–G, yielding a maximum flow whose value equals the minimum cut by the max-flow min-cut theorem.</p>
+<p>See also: <a href="../Maximum_flow_problem/index.html">Maximum flow problem</a>, <a href="../Dinic's_algorithm/index.html">Dinic's algorithm</a>, <a href="../Push-relabel_maximum_flow_algorithm/index.html">Push–relabel algorithm</a>, <a href="../Max-flow_min-cut_theorem/index.html">Max-flow min-cut theorem</a>.</p>
+</body>
+</html>

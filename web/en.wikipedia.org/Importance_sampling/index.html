@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Importance sampling - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 800px; line-height: 1.6; color: #202122; padding: 0 1em; }
+h1 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; }
+img.hero { display: block; margin: 1em auto; max-width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 1em; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<h1>Importance sampling</h1>
+<img class="hero" src="images/Importance_sampling.png" alt="Placeholder image: plot illustrating sampling from a proposal distribution">
+<p><b>Importance sampling</b> is a Monte Carlo method for evaluating properties of a particular distribution, while only having samples generated from a different distribution than the distribution of interest. Its introduction in statistics is generally attributed to Herman Kahn and others at RAND in the late 1940s and early 1950s, in work on neutron transport.</p>
+<h2>Basic idea</h2>
+<p>Let X be a random variable distributed according to p, and suppose one wishes to estimate E<sub>p</sub>[f(X)]. Importance sampling draws samples from a different "proposal" (or importance) distribution q, and reweights each sample by the likelihood ratio w(x) = p(x)/q(x). The estimator is the weighted average of f over the samples. When q places more mass where |f(x)|p(x) is large than p itself does, the variance of the estimator can be greatly reduced.</p>
+<h2>Applications</h2>
+<p>Importance sampling is used for variance reduction in simulation, for estimating rare-event probabilities, in Bayesian statistics (for example in sequential Monte Carlo and particle filters), in rendering (path tracing in computer graphics), and as a component of off-policy evaluation in reinforcement learning. Its effectiveness depends critically on choosing a proposal distribution close to the (normalized) product |f|p; poor choices can produce estimates with infinite variance.</p>
+<h2>Self-normalized importance sampling</h2>
+<p>When p is known only up to a normalizing constant, the unknown constants cancel if the weights are normalized to sum to one, yielding the self-normalized estimator, which is biased for finite sample sizes but consistent.</p>
+<h2>See also</h2>
+<ul>
+<li>Monte Carlo method</li>
+<li>Variance reduction</li>
+<li>Rejection sampling</li>
+<li>Particle filter</li>
+</ul>
+</body>
+</html>

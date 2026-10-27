@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Double Ratchet Algorithm - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:800px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.thumb{float:right;margin:0 0 1em 1em;border:1px solid #c8ccd1;background:#f8f9fa;padding:.4em;text-align:center;font-size:.85em;width:220px}
+.thumb img{max-width:210px;background:#eaecf0}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Double Ratchet Algorithm</h1>
+<div class="thumb"><img src="images/double-ratchet.png" alt="Diagram of key ratcheting in the Double Ratchet Algorithm"><br>The algorithm advances cryptographic keys with every message.</div>
+<p>The <b>Double Ratchet Algorithm</b> is a cryptographic key management protocol for end-to-end encrypted messaging. Developed by Trevor Perren and Moxie Marlinspike in 2013, it is the core of the <a href="../Signal_Protocol/index.html">Signal Protocol</a>, used by Signal, WhatsApp, and other messengers to protect billions of conversations.</p>
+<h2>How it works</h2>
+<p>The algorithm combines two ratchets. A symmetric-key ratchet derives a fresh message key for every message from a chain key, providing forward secrecy: compromising a later key cannot decrypt earlier messages. A Diffie–Hellman ratchet periodically exchanges new public keys, so the session "heals" after a compromise — called post-compromise security or future secrecy. Out-of-order messages are handled by storing skipped message keys in a message-key cache.</p>
+<h2>Security properties</h2>
+<p>Because keys change with every message and are derived through one-way functions, an attacker who steals a device's state obtains only the keys not yet deleted. The design influenced later standards, including the MLS protocol for group messaging.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Signal_Protocol/index.html">Signal Protocol</a></li>
+<li><a href="../End-to-end_encryption/index.html">End-to-end encryption</a></li>
+<li><a href="../Forward_secrecy/index.html">Forward secrecy</a></li>
+</ul>
+<p class="small">Recreated from memory for archival purposes.</p>
+</body>
+</html>

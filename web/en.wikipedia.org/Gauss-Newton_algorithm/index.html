@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gauss–Newton algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:24px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{float:right;margin:0 0 12px 16px;max-width:300px;background:#f8f9fa;border:1px solid #c8ccd1;padding:6px;font-size:0.85em;text-align:center}
+.hero img{max-width:100%;background:#e8e8e8;min-height:140px;display:block}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Gauss–Newton algorithm</h1>
+<div class="hero"><img src="images/gauss-newton-algorithm.png" alt="Iterative curve fitting converging on data points using the Gauss–Newton algorithm"></div>
+<p>The <b>Gauss–Newton algorithm</b> is an iterative method for solving non-linear <a href="../Least_squares/index.html">least squares</a> problems, named after <a href="../Carl_Friedrich_Gauss/index.html">Carl Friedrich Gauss</a> and Isaac Newton. It is widely used for fitting a model function to data, for example in curve fitting, calibration, and parameter estimation in science and engineering.</p>
+<h2>Method</h2>
+<p>Given a set of residual functions — the differences between observed values and the predictions of a model depending on unknown parameters — the algorithm linearises the residuals around the current parameter estimate using a first-order Taylor expansion. The resulting linear least-squares subproblem is solved via the normal equations using the Jacobian matrix of the residuals, and the solution gives the step by which the parameters are updated. The process repeats until the parameter changes and the sum of squared residuals become sufficiently small.</p>
+<h2>Properties and variants</h2>
+<p>The Gauss–Newton method can be viewed as a modification of <a href="../Newton's_method_in_optimization/index.html">Newton's method</a> that drops the second-derivative terms from the Hessian, making each iteration cheaper but providing only approximate curvature information. It converges rapidly when the residuals at the solution are small, but can fail or diverge when the starting point is far from the solution or the residuals are large. The Levenberg–Marquardt algorithm improves robustness by interpolating between Gauss–Newton steps and gradient descent. For large problems, quasi-Newton and iterative variants are used, and the method forms the basis of many standard nonlinear regression software routines.</p>
+</div>
+</body>
+</html>

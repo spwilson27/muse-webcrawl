@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Isolation (database systems) - Wikipedia</title>
+<style>
+body { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: "Linux Libertine", Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 28px; }
+h2 { font-family: "Linux Libertine", Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; font-size: 22px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 480px; width: 100%; background: #eef3f8; border: 1px solid #a2a9b1; padding: 24px 0; }
+.caption { font-size: 12px; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+ul { line-height: 1.6; font-size: 15px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Isolation (database systems)</h1>
+<div class="hero"><img src="images/Isolation_(database_systems).png" alt="Diagram of concurrent transactions isolated from one another"><div class="caption">Isolation determines when changes made by one transaction become visible to others.</div></div>
+<p>In database systems, <b>isolation</b> is one of the ACID properties (alongside atomicity, consistency and durability). It determines how transaction integrity is visible to other users and systems: a transaction in process and yet not committed must remain isolated from other transactions, so that concurrent executions produce the same result as if the transactions ran serially.</p>
+<h2>Isolation levels</h2>
+<p>The ANSI/ISO SQL standard defines four isolation levels in increasing order of strictness: <b>Read Uncommitted</b>, <b>Read Committed</b>, <b>Repeatable Read</b>, and <b>Serializable</b>. Weaker levels permit concurrency anomalies: dirty reads (reading uncommitted data), non-repeatable reads, and phantom reads, in exchange for higher throughput.</p>
+<h2>Implementation</h2>
+<p>Isolation is typically enforced with locking (two-phase locking) or multiversion concurrency control (MVCC), in which readers access a snapshot of committed data while writers create new versions. Snapshot isolation, a popular MVCC variant, prevents most read anomalies but does not guarantee full serializability.</p>
+</div>
+</body>
+</html>

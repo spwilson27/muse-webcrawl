@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bootstrapping (statistics) - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#fff;color:#202122;}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:12px 20px;}
+h1{font-size:1.8em;margin:0;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;}
+main{max-width:960px;margin:0 auto;padding:16px 20px;line-height:1.6;}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.9em;}
+.infobox img{width:100%;background:#eaecf0;display:block;padding:20px 0;text-align:center;}
+a{color:#0645ad;text-decoration:none;}
+a:hover{text-decoration:underline;}
+footer{border-top:1px solid #a2a9b1;padding:10px 20px;font-size:0.85em;color:#54595d;}
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> — The Free Encyclopedia</header>
+<main>
+<h1>Bootstrapping (statistics)</h1>
+<div class="infobox">
+<img src="images/bootstrapping-statistics.png" alt="Histogram of bootstrap resample statistics">
+<p><strong>Field:</strong> Statistics</p>
+<p><strong>Introduced by:</strong> Bradley Efron (1979)</p>
+<p><strong>Method:</strong> Resampling with replacement</p>
+<p><strong>Used for:</strong> Standard errors, confidence intervals, bias</p>
+</div>
+<p><strong>Bootstrapping</strong> is a statistical method that estimates the sampling distribution of a statistic by resampling the observed data. Introduced by Bradley Efron in 1979, it treats the sample as a stand-in for the population: many new samples, each of the same size as the original, are drawn randomly <em>with replacement</em> from the data, the statistic of interest is computed for each, and the spread of those values approximates the statistic's true sampling variability. The name evokes pulling oneself up by one's bootstraps.</p>
+<h2>How it works</h2>
+<p>Given a sample of <em>n</em> observations, the analyst generates <em>B</em> bootstrap samples (typically hundreds or thousands), computes the estimate θ* in each, and uses the distribution of these replicates to obtain standard errors, bias estimates, and confidence intervals. The simplest interval takes percentiles of the bootstrap distribution; refined methods such as the BCa (bias-corrected and accelerated) interval adjust for bias and skewness.</p>
+<h2>Variants</h2>
+<p>Related resampling schemes include the parametric bootstrap, which resamples from a fitted model rather than the raw data; block bootstraps for time series, which resample contiguous chunks to preserve dependence; and the jackknife, an older method based on leaving out one observation at a time.</p>
+<h2>Strengths and limitations</h2>
+<p>Bootstrapping requires few distributional assumptions and works for complicated statistics, such as medians or ratios, for which formulas are unavailable — a flexibility that only became practical with cheap computing. It can fail for extreme statistics (like the sample maximum), for very small samples, and when the data are strongly dependent and the resampling scheme does not reflect that dependence. Like multiple-testing adjustments such as the <a href="../Bonferroni_correction/index.html">Bonferroni correction</a>, it is a general-purpose tool whose validity rests on matching the procedure to the structure of the data. The unrelated computing sense of "bootstrapping" is covered at <a href="../Bootloader/index.html">Bootloader</a>.</p>
+</main>
+<footer>Recreated from memory for the muse-webcrawl project.</footer>
+</body>
+</html>

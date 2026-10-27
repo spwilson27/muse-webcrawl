@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Monte Carlo algorithm - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 320px; background: #eaecf0; border: 1px solid #a2a9b1; padding: 8px; }
+.caption { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Monte Carlo algorithm</h1>
+<p>In computational complexity theory, a <b>Monte Carlo algorithm</b> is a randomized algorithm whose output may be incorrect with some small probability. The name comes from the Monte Carlo method of using repeated random sampling, itself named after the casino district of Monaco. Such algorithms trade certainty for speed: they answer a decision problem correctly with probability at least some constant greater than one half, and the error can be reduced exponentially by repeating the computation and taking a majority vote.</p>
+<div class="hero"><img src="images/Monte_Carlo_algorithm.png" alt="Random points scattered in a square, illustrating random sampling as used by Monte Carlo algorithms"></div>
+<p class="caption">Randomized algorithms use chance as a computational resource.</p>
+<h2>One-sided and two-sided error</h2>
+<p>Monte Carlo algorithms may have <i>one-sided error</i> — for example, always answering correctly on "yes" instances while sometimes erring on "no" instances — or <i>two-sided error</i>, erring on either. A classic example is the Solovay–Strassen primality test, and its successor the Miller–Rabin test, which can declare a composite number prime with a small, controllable probability. The complexity class BPP (bounded-error probabilistic polynomial time) consists of problems solvable by Monte Carlo algorithms in polynomial time with error probability at most 1/3.</p>
+<h2>Amplification</h2>
+<p>If an algorithm errs with probability at most 1/2 − ε, running it independently <i>k</i> times and taking the majority answer reduces the error probability to a quantity that falls exponentially in <i>k</i> (a Chernoff bound argument). This amplification is what makes randomized algorithms practical despite their uncertainty.</p>
+<h2>Comparison with Las Vegas algorithms</h2>
+<p>Monte Carlo algorithms contrast with <a href="../Las_Vegas_algorithm/index.html">Las Vegas algorithms</a>, whose runtime is random but whose output is always correct. A Las Vegas algorithm can be converted to a Monte Carlo algorithm by cutting it off after a fixed time and accepting a small chance of no answer.</p>
+<p>See also: <a href="../Randomized_algorithm/index.html">Randomized algorithm</a>, <a href="../Monte_Carlo_method/index.html">Monte Carlo method</a>, <a href="../Miller–Rabin_primality_test/index.html">Miller–Rabin primality test</a>.</p>
+</div>
+</body>
+</html>

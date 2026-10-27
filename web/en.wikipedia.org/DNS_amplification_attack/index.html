@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DNS amplification attack - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { border: 1px solid #a2a9b1; background: #eaecf0; padding: 16px; text-align: center; color: #54595d; margin: 16px 0; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>DNS amplification attack</h1>
+<div class="hero"><img src="images/DNS_amplification_attack.png" alt="Diagram of spoofed DNS queries reflecting large responses onto a victim"></div>
+<p>A <b>DNS amplification attack</b> is a form of distributed denial-of-service (DDoS) attack in which an attacker exploits open DNS resolvers to flood a victim with traffic. It is a reflection attack: the attacker sends small queries with the victim's spoofed IP address as the source, and the resolvers send their much larger replies to the victim.</p>
+<h2>How it works</h2>
+<p>Because DNS runs over UDP, source addresses can be forged on networks that do not filter spoofed packets. The attacker chooses query types — historically "ANY" queries against DNSSEC-signed zones — whose responses may be fifty times larger than the request. A botnet issuing such queries through thousands of open resolvers can generate hundreds of gigabits per second of traffic aimed at a single target, as in the 2013 attack on Spamhaus, then among the largest DDoS attacks ever recorded.</p>
+<h2>Mitigation</h2>
+<p>Defences include disabling open recursion on publicly reachable resolvers, response rate limiting on authoritative servers, minimising large "ANY" responses, and source address validation (BCP 38) at network edges so that spoofed packets cannot leave an attacker's network. DNS over TCP, which requires a real handshake, is inherently resistant to this kind of reflection.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Denial-of-service_attack/index.html">Denial-of-service attack</a></li>
+<li><a href="../Domain_Name_System/index.html">Domain Name System</a></li>
+<li><a href="../Smurf_attack/index.html">Smurf attack</a></li>
+<li><a href="../Botnet/index.html">Botnet</a></li>
+</ul>
+</div>
+</body>
+</html>

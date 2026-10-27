@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GraphQL</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#222;background:#fff}
+h1{font-size:1.9em;border-bottom:2px solid #a2a9b1;padding-bottom:.3em}
+h2{font-size:1.35em;border-bottom:1px solid #c8ccd1;padding-bottom:.2em;margin-top:1.4em}
+img.hero{display:block;width:100%;max-height:320px;object-fit:cover;background:#eef;border:1px solid #c8ccd1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+code{background:#f0f0f0;padding:.1em .3em;font-size:.95em}
+pre{background:#f8f9fa;border:1px solid #c8ccd1;padding:.8em;overflow-x:auto;font-size:.88em}
+</style>
+</head>
+<body>
+<h1>GraphQL</h1>
+<img class="hero" src="images/GraphQL.png" alt="GraphQL logo">
+<p><b>GraphQL</b> is a data query and manipulation language for APIs, and a runtime for fulfilling those queries with existing data. It was developed internally by Facebook (now Meta) starting in 2012, publicly released as an open-source project in 2015, and moved to the GraphQL Foundation in 2018. GraphQL provides an alternative to REST-style APIs in which clients specify exactly the shape of the data they need.</p>
+<h2>Design</h2>
+<p>A GraphQL service defines a <i>schema</i> describing the types available and the fields on each type. Clients send queries naming the fields they want, and the server returns a JSON response mirroring the query structure. This avoids the over-fetching and under-fetching common with fixed REST endpoints. Operations include <i>queries</i> for reading, <i>mutations</i> for writing, and <i>subscriptions</i> for receiving real-time updates.</p>
+<pre><code>{
+  user(id: "1") {
+    name
+    friends {
+      name
+    }
+  }
+}</code></pre>
+<h2>Features</h2>
+<p>GraphQL schemas are strongly typed, enabling validation and tooling such as code generation and interactive explorers. The system is self-documenting through <i>introspection</i>, which lets clients query the schema itself. Because clients control the response shape, a single endpoint can serve web, mobile and other clients with different data needs.</p>
+<h2>Adoption</h2>
+<p>GraphQL is used by companies including Meta, GitHub, Shopify, Twitter and Airbnb. Implementations exist in many programming languages, and popular client libraries include Apollo Client and Relay.</p>
+<h2>See also</h2>
+<p><a href="../API/index.html">API</a> &middot; <a href="../REST/index.html">REST</a> &middot; <a href="../JSON/index.html">JSON</a></p>
+</body>
+</html>

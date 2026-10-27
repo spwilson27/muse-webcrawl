@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DPLL algorithm - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { border: 1px solid #a2a9b1; background: #eaecf0; padding: 16px; text-align: center; color: #54595d; margin: 16px 0; }
+tt { background: #eaecf0; padding: 0 3px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>DPLL algorithm</h1>
+<div class="hero"><img src="images/DPLL_algorithm.png" alt="Search tree of a DPLL solver branching on variable assignments"></div>
+<p>The <b>DPLL algorithm</b> (Davis–Putnam–Logemann–Loveland) is a complete, backtracking-based search algorithm for deciding the satisfiability of propositional logic formulae in conjunctive normal form (CNF) — the SAT problem. Introduced in 1962, it refined the earlier Davis–Putnam procedure of 1960 and remains the conceptual basis of most modern SAT solvers.</p>
+<h2>Description</h2>
+<p>DPLL works by recursively choosing an unassigned variable and branching on its truth value. After each assignment it simplifies the formula and applies two key rules: <b>unit propagation</b>, which forces the value of any clause reduced to a single unassigned literal, and the <b>pure literal rule</b>, which assigns variables that appear with only one polarity. If a clause becomes empty (all its literals false), the current branch is a dead end and the algorithm backtracks; if all clauses are satisfied, the formula is satisfiable, and if every branch fails, it is unsatisfiable.</p>
+<h2>Modern developments</h2>
+<p>Practical solvers augment DPLL with conflict-driven clause learning (CDCL), which records the reasons for conflicts as new clauses so that the same failure is never repeated, together with watched literals, activity-based branching heuristics such as VSIDS, and periodic restarts. These enhancements let DPLL-style solvers routinely solve industrial problems with millions of variables, and the algorithm also underlies SMT solvers built on the DPLL(T) architecture.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Boolean_satisfiability_problem/index.html">Boolean satisfiability problem</a></li>
+<li><a href="../Conflict-driven_clause_learning/index.html">Conflict-driven clause learning</a></li>
+<li><a href="../Backtracking/index.html">Backtracking</a></li>
+<li><a href="../Conjunctive_normal_form/index.html">Conjunctive normal form</a></li>
+</ul>
+</div>
+</body>
+</html>

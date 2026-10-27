@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Heartbleed - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+img.hero{width:100%;max-height:320px;object-fit:cover;background:#eef;border:1px solid #c8ccd1}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{background:#b0c4de;padding:4px;text-align:left}
+a{color:#0645ad;text-decoration:none}
+.small{font-size:0.85em;color:#54595d}
+code{background:#f8f9fa}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Heartbleed</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/heartbleed.png" alt="The Heartbleed logo, a bleeding heart">
+<div class="infobox">
+<table>
+<tr><th colspan="2">Heartbleed</th></tr>
+<tr><td><b>CVE identifier</b></td><td>CVE-2014-0160</td></tr>
+<tr><td><b>Date discovered</b></td><td>1 April 2014 (privately); disclosed 7 April 2014</td></tr>
+<tr><td><b>Discoverer</b></td><td>Neel Mehta (Google); Codenomicon</td></tr>
+<tr><td><b>Affected software</b></td><td>OpenSSL 1.0.1 – 1.0.1f</td></tr>
+</table>
+</div>
+<p><b>Heartbleed</b> is a security bug in some outdated versions of the OpenSSL cryptography library, which is a widely used implementation of the Transport Layer Security (TLS) protocol. It was introduced into the software in 2012 and publicly disclosed in April 2014. Heartbleed could be exploited regardless of whether the vulnerable OpenSSL instance was running as a TLS server or client. It resulted from improper input validation in the implementation of the TLS heartbeat extension, hence the name.</p>
+<h2>Behaviour</h2>
+<p>The heartbeat extension allows a computer at one end of a connection to test whether the other end is still available by sending a known string of data and requiring a matching response. The flaw — a missing bounds check in OpenSSL's handling of heartbeat requests — allowed an attacker to request up to 64 kilobytes of the server's memory in a single query, potentially repeatedly, exposing passwords, session cookies and even the server's private encryption keys.</p>
+<h2>Impact and response</h2>
+<p>At the time of disclosure, roughly 17 percent of the Internet's secure web servers were believed vulnerable. Cloudflare famously challenged the security community to steal its private key via Heartbleed, and the challenge was quickly met, proving that private keys could indeed be extracted. Major websites forced password resets, and system administrators worldwide patched servers, revoked certificates and reissued keys. The bug also spurred new funding for open-source security projects and helped motivate the creation of forks and hardening efforts such as LibreSSL.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../OpenSSL/index.html">OpenSSL</a></li>
+<li><a href="../Transport_Layer_Security/index.html">Transport Layer Security</a></li>
+<li><a href="../Buffer_over-read/index.html">Buffer over-read</a></li>
+</ul>
+<p class="small">This page was recreated from memory as part of the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

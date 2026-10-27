@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HATEOAS - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 0 auto; padding: 20px; color: #202122; line-height: 1.6; background: #fff; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 8px; }
+.caption { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<h1>HATEOAS</h1>
+<div class="hero"><img src="images/hateoas.png" alt="Diagram of a client navigating an API through hypermedia links"><div class="caption">HATEOAS: clients discover available actions by following hypermedia links in responses.</div></div>
+<p><b>HATEOAS</b> (<b>Hypermedia as the Engine of Application State</b>) is a constraint of the REST application architecture. It specifies that a client interacts with a network application largely through hypermedia provided dynamically by the server: the client needs no prior knowledge of the API beyond an initial entry point and an understanding of the media types, because each response contains links describing the actions currently available.</p>
+<h2>Concept</h2>
+<p>The idea, set out in Roy Fielding's 2000 doctoral dissertation that defined REST, is analogous to the human web: a user starts at a home page and follows links that the server presents in context, rather than constructing addresses from out-of-band documentation. In an API, a response representing, for example, a bank account may include links to deposit, withdraw, or transfer operations only when those operations are valid for the account's current state — so application state transitions are driven by the hypermedia itself.</p>
+<h2>Implementation</h2>
+<p>HATEOAS is realised through media types that support links and forms, such as HAL, JSON-LD with Hydra, Siren, and Collection+JSON; HTML itself is a hypermedia format. Advocates argue the approach decouples clients from server URL structures and workflows, making APIs more evolvable. Critics note that many real-world "REST" APIs omit hypermedia entirely, that link-following clients can be harder to build, and that adoption in commercial APIs has remained limited compared with fixed, documented endpoint designs.</p>
+<h2>See also</h2>
+<p><a href="../REST/index.html">REST</a> · <a href="../Roy_Fielding/index.html">Roy Fielding</a> · <a href="../Hypermedia/index.html">Hypermedia</a> · <a href="../API/index.html">API</a></p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Elastic net regularization - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 30px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #3366cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 10px; margin: 10px 0; }
+.hero img { max-width: 100%; background: #eaecf0; min-height: 120px; }
+.caption { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Elastic net regularization</h1>
+<div class="hero"><img src="images/elastic-net.png" alt="Constraint regions for lasso, ridge and elastic net penalties"><div class="caption">Constraint regions: ridge (circle), lasso (diamond), and elastic net (rounded diamond)</div></div>
+<p>In statistics and machine learning, the <b>elastic net</b> is a regularized regression method that linearly combines the L<sub>1</sub> and L<sub>2</sub> penalties of the lasso and ridge methods. It was introduced by Hui Zou and Trevor Hastie in 2005.</p>
+<h2>Motivation</h2>
+<p>The lasso (L<sub>1</sub> penalty) performs variable selection by shrinking some coefficients exactly to zero, but it has drawbacks: it can select at most as many variables as there are observations, and among a group of highly correlated predictors it tends to pick one arbitrarily. Ridge regression (L<sub>2</sub> penalty) shrinks coefficients of correlated variables toward each other but performs no selection. The elastic net was designed to overcome these limitations: it encourages a grouping effect, selecting or discarding correlated predictors together, and can select more variables than there are observations.</p>
+<h2>Formulation</h2>
+<p>The elastic net estimator minimises the residual sum of squares plus a penalty λ[α‖β‖<sub>1</sub> + (1−α)‖β‖<sub>2</sub>²/2], where α ∈ [0, 1] controls the balance between the lasso and ridge penalties. Pure lasso corresponds to α = 1 and pure ridge to α = 0. The method is widely used for high-dimensional data such as genomic studies, and can be fitted efficiently with coordinate descent algorithms.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Lasso_(statistics)/index.html">Lasso (statistics)</a></li>
+<li><a href="../Ridge_regression/index.html">Ridge regression</a></li>
+<li><a href="../Regularization_(mathematics)/index.html">Regularization (mathematics)</a></li>
+<li><a href="../Least-angle_regression/index.html">Least-angle regression</a></li>
+</ul>
+</div>
+</body>
+</html>

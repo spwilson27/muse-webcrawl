@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Forward secrecy - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 60px; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 6px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.4em; font-weight: normal; }
+p { line-height: 1.6; margin: 0.6em 0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 18px 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; }
+.caption { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Forward secrecy</h1>
+<div class="hero"><img src="images/forward-secrecy.png" alt="Diagram of an ephemeral key exchange producing fresh session keys"></div>
+<p class="caption">Ephemeral key exchange ensures each session uses fresh keys that are discarded afterwards.</p>
+<p>In cryptography, <b>forward secrecy</b> (<b>FS</b>), also known as <b>perfect forward secrecy</b> (<b>PFS</b>), is a property of secure communication protocols in which compromise of long-term keys does not compromise past session keys. It protects past sessions against future compromises of keys or passwords: an attacker who records encrypted traffic and later obtains the server's private key cannot decrypt the recorded sessions.</p>
+<h2>How it works</h2>
+<p>Forward secrecy is typically achieved by generating a fresh, ephemeral key pair for each session using the Diffie–Hellman key exchange, and deleting the ephemeral private key when the session ends. Because the session key is never stored and cannot be recomputed from the long-term key alone, stealing the long-term key yields nothing about past sessions. The term was coined by Whitfield Diffie, Paul van Oorschot, and Michael Wiener in 1992.</p>
+<h2>Deployment</h2>
+<p>Early versions of TLS often used RSA key transport, in which the session key is encrypted under the server's long-term key and therefore lacks forward secrecy. Modern practice uses ephemeral Diffie–Hellman (DHE) or elliptic-curve ephemeral Diffie–Hellman (ECDHE) cipher suites. TLS 1.3, published in 2018, made forward secrecy mandatory by removing non-ephemeral key exchange. Forward secrecy is also central to secure messaging protocols such as the Signal Protocol, whose "double ratchet" additionally provides post-compromise security by continually updating keys during a session.</p>
+<h2>Limitations</h2>
+<p>Forward secrecy protects only past communications; it does not protect future sessions after a compromise, nor data stored at the endpoints. It also cannot help if an adversary compromises a device during a live session. Its main cost is modest additional computation and the loss of some passive network-inspection techniques used by enterprises.</p>
+<h2>See also</h2>
+<p><a href="../Diffie–Hellman_key_exchange/index.html">Diffie–Hellman key exchange</a> &middot; <a href="../Transport_Layer_Security/index.html">Transport Layer Security</a> &middot; <a href="../Signal_Protocol/index.html">Signal Protocol</a></p>
+</div>
+</body>
+</html>

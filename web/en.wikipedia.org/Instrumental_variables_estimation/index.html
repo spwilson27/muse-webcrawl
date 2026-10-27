@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Instrumental variables estimation - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #fff; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.2em; }
+p, li { font-family: sans-serif; font-size: 0.95em; line-height: 1.6; }
+.hero { width: 100%; max-width: 640px; background: #eaecf0; border: 1px solid #c8ccd1; text-align: center; padding: 1.2em 0; color: #54595d; font-family: sans-serif; font-size: 0.9em; margin: 1em auto; }
+a { color: #0645ad; text-decoration: none; }
+.math { font-family: 'Times New Roman', serif; font-style: italic; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Instrumental variables estimation</h1>
+<p>In statistics, econometrics, epidemiology and related disciplines, the method of <b>instrumental variables</b> (IV) is used to estimate causal relationships when controlled experiments are not feasible or when a treatment is not successfully delivered to every unit in a randomized experiment. Intuitively, IVs are used when an explanatory variable of interest is correlated with the error term of a regression, in which case ordinary least squares (OLS) and ANOVA give biased results. A valid instrument induces changes in the explanatory variable but has no independent effect on the dependent variable, allowing a researcher to identify the causal effect of the explanatory variable on the dependent variable.</p>
+<div class="hero"><img src="images/instrumental-variables-estimation.png" alt="Diagram of an instrumental variable: Z affects Y only through X">Image placeholder: Instrumental variable diagram</div>
+<h2>Definition</h2>
+<p>Consider a linear model <span class="math">y = Xβ + e</span>, where <span class="math">y</span> is a vector of outcomes, <span class="math">X</span> is a matrix of explanatory variables, <span class="math">β</span> is a vector of parameters to be estimated, and <span class="math">e</span> is a vector of errors. If some columns of <span class="math">X</span> are correlated with <span class="math">e</span> (endogeneity), OLS estimates of <span class="math">β</span> are inconsistent. An instrument is a variable <span class="math">z</span> satisfying two conditions:</p>
+<ul>
+<li><b>Relevance:</b> <span class="math">z</span> is correlated with the endogenous explanatory variables, conditional on the other covariates.</li>
+<li><b>Exogeneity (exclusion restriction):</b> <span class="math">z</span> is uncorrelated with the error term, i.e. it affects the outcome only through the explanatory variables.</li>
+</ul>
+<h2>Estimation</h2>
+<p>In the exactly identified case, with as many instruments as endogenous regressors, the IV estimator is <span class="math">β<sub>IV</sub> = (Z′X)<sup>−1</sup>Z′y</span>, where <span class="math">Z</span> is the matrix of instruments. When there are more instruments than endogenous variables, the most common estimator is two-stage least squares (2SLS): in the first stage, each endogenous variable is regressed on all instruments and exogenous covariates; in the second stage, the outcome is regressed on the fitted values from the first stage.</p>
+<h2>History</h2>
+<p>The method was first described in the 1928 appendix to Philip G. Wright's book <i>The Tariff on Animal and Vegetable Oils</i>, in the context of estimating supply and demand elasticities. It became a central tool of econometrics, and was later developed extensively for the estimation of local average treatment effects in the work of Joshua Angrist, Guido Imbens and Donald Rubin in the 1990s.</p>
+<h2>Interpretation and limitations</h2>
+<p>Under assumptions of exogeneity, relevance and monotonicity, IV estimates a local average treatment effect (LATE): the average causal effect for the subpopulation of "compliers" whose treatment status is changed by the instrument. Weak instruments — those only weakly correlated with the endogenous regressor — can produce badly biased estimates and invalid inference, a problem emphasized by Bound, Jaeger and Baker (1995) and subsequent literature.</p>
+<h2>Applications</h2>
+<p>Classic applications include the effect of schooling on earnings (using quarter of birth as an instrument), the effect of institutions on economic development, and Mendelian randomization in epidemiology, where genetic variants serve as instruments for modifiable exposures.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Canny edge detector - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{border:1px solid #c8ccd1;background:#f8f9fa;padding:12px;text-align:center;color:#54595d;margin:16px 0}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Canny edge detector</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="hero"><img src="images/canny-edge-detector.png" alt="Image before and after Canny edge detection"></div>
+<p>The <b>Canny edge detector</b> is an edge detection operator that uses a multi-stage algorithm to detect a wide range of edges in images. It was developed by John F. Canny in 1986. Canny also produced a computational theory of edge detection explaining why the technique works.</p>
+<h2>The algorithm</h2>
+<p>The Canny algorithm contains five stages:</p>
+<ol>
+<li><b>Noise reduction</b> — the image is smoothed with a <a href="../Gaussian_blur/index.html">Gaussian filter</a> to remove noise.</li>
+<li><b>Finding the intensity gradient</b> — the smoothed image is filtered with a Sobel kernel in both horizontal and vertical directions to obtain the first derivative, from which gradient magnitude and direction are computed.</li>
+<li><b>Non-maximum suppression</b> — pixels that are not local maxima along the gradient direction are suppressed, thinning the edges.</li>
+<li><b>Double threshold</b> — pixels are classified as strong, weak, or non-relevant based on two threshold values.</li>
+<li><b>Edge tracking by hysteresis</b> — weak pixels are kept only if connected to strong pixels.</li>
+</ol>
+<h2>Applications</h2>
+<p>The Canny detector is widely used in <a href="../Computer_vision/index.html">computer vision</a>, including medical imaging, object recognition, and autonomous vehicle systems. Implementations are included in libraries such as <a href="../OpenCV/index.html">OpenCV</a>.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Edge_detection/index.html">Edge detection</a></li>
+<li><a href="../Sobel_operator/index.html">Sobel operator</a></li>
+<li><a href="../Image_processing/index.html">Image processing</a></li>
+</ul>
+</div>
+</body>
+</html>

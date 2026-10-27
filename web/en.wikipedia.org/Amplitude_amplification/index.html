@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Amplitude amplification - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:52em;line-height:1.55;color:#202122;background:#fff}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+figure{float:right;margin:0 0 1em 1.5em;border:1px solid #c8ccd1;background:#f8f9fa;padding:.5em;text-align:center;font-size:.85em}
+figure img{max-width:260px;background:#eaecf0}
+.thumb{width:260px;height:150px;background:#eaecf0;display:flex;align-items:center;justify-content:center;color:#54595d}
+table{border-collapse:collapse;margin:1em 0}
+td,th{border:1px solid #a2a9b1;padding:.3em .6em}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Amplitude amplification</h1>
+<figure><div class="thumb"><img src="images/amplitude-amplification.png" alt="Amplitude amplification rotating a quantum state toward the target"></div><figcaption>Geometric view of amplitude amplification</figcaption></figure>
+<p><b>Amplitude amplification</b> is a technique in quantum computing that generalizes the idea behind <a href="../Grover's_algorithm/index.html">Grover's algorithm</a>. It allows the amplitude of desired ("good") components of a quantum state to be boosted, so that measuring the state yields a good outcome with high probability. Developed by Gilles Brassard, Peter Høyer, Michele Mosca, and Alain Tapp, it applies to any quantum algorithm that produces a desired result with some probability, increasing that probability quadratically faster than classical repetition.</p>
+<h2>Overview</h2>
+<p>Suppose a quantum procedure prepares a state that is a superposition of good and bad components, where the good component has squared amplitude (probability) <i>a</i>. Classically, repeating the procedure would need about 1/<i>a</i> trials to find a good outcome. Amplitude amplification achieves the same with on the order of 1/√<i>a</i> iterations, by alternately applying the preparation procedure (and its inverse) and reflections that mark the good states.</p>
+<h2>The algorithm</h2>
+<p>Each iteration applies an operator built from the algorithm and its inverse combined with reflections about the initial state and about the subspace of good states — analogous to the Grover iterate's rotation in the two-dimensional plane spanned by the good and bad components. After roughly π/(4θ) iterations, where sin²θ = <i>a</i>, the good amplitude is close to one. Variants known as amplitude estimation use related ideas to estimate the value of <i>a</i> itself, a subroutine used in quantum algorithms for Monte Carlo simulation and finance.</p>
+<h2>Applications</h2>
+<ul>
+<li><a href="../Grover's_algorithm/index.html">Grover's algorithm</a> for unstructured search</li>
+<li>Quantum counting and amplitude estimation</li>
+<li>Speeding up heuristic and randomized algorithms</li>
+</ul>
+<h2>See also</h2>
+<ul>
+<li><a href="../Quantum_computing/index.html">Quantum computing</a></li>
+<li><a href="../Amplitude/index.html">Amplitude</a></li>
+<li><a href="../Quantum_Fourier_transform/index.html">Quantum Fourier transform</a></li>
+</ul>
+<p class="small">Recreated from memory for the muse-webcrawl project.</p>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Content-based filtering</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: #eaecf0; border: 1px solid #c8ccd1; text-align: center; padding: 12px; margin: 16px 0; }
+.hero img { max-width: 100%; }
+.caption { font-size: 12px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Content-based filtering</h1>
+<div class="hero"><img src="images/content-based-filtering.png" alt="A diagram of a recommender system suggesting items similar to past choices"><div class="caption">Content-based filtering recommends items similar in features to those a user has liked.</div></div>
+<p><b>Content-based filtering</b> is a method used by recommender systems to suggest items to a user based on the features of items the user has previously liked, rather than on the behaviour of other users (as in collaborative filtering). A profile of the user's tastes is built from the attributes of items they have rated, bought, or viewed, and candidate items are scored by how closely their attributes match that profile.</p>
+<h2>Method</h2>
+<p>Items are represented by descriptors: keywords or TF-IDF vectors for text, metadata such as genre or artist for music and films, or learned embeddings in modern systems. The user profile is often formed by aggregating the representations of liked items, sometimes weighted by recency or rating strength. Recommendations are ranked by a similarity measure such as cosine similarity, or predicted by a classifier trained on the user's history. News and article recommenders, email spam filters (a related binary classification task), and music services that analyse audio features all use content-based techniques.</p>
+<h2>Advantages and limitations</h2>
+<p>Content-based methods can recommend brand-new items as soon as their features are known, and they do not need data about other users, which aids privacy and transparency, since recommendations can be explained by item features. Their weaknesses include a dependence on rich, accurate item descriptions; overspecialisation, in which the user is only ever offered more of what they already like (a "filter bubble"); and difficulty recommending to new users with no history, the cold-start problem. In practice most commercial systems are hybrids combining content-based and collaborative signals.</p>
+<h2>See also</h2>
+<p><a href="../Content_analysis/index.html">Content analysis</a> &middot; <a href="../Recommender_system/index.html">Recommender system</a></p>
+</div>
+</body>
+</html>

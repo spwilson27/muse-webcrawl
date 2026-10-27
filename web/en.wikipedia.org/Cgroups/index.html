@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>cgroups - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:52em;line-height:1.6;color:#222;background:#fff}
+h1{font-size:1.9em;border-bottom:1px solid #a7d7f9;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #ccc;padding-bottom:.15em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.thumb{float:right;margin:0 0 1em 1em;border:1px solid #ccc;background:#f8f9fa;padding:.5em;font-size:.85em;text-align:center}
+pre{background:#f8f9fa;border:1px solid #ccc;padding:.6em;overflow-x:auto}
+</style>
+</head>
+<body>
+<h1>cgroups</h1>
+<p><b>cgroups</b> (abbreviated from <b>control groups</b>) is a <a href="../Linux_kernel/index.html">Linux kernel</a> feature that limits, accounts for and isolates the resource usage (CPU, memory, disk I/O, network, etc.) of a collection of processes. It is a foundational technology behind <a href="../Operating-system-level_virtualization/index.html">containers</a> such as those managed by <a href="../Docker_(software)/index.html">Docker</a> and <a href="../Kubernetes/index.html">Kubernetes</a>.</p>
+<div class="thumb"><img src="images/cgroups.png" alt="Diagram of the cgroup hierarchy with resource controllers"><br>The cgroup v2 unified hierarchy</div>
+<h2>History</h2>
+<p>Engineers at Google, principally Paul Menage and Rohit Seth, began work on the feature in 2006 under the name "process containers"; it was merged into the Linux kernel in version 2.6.24 (2008) and renamed cgroups. A major redesign, cgroup v2, introduced a single unified hierarchy and was declared stable with kernel 4.5 in 2016.</p>
+<h2>Features</h2>
+<p>Resource controllers ("subsystems") manage individual resources: the cpu controller throttles or weights processor time, the memory controller limits RAM use and can trigger <a href="../Out_of_memory/index.html">out-of-memory</a> handling per group, and io, pids, cpuset and devices controllers manage their respective resources. Processes are assigned to cgroups through a pseudo-filesystem interface, typically managed by <a href="../Systemd/index.html">systemd</a> or container runtimes. Unlike virtual machines, cgroups provide isolation and limits without a separate kernel, and are combined with <a href="../Linux_namespaces/index.html">namespaces</a> to build containers.</p>
+<p><i>See also: <a href="../LXC/index.html">LXC</a>, <a href="../Operating-system-level_virtualization/index.html">OS-level virtualization</a></i></p>
+</body>
+</html>

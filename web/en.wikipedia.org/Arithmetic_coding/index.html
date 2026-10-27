@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Arithmetic coding - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 960px; padding: 0 1em; color: #202122; line-height: 1.6; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em; margin: 0 0 1em 1em; width: 260px; font-size: 90%; }
+img.hero { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Arithmetic coding</h1>
+<div class="infobox"><img class="hero" src="images/arithmetic-coding.png" alt="Diagram showing interval subdivision in arithmetic coding"></div>
+<p><b>Arithmetic coding</b> (AC) is a form of entropy encoding used in lossless data compression. Unlike Huffman coding, which assigns an integer-length code to each symbol, arithmetic coding encodes an entire message as a single number — a fraction in the interval [0, 1) — allowing it to approach the theoretical entropy limit more closely, especially for symbols with probabilities that are not powers of two.</p>
+<h2>Principle</h2>
+<p>The encoder begins with the interval [0, 1) and, for each symbol of the message, subdivides the current interval into subintervals proportional to the estimated probability of each possible symbol, selecting the subinterval corresponding to the actual symbol. As more symbols are processed, the interval shrinks; any number within the final interval uniquely represents the message, and the decoder can reconstruct it by tracking the same subdivisions. Practical implementations use finite-precision integer arithmetic with renormalisation.</p>
+<h2>Applications</h2>
+<p>Arithmetic coding and its variants are used in modern compression standards, including the context-based adaptive binary arithmetic coding (CABAC) of the H.264/AVC and HEVC video standards, and in image formats such as JPEG 2000 and JBIG2. Historically, patent issues surrounding arithmetic coding encouraged the development of alternatives such as range coding and asymmetric numeral systems.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Entropy_encoding/index.html">Entropy encoding</a></li>
+<li><a href="../Huffman_coding/index.html">Huffman coding</a></li>
+<li><a href="../Data_compression/index.html">Data compression</a></li>
+<li><a href="../Context-adaptive_binary_arithmetic_coding/index.html">CABAC</a></li>
+</ul>
+</body>
+</html>

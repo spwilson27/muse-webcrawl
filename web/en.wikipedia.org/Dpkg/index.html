@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>dpkg - Wikipedia</title>
+<style>
+body { font-family: sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 10px 15px; width: 250px; font-size: 0.9em; }
+.infobox th { text-align: left; }
+figure { text-align: center; }
+img { max-width: 100%; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 1px 4px; }
+</style>
+</head>
+<body>
+<h1>dpkg</h1>
+<figure>
+<img src="images/dpkg.png" alt="Terminal window showing dpkg package operations">
+<figcaption>dpkg is the low-level package manager for Debian-based systems.</figcaption>
+</figure>
+<table class="infobox">
+<tr><th>Developer</th><td>Debian project</td></tr>
+<tr><th>Initial release</th><td>1994</td></tr>
+<tr><th>Operating system</th><td>Unix-like</td></tr>
+<tr><th>License</th><td>GPL</td></tr>
+</table>
+<p><b>dpkg</b> is the software at the base of the <a href="../Debian/index.html">Debian</a> package management system. It is used to install, remove, and provide information about <code>.deb</code> packages. dpkg itself is a low-level tool; front-ends such as <a href="../Advanced_Packaging_Tool/index.html">APT</a> are normally used to fetch packages from remote repositories and resolve dependencies, while dpkg performs the actual installation.</p>
+<p>dpkg was originally written by Ian Murdock and others in the early 1990s as part of the Debian project. It maintains a database of installed packages in <code>/var/lib/dpkg</code>, including each package's status, file list, and maintainer scripts.</p>
+<h2>Usage</h2>
+<p>Common dpkg commands include:</p>
+<ul>
+<li><code>dpkg -i package.deb</code> — install a package file</li>
+<li><code>dpkg -r package</code> — remove a package (keeping configuration files)</li>
+<li><code>dpkg -P package</code> — purge a package, including configuration files</li>
+<li><code>dpkg -l</code> — list installed packages</li>
+<li><code>dpkg -s package</code> — show the status of a package</li>
+<li><code>dpkg -L package</code> — list the files installed by a package</li>
+</ul>
+<p>dpkg runs maintainer scripts at various stages of installation and removal: <code>preinst</code>, <code>postinst</code>, <code>prerm</code>, and <code>postrm</code>. These scripts allow packages to perform setup tasks such as creating users, restarting services, or updating caches.</p>
+<h2>Package format</h2>
+<p>A <code>.deb</code> file is an ar archive containing a <code>debian-binary</code> file, a control archive with package metadata, and a data archive with the files to be installed. dpkg verifies package integrity and handles conffile prompts when a modified configuration file would be overwritten.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Debian/index.html">Debian</a></li>
+<li><a href="../Advanced_Packaging_Tool/index.html">Advanced Packaging Tool</a></li>
+<li><a href="../RPM_Package_Manager/index.html">RPM Package Manager</a></li>
+</ul>
+</body>
+</html>

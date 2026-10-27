@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Collision detection - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; color: #202122; background: #fff; }
+header { background: #f8f9fa; border-bottom: 1px solid #a2a9b1; padding: 10px 20px; }
+header .site { font-family: sans-serif; font-size: 13px; color: #54595d; }
+main { max-width: 960px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 20px; border-bottom: 1px solid #eaecf0; padding-bottom: 3px; font-weight: normal; }
+img.hero { display: block; max-width: 320px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 6px; margin: 0 0 12px 16px; float: right; font-family: sans-serif; font-size: 12px; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+footer { border-top: 1px solid #a2a9b1; padding: 12px 20px; font-family: sans-serif; font-size: 12px; color: #54595d; }
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia, the free encyclopedia</span></header>
+<main>
+<h1>Collision detection</h1>
+<img class="hero" src="images/collision-detection.png" alt="Bounding volumes around two objects intersecting in a simulated scene">
+<p><b>Collision detection</b> is the computational problem of detecting the intersection of two or more objects. It is a central component of physics engines, video games, computer animation, robotics and engineering simulation, where the system must determine when objects touch so that a collision response can be computed.</p>
+<h2>Phases</h2>
+<p>Collision detection is usually divided into a <b>broad phase</b>, which quickly eliminates pairs of objects that cannot possibly collide using spatial partitioning (such as grids, octrees or bounding volume hierarchies) and bounding volumes (spheres, axis-aligned or oriented boxes), and a <b>narrow phase</b>, which performs exact intersection tests on the remaining candidate pairs using the objects' actual geometry, for example triangle meshes. Algorithms such as GJK compute the distance between convex shapes and detect their intersection.</p>
+<h2>Issues</h2>
+<p>Discrete collision detection samples positions at each time step and can suffer from "tunnelling", where a fast-moving object passes through a thin obstacle between samples; continuous collision detection addresses this by computing the time of impact along objects' trajectories. Performance and numerical robustness are major practical concerns, and implementations often exploit temporal coherence — the fact that object positions change little between frames.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Physics_engine/index.html">Physics engine</a></li>
+<li><a href="../Bounding_volume/index.html">Bounding volume</a></li>
+<li><a href="../Collision_domain/index.html">Collision domain</a></li>
+</ul>
+</main>
+<footer>This page was recreated from memory as part of the muse-webcrawl project.</footer>
+</body>
+</html>

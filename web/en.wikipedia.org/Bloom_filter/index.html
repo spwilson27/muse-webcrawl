@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bloom filter - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:760px;color:#202122;line-height:1.6}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:0.2em}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;padding-bottom:0.15em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{background:#f8f9fa;border:1px solid #c8ccd1;padding:1em;text-align:center;color:#54595d;margin:1em 0}
+</style>
+</head>
+<body>
+<h1>Bloom filter</h1>
+<div class="hero"><img src="images/bloom-filter.png" alt="Diagram of a Bloom filter with three hash functions setting bits in an array"></div>
+<p>A <b>Bloom filter</b> is a space-efficient probabilistic data structure, conceived by Burton Howard Bloom in 1970, that is used to test whether an element is a member of a set. It can report false positives — saying an element is in the set when it is not — but never false negatives. Elements can be added to the set, but removing elements is not possible with the basic form of the structure (counting Bloom filters address this).</p>
+<h2>Algorithm</h2>
+<p>A Bloom filter consists of a bit array of <i>m</i> bits, initially all zero, and <i>k</i> different hash functions, each mapping an element to one of the <i>m</i> positions. To add an element, it is fed to each hash function and the bits at the resulting positions are set to 1. To query an element, its positions are checked: if any is 0, the element is definitely not in the set; if all are 1, the element is probably in the set.</p>
+<h2>Applications</h2>
+<p>Bloom filters are used wherever a compact, approximate membership test saves expensive work: database systems use them to avoid disk lookups for non-existent rows, web browsers have used them to flag malicious URLs, and distributed systems such as Apache Cassandra and Bitcoin (for simplified payment verification) employ them to reduce I/O and network traffic.</p>
+<h2>See also</h2>
+<p><a href="../Hash_function/index.html">Hash function</a> · <a href="../Cuckoo_filter/index.html">Cuckoo filter</a> · <a href="../Count–min_sketch/index.html">Count–min sketch</a> · <a href="../HyperLogLog/index.html">HyperLogLog</a></p>
+</body>
+</html>

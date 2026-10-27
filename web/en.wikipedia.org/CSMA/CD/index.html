@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CSMA/CD - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 16px 24px 48px; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: #f8f9fa; border: 1px solid #c8ccd1; padding: 12px; text-align: center; color: #72777d; margin: 12px 0; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>CSMA/CD</h1>
+<p><b>Carrier-sense multiple access with collision detection</b> (<b>CSMA/CD</b>) is a medium access control method used most notably in early <a href="../../Ethernet/index.html">Ethernet</a> technology for local area networking. It uses carrier-sensing to defer transmissions until no other station is transmitting, and detects collisions when they nevertheless occur so that frames can be retransmitted after a randomized delay.</p>
+<div class="hero"><img src="images/CSMA_CD.png" alt="Diagram of two stations colliding on a shared Ethernet segment"></div>
+<h2>Procedure</h2>
+<p>A station wishing to transmit first listens to the medium. If the medium is idle, it begins transmitting while continuing to monitor the signal. If it detects that another station has also started transmitting, producing a collision, it sends a short jam signal to ensure all stations recognize the collision, stops, and waits for a random backoff period computed by the truncated binary exponential backoff algorithm before trying again. After 16 failed attempts the frame is discarded.</p>
+<h2>Decline</h2>
+<p>CSMA/CD only works on shared, half-duplex media such as coaxial Ethernet segments and hub-based networks. With the move to switched, full-duplex Ethernet, collisions became impossible on point-to-point links and CSMA/CD fell out of use; it is not used at gigabit speeds and above in practice, and Ethernet standards from 10 Gigabit onward are full-duplex only. Related protocols include CSMA/CA, used in Wi-Fi, which avoids collisions rather than detecting them because wireless radios generally cannot listen while transmitting.</p>
+<p><i>See also: <a href="../../Ethernet/index.html">Ethernet</a>, <a href="../../CSMA/CA/index.html">CSMA/CA</a>, <a href="../../ALOHAnet/index.html">ALOHAnet</a></i></p>
+</div>
+</body>
+</html>

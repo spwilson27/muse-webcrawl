@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>BB84 - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:12px 24px}
+header h1{margin:0;font-size:1.6em;font-weight:normal}
+main{max-width:960px;margin:0 auto;padding:16px 24px}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+.hero{border:1px solid #c8ccd1;background:#f8f9fa;padding:8px;text-align:center;margin:12px 0}
+.hero img{max-width:100%;height:auto;background:#eaecf0}
+footer{border-top:1px solid #a2a9b1;padding:12px 24px;font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<header><h1>BB84</h1></header>
+<main>
+<div class="hero"><img src="images/bb84.png" alt="Diagram of photon polarisation bases used in the BB84 protocol"></div>
+<p><b>BB84</b> is a <a href="../Quantum_key_distribution/index.html">quantum key distribution</a> protocol developed by <a href="../Charles_Bennett_(physicist)/index.html">Charles Bennett</a> and <a href="../Gilles_Brassard/index.html">Gilles Brassard</a> in 1984. It was the first quantum cryptography protocol, and is provably secure against eavesdropping when implemented with an authenticated classical channel.</p>
+<h2>Protocol</h2>
+<p>In BB84, the sender (Alice) prepares qubits — typically photons — each randomly encoded in one of two conjugate bases (rectilinear or diagonal polarisation), representing bits 0 and 1. The receiver (Bob) measures each incoming qubit in a randomly chosen basis. Afterwards, Alice and Bob publicly compare the bases they used for each position, discarding the results where their bases disagreed; the remaining matching bits form the sifted key.</p>
+<h2>Security</h2>
+<p>The security of BB84 rests on the no-cloning theorem and the fact that measuring a qubit in the wrong basis disturbs its state. Any eavesdropper (Eve) who intercepts and resends the qubits inevitably introduces errors, which Alice and Bob can detect by sacrificing a random sample of their sifted key and comparing it. If the error rate is below a threshold, they apply error correction and privacy amplification to obtain a shorter, secret key; otherwise they abort.</p>
+<h2>Legacy</h2>
+<p>BB84 inspired a family of related protocols, including the six-state protocol and decoy-state methods, and remains the reference design for practical quantum key distribution systems.</p>
+</main>
+<footer>Recreated from memory as part of the muse-webcrawl project.</footer>
+</body>
+</html>

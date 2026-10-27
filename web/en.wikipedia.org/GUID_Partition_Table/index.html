@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GUID Partition Table - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 860px; margin: 0 auto; padding: 24px 20px 48px; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 6px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p { line-height: 1.6; margin: 10px 0; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; }
+.caption { font-size: 0.85em; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul { line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>GUID Partition Table</h1>
+<div class="hero"><img src="images/gpt-layout.png" alt="Diagram of the GUID Partition Table disk layout"><div class="caption">Layout of a GPT disk, with LBA 0 holding the protective MBR</div></div>
+<p>The <b>GUID Partition Table</b> (<b>GPT</b>) is a standard for the layout of partition tables of a physical computer storage device, such as a hard disk drive or solid-state drive, using universally unique identifiers (UUIDs, also known as globally unique identifiers, GUIDs). It forms part of the Unified Extensible Firmware Interface (UEFI) standard and replaced the Master Boot Record (MBR) partitioning scheme that dated from the early 1980s.</p>
+<h2>Features</h2>
+<p>GPT uses 64-bit logical block addressing, allowing disks far larger than MBR's 2.2 terabyte limit (with 512-byte sectors); the theoretical maximum is 8 zebibytes. A GPT disk by default supports up to 128 partitions in Windows (the table has room for 128 entries), instead of MBR's four primary partitions. Every partition has its own unique GUID and a partition-type GUID, and names of up to 36 Unicode characters are supported.</p>
+<h2>Structure and integrity</h2>
+<p>Logical block 0 contains a "protective MBR" so that legacy tools see a valid, disk-spanning partition and do not overwrite the GPT structures. The primary partition table header and entries sit at the start of the disk, and a backup header and table are stored at the end, providing redundancy. CRC32 checksums protect the header and the partition table, allowing firmware and operating systems to detect corruption and recover from the backup copy.</p>
+<h2>Adoption</h2>
+<p>GPT is required for booting in UEFI mode on most modern systems and is the default partitioning scheme for new installations of Windows, macOS (which adopted it with the move to Intel processors), and Linux distributions.</p>
+</div>
+</body>
+</html>

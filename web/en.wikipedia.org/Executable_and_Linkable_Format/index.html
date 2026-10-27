@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Executable and Linkable Format - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #fff; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; padding: 16px 24px 48px; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: #f8f9fa; border: 1px solid #c8ccd1; padding: 12px; text-align: center; margin: 16px 0; color: #54595d; }
+.small { font-size: 0.85em; color: #54595d; }
+code { background: #f8f9fa; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Executable and Linkable Format</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="hero"><img src="images/Executable_and_Linkable_Format.png" alt="Diagram of the layout of an ELF file"></div>
+<p>The <b>Executable and Linkable Format</b> (<b>ELF</b>, formerly named Extensible Linking Format) is a common standard file format for executable files, object code, shared libraries, and core dumps. It was developed by Unix System Laboratories as part of the Application Binary Interface for Unix System V, and was first published in the late 1980s. ELF has since become the standard binary format on most Unix and Unix-like operating systems, including Linux and the modern BSDs, displacing the older a.out and COFF formats.</p>
+<h2>Structure</h2>
+<p>An ELF file begins with an ELF header, identified by the magic number <code>0x7F</code> followed by the ASCII letters <code>E</code>, <code>L</code>, <code>F</code>. The header records, among other things, whether the file uses 32-bit or 64-bit addressing, its byte order (endianness), the target instruction set architecture, and the file type: relocatable object, executable, shared object, or core dump. Following the header are a program header table, describing segments used by the loader at run time, and a section header table, describing sections used by the linker and debugger.</p>
+<p>The two views of the file are complementary: the linker works with sections such as <code>.text</code> (code), <code>.data</code> (initialized data), <code>.bss</code> (uninitialized data), and symbol tables, while the operating system's program loader works with loadable segments. Tools such as <code>readelf</code> and <code>objdump</code> are used to inspect ELF files.</p>
+<h2>Adoption</h2>
+<p>ELF is used not only for user programs on Linux and BSD systems but also for their kernels, and it is the object format of the GNU toolchain. Many game consoles, embedded systems, and mobile devices also use ELF. Windows, by contrast, uses the Portable Executable (PE) format, and macOS uses Mach-O.</p>
+<h2>See also</h2>
+<p><a href="../Object_file/index.html">Object file</a> &middot; <a href="../Portable_Executable/index.html">Portable Executable</a> &middot; <a href="../Mach-O/index.html">Mach-O</a> &middot; <a href="../Linker_(computing)/index.html">Linker</a> &middot; <a href="../Application_binary_interface/index.html">Application binary interface</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>BGP hijacking - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:12px 24px}
+header h1{margin:0;font-size:1.6em;font-weight:normal}
+main{max-width:960px;margin:0 auto;padding:16px 24px}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+.hero{border:1px solid #c8ccd1;background:#f8f9fa;padding:8px;text-align:center;margin:12px 0}
+.hero img{max-width:100%;height:auto;background:#eaecf0}
+footer{border-top:1px solid #a2a9b1;padding:12px 24px;font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<header><h1>BGP hijacking</h1></header>
+<main>
+<div class="hero"><img src="images/bgp-hijacking.png" alt="Diagram showing internet traffic diverted through a rogue autonomous system"></div>
+<p><b>BGP hijacking</b> is the illegitimate takeover of groups of IP addresses by corrupting the Internet's global routing tables maintained through the <a href="../Border_Gateway_Protocol/index.html">Border Gateway Protocol</a> (BGP). Because BGP was designed on the assumption that networks announce routes honestly, an autonomous system that announces prefixes it does not own can cause traffic for those prefixes to be routed to itself.</p>
+<h2>Mechanism</h2>
+<p>Routers prefer the most specific matching prefix and, among equal prefixes, often the apparently shortest path. An attacker — or a misconfigured router — that originates a victim's prefix, or a more specific sub-prefix of it, can therefore attract some or all of the traffic destined for that prefix. Depending on what the hijacker does with the traffic, the result may be a black hole (an outage), interception and surveillance, or impersonation of services.</p>
+<h2>Notable incidents</h2>
+<p>In 2008, Pakistan Telecom, acting on a government order to block YouTube domestically, announced a more specific route for YouTube's addresses that propagated worldwide and took the site offline for much of the Internet. Other widely reported incidents have involved large-scale route leaks and the redirection of traffic through unexpected countries.</p>
+<h2>Defences</h2>
+<p>Proposed and deployed defences include prefix filtering by providers, the Resource Public Key Infrastructure (RPKI), which lets address holders cryptographically authorise which networks may originate their prefixes, and route origin validation by receiving networks.</p>
+</main>
+<footer>Recreated from memory as part of the muse-webcrawl project.</footer>
+</body>
+</html>

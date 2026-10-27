@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GDScript - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 860px; margin: 0 auto; padding: 24px 20px 48px; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 6px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p { line-height: 1.6; margin: 10px 0; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; }
+.caption { font-size: 0.85em; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul { line-height: 1.6; }
+pre { background: #f8f9fa; border: 1px solid #c8ccd1; padding: 10px 14px; overflow-x: auto; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>GDScript</h1>
+<div class="hero"><img src="images/gdscript.png" alt="GDScript code in the Godot editor"><div class="caption">GDScript source code in the Godot Engine editor</div></div>
+<p><b>GDScript</b> is a high-level, object-oriented, imperative, and gradually typed programming language built for the Godot game engine. Its syntax is deliberately similar to Python, using indentation to delimit blocks, and it is designed to integrate tightly with Godot's scene and node architecture.</p>
+<h2>Features</h2>
+<p>GDScript scripts are attached to nodes in a Godot scene tree. The language provides first-class support for engine concepts such as signals (an implementation of the observer pattern), groups, and scene instancing. It supports both dynamic typing and optional static typing with type hints, which can improve performance and editor error-checking. Since Godot 4.0, GDScript has included features such as lambdas, typed arrays, await for coroutines, and improved pattern matching.</p>
+<pre>extends CharacterBody2D
+
+const SPEED := 300.0
+
+func _physics_process(delta):
+    var direction := Input.get_axis("move_left", "move_right")
+    velocity.x = direction * SPEED
+    move_and_slide()</pre>
+<h2>History</h2>
+<p>Godot's lead developer Juan Linietsky created GDScript because integrating existing scripting languages such as Lua or Python with the engine's object model proved awkward, and a custom language promised a smaller footprint and better optimisation for the engine's needs. GDScript first appeared with Godot's open-source release in 2014 and was substantially rewritten for Godot 4.0 (2023), which added a new bytecode interpreter with significant performance improvements.</p>
+<h2>Use</h2>
+<p>GDScript is the most widely used language for Godot development, popular for 2D and 3D indie games, prototypes, and game jams. Alternatives within Godot include C#, C++, and visual scripting (removed in Godot 4).</p>
+</div>
+</body>
+</html>

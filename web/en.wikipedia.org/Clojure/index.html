@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Clojure - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; padding: 0 1em 2em; color: #202122; background: #fff; }
+h1 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px; text-align: center; font-size: 0.9em; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 8px; overflow-x: auto; }
+table.infobox { border: 1px solid #a2a9b1; background: #f8f9fa; float: right; margin: 0 0 1em 1em; font-size: 0.9em; border-collapse: collapse; }
+table.infobox td, table.infobox th { border: 1px solid #a2a9b1; padding: 4px 8px; }
+</style>
+</head>
+<body>
+<h1>Clojure</h1>
+<p><b>Clojure</b> (pronounced like <i>closure</i>) is a dynamic and functional dialect of the <a href="../Lisp_(programming_language)/index.html">Lisp</a> programming language on the <a href="../Java_virtual_machine/index.html">Java platform</a>. Created by Rich Hickey and first released in 2007, it was designed as a general-purpose language combining the interactivity of a scripting language with an efficient approach to concurrent programming, largely through an emphasis on immutable data structures.</p>
+<div class="hero"><img src="images/clojure.png" alt="Clojure code in a REPL, showing Lisp-style parenthesised expressions"></div>
+<h2>Design</h2>
+<p>Like other Lisps, Clojure treats code as data (homoiconicity) and has a powerful macro system. Unlike many Lisps, it discourages extensive mutable state: core data structures — lists, vectors, sets and maps — are persistent and immutable, and shared state is managed through explicit references with software transactional memory, atoms and agents. Functions are first-class, laziness is supported in sequences, and recursion is handled through the explicit <i>loop/recur</i> construct in the absence of tail-call optimisation in the JVM. Clojure compiles to JVM bytecode and interoperates directly with Java libraries.</p>
+<pre>(defn fib [n]
+  (loop [a 0 b 1 i n]
+    (if (zero? i) a (recur b (+ a b) (dec i)))))</pre>
+<h2>Ecosystem</h2>
+<p><b>ClojureScript</b> compiles Clojure to JavaScript for browser and Node.js applications. The language is maintained under the stewardship of Cognitect (later part of Nubank), with Hickey as benevolent dictator for life, and it is used commercially in domains such as finance, retail and data processing. Development is centred on REPL-driven, interactive programming.</p>
+<p>See also: <a href="../Lisp_(programming_language)/index.html">Lisp</a>, <a href="../Functional_programming/index.html">Functional programming</a>, <a href="../Java_virtual_machine/index.html">Java virtual machine</a>.</p>
+</body>
+</html>

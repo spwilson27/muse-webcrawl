@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Consistency model - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:52em;padding:0 1em;color:#202122;line-height:1.6}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:.5em;text-align:center;color:#54595d;font-size:.9em;margin:1em 0}
+</style>
+</head>
+<body>
+<h1>Consistency model</h1>
+<div class="thumb"><img src="images/consistency-model.png" alt="Spectrum diagram from strong to weak consistency models"></div>
+<p>A <b>consistency model</b> is a contract between a distributed (or shared-memory) system and the programs that use it, specifying which histories of reads and writes are allowed — in particular, what value a read may return given the writes that preceded it. Consistency models are a central topic in distributed computing and computer architecture, where data may be replicated across many nodes or cached in many processors.</p>
+<h2>Strong and weak models</h2>
+<p>The strongest familiar model is <b>linearizability</b> (strict consistency), in which every operation appears to take effect instantaneously at some point between its invocation and completion, so all processes observe a single global order. <b>Sequential consistency</b>, defined by Leslie Lamport in 1979, requires only that operations appear in a single order consistent with each process's program order. Weaker models relax ordering further for performance: causal consistency preserves the order of causally related operations; processor consistency, release consistency, and eventual consistency allow still more reordering or delay.</p>
+<h2>Trade-offs</h2>
+<p>Weaker models permit higher availability, lower latency, and better scalability, but are harder to program against. The CAP theorem formalizes part of this tension: in the presence of a network partition, a system must choose between consistency and availability. Real systems — from multiprocessor memory hierarchies to cloud databases — expose tunable consistency, advertising models such as strong, bounded-staleness, session, consistent-prefix, and eventual consistency. The related concept in databases is captured by transaction isolation levels and the ACID properties.</p>
+<p>See also: <a href="../Linearizability/index.html">Linearizability</a>, <a href="../Sequential_consistency/index.html">Sequential consistency</a>, <a href="../Eventual_consistency/index.html">Eventual consistency</a>, <a href="../CAP_theorem/index.html">CAP theorem</a>.</p>
+</body>
+</html>

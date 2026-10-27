@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>High-Level Shader Language - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; padding: 0 1.5em; background: #fff; color: #202122; line-height: 1.6; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em; margin: 0 0 1em 1em; font-size: 90%; width: 22em; }
+figure { text-align: center; margin: 1em auto; }
+figcaption { font-size: 85%; color: #54595d; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 1em; overflow-x: auto; }
+</style>
+</head>
+<body>
+<h1>High-Level Shader Language</h1>
+<p>The <b>High-Level Shader Language</b> or <b>High-Level Shading Language</b> (<b>HLSL</b>) is a proprietary shading language developed by Microsoft for use with the Microsoft Direct3D API to create shaders. It is analogous to the GLSL shading language used with the OpenGL standard. HLSL was first introduced with Direct3D 9 in 2002, allowing developers to write programmable vertex and pixel shaders in a C-like syntax rather than assembly language.</p>
+<figure>
+<img src="images/High-Level_Shader_Language.png" alt="Example HLSL shader code">
+<figcaption>An example of an HLSL pixel shader.</figcaption>
+</figure>
+<h2>Overview</h2>
+<p>HLSL programs come in several forms: vertex shaders, geometry shaders, pixel (fragment) shaders, compute shaders, and — with Direct3D 11 and later — tessellation stages (hull and domain shaders). The language includes scalar and vector types (such as <code>float4</code>), matrices, structures, semantics that bind shader inputs and outputs to pipeline stages, and intrinsic functions for common graphics operations.</p>
+<pre>
+float4 main(float4 color : COLOR) : SV_Target
+{
+    return color;
+}
+</pre>
+<p>HLSL shaders were originally compiled offline or at runtime using Microsoft's D3DCompile API. In 2017 Microsoft released the DirectX Shader Compiler (DXC), based on LLVM/Clang, which compiles HLSL to DXIL (DirectX Intermediate Language) and supports Shader Model 6 and later, adding features such as wave intrinsics and support for ray tracing shaders. HLSL can also be cross-compiled to SPIR-V for use with Vulkan.</p>
+<h2>Comparison with GLSL</h2>
+<p>HLSL and GLSL are similar in purpose and syntax, both being C-like languages for GPU programming. Differences include how matrices are stored by default (row-major in HLSL, column-major in GLSL), the use of semantics instead of layout qualifiers for input/output binding, and differences in texture sampling functions and coordinate conventions.</p>
+<h2>See also</h2>
+<ul>
+<li>Shader</li>
+<li>Direct3D</li>
+<li>GLSL</li>
+<li>Cg (programming language)</li>
+</ul>
+</body>
+</html>

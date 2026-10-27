@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ChaCha (cipher) - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:52em;line-height:1.6;color:#222;background:#fff}
+h1{font-size:1.9em;border-bottom:1px solid #a7d7f9;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #ccc;padding-bottom:.15em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.thumb{float:right;margin:0 0 1em 1em;border:1px solid #ccc;background:#f8f9fa;padding:.5em;font-size:.85em;text-align:center}
+</style>
+</head>
+<body>
+<h1>ChaCha (cipher)</h1>
+<p><b>ChaCha</b> is a family of <a href="../Stream_cipher/index.html">stream ciphers</a> designed by Daniel J. Bernstein in 2008, developed from his earlier <a href="../Salsa20/index.html">Salsa20</a> cipher. The most common variant, ChaCha20, uses 20 rounds of operations on a 512-bit state and is widely deployed in Internet protocols.</p>
+<div class="thumb"><img src="images/chacha_cipher.png" alt="Diagram of the ChaCha quarter-round operation"><br>The ChaCha quarter-round</div>
+<h2>Design</h2>
+<p>ChaCha arranges its state as a 4×4 matrix of 32-bit words containing constants, a 256-bit key, a counter and a nonce. Its quarter-round function uses only additions, XORs and rotations (an ARX design), which makes it fast in software and resistant to timing side channels. ChaCha20 generates keystream blocks by adding the transformed state to the original input state.</p>
+<h2>Adoption</h2>
+<p>The <a href="../ChaCha20-Poly1305/index.html">ChaCha20-Poly1305</a> authenticated encryption construction is standardised in RFC 8439 and is one of only two cipher suites required in <a href="../TLS_1.3/index.html">TLS 1.3</a>. It is used by Google services, the WireGuard VPN protocol, OpenSSH, and as the basis of the keystream in several operating-system random number generators.</p>
+<p><i>See also: <a href="../Salsa20/index.html">Salsa20</a>, <a href="../Authenticated_encryption/index.html">Authenticated encryption</a></i></p>
+</body>
+</html>

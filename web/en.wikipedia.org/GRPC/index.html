@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>gRPC - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 860px; margin: 0 auto; padding: 24px 20px 48px; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 6px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p { line-height: 1.6; margin: 10px 0; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; }
+.caption { font-size: 0.85em; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul { line-height: 1.6; }
+pre { background: #f8f9fa; border: 1px solid #c8ccd1; padding: 10px 14px; overflow-x: auto; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>gRPC</h1>
+<div class="hero"><img src="images/grpc.png" alt="gRPC logo"><div class="caption">gRPC is an open-source remote procedure call framework</div></div>
+<p><b>gRPC</b> is an open-source high-performance remote procedure call (RPC) framework developed by Google. It can run in any environment and supports load balancing, tracing, health checking, and authentication. It is commonly used to connect services in microservices architectures and to link mobile and browser clients to backend services.</p>
+<h2>Design</h2>
+<p>Services and messages in gRPC are defined in an interface description language using Protocol Buffers (protobuf) as the default serialisation format. From a .proto definition, the Protocol Buffer compiler generates client stubs and server skeletons in languages including C++, Java, Python, Go, C#, Ruby, PHP, and Dart:</p>
+<pre>service Greeter {
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+message HelloRequest { string name = 1; }
+message HelloReply { string message = 1; }</pre>
+<p>Transport is based on HTTP/2, which gives multiplexed streams over a single connection, header compression, and flow control. gRPC supports four kinds of service method: simple unary calls, server streaming, client streaming, and bidirectional streaming.</p>
+<h2>History and adoption</h2>
+<p>gRPC grew out of Google's internal RPC system, Stubby, and was announced as open source in 2015; version 1.0 was released in August 2016. The project is now governed by the Cloud Native Computing Foundation (CNCF). It has been adopted by organisations such as Netflix, Cisco, and Square for internal and public APIs. Limitations include comparatively weak browser support (addressed by the separate gRPC-Web specification) and reduced human readability of its binary wire format compared with text-based REST/JSON APIs.</p>
+</div>
+</body>
+</html>

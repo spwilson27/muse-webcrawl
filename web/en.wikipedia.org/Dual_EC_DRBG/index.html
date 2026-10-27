@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dual EC DRBG - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:800px;line-height:1.6;color:#222}
+h1{border-bottom:1px solid #a2a9b1;font-size:1.8em}
+h2{border-bottom:1px solid #a2a9b1;font-size:1.3em;margin-top:1.4em}
+img.hero{display:block;background:#f8f9fa;border:1px solid #a2a9b1;padding:1em;width:300px;height:180px;text-align:center}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<img class="hero" src="images/dual-ec-drbg.png" alt="Diagram of an elliptic curve with two points P and Q used by the generator">
+<h1>Dual EC DRBG</h1>
+<p><b>Dual EC DRBG</b> (Dual Elliptic Curve Deterministic Random Bit Generator) is a pseudorandom number generator based on elliptic-curve cryptography. It was standardised by the US National Institute of Standards and Technology (NIST) in 2006–2007 in Special Publication 800-90, and later became notorious after evidence emerged that it could contain a backdoor.</p>
+<h2>Algorithm</h2>
+<p>The generator works with two points, P and Q, on an elliptic curve. From a secret internal seed it computes scalar multiples of P (to update its state) and of Q (to produce output), truncating a few bits of the resulting x-coordinate. Whoever chooses Q in a particular relation to P can, knowing the secret factor, predict all future outputs from a short sample — the property that makes the design suitable for a kleptographic backdoor.</p>
+<h2>Controversy</h2>
+<p>Cryptographers noted the potential weakness from the start; in 2007 Dan Shumow and Niels Ferguson publicly demonstrated the possible backdoor. In 2013, documents leaked by Edward Snowden indicated that the US National Security Agency had promoted the algorithm, that it had become the default generator in RSA Security's BSAFE library, and that the NSA had paid RSA $10 million in connection with that default. NIST subsequently withdrew the algorithm from its standard in 2014.</p>
+<h2>Legacy</h2>
+<p>Dual EC DRBG is a standard cautionary example in security engineering about trusting opaque standardised parameters, and it led to reforms in NIST's standardisation process, including greater transparency and public comment.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Pseudorandom_number_generator/index.html">Pseudorandom number generator</a></li>
+<li><a href="../Kleptography/index.html">Kleptography</a></li>
+<li><a href="../Elliptic-curve_cryptography/index.html">Elliptic-curve cryptography</a></li>
+</ul>
+</body>
+</html>

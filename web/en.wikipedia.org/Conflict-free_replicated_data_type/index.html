@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Conflict-free replicated data type - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 16px 24px; }
+h1 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; max-width: 320px; height: 200px; background: #eaecf0; border: 1px solid #c8ccd1; float: right; margin: 0 0 12px 16px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Conflict-free replicated data type</h1>
+<img class="hero" src="images/crdt.png" alt="Diagram of replicas merging concurrent edits without conflicts">
+<p>In distributed computing, a <b>conflict-free replicated data type</b> (CRDT) is a data structure that is replicated across multiple computers in a network, where the replicas can be updated independently and concurrently without coordination, and where it is always mathematically possible to resolve inconsistencies that might result. The replicas converge to a consistent state — a property called strong eventual consistency — without needing a consensus protocol.</p>
+<h2>Types</h2>
+<p>There are two main families. State-based CRDTs (convergent replicated data types, CvRDTs) send their full state to other replicas and merge states using a join operation that is commutative, associative, and idempotent, forming a join-semilattice. Operation-based CRDTs (commutative replicated data types, CmRDTs) propagate only update operations, which must commute with one another when applied concurrently.</p>
+<h2>Examples and use</h2>
+<p>Well-known examples include grow-only counters (G-Counters), positive–negative counters, grow-only sets, observed-remove sets (OR-Sets), and sequence CRDTs such as RGA and LSEQ used for collaborative text editing. CRDTs underpin many real-time collaborative editors, distributed databases such as Redis and Riak data types, and offline-first applications.</p>
+<p>See also: <a href="../Eventual_consistency/index.html">Eventual consistency</a>, <a href="../Collaborative_editing/index.html">Collaborative editing</a>, <a href="../CAP_theorem/index.html">CAP theorem</a></p>
+</div>
+</body>
+</html>

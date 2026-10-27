@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Init - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:52em;color:#202122;line-height:1.6;padding:0 1em}
+h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em;font-weight:normal}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal}
+a{color:#0645ad;text-decoration:none}
+.hero{display:block;margin:1em auto;max-width:320px;border:1px solid #c8ccd1;background:#f8f9fa;padding:1em;text-align:center;color:#72777d}
+table{border-collapse:collapse;margin:1em 0}td,th{border:1px solid #a2a9b1;padding:.3em .6em}
+</style>
+</head>
+<body>
+<h1>Comparison of init systems</h1>
+<img class="hero" src="images/init-systems.png" alt="Illustrative placeholder image comparing init systems">
+<p>An <b>init system</b> is the first process started by the kernel of a Unix-like operating system (PID 1). It initialises the system, starts and supervises services (daemons), and handles shutdown. Init systems differ in design philosophy — from simple sequential shell scripts to dependency-based service managers with logging, socket activation, and sandboxing.</p>
+<h2>Major systems</h2>
+<table>
+<tr><th>System</th><th>Used by</th><th>Design</th></tr>
+<tr><td>SysVinit</td><td>Historically most Unix/Linux</td><td>Sequential runlevel scripts in /etc/init.d</td></tr>
+<tr><td>systemd</td><td>Most major Linux distributions since ~2015</td><td>Dependency-based units, parallel start, integrated logging (journald), cgroups</td></tr>
+<tr><td>OpenRC</td><td>Gentoo, Alpine (partly)</td><td>Dependency-based, portable, works with several init binaries</td></tr>
+<tr><td>runit</td><td>Void Linux, others</td><td>Minimal supervision suite based on daemontools ideas</td></tr>
+<tr><td>s6</td><td>Niche distributions and containers</td><td>Modular low-level process supervision</td></tr>
+<tr><td>Upstart</td><td>Ubuntu (2006–2015), formerly</td><td>Event-based; superseded by systemd</td></tr>
+<tr><td>launchd</td><td>macOS</td><td>Apple's unified service manager</td></tr>
+<tr><td>Service Management Facility</td><td>Solaris/illumos</td><td>XML manifests, dependency graph, fault management</td></tr>
+</table>
+<h2>Debate</h2>
+<p>The adoption of systemd by most large distributions prompted sustained controversy over adherence to the Unix philosophy, the scope of the project, and its logging and binary formats; distributions such as Devuan were founded to offer alternatives.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Init/index.html">Init</a></li>
+<li><a href="../Systemd/index.html">Systemd</a></li>
+<li><a href="../Operating_system_service_management/index.html">Operating system service management</a></li>
+</ul>
+</body>
+</html>

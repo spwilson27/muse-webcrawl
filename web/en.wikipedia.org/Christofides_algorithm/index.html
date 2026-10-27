@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Christofides algorithm</title>
+<style>
+body { font-family: Georgia, serif; margin: 2em auto; max-width: 800px; padding: 0 1em; color: #222; background: #fff; line-height: 1.6; }
+h1 { font-size: 2em; border-bottom: 1px solid #ccc; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #eee; margin-top: 1.5em; }
+img.hero { display: block; max-width: 100%; margin: 1em auto; border: 1px solid #ccc; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f4f4f4; padding: 0 0.2em; }
+</style>
+</head>
+<body>
+<h1>Christofides algorithm</h1>
+<img class="hero" src="images/christofides_algorithm.png" alt="Diagram of the steps of the Christofides algorithm">
+<p>The <b>Christofides algorithm</b>, also known as the <b>Christofides–Serdyukov algorithm</b>, is an approximation algorithm for solving the <a href="../Travelling_salesman_problem/index.html">travelling salesman problem</a>, given a set of instances whose edge weights satisfy the triangle inequality. Proposed by Greek mathematician Nicos Christofides in 1976 (and independently by Anatoliy Serdyukov in 1978), it guarantees that its solutions are within a factor of 3/2 of the optimal solution length.</p>
+<h2>Algorithm</h2>
+<p>Let <i>G = (V, w)</i> be a complete graph whose edge weights obey the triangle inequality. The algorithm proceeds as follows:</p>
+<ol>
+<li>Compute a minimum spanning tree <i>T</i> of <i>G</i>.</li>
+<li>Let <i>O</i> be the set of vertices with odd degree in <i>T</i>. By the handshaking lemma, <i>O</i> has an even number of vertices.</li>
+<li>Find a minimum-weight perfect matching <i>M</i> in the induced subgraph given by the vertices of <i>O</i>.</li>
+<li>Combine the edges of <i>M</i> and <i>T</i> to form a connected, Eulerian multigraph <i>H</i> in which every vertex has even degree.</li>
+<li>Form an Eulerian circuit in <i>H</i>.</li>
+<li>Convert the circuit into a Hamiltonian circuit by skipping repeated vertices (shortcutting), which does not increase its length because of the triangle inequality.</li>
+</ol>
+<h2>Approximation ratio</h2>
+<p>The cost of the minimum spanning tree is at most the cost of the optimal tour, and the minimum perfect matching on <i>O</i> costs at most half of the optimal tour: the optimal tour restricted to <i>O</i> decomposes into two perfect matchings, the cheaper of which bounds <i>M</i>. Adding the two bounds gives the 3/2 approximation ratio. For decades this was the best known guarantee for the metric travelling salesman problem; in 2020–2021 a slight improvement below 3/2 was announced by Karlin, Klein and Oveis Gharan.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Travelling_salesman_problem/index.html">Travelling salesman problem</a></li>
+<li><a href="../Approximation_algorithm/index.html">Approximation algorithm</a></li>
+<li><a href="../Minimum_spanning_tree/index.html">Minimum spanning tree</a></li>
+</ul>
+</body>
+</html>

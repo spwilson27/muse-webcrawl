@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Finalizer - Wikipedia</title>
+<style>
+body { font-family: sans-serif; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 20px; color: #202122; }
+h1 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 320px; float: right; margin: 0 0 12px 16px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; }
+.lead { font-size: 1.02em; }
+</style>
+</head>
+<body>
+<h1>Finalizer</h1>
+<img class="hero" src="images/Finalizer.png" alt="Diagram of an object lifecycle ending with a finalizer call before garbage collection">
+<p class="lead">In computer programming, a <b>finalizer</b> or <b>finalize method</b> is a special method that is invoked by a garbage collector before an object is destroyed and its memory reclaimed. Finalizers allow an object to perform cleanup tasks, such as releasing non-memory resources, as a last resort before disposal.</p>
+
+<h2>Behaviour</h2>
+<p>Finalizers are found in garbage-collected languages including Java (the <code>Object.finalize()</code> method), C# and other .NET languages (where the syntax resembles a destructor), and Python (<code>__del__</code>). Unlike destructors in languages such as C++, which run deterministically when an object leaves scope, finalizers run at a time chosen by the garbage collector; there is no guarantee when — or, in some circumstances, whether — a finalizer will execute.</p>
+
+<h2>Criticism and alternatives</h2>
+<p>Because of their unpredictability and performance costs, finalizers are widely discouraged for managing resources. Java deprecated <code>Object.finalize()</code> in Java 9 and has moved toward removing it, recommending instead explicit resource management such as try-with-resources, and <i>Cleaner</i> mechanisms based on phantom references for the rare cases where a safety net is needed. In .NET, the recommended pattern is to implement <code>IDisposable</code> and reserve the finalizer as a fallback for unmanaged resources only.</p>
+
+<h2>Object resurrection</h2>
+<p>A notorious subtlety of finalizers is object resurrection: a finalizer can store a reference to the object being finalized, making it reachable again after the collector had decided to reclaim it. Languages handle this differently, but resurrection is generally considered an anti-pattern that can cause inconsistent program state.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Garbage_collection_(computer_science)/index.html">Garbage collection</a></li>
+<li><a href="../Destructor_(computer_programming)/index.html">Destructor</a></li>
+<li><a href="../Resource_acquisition_is_initialization/index.html">Resource acquisition is initialization</a></li>
+</ul>
+</body>
+</html>

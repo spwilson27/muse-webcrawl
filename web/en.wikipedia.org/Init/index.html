@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Init - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff;line-height:1.6}
+header{border-bottom:1px solid #a7d7f9;padding:12px 24px;background:#f8f9fa}
+header h1{font-size:28px;margin:0;font-weight:normal;font-family:Georgia,serif}
+main{max-width:960px;margin:0 auto;padding:20px 24px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:28px}
+img.hero{display:block;max-width:480px;width:100%;height:auto;background:#eaecf0;border:1px solid #c8ccd1;padding:8px;box-sizing:border-box}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.refs{font-size:90%;color:#54595d}
+</style>
+</head>
+<body>
+<header><h1>Init</h1></header>
+<main>
+<img class="hero" src="images/Init.png" alt="Illustrative placeholder image for Init">
+<p>In Unix-based computer operating systems, <b>init</b> (short for <i>initialisation</i>) is the first process started during booting of the operating system. Init is a daemon process that continues running until the system is shut down. It is the direct or indirect ancestor of all other processes and automatically adopts any orphaned processes. Init is started by the kernel during the boot process; a kernel panic will occur if the kernel is unable to start it, or if it dies for any reason.</p>
+<h2>Styles of init</h2>
+<p>Several designs of init have been widely used:</p>
+<ul>
+<li><b>System V init</b> — the traditional design originating in AT&T System V Unix, which uses runlevels and scripts in directories such as /etc/rc.d, sequenced by /etc/inittab.</li>
+<li><b>BSD-style init</b> — used by the BSD operating systems, relying mainly on rc scripts.</li>
+<li><b>systemd</b> — a modern init system and service manager for Linux, adopted by most major distributions from the mid-2010s, which parallelises service startup and uses unit files and targets instead of runlevels.</li>
+<li><b>Other systems</b> — including Upstart, OpenRC, runit, s6, and launchd (macOS), each with different approaches to service supervision and dependency handling.</li>
+</ul>
+<h2>Process ID 1</h2>
+<p>Init traditionally has process ID 1 (PID 1). Its special responsibilities include reaping zombie processes whose parents have died, and handling certain signals differently from ordinary processes — for example, it ignores signals for which it has installed no handler. In container environments, these special semantics of PID 1 have led to the use of minimal init processes such as tini to forward signals and reap children correctly.</p>
+<p class="refs">Categories: Unix | Operating system technology | Process (computing)</p>
+</main>
+</body>
+</html>

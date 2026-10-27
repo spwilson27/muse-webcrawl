@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Classless Inter-Domain Routing - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; padding: 0 1em 2em; color: #202122; background: #fff; }
+h1 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px; text-align: center; font-size: 0.9em; }
+table.infobox { border: 1px solid #a2a9b1; background: #f8f9fa; float: right; margin: 0 0 1em 1em; font-size: 0.9em; border-collapse: collapse; }
+table.infobox td, table.infobox th { border: 1px solid #a2a9b1; padding: 4px 8px; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 8px; overflow-x: auto; }
+</style>
+</head>
+<body>
+<h1>Classless Inter-Domain Routing</h1>
+<p><b>Classless Inter-Domain Routing</b> (<b>CIDR</b>) is a method for allocating <a href="../IP_address/index.html">IP addresses</a> and for <a href="../Routing/index.html">IP routing</a>. The <a href="../Internet_Engineering_Task_Force/index.html">Internet Engineering Task Force</a> introduced CIDR in 1993 to replace the previous classful network addressing architecture on the Internet. Its goal was to slow the growth of routing tables on routers across the Internet, and to decrease the rapid exhaustion of IPv4 addresses.</p>
+<div class="hero"><img src="images/classless-inter-domain-routing.png" alt="Diagram of CIDR network prefix allocation"></div>
+<h2>Background</h2>
+<p>Every IP address consists of two parts: the network identifier and the host identifier. Under the classful system, addresses were divided into classes A, B and C, with fixed network-prefix lengths of 8, 16 or 24 bits. This coarse granularity wasted many addresses: an organisation needing slightly more than 254 hosts had to request a class B network with over 65,000 addresses. CIDR replaced fixed classes with prefixes of arbitrary length, a scheme known as variable-length subnet masking (VLSM) applied at the level of the whole Internet.</p>
+<h2>CIDR notation</h2>
+<p>CIDR notation is a compact representation of an IP address and its associated network mask. It is written as the address followed by a slash and a decimal number giving the count of leading 1-bits in the subnet mask. For example, 192.168.100.14/24 represents the address 192.168.100.14 with the mask 255.255.255.0, so the first 24 bits identify the network and the remaining 8 bits identify hosts. The network address 198.51.100.0/22 describes a block of 1,024 addresses.</p>
+<h2>Aggregation</h2>
+<p>Because prefixes can be any length, adjacent networks sharing a common prefix can be summarised into a single routing entry, a technique called supernetting or route aggregation. This substantially reduced the size of the global BGP routing table and remains one of CIDR's most important benefits.</p>
+<h2>IPv6</h2>
+<p>CIDR concepts carry over directly to IPv6, where the notation is identical in form; a typical end-user allocation is a /48 or /56 prefix, and a single LAN segment is almost always a /64.</p>
+<p>See also: <a href="../Subnet/index.html">Subnet</a>, <a href="../Border_Gateway_Protocol/index.html">Border Gateway Protocol</a>, <a href="../IPv4_address_exhaustion/index.html">IPv4 address exhaustion</a>.</p>
+</body>
+</html>

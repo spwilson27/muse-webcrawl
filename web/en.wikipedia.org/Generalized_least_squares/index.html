@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Generalized least squares - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 1.2em; }
+img.hero { display: block; max-width: 320px; width: 100%; height: 200px; background: #eaecf0; border: 1px solid #a2a9b1; margin: 12px 0; }
+p { line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.eq { text-align: center; font-size: 1.1em; font-style: italic; margin: 14px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Generalized least squares</h1>
+<img class="hero" src="images/generalized-least-squares.png" alt="Regression fit with correlated errors">
+<p>In statistics, <b>generalized least squares</b> (GLS) is a method used to estimate the unknown parameters in a linear regression model when there is a certain degree of correlation between the residuals in the regression and/or the residuals have unequal variance (heteroscedasticity). In these cases ordinary least squares (OLS) estimates remain unbiased but are no longer efficient, and their usual standard errors are wrong; GLS restores efficiency by weighting the observations according to the error covariance structure.</p>
+<h2>Method</h2>
+<p>For the model <i>y</i> = X<i>β</i> + <i>ε</i> with error covariance matrix Var(<i>ε</i>) = Ω, the GLS estimator is</p>
+<p class="eq">β̂ = (XᵀΩ⁻¹X)⁻¹XᵀΩ⁻¹y</p>
+<p>Equivalently, the data are transformed by a matrix that "whitens" the errors — premultiplying the model by Ω<sup>−1/2</sup> so that the transformed errors are uncorrelated with equal variance — and OLS is then applied to the transformed model. By the Gauss–Markov–Aitken theorem, GLS is the best linear unbiased estimator when Ω is known.</p>
+<h2>Feasible GLS</h2>
+<p>In practice Ω is unknown and must itself be estimated from the data, giving <b>feasible generalized least squares</b> (FGLS): a first-stage OLS regression supplies residuals from which the variance and correlation parameters (for example, the parameters of an autoregressive error process or group-wise variances) are estimated, and GLS is then performed with the estimated matrix. Standard applications include correcting for autocorrelation in time-series regression, heteroscedasticity across groups in panel data, and seemingly unrelated regressions. Weighted least squares is the special case in which the errors are uncorrelated but have differing variances.</p>
+<p>See also: <a href="../Ordinary_least_squares/index.html">Ordinary least squares</a>, <a href="../Weighted_least_squares/index.html">Weighted least squares</a>, <a href="../Linear_regression/index.html">Linear regression</a>, <a href="../Heteroscedasticity/index.html">Heteroscedasticity</a>, <a href="../Generalized_least_squares/index.html">Generalized least squares</a>.</p>
+</div>
+</body>
+</html>

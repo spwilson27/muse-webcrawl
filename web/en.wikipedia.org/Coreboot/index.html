@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>coreboot - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em; }
+h1 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+h2 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+img.hero { max-width: 320px; float: right; margin: 0 0 1em 1em; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; }
+a { color: #3366cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+table.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; margin: 0 0 1em 1em; border-collapse: collapse; width: 264px; font-size: 90%; }
+table.infobox th, table.infobox td { border: 1px solid #a2a9b1; padding: 4px 6px; text-align: left; }
+table.infobox caption { font-weight: bold; padding: 4px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>coreboot</h1>
+<img class="hero" src="images/coreboot.png" alt="coreboot logo">
+<table class="infobox">
+<caption>coreboot</caption>
+<tr><th>Original author</th><td>Ron Minnich et al.</td></tr>
+<tr><th>Initial release</th><td>1999 (as LinuxBIOS)</td></tr>
+<tr><th>License</th><td>GPL-2.0-only</td></tr>
+<tr><th>Type</th><td>Firmware</td></tr>
+</table>
+<p><b>coreboot</b>, formerly <b>LinuxBIOS</b>, is a software project aimed at replacing proprietary firmware (<a href="../BIOS/index.html">BIOS</a> or <a href="../UEFI/index.html">UEFI</a>) found in most computers with a lightweight firmware designed to perform only the minimum number of tasks necessary to load and run a modern 32-bit or 64-bit operating system.</p>
+<h2>History</h2>
+<p>The project was begun in 1999 at the Advanced Computing Laboratory of <a href="../Los_Alamos_National_Laboratory/index.html">Los Alamos National Laboratory</a> by Ron Minnich, originally to boot clusters quickly. It was renamed coreboot in 2008 to reflect that it could load payloads other than Linux.</p>
+<h2>Design</h2>
+<p>coreboot performs minimal hardware initialization — CPU, memory controller (DRAM), and boot device — in stages (bootblock, romstage, ramstage), then hands off to a <i>payload</i>, which may be a bootloader or operating system kernel such as SeaBIOS (for legacy BIOS compatibility), TianoCore (UEFI), GRUB 2, or a Linux kernel directly. Because most initialization code is open source, coreboot boots quickly and can be audited, though some platforms still require vendor binary blobs for certain hardware.</p>
+<h2>Adoption</h2>
+<p>coreboot ships on all <a href="../Chromebook/index.html">Chromebooks</a> and is supported by vendors such as Purism, System76, and Star Labs, and by the <a href="../Libreboot/index.html">Libreboot</a> distribution, which removes proprietary blobs for supported boards. It supports architectures including x86, ARM, RISC-V, and POWER.</p>
+<p><i>See also: <a href="../Libreboot/index.html">Libreboot</a>, <a href="../Open-source_firmware/index.html">Open-source firmware</a></i></p>
+</div>
+</body>
+</html>

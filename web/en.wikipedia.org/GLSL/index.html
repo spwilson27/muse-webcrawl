@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>OpenGL Shading Language - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 860px; margin: 0 auto; padding: 24px 20px 48px; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 6px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p { line-height: 1.6; margin: 10px 0; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; }
+.caption { font-size: 0.85em; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul { line-height: 1.6; }
+pre { background: #f8f9fa; border: 1px solid #c8ccd1; padding: 10px 14px; overflow-x: auto; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>OpenGL Shading Language</h1>
+<div class="hero"><img src="images/glsl.png" alt="A 3D scene rendered with GLSL shaders"><div class="caption">GLSL programs control the programmable stages of the OpenGL pipeline</div></div>
+<p>The <b>OpenGL Shading Language</b> (<b>GLSL</b>) is a high-level shading language with a syntax based on the C programming language. It was created by the OpenGL ARB (OpenGL Architecture Review Board) to give developers more direct control of the graphics pipeline without having to use ARB assembly language or hardware-specific languages.</p>
+<h2>Features</h2>
+<p>GLSL shaders are small programs that run on the GPU. A typical program set includes a <i>vertex shader</i>, which processes each vertex and outputs its clip-space position, and a <i>fragment shader</i>, which computes the colour of each fragment (pixel candidate). Later versions added geometry, tessellation control and evaluation, and compute shaders. GLSL provides built-in vector and matrix types (vec2, vec3, vec4, mat4, and so on), swizzling, texture sampling functions, and qualifiers for inputs, outputs, and uniforms. It deliberately omits pointers, recursion, and dynamic memory allocation, fitting the massively parallel GPU execution model.</p>
+<pre>#version 330 core
+layout(location = 0) in vec3 aPos;
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+void main()
+{
+    gl_Position = projection * view * model * vec4(aPos, 1.0);
+}</pre>
+<h2>Versions and related languages</h2>
+<p>GLSL was introduced as an extension to OpenGL 1.4 and became core in OpenGL 2.0 (2004); its versions are numbered to track OpenGL versions (for example GLSL 4.60 accompanies OpenGL 4.6). GLSL ES is the variant used with OpenGL ES and WebGL on mobile and web platforms. With the arrival of Vulkan, shaders for that API are usually written in GLSL or HLSL and compiled offline to SPIR-V intermediate representation using tools such as glslangValidator.</p>
+<p>See also: <a href="../GDScript/index.html">GDScript</a>, another domain-specific language used in game development.</p>
+</div>
+</body>
+</html>

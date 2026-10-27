@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bootloader - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#fff;color:#202122;}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:12px 20px;}
+h1{font-size:1.8em;margin:0;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;}
+main{max-width:960px;margin:0 auto;padding:16px 20px;line-height:1.6;}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.9em;}
+.infobox img{width:100%;background:#eaecf0;display:block;padding:20px 0;text-align:center;}
+a{color:#0645ad;text-decoration:none;}
+a:hover{text-decoration:underline;}
+footer{border-top:1px solid #a2a9b1;padding:10px 20px;font-size:0.85em;color:#54595d;}
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> — The Free Encyclopedia</header>
+<main>
+<h1>Bootloader</h1>
+<div class="infobox">
+<img src="images/bootloader.png" alt="A bootloader menu offering several operating systems">
+<p><strong>Type:</strong> System software</p>
+<p><strong>Function:</strong> Loads an operating system at startup</p>
+<p><strong>Examples:</strong> GRUB, Windows Boot Manager, U-Boot</p>
+</div>
+<p>A <strong>bootloader</strong> (also spelled <strong>boot loader</strong>, and historically called a bootstrap loader) is a small program that loads an operating system into memory when a computer starts. Since a computer cannot load its operating system by itself, firmware — traditionally the BIOS, now usually UEFI — locates and runs the bootloader from a fixed location on a storage device, and the bootloader in turn locates the kernel, loads it, and transfers control to it.</p>
+<h2>Boot sequence</h2>
+<p>On classic PC systems the BIOS loads the first 512-byte sector of the boot disk (the Master Boot Record) into memory; this first-stage code then loads a larger second-stage bootloader with knowledge of file systems and configuration. Modern UEFI firmware can load a full bootloader application such as GRUB or the Windows Boot Manager directly from an EFI system partition. Multi-stage loading is necessary because early stages are severely size-constrained.</p>
+<h2>Common bootloaders</h2>
+<p>GNU GRUB is the standard bootloader of most Linux distributions, offering a menu of operating systems and kernels, an editable command line, and support for many file systems. Other examples include systemd-boot, the Windows Boot Manager (bootmgr), the embedded-system bootloader U-Boot, and mobile bootloaders such as Android's fastboot environment.</p>
+<h2>Security</h2>
+<p>Because bootloaders run before the operating system, they are a target for persistent malware ("bootkits"), and a point of control over what software may run. Secure Boot, part of UEFI, counters this by requiring bootloaders to carry valid cryptographic signatures. Many phones and consoles ship with locked bootloaders that refuse unsigned code, a source of controversy over owners' ability to modify their devices.</p>
+</main>
+<footer>Recreated from memory for the muse-webcrawl project.</footer>
+</body>
+</html>
