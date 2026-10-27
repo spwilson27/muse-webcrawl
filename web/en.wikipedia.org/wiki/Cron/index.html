@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>cron - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 900px; margin: 0 auto; background: #fff; padding: 24px 40px 60px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 1.9em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; font-size: 1.4em; margin-top: 1.2em; }
+p { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; max-width: 320px; margin: 12px auto; border: 1px solid #c8ccd1; background: #eaecf0; padding: 8px; }
+.caption { text-align: center; font-size: 0.8em; color: #54595d; }
+code, pre { font-family: monospace; background: #f8f9fa; font-size: 0.9em; }
+pre { border: 1px solid #eaecf0; padding: 10px; overflow-x: auto; }
+ul { line-height: 1.6; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>cron</h1>
+<img class="hero" src="images/cron.png" alt="Diagram of a crontab schedule">
+<p class="caption">The cron daemon runs scheduled commands at fixed times and intervals.</p>
+<p>The <b>cron</b> daemon is a time-based job scheduler in <a href="../Unix/index.html">Unix-like</a> computer operating systems. Users who set up and maintain software environments use cron to schedule jobs (commands or shell scripts), also known as <b>cron jobs</b>, to run periodically at fixed times, dates, or intervals. It typically automates system maintenance or administration — though its general-purpose nature makes it useful for things like downloading files from the Internet and downloading email at regular intervals.</p>
+<h2>Overview</h2>
+<p>cron is driven by a <b>crontab</b> (cron table) file, a configuration file that specifies shell commands to run periodically on a given schedule. The crontab files are stored in operating system-specific locations and can be edited with the <code>crontab</code> command. Each line of a crontab entry has five time-and-date fields, followed by a command:</p>
+<pre># ┌───────────── minute (0–59)
+# │ ┌───────────── hour (0–23)
+# │ │ ┌───────────── day of the month (1–31)
+# │ │ │ ┌───────────── month (1–12)
+# │ │ │ │ ┌───────────── day of the week (0–6, Sunday to Saturday)
+# │ │ │ │ │
+# * * * * * &lt;command to execute&gt;</pre>
+<p>For example, <code>0 3 * * 1 /usr/bin/backup</code> runs the backup program at 03:00 every Monday. Special strings such as <code>@daily</code> and <code>@reboot</code> are supported by many implementations.</p>
+<h2>History</h2>
+<p>A simple form of cron appeared in early versions of Unix in the 1970s. The widely used Vixie cron, written by Paul Vixie and released in 1987, added features such as per-user crontabs and environment settings, and its descendants remain standard on Linux and BSD systems. Modern alternatives and complements include anacron, systemd timers, and launchd on macOS.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Job_scheduler/index.html">Job scheduler</a></li>
+<li><a href="../At_(command)/index.html">at (command)</a></li>
+<li><a href="../Systemd/index.html">systemd</a></li>
+</ul>
+</div>
+</body>
+</html>

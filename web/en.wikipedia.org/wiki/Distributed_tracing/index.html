@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Distributed tracing - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 60px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 28px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; font-size: 21px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; }
+.caption { font-size: 12px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Distributed tracing</h1>
+<div class="hero">
+<img src="images/Distributed_tracing.png" alt="Waterfall diagram showing spans of a distributed trace across several services">
+<div class="caption">A trace visualised as a set of timed spans across multiple services.</div>
+</div>
+<p><b>Distributed tracing</b>, also called distributed request tracing, is a method used to profile and monitor applications built using a microservices architecture. It helps pinpoint where failures occur and what causes poor performance by following a request as it propagates through the services that make up an application.</p>
+<h2>Concepts</h2>
+<p>A <b>trace</b> represents the end-to-end journey of a single request or transaction. Each trace is composed of <b>spans</b>, which are timed units of work performed by a service; spans can be nested to show parent&ndash;child relationships. A unique trace identifier is propagated between services, usually in HTTP headers, so that spans emitted by different processes can be assembled into a single trace. This propagation is standardised by the W3C Trace Context specification.</p>
+<h2>History and tooling</h2>
+<p>The approach was popularised by Google's Dapper system, described in a 2010 paper, which inspired open-source implementations such as Zipkin and Jaeger. The OpenTracing and OpenCensus projects later merged into <a href="../OpenTelemetry/index.html">OpenTelemetry</a>, a vendor-neutral observability framework providing APIs and SDKs for generating and exporting trace data.</p>
+<h2>Use</h2>
+<p>Distributed tracing is one of the "three pillars" of observability, alongside metrics and logging. It is used to measure latency across service boundaries, diagnose bottlenecks, and understand dependencies between services in complex systems.</p>
+</div>
+</body>
+</html>

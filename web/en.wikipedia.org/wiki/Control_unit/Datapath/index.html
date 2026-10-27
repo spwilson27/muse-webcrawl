@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Datapath - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:52em;line-height:1.6;color:#202122;padding:0 1em}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+figure{float:right;margin:0 0 1em 1.5em;border:1px solid #c8ccd1;background:#f8f9fa;padding:.5em;max-width:250px;text-align:center}
+figure img{max-width:100%}
+figcaption{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Datapath</h1>
+<figure>
+<img src="images/datapath.png" alt="A simple CPU datapath diagram">
+<figcaption>A simple datapath with registers, an ALU, and buses</figcaption>
+</figure>
+<p>A <b>datapath</b> is a collection of functional units such as arithmetic logic units (ALUs) or multipliers that perform data processing operations, most central processing units consisting of a datapath and a control unit. The datapath contains the registers, buses, multiplexers, and functional units through which data actually flows and is transformed during instruction execution, while the control unit generates the signals that orchestrate those transfers.</p>
+<h2>Components</h2>
+<p>A typical processor datapath includes:</p>
+<ul>
+<li>A <b>register file</b> holding operands and results close to the execution units;</li>
+<li>One or more <b>functional units</b> (ALU, shifter, multiplier, load/store unit);</li>
+<li><b>Buses and interconnect</b>, often with multiplexers that select which source drives each destination in a given cycle;</li>
+<li><b>Pipeline registers</b> that separate stages in a pipelined design;</li>
+<li>Interfaces to the instruction and data caches.</li>
+</ul>
+<h2>Design</h2>
+<p>Datapaths may be single-cycle, multi-cycle, or pipelined. In a classic five-stage pipeline (fetch, decode, execute, memory, write-back), the datapath is partitioned so different instructions occupy different stages simultaneously. Forwarding (bypassing) paths carry results directly between pipeline stages to reduce stalls caused by data hazards. The organization of the datapath largely determines a processor's clock rate and instructions-per-cycle capability.</p>
+<h2>Datapath synthesis</h2>
+<p>In digital design flows, datapath synthesis is the part of high-level synthesis that schedules operations and binds them to hardware resources, producing a register-transfer-level structure from a behavioral description. Specialized datapath elements are also found in digital signal processors, graphics units, and network processors, where wide parallel datapaths stream data with minimal control overhead.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Central_processing_unit/index.html">Central processing unit</a></li>
+<li><a href="../Arithmetic_logic_unit/index.html">Arithmetic logic unit</a></li>
+<li><a href="../../Control_unit/index.html">Control unit</a></li>
+<li><a href="../../Instruction_pipelining/index.html">Instruction pipelining</a></li>
+</ul>
+</body>
+</html>

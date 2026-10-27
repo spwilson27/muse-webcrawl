@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>HTTP/2</title>
+<style>body{font-family:sans-serif;max-width:800px;margin:2em auto;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #a2a9b1}img{max-width:100%}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.5em;margin:.5em;font-size:.9em}</style></head>
+<body>
+<h1>HTTP/2</h1>
+<img src="images/HTTP_2.png" alt="Diagram of HTTP/2 multiplexing">
+<p><b>HTTP/2</b> (originally named <b>HTTP/2.0</b>) is a major revision of the HTTP network protocol used by the World Wide Web. It was published by the IETF in May 2015 as RFC 7540, with its header compression format HPACK specified in RFC 7541. HTTP/2 was derived from the SPDY protocol developed by Google and is supported by virtually all modern web browsers and servers.</p>
+<h2>Goals</h2>
+<p>HTTP/2 was designed to reduce perceived latency by enabling full request and response multiplexing over a single TCP connection, compressing request headers, and allowing servers to push resources to clients before they are requested. Unlike HTTP/1.1, which requires multiple connections or pipelining to fetch resources in parallel, HTTP/2 interleaves many streams within one connection.</p>
+<h2>Key features</h2>
+<ul>
+<li><b>Binary framing:</b> messages are split into small binary frames tagged with stream identifiers.</li>
+<li><b>Multiplexing:</b> many requests and responses proceed concurrently on one connection without head-of-line blocking at the HTTP layer.</li>
+<li><b>Header compression:</b> HPACK compresses header fields using static and dynamic tables plus Huffman encoding.</li>
+<li><b>Server push:</b> a server may send resources it anticipates the client will need.</li>
+<li><b>Stream prioritisation:</b> clients can signal relative importance of streams.</li>
+</ul>
+<h2>Encryption</h2>
+<p>Although the specification allows HTTP/2 over cleartext (h2c), all major browsers implemented it only over TLS (h2), negotiated with the ALPN extension. A revised specification, RFC 9113, was published in June 2022, consolidating and obsoleting RFC 7540.</p>
+<h2>See also</h2>
+<ul><li><a href="../../HTTP/index.html">HTTP</a></li><li><a href="../../HTTP/3/index.html">HTTP/3</a></li><li><a href="../QUIC/index.html">QUIC</a></li></ul>
+</body></html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Disk mirroring - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+header { border-bottom: 1px solid #a7d7f9; padding: 12px 24px; }
+header .site { font-size: 13px; color: #54595d; letter-spacing: 1px; }
+main { max-width: 960px; margin: 0 auto; padding: 16px 24px 48px; line-height: 1.6; }
+h1 { font-size: 28px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 21px; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { margin: 16px 0; text-align: center; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; }
+.hero figcaption { font-size: 12px; color: #54595d; margin-top: 4px; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 13px; margin: 0 0 12px 16px; padding: 8px 12px; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+</style>
+</head>
+<body>
+<header><span class="site">WIKIPEDIA — The Free Encyclopedia</span></header>
+<main>
+<h1>Disk mirroring</h1>
+<figure class="hero"><img src="images/Disk_mirroring.png" alt="Diagram showing the same data written simultaneously to two disks in a mirror pair"><figcaption>In a mirror, every write is duplicated on both disks.</figcaption></figure>
+<p>In data storage, <b>disk mirroring</b> is the replication of logical disk volumes onto separate physical hard disks in real time to ensure continuous availability. It is the scheme standardized as <b>RAID 1</b>. A mirrored volume is a complete logical representation of separate volume copies; data written to one disk is simultaneously written to the other (or others), so if one physical disk fails, the data remains accessible from its mirror without interruption.</p>
+<h2>Operation</h2>
+<p>Mirroring may be implemented in hardware by a RAID controller, in software by the operating system (for example Linux mdraid, Windows dynamic disks, or ZFS mirror vdevs), or by a disk array. Reads can be served from either copy, sometimes doubling read throughput and reducing latency by choosing the disk whose heads are closer. After a disk is replaced, the mirror must be <i>resilvered</i> or rebuilt by copying the surviving data, a process that stresses the remaining disk and can take hours on large drives.</p>
+<h2>Advantages and disadvantages</h2>
+<p>Mirroring offers excellent fault tolerance and simple recovery, at the cost of half (or more) of raw capacity: usable space is that of a single disk. Disks are usually identical in size and model, and mirrors are often paired with hot spares. Synchronous remote mirroring extends the idea between sites for disaster recovery, though at the cost of latency limits. Mirroring is not a substitute for backup, because deletion, corruption, and ransomware are faithfully replicated to every copy.</p>
+<h2>Variants</h2>
+<p>Three-way mirrors tolerate two failures. <i>Duplexing</i> mirrors across separate controllers to remove the controller as a single point of failure. In ZFS and some enterprise arrays, mirrors are combined with striping (RAID 10) for both performance and redundancy.</p>
+<p>See also: <a href="../RAID/index.html">RAID</a>, <a href="../Standard_RAID_levels/index.html">Standard RAID levels</a>, <a href="../Disk_array/index.html">Disk array</a>, <a href="../Data_redundancy/index.html">Data redundancy</a>.</p>
+</main>
+</body>
+</html>

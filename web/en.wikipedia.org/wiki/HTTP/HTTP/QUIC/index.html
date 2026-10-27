@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>QUIC</title>
+<style>body{font-family:sans-serif;max-width:800px;margin:2em auto;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #a2a9b1}img{max-width:100%}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.5em;margin:.5em;font-size:.9em}</style></head>
+<body>
+<h1>QUIC</h1>
+<img src="images/QUIC.png" alt="Diagram of a QUIC connection">
+<p><b>QUIC</b> is a general-purpose transport layer network protocol initially designed by Jim Roskind at Google. It was first implemented and deployed in 2012 and standardised by the IETF in May 2021 in RFC 9000, together with companion specifications for loss detection and congestion control, TLS integration, and the HTTP/3 mapping.</p>
+<h2>Design</h2>
+<p>QUIC runs over UDP and provides multiplexed streams within a single connection, so that packet loss affecting one stream does not block others — eliminating the transport-level head-of-line blocking of TCP. Connections are identified by connection IDs rather than IP addresses and ports, allowing a connection to survive changes of the client's network address, such as moving from Wi-Fi to a mobile network.</p>
+<h2>Encryption and handshake</h2>
+<p>Encryption is integral: QUIC integrates the TLS 1.3 handshake, so a connection is established in a single round trip, and resumed connections can send data immediately (0-RTT). Almost all QUIC packet content beyond a small header is encrypted.</p>
+<h2>Use</h2>
+<p>QUIC underlies HTTP/3 and is used by major browsers, content delivery networks, and large web services; versions of the protocol also carry DNS and other application traffic.</p>
+<h2>See also</h2>
+<ul><li><a href="../HTTP/2/index.html">HTTP/2</a></li><li><a href="../../User_Datagram_Protocol/index.html">User Datagram Protocol</a></li><li><a href="../../Transmission_Control_Protocol/index.html">Transmission Control Protocol</a></li></ul>
+</body></html>

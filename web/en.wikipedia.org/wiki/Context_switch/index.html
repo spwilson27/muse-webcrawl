@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Context switch - Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:960px;margin:0 auto;padding:16px;line-height:1.6;color:#202122}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1}
+img.hero{float:right;margin:0 0 12px 16px;max-width:280px;background:#eaecf0;padding:8px}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<img class="hero" src="images/context-switch.png" alt="Diagram of a CPU switching between two processes">
+<h1>Context switch</h1>
+<p>In computing, a <b>context switch</b> is the process of storing the state of a process or thread, so that it can be restored and resume execution at a later point, and restoring the state of a different, previously saved, process or thread. This allows multiple processes to share a single central processing unit (CPU), and is an essential feature of a multitasking operating system.</p>
+<h2>Mechanism</h2>
+<p>The state saved for a process typically includes the program counter, processor registers, stack pointer, memory-management information and open-file state, stored in a data structure such as the process control block. Context switches are usually triggered by an interrupt, a system call, or the scheduler's time quantum expiring. Switching between threads of the same process is generally cheaper than switching between processes, because threads share an address space and no memory-management context must change.</p>
+<h2>Cost</h2>
+<p>A context switch is pure overhead: while it occurs, the system does no useful work for any user process. Its cost includes saving and restoring state, scheduler execution, and indirect effects such as flushing or cold-starting CPU caches and translation lookaside buffers. Typical direct costs on modern hardware are on the order of microseconds, but cache effects can make the effective cost much larger.</p>
+<h2>Hardware support</h2>
+<p>Some processor architectures provide hardware support for context switching; for example, the x86 architecture historically supported task switching via task state segments, though most operating systems implement switching in software for portability and speed.</p>
+</body>
+</html>

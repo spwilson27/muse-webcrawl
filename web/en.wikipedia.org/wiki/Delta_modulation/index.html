@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Delta modulation - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 8px; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; max-width: 320px; width: 100%; height: auto; background: #eaecf0; border: 1px solid #c8ccd1; margin: 12px 0; }
+ul { line-height: 1.6; font-size: 15px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Delta modulation</h1>
+<img class="hero" src="images/Delta_modulation.png" alt="Delta modulation staircase waveform tracking an analog signal">
+<p><b>Delta modulation</b> (DM or Δ-modulation) is an analog-to-digital and digital-to-analog signal conversion technique used for transmitting voice information where quality is not of primary importance. It is a simplified form of differential pulse-code modulation (DPCM) in which the difference between successive samples is encoded into a single bit.</p>
+<h2>Principle</h2>
+<p>Rather than encoding the absolute value of each sample, a delta modulator compares the input signal with a staircase approximation. At each sampling instant it outputs a single bit indicating whether the staircase should step up or step down by a fixed step size so as to track the input. The decoder integrates the bit stream to reconstruct the staircase, which a low-pass filter then smooths into an approximation of the original signal.</p>
+<h2>Characteristics</h2>
+<p>Delta modulation is simple and robust, requiring only a comparator, an integrator, and a sampler. Its performance is limited by two forms of distortion:</p>
+<ul>
+<li><b>Slope overload</b>, which occurs when the signal changes faster than the staircase can follow with the chosen step size and sampling rate.</li>
+<li><b>Granular noise</b>, which occurs when the signal is nearly constant and the staircase hunts up and down around it.</li>
+</ul>
+<h2>Variants</h2>
+<p>Adaptive delta modulation varies the step size according to the recent history of the output bits, increasing it during steep slopes and decreasing it during flat passages, which improves the dynamic range. Continuously variable slope delta modulation (CVSD), used in some military and Bluetooth voice applications, is a widely used adaptive form. Delta modulation is also the conceptual forerunner of the more sophisticated <a href="../Delta-sigma_modulation/index.html">delta-sigma modulation</a> used in modern audio converters.</p>
+<p>See also: <a href="../Pulse-code_modulation/index.html">Pulse-code modulation</a>, <a href="../Analog-to-digital_converter/index.html">Analog-to-digital converter</a>.</p>
+</div>
+</body>
+</html>

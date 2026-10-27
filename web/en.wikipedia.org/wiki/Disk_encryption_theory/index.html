@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Disk encryption theory - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+header { border-bottom: 1px solid #a7d7f9; padding: 12px 24px; }
+header .site { font-size: 13px; color: #54595d; letter-spacing: 1px; }
+main { max-width: 960px; margin: 0 auto; padding: 16px 24px 48px; line-height: 1.6; }
+h1 { font-size: 28px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 21px; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { margin: 16px 0; text-align: center; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; }
+.hero figcaption { font-size: 12px; color: #54595d; margin-top: 4px; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 13px; margin: 0 0 12px 16px; padding: 8px 12px; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+</style>
+</head>
+<body>
+<header><span class="site">WIKIPEDIA — The Free Encyclopedia</span></header>
+<main>
+<h1>Disk encryption theory</h1>
+<figure class="hero"><img src="images/Disk_encryption_theory.png" alt="Diagram of tweakable block cipher encryption applied independently to disk sectors"><figcaption>Tweakable encryption applies a sector-dependent tweak so identical plaintext sectors encrypt differently.</figcaption></figure>
+<p><b>Disk encryption theory</b> is the study of cryptographic methods for encrypting data on storage devices sector by sector, as in <a href="../Full_disk_encryption/index.html">full disk encryption</a>. Unlike file encryption, disk encryption must operate within strict constraints: data must be accessible in fixed-size blocks (typically 512 bytes or 4 KiB) at arbitrary positions, the ciphertext can occupy no more space than the plaintext (there is nowhere to store an initialization vector or authentication tag per sector), and access must be fast and random.</p>
+<h2>Tweakable block ciphers</h2>
+<p>The standard solution is the <i>tweakable</i> block cipher, in which the sector address serves as a public "tweak" that diversifies the encryption without requiring extra storage. The dominant constructions are <b>XTS</b>, standardized in IEEE 1619-2007 and used by BitLocker, FileVault, and dm-crypt, and its predecessor <b>XEX</b> (XOR–encrypt–XOR). XTS combines two keys with AES and multiplies a tweak value in the finite field GF(2<sup>128</sup>) for each block within a sector. Earlier modes such as CBC with sector-derived IVs suffered from watermarking attacks and predictable-IV weaknesses, and LRW (Liskov–Rivest–Wagner) was largely displaced by XTS after concerns over key collisions across sectors.</p>
+<h2>Security notions and limitations</h2>
+<p>Disk encryption provides confidentiality against an adversary who obtains the powered-off device, but standard sector modes are length-preserving and unauthenticated: they are malleable, leak equality of ciphertext blocks moved between tweaks, and do not detect tampering. They also do not protect data while the system is running and unlocked. Wide-block modes such as AES-SIV derivatives and the Adiantum construction (used on low-end Android devices) aim to improve diffusion so that changing one plaintext bit garbles an entire sector. Cold boot attacks, evil maid attacks, and DMA attacks target keys in memory rather than the cipher itself and are mitigated with hardware key storage and pre-boot authentication.</p>
+<p>See also: <a href="../Disk_encryption/index.html">Disk encryption</a>, <a href="../XTS/index.html">XTS</a>, <a href="../Block_cipher_mode_of_operation/index.html">Block cipher mode of operation</a>, <a href="../Adiantum_(cryptography)/index.html">Adiantum</a>.</p>
+</main>
+</body>
+</html>

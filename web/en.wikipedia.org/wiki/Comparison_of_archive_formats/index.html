@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Comparison of archive formats - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;color:#202122;background:#fff}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header .site{font-family:sans-serif;font-size:0.85em;color:#54595d}
+main{max-width:960px;margin:0 auto;padding:20px 24px 60px}
+h1{font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.4em}
+p{line-height:1.6;font-family:sans-serif;font-size:0.95em}
+ul,ol,table{font-family:sans-serif;font-size:0.95em;line-height:1.6}
+table.diff{border-collapse:collapse;font-size:0.85em}
+table.diff th,table.diff td{border:1px solid #a2a9b1;padding:4px 8px;text-align:left}
+table.diff th{background:#eaecf0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{float:right;margin:0 0 12px 18px;width:260px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;text-align:center;font-family:sans-serif;font-size:0.8em;color:#54595d}
+.hero img{max-width:100%;height:auto;display:block;margin:0 auto 6px;background:#eaecf0}
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia, The Free Encyclopedia</span></header>
+<main>
+<h1>Comparison of archive formats</h1>
+<div class="hero"><img src="images/comparison_archive_formats.png" alt="Icons representing common archive file formats such as ZIP, RAR, 7z and tar">[Image: Archive format icons]</div>
+<p>An <b>archive file format</b> is a file format that combines multiple files into one, often with compression, to facilitate storage and transfer. This article compares the principal archive formats by their features, including compression methods, support for encryption, recovery records, splitting into volumes, preservation of file-system metadata and licensing.</p>
+<h2>Comparison table</h2>
+<table class="diff">
+<tr><th>Format</th><th>Extension</th><th>Compression</th><th>Encryption</th><th>Notes</th></tr>
+<tr><td>ZIP</td><td>.zip</td><td>Deflate (also store, bzip2, LZMA in extensions)</td><td>Legacy ZipCrypto; AES in extensions</td><td>Created by Phil Katz (PKZIP, 1989); ubiquitous, ISO-standardised variant for Office documents</td></tr>
+<tr><td>RAR</td><td>.rar</td><td>Proprietary RAR algorithm</td><td>AES-256</td><td>By Eugene Roshal (1993); supports recovery records and volumes</td></tr>
+<tr><td>7z</td><td>.7z</td><td>LZMA/LZMA2 and others</td><td>AES-256</td><td>Open format by Igor Pavlov (7-Zip, 1999); high compression ratios</td></tr>
+<tr><td>tar</td><td>.tar (often .tar.gz, .tar.xz)</td><td>None built in; external gzip/bzip2/xz/zstd</td><td>Via external tools</td><td>Unix tape archive (1979); preserves permissions; compression added by separate filters</td></tr>
+<tr><td>gzip</td><td>.gz</td><td>Deflate</td><td>No</td><td>Single-stream compressor, typically used with tar</td></tr>
+<tr><td>bzip2</td><td>.bz2</td><td>Burrows–Wheeler + Huffman</td><td>No</td><td>Single-stream compressor, slower but often tighter than gzip</td></tr>
+<tr><td>XZ</td><td>.xz</td><td>LZMA2</td><td>No</td><td>Single-stream compressor common for software distribution</td></tr>
+<tr><td>Zstandard</td><td>.zst</td><td>Zstandard</td><td>No</td><td>Fast compression with adjustable levels (Facebook/Meta, 2016)</td></tr>
+<tr><td>ARJ</td><td>.arj</td><td>Proprietary</td><td>Weak by modern standards</td><td>Popular in the 1990s DOS/BBS era</td></tr>
+<tr><td>ACE</td><td>.ace</td><td>Proprietary</td><td>Yes</td><td>Largely obsolete; known vulnerabilities in old libraries</td></tr>
+</table>
+<p>Features vary in practice by implementation: for example, solid compression (treating all files as one data stream) improves ratios in 7z, RAR and tar-compressor combinations but slows random access. Disk image formats such as ISO 9660 and features like Unicode filename support, sparse-file handling and archive comments are also compared in the full treatment.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Archive_file/index.html">Archive file</a></li>
+<li><a href="../Data_compression/index.html">Data compression</a></li>
+<li><a href="../ZIP_(file_format)/index.html">ZIP (file format)</a></li>
+<li><a href="../Comparison_of_file_archivers/index.html">Comparison of file archivers</a></li>
+</ul>
+</main>
+</body>
+</html>

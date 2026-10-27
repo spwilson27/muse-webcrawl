@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Event sourcing - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 2em auto; max-width: 52em; padding: 0 1em; color: #202122; line-height: 1.55; background: #fff; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; font-weight: normal; margin-top: 1.2em; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 480px; width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.6em; margin: 0 0 1em 1em; font-size: 0.9em; width: 16em; }
+.infobox th { text-align: left; padding-right: 0.5em; vertical-align: top; }
+</style>
+</head>
+<body>
+<h1>Event sourcing</h1>
+<div class="hero"><img src="images/Event_sourcing.png" alt="Diagram of an event store with events being replayed to rebuild state"></div>
+<p><b>Event sourcing</b> is a software design pattern in which the state of an application is determined by a sequence of events, each of which is recorded in an append-only event store. Instead of storing only the current state of an entity in a database, the system persists every change as an immutable event — for example, "item added to cart" or "payment received" — and derives the current state by replaying the events.</p>
+<h2>Characteristics</h2>
+<p>Because the event log is complete, the system can reconstruct the state of an entity at any point in its history, providing a built-in audit trail and simplifying debugging. Projections can be built from the same events to serve different read models, an approach often combined with the CQRS pattern (command query responsibility segregation). Events can also be published to other services, making the pattern popular in microservice architectures.</p>
+<h2>Challenges</h2>
+<p>Replaying long event streams can be slow, so systems often store periodic snapshots of state. Events are never deleted, which raises storage costs and complicates compliance with privacy rules requiring erasure of personal data; common mitigations include encrypting personal data per subject so it can be "crypto-shredded". Versioning event schemas over time is another persistent difficulty.</p>
+<h2>See also</h2>
+<p><a href="../Command_Query_Responsibility_Segregation/index.html">CQRS</a> &middot; <a href="../Microservices/index.html">Microservices</a> &middot; <a href="../Database_transaction/index.html">Database transaction</a></p>
+</body>
+</html>

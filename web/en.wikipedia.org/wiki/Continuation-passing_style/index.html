@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Continuation-passing style - Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:960px;margin:0 auto;padding:16px;line-height:1.6;color:#202122}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1}
+img.hero{float:right;margin:0 0 12px 16px;max-width:280px;background:#eaecf0;padding:8px}
+a{color:#0645ad;text-decoration:none}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:8px;overflow:auto}
+</style>
+</head>
+<body>
+<img class="hero" src="images/continuation-passing-style.png" alt="Call tree diagram in continuation-passing style">
+<h1>Continuation-passing style</h1>
+<p>In functional programming, <b>continuation-passing style</b> (<b>CPS</b>) is a style of programming in which control is passed explicitly in the form of a continuation. This is contrasted with direct style, which is the usual style of programming. A function written in continuation-passing style takes an extra argument: an explicit "continuation", i.e. a function of one argument. When the CPS function has computed its result value, it "returns" it by calling the continuation function with this value as the argument.</p>
+<h2>Example</h2>
+<p>In direct style, a simple function such as the identity or a factorial might be written straightforwardly. In CPS, every function receives an additional continuation parameter <code>k</code>, and instead of returning a value it calls <code>k</code> with the value:</p>
+<pre>(define (fact n k)
+  (if (= n 0)
+      (k 1)
+      (fact (- n 1)
+            (lambda (v) (k (* n v))))))</pre>
+<p>Every call in CPS is a tail call, because functions never return to their caller; instead the continuation captures "what to do next".</p>
+<h2>Uses</h2>
+<p>CPS is used as an intermediate representation in compilers for functional languages, notably in the tradition of Guy L. Steele's work on the Rabbit compiler for Scheme and Andrew Appel's <i>Compiling with Continuations</i>. Because control flow is explicit, CPS makes it easy to implement features such as first-class continuations (<code>call/cc</code>), exceptions, coroutines and backtracking. CPS transformation is closely related to the A-normal form used in other compilers.</p>
+<h2>Relation to other concepts</h2>
+<p>Continuation-passing style corresponds, via the Curry–Howard correspondence, to double-negation translations in logic. In web programming, asynchronous APIs that use callback functions are an informal analogue of CPS, sometimes leading to deeply nested callbacks known colloquially as "callback hell".</p>
+</body>
+</html>

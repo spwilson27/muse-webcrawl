@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Depth-first search - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 8px; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; max-width: 320px; width: 100%; height: auto; background: #eaecf0; border: 1px solid #c8ccd1; margin: 12px 0; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 12px; font-size: 13px; overflow-x: auto; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Depth-first search</h1>
+<img class="hero" src="images/Depth-first_search.png" alt="Order in which nodes are visited by depth-first search">
+<p><b>Depth-first search</b> (DFS) is an algorithm for traversing or searching tree and graph data structures. Starting at a chosen root (or an arbitrary node in a graph), it explores as far as possible along each branch before backtracking. The algorithm is a systematic development of the maze-solving method published by Charles Pierre Trémaux in the 19th century.</p>
+<h2>Algorithm</h2>
+<p>DFS can be implemented recursively or iteratively with an explicit stack. Each vertex is marked when first visited so that, in graphs with cycles, no vertex is processed more than once.</p>
+<pre>
+DFS(G, v):
+    mark v as visited
+    for each neighbour w of v:
+        if w is not visited:
+            DFS(G, w)
+</pre>
+<p>For a graph with V vertices and E edges, the running time is O(V + E), and the space requirement is O(V) in the worst case for the recursion stack or explicit stack.</p>
+<h2>Vertex orderings</h2>
+<p>Traversals of trees are classified as pre-order, in-order, or post-order according to when a node is recorded relative to the traversal of its subtrees. In directed graphs, DFS yields discovery and finishing times for each vertex, which classify edges as tree, back, forward, or cross edges.</p>
+<h2>Applications</h2>
+<p>Depth-first search underpins topological sorting, detection of cycles and strongly connected components (in Kosaraju's and Tarjan's algorithms), maze generation and solving, finding connected components, parsing, and the backtracking search used in constraint satisfaction and game-tree exploration. Its counterpart, <a href="../Breadth-first_search/index.html">breadth-first search</a>, explores vertices level by level instead.</p>
+<p>See also: <a href="../Tree_traversal/index.html">Tree traversal</a>, <a href="../Topological_sorting/index.html">Topological sorting</a>, <a href="../Backtracking/index.html">Backtracking</a>.</p>
+</div>
+</body>
+</html>

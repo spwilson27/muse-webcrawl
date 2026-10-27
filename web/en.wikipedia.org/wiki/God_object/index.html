@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>God object - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.mw-body { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+img.hero { display: block; max-width: 320px; margin: 0 0 1em 1em; float: right; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>God object</h1>
+<img class="hero" src="images/God_object.png" alt="Diagram illustrating a god object controlling many parts of a system">
+<p>In <a href="../Object-oriented_programming/index.html">object-oriented programming</a>, a <b>god object</b> (also known as a <b>god class</b>) is an object that references a large number of distinct types, has too many unrelated or uncategorized methods, or some combination of both. The god object is an example of an anti-pattern and a code smell.</p>
+<p>A common programming technique is to separate a large problem into several smaller, more manageable parts (divide and conquer) and create solutions for each of them. Once the smaller problems are solved, the big problem as a whole has been solved. Therefore, a given object for a small problem need only know about itself. However, a god object knows or does an excessive amount, centralising functionality that ought to be distributed among many smaller objects.</p>
+<h2>Characteristics</h2>
+<p>God objects exhibit high coupling and low cohesion: they interact with many other parts of the system, and their responsibilities are numerous and unrelated. Because a god object centralises so much behaviour, changes to it risk breaking many parts of the system at once, and it becomes difficult to test, reuse, or maintain. Systems centred on a god object also tend to have many other objects that are mere data holders, passing information to the central object for processing.</p>
+<h2>Remedies</h2>
+<p>The standard remedy is refactoring: applying the single-responsibility principle by splitting the god object's responsibilities among several cohesive classes, delegating behaviour to the objects that own the relevant data. Related anti-patterns include the "blob" in procedural design and overly large utility classes.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Anti-pattern/index.html">Anti-pattern</a></li>
+<li><a href="../Code_smell/index.html">Code smell</a></li>
+<li><a href="../Single-responsibility_principle/index.html">Single-responsibility principle</a></li>
+<li><a href="../Ravioli_code/index.html">Ravioli code</a></li>
+</ul>
+</div>
+</body>
+</html>

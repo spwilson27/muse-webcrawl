@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HATEOAS - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; color: #202122; margin: 0; background: #fff; }
+#content { max-width: 960px; margin: 0 auto; padding: 24px 32px 64px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 28px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; font-size: 22px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+.hero { background: #eaecf0; border: 1px solid #a2a9b1; padding: 16px; text-align: center; margin: 16px 0; color: #54595d; font-style: italic; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 12px; font-size: 13px; overflow-x: auto; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>HATEOAS</h1>
+<div class="hero"><img src="images/HATEOAS.png" alt="Diagram of a client navigating an application by following hypermedia links"></div>
+<p><b>HATEOAS</b> (<b>Hypermedia as the Engine of Application State</b>) is a constraint of the REST application architecture that distinguishes it from other network application architectures. With HATEOAS, a client interacts with a network application entirely through hypermedia provided dynamically by application servers. A REST client needs little prior knowledge about how to interact with an application beyond a generic understanding of hypermedia.</p>
+<h2>Principle</h2>
+<p>The principle is analogous to browsing the World Wide Web: a user enters a website at a home page and navigates by following links, rather than constructing addresses from a manual. In a HATEOAS-driven API, the response to a request includes links describing the actions currently available on the returned resource, so the client discovers possible state transitions from the representation itself. Roy Fielding, who introduced the concept in his 2000 doctoral dissertation defining REST, has argued that most APIs described as "RESTful" do not satisfy this constraint.</p>
+<h2>Example</h2>
+<p>A request for a bank account might return a representation including links to deposit, withdraw and transfer actions only when the account state permits them:</p>
+<pre>{
+  "accountNumber": 12345,
+  "balance": 250.00,
+  "links": [
+    { "rel": "deposit", "href": "/accounts/12345/deposit" },
+    { "rel": "transfer", "href": "/accounts/12345/transfer" }
+  ]
+}</pre>
+<h2>Formats</h2>
+<p>Several hypermedia formats have been designed to carry such links, including HAL, JSON:API, Siren, and Collection+JSON. Adoption in public APIs has been limited compared with plain JSON APIs documented out-of-band, but HATEOAS remains influential in discussions of API design and evolvability.</p>
+<h2>See also</h2>
+<p><a href="../REST/index.html">REST</a> · <a href="../Roy_Fielding/index.html">Roy Fielding</a> · <a href="../Hypermedia/index.html">Hypermedia</a></p>
+</div>
+</body>
+</html>

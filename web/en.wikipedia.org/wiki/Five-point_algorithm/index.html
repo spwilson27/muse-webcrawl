@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Five-point algorithm - Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:760px;margin:2em auto;padding:0 1em;line-height:1.55;color:#202122}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:480px;width:100%;margin:1em auto;background:#eaecf0;border:1px solid #a2a9b1;text-align:center;padding:2.2em 0;color:#54595d;font-size:.9em}
+.ref{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Five-point algorithm</h1>
+<img class="hero" src="images/Five-point_algorithm.png" alt="Epipolar geometry diagram for relative camera pose">
+<p>The <b>five-point algorithm</b> is a method in computer vision for estimating the relative position and orientation (pose) of a calibrated camera between two views, given correspondences between five pairs of points. It solves for the essential matrix E, a 3×3 matrix encoding the epipolar geometry of the two views, which satisfies the epipolar constraint x′ᵀ E x = 0 for each corresponding pair of normalised image points.</p>
+<h2>Background</h2>
+<p>Five points is the minimum number needed to determine the essential matrix up to scale, because the essential matrix has five degrees of freedom (three for rotation and two for the direction of translation). Earlier approaches, such as the eight-point algorithm, used more correspondences and solved a linear system, but could produce matrices that do not satisfy the internal constraints of a true essential matrix (two equal non-zero singular values and one zero singular value).</p>
+<h2>The algorithm</h2>
+<p>The algorithm was presented by David Nistér in 2004. From five point correspondences, the epipolar equations yield a 5×9 coefficient matrix whose four-dimensional null space gives a basis for the essential matrix. Imposing the cubic constraints on E — the determinant condition det(E) = 0 and the trace constraint 2EEᵀE − tr(EEᵀ)E = 0 — produces ten cubic equations in four unknowns. These are solved by computing the action matrix from a Gröbner basis (via Gauss–Jordan elimination on an expanded polynomial system), giving up to ten real solutions for E. Each candidate is then tested against additional correspondences.</p>
+<h2>Applications</h2>
+<p>Because it uses the minimal sample, the five-point algorithm is the standard minimal solver inside RANSAC procedures for robust relative pose estimation, visual odometry, structure from motion and SLAM, where its small sample size greatly reduces the number of iterations needed to reject outlier correspondences.</p>
+<p>See also: <a href="../Essential_matrix/index.html">Essential matrix</a> · <a href="../Eight-point_algorithm/index.html">Eight-point algorithm</a> · <a href="../Epipolar_geometry/index.html">Epipolar geometry</a> · <a href="../Structure_from_motion/index.html">Structure from motion</a></p>
+</body>
+</html>

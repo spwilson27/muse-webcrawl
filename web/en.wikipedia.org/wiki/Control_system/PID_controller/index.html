@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PID controller - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:52em;line-height:1.6;color:#202122;padding:0 1em}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+figure{float:right;margin:0 0 1em 1.5em;border:1px solid #c8ccd1;background:#f8f9fa;padding:.5em;max-width:250px;text-align:center}
+figure img{max-width:100%}
+figcaption{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>PID controller</h1>
+<figure>
+<img src="images/pid-controller.png" alt="Block diagram of a PID controller in a feedback loop">
+<figcaption>A PID controller in a feedback loop</figcaption>
+</figure>
+<p>A <b>proportional–integral–derivative controller</b> (<b>PID controller</b> or <b>three-term controller</b>) is a control loop mechanism employing feedback that is widely used in industrial control systems and a variety of other applications requiring continuously modulated control. A PID controller continuously calculates an error value as the difference between a desired setpoint (SP) and a measured process variable (PV) and applies a correction based on proportional, integral, and derivative terms (denoted P, I, and D respectively), hence the name.</p>
+<h2>Control algorithm</h2>
+<p>The output of the controller is the sum of three terms:</p>
+<ul>
+<li>The <b>proportional</b> term produces an output proportional to the current error. Larger proportional gain gives a faster response but can cause overshoot and oscillation.</li>
+<li>The <b>integral</b> term accumulates past errors over time, eliminating steady-state offset but potentially causing integrator windup when the actuator saturates.</li>
+<li>The <b>derivative</b> term responds to the rate of change of the error, damping oscillations and improving stability, though it amplifies measurement noise.</li>
+</ul>
+<p>Mathematically, u(t) = K<sub>p</sub>e(t) + K<sub>i</sub>∫e(τ)dτ + K<sub>d</sub>de(t)/dt, where the gains K<sub>p</sub>, K<sub>i</sub>, and K<sub>d</sub> must be tuned for each application.</p>
+<h2>Tuning</h2>
+<p>Tuning methods include manual adjustment, the Ziegler–Nichols method (1942), which sets gains from the ultimate gain and oscillation period found by increasing proportional gain until sustained oscillation, and software-based auto-tuning and model-based rules. Many controllers omit the derivative term (PI controllers) where noise or process characteristics make it troublesome.</p>
+<h2>History and applications</h2>
+<p>PID control descends from ship-steering and pneumatic process controllers of the early twentieth century; Elmer Sperry's autopilots and the pneumatic controllers of the 1930s embodied the three actions before electronic and digital implementations became standard. Today PID loops regulate temperature, pressure, flow, speed, and countless other variables, and PID remains the most common control algorithm in industry, implemented in PLCs, distributed control systems, and embedded devices.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Control_theory/index.html">Control theory</a></li>
+<li><a href="../Feedback/index.html">Feedback</a></li>
+<li><a href="../Thermostat/index.html">Thermostat</a></li>
+<li><a href="../../Ziegler%E2%80%93Nichols_method/index.html">Ziegler–Nichols method</a></li>
+</ul>
+</body>
+</html>

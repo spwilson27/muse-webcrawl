@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Galois/Advanced Encryption Standard - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em; line-height: 1.6; color: #202122; max-width: 960px; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 320px; background: #eaecf0; padding: 2em; }
+</style>
+</head>
+<body>
+<h1>Galois/Counter Mode and the Advanced Encryption Standard</h1>
+<p>This article discusses the use of <b>Galois field arithmetic</b> in the <a href="../../Advanced_Encryption_Standard/index.html">Advanced Encryption Standard</a> (AES). AES, standardised by the U.S. National Institute of Standards and Technology in 2001 (FIPS 197), is built almost entirely on operations in the finite field GF(2⁸), also written as GF(2)[x]/(x⁸ + x⁴ + x³ + x + 1).</p>
+<div class="hero"><img src="images/Galois_Advanced_Encryption_Standard.png" alt="Diagram of the AES SubBytes step using finite field inversion"></div>
+<h2>Finite field arithmetic in AES</h2>
+<p>Each byte of the AES state is interpreted as an element of GF(2⁸): a polynomial of degree at most 7 over GF(2), with arithmetic performed modulo the irreducible polynomial m(x) = x⁸ + x⁴ + x³ + x + 1 (0x11B). Addition in the field is bitwise XOR. Multiplication is polynomial multiplication followed by reduction modulo m(x); in software this is often accelerated with tables or with the "xtime" operation for multiplication by x.</p>
+<h2>Where the field is used</h2>
+<ul>
+<li><b>SubBytes</b>: each byte is replaced by its multiplicative inverse in GF(2⁸) (with zero mapped to zero), followed by a fixed affine transformation over GF(2).</li>
+<li><b>MixColumns</b>: each column of the state is multiplied by a fixed 4×4 matrix over GF(2⁸) with entries {01}, {02} and {03}, providing diffusion.</li>
+<li><b>Key expansion</b>: the RotWord/SubWord steps use the same S-box, and round constants are generated as powers of x in the field.</li>
+</ul>
+<p>The use of finite-field operations gives AES strong algebraic structure that supports its security analysis, while remaining implementable efficiently in hardware and software; the field arithmetic can be computed with small lookup tables or, in modern processors, with dedicated instructions such as AES-NI.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../Advanced_Encryption_Standard/index.html">Advanced Encryption Standard</a></li>
+<li><a href="../../Finite_field/index.html">Finite field</a></li>
+<li><a href="../../Rijndael_S-box/index.html">Rijndael S-box</a></li>
+<li><a href="../../Galois/Counter_Mode/index.html">Galois/Counter Mode</a></li>
+</ul>
+</body>
+</html>

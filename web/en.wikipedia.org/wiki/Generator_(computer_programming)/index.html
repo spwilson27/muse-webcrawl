@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Generator (computer programming) - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; padding: 0 2em; color: #202122; line-height: 1.6; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 480px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 1em; }
+</style>
+</head>
+<body>
+<h1>Generator (computer programming)</h1>
+<div class="hero"><img src="images/Generator_(computer_programming).png" alt="Placeholder image for Generator (computer programming)"></div>
+<p>In computer programming, a <b>generator</b> is a routine that can be used to control the iteration behaviour of a loop. All generators are also iterators. A generator is very similar to a function that returns an array, in that a generator has parameters, can be called, and generates a sequence of values. However, instead of building an array containing all the values and returning them all at once, a generator yields the values one at a time, which requires less memory and allows the caller to get started processing the first values immediately.</p>
+
+<h2>Characteristics</h2>
+<p>Generators were first introduced in the programming language CLU in the 1970s and are now available in many languages, including Python, C#, JavaScript, PHP, Ruby, and Rust. In Python, a function containing the <code>yield</code> keyword becomes a generator function; each call to <code>next()</code> resumes execution where it last suspended, preserving local state between yields. This allows the representation of infinite sequences, such as the sequence of Fibonacci numbers, and supports lazy evaluation of data pipelines.</p>
+
+<h2>Comparison with iterators and coroutines</h2>
+<p>Generators are a special case of coroutines: a generator can suspend and resume its execution, but control always returns to the routine that resumed it, whereas full coroutines can transfer control to one another. Generators simplify the implementation of custom iterators, because the compiler automatically manages the state machine underlying the iteration protocol.</p>
+
+<h2>Examples</h2>
+<p>In Python:</p>
+<pre>
+def fibonacci():
+    a, b = 0, 1
+    while True:
+        yield a
+        a, b = b, a + b
+</pre>
+<p>In JavaScript, generator functions are declared with <code>function*</code> and use the <code>yield</code> expression; the ECMAScript standard introduced them in ES2015.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Iterator/index.html">Iterator</a></li>
+<li><a href="../Coroutine/index.html">Coroutine</a></li>
+<li><a href="../Lazy_evaluation/index.html">Lazy evaluation</a></li>
+</ul>
+</body>
+</html>

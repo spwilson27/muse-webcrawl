@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Instruction cycle - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:52em;line-height:1.6;color:#202122;padding:0 1em}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+figure{float:right;margin:0 0 1em 1.5em;border:1px solid #c8ccd1;background:#f8f9fa;padding:.5em;max-width:250px;text-align:center}
+figure img{max-width:100%}
+figcaption{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Instruction cycle</h1>
+<figure>
+<img src="images/instruction-cycle.png" alt="Diagram of the fetch-decode-execute cycle">
+<figcaption>The basic instruction cycle: fetch, decode, execute</figcaption>
+</figure>
+<p>The <b>instruction cycle</b> (also known as the <b>fetch–decode–execute cycle</b>, or simply the <b>fetch–execute cycle</b>) is the cycle that the central processing unit (CPU) follows from boot-up until the computer has shut down in order to process instructions. It is composed of three main stages: the fetch stage, the decode stage, and the execute stage.</p>
+<h2>Fetch</h2>
+<p>The program counter (PC) holds the address of the next instruction. At the start of the cycle, the instruction at that address is copied from memory into the instruction register (IR), and the PC is incremented to point to the following instruction.</p>
+<h2>Decode</h2>
+<p>The control unit interprets the opcode in the instruction register, identifies the operation and its operands, reads operand values from registers or memory, and configures the datapath accordingly. In microprogrammed processors, decoding selects an entry point in the microcode store; in hardwired designs it activates combinational control logic.</p>
+<h2>Execute</h2>
+<p>The CPU performs the specified operation: the ALU computes an arithmetic or logical result, memory is read or written, a branch changes the program counter, or input/output is transferred. At the end of execution, results are written back to registers or memory, and the cycle repeats with the next fetch. Between instructions the CPU may also check for interrupts and, if one is pending, save its state and transfer control to an interrupt handler.</p>
+<h2>Pipelining</h2>
+<p>Modern CPUs overlap the stages of many instructions in an instruction pipeline, and superscalar designs fetch and execute several instructions per cycle. The simple three-stage description remains the conceptual basis for these more complex organizations.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Central_processing_unit/index.html">Central processing unit</a></li>
+<li><a href="../Microcode/index.html">Microcode</a></li>
+<li><a href="../../Program_counter/index.html">Program counter</a></li>
+<li><a href="../../Instruction_pipelining/index.html">Instruction pipelining</a></li>
+</ul>
+</body>
+</html>

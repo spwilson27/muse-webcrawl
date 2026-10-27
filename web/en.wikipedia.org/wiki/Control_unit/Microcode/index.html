@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Microcode - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:52em;line-height:1.6;color:#202122;padding:0 1em}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+figure{float:right;margin:0 0 1em 1.5em;border:1px solid #c8ccd1;background:#f8f9fa;padding:.5em;max-width:250px;text-align:center}
+figure img{max-width:100%}
+figcaption{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Microcode</h1>
+<figure>
+<img src="images/microcode.png" alt="Diagram of a microprogrammed control unit">
+<figcaption>A microprogrammed control unit, with a control store holding microinstructions</figcaption>
+</figure>
+<p><b>Microcode</b> is a computer hardware technique that interposes a layer of low-level machine-specific instructions between the higher-level machine code instructions of a computer architecture and the underlying electronics. The microcode resides in a dedicated high-speed memory called the <i>control store</i>, and each machine instruction is implemented as a short sequence of microinstructions (a microprogram) that generate the control signals for the datapath.</p>
+<h2>History</h2>
+<p>The concept was developed by Maurice Wilkes in 1951 as a systematic way to design a control unit, and was first widely used in IBM's System/360 family (1964), which allowed different models — from small to large — to share one architecture while differing in hardware, the slower models interpreting complex instructions with microcode on simple datapaths. Microprogramming dominated mainframe and minicomputer design through the 1970s; the RISC movement of the 1980s favored hardwired control for simple instruction sets, but modern high-performance x86 processors still decode complex instructions into micro-operations, some of them microcoded.</p>
+<h2>Vertical and horizontal microcode</h2>
+<p>In <i>horizontal</i> microcode, each microinstruction word is wide and directly encodes many control signals, allowing parallel control of hardware resources. In <i>vertical</i> microcode, words are narrower and more like conventional instructions, requiring more cycles but less storage. Many designs compromise between the two, a style sometimes called diagonal.</p>
+<h2>Updates</h2>
+<p>Because microcode in modern processors is stored in patchable RAM loaded at startup, vendors can issue microcode updates through firmware or the operating system to fix errata. Notable examples include updates mitigating the Pentium FDIV bug's aftermath in later designs and the Spectre and Meltdown vulnerabilities, where microcode changes assisted software mitigations.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Central_processing_unit/index.html">Central processing unit</a></li>
+<li><a href="../Instruction_cycle/index.html">Instruction cycle</a></li>
+<li><a href="../../Control_unit/index.html">Control unit</a></li>
+<li><a href="../../Firmware/index.html">Firmware</a></li>
+</ul>
+</body>
+</html>

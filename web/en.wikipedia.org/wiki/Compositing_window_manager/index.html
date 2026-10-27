@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Compositing window manager - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: sans-serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+p, li { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 480px; width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; }
+.caption { font-size: 12px; color: #54595d; font-family: sans-serif; }
+.small { font-size: 13px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Compositing window manager</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="hero"><img src="images/compositing-window-manager.png" alt="A desktop with translucent, shadowed, overlapping windows"><div class="caption">Compositing enables per-window translucency, shadows, and smooth animation</div></div>
+<p>A <b>compositing window manager</b>, or <b>compositor</b>, is a window manager that provides applications with an off-screen buffer for each window. The window manager composites the window buffers together to create the image of the desktop and writes the result into the display memory. This differs from a traditional "stacking" window manager, in which applications draw directly into the shared framebuffer.</p>
+<h2>Effects made possible</h2>
+<p>Because the compositor holds each window as a separate image (texture), it can manipulate windows freely before presenting them:</p>
+<ul>
+<li>Drop shadows and window borders rendered independently of applications</li>
+<li>True translucency and alpha blending between overlapping windows</li>
+<li>Smooth scaling, fading, and animation of windows, including live previews and thumbnails (as in task switchers and Exposé/Mission Control)</li>
+<li>Desktop effects such as virtual-desktop transitions, zooming accessibility aids, and 3D effects like the Compiz cube</li>
+<li>Elimination of tearing and flicker, since partially drawn windows are never displayed</li>
+</ul>
+<h2>History and implementations</h2>
+<p>Compositing was popularized on the desktop by Apple's Quartz Compositor in Mac OS X (2001). On Linux and Unix, compositing for the X Window System became practical with the X Composite extension (2004) and managers such as Compiz (2006), KWin, and Mutter; the Wayland display protocol builds compositing into its core design, with the compositor also acting as the display server. Microsoft's Desktop Window Manager, introduced with Windows Vista (2007), made compositing standard on Windows. A drawback of compositing is some added latency and GPU memory use, which matters for full-screen games; many systems therefore "unredirect" or bypass composition for full-screen windows.</p>
+<h2>Compositing and tiling</h2>
+<p>Compositing is independent of the window-management model: compositors may stack windows in the familiar overlapping style or tile them without overlap, as in tiling compositors such as Sway under Wayland.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Window_manager/index.html">Window manager</a></li>
+<li><a href="../Desktop_Window_Manager/index.html">Desktop Window Manager</a></li>
+<li><a href="../Wayland_(protocol)/index.html">Wayland (protocol)</a></li>
+<li><a href="../Compiz/index.html">Compiz</a></li>
+</ul>
+</div>
+</body>
+</html>
