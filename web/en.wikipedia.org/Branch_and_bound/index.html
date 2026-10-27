@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Branch and bound - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+.topbar { background: #f8f9fa; border-bottom: 1px solid #a7d7f9; padding: 8px 20px; font-family: sans-serif; font-size: 13px; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+.thumb { text-align: center; background: #eaecf0; padding: 18px 6px; margin: 12px 0; color: #54595d; font-size: 12px; font-family: sans-serif; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul, ol { line-height: 1.6; font-size: 15px; }
+</style>
+</head>
+<body>
+<div class="topbar">Wikipedia &nbsp;|&nbsp; The Free Encyclopedia</div>
+<div class="content">
+<h1>Branch and bound</h1>
+<div class="thumb"><img src="images/branch-and-bound.png" alt="Search tree diagram with branches pruned by bounds"> [Image placeholder: branch and bound search tree]</div>
+<p><b>Branch and bound</b> (BB, B&amp;B, or BnB) is an algorithm design paradigm for discrete and combinatorial optimization problems, introduced by Ailsa Land and Alison Doig in 1960 for integer programming. It is a general method for finding optimal solutions by systematically enumerating candidate solutions in a search tree while using bounds to discard ("prune") large portions of the tree that provably cannot contain a better solution than the best one found so far.</p>
+<h2>Method</h2>
+<ol>
+<li><b>Branching:</b> A problem is divided into smaller subproblems — for integer programming, typically by selecting a variable that takes a fractional value in the relaxed solution and creating subproblems with that variable fixed to its floor and ceiling values.</li>
+<li><b>Bounding:</b> Each subproblem is solved in a relaxed form (for example, the linear programming relaxation), giving an optimistic bound on the best solution it could contain.</li>
+<li><b>Pruning:</b> A subproblem is discarded if its bound is no better than the current incumbent solution, if its relaxation is infeasible, or if it yields an integer solution — in which case the incumbent may be updated.</li>
+</ol>
+<p>The search continues until the tree is exhausted or a tolerance gap between the incumbent and the best bound is met. Worst-case running time remains exponential, but in practice, strong relaxations, cutting planes (leading to <i>branch and cut</i>), and good branching rules make many large problems tractable; modern mixed-integer programming solvers are built on this framework.</p>
+<h2>Applications</h2>
+<p>Branch and bound is used for the travelling salesman problem, knapsack problems, scheduling, facility location, protein structure prediction, and exact solutions in operations research generally. Related strategies include branch and price (combined with column generation) and best-first or depth-first node selection policies.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Integer_programming/index.html">Integer programming</a></li>
+<li><a href="../Combinatorial_optimization/index.html">Combinatorial optimization</a></li>
+<li><a href="../Branch_and_cut/index.html">Branch and cut</a></li>
+<li><a href="../Travelling_salesman_problem/index.html">Travelling salesman problem</a></li>
+</ul>
+</div>
+</body>
+</html>

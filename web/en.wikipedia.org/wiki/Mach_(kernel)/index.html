@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mach (kernel) - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 13px; margin: 0 0 16px 20px; padding: 8px 12px; }
+.infobox th { text-align: left; padding: 3px 6px 3px 0; vertical-align: top; }
+.infobox td { padding: 3px 0; }
+.infobox .title { font-weight: bold; text-align: center; font-size: 15px; padding-bottom: 6px; }
+.hero { text-align: center; margin: 12px 0; }
+.hero img { max-width: 100%; border: 1px solid #ccc; background: #eee; }
+.caption { font-size: 12px; color: #54595d; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Mach (kernel)</h1>
+
+<div class="infobox">
+<div class="title">Mach</div>
+<table>
+<tr><th>Developer</th><td>Richard Rashid, Avadis Tevanian; Carnegie Mellon University</td></tr>
+<tr><th>Initial release</th><td>1985</td></tr>
+<tr><th>Written in</th><td>C</td></tr>
+<tr><th>OS family</th><td>Unix-like</td></tr>
+<tr><th>Kernel type</th><td>Microkernel (hybrid in derivatives)</td></tr>
+<tr><th>License</th><td>Various</td></tr>
+</table>
+</div>
+
+<p><b>Mach</b> is a kernel developed at Carnegie Mellon University by Richard Rashid and Avadis Tevanian to support operating system research, primarily distributed and parallel computation. It is one of the earliest examples of a <a href="../Microkernel/index.html">microkernel</a>, and its design principles influenced a generation of operating systems, including the kernels underlying <a href="../NeXTSTEP/index.html">NeXTSTEP</a>, <a href="../macOS/index.html">macOS</a>, <a href="../iOS/index.html">iOS</a>, and <a href="../GNU_Hurd/index.html">GNU Hurd</a>.</p>
+
+<div class="hero">
+<img src="images/mach-kernel.png" alt="Diagram of the Mach microkernel architecture">
+<div class="caption">The Mach microkernel provides a minimal set of core abstractions; most operating system services run in user space.</div>
+</div>
+
+<h2>History</h2>
+<p>Development began in 1985 as a successor to the Accent kernel, also developed at Carnegie Mellon. The Mach project, funded in part by DARPA, sought to create a kernel that could run <a href="../Berkeley_Software_Distribution/index.html">BSD</a> Unix as an application while also supporting multiprocessor systems and distributed computing. Mach 3.0, released in the early 1990s, was the first version to separate the BSD compatibility code fully from the kernel itself, producing a true microkernel.</p>
+<p>The project was later continued by the Open Software Foundation Research Institute and at the University of Utah as part of the Flux project. While research on Mach itself wound down, its commercial descendants proved enormously influential.</p>
+
+<h2>Design</h2>
+<p>Mach reduces the kernel to a small set of fundamental abstractions:</p>
+<p><b>Tasks and threads.</b> A task is an execution environment consisting of an address space and a set of port rights; a thread is a unit of execution within a task. This separation allows a single process to run many threads concurrently across multiple processors.</p>
+<p><b>Ports and messages.</b> All inter-process communication in Mach takes place by message passing through ports, which are protected message queues. A task holds rights to ports — receive, send, or send-once rights — and the kernel mediates every transfer, giving Mach a capability-like protection model.</p>
+<p><b>Memory objects.</b> Mach implements virtual memory in terms of memory objects, which can be backed by external pager tasks in user space. This made it possible to implement file systems, network buffering, and distributed shared memory outside the kernel.</p>
+<p><b>Device and processor abstractions.</b> Hardware is presented through device ports, and multiprocessor support is built into the basic scheduling model rather than bolted on.</p>
+
+<h2>Influence and derivatives</h2>
+<p>Avadis Tevanian carried Mach to <a href="../NeXT/index.html">NeXT</a>, where it formed the core of NeXTSTEP together with BSD Unix code. When Apple acquired NeXT in 1997, that system became the basis of <a href="../XNU/index.html">XNU</a>, the hybrid kernel of macOS and iOS, which combines Mach with BSD components in a single kernel. GNU Hurd, the Free Software Foundation's kernel, is built on Mach (GNU Mach). The L4 microkernel family was designed partly in response to performance criticisms of Mach's message passing.</p>
+
+<h2>Criticism</h2>
+<p>Mach was criticized for the performance overhead of its IPC mechanism, especially on the hardware of its era, and for the complexity of implementing full Unix compatibility in user space. These critiques contributed to the debate between microkernel and monolithic kernel designs exemplified by the famous Tanenbaum–Torvalds exchange.</p>
+
+<h2>See also</h2>
+<p><a href="../Microkernel/index.html">Microkernel</a> &middot; <a href="../GNU_Hurd/index.html">GNU Hurd</a> &middot; <a href="../XNU/index.html">XNU</a> &middot; <a href="../L4_microkernel_family/index.html">L4 microkernel family</a> &middot; <a href="../Accent_kernel/index.html">Accent kernel</a></p>
+
+<h2>References</h2>
+<p>From memory: Rashid, R. et al., "Machine-Independent Virtual Memory Management for Paged Uniprocessor and Multiprocessor Architectures" (1987); Tevanian, A., "Architecture-Independent Virtual Memory Management in the Mach Operating System." Standard operating-system textbooks survey Mach's task/thread/port model.</p>
+</div>
+</body>
+</html>

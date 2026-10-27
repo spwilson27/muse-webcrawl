@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cross compiler</title>
+<style>
+body { font-family: Georgia, serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #222; }
+h1 { border-bottom: 2px solid #a2a9b1; padding-bottom: 5px; }
+h2 { border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 15px 15px; font-size: 0.9em; }
+.infobox th { text-align: left; vertical-align: top; padding-right: 8px; }
+.hero { display: block; margin: 10px auto; max-width: 100%; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Cross compiler</h1>
+<img class="hero" src="images/cross-compiler.png" alt="Illustration placeholder: diagram of a host machine compiling code for a target device">
+<div class="infobox">
+<table>
+<tr><th>Field</th><td>Computer science, software development</td></tr>
+<tr><th>Host</th><td>The platform on which the compiler runs</td></tr>
+<tr><th>Target</th><td>The platform for which code is generated</td></tr>
+<tr><th>Common uses</th><td>Embedded systems, operating system development, bootstrapping</td></tr>
+</table>
+</div>
+<p>A <b>cross compiler</b> is a compiler capable of creating executable code for a platform other than the one on which the compiler itself is running. The machine running the compiler is called the <i>host</i>, and the machine for which code is produced is the <i>target</i>. This contrasts with a native compiler, which generates code for the same platform it runs on.</p>
+<h2>Uses</h2>
+<p>Cross compilation is essential in embedded systems development, where the target device (a microcontroller or single-board computer) may lack the memory, storage, or processing power to run a compiler. It is also used to bootstrap new platforms: the first compiler for a new architecture must necessarily be a cross compiler built on an existing system. Operating system and kernel developers routinely cross-compile, and large software projects use cross compilation to produce binaries for multiple architectures from a single build server.</p>
+<h2>Toolchains</h2>
+<p>A cross-compilation environment, or toolchain, includes the compiler, assembler, linker, and libraries built for the target. Tools such as GCC can be configured for cross compilation, and projects like crosstool-NG and the GNU build system's "Canadian cross" terminology (build, host, and target machines) help manage the complexity. Challenges include correctly configuring the target's ABI, endianness, floating-point support, and C library (such as glibc, musl, or newlib).</p>
+<p>See also: <a href="../Compiler/index.html">Compiler</a>, <a href="../GNU_Compiler_Collection/index.html">GNU Compiler Collection</a>, <a href="../Embedded_system/index.html">Embedded system</a>, <a href="../Bootstrapping_(compilers)/index.html">Bootstrapping (compilers)</a>.</p>
+</body>
+</html>

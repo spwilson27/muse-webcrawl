@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Instruction pipelining</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #c8ccd1;padding-bottom:.15em;margin-top:1.2em}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.9em}
+.infobox th{text-align:left;background:#e9ecef;padding:.2em .4em}
+.infobox td{padding:.2em .4em}
+img.hero{display:block;max-width:100%;border:1px solid #c8ccd1;background:#f8f9fa;padding:.5em;box-sizing:border-box}
+a{color:#0645ad}
+</style>
+</head>
+<body>
+<h1>Instruction pipelining</h1>
+<img class="hero" src="images/instruction-pipelining.png" alt="Diagram of a five-stage instruction pipeline processing several instructions overlapped in time">
+<p><b>Instruction pipelining</b> is a technique used in the design of modern microprocessors to increase their instruction throughput — the number of instructions that can be executed in a unit of time. Rather than processing each instruction from start to finish before beginning the next, pipelining overlaps the distinct phases of multiple instructions so that, in the ideal case, one instruction completes on every clock cycle.</p>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Instruction pipelining</th></tr>
+<tr><th>Field</th><td>Computer architecture</td></tr>
+<tr><th>Classic stages</th><td>Fetch, decode, execute, memory access, writeback</td></tr>
+<tr><th>Ideal speedup</th><td>Proportional to the number of stages</td></tr>
+<tr><th>Key problems</th><td>Data hazards, control hazards, structural hazards</td></tr>
+</table>
+</div>
+<h2>Concept</h2>
+<p>The execution of a machine instruction can be decomposed into a sequence of steps: fetching the instruction from memory, decoding it, reading operands, performing the operation, accessing memory, and writing the result back to a register. In a non-pipelined processor these steps are performed serially for one instruction before the next begins, leaving much of the hardware idle at any given moment. Pipelining assigns each step to separate hardware units, called <i>stages</i>, so that while one instruction is being executed, the next is being decoded and a third is being fetched — much as an assembly line assembles many products simultaneously.</p>
+<h2>Classic five-stage pipeline</h2>
+<p>The textbook example, popularised by the MIPS architecture and the book <i>Computer Architecture: A Quantitative Approach</i> by John L. Hennessy and David A. Patterson, uses five stages: instruction fetch (IF), instruction decode and register fetch (ID), execution or address calculation (EX), memory access (MEM), and writeback (WB). Pipeline registers between stages hold the intermediate state of each in-flight instruction.</p>
+<h2>Performance</h2>
+<p>If the stages are perfectly balanced and no instruction ever has to wait, a pipeline with <i>k</i> stages can approach a speedup of <i>k</i> over an unpipelined design at the same clock rate. In practice the benefit is reduced by imbalances between stages, pipeline-register overhead, and hazards that force the pipeline to stall or "flush". Modern high-performance processors use deep pipelines of ten to more than thirty stages, and superscalar designs issue several instructions per cycle into multiple parallel pipelines.</p>
+<h2>Hazards</h2>
+<p><b>Structural hazards</b> occur when two instructions need the same hardware resource at the same time. <b>Data hazards</b> arise when an instruction depends on the result of a previous instruction still in the pipeline; techniques such as operand forwarding (bypassing) reduce the stalls they cause. <b>Control hazards</b> stem from branch instructions, whose outcome is not known until late in the pipeline; branch prediction, delayed branching, and speculative execution are used to keep the pipeline full. When speculation fails, the wrongly fetched instructions must be discarded, wasting work.</p>
+<h2>History</h2>
+<p>Pipelining was used in early mainframes such as the IBM 7030 Stretch (1961) and the CDC 6600 (1964), and became a defining feature of the RISC processors of the 1980s. The desire for ever-higher clock frequencies drove the extremely deep pipelines of designs such as the Intel Pentium 4, whose 31-stage pipeline proved vulnerable to branch mispredictions; later designs retreated to moderate depths combined with wider issue.</p>
+<p><i>See also:</i> <a href="../Superscalar_processor/index.html">Superscalar processor</a>, <a href="../Branch_predictor/index.html">Branch predictor</a>, <a href="../Hazard_(computer_architecture)/index.html">Hazard (computer architecture)</a>, <a href="../RISC/index.html">RISC</a>.</p>
+</body>
+</html>

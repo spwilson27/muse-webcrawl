@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>X.509 - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; max-width: 860px; margin: 0 auto; padding: 20px; color: #202122; background: #fff; line-height: 1.6; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+.infobox { float: right; width: 300px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 12px 16px; font-size: 0.9em; }
+.infobox th { text-align: left; padding: 3px 6px; vertical-align: top; }
+.infobox td { padding: 3px 6px; }
+.hero { width: 100%; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>X.509</h1>
+<div class="infobox">
+<img class="hero" src="images/x509.png" alt="Structure of an X.509 digital certificate">
+<table>
+<tr><th>Developed by</th><td>ITU-T</td></tr>
+<tr><th>First published</th><td>1988</td></tr>
+<tr><th>Type</th><td>Standard for public key certificates</td></tr>
+<tr><th>Used in</th><td>TLS/SSL, S/MIME, code signing, smart cards</td></tr>
+</table>
+</div>
+<p><b>X.509</b> is an International Telecommunication Union (ITU) standard defining the format of public key certificates. An X.509 certificate binds an identity — such as a hostname, organization, or individual — to a public key using a digital signature from a certificate authority (CA) or, in self-signed certificates, from the key owner itself. X.509 certificates are used in many Internet protocols, including TLS/SSL, which underlies HTTPS secure web browsing.</p>
+<h2>History</h2>
+<p>X.509 was initially issued in 1988 as part of the X.500 directory services standards. Version 3, finalized in 1996, added flexible extension fields and is the basis of the profile standardized by the IETF in RFC 5280 for use on the Internet.</p>
+<h2>Certificate structure</h2>
+<p>A certificate contains, among other fields: a version number, a serial number, the signature algorithm identifier, the issuer name, a validity period (not before and not after dates), the subject name, the subject's public key, and optional extensions such as Subject Alternative Name, Key Usage, and Basic Constraints. The whole structure is signed by the issuing CA, and relying parties verify certificates by building a chain of trust to a root CA held in their trust store.</p>
+<h2>Revocation and validation</h2>
+<p>Certificates may be revoked before expiry if a key is compromised. Revocation information is published in certificate revocation lists (CRLs) or queried in real time via the Online Certificate Status Protocol (OCSP). Weaknesses in the CA ecosystem — such as the 2011 DigiNotar compromise — have led to transparency measures like Certificate Transparency logs.</p>
+<p>See also: <a href="../Public_key_infrastructure/index.html">Public key infrastructure</a>, <a href="../Certificate_authority/index.html">Certificate authority</a>, <a href="../Transport_Layer_Security/index.html">Transport Layer Security</a>.</p>
+</body>
+</html>

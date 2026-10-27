@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hungarian algorithm - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { border-bottom: 1px solid #a2a9b1; font-size: 1.4em; margin-top: 1.2em; }
+.infobox { float: right; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; margin: 0 0 16px 16px; font-size: 0.9em; }
+.infobox th { background: #cee; padding: 4px 8px; text-align: left; }
+.infobox td { padding: 4px 8px; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+code { background: #f0f0f0; padding: 0 3px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Hungarian algorithm</h1>
+<table class="infobox">
+<tr><th colspan="2">Hungarian algorithm</th></tr>
+<tr><td><b>Class</b></td><td>Assignment problem (optimisation)</td></tr>
+<tr><td><b>Inventor</b></td><td>Harold W. Kuhn (1955)</td></tr>
+<tr><td><b>Based on work by</b></td><td>Dénes Kőnig and Jenő Egerváry</td></tr>
+<tr><td><b>Worst-case complexity</b></td><td>O(n³) (Jonker–Volgenant improvements)</td></tr>
+<tr><td><b>Also known as</b></td><td>Kuhn–Munkres algorithm</td></tr>
+</table>
+<div class="hero"><img src="images/hungarian-algorithm.png" alt="A cost matrix with an optimal assignment highlighted"></div>
+<p>The <b>Hungarian algorithm</b>, also called the <b>Kuhn–Munkres algorithm</b>, is a combinatorial optimisation algorithm that solves the <a href="../Assignment_problem/index.html">assignment problem</a> in polynomial time. Given a square matrix of costs for assigning each of <i>n</i> workers to <i>n</i> tasks, it finds the one-to-one assignment with the minimum (or maximum) total cost.</p>
+
+<h2>History</h2>
+<p>The algorithm was published by Harold Kuhn in 1955 in the journal <i>Naval Research Logistics Quarterly</i>. Kuhn named it the "Hungarian method" because it was based on the earlier work of two Hungarian mathematicians, Dénes Kőnig and Jenő Egerváry, whose theorems on bipartite graphs underpin the method. James Munkres reviewed the algorithm in 1957 and showed it runs in polynomial time; hence the double name Kuhn–Munkres algorithm. The original implementation ran in O(n⁴); later refinements, including the Jonker–Volgenant variant (1987), achieve O(n³) and are widely used in practice.</p>
+
+<h2>Problem statement</h2>
+<p>Suppose there are <i>n</i> workers and <i>n</i> tasks, and a cost <i>c(i, j)</i> for assigning worker <i>i</i> to task <i>j</i>. The goal is to assign each worker to exactly one task and each task to exactly one worker so that the total cost is minimised. In graph terms this is a minimum-weight perfect matching in a complete bipartite graph. Rectangular problems (more workers than tasks, or vice versa) are handled by padding the matrix with dummy entries.</p>
+
+<h2>Method</h2>
+<p>The classical matrix form of the algorithm proceeds as follows:</p>
+<ol>
+<li>Subtract the smallest entry in each row from every entry in that row, then subtract the smallest entry in each column from every entry in that column. This produces zeros without changing which assignments are optimal.</li>
+<li>Try to assign workers to distinct tasks using only zero entries. Cover all zeros with the minimum number of horizontal and vertical lines; by Kőnig's theorem, if the number of lines equals <i>n</i>, an optimal assignment exists among the zeros.</li>
+<li>If fewer than <i>n</i> lines suffice, find the smallest uncovered entry, subtract it from all uncovered entries, and add it to entries covered twice. This creates new zeros while preserving optimality; return to step 2.</li>
+</ol>
+<p>Modern implementations usually work with dual potentials and augmenting paths on graphs rather than explicit matrix manipulation, treating the problem as a sequence of shortest-path computations.</p>
+
+<h2>Applications</h2>
+<p>The Hungarian algorithm is used wherever one-to-one matching must be optimised: assigning workers to jobs, vehicles to delivery routes, gates to aircraft, and — prominently — data association in multi-object tracking, where detections in successive frames must be matched to existing tracks. It is a standard component of tracking libraries and of the scipy function <code>linear_sum_assignment</code>.</p>
+</div>
+</body>
+</html>

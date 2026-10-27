@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Open Shortest Path First - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;padding:0;color:#202122;background:#fff;line-height:1.6}
+.mw-body{max-width:960px;margin:0 auto;padding:1em 2em}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.4em;padding-bottom:.15em}
+img.hero{display:block;max-width:400px;width:100%;height:200px;object-fit:cover;background:#eaecf0;border:1px solid #c8ccd1;margin:1em auto}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:.88em;margin:0 0 1em 1.5em;padding:.5em}
+.infobox th{background:#b0c4de;text-align:left;padding:.3em}
+.infobox td{padding:.25em .3em;vertical-align:top}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Open Shortest Path First</h1>
+<img class="hero" src="images/open-shortest-path-first.png" alt="Network topology diagram showing routers exchanging link-state information in an OSPF area">
+<div class="infobox">
+<table>
+<tr><th colspan="2">Open Shortest Path First (OSPF)</th></tr>
+<tr><td><b>Type</b></td><td>Interior gateway protocol (link-state)</td></tr>
+<tr><td><b>Standard</b></td><td>RFC 2328 (OSPFv2, 1998); RFC 5340 (OSPFv3, for IPv6)</td></tr>
+<tr><td><b>Algorithm</b></td><td>Dijkstra's shortest path first</td></tr>
+<tr><td><b>Metric</b></td><td>Cost (inversely proportional to link bandwidth)</td></tr>
+<tr><td><b>Administrative distance</b></td><td>110 (Cisco default)</td></tr>
+<tr><td><b>Transport</b></td><td>Directly over IP (protocol 89); multicast 224.0.0.5/.6</td></tr>
+</table>
+</div>
+<p><b>Open Shortest Path First</b> (<b>OSPF</b>) is a routing protocol for Internet Protocol (IP) networks. It uses a link-state routing algorithm and falls into the group of interior gateway protocols (IGPs), operating within a single autonomous system. It is defined for IPv4 in RFC 2328 (1998) and for IPv6 as OSPFv3 in RFC 5340 (2008). OSPF is one of the most widely deployed interior gateway protocols in large enterprise and service-provider networks.</p>
+<h2>Operation</h2>
+<p>Each OSPF router learns the complete topology of its area. Routers discover neighbours through Hello packets, form adjacencies, and flood <b>link-state advertisements</b> (LSAs) describing their interfaces and link costs. From the synchronised link-state database, every router independently runs <a href="../Dijkstra%27s_algorithm/index.html">Dijkstra's algorithm</a> with itself as root to build a shortest-path tree and populate its routing table. Link cost is by default derived from bandwidth (reference bandwidth divided by interface bandwidth).</p>
+<h2>Areas and hierarchy</h2>
+<p>To scale, OSPF divides a network into <b>areas</b> connected through a backbone area (Area 0). Area border routers (ABRs) summarise routes between areas, limiting LSA flooding and recomputation. Special area types — stub, totally stubby, and not-so-stubby areas (NSSA) — control how external routes (redistributed from other protocols, via ASBRs) are propagated. On multi-access networks such as Ethernet, routers elect a Designated Router (DR) and Backup Designated Router (BDR) to reduce adjacency and flooding overhead.</p>
+<h2>Features</h2>
+<p>OSPF supports variable-length subnet masking and classless routing, equal-cost multipath load balancing, authentication (including MD5 and cryptographic options), and fast convergence relative to distance-vector protocols such as RIP. Extensions support traffic engineering (OSPF-TE) and graceful restart.</p>
+<h2>History</h2>
+<p>OSPF was developed by the IETF beginning in 1987 as a scalable open-standard replacement for RIP; the intermediate-system-to-intermediate-system protocol (IS-IS) is its closest functional relative, and the two share the link-state design. John Moy was a central figure in its development and documentation.</p>
+<p><i>See also: <a href="../Routing_protocol/index.html">Routing protocol</a>, <a href="../IS-IS/index.html">IS-IS</a>, <a href="../Border_Gateway_Protocol/index.html">Border Gateway Protocol</a></i></p>
+</div>
+</body>
+</html>

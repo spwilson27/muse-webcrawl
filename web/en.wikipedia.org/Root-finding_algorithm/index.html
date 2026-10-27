@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Root-finding algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header .logo{font-family:sans-serif;font-size:22px;font-weight:bold}
+main{max-width:960px;margin:0 auto;padding:20px 24px}
+h1{font-size:32px;border-bottom:1px solid #a2a9b1;padding-bottom:6px;margin-top:0}
+h2{font-size:22px;border-bottom:1px solid #a7d7f9;padding-bottom:4px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 16px 20px;font-family:sans-serif;font-size:13px}
+.infobox caption{font-weight:bold;font-size:15px;padding:4px}
+img.hero{display:block;width:100%;border:1px solid #ccc;background:#eee}
+.caption{font-size:12px;color:#54595d;text-align:center}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<header><span class="logo">Wikipedia</span> &nbsp;|&nbsp; The Free Encyclopedia</header>
+<main>
+<h1>Root-finding algorithm</h1>
+<aside class="infobox">
+<caption>Root-finding algorithm</caption>
+<img class="hero" src="images/root-finding.png" alt="Illustration of Newton's method converging on a root">
+<p class="caption">Newton's method converging to a root of a function</p>
+<table>
+<tr><th>Problem</th><td>Find x such that f(x) = 0</td></tr>
+<tr><th>Main methods</th><td>Bisection, Newton's method, secant method, Brent's method</td></tr>
+<tr><th>Field</th><td>Numerical analysis</td></tr>
+</table>
+</aside>
+<p>In <a href="../Numerical_analysis/index.html">numerical analysis</a>, a <b>root-finding algorithm</b> is an algorithm for finding the zeros, also called "roots", of continuous functions. A zero of a function f, from the real numbers to real numbers or from the complex numbers to the complex numbers, is a number x such that f(x) = 0. In general, the roots of a function cannot be computed exactly or expressed in closed form, so root-finding algorithms provide approximations.</p>
+<h2>Bracketing methods</h2>
+<p>Bracketing methods determine successively smaller intervals (brackets) in which a root must lie, relying on the intermediate value theorem. The <a href="../Bisection_method/index.html">bisection method</a> is the simplest: it repeatedly halves an interval in which the function changes sign, guaranteeing convergence at a linear rate. The false position (regula falsi) method improves on bisection by using linear interpolation, and Brent's method combines bisection, the secant method, and inverse quadratic interpolation to achieve both reliability and speed.</p>
+<h2>Iterative methods</h2>
+<p><a href="../Newton's_method/index.html">Newton's method</a> uses the derivative of the function to refine an initial guess by following the tangent line to the x-axis; near a simple root it converges quadratically, though it can fail if the starting guess is poor or the derivative vanishes. The secant method replaces the derivative with a finite difference between two previous points, achieving superlinear convergence without requiring derivatives. Fixed-point iteration rewrites the equation as x = g(x) and iterates.</p>
+<h2>Polynomial roots</h2>
+<p>For polynomials, specialized algorithms exploit algebraic structure. The Abel–Ruffini theorem shows no general formula in radicals exists for degree five or higher, making numerical methods essential; algorithms such as the Jenkins–Traub algorithm and Aberth method find all roots simultaneously. Eigenvalue methods compute roots as eigenvalues of the companion matrix.</p>
+<h2>Convergence and stopping criteria</h2>
+<p>Algorithms are judged by their order of convergence, robustness, and cost per iteration. Practical implementations stop when the interval is sufficiently small, the function value is near zero, or successive iterates differ by less than a chosen tolerance.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Newton's_method/index.html">Newton's method</a></li>
+<li><a href="../Bisection_method/index.html">Bisection method</a></li>
+<li><a href="../Brent's_method/index.html">Brent's method</a></li>
+</ul>
+</main>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Probably approximately correct learning - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; line-height: 1.6; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 20px 40px 60px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.formula { text-align: center; font-size: 1.1em; background: #f8f9fa; border: 1px solid #eaecf0; padding: 12px; margin: 14px 0; }
+.hero { text-align: center; margin: 10px 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; }
+.caption { font-size: 0.85em; color: #54595d; font-family: sans-serif; }
+ul { margin-top: 0.3em; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Probably approximately correct learning</h1>
+<p>In computational learning theory, <b>probably approximately correct (PAC) learning</b> is a mathematical framework for analysing machine learning algorithms. It was proposed by Leslie Valiant in a landmark 1984 paper and underpins much of the theoretical study of supervised learning.</p>
+<div class="hero"><img src="images/probably-approximately-correct-learning.png" alt="Diagram of the PAC learning framework with concept class and hypothesis space"></div>
+<p class="caption">Placeholder image: the PAC model — a learner outputs a hypothesis that is probably approximately correct.</p>
+<h2>Definition</h2>
+<p>A concept class <i>C</i> is said to be PAC learnable if there exists an algorithm that, for any target concept in <i>C</i>, any distribution over examples, and any parameters ε, δ &gt; 0, outputs with probability at least 1 − δ a hypothesis whose error is at most ε, in time polynomial in 1/ε, 1/δ and the size of the examples:</p>
+<div class="formula">Pr[ error(h) ≤ ε ] ≥ 1 − δ</div>
+<p>The name reflects the two tolerances: the learned hypothesis is <i>probably</i> (with confidence 1 − δ) <i>approximately</i> correct (within error ε).</p>
+<h2>Sample complexity</h2>
+<p>For a finite hypothesis class, the number of training examples needed to guarantee PAC learning grows roughly as (log |H| + log(1/δ)) / ε. For infinite hypothesis classes, learnability is characterized by the <a href="../VC_dimension/index.html">VC dimension</a>: a concept class is PAC learnable if and only if its VC dimension is finite (the fundamental theorem of statistical learning).</p>
+<h2>Extensions</h2>
+<p>The basic model assumes examples are drawn from a fixed distribution and labelled exactly by the target concept. Variants relax these assumptions: agnostic PAC learning allows arbitrary labelling functions and asks the learner to compete with the best hypothesis in the class; other extensions handle noisy labels, quantum examples, and online settings. Valiant received the Turing Award in part for introducing the framework.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Computational_learning_theory/index.html">Computational learning theory</a></li>
+<li><a href="../VC_dimension/index.html">VC dimension</a></li>
+<li><a href="../Leslie_Valiant/index.html">Leslie Valiant</a></li>
+<li><a href="../Machine_learning/index.html">Machine learning</a></li>
+</ul>
+</div>
+</body>
+</html>

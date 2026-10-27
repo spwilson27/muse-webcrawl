@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euler method - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+ul { line-height: 1.6; font-size: 15px; }
+.infobox { float: right; width: 250px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px 14px; margin: 0 0 16px 20px; font-size: 13px; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; background: #eaecf0; border: 1px solid #c8ccd1; padding: 30px; box-sizing: border-box; }
+.caption { font-size: 12px; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.formula { font-style: italic; text-align: center; margin: 12px 0; font-size: 16px; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Euler method</h1>
+<div class="infobox">
+<table>
+<tr><th>Type</th><td>Numerical method for ODEs</td></tr>
+<tr><th>Named after</th><td><a href="../Leonhard_Euler/index.html">Leonhard Euler</a></td></tr>
+<tr><th>First described</th><td>1768, <i>Institutiones calculi integralis</i></td></tr>
+<tr><th>Global error</th><td>First order, O(h)</td></tr>
+<tr><th>Variants</th><td>Forward Euler, backward Euler, semi-implicit Euler</td></tr>
+</table>
+</div>
+<p>In mathematics and computational science, the <b>Euler method</b> (also called the <b>forward Euler method</b>) is a first-order numerical procedure for solving <a href="../Ordinary_differential_equation/index.html">ordinary differential equations</a> (ODEs) with a given initial value. It is the most basic explicit method for numerical integration of ordinary differential equations and is the simplest <a href="../Runge%E2%80%93Kutta_methods/index.html">Runge–Kutta method</a>. The method is named after Leonhard Euler, who first proposed it in his book <i>Institutiones calculi integralis</i>, published in 1768–1770.</p>
+<div class="hero"><img src="images/euler-method.png" alt="Euler method approximating a curve by short tangent line segments"><div class="caption">The Euler method approximates the solution curve by stepping along tangent line segments.</div></div>
+<h2>The method</h2>
+<p>Consider the initial value problem y&prime; = f(t, y), with y(t<sub>0</sub>) = y<sub>0</sub>. Choose a step size h &gt; 0 and set t<sub>n</sub> = t<sub>0</sub> + nh. The Euler method advances the approximation by following the tangent line at each step:</p>
+<p class="formula">y<sub>n+1</sub> = y<sub>n</sub> + h f(t<sub>n</sub>, y<sub>n</sub>)</p>
+<p>The value of y<sub>n</sub> is an approximation of the true solution y(t<sub>n</sub>). Geometrically, the method replaces the unknown solution curve over each short interval with its tangent line at the left-hand endpoint.</p>
+<h2>Error and stability</h2>
+<p>The local truncation error of one step is proportional to h<sup>2</sup>, so the accumulated (global) error is proportional to h: the method is <i>first order</i>. Reducing the step size improves accuracy but increases computation and round-off accumulation. The Euler method is only conditionally stable; for stiff equations the step size needed for stability can be impractically small, which motivates implicit methods such as the <a href="../Backward_Euler_method/index.html">backward Euler method</a>, in which the derivative is evaluated at the new point.</p>
+<h2>Variants</h2>
+<ul>
+<li><b>Backward Euler</b>: uses y<sub>n+1</sub> = y<sub>n</sub> + h f(t<sub>n+1</sub>, y<sub>n+1</sub>), requiring solution of an equation at each step; it is A-stable and suited to stiff problems.</li>
+<li><b>Semi-implicit (symplectic) Euler</b>: updates position and momentum in a staggered fashion; widely used in physics simulations and video game engines because of its good energy behaviour.</li>
+<li><b>Improved Euler / Heun's method</b>: averages the derivative at both endpoints, giving a second-order method.</li>
+</ul>
+<h2>Example</h2>
+<p>For the equation y&prime; = y with y(0) = 1, whose solution is y = e<sup>t</sup>, the Euler recursion is y<sub>n+1</sub> = (1 + h) y<sub>n</sub>, so after N steps of size h = 1/N the approximation at t = 1 is (1 + 1/N)<sup>N</sup>, which converges to e as N grows — an illustration both of the method and of its slow, first-order convergence.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Numerical_analysis/index.html">Numerical analysis</a></li>
+<li><a href="../Midpoint_method/index.html">Midpoint method</a></li>
+<li><a href="../Stiff_equation/index.html">Stiff equation</a></li>
+</ul>
+</div>
+</body>
+</html>

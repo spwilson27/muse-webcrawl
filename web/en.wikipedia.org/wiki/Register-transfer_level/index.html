@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Register-transfer level - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:2em auto;padding:0 1em;line-height:1.6;color:#222}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{border-bottom:1px solid #a2a9b1;margin-top:1.4em}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.9em}
+.infobox th{text-align:left;padding-right:.5em;vertical-align:top}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:1em auto;max-width:400px;background:#eef;border:1px solid #a2a9b1;padding:2em;text-align:center;color:#555}
+</style>
+</head>
+<body>
+<h1>Register-transfer level</h1>
+<div class="infobox">
+<table>
+<tr><th>Field</th><td>Digital circuit design</td></tr>
+<tr><th>Abstraction</th><td>Between behavioural and gate level</td></tr>
+<tr><th>Languages</th><td>Verilog, VHDL, SystemVerilog</td></tr>
+<tr><th>Key tools</th><td>Logic synthesis, simulation</td></tr>
+</table>
+</div>
+<img class="hero" src="images/register-transfer-level.png" alt="Diagram of registers and combinational logic between clock cycles">
+<p>The <b>register-transfer level</b> (<b>RTL</b>) is a design abstraction used in hardware description languages (HDLs) to model a synchronous digital circuit in terms of the flow of digital signals (data) between hardware registers, and the logical operations performed on those signals. RTL is the level at which most modern integrated circuits are designed, using languages such as Verilog, VHDL and SystemVerilog, and it forms the principal input to logic synthesis tools that convert the description into a gate-level netlist.</p>
+<h2>Concepts</h2>
+<p>An RTL description models a circuit as a set of registers (flip-flops) clocked by one or more clocks, together with combinational logic that computes the next values of the registers and the circuit outputs from the current register values and inputs. On each clock edge, all registers update simultaneously — a "register transfer". Anything not explicitly stored in a register is combinational: its value is a pure function of its inputs and settles within the clock cycle.</p>
+<h2>Design flow</h2>
+<p>RTL sits between high-level behavioural or algorithmic descriptions and the physical gates of the chip. Designers write RTL to describe datapaths, control state machines, pipelines and interfaces. The code is verified by simulation and formal methods, then passed to a logic synthesis tool, which maps the description onto the standard cells of a target technology library, optimising for area, speed and power. The resulting gate-level netlist proceeds to place-and-route for physical layout.</p>
+<h2>Synthesisable subset</h2>
+<p>Not every construct of an HDL is synthesisable. Hardware description languages can also express testbench behaviour — delays, file I/O, waveform printing — that has no hardware meaning. Designers therefore write RTL within the synthesisable subset: clocked processes or always blocks with edge-sensitive lists describe registers, while continuous assignments and level-sensitive blocks describe combinational logic. Accidentally inferring latches, by leaving a combinational output unassigned on some path, is a classic RTL pitfall.</p>
+<h2>Cycle accuracy</h2>
+<p>Because values change only at clock edges, an RTL model is cycle-accurate: it reproduces exactly which values appear on every signal in every clock cycle, while abstracting away the analogue details of signal transitions within a cycle. This makes RTL simulation much faster than gate- or transistor-level simulation while preserving the timing behaviour that matters for verifying pipelines and protocols.</p>
+<p>See also: <a href="../Hardware_description_language/index.html">Hardware description language</a>, <a href="../Logic_synthesis/index.html">Logic synthesis</a>, <a href="../Verilog/index.html">Verilog</a>.</p>
+</body>
+</html>

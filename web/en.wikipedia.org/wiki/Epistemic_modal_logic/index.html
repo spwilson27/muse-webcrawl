@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Epistemic modal logic - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+h3 { font-size: 17px; margin-top: 20px; }
+p { line-height: 1.6; font-size: 15px; }
+ul { line-height: 1.6; font-size: 15px; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px 14px; margin: 0 0 16px 20px; font-size: 13px; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; background: #eaecf0; border: 1px solid #c8ccd1; padding: 30px; box-sizing: border-box; }
+.caption { font-size: 12px; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.formula { font-style: italic; text-align: center; margin: 12px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Epistemic modal logic</h1>
+<div class="infobox">
+<table>
+<tr><th>Field</th><td>Logic, philosophy, computer science</td></tr>
+<tr><th>Branch of</th><td>Modal logic</td></tr>
+<tr><th>Key operators</th><td>K<sub>a</sub> (agent a knows), B<sub>a</sub> (agent a believes)</td></tr>
+<tr><th>Key figures</th><td>Jaakko Hintikka, Saul Kripke, Robert Aumann</td></tr>
+<tr><th>Foundational text</th><td><i>Knowledge and Belief</i> (Hintikka, 1962)</td></tr>
+</table>
+</div>
+<p><b>Epistemic modal logic</b> is a subfield of <a href="../Modal_logic/index.html">modal logic</a> concerned with reasoning about <a href="../Knowledge/index.html">knowledge</a> and <a href="../Belief/index.html">belief</a>. While the study of knowledge in philosophy dates back to Plato, epistemic logic itself was proposed in the mid-20th century and given its modern form by <a href="../Jaakko_Hintikka/index.html">Jaakko Hintikka</a> in his 1962 book <i>Knowledge and Belief</i>. Applications range from philosophy to <a href="../Theoretical_computer_science/index.html">theoretical computer science</a>, <a href="../Game_theory/index.html">game theory</a>, and <a href="../Artificial_intelligence/index.html">artificial intelligence</a>.</p>
+<div class="hero"><img src="images/epistemic-modal-logic.png" alt="Diagram of possible worlds and accessibility relations between agents' epistemic states"><div class="caption">Possible worlds connected by accessibility relations representing what agents consider possible.</div></div>
+<h2>Syntax and semantics</h2>
+<p>The language of epistemic logic extends basic propositional logic with modal operators indexed by agents. For an agent <i>a</i>, the formula K<sub>a</sub>&phi; is read "agent <i>a</i> knows that &phi;", and B<sub>a</sub>&phi; is read "agent <i>a</i> believes that &phi;". The semantics is typically given in terms of <a href="../Kripke_semantics/index.html">Kripke models</a>: a set of possible worlds, an accessibility relation for each agent, and a valuation assigning truth values to atomic propositions at each world. K<sub>a</sub>&phi; is true at a world <i>w</i> when &phi; is true at every world accessible from <i>w</i> for agent <i>a</i> — that is, at every world the agent cannot rule out.</p>
+<h2>Axioms</h2>
+<p>The standard system for knowledge, often called <b>S5</b>, includes the distribution axiom (if an agent knows &phi; and knows that &phi; implies &psi;, the agent knows &psi;), the truth axiom (knowledge implies truth: K<sub>a</sub>&phi; &rarr; &phi;), positive introspection (knowing implies knowing that one knows), and negative introspection (not knowing implies knowing that one does not know). Because the truth axiom does not hold for belief, logics of belief (doxastic logics) typically use the weaker system <b>KD45</b>.</p>
+<h2>Common knowledge</h2>
+<p>Epistemic logic also studies group notions such as <i>mutual knowledge</i> and <a href="../Common_knowledge_(logic)/index.html">common knowledge</a>: a proposition is common knowledge in a group when everyone knows it, everyone knows that everyone knows it, and so on ad infinitum. Common knowledge plays a central role in game theory — notably in <a href="../Robert_Aumann/index.html">Robert Aumann's</a> "agreeing to disagree" theorem — and in the analysis of coordination problems and distributed systems, where it underlies results about the impossibility of certain agreement protocols.</p>
+<h2>Known puzzles</h2>
+<ul>
+<li>The <b>muddy children puzzle</b>, illustrating iterated elimination under common knowledge of a public announcement.</li>
+<li>The <b>surprise examination paradox</b>, formalised using epistemic operators.</li>
+<li>The problem of <b>logical omniscience</b>: the standard semantics attribute to agents knowledge of all logical consequences of what they know, which idealises away from real reasoners. Awareness logics and other extensions address this.</li>
+</ul>
+<h2>Dynamic epistemic logic</h2>
+<p><b>Dynamic epistemic logic</b> extends the framework with operators describing how knowledge changes in response to informational events such as public announcements, private messages, and observations. Public announcement logic, developed by Jan Plaza and others, and the action-model framework of Baltag, Moss, and Solecki are leading approaches. These tools are used to model communication protocols, security, and social network reasoning.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Doxastic_logic/index.html">Doxastic logic</a></li>
+<li><a href="../Epistemology/index.html">Epistemology</a></li>
+<li><a href="../Distributed_knowledge/index.html">Distributed knowledge</a></li>
+<li><a href="../Gettier_problem/index.html">Gettier problem</a></li>
+</ul>
+</div>
+</body>
+</html>

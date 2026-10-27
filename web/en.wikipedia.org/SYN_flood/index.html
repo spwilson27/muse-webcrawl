@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SYN flood - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:820px;margin:0 auto;padding:24px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.4em}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px 14px;margin:0 0 14px 18px;width:250px;font-size:0.9em}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+.hero{display:block;max-width:100%;margin:10px 0;border:1px solid #ccc;background:#eef;padding:12px;text-align:center;color:#555;font-size:0.85em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>SYN flood</h1>
+<div class="infobox">
+<table>
+<tr><th>Type</th><td>Denial-of-service attack</td></tr>
+<tr><th>Exploits</th><td>TCP three-way handshake</td></tr>
+<tr><th>First documented</th><td>1996 (Phrack magazine; CERT advisory)</td></tr>
+<tr><th>Mitigations</th><td>SYN cookies, SYN cache, rate limiting, filtering</td></tr>
+</table>
+</div>
+<span class="hero"><img src="images/syn_flood.png" alt="Diagram of a TCP SYN flood overwhelming a server"></span>
+<p>A <b>SYN flood</b> is a form of <a href="../Denial-of-service_attack/index.html">denial-of-service attack</a> in which an attacker rapidly initiates many connections to a server without completing them. The server is left holding large numbers of half-open connections, consuming the resources reserved for connection state until it can no longer accept legitimate traffic.</p>
+<h2>Background: the TCP handshake</h2>
+<p>A normal <a href="../Transmission_Control_Protocol/index.html">TCP</a> connection begins with a three-way handshake: the client sends a SYN (synchronise) packet, the server replies with SYN-ACK and reserves state for the connection in a backlog queue, and the client completes the handshake with an ACK. Until the final ACK arrives, the connection is "half-open" and the server's reserved state is held until it times out.</p>
+<h2>The attack</h2>
+<p>In a SYN flood, the attacker sends a rapid succession of SYN requests, typically using <a href="../IP_address_spoofing/index.html">spoofed source addresses</a> belonging to unreachable or uninvolved hosts. The server dutifully replies with SYN-ACK packets and allocates backlog entries, but the final ACKs never arrive — the spoofed hosts either do not exist or discard the unsolicited replies. The backlog fills, and new connection attempts, including those from real users, are refused or dropped. Perpetrated from many machines at once, the attack becomes a distributed denial of service (DDoS).</p>
+<p>The attack was described publicly in 1996, notably in issue 48 of the hacker magazine <i>Phrack</i> and in a subsequent CERT advisory; it was used that year against the New York ISP Panix, one of the earliest widely reported denial-of-service incidents.</p>
+<h2>Countermeasures</h2>
+<p>Defences include increasing the size of the backlog queue and shortening the half-open timeout, though both merely raise the threshold. More robust techniques include:</p>
+<ul>
+<li><b>SYN cookies</b> — the server encodes the connection state into the sequence number of its SYN-ACK and allocates nothing until the client returns a valid ACK, making spoofed floods harmless to memory.</li>
+<li><b>SYN cache</b> — a compact global hash of pending connections that stores far less state per entry.</li>
+<li><b>Filtering and rate limiting</b> — upstream routers and scrubbing services discard or throttle suspicious SYN traffic.</li>
+<li><b>Firewalls and proxies</b> that complete handshakes on the server's behalf and pass on only established connections.</li>
+</ul>
+<h2>See also</h2>
+<ul>
+<li><a href="../Denial-of-service_attack/index.html">Denial-of-service attack</a></li>
+<li><a href="../SYN_cookies/index.html">SYN cookies</a></li>
+<li><a href="../Transmission_Control_Protocol/index.html">Transmission Control Protocol</a></li>
+</ul>
+</body>
+</html>

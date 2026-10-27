@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Document type definition - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.85em;margin:0 0 1em 1em;padding:10px}
+.infobox th{background:#eaf3ff;text-align:center}
+.infobox td,.infobox th{padding:4px 6px;vertical-align:top}
+.hero{display:block;max-width:100%;background:#f0f0f0;border:1px solid #ccc;text-align:center;padding:20px;color:#666;font-style:italic;margin:1em 0}
+.mono{font-family:'Courier New',monospace;background:#f8f9fa;padding:8px;display:block;white-space:pre;overflow-x:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Document type definition</h1>
+<p><i>From Wikipedia, the free encyclopedia</i></p>
+<img class="hero" src="images/dtd.png" alt="Diagram of an XML document referencing a document type definition">
+<p>A <b>document type definition</b> (<b>DTD</b>) is a specification file that formally defines the structure and the legal elements and attributes of an <a href="../XML/index.html">XML</a> document. Besides its application to XML, DTDs have also been used for <a href="../SGML/index.html">SGML</a> documents. A DTD can be declared inside an XML document (an "internal subset") or in an external file (an "external subset") referenced by a document type declaration.</p>
+<table class="infobox">
+<tr><th colspan="2">Document type definition</th></tr>
+<tr><td><b>Abbreviation</b></td><td>DTD</td></tr>
+<tr><td><b>Type</b></td><td>Schema language</td></tr>
+<tr><td><b>Used with</b></td><td>XML, SGML, HTML (historical doctypes)</td></tr>
+<tr><td><b>Successors</b></td><td>XML Schema, RELAX NG</td></tr>
+</table>
+<h2>Declarations</h2>
+<p>A DTD consists of markup declarations that define element types, attribute lists, entities, and notations. For example:</p>
+<span class="mono">&lt;!ELEMENT note (to, from, heading, body)&gt;
+&lt;!ELEMENT to (#PCDATA)&gt;
+&lt;!ATTLIST note date CDATA #IMPLIED&gt;</span>
+<p>Element declarations specify which child elements or character data an element may contain; attribute-list declarations specify allowed attributes, their types, and default values; entity declarations define replacement text or external resources.</p>
+<h2>Validation</h2>
+<p>An XML parser can use a DTD to check that a document conforms to its declared structure; such documents are called <b>valid</b>, as opposed to merely well-formed. DTDs are limited: they use a non-XML syntax, provide weak datatype support, and do not support <a href="../XML_namespace/index.html">namespaces</a>. These limitations motivated later schema languages such as <a href="../XML_Schema_(W3C)/index.html">XML Schema</a> and <a href="../RELAX_NG/index.html">RELAX NG</a>.</p>
+<h2>Use in HTML</h2>
+<p>Historical versions of <a href="../HTML/index.html">HTML</a> were defined as applications of SGML, and HTML documents conventionally began with a <code>&lt;!DOCTYPE&gt;</code> declaration referencing public DTDs for HTML 2.0, 3.2, or 4.01. HTML5 simplified this to the minimal <code>&lt;!DOCTYPE html&gt;</code>, which no longer references a DTD.</p>
+<h2>Security considerations</h2>
+<p>External entities declared in DTDs are the basis of XML external entity (XXE) attacks and entity-expansion ("billion laughs") denial-of-service attacks, so many modern parsers restrict or disable external DTD processing by default.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../XML/index.html">XML</a></li>
+<li><a href="../XML_Schema_(W3C)/index.html">XML Schema</a></li>
+<li><a href="../RELAX_NG/index.html">RELAX NG</a></li>
+<li><a href="../Doctype/index.html">Doctype</a></li>
+</ul>
+</div>
+</body>
+</html>

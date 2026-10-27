@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Address space layout randomization - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:800px;line-height:1.6;color:#202122;background:#fff;padding:0 1em}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1}
+img{max-width:100%;border:1px solid #c8ccd1;background:#f8f9fa}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:.5em;text-align:center;font-size:.85em}
+</style>
+</head>
+<body>
+<h1>Address space layout randomization</h1>
+<p><b>Address space layout randomization</b> (<b>ASLR</b>) is a computer security technique involved in preventing exploitation of memory corruption vulnerabilities. In order to prevent an attacker from reliably jumping to, for example, a particular exploited function in memory, ASLR randomly arranges the address space positions of key data areas of a process, including the base of the executable and the positions of the stack, heap, and libraries.</p>
+<div class="thumb"><img src="images/address-space-layout-randomization.png" alt="Diagram of a process address space with randomized library base addresses"></div>
+<h2>History</h2>
+<p>The PaX project first coined the term and implemented ASLR in 2001. A Linux kernel mainline implementation followed, and major operating systems adopted the technique: Windows Vista (2007), macOS 10.5 Leopard (with partial implementation), iOS 4.3, and Android 4.0. Linux enables ASLR by default for position-independent executables.</p>
+<h2>Effectiveness and limitations</h2>
+<p>ASLR increases control-flow integrity by making it harder for an attacker to predict target addresses, particularly in combination with data execution prevention. Its effectiveness is weakened by information leaks that disclose addresses, by low entropy on 32-bit systems (making brute force feasible), and by exploits that do not rely on absolute addresses. Kernel ASLR (KASLR) applies the same idea to the kernel image itself.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Buffer_overflow/index.html">Buffer overflow</a></li>
+<li><a href="../Data_Execution_Prevention/index.html">Data Execution Prevention</a></li>
+<li><a href="../Position-independent_code/index.html">Position-independent code</a></li>
+</ul>
+</body>
+</html>

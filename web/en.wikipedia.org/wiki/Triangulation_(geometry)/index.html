@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Triangulation (geometry) - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:2em auto;padding:0 1em;color:#202122;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.4em}
+h3{font-size:1.15em;margin-top:1.1em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em 1em;margin:0 0 1em 1.5em;font-size:.88em;width:250px}
+.infobox th{text-align:left;padding-right:.6em;vertical-align:top}
+.hero{display:block;margin:1em auto;max-width:420px;text-align:center;color:#72777d;font-size:.85em;border:1px dashed #a2a9b1;padding:2em 1em;background:#f8f9fa}
+.formula{font-style:italic;background:#f8f9fa;border:1px solid #eaecf0;padding:.5em .8em;margin:.6em 0}
+ul,ol{margin:.4em 0 .8em 0}
+</style>
+</head>
+<body>
+<h1>Triangulation (geometry)</h1>
+<div class="hero"><img src="images/triangulation.png" alt="Diagram of a polygon subdivided into triangles"></div>
+<table class="infobox">
+<tr><th>Field</th><td>Geometry, computational geometry</td></tr>
+<tr><th>Related concepts</th><td>Polygon triangulation, Delaunay triangulation, mesh generation</td></tr>
+</table>
+<p>In <b>geometry</b>, a <b>triangulation</b> is a subdivision of a geometric object into <a href="../Triangle/index.html">triangles</a>. Most typically, the object is a region of the <a href="../Plane_(geometry)/index.html">plane</a> — a polygon, a set of points, or a surface — and the subdivision covers it exactly with triangles whose interiors are disjoint and which meet only along shared edges or vertices.</p>
+<p>Triangulations are fundamental in <a href="../Computational_geometry/index.html">computational geometry</a>, computer graphics, finite element analysis, and surveying, because triangles are the simplest polygons: any three non-collinear points determine exactly one triangle, and quantities such as area and interpolation are easy to compute on them.</p>
+<h2>Polygon triangulation</h2>
+<p>A polygon triangulation subdivides a <a href="../Polygon/index.html">polygon</a> into triangles by adding non-crossing diagonals between its vertices. A classical result states that every simple polygon with <i>n</i> vertices has a triangulation, and every triangulation of it uses exactly <i>n</i> &minus; 2 triangles and <i>n</i> &minus; 3 diagonals. This can be proved by induction using the "two ears theorem": every simple polygon with more than three vertices has at least two <i>ears</i> — vertices at which the diagonal to the neighbouring vertices lies inside the polygon.</p>
+<p>Triangulations underlie the <b>art gallery theorem</b>: any simple polygon with <i>n</i> vertices can be guarded by at most &lfloor;<i>n</i>/3&rfloor; guards (or cameras placed at vertices), a bound proved by Václav Chvátal and tight in the worst case.</p>
+<h2>Point set triangulation</h2>
+<p>Given a finite set of points in the plane, a triangulation is a maximal straight-line planar subdivision: points are connected by non-crossing segments until no further segment can be added, at which point every bounded face is a triangle. Any triangulation of a point set with <i>n</i> points, of which <i>h</i> lie on the convex hull, contains exactly 2<i>n</i> &minus; 2 &minus; <i>h</i> triangles.</p>
+<p>Among all possible triangulations of a point set, the <a href="../Delaunay_triangulation/index.html">Delaunay triangulation</a> is distinguished by maximising the minimum angle, which tends to avoid long, thin "sliver" triangles; it is dual to the <a href="../Voronoi_diagram/index.html">Voronoi diagram</a> of the points. Other criteria include minimum-weight triangulation, which minimises the total edge length and is known to be NP-hard in general settings.</p>
+<h2>Triangulation of surfaces</h2>
+<p>In <a href="../Topology/index.html">topology</a>, a triangulation of a <a href="../Surface_(topology)/index.html">surface</a> or higher-dimensional manifold is a decomposition into simplices (triangles in dimension two, tetrahedra in dimension three) glued along faces. Triangulations allow topological invariants such as the <a href="../Euler_characteristic/index.html">Euler characteristic</a> to be computed combinatorially, by counting vertices, edges, and faces:</p>
+<div class="formula">&chi; = V &minus; E + F</div>
+<p>The existence of triangulations for smooth manifolds is a classical theorem; every compact surface admits a triangulation, and surfaces are classified up to homeomorphism by their Euler characteristic and orientability.</p>
+<h2>Applications</h2>
+<ul>
+<li><b>Finite element methods:</b> domains are meshed into triangles so that partial differential equations can be solved approximately.</li>
+<li><b>Computer graphics:</b> surfaces of three-dimensional models are stored as triangle meshes for rendering.</li>
+<li><b>Surveying and geodesy:</b> positions are determined by measuring angles in a network of triangles from a known baseline (see <a href="../Triangulation_(surveying)/index.html">triangulation in surveying</a>).</li>
+<li><b>Terrain modelling:</b> triangulated irregular networks (TINs) approximate landscapes from elevation samples.</li>
+</ul>
+<h2>See also</h2>
+<ul>
+<li><a href="../Delaunay_triangulation/index.html">Delaunay triangulation</a></li>
+<li><a href="../Polygon_triangulation/index.html">Polygon triangulation</a></li>
+<li><a href="../Simplicial_complex/index.html">Simplicial complex</a></li>
+<li><a href="../Mesh_generation/index.html">Mesh generation</a></li>
+</ul>
+</body>
+</html>

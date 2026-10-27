@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Birthday attack</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#222}
+h1{border-bottom:2px solid #a2a9b1;padding-bottom:.2em}
+h2{border-bottom:1px solid #a2a9b1}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;width:260px;font-size:.9em}
+.infobox th{text-align:left;padding-right:.5em}
+img.hero{display:block;max-width:100%;background:#eef;border:1px dashed #88a;padding:2em;text-align:center;color:#446}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>Birthday attack</h1>
+<table class="infobox">
+<tr><th>Type</th><td>Cryptographic attack</td></tr>
+<tr><th>Exploits</th><td>Birthday paradox (probability of collisions)</td></tr>
+<tr><th>Target</th><td>Hash functions, digital signatures</td></tr>
+<tr><th>Complexity</th><td>Roughly 2<sup>n/2</sup> for an n-bit hash</td></tr>
+</table>
+<img class="hero" src="images/birthday-attack.png" alt="Graph showing collision probability versus number of hash inputs">
+<p>A <b>birthday attack</b> is a type of cryptographic attack that exploits the mathematics behind the <a href="../Birthday_paradox/index.html">birthday paradox</a> in probability theory. The attack depends on the high likelihood of collisions found between random attack attempts and a fixed degree of permutations, as described by the pigeonhole principle.</p>
+<p>Given a hash function <i>f</i> with <i>n</i> bits of output, an attacker would naively expect to try about 2<sup>n</sup> different inputs before finding two that produce the same output (a <i>collision</i>). The birthday paradox shows that only about 2<sup>n/2</sup> inputs are needed before a collision becomes likely — the same reasoning by which only 23 randomly chosen people are needed for a better-than-even chance that two share a birthday, out of 365 possible days.</p>
+<h2>Mathematics</h2>
+<p>If a function produces <i>H</i> equally likely outputs, then after about 1.25√<i>H</i> distinct inputs there is roughly a 50% probability that two inputs produced the same output. For an n-bit hash, H = 2<sup>n</sup>, so the birthday bound is approximately 2<sup>n/2</sup>. Consequently, a hash function with 128 bits of output offers only about 64 bits of security against collision attacks.</p>
+<h2>Applications</h2>
+<p>Birthday attacks are used to find collisions in hash functions, which can undermine digital signatures: an attacker prepares many harmless and many malicious variants of a document, finds a pair with equal hashes, and gets the harmless one signed, after which the signature also validates the malicious version. The practical collision attacks against MD5 and later SHA-1 were extensions of this idea. The attack also applies to problems such as finding collisions in MACs and to the "birthday" bounds used in the design of block ciphers and protocols.</p>
+<h2>Countermeasures</h2>
+<p>The principal defence is to use output lengths large enough that 2<sup>n/2</sup> work is infeasible: modern standards recommend hash functions with at least 256 bits of output where collision resistance matters. Salting, randomization of signed documents, and switching away from broken hash functions (such as MD5 and SHA-1) also mitigate the risk.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Birthday_paradox/index.html">Birthday paradox</a></li>
+<li><a href="../Collision_attack/index.html">Collision attack</a></li>
+<li><a href="../Cryptographic_hash_function/index.html">Cryptographic hash function</a></li>
+<li><a href="../Preimage_attack/index.html">Preimage attack</a></li>
+<li><a href="../Meet-in-the-middle_attack/index.html">Meet-in-the-middle attack</a></li>
+</ul>
+</body>
+</html>

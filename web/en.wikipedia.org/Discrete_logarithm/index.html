@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Discrete logarithm - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px 40px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:28px}
+p{font-size:15px;line-height:1.6}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 16px 20px;padding:10px}
+.infobox th{text-align:left;padding:2px 6px;color:#54595d}
+.infobox caption{font-weight:bold;font-size:14px;padding-bottom:6px}
+.hero{display:block;margin:16px 0;border:1px solid #c8ccd1;background:#f8f9fa;padding:8px;max-width:420px}
+a{color:#0645ad;text-decoration:none}
+.small{font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Discrete logarithm</h1>
+<table class="infobox">
+<caption>Discrete logarithm</caption>
+<tr><th>Field</th><td>Number theory, group theory, cryptography</td></tr>
+<tr><th>Problem</th><td>Given g and h = g<sup>k</sup>, find the exponent k</td></tr>
+<tr><th>Status</th><td>No known efficient classical algorithm for well-chosen groups</td></tr>
+<tr><th>Used in</th><td>Diffie–Hellman key exchange, ElGamal, DSA, elliptic-curve cryptography</td></tr>
+</table>
+<img class="hero" src="images/discrete-logarithm.png" alt="Powers of a generator wrapping around a modular circle">
+<p>In mathematics, for given real numbers a and b, the logarithm log<sub>b</sub> a is a number x such that b<sup>x</sup> = a. Analogously, in any group G, powers b<sup>k</sup> can be defined for all integers k, and the <b>discrete logarithm</b> log<sub>b</sub> a is the integer k such that b<sup>k</sup> = a. In finite groups and modular arithmetic, the discrete logarithm is notoriously hard to compute, even though the inverse operation — exponentiation — is fast.</p>
+<h2>Problem statement</h2>
+<p>Let G be a finite cyclic group of order n with generator g. Every element h of G can be written as h = g<sup>k</sup> for a unique k mod n. Computing k from g and h is the discrete logarithm problem (DLP). In the multiplicative group of integers modulo a prime p, this means solving g<sup>k</sup> ≡ h (mod p).</p>
+<h2>Algorithms</h2>
+<p>Brute force is exponential in the size of the group. Generic algorithms, such as baby-step giant-step and Pollard's rho, run in time proportional to the square root of the group order. For finite fields, subexponential index-calculus methods (including the number field sieve) exist, which is why modular groups must be large — 2048-bit or more — for security. On elliptic curves, only generic algorithms are known, so far smaller keys suffice. Peter Shor's 1994 quantum algorithm solves the discrete logarithm in polynomial time, motivating post-quantum cryptography.</p>
+<h2>Applications in cryptography</h2>
+<p>The assumed hardness of the DLP underpins the Diffie–Hellman key exchange (1976), ElGamal encryption, the Digital Signature Algorithm, and elliptic-curve systems such as ECDSA and Curve25519 key exchange. Record computations have solved discrete logarithms in finite fields of several hundred digits and in special "trapdoor" groups deliberately weakened, underscoring the need for careful parameter choices.</p>
+<p class="small">See also: <a href="../Diffie–Hellman_key_exchange/index.html">Diffie–Hellman key exchange</a> · <a href="../Elliptic-curve_cryptography/index.html">Elliptic-curve cryptography</a> · <a href="../Shor's_algorithm/index.html">Shor's algorithm</a></p>
+</div>
+</body>
+</html>

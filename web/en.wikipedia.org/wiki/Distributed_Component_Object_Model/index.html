@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Distributed Component Object Model - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px}
+h2{border-bottom:1px solid #c8ccd1;padding-bottom:3px;margin-top:1.4em}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 16px 20px;font-size:0.88em}
+.infobox th{text-align:left;padding-right:10px;vertical-align:top}
+.infobox td{padding:2px 0}
+img.hero{display:block;width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:12px;box-sizing:border-box;text-align:center;color:#54595d}
+a{color:#3366cc;text-decoration:none}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Distributed Component Object Model</h1>
+<img class="hero" src="images/dcom.png" alt="Diagram of a DCOM client invoking a remote COM object (image placeholder)">
+<table class="infobox">
+<tr><th>Developer</th><td>Microsoft</td></tr>
+<tr><th>Initial release</th><td>1996 (with Windows NT 4.0)</td></tr>
+<tr><th>Type</th><td>Distributed object middleware</td></tr>
+<tr><th>Predecessor</th><td>Network OLE</td></tr>
+<tr><th>Transport</th><td>DCE/RPC over TCP, typically port 135 plus dynamic ports</td></tr>
+</table>
+<p>The <b>Distributed Component Object Model</b> (<b>DCOM</b>) is a Microsoft technology for communication between software components on networked computers. It extends the Component Object Model (COM) so that objects can be activated and invoked across machine boundaries, using DCE/RPC as its underlying remote procedure call mechanism. DCOM shipped with Windows NT 4.0 in 1996.</p>
+<h2>Overview</h2>
+<p>DCOM lets a client program instantiate a COM object on a remote server, identified by its CLSID, and call its interfaces as if it were local. The Service Control Manager on the server machine launches the object, and proxies and stubs marshal interface pointers and parameters using the Network Data Representation of DCE/RPC. COM's <i>IUnknown</i> and reference counting are extended over the wire with a pinging protocol to detect dead clients.</p>
+<h2>Security and configuration</h2>
+<p>DCOM permissions — activation, launch and access rights — are configured with the DCOMCNFG tool and stored in the registry. Its reliance on port 135 (the RPC endpoint mapper) plus dynamically allocated ports made DCOM difficult to use through firewalls and across the Internet, limiting its adoption there. Vulnerabilities in the DCOM RPC interface were exploited by the Blaster worm in 2003, prompting Microsoft to harden RPC/DCOM in later Windows service packs. Industrial automation's OPC Classic standards were built on DCOM and inherited these configuration challenges, motivating the later OPC Unified Architecture.</p>
+<h2>See also</h2>
+<p><a href="../Component_Object_Model/index.html">Component Object Model</a> · <a href="../CORBA/index.html">CORBA</a> · <a href="../DCE/RPC/index.html">DCE/RPC</a> · <a href="../.NET_Remoting/index.html">.NET Remoting</a></p>
+<p class="small">Recreated from memory for the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

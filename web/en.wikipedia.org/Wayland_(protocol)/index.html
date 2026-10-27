@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wayland (protocol) - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.4em; }
+.infobox { float: right; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 12px 16px; font-size: 90%; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+.hero { text-align: center; background: #eaecf0; padding: 18px; margin: 12px 0; color: #54595d; font-style: italic; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.lead { font-size: 105%; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Wayland (protocol)</h1>
+<p class="lead"><b>Wayland</b> is a communication protocol that specifies the communication between a display server and its clients, together with a C library implementation of that protocol. A display server using the Wayland protocol is called a <b>Wayland compositor</b>, because it additionally performs the task of a compositing window manager. Wayland was developed to replace the aging X Window System (X11) protocol with a simpler, more secure and more performant design.</p>
+
+<div class="hero"><img src="images/wayland-protocol.png" alt="Diagram of the Wayland architecture: clients rendering to buffers managed by the compositor"></div>
+
+<div class="infobox">
+<table>
+<tr><th>Original author</th><td>Kristian Høgsberg</td></tr>
+<tr><th>Initial release</th><td>2008 (project); protocol 1.0 in 2012</td></tr>
+<tr><th>Reference compositor</th><td>Weston</td></tr>
+<tr><th>Major compositors</th><td>Mutter (GNOME), KWin (KDE), wlroots-based (Sway), Hyprland</td></tr>
+<tr><th>Predecessor</th><td>X Window System (X11)</td></tr>
+</table>
+</div>
+
+<h2>Architecture</h2>
+<p>In Wayland, the compositor is the display server: clients render their own window contents into buffers (using OpenGL, Vulkan or CPU rendering) and pass buffer handles to the compositor, which combines them into the final screen image and handles input, output and window management. Unlike X11, there is no separate window manager or compositing manager, and clients are isolated: an application cannot read another application's window contents or snoop on its keystrokes, closing major X11 security holes. Functionality that X11 clients took for granted — screen capture, global hotkeys, remote display — is instead provided through restricted protocols and portals such as PipeWire and xdg-desktop-portal. Legacy X11 applications run through the XWayland compatibility server.</p>
+
+<h2>History and adoption</h2>
+<p>Kristian Høgsberg, then at Red Hat, began Wayland in 2008 as a side project; the reference compositor Weston followed. Fedora adopted Wayland by default with GNOME in 2016, and Ubuntu followed (after a detour) in 2021. Through the 2020s most major Linux distributions and desktop environments made Wayland their default session, while NVIDIA driver support and some accessibility and remote-desktop tools lagged for years. The protocol is specified in XML; extension protocols are standardised through the wayland-protocols project.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../X_Window_System/index.html">X Window System</a></li>
+<li><a href="../Display_server/index.html">Display server</a></li>
+<li><a href="../Weston_(software)/index.html">Weston</a></li>
+<li><a href="../Mir_(software)/index.html">Mir</a></li>
+</ul>
+</div>
+</body>
+</html>
