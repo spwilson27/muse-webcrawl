@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>x86 virtualization - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #fff; color: #202122; }
+.mw-body { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { font-family: sans-serif; font-size: 14px; line-height: 1.6; }
+ul { font-family: sans-serif; font-size: 14px; line-height: 1.6; }
+img.hero { display: block; max-width: 320px; margin: 10px 0 16px; border: 1px solid #c8ccd1; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>x86 virtualization</h1>
+<img class="hero" src="images/X86_virtualization.png" alt="Diagram of a hypervisor running multiple virtual machines on x86 hardware">
+<p><b>x86 virtualization</b> is the use of hardware-assisted virtualization capabilities of <a href="../X86/index.html">x86</a> processors to run multiple guest operating systems concurrently on a single physical machine, each within its own virtual machine managed by a <a href="../Hypervisor/index.html">hypervisor</a>. The principal technologies are <b>Intel VT-x</b> and <b>AMD-V</b>.</p>
+<h2>Background</h2>
+<p>The classic x86 architecture was not designed for virtualization: certain privileged instructions behaved differently depending on privilege level without trapping to the hypervisor, violating the Popek and Goldberg virtualization requirements. Early x86 hypervisors such as VMware's products worked around this with binary translation of guest kernel code, while open-source systems such as Xen initially relied on paravirtualization, in which the guest operating system is modified to cooperate with the hypervisor.</p>
+<h2>Hardware assistance</h2>
+<p>Intel introduced VT-x (codenamed Vanderpool) in 2005, and AMD introduced AMD-V (codenamed Pacifica) in 2006. These add a new, more privileged mode of operation — often informally called "ring −1" — in which the hypervisor runs in VMX root mode while guests run in non-root mode. Sensitive instructions and events cause VM exits to the hypervisor, which emulates or mediates them, allowing unmodified guests to run.</p>
+<p>Second-generation features reduced the cost of virtualization further: Extended Page Tables (EPT) from Intel and Nested Page Tables (NPT) from AMD let the processor translate guest virtual addresses to physical addresses in hardware, avoiding shadow page tables. VT-d and AMD-Vi (IOMMU) permit safe direct assignment of PCI devices to guests.</p>
+<h2>Software</h2>
+<p>Hypervisors using these extensions include KVM, Xen, VMware ESXi, Microsoft Hyper-V, VirtualBox and QEMU. Hardware-assisted x86 virtualization underpins modern cloud computing, server consolidation, desktop virtualization and sandboxing.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Hypervisor/index.html">Hypervisor</a></li>
+<li><a href="../X86/index.html">x86</a></li>
+<li><a href="../Kernel-based_Virtual_Machine/index.html">Kernel-based Virtual Machine</a></li>
+</ul>
+</div>
+</body>
+</html>

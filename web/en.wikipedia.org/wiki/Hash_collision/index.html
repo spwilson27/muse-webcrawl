@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hash collision - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-family:'Linux Libertine',Georgia,serif;font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+p{line-height:1.65;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{text-align:center;margin:20px 0}
+.hero img{max-width:560px;width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:24px;box-sizing:border-box}
+.caption{font-size:13px;color:#54595d;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Hash collision</h1>
+<p>In computer science, a <b>hash collision</b> occurs when two distinct inputs to a <a href="../Hash_function/index.html">hash function</a> produce the same output (hash value). Because a hash function maps an effectively unlimited input space to a fixed number of possible outputs, collisions are mathematically inevitable by the pigeonhole principle; good hash functions make them rare, hard to find, or both, depending on the application.</p>
+<div class="hero"><img src="images/hash-collision.png" alt="Placeholder image: diagram of two inputs hashing to the same value"></div>
+<p class="caption">Two different inputs producing the same hash value: a collision.</p>
+<h2>In hash tables</h2>
+<p>In a <a href="../Hash_table/index.html">hash table</a>, collisions are routine and are handled by resolution strategies such as separate chaining (each bucket holds a list of entries) or open addressing (entries are stored in alternative slots found by probing). Well-designed hash functions distribute keys uniformly so that collisions remain infrequent and operations stay close to constant time.</p>
+<h2>In cryptography</h2>
+<p>For cryptographic hash functions, collision resistance is a core security property: it should be computationally infeasible to find any two inputs with the same hash. The birthday paradox implies that an <i>n</i>-bit hash offers at most about 2<sup>n/2</sup> security against collision search. Practical collision attacks have broken widely used functions — MD5 fell to collisions in 2004, and in 2017 the SHAttered attack produced two PDF files with the same SHA-1 hash — prompting migration to stronger functions such as the SHA-2 and SHA-3 families. Collision resistance matters for digital signatures, certificates, and content-addressed storage, where an attacker who can force a collision can substitute one document for another with the same fingerprint.</p>
+<h2>See also</h2>
+<p><a href="../Hash_function/index.html">Hash function</a> · <a href="../Cryptographic_hash_function/index.html">Cryptographic hash function</a> · <a href="../Birthday_attack/index.html">Birthday attack</a> · <a href="../MD5/index.html">MD5</a> · <a href="../SHA-1/index.html">SHA-1</a></p>
+</div>
+</body>
+</html>

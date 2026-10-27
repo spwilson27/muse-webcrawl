@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Seam carving - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; padding: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px 12px; margin: 0 0 12px 16px; font-size: 0.9em; }
+.hero { display: block; max-width: 100%; margin: 12px auto; border: 1px solid #c8ccd1; }
+.caption { text-align: center; font-size: 0.85em; color: #54595d; }
+ul { line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Seam carving</h1>
+<img class="hero" src="images/seam-carving.png" alt="An image with low-energy seams highlighted before content-aware resizing">
+<p class="caption">Low-energy seams (highlighted) ready for removal in content-aware image resizing.</p>
+<p><b>Seam carving</b> (also known as <b>image retargeting</b> or <b>liquid resizing</b>) is an algorithm for content-aware image resizing, developed by Shai Avidan of Mitsubishi Electric Research Labs and Ariel Shamir. It works by removing or inserting paths of pixels ("seams") that pass through the least important parts of an image, so that resizing preserves the most salient content better than uniform scaling or cropping.</p>
+<div class="infobox">
+<p><b>Type:</b> Image processing algorithm</p>
+<p><b>Introduced:</b> 2007 (SIGGRAPH paper by Avidan &amp; Shamir)</p>
+<p><b>Purpose:</b> Content-aware image resizing</p>
+<p><b>Key concepts:</b> Energy function, dynamic programming, seams</p>
+</div>
+<h2>Algorithm</h2>
+<p>An energy function assigns each pixel an importance value, commonly based on the gradient magnitude so that edges and textured regions score highly. A seam is a connected path of pixels running from one side of the image to the other (top to bottom, or left to right), with one pixel per row or column. Dynamic programming finds the seam of minimum total energy, which is then removed (to shrink the image) or duplicated with interpolated values (to enlarge it). The process repeats, one seam at a time.</p>
+<h2>Applications and reception</h2>
+<p>Seam carving was adopted in Adobe Photoshop as "Content-Aware Scaling" and is available in GIMP via a plugin and in libraries such as OpenCV and ImageMagick (as liquid rescale). It became famous through a widely viewed SIGGRAPH demonstration video. Limitations include distortion of straight lines, faces and high-entropy scenes, mitigated by user-painted protection masks and improved energy functions incorporating face detection and forward-energy criteria.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Image_scaling/index.html">Image scaling</a></li>
+<li><a href="../Dynamic_programming/index.html">Dynamic programming</a></li>
+<li><a href="../Retargeting_(imaging)/index.html">Retargeting (imaging)</a></li>
+</ul>
+</div>
+</body>
+</html>

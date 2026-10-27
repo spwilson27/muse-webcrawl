@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sleep (system call) - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; padding: 0; background: #fff; color: #202122; line-height: 1.6; }
+.container { max-width: 960px; margin: 0 auto; padding: 20px 30px; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+.hero { text-align: center; margin: 20px 0; }
+.hero img { max-width: 100%; border: 1px solid #ccc; background: #f8f9fa; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Sleep (system call)</h1>
+<div class="hero"><img src="images/sleep-system-call.png" alt="Diagram of a process suspending execution in a sleep state"></div>
+<p><b>Sleep</b> is a system call and library function that causes the calling process or thread to suspend execution for a specified interval of time. While asleep, the process consumes essentially no CPU time; the operating system schedules other work until the timer expires or an event interrupts the sleep.</p>
+<h2>Implementations</h2>
+<p>On Unix and POSIX systems, <code>sleep(seconds)</code> suspends the process for a whole number of seconds and is defined in the C library, traditionally implemented via the <code>alarm</code> mechanism or <code>nanosleep</code>. Higher-resolution variants include <code>usleep</code> (microseconds, now deprecated) and <code>nanosleep</code>, which takes a <code>timespec</code> and can report the unslept remainder if interrupted by a signal. The underlying Linux system calls are <code>nanosleep</code> and <code>clock_nanosleep</code>.</p>
+<p>On Windows, the equivalent is the <code>Sleep(milliseconds)</code> function in kernel32.dll. Most programming languages expose sleep facilities, such as <code>time.sleep()</code> in Python, <code>Thread.sleep()</code> in Java, and <code>std::this_thread::sleep_for</code> in C++.</p>
+<h2>Behaviour and caveats</h2>
+<p>A sleep may return early if the process receives a signal, and the actual delay may exceed the requested interval depending on system load and timer granularity. Historically, thread sleep functions such as early Unix <code>sleep</code> interacted badly with SIGALRM and multiple threads, leading to thread-safe, higher-resolution interfaces. Sleep is not a synchronization primitive: programs use it for polling delays, pacing, and backoff, but condition variables and event loops are preferred for waiting on work.</p>
+</div>
+</body>
+</html>

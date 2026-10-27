@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tracing (software) - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 28px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; font-size: 22px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; }
+.caption { font-size: 12px; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+ul { line-height: 1.6; font-size: 15px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Tracing (software)</h1>
+<div class="hero"><img src="images/Tracing_(software).png" alt="A software trace visualized as a timeline of spans across services"></div>
+<p>In software engineering, <b>tracing</b> involves a specialized use of logging to record information about a program's execution. Tracing is used by programmers for debugging and by systems administrators and observability platforms for monitoring running systems, especially distributed systems. Unlike ordinary event logging, tracing typically follows the flow of a single request or transaction as it propagates through components, recording a sequence of timed operations.</p>
+<h2>Tracing versus logging</h2>
+<p>Logging records discrete events; tracing records causally related spans of work. In <b>distributed tracing</b>, a request crossing many services carries a trace identifier, and each service records spans — units of work with start times, durations and metadata — which are assembled into a trace showing latency and dependencies across the whole system. Open standards such as OpenTelemetry, and earlier projects like Google's Dapper (which inspired Zipkin and Jaeger), define how trace data is propagated and collected.</p>
+<h2>Implementation</h2>
+<p>Tracing can be implemented by:</p>
+<ul>
+<li><b>Instrumentation in source code</b> — explicit trace statements or tracing libraries and macros</li>
+<li><b>Kernel and system tracers</b> — such as Linux's ftrace, perf, eBPF-based tools, LTTng, and Sun's DTrace, which trace system calls, function entry and exit and scheduler events</li>
+<li><b>Hardware tracing</b> — processor features such as Intel Processor Trace and ARM CoreSight</li>
+<li><b>Program tracing utilities</b> — e.g. strace and ltrace, which intercept system calls and library calls of a running program</li>
+</ul>
+<h2>Uses</h2>
+<p>Tracing is used for performance analysis and optimization (locating bottlenecks at function granularity), debugging intermittent faults that cannot be reproduced, reverse engineering of program behaviour, and production observability — where sampled traces complement metrics and logs. Because tracing generates large volumes of data, production systems commonly sample traces or enable detailed tracing only conditionally.</p>
+<p>See also: <a href="../Logging_(computing)/index.html">Logging (computing)</a>, <a href="../OpenTelemetry/index.html">OpenTelemetry</a>, <a href="../DTrace/index.html">DTrace</a>, <a href="../Debugging/index.html">Debugging</a>.</p>
+</div>
+</body>
+</html>

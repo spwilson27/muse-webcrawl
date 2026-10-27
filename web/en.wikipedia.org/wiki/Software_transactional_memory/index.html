@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Software transactional memory - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 20px 40px 60px; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; margin: 0.5em 0; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 100%; height: auto; border: 1px solid #c8ccd1; background: #eaecf0; padding: 10px; }
+.caption { font-size: 0.85em; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Software transactional memory</h1>
+<div class="hero"><img src="images/software-transactional-memory.png" alt="Diagram of concurrent threads executing atomic transactions on shared memory"></div>
+<p class="caption">STM lets programmers mark blocks of code as atomic transactions instead of managing locks.</p>
+<p><b>Software transactional memory</b> (STM) is a concurrency control mechanism analogous to database transactions for controlling access to shared memory in concurrent computing. Instead of guarding shared data with locks, the programmer declares a block of code an <i>atomic transaction</i>; the runtime executes it speculatively and either commits its effects all at once, if no conflicting transaction interfered, or aborts and retries it. The concept was introduced in the early 1990s, notably in Maurice Herlihy's work on transactional memory (1993) and the software implementation by Nir Shavit and Dan Touitou (1995).</p>
+<h2>Motivation and semantics</h2>
+<p>Lock-based programming is error-prone: coarse-grained locks limit parallelism while fine-grained locks invite deadlock, race conditions, and poor composability — separately correct locked components often cannot be combined safely. Transactions promise composability: atomic blocks can be nested and combined, and the runtime handles conflicts. A transaction observes a consistent snapshot and either commits atomically or has no effect, providing the atomicity and isolation properties familiar from databases (though durability is not implied). Implementations differ in conflict detection (eager or lazy), versioning, and contention management, and must address problems such as irrevocable operations (a transaction cannot "unprint" output) and interaction with non-transactional code.</p>
+<h2>Implementations and adoption</h2>
+<p>STM is best known in Haskell, whose <i>stm</i> package (with the <code>atomically</code> and <code>retry</code> combinators, described by Tim Harris, Simon Marlow, Simon Peyton Jones and Herlihy in 2005) made it a standard feature influential in language design. Libraries exist for many languages (e.g., Clojure's built-in STM with refs, and experimental support in others). Intel and IBM also implemented hardware transactional memory in some processors, which can accelerate or complement software schemes. In practice, STM has seen selective rather than universal adoption, owing to performance overheads in some workloads, unresolved interactions with I/O, and the competing simplicity of message-passing and immutable-data styles of concurrency.</p>
+<h2>See also</h2>
+<p><a href="../Transactional_memory/index.html">Transactional memory</a> · <a href="../Concurrency_control/index.html">Concurrency control</a> · <a href="../Lock_(computer_science)/index.html">Lock (computer science)</a> · <a href="../Haskell/index.html">Haskell</a> · <a href="../Database_transaction/index.html">Database transaction</a></p>
+</div>
+</body>
+</html>

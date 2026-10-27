@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Sidecar (container pattern) - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #a2a9b1;font-size:1.35em}</style></head>
+<body>
+<h1>Sidecar (container pattern)</h1>
+<img src="images/sidecar-container-pattern.png" alt="Diagram of a main application container with an attached sidecar container">
+<p>The <b>sidecar pattern</b> is a software design pattern used in containerised and microservice architectures, in which a helper component — the "sidecar" — is deployed alongside a primary application component, sharing its lifecycle, network namespace, and often its storage volumes. The name comes from a motorcycle sidecar, which is attached to and travels with the main vehicle.</p>
+<h2>Characteristics</h2>
+<p>A sidecar runs in its own process or container but is tightly coupled to the main application: it is created and destroyed with it and can communicate over localhost. Because the sidecar is separate from the application's code, it can be written in a different language and reused across services written in many languages.</p>
+<h2>Uses</h2>
+<p>Common sidecar functions include:</p>
+<ul>
+<li>Service-mesh proxies (such as Envoy) handling networking, retries, and encryption</li>
+<li>Logging and monitoring agents that collect and forward application output</li>
+<li>Configuration synchronisation and secret fetching</li>
+<li>Protocol translation and legacy integration</li>
+</ul>
+<p>In Kubernetes, sidecar containers run within the same pod as the main container. The pattern is foundational to service mesh implementations such as Istio and Linkerd, where a proxy sidecar intercepts all traffic to and from the workload.</p>
+</body></html>

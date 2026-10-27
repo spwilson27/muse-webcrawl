@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>XZ Utils backdoor - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:10px 20px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+main{max-width:960px;margin:0 auto;padding:20px}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 15px 15px;width:260px;font-size:90%}
+img.hero{display:block;max-width:300px;border:1px solid #ccc;padding:4px;background:#f8f9fa}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal}
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> — the free encyclopedia</header>
+<main>
+<h1>XZ Utils backdoor</h1>
+<img class="hero" src="images/xz-utils-backdoor.png" alt="Diagram of the XZ Utils backdoor attack chain">
+<p>The <b>XZ Utils backdoor</b> was a software supply-chain attack discovered in March 2024 in XZ Utils, a widely used data compression library included in most Linux distributions. The backdoor, designated CVE-2024-3094 with the maximum CVSS severity score of 10.0, was inserted by a maintainer using the pseudonym "Jia Tan" and targeted the OpenSSH server in certain Linux distributions.</p>
+<div class="infobox">
+<b>XZ Utils backdoor</b><br>
+CVE: CVE-2024-3094<br>
+Discovered: 29 March 2024<br>
+Discovered by: Andres Freund<br>
+Affected versions: XZ Utils 5.6.0 and 5.6.1<br>
+Attacker pseudonym: "Jia Tan"
+</div>
+<h2>Background</h2>
+<p>Over roughly two years, the persona "Jia Tan" contributed to XZ Utils and, aided by apparent sockpuppet accounts pressuring the original maintainer Lasse Collin, gained commit access and release responsibilities. Malicious code was concealed in binary test files and activated during package builds, modifying the library used by OpenSSH so that authentication could be bypassed by a holder of a specific private key.</p>
+<h2>Discovery</h2>
+<p>Microsoft engineer Andres Freund discovered the backdoor after noticing unusually high CPU usage and roughly 500-millisecond delays in SSH logins on a Debian testing system. He traced the anomaly to the compromised liblzma library and reported it on 29 March 2024, just before the affected versions entered major stable distributions.</p>
+<h2>Response and significance</h2>
+<p>Distributions reverted to safe versions, and CISA issued an alert. The incident is considered one of the most sophisticated known supply-chain attacks and prompted wide discussion of the security risks surrounding critical open-source projects maintained by small numbers of volunteers.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Materialized view - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{max-width:100%;display:block;margin:12px 0;border:1px solid #c8ccd1;background:#f8f9fa}
+.small{font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Materialized view</h1>
+<img class="hero" src="images/materialized-view.png" alt="Diagram comparing a regular view with a materialized view">
+<p>In computing, a <b>materialized view</b> is a database object that contains the results of a query. It is a form of cache: unlike an ordinary view, which is a virtual table computed on demand each time it is accessed, a materialized view stores the query result physically as actual data, much like the contents of a table.</p>
+<h2>Purpose</h2>
+<p>Materialized views are used to speed up expensive or frequently run queries, particularly aggregations over large tables in data warehouses, and to replicate data to remote sites in distributed databases. By pre-computing and storing the result, the database avoids repeating costly joins and aggregations at query time. Query optimizers in systems such as Oracle Database can automatically rewrite queries to use a suitable materialized view.</p>
+<h2>Maintenance</h2>
+<p>Because the stored result becomes stale when the underlying data changes, materialized views must be refreshed. Refresh strategies include complete refresh (recomputing the whole result) and incremental or "fast" refresh (applying only the changes recorded in materialized view logs). Refreshes may occur on a schedule, on demand, or immediately on commit of a transaction, trading freshness against update cost. Materialized views are supported by many systems, including Oracle, PostgreSQL (without built-in incremental refresh), Microsoft SQL Server (as indexed views), and various data-warehouse and streaming platforms.</p>
+<p class="small">See also: <a href="../View_(SQL)/index.html">View (SQL)</a> · <a href="../Data_warehouse/index.html">Data warehouse</a> · <a href="../Cache_(computing)/index.html">Cache (computing)</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Libavcodec - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{max-width:100%;height:auto;background:#f8f9fa;border:1px solid #a2a9b1;padding:4px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{text-align:left;background:#e8e9ea;padding:4px}
+.infobox td{padding:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Libavcodec</h1>
+<img class="hero" src="images/libavcodec.png" alt="Diagram of a media decoding pipeline using libavcodec">
+<table class="infobox">
+<tr><th colspan="2">libavcodec</th></tr>
+<tr><td><b>Developer(s)</b></td><td>FFmpeg project</td></tr>
+<tr><td><b>Written in</b></td><td>C</td></tr>
+<tr><td><b>Type</b></td><td>Codec library</td></tr>
+<tr><td><b>License</b></td><td>GNU Lesser General Public License (parts under GPL)</td></tr>
+</table>
+<p><b>libavcodec</b> is a free and open-source library of codecs for encoding and decoding video and audio data. It is part of the <a href="../FFmpeg/index.html">FFmpeg</a> project and is used by a large number of multimedia applications, including media players, transcoders, web browsers, and game engines.</p>
+<p>The library contains implementations of a very large number of media formats. Its video decoders include H.264/AVC, H.265/HEVC, AV1 (through external libraries), VP8 and VP9, MPEG-1, MPEG-2, MPEG-4 Part 2, and many legacy and niche formats; its audio codecs include AAC, MP3, Opus, Vorbis, FLAC, and AC-3. For widely used formats, libavcodec includes both decoders and encoders, and it can also act as a wrapper around external encoding libraries such as x264 and x265.</p>
+<h2>Design</h2>
+<p>libavcodec uses a codec registration and context-based API. An application opens a codec context for a stream, feeds it compressed packets, and receives decoded frames. Since version 3.1 of FFmpeg, the preferred interface is the send/receive API, in which the application sends packets to the decoder and receives frames from it, decoupling the input and output sides. Hardware acceleration can be provided through platform APIs such as VA-API, NVDEC, and VideoToolbox.</p>
+<h2>Legal issues</h2>
+<p>Some codecs implemented in libavcodec have historically been covered by software patents in certain jurisdictions, which has led some Linux distributions to ship reduced versions of the library or to exclude particular encoders. The FFmpeg project's own native encoders are distributed under the LGPL, although enabling certain components makes the combined library effectively GPL-licensed.</p>
+<h2>Applications</h2>
+<p>Programs and frameworks that use libavcodec include VLC media player, mpv, Chromium, HandBrake, and the GStreamer framework (through gst-libav). Many commercial products also embed the library.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../FFmpeg/index.html">FFmpeg</a></li>
+<li><a href="../Libav/index.html">Libav</a></li>
+<li><a href="../Codec/index.html">Codec</a></li>
+</ul>
+</div>
+</body>
+</html>

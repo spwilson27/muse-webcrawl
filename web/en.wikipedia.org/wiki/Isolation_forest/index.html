@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Isolation forest - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:.15em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{background:#f8f9fa;border:1px solid #c8ccd1;padding:1em;text-align:center;margin:1em 0}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.9em}
+</style>
+</head>
+<body>
+<h1>Isolation forest</h1>
+<img class="hero" src="images/isolation_forest.png" alt="Diagram of an isolation tree partitioning a data space">
+<p><b>Isolation forest</b> is an algorithm for anomaly detection originally proposed by Fei Tony Liu, Kai Ming Ting and Zhi-Hua Zhou in 2008. Instead of profiling normal data points, the method explicitly isolates anomalies by randomly partitioning the feature space. Because anomalies are few and different, they tend to be isolated in fewer splits than normal points, so the average path length from the root of an isolation tree to a leaf is shorter for anomalies than for inliers.</p>
+<h2>Algorithm</h2>
+<p>An isolation forest is an ensemble of <i>isolation trees</i> (iTrees). Each tree is built by recursively selecting a random feature and a random split value between that feature's minimum and maximum until every point is isolated or a height limit is reached. The anomaly score of a point is derived from the expected path length across all trees, normalised by the expected path length of an unsuccessful search in a binary search tree. Scores close to 1 indicate anomalies, scores near 0.5 indicate no distinct anomaly, and scores well below 0.5 indicate normal points.</p>
+<h2>Properties</h2>
+<p>The algorithm has low memory requirements, a linear time complexity in the number of samples, and works well on high-dimensional data because it uses subsampling: only a small sample of the data (often 256 points) is needed to build each tree. It does not rely on distance or density measures, which makes it fast but can cause it to struggle with local anomalies and irrelevant features.</p>
+<h2>Applications</h2>
+<p>Isolation forests are used for fraud detection, intrusion detection, fault monitoring in industrial systems and outlier screening in data preprocessing. The method is implemented in libraries such as <a href="../Scikit-learn/index.html">scikit-learn</a>.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Anomaly_detection/index.html">Anomaly detection</a></li>
+<li><a href="../Random_forest/index.html">Random forest</a></li>
+<li><a href="../Unsupervised_learning/index.html">Unsupervised learning</a></li>
+</ul>
+<h2>References</h2>
+<p>Liu, F. T., Ting, K. M., &amp; Zhou, Z.-H. (2008). "Isolation Forest". <i>Proceedings of the 8th IEEE International Conference on Data Mining</i>.</p>
+</body>
+</html>

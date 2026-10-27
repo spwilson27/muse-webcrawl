@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Strace - Wikipedia</title>
+<style>
+body { font-family: sans-serif; max-width: 820px; margin: 2em auto; padding: 0 1em; line-height: 1.6; color: #202122; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.4em; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 480px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 1em; box-sizing: border-box; }
+.caption { font-size: 0.85em; color: #54595d; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0.8em; overflow-x: auto; font-size: 0.9em; }
+code { font-family: monospace; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<h1>Strace</h1>
+<div class="hero"><img src="images/strace.png" alt="Terminal output of an strace session tracing system calls"><div class="caption">strace output tracing a program's system calls</div></div>
+<p><b>strace</b> is a diagnostic, debugging and instructional userspace utility for Linux. It is used to monitor and tamper with interactions between processes and the Linux kernel, which include system calls, signal deliveries, and changes of process state. The operation of strace is made possible by the kernel feature known as ptrace.</p>
+<h2>Usage</h2>
+<p>strace can be used to attach to a running process or to launch a program and trace it from the start. A typical invocation is:</p>
+<pre>strace [options] &lt;command&gt; [arguments]
+strace -p &lt;PID&gt;</pre>
+<p>The output lists each system call with its arguments and return value, for example:</p>
+<pre>execve("/bin/ls", ["ls"], 0x7ffd...) = 0
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF...", 832) = 832</pre>
+<p>Common options include <code>-e trace=...</code> to filter by system call class or name, <code>-f</code> to follow child processes created by fork or clone, <code>-c</code> to print a summary of time and call counts, <code>-o file</code> to write output to a file, and <code>-s</code> to control the maximum length of printed strings.</p>
+<h2>Applications</h2>
+<p>Because strace reveals exactly which files a program opens, which network connections it attempts, and where it fails, it is widely used for troubleshooting missing configuration files, permission errors, unexpected behaviour, and performance problems. Software developers use it to understand the behaviour of programs for which source code is unavailable.</p>
+<h2>History and related tools</h2>
+<p>strace was originally written for SunOS in 1991–1992 by Paul Kranenburg, based on a utility called "trace" by Mark Kleynerman for System V, and was later ported to Linux. Related tools include ltrace, which traces library calls, and truss on Solaris and other System V systems.</p>
+</body>
+</html>

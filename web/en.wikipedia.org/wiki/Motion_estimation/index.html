@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Motion estimation - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;color:#202122;background:#fff}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header h1{font-size:1.7em;margin:0;font-weight:normal}
+main{max-width:900px;margin:0 auto;padding:20px 24px;line-height:1.6}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{display:block;max-width:480px;width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:24px;text-align:center;color:#54595d;margin:12px 0}
+</style>
+</head>
+<body>
+<header><h1>Motion estimation</h1></header>
+<main>
+<img class="hero" src="images/motion-estimation.png" alt="Illustration placeholder for motion estimation">
+<p><b>Motion estimation</b> is the process of determining the motion of image content between two or more frames of a video sequence, typically expressed as two-dimensional <b>motion vectors</b> that describe how blocks of pixels (or individual pixels) have moved from one frame to the next. It underpins video compression, and is also used in frame-rate conversion, video stabilisation, object tracking, and computer vision.</p>
+<h2>Role in video compression</h2>
+<p>Successive video frames are usually very similar. Modern codecs (MPEG-2, H.264/AVC, HEVC, AV1) exploit this redundancy through <i>inter prediction</i>: for each block in the current frame, the encoder searches a reference frame for the best-matching block and transmits only the motion vector plus the small residual difference. The search is the most computationally expensive part of encoding. Strategies include:</p>
+<ul>
+<li><b>Full search (exhaustive)</b> — tests every candidate position within the search window; optimal by the chosen distortion measure but costly.</li>
+<li><b>Fast search patterns</b> — diamond, hexagon, and three-step searches that test a small set of candidate points and iteratively refine.</li>
+<li><b>Hierarchical and predictive methods</b> — coarse-to-fine searches and the use of neighbouring or co-located vectors as predictors.</li>
+</ul>
+<p>Match quality is measured by the sum of absolute differences (SAD) or squared differences (SSD) between blocks, often with a rate term added so that cheap vectors are preferred. Sub-pixel accuracy — interpolating reference frames to half- and quarter-pixel positions — further reduces the residual.</p>
+<h2>Dense motion estimation</h2>
+<p>In computer vision, motion estimation often means computing a motion vector for every pixel, a field known as <b>optical flow</b>. Classical methods such as Lucas–Kanade (local window methods) and Horn–Schunck (global smoothness methods) formalise assumptions of brightness constancy and spatial coherence. Deep-learning approaches such as FlowNet and RAFT now dominate optical-flow benchmarks.</p>
+<h2>Applications</h2>
+<p>Beyond compression, motion estimation enables motion-compensated deinterlacing, frame interpolation for slow motion and refresh-rate conversion, electronic image stabilisation, video surveillance tracking, autonomous-vehicle scene analysis, and medical image registration.</p>
+</main>
+</body>
+</html>

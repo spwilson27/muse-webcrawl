@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Range coding - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f8f8;color:#222;line-height:1.6}
+.wrap{max-width:860px;margin:0 auto;background:#fff;padding:32px 40px;box-shadow:0 0 8px #ccc}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-weight:normal}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal;margin-top:28px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:100%;height:auto;background:#eaeaea;border:1px solid #ccc;padding:20px;text-align:center;color:#666;font-style:italic;box-sizing:border-box}
+.small{color:#555;font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Range coding</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/range-coding.png" alt="Hero image placeholder: diagram of an interval being narrowed during range coding">
+<p><b>Range coding</b> is a form of entropy encoding used in lossless data compression. It is closely related to <a href="../Arithmetic_coding/index.html">arithmetic coding</a> and achieves essentially the same compression efficiency, but performs the computation with integer arithmetic on a "range" value rather than with the fractional interval arithmetic of the classical formulation.</p>
+<h2>Description</h2>
+<p>Like arithmetic coding, range coding represents an entire message as a sub-interval of [0, 1), narrowing the interval symbol by symbol according to each symbol's probability. In practice, implementations keep the current interval scaled to a fixed integer range (such as 32 bits). As the encoder processes symbols it repeatedly renormalises: when the top digits of the interval bounds agree, they can be output and the range rescaled, keeping numbers within machine word size. Range coding is often described as a byte-oriented reformulation, since renormalisation naturally emits whole bytes.</p>
+<h2>History and use</h2>
+<p>The method was described by G. Nigel N. Martin in 1979. Range coders are used in various compression schemes and libraries, sometimes as a patent-avoiding alternative to arithmetic coding, though both are now free of the historical patent concerns. Modern formats using range-coding-like entropy coders include the asymmetric numeral systems (ANS) family and the entropy coders in codecs such as VP9 and AV1, which are conceptually related.</p>
+</div>
+</body>
+</html>

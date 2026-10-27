@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Packet delay variation - Wikipedia</title>
+<style>
+body { font-family: "Helvetica Neue", Arial, sans-serif; margin: 0 auto; max-width: 960px; padding: 20px; color: #202122; background: #ffffff; line-height: 1.6; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { display: block; margin: 16px auto; max-width: 480px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 8px; }
+.thumbcaption { font-size: 0.85em; color: #54595d; text-align: center; }
+p { margin: 0.6em 0; }
+ul { margin: 0.5em 0 0.5em 1.5em; }
+</style>
+</head>
+<body>
+<h1>Packet delay variation</h1>
+<p>In computer networking, <b>packet delay variation</b> (<b>PDV</b>) is the difference in end-to-end one-way delay between selected packets in a flow, commonly understood as the variation of <a href="../Latency_(engineering)/index.html">latency</a> over time. In informal usage PDV is often called <b>jitter</b>, although jitter has several distinct technical definitions.</p>
+<h2>Definitions</h2>
+<p>The IETF defines several measures. RFC 3393 defines the IP Packet Delay Variation metric based on the difference between the one-way delay of a selected pair of packets. RFC 3550 (RTP) defines an interarrival jitter estimate used in RTCP receiver reports, an exponentially smoothed statistic of packet transit-time differences. ITU-T recommendation Y.1540 also defines packet delay variation for IP service performance.</p>
+<h2>Causes and effects</h2>
+<p>PDV arises from queuing in routers, variable path lengths, contention, and serialization effects. It matters most for real-time traffic such as voice over IP and video conferencing, where late-arriving packets cannot be used. Receivers typically use a <a href="../Jitter_buffer/index.html">jitter buffer</a> (playout buffer) to smooth out variation, trading added delay for fewer dropouts. High PDV can also degrade TCP throughput in some conditions.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Latency_(engineering)/index.html">Latency</a></li>
+<li><a href="../Jitter/index.html">Jitter</a></li>
+<li><a href="../Jitter_buffer/index.html">Jitter buffer</a></li>
+<li><a href="../Quality_of_service/index.html">Quality of service</a></li>
+</ul>
+<figure class="hero">
+<img src="images/packet-delay-variation.png" alt="Graph showing packets sent at regular intervals arriving with variable delay">
+<figcaption class="thumbcaption">Placeholder image: packet delay variation over time</figcaption>
+</figure>
+</body>
+</html>

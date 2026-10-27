@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Point set registration</title>
+<style>body{font-family:Georgia,serif;max-width:760px;margin:2em auto;padding:0 1em;color:#222;line-height:1.6}h1{font-size:1.9em;border-bottom:1px solid #999;padding-bottom:.2em}h2{font-size:1.3em;margin-top:1.4em}a{color:#0645ad}.hero{display:block;background:#e8e8e8;border:1px solid #bbb;text-align:center;padding:2.5em 1em;color:#666;font-style:italic;margin:1em 0}</style></head>
+<body><h1>Point set registration</h1>
+<span class="hero"><img src="images/point-set-registration.png" alt="Two point clouds being aligned by a rigid transformation">Two point clouds being aligned by a rigid transformation</span>
+<p><b>Point set registration</b>, also known as <b>point cloud registration</b>, is the process of finding a spatial transformation — typically a rotation and translation, possibly with scaling or a more general deformation — that aligns one set of points with another. The two point sets may come from different sensor scans of the same scene, from a model and a measurement, or from images taken at different times.</p>
+<h2>Problem formulation</h2>
+<p>Given a model point set and a scene point set, registration seeks the transformation minimising an error measure between corresponding points. When correspondences are unknown, the problem is harder and usually solved iteratively. Rigid registration preserves all distances and is described by a rotation matrix and a translation vector; non-rigid registration additionally allows local warping.</p>
+<h2>Algorithms</h2>
+<p>The best-known algorithm is <a href="../Iterative_closest_point/index.html">iterative closest point</a> (ICP), which alternates between assigning each point its nearest neighbour in the other set and computing the least-squares optimal transformation, for example via the Kabsch algorithm using singular value decomposition. Other approaches include coherent point drift, which treats alignment as probability density estimation, and robust methods that use random sample consensus or feature matching to reject outliers. Applications include 3D reconstruction, robotics and SLAM, medical image fusion, and object recognition.</p>
+<p>See also: <a href="../Image_registration/index.html">Image registration</a>, <a href="../Point_cloud/index.html">Point cloud</a>.</p>
+</body></html>

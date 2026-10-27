@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Static single assignment form - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; max-width: 860px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; background: #fff; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; }
+img.hero { display: block; max-width: 100%; height: auto; margin: 15px 0; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 10px; }
+code { background: #f8f9fa; padding: 1px 4px; font-family: monospace; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<h1>Static single assignment form</h1>
+<img class="hero" src="images/Static_single_assignment_form.png" alt="Control flow graph in SSA form">
+<p>In compiler design, <b>static single assignment form</b> (often abbreviated as <b>SSA form</b> or simply <b>SSA</b>) is a type of intermediate representation (IR) where each variable is assigned exactly once and each variable is defined before it is used. Existing variables in the original IR are split into versions, each with its own name, so that every definition has a unique name.</p>
+<h2>Phi functions</h2>
+<p>Where control flow merges — for example at the head of a loop or after a conditional branch — a special statement called a Φ (phi) function selects among the versions of a variable arriving from different predecessors, creating a new version for the merged value. Phi functions are chosen according to which predecessor block control came from.</p>
+<h2>Benefits</h2>
+<p>SSA form simplifies and speeds up many compiler optimisations, including constant propagation, value numbering, dead code elimination, partial redundancy elimination, strength reduction, and register allocation, because use-define chains are explicit: each use of a variable points directly to its single definition. SSA was developed at IBM Research in the 1980s by Ron Cytron, Jeanne Ferrante, Barry Rosen, Mark Wegman, and Ken Zadeck.</p>
+<h2>Use</h2>
+<p>SSA is used in many production compilers, including GCC (in its GIMPLE representation), LLVM, the Java HotSpot virtual machine, and Go's compiler.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Intermediate_representation">Intermediate representation</a></li>
+<li><a href="../Control-flow_graph">Control-flow graph</a></li>
+<li><a href="../LLVM">LLVM</a></li>
+<li><a href="../Optimizing_compiler">Optimizing compiler</a></li>
+</ul>
+</body>
+</html>

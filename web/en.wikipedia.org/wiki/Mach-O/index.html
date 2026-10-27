@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mach-O - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; max-width: 900px; margin: 0 auto; padding: 20px; color: #202122; background: #fff; line-height: 1.6; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 8px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 14px 0; }
+.hero img { max-width: 420px; width: 100%; border: 1px solid #ccc; background: #eee; }
+code { background: #f8f9fa; padding: 1px 4px; }
+</style>
+</head>
+<body>
+<h1>Mach-O</h1>
+<div class="hero"><img src="images/mach-o.png" alt="Diagram of the structure of a Mach-O binary file"></div>
+<p><b>Mach-O</b>, short for Mach object file format, is a file format for executables, object code, shared libraries, dynamically loaded code and core dumps. It was developed by the Mach Project at Carnegie Mellon University for the <a href="../Mach_(kernel)/index.html">Mach kernel</a> and was later adopted by NeXTSTEP and by Apple for macOS and iOS, where it replaced the a.out and PEF formats.</p>
+<h2>Structure</h2>
+<p>A Mach-O file begins with a header containing a magic number, the target CPU type and subtype, the file type and a count of load commands. The load commands describe the layout of the file's segments, the dynamic linker information, symbol tables and other metadata. Segments, conventionally named with a <code>__</code> prefix such as <code>__TEXT</code> and <code>__DATA</code>, are divided into sections.</p>
+<h2>Multi-architecture support</h2>
+<p>Mach-O supports "fat" binaries, in which a wrapper header points to several Mach-O files for different processor architectures bundled into a single file. This mechanism allowed Apple to ship universal binaries during its transitions from PowerPC to Intel and from Intel to Apple silicon.</p>
+<h2>Use</h2>
+<p>Mach-O is the native executable format for macOS, iOS, iPadOS, tvOS and watchOS. Tools such as <code>otool</code> and <code>nm</code> inspect Mach-O files, and the format is produced by the LLVM/Clang toolchain.</p>
+<p>See also: <a href="../Executable_and_Linkable_Format/index.html">ELF</a>, <a href="../Portable_Executable/index.html">Portable Executable</a>, <a href="../Universal_binary/index.html">Universal binary</a>.</p>
+</body>
+</html>

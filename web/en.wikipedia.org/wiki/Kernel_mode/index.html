@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kernel mode - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; background: #eaecf0; padding: 40px 0; }
+.caption { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Kernel mode</h1>
+<div class="hero"><img src="images/kernel-mode.png" alt="Diagram of privilege rings with kernel mode at the centre"><div class="caption">Placeholder image: CPU privilege levels, kernel mode innermost.</div></div>
+<p><b>Kernel mode</b>, also known as <b>supervisor mode</b> or privileged mode, is a state of operation of a computer's central processing unit in which executing code has unrestricted access to all hardware and system resources. It contrasts with <a href="../User_mode/index.html">user mode</a>, in which application code runs with limited privileges.</p>
+<h2>Privilege separation</h2>
+<p>Modern CPUs implement privilege levels — for example, rings 0 through 3 in the x86 architecture — with ring 0 reserved for the operating system <a href="../Kernel_(operating_system)/index.html">kernel</a>. In kernel mode, code can execute any instruction, access any memory address, and manipulate page tables, interrupt handling, and device registers directly.</p>
+<h2>Entering kernel mode</h2>
+<p>User programs enter kernel mode only through controlled interfaces: system calls, hardware interrupts, and exceptions (traps). This mechanism lets the kernel validate requests and protect processes from one another; a fault in kernel-mode code, however, can crash or compromise the entire system, which is why device drivers and kernel extensions are a common source of instability.</p>
+<h2>Design approaches</h2>
+<p><a href="../Monolithic_kernel/index.html">Monolithic kernels</a> run most operating-system services in kernel mode, whereas <a href="../Microkernel/index.html">microkernels</a> minimise kernel-mode code, running services in user mode for reliability at some cost in overhead.</p>
+<p>See also: <a href="../Protection_ring/index.html">Protection ring</a>, <a href="../System_call/index.html">System call</a>, <a href="../Operating_system/index.html">Operating system</a>.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Page cache - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #fff; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+img.hero { display: block; max-width: 320px; width: 100%; height: auto; background: #eaecf0; border: 1px solid #a2a9b1; padding: 0.5em; margin: 0.5em 0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Page cache</h1>
+<img class="hero" src="images/page-cache.png" alt="Diagram of the page cache between memory and disk placeholder">
+<p>In computing, a <b>page cache</b>, sometimes also called a disk cache, is a transparent cache for the pages originating from a secondary storage device such as a hard disk drive (HDD) or solid-state drive (SSD). The operating system keeps a page cache in otherwise unused portions of the main memory (RAM), resulting in much quicker access to the contents of cached pages.</p>
+<h2>Overview</h2>
+<p>When a process reads data from a file, the kernel first checks the page cache; if the page is present, the data is copied directly from memory without a disk access. When data is written, it is typically placed in the page cache and marked "dirty"; a background writeback mechanism later flushes dirty pages to the storage device. This deferred writing greatly improves performance but means recently written data can be lost on a power failure unless the application calls <code>fsync</code> or a related system call.</p>
+<h2>Linux</h2>
+<p>In <a href="../Linux/index.html">Linux</a>, the page cache is unified with the virtual memory system: file pages and anonymous pages are managed together, and free memory is used opportunistically for caching. Tools such as <code>free</code> report cached memory separately from memory used by applications, and administrators may drop caches through <code>/proc/sys/vm/drop_caches</code> for benchmarking. The kernel reclaims cached pages under memory pressure, preferring to evict clean pages that can be re-read from disk.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Cache_(computing)/index.html">Cache (computing)</a></li>
+<li><a href="../Virtual_memory/index.html">Virtual memory</a></li>
+<li><a href="../Buffer_cache/index.html">Buffer cache</a></li>
+</ul>
+</div>
+</body>
+</html>

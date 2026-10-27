@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MESI protocol - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+header { background: #f8f9fa; border-bottom: 1px solid #a2a9b1; padding: 12px 24px; }
+main { max-width: 960px; margin: 0 auto; padding: 16px 24px 48px; line-height: 1.6; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.4em; }
+table.infobox { float: right; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 90%; margin: 0 0 12px 16px; border-collapse: collapse; }
+table.infobox th, table.infobox td { padding: 4px 8px; text-align: left; border-bottom: 1px solid #eaecf0; }
+table.infobox th { background: #eaecf0; }
+img.hero { display: block; width: 100%; height: 140px; object-fit: cover; background: #eaecf0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+figure { margin: 0; }
+figcaption { font-size: 85%; color: #54595d; padding: 6px 8px; }
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> — the free encyclopedia</header>
+<main>
+<h1>MESI protocol</h1>
+<table class="infobox">
+<tr><th colspan="2">MESI protocol</th></tr>
+<tr><td colspan="2"><figure><img class="hero" src="images/mesi-protocol.png" alt="Illustrated placeholder diagram of MESI cache state transitions"><figcaption>State transitions in the MESI protocol</figcaption></figure></td></tr>
+<tr><th>States</th><td>Modified, Exclusive, Shared, Invalid</td></tr>
+<tr><th>Purpose</th><td>Cache coherence in multiprocessor systems</td></tr>
+<tr><th>Mechanism</th><td>Bus snooping</td></tr>
+<tr><th>Related</th><td>MSI, MOSI, MOESI, MESIF protocols</td></tr>
+</table>
+<p>The <strong>MESI protocol</strong> is an invalidate-based cache coherence protocol used in multiprocessor computer systems to keep the data stored in separate processor caches consistent. It is one of the most common protocols supporting write-back caches, and it is sometimes known as the <strong>Illinois protocol</strong>, after its development at the University of Illinois.</p>
+<h2>States</h2>
+<p>Every cache line is in one of four states:</p>
+<ul>
+<li><strong>Modified (M)</strong> — the line is present only in this cache and has been changed; it differs from main memory and must be written back before another processor may use it.</li>
+<li><strong>Exclusive (E)</strong> — the line is present only in this cache but is unmodified, matching memory; it may transition to Modified on a write without bus traffic.</li>
+<li><strong>Shared (S)</strong> — the line may be present in several caches and is clean.</li>
+<li><strong>Invalid (I)</strong> — the line is not valid and must be fetched on access.</li>
+</ul>
+<h2>Operation</h2>
+<p>Caches snoop (monitor) transactions on the shared bus or interconnect. When a processor writes to a line, other copies are invalidated; when it reads a line held Modified by another cache, that cache supplies the data and both copies typically become Shared, or the line is written back to memory. The Exclusive state is the key optimisation over the simpler MSI protocol: a read miss that finds no other copy grants Exclusive status, so a subsequent write needs no invalidation broadcast.</p>
+<h2>Extensions</h2>
+<p>MESI has been extended by adding states, giving MOESI (used by AMD) and MESIF (used by Intel), which reduce traffic in large shared-memory and multi-socket systems.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Cache_coherence/index.html">Cache coherence</a></li>
+<li><a href="../MOESI_protocol/index.html">MOESI protocol</a></li>
+<li><a href="../Bus_snooping/index.html">Bus snooping</a></li>
+</ul>
+</main>
+</body>
+</html>

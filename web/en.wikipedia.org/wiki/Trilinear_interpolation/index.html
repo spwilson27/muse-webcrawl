@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trilinear interpolation - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:6px;margin-bottom:10px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:1.2em}
+img.hero{display:block;max-width:100%;height:auto;margin:14px 0;border:1px solid #c8ccd1;background:#f8f9fa}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Trilinear interpolation</h1>
+<img class="hero" src="images/Trilinear_interpolation.png" alt="Trilinear interpolation — hero image placeholder">
+<p><b>Trilinear interpolation</b> is a method of multivariate interpolation on a three-dimensional regular grid. It approximates the value of a function at an arbitrary point within a grid cell using the values at the eight corners of that cell. It is the three-dimensional extension of linear interpolation (1D) and bilinear interpolation (2D), and is widely used in computer graphics for texture mapping (especially volume rendering and 3D textures) and in scientific computing for resampling volumetric data such as medical CT and MRI scans.</p>
+<h2>Method</h2>
+<p>Given the fractional position of the query point within its unit cell, (x<sub>d</sub>, y<sub>d</sub>, z<sub>d</sub>), the value is computed by performing linear interpolation first along one axis on the four pairs of corners, then along the second axis on the resulting two pairs, and finally along the third axis — seven linear interpolations in total. The result weights each corner by the volume of the sub-rectangle opposite to it; the interpolated function is continuous across cells, though its gradient is not.</p>
+<h2>Comparison with other methods</h2>
+<p>Trilinear interpolation is cheap and smooth enough for many purposes, but it can blur fine detail and produce visible artifacts compared with higher-order methods such as tricubic interpolation, which uses a larger neighbourhood and yields a smoother gradient at greater computational cost.</p>
+<p>See also: <a href="../Bilinear_interpolation/index.html">Bilinear interpolation</a>, <a href="../Linear_interpolation/index.html">Linear interpolation</a>, <a href="../Tricubic_interpolation/index.html">Tricubic interpolation</a>.</p>
+</body>
+</html>

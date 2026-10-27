@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Solving Nim - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #fff; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em; line-height: 1.6; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #3366cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 480px; width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; }
+.caption { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Solving Nim</h1>
+<p>The game of <b>Nim</b> is a mathematical game of strategy in which two players take turns removing objects from distinct heaps. On each turn, a player must remove at least one object, and may remove any number of objects provided they all come from the same heap. In the normal play convention, the player who removes the last object wins; in misère Nim, that player loses. Nim was completely solved in 1901 by Charles L. Bouton of Harvard University, in one of the founding results of combinatorial game theory.</p>
+<div class="hero"><img src="images/solving-nim.png" alt="Heaps of matchsticks arranged for a game of Nim"><div class="caption">A Nim position: heaps of objects from which players alternately remove counters.</div></div>
+<h2>Bouton's theorem</h2>
+<p>The solution depends on the <b>nim-sum</b>: the binary digital sum (bitwise XOR) of the heap sizes, computed without carry. Bouton proved that a Nim position is losing for the player about to move if and only if the nim-sum of the heap sizes is zero. Consequently, the winning strategy is always to leave a position whose nim-sum is zero. If the initial nim-sum is non-zero, such a move always exists: find the largest heap affected by the highest set bit of the nim-sum and reduce it to the XOR of its size with the total nim-sum. If the initial nim-sum is zero, the player loses under perfect play whatever they do, since every legal move makes the nim-sum non-zero and the opponent can restore it to zero.</p>
+<h2>Example</h2>
+<p>For heaps of sizes 3, 4, and 5: 3 ⊕ 4 ⊕ 5 = 2, so the position is winning. The highest set bit of 2 is 2; the heap of 3 (binary 011) is reduced to 3 ⊕ 2 = 1, leaving heaps 1, 4, 5 with nim-sum 1 ⊕ 4 ⊕ 5 = 0, as required.</p>
+<h2>Misère play and generalisations</h2>
+<p>In misère Nim the strategy coincides with normal play until a move would leave only heaps of size one; at that point the player instead leaves an odd number of heaps of size one. Nim generalises to the disjunctive sum of impartial games, and the Sprague–Grundy theorem shows that every impartial game is equivalent to a Nim heap of a certain size (its Grundy value), making Nim central to combinatorial game theory. Variants include Wythoff's game, turning-turtles, and the subtraction games. A mechanical computer called the Nimrod, exhibited in 1951, played Nim and was one of the earliest video-game-playing machines.</p>
+<h2>See also</h2>
+<p><a href="../Nim/index.html">Nim</a> · <a href="../Sprague%E2%80%93Grundy_theorem/index.html">Sprague–Grundy theorem</a> · <a href="../Combinatorial_game_theory/index.html">Combinatorial game theory</a> · <a href="../Nimber/index.html">Nimber</a></p>
+</div>
+</body>
+</html>

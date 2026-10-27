@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Smoothing spline - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+img.hero{max-width:100%;height:auto;border:1px solid #c8ccd1;background:#f8f9fa;padding:4px}
+.formula{background:#f8f9fa;border:1px solid #a2a9b1;padding:10px;text-align:center;font-family:monospace}
+</style>
+</head>
+<body>
+<h1>Smoothing spline</h1>
+<img class="hero" src="images/Smoothing_spline.png" alt="A smoothing spline curve fitted through scattered data points">
+<p><b>Smoothing splines</b> are function estimates, <i>f&#770;(x)</i>, obtained from a set of noisy observations <i>y<sub>i</sub></i> of the target <i>f(x<sub>i</sub>)</i>, in order to balance a measure of goodness of fit of the estimate with a derivative-based measure of the smoothness of the estimate. They provide a means for smoothing noisy data, and are a popular tool in nonparametric regression.</p>
+<h2>Definition</h2>
+<p>Let <i>x<sub>1</sub> &le; ... &le; x<sub>n</sub></i> be a set of observations, modeled by the relation <i>y<sub>i</sub> = f(x<sub>i</sub>) + &epsilon;<sub>i</sub></i> where the &epsilon;<sub>i</sub> are independent, zero-mean noise terms. The cubic smoothing spline estimate of the function <i>f</i> is defined to be the minimizer of:</p>
+<p class="formula">&Sigma;<sub>i</sub> (y<sub>i</sub> &minus; f&#770;(x<sub>i</sub>))&sup2; + &lambda; &int; (f&#770;&Prime;(x))&sup2; dx</p>
+<p>The smoothing parameter &lambda; controls the trade-off between fidelity to the data and smoothness: as &lambda; approaches zero the spline interpolates the data, while as &lambda; approaches infinity it approaches a least-squares straight line. The minimizer is a natural cubic spline with knots at the distinct values of the covariates.</p>
+<h2>Choice of smoothing parameter</h2>
+<p>The parameter &lambda; may be selected by cross-validation, generalized cross-validation (GCV), or by treating the spline as a mixed model and using (restricted) maximum likelihood estimation of variance components.</p>
+<h2>Extensions</h2>
+<p>Multivariate smoothing splines, known as thin-plate splines, extend the penalized-fit idea to data in several dimensions. Smoothing splines form the foundation of generalized additive models, in which a response is modeled as a sum of smooth functions of predictor variables.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Spline_(mathematics)/index.html">Spline (mathematics)</a></li>
+<li><a href="../Nonparametric_regression/index.html">Nonparametric regression</a></li>
+<li><a href="../Generalized_additive_model/index.html">Generalized additive model</a></li>
+</ul>
+</body>
+</html>

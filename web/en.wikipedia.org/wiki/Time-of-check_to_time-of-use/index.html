@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Time-of-check to time-of-use - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;margin:0;font-size:1.8em}
+main{max-width:960px;margin:0 auto;padding:16px 24px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+.hero{float:right;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;text-align:center;font-size:.85em}
+.hero img{width:220px;height:150px;background:#eaecf0;display:block}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<header><h1>Time-of-check to time-of-use</h1></header>
+<main>
+<div class="hero"><img src="images/time-of-check-to-time-of-use.png" alt="Illustration of a race condition between a check and a use of shared state"><br>The gap between check and use is exploitable</div>
+<p><b>Time-of-check to time-of-use</b> (<b>TOCTOU</b>, pronounced "tock-too") is a class of software bugs in computer security caused by a race condition involving the <i>checking</i> of the state of a part of a system (such as a security credential) and the <i>use</i> of the results of that check. TOCTOU race conditions are most common in Unix file system operations, but can occur in other local and distributed systems.</p>
+<h2>Description</h2>
+<p>A classic example involves a program that checks whether a user has permission to access a file, and then opens the file. Between the check and the open, an attacker may replace the file with a symbolic link pointing to a protected file such as a password database. If the checking program runs with elevated privileges, the attacker thereby gains access it should not have. The vulnerability exists because the state verified at check time is not guaranteed to be the state acted on at use time.</p>
+<h2>Exploitation and mitigation</h2>
+<p>TOCTOU bugs are hard to eliminate because they require the attacker to win a race, often by slowing the victim process with many files or symlinks. Reliable mitigations bind the check and the use together: opening the file once and performing permission checks on the already-open file descriptor (for example with <code>fstat</code>), using system calls that operate on file descriptors rather than paths, or working in directories the attacker cannot write to. Transactions and atomic operations provide similar guarantees in databases and distributed systems.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Race_condition/index.html">Race condition</a></li>
+<li><a href="../Symbolic_link/index.html">Symbolic link</a></li>
+<li><a href="../Computer_security/index.html">Computer security</a></li>
+</ul>
+</main>
+</body>
+</html>

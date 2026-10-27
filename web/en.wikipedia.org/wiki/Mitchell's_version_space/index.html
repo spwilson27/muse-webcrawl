@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mitchell's version space - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 800px; line-height: 1.6; color: #202122; padding: 0 1em; }
+h1 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+a { color: #0645ad; text-decoration: none; }
+img.hero { display: block; max-width: 320px; margin: 1em 0; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 0.5em; }
+</style>
+</head>
+<body>
+<h1>Mitchell's version space</h1>
+<img class="hero" src="images/version-space.png" alt="Diagram of a version space bounded by specific and general hypotheses">
+<p>In <a href="../Machine_learning/index.html">machine learning</a>, the <b>version space</b>, introduced by Tom Mitchell in the late 1970s, is the set of all hypotheses in a hypothesis space that are consistent with a given set of training examples. It is a central concept in Mitchell's work on concept learning.</p>
+<h2>Definition</h2>
+<p>A hypothesis is consistent with a set of training examples if it correctly classifies every example. The version space is the subset of the hypothesis space containing every consistent hypothesis — no more and no fewer.</p>
+<h2>Boundary representation</h2>
+<p>Because the version space can be very large, it is usually represented implicitly by its boundary sets: the <b>specific boundary</b> (S), containing the most specific consistent hypotheses, and the <b>general boundary</b> (G), containing the most general consistent hypotheses. Every hypothesis between these boundaries (in the generality partial ordering) is in the version space.</p>
+<h2>Candidate elimination algorithm</h2>
+<p>Mitchell's <b>candidate elimination algorithm</b> incrementally maintains the S and G boundary sets as training examples arrive. Positive examples cause the specific boundary to be generalized, while negative examples cause the general boundary to be specialized. Learning succeeds when the version space converges to a single hypothesis, and fails (collapses) when no hypothesis is consistent with the data.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Machine_learning/index.html">Machine learning</a></li>
+<li><a href="../Concept_learning/index.html">Concept learning</a></li>
+<li><a href="../Tom_M._Mitchell/index.html">Tom M. Mitchell</a></li>
+</ul>
+</body>
+</html>

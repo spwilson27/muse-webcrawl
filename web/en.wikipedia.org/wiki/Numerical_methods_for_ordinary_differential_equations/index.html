@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Numerical methods for ordinary differential equations</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+main { max-width: 860px; margin: 0 auto; background: #fff; padding: 2em 2.5em; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; margin-top: 0; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #c8ccd1; padding-bottom: 0.15em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { display: block; margin: 1em auto; max-width: 420px; width: 100%; background: #eaecf0; border: 1px solid #c8ccd1; padding: 2em 0; text-align: center; color: #54595d; }
+</style>
+</head>
+<body>
+<main>
+<h1>Numerical methods for ordinary differential equations</h1>
+<img class="hero" src="images/ode-methods.png" alt="Placeholder image: stepwise numerical approximation of a solution curve">
+<p><b>Numerical methods for ordinary differential equations</b> are methods used to find numerical approximations to the solutions of ordinary differential equations (ODEs), typically initial value problems of the form <i>y</i>′ = <i>f</i>(<i>t</i>, <i>y</i>) with a given initial condition. They are essential because most ODEs arising in science and engineering have no closed-form solution.</p>
+<h2>Single-step and multistep methods</h2>
+<p>The oldest and simplest method is Euler's method, which advances the solution by steps using the derivative at the current point. Higher accuracy is obtained with Runge–Kutta methods, which evaluate the derivative at several points within each step; the classical fourth-order Runge–Kutta method and adaptive pairs such as Runge–Kutta–Fehlberg and Dormand–Prince (used as the default in software such as MATLAB's ode45) vary the step size to meet an error tolerance. Linear multistep methods instead reuse values from previous steps; Adams–Bashforth and Adams–Moulton methods and backward differentiation formulas (BDF) are the main families.</p>
+<h2>Stability and stiffness</h2>
+<p>Key theoretical concerns are consistency, convergence and stability, especially absolute stability on the test equation <i>y</i>′ = λ<i>y</i>. Stiff equations, whose solutions contain widely separated timescales, require implicit methods such as BDF or implicit Runge–Kutta schemes with large stability regions, solved at each step with iterative algebraic solvers. Specialised methods exist for boundary value problems, Hamiltonian systems (symplectic integrators) and differential-algebraic equations.</p>
+<h2>See also</h2>
+<p><a href="../Euler_method/index.html">Euler method</a> · <a href="../Runge%E2%80%93Kutta_methods/index.html">Runge–Kutta methods</a> · <a href="../Stiff_equation/index.html">Stiff equation</a> · <a href="../Linear_multistep_method/index.html">Linear multistep method</a></p>
+</main>
+</body>
+</html>

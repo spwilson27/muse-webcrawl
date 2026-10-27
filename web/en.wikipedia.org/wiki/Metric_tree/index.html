@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Metric tree - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px; background: #fff; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 480px; width: 100%; background: #eaecf0; border: 1px solid #a2a9b1; padding: 24px 0; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Metric tree</h1>
+<p>A <b>metric tree</b> is a type of spatial data structure used to index objects in a metric space — a set equipped with a distance function satisfying the triangle inequality — in order to answer similarity queries such as nearest-neighbour and range searches efficiently. Unlike structures for vector spaces, metric trees rely only on distances between objects, so they apply to strings, shapes, and other non-numerical data.</p>
+<div class="hero"><img src="images/metric-tree.png" alt="A tree partitioning a metric space into nested balls"></div>
+<h2>Principle</h2>
+<p>Metric trees recursively partition the data into regions, commonly metric balls centred on chosen "pivot" objects with a covering radius. During a search, the triangle inequality provides lower bounds on the distance from the query to every object in a region; if that bound exceeds the best distance found so far, the whole region can be pruned without examining its members.</p>
+<h2>Examples</h2>
+<ul>
+<li><b>Ball tree</b> — partitions data into nested hyperspheres.</li>
+<li><b>VP-tree</b> (vantage-point tree) — splits data by distance to a chosen vantage point.</li>
+<li><b>M-tree</b> — a balanced, dynamic tree designed for secondary storage and large databases.</li>
+<li><b>BK-tree</b> — designed for discrete metric spaces such as edit distance between strings.</li>
+<li><b>Cover tree</b> — offers strong theoretical guarantees for nearest-neighbour search in spaces of low intrinsic dimension.</li>
+</ul>
+<h2>Applications</h2>
+<p>Metric trees are used in content-based image and music retrieval, spell checking, biological sequence searching, and duplicate detection — any domain where similarity is defined by a distance function. Their effectiveness diminishes in very high-dimensional spaces, a manifestation of the curse of dimensionality.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Metric_space/index.html">Metric space</a></li>
+<li><a href="../Nearest_neighbor_search/index.html">Nearest neighbor search</a></li>
+<li><a href="../Ball_tree/index.html">Ball tree</a></li>
+<li><a href="../Vantage-point_tree/index.html">Vantage-point tree</a></li>
+</ul>
+</div>
+</body>
+</html>

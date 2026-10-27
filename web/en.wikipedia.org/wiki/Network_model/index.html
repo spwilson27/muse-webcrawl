@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Network model - Wikipedia</title>
+<style>
+body { font-family: "Helvetica Neue", Arial, sans-serif; margin: 0 auto; max-width: 960px; padding: 24px; color: #202122; line-height: 1.6; background: #fff; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; }
+h2 { font-size: 22px; border-bottom: 1px solid #c8ccd1; padding-bottom: 4px; margin-top: 28px; }
+h3 { font-size: 17px; margin-top: 20px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { background: #f8f9fa; border: 1px solid #c8ccd1; padding: 12px; text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; }
+.infobox { float: right; width: 260px; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 10px; margin: 0 0 16px 16px; font-size: 14px; }
+ul, ol { padding-left: 24px; }
+.small { font-size: 13px; color: #54595d; }
+</style>
+</head>
+<body>
+<h1>Network model</h1>
+<p>The <b>network model</b> is a database model conceived as a flexible way of representing objects and their relationships. Its distinguishing feature is that the schema, viewed as a graph in which object types are nodes and relationship types are arcs, is not restricted to being a hierarchy or lattice.</p>
+<p>The network model was adopted by the CODASYL Data Base Task Group in 1969 and underwent a major update in 1971. It is sometimes known as the <b>CODASYL model</b> after the consortium that developed it, or the <b>DBTG model</b> after the Database Task Group that authored it.</p>
+<div class="hero"><img src="images/network-model.png" alt="Diagram of a network model database schema, showing records linked by sets"></div>
+<h2>History</h2>
+<p>The original inventor of the network model was Charles Bachman, who developed it while working at General Electric on the Integrated Data Store (IDS), one of the first database management systems, in the early 1960s. Bachman's work strongly influenced the CODASYL Data Base Task Group, whose 1969 specification became the basis for commercial network database systems from vendors such as Computer Sciences Corporation, Honeywell, and Cullinet (with its IDMS product).</p>
+<p>The network model was a contemporary and competitor of the <a href="../Relational_model/index.html">relational model</a> proposed by Edgar F. Codd in 1970. A famous 1974 debate between Bachman and Codd contrasted the navigational style of network databases with the declarative style of relational databases. Bachman received the Turing Award in 1973 for his work on database technology.</p>
+<h2>Overview</h2>
+<p>In a network database, data is organised into <b>records</b>, which are grouped into <b>record types</b>. Relationships between records are expressed by <b>set types</b>: a named directed relationship between an owner record type and a member record type. Unlike the hierarchical model, a member record may participate in several sets and may have more than one owner, which allows many-to-many relationships to be modelled directly.</p>
+<p>A network database is navigated procedurally: a program maintains <b>currency indicators</b> pointing at records it has most recently accessed and follows set occurrences from owner to member records. Charles Bachman called this style "the programmer as navigator."</p>
+<h3>Basic concepts</h3>
+<ul>
+<li><b>Record type</b> — a named collection of data items, analogous to a table but without relational constraints.</li>
+<li><b>Set type</b> — a named owner–member relationship between two record types.</li>
+<li><b>Set occurrence</b> — one instance of a set type: one owner record together with its member records.</li>
+<li><b>Currency</b> — the notion of "current" record for the run unit, each set type, and each record type.</li>
+</ul>
+<h2>Comparison with other models</h2>
+<p>The network model generalises the earlier <a href="../Hierarchical_database_model/index.html">hierarchical model</a> by removing the restriction that each record has only one parent. Compared with the relational model, it offered predictable performance and direct pointer-based access in exchange for queries that are harder to write and a schema that is costly to change. Most new database designs from the 1980s onward adopted the relational model, though network-style graph structures have returned to prominence with modern <a href="../Graph_database/index.html">graph databases</a>.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Database_model/index.html">Database model</a></li>
+<li><a href="../Navigational_database/index.html">Navigational database</a></li>
+<li><a href="../Object_database/index.html">Object database</a></li>
+</ul>
+<p class="small">This article is about the database model. For network science models, see Network theory.</p>
+</body>
+</html>

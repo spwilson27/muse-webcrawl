@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Monte Carlo localization - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;}
+main{max-width:960px;margin:0 auto;padding:20px 32px;}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;}
+a{color:#0645ad;text-decoration:none;} a:hover{text-decoration:underline;}
+img.hero{display:block;max-width:320px;background:#f8f9fa;border:1px solid #c8ccd1;padding:8px;color:#54595d;font-size:13px;text-align:center;}
+</style>
+</head>
+<body>
+<main>
+<h1>Monte Carlo localization</h1>
+<img class="hero" src="images/monte-carlo-localization.png" alt="Particle cloud converging on a robot's estimated position">
+<p><b>Monte Carlo localization</b> (<b>MCL</b>), known also as <b>particle filter localization</b>, is an algorithm for robots to localize using a particle filter. Given a map of the robot's environment, the algorithm estimates the position and orientation of a robot as it moves and senses the environment. The robot's belief about its pose is represented by a set of randomly drawn samples ("particles"), each weighted by how well the robot's sensor readings match the map.</p>
+<h2>Operation</h2>
+<p>MCL maintains a distribution over possible poses. When the robot moves, each particle is updated according to the motion model (with added noise). When the robot observes the environment, each particle is re-weighted by the likelihood of the observation given the particle's pose, and a new set of particles is drawn with replacement according to these weights (resampling). Over time the particles concentrate around the true pose.</p>
+<p>Because the particle set can represent multi-modal distributions, MCL solves the <i>global localization problem</i> — a robot placed somewhere unknown can recover its position from scratch — as well as the position-tracking problem. Variants such as KLD-sampling adapt the number of particles to the uncertainty of the estimate, and augmented MCL injects random particles to recover from localization failures such as the "kidnapped robot" scenario.</p>
+<h2>History and use</h2>
+<p>The method was developed in the late 1990s by researchers including Dieter Fox, Wolfram Burgard, Frank Dellaert, and Sebastian Thrun, building on earlier condensation/particle-filtering work in computer vision. It was famously used in museum tour-guide robots. An adaptive version (AMCL) is widely used in the Robot Operating System (ROS) navigation stack for mobile robots equipped with laser rangefinders.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Particle_filter/index.html">Particle filter</a></li>
+<li><a href="../Simultaneous_localization_and_mapping/index.html">Simultaneous localization and mapping</a></li>
+<li><a href="../Kalman_filter/index.html">Kalman filter</a></li>
+<li><a href="../Monte_Carlo_method/index.html">Monte Carlo method</a></li>
+</ul>
+</main>
+</body>
+</html>

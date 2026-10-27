@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>IOMMU - Wikipedia</title>
+<style>body{font-family:sans-serif;max-width:800px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #c8ccd1}img.hero{display:block;max-width:400px;width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:1em;text-align:center;color:#54595d}</style>
+</head>
+<body>
+<img class="hero" src="images/iommu.png" alt="Diagram showing an IOMMU translating device addresses between peripherals and main memory">
+<h1>IOMMU</h1>
+<p>In computing, an <b>input–output memory management unit</b> (<b>IOMMU</b>) is a memory management unit (MMU) connecting a direct-memory-access–capable (DMA-capable) I/O bus to the main memory. Like a traditional MMU, which translates CPU-visible virtual addresses to physical addresses, the IOMMU maps device-visible virtual addresses (also called device addresses or I/O addresses) to physical addresses. Some units also provide memory protection from faulty or malicious devices.</p>
+<h2>Advantages</h2>
+<p>An IOMMU allows devices to address memory using the same virtual addresses as the rest of the system, enables devices with limited address ranges to access all of main memory, provides scatter-gather DMA by mapping scattered physical pages into a contiguous device-visible range, and protects memory from erroneous or malicious DMA. These features are essential for device passthrough in virtualization, where a guest virtual machine is given direct control of a physical device while being prevented from accessing memory outside its own.</p>
+<h2>Implementations</h2>
+<p>Intel markets its IOMMU technology as <b>VT-d</b> (Virtualization Technology for Directed I/O). AMD's implementation is called <b>AMD-Vi</b>. ARM specifies the System Memory Management Unit (SMMU) architecture. Older and simpler forms include the Graphics Address Remapping Table (GART) used by AGP and early x86 systems.</p>
+<h2>Use in virtualization</h2>
+<p>With IOMMU support, hypervisors such as Xen, KVM and Hyper-V can assign PCI devices directly to guest virtual machines (PCI passthrough, and with SR-IOV, individual virtual functions), achieving near-native I/O performance while the IOMMU enforces isolation between guests.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Memory_management_unit/index.html">Memory management unit</a></li>
+<li><a href="../Direct_memory_access/index.html">Direct memory access</a></li>
+<li><a href="../X86_virtualization/index.html">x86 virtualization</a></li>
+<li><a href="../PCI_passthrough/index.html">PCI passthrough</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Struct (C programming language) - Wikipedia</title>
+<style>
+body { font-family: sans-serif; max-width: 820px; margin: 2em auto; padding: 0 1em; line-height: 1.6; color: #202122; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.4em; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 480px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 1em; box-sizing: border-box; }
+.caption { font-size: 0.85em; color: #54595d; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0.8em; overflow-x: auto; font-size: 0.9em; }
+code { font-family: monospace; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<h1>Struct (C programming language)</h1>
+<div class="hero"><img src="images/struct-c.png" alt="Diagram of a struct's members laid out contiguously in memory"><div class="caption">Memory layout of a struct with padding</div></div>
+<p>In the C programming language, a <b>struct</b> (short for "structure") is a composite data type that groups together variables of potentially different types under a single name. The members of a struct are stored in memory in the order declared, possibly with implementation-defined padding inserted to satisfy alignment requirements, so the size of a struct is at least the sum of its members' sizes.</p>
+<h2>Declaration and use</h2>
+<pre>struct point {
+    int x;
+    int y;
+};
+
+struct point p = { .x = 3, .y = 4 };
+p.x += 1;</pre>
+<p>Members are accessed with the dot operator (<code>.</code>) on a struct value or the arrow operator (<code>-&gt;</code>) through a pointer. A <code>typedef</code> is commonly used to avoid repeating the <code>struct</code> keyword. Structs can contain pointers to their own type, enabling linked lists, trees and other recursive data structures, and can be nested, returned from functions, and assigned wholesale—unlike arrays.</p>
+<h2>Bit fields and unions</h2>
+<p>A member may be declared with a width in bits (a bit field), allowing compact packing of flags and small integers; the packing order is implementation-defined. A union is a related construct in which all members share the same storage. An anonymous struct or union member (standardised in C11) contributes its members to the enclosing type.</p>
+<h2>Implementation details</h2>
+<p>Alignment requirements mean reordering members can change a struct's size; tools such as <code>offsetof</code> reveal member offsets. Because struct layouts are part of binary interfaces, operating-system headers define them carefully, and flexible array members (C99) support variable-length trailing data in allocated structs.</p>
+</body>
+</html>

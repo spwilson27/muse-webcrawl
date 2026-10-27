@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Worley noise - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #fff; color: #202122; }
+.mw-body { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { font-family: sans-serif; font-size: 14px; line-height: 1.6; }
+ul { font-family: sans-serif; font-size: 14px; line-height: 1.6; }
+img.hero { display: block; max-width: 320px; margin: 10px 0 16px; border: 1px solid #c8ccd1; }
+a { color: #0645ad; text-decoration: none; }
+code { background: #f8f9fa; padding: 1px 4px; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Worley noise</h1>
+<img class="hero" src="images/Worley_noise.png" alt="A cellular pattern generated with Worley noise">
+<p><b>Worley noise</b> is a noise function introduced by Steven Worley in 1996 for use in procedural texture generation in computer graphics. It is a type of <b>cellular noise</b>: the function is based on the distances from a sample point to a set of randomly distributed feature points, producing patterns that resemble cells, pebbles, scales or cracked surfaces.</p>
+<h2>Algorithm</h2>
+<p>The algorithm proceeds as follows:</p>
+<ul>
+<li>Feature points are distributed randomly throughout the space, typically with one point in each cell of a regular grid.</li>
+<li>For any point being evaluated, the distances to the nearest feature points are computed and ordered: F<sub>1</sub> is the distance to the closest point, F<sub>2</sub> to the second closest, and so on.</li>
+<li>The returned value is some combination of these distances, such as F<sub>1</sub>, F<sub>2</sub> − F<sub>1</sub>, or a weighted combination.</li>
+</ul>
+<p>Using F<sub>1</sub> alone yields a pattern of rounded cells similar to a <a href="../Voronoi_diagram/index.html">Voronoi diagram</a>, while F<sub>2</sub> − F<sub>1</sub> produces thin borders along cell boundaries, useful for simulating cracks, veins or giraffe-like markings.</p>
+<h2>Applications</h2>
+<p>Worley noise is widely used in 3D rendering and game development to synthesise textures such as stone, water surfaces, clouds, lizard skin, marble and biological cell structures. It is implemented in many graphics packages, shader languages and procedural generation tools, often alongside gradient noise functions such as <a href="../Perlin_noise/index.html">Perlin noise</a> and <a href="../Simplex_noise/index.html">simplex noise</a>. Because feature points can be animated over time, the noise can also generate effects such as caustics in shallow water.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Perlin_noise/index.html">Perlin noise</a></li>
+<li><a href="../Simplex_noise/index.html">Simplex noise</a></li>
+<li><a href="../Voronoi_diagram/index.html">Voronoi diagram</a></li>
+<li><a href="../Procedural_generation/index.html">Procedural generation</a></li>
+</ul>
+</div>
+</body>
+</html>

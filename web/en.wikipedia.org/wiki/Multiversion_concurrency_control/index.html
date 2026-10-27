@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Multiversion concurrency control - Wikipedia</title>
+<style>body{font-family:sans-serif;max-width:800px;margin:0 auto;padding:16px;line-height:1.5;color:#202122}h1{border-bottom:1px solid #a2a9b1;padding-bottom:4px}img{max-width:100%}a{color:#0645ad;text-decoration:none}</style>
+</head>
+<body>
+<h1>Multiversion concurrency control</h1>
+<img src="images/mvcc.png" alt="Multiversion concurrency control diagram">
+<p><b>Multiversion concurrency control</b> (<b>MVCC</b>) is a method commonly used by database management systems to provide concurrent access to data. Instead of overwriting a data item when it changes, the system creates a new version, so that readers can access a consistent snapshot of the database without being blocked by writers.</p>
+<h2>Implementation</h2>
+<p>Each transaction is associated with a timestamp or transaction identifier. When a transaction reads an item, it sees the most recent version committed before it started. Writes create new versions rather than modifying data in place, and old versions are removed by a garbage-collection or "vacuum" process once no active transaction can see them.</p>
+<h2>Use</h2>
+<p>MVCC is used by many widely used databases, including PostgreSQL, Oracle, MySQL's InnoDB engine and CouchDB. A key advantage is that readers and writers rarely block each other; a drawback is the storage overhead of keeping multiple versions and the need to clean them up.</p>
+<p>See also <a href="../Concurrency_control/index.html">concurrency control</a> and <a href="../Snapshot_isolation/index.html">snapshot isolation</a>.</p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Portable Executable - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; max-width: 320px; width: 100%; min-height: 180px; background: #eaecf0; border: 1px solid #a2a9b1; margin: 0 0 1em 1em; float: right; }
+code { background: #f8f9fa; padding: 0 0.2em; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Portable Executable</h1>
+<p>The <b>Portable Executable</b> (PE) format is a file format for executables, object code and DLLs used in 32-bit and 64-bit versions of the Microsoft Windows operating system. The 64-bit extension, PE32+, is used by Windows on x86-64 and ARM64. The format derives from the Unix COFF format and is used for .exe, .dll, .sys and other binary files.</p>
+<img class="hero" src="images/portable-executable.png" alt="Diagram of the structure of a Portable Executable file">
+<h2>Structure</h2>
+<p>A PE file begins with an MS-DOS stub (starting with the letters "MZ") that prints a message under DOS, followed by the PE signature "PE\0\0". After this come the COFF file header, an "optional" header — which is in fact required for executables and contains fields such as the entry point address, image base and subsystem — and a table of section headers. Sections hold the actual content: typically <code>.text</code> for code, <code>.rdata</code> for read-only data and import tables, <code>.data</code> for initialised data, and <code>.rsrc</code> for resources such as icons and dialogs.</p>
+<h2>Imports and relocations</h2>
+<p>PE files record the DLLs and functions they import so the Windows loader can resolve addresses at load time, and may include relocation information allowing the image to be loaded at an address other than its preferred base — a feature relied on by address space layout randomisation (ASLR).</p>
+<h2>Uses</h2>
+<p>Beyond ordinary applications, the PE format is used for UEFI firmware executables and by the .NET framework, whose assemblies are PE files containing Common Intermediate Language code and a CLR header.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../COFF/index.html">COFF</a></li>
+<li><a href="../Executable_and_Linkable_Format/index.html">Executable and Linkable Format</a></li>
+<li><a href="../Dynamic-link_library/index.html">Dynamic-link library</a></li>
+</ul>
+</div>
+</body>
+</html>

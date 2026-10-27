@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wide-column store - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em;line-height:1.6;max-width:900px}
+h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{border-bottom:1px solid #a2a9b1}
+.thumb{text-align:center;color:#666;font-size:.85em}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>Wide-column store</h1>
+<div class="thumb"><img src="images/wide-column-store.png" alt="Diagram of a wide-column data model with column families"></div>
+<p>A <b>wide-column store</b> (also called a column-family database) is a type of NoSQL database that stores data in tables with rows and dynamic columns. Unlike a relational database, the names and formats of columns can vary from row to row in the same table, and each cell can hold multiple timestamped versions of a value. Wide-column stores are designed to scale horizontally across many commodity servers and to handle very large volumes of sparse data.</p>
+<h2>Data model</h2>
+<p>Data is organised into <b>column families</b> — groups of related columns that are stored together and usually accessed together. A row is identified by a row key, and the full address of a value is given by row key, column family, column qualifier, and timestamp. Because columns are created dynamically, different rows can have entirely different sets of columns, making the model well suited to event data, time series, and user profiles with heterogeneous attributes.</p>
+<h2>Examples</h2>
+<p>The model was popularised by Google's <b>Bigtable</b> (described in a 2006 paper), which inspired the open-source Apache HBase. Other widely used wide-column stores include Apache Cassandra (originally developed at Facebook) and ScyllaDB. These systems are used for write-heavy workloads such as messaging inboxes, recommendation data, sensor readings, and activity logs.</p>
+<h2>Comparison</h2>
+<p>Wide-column stores differ from relational column-oriented databases (columnar OLAP systems), which have fixed schemas and are optimised for analytical scans; wide-column stores instead prioritise flexible schemas, fast key-based lookups, and massive write throughput on distributed clusters.</p>
+</body>
+</html>

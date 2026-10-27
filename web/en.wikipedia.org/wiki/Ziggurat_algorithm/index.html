@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ziggurat algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:2em auto;max-width:800px;line-height:1.6;color:#202122;padding:0 1em}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.thumb{float:right;margin:0 0 1em 1em;border:1px solid #c8ccd1;background:#f8f9fa;padding:.5em;font-size:.85em;text-align:center}
+.tag{font-size:.85em;color:#54595d;font-style:italic}
+</style>
+</head>
+<body>
+<h1>Ziggurat algorithm</h1>
+<p class="tag">From Wikipedia, the free encyclopedia</p>
+<div class="thumb"><img src="images/ziggurat-algorithm.png" alt="Diagram of horizontal layers stacked like a ziggurat sampling a bell-shaped distribution"></div>
+<p>The <b>ziggurat algorithm</b> is an algorithm for pseudo-random number sampling. Belonging to the class of rejection sampling algorithms, it relies on an underlying source of uniformly-distributed random numbers, typically from a pseudo-random number generator, as well as precomputed tables. The algorithm is used to generate values from a monotone decreasing probability distribution. It can also be applied to symmetric unimodal distributions, such as the normal distribution, by choosing a value from one half of the distribution and then randomly choosing which half the value is considered to have been drawn from. It was developed by George Marsaglia and Wai Wan Tsang in 2000.</p>
+<h2>How it works</h2>
+<p>The algorithm divides the area under the probability density curve into horizontal layers of equal area, stacked on top of one another like the tiers of a ziggurat. Most of the time, a randomly chosen point falls inside one of the solid rectangular layers, and the corresponding x-coordinate can be returned immediately without further computation. Only when the point falls in the partially filled top layer, or in the unbounded tail of the distribution, is a more expensive fallback calculation needed. Because the fast path succeeds in the overwhelming majority of cases, the method is extremely fast in practice.</p>
+<h2>Applications</h2>
+<p>The ziggurat algorithm is widely used to generate normally distributed and exponentially distributed random numbers in statistical software, simulations, and Monte Carlo methods. Variants exist for many other distributions, and precomputed tables of layer boundaries make the implementation compact and efficient.</p>
+<p>See also: <a href="../Rejection_sampling/index.html">Rejection sampling</a>, <a href="../Normal_distribution/index.html">Normal distribution</a>, <a href="../George_Marsaglia/index.html">George Marsaglia</a>.</p>
+</body>
+</html>

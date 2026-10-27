@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hopcroft–Karp algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a2a9b1}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:6px;margin-top:0}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+.imgbox{float:right;width:280px;margin:0 0 12px 16px;border:1px solid #a2a9b1;background:#f8f9fa;padding:6px;font-size:12px;text-align:center}
+.imgbox img{width:100%;height:150px;object-fit:cover;background:#dfe3e6}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:13px;color:#54595d}
+code{font-family:monospace;background:#f8f9fa}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Hopcroft–Karp algorithm</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="imgbox"><img src="images/hopcroft-karp.png" alt="Diagram of layered augmenting paths in a bipartite graph"><div>Phases of shortest augmenting paths in the algorithm</div></div>
+<p>The <b>Hopcroft–Karp algorithm</b> is an algorithm in computational graph theory for finding a maximum-cardinality matching in a <a href="../Bipartite_graph/index.html">bipartite graph</a>. It was published in 1973 by John Hopcroft and Richard Karp, and independently discovered by other researchers. The algorithm runs in time O(<i>E</i> √<i>V</i>) in the worst case, improving on the O(<i>VE</i>) bound of simpler augmenting-path methods.</p>
+<h2>Description</h2>
+<p>Like the Hungarian search algorithm for bipartite matching, Hopcroft–Karp repeatedly increases the size of a partial matching by finding augmenting paths — paths that alternate between edges outside and inside the matching, beginning and ending at free (unmatched) vertices. Its key idea is to find, in each phase, a maximal set of vertex-disjoint augmenting paths of the <i>shortest</i> length simultaneously. A breadth-first search builds a layered graph of edges that can appear in a shortest augmenting path, and depth-first searches then extract a maximal set of such paths. Because the shortest augmenting path length strictly increases after each phase, and there can be at most √<i>V</i> phases before the remaining paths are long and few, the total running time is O(<i>E</i> √<i>V</i>).</p>
+<h2>Analysis</h2>
+<p>The analysis divides the phases into two groups: after √<i>V</i> phases the matching is within √<i>V</i> augmentations of optimal, and each subsequent phase increases the matching size by at least one, so at most 2√<i>V</i> phases occur overall. Each phase takes linear time in the number of edges. The algorithm is closely related to Dinic's algorithm for maximum flow, and bipartite matching can also be solved by reduction to flow, but Hopcroft–Karp's specialised analysis gives the tighter bound for this problem.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Matching_(graph_theory)/index.html">Matching (graph theory)</a></li>
+<li><a href="../Hungarian_algorithm/index.html">Hungarian algorithm</a></li>
+<li><a href="../Berge%27s_lemma/index.html">Berge's lemma</a></li>
+<li><a href="../Maximum_flow_problem/index.html">Maximum flow problem</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ternary search - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.4em; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; padding: 8px; }
+.caption { font-size: 0.85em; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px; overflow-x: auto; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Ternary search</h1>
+<p>A <b>ternary search</b> is a divide-and-conquer algorithm for finding the minimum or maximum of a <b>unimodal function</b> — a function that strictly increases and then strictly decreases (or vice versa). The technique is similar to binary search but divides the interval into three parts at each step, discarding the third that cannot contain the extremum.</p>
+<div class="hero"><img src="images/ternary-search.png" alt="Diagram of ternary search discarding one third of a unimodal curve"><div class="caption">Ternary search on a unimodal function</div></div>
+<h2>Algorithm</h2>
+<p>Given a unimodal function <i>f</i> on the interval [<i>l</i>, <i>r</i>], two interior points are evaluated:</p>
+<pre>m1 = l + (r - l) / 3
+m2 = r - (r - l) / 3</pre>
+<p>If <i>f</i>(m1) &lt; <i>f</i>(m2) (when seeking a maximum), the maximum cannot lie in [<i>l</i>, m1], so the search continues on [m1, <i>r</i>]; otherwise it continues on [<i>l</i>, m2]. The interval shrinks by a factor of 2/3 per iteration, so the algorithm requires O(log<sub>2/3</sub>(ε)) evaluations to reach precision ε. For discrete unimodal arrays the procedure terminates when the interval becomes sufficiently small, after which the few remaining points are checked directly.</p>
+<h2>Uses</h2>
+<p>Ternary search is used in optimisation problems where the objective function is known to be unimodal but has no easily computed derivative — for example, maximising a likelihood, tuning a physical quantity, or finding the best response in game-theoretic and geometry problems such as locating the point minimising the sum of distances along a line. When the function is evaluated many times, the golden-section search is a related alternative that reuses one function evaluation per iteration.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Binary_search/index.html">Binary search</a></li>
+<li><a href="../Golden-section_search/index.html">Golden-section search</a></li>
+<li><a href="../Unimodality/index.html">Unimodality</a></li>
+</ul>
+</div>
+</body>
+</html>

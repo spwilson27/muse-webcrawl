@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tikhonov regularization - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 800px; padding: 0 1em; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 1em; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<h1>Tikhonov regularization</h1>
+<div class="hero"><img src="images/Tikhonov_regularization.png" alt="Graph comparing unregularized and Tikhonov-regularized solutions of an ill-posed problem"></div>
+<p><b>Tikhonov regularization</b>, named for Andrey Tikhonov, is a method of regularization of ill-posed problems. It is also known in statistics as <b>ridge regression</b>, in machine learning as <b>weight decay</b> in a particular form, and is related to the Levenberg–Marquardt algorithm for non-linear least-squares problems. The method adds a penalty term to a least-squares problem so that the solution is stable and unique even when the original problem is ill-conditioned.</p>
+<h2>Formulation</h2>
+<p>To solve the linear system <i>Ax = b</i>, which may be ill-posed or have no exact solution, Tikhonov regularization replaces the ordinary least-squares objective with the sum of the residual norm and a regularization term: minimize ‖Ax − b‖² + λ²‖Γx‖², where λ is a regularization parameter controlling the trade-off between fitting the data and keeping the solution small or smooth, and Γ is the Tikhonov matrix, often the identity or a discrete derivative operator. The resulting normal equations have a closed-form solution, and in the identity case this amounts to adding λ² to the diagonal of AᵀA, hence "ridge" regression.</p>
+<h2>Choosing the parameter</h2>
+<p>The choice of λ is critical: too small a value leaves the solution noisy, while too large a value over-smooths it. Standard techniques include the discrepancy principle, generalized cross-validation, and the L-curve method, which plots solution norm against residual norm to find a corner balancing the two.</p>
+<h2>Applications</h2>
+<p>Tikhonov regularization is used in inverse problems such as image deblurring and computed tomography, in integral equations of the first kind, and as ridge regression in statistics, where it shrinks coefficient estimates, handles multicollinearity, and corresponds to a Bayesian maximum a posteriori estimate with a Gaussian prior. It was developed by Tikhonov in the 1940s–1960s for integral equations and independently described by others for statistical estimation.</p>
+</body>
+</html>

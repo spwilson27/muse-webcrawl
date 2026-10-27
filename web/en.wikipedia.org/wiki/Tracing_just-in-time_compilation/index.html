@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tracing just-in-time compilation - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 28px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; font-size: 22px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; }
+.caption { font-size: 12px; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+ul { line-height: 1.6; font-size: 15px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Tracing just-in-time compilation</h1>
+<div class="hero"><img src="images/Tracing_just-in-time_compilation.png" alt="Diagram of a tracing JIT recording a hot loop and compiling it to native code"></div>
+<p><b>Tracing just-in-time compilation</b> is a technique used by virtual machines to speed up the execution of programs, often those written in dynamically typed languages. Instead of compiling whole methods in advance, a tracing JIT observes the program as it runs in an interpreter, identifies frequently executed ("hot") sequences of instructions — typically loops — and records a linear <i>trace</i> of the actual instructions executed along one path through the code. The trace is then compiled to optimized native machine code, with guards that check assumptions made during recording; if a guard fails, execution exits back to the interpreter.</p>
+<h2>Overview</h2>
+<p>The approach contrasts with <i>method-based</i> JIT compilation, which compiles one method at a time. Because traces follow actual execution across method calls and branches, tracing JITs naturally inline across function boundaries and optimize the common path, deferring rarely taken branches to side exits. The linearization of control flow simplifies optimization, but the technique is less effective for code with many unpredictable branches or short-lived programs where compilation costs are not amortized.</p>
+<h2>History and implementations</h2>
+<p>Tracing compilation has roots in research systems of the 1990s and 2000s, including the Dynamo project for native code optimization and the Gal et al. work on tracing for dynamic languages. Well-known implementations include:</p>
+<ul>
+<li><b>TraceMonkey</b> — the tracing JIT added to Mozilla's SpiderMonkey JavaScript engine in Firefox 3.5 (2009)</li>
+<li><b>LuaJIT</b> — Mike Pall's high-performance just-in-time compiler for Lua, built around trace compilation</li>
+<li><b>PyPy</b> — a Python implementation whose meta-tracing JIT is generated from an interpreter written in RPython</li>
+<li><b>GraalVM / Truffle</b> — related partial-evaluation approaches in the same design space</li>
+</ul>
+<h2>Advantages and disadvantages</h2>
+<p>Traces capture type information and branch behaviour observed at run time, enabling aggressive specialization. However, tracing JITs can suffer from "trace explosion" on branchy code, high memory use for compiled traces, and difficulty with programs whose hot paths are not loop-shaped.</p>
+<p>See also: <a href="../Just-in-time_compilation/index.html">Just-in-time compilation</a>, <a href="../LuaJIT/index.html">LuaJIT</a>, <a href="../PyPy/index.html">PyPy</a>.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Layer normalization - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+p{line-height:1.6}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{background:#f8f9fa;border:1px solid #a2a9b1;padding:12px;text-align:center;margin:16px 0;color:#54595d;font-style:italic}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Layer normalization</h1>
+<p><b>Layer normalization</b> is a technique used in deep learning to stabilize the training of <a href="../Artificial_neural_network/index.html">neural networks</a>. Introduced by Jimmy Lei Ba, Jamie Ryan Kiros, and Geoffrey Hinton in 2016, it normalizes the inputs across the features of a single training example, rather than across the batch dimension as in batch normalization.</p>
+<div class="hero"><img src="images/layer-normalization.png" alt="Diagram comparing layer normalization with batch normalization"></div>
+<h2>Method</h2>
+<p>For a layer with inputs x, layer normalization computes the mean μ and standard deviation σ over all the hidden units in the layer for each individual training case, then normalizes each input to have zero mean and unit variance. Learnable gain and bias parameters rescale and shift the normalized values. Because the statistics are computed per example, the method behaves identically during training and inference and does not depend on batch size.</p>
+<h2>Applications</h2>
+<p>Layer normalization is a standard component of the <a href="../Transformer_(machine_learning_model)/index.html">Transformer</a> architecture and is used in large language models, recurrent neural networks, and reinforcement learning. Variants such as RMS normalization simplify the computation by omitting the mean-centering step.</p>
+<h2>Comparison with batch normalization</h2>
+<p>Unlike batch normalization, layer normalization works well with small or variable batch sizes, sequences of varying length, and online (single-example) inference, which made it the preferred normalization scheme in natural language processing.</p>
+<h2>See also</h2>
+<p><a href="../Batch_normalization/index.html">Batch normalization</a> · <a href="../Transformer_(machine_learning_model)/index.html">Transformer</a> · <a href="../Deep_learning/index.html">Deep learning</a></p>
+</div>
+</body>
+</html>

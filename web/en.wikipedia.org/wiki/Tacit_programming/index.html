@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tacit programming - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 480px; width: 100%; background: #eef; border: 1px solid #a2a9b1; padding: 8px; }
+.caption { font-size: 0.85em; color: #54595d; }
+pre { background: #f8f9fa; border: 1px solid #a2a9b1; padding: 10px; overflow-x: auto; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Tacit programming</h1>
+<div class="hero"><img src="images/Tacit_programming.png" alt="Diagram of function composition pipelines without explicit arguments"><div class="caption">In tacit programming, functions are composed without naming their arguments</div></div>
+<p><b>Tacit programming</b>, also called <b>point-free style</b>, is a programming paradigm in which function definitions do not explicitly mention the arguments (or "points") they operate on. Instead, functions are defined by composing other functions, using combinators and function composition.</p>
+<h2>Example</h2>
+<p>An explicit definition of the average of a list in Haskell might be:</p>
+<pre>avg xs = sum xs / fromIntegral (length xs)</pre>
+<p>In point-free style, the argument disappears:</p>
+<pre>avg = (/) &lt;*&gt; sum &lt;*&gt; fromIntegral . length</pre>
+<p>The style is idiomatic in array languages such as APL, J, and K, where trains of verbs operate on data without variable references, and is also common in concatenative languages such as Forth and Factor, where programs are sequences of functions applied to an implicit stack.</p>
+<h2>Advantages and criticism</h2>
+<p>Supporters argue that tacit definitions can be concise, emphasise the algebra of functions, and make equational reasoning and refactoring easier. Critics note that dense point-free code can become hard to read — sometimes jokingly called "pointless style" — especially when carried to extremes. The name "point-free" is borrowed from topology, where point-free methods describe spaces without referring to their points; the term was popularised in computing through the work of John Backus on function-level programming.</p>
+<h2>See also</h2>
+<p><a href="../Function_composition_(computer_science)/index.html">Function composition</a> · <a href="../Concatenative_programming_language/index.html">Concatenative programming</a> · <a href="../J_(programming_language)/index.html">J (programming language)</a></p>
+</div>
+</body>
+</html>

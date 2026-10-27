@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Word wrap - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; padding: 0 1.5em 3em; color: #202122; background: #fff; line-height: 1.6; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a7d7f9; padding-bottom: 0.2em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+figure.hero { text-align: center; margin: 1em auto; }
+figure.hero img { max-width: 420px; border: 1px solid #a2a9b1; padding: 4px; background: #f8f9fa; }
+figcaption { font-size: 0.85em; color: #54595d; }
+code { background: #f8f9fa; padding: 0 3px; }
+</style>
+</head>
+<body>
+<h1>Word wrap</h1>
+<p><b>Word wrap</b> is the feature of text editors and word processors that automatically moves a word that would extend beyond the right margin down to the next line, so that text fits within a display or page width without the user inserting manual line breaks. The stored text remains a continuous stream; wrapping is a property of how it is displayed, and the wrapping changes automatically when the window is resized or the font changes. Text that wraps in this dynamic way is said to be <i>soft-wrapped</i>, in contrast to <i>hard return</i> characters stored in the file.</p>
+<figure class="hero"><img src="images/Word_wrap.png" alt="Placeholder image: text in an editor window wrapping automatically at the right margin"></figure>
+<h2>History</h2>
+<p>Manual typewriters required the operator to watch for the end of the line and press the carriage return. Early full-screen text editors and dedicated word processors of the 1970s and 1980s introduced automatic wrapping, though standards differed over whether the text file itself recorded line breaks. Programs such as WordStar and later Microsoft Word made soft wrap the norm for prose, while programmers' editors retained configurable wrapping because source code and data formats are often sensitive to line length.</p>
+<h2>Algorithms</h2>
+<p>The simplest approach is a greedy algorithm: words are placed on a line until the next word does not fit, at which point a break is inserted. This is fast but can leave uneven line lengths. Typesetting systems such as TeX use a global algorithm (the Knuth–Plass algorithm) that evaluates all possible break points in a paragraph to minimise raggedness and bad spacing. Implementations must handle long words that exceed the line width (which may be split, hyphenated, or allowed to overflow), trailing spaces, and different scripts, including languages like Chinese and Japanese where breaks can occur between most characters, and languages where words are joined by spaces only loosely.</p>
+<h2>In HTML and CSS</h2>
+<p>Web browsers wrap text by default according to the Unicode line-breaking algorithm. CSS provides controls such as <code>white-space</code> (for example <code>nowrap</code> to disable wrapping and <code>pre</code> to preserve hard breaks), <code>overflow-wrap</code>/<code>word-wrap</code> (to force breaks inside long words), <code>word-break</code>, and <code>hyphens</code> for dictionary-based hyphenation.</p>
+<h2>Soft and hard wrapping</h2>
+<p>Hard wrapping physically inserts newline characters at a fixed column (traditional in email, limited historically to about 78 characters per line by RFC conventions and terminal widths). Hard-wrapped plain text reflows badly when quoted or displayed at different widths, one reason modern mail clients write soft-wrapped messages and wrap only for display. Many editors offer both: visual soft wrap to a window width and an option to insert hard breaks at a specified margin.</p>
+<h2>See also</h2>
+<p><a href="../Line_wrap_and_word_wrap/index.html">Line breaking</a> · <a href="../Hyphenation_algorithm/index.html">Hyphenation algorithm</a> · <a href="../Knuth–Plass_line-breaking_algorithm/index.html">Knuth–Plass line-breaking algorithm</a> · <a href="../Text_editor/index.html">Text editor</a></p>
+</body>
+</html>

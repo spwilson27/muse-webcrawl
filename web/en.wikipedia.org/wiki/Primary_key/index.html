@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primary key - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; padding: 0; background: #f6f6f6; color: #222; line-height: 1.6; }
+.container { max-width: 860px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; font-weight: normal; }
+p { margin: 10px 0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { display: block; margin: 16px auto; max-width: 100%; }
+.caption { text-align: center; font-size: 0.85em; color: #54595d; margin-top: -8px; }
+ul { margin: 8px 0 8px 20px; padding: 0; }
+li { margin: 4px 0; }
+code { background: #f8f9fa; padding: 1px 4px; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Primary key</h1>
+<img class="hero" src="images/primary-key.png" alt="Diagram of a database table with its primary key column highlighted">
+<p class="caption">A table with a primary key uniquely identifying each row</p>
+<p>In the <a href="../Relational_database/index.html">relational model</a> of databases, a <b>primary key</b> is a specific choice of a minimal set of attributes (columns) that uniquely specify a tuple (row) in a relation (table). Informally, a primary key is "which attributes identify a record," and in simple cases, a single attribute: for example, a student ID number.</p>
+<h2>Properties</h2>
+<p>More formally, a primary key is a choice of <a href="../Candidate_key/index.html">candidate key</a>: a set of attributes that is (1) unique — no two distinct tuples may have the same values for the key attributes — and (2) irreducible — no proper subset of the attributes has the uniqueness property. In addition, a primary key may not contain null values. A table can have several candidate keys, of which one is designated the primary key; the others are called alternate keys.</p>
+<h2>Composite and surrogate keys</h2>
+<p>A primary key consisting of more than one attribute is a <b>composite key</b>. When a table lacks a satisfactory natural key, designers often introduce a <b>surrogate key</b> — an artificial attribute, such as an auto-incrementing integer or a UUID, which has no business meaning but serves purely as an identifier.</p>
+<h2>Role in relationships</h2>
+<p>Primary keys are the targets of <a href="../Foreign_key/index.html">foreign keys</a>: a foreign key in another table references the primary key to establish relationships between records, and the database management system enforces <i>referential integrity</i> so that references cannot point to nonexistent rows. In SQL, a primary key is declared with the <code>PRIMARY KEY</code> constraint, either inline on a column or as a table-level constraint, and most database systems automatically create a unique index to support it.</p>
+<h2>Example</h2>
+<p>In a table <code>Employees(EmployeeID, FirstName, LastName, DepartmentID)</code>, <code>EmployeeID</code> is a natural choice of primary key because each employee has a distinct ID, whereas names may repeat. Orders in another table can then store an <code>EmployeeID</code> foreign key to record which employee handled each order.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Candidate_key/index.html">Candidate key</a></li>
+<li><a href="../Foreign_key/index.html">Foreign key</a></li>
+<li><a href="../Surrogate_key/index.html">Surrogate key</a></li>
+<li><a href="../Unique_key/index.html">Unique key</a></li>
+<li><a href="../Database_normalization/index.html">Database normalization</a></li>
+</ul>
+</div>
+</body>
+</html>

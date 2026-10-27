@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Superscalar processor - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0 auto; max-width: 960px; padding: 20px 40px; background: #fff; color: #202122; line-height: 1.6; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.5em; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; font-weight: normal; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { display: block; margin: 10px auto; max-width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 8px; }
+.caption { font-size: 0.85em; color: #54595d; text-align: center; font-family: sans-serif; }
+ul, ol { margin: 0.5em 0 0.5em 1.6em; }
+</style>
+</head>
+<body>
+<h1>Superscalar processor</h1>
+<img class="hero" src="images/superscalar.png" alt="Diagram of a superscalar pipeline issuing several instructions per clock cycle">
+<p class="caption">A superscalar processor can dispatch multiple instructions to redundant execution units in each cycle.</p>
+<p>A <b>superscalar processor</b> (or <b>superscalar architecture</b>) is a central processing unit that implements a form of parallelism called instruction-level parallelism, in which several instructions can be executed in a single clock cycle. This contrasts with a scalar processor, which can execute at most one instruction per cycle. A superscalar CPU contains multiple execution units — for example several integer ALUs, a floating-point unit, and load/store units — and dispatch logic that examines the incoming instruction stream and issues independent instructions to free units simultaneously.</p>
+<h2>History</h2>
+<p>The CDC 6600 (1964), designed by Seymour Cray, is often regarded as the first superscalar design, with multiple functional units fed from a central instruction scoreboard. The concept became mainstream in the 1990s with processors such as the Intel Pentium (1993), which had two integer pipelines, and the PowerPC 601. Modern high-performance CPUs — from Intel's and AMD's x86 families to Apple's Arm-based designs — are wide superscalar machines, commonly issuing four to eight instructions per cycle.</p>
+<h2>Design considerations</h2>
+<p>Exploiting superscalar execution requires the hardware (or, in VLIW designs, the compiler) to find instructions without data dependencies. Techniques include register renaming to remove false dependencies, out-of-order execution with reservation stations, branch prediction to keep the instruction fetch stream flowing, and speculative execution. The practical limits are set by the available parallelism in real programs, the cost of dependency-checking logic, and power consumption, which grows steeply with issue width.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Instruction-level_parallelism/index.html">Instruction-level parallelism</a></li>
+<li><a href="../Out-of-order_execution/index.html">Out-of-order execution</a></li>
+<li><a href="../Very_long_instruction_word/index.html">Very long instruction word</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Supersampling - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0 auto; max-width: 960px; padding: 20px 40px; background: #fff; color: #202122; line-height: 1.6; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.5em; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; font-weight: normal; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { display: block; margin: 10px auto; max-width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 8px; }
+.caption { font-size: 0.85em; color: #54595d; text-align: center; font-family: sans-serif; }
+ul, ol { margin: 0.5em 0 0.5em 1.6em; }
+</style>
+</head>
+<body>
+<h1>Supersampling</h1>
+<img class="hero" src="images/supersampling.png" alt="Aliased diagonal edge compared with a supersampled, smoothed version">
+<p class="caption">Supersampling renders at a higher resolution and downsamples, smoothing jagged edges.</p>
+<p><b>Supersampling</b> or <b>supersampling anti-aliasing</b> (<b>SSAA</b>) is a spatial anti-aliasing method used to remove aliasing ("jaggies") from rendered images in computer graphics. The scene is rendered at a higher resolution than the display and then downsampled (downscaled) to the output resolution; the extra samples capture sub-pixel detail, so edges and fine geometry appear smoother in the final image.</p>
+<h2>Method</h2>
+<p>In full-scene supersampling, every pixel of the output corresponds to several sample points in a high-resolution framebuffer. Sample positions may follow a regular grid (ordered grid supersampling) or rotated/sparse patterns that distribute aliasing artefacts less visibly. The stored samples are then combined with a reconstruction filter — commonly a box filter, or wider filters such as tent or Gaussian — to produce each output pixel.</p>
+<h2>Cost and alternatives</h2>
+<p>SSAA is the reference standard for image quality but is computationally expensive: rendering at four times the pixel count roughly quadruples shading and memory bandwidth costs. Cheaper multisample anti-aliasing (MSAA) oversamples only geometry edges and depth, and post-process methods such as FXAA and SMAA smooth the final image without extra rendering. Temporal methods (TAA) and, more recently, AI-based reconstruction techniques such as DLSS and FSR have largely superseded pure SSAA in real-time graphics, though SSAA remains common in offline rendering and is still offered in games as "render scale" or downsampling options.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Anti-aliasing/index.html">Anti-aliasing</a></li>
+<li><a href="../Multisample_anti-aliasing/index.html">Multisample anti-aliasing</a></li>
+<li><a href="../Temporal_anti-aliasing/index.html">Temporal anti-aliasing</a></li>
+</ul>
+</body>
+</html>

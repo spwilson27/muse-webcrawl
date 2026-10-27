@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Program counter - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 800px; padding: 0 1em; color: #202122; background: #fff; line-height: 1.6; }
+h1 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-family: serif; }
+h2 { border-bottom: 1px solid #a2a9b1; font-family: serif; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em; margin: 0 0 1em 1em; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<h1>Program counter</h1>
+<p>The <b>program counter</b> (<b>PC</b>), commonly called the <b>instruction pointer</b> (<b>IP</b>) in <a href="../Instruction_register/index.html">Intel x86</a> and Itanium microprocessors, and sometimes called the <b>instruction address register</b> (<b>IAR</b>), the <b>instruction counter</b>, or just part of the instruction sequencer, is a processor register that indicates where a computer is in its program sequence.</p>
+<div class="hero"><img src="images/program-counter.png" alt="Diagram of a program counter within a CPU"></div>
+<p>Usually, the PC is incremented after fetching each instruction, and holds the memory address of ("points to") the next instruction that would be executed. Processors usually fetch instructions sequentially from memory, but <i>control transfer</i> instructions change the sequence by placing a new value in the PC. These include branches (sometimes called jumps), subroutine calls, and returns. A transfer that is conditional on the truth of some assertion lets the computer follow a different sequence under different conditions.</p>
+<h2>Hardware implementation</h2>
+<p>In a simple central processing unit (CPU), the PC is a digital counter (which is the origin of the name "program counter") that may be one of several hardware registers. The instruction cycle begins with a <i>fetch</i>, in which the CPU places the value of the PC on the address bus to send it to the memory. The memory responds by sending the contents of that memory location on the data bus. This is followed by the <i>decode</i> and <i>execute</i> phases. Following the fetch of an instruction, the PC is incremented in preparation for the next instruction.</p>
+<h2>Use in high-level programming</h2>
+<p>Most modern processors are pipelined, which complicates the notion of a single program counter, since each pipeline stage may be processing a different instruction. Nevertheless, the concept remains central to debugging: debuggers display the current value of the PC to show where execution is paused, and exceptions and interrupts record the PC so that execution can resume correctly. See also <a href="../Central_processing_unit/index.html">central processing unit</a> and <a href="../Machine_code/index.html">machine code</a>.</p>
+</body>
+</html>

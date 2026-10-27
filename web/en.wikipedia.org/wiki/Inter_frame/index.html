@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Inter frame - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:800px;line-height:1.6;padding:0 1em;color:#202122}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+a{color:#0645ad;text-decoration:none}
+.hero{display:block;margin:1em auto;max-width:400px;background:#f8f9fa;border:1px solid #c8ccd1;padding:2em;text-align:center;color:#72777d}
+</style>
+</head>
+<body>
+<h1>Inter frame</h1>
+<img class="hero" src="images/inter-frame.png" alt="Sequence of video frames showing predicted frames between key frames">
+<p>An <b>inter frame</b> is a frame in a video compression stream that is expressed in terms of one or more neighboring frames, rather than containing a complete image. Inter frames are used in standards such as MPEG-2, H.264/AVC, and <a href="../High_Efficiency_Video_Coding/index.html">H.265/HEVC</a> to exploit temporal redundancy between successive pictures.</p>
+<h2>Types</h2>
+<p>P-frames are predicted from a preceding frame using motion compensation, storing only motion vectors and the prediction error. B-frames are predicted bidirectionally from preceding and following frames, often achieving the highest compression. Inter frames depend on other frames, so decoding must start from a self-contained <a href="../Intra-frame_coding/index.html">intra frame</a> (keyframe).</p>
+<h2>Trade-offs</h2>
+<p>Because consecutive images in natural video usually differ only slightly, inter frames can be far smaller than independently coded frames. The cost is greater encoding complexity, latency, and error propagation: damage to a reference frame affects all frames predicted from it until the next keyframe.</p>
+<p><i>See also:</i> <a href="../Group_of_pictures/index.html">Group of pictures</a>, <a href="../Video_compression/index.html">Video compression</a></p>
+</body>
+</html>

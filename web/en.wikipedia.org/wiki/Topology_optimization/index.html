@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Topology optimization - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#fff;color:#202122}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header h1{font-size:28px;margin:0;font-weight:normal}
+main{max-width:900px;margin:0 auto;padding:20px 24px;line-height:1.6}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 16px 20px;font-size:13px}
+.infobox caption{font-weight:bold;background:#cedff2;padding:6px}
+.infobox th{text-align:left;padding:3px 6px;vertical-align:top}
+.infobox td{padding:3px 6px}
+img.hero{width:100%;border:1px solid #c8ccd1}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+footer{clear:both;border-top:1px solid #a2a9b1;margin-top:30px;padding:12px 24px;font-size:12px;color:#54595d;background:#f8f9fa}
+</style>
+</head>
+<body>
+<header><h1>Topology optimization</h1></header>
+<main>
+<table class="infobox">
+<caption>Topology optimization</caption>
+<tr><td colspan="2"><img class="hero" src="images/topology-optimization.png" alt="A topology-optimized bracket produced by density-based optimization"></td></tr>
+<tr><th>Field</th><td>Structural optimization, engineering design</td></tr>
+<tr><th>Core methods</th><td>SIMP (density method), level-set, BESO</td></tr>
+<tr><th>Origin</th><td>Bendsøe &amp; Kikuchi (1988)</td></tr>
+</table>
+<p><b>Topology optimization</b> is a mathematical method that optimizes the layout of material within a given design space, for a set of loads, boundary conditions, and constraints, with the goal of maximizing (or minimizing) some measure of system performance. Unlike traditional size and shape optimization, topology optimization can create entirely new holes and members, so it typically produces organic, lightweight structures that a designer would not have drawn by hand. It is widely used in aerospace, automotive, and civil engineering, and is a natural partner for additive manufacturing, which can fabricate the complex geometries it generates.</p>
+<h2>Methodology</h2>
+<p>The design domain is usually discretized into finite elements, and the algorithm decides where material should be solid and where it should be void. The most common approach is the density-based SIMP method (Solid Isotropic Material with Penalization), in which each element has a continuous density variable between 0 and 1 and its stiffness is scaled by the density raised to a power greater than one, penalizing intermediate densities so the solution converges toward a black-and-white design. Alternatives include level-set methods, which track an explicit boundary, and evolutionary methods such as BESO (bidirectional evolutionary structural optimization).</p>
+<h2>Formulation and challenges</h2>
+<p>The classical problem minimizes structural compliance (equivalently, maximizes stiffness) subject to a constraint on the volume of material used, though stress, frequency, thermal, and multi-physics objectives are also common. Practical implementations must contend with numerical artefacts such as checkerboard patterns and mesh dependence, addressed by density or sensitivity filtering, and with manufacturability, addressed by adding overhang, extrusion, or minimum-member-size constraints. Results are often smoothed and reinterpreted in CAD before production.</p>
+</main>
+<footer>From Wikipedia, the free encyclopedia (recreated from memory).</footer>
+</body>
+</html>

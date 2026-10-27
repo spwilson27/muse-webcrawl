@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Signal (IPC) - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #a2a9b1;font-size:1.35em}</style></head>
+<body>
+<h1>Signal (IPC)</h1>
+<img src="images/signal-ipc.png" alt="Diagram of a signal being delivered from one Unix process to another">
+<p>A <b>signal</b> is a form of inter-process communication (IPC) in Unix and Unix-like operating systems: a limited, asynchronous notification sent to a process or thread to inform it of an event. Signals have been part of Unix since the 1970s and are standardised by POSIX.</p>
+<h2>Common signals</h2>
+<ul>
+<li><b>SIGHUP</b> (1) — terminal hangup</li>
+<li><b>SIGINT</b> (2) — interrupt, typically Ctrl+C</li>
+<li><b>SIGQUIT</b> (3) — quit, typically Ctrl+\</li>
+<li><b>SIGKILL</b> (9) — forced termination; cannot be caught or ignored</li>
+<li><b>SIGSEGV</b> (11) — invalid memory reference (segmentation fault)</li>
+<li><b>SIGTERM</b> (15) — polite termination request; the default of the <i>kill</i> command</li>
+<li><b>SIGSTOP</b> / <b>SIGCONT</b> — suspend and resume a process</li>
+</ul>
+<h2>Handling</h2>
+<p>A process may set a signal handler, block signals, or accept the default action (termination, core dump, stop, or ignore). Sending a signal is done with the <code>kill()</code> system call or the <code>kill</code> command. Because handlers run asynchronously, only a restricted set of async-signal-safe functions may be called within them. Real-time signals (SIGRTMIN–SIGRTMAX) extend the standard set with queueing and user data.</p>
+</body></html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Matrix inversion - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fdfdfd;color:#222}
+header{background:#eef0f2;border-bottom:1px solid #ccc;padding:12px 24px;font-family:sans-serif}
+main{max-width:820px;margin:0 auto;padding:20px 24px}
+h1{font-size:28px;margin:0 0 8px}
+h2{font-size:20px;border-bottom:1px solid #ccc;padding-bottom:4px;margin-top:24px}
+p{line-height:1.6}
+a{color:#3366cc;text-decoration:none}
+.hero{display:block;margin:16px 0;border:1px solid #bbb;background:#f4f4f4;padding:40px;text-align:center;color:#777;font-style:italic;width:100%;box-sizing:border-box}
+.small{color:#666;font-size:13px}
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> — The Free Encyclopedia</header>
+<main>
+<h1>Matrix inversion</h1>
+<img class="hero" src="images/matrix-inversion.png" alt="Diagram illustrating inversion of a matrix (image placeholder)">
+<p><b>Matrix inversion</b> is the process of finding, for a given square matrix <i>A</i>, another matrix <i>A</i><sup>−1</sup> — the <b>inverse</b> of <i>A</i> — such that their product in either order is the identity matrix. A matrix possessing an inverse is called <b>invertible</b> (or non-singular); one without an inverse is <b>singular</b>. Over the real or complex numbers, a square matrix is invertible if and only if its <a href="../Determinant/index.html">determinant</a> is nonzero, equivalently if its rows and columns are linearly independent and its rank is full.</p>
+<h2>Methods</h2>
+<p>The oldest method is the <b>adjugate formula</b>: the inverse is the transpose of the cofactor matrix divided by the determinant. For a 2 × 2 matrix this gives a simple closed form, but for large matrices the method is impractical. In practice, <b>Gauss–Jordan elimination</b> — augmenting the matrix with the identity and performing row operations — or an LU decomposition is used. Cramer's rule expresses the inverse through determinants and shares the same inefficiency. Special structures admit faster approaches: the inverse of a block matrix can be computed through the Schur complement, and the Woodbury identity updates inverses after low-rank modifications.</p>
+<h2>Computational complexity</h2>
+<p>Classical elimination inverts an <i>n</i> × <i>n</i> matrix in O(n³) arithmetic operations. Strassen-type fast matrix multiplication reduces the exponent, and matrix inversion is known to have the same asymptotic complexity as matrix multiplication. Numerical analysts generally advise against forming an explicit inverse when the real goal is solving a linear system A<b>x</b> = <b>b</b>, since solving directly is faster and more stable; the condition number of the matrix governs the accuracy of either approach.</p>
+<h2>Generalizations</h2>
+<p>Rectangular and singular matrices possess generalized inverses, most famously the <a href="../Moore–Penrose_inverse/index.html">Moore–Penrose pseudoinverse</a>, which gives least-squares solutions of overdetermined systems.</p>
+<p class="small">See also: <a href="../Invertible_matrix/index.html">Invertible matrix</a> · <a href="../Gaussian_elimination/index.html">Gaussian elimination</a> · <a href="../Moore–Penrose_inverse/index.html">Moore–Penrose inverse</a></p>
+</main>
+</body>
+</html>

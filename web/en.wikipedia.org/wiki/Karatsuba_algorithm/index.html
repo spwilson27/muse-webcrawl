@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Karatsuba algorithm</title>
+<style>body{font-family:Georgia,serif;max-width:760px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{border-bottom:2px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #c8ccd1}img.hero{display:block;margin:1em auto;max-width:100%;border:1px solid #ccc;padding:.4em;background:#f8f9fa}a{color:#0645ad}code{background:#f8f9fa;padding:.1em .3em}</style></head>
+<body><h1>Karatsuba algorithm</h1>
+<img class="hero" src="images/karatsuba.png" alt="Illustration placeholder: diagram of Karatsuba multiplication">
+<p>The <b>Karatsuba algorithm</b> is a fast multiplication algorithm discovered by Anatoly Karatsuba in 1960 and published in 1962. It was the first multiplication algorithm asymptotically faster than the grade-school algorithm, reducing the multiplication of two <i>n</i>-digit numbers to at most <i>n</i><sup>log<sub>2</sub>3</sup> ≈ <i>n</i><sup>1.58</sup> single-digit multiplications, instead of the <i>n</i><sup>2</sup> required by the naive method.</p>
+<h2>Idea</h2>
+<p>Writing two numbers as <i>x</i> = <i>x</i><sub>1</sub><i>B</i><sup><i>m</i></sup> + <i>x</i><sub>0</sub> and <i>y</i> = <i>y</i><sub>1</sub><i>B</i><sup><i>m</i></sup> + <i>y</i><sub>0</sub>, the product <i>xy</i> needs the three quantities <i>z</i><sub>2</sub> = <i>x</i><sub>1</sub><i>y</i><sub>1</sub>, <i>z</i><sub>0</sub> = <i>x</i><sub>0</sub><i>y</i><sub>0</sub>, and the cross term. Karatsuba observed that the cross term can be recovered from a single additional multiplication, <i>z</i><sub>1</sub> = (<i>x</i><sub>1</sub> + <i>x</i><sub>0</sub>)(<i>y</i><sub>1</sub> + <i>y</i><sub>0</sub>) − <i>z</i><sub>2</sub> − <i>z</i><sub>0</sub>, so three multiplications suffice rather than four. Applying the trick recursively yields the faster running time.</p>
+<h2>History and impact</h2>
+<p>Karatsuba's result refuted Andrey Kolmogorov's conjecture that multiplication required Ω(<i>n</i><sup>2</sup>) operations. It opened the way to later algorithms such as Toom–Cook and the Schönhage–Strassen algorithm. Karatsuba multiplication is still used in practice for numbers of moderate size, where its low overhead beats more asymptotically advanced methods.</p>
+<h2>Related topics</h2>
+<p><a href="../Anatoly_Karatsuba/index.html">Anatoly Karatsuba</a> · <a href="../Multiplication_algorithm/index.html">Multiplication algorithm</a> · <a href="../Divide-and-conquer_algorithm/index.html">Divide-and-conquer algorithm</a></p>
+</body></html>

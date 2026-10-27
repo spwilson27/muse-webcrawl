@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wayland - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; max-width: 960px; margin: 0 auto; padding: 20px; color: #202122; background: #fff; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+.hero { background: #f8f9fa; border: 1px solid #c8ccd1; padding: 10px; text-align: center; margin: 1em 0; }
+.hero img { max-width: 100%; }
+.lede { font-size: 1.05em; }
+</style>
+</head>
+<body>
+<h1>Wayland</h1>
+<div class="hero"><img src="images/Wayland.png" alt="Architecture diagram of a Wayland compositor and clients"></div>
+<p class="lede"><b>Wayland</b> is a communication protocol that specifies the communication between a display server and its clients, as well as a C library implementation of that protocol. A display server using the Wayland protocol is called a Wayland compositor, as it additionally performs the task of a compositing window manager.</p>
+<p>Wayland was developed by a group of developers from Intel and Red Hat, led by Danish developer Kristian Høgsberg, with the goal of simplifying the graphics stack of Linux and other Unix-like operating systems by replacing the ageing X Window System (X11). The project was started in 2008 and reached its first stable release of the protocol and reference compositor in 2012.</p>
+<h2>Overview</h2>
+<p>Unlike X11, in which a central server draws windows and forwards input events, the Wayland protocol lets clients render their own surfaces and communicate directly with the compositor, which handles input, output and composition. Each client receives its own buffer, and the compositor combines the buffers for display. Communication between clients and the compositor uses Unix domain sockets and shared memory, giving Wayland lower latency and enabling perfect frames without tearing.</p>
+<h2>Architecture</h2>
+<p>The core protocol is intentionally small and covers buffer management, input events and surface roles. Extensions defined in the wayland-protocols repository add features such as screenshotting, tablet support and idle inhibition. The wlroots-based compositors (such as Sway), KDE's KWin and GNOME's Mutter all implement Wayland. X11 applications can run under Wayland through the XWayland compatibility server.</p>
+<h2>Adoption</h2>
+<p>Most major Linux distributions now use Wayland by default for their GNOME and KDE Plasma sessions, although adoption is gradual because of differences in application support for screen recording, remote desktop and global hotkeys.</p>
+<h2>See also</h2>
+<p><a href="../X_Window_System/index.html">X Window System</a>, <a href="../Mir_(software)/index.html">Mir</a>, <a href="../Display_server/index.html">Display server</a></p>
+</body>
+</html>

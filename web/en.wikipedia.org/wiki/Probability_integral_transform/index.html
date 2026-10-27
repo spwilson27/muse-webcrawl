@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Probability integral transform - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 48px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 1.35em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 1.4em; }
+p, li { line-height: 1.6; font-size: 0.95em; }
+.hero { background: #f8f9fa; border: 1px solid #c8ccd1; padding: 10px; text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; height: auto; background: #eaecf0; }
+.caption { font-size: 0.85em; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Probability integral transform</h1>
+<div class="hero">
+<img src="images/probability-integral-transform.png" alt="A cumulative distribution function mapping values to uniform probabilities">
+<div class="caption">Applying a random variable's own CDF to it produces a uniform distribution on [0, 1].</div>
+</div>
+<p>In probability theory, the <b>probability integral transform</b> (also known as the <b>universality of the uniform distribution</b>) relates the cumulative distribution function of a continuous random variable to the uniform distribution. Specifically, if X is a continuous random variable with cumulative distribution function F<sub>X</sub>, then the random variable Y = F<sub>X</sub>(X) has a standard uniform distribution on the interval [0, 1].</p>
+<h2>Proof sketch</h2>
+<p>For 0 ≤ y ≤ 1, P(Y ≤ y) = P(F<sub>X</sub>(X) ≤ y) = P(X ≤ F<sub>X</sub><sup>−1</sup>(y)) = F<sub>X</sub>(F<sub>X</sub><sup>−1</sup>(y)) = y, which is exactly the cumulative distribution function of a uniform random variable on [0, 1].</p>
+<h2>Applications</h2>
+<p>The converse of the transform — inverse transform sampling — is a standard method for generating random samples from arbitrary distributions: drawing U uniformly from [0, 1] and returning F<sup>−1</sup>(U) yields a sample from the distribution with CDF F. The transform is also used in goodness-of-fit testing, such as the Kolmogorov–Smirnov test, and in the construction of copulas, where the transformed variables (the copula's marginals) are uniform by construction.</p>
+<p>For discrete or mixed random variables the result does not hold directly, but generalized (randomized) versions of the transform exist that restore uniformity by distributing probability mass within jumps of the CDF.</p>
+</div>
+</body>
+</html>

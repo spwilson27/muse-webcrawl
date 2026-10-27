@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Master theorem (analysis of algorithms) - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{max-width:100%;display:block;margin:12px 0;border:1px solid #c8ccd1;background:#f8f9fa}
+.small{font-size:13px;color:#54595d}
+code{background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Master theorem (analysis of algorithms)</h1>
+<img class="hero" src="images/master-theorem.png" alt="Recursion tree used in the analysis of divide-and-conquer recurrences">
+<p>In the analysis of algorithms, the <b>master theorem</b> provides a "cookbook" method for solving recurrence relations of the form that arise in divide-and-conquer algorithms:</p>
+<p><code>T(n) = a·T(n/b) + f(n)</code></p>
+<p>where <i>a</i> ≥ 1 is the number of subproblems, <i>b</i> &gt; 1 is the factor by which the problem size is divided, and <i>f(n)</i> is the cost of dividing and combining the results.</p>
+<h2>The three cases</h2>
+<p>Let <i>c</i> = log<sub>b</sub> <i>a</i>, the exponent of the work done at the leaves of the recursion tree. Comparing <i>f(n)</i> with <i>n<sup>c</sup></i> gives three cases:</p>
+<ol>
+<li>If <i>f(n)</i> is polynomially smaller than <i>n<sup>c</sup></i>, the leaves dominate and <code>T(n) = Θ(n<sup>c</sup>)</code>.</li>
+<li>If <i>f(n)</i> is comparable to <i>n<sup>c</sup></i> (within a factor of log<sup>k</sup> n), every level contributes equally and <code>T(n) = Θ(n<sup>c</sup> log<sup>k+1</sup> n)</code>.</li>
+<li>If <i>f(n)</i> is polynomially larger than <i>n<sup>c</sup></i> and satisfies a regularity condition, the root dominates and <code>T(n) = Θ(f(n))</code>.</li>
+</ol>
+<h2>Applications and limits</h2>
+<p>The theorem gives immediate running times for algorithms such as merge sort, binary search, and the Karatsuba and Strassen multiplication algorithms. It does not apply to all recurrences: if <i>f(n)</i> falls between cases (e.g., <i>n</i> log <i>n</i> vs <i>n</i> in some borderline settings) or subproblem sizes are uneven, more general methods such as the Akra–Bazzi theorem or the recursion-tree and substitution methods are needed. The theorem is presented in the textbook <i>Introduction to Algorithms</i> by Cormen, Leiserson, Rivest, and Stein.</p>
+<p class="small">See also: <a href="../Akra%E2%80%93Bazzi_method/index.html">Akra–Bazzi method</a> · <a href="../Divide-and-conquer_algorithm/index.html">Divide-and-conquer algorithm</a> · <a href="../Big_O_notation/index.html">Big O notation</a></p>
+</div>
+</body>
+</html>

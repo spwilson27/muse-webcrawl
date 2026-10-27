@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ingress filtering - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:40px auto;max-width:860px;padding:0 20px;color:#202122;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;font-size:1.4em;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+img.hero{display:block;max-width:400px;width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:12px;margin:16px 0;text-align:center;color:#72777d;font-style:italic}
+</style>
+</head>
+<body>
+<h1>Ingress filtering</h1>
+<img class="hero" src="images/ingress-filtering.png" alt="Image placeholder: network router filtering packets">
+<p>In computer networking, <b>ingress filtering</b> is a technique used to ensure that incoming packets are actually from the networks from which they claim to originate. This can be used as a countermeasure against various spoofing attacks in which the attacker's packets contain fake IP addresses, making them harder to trace and block.</p>
+<h2>Network ingress filtering</h2>
+<p>Best current practice, described in BCP 38 (RFC 2827) and BCP 84 (RFC 3704), recommends that Internet service providers filter packets entering their networks from downstream customers, discarding any packet whose source address is not within the address range allocated to that customer. Widespread deployment would greatly reduce the effectiveness of <a href="../IP_address_spoofing/index.html">IP address spoofing</a> used in distributed denial-of-service attacks.</p>
+<h2>Implementation</h2>
+<p>Filtering can be implemented with access control lists on border routers or with unicast reverse path forwarding (uRPF), which checks that a route back to the source address exists via the receiving interface. Strict uRPF can break legitimate traffic in multihomed or asymmetric-routing setups, so looser modes are often used.</p>
+<h2>Related concepts</h2>
+<p>Egress filtering applies similar checks to outbound traffic. Ingress filtering at the application level also describes sanitizing user input to prevent injection attacks.</p>
+<h2>See also</h2>
+<p><a href="../Egress_filtering/index.html">Egress filtering</a> · <a href="../Denial-of-service_attack/index.html">Denial-of-service attack</a> · <a href="../Firewall_(computing)/index.html">Firewall</a></p>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sobel operator - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 20px 40px 60px; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; margin: 0.5em 0; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 100%; height: auto; border: 1px solid #c8ccd1; background: #eaecf0; padding: 10px; }
+.caption { font-size: 0.85em; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+pre { background: #f8f9fa; border: 1px solid #a2a9b1; padding: 10px; overflow-x: auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Sobel operator</h1>
+<div class="hero"><img src="images/sobel-operator.png" alt="An image before and after applying the Sobel operator, showing highlighted edges"></div>
+<p class="caption">The Sobel operator highlights regions of high spatial gradient, corresponding to edges.</p>
+<p>The <b>Sobel operator</b>, sometimes called the <b>Sobel–Feldman operator</b> or <b>Sobel filter</b>, is used in image processing and computer vision, particularly in edge detection algorithms, where it creates an image emphasising edges. It was presented by Irwin Sobel and Gary Feldman at the Stanford Artificial Intelligence Laboratory in 1968.</p>
+<h2>Formulation</h2>
+<p>The operator consists of a pair of 3×3 convolution kernels. One kernel estimates the gradient in the horizontal (x) direction and the other in the vertical (y) direction:</p>
+<pre>
+Gx = [-1 0 +1; -2 0 +2; -1 0 +1] * A
+Gy = [+1 +2 +1; 0 0 0; -1 -2 -1] * A
+</pre>
+<p>Here A is the source image. The kernels can be understood as combining a smoothing (averaging) operation in one direction with a derivative operation in the perpendicular direction, which gives the Sobel operator some resistance to noise. The gradient magnitude at each point is commonly computed as the square root of the sum of the squares of the two components, and the gradient direction is given by the arctangent of their ratio.</p>
+<h2>Properties and extensions</h2>
+<p>Because the kernels are separable, the computation can be performed efficiently. The operator is simple and fast, making it popular for real-time applications, though more modern methods such as the <a href="../Canny_edge_detector/index.html">Canny edge detector</a> offer better localisation and noise performance. The idea extends to higher dimensions; 3D Sobel operators are used in volumetric data. The Scharr operator is a related filter with improved rotational symmetry.</p>
+<h2>See also</h2>
+<p><a href="../Edge_detection/index.html">Edge detection</a> · <a href="../Prewitt_operator/index.html">Prewitt operator</a> · <a href="../Canny_edge_detector/index.html">Canny edge detector</a> · <a href="../Roberts_cross/index.html">Roberts cross</a> · <a href="../Image_gradient/index.html">Image gradient</a></p>
+</div>
+</body>
+</html>

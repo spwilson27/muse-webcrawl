@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Verilog - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;color:#202122;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:1.2em}
+img.hero{display:block;max-width:420px;width:100%;height:220px;object-fit:cover;background:#eef;border:1px solid #a2a9b1;margin:12px 0}
+pre{background:#f8f9fa;border:1px solid #a2a9b1;padding:10px;overflow-x:auto}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>Verilog</h1>
+<img class="hero" src="images/Verilog.png" alt="Example of Verilog code describing a digital circuit">
+<p><b>Verilog</b>, standardized as IEEE 1364, is a hardware description language (HDL) used to model electronic systems. It is most commonly used in the design and verification of digital circuits at the register-transfer level (RTL) of abstraction. It is also used in the verification of analog circuits and mixed-signal circuits, as well as in the design of genetic circuits.</p>
+<h2>History</h2>
+<p>Verilog was created by Phil Moorby and Prabhu Goel during the winter of 1983/1984 at Gateway Design Automation. Cadence Design Systems acquired Gateway in 1989 and placed Verilog in the public domain in 1990 under the Open Verilog International organization. It was standardized by the IEEE as Standard 1364-1995, with revisions in 2001 and 2005. SystemVerilog (IEEE 1800), a major extension adding verification and object-oriented features, later merged with the base language.</p>
+<h2>Overview</h2>
+<p>A Verilog design consists of modules with defined input and output ports. Inside a module, the designer describes hardware using continuous assignments (<code>assign</code>), procedural blocks (<code>always</code> and <code>initial</code>), and instantiations of other modules. A classic example is a D flip-flop:</p>
+<pre>module dff (input clk, input d, output reg q);
+  always @(posedge clk)
+    q &lt;= d;
+endmodule</pre>
+<p>Verilog models hardware concurrency: statements in separate <code>always</code> blocks execute in parallel, unlike conventional software. Values typically use a four-state system (0, 1, X for unknown, and Z for high impedance).</p>
+</body>
+</html>

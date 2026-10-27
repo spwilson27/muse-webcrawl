@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MinHash - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{border-bottom:1px solid #a2a9b1;padding:12px 24px;font-family:sans-serif}
+header .site{font-size:1.4em;font-weight:bold}
+main{max-width:960px;margin:0 auto;padding:16px 24px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:0}
+h2{font-size:1.35em;border-bottom:1px solid #a2a9b1;padding-bottom:2px}
+img.hero{display:block;max-width:320px;width:100%;height:200px;background:#eaecf0;border:1px solid #a2a9b1;margin:8px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.mono{font-family:monospace;background:#f8f9fa;padding:2px 4px}
+footer{border-top:1px solid #a2a9b1;padding:12px 24px;font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia</span></header>
+<main>
+<h1>MinHash</h1>
+<img class="hero" src="images/minhash.png" alt="Diagram illustrating the MinHash sketching technique">
+<p><b>MinHash</b> (or the min-wise independent permutations locality sensitive hashing scheme) is a technique for quickly estimating how similar two sets are. The scheme was invented by Andrei Broder in 1997 and initially used in the AltaVista search engine to detect duplicate web pages and eliminate them from search results. It has also been applied in large-scale data mining and clustering problems.</p>
+<h2>Method</h2>
+<p>Given two sets A and B, their similarity is measured by the <a href="../Jaccard_index/index.html">Jaccard index</a>, the size of their intersection divided by the size of their union. MinHash estimates this quantity by applying a random permutation (in practice, one or more <a href="../Hash_function/index.html">hash functions</a>) to the elements and recording, for each set, the minimum hash value attained. A key property is that the probability that the minima of the two sets coincide equals their Jaccard similarity, so by comparing many such minimum values one obtains an accurate estimate from compact "sketches" of the sets.</p>
+<h2>Applications</h2>
+<p>MinHash is used for near-duplicate detection in documents, web pages and source code; for clustering of large document collections; and in computational biology, where variants such as Mash use MinHash sketches to compare DNA sequences and estimate mutation distances between genomes. Combined with <a href="../Locality-sensitive_hashing/index.html">locality-sensitive hashing</a>, the sketches allow similar items to be retrieved efficiently from very large databases.</p>
+<h2>Variants</h2>
+<p>Numerous variants improve on the basic scheme, including b-bit minwise hashing, which stores only the lowest bits of each minimum, and one-permutation hashing, which derives many estimates from a single permutation by partitioning the hashed values into bins.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Count%E2%80%93min_sketch/index.html">Count–min sketch</a></li>
+<li><a href="../HyperLogLog/index.html">HyperLogLog</a></li>
+</ul>
+</main>
+<footer>From Wikipedia, the free encyclopedia.</footer>
+</body>
+</html>

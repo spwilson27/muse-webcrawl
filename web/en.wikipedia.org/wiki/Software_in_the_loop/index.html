@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Software in the loop - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 20px 40px 60px; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; margin: 0.5em 0; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 100%; height: auto; border: 1px solid #c8ccd1; background: #eaecf0; padding: 10px; }
+.caption { font-size: 0.85em; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Software in the loop</h1>
+<div class="hero"><img src="images/software-in-the-loop.png" alt="Diagram of a software-in-the-loop test bench connecting compiled control code to a simulated plant"></div>
+<p class="caption">SIL testing runs the actual production code against a simulated environment.</p>
+<p><b>Software in the loop</b> (SIL) is a method of testing and validating embedded and control software in which the compiled production code — the same code that will run on the target device — is executed on a host computer (or an emulator of the target processor) connected to a simulation of the physical system and environment it will control. SIL is a standard stage in the model-based design workflow common in the automotive, aerospace, and industrial-control industries.</p>
+<h2>Place in the V-model workflow</h2>
+<p>In model-based development, a controller is first designed as a block-diagram model and tested in <b>model in the loop</b> (MIL) simulation, where both controller and plant are models. Code is then generated (or handwritten) from the model and re-verified: in SIL, the generated or written code runs against the plant model, checking numerical equivalence with the model and exposing implementation errors, overflow, and timing-independent logic faults. Subsequent stages are <b>processor in the loop</b> (PIL), which runs the code on the actual target processor, and <a href="../Hardware-in-the-loop_simulation/index.html">hardware in the loop</a> (HIL), which connects the real controller hardware to a real-time simulation of the plant.</p>
+<h2>Advantages and limits</h2>
+<p>SIL allows testing early, cheaply, and repeatably, without physical prototypes, and permits dangerous or rare scenarios to be exercised safely. Its limits are that the host environment differs from the target in timing, word length, and hardware interfaces; discrepancies between the simulated plant and reality can also mask defects. For these reasons SIL complements rather than replaces later PIL and HIL verification and physical testing, and safety standards such as ISO 26262 (automotive) prescribe back-to-back testing across these stages.</p>
+<h2>See also</h2>
+<p><a href="../Hardware-in-the-loop_simulation/index.html">Hardware-in-the-loop simulation</a> · <a href="../Model-based_design/index.html">Model-based design</a> · <a href="../Embedded_system/index.html">Embedded system</a> · <a href="../V-model/index.html">V-model</a></p>
+</div>
+</body>
+</html>

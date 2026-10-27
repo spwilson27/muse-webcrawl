@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Point-free programming</title>
+<style>body{font-family:Georgia,serif;max-width:760px;margin:2em auto;padding:0 1em;color:#222;line-height:1.6}h1{font-size:1.9em;border-bottom:1px solid #999;padding-bottom:.2em}h2{font-size:1.3em;margin-top:1.4em}a{color:#0645ad}.hero{display:block;background:#e8e8e8;border:1px solid #bbb;text-align:center;padding:2.5em 1em;color:#666;font-style:italic;margin:1em 0}code{font-family:monospace;background:#f4f4f4;padding:0 .2em}</style></head>
+<body><h1>Point-free programming</h1>
+<span class="hero"><img src="images/point-free.png" alt="Illustration of functions composed as a pipeline without named arguments">Illustration of functions composed as a pipeline without named arguments</span>
+<p><b>Point-free programming</b>, also called <b>tacit programming</b>, is a programming paradigm in which function definitions do not identify the arguments (or "points") on which they operate. Instead, programs are constructed by combining other functions through operations such as <a href="../Function_composition/index.html">function composition</a> and combinators.</p>
+<h2>Examples</h2>
+<p>In Haskell, the function that sums a list might be written pointfully as <code>sum xs = foldr (+) 0 xs</code>, but point-free as <code>sum = foldr (+) 0</code>. Similarly, <code>f x = g (h x)</code> becomes <code>f = g . h</code>. The style is natural in concatenative languages such as Forth and Joy, and in array languages such as APL and J, and can be used in many functional languages.</p>
+<h2>Discussion</h2>
+<p>Advocates argue that point-free definitions can be concise and can make equational reasoning about programs easier, since they emphasise the algebra of functions themselves. Critics note that heavily point-free code can be difficult to read, sometimes jokingly calling it "pointless" style. The term derives from topology, where a "point-free" treatment of spaces avoids reference to individual points.</p>
+<p>See also: <a href="../Functional_programming/index.html">Functional programming</a>, <a href="../Combinatory_logic/index.html">Combinatory logic</a>.</p>
+</body></html>

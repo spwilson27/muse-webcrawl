@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MapReduce - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;color:#202122;line-height:1.6;background:#fff}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;margin-bottom:.4em}
+h2{font-size:1.35em;border-bottom:1px solid #c8ccd1;padding-bottom:.15em;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{display:block;max-width:100%;height:auto;background:#f8f9fa;border:1px solid #c8ccd1;padding:.5em;margin:1em 0}
+.infobox{float:right;width:270px;background:#f8f9fa;border:1px solid #a2a9b1;padding:.6em;margin:0 0 1em 1em;font-size:.88em;font-family:sans-serif}
+.infobox th{text-align:left;padding-right:.5em;vertical-align:top}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>MapReduce</h1>
+<img class="hero" src="images/mapreduce.png" alt="Diagram of the MapReduce process: map, shuffle and reduce phases (placeholder image)">
+<table class="infobox">
+<tr><th>Paradigm</th><td>Distributed computing, data-parallel processing</td></tr>
+<tr><th>Designed by</th><td>Jeffrey Dean and Sanjay Ghemawat, Google</td></tr>
+<tr><th>First described</th><td>2004 (OSDI paper)</td></tr>
+<tr><th>Notable implementation</th><td>Apache Hadoop</td></tr>
+</table>
+<p><b>MapReduce</b> is a programming model and an associated implementation for processing and generating big data sets with a parallel, distributed algorithm on a cluster. A MapReduce program is composed of a <i>map</i> procedure, which performs filtering and sorting (such as sorting students by first name into queues, one queue for each name), and a <i>reduce</i> method, which performs a summary operation (such as counting the number of students in each queue, yielding name frequencies).</p>
+<h2>Overview</h2>
+<p>The model is inspired by the <i>map</i> and <i>reduce</i> functions commonly used in functional programming. The framework takes care of partitioning the input data, scheduling the program's execution across a set of machines, handling machine failures, and managing the required inter-machine communication, allowing programmers without experience of parallel systems to use the resources of a large distributed system.</p>
+<p>During the map phase, the input is split into chunks processed independently, each producing intermediate key–value pairs. The framework then shuffles and sorts these pairs, grouping values by key, and the reduce phase aggregates each group into output values. A classic example is counting word occurrences in a large corpus of documents.</p>
+<h2>History and implementations</h2>
+<p>Google's Jeffrey Dean and Sanjay Ghemawat described MapReduce in a 2004 paper, reporting its use in generating Google's search index. The open-source Apache Hadoop project reimplemented the model, with Hadoop MapReduce running on the Hadoop Distributed File System (HDFS), and became a standard tool in early big-data processing. Later systems such as Apache Spark improved on the model by supporting iterative and interactive workloads in memory, but MapReduce remains influential and widely used for batch jobs.</p>
+<p class="small">See also: <a href="../Apache_Hadoop/index.html">Apache Hadoop</a> &middot; <a href="../Big_data/index.html">Big data</a> &middot; <a href="../Apache_Spark/index.html">Apache Spark</a></p>
+</body>
+</html>

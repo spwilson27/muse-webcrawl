@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Percent-encoding - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:24px;color:#202122;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{background:#f8f9fa;border:1px solid #a2a9b1;text-align:center;padding:16px;margin:16px 0;color:#72777d}
+table{border-collapse:collapse;margin:12px 0}
+th,td{border:1px solid #a2a9b1;padding:6px 10px}
+th{background:#eaecf0}
+code{background:#f8f9fa;padding:1px 4px;font-family:monospace}
+</style>
+</head>
+<body>
+<h1>Percent-encoding</h1>
+<div class="hero"><img src="images/percent-encoding.png" alt="Illustration of percent-encoded characters in a URL"></div>
+<p><b>Percent-encoding</b>, also known as <b>URL encoding</b>, is a mechanism for encoding information in a Uniform Resource Identifier (URI) under certain circumstances. Although it is known as URL encoding, it also applies more generally to the full URI character set, including both Uniform Resource Locators (URLs) and Uniform Resource Names (URNs).</p>
+<p>Characters outside an allowable set are encoded using a triplet of the form <code>%XY</code>, where X and Y are two hexadecimal digits representing the eight bits of the character's value. For example, a space character may be encoded as <code>%20</code>, and the character <code>/</code> may be encoded as <code>%2F</code>.</p>
+<h2>The URI character set</h2>
+<p>The characters allowed in a URI are either <i>reserved</i> or <i>unreserved</i>, or a percent sign as part of a percent-encoding. Reserved characters are those that may have special significance within a URI. Unreserved characters, by contrast, have no special meaning and should not be encoded.</p>
+<table>
+<tr><th>Category</th><th>Characters</th></tr>
+<tr><td>Unreserved</td><td>A–Z a–z 0–9 - _ . ~</td></tr>
+<tr><td>Reserved (gen-delims)</td><td>: / ? # [ ] @</td></tr>
+<tr><td>Reserved (sub-delims)</td><td>! $ &amp; ' ( ) * + , ; =</td></tr>
+</table>
+<h2>Encoding of specific characters</h2>
+<p>When a character from the reserved set has special meaning in a particular context, and a URI scheme says it must be used for some other purpose, the character must be percent-encoded. For instance, if a URL path segment contains data in which a slash has no path-delimiting role, it is written as <code>%2F</code>.</p>
+<p>Arbitrary binary data may also be encoded this way; for example, UTF-8 text is commonly percent-encoded byte by byte, so the character "é" becomes <code>%C3%A9</code>.</p>
+<h2>Application/x-www-form-urlencoded</h2>
+<p>When data that has been entered into HTML forms is submitted, the form field names and values are encoded and sent to the server in an HTTP request message using the <a href="../Uniform_Resource_Locator/index.html">URL</a> encoding scheme, with a plus sign (<code>+</code>) permitted as a substitute for a space. This content type is called <code>application/x-www-form-urlencoded</code>.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Uniform_Resource_Identifier/index.html">Uniform Resource Identifier</a></li>
+<li><a href="../UTF-8/index.html">UTF-8</a></li>
+<li><a href="../Base64/index.html">Base64</a></li>
+</ul>
+</body>
+</html>
