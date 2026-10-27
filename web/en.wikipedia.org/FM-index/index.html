@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FM-index</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;color:#202122;line-height:1.6}
+h1{font-family:sans-serif;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{font-family:sans-serif;border-bottom:1px solid #c8ccd1;padding-bottom:4px;margin-top:1.4em}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.9em;font-family:sans-serif}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+.hero{display:block;max-width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:24px;text-align:center;color:#54595d;font-family:sans-serif}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>FM-index</h1>
+<img class="hero" src="images/FM-index.png" alt="Schematic of backward search in an FM-index">
+<table class="infobox">
+<tr><th>Type</th><td>Compressed full-text index (data structure)</td></tr>
+<tr><th>Introduced</th><td>2000, by Paolo Ferragina and Giovanni Manzini</td></tr>
+<tr><th>Based on</th><td>Burrows–Wheeler transform, suffix array</td></tr>
+<tr><th>Space</th><td>Near the information-theoretic entropy of the text</td></tr>
+<tr><th>Applications</th><td>Sequence alignment (Bowtie, BWA), text search</td></tr>
+</table>
+<p>In computer science, an <b>FM-index</b> is a compressed full-text substring index based on the <a href="../Burrows–Wheeler_transform/index.html">Burrows–Wheeler transform</a>, with similarities to a suffix array. It was created by Paolo Ferragina and Giovanni Manzini in 2000; its name stands for "Full-text index in Minute space". It can find the number of occurrences of a pattern within a compressed text, and locate the position of each occurrence, while occupying space roughly proportional to the size of the compressed text itself.</p>
+<h2>Structure</h2>
+<p>For a text T, the FM-index stores the Burrows–Wheeler transform BWT(T) in a wavelet tree (or similar rank-supporting structure), together with two auxiliary tables: C[c], the number of characters in T lexicographically smaller than c, and Occ(c, k), the number of occurrences of character c in the first k positions of the transform. A sampled suffix array allows positions to be recovered. Rank queries on the BWT support the central operation known as backward search.</p>
+<h2>Searching</h2>
+<p>Backward search processes the pattern from its last character to its first, maintaining an interval of suffix-array rows prefixed by the substring processed so far. Each step updates the interval using the LF-mapping: LF(i) = C[BWT[i]] + Occ(BWT[i], i). Counting the occurrences of a pattern of length m takes O(m) rank queries; locating each occurrence additionally requires following LF steps until a sampled suffix position is reached.</p>
+<h2>Applications</h2>
+<p>The FM-index underlies widely used bioinformatics tools. The short-read aligners Bowtie and BWA (in its BWA-backtrack and BWA-MEM modes) index reference genomes with FM-index variants, enabling fast alignment of billions of DNA reads on ordinary hardware. FM-indexes are also used in general-purpose full-text search libraries and in compressed data structures research, including run-length FM-indexes optimized for highly repetitive text collections such as many related genomes.</p>
+<p>See also: <a href="../Suffix_array/index.html">Suffix array</a>, <a href="../Suffix_tree/index.html">Suffix tree</a>, <a href="../Burrows–Wheeler_transform/index.html">Burrows–Wheeler transform</a>, <a href="../Wavelet_tree/index.html">Wavelet tree</a>.</p>
+</body>
+</html>

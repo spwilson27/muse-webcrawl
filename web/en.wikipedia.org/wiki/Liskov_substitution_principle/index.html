@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Liskov substitution principle - Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:960px;margin:0 auto;padding:0 1em 2em;color:#202122;line-height:1.6;font-size:14px}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:28px;margin-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:21px;margin-top:1.2em}
+h3{font-size:16px}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.4em 0.8em;margin:0 0 1em 1em;width:260px;font-size:13px}
+.infobox caption{font-weight:bold;font-size:15px;padding:4px}
+.infobox th{text-align:left;vertical-align:top;padding-right:6px}
+figure.hero{float:right;clear:right;margin:0 0 1em 1em;border:1px solid #a2a9b1;background:#f8f9fa;padding:4px;width:270px;text-align:center}
+figure.hero figcaption{font-size:12px;color:#54595d}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:monospace;background:#f8f9fa}
+</style>
+</head>
+<body>
+<h1>Liskov substitution principle</h1>
+<p>The <b>Liskov substitution principle</b> (<b>LSP</b>) is a particular definition of a subtyping relation, called (strong) behavioural subtyping, that was initially introduced by Barbara Liskov in a 1987 conference keynote address titled <i>Data abstraction and hierarchy</i>. It was later formalised by Liskov and Jeannette Wing in a 1994 paper. The principle states that objects of a superclass should be replaceable with objects of any of its subclasses without breaking the correctness of the program.</p>
+<figure class="hero"><img src="images/Liskov_substitution_principle.png" alt="Barbara Liskov, formulator of the principle"><figcaption>Barbara Liskov, formulator of the principle</figcaption></figure>
+<h2>Formulation</h2>
+<p>Liskov and Wing's formal statement reads: "Let φ(x) be a property provable about objects x of type T. Then φ(y) should be true for objects y of type S where S is a subtype of T." In practical terms, a subtype must preserve the observable behaviour of the supertype: it must not strengthen preconditions of inherited methods, must not weaken their postconditions, must preserve invariants of the supertype, and must not throw new exceptions not allowed by the base methods.</p>
+<h2>Example and violations</h2>
+<p>The classic illustration is the circle–ellipse (or square–rectangle) problem: although a circle is mathematically a special ellipse, a mutable <code>Circle</code> class cannot safely substitute for a mutable <code>Ellipse</code> class whose width and height can be set independently, because setting the ellipse's width alone would break the circle's invariant that its axes are equal. Similarly, a class modelling ducks that throws an exception when asked to fly, if flightless, violates the principle if clients of the base class expect flight always to succeed.</p>
+<h2>Relation to SOLID</h2>
+<p>LSP is the "L" of Robert C. Martin's SOLID mnemonic for object-oriented design principles, alongside the single-responsibility, open–closed, interface-segregation, and dependency-inversion principles. Violations are often detected by code smells such as type-checking and downcasting in client code, empty or exception-throwing overrides, and overridden methods that return null where the base contract does not allow it.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../SOLID/index.html">SOLID</a></li>
+<li><a href="../Barbara_Liskov/index.html">Barbara Liskov</a></li>
+<li><a href="../Subtyping/index.html">Subtyping</a></li>
+<li><a href="../Design_by_contract/index.html">Design by contract</a></li>
+<li><a href="../Polymorphism_(computer_science)/index.html">Polymorphism (computer science)</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gradual typing - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header h1{font-size:28px;margin:0;font-weight:normal}
+main{max-width:960px;margin:0 auto;padding:16px 24px}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h3{font-size:18px;font-weight:bold}
+.infobox{float:right;width:280px;background:#f8f9fa;border:1px solid #a2a9b1;padding:10px;margin:0 0 12px 16px;font-size:13px}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+.hero{display:block;width:100%;max-width:420px;margin:12px 0;background:#eaecf0;border:1px solid #a2a9b1;padding:24px 0;text-align:center;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<header><h1>Gradual typing</h1></header>
+<main>
+<img class="hero" src="images/gradual-typing.png" alt="Illustration: spectrum between dynamic and static typing">
+<div class="infobox">
+<table>
+<tr><th>Introduced</th><td>Term coined by Jeremy Siek and Walid Taha (2006)</td></tr>
+<tr><th>Key mechanism</th><td>Dynamic type ("?"), consistency relation, runtime casts</td></tr>
+<tr><th>Examples</th><td>TypeScript, Hack, Typed Racket, mypy's Python, Reticulated Python</td></tr>
+<tr><th>Field</th><td>Programming language theory</td></tr>
+</table>
+</div>
+<p><b>Gradual typing</b> is a type system in which some variables and expressions may be given types while others are left untyped, allowing a program to mix static and dynamic typing and to be migrated incrementally from one style to the other. The idea grew out of work on integrating static typing into dynamically typed languages, notably Jeremy Siek and Walid Taha's 2006 paper, which introduced a special <i>dynamic type</i> (written ?) and a symmetric "consistency" relation replacing equality of types.</p>
+<h2>How it works</h2>
+<p>Where typed and untyped code meet — at "boundaries" such as function calls — a gradual type system inserts runtime casts or contracts that check values as they cross. If a value fails to conform, the cast fails and blame is assigned to one side of the boundary. In sound designs ("sound gradual typing"), annotated code receives the usual guarantee that well-typed programs cannot commit certain errors; in unsound or "optional typing" designs (such as TypeScript's), annotations are erased and used only for tooling and error detection during development.</p>
+<h2>Implementations</h2>
+<p>Typed Racket (developed by Sam Tobin-Hochstadt and Matthias Felleisen) was one of the first full implementations, letting programmers add types module by module to Racket programs. Other prominent examples include TypeScript and Flow for JavaScript, Hack for PHP, Sorbet for Ruby, and type checkers such as mypy for Python. Research continues on the performance cost of boundary checks ("the gradual guarantee" versus soundness) and on blame assignment for higher-order contracts.</p>
+<h2>Debates</h2>
+<p>A widely discussed 2016 paper, "Is Sound Gradual Typing Dead?", reported severe performance overheads in some sound implementations, prompting work on more efficient cast representations, transient checks, and erasure semantics. The debate clarified the design space: languages trade off stronger guarantees against speed and simplicity.</p>
+<p class="small">See also: <a href="../Type_system/index.html">Type system</a> · <a href="../TypeScript/index.html">TypeScript</a> · <a href="../Dynamic_typing/index.html">Dynamic typing</a></p>
+</main>
+</body>
+</html>

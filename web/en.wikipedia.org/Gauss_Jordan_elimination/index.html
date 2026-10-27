@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gauss–Jordan elimination - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;color:#202122;background:#fff}
+.content{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;text-align:center;font-size:90%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Gauss–Jordan elimination</h1>
+<p>In linear algebra, <b>Gauss–Jordan elimination</b> is an algorithm for solving systems of linear equations. It extends Gaussian elimination by continuing the process until the coefficient matrix is in <i>reduced</i> row echelon form, at which point the solutions can be read off directly without back-substitution. The method is named after Carl Friedrich Gauss and Wilhelm Jordan.</p>
+<div class="hero"><img src="images/gauss-jordan.png" alt="Step-by-step row operations reducing an augmented matrix to reduced row echelon form"></div>
+<h2>Procedure</h2>
+<p>The system is first written as an augmented matrix. Using the three elementary row operations — swapping two rows, multiplying a row by a non-zero constant, and adding a multiple of one row to another — the algorithm proceeds column by column:</p>
+<ol>
+<li>Choose a non-zero pivot in the current column and swap it into the pivot row if necessary.</li>
+<li>Scale the pivot row so the pivot becomes 1.</li>
+<li>Eliminate the pivot variable from <i>all other</i> rows (above and below), not only those below as in Gaussian elimination.</li>
+<li>Move to the next column and repeat.</li>
+</ol>
+<p>The result is the reduced row echelon form: each pivot is 1, each pivot is the only non-zero entry in its column, and pivots step down and to the right.</p>
+<h2>Applications</h2>
+<p>Besides solving linear systems, Gauss–Jordan elimination applied to a matrix augmented with the identity matrix yields the matrix inverse (when it exists). The row echelon forms it produces also reveal the rank of a matrix and the consistency of a system.</p>
+<h2>History and complexity</h2>
+<p>Elimination methods appear in the ancient Chinese text <i>The Nine Chapters on the Mathematical Art</i>. Gauss used elimination in least-squares work, and Wilhelm Jordan presented the fully reduced variant in an 1888 geodesy handbook. For an <i>n</i> × <i>n</i> system the algorithm performs on the order of n³ arithmetic operations; while slightly more work than Gaussian elimination followed by back-substitution, it is simple, systematic and widely taught.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Gaussian_elimination/index.html">Gaussian elimination</a></li>
+<li><a href="../Row_echelon_form/index.html">Row echelon form</a></li>
+<li><a href="../System_of_linear_equations/index.html">System of linear equations</a></li>
+<li><a href="../Invertible_matrix/index.html">Invertible matrix</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Zeckendorf's theorem - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-family: Georgia, 'Times New Roman', serif; font-weight: normal; font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 6px; }
+h2 { font-family: Georgia, 'Times New Roman', serif; font-weight: normal; font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 14.5px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px 12px; margin: 0 0 14px 18px; font-size: 13px; }
+.infobox th { text-align: left; padding: 3px 6px 3px 0; vertical-align: top; }
+.infobox td { padding: 3px 0; }
+.infobox .title { font-weight: bold; font-size: 15px; text-align: center; padding-bottom: 8px; }
+.hero { text-align: center; margin: 14px 0; }
+.hero img { max-width: 420px; width: 100%; background: #eaecf0; border: 1px solid #c8ccd1; }
+.caption { font-size: 12.5px; color: #54595d; }
+ul { line-height: 1.6; font-size: 14.5px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Zeckendorf's theorem</h1>
+<div class="infobox">
+<div class="title">Zeckendorf's theorem</div>
+<table>
+<tr><th>Field</th><td>Number theory, combinatorics</td></tr>
+<tr><th>Named after</th><td>Edouard Zeckendorf</td></tr>
+<tr><th>Statement</th><td>Every positive integer has a unique representation as a sum of non-consecutive Fibonacci numbers</td></tr>
+<tr><th>First published</th><td>1939 (known to Gerrit Lekkerkerker; formally proved by Zeckendorf, 1972)</td></tr>
+</table>
+</div>
+<p><b>Zeckendorf's theorem</b>, named after the Belgian amateur mathematician and army officer Edouard Zeckendorf, states that every positive integer can be represented uniquely as the sum of one or more distinct <a href="../../Fibonacci_sequence/index.html">Fibonacci numbers</a> in such a way that the sum does not include any two consecutive Fibonacci numbers. Such a sum is called the <b>Zeckendorf representation</b> of the number. Using the convention F<sub>2</sub> = 1, F<sub>3</sub> = 2, F<sub>4</sub> = 3, F<sub>5</sub> = 5, F<sub>6</sub> = 8, …, the representation of, for example, 100 is 89 + 8 + 3, and that of 10 is 8 + 2.</p>
+<div class="hero">
+<img src="images/zeckendorf-theorem.png" alt="Diagram of Zeckendorf representations as binary strings">
+<div class="caption">Image placeholder: Zeckendorf representations as binary strings without consecutive ones</div>
+</div>
+<h2>Finding the representation</h2>
+<p>The greedy algorithm yields the Zeckendorf representation: repeatedly subtract the largest Fibonacci number not exceeding the remainder. Writing the representation as a binary string (1 where a Fibonacci number is used, 0 where not, with F<sub>2</sub> as the least significant digit) gives a numeration system — the Zeckendorf (or Fibonacci) coding — in which no two 1s are adjacent; this code is used in data compression as Fibonacci coding, where the appearance of "11" marks the end of a codeword.</p>
+<h2>Proof sketch</h2>
+<p>Existence follows by induction: if n is itself a Fibonacci number the claim is immediate; otherwise, take the largest Fibonacci number F ≤ n; by induction n − F has a representation, and F's predecessor cannot appear in it — otherwise n would meet or exceed the next Fibonacci number — so the combined sum has no consecutive terms. Uniqueness uses the lemma that the sum of any set of non-consecutive Fibonacci numbers, each at most F, is strictly less than the next Fibonacci number after F, so the largest term of the representation is forced, and induction completes the argument. The same result holds, mutatis mutandis, for Lucas numbers and generalisations studied by Lekkerkerker and others.</p>
+<h2>Related topics</h2>
+<p>Zeckendorf representations support analogues of arithmetic operations studied in "Zeckendorf game" problems and in the theory of numeration systems, and the counting of representations of integers connects to the Stern's diatomic series and the Fibonacci coding used in robotics and signal processing.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../Fibonacci_sequence/index.html">Fibonacci sequence</a></li>
+<li><a href="../Leonardo_Fibonacci/index.html">Leonardo Fibonacci</a></li>
+<li><a href="../Lucas_number/index.html">Lucas number</a></li>
+<li><a href="../../Fibonacci_coding/index.html">Fibonacci coding</a></li>
+<li><a href="../Golden_ratio/index.html">Golden ratio</a></li>
+</ul>
+</div>
+</body>
+</html>

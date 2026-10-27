@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Halting problem - Wikipedia</title>
+<style>
+body{font-family:sans-serif;font-size:14px;line-height:1.6;color:#202122;max-width:960px;margin:0 auto;padding:16px;background:#fff}
+h1{font-family:serif;font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-family:serif;font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:24px}
+h3{font-size:16px;margin-top:18px}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;width:250px;font-size:13px}
+.infobox th{text-align:left;background:#e8e9ea;padding:3px 6px}
+.infobox td{padding:3px 6px}
+.infobox caption{font-weight:bold;padding:4px}
+.heroimg{display:block;text-align:center;margin:12px 0}
+.ref{font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Halting problem</h1>
+<span class="heroimg"><img src="images/halting-problem.png" alt="Diagram of a Turing machine, the model used to define the halting problem"></span>
+<table class="infobox">
+<caption>Halting problem</caption>
+<tr><th>Field</th><td>Computability theory</td></tr>
+<tr><th>Proved undecidable by</th><td>Alan Turing, 1936</td></tr>
+<tr><th>Formalism</th><td>Turing machines</td></tr>
+<tr><th>Related results</th><td>Rice's theorem; Entscheidungsproblem</td></tr>
+</table>
+<p>In computability theory, the <b>halting problem</b> is the problem of determining, from a description of an arbitrary computer program and its input, whether the program will finish running (halt) or continue to run forever. <a href="../Alan_Turing/index.html">Alan Turing</a> proved in 1936 that a general algorithm to solve the halting problem for all possible program–input pairs cannot exist, publishing the result in his landmark paper "On Computable Numbers, with an Application to the Entscheidungsproblem".</p>
+<h2>Statement</h2>
+<p>Formally: there is no Turing machine <i>H</i> which, given the description of any Turing machine <i>M</i> and input <i>w</i>, always halts and answers "yes" if <i>M</i> halts on <i>w</i> and "no" otherwise. The halting problem is the canonical example of an <a href="../Undecidable_problem/index.html">undecidable problem</a>: computable functions can decide it for many particular programs, but no single algorithm decides it in general.</p>
+<h2>Proof sketch</h2>
+<p>Turing's proof proceeds by contradiction, using a diagonal argument. Suppose such a decider <i>H</i> existed. One could then build a machine <i>D</i> that takes the description of a machine as input, uses <i>H</i> to ask whether that machine halts when given its own description, and then does the opposite: <i>D</i> loops forever if the answer is "halts" and halts if the answer is "loops". Running <i>D</i> on its own description yields a paradox — <i>D</i> halts if and only if it does not halt — so <i>H</i> cannot exist. The argument parallels Cantor's diagonal argument and, in later folklore, the barber paradox.</p>
+<h2>Significance</h2>
+<p>Together with Alonzo Church's work on the lambda calculus, Turing's result settled the <i>Entscheidungsproblem</i> posed by David Hilbert: there can be no fully mechanical procedure for deciding the truth of arbitrary mathematical statements. In practical computing, undecidability implies that no program verifier, compiler or static analyser can perfectly predict all behaviour of arbitrary programs — for example, perfect virus detection and general loop detection are impossible. Rice's theorem generalises the result to all non-trivial semantic properties of programs.</p>
+<h2>Related concepts</h2>
+<p>The halting problem nevertheless has structure studied by computability theorists: it is computably enumerable (a machine can confirm halting by simply running the program) but not decidable, and it is complete for its level of the arithmetical hierarchy. Bounded versions of the problem — whether a program halts within a given number of steps — are decidable but computationally intractable, as illustrated by the busy beaver function, whose values grow faster than any computable function.</p>
+<h2>See also</h2>
+<p><a href="../Alan_Turing/index.html">Alan Turing</a> · <a href="../Turing_machine/index.html">Turing machine</a> · <a href="../Undecidable_problem/index.html">Undecidable problem</a> · <a href="../Rice's_theorem/index.html">Rice's theorem</a> · <a href="../Busy_beaver/index.html">Busy beaver</a></p>
+<p class="ref">Categories: Computability theory · Theory of computation · Undecidable problems</p>
+</body>
+</html>

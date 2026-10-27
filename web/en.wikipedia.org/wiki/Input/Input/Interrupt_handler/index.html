@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Interrupt handler - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;padding:0 1em;color:#202122;background:#fff;line-height:1.6}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:1.8em;margin:0.5em 0 0.2em}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:1.4em;margin:1em 0 0.3em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{float:right;margin:0 0 1em 1em;border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;font-size:0.85em;text-align:center;width:280px}
+.hero img{width:272px;height:180px;background:#eaecf0;display:block}
+ul,ol{margin:0.3em 0 0.3em 1.6em;padding:0}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Interrupt handler</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="hero"><img src="images/interrupt-handler.png" alt="Diagram of a CPU diverting to an interrupt service routine, labelled placeholder image"><br>Flow of control when an interrupt is serviced.</div>
+<p>In <a href="../../../Computer_science/index.html">computer science</a>, an <b>interrupt handler</b>, also known as an <b>interrupt service routine</b> (<b>ISR</b>), is a special block of code associated with a specific interrupt condition. Interrupt handlers are initiated by hardware <a href="../../../Interrupt/index.html">interrupts</a>, software interrupt instructions, or software exceptions, and are used for implementing device drivers, real-time response to external events, multitasking, and other system services.</p>
+<h2>Operation</h2>
+<p>When an interrupt occurs, the processor suspends its current activity, saves enough state (such as the instruction pointer and status flags, and on some architectures the register set) to resume later, and transfers control to the handler identified through an interrupt vector table or descriptor table. The handler performs a small amount of time-critical work — acknowledging the device, moving data, or recording that an event happened — restores the saved state, and returns, allowing the interrupted program to continue as if nothing had happened.</p>
+<h2>Design constraints</h2>
+<p>Because handlers run asynchronously and may interrupt almost any code, they are heavily constrained: they must be short, cannot block or sleep, must be re-entrant or protected against nested interrupts, and can usually call only a restricted set of kernel services. Operating systems therefore split interrupt processing into a minimal "top half" (the hard-IRQ handler) and deferred work — softirqs, tasklets, workqueues, or threaded interrupts in Linux; deferred procedure calls in Windows — that runs later with fewer restrictions. This split keeps interrupt latency low while still allowing substantial processing.</p>
+<h2>Priorities and masking</h2>
+<p>Interrupt controllers such as the APIC assign priorities so urgent interrupts (timer, inter-processor) can preempt less urgent ones. Handlers can mask (disable) their own or lower-priority interrupt lines while running. Interrupt storms — a device repeatedly raising interrupts — can livelock a system, so drivers and kernels include mitigation and polling fallbacks (as in Linux's NAPI for network interfaces).</p>
+<h2>Software interrupts and exceptions</h2>
+<p>Not all handlers respond to hardware: processors provide instructions (such as <code>INT</code> on x86) that invoke handlers synchronously, historically used for system calls. Exceptions — faults, traps, and aborts arising from instruction execution, like page faults and divide-by-zero — are dispatched through the same mechanism, with handlers in the kernel deciding whether to satisfy the fault, deliver a signal, or terminate the process.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../../Interrupt/index.html">Interrupt</a></li>
+<li><a href="../../../Kernel_(operating_system)/index.html">Kernel (operating system)</a></li>
+<li><a href="../../../Device_driver/index.html">Device driver</a></li>
+<li><a href="../../../Exception_handling/index.html">Exception handling</a></li>
+<li><a href="../../../Signal_(IPC)/index.html">Signal (IPC)</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lyapunov exponent - Wikipedia</title>
+<style>
+body{font-family:sans-serif;font-size:14px;line-height:1.6;color:#202122;margin:0 auto;max-width:960px;padding:0 16px 40px;background:#fff}
+h1{font-family:Georgia,serif;font-weight:normal;font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:4px}
+h2{font-family:Georgia,serif;font-weight:normal;font-size:20px;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:24px}
+h3{font-size:15px;margin-top:18px}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:12.5px;margin:4px 0 12px 16px;border-collapse:collapse}
+.infobox th{background:#e8e9ea;padding:5px 8px;text-align:left}
+.infobox td{padding:5px 8px;border-top:1px solid #eaecf0;vertical-align:top}
+.hero{display:block;margin:12px 0}
+.hat{font-style:italic;font-size:13px;color:#54595d}
+sup{font-size:11px}
+.formula{font-family:Georgia,serif;font-style:italic;background:#f8f9fa;border:1px solid #eaecf0;padding:8px 14px;display:inline-block}
+</style>
+</head>
+<body>
+<h1>Lyapunov exponent</h1>
+<p class="hat">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/Lyapunov_exponent.png" alt="Diagram of two trajectories in phase space diverging exponentially, illustrating a positive Lyapunov exponent">
+<p>In mathematics the <b>Lyapunov exponent</b> or <b>Lyapunov characteristic exponent</b> of a dynamical system is a quantity that characterizes the rate of separation of infinitesimally close trajectories. Quantitatively, two trajectories in phase space with initial separation vector &delta;<sub>0</sub> diverge (provided that the divergence can be treated within the linearized approximation) at a rate given by</p>
+<p class="formula">|&delta;(t)| &asymp; e<sup>&lambda;t</sup> |&delta;<sub>0</sub>|</p>
+<p>where &lambda; is the Lyapunov exponent. The rate of separation can be different for different orientations of initial separation vector, so there is a whole <b>spectrum of Lyapunov exponents</b>, equal in number to the dimensionality of the phase space. It is common to refer to the largest one as the <b>maximal Lyapunov exponent</b> (MLE), because it determines a notion of predictability for a dynamical system. A positive MLE is usually taken as an indication that the system is chaotic, although certain special conditions have to be met, such as avoiding unbounded growth.</p>
+<p>The exponent is named after Aleksandr Lyapunov, who introduced the concept in his 1892 doctoral dissertation on the stability of motion.</p>
+<h2>Definition for a flow</h2>
+<p>For a dynamical system described by a flow &phi;<sup>t</sup> on an n-dimensional phase space, consider a reference trajectory x(t) and a nearby trajectory starting at x(t) + &delta;x. The evolution of the infinitesimal separation is governed by the linearized (variational) equation obtained from the Jacobian of the flow along the trajectory. The Lyapunov exponents are the long-time average logarithmic growth rates of the singular values of the fundamental solution matrix of this linearized system.</p>
+<p>Formally, if M(t) is the fundamental matrix solving the variational equation with M(0) = I, the multiplicative ergodic theorem of Oseledets guarantees that, for almost every initial condition with respect to an invariant measure, the limit</p>
+<p class="formula">&Lambda; = lim<sub>t&rarr;&infin;</sub> (M<sup>T</sup>(t) M(t))<sup>1/2t</sup></p>
+<p>exists, and the Lyapunov spectrum is the set of logarithms of the eigenvalues of &Lambda;, ordered &lambda;<sub>1</sub> &ge; &lambda;<sub>2</sub> &ge; &hellip; &ge; &lambda;<sub>n</sub>.</p>
+<h2>Definition for a map</h2>
+<p>For a one-dimensional map x<sub>n+1</sub> = f(x<sub>n</sub>), the Lyapunov exponent takes the simpler form of a time average of the logarithm of the derivative along the orbit:</p>
+<p class="formula">&lambda;(x<sub>0</sub>) = lim<sub>n&rarr;&infin;</sub> (1/n) &Sigma;<sub>i=0</sub><sup>n&minus;1</sup> ln |f&prime;(x<sub>i</sub>)|</p>
+<p>For the logistic map at the fully chaotic parameter value r = 4, this evaluates exactly to ln 2, meaning that on average the separation between nearby orbits doubles with each iteration, so roughly one bit of information about the initial condition is lost per step.</p>
+<h2>Properties</h2>
+<p>If the system is conservative (for example, a Hamiltonian system without dissipation), the Lyapunov exponents come in pairs summing to zero, a consequence of Liouville's theorem on the preservation of phase-space volume. For a dissipative system, the sum of all Lyapunov exponents is negative and equals the average rate of contraction of phase-space volume; the sum is related to entropy production in nonequilibrium statistical mechanics.</p>
+<p>The Lyapunov dimension (Kaplan&ndash;Yorke dimension), computed from the spectrum, provides an estimate of the fractal dimension of a strange attractor. The reciprocal of the maximal Lyapunov exponent, sometimes called the Lyapunov time, sets the time horizon over which the behaviour of a chaotic system remains predictable in practice; beyond a few Lyapunov times, small measurement errors grow to the size of the attractor itself.</p>
+<h2>Numerical computation</h2>
+<p>Numerically, Lyapunov exponents are computed by integrating the variational equations alongside the equations of motion and periodically re-orthonormalizing the perturbation vectors (the method of Benettin and collaborators), because the fastest-growing direction otherwise dominates all vectors. Algorithms by Wolf and others extract the maximal exponent from an experimental time series by tracking the divergence of nearest neighbours in a reconstructed phase space.</p>
+<h2>Applications</h2>
+<p>Lyapunov exponents are used throughout science and engineering: to diagnose chaos in celestial mechanics, fluid dynamics and plasma physics; to estimate predictability horizons in weather and climate models; in the analysis of physiological signals such as heart-rate variability and EEG; and in economics and ecology, where they quantify the sensitivity of model trajectories to initial conditions.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Chaos_theory/index.html">Chaos theory</a></li>
+<li><a href="../Lyapunov_stability/index.html">Lyapunov stability</a></li>
+<li><a href="../Oseledets_theorem/index.html">Oseledets theorem</a></li>
+<li><a href="../Kolmogorov%E2%80%93Sinai_entropy/index.html">Kolmogorov&ndash;Sinai entropy</a></li>
+<li><a href="../Butterfly_effect/index.html">Butterfly effect</a></li>
+</ul>
+<h2>References</h2>
+<ul>
+<li>Lyapunov, A. M. (1992). <i>The General Problem of the Stability of Motion</i> (English translation). Taylor &amp; Francis.</li>
+<li>Benettin, G., Galgani, L., Giorgilli, A., &amp; Strelcyn, J.-M. (1980). "Lyapunov characteristic exponents for smooth dynamical systems and for Hamiltonian systems." <i>Meccanica</i>, 15, 9&ndash;30.</li>
+<li>Ott, E. (2002). <i>Chaos in Dynamical Systems</i> (2nd ed.). Cambridge University Press.</li>
+<li>Wolf, A., Swift, J. B., Swinney, H. L., &amp; Vastano, J. A. (1985). "Determining Lyapunov exponents from a time series." <i>Physica D</i>, 16, 285&ndash;317.</li>
+</ul>
+</body>
+</html>

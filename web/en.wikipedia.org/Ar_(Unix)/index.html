@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ar (Unix) - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#fff;color:#202122}
+.wrap{max-width:960px;margin:0 auto;padding:24px 20px 60px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+p{line-height:1.6;font-size:0.95em}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.85em}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+.infobox caption{font-weight:bold;font-size:1.05em;padding-bottom:6px}
+.hero{display:block;max-width:420px;width:100%;height:auto;background:#eaecf0;border:1px solid #c8ccd1;margin:12px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{line-height:1.6;font-size:0.95em}
+code{background:#f8f9fa;padding:0 3px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>ar (Unix)</h1>
+<div class="infobox">
+<table>
+<caption>ar</caption>
+<tr><th>Operating system</th><td>Unix and Unix-like</td></tr>
+<tr><th>Type</th><td>Command-line utility</td></tr>
+<tr><th>Purpose</th><td>Create, modify and extract archives</td></tr>
+<tr><th>Typical file</th><td>Static library (lib*.a), .deb packages</td></tr>
+</table>
+</div>
+<p><b>ar</b> (short for <i>archiver</i>) is a Unix utility for creating, modifying and extracting archives of files. It is one of the oldest Unix tools, and its simple archive format remains in everyday use today in the creation of static libraries (files named <code>lib<em>name</em>.a</code>) and as the container format of Debian <code>.deb</code> software packages.</p>
+<img class="hero" src="images/ar-unix.png" alt="Terminal showing the ar archiver utility listing a static library">
+<h2>Usage</h2>
+<p>Common operations are given by single-letter keys: <code>r</code> adds or replaces files in an archive, <code>d</code> deletes members, <code>t</code> lists the table of contents and <code>x</code> extracts members. For example, <code>ar rcs libfoo.a foo.o bar.o</code> creates a static library, where the modifier <code>s</code> writes an index (symbol table) that speeds up linking; the related program <code>ranlib</code> performs the indexing step on its own on some systems.</p>
+<h2>File format</h2>
+<p>An ar archive begins with the eight-byte global header <code>!&lt;arch&gt;\n</code>, followed by a sequence of members, each preceded by a 60-byte ASCII header recording the member name, modification time, owner and group IDs, permissions and size, padded so members start on even byte boundaries. Variants of the format include the GNU/System V form used on Linux and the BSD form with extended filename support.</p>
+<h2>Role in software development</h2>
+<p>Static linkers such as <code>ld</code> read ar archives of object files and pull in only the members needed to resolve symbols, which is why ar-format libraries underpin Unix software development. The <code>.deb</code> package is itself an ar archive containing control and data tarballs, and early versions of the <code>.a</code> format predate the more general <code>tar</code> archiver for pure file storage.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Static_library/index.html">Static library</a></li>
+<li><a href="../Tar_(computing)/index.html">tar (computing)</a></li>
+<li><a href="../Deb_(file_format)/index.html">deb (file format)</a></li>
+<li><a href="../GNU_Binutils/index.html">GNU Binutils</a></li>
+</ul>
+</div>
+</body>
+</html>

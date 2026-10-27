@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Abstract type - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:1em 1.5em 3em}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:0.2em;margin-bottom:0.3em}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.85em;margin:0 0 1em 1em;padding:0.5em;font-family:sans-serif}
+.infobox th{text-align:left;padding:2px 6px;vertical-align:top}
+.infobox td{padding:2px 6px}
+.infobox .cap{text-align:center;font-weight:bold;background:#eaecf0;padding:4px}
+.hero{text-align:center;background:#f8f9fa;border:1px solid #eaecf0;padding:1em;margin-bottom:1em}
+.hero img{max-width:100%}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:0.8em;overflow-x:auto;font-size:0.9em}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Abstract type</h1>
+<p>In programming languages, an <b>abstract type</b> (also called an <b>abstract data type</b>, or ADT) is a type whose behavior is defined by a set of operations and values, without specifying how those operations are implemented or how the values are represented in memory. Clients of an abstract type interact with it only through its declared interface, so the implementation can be changed without affecting client code. The concept is central to information hiding, modularity, and object-oriented and functional programming.</p>
+<div class="hero"><img src="images/Abstract_type.png" alt="Abstract type - hero image placeholder"></div>
+<table class="infobox">
+<tr><td class="cap" colspan="2">Abstract type</td></tr>
+<tr><th>Field</th><td>Computer science, type theory</td></tr>
+<tr><th>Key concepts</th><td>Encapsulation, information hiding, interface</td></tr>
+<tr><th>Examples</th><td>Stack, queue, set, map, list</td></tr>
+<tr><th>Related</th><td>Abstract class, interface, data structure</td></tr>
+</table>
+<h2>Definition</h2>
+<p>An abstract type is specified by the operations that can be performed on its values, the axioms or contracts those operations must satisfy, and the errors they may signal. A stack, for example, is defined by <i>push</i>, <i>pop</i>, <i>top</i> and <i>isEmpty</i> operations obeying the rule that popping a stack reverses the effect of the most recent push. Whether the stack is stored in an array or a linked list is invisible to clients.</p>
+<h2>History</h2>
+<p>The idea was articulated in the 1970s by Barbara Liskov and Stephen Zilles, who introduced abstract data types in the language CLU, and by John Guttag, whose work on algebraic specification gave ADTs a formal foundation. Liskov later received the Turing Award in part for contributions to data abstraction.</p>
+<h2>Implementations</h2>
+<p>Languages support abstract types in various ways: abstract classes and interfaces in Java and C#, type classes in Haskell, modules with opaque types in ML and OCaml, and traits in Rust. In each case, the type system prevents client code from depending on the hidden representation, a property sometimes called <i>representation independence</i>.</p>
+<h2>Benefits and limitations</h2>
+<p>Abstract types improve maintainability and reasoning: invariants can be enforced at the boundary of the type, and implementations can be optimized or replaced freely. The main cost is the loss of some optimization opportunities that require knowledge of the representation, and the design effort needed to choose a complete yet minimal interface.</p>
+</div>
+</body>
+</html>

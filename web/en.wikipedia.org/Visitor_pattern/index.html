@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Visitor pattern - Wikipedia</title>
+<style>body{font-family:sans-serif;margin:0 auto;max-width:960px;padding:16px;line-height:1.6;color:#202122;background:#fff}h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px}h2{font-size:22px;border-bottom:1px solid #a2a9b1;margin-top:24px}h3{font-size:17px}.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:13px}.infobox th{text-align:left;padding-right:8px;vertical-align:top}.hatnote{font-style:italic;color:#54595d;font-size:14px}a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}.thumb{border:1px solid #a2a9b1;background:#f8f9fa;padding:6px;font-size:12px;text-align:center}</style>
+</head><body>
+<h1>Visitor pattern</h1>
+<p class="hatnote">From Wikipedia, the free encyclopedia</p>
+<div class="infobox"><table>
+<tr><th>Type</th><td>Behavioral design pattern</td></tr>
+<tr><th>Described in</th><td><i>Design Patterns</i> (Gamma et al., 1994)</td></tr>
+<tr><th>Key mechanism</th><td>Double dispatch</td></tr>
+<tr><th>Common uses</th><td>Compiler operations over abstract syntax trees, document processing</td></tr>
+</table></div>
+<div class="thumb"><img src="images/visitor-pattern.png" alt="UML class diagram of the visitor design pattern"></div>
+<p>In object-oriented programming, the <b>visitor pattern</b> is a behavioral software design pattern that separates an algorithm from the object structure on which it operates. A visitor class defines an operation to be performed on the elements of an object structure, letting new operations be added to existing object structures without modifying those structures. It is one of the twenty-three canonical patterns described by the "Gang of Four" in <i>Design Patterns</i> (1994).</p>
+<h2>Structure</h2>
+<p>The pattern involves two kinds of types: <b>elements</b> (nodes of the structure), each with an <code>accept(visitor)</code> method, and <b>visitors</b> with a <code>visit</code> method overloaded for each concrete element type. When <code>accept</code> is called, the element calls back the matching <code>visit</code> method passing itself — a technique called <i>double dispatch</i>, which combines the runtime type of the element with the runtime type of the visitor.</p>
+<h2>Uses</h2>
+<p>Classic applications include compilers, where separate visitors type-check, optimize, and generate code over an abstract syntax tree without entangling those operations in the node classes; and document or scene-graph processors performing export, statistics, or rendering passes.</p>
+<h2>Advantages and drawbacks</h2>
+<p>Visitor makes it easy to add new operations but hard to add new element classes, since every existing visitor must then gain a new method — a trade-off sometimes called the <i>expression problem</i>. It also breaks some encapsulation, since visitors often need access to elements' internal state. Alternatives include pattern matching in functional languages, the acyclic visitor variant, and reflection-based walkers.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Software_design_pattern/index.html">Software design pattern</a></li>
+<li><a href="../Double_dispatch/index.html">Double dispatch</a></li>
+<li><a href="../Abstract_syntax_tree/index.html">Abstract syntax tree</a></li>
+<li><a href="../Design_Patterns/index.html">Design Patterns</a></li>
+</ul>
+</body></html>

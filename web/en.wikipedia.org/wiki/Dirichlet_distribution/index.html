@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dirichlet distribution - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+#content{max-width:960px;margin:0 auto;padding:1em 1.5em}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:0.2em}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em 1em;margin:0 0 1em 1em;font-size:0.9em;width:260px}
+.infobox th{text-align:left;vertical-align:top;padding-right:0.5em}
+.hero{display:block;margin:1em auto;max-width:640px}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;text-align:center;color:#72777d;font-size:0.85em}
+.eq{text-align:center;font-style:italic;margin:1em 0}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Dirichlet distribution</h1>
+<p>In <a href="../Probability_theory/index.html">probability</a> and <a href="../Statistics/index.html">statistics</a>, the <b>Dirichlet distribution</b> (after <a href="../Peter_Gustav_Lejeune_Dirichlet/index.html">Peter Gustav Lejeune Dirichlet</a>), often denoted Dir(<i>α</i>), is a family of continuous multivariate <a href="../Probability_distribution/index.html">probability distributions</a> parameterized by a vector <i>α</i> of positive reals. It is a multivariate generalization of the <a href="../Beta_distribution/index.html">beta distribution</a>. The Dirichlet distribution is the <a href="../Conjugate_prior/index.html">conjugate prior</a> of the <a href="../Categorical_distribution/index.html">categorical distribution</a> and <a href="../Multinomial_distribution/index.html">multinomial distribution</a> in <a href="../Bayesian_statistics/index.html">Bayesian statistics</a>, and it is commonly used as a prior distribution in Bayesian statistics and as the component distribution in <a href="../Latent_Dirichlet_allocation/index.html">Latent Dirichlet allocation</a>.</p>
+<div class="thumb hero"><img src="images/dirichlet-distribution.png" alt="Dirichlet distribution densities plotted on the 2-simplex for different concentration parameters"></div>
+<table class="infobox">
+<tr><th>Parameters</th><td><i>K</i> ≥ 2 number of categories; concentration parameters <i>α</i><sub>1</sub>,…,<i>α</i><sub><i>K</i></sub> &gt; 0</td></tr>
+<tr><th>Support</th><td><i>x</i><sub>1</sub>,…,<i>x</i><sub><i>K</i></sub> ≥ 0 with Σ<i>x</i><sub><i>i</i></sub> = 1</td></tr>
+<tr><th>Mean</th><td>E[<i>x</i><sub><i>i</i></sub>] = <i>α</i><sub><i>i</i></sub> / <i>α</i><sub>0</sub></td></tr>
+</table>
+<h2>Probability density function</h2>
+<p>The probability density function of the Dirichlet distribution of order <i>K</i> ≥ 2 with parameters <i>α</i><sub>1</sub>, …, <i>α</i><sub><i>K</i></sub> &gt; 0 is</p>
+<p class="eq">f(x<sub>1</sub>,…,x<sub>K</sub>; α<sub>1</sub>,…,α<sub>K</sub>) = (1 / B(α)) ∏ x<sub>i</sub><sup>α<sub>i</sub> − 1</sup>,</p>
+<p>where the normalizing constant B(<i>α</i>) is the multivariate beta function, expressible in terms of <a href="../Gamma_function/index.html">gamma functions</a>:</p>
+<p class="eq">B(α) = ∏ Γ(α<sub>i</sub>) / Γ(Σ α<sub>i</sub>).</p>
+<p>The support is the open (<i>K</i> − 1)-dimensional simplex { (<i>x</i><sub>1</sub>, …, <i>x</i><sub><i>K</i></sub>) ∈ ℝ<sup><i>K</i></sup> : all <i>x</i><sub><i>i</i></sub> ≥ 0 and Σ<i>x</i><sub><i>i</i></sub> = 1 }.</p>
+<h2>Properties</h2>
+<h3>Marginals and aggregation</h3>
+<p>Each component marginally follows a beta distribution: <i>x</i><sub><i>i</i></sub> ~ Beta(<i>α</i><sub><i>i</i></sub>, <i>α</i><sub>0</sub> − <i>α</i><sub><i>i</i></sub>). The distribution has the aggregation property: if components are grouped and summed, the grouped vector is again Dirichlet with the summed parameters.</p>
+<h3>Conjugate prior</h3>
+<p>If data are drawn from a categorical or multinomial distribution with unknown probabilities, placing a Dirichlet prior on those probabilities yields a Dirichlet posterior whose parameters are increased by the observed counts. This conjugacy makes the Dirichlet distribution the standard prior for multinomial models, including smoothed estimates such as Laplace smoothing.</p>
+<h2>Related distributions</h2>
+<p>The <a href="../Generalized_Dirichlet_distribution/index.html">generalized Dirichlet distribution</a> relaxes the independence structure among components. The <a href="../Dirichlet-multinomial_distribution/index.html">Dirichlet-multinomial distribution</a> results from integrating a multinomial likelihood against a Dirichlet prior. The <a href="../Dirichlet_process/index.html">Dirichlet process</a> is an infinite-dimensional analogue used in nonparametric Bayesian models.</p>
+<h2>Applications</h2>
+<p>Dirichlet distributions are used to model compositional data, in <a href="../Latent_Dirichlet_allocation/index.html">topic models</a> for text, in Bayesian mixture models, in population genetics, and in the analysis of vote shares and market shares across categories.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Beta_distribution/index.html">Beta distribution</a></li>
+<li><a href="../Multinomial_distribution/index.html">Multinomial distribution</a></li>
+<li><a href="../Simplex/index.html">Simplex</a></li>
+</ul>
+</div>
+</body>
+</html>

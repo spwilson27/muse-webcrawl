@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SAML - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;margin:0;background:#f8f9fa;color:#202122;line-height:1.6}
+.page{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:4px}
+h2{font-family:Georgia,'Times New Roman',serif;font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+h3{font-size:17px;margin-top:20px}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;margin:0 0 16px 20px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;border-collapse:collapse}
+.infobox th,.infobox td{padding:4px 8px;border-top:1px solid #eaecf0;text-align:left;vertical-align:top}
+.infobox caption{font-weight:bold;font-size:15px;padding:6px;background:#eaf3ff}
+.hero{text-align:center;margin:16px 0}
+.hero img{max-width:100%;border:1px solid #c8ccd1;background:#eaecf0}
+.small{font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="page">
+<h1>SAML</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<caption>Security Assertion Markup Language</caption>
+<tr><th>Abbreviation</th><td>SAML</td></tr>
+<tr><th>Status</th><td>OASIS Standard</td></tr>
+<tr><th>First published</th><td>November 2002 (SAML 1.0)</td></tr>
+<tr><th>Latest version</th><td>SAML 2.0 (March 2005)</td></tr>
+<tr><th>Organization</th><td>OASIS</td></tr>
+<tr><th>Base standards</th><td>XML, XML Schema, XML Signature, XML Encryption, SOAP, HTTP</td></tr>
+<tr><th>Domain</th><td>Federated identity, single sign-on</td></tr>
+</table>
+<div class="hero"><img src="images/SAML.png" alt="Diagram of a SAML single sign-on message flow (placeholder)"></div>
+<p><b>Security Assertion Markup Language</b> (<b>SAML</b>, pronounced "SAM-el") is an open standard for exchanging authentication and authorization data between parties, in particular between an <b>identity provider</b> (IdP) and a <b>service provider</b> (SP). SAML is an <a href="../XML/index.html">XML</a>-based markup language for security assertions — statements that service providers use to make access-control decisions. The standard is maintained by the Security Services Technical Committee of <a href="../OASIS/index.html">OASIS</a>.</p>
+<p>SAML's most important use case is web browser <a href="../Single_sign-on/index.html">single sign-on</a> (SSO), especially in enterprise and government environments, where a user authenticates once with an identity provider and then accesses many applications without re-entering credentials.</p>
+<h2>Overview</h2>
+<p>The SAML specification defines three roles. The <b>principal</b> (typically a user) requests a service; the <b>service provider</b> delivers it and relies on assertions; the <b>identity provider</b> authenticates the principal and issues assertions. Assertions are XML documents containing statements about authentication (when and how the subject authenticated), attributes (such as name, email, or group membership), and authorization decisions.</p>
+<p>SAML separates the protocol machinery — request/response message formats and bindings to transport protocols such as HTTP Redirect and HTTP POST — from <b>profiles</b>, which combine assertions, protocols, and bindings to address specific use cases such as Web Browser SSO.</p>
+<h2>History</h2>
+<p>SAML 1.0 was adopted as an OASIS standard in November 2002, drawing on Netegrity's S2ML and Securant's AuthXML. SAML 1.1 followed in 2003. SAML 2.0, ratified in March 2005, merged SAML 1.1 with the Liberty Alliance's Identity Federation Framework (ID-FF) and the Shibboleth profile, adding features such as single logout, name identifier management, and pseudonymous identifiers. It remains widely deployed in enterprise federation, though newer systems often prefer the JSON- and OAuth-based <a href="../OpenID_Connect/index.html">OpenID Connect</a>.</p>
+<h2>Security considerations</h2>
+<p>Assertions are typically digitally signed using XML Signature, and may be encrypted. Misconfigurations and implementation flaws — such as signature-wrapping attacks — have been the subject of significant security research, leading to hardened profiles and best-practice guidance.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Single_sign-on/index.html">Single sign-on</a></li>
+<li><a href="../OpenID_Connect/index.html">OpenID Connect</a></li>
+<li><a href="../OAuth/index.html">OAuth</a></li>
+<li><a href="../Federated_identity/index.html">Federated identity</a></li>
+<li><a href="../Shibboleth/index.html">Shibboleth</a></li>
+</ul>
+</div>
+</body>
+</html>

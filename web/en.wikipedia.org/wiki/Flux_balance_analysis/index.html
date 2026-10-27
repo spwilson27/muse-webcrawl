@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Flux balance analysis - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; line-height: 1.6; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+h3 { font-size: 1.15em; font-weight: bold; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 270px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px 14px; margin: 0 0 16px 20px; font-size: 0.88em; }
+.infobox h3 { margin: 4px 0 8px; text-align: center; font-size: 1.05em; }
+.infobox table { border-collapse: collapse; width: 100%; }
+.infobox td { padding: 3px 4px; vertical-align: top; }
+.infobox td:first-child { font-weight: bold; width: 40%; }
+.hero { text-align: center; margin: 12px 0; }
+.hero img { max-width: 100%; }
+.caption { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Flux balance analysis</h1>
+<div class="hero"><img src="images/Flux_balance_analysis.png" alt="Diagram of a metabolic network modelled by flux balance analysis"></div>
+<p class="caption">Flux balance analysis predicts the flow of metabolites through a metabolic network using linear optimisation.</p>
+<p><b>Flux balance analysis</b> (FBA) is a mathematical modelling approach for analysing the flow of metabolites through a metabolic network, widely used in systems biology and metabolic engineering. Rather than requiring detailed kinetic parameters, FBA uses the stoichiometry of metabolic reactions and the assumption of a steady state to compute feasible distributions of reaction fluxes, typically optimising an objective such as maximal growth (biomass production).</p>
+<h2>Method</h2>
+<p>A genome-scale metabolic model is represented by a stoichiometric matrix <b>S</b>, whose rows are metabolites and columns are reactions. The steady-state assumption requires <b>S</b>·<b>v</b> = 0, where <b>v</b> is the vector of reaction fluxes. Bounds on each flux encode reaction reversibility, nutrient uptake limits and measured capacities. The resulting system is underdetermined, so linear programming selects the flux distribution that maximises or minimises a chosen objective function — commonly the flux through a synthetic "biomass reaction" representing growth.</p>
+<h2>Applications</h2>
+<p>FBA predicts microbial growth rates and yields on different substrates, the effects of gene knockouts (compared with experimental screens in <i>E. coli</i> and yeast), nutrient requirements, and metabolic engineering strategies for overproducing fuels and chemicals. Extensions include flux variability analysis (FVA), which finds the range of each flux consistent with an optimum; minimisation of metabolic adjustment (MOMA) and ROOM for predicting knockout phenotypes; dynamic FBA for time courses; and methods integrating transcriptomic or thermodynamic constraints.</p>
+<h2>Tools and models</h2>
+<p>Curated genome-scale reconstructions exist for many organisms, from <i>E. coli</i> (iJO1366 and successors) through yeast to the human models Recon and Human-GEM. Community software includes the COBRA Toolbox (MATLAB) and COBRApy (Python), with models exchanged in SBML format.</p>
+<h2>Limitations</h2>
+<p>Because FBA ignores enzyme kinetics and metabolite concentrations, it cannot predict dynamic responses or the effects of regulation directly, and the choice of objective function strongly shapes predictions. Nonetheless its scalability to whole genomes, modest data requirements, and good agreement with growth experiments have made it a standard tool of computational biology.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Metabolic_network_modelling/index.html">Metabolic network modelling</a></li>
+<li><a href="../Systems_biology/index.html">Systems biology</a></li>
+<li><a href="../Linear_programming/index.html">Linear programming</a></li>
+<li><a href="../Metabolic_engineering/index.html">Metabolic engineering</a></li>
+</ul>
+</div>
+</body>
+</html>

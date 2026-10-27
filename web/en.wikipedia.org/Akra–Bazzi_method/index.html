@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Akra–Bazzi method - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#fff;color:#202122;margin:0;padding:20px 40px;line-height:1.6;max-width:960px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.35em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.85em;margin:0 0 12px 16px;padding:8px}
+.infobox caption{font-weight:bold;background:#cedff2;padding:4px;text-align:center}
+.infobox td{padding:2px 6px;vertical-align:top}
+.infobox th{text-align:left;padding:2px 6px}
+.hero{margin:10px 0}
+.hero img{max-width:100%;border:1px solid #a2a9b1;background:#eaecf0}
+.math{font-style:italic;background:#f8f9fa;padding:8px 12px;border-left:3px solid #a2a9b1}
+</style>
+</head>
+<body>
+<h1>Akra–Bazzi method</h1>
+<div class="infobox">
+<table>
+<caption>Akra–Bazzi method</caption>
+<tr><th>Field</th><td>Analysis of algorithms</td></tr>
+<tr><th>Named after</th><td>Mohamad Akra, Louay Bazzi</td></tr>
+<tr><th>Published</th><td>1998</td></tr>
+<tr><th>Generalises</th><td>Master theorem</td></tr>
+</table>
+</div>
+<div class="hero"><img src="images/Akra–Bazzi_method.png" alt="Diagram of a recursion tree analysed with the Akra–Bazzi method"></div>
+<p>The <b>Akra–Bazzi method</b>, or <b>Akra–Bazzi theorem</b>, is used in the analysis of algorithms to determine the asymptotic behaviour of recurrences that arise in divide-and-conquer algorithms where the subproblems have unequal sizes. It is a generalisation of the <a href="../Master_theorem_(analysis_of_algorithms)/index.html">master theorem</a>, which requires equal subproblem sizes.</p>
+
+<h2>Formulation</h2>
+<p>The method applies to recurrences of the form:</p>
+<p class="math">T(x) = g(x) + &Sigma;<sub>i=1..k</sub> a<sub>i</sub> T(b<sub>i</sub> x + h<sub>i</sub>(x))</p>
+<p>where the a<sub>i</sub> are positive constants, each b<sub>i</sub> lies strictly between 0 and 1, g(x) is a reasonably smooth driving function, and the perturbation terms h<sub>i</sub>(x) grow at most polynomially slower than x.</p>
+<p>One first finds the unique real number p such that &Sigma; a<sub>i</sub> b<sub>i</sub><sup>p</sup> = 1. The asymptotic behaviour is then:</p>
+<p class="math">T(x) = &Theta;( x<sup>p</sup> ( 1 + &int;<sub>1</sub><sup>x</sup> g(u) / u<sup>p+1</sup> du ) )</p>
+
+<h2>Example</h2>
+<p>For the recurrence T(x) = (9/4) T(3x/4) + T(x/2) + x<sup>2</sup>, the exponent p satisfies (9/4)(3/4)<sup>p</sup> + (1/2)<sup>p</sup> = 1, giving p = 2, and evaluating the integral yields T(x) = &Theta;(x<sup>2</sup> log x).</p>
+
+<h2>Significance</h2>
+<p>Unlike the master theorem, the Akra–Bazzi method tolerates unequal splits, floors and ceilings, and certain perturbations in the subproblem sizes, making it applicable to recurrences such as those produced by quickselect, integer multiplication variants and median-of-medians selection. The result was proved by Mohamad Akra and Louay Bazzi in 1998; a simplified proof was later given by Tom Leighton in course notes, and a rigorous justification appears in standard references on analytic combinatorics.</p>
+
+<p>See also: <a href="../Recurrence_relation/index.html">Recurrence relation</a> · <a href="../Big_O_notation/index.html">Big O notation</a> · <a href="../Divide-and-conquer_algorithm/index.html">Divide-and-conquer algorithm</a></p>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Common Lisp Object System - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 28px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; font-size: 21px; }
+p { line-height: 1.6; font-size: 14px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px 12px; margin: 0 0 12px 16px; font-size: 13px; }
+.infobox th { text-align: left; padding: 3px 6px 3px 0; vertical-align: top; }
+.infobox td { padding: 3px 0; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 480px; width: 100%; background: #eaecf0; border: 1px solid #c8ccd1; }
+.caption { font-size: 12px; color: #54595d; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 13px; }
+ul { font-size: 14px; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Common Lisp Object System</h1>
+<div class="infobox">
+<table>
+<tr><th>Paradigm</th><td>Object-oriented, multi-paradigm</td></tr>
+<tr><th>Part of</th><td>ANSI Common Lisp (standardized 1994)</td></tr>
+<tr><th>Influences</th><td>Flavors, LOOPS, Smalltalk</td></tr>
+<tr><th>Key concepts</th><td>Generic functions, multiple dispatch, metaobject protocol</td></tr>
+</table>
+</div>
+<p>The <b>Common Lisp Object System</b> (CLOS) is the object-oriented programming facility of the Common Lisp programming language. Standardized as part of ANSI Common Lisp in 1994, CLOS is notable for being built around generic functions and multiple dispatch rather than message passing, and for its powerful metaobject protocol (MOP), which allows programmers to customize the behavior of the object system itself.</p>
+<div class="hero"><img src="images/Common_Lisp_Object_System.png" alt="Diagram of a class hierarchy with multiple inheritance"><div class="caption">A CLOS class hierarchy with multiple inheritance</div></div>
+<h2>Design</h2>
+<p>Classes are defined with <code>defclass</code>, specifying slots (instance variables) and superclasses; multiple inheritance is supported, with a class precedence list resolving conflicts. Behavior is defined not inside classes but in <b>generic functions</b> declared with <code>defgeneric</code> and specialized via <code>defmethod</code>. Unlike most object systems, methods can specialize on any or all of their required arguments — <i>multiple dispatch</i> — and method combination allows <code>:before</code>, <code>:after</code>, and <code>:around</code> methods to wrap a primary method.</p>
+<h2>Metaobject protocol</h2>
+<p>CLOS classes, generic functions, and methods are themselves objects (metaobjects), and the MOP — described in the book <i>The Art of the Metaobject Protocol</i> (1991) — specifies protocols by which programmers can redefine fundamental operations such as class instantiation, inheritance computation, and slot access. This makes CLOS one of the most extensible object systems ever standardized.</p>
+<h2>History and influence</h2>
+<p>CLOS synthesized earlier Lisp object systems, principally New Flavors and Xerox PARC's LOOPS. Its generic-function model influenced later languages and libraries, including Dylan, Julia's multiple dispatch, and aspects of R's S4 system and Python frameworks. Critics have noted that its power and flexibility can also produce programs that are difficult to reason about.</p>
+<p>See also: <a href="../Common_Lisp/index.html">Common Lisp</a>, <a href="../Multiple_dispatch/index.html">Multiple dispatch</a>, <a href="../Generic_function/index.html">Generic function</a>, <a href="../Metaobject/index.html">Metaobject</a></p>
+</div>
+</body>
+</html>

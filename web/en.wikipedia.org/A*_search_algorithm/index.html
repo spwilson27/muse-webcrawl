@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>A* search algorithm - Wikipedia</title>
+<style>
+body{font-family:sans-serif;font-size:14px;line-height:1.5;color:#202122;margin:0 auto;max-width:960px;padding:16px;background:#fff}
+h1{font-family:serif;font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:24px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:12px auto;max-width:420px;background:#eef;border:1px solid #a2a9b1;padding:24px;text-align:center;color:#54595d}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<h1>A* search algorithm</h1>
+<img class="hero" src="images/A*_search_algorithm.png" alt="A grid showing A* expanding nodes toward a goal">
+<p><b>A*</b> (pronounced "A-star") is a graph traversal and pathfinding algorithm known for its completeness, optimality, and efficiency. It was described in 1968 by Peter Hart, Nils Nilsson, and Bertram Raphael at Stanford Research Institute, as part of the Shakey the Robot project. A* is an extension of Dijkstra's algorithm that uses a heuristic estimate to guide the search toward the goal.</p>
+<h2>How it works</h2>
+<p>For each node <code>n</code>, A* tracks <code>g(n)</code>, the exact cost of the cheapest path found from the start, and estimates the remaining cost with a heuristic <code>h(n)</code>. Nodes are expanded in order of <code>f(n) = g(n) + h(n)</code>, using a priority queue (the "open set"). If the heuristic is <i>admissible</i> — it never overestimates the true remaining cost — A* is guaranteed to return an optimal path; if it is also <i>consistent</i>, no node ever needs to be re-expanded.</p>
+<h2>Applications and variants</h2>
+<p>A* and its descendants are standard tools for route planning in video games, robot navigation, road-network routing, and puzzle solving. Variants include weighted A*, IDA* (iterative deepening), SMA* (memory-bounded), and dynamic replanners such as D* used on planetary rovers. In the worst case its time and memory grow exponentially with problem size, so practical performance depends heavily on the quality of the heuristic.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Dijkstra's_algorithm/index.html">Dijkstra's algorithm</a></li>
+<li><a href="../Breadth-first_search/index.html">Breadth-first search</a></li>
+<li><a href="../Pathfinding/index.html">Pathfinding</a></li>
+</ul>
+</body>
+</html>

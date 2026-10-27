@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Data remanence - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:16px 24px 48px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+p,li{font-size:15px;line-height:1.6}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px 12px;margin:0 0 12px 16px;font-size:13px}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+.infobox caption{font-weight:bold;font-size:14px;padding-bottom:6px}
+.hero{margin:12px 0}
+.hero img{max-width:420px;width:100%;background:#eaecf0;border:1px solid #c8ccd1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Data remanence</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<caption>Data remanence</caption>
+<tr><th>Field</th><td>Computer security, digital forensics</td></tr>
+<tr><th>Affected media</th><td>Hard disks, SSDs, magnetic tape, RAM, optical media</td></tr>
+<tr><th>Mitigations</th><td>Overwriting, degaussing, encryption, physical destruction</td></tr>
+<tr><th>Standards</th><td>NIST SP 800-88 (Clear, Purge, Destroy)</td></tr>
+</table>
+<div class="hero"><img src="images/data-remanence.png" alt="A hard disk drive with its cover removed, showing the platters where residual data may persist"></div>
+<p><b>Data remanence</b> is the residual representation of digital data that remains even after attempts have been made to remove or erase it. Because deleting a file typically removes only its directory entry, and formatting a disk rewrites only its structures, the underlying data often persists until overwritten by new data. Remanence is a serious concern for privacy and security: studies of second-hand hard drives have repeatedly recovered medical records, financial data and personal files from equipment that sellers believed had been wiped.</p>
+<h2>Forms</h2>
+<p>On magnetic hard drives, remanence arises both from ordinary undeleted data left in unallocated space and, in principle, from residual magnetization at track edges after overwriting. Peter Gutmann's influential 1996 paper argued that overwritten data might be recoverable with magnetic force microscopy, leading to multi-pass "Gutmann" wipe patterns; for modern high-density drives, however, a single overwrite pass is generally considered sufficient, a position reflected in later guidance, and Gutmann himself noted his method was often misapplied. Solid-state drives complicate erasure because wear levelling and over-provisioning hide blocks from the host: commands such as ATA Secure Erase and TRIM-based sanitize operations, or cryptographic erasure of a self-encrypting drive, are preferred where supported. Volatile memory also exhibits remanence — the <b>cold boot attack</b> exploits the fact that DRAM contents fade over seconds to minutes (longer when cooled), allowing keys and data to be extracted after a power cycle.</p>
+<h2>Mitigation</h2>
+<p>The US NIST Special Publication 800-88 categorizes media sanitization as <i>Clear</i> (logical techniques such as overwriting), <i>Purge</i> (degaussing, secure erase, cryptographic erase — rendering recovery infeasible even in a laboratory) and <i>Destroy</i> (shredding, incinerating, disintegrating). Degaussing erases magnetic media by exposure to a strong alternating field but does not work on flash storage. Full-disk encryption reduces risk substantially: if the key is destroyed, residual ciphertext is useless. Organizations handling sensitive data typically require documented sanitization before drives are reused, resold or discarded.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Data_erasure/index.html">Data erasure</a></li>
+<li><a href="../Cold_boot_attack/index.html">Cold boot attack</a></li>
+<li><a href="../Digital_forensics/index.html">Digital forensics</a></li>
+<li><a href="../Gutmann_method/index.html">Gutmann method</a></li>
+</ul>
+</div>
+</body>
+</html>

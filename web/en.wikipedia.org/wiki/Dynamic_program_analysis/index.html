@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dynamic program analysis - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+#content{max-width:960px;margin:0 auto;padding:1em 1.5em}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:0.2em}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em 1em;margin:0 0 1em 1em;font-size:0.9em;width:260px}
+.infobox th{text-align:left;vertical-align:top;padding-right:0.5em}
+.hero{display:block;margin:1em auto;max-width:640px}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;text-align:center;color:#72777d;font-size:0.85em}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Dynamic program analysis</h1>
+<p><b>Dynamic program analysis</b> is the act of analysing <a href="../Software/index.html">software</a> by executing programs on a real or virtual processor. For dynamic program analysis to be effective, the target program must be executed with sufficient test inputs to cover a variety of possible behaviours. Dynamic analysis is contrasted with <a href="../Static_program_analysis/index.html">static program analysis</a>, which examines code without running it.</p>
+<div class="thumb hero"><img src="images/dynamic-program-analysis.png" alt="A profiler output showing function timings from a running program"></div>
+<h2>Techniques</h2>
+<ul>
+<li><b>Profiling</b> — measuring time, memory use, and call frequency, with tools such as gprof and perf.</li>
+<li><b>Code coverage</b> — determining which statements, branches, or paths were executed by a test suite (e.g., gcov).</li>
+<li><b>Memory error detection</b> — tools such as <a href="../Valgrind/index.html">Valgrind</a> (Memcheck), AddressSanitizer, and Purify detect invalid reads/writes, leaks, and use-after-free errors.</li>
+<li><b>Thread error detection</b> — ThreadSanitizer and Helgrind detect data races and deadlocks.</li>
+<li><b>Taint analysis</b> — tracking the flow of untrusted data through a running program.</li>
+<li><b>Dynamic slicing and execution tracing</b> — recording execution histories for debugging and fault localization.</li>
+<li><b>Fuzzing</b> — supplying random or mutated inputs to provoke crashes (e.g., American fuzzy lop, libFuzzer), often combined with coverage guidance.</li>
+</ul>
+<h2>Implementation methods</h2>
+<p>Dynamic analysis is implemented through compile-time or binary <a href="../Instrumentation_(computer_programming)/index.html">instrumentation</a> (e.g., LLVM's sanitizers, Pin, DynamoRIO), through interpretation or emulation, through operating-system tracing facilities (ptrace, DTrace, eBPF), or through hardware performance counters. Instrumentation typically trades runtime overhead for detail; sampling profilers reduce overhead at the cost of precision.</p>
+<h2>Advantages and limitations</h2>
+<p>Because it observes real executions, dynamic analysis can detect errors that actually occur and avoid many false alarms of static analysis, but it can only report on paths that were executed, so results depend heavily on the quality of test inputs. It is a mainstay of software testing, performance engineering, and security auditing.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Static_program_analysis/index.html">Static program analysis</a></li>
+<li><a href="../Profiling_(computer_programming)/index.html">Profiling</a></li>
+<li><a href="../Valgrind/index.html">Valgrind</a></li>
+<li><a href="../Fuzzing/index.html">Fuzzing</a></li>
+</ul>
+</div>
+</body>
+</html>

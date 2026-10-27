@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Inference engine - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;padding:0 1em;color:#202122;background:#fff;line-height:1.6}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:1.8em;margin:0.5em 0 0.2em}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:1.4em;margin:1em 0 0.3em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{float:right;margin:0 0 1em 1em;border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;font-size:0.85em;text-align:center;width:280px}
+.hero img{width:272px;height:180px;background:#eaecf0;display:block}
+ul,ol{margin:0.3em 0 0.3em 1.6em;padding:0}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Inference engine</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="hero"><img src="images/inference-engine.png" alt="Diagram of facts and rules feeding an inference engine, labelled placeholder image"><br>Structure of a rule-based inference engine.</div>
+<p>In <a href="../Computer_science/index.html">computer science</a>, an <b>inference engine</b> is a component of a computer system that applies logical rules to a knowledge base to deduce new information. Inference engines are a core component of <a href="../Expert_system/index.html">expert systems</a>, in which the knowledge base typically consists of facts and if–then rules supplied by domain specialists. The inference engine interprets and evaluates the facts in the knowledge base in order to provide an answer, prediction, or decision.</p>
+<h2>Architecture</h2>
+<p>A classic inference engine operates over two components: the <b>knowledge base</b> (facts and rules) and <b>working memory</b> (assertions derived during a run). The engine cycles through matching rules whose conditions are satisfied by working memory, selecting among conflicting matches (conflict resolution), and firing the chosen rule, which adds new assertions or triggers actions. Efficient pattern matching is provided by algorithms such as <a href="../Rete_algorithm/index.html">Rete</a>, developed by Charles Forgy for the OPS5 production system.</p>
+<h2>Chaining strategies</h2>
+<h3>Forward chaining</h3>
+<p><b>Forward chaining</b> is data-driven: the engine starts from known facts and applies rules to derive everything that follows, until a goal statement is derived or no rules can fire. It suits monitoring, configuration, and classification tasks where all data is present at the outset.</p>
+<h3>Backward chaining</h3>
+<p><b>Backward chaining</b> is goal-driven: the engine starts from a hypothesis and works backwards, looking for rules that conclude the hypothesis and then trying to establish their premises, asking the user for facts it cannot derive. It is the strategy used by the logic programming language <a href="../Prolog/index.html">Prolog</a> and suits diagnostic and consultation tasks.</p>
+<h2>Applications</h2>
+<p>Inference engines powered landmark expert systems such as MYCIN (medical diagnosis), DENDRAL (chemical analysis), and XCON/R1 (computer configuration at DEC). Modern descendants include business-rules engines (such as Drools), production-rule systems (such as CLIPS, developed at NASA), and the reasoners used in the <a href="../Semantic_Web/index.html">semantic web</a> to infer class memberships and relationships from ontologies expressed in RDF and OWL. Description-logic reasoners classify large terminologies in medicine and biology.</p>
+<h2>Relation to theorem proving</h2>
+<p>Inference engines overlap with automated <a href="../Automated_theorem_proving/index.html">theorem provers</a>, but are typically optimised for practical rule sets and explanation facilities rather than completeness over arbitrary logical theories. Many provide an explanation subsystem that can show which rules fired, answering "why" and "how" questions from users — a feature considered essential for trust in advisory systems.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Expert_system/index.html">Expert system</a></li>
+<li><a href="../Knowledge_base/index.html">Knowledge base</a></li>
+<li><a href="../Forward_chaining/index.html">Forward chaining</a></li>
+<li><a href="../Backward_chaining/index.html">Backward chaining</a></li>
+<li><a href="../Logic_programming/index.html">Logic programming</a></li>
+</ul>
+</body>
+</html>

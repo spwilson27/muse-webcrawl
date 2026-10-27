@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cargo (Rust) - Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; color: #202122; background: #fff; }
+#content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 0.95em; }
+ul, pre { font-family: sans-serif; font-size: 0.95em; line-height: 1.6; }
+pre { font-family: monospace; background: #f8f9fa; border: 1px solid #eaecf0; padding: 0.8em; overflow-x: auto; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.6em 0.9em; margin: 0 0 1em 1.2em; font-family: sans-serif; font-size: 0.85em; max-width: 260px; }
+.infobox th { text-align: left; padding-right: 0.8em; vertical-align: top; }
+.hero { display: block; margin: 1em auto; max-width: 420px; width: 100%; background: #eaecf0; border: 1px solid #c8ccd1; min-height: 160px; }
+.caption { text-align: center; font-family: sans-serif; font-size: 0.8em; color: #54595d; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Cargo (Rust)</h1>
+<table class="infobox">
+<tr><th>Type</th><td>Package manager, build tool</td></tr>
+<tr><th>For</th><td>Rust programming language</td></tr>
+<tr><th>Registry</th><td>crates.io</td></tr>
+<tr><th>Manifest</th><td>Cargo.toml (TOML format)</td></tr>
+</table>
+<p><b>Cargo</b> is the build system and package manager for the Rust programming language. Cargo downloads a project's dependencies, compiles the project (libraries and binaries), runs tests, and produces distributable packages called <i>crates</i>. It is distributed together with Rust itself and is written in Rust.</p>
+<img class="hero" src="images/cargo-rust.png" alt="The Cargo package manager logo and a crate package">
+<p class="caption">Cargo manages Rust packages, known as crates.</p>
+<h2>Overview</h2>
+<p>A Cargo project is described by a manifest file, <code>Cargo.toml</code>, which lists the package name, version, edition of Rust, and its dependencies. Dependencies are resolved against the central registry, crates.io, using semantic versioning; the exact resolved versions are recorded in a lock file, <code>Cargo.lock</code>, so builds are reproducible.</p>
+<pre>$ cargo new hello_world
+$ cargo build
+$ cargo run
+$ cargo test
+$ cargo publish</pre>
+<h2>Features</h2>
+<ul>
+<li><b>Workspaces:</b> multiple related packages can share a lock file and build directory.</li>
+<li><b>Features:</b> optional, additive compile-time flags that enable optional dependencies or code paths.</li>
+<li><b>Build scripts:</b> a <code>build.rs</code> program run before compilation, used to link native libraries or generate code.</li>
+<li><b>Profiles:</b> debug and release profiles controlling optimization and debug information.</li>
+</ul>
+<h2>History</h2>
+<p>Cargo was developed alongside Rust by the Rust project, with Yehuda Katz among its early designers. The crates.io registry launched in 2014, and Cargo shipped with Rust 1.0 in May 2015. It has since become the standard way to build and share Rust software.</p>
+<h2>See also</h2>
+<ul>
+<li>Rust (programming language)</li>
+<li>Package manager</li>
+<li><a href="../Cascading_Style_Sheets/index.html">Cascading Style Sheets</a></li>
+</ul>
+</div>
+</body>
+</html>

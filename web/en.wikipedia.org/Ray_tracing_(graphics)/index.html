@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ray tracing (graphics) - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122}
+.wrap{max-width:960px;margin:0 auto;padding:20px 28px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:26px}
+h3{font-size:17px;font-weight:bold;margin-top:20px}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 14px 18px;padding:8px 12px}
+.infobox caption{font-weight:bold;font-size:14px;padding:4px}
+.infobox th{text-align:left;vertical-align:top;padding:3px 6px;color:#54595d}
+.infobox td{padding:3px 6px}
+.hero{display:block;max-width:320px;margin:10px 0;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px}
+.small{font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Ray tracing (graphics)</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<caption>Ray tracing</caption>
+<tr><th>Field</th><td>Computer graphics (rendering)</td></tr>
+<tr><th>Simulates</th><td>Reflection, refraction, shadows, global illumination</td></tr>
+<tr><th>Key papers</th><td>Whitted (1980); Kajiya's rendering equation (1986)</td></tr>
+<tr><th>Real-time hardware</th><td>NVIDIA RTX (2018), AMD RDNA 2, Apple M3</td></tr>
+</table>
+<img class="hero" src="images/Ray_tracing_(graphics).png" alt="Ray-traced image of glass spheres showing reflection and refraction">
+<p>In <a href="../3D_computer_graphics/index.html">3D computer graphics</a>, <b>ray tracing</b> is a technique for modelling light transport to generate digital images, by tracing the paths that light takes as pixels in an image plane and simulating the effects of its encounters with virtual objects. The technique is capable of producing a high degree of visual realism — accurate shadows, reflections, refractions, caustics, and soft global illumination — at a greater computational cost than the scanline <a href="../Rasterisation/index.html">rasterisation</a> long used for real-time graphics. Ray tracing has been the standard for film visual effects and architectural visualisation for decades, and since 2018 dedicated GPU hardware has made it viable in real-time video games.</p>
+
+<h2>How it works</h2>
+<p>The algorithm casts a <b>primary ray</b> from the virtual camera through each pixel into the scene and finds its nearest intersection with the geometry — typically accelerated by spatial data structures such as <a href="../Bounding_volume_hierarchy/index.html">bounding volume hierarchies</a> (BVH) or kd-trees. At each hit point, <b>secondary rays</b> are spawned: shadow rays toward light sources to test occlusion, reflection and refraction rays according to the material's properties, and — in <b>path tracing</b> — randomly scattered rays that sample the full space of light paths. The physical basis is the <b>rendering equation</b> (Kajiya, 1986), an integral equation describing energy equilibrium of light in a scene; Monte Carlo integration of it produces unbiased images that converge from grainy noise to clean results, with denoising algorithms (now often AI-assisted) accelerating convergence.</p>
+
+<h2>History</h2>
+<p>Ray casting for hidden-surface removal dates to Arthur Appel (1968); Turner Whitted's 1980 paper added recursive reflection, refraction, and shadows, defining classic ray tracing. The REYES rasteriser dominated film until physically based path tracers — Arnold, RenderMan's RIS, and others — took over in the 2000s–2010s, making ray-traced global illumination standard in animated features and VFX. On the hardware side, NVIDIA's Turing architecture (2018) introduced RT cores and the RTX platform, followed by AMD, Intel, console (PlayStation 5, Xbox Series X), and mobile support; APIs include DirectX Raytracing (DXR), Vulkan RT, and OptiX. Games such as <i>Cyberpunk 2077</i> and <i>Minecraft RTX</i> showcase fully path-traced modes.</p>
+
+<h2>Advantages and costs</h2>
+<p>Ray tracing handles effects that rasterisation approximates poorly: true multi-bounce diffuse lighting, curved reflections, refraction through glass, contact shadows, and area-light softness all fall out of the same simulation, and it scales to arbitrarily complex geometry via instancing and BVH. Its cost is computational — billions of ray–scene intersections per frame — mitigated by hardware acceleration, adaptive sampling, temporal accumulation, and machine-learning denoisers and upscalers (DLSS, FSR, XeSS). Hybrid pipelines that ray trace only selected effects remain common in real-time rendering.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Path_tracing/index.html">Path tracing</a></li>
+<li><a href="../Rendering_equation/index.html">Rendering equation</a></li>
+<li><a href="../Rasterisation/index.html">Rasterisation</a></li>
+<li><a href="../Global_illumination/index.html">Global illumination</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Memory management - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+#content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+figure.thumb { border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; margin: 0.5em 0; text-align: center; }
+figcaption { font-size: 85%; color: #54595d; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Memory management</h1>
+<p><b>Memory management</b> is the act of managing computer memory at the system level. It involves allocating portions of memory to programs at their request and freeing the memory for reuse when it is no longer needed. Essential functions include allocation and deallocation, tracking which parts of memory are in use, protection between processes, and — in systems with <a href="../Virtual_memory/index.html">virtual memory</a> — mapping virtual addresses to physical locations.</p>
+<figure class="thumb"><img src="images/memory-management.png" alt="Diagram of virtual memory being mapped to physical memory"></figure>
+<h2>Manual memory management</h2>
+<p>In languages such as C, the programmer explicitly allocates memory (e.g. with <code>malloc</code>) and frees it (with <code>free</code>) when done. This gives fine control and low overhead, but errors produce bugs such as <a href="../Memory_leak/index.html">memory leaks</a>, double frees and use-after-free, which can cause crashes and security vulnerabilities.</p>
+<h2>Automatic memory management</h2>
+<p>Most modern languages automate management with <a href="../Garbage_collection_(computer_science)/index.html">garbage collection</a>, in which the runtime identifies and reclaims memory that is no longer reachable. Alternatives include reference counting (used in Objective-C/Swift ARC, Python and COM) and region-based or ownership-based schemes, as in Rust, where the compiler enforces that each value has a single owner whose scope determines deallocation.</p>
+<h2>Operating system techniques</h2>
+<p>Operating systems manage physical memory through paging: memory is divided into fixed-size pages, and per-process page tables translate virtual addresses. Demand paging loads pages from disk only when accessed; page replacement algorithms such as least-recently-used decide which pages to evict when physical memory is exhausted. Kernel allocators use techniques such as buddy allocation and slab allocation to limit fragmentation.</p>
+<h2>Fragmentation</h2>
+<p>Repeated allocation and deallocation can fragment memory into unusable small gaps (external fragmentation), or waste space inside allocated blocks (internal fragmentation). Compaction, pooling and size-class allocators are used to mitigate these effects.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Memory_leak/index.html">Memory leak</a></li>
+<li><a href="../Virtual_memory/index.html">Virtual memory</a></li>
+<li><a href="../Paging/index.html">Paging</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Minimax - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;color:#202122;background:#fff}
+#content{max-width:960px;margin:0 auto;padding:24px;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 14px 18px;font-size:.88em;font-family:sans-serif}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;text-align:center;font-size:.85em;font-family:sans-serif}
+.thumb img{max-width:250px;width:100%;background:#eaecf0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:.85em;color:#54595d}
+code{font-family:monospace;background:#f8f9fa;padding:0 2px}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Minimax</h1>
+<p><b>Minimax</b> (sometimes <b>MinMax</b>, <b>MM</b> or <b>saddle point</b>) is a decision rule used in artificial intelligence, decision theory, game theory, statistics, and philosophy for <i>mini</i>mizing the possible loss for a worst case (<i>max</i>imum loss) scenario. When dealing with gains, it is referred to as "maximin" &mdash; to maximize the minimum gain. Originally formulated for several-player zero-sum game theory, covering both the cases where players take alternate moves and those where they make simultaneous moves, it has also been extended to more complex games and to general decision-making in the presence of uncertainty.</p>
+<div class="infobox">
+<table>
+<tr><th>Type</th><td>Decision rule / search algorithm</td></tr>
+<tr><th>Fields</th><td>Game theory, artificial intelligence, decision theory</td></tr>
+<tr><th>Origin</th><td>John von Neumann, minimax theorem (1928)</td></tr>
+<tr><th>Related</th><td>Alpha&ndash;beta pruning, expectimax, negamax</td></tr>
+</table>
+</div>
+<div class="thumb"><img src="images/Minimax.png" alt="Minimax"></div>
+<h2>Minimax theorem</h2>
+<p>The minimax theorem, proved by John von Neumann in 1928 and published in his work on game theory, states that for every finite two-player zero-sum game there exists a value V and a mixed strategy for each player such that, given player 2's strategy, the best payoff possible for player 1 is V, and given player 1's strategy, the best payoff possible for player 2 is &minus;V. Equivalently, player 1's strategy guarantees them a payoff of at least V regardless of player 2's strategy, and likewise for player 2.</p>
+<h2>Minimax algorithm</h2>
+<p>The minimax algorithm is a recursive algorithm for choosing the next move in an n-player game, usually a two-player game. A value is associated with each position or state of the game; this value is computed by means of a position evaluation function, and it indicates how good it would be for a player to reach that position. The player then makes the move that maximizes the minimum value of the position resulting from the opponent's possible following moves. In zero-sum games, the algorithm can be implemented with the negamax formulation, and its efficiency is greatly improved by alpha&ndash;beta pruning, which discards branches that cannot affect the final decision. The algorithm's worst-case complexity is O(b<sup>m</sup>) for branching factor b and search depth m, reduced to roughly O(b<sup>m/2</sup>) with ideal alpha&ndash;beta ordering.</p>
+<h2>Applications</h2>
+<p>Minimax underlies classical game-playing programs for chess, checkers, tic-tac-toe, and Go, usually combined with a heuristic evaluation function that estimates positions when the search is cut off. Variants such as expectimax handle games with chance elements. In decision theory, the maximin rule is used for choice under complete uncertainty, and in statistics a minimax estimator minimizes the maximum risk over all parameter values.</p>
+<h2>See also</h2>
+<p><a href="../Alpha-beta_pruning/index.html">Alpha&ndash;beta pruning</a> &middot; <a href="../Game_theory/index.html">Game theory</a> &middot; <a href="../Zero-sum_game/index.html">Zero-sum game</a> &middot; <a href="../Expectimax/index.html">Expectimax</a> &middot; <a href="../John_von_Neumann/index.html">John von Neumann</a></p>
+<p class="small">Categories: Game theory &middot; Search algorithms &middot; Decision theory</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Direct3D - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+#content{max-width:960px;margin:0 auto;padding:1em 1.5em}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:0.2em}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em 1em;margin:0 0 1em 1em;font-size:0.9em;width:260px}
+.infobox th{text-align:left;vertical-align:top;padding-right:0.5em}
+.hero{display:block;margin:1em auto;max-width:640px}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;text-align:center;color:#72777d;font-size:0.85em}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Direct3D</h1>
+<p><b>Direct3D</b> is a <a href="../Application_programming_interface/index.html">graphics application programming interface</a> (API) for <a href="../Microsoft_Windows/index.html">Microsoft Windows</a>. Part of <a href="../DirectX/index.html">DirectX</a>, Direct3D is used to render three-dimensional graphics in applications where performance is important, most notably computer games. Direct3D uses <a href="../Hardware_acceleration/index.html">hardware acceleration</a> if it is available on the graphics card, allowing the hardware acceleration of the entire 3D rendering pipeline or even only partial acceleration.</p>
+<div class="thumb hero"><img src="images/direct3d.png" alt="Direct3D logo and a rendered 3D scene"></div>
+<table class="infobox">
+<tr><th>Developer</th><td>Microsoft</td></tr>
+<tr><th>Initial release</th><td>1996 (with DirectX 3.0)</td></tr>
+<tr><th>Written in</th><td>C++</td></tr>
+<tr><th>Operating system</th><td>Microsoft Windows</td></tr>
+<tr><th>Type</th><td>3D graphics API</td></tr>
+</table>
+<h2>History</h2>
+<p>Direct3D 1.0 through 3.0 shipped as part of early DirectX releases in 1996, offering immediate mode and retained mode APIs. Direct3D 7 (1999) introduced hardware transform and lighting (T&amp;L) and cube environment mapping. Direct3D 8 (2000) unified the vertex and pixel programming models into the first widely used <a href="../Shader/index.html">shader</a> model. Direct3D 9 (2002) added longer shader programs and floating-point formats, and was the version bundled with Windows XP; its extended support life came through the widely deployed Direct3D 9Ex variant on Windows Vista.</p>
+<p>Direct3D 10, released with Windows Vista in 2006, was a ground-up redesign that required Shader Model 4.0 hardware and dropped fixed-function legacy support. Direct3D 11 (2009) introduced tessellation, multithreaded rendering, and compute shaders. Direct3D 12, released with Windows 10 in 2015, is a lower-level API that gives developers explicit control over command queues, resource states, and memory, in the spirit of APIs such as <a href="../Vulkan/index.html">Vulkan</a> and Apple's Metal.</p>
+<h2>Architecture</h2>
+<p>Applications issue drawing commands into command lists that are submitted to the GPU through a device context. The rendering pipeline processes vertex data through vertex shaders, primitive assembly, rasterization, and pixel (fragment) shaders before blending results into render targets. Direct3D 11 and later expose the pipeline through a state-object design intended to reduce driver overhead.</p>
+<h2>Direct3D 12</h2>
+<p>Direct3D 12 reduces CPU overhead by letting applications record command lists on multiple threads and manage synchronization explicitly via fences. Resources are described through descriptor heaps, and pipelines are bound as immutable pipeline state objects combined with mutable root signatures. While more verbose than its predecessors, the API allows engines to scale across many CPU cores and approach console-style efficiency on PC hardware.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../DirectX/index.html">DirectX</a></li>
+<li><a href="../OpenGL/index.html">OpenGL</a></li>
+<li><a href="../Vulkan/index.html">Vulkan</a></li>
+<li><a href="../High-Level_Shader_Language/index.html">High-Level Shader Language</a></li>
+</ul>
+</div>
+</body>
+</html>

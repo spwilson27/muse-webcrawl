@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Matched filter - Wikipedia</title>
+<style>
+body{font-family:sans-serif;font-size:14px;line-height:1.6;color:#202122;margin:0;padding:0 20px;background:#fff;max-width:960px;margin:0 auto}
+h1{font-family:serif;font-size:28px;border-bottom:1px solid #a7d7f9;padding-bottom:4px;margin:20px 0 8px 0;font-weight:normal}
+h2{font-family:serif;font-size:22px;border-bottom:1px solid #a2a9b1;margin:24px 0 8px 0;font-weight:normal}
+h3{font-size:17px;margin:18px 0 6px 0}
+p{margin:6px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:12.5px}
+.infobox th{text-align:left;background:#eaecf0;padding:4px}
+.infobox td{padding:4px}
+.hero{text-align:center;margin:12px 0}
+.hero img{background:#eaecf0;border:1px solid #a2a9b1;padding:30px;width:60%}
+.caption{font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Matched filter</h1>
+<p>In signal processing, a <b>matched filter</b> is a linear filter designed to detect the presence of a known signal (a template) embedded in noise. It is obtained by correlating the received signal with a time-reversed, conjugated copy of the template, and it maximises the output signal-to-noise ratio (SNR) in the presence of additive white noise — it is the optimal linear detector in that setting.</p>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Matched filter</th></tr>
+<tr><td>Field</td><td>Signal processing, detection theory</td></tr>
+<tr><td>Optimises</td><td>Output signal-to-noise ratio for a known waveform in white noise</td></tr>
+<tr><td>Impulse response</td><td>Time-reversed complex conjugate of the template signal</td></tr>
+<tr><td>Applications</td><td>Radar, sonar, communications, gravitational-wave astronomy, image processing</td></tr>
+</table>
+</div>
+<div class="hero"><img src="images/Matched_filter.png" alt="Placeholder image for a matched filter"></div>
+<p class="caption">Correlating a noisy signal with a known template concentrates signal energy into a detection peak.</p>
+<h2>Theory</h2>
+<p>If the received signal is a known waveform <i>s(t)</i> plus noise, the filter that maximises SNR at the sampling instant has impulse response <i>h(t) = s*(T − t)</i>: the template flipped in time and conjugated. The output SNR then equals the signal energy divided by the noise power spectral density, regardless of the waveform's shape — the filter "collects" all the signal's energy into one peak. The derivation follows from the Cauchy–Schwarz inequality. For coloured (non-white) noise, the signal is first whitened, giving a "generalised" matched filter.</p>
+<h2>Applications</h2>
+<p>Matched filtering is fundamental in radar and sonar, where it is used with pulse compression waveforms such as chirps: a long, low-power pulse is transmitted, and filtering on receive compresses its energy into a sharp peak, giving both range resolution and detectability. In digital communications, matched filtering at the receiver maximises SNR for each symbol and underlies the optimal demodulator. In gravitational-wave astronomy, observatories such as LIGO search their data by correlating it with banks of hundreds of thousands of predicted waveform templates (template matching). Cross-correlation in image processing — for example, finding a known pattern in a photograph — is the two-dimensional analogue.</p>
+<h2>Limitations</h2>
+<p>The matched filter requires knowing the target waveform in advance; signals deviating from the template are detected less efficiently, and highly manoeuvrable targets, Doppler shifts, and non-Gaussian noise can all degrade performance. In practice, banks of filters covering plausible variations of the signal are used.</p>
+<h2>See also</h2>
+<p><a href="../Signal-to-noise_ratio/index.html">Signal-to-noise ratio</a> &middot; <a href="../Pulse_compression/index.html">Pulse compression</a> &middot; <a href="../Cross-correlation/index.html">Cross-correlation</a> &middot; <a href="../Detection_theory/index.html">Detection theory</a> &middot; <a href="../Weiner_filter/index.html">Wiener filter</a></p>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kernel (operating system) - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;padding:0 1em;color:#202122;background:#fff;line-height:1.6}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:1.8em;margin:0.5em 0 0.2em}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:1.4em;margin:1em 0 0.3em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{float:right;margin:0 0 1em 1em;border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;font-size:0.85em;text-align:center;width:280px}
+.hero img{width:272px;height:180px;background:#eaecf0;display:block}
+ul,ol{margin:0.3em 0 0.3em 1.6em;padding:0}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Kernel (operating system)</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="hero"><img src="images/kernel-operating-system.png" alt="Diagram of a kernel mediating between applications and hardware, labelled placeholder image"><br>The kernel connects application software to the computer hardware.</div>
+<p>A <b>kernel</b> is a computer program at the core of a computer's <a href="../../../Operating_system/index.html">operating system</a> that always has complete control of the system. It is the portion of the operating-system code that is always resident in memory and facilitates interactions between hardware and software components. The kernel manages the system's resources, performs process scheduling and memory management, and provides controlled access to devices through device drivers and system calls.</p>
+<h2>Functions</h2>
+<p>The kernel's principal duties are <b>process management</b> (creating, scheduling, and terminating processes and threads), <b>memory management</b> (virtual memory, paging, and protection between address spaces), <b>device management</b> (through drivers and interrupt handling), and <b>system call</b> handling, which gives user programs a safe interface to request services. Many kernels also incorporate file systems, networking stacks, and inter-process communication facilities.</p>
+<h2>Design approaches</h2>
+<h3>Monolithic kernels</h3>
+<p>In a monolithic design, all operating-system services run together in kernel space, sharing one address space. This gives high performance but means a fault in any component can crash the whole system. Unix and <a href="../../../Linux_kernel/index.html">Linux</a> are prominent examples; Linux mitigates rigidity with loadable kernel modules.</p>
+<h3>Microkernels</h3>
+<p>A microkernel provides only minimal mechanisms — address spaces, threads, and inter-process communication — in privileged mode, running services such as drivers and file systems as user-space servers. This improves modularity and fault isolation at some cost in communication overhead. Examples include Mach, the L4 family, MINIX 3, and QNX.</p>
+<h3>Hybrid kernels</h3>
+<p>Hybrid designs, such as the Windows NT kernel and Apple's XNU (which combines Mach with BSD components), place some traditionally user-space services in the kernel for performance while retaining a modular structure.</p>
+<h2>Protection</h2>
+<p>Kernels execute in the processor's most privileged mode (kernel mode, ring 0 on x86), separated from user mode by hardware enforcement. A crash or "panic" in kernel space is unrecoverable without reboot, which is why kernels are written conservatively and subjected to heavy review. Modern systems add mitigations — address-space layout randomisation, stack canaries, and control-flow integrity — to harden this critical layer.</p>
+<h2>History</h2>
+<p>Early systems had resident monitors; the concept matured with multiprogramming systems of the 1960s such as OS/360 and Multics, and Brinch Hansen's RC 4000 nucleus (1969) is an early statement of the microkernel idea. The Tanenbaum–Torvalds debate of 1992 famously aired the monolithic-versus-microkernel argument as Linux was beginning.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../../Operating_system/index.html">Operating system</a></li>
+<li><a href="../../../Linux_kernel/index.html">Linux kernel</a></li>
+<li><a href="../../../Microkernel/index.html">Microkernel</a></li>
+<li><a href="../../../System_call/index.html">System call</a></li>
+<li><a href="../../../Virtual_memory/index.html">Virtual memory</a></li>
+</ul>
+</body>
+</html>

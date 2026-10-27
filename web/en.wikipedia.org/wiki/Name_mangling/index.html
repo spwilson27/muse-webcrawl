@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Name mangling - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 20px 24px 48px; }
+h1 { font-family: serif; font-weight: normal; font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 6px; }
+h2 { font-family: serif; font-weight: normal; font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 26px; }
+h3 { font-size: 16px; margin-top: 18px; }
+p, li { font-size: 14.5px; line-height: 1.6; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 13.5px; }
+.hero { display: block; margin: 12px 0; border: 1px solid #c8ccd1; background: #eaecf0; padding: 26px 12px; text-align: center; color: #54595d; font-size: 13px; max-width: 420px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.ref { color: #54595d; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Name mangling</h1>
+<p>In compiler construction, <b>name mangling</b> (also called name decoration) is a technique used to solve various problems caused by the need to resolve unique names for programming entities in many modern programming languages. It provides a way of encoding additional information in the name of a function, structure, class, or another data type in order to pass more semantic information from the compiler to the linker.</p>
+<img class="hero" src="images/Name_mangling.png" alt="A C++ function name before and after mangling">
+<h2>Why mangling is needed</h2>
+<p>Languages such as <a href="../C%2B%2B/index.html">C++</a> allow function overloading: several functions may share one name provided their parameter types differ. Traditional linkers, designed for C, expect every symbol to be unique. Mangling solves the conflict by folding the signature — namespace, class, and parameter types — into the symbol itself. The C++ function <code>void f(int)</code> might become <code>_Z1fi</code> under the Itanium ABI scheme, while <code>f(double)</code> becomes a different symbol.</p>
+<h2>Schemes and compatibility</h2>
+<p>There is no single standard for C++ name mangling. Microsoft Visual C++ uses a scheme beginning with <code>?</code>, while GCC and Clang on most platforms follow the Itanium C++ ABI, whose mangled names begin with <code>_Z</code>. Because schemes differ, object files produced by different compilers are often not link-compatible even on the same operating system. Tools such as <code>c++filt</code> demangle symbol names for debugging and profiling.</p>
+<h2>Other languages</h2>
+<p>Mangling also occurs elsewhere. Fortran compilers historically appended underscores to symbol names. Rust encodes crate and version information in its symbols. The Java Native Interface and C linkage declarations such as <code>extern "C"</code> deliberately suppress mangling so that symbols can be found across language boundaries.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Linker_(computing)/index.html">Linker (computing)</a></li>
+<li><a href="../Application_binary_interface/index.html">Application binary interface</a></li>
+<li><a href="../Function_overloading/index.html">Function overloading</a></li>
+<li><a href="../Symbol_table/index.html">Symbol table</a></li>
+</ul>
+<p class="ref">Categories: Compilers · Computer programming</p>
+</div>
+</body>
+</html>

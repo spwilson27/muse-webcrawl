@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bin packing problem - Wikipedia</title>
+<style>
+body{margin:0;font-family:Georgia,"Times New Roman",serif;color:#202122;background:#fff}
+header{border-bottom:1px solid #a7d7f9;padding:10px 20px;font-family:sans-serif}
+header .site{font-size:20px;font-weight:bold}
+header nav a{margin-right:12px;color:#0645ad;text-decoration:none;font-size:13px}
+main{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:0}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:24px;text-align:center;color:#54595d;font-family:sans-serif;margin:12px 0;box-sizing:border-box}
+.lead{font-size:16px}
+footer{border-top:1px solid #a2a9b1;margin-top:40px;padding:12px 20px;font-family:sans-serif;font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia</span><nav><a href="../index.html">Main page</a><a href="../Contents/index.html">Contents</a><a href="../Random_article/index.html">Random article</a></nav></header>
+<main>
+<h1>Bin packing problem</h1>
+<img class="hero" src="images/bin-packing-problem.png" alt="Diagram of items of different sizes packed into the smallest number of fixed-capacity bins">
+<p class="lead">The <b>bin packing problem</b> is an optimisation problem in computer science and operations research in which items of different sizes must be packed into a finite number of bins, each of a fixed capacity, in a way that minimises the number of bins used. It is a classic NP-hard problem with applications in logistics, resource allocation, and scheduling.</p>
+<h2>Formulation</h2>
+<p>Given a set of items with sizes between 0 and 1, and bins of capacity 1, the goal is to assign every item to a bin so that no bin's total exceeds capacity and the number of bins is as small as possible. The decision version — whether items fit into a given number of bins — is NP-complete, and the optimisation problem is NP-hard in the strong sense: unless P = NP, no polynomial-time algorithm can guarantee a solution using fewer than 3/2 times the optimal number of bins.</p>
+<h2>Heuristic algorithms</h2>
+<p>Because exact solutions are impractical for large inputs, many heuristics are used. In the <b>First Fit</b> heuristic, each item goes into the first bin that can hold it; <b>Next Fit</b> opens a new bin whenever an item does not fit in the current one; <b>Best Fit</b> places each item in the bin that leaves the least remaining space. Sorting items in decreasing size before applying these rules — First Fit Decreasing and Best Fit Decreasing — substantially improves performance, guaranteeing solutions within a constant factor of optimal. First Fit Decreasing, for example, never uses more than about 11/9 of the optimal number of bins plus a small additive term.</p>
+<h2>Online and offline versions</h2>
+<p>In the <i>offline</i> version all items are known in advance, permitting sorting strategies. In the <i>online</i> version items arrive one at a time and must be packed irrevocably, which models problems such as allocating arriving jobs to servers. Online algorithms are analysed by competitive ratio, and no online algorithm can do better than a factor of about 1.54 against an optimal offline packing.</p>
+<h2>Variants and applications</h2>
+<p>Variants include two- and three-dimensional packing (cutting stock and container loading), bins of varying sizes, and problems with item fragmentation. Applications range from loading shipping containers and cutting raw materials to scheduling television advertisements, allocating memory, and cloud computing, where virtual machines must be packed onto physical servers efficiently.</p>
+<h2>See also</h2>
+<p><a href="../Knapsack_problem/index.html">Knapsack problem</a> · <a href="../NP-hardness/index.html">NP-hardness</a> · <a href="../Cutting_stock_problem/index.html">Cutting stock problem</a> · <a href="../Approximation_algorithm/index.html">Approximation algorithm</a> · <a href="../Partition_problem/index.html">Partition problem</a></p>
+</main>
+<footer>This page was recreated from memory as part of the muse-webcrawl project. Content is a paraphrase of general knowledge about the subject.</footer>
+</body>
+</html>

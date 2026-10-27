@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Database normalization - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#fff;color:#202122;margin:0;padding:0 1em;line-height:1.6}
+#content{max-width:960px;margin:0 auto;padding:1em 0 3em}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:.85em;margin:0 0 1em 1em;padding:.4em}
+.infobox th{text-align:left;background:#eaecf0;padding:.2em}
+.infobox td,.infobox th{padding:.2em .4em;vertical-align:top}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:2em;text-align:center;color:#54595d;margin:1em 0}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Database normalization</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/database_normalization.png" alt="Hero image placeholder: decomposition of a table into normal forms">
+<table class="infobox">
+<tr><th colspan="2">Database normalization</th></tr>
+<tr><th>Proposed by</th><td>Edgar F. Codd (1970–1972)</td></tr>
+<tr><th>Applies to</th><td>Relational database design</td></tr>
+<tr><th>Goal</th><td>Reduce redundancy and update anomalies</td></tr>
+<tr><th>Normal forms</th><td>1NF, 2NF, 3NF, BCNF, 4NF, 5NF, 6NF, DKNF</td></tr>
+</table>
+<p><b>Database normalization</b> is a systematic approach to designing a <a href="../Relational_database/index.html">relational database</a> so as to reduce data redundancy and improve data integrity. Proposed by Edgar F. Codd as part of his relational model, normalization organises tables according to a series of <b>normal forms</b>, each imposing rules based on functional dependencies between attributes.</p>
+<h2>Objectives</h2>
+<p>An unnormalised design stores the same fact in many places, so updates may leave copies inconsistent (update anomalies) and make some facts impossible to record without others (insertion and deletion anomalies). Normalization decomposes tables so that each fact is stored once, and dependencies are enforced by keys.</p>
+<h2>Normal forms</h2>
+<p><b>First normal form (1NF)</b> requires atomic values and no repeating groups. <b>Second normal form (2NF)</b> removes partial dependencies on part of a composite key. <b>Third normal form (3NF)</b> removes transitive dependencies: every non-key attribute must depend on "the key, the whole key, and nothing but the key". <b>Boyce–Codd normal form (BCNF)</b> is a slightly stronger version of 3NF. Higher forms (4NF, 5NF) address multi-valued and join dependencies.</p>
+<h2>Practice</h2>
+<p>Most production designs target 3NF or BCNF. Deliberate <b>denormalization</b> — reintroducing redundancy — is sometimes used to improve read performance, at the cost of more complex updates.</p>
+<h2>See also</h2>
+<p><a href="../Relational_model/index.html">Relational model</a> &middot; <a href="../Functional_dependency/index.html">Functional dependency</a> &middot; <a href="../Denormalization/index.html">Denormalization</a> &middot; <a href="../Edgar_F._Codd/index.html">Edgar F. Codd</a></p>
+</div>
+</body>
+</html>

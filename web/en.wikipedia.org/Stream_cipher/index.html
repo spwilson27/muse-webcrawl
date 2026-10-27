@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Stream cipher - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:10px 24px}
+header .site{font-size:13px;color:#54595d;letter-spacing:.05em}
+main{max-width:960px;margin:0 auto;padding:16px 24px 48px}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:32px;border-bottom:1px solid #a2a9b1;margin:8px 0 12px;padding-bottom:4px}
+h2{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:24px;border-bottom:1px solid #a2a9b1;margin:28px 0 10px;padding-bottom:3px}
+p{margin:8px 0;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+figure{margin:12px 0}
+figure img{max-width:100%;border:1px solid #c8ccd1;background:#f8f9fa}
+figcaption{font-size:12px;color:#54595d;margin-top:4px}
+ul{font-size:15px}
+.small{font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<header><span class="site">WIKIPEDIA — The Free Encyclopedia</span></header>
+<main>
+<h1>Stream cipher</h1>
+<figure><img src="images/stream-cipher.png" alt="Diagram of a stream cipher combining keystream with plaintext"></figure>
+<p>A <b>stream cipher</b> is a symmetric key cipher in which plaintext digits are combined with a pseudorandom cipher digit stream (the <b>keystream</b>), typically by XOR, one bit or byte at a time. Unlike block ciphers, which encrypt fixed-size blocks, stream ciphers can encrypt data of arbitrary length and are well suited to continuous streams of data.</p>
+<h2>Operation</h2>
+<p>The keystream is generated from a secret key and usually an initialisation vector (IV) or nonce by a keystream generator — often built from linear-feedback shift registers, nonlinear feedback registers, or a block cipher or hash function in a streaming mode. Encryption and decryption are identical: the same keystream is regenerated and XORed with the ciphertext to recover the plaintext. A keystream must never be reused with the same key and nonce; doing so exposes the XOR of the two plaintexts.</p>
+<h2>Examples</h2>
+<ul>
+<li><b>RC4</b> — once ubiquitous in TLS and WEP; now deprecated because of statistical biases.</li>
+<li><b>A5/1 and A5/2</b> — used in GSM mobile telephony; both broken.</li>
+<li><b>Salsa20 and ChaCha</b> — modern designs; ChaCha20 is standardised for use in TLS as part of ChaCha20-Poly1305.</li>
+<li><b>Trivium, Grain and Mickey</b> — hardware-oriented finalists of the eSTREAM project.</li>
+<li>Block ciphers in counter (CTR) or output feedback (OFB) mode behave as stream ciphers.</li>
+</ul>
+<h2>Properties</h2>
+<p>Stream ciphers generally offer high speed, low hardware complexity and no error propagation — a corrupted ciphertext bit affects only the corresponding plaintext bit. They provide no integrity protection by themselves and are usually combined with a message authentication code in authenticated encryption constructions.</p>
+<p class="small">See also: <a href="../Block_cipher/index.html">Block cipher</a> · <a href="../ChaCha20-Poly1305/index.html">ChaCha20-Poly1305</a> · <a href="../One-time_pad/index.html">One-time pad</a></p>
+</main>
+</body>
+</html>

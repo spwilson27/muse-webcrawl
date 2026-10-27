@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Facade pattern</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;color:#202122;line-height:1.6}
+h1{font-family:sans-serif;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{font-family:sans-serif;border-bottom:1px solid #c8ccd1;padding-bottom:4px;margin-top:1.4em}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.9em;font-family:sans-serif}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+.hero{display:block;max-width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:24px;text-align:center;color:#54595d;font-family:sans-serif}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>Facade pattern</h1>
+<img class="hero" src="images/Facade_pattern.png" alt="UML diagram of the facade design pattern">
+<table class="infobox">
+<tr><th>Type</th><td>Structural design pattern</td></tr>
+<tr><th>Source</th><td><i>Design Patterns</i> (Gang of Four, 1994)</td></tr>
+<tr><th>Intent</th><td>Provide a unified, higher-level interface to a set of interfaces in a subsystem</td></tr>
+<tr><th>Related patterns</th><td>Adapter, Mediator, Abstract factory</td></tr>
+</table>
+<p>The <b>facade pattern</b> (also spelled façade) is a software design pattern commonly used in object-oriented programming. Analogous to a building's façade in architecture, a facade is an object that serves as a front-facing interface masking more complex underlying or structural code. It improves readability and usability of a library by masking interaction with complex components behind a single, simplified application programming interface (API), and reduces dependencies of outside code on the inner workings of a library.</p>
+<h2>Intent and structure</h2>
+<p>In <i>Design Patterns: Elements of Reusable Object-Oriented Software</i> (1994), the Gang of Four define the facade's intent: "Provide a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use." The facade class delegates client requests to the appropriate subsystem classes but does not hide them entirely — clients may still access subsystem classes directly when fine-grained control is needed.</p>
+<h2>Usage</h2>
+<p>Facades are commonly used to wrap poorly designed or legacy APIs, to present a simple interface over a complex class library (for example, a "compile" method that drives a compiler's scanner, parser, and code generator), to structure a system into layers, and to decouple clients from subsystem components so the subsystem can evolve independently. A facade differs from the adapter pattern, which converts one interface into another expected by the client, and from the mediator pattern, which centralizes communication between colleague objects.</p>
+<h2>Example</h2>
+<p>A home-theatre facade might expose a single <i>watchMovie()</i> operation that dims the lights, lowers the screen, powers the projector, amplifier, and streaming player, and sets the correct inputs — replacing a dozen manual steps the client would otherwise perform on each subsystem class directly.</p>
+<p>See also: <a href="../Software_design_pattern/index.html">Software design pattern</a>, <a href="../Adapter_pattern/index.html">Adapter pattern</a>, <a href="../API/index.html">API</a>.</p>
+</body>
+</html>

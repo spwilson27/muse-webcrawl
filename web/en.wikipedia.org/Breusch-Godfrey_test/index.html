@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Breusch-Godfrey test - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f6f6f6;color:#202122}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;background:#f8f9fa;border:1px solid #a2a9b1;padding:10px;margin:0 0 12px 16px;font-size:13px}
+.infobox th{text-align:left;padding-right:8px}
+.hero{display:block;max-width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:24px;text-align:center;color:#54595d;margin:12px 0}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Breusch–Godfrey test</h1>
+<p>The <b>Breusch–Godfrey test</b> is a statistical test for <a href="../Autocorrelation/index.html">autocorrelation</a> in the errors of a regression model. It makes use of the residuals from the model being considered in a regression analysis, and a test statistic is derived from these. The null hypothesis is that there is no serial correlation of any order up to a specified order <i>p</i>. The test was developed independently by Trevor Breusch and Leslie Godfrey in 1978. Because it is based on the Lagrange multiplier principle, it is also known as the <b>LM test for serial correlation</b>.</p>
+<span class="hero"><img src="images/breusch-godfrey-test.png" alt="Plotted regression residuals over time showing a pattern suggestive of serial correlation"></span>
+<table class="infobox">
+<tr><th>Type</th><td>Statistical hypothesis test (Lagrange multiplier)</td></tr>
+<tr><th>Proposed by</th><td>Trevor S. Breusch and Leslie G. Godfrey (1978)</td></tr>
+<tr><th>Null hypothesis</th><td>No autocorrelation up to order p</td></tr>
+<tr><th>Test statistic</th><td>(T − p)R², asymptotically χ²(p)</td></tr>
+<tr><th>Advantage</th><td>Valid with lagged dependent variables (unlike Durbin–Watson)</td></tr>
+</table>
+<h2>Procedure</h2>
+<p>Consider a linear regression <i>y</i><sub>t</sub> = β′<i>x</i><sub>t</sub> + <i>u</i><sub>t</sub>, estimated by ordinary least squares, with residuals <i>û</i><sub>t</sub>. The test proceeds by an auxiliary regression of the residuals on the original regressors and on <i>p</i> lagged residuals, <i>û</i><sub>t−1</sub>, …, <i>û</i><sub>t−p</sub>. If the sample size is <i>T</i>, the statistic (<i>T</i> − <i>p</i>)<i>R</i>² from this auxiliary regression follows, under the null of no autocorrelation, an asymptotic chi-squared distribution with <i>p</i> degrees of freedom. An F-test version of the auxiliary regression is often preferred in finite samples.</p>
+<h2>Advantages and limitations</h2>
+<p>Unlike the older <a href="../Durbin–Watson_statistic/index.html">Durbin–Watson test</a>, the Breusch–Godfrey test detects autocorrelation of arbitrary order (not just first-order) and remains valid when the regression includes lagged dependent variables, a setting in which Durbin–Watson is biased toward finding no autocorrelation. It also applies to moving-average errors, not only autoregressive ones. However, it is an asymptotic test and may have poor size or power in small samples; and it cannot identify which lag order is present without additional testing. Similar LM-based diagnostics include the Breusch–Pagan test for heteroskedasticity, developed by Breusch with Adrian Pagan in 1979.</p>
+<h2>Implementation</h2>
+<p>The test is implemented in most econometric software: as <code>bgodfrey</code> in R's lmtest package, <code>acorr_breusch_godfrey</code> in Python's statsmodels, <code>bgodfrey</code> in Stata, and in EViews and MATLAB's Econometrics Toolbox. It is a standard post-estimation diagnostic for time-series and dynamic panel regressions.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Durbin–Watson_statistic/index.html">Durbin–Watson statistic</a></li>
+<li><a href="../Ljung–Box_test/index.html">Ljung–Box test</a></li>
+<li><a href="../Autocorrelation/index.html">Autocorrelation</a></li>
+<li><a href="../Breusch–Pagan_test/index.html">Breusch–Pagan test</a></li>
+<li><a href="../Lagrange_multiplier_test/index.html">Lagrange multiplier test</a></li>
+</ul>
+</div>
+</body>
+</html>

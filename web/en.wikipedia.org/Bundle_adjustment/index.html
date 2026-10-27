@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bundle adjustment - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f6f6f6; color: #202122; }
+.mw-body { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-family: Georgia, 'Times New Roman', serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, 'Times New Roman', serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+p { line-height: 1.6; }
+.infobox { float: right; width: 270px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px; margin: 0 0 12px 16px; font-size: 90%; }
+.infobox th { background: #cedff2; padding: 4px; text-align: center; }
+.infobox td { padding: 3px 4px; vertical-align: top; }
+a { color: #0645ad; text-decoration: none; }
+.hero { text-align: center; margin: 12px 0; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Bundle adjustment</h1>
+<div class="hero"><img src="images/bundle-adjustment.png" alt="Rays from multiple cameras converging on 3D points in a bundle adjustment diagram"></div>
+<p>In photogrammetry and computer vision, <b>bundle adjustment</b> is the problem of refining a visual reconstruction to produce jointly optimal estimates of 3D structure and viewing parameters — camera positions, orientations and calibrations. The name refers to the "bundles" of light rays leaving each 3D feature and converging on each camera centre, which are adjusted together to minimise the reprojection error: the difference between observed image points and the projections of their reconstructed 3D counterparts.</p>
+<h2>Formulation</h2>
+<p>Bundle adjustment is typically cast as a nonlinear least-squares problem, minimising the sum of squared reprojection errors over all cameras and points. It is usually solved with iterative algorithms such as Levenberg–Marquardt. Although the problem is large — thousands of cameras and millions of points — the normal equations have a sparse block structure (the Jacobian involves each point with only the cameras that observe it), and exploiting this sparsity via the Schur complement makes large problems tractable.</p>
+<h2>Applications</h2>
+<p>Bundle adjustment is the final refinement step in most <a href="../Structure_from_motion/index.html">structure from motion</a> pipelines, and is used in aerial photogrammetry, 3D modelling from photographs, visual SLAM, augmented reality and the calibration of camera networks. It has been standard in photogrammetry since the mid-20th century and was adopted by computer vision researchers in the 1990s and 2000s.</p>
+<h2>See also</h2>
+<p><a href="../Structure_from_motion/index.html">Structure from motion</a> · <a href="../Photogrammetry/index.html">Photogrammetry</a> · <a href="../Levenberg–Marquardt_algorithm/index.html">Levenberg–Marquardt algorithm</a> · <a href="../Simultaneous_localization_and_mapping/index.html">Simultaneous localization and mapping</a></p>
+</div>
+</body>
+</html>

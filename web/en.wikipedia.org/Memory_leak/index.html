@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Memory leak - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+#content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+figure.thumb { border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; margin: 0.5em 0; text-align: center; }
+figcaption { font-size: 85%; color: #54595d; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Memory leak</h1>
+<p>In computer science, a <b>memory leak</b> is a type of resource leak that occurs when a computer program incorrectly manages memory allocations, so that memory which is no longer needed is not released. A memory leak reduces the performance of the computer by reducing the amount of available memory, and in the worst case can cause the program — or the whole system — to crash or be terminated by the operating system.</p>
+<figure class="thumb"><img src="images/memory-leak.png" alt="Graph showing memory usage growing steadily from a leak"></figure>
+<h2>Causes</h2>
+<p>Leaks are most common in languages with manual memory management, such as C and C++, where a program allocates heap memory with functions like <code>malloc</code> but never calls <code>free</code>. They can also occur in garbage-collected languages when a program keeps unintended references to objects — for example by storing them in a long-lived cache or failing to deregister event listeners — preventing the garbage collector from reclaiming them.</p>
+<h2>Consequences</h2>
+<p>A slow leak may be unnoticeable in a short-lived process, because the operating system reclaims all of a process's memory when it exits. In long-running systems such as servers, daemons and operating system kernels, even a small leak per operation accumulates: the process's memory footprint grows until the system begins swapping or the out-of-memory manager kills the process.</p>
+<h2>Detection and prevention</h2>
+<p>Tools such as Valgrind, AddressSanitizer and various heap profilers help detect leaks. Preventive techniques include disciplined ownership conventions, reference counting, smart pointers and RAII in C++, and automatic <a href="../Garbage_collection_(computer_science)/index.html">garbage collection</a> in languages such as Java, C# and Go. Related resource leaks include file-handle leaks and connection leaks.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Memory_management/index.html">Memory management</a></li>
+<li><a href="../Dangling_pointer/index.html">Dangling pointer</a></li>
+<li><a href="../Garbage_collection_(computer_science)/index.html">Garbage collection (computer science)</a></li>
+</ul>
+</div>
+</body>
+</html>

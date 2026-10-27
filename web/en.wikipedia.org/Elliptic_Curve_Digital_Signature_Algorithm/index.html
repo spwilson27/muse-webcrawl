@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Elliptic Curve Digital Signature Algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:12px 24px}
+header h1{font-size:1.6em;margin:0;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+main{max-width:860px;margin:0 auto;padding:16px 24px}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+h3{font-size:1.1em;margin-top:1em}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.88em;margin:0 0 12px 16px;padding:8px}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+.infobox caption{font-weight:bold;background:#eaf3ff;padding:4px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{max-width:100%;border:1px solid #c8ccd1;background:#f8f9fa}
+figure{margin:0 0 12px 0}
+figcaption{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<header><h1>Elliptic Curve Digital Signature Algorithm</h1></header>
+<main>
+<figure><img class="hero" src="images/ecdsa.png" alt="Illustration of a digital signature being generated and verified with an elliptic curve key pair"></figure>
+<table class="infobox">
+<caption>ECDSA</caption>
+<tr><th>Type</th><td>Digital signature scheme</td></tr>
+<tr><th>Based on</th><td><a href="../Digital_Signature_Algorithm/index.html">Digital Signature Algorithm</a>, elliptic curves</td></tr>
+<tr><th>Standard</th><td>FIPS 186, ANSI X9.62</td></tr>
+<tr><th>First published</th><td>1992 (proposed by Scott Vanstone)</td></tr>
+<tr><th>Used in</th><td>Bitcoin, TLS certificates, SSH, code signing</td></tr>
+</table>
+<p>The <b>Elliptic Curve Digital Signature Algorithm</b> (<b>ECDSA</b>) is a variant of the Digital Signature Algorithm (DSA) which uses elliptic-curve cryptography. It offers equivalent security to other signature schemes with significantly smaller key sizes, which makes it attractive for constrained environments and high-volume systems.</p>
+<h2>Key and signature generation</h2>
+<p>A signer's private key is a random integer <i>d</i> in the range of the curve group's order, and the public key is the point <i>Q = dG</i>. To sign a message, the signer hashes the message, selects a fresh random nonce <i>k</i>, computes the point <i>kG</i>, and derives the signature pair (<i>r</i>, <i>s</i>) from the point's x-coordinate and the hash. Verification uses the public key to check that a recomputed point matches the value implied by <i>r</i>.</p>
+<h2>Security considerations</h2>
+<p>The nonce <i>k</i> must be unique and unpredictable for every signature. Reusing <i>k</i> for two different messages reveals the private key by simple algebra — a failure famously exploited in the 2010 PlayStation 3 compromise, where Sony used a constant value. This risk motivated deterministic nonce generation (RFC 6979), which derives <i>k</i> from the private key and message hash.</p>
+<p>ECDSA signatures are also malleable: if (<i>r</i>, <i>s</i>) is valid, so is (<i>r</i>, <i>n − s</i>). Bitcoin addressed this in transaction validation rules, and later systems such as BIP-62 and SegWit reduced its impact.</p>
+<h2>Applications</h2>
+<p>ECDSA is used to authorize transactions in Bitcoin and many other cryptocurrencies, typically over the secp256k1 curve. It is widely deployed in X.509 certificates for TLS, in SSH host and user keys, in smart cards, and in software code signing. Certicom's Scott Vanstone proposed the algorithm in 1992, and it was standardized by ANSI in 1999 and by NIST in FIPS 186.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Elliptic-curve_Diffie–Hellman/index.html">Elliptic-curve Diffie–Hellman</a></li>
+<li><a href="../EdDSA/index.html">EdDSA</a></li>
+<li><a href="../Digital_signature/index.html">Digital signature</a></li>
+<li><a href="../Schnorr_signature/index.html">Schnorr signature</a></li>
+</ul>
+</main>
+</body>
+</html>

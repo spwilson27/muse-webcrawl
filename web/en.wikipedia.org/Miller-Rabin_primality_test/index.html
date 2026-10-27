@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Miller–Rabin primality test - Wikipedia</title>
+<style>
+body{font-family:sans-serif;line-height:1.6;color:#202122;margin:0 auto;max-width:960px;padding:16px;background:#fff}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:1.2em}
+h3{font-size:1.1em;margin-top:1em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+.infobox caption{font-weight:bold;text-align:center;padding-bottom:4px}
+img.hero{display:block;max-width:320px;width:100%;border:1px solid #a2a9b1;background:#eaecf0;padding:4px;margin:8px 0}
+.caption{font-size:0.85em;color:#54595d}
+ul,ol{margin:0.4em 0 0.4em 1.6em;padding:0}
+code{font-family:monospace;background:#f8f9fa;padding:0 2px}
+</style>
+</head>
+<body>
+<h1>Miller–Rabin primality test</h1>
+<p>The <b>Miller–Rabin primality test</b> is a probabilistic algorithm for determining whether a given number is prime. It was developed from Gary Miller's deterministic test (1976), which relied on the unproven generalised Riemann hypothesis, by Michael O. Rabin (1980), who turned it into an unconditional Monte Carlo algorithm. Like the Fermat and Solovay–Strassen tests, it works by finding "witnesses" to compositeness; unlike them, it never misidentifies primes and has a provably small error probability, making it the standard practical primality test used in cryptography.</p>
+<img class="hero" src="images/Miller-Rabin_primality_test.png" alt="Diagram of modular exponentiation rounds in the Miller–Rabin test">
+<p class="caption">Each round of the test either proves compositeness or boosts confidence in primality.</p>
+
+<h2>Algorithm</h2>
+<p>To test an odd integer <i>n</i> &gt; 2, write <i>n</i> − 1 = 2<sup><i>s</i></sup>·<i>d</i> with <i>d</i> odd. Choose a base <i>a</i> in [2, <i>n</i> − 2]. Compute <i>x</i> = <i>a</i><sup><i>d</i></sup> mod <i>n</i>. If <i>x</i> = 1 or <i>x</i> = <i>n</i> − 1, the round is inconclusive. Otherwise square <i>x</i> up to <i>s</i> − 1 times; if it never reaches <i>n</i> − 1, then <i>n</i> is certainly composite and <i>a</i> is a witness. If <i>n</i> is composite, at least three quarters of all bases are witnesses, so <i>k</i> independent rounds bound the error probability by 4<sup>−<i>k</i></sup>.</p>
+
+<h2>Deterministic variants</h2>
+<p>For numbers of bounded size, testing a small fixed set of bases is sufficient and exact. For example, testing bases {2, 3, 5, 7, 11, 13} decides primality for all <i>n</i> &lt; 3.3 × 10<sup>14</sup>, and seven particular bases (2, 325, 9375, 28178, 450775, 9780504, 1795265022) give an exact test for all 64-bit integers. Under the generalised Riemann hypothesis, testing all bases up to 2(ln <i>n</i>)<sup>2</sup> is deterministic and polynomial-time.</p>
+
+<h2>Applications</h2>
+<p>Miller–Rabin is the workhorse of key generation in RSA, Diffie–Hellman and elliptic-curve systems, where random primes of hundreds or thousands of bits must be found quickly; implementations in OpenSSL, Java's <code>BigInteger.isProbablePrime</code> and Python's <code>sympy</code> rely on it, often combined with trial division by small primes first. Although the AKS test (2002) proved primality testing is possible in deterministic polynomial time, it remains far slower in practice.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Primality_test/index.html">Primality test</a></li>
+<li><a href="../AKS_primality_test/index.html">AKS primality test</a></li>
+<li><a href="../Fermat_primality_test/index.html">Fermat primality test</a></li>
+<li><a href="../Solovay–Strassen_primality_test/index.html">Solovay–Strassen primality test</a></li>
+<li><a href="../Prime_number/index.html">Prime number</a></li>
+</ul>
+</body>
+</html>

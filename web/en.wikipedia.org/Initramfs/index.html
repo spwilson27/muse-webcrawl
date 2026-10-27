@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>initramfs - Wikipedia</title>
+<style>body{font-family:sans-serif;line-height:1.6;margin:0;color:#202122;background:#fff}.content{max-width:960px;margin:0 auto;padding:20px}h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1}.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 16px 16px;font-size:90%}.infobox th{text-align:left;background:#eaecf0;padding:4px}.infobox td{padding:4px}a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}.hero{display:block;background:#eaecf0;border:1px solid #a2a9b1;text-align:center;padding:24px;margin:16px 0;color:#54595d}code{font-family:monospace;background:#f8f9fa}</style>
+</head><body><div class="content">
+<h1>initramfs</h1>
+<div class="hero"><img src="images/initramfs.png" alt="Linux boot process diagram showing initramfs"></div>
+<table class="infobox"><tr><th colspan="2">initramfs</th></tr>
+<tr><th>Operating system</th><td>Linux</td></tr>
+<tr><th>Type</th><td>Initial root file system</td></tr>
+<tr><th>Format</th><td>cpio archive (often compressed)</td></tr>
+<tr><th>Predecessor</th><td>initrd</td></tr></table>
+<p><b>initramfs</b> (initial RAM file system) is a scheme for loading a temporary root file system into memory in the early stages of the Linux boot process. It provides a minimal environment, including an <code>init</code> program and necessary kernel modules and tools, so that the real root file system can be prepared and mounted.</p>
+<h2>Purpose</h2>
+<p>The real root file system may reside on an encrypted volume, a logical volume (LVM), a RAID array, or a network share, none of which the kernel can necessarily access on its own. The initramfs contains the drivers and utilities needed to unlock, assemble, and mount that file system. Once the real root is mounted, control passes to it via <code>switch_root</code>, and the normal init system (such as systemd) starts.</p>
+<h2>Construction</h2>
+<p>An initramfs image is a (usually compressed) cpio archive. Distributions generate it with tools such as dracut or mkinitcpio, and update it whenever the kernel is updated. The boot loader (such as GRUB) loads both the kernel and the initramfs image into memory.</p>
+<h2>Comparison with initrd</h2>
+<p>The older initrd (initial ramdisk) treated the image as a block device formatted with a conventional file system, which had to be copied and mounted. initramfs instead unpacks the archive directly into the kernel's rootfs, a special instance of a RAM-based file system, which is simpler and more efficient.</p>
+<h2>See also</h2>
+<p><a href="../Linux_kernel/index.html">Linux kernel</a> · <a href="../Booting/index.html">Booting</a> · <a href="../Dracut/index.html">dracut</a> · <a href="../Systemd/index.html">systemd</a></p>
+</div></body></html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Finite volume method - Wikipedia</title>
+<style>
+body{font-family:sans-serif;font-size:14px;line-height:1.6;color:#202122;margin:0;padding:16px 24px;max-width:960px}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:28px;margin-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:21px;margin-top:24px}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;width:280px;font-size:13px}
+.infobox th{background:#e8eaed;text-align:left;padding:4px}
+.infobox td{padding:4px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:12px 0}
+.small{font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Finite volume method</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/Finite_volume_method.png" alt="A computational mesh of finite volumes (image placeholder)">
+<table class="infobox">
+<tr><th colspan="2">Finite volume method</th></tr>
+<tr><td><b>Field</b></td><td>Computational fluid dynamics; numerical analysis</td></tr>
+<tr><td><b>Type</b></td><td>Discretisation method for partial differential equations</td></tr>
+<tr><td><b>Key property</b></td><td>Local conservation of fluxes</td></tr>
+<tr><td><b>Related methods</b></td><td><a href="../Finite_difference_method/index.html">Finite difference method</a>; <a href="../Finite_element_method/index.html">finite element method</a></td></tr>
+</table>
+<p>The <b>finite volume method</b> (<b>FVM</b>) is a method for representing and evaluating <a href="../Partial_differential_equation/index.html">partial differential equations</a> in the form of algebraic equations. In the finite volume method, volume integrals in a partial differential equation that contain a divergence term are converted to surface integrals, using the divergence theorem. These terms are then evaluated as fluxes at the surfaces of each finite volume.</p>
+<p>Because the flux entering a given volume is identical to that leaving the adjacent volume, these methods are conservative. Another advantage of the finite volume method is that it can be used on unstructured polygonal meshes, and it handles complex geometries naturally. The method is used in many <a href="../Computational_fluid_dynamics/index.html">computational fluid dynamics</a> packages, including OpenFOAM, FLUENT and SU2.</p>
+<h2>Formulation</h2>
+<p>The domain is subdivided into a finite number of small control volumes. The governing conservation law is integrated over each control volume; the divergence theorem converts the volume integral of divergence into a balance of fluxes through the control surface. The resulting equations express the principle that, for each cell, the rate of change of the conserved quantity equals the net flux into the cell plus any source terms.</p>
+<h2>Discretisation</h2>
+<p>Values are stored at cell centres (in the common cell-centred formulation), and the fluxes at cell faces are approximated using interpolation schemes such as upwind, central differencing, or higher-order flux-limited schemes. The choice of scheme affects the accuracy and stability of the solution; total variation diminishing (TVD) schemes are popular for flows with shocks and discontinuities.</p>
+<h2>Comparison with other methods</h2>
+<p>Unlike the finite difference method, which approximates derivatives directly at grid points, and the finite element method, which uses weighted residual formulations, the finite volume method is built on the integral form of the conservation equations and therefore guarantees local and global conservation of mass, momentum and energy by construction.</p>
+<p class="small">See also: <a href="../Computational_fluid_dynamics/index.html">Computational fluid dynamics</a> · <a href="../Godunov%27s_scheme/index.html">Godunov's scheme</a> · <a href="../Conservation_law/index.html">Conservation law</a></p>
+</body>
+</html>

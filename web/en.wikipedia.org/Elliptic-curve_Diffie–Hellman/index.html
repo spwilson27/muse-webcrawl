@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Elliptic-curve Diffie–Hellman - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:12px 24px}
+header h1{font-size:1.6em;margin:0;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+main{max-width:860px;margin:0 auto;padding:16px 24px}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+h3{font-size:1.1em;margin-top:1em}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.88em;margin:0 0 12px 16px;padding:8px}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+.infobox caption{font-weight:bold;background:#eaf3ff;padding:4px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{max-width:100%;border:1px solid #c8ccd1;background:#f8f9fa}
+figure{margin:0 0 12px 0}
+figcaption{font-size:0.85em;color:#54595d}
+code{font-family:monospace;background:#f8f9fa;padding:0 3px}
+</style>
+</head>
+<body>
+<header><h1>Elliptic-curve Diffie–Hellman</h1></header>
+<main>
+<figure><img class="hero" src="images/elliptic-curve-diffie-hellman.png" alt="Diagram of an elliptic curve with two points representing the shared secret computation"></figure>
+<table class="infobox">
+<caption>Elliptic-curve Diffie–Hellman</caption>
+<tr><th>Type</th><td>Key agreement protocol</td></tr>
+<tr><th>Based on</th><td><a href="../Elliptic_curve_cryptography/index.html">Elliptic-curve cryptography</a></td></tr>
+<tr><th>Security basis</th><td>Elliptic-curve discrete logarithm problem</td></tr>
+<tr><th>Common curves</th><td>Curve25519, NIST P-256, secp256k1</td></tr>
+<tr><th>Used in</th><td>TLS, Signal Protocol, SSH, WireGuard</td></tr>
+</table>
+<p><b>Elliptic-curve Diffie–Hellman</b> (<b>ECDH</b>) is a key agreement protocol that allows two parties, each having an elliptic-curve public–private key pair, to establish a shared secret over an insecure channel. It is a variant of the Diffie–Hellman key exchange that uses the mathematics of elliptic curves rather than modular exponentiation in a finite field.</p>
+<h2>Key establishment process</h2>
+<p>Before the protocol can be run, the two parties must agree on the parameters of the elliptic curve: the finite field over which the curve is defined, the curve equation, and a generator point <i>G</i> of prime order. Each party then generates a private key <i>d</i>, a randomly selected integer, and computes a public key <i>Q = dG</i>, where the multiplication is the scalar multiplication of the generator point.</p>
+<p>Alice computes <i>K = d<sub>A</sub> Q<sub>B</sub></i> using her own private key and Bob's public key, while Bob computes <i>K = d<sub>B</sub> Q<sub>A</sub></i>. Because scalar multiplication is associative in the relevant sense, both arrive at the same point: <i>d<sub>A</sub> d<sub>B</sub> G</i>. The shared secret is typically the x-coordinate of this point, which is then passed through a key derivation function to produce symmetric encryption keys.</p>
+<h2>Security</h2>
+<p>The security of ECDH rests on the difficulty of the elliptic-curve discrete logarithm problem: given <i>G</i> and <i>Q = dG</i>, it is computationally infeasible to recover <i>d</i> for well-chosen curves. ECDH provides much shorter key sizes than classical Diffie–Hellman for equivalent security; a 256-bit elliptic-curve key offers security comparable to a 3072-bit finite-field key.</p>
+<p>ECDH by itself does not authenticate either party and is therefore vulnerable to man-in-the-middle attacks if used alone. In practice it is combined with digital signatures, as in the TLS handshake, or with pre-shared identity keys, as in the Signal protocol's X3DH handshake. Implementations must also validate that received public keys are points on the correct curve to prevent invalid-curve attacks.</p>
+<h2>Usage</h2>
+<p>Ephemeral ECDH (ECDHE) is the standard key exchange in modern <a href="../Transport_Layer_Security/index.html">TLS</a> connections, providing forward secrecy. Curve25519, designed by Daniel J. Bernstein, is widely used through the X25519 function and appears in SSH, WireGuard, and many messaging applications. NIST curves such as P-256 and P-384 remain common in enterprise and government systems.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Diffie-Hellman_key_exchange/index.html">Diffie–Hellman key exchange</a></li>
+<li><a href="../Elliptic_curve_cryptography/index.html">Elliptic-curve cryptography</a></li>
+<li><a href="../Curve25519/index.html">Curve25519</a></li>
+<li><a href="../ECDSA/index.html">ECDSA</a></li>
+</ul>
+</main>
+</body>
+</html>

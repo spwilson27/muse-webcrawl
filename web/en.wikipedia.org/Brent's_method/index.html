@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Brent's method - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f6f6f6;color:#202122}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;background:#f8f9fa;border:1px solid #a2a9b1;padding:10px;margin:0 0 12px 16px;font-size:13px}
+.infobox th{text-align:left;padding-right:8px}
+.hero{display:block;max-width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:24px;text-align:center;color:#54595d;margin:12px 0}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Brent's method</h1>
+<p>In <a href="../Numerical_analysis/index.html">numerical analysis</a>, <b>Brent's method</b> is a root-finding algorithm that combines the robustness of the <a href="../Bisection_method/index.html">bisection method</a> with the speed of the secant method and inverse quadratic interpolation. It was developed by Australian mathematician Richard Peirson Brent in 1973, building on an earlier algorithm by Dutch mathematician Theodorus Dekker (1969), and is therefore sometimes called the <b>Brent–Dekker method</b>. Brent's method is the standard bracketing root-finder in many numerical libraries and is the basis of the widely used <code>fzero</code> routine in <a href="../MATLAB/index.html">MATLAB</a> and of implementations in <a href="../SciPy/index.html">SciPy</a>, the GNU Scientific Library and <a href="../Numerical_Recipes/index.html">Numerical Recipes</a>.</p>
+<span class="hero"><img src="images/brents-method.png" alt="Graph of successive bracketing approximations converging on a root"></span>
+<table class="infobox">
+<tr><th>Type</th><td>Root-finding algorithm (bracketing)</td></tr>
+<tr><th>Author</th><td>Richard P. Brent (1973), after T. J. Dekker (1969)</td></tr>
+<tr><th>Combines</th><td>Bisection, secant method, inverse quadratic interpolation</td></tr>
+<tr><th>Convergence</th><td>Guaranteed for continuous functions with a sign-changing bracket; superlinear in practice</td></tr>
+<tr><th>Requirements</th><td>Function continuous on [a, b] with f(a)·f(b) &lt; 0</td></tr>
+</table>
+<h2>How it works</h2>
+<p>Like bisection, Brent's method maintains an interval [a, b] that brackets a root — the function values at the endpoints have opposite signs. At each step it proposes a new point by inverse quadratic interpolation through the three most recent points (or the secant method if only two distinct points are available). The proposal is <i>accepted</i> only if it lies safely inside the bracket and is making adequate progress; otherwise the algorithm falls back to a bisection step. Acceptance tests involving the size of the previous step — the heart of Brent's refinement of Dekker's method — guarantee convergence not much slower than bisection in the worst case, while retaining fast, often superlinear, convergence on smooth functions.</p>
+<h2>Comparison with other methods</h2>
+<p>Newton's method converges quadratically but requires derivatives and can diverge without a good starting guess; the secant method avoids derivatives but can also leave the bracket. Brent's method needs no derivatives, never loses the bracket, and typically needs only a handful more evaluations than the secant method. These properties made it the default general-purpose scalar root-finder: Numerical Recipes calls it the method of choice for functions that can be bracketed. Related later algorithms, such as Chandrupatla's method (1997) and the ITP method (2020), aim to improve worst-case guarantees further.</p>
+<h2>The zbrent implementation</h2>
+<p>The best-known implementation, <code>zbrent</code> from <i>Numerical Recipes</i>, encodes the algorithm in a few dozen lines and has been ported to most scientific languages; Brent's original ALGOL 60 and Fortran versions appear in his 1973 book <i>Algorithms for Minimization Without Derivatives</i>, which treats the companion problem of minimising a function of one variable by a related method also named after Brent.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Bisection_method/index.html">Bisection method</a></li>
+<li><a href="../Secant_method/index.html">Secant method</a></li>
+<li><a href="../Newton's_method/index.html">Newton's method</a></li>
+<li><a href="../False_position_method/index.html">False position method</a></li>
+<li><a href="../Richard_Brent_(scientist)/index.html">Richard Brent (scientist)</a></li>
+</ul>
+</div>
+</body>
+</html>

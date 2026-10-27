@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Divide-and-conquer algorithm - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+#content{max-width:960px;margin:0 auto;padding:1em 1.5em}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:0.2em}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em 1em;margin:0 0 1em 1em;font-size:0.9em;width:260px}
+.infobox th{text-align:left;vertical-align:top;padding-right:0.5em}
+.hero{display:block;margin:1em auto;max-width:640px}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;text-align:center;color:#72777d;font-size:0.85em}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Divide-and-conquer algorithm</h1>
+<p>In <a href="../Computer_science/index.html">computer science</a>, <b>divide and conquer</b> is an <a href="../Algorithm/index.html">algorithm</a> design paradigm. A divide-and-conquer algorithm <a href="../Recursion_(computer_science)/index.html">recursively</a> breaks down a problem into two or more sub-problems of the same or related type, until these become simple enough to be solved directly. The solutions to the sub-problems are then combined to give a solution to the original problem.</p>
+<div class="thumb hero"><img src="images/divide-and-conquer.png" alt="Recursion tree of a divide-and-conquer algorithm splitting a problem into subproblems"></div>
+<h2>The three steps</h2>
+<ol>
+<li><b>Divide</b> the problem into a number of sub-problems that are smaller instances of the same problem.</li>
+<li><b>Conquer</b> the sub-problems by solving them recursively. If the sub-problem sizes are small enough, solve them directly.</li>
+<li><b>Combine</b> the solutions of the sub-problems into the solution for the original problem.</li>
+</ol>
+<h2>Examples</h2>
+<p>Classic divide-and-conquer algorithms include <a href="../Merge_sort/index.html">merge sort</a> and <a href="../Quicksort/index.html">quicksort</a> for sorting, <a href="../Binary_search/index.html">binary search</a>, the <a href="../Karatsuba_algorithm/index.html">Karatsuba algorithm</a> for fast multiplication, <a href="../Strassen_algorithm/index.html">Strassen's algorithm</a> for matrix multiplication, and the <a href="../Fast_Fourier_transform/index.html">fast Fourier transform</a> (Cooley–Tukey algorithm).</p>
+<h2>Analysis</h2>
+<p>The running time of a divide-and-conquer algorithm is commonly expressed by a <a href="../Recurrence_relation/index.html">recurrence relation</a> of the form T(n) = aT(n/b) + f(n), solved by the <a href="../Master_theorem_(analysis_of_algorithms)/index.html">master theorem</a> or the Akra–Bazzi method. When the work done at each level decreases geometrically, the total cost is dominated by one level; this explains, for example, why merge sort runs in Θ(n log n).</p>
+<h2>Advantages and implementation issues</h2>
+<p>Divide and conquer is a powerful tool for solving conceptually difficult problems and often yields optimal algorithms. It lends itself naturally to parallel execution, since sub-problems can be solved independently (as in the <a href="../MapReduce/index.html">MapReduce</a> framework). Recursive implementations may incur overhead and stack usage; problems with overlapping sub-problems are better handled by <a href="../Dynamic_programming/index.html">dynamic programming</a> or <a href="../Memoization/index.html">memoization</a>.</p>
+<h2>History</h2>
+<p>The name "divide and conquer" echoes the Latin maxim <i>divide et impera</i>. The paradigm underlies algorithms known since antiquity (such as the Euclidean algorithm's recursive form) and was formalized in 20th-century algorithm analysis; John von Neumann developed merge sort in 1945.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Recursion_(computer_science)/index.html">Recursion</a></li>
+<li><a href="../Master_theorem_(analysis_of_algorithms)/index.html">Master theorem</a></li>
+<li><a href="../Dynamic_programming/index.html">Dynamic programming</a></li>
+<li><a href="../Merge_sort/index.html">Merge sort</a></li>
+</ul>
+</div>
+</body>
+</html>

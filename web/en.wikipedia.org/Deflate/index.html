@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Deflate - Wikipedia</title>
+<style>
+body{font-family:sans-serif;font-size:14px;line-height:1.6;color:#202122;margin:0;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:serif;font-weight:normal;font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-weight:normal;font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:24px}
+h3{font-size:16px;margin-top:18px}
+.infobox{float:right;width:250px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:13px}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+.infobox caption{font-weight:bold;font-size:15px;padding-bottom:6px}
+.hero{width:100%;border:1px solid #a2a9b1;background:#eaecf0;text-align:center;color:#54595d;padding:20px 0;margin-bottom:10px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Deflate</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<caption>Deflate</caption>
+<tr><th>Type</th><td>Lossless data compression algorithm</td></tr>
+<tr><th>Designed by</th><td>Phil Katz (PKZIP); specified in RFC 1951 (1996)</td></tr>
+<tr><th>Combines</th><td>LZ77 and Huffman coding</td></tr>
+<tr><th>Used in</th><td>ZIP, gzip, PNG, HTTP compression, zlib</td></tr>
+<tr><th>Patent status</th><td>Patent-free (designed to avoid LZW patents)</td></tr>
+</table>
+<div class="hero"><img src="images/Deflate.png" alt="Diagram of the DEFLATE compression process"></div>
+<p><b>Deflate</b> (stylised as <b>DEFLATE</b>) is a lossless data compression file format and algorithm that uses a combination of LZ77 and Huffman coding. It was designed by Phil Katz to replace the LZW compression used in his PKZIP archiving tool, in part to avoid the patent encumbrance on LZW, and it was later specified formally in RFC 1951 (May 1996).</p>
+<h2>Algorithm</h2>
+<p>DEFLATE first applies LZ77-style matching: sequences of bytes already seen within a sliding window of up to 32 KiB are replaced by references giving a length (3–258 bytes) and a backward distance. The resulting stream of literals and match references is then encoded with Huffman coding, using one of three block modes: stored (uncompressed), fixed Huffman codes defined by the specification, or dynamic Huffman codes transmitted with the block. Compressed data is processed as a series of blocks, each independently selectable by the encoder to balance speed and compression ratio.</p>
+<h2>Formats and implementations</h2>
+<p>The raw DEFLATE stream is wrapped by several widely used formats: the <b>zlib</b> format (RFC 1950), which adds a short header and an Adler-32 checksum, and the <b>gzip</b> format (RFC 1952), which adds file metadata and a CRC-32 checksum. DEFLATE is the compression method of ZIP archives, the PNG image format (via zlib), and HTTP content encoding, among many others. The reference implementation is the zlib library by Jean-loup Gailly and Mark Adler; decompress-only implementations are small enough to be embedded in boot loaders and firmware. Adler also maintains the single-file <i>puff</i> decoder, intended as an intelligible specification of the format.</p>
+<h2>Compression performance</h2>
+<p>DEFLATE compressors such as gzip and zopfli trade speed against ratio by adjusting match-search effort and block splitting. Although newer algorithms — including LZMA, bzip2's Burrows–Wheeler method, Brotli, and Zstandard — often achieve higher ratios, DEFLATE's universality, patent-free status, and speed keep it the default interchange format for compressed data on the web and in archives.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Gzip/index.html">gzip</a></li>
+<li><a href="../Zlib/index.html">zlib</a></li>
+<li><a href="../LZ77_and_LZ78/index.html">LZ77 and LZ78</a></li>
+<li><a href="../Huffman_coding/index.html">Huffman coding</a></li>
+</ul>
+</div>
+</body>
+</html>

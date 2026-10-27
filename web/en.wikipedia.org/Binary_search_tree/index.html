@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Binary search tree - Wikipedia</title>
+<style>
+body{margin:0;font-family:Georgia,"Times New Roman",serif;color:#202122;background:#fff}
+header{border-bottom:1px solid #a7d7f9;padding:10px 20px;font-family:sans-serif}
+header .site{font-size:20px;font-weight:bold}
+header nav a{margin-right:12px;color:#0645ad;text-decoration:none;font-size:13px}
+main{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:0}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:24px;text-align:center;color:#54595d;font-family:sans-serif;margin:12px 0;box-sizing:border-box}
+.lead{font-size:16px}
+table.wikitable{border-collapse:collapse;font-size:14px}
+table.wikitable th,table.wikitable td{border:1px solid #a2a9b1;padding:5px 10px;text-align:left}
+table.wikitable th{background:#eaecf0}
+footer{border-top:1px solid #a2a9b1;margin-top:40px;padding:12px 20px;font-family:sans-serif;font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia</span><nav><a href="../index.html">Main page</a><a href="../Contents/index.html">Contents</a><a href="../Random_article/index.html">Random article</a></nav></header>
+<main>
+<h1>Binary search tree</h1>
+<img class="hero" src="images/binary-search-tree.png" alt="Diagram of a binary search tree with keys arranged so left descendants are smaller and right descendants larger">
+<p class="lead">A <b>binary search tree</b> (BST), also called an <b>ordered</b> or <b>sorted binary tree</b>, is a rooted binary tree data structure whose internal nodes store keys in sorted order: for every node, all keys in its left subtree are smaller than the node's key, and all keys in its right subtree are larger. This property allows lookup, insertion, and deletion to be performed by a form of binary search, skipping about half of the tree at each step on average.</p>
+<h2>Operations</h2>
+<h3>Searching</h3>
+<p>To search for a key, the algorithm compares it with the root: if equal, the search succeeds; if smaller, it continues in the left subtree; if larger, in the right subtree. Because each comparison discards one subtree, the running time is proportional to the height of the tree.</p>
+<h3>Insertion and deletion</h3>
+<p>Insertion proceeds like an unsuccessful search, attaching the new key as a leaf where the search ends. Deletion has three cases: removing a leaf is trivial; removing a node with one child replaces it with that child; removing a node with two children replaces its key with that of its in-order successor (the smallest key in its right subtree) or predecessor, and then deletes that node instead.</p>
+<h3>Traversal</h3>
+<p>An in-order traversal of a BST visits the keys in sorted order. Pre-order and post-order traversals are used for copying and deleting whole trees and for representing expressions.</p>
+<h2>Performance</h2>
+<table class="wikitable">
+<tr><th>Operation</th><th>Average</th><th>Worst case</th></tr>
+<tr><td>Search</td><td>O(log n)</td><td>O(n)</td></tr>
+<tr><td>Insert</td><td>O(log n)</td><td>O(n)</td></tr>
+<tr><td>Delete</td><td>O(log n)</td><td>O(n)</td></tr>
+<tr><td>Space</td><td>O(n)</td><td>O(n)</td></tr>
+</table>
+<p>The worst case arises when keys are inserted in sorted order, degenerating the tree into a linked list. This motivated <b>self-balancing binary search trees</b> — such as AVL trees, red–black trees, splay trees, and treaps — which use rotations or randomised priorities to keep the height logarithmic. Randomised insertion order also gives expected logarithmic height without explicit balancing.</p>
+<h2>Applications</h2>
+<p>BSTs underlie implementations of sets, maps, and priority queues in standard libraries (often as red–black trees), support range queries and order statistics, and appear in databases and file systems in generalised forms such as the B-tree.</p>
+<h2>See also</h2>
+<p><a href="../AVL_tree/index.html">AVL tree</a> · <a href="../Red%E2%80%93black_tree/index.html">Red–black tree</a> · <a href="../B-tree/index.html">B-tree</a> · <a href="../Binary_tree/index.html">Binary tree</a> · <a href="../Binary_heap/index.html">Binary heap</a> · <a href="../Binary_search/index.html">Binary search</a></p>
+</main>
+<footer>This page was recreated from memory as part of the muse-webcrawl project. Content is a paraphrase of general knowledge about the subject.</footer>
+</body>
+</html>

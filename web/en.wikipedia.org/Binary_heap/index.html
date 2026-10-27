@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Binary heap - Wikipedia</title>
+<style>
+body{margin:0;font-family:Georgia,"Times New Roman",serif;color:#202122;background:#fff}
+header{border-bottom:1px solid #a7d7f9;padding:10px 20px;font-family:sans-serif}
+header .site{font-size:20px;font-weight:bold}
+header nav a{margin-right:12px;color:#0645ad;text-decoration:none;font-size:13px}
+main{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:0}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:24px;text-align:center;color:#54595d;font-family:sans-serif;margin:12px 0;box-sizing:border-box}
+.lead{font-size:16px}
+table.wikitable{border-collapse:collapse;font-size:14px}
+table.wikitable th,table.wikitable td{border:1px solid #a2a9b1;padding:5px 10px;text-align:left}
+table.wikitable th{background:#eaecf0}
+footer{border-top:1px solid #a2a9b1;margin-top:40px;padding:12px 20px;font-family:sans-serif;font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia</span><nav><a href="../index.html">Main page</a><a href="../Contents/index.html">Contents</a><a href="../Random_article/index.html">Random article</a></nav></header>
+<main>
+<h1>Binary heap</h1>
+<img class="hero" src="images/binary-heap.png" alt="Diagram of a complete binary tree satisfying the min-heap property, smallest key at the root">
+<p class="lead">A <b>binary heap</b> is a tree-based data structure that satisfies the <b>heap property</b>: in a <i>min heap</i>, each parent node's key is less than or equal to the keys of its children, so the smallest element sits at the root; in a <i>max heap</i>, the ordering is reversed. Binary heaps are the standard implementation of the <b>priority queue</b> abstract data type and underpin the heapsort sorting algorithm.</p>
+<h2>Structure</h2>
+<p>A binary heap is stored as a <b>complete binary tree</b>: every level is fully filled except possibly the last, which is filled from the left. Because of this shape, the tree can be stored compactly in an array without pointers. For a node at index <i>i</i> (in a 1-based array), its children are at indices 2<i>i</i> and 2<i>i</i>+1 and its parent is at floor(<i>i</i>/2). The height of a heap with <i>n</i> elements is Θ(log <i>n</i>).</p>
+<h2>Operations</h2>
+<p>Inserting an element appends it at the end of the array and then "bubbles up" (sift-up), swapping it with its parent while the heap property is violated. Extracting the minimum removes the root, moves the last element to the root, and "bubbles down" (sift-down), swapping it with its smaller child until the property is restored. Both operations cost O(log <i>n</i>). A heap can be built from an unordered array in linear time by sifting down each internal node from the bottom up, a method analysed by Robert W. Floyd.</p>
+<table class="wikitable">
+<tr><th>Operation</th><th>Time complexity</th></tr>
+<tr><td>Find minimum (peek)</td><td>O(1)</td></tr>
+<tr><td>Insert</td><td>O(log n)</td></tr>
+<tr><td>Extract minimum</td><td>O(log n)</td></tr>
+<tr><td>Decrease key</td><td>O(log n)</td></tr>
+<tr><td>Build heap</td><td>O(n)</td></tr>
+</table>
+<h2>Applications</h2>
+<p>Binary heaps implement efficient priority queues used in Dijkstra's shortest-path algorithm, Prim's minimum spanning tree algorithm, event-driven simulation, and operating-system job scheduling. Heapsort sorts an array in O(<i>n</i> log <i>n</i>) time and O(1) extra space by repeatedly extracting the extremum. Variants such as Fibonacci heaps and binomial heaps improve the amortised cost of some operations, at the price of greater complexity.</p>
+<h2>History</h2>
+<p>The binary heap was introduced by J. W. J. Williams in 1964 as the basis of heapsort, and Floyd published the efficient linear-time construction algorithm in the same period.</p>
+<h2>See also</h2>
+<p><a href="../Heap_(data_structure)/index.html">Heap (data structure)</a> · <a href="../Priority_queue/index.html">Priority queue</a> · <a href="../Heapsort/index.html">Heapsort</a> · <a href="../Fibonacci_heap/index.html">Fibonacci heap</a> · <a href="../Binary_search_tree/index.html">Binary search tree</a></p>
+</main>
+<footer>This page was recreated from memory as part of the muse-webcrawl project. Content is a paraphrase of general knowledge about the subject.</footer>
+</body>
+</html>

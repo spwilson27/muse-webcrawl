@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Echo cancellation - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;color:#202122;background:#fff}
+.content{max-width:960px;margin:0 auto;padding:16px 24px}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a7d7f9;padding-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:13px}
+.infobox th{text-align:left;background:#eaf3ff;padding:3px}
+figure{border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;text-align:center;font-size:12px;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Echo cancellation</h1>
+<p><b>Echo cancellation</b> is a method in telephony and audio signal processing that removes echo from a voice communication link to improve quality and allow full-duplex conversation. An adaptive filter models the echo path, synthesises a replica of the echo and subtracts it from the return signal.</p>
+<figure><img src="images/Echo_cancellation.png" alt="Block diagram of an adaptive echo canceller"><figcaption>An acoustic echo canceller subtracts a modelled echo from the microphone signal</figcaption></figure>
+<table class="infobox">
+<tr><th colspan="2">Echo cancellation</th></tr>
+<tr><th>Domain</th><td>Telecommunications, digital signal processing</td></tr>
+<tr><th>Key technique</th><td>Adaptive filtering (e.g. NLMS algorithm)</td></tr>
+<tr><th>Standards</th><td>ITU-T G.165, G.168</td></tr>
+<tr><th>Applications</th><td>Telephone networks, VoIP, speakerphones, hearing aids</td></tr>
+</table>
+<h2>Origins of echo</h2>
+<p>Line echo arises at hybrid circuits converting between two-wire and four-wire telephone circuits, where impedance mismatch reflects part of the far-end signal back. Acoustic echo arises when a loudspeaker's output is picked up by a microphone, as in speakerphones and hands-free systems; long network delays make such echoes especially disruptive.</p>
+<h2>How it works</h2>
+<p>The canceller builds an adaptive finite-impulse-response model of the echo path, continuously updated using the incoming far-end signal as a reference. The estimated echo is subtracted from the send path, and a residual echo suppressor and comfort-noise generator clean up what remains. Convergence must be fast, but the filter must freeze or adapt carefully during double-talk, when both parties speak at once.</p>
+<h2>Modern use</h2>
+<p>Echo cancellation is integral to VoIP software, conference systems, smart speakers and mobile phones, where acoustic echo cancellers handle echo tails of hundreds of milliseconds.</p>
+<h2>See also</h2>
+<p><a href="../Adaptive_filter/index.html">Adaptive filter</a> · <a href="../Digital_signal_processing/index.html">Digital signal processing</a> · <a href="../Voice_over_IP/index.html">Voice over IP</a></p>
+</div>
+</body>
+</html>

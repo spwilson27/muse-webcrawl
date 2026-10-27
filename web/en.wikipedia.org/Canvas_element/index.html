@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Canvas element - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;}
+.wrap{max-width:960px;margin:0 auto;padding:20px 24px;}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-weight:normal;}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal;margin-top:28px;}
+p{line-height:1.6;font-size:15px;}
+a{color:#0645ad;text-decoration:none;}
+a:hover{text-decoration:underline;}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px 14px;margin:0 0 16px 20px;font-size:13px;}
+.infobox th{text-align:left;padding:3px 6px;color:#54595d;}
+.infobox td{padding:3px 6px;}
+.figure{text-align:center;margin:16px 0;}
+.figure img{max-width:520px;width:100%;background:#eaecf0;border:1px solid #a2a9b1;}
+.caption{font-size:13px;color:#54595d;}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:12px;font-size:13px;overflow:auto;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Canvas element</h1>
+<div class="infobox">
+<table>
+<tr><th>Introduced</th><td>2004, by Apple (Safari/WebKit)</td></tr>
+<tr><th>Standardized</th><td>WHATWG HTML Living Standard; W3C HTML5</td></tr>
+<tr><th>APIs</th><td>Canvas 2D Context; WebGL; WebGPU</td></tr>
+</table>
+</div>
+<p>The <b>canvas element</b> is part of HTML5 and allows for dynamic, scriptable rendering of 2D shapes and bitmap images in web pages. It is a low-level, procedural model that updates a bitmap region; elements drawn on a canvas have no scene graph or DOM representation of their own. Scripts access the drawing surface through rendering contexts, principally the Canvas 2D API and the 3D-oriented WebGL API.</p>
+<div class="figure"><img src="images/canvas-element.png" alt="Example of graphics drawn with the canvas element"><div class="caption">Shapes rendered in the browser with the canvas 2D API.</div></div>
+<h2>History</h2>
+<p>Canvas was introduced by Apple in 2004 for use in Mac OS X Dashboard widgets and the Safari browser, and was later standardized by the WHATWG and incorporated into the HTML5 specification. Apple's early patent claims on the technology caused controversy, but the company later disclosed its related patents under royalty-free terms through the W3C process.</p>
+<h2>Usage</h2>
+<p>A canvas is declared with width and height attributes; JavaScript obtains a context and issues drawing commands:</p>
+<pre>&lt;canvas id="c" width="200" height="100"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+  const ctx = document.getElementById('c').getContext('2d');
+  ctx.fillStyle = '#3366cc';
+  ctx.fillRect(10, 10, 150, 75);
+&lt;/script&gt;</pre>
+<p>The 2D context supports paths, fills, strokes, gradients, patterns, text, image drawing, compositing, and pixel manipulation via <i>ImageData</i>. Canvas is widely used for charts, games, photo editors, data visualization, and browser-based creative tools. Unlike SVG, which is resolution-independent and retains a document model, canvas is resolution-dependent and raster-based, though it can be redrawn at device pixel ratios for sharpness.</p>
+<h2>Accessibility and fallback</h2>
+<p>Content placed between the canvas tags is displayed by browsers that do not support the element and can serve as fallback content. Because canvas graphics are opaque to assistive technologies, authors are advised to provide text alternatives or accessible equivalents.</p>
+<p>See also: <a href="../HTML5/index.html">HTML5</a> · <a href="../WebGL/index.html">WebGL</a> · <a href="../Scalable_Vector_Graphics/index.html">SVG</a></p>
+</div>
+</body>
+</html>
