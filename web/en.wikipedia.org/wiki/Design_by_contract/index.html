@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Design by contract - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+header{background:#fff;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header h1{font-size:1.7em;margin:0;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+main{max-width:960px;margin:0 auto;background:#fff;padding:24px;line-height:1.6}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+img.hero{float:right;margin:0 0 12px 16px;max-width:280px;background:#eaecf0;padding:8px}
+a{color:#0645ad;text-decoration:none}
+footer{max-width:960px;margin:0 auto;padding:12px 24px;font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<header><h1>Design by contract</h1></header>
+<main>
+<img class="hero" src="images/design-by-contract.png" alt="Diagram of a contract between a client and a supplier routine">
+<p><b>Design by contract</b> (<b>DbC</b>), also known as <b>contract programming</b>, <b>programming by contract</b>, and <b>design-by-contract programming</b>, is an approach for designing software. It prescribes that software designers should define formal, precise, and verifiable interface specifications for software components, which extend the ordinary definition of abstract data types with preconditions, postconditions, and invariants. These specifications are referred to as "contracts", in accordance with a conceptual metaphor of the terms and conditions of a business contract.</p>
+<h2>Origin</h2>
+<p>The approach was introduced by Bertrand Meyer, who originated the term and developed it in connection with the Eiffel programming language, described in his book <i>Object-Oriented Software Construction</i>. Eiffel provides language-level support for assertions and contracts, and Meyer's company Eiffel Software registered "Design by Contract" as a trademark. The underlying ideas build on earlier work on axiomatic semantics, notably Hoare logic and Floyd's assertions.</p>
+<h2>The contract metaphor</h2>
+<p>A routine's contract spells out mutual obligations and benefits, like a business contract:</p>
+<ul>
+<li><b>Preconditions</b> — what the client must guarantee before calling the routine; the supplier may then assume them.</li>
+<li><b>Postconditions</b> — what the routine guarantees on completion, provided the preconditions held.</li>
+<li><b>Class invariants</b> — conditions that must hold for every instance of a class whenever it is observable, constraining its state throughout its lifetime.</li>
+</ul>
+<p>If a precondition is violated, the fault lies with the caller; if a postcondition or invariant fails despite satisfied preconditions, the fault lies with the supplier. This "blame assignment" makes debugging and reasoning about correctness systematic.</p>
+<h2>Inheritance and use</h2>
+<p>In object-oriented programming, contracts are inherited: a subclass may weaken preconditions but not strengthen them, and may strengthen postconditions but not weaken them, while invariants accumulate. This preserves the substitutability expressed in the Liskov substitution principle. Contract support is native in Eiffel and D, and is provided through libraries, preprocessors, or assertions in languages such as Java, C#, Python, and Rust. Contracts serve as documentation, runtime checks, and a basis for testing and static verification.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Eiffel_(programming_language)/index.html">Eiffel (programming language)</a></li>
+<li><a href="../Precondition/index.html">Precondition</a></li>
+<li><a href="../Postcondition/index.html">Postcondition</a></li>
+<li><a href="../Hoare_logic/index.html">Hoare logic</a></li>
+<li><a href="../Liskov_substitution_principle/index.html">Liskov substitution principle</a></li>
+</ul>
+</main>
+<footer>From Wikipedia, the free encyclopedia.</footer>
+</body>
+</html>

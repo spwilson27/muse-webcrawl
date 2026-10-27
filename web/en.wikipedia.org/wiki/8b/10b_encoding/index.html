@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>8b/10b encoding - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:24px;color:#202122;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #c8ccd1;padding-bottom:2px;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+.infobox{float:right;width:250px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.85em}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+.hero{display:block;margin:16px auto;max-width:480px;width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:40px 0;text-align:center;color:#54595d}
+</style>
+</head>
+<body>
+<h1>8b/10b encoding</h1>
+<div class="infobox">
+<table>
+<tr><th>Inventors</th><td>Albert X. Widmer and Peter A. Franaszek</td></tr>
+<tr><th>Year</th><td>1983 (IBM patent filed)</td></tr>
+<tr><th>Overhead</th><td>25%</td></tr>
+</table>
+</div>
+<img class="hero" src="images/8b10b-encoding.png" alt="Diagram of 8b/10b code groups and running disparity">
+<p>In telecommunications, <b>8b/10b</b> is a line code that maps 8-bit symbols to 10-bit symbols to achieve DC balance and bounded running disparity, while providing enough state changes to allow reasonable clock recovery. It was invented by Albert X. Widmer and Peter A. Franaszek of IBM in 1983.</p>
+<h2>How it works</h2>
+<p>The encoder splits each byte into a 5-bit and a 3-bit part, encoding them through 5b/6b and 3b/4b sub-blocks. Every 10-bit code group has a disparity of zero or two more ones than zeros, and the encoder tracks a "running disparity" so that the long-term count of transmitted ones and zeros stays balanced. This prevents a DC offset accumulating on AC-coupled links and guarantees frequent transitions for the receiver's clock-recovery circuit.</p>
+<p>Of the 1,024 possible 10-bit values, 256 encode data bytes (D characters) and 12 special "K" control characters are used for framing, alignment (the distinctive "comma" sequence in K.28.5), and link management. Invalid symbols and disparity violations let receivers detect transmission errors.</p>
+<h2>Applications</h2>
+<p>8b/10b encoding was widely adopted in high-speed serial standards, including Gigabit Ethernet (1000BASE-X), Fibre Channel, Serial ATA (generations 1 and 2), PCI Express (generations 1 and 2), USB 3.0, DisplayPort, DVI and HDMI, and Serial RapidIO. Many later standards moved to more efficient schemes such as 64b/66b or 128b/130b encoding.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../64b/66b_encoding/index.html">64b/66b encoding</a></li>
+<li><a href="../Line_code/index.html">Line code</a></li>
+<li><a href="../Serial_ATA/index.html">Serial ATA</a></li>
+<li><a href="../PCI_Express/index.html">PCI Express</a></li>
+</ul>
+</body>
+</html>

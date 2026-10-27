@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gram–Schmidt process - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; padding: 24px; }
+.caption { font-size: 12px; color: #54595d; }
+.eq { text-align: center; font-style: italic; margin: 12px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Gram–Schmidt process</h1>
+<div class="hero"><img src="images/gram-schmidt.png" alt="Diagram showing successive vector projections in the Gram-Schmidt process"><div class="caption">Steps of Gram–Schmidt orthogonalization in two dimensions</div></div>
+<p>In mathematics, particularly linear algebra and numerical analysis, the <b>Gram–Schmidt process</b> is a method for orthonormalizing a set of vectors in an inner product space, most commonly the Euclidean space R<sup>n</sup> equipped with the standard inner product. It takes a finite, linearly independent set of vectors and generates an orthogonal (or orthonormal) set that spans the same subspace.</p>
+<h2>Definition</h2>
+<p>The process works by successive projection. Given linearly independent vectors v<sub>1</sub>, ..., v<sub>k</sub>, one defines:</p>
+<p class="eq">u<sub>1</sub> = v<sub>1</sub>, &nbsp; u<sub>j</sub> = v<sub>j</sub> &minus; &Sigma;<sub>i&lt;j</sub> proj<sub>u<sub>i</sub></sub>(v<sub>j</sub>)</p>
+<p>where proj<sub>u</sub>(v) = (&lang;u, v&rang; / &lang;u, u&rang;) u. Dividing each u<sub>j</sub> by its norm yields an orthonormal set e<sub>j</sub> = u<sub>j</sub> / ||u<sub>j</sub>||.</p>
+<h2>History</h2>
+<p>The method is named after Danish mathematician Jørgen Pedersen Gram and German mathematician Erhard Schmidt, though it appeared earlier in the work of Laplace and Cauchy. Gram published on least squares in 1883, and Schmidt described the orthogonalization procedure in 1907 in the context of integral equations.</p>
+<h2>Numerical stability</h2>
+<p>The classical Gram–Schmidt algorithm can suffer from loss of orthogonality due to rounding errors. The modified Gram–Schmidt process, which computes each projection sequentially and updates the working vector at each step, is numerically more stable and is mathematically equivalent. The process is closely related to QR decomposition of a matrix, in which the columns of Q are the orthonormal vectors produced.</p>
+<h2>Applications</h2>
+<p>Gram–Schmidt orthogonalization is used in solving least squares problems, constructing orthonormal bases, the Arnoldi and Lanczos iterations in numerical linear algebra, and in signal processing.</p>
+<h2>See also</h2>
+<p><a href="../Orthogonality/index.html">Orthogonality</a> &middot; <a href="../QR_decomposition/index.html">QR decomposition</a> &middot; <a href="../Inner_product_space/index.html">Inner product space</a> &middot; <a href="../Orthonormal_basis/index.html">Orthonormal basis</a></p>
+</div>
+</body>
+</html>

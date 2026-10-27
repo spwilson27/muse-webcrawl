@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gauss–Markov theorem - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+main{max-width:820px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+img.hero{max-width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:8px;box-sizing:border-box}
+.formula{font-style:italic;text-align:center;margin:12px 0}
+</style>
+</head>
+<body>
+<main>
+<h1>Gauss–Markov theorem</h1>
+<p>In statistics, the <b>Gauss–Markov theorem</b> (or simply <b>Gauss theorem</b>) states that in a linear regression model in which the errors have expectation zero, are uncorrelated, and have equal variances, the best linear unbiased estimator (BLUE) of the coefficients is given by the ordinary least squares (OLS) estimator, provided it exists. Here "best" means giving the lowest variance of the estimate, as compared to other unbiased linear estimators.</p>
+<img class="hero" src="images/gauss_markov.png" alt="Scatter plot with ordinary least squares regression line">
+<h2>Statement</h2>
+<p>Suppose we have in matrix notation the linear model</p>
+<p class="formula">y = Xβ + ε, &nbsp; ε ~ (0, σ²I)</p>
+<p>where β is a parameter vector, X is the matrix of regressors, and ε is the error term with mean zero, constant variance σ² (homoscedasticity) and no autocorrelation. The theorem asserts that the OLS estimator</p>
+<p class="formula">β̂ = (X′X)⁻¹X′y</p>
+<p>has the smallest variance among all linear unbiased estimators of β. The result is named after Carl Friedrich Gauss, who proved a version of it in 1821–1823 in his work on least squares, and Andrey Markov, who gave the modern formulation in 1900.</p>
+<h2>Assumptions</h2>
+<ul>
+<li><b>Linearity in parameters</b> — the model is linear in β.</li>
+<li><b>Full rank</b> — X has full column rank, so (X′X) is invertible.</li>
+<li><b>Exogeneity</b> — the errors have conditional mean zero, E[ε|X] = 0.</li>
+<li><b>Spherical errors</b> — errors are homoscedastic and uncorrelated: Var(ε|X) = σ²I.</li>
+</ul>
+<p>Notably, the theorem does <i>not</i> require the errors to be normally distributed. If the spherical-error assumption fails, OLS remains unbiased but is no longer efficient; the generalised least squares estimator is then the BLUE.</p>
+<h2>Generalised least squares</h2>
+<p>When the error covariance matrix is a known positive-definite matrix Ω ≠ σ²I, the Aitken/generalised least squares estimator is the best linear unbiased estimator, a result sometimes called the generalised Gauss–Markov theorem.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Ordinary_least_squares">Ordinary least squares</a></li>
+<li><a href="../Linear_regression">Linear regression</a></li>
+<li><a href="../Generalized_least_squares">Generalized least squares</a></li>
+<li><a href="../Best_linear_unbiased_prediction">Best linear unbiased prediction</a></li>
+</ul>
+</main>
+</body>
+</html>

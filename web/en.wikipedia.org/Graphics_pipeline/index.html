@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Graphics pipeline - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; padding: 24px; }
+.caption { font-size: 12px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Graphics pipeline</h1>
+<div class="hero"><img src="images/graphics-pipeline.png" alt="Flow diagram of the stages of a 3D graphics pipeline"><div class="caption">Stages of a typical 3D rendering pipeline, from vertex data to final pixels</div></div>
+<p>The computer <b>graphics pipeline</b>, also known as the rendering pipeline, is a conceptual model that describes the sequence of steps used to create a two-dimensional raster representation of a three-dimensional scene. It is implemented in graphics hardware and in APIs such as OpenGL, Direct3D, and Vulkan, and is the basis of real-time rendering in video games and interactive applications.</p>
+<h2>Stages</h2>
+<p>In the standard pipeline, <b>vertex processing</b> transforms the positions of vertices from object space through model, view, and projection transformations into clip space; since the late 1990s this stage is programmable through vertex shaders. <b>Primitive assembly</b> groups vertices into points, lines, and triangles, followed by clipping against the view volume and culling of back faces. <b>Rasterization</b> converts the primitives into fragments — candidate pixels — interpolating attributes such as color, depth, and texture coordinates. <b>Fragment processing</b>, programmable through fragment (pixel) shaders, computes the final color of each fragment using texturing, lighting, and other effects. Finally, per-sample operations test depth and stencil values and blend fragments into the framebuffer.</p>
+<h2>Programmability</h2>
+<p>Early 3D accelerators implemented a fixed-function pipeline in which lighting and transformation parameters could only be configured. The introduction of programmable shaders in 2001 began a transition to the modern pipeline, later extended with geometry, tessellation, mesh, and compute stages, as well as hardware-accelerated ray tracing stages. The pipeline metaphor survives because the flow remains essentially feed-forward: geometry enters one end and pixels come out the other, with each stage operating in massive parallel on the GPU.</p>
+<h2>See also</h2>
+<p><a href="../Graphics_processing_unit/index.html">Graphics processing unit</a> &middot; <a href="../Shader/index.html">Shader</a> &middot; <a href="../Rasterisation/index.html">Rasterisation</a> &middot; <a href="../Rendering_(computer_graphics)/index.html">Rendering (computer graphics)</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Double dispatch - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:860px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #ddd;border-right:1px solid #ddd}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.4em}
+.imgbox{border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;text-align:center;margin:8px 0}
+.imgbox img{max-width:100%;border:1px solid #888;background:#e0e0e0}
+.imgbox .cap{font-size:.85em;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Double dispatch</h1>
+<div class="imgbox"><img src="images/double-dispatch.png" alt="Diagram of a double dispatch call sequence"><div class="cap">Two polymorphic calls select behaviour based on two objects' types.</div></div>
+<p><b>Double dispatch</b> is a technique in object-oriented programming in which a method call is dispatched — its implementation selected at runtime — based on the runtime types of two objects rather than one. Most object-oriented languages provide single dispatch (the familiar virtual method call, chosen by the receiver's type). Operations whose behaviour depends on a pair of objects, such as computing the interaction between two shapes or two game entities, require double dispatch.</p>
+<h2>Implementation</h2>
+<p>The standard implementation uses the visitor pattern. The first object accepts a visitor and, from within its own method, calls back ("dispatches again") on the visitor with a method whose name encodes the first object's type; the visitor, itself chosen by type, then executes the correct pair-specific behaviour. In pseudo-code: <i>shape.intersect(other)</i> calls <i>other.intersectWith(shape-as-typed)</i>.</p>
+<h2>Uses</h2>
+<p>Double dispatch appears in collision handling in games and simulations, arithmetic on mixed numeric types, stream and document formatting where behaviour depends on both element and output device, and adaptive interfaces. Languages with generic functions or multimethods, such as Common Lisp's CLOS, Julia, and Dylan, provide multiple dispatch directly, generalising double dispatch to any number of arguments.</p>
+<h2>Trade-offs</h2>
+<p>The visitor-based encoding introduces boilerplate and makes adding new types invasive, since every visitor must handle them — a form of the expression problem. Alternatives include lookup tables keyed on type pairs, reflection, and chained conditional tests.</p>
+<h2>See also</h2>
+<p><a href="../Multiple_dispatch/index.html">Multiple dispatch</a> &middot; <a href="../Visitor_pattern/index.html">Visitor pattern</a> &middot; <a href="../Dynamic_dispatch/index.html">Dynamic dispatch</a> &middot; <a href="../Polymorphism_(computer_science)/index.html">Polymorphism</a></p>
+</div>
+</body>
+</html>

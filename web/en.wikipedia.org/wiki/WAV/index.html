@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WAV - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0 auto; max-width: 960px; padding: 0 20px 40px; color: #202122; line-height: 1.6; background: #fff; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 1.9em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-size: 1.45em; margin-top: 1.2em; }
+a { color: #3366cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 30px 0; }
+.caption { font-size: 0.85em; color: #54595d; text-align: center; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px 14px; margin: 0 0 12px 16px; font-size: 0.88em; width: 250px; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+ul { margin: 0.3em 0 0.3em 1.6em; padding: 0; }
+code { background: #f8f9fa; padding: 0 3px; }
+</style>
+</head>
+<body>
+<h1>WAV</h1>
+<p><b>Waveform Audio File Format</b> (<b>WAVE</b>, or <b>WAV</b> owing to its filename extension) is an audio file format standard for storing an audio bitstream on personal computers. Developed by Microsoft and IBM and released in August 1991, it is the principal format used on Microsoft Windows systems for uncompressed audio, and it remains widely used for professional recording, editing and archiving where lossy compression is unacceptable.</p>
+<div class="hero"><img src="images/wav.png" alt="Waveform of an uncompressed WAV audio recording"></div>
+<p class="caption">A digital audio waveform of the kind stored, sample by sample, in a WAV file.</p>
+<table class="infobox">
+<tr><th>Filename extension</th><td><code>.wav</code>, <code>.wave</code></td></tr>
+<tr><th>Developed by</th><td>Microsoft, IBM</td></tr>
+<tr><th>Initial release</th><td>August 1991</td></tr>
+<tr><th>Container for</th><td>Audio (usually LPCM)</td></tr>
+<tr><th>Based on</th><td>RIFF</td></tr>
+</table>
+<h2>Format details</h2>
+<p>WAV files are an application of the Resource Interchange File Format (RIFF) bitstream format, which stores data in chunks. A typical WAV file begins with a RIFF header containing the ASCII identifier "WAVE", followed by a <code>fmt </code> subchunk describing the audio format — the encoding, number of channels, sample rate, byte rate and bits per sample — and a <code>data</code> subchunk containing the audio samples themselves. A minimal uncompressed WAV file has a 44-byte header.</p>
+<p>Audio is most commonly stored using linear pulse-code modulation (LPCM), in which case the file is essentially a raw recording of the samples: CD-quality audio uses a sample rate of 44,100 Hz with 16 bits per sample per channel, giving a bitrate of 1,411.2 kbit/s. Although WAV files are usually uncompressed, the format's header can also declare compressed encodings such as ADPCM or even MP3, in which case the data is interpreted according to an Audio Compression Manager codec.</p>
+<h2>Limitations</h2>
+<p>Because RIFF uses 32-bit fields for chunk sizes, a WAV file cannot exceed 4 gigabytes, which at CD quality corresponds to roughly 6.8 hours of audio. The RF64 extension, standardised by the European Broadcasting Union, overcomes this limit by substituting a 64-bit size field and is used in professional broadcast and recording software. WAV files also have limited native support for metadata compared with formats such as FLAC or MP3, although LIST and BEXT (Broadcast Wave Format) chunks can carry descriptive information.</p>
+<h2>Comparison with other formats</h2>
+<p>WAV's uncompressed nature makes files large — about 10 megabytes per minute of stereo CD-quality audio — so lossy formats such as MP3 and AAC became preferred for distribution, while lossless compressed formats such as FLAC and Apple Lossless are often used for archiving. WAV remains a default interchange format in digital audio workstations, video editing and telephony because decoding it is trivial and it introduces no generational quality loss in editing.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Resource_Interchange_File_Format/index.html">Resource Interchange File Format</a></li>
+<li><a href="../Pulse-code_modulation/index.html">Pulse-code modulation</a></li>
+<li><a href="../Broadcast_Wave_Format/index.html">Broadcast Wave Format</a></li>
+<li><a href="../FLAC/index.html">FLAC</a></li>
+<li><a href="../MP3/index.html">MP3</a></li>
+</ul>
+</body>
+</html>

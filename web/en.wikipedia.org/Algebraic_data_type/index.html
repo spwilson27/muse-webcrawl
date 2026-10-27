@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Algebraic data type - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; padding: 0; background: #fff; color: #202122; line-height: 1.6; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 40px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; font-size: 28px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-size: 22px; margin-top: 28px; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 15px 20px; font-size: 13px; }
+.infobox th { text-align: left; padding: 2px 6px; }
+.infobox td { padding: 2px 6px; }
+.hero { text-align: center; margin: 15px 0; }
+.hero img { max-width: 100%; border: 1px solid #ccc; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Algebraic data type</h1>
+<div class="infobox">
+<table>
+<tr><th>Paradigm</th><td>Functional programming</td></tr>
+<tr><th>Kinds</th><td>Product types, sum types</td></tr>
+<tr><th>Languages</th><td>Haskell, ML, OCaml, Rust, Scala, Swift</td></tr>
+</table>
+</div>
+<div class="hero"><img src="images/Algebraic_data_type.png" alt="Diagram of sum and product types"></div>
+<p>In computer programming, especially functional programming and type theory, an <b>algebraic data type</b> (ADT) is a kind of composite type—a type formed by combining other types. Two common classes of algebraic types are product types (such as tuples and records) and sum types (also called tagged or disjoint unions, or variant types).</p>
+<p>The values of an algebraic data type are typically analyzed with pattern matching, which allows the program to inspect which constructor was used to build a value and to extract the data it contains. Algebraic data types were introduced in the Hope programming language in the 1970s and are a central feature of languages in the ML family and of Haskell.</p>
+<h2>Product types</h2>
+<p>A product type combines several values into one; the number of possible values is the product of the numbers of values of the components. Records and tuples are product types. In Haskell, a declaration such as <code>data Point = Point Double Double</code> defines a product type with a single constructor taking two arguments.</p>
+<h2>Sum types</h2>
+<p>A sum type is a type whose values can be constructed by one of several constructors, each possibly carrying different data. A classic example is a binary tree:</p>
+<p><code>data Tree a = Empty | Leaf a | Node (Tree a) (Tree a)</code></p>
+<p>Here <code>Empty</code>, <code>Leaf</code>, and <code>Node</code> are the constructors of the type <code>Tree</code>. Enumerated types are the special case of sum types in which every constructor has no arguments.</p>
+<h2>Pattern matching</h2>
+<p>Algebraic data types are commonly used with pattern matching, which checks a value against a sequence of patterns and binds variables to its components. Compilers for languages like OCaml and Haskell check pattern matches for exhaustiveness, warning when cases are missing.</p>
+<h2>Generalized algebraic data types</h2>
+<p>Generalized algebraic data types (GADTs) extend ordinary algebraic data types by allowing constructors to specify more precise type instances of the result type. They are supported in Haskell (via GHC extensions), OCaml, and other languages, and enable encoding invariants in types, such as well-typed interpreters for embedded languages.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Pattern_matching/index.html">Pattern matching</a></li>
+<li><a href="../Haskell/index.html">Haskell</a></li>
+<li><a href="../Tagged_union/index.html">Tagged union</a></li>
+</ul>
+</div>
+</body>
+</html>

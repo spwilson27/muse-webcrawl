@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>EdDSA - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;color:#202122;background:#fff}
+#content{max-width:960px;margin:0 auto;padding:24px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:2px;font-weight:normal}
+a{color:#3366cc;text-decoration:none}a:hover{text-decoration:underline}
+.hero{text-align:center;margin:16px 0}
+.hero img{max-width:640px;width:100%;border:1px solid #c8ccd1;background:#f8f9fa}
+.caption{font-size:.85em;color:#54595d}
+p{line-height:1.6}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>EdDSA</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="hero"><img src="images/eddsa.png" alt="Twisted Edwards curve used in EdDSA signature schemes"><div class="caption">EdDSA operates on twisted Edwards curves, which admit fast, complete addition formulas.</div></div>
+<p>The <b>Edwards-curve Digital Signature Algorithm</b> (<b>EdDSA</b>) is a digital signature scheme using a variant of Schnorr signatures based on twisted Edwards curves. It is designed to be faster than existing digital signature schemes without sacrificing security, and was developed by a team including Daniel J. Bernstein, Niels Duif, Tanja Lange, Peter Schwabe and Bo-Yin Yang. The reference implementation has formed part of widely used libraries such as libsodium.</p>
+<h2>Variants</h2>
+<p>The best-known instance is <b>Ed25519</b>, which uses the curve related to Curve25519 with SHA-512 and provides about 128-bit security. <b>Ed448</b>, defined alongside it in RFC 8032, uses a larger curve related to Curve448 with SHAKE256, targeting roughly 224-bit security. RFC 8032 describes both schemes informally as EdDSA.</p>
+<h2>Algorithm</h2>
+<p>Key generation hashes a seed with the chosen hash function to derive a scalar and a nonce prefix; the public key is the scalar multiple of the curve's base point. Signing derives a deterministic nonce from the prefix and the message, computes a challenge hash over the nonce point, public key and message, and outputs the nonce point with a scalar response. Verification checks the corresponding group equation.</p>
+<h2>Security and adoption</h2>
+<p>EdDSA's deterministic nonces protect against failures of random number generators, and its design resists common implementation pitfalls and side channels. The scheme is standardised in RFC 8032 (2017) and FIPS 186-5, and used in TLS 1.3, SSH, messaging protocols and cryptocurrencies.</p>
+<h2>See also</h2>
+<p><a href="../Ed25519/index.html">Ed25519</a> · <a href="../ECDSA/index.html">ECDSA</a> · <a href="../Schnorr_signature/index.html">Schnorr signature</a> · <a href="../Curve25519/index.html">Curve25519</a> · <a href="../Digital_Signature_Algorithm/index.html">Digital Signature Algorithm</a></p>
+<p class="small">Categories: Digital signature schemes · Cryptography · Elliptic curve cryptography</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>I2C - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 60px; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.4em; }
+p { line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; min-height: 180px; }
+.caption { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>I2C</h1>
+<div class="hero"><img src="images/I2C.png" alt="Diagram of an I2C bus with one controller and several peripheral devices"><div class="caption">An I2C bus with one controller and three target devices</div></div>
+<p><b>I&sup2;C</b> (Inter-Integrated Circuit), pronounced "I-squared-C" or "I-two-C", is a serial communication bus invented in 1982 by Philips Semiconductors (now NXP Semiconductors). It is a synchronous, multi-controller/multi-target, single-ended serial protocol widely used for attaching lower-speed peripheral integrated circuits—such as sensors, EEPROMs, real-time clocks and analogue-to-digital converters—to processors and microcontrollers over short distances within a device.</p>
+<h2>Design</h2>
+<p>I2C uses only two wires: a serial data line (SDA) and a serial clock line (SCL), both open-drain lines pulled up to a supply voltage by resistors. Devices communicate by pulling the lines low; wired-AND behaviour allows multiple controllers to arbitrate for the bus. Each target device has a 7-bit address (10-bit addressing is also defined), and transfers are initiated with a START condition, followed by the address and a read/write bit, data bytes acknowledged by the receiver, and a STOP condition. Standard mode runs at up to 100 kbit/s, Fast mode at 400 kbit/s, Fast mode Plus at 1 Mbit/s and High-speed mode at up to 3.4 Mbit/s. Clock stretching lets a slow target pause a transfer.</p>
+<h2>Applications</h2>
+<p>Because it needs only two pins, I2C is used in a vast range of consumer and embedded electronics: reading identification data from memory modules (SPD EEPROMs on DIMMs), accessing sensors in smartphones and laptops, controlling display and tuner chips in televisions, and in the related SMBus and PMBus protocols used for system and power management. The simplicity of the protocol and the availability of hardware support in microcontrollers have made it a de facto standard for board-level communication.</p>
+<h2>History</h2>
+<p>Philips introduced I2C in 1982 for communication between chips in television sets. The specification was revised several times; version 7, published in 2021, is the current reference. The newer I3C standard, developed by the MIPI Alliance, is a backward-compatible successor intended to address I2C's limitations in speed and features.</p>
+<h2>See also</h2>
+<p><a href="../Serial_Peripheral_Interface/index.html">Serial Peripheral Interface</a> &middot; <a href="../SMBus/index.html">SMBus</a> &middot; <a href="../I3C_(bus)/index.html">I3C</a> &middot; <a href="../UART/index.html">UART</a> &middot; <a href="../NXP_Semiconductors/index.html">NXP Semiconductors</a></p>
+</div>
+</body>
+</html>

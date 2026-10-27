@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dangling pointer - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px; overflow-x: auto; font-size: 0.9em; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; background: #eaecf0; border: 1px solid #c8ccd1; padding: 24px; box-sizing: border-box; }
+.caption { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Dangling pointer</h1>
+<div class="hero"><img src="images/Dangling_pointer.png" alt="Diagram of a pointer indicating freed memory"><div class="caption">A dangling pointer indicates memory that has been deallocated</div></div>
+<p><b>Dangling pointers</b> and <b>wild pointers</b> in computer programming are pointers that do not point to a valid object of the appropriate type. These are special cases of memory safety violations. A dangling pointer arises when an object is deleted or deallocated without modifying the value of pointers that referenced it, so the pointer still refers to the memory location even though it may have been reused for other purposes.</p>
+<h2>Causes</h2>
+<p>The classic cause in languages such as C and C++ is freeing heap memory while pointers to it remain:</p>
+<pre>char *p = malloc(10);
+free(p);
+/* p is now a dangling pointer; using it is undefined behaviour */</pre>
+<p>Dangling pointers also arise when a function returns the address of a local variable, when a scope exits while references to its variables persist elsewhere, and in manual reference systems when an object is destroyed while other objects still hold pointers to it. Wild pointers, by contrast, are pointers that have never been initialised to a valid address.</p>
+<h2>Consequences</h2>
+<p>Dereferencing a dangling pointer is undefined behaviour in C and C++: the program may crash, read corrupted data, or appear to work while silently corrupting memory. Such use-after-free errors are also a major source of exploitable security vulnerabilities, since an attacker who can control the reused memory may hijack the stale pointer.</p>
+<h2>Avoidance</h2>
+<p>Common defences include setting pointers to NULL after freeing, using smart pointers and ownership models (such as C++ RAII and Rust's borrow checker), garbage collection, and static and dynamic analysis tools such as AddressSanitizer and Valgrind.</p>
+<h2>See also</h2>
+<p><a href="../Use_after_free/index.html">Use after free</a> · <a href="../Memory_safety/index.html">Memory safety</a> · <a href="../Buffer_overflow/index.html">Buffer overflow</a> · <a href="../Garbage_collection_(computer_science)/index.html">Garbage collection</a></p>
+</div>
+</body>
+</html>

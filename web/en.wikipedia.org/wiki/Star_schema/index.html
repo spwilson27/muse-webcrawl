@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Star schema - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 8px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; font-weight: normal; }
+p { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; background: #eaecf0; border: 1px solid #c8ccd1; padding: 24px; box-sizing: border-box; }
+.caption { font-size: 0.8em; color: #54595d; margin-top: 4px; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Star schema</h1>
+<div class="hero">
+<img src="images/star-schema.png" alt="Diagram of a star schema with a central fact table surrounded by dimension tables">
+<div class="caption">A star schema: a central fact table connected to denormalized dimension tables.</div>
+</div>
+<p>In computing, the <b>star schema</b> (also known as the star join schema) is the simplest style of data mart schema and is the approach most widely used to develop data warehouses and dimensional data marts. The star schema consists of one or more fact tables referencing any number of dimension tables. It is an important special case of the snowflake schema and is more effective for handling simpler queries.</p>
+<p>The star schema gets its name from the physical model's resemblance to a star shape, with a fact table at its center and the dimension tables radiating from it.</p>
+<h2>Model</h2>
+<p>The star schema separates business process data into facts, which hold measurable, quantitative data about a business, and dimensions, which are descriptive attributes related to fact data. Examples of fact data include sales price, sale quantity, and time, distance, speed, and weight measurements. Related dimension attribute examples include product models, product colors, product sizes, geographic locations, and salesperson names.</p>
+<p>A fact table in a star schema might hold, for example, foreign keys referencing dimension tables for date, product, store, and customer, alongside numeric measures such as units sold and revenue.</p>
+<h2>Benefits</h2>
+<p>Star schemas are denormalized, meaning typical relational database rules of normalization are relaxed during design. The benefits include simpler queries — join logic is straightforward because all dimensions connect directly to the fact table — and query performance gains, since the database engine can use star join optimization and fewer joins are required than in a fully normalized schema.</p>
+<h2>Drawbacks</h2>
+<p>The main disadvantage of the star schema is that data integrity is not well enforced because of its denormalized state. Dimension tables contain redundant data, increasing storage requirements, and one-off inserts and updates can lead to data anomalies that normalized schemas avoid.</p>
+<h2>See also</h2>
+<p><a href="../Data_warehouse/index.html">Data warehouse</a> &middot; <a href="../Snowflake_schema/index.html">Snowflake schema</a> &middot; <a href="../Fact_table/index.html">Fact table</a> &middot; <a href="../Dimension_(data_warehouse)/index.html">Dimension</a> &middot; <a href="../Online_analytical_processing/index.html">OLAP</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cramer's rule - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 1.4em; }
+p { line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { margin: 16px 0; text-align: center; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; padding: 24px; }
+.caption { font-size: 0.85em; color: #54595d; }
+.formula { font-family: 'Courier New', monospace; background: #f8f9fa; padding: 10px 14px; border-left: 3px solid #a2a9b1; margin: 12px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Cramer's rule</h1>
+<p><b>Cramer's rule</b> is an explicit formula for the solution of a system of linear equations with as many equations as unknowns, valid whenever the system has a unique solution. It expresses the solution in terms of the determinants of the (square) coefficient matrix and of matrices obtained from it by replacing one column by the column vector of right-hand sides of the equations. It is named after Gabriel Cramer (1704–1752), who published the rule for an arbitrary number of unknowns in 1750, although Colin Maclaurin also published special cases of the rule in 1748 (and possibly knew of it as early as 1729).</p>
+<div class="hero"><img src="images/cramers-rule.png" alt="Diagram illustrating Cramer's rule for a system of two linear equations"><div class="caption">Cramer's rule applied to a 2&times;2 system</div></div>
+<h2>General case</h2>
+<p>Consider a system of <i>n</i> linear equations for <i>n</i> unknowns, represented in matrix multiplication form as <i>Ax</i> = <i>b</i>, where the <i>n</i> &times; <i>n</i> matrix <i>A</i> has a nonzero determinant, and the vector <i>x</i> = (<i>x</i><sub>1</sub>, &hellip;, <i>x</i><sub>n</sub>)<sup>T</sup> is the column vector of the variables. Then the theorem states that in this case the system has a unique solution, whose individual values for the unknowns are given by:</p>
+<div class="formula">x<sub>i</sub> = det(A<sub>i</sub>) / det(A)</div>
+<p>where <i>A</i><sub>i</sub> is the matrix formed by replacing the <i>i</i>-th column of <i>A</i> with the column vector <i>b</i>.</p>
+<h2>Proof</h2>
+<p>The proof of Cramer's rule uses properties of the determinant: linearity in each column of an argument and the fact that the determinant is zero when two columns are equal. A slick proof follows from abstract linear algebra: the rule is a consequence of the adjugate identity <i>A</i> adj(<i>A</i>) = det(<i>A</i>) <i>I</i>.</p>
+<h2>Finding inverse matrix</h2>
+<p>Cramer's rule can also be used to express the inverse of an invertible <i>n</i> &times; <i>n</i> matrix: solving <i>Ax</i> = <i>e</i><sub>j</sub> for each standard basis vector gives the columns of <i>A</i><sup>&minus;1</sup>. This leads to the formula <i>A</i><sup>&minus;1</sup> = adj(<i>A</i>) / det(<i>A</i>), where adj denotes the adjugate matrix of cofactors.</p>
+<h2>Applications</h2>
+<p>Cramer's rule is of theoretical importance mainly, because it gives an explicit expression for the solution of a system in terms of determinants. For large systems, Gaussian elimination is far more efficient computationally: Cramer's rule requires computing <i>n</i> + 1 determinants, each of which is generally as expensive as solving a system directly. The rule also applies in differential geometry and in proofs involving systems of equations over commutative rings.</p>
+<h2>See also</h2>
+<p><a href="../Determinant/">Determinant</a> &middot; <a href="../Gaussian_elimination/">Gaussian elimination</a> &middot; <a href="../Linear_algebra/">Linear algebra</a> &middot; <a href="../System_of_linear_equations/">System of linear equations</a> &middot; <a href="../Matrix_(mathematics)/">Matrix</a></p>
+</div>
+</body>
+</html>

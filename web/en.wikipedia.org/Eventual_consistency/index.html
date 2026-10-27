@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Eventual consistency - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+img.hero{float:right;width:300px;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Eventual consistency</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/eventual_consistency.png" alt="Diagram of replicas in a distributed database converging to the same value over time">
+<p><b>Eventual consistency</b> is a consistency model used in distributed computing to achieve high availability. It guarantees that, if no new updates are made to a given data item, eventually all accesses to that item will return the last updated value — that is, all replicas will converge to the same state. Between an update and convergence, different replicas may return different (stale) values.</p>
+<h2>Context</h2>
+<p>Eventual consistency is a weak consistency model contrasted with strong consistency, in which every read returns the most recent write. The trade-off is described by the <a href="../CAP_theorem/index.html">CAP theorem</a>: under a network partition, a distributed system must choose between consistency and availability, and eventually consistent systems choose availability. Such systems are sometimes described by the acronym BASE — Basically Available, Soft state, Eventually consistent — as opposed to the ACID guarantees of traditional databases.</p>
+<h2>Mechanisms</h2>
+<p>Systems achieve convergence through techniques such as anti-entropy protocols and gossip protocols for spreading updates, vector clocks and version vectors for detecting concurrent writes, and conflict-resolution strategies including last-writer-wins timestamps, application-level merge functions, and conflict-free replicated data types (CRDTs). Amazon's Dynamo and its descendants (Cassandra, Riak, DynamoDB in its default mode) popularised the model for web-scale storage; the Domain Name System is an older example of an eventually consistent system.</p>
+<h2>Variants</h2>
+<p>Stronger models built on eventual consistency include causal consistency, read-your-writes consistency, monotonic reads, and session consistency, which repair specific anomalies users find surprising while keeping most operations available during partitions. Werner Vogels's 2008 article "Eventually Consistent" is a widely cited exposition of the concept.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../CAP_theorem/index.html">CAP theorem</a></li>
+<li><a href="../Consistency_model/index.html">Consistency model</a></li>
+<li><a href="../Distributed_database/index.html">Distributed database</a></li>
+<li><a href="../Conflict-free_replicated_data_type/index.html">Conflict-free replicated data type</a></li>
+</ul>
+</div>
+</body>
+</html>

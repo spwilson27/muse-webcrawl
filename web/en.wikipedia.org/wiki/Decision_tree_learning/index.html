@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Decision tree learning - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+header{background:#fff;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header h1{font-size:1.7em;margin:0;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+main{max-width:960px;margin:0 auto;background:#fff;padding:24px;line-height:1.6}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+img.hero{float:right;margin:0 0 12px 16px;max-width:280px;background:#eaecf0;padding:8px}
+a{color:#0645ad;text-decoration:none}
+footer{max-width:960px;margin:0 auto;padding:12px 24px;font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<header><h1>Decision tree learning</h1></header>
+<main>
+<img class="hero" src="images/decision-tree.png" alt="A decision tree diagram with branching test nodes">
+<p><b>Decision tree learning</b> is a supervised learning approach used in statistics, data mining, and machine learning. In this formalism, a classification or regression decision tree is used as a predictive model to draw conclusions about a set of observations. The model takes the form of a tree structure: internal nodes represent tests on attributes, branches represent the outcomes of those tests, and leaf nodes represent class labels or continuous values.</p>
+<h2>Overview</h2>
+<p>The goal is to create a model that predicts the value of a target variable based on several input variables. An example is the survival of passengers on the Titanic: attributes such as sex, age, and passenger class can be combined in a small tree that separates survivors from non-survivors with reasonable accuracy. Decision trees are prized for their interpretability — the resulting model can be read as a set of if–then rules — and they require little data preparation, handling both numerical and categorical data.</p>
+<h2>Algorithms</h2>
+<p>Well-known decision tree algorithms include:</p>
+<ul>
+<li><b>ID3</b> (Iterative Dichotomiser 3), developed by Ross Quinlan, which selects attributes by information gain based on entropy.</li>
+<li><b>C4.5</b>, Quinlan's successor to ID3, using gain ratio, handling continuous attributes and missing values, and supporting pruning.</li>
+<li><b>CART</b> (Classification and Regression Trees), introduced by Breiman and colleagues, which builds binary trees using the Gini impurity and supports regression as well as classification.</li>
+<li><b>CHAID</b>, which uses chi-squared tests for splitting multi-way categorical trees.</li>
+</ul>
+<p>Most algorithms grow the tree greedily, top-down, choosing at each node the split that maximises a purity measure such as information gain or minimises impurity such as the Gini index. Growth stops when subsets are pure or a stopping criterion is met.</p>
+<h2>Overfitting and pruning</h2>
+<p>Deep trees can overfit training data, memorising noise rather than learning general patterns. Pruning simplifies a tree by removing sections that provide little predictive power, trading a small increase in training error for better generalisation. Cost-complexity pruning, reduced-error pruning, and limits on depth or leaf size are common strategies.</p>
+<h2>Ensembles</h2>
+<p>Decision trees are frequently combined into ensembles. <b>Random forests</b> average many trees trained on bootstrap samples with random feature subsets, greatly improving accuracy at some cost to interpretability. Gradient-boosted trees, implemented in systems such as XGBoost and LightGBM, sequentially fit trees to the errors of their predecessors and have won many machine learning competitions.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Random_forest/index.html">Random forest</a></li>
+<li><a href="../Gradient_boosting/index.html">Gradient boosting</a></li>
+<li><a href="../Machine_learning/index.html">Machine learning</a></li>
+<li><a href="../Decision_tree/index.html">Decision tree</a></li>
+</ul>
+</main>
+<footer>From Wikipedia, the free encyclopedia.</footer>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Binary heap - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:2em auto;max-width:820px;padding:0 1em;color:#202122;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{border-bottom:1px solid #a2a9b1;margin-top:1.5em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+figure{float:right;margin:0 0 1em 1em;width:260px;text-align:center}
+figure img{width:100%;background:#f8f9fa;border:1px solid #c8ccd1}
+figcaption{font-size:.85em;color:#54595d}
+code{font-family:monospace;background:#f8f9fa}
+</style>
+</head>
+<body>
+<h1>Binary heap</h1>
+<figure><img src="images/binary-heap.png" alt="Diagram of a binary max-heap stored as a tree"></figure>
+<p>A <b>binary heap</b> is a heap data structure that takes the form of a complete binary tree. It is a common way of implementing a priority queue. In a <i>max-heap</i>, each parent node's key is greater than or equal to the keys of its children; in a <i>min-heap</i>, each parent's key is less than or equal to its children's keys — the "heap property".</p>
+<h2>Representation</h2>
+<p>Because the tree is complete, a binary heap is usually stored in an array with no gaps. For a node at index <code>i</code> (in 1-based indexing), its children are at indices <code>2i</code> and <code>2i+1</code>, and its parent is at index <code>⌊i/2⌋</code>. No pointers are needed, making the structure compact and cache-friendly.</p>
+<h2>Operations</h2>
+<p>Insertion appends the new element at the end of the array and restores the heap property by "bubbling up" (sift up). Extracting the maximum (or minimum) removes the root, moves the last element to the root, and restores the property by "bubbling down" (sift down). Both operations take O(log n) time; building a heap from n elements can be done in O(n) by heapifying from the bottom up.</p>
+<h2>Applications</h2>
+<p>Binary heaps underlie the <a href="../Heapsort/index.html">heapsort</a> sorting algorithm, and are used in graph algorithms such as Dijkstra's shortest path and Prim's minimum spanning tree, in schedulers, and in event-driven simulation. The binary heap was introduced by J. W. J. Williams in 1964 as part of heapsort.</p>
+<p>See also: <a href="../Priority_queue/index.html">Priority queue</a>, <a href="../Binary_tree/index.html">Binary tree</a>, <a href="../Fibonacci_heap/index.html">Fibonacci heap</a>.</p>
+</body>
+</html>

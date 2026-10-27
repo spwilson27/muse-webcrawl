@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>Ziegler–Nichols method - Wikipedia</title><style>body{font-family:sans-serif;max-width:900px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1}h2{border-bottom:1px solid #a2a9b1}a{color:#0645ad}table{border-collapse:collapse}td,th{border:1px solid #a2a9b1;padding:6px 10px}</style></head><body>
+<h1>Ziegler–Nichols method</h1>
+<img src="images/Ziegler–Nichols_method.png" alt="Sustained oscillation of a control loop at the ultimate gain">
+<p>The <b>Ziegler–Nichols method</b> is a heuristic method of tuning a PID controller. It was developed by John G. Ziegler and Nathaniel B. Nichols at Taylor Instruments and presented in their 1942 paper "Optimum Settings for Automatic Controllers". It remains one of the most widely taught first approaches to PID tuning.</p>
+<h2>The ultimate gain method</h2>
+<p>In the closed-loop (ultimate sensitivity) method, the integral and derivative actions are first disabled. The proportional gain K<sub>p</sub> is increased from zero until the loop output exhibits sustained, constant-amplitude oscillations. This gain is the ultimate gain K<sub>u</sub>, and the oscillation period is the ultimate period P<sub>u</sub>. Controller settings are then calculated as fractions of these values.</p>
+<table><tr><th>Controller</th><th>K<sub>p</sub></th><th>T<sub>i</sub></th><th>T<sub>d</sub></th></tr>
+<tr><td>P</td><td>0.5 K<sub>u</sub></td><td>—</td><td>—</td></tr>
+<tr><td>PI</td><td>0.45 K<sub>u</sub></td><td>P<sub>u</sub>/1.2</td><td>—</td></tr>
+<tr><td>PID</td><td>0.6 K<sub>u</sub></td><td>P<sub>u</sub>/2</td><td>P<sub>u</sub>/8</td></tr></table>
+<h2>Step response method</h2>
+<p>Ziegler and Nichols also described an open-loop method based on the process reaction curve: the plant's response to a step input is characterised by a time delay L and a time constant T, from which P, PI, and PID settings are derived.</p>
+<h2>Characteristics and criticism</h2>
+<p>The classic rules aim for quarter-amplitude decay — each overshoot one quarter of the previous — which gives a fast but oscillatory, fairly aggressive response with modest robustness margins. Later modifications, such as the Tyreus–Luyben and "no overshoot" variants, use more conservative fractions of K<sub>u</sub> and P<sub>u</sub> for loops where stability margins matter more than speed.</p>
+<h2>See also</h2>
+<ul><li><a href="../PID_controller/index.html">PID controller</a></li><li><a href="../Control_theory/index.html">Control theory</a></li><li><a href="../Cohen–Coon_process_reaction_method/index.html">Cohen–Coon method</a></li></ul>
+</body></html>

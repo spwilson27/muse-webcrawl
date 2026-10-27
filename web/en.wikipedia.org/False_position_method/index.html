@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>False position method — Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 320px; float: right; margin: 0 0 12px 16px; border: 1px solid #c8ccd1; background: #eaecf0; padding: 4px; }
+.small { font-size: 85%; color: #54595d; }
+.eq { text-align: center; font-style: italic; margin: 16px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>False position method</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/false-position-method.png" alt="Graph showing two iterations of the false position method converging on a root of a function">
+<p>In mathematics, the <b>false position method</b> or <b><i>regula falsi</i></b> method is a root-finding algorithm that combines features of the <a href="../Bisection_method/">bisection method</a> and the <a href="../Secant_method/">secant method</a>. Like the bisection method, it maintains a bracket of two points whose function values have opposite signs, guaranteeing convergence to a root; but instead of taking the midpoint, it takes the point where the straight line through the two bracket endpoints crosses the x-axis — the "false position".</p>
+<h2>The method</h2>
+<p>Given points <i>a</i> and <i>b</i> with <i>f(a)</i> and <i>f(b)</i> of opposite sign, the next approximation is:</p>
+<p class="eq">c = b − f(b)·(b − a) / (f(b) − f(a))</p>
+<p>The point <i>c</i> then replaces whichever endpoint has a function value of the same sign, keeping the root bracketed. The method dates to ancient Egyptian and Babylonian mathematics; a form of it appears in the Rhind Papyrus (c. 1550 BC), and it was transmitted through medieval texts such as Fibonacci's <i>Liber Abaci</i> (1202), making it one of the oldest numerical methods still in use.</p>
+<h2>Convergence and variants</h2>
+<p>Regula falsi always converges, but it can be much slower than the bisection method in one respect: if the function is strongly curved, one endpoint may remain fixed for many iterations, so the interval shrinks only from one side and convergence becomes merely linear. Modifications such as the <b>Illinois algorithm</b>, the Pegasus method and the Anderson–Björck method correct this by scaling the retained endpoint's function value, restoring fast superlinear convergence. The hybrid Brent's method, widely used in numerical libraries, combines false-position-like interpolation with bisection safeguards.</p>
+<p class="small">See also: <a href="../Root-finding_algorithm/">Root-finding algorithm</a> · <a href="../Newton's_method/">Newton's method</a> · <a href="../Brent's_method/">Brent's method</a></p>
+</div>
+</body>
+</html>

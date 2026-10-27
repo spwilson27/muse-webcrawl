@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Knapsack problem - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 4px; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #a2a9b1; background: #eaecf0; }
+.caption { font-size: 12px; color: #54595d; }
+.formula { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px 14px; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Knapsack problem</h1>
+<p>The <b>knapsack problem</b> is a problem in combinatorial optimization: given a set of items, each with a weight and a value, determine which items to include in a collection so that the total weight is less than or equal to a given limit and the total value is as large as possible. It derives its name from the problem faced by someone who is constrained by a fixed-size knapsack and must fill it with the most valuable items.</p>
+<div class="hero">
+<img src="images/knapsack_problem.png" alt="Illustration of a knapsack being filled with items of different weights and values">
+<div class="caption">Choosing the most valuable combination of items that fits in a knapsack of limited capacity.</div>
+</div>
+<h2>Definition</h2>
+<p>The most common problem being solved is the <b>0–1 knapsack problem</b>, which restricts the number of copies of each kind of item to zero or one. Given a set of <i>n</i> items, each with weight <i>w<sub>i</sub></i> and value <i>v<sub>i</sub></i>, and a maximum capacity <i>W</i>, the goal is:</p>
+<div class="formula">maximize Σ v<sub>i</sub> x<sub>i</sub> &nbsp; subject to &nbsp; Σ w<sub>i</sub> x<sub>i</sub> ≤ W, &nbsp; x<sub>i</sub> ∈ {0, 1}</div>
+<p>Variants include the bounded knapsack problem (each item type available in limited quantity), the unbounded knapsack problem (unlimited copies), and the multiple knapsack problem (several knapsacks). The problem is one of <a href="../Richard_Karp/index.html">Richard Karp's</a> 21 NP-complete problems, described in his 1972 paper, and appears on the list of Millennium-adjacent classics of theoretical computer science.</p>
+<h2>Computational complexity</h2>
+<p>The 0–1 knapsack problem is <a href="../NP-hardness/index.html">NP-hard</a>, and its decision version is NP-complete. Nevertheless, it admits a pseudo-polynomial time algorithm based on <a href="../Dynamic_programming/index.html">dynamic programming</a> whose running time is proportional to the number of items times the capacity <i>W</i>. Because <i>W</i> is a numerical value rather than a function of the input length, this does not contradict NP-hardness: the problem is described as weakly NP-hard. Knapsack also admits a fully polynomial-time approximation scheme (FPTAS), making it one of the best-behaved NP-hard optimization problems in practice.</p>
+<h2>Solution methods</h2>
+<h3>Dynamic programming</h3>
+<p>The classical algorithm computes, for each item and each capacity, the maximum value obtainable. Building the table requires O(nW) time and space, which is practical when the capacity is moderate. Space can be reduced by processing items in reverse order of capacity within a single one-dimensional array.</p>
+<h3>Greedy and approximation algorithms</h3>
+<p>A simple greedy strategy sorts items by value density (value per unit weight) and packs them in that order; although this can be arbitrarily bad for the 0–1 problem, combining it with a best-single-item check yields a 2-approximation. The FPTAS scales item values to reduce state space while losing only a small, controlled fraction of optimality.</p>
+<h3>Branch and bound</h3>
+<p>Exact solvers often use <a href="../Branch_and_bound/index.html">branch and bound</a>, computing upper bounds from the linear (fractional) relaxation of the problem, in which fractions of items are allowed. The fractional problem is solvable greedily by value density, and its optimum bounds any integral solution.</p>
+<h2>Applications</h2>
+<p>Knapsack models arise in resource allocation, budgeting, cargo loading, cutting stock problems, and project selection. The problem also played a role in early public-key cryptography: the Merkle–Hellman knapsack cryptosystem (1978) based its security on the subset-sum special case, although it was later broken by Adi Shamir and others.</p>
+<h2>See also</h2>
+<p><a href="../Subset_sum_problem/index.html">Subset sum problem</a> · <a href="../Bin_packing_problem/index.html">Bin packing problem</a> · <a href="../Dynamic_programming/index.html">Dynamic programming</a> · <a href="../Cutting_stock_problem/index.html">Cutting stock problem</a> · <a href="../Change-making_problem/index.html">Change-making problem</a></p>
+</div>
+</body>
+</html>

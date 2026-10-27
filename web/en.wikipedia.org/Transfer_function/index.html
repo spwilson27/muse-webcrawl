@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Transfer function - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.mw-body { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 16px 20px; font-size: 13px; }
+.infobox th { text-align: left; padding: 3px 6px; vertical-align: top; }
+.infobox td { padding: 3px 6px; }
+.infobox .ib-title { text-align: center; font-weight: bold; font-size: 15px; background: #e8eaf6; padding: 6px; }
+.hero { text-align: center; margin: 12px 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; }
+.caption { font-size: 12px; color: #54595d; }
+.math { font-style: italic; font-family: 'Times New Roman', serif; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Transfer function</h1>
+<div class="infobox">
+<div class="ib-title">Transfer function</div>
+<table>
+<tr><th>Field</th><td>Control engineering, signal processing</td></tr>
+<tr><th>Definition</th><td>Ratio of the Laplace transform of the output to that of the input (zero initial conditions)</td></tr>
+<tr><th>Applies to</th><td>Linear time-invariant (LTI) systems</td></tr>
+<tr><th>Key concepts</th><td>Poles, zeros, frequency response, stability</td></tr>
+</table>
+</div>
+<div class="hero">
+<img src="images/Transfer_function.png" alt="Bode plot diagram of a transfer function's magnitude and phase response">
+<div class="caption">A Bode plot visualizes a transfer function's frequency response.</div>
+</div>
+<p>In engineering, a <b>transfer function</b> (also known as <b>system function</b> or <b>network function</b>) of a system, sub-system, or component is a mathematical function that theoretically models the system's output for each possible input. It is used in the mathematical modeling of dynamic systems, principally in control theory and signal processing, for systems that can be treated as linear and time-invariant.</p>
+<h2>Definition</h2>
+<p>For a single-input single-output LTI system described by a linear differential equation with constant coefficients, the transfer function <span class="math">H(s)</span> is the ratio of the Laplace transform of the output <span class="math">Y(s)</span> to the Laplace transform of the input <span class="math">X(s)</span>, assuming all initial conditions are zero: <span class="math">H(s) = Y(s)/X(s)</span>. Because the system is linear, <span class="math">H(s)</span> is a rational function of the complex variable <span class="math">s</span> — a ratio of polynomials. The roots of the numerator are the system's <b>zeros</b>; the roots of the denominator (the characteristic polynomial) are its <b>poles</b>.</p>
+<h2>Interpretation and use</h2>
+<p>Poles determine the system's natural modes and stability: for a continuous-time system, all poles must lie in the left half of the s-plane for bounded-input bounded-output stability. The frequency response is obtained by evaluating <span class="math">H(s)</span> on the imaginary axis (<span class="math">s = jω</span>), giving the gain and phase shift applied to a sinusoid of frequency ω; it is conventionally displayed as Bode plots or Nyquist plots. In the time domain, the transfer function corresponds via the inverse Laplace transform to the impulse response, and the output is the convolution of the input with that response. In block diagrams, systems in series multiply their transfer functions, systems in parallel add them, and feedback interconnections simplify algebraically — allowing engineers to design compensators (such as PID controllers) directly in the frequency domain. For discrete-time systems, the analogous tool is the z-transform transfer function <span class="math">H(z)</span>.</p>
+<h2>Limitations</h2>
+<p>Transfer functions apply strictly to linear time-invariant systems and hide internal state information: different state realizations can share a transfer function (through pole–zero cancellation), so controllability and observability cannot be judged from it alone. Nonlinear or time-varying systems require other methods, such as state-space models, describing functions, or Volterra series.</p>
+<h2>See also</h2>
+<p><a href="../Laplace_transform/index.html">Laplace transform</a> · <a href="../Control_theory/index.html">Control theory</a> · <a href="../Bode_plot/index.html">Bode plot</a> · <a href="../Impulse_response/index.html">Impulse response</a></p>
+</div>
+</body>
+</html>

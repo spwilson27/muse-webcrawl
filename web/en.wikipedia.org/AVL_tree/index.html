@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AVL tree - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 920px; padding: 0 1em; color: #202122; line-height: 1.6; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+img.hero { display: block; margin: 1em auto; max-width: 400px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 1em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>AVL tree</h1>
+<img class="hero" src="images/AVL_tree.png" alt="Diagram of a balanced AVL binary search tree with balance factors shown at each node">
+<p>An <b>AVL tree</b> (named after its inventors, Georgy Adelson-Velsky and Evgenii Landis) is a self-balancing binary search tree. It was the first such data structure to be invented, published by Adelson-Velsky and Landis in a 1962 paper. In an AVL tree, the heights of the two child subtrees of any node differ by at most one; if they differ by more than one after an insertion or deletion, the tree is rebalanced using rotations.</p>
+<h2>Properties</h2>
+<p>Each node stores a balance factor — the height of its right subtree minus the height of its left subtree (or vice versa) — which in a valid AVL tree is −1, 0, or +1. The height of an AVL tree with <i>n</i> nodes is O(log <i>n</i>), specifically bounded by about 1.44 log<sub>2</sub>(<i>n</i> + 2) − 0.33, so search, insertion, and deletion all take O(log <i>n</i>) time in the worst case. The tight balance condition makes AVL trees more rigidly balanced than red–black trees, giving slightly faster lookups at the cost of potentially more rotations on updates.</p>
+<h2>Rebalancing</h2>
+<p>After modification, the algorithm retraces the path from the changed node to the root, updating balance factors. If a node becomes unbalanced, one of four cases applies: left-left and right-right imbalances are fixed by a single rotation, while left-right and right-left imbalances require a double rotation (a rotation of the child followed by a rotation of the node). Insertion needs at most one single or double rotation; deletion may require rotations at several levels, though still O(log <i>n</i>) overall.</p>
+<h2>Comparison and applications</h2>
+<p>AVL trees are preferred where lookups dominate, such as in-memory databases, ordered maps, and sets, while red–black trees are common in language libraries (for example, the Linux kernel and Java's TreeMap) because they need fewer rotations on insertions and deletions. AVL trees are also used in geometric and interval data structures and in functional data structures where strict balancing bounds are valuable.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Red%E2%80%93black_tree/index.html">Red–black tree</a></li>
+<li><a href="../Binary_search_tree/index.html">Binary search tree</a></li>
+<li><a href="../Self-balancing_binary_search_tree/index.html">Self-balancing binary search tree</a></li>
+<li><a href="../Tree_rotation/index.html">Tree rotation</a></li>
+</ul>
+</body>
+</html>

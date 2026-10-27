@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Generic function - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.35em;border-bottom:1px solid #c8ccd1;padding-bottom:.15em;margin-top:1.4em}
+img.hero{display:block;max-width:420px;width:100%;height:220px;object-fit:cover;background:#e8e8e8;border:1px solid #a2a9b1;margin:1em 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Generic function</h1>
+<img class="hero" src="images/generic-function.png" alt="Diagram of method dispatch in a generic function based on argument classes">
+<p>In computer programming, a <b>generic function</b> is a function that consists of a collection of <i>methods</i>, each specialised for particular classes of arguments. When the generic function is called, the appropriate method is selected — or several methods are combined — based on the classes of the arguments. The idea was developed most fully in the Common Lisp Object System (CLOS), where generic functions are the primary vehicle of polymorphism.</p>
+<h2>Method dispatch</h2>
+<p>Unlike message-passing object systems, where a method belongs to a single class and is selected by the class of one receiver, a generic function can dispatch on the classes of <i>all</i> of its required arguments — a feature called multiple dispatch. For example, a generic function <code>collide</code> might have methods for (asteroid, spaceship), (asteroid, asteroid) and (spaceship, spaceship) argument pairs, each implementing different behaviour.</p>
+<h2>Method combination</h2>
+<p>CLOS provides standard method combination: <i>primary</i> methods do the main work, while <i>:before</i>, <i>:after</i> and <i>:around</i> auxiliary methods add behaviour around a call to the next most specific method via <code>call-next-method</code>. The applicable methods are ordered by the class precedence lists of the argument classes.</p>
+<h2>Other languages</h2>
+<p>The concept appears under various names elsewhere: Julia's functions are generic with multiple dispatch as the language's central paradigm; Dylan, Cecil and other languages adopt similar designs. In C++, templates provide compile-time genericity but are not generic functions in the CLOS sense.</p>
+<p class="small">See also: <a href="../Common_Lisp_Object_System/index.html">Common Lisp Object System</a> · <a href="../Multiple_dispatch/index.html">Multiple dispatch</a> · <a href="../Generic_programming/index.html">Generic programming</a></p>
+</body>
+</html>

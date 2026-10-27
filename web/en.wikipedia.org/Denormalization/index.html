@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Denormalization - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 36px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+img.hero { display: block; max-width: 320px; margin: 12px auto; border: 1px solid #c8ccd1; background: #eaecf0; padding: 8px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.caption { text-align: center; font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Denormalization</h1>
+<p>In database theory, <b>denormalization</b> is a strategy used on a previously normalized database to increase performance. In computing, denormalization is the process of trying to improve the read performance of a database, at the expense of losing some write performance, by adding redundant copies of data or by grouping data.</p>
+<img class="hero" src="images/Denormalization.png" alt="Diagram contrasting normalized and denormalized schemas">
+<p class="caption">Denormalization trades redundancy for faster reads</p>
+<h2>Motivation</h2>
+<p>A normalized design minimizes redundancy and update anomalies, but queries spanning many tables require joins, which can be expensive on large data volumes. Where read load dominates — reporting systems, data warehouses, and high-traffic web applications — deliberately duplicating data can eliminate joins and precompute aggregates.</p>
+<h2>Techniques</h2>
+<p>Common techniques include storing derived values (such as totals) alongside their components, keeping redundant copies of a column in multiple tables, maintaining summary or materialized tables refreshed periodically, and flattening hierarchies into a single table. In NoSQL systems such as document databases, embedding related data in one document is a form of denormalization built into the data model.</p>
+<h2>Trade-offs</h2>
+<p>Redundant data can become inconsistent if updates fail to propagate, so denormalized designs need discipline: application-level maintenance, triggers, or scheduled reconciliation. Denormalization increases storage use and slows writes, and is normally applied selectively, after measurement shows a normalized design cannot meet performance goals.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Database_normalization/index.html">Database normalization</a></li>
+<li><a href="../Materialized_view/index.html">Materialized view</a></li>
+<li><a href="../Data_warehouse/index.html">Data warehouse</a></li>
+<li><a href="../Relational_database/index.html">Relational database</a></li>
+</ul>
+</div>
+</body>
+</html>

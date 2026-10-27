@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Edit distance - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 8px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; margin-top: 28px; }
+img.hero { display: block; margin: 12px auto; max-width: 480px; width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; padding: 6px; }
+.caption { text-align: center; font-size: 0.85em; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+p { line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Edit distance</h1>
+<p>In computer science and information theory, <b>edit distance</b> is a way of quantifying how dissimilar two strings are by counting the minimum number of single-character operations required to transform one string into the other. The permitted operations depend on the variant of the measure.</p>
+<img class="hero" src="images/edit-distance.png" alt="Matrix used to compute the Levenshtein edit distance">
+<p class="caption">The dynamic-programming matrix for Levenshtein distance</p>
+<h2>Levenshtein distance</h2>
+<p>The best-known measure, the <a href="../Levenshtein_distance/index.html">Levenshtein distance</a>, named after Soviet mathematician Vladimir Levenshtein, who described it in 1965, permits insertion, deletion, and substitution of a single character. For example, the distance between "kitten" and "sitting" is 3: substitute k→s, substitute e→i, and insert g. When substitutions are disallowed or priced double, one obtains the LCS distance, based on insertions and deletions only.</p>
+<h2>Other variants</h2>
+<p>The Damerau–Levenshtein distance additionally allows transposition of two adjacent characters, common in typing errors. The Hamming distance, restricted to strings of equal length, counts positions at which characters differ. Jaro and Jaro–Winkler similarity are related measures designed for short strings such as names.</p>
+<h2>Computation</h2>
+<p>Edit distance is classically computed with the Wagner–Fischer dynamic programming algorithm, which fills a matrix of distances between prefixes in O(mn) time for strings of length m and n. The memory can be reduced to two rows, and algorithms such as Hunt–Szymanski and Ukkonen's cutoff method speed up cases where the distance is small.</p>
+<h2>Applications</h2>
+<p>Edit distance underpins spell checkers and fuzzy search, approximate string matching in text editors, plagiarism detection, and — in bioinformatics — the alignment of DNA and protein sequences, where closely related measures such as the Needleman–Wunsch and Smith–Waterman algorithms score substitutions with biochemical substitution matrices.</p>
+<h2>See also</h2>
+<p><a href="../Levenshtein_distance/index.html">Levenshtein distance</a> · <a href="../Hamming_distance/index.html">Hamming distance</a> · <a href="../Approximate_string_matching/index.html">Approximate string matching</a> · <a href="../Sequence_alignment/index.html">Sequence alignment</a></p>
+</div>
+</body>
+</html>

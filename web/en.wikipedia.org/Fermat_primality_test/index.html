@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fermat Primality Test - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 0 auto; padding: 24px; color: #202122; line-height: 1.6; background: #fff; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 480px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 12px; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<h1>Fermat primality test</h1>
+<div class="hero"><img src="images/Fermat_primality_test.png" alt="Flowchart of the Fermat primality test choosing random bases and checking congruences"></div>
+<p>The <b>Fermat primality test</b> is a probabilistic method for determining whether a number is prime. It is based on Fermat's little theorem, which states that if <i>p</i> is prime and <i>a</i> is not divisible by <i>p</i>, then <i>a</i><sup><i>p</i>−1</sup> ≡ 1 (mod <i>p</i>). If a number <i>n</i> fails this congruence for some base <i>a</i>, then <i>n</i> is certainly composite; if it passes, <i>n</i> is probably prime.</p>
+<h2>Algorithm</h2>
+<p>Given an integer <i>n</i> &gt; 1 to be tested, choose a random integer <i>a</i> with 1 &lt; <i>a</i> &lt; <i>n</i> and compute <i>a</i><sup><i>n</i>−1</sup> mod <i>n</i> using fast modular exponentiation. If the result is not 1, then <i>n</i> is composite (and <i>a</i> is called a <i>Fermat witness</i>). If the result is 1, repeat with other random bases to increase confidence; <i>n</i> is then a probable prime to base <i>a</i>.</p>
+<h2>Limitations: Fermat pseudoprimes and Carmichael numbers</h2>
+<p>Some composite numbers pass the test for particular bases: a composite <i>n</i> with <i>a</i><sup><i>n</i>−1</sup> ≡ 1 (mod <i>n</i>) is a Fermat pseudoprime to base <i>a</i>, the smallest example being 341 = 11 × 31 for base 2. Worse, <b>Carmichael numbers</b> — composite numbers such as 561 — pass the test for <i>every</i> base coprime to them, so no amount of testing with random bases can expose them except by luck of choosing a factor-sharing base. For this reason, the Fermat test is mainly of historical and pedagogical interest, and practical systems prefer the Miller–Rabin or Baillie–PSW tests, which have no such counterexamples of this kind.</p>
+<h2>Applications</h2>
+<p>Despite its flaw, the Fermat test illustrates the core idea behind modern probabilistic primality testing used in cryptography, where candidate primes for RSA key generation must be generated quickly. Faster deterministic variants and refinements of the same underlying idea remain in daily use.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Primality_test/index.html">Primality test</a></li>
+<li><a href="../Miller–Rabin_primality_test/index.html">Miller–Rabin primality test</a></li>
+<li><a href="../Carmichael_number/index.html">Carmichael number</a></li>
+</ul>
+</body>
+</html>

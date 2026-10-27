@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>CAP theorem</title>
+<style>body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.6;color:#222}h1{border-bottom:2px solid #a2a9b1}h2{border-bottom:1px solid #a2a9b1}img.hero{max-width:100%;background:#eee;display:block;padding:40px;text-align:center;color:#555}a{color:#0645ad}</style></head>
+<body>
+<h1>CAP theorem</h1>
+<img class="hero" src="images/CAP_theorem.png" alt="Diagram showing consistency, availability and partition tolerance triangle">
+<p>The <b>CAP theorem</b>, also known as <b>Brewer's theorem</b> after computer scientist Eric Brewer, states that a distributed data store can provide only two of the following three guarantees simultaneously: consistency, availability, and partition tolerance.</p>
+<h2>The three guarantees</h2>
+<p><b>Consistency</b> means every read receives the most recent write or an error. <b>Availability</b> means every request receives a non-error response, without the guarantee that it contains the most recent write. <b>Partition tolerance</b> means the system continues to operate despite an arbitrary number of messages being dropped or delayed by the network between nodes.</p>
+<h2>History</h2>
+<p>Brewer presented the conjecture at the Symposium on Principles of Distributed Computing in 2000. In 2002 Seth Gilbert and Nancy Lynch of MIT published a formal proof, establishing it as a theorem. Brewer later refined his position in a 2012 article, arguing that the "two of three" formulation is somewhat misleading and that systems can manage trade-offs more gradually.</p>
+<h2>Implications</h2>
+<p>Because network partitions are unavoidable in real distributed systems, designers effectively choose between consistency and availability when a partition occurs. Databases described as CP favour consistency, while AP systems favour availability. The theorem influenced the design of NoSQL databases and is complemented by the PACELC theorem, which also addresses latency trade-offs in the absence of partitions.</p>
+<p>See also: <a href="../Distributed_computing/index.html">Distributed computing</a> · <a href="../Database/index.html">Database</a></p>
+</body></html>

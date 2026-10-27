@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Kernel regression - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 4px; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+h3 { font-size: 17px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #a2a9b1; background: #eaecf0; }
+.caption { font-size: 12px; color: #54595d; }
+.toc { background: #f8f9fa; border: 1px solid #a2a9b1; display: inline-block; padding: 10px 18px; font-size: 14px; }
+.formula { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px 14px; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Kernel regression</h1>
+<p><b>Kernel regression</b> is a non-parametric technique in <a href="../Statistics/index.html">statistics</a> to estimate the conditional expectation of a random variable. The objective is to find a non-linear relation between a pair of random variables <i>X</i> and <i>Y</i>.</p>
+<div class="hero">
+<img src="images/kernel_regression.png" alt="Scatter plot with a smooth curve fitted by kernel regression">
+<div class="caption">A kernel regression smoother fitted to scattered data.</div>
+</div>
+<div class="toc">
+<b>Contents</b>
+<ol>
+<li>Introduction</li>
+<li>Nadaraya–Watson kernel regression</li>
+<li>Priestley–Chao kernel estimator</li>
+<li>Gasser–Müller kernel estimator</li>
+<li>Bandwidth selection</li>
+<li>See also</li>
+</ol>
+</div>
+<h2>Introduction</h2>
+<p>In any nonparametric regression, the conditional expectation of a variable <i>Y</i> relative to a variable <i>X</i> may be written:</p>
+<div class="formula">E(Y | X) = m(X)</div>
+<p>where <i>m</i> is an unknown function. Kernel regression estimates <i>m</i> by locally weighting the observed data points with a <a href="../Kernel_(statistics)/index.html">kernel function</a>, so that observations closer to the point of interest receive greater weight. Unlike <a href="../Linear_regression/index.html">linear regression</a>, no global functional form — such as a straight line — is assumed in advance; the shape of the curve is determined by the data themselves.</p>
+<p>The technique is closely related to <a href="../Kernel_density_estimation/index.html">kernel density estimation</a> and to smoothing methods such as <a href="../Moving_average/index.html">moving averages</a> and splines. Its accuracy depends strongly on the choice of the kernel and, most importantly, on the bandwidth parameter, which controls the degree of smoothing.</p>
+<h2>Nadaraya–Watson kernel regression</h2>
+<p>The Nadaraya–Watson estimator, proposed independently by Nadaraya (1964) and Watson (1964), estimates <i>m(x)</i> as a locally weighted average using a kernel as a weighting function:</p>
+<div class="formula">m̂(x) = Σ K<sub>h</sub>(x − x<sub>i</sub>) y<sub>i</sub> / Σ K<sub>h</sub>(x − x<sub>i</sub>)</div>
+<p>where K<sub>h</sub> is a kernel with bandwidth <i>h</i>. Common choices of kernel include the Gaussian kernel and the Epanechnikov kernel. The denominator is a weighting term that acts as a normalizing constant and is related to the estimated density of <i>X</i> at the point <i>x</i>.</p>
+<h2>Priestley–Chao kernel estimator</h2>
+<p>The Priestley–Chao estimator, introduced by M. B. Priestley and M. T. Chao in 1972, was designed for cases in which the design points are ordered, as in time series. It weights successive differences of the ordered observations by kernel weights and does not require dividing by an estimated density, which can make it more stable in some settings.</p>
+<h2>Gasser–Müller kernel estimator</h2>
+<p>The Gasser–Müller estimator, proposed by Theo Gasser and Hans-Georg Müller, integrates the kernel over intervals defined by midpoints between consecutive design points. It was developed partly to reduce the boundary bias that simple kernel smoothers exhibit near the edges of the data range.</p>
+<h2>Bandwidth selection</h2>
+<p>The choice of bandwidth <i>h</i> governs the <a href="../Bias–variance_tradeoff/index.html">bias–variance tradeoff</a>: a small bandwidth yields a curve that tracks the data closely but is noisy (high variance), whereas a large bandwidth oversmooths, washing out genuine structure (high bias). Practical methods include cross-validation, plug-in rules based on estimated curvature, and rules of thumb analogous to those used in kernel density estimation.</p>
+<h2>See also</h2>
+<p><a href="../Kernel_smoother/index.html">Kernel smoother</a> · <a href="../Local_regression/index.html">Local regression</a> · <a href="../Nonparametric_regression/index.html">Nonparametric regression</a> · <a href="../Nadaraya–Watson_estimator/index.html">Nadaraya–Watson estimator</a></p>
+</div>
+</body>
+</html>

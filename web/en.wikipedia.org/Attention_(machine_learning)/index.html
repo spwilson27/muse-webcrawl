@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Attention (machine learning) - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #fff; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 24px; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 640px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; }
+.caption { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Attention (machine learning)</h1>
+<p><b>Attention</b> is a machine learning method that determines the relative importance of each component in a sequence relative to the other components in that sequence. In neural networks, attention is a process used to focus on the most relevant parts of the input sequence, in a way that resembles human attention. The mechanism assigns weights to different elements of an input sequence, enabling the model to highlight the most relevant information for the tasks, such as generating the next word in machine translation.</p>
+<div class="hero"><img src="images/Attention_(machine_learning).png" alt="Diagram of scaled dot-product attention"><div class="caption">Scaled dot-product attention, the core operation of the Transformer.</div></div>
+<h2>History</h2>
+<p>Attention was introduced for neural machine translation in 2014 by Bahdanau, Cho and Bengio, allowing a decoder to consult all encoder states rather than a single fixed-length context vector. In 2017, the paper "Attention Is All You Need" by Vaswani and colleagues introduced the <a href="../Transformer_(machine_learning_model)/index.html">Transformer</a> architecture, which relies entirely on self-attention mechanisms, dispensing with recurrence and convolutions entirely.</p>
+<h2>Mechanism</h2>
+<p>In the standard formulation, each input element is projected into three vectors: a query, a key and a value. Attention scores are computed as the scaled dot product of queries and keys, normalised with a softmax function, and used as weights to form a weighted sum of the values. Multi-head attention runs several such operations in parallel, allowing the model to attend to information from different representation subspaces simultaneously.</p>
+<h2>Variants</h2>
+<p>Variants include self-attention, in which a sequence attends to itself; cross-attention, in which one sequence attends to another; and masked attention, used in autoregressive decoders to prevent positions from attending to future tokens. Efficient variants seek to reduce the quadratic computational cost of attention over long sequences.</p>
+<h2>Applications</h2>
+<p>Attention underlies most modern large language models, as well as advances in computer vision (vision transformers), speech recognition, protein structure prediction and reinforcement learning.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Transformer_(machine_learning_model)/index.html">Transformer (machine learning model)</a></li>
+<li><a href="../Large_language_model/index.html">Large language model</a></li>
+<li><a href="../Neural_machine_translation/index.html">Neural machine translation</a></li>
+</ul>
+</div>
+</body>
+</html>

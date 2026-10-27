@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cross-validation (statistics) - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;margin:0 0 8px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+p{line-height:1.6;font-size:0.95em}
+.hero{text-align:center;margin:16px 0}
+.hero img{max-width:70%;border:1px solid #c8ccd1;background:#eaecf0;padding:12px}
+.caption{font-size:0.85em;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px 12px;margin:0 0 12px 16px;font-size:0.85em}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Cross-validation (statistics)</h1>
+<p><b>Cross-validation</b>, sometimes called <b>rotation estimation</b> or <b>out-of-sample testing</b>, is any of various similar model validation techniques for assessing how the results of a statistical analysis will generalize to an independent data set. Cross-validation is a resampling method that uses different portions of the data to test and train a model on different iterations. It is mainly used in settings where the goal is prediction, and one wants to estimate how accurately a predictive model will perform in practice.</p>
+<div class="hero"><img src="images/cross-validation.png" alt="Diagram of k-fold cross-validation, showing data split into k subsets rotated between training and validation"><div class="caption">K-fold cross-validation.</div></div>
+<h2>Motivation</h2>
+<p>A model fitted to a data set tends to perform better on that same data than on new data — a phenomenon called overfitting. Cross-validation estimates out-of-sample performance by repeatedly holding out part of the data, fitting the model on the remainder, and evaluating it on the held-out portion.</p>
+<h2>Types</h2>
+<h3>k-fold cross-validation</h3>
+<p>In k-fold cross-validation, the original sample is randomly partitioned into k equal-sized subsamples. Of the k subsamples, a single subsample is retained as the validation data for testing the model, and the remaining k − 1 subsamples are used as training data. The process is repeated k times, with each of the k subsamples used exactly once as validation data. The k results are then averaged. Common choices are k = 5 or k = 10; stratified k-fold preserves class proportions in each fold.</p>
+<h3>Leave-one-out cross-validation</h3>
+<p>Leave-one-out cross-validation (LOOCV) is the limiting case where k equals the number of observations: each observation is used once as the test set while the rest form the training set. It has low bias but can have high variance and is computationally expensive for large data sets, though closed-form shortcuts exist for linear models.</p>
+<h3>Holdout and repeated splits</h3>
+<p>The simplest scheme splits the data once into training and test sets (the holdout method). Repeated random subsampling performs many such random splits and averages the results.</p>
+<h2>Uses</h2>
+<p>Cross-validation is used for model selection (choosing hyperparameters or among algorithms), for estimating generalization error, and within nested cross-validation when both tuning and evaluation must be unbiased. It is a standard tool in machine learning and applied statistics.</p>
+<h2>See also</h2>
+<p><a href="../Overfitting/index.html">Overfitting</a> · <a href="../Bootstrapping_(statistics)/index.html">Bootstrapping (statistics)</a> · <a href="../Training,_validation,_and_test_data_sets/index.html">Training, validation, and test data sets</a> · <a href="../Machine_learning/index.html">Machine learning</a></p>
+</div>
+</body>
+</html>

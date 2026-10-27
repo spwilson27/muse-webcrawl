@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>End-to-end principle - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header h1{font-size:1.8em;margin:0;font-weight:normal}
+main{max-width:960px;margin:0 auto;padding:16px 24px}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.4em}
+img.hero{display:block;margin:16px auto;max-width:480px;width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:40px 0;text-align:center;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+footer{border-top:1px solid #a2a9b1;padding:12px 24px;font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<header><h1>End-to-end principle</h1></header>
+<main>
+<img class="hero" src="images/End-to-end_principle.png" alt="Diagram of a dumb network core with intelligent endpoints">
+<p>The <b>end-to-end principle</b> is a design principle in computer networking that holds that application-specific functions should reside in the communicating endpoints of a network rather than in intermediary nodes, provided they can be implemented completely and correctly only with the knowledge and help of the applications at the endpoints. It was articulated in a classic 1981 paper by Jerome Saltzer, David Reed, and David Clark, "End-to-End Arguments in System Design".</p>
+<h2>Core idea</h2>
+<p>Because functions placed inside the network can at best be a partial or performance-enhancing version of what the endpoints need (for example, reliable delivery or encryption), the network itself should be kept as simple and general as possible, with intelligence pushed to the edges. The endpoints must implement the function anyway for correctness, so duplicating it in the network adds cost without removing complexity at the ends.</p>
+<h2>Examples</h2>
+<p>A canonical example is file transfer: even if every link in a network guarantees error-free delivery, only the receiving application can verify that the correct file arrived intact, so end-to-end checksums remain necessary. Similarly, end-to-end encryption means intermediate routers forward ciphertext without needing to be trusted with the plaintext.</p>
+<h2>Influence on the Internet</h2>
+<p>The principle strongly influenced the architecture of the <a href="../Internet/index.html">Internet</a>: the IP layer provides a simple best-effort datagram service, while reliability (<a href="../Transmission_Control_Protocol/index.html">TCP</a>), congestion control, and security are implemented at the hosts. This "dumb network, smart endpoints" model is credited with enabling rapid innovation, since new applications could be deployed by changing only the endpoints, without permission from network operators.</p>
+<h2>Criticisms and evolution</h2>
+<p>The principle has been debated as networks acquired firewalls, NAT, content delivery networks, and quality-of-service mechanisms that deliberately place functions in the middle. Critics argue that performance, security, and manageability sometimes justify in-network functions; defenders reply that the principle remains a useful guide for deciding where complexity belongs.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Internet_Protocol/index.html">Internet Protocol</a></li>
+<li><a href="../Net_neutrality/index.html">Net neutrality</a></li>
+<li><a href="../End-to-end_encryption/index.html">End-to-end encryption</a></li>
+<li><a href="../OSI_model/index.html">OSI model</a></li>
+</ul>
+</main>
+<footer>Recreated from memory.</footer>
+</body>
+</html>

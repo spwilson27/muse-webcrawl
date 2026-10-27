@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>VC dimension - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0 auto; max-width: 960px; padding: 0 20px 40px; color: #202122; line-height: 1.6; background: #fff; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 1.9em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-size: 1.45em; margin-top: 1.2em; }
+a { color: #3366cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 30px 0; }
+.caption { font-size: 0.85em; color: #54595d; text-align: center; }
+.formula { text-align: center; font-style: italic; margin: 12px 0; }
+ul { margin: 0.3em 0 0.3em 1.6em; padding: 0; }
+</style>
+</head>
+<body>
+<h1>VC dimension</h1>
+<p>In statistical learning theory, the <b>VC dimension</b> (for <b>Vapnik–Chervonenkis dimension</b>) is a measure of the capacity of a set of functions — typically a class of binary classifiers — to fit data. It was introduced by Vladimir Vapnik and Alexey Chervonenkis in work beginning in 1968, and it is central to the theory of empirical processes and to the analysis of generalisation error in machine learning.</p>
+<div class="hero"><img src="images/vc-dimension.png" alt="Three points shattered by lines in the plane, illustrating the VC dimension of halfplanes"></div>
+<p class="caption">Three points in the plane can be shattered by halfplanes: every one of the 2<sup>3</sup> = 8 labellings is realised by some line. No set of four points can be.</p>
+<h2>Definition</h2>
+<p>A hypothesis class <i>H</i> <b>shatters</b> a set of points <i>C</i> if, for every subset of <i>C</i>, there is a hypothesis in <i>H</i> that labels exactly the points of that subset positive and the rest negative — that is, <i>H</i> realises all 2<sup>|<i>C</i>|</sup> possible dichotomies on <i>C</i>. The VC dimension of <i>H</i> is the cardinality of the largest set that <i>H</i> can shatter. If arbitrarily large sets can be shattered, the VC dimension is infinite.</p>
+<p>For example, intervals on the real line have VC dimension 2: any two points can be shattered, but no three points can, since no interval contains the two outer points while excluding the middle one. Halfplanes in the plane have VC dimension 3, and the class of axis-aligned rectangles in the plane has VC dimension 4.</p>
+<h2>The growth function and Sauer's lemma</h2>
+<p>The <b>growth function</b> counts the maximum number of dichotomies that a class can realise on any set of <i>m</i> points. A fundamental result, proved independently by Vapnik and Chervonenkis, by Norbert Sauer, and by Saharon Shelah, states that if the VC dimension is finite and equal to <i>d</i>, then the growth function is bounded polynomially:</p>
+<p class="formula">&Pi;<sub>H</sub>(m) &le; &Sigma;<sub>i=0</sub><sup>d</sup> C(m, i) &le; (em/d)<sup>d</sup></p>
+<p>This dichotomy — the growth function is either polynomial or exactly 2<sup>m</sup> — is what makes uniform convergence of empirical errors possible for classes of finite VC dimension.</p>
+<h2>Importance in learning theory</h2>
+<p>The VC dimension controls generalisation bounds. With high probability, the true error of every hypothesis in a class of VC dimension <i>d</i> is close to its empirical error, with the gap shrinking roughly as the square root of <i>d</i> divided by the sample size <i>m</i>. Consequently, minimising empirical error over a class of finite VC dimension is a consistent learning rule in the PAC learning model, and sample complexity bounds scale linearly in the VC dimension (for fixed accuracy and confidence parameters).</p>
+<p>In practice, the VC dimension of common models can be estimated: linear classifiers in <i>n</i> dimensions have VC dimension <i>n</i> + 1, and the VC dimension of a neural network grows with the number of its weights and units, which helps explain both its expressive power and its tendency to overfit when data are scarce.</p>
+<h2>Uses</h2>
+<p>Beyond PAC learning, VC theory underlies structural risk minimisation, the design of support vector machines, and results in computational geometry, where the VC dimension of range spaces governs the size of &epsilon;-nets and &epsilon;-approximations used in sampling and rendering algorithms.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Statistical_learning_theory/index.html">Statistical learning theory</a></li>
+<li><a href="../Probably_approximately_correct_learning/index.html">Probably approximately correct learning</a></li>
+<li><a href="../Rademacher_complexity/index.html">Rademacher complexity</a></li>
+<li><a href="../Support_vector_machine/index.html">Support vector machine</a></li>
+<li><a href="../Overfitting/index.html">Overfitting</a></li>
+</ul>
+</body>
+</html>

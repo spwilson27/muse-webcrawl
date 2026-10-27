@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Branch and bound - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; }
+.caption { font-size: 12px; color: #54595d; margin-top: 4px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Branch and bound</h1>
+<div class="hero"><img src="images/branch-and-bound.png" alt="Search tree of a branch and bound algorithm with pruned branches shown faded"><div class="caption">Branch and bound explores a search tree, pruning branches whose bounds cannot beat the incumbent solution</div></div>
+<p><b>Branch and bound</b> (BB, B&amp;B, or BnB) is a general <a href="../Algorithm/index.html">algorithm</a> design paradigm for solving <a href="../Discrete_optimization/index.html">discrete</a> and combinatorial <a href="../Mathematical_optimization/index.html">optimisation</a> problems, as well as mathematical optimisation problems more generally. A branch-and-bound algorithm consists of a systematic enumeration of candidate solutions by means of state-space search: the set of candidate solutions is thought of as forming a rooted tree, and the algorithm explores branches of this tree, estimating upper and lower bounds on the optimal solution reachable from each branch and discarding branches that cannot improve on the best solution found so far.</p>
+<h2>History</h2>
+<p>The method was first proposed by Ailsa Land and Alison Doig in 1960 for discrete programming, and has become the most commonly used tool for solving NP-hard optimisation problems. The name "branch and bound" first appeared in the work of Little and colleagues on the <a href="../Travelling_salesman_problem/index.html">travelling salesman problem</a>.</p>
+<h2>Description</h2>
+<p>The algorithm recursively splits ("branches") the problem into smaller subproblems, typically by fixing the value of a decision variable. For each subproblem it computes a bound on the best achievable objective value, often by solving a relaxation such as the linear programming relaxation of an <a href="../Integer_programming/index.html">integer program</a>. If the bound for a subproblem is no better than the incumbent (the best feasible solution found so far), the whole subtree is pruned and never explored. If the relaxation yields a feasible solution, the incumbent is updated.</p>
+<h2>Applications</h2>
+<p>Branch and bound underlies most commercial and open-source mixed-integer programming solvers and is used for scheduling, vehicle routing, facility location, cutting stock, and many other combinatorial problems. Variants include branch and cut, which strengthens relaxations with cutting planes, and branch and price, which combines branching with column generation.</p>
+<h2>See also</h2>
+<p><a href="../Branch_and_cut/index.html">Branch and cut</a> · <a href="../Backtracking/index.html">Backtracking</a> · <a href="../A*_search_algorithm/index.html">A* search algorithm</a> · <a href="../Linear_programming/index.html">Linear programming</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cutting stock problem - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 4px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p { line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; background: #eaecf0; border: 1px solid #a2a9b1; padding: 40px 0; width: 90%; }
+.caption { font-size: 0.85em; color: #54595d; margin-top: 4px; }
+.formula { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px 16px; font-family: 'Courier New', monospace; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Cutting stock problem</h1>
+<div class="hero">
+<img src="images/cutting-stock-problem.png" alt="Illustration of cutting patterns on a stock roll">
+<div class="caption">Cutting patterns applied to a standard stock length; the goal is to meet demand while minimising trim loss.</div>
+</div>
+<p>The <b>cutting stock problem</b> is an optimisation problem in <a href="../Operations_research/index.html">operations research</a> and <a href="../Combinatorial_optimization/index.html">combinatorial optimisation</a>: given stock material of a standard size (for example, rolls of paper or steel of fixed width or length) and a demand for smaller pieces of specified sizes, find the way of cutting the stock that meets all demands while minimising waste ("trim loss") or, equivalently, the number of stock units used. It is closely related to the <a href="../Bin_packing_problem/index.html">bin packing problem</a> and the <a href="../Knapsack_problem/index.html">knapsack problem</a>.</p>
+<h2>Formulation</h2>
+<p>In the one-dimensional problem, stock of length L must be cut into pieces of lengths l<sub>1</sub>, …, l<sub>m</sub> with demands d<sub>1</sub>, …, d<sub>m</sub>. A <i>cutting pattern</i> is a vector (a<sub>1</sub>, …, a<sub>m</sub>) of non-negative integers such that Σ a<sub>i</sub> l<sub>i</sub> ≤ L. If x<sub>p</sub> denotes how many times pattern p is used, the problem becomes:</p>
+<div class="formula">minimise Σ<sub>p</sub> x<sub>p</sub> subject to Σ<sub>p</sub> a<sub>ip</sub> x<sub>p</sub> ≥ d<sub>i</sub> for all i, x<sub>p</sub> ≥ 0 integer.</div>
+<p>The number of possible patterns grows exponentially, so practical solution methods work with the linear programming relaxation and generate patterns only as needed.</p>
+<h2>Solution methods</h2>
+<h3>Gilmore–Gomory and column generation</h3>
+<p>In a landmark series of papers (1961–1963), Paul Gilmore and <a href="../Ralph_E._Gomory/index.html">Ralph Gomory</a> formulated the problem as a large-scale linear program and solved it by <b>column generation</b>: the master problem chooses among known patterns, while a knapsack subproblem generates a new pattern with negative reduced cost. This remains the foundation of most industrial solvers.</p>
+<h3>Heuristics</h3>
+<p>Simple constructive heuristics such as first-fit decreasing give fast, approximately optimal cutting plans and are widely used in practice, especially for the related bin packing problem. Exact branch-and-price algorithms combine column generation with branch-and-bound to solve moderate instances to proven optimality.</p>
+<h2>Applications</h2>
+<p>The problem originated in the paper industry — Leonid Kantorovich modelled it in 1939, and early work was motivated by cutting paper rolls at mills — and it now arises in steel and aluminium cutting, glass, timber, textiles, shipbuilding plate cutting, and in two-dimensional form in furniture and sheet-metal manufacturing. Two- and three-dimensional variants are substantially harder and are treated as separate problems.</p>
+<h2>Complexity</h2>
+<p>The cutting stock problem is NP-hard; even its one-dimensional form generalises bin packing. Its LP relaxation is known to have an unusually small integrality gap, a fact related to the modified integer round-up property conjectured by Scheithauer and Terno.</p>
+<h2>See also</h2>
+<p><a href="../Bin_packing_problem/index.html">Bin packing problem</a> · <a href="../Knapsack_problem/index.html">Knapsack problem</a> · <a href="../Linear_programming/index.html">Linear programming</a> · <a href="../Column_generation/index.html">Column generation</a></p>
+</div>
+</body>
+</html>

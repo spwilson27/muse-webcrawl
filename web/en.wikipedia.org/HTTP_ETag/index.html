@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTTP ETag - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 48px; }
+h1 { font-size: 32px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 13px; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px 14px; font-size: 13px; overflow-x: auto; }
+img.hero { display: block; max-width: 460px; width: 100%; height: 200px; object-fit: cover; background: #eaecf0; border: 1px solid #c8ccd1; margin: 12px 0; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>HTTP ETag</h1>
+<img class="hero" src="images/http-etag.png" alt="Diagram of a client and server exchanging ETag and If-None-Match headers">
+<p>An <b>ETag</b> (entity tag) is part of HTTP, the protocol for the World Wide Web. It is one of several mechanisms HTTP provides for web cache validation, allowing a client to make conditional requests and a server to avoid resending content that has not changed. An ETag is an opaque identifier assigned by a web server to a specific version of a resource found at a URL. If the resource content ever changes, a new and different ETag must be generated.</p>
+<h2>Operation</h2>
+<p>The server includes the tag in the <code>ETag</code> response header:</p>
+<pre>ETag: "686897696a7c876b7e"</pre>
+<p>On a subsequent request the client sends it back in <code>If-None-Match</code>. If the current version matches, the server replies <code>304 Not Modified</code> with an empty body, saving bandwidth. ETags prefixed with <code>W/</code> are "weak" validators, indicating only semantic equivalence; unprefixed tags are "strong" and assert byte-for-byte identity. Related headers include <code>If-Match</code>, <code>If-Range</code> and the date-based <code>Last-Modified</code> validator.</p>
+<h2>Generation and issues</h2>
+<p>Servers commonly derive ETags from a hash of the content, or from the file's modification time and size (as in Apache's default scheme, which caused problems in load-balanced farms where inode numbers differ). Because ETags persist across sessions and are resent even where cookies are blocked, they have also been abused as a persistent tracking mechanism — so-called "zombie cookies" — prompting browsers to limit such uses.</p>
+<p>See also: <a href="../Hypertext_Transfer_Protocol/index.html">Hypertext Transfer Protocol</a>, <a href="../Web_cache/index.html">Web cache</a>, <a href="../List_of_HTTP_header_fields/index.html">List of HTTP header fields</a></p>
+</div>
+</body>
+</html>

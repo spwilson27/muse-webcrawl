@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Godunov's scheme - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; padding: 0; color: #202122; background: #f8f9fa; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 48px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 1.35em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.2em; }
+p, li { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 640px; width: 100%; background: #eaecf0; border: 1px solid #a2a9b1; }
+.caption { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Godunov's scheme</h1>
+<div class="hero"><img src="images/godunovs-scheme.png" alt="Diagram of a computational grid showing constant states in each cell and Riemann problems at cell interfaces"><div class="caption">Godunov's method solves a Riemann problem at each cell interface.</div></div>
+<p>In numerical analysis, <b>Godunov's scheme</b> is a conservative numerical method for solving partial differential equations, introduced by Sergei K. Godunov in 1959. It is a foundation of modern computational fluid dynamics. The scheme represents the solution as piecewise constant within each computational cell, then advances it exactly by solving, at each cell boundary, the local Riemann problem &mdash; the evolution of the discontinuity between neighboring cell states &mdash; and averaging the result.</p>
+<h2>Description</h2>
+<p>For a hyperbolic conservation law, Godunov's method computes cell averages of the conserved variables. Numerical fluxes at cell faces are obtained from the (exact or approximate) solution of the Riemann problem defined by the states on either side. The method is conservative, robust, and captures shocks sharply without spurious oscillations, but in its original form it is only first-order accurate in space and time.</p>
+<h2>Godunov's theorem</h2>
+<p>A famous result, also due to Godunov, states that a linear numerical scheme for a partial differential equation can be at most first-order accurate if it is required to be monotonicity preserving (i.e., introduces no new extrema). This "order barrier" motivated the development of nonlinear high-resolution schemes &mdash; such as MUSCL-type methods with flux or slope limiters, and later ENO and WENO schemes &mdash; which retain Godunov's Riemann-solver framework while achieving higher accuracy away from discontinuities.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Riemann_solver/index.html">Riemann solver</a></li>
+<li><a href="../Finite_volume_method/index.html">Finite volume method</a></li>
+<li><a href="../Computational_fluid_dynamics/index.html">Computational fluid dynamics</a></li>
+<li><a href="../Sergei_Godunov/index.html">Sergei Godunov</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RADIUS - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:820px;margin:0 auto;background:#fff;padding:28px 36px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:6px;margin:0 0 14px}
+h2{font-size:1.35em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:28px}
+p{line-height:1.6}
+.hero{text-align:center;background:#f0f0f0;border:1px solid #c8ccd1;padding:18px;margin:16px 0;color:#54595d;font-style:italic}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>RADIUS</h1>
+<p><b>Remote Authentication Dial-In User Service</b> (<b>RADIUS</b>) is a networking protocol that provides centralized authentication, authorization, and accounting (AAA) management for users who connect and use a network service. It operates in the application layer and can use either TCP or UDP as transport. Network access servers, the gateways that control access to a network, usually contain a RADIUS client component that communicates with the RADIUS server.</p>
+<div class="hero"><img src="images/radius.png" alt="Diagram of a user authenticating through a network access server to a RADIUS server"></div>
+<h2>History</h2>
+<p>RADIUS was developed in 1991 by Livingston Enterprises as an access server authentication and accounting protocol, and was later brought into the IETF standards process. The protocol was standardised in RFC 2865 (authentication and authorization) and RFC 2866 (accounting) in 2000. Its successor, Diameter, was designed to overcome RADIUS's limitations in mobile and roaming networks, but RADIUS remains by far the most widely deployed AAA protocol.</p>
+<h2>Operation</h2>
+<p>When a user connects, the network access server (NAS) forwards the credentials to the RADIUS server in an Access-Request packet. The server checks the credentials against a database — which may be a local file, an LDAP directory, or Active Directory — and replies with Access-Accept, Access-Reject, or Access-Challenge (for example requesting a second factor). Once authorised, accounting packets record session start and stop times and usage data. Passwords in RADIUS packets are obfuscated using a shared secret and MD5, and the protocol traditionally runs over UDP ports 1812 (authentication) and 1813 (accounting); encrypted transports such as RADIUS over TLS ("RadSec") address the weaknesses of the original MD5-based scheme.</p>
+<h2>Features</h2>
+<ul>
+<li><b>Attribute–value pairs</b> — requests and replies carry extensible attributes, including vendor-specific attributes</li>
+<li><b>Proxying and roaming</b> — servers can forward requests based on realm, enabling federated networks such as eduroam</li>
+<li><b>802.1X support</b> — RADIUS underpins enterprise Wi-Fi security (WPA2/WPA3-Enterprise) and port-based network access control</li>
+<li><b>Accounting</b> — interim updates and stop records support billing and auditing</li>
+</ul>
+<h2>Deployments</h2>
+<p>RADIUS servers such as FreeRADIUS, Microsoft Network Policy Server, and Cisco ISE authenticate users for ISPs, VPNs, wireless LANs and university networks worldwide. See also <a href="../Diameter_(protocol)/index.html">Diameter</a>, <a href="../TACACS/index.html">TACACS</a> and <a href="../IEEE_802.1X/index.html">IEEE 802.1X</a>.</p>
+</div>
+</body>
+</html>

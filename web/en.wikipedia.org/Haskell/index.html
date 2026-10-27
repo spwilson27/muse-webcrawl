@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Haskell - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:24px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.thumb{text-align:center;margin:16px 0}
+.thumb img{max-width:420px;width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:6px}
+.caption{font-size:.85em;color:#54595d}
+table.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:.9em;border-collapse:collapse}
+table.infobox td,table.infobox th{padding:3px 8px;text-align:left}
+</style>
+</head>
+<body>
+<h1>Haskell</h1>
+<table class="infobox">
+<tr><th>Paradigm</th><td>Purely functional</td></tr>
+<tr><th>First appeared</th><td>1990</td></tr>
+<tr><th>Named after</th><td>Haskell Curry</td></tr>
+<tr><th>Typing</th><td>Static, strong, inferred</td></tr>
+<tr><th>Major implementations</th><td>GHC, Hugs</td></tr>
+</table>
+<div class="thumb"><img src="images/haskell.png" alt="The Haskell programming language logo"><div class="caption">Haskell, a purely functional programming language named for logician Haskell Curry.</div></div>
+<p><b>Haskell</b> is a general-purpose, statically-typed, purely functional programming language with type inference and lazy evaluation. Named after the logician <a href="../Haskell_Curry/index.html">Haskell Curry</a>, it was designed by a committee formed in the late 1980s to create an open standard unifying the many functional languages of the time; the first version appeared in 1990, and the language was later standardized as Haskell 98 and Haskell 2010.</p>
+<h2>Features</h2>
+<p>Haskell programs are built from pure functions: expressions have no side effects, and effects such as input/output are represented in the type system, famously through the IO monad and other monads for state, exceptions, and nondeterminism. Its type system, derived from Hindley–Milner with type classes, supports powerful compile-time guarantees and equational reasoning. Lazy evaluation (call-by-need) allows infinite data structures and modular composition of programs.</p>
+<h2>Implementations and use</h2>
+<p>The main implementation is the <a href="../Glasgow_Haskell_Compiler/index.html">Glasgow Haskell Compiler</a> (GHC), an optimizing native-code compiler and interactive environment (GHCi). Haskell is used in academia, in finance, and in industry — including at Meta, where it powers the Sigma spam-fighting system, and in tools such as the Pandoc document converter and the xmonad window manager. Concepts pioneered or popularized in Haskell, including monads, type classes, and parser combinators, have influenced many other languages.</p>
+<h2>History</h2>
+<p>The committee that created Haskell included Paul Hudak, Simon Peyton Jones, Philip Wadler, and John Hughes. Successive language reports stabilized the core, while GHC extensions (such as generalized algebraic data types and type families) have driven much subsequent language evolution. The community maintains the Hackage package repository and the Cabal and Stack build tools.</p>
+<h2>Example</h2>
+<pre>
+factorial :: Integer -> Integer
+factorial 0 = 1
+factorial n = n * factorial (n - 1)
+
+quicksort :: Ord a => [a] -> [a]
+quicksort [] = []
+quicksort (p:xs) = quicksort [x | x <- xs, x < p]
+                ++ [p]
+                ++ quicksort [x | x <- xs, x >= p]
+</pre>
+<h2>See also</h2>
+<ul>
+<li><a href="../Functional_programming/index.html">Functional programming</a></li>
+<li><a href="../Glasgow_Haskell_Compiler/index.html">Glasgow Haskell Compiler</a></li>
+<li><a href="../Monad_(functional_programming)/index.html">Monad (functional programming)</a></li>
+<li><a href="../Lambda_calculus/index.html">Lambda calculus</a></li>
+</ul>
+</body>
+</html>

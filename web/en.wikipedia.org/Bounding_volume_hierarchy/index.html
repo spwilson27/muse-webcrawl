@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Bounding volume hierarchy</title>
+<style>body{font-family:Georgia,serif;max-width:760px;margin:2em auto;padding:0 1em;line-height:1.6;color:#222}h1{border-bottom:2px solid #a2a9b1}h2{border-bottom:1px solid #ccc}img.hero{max-width:100%;background:#eee;display:block;padding:2em 0;text-align:center;color:#666}a{color:#0645ad}</style></head>
+<body><h1>Bounding volume hierarchy</h1>
+<img class="hero" src="images/Bounding_volume_hierarchy.png" alt="A tree of nested bounding boxes enclosing a 3D model">
+<p>A <b>bounding volume hierarchy</b> (<b>BVH</b>) is a tree structure on a set of geometric objects in which each node represents a bounding volume — commonly an axis-aligned bounding box (AABB) — that encloses all the geometry in its subtree. BVHs are a central data structure in computer graphics, used to accelerate ray tracing, collision detection and visibility queries.</p>
+<h2>Ray tracing acceleration</h2>
+<p>In a ray tracer, testing a ray against every triangle in a scene is prohibitively slow. With a BVH, the ray is first tested against the root bounding volume; subtrees whose volumes the ray misses can be discarded without further work, and only volumes the ray intersects are visited, recursively, down to the primitives at the leaves. Well-built BVHs reduce intersection cost from linear to roughly logarithmic in the number of primitives.</p>
+<h2>Construction</h2>
+<p>BVHs are usually built top-down by recursively splitting the object set, for example by choosing the longest axis of the centroid bounds and partitioning at the median, or by using the surface area heuristic (SAH), which chooses splits minimizing the expected cost of traversal. Bottom-up construction by agglomerative clustering is also used, and dynamic scenes may rebuild or refit the hierarchy each frame.</p>
+<h2>Applications</h2>
+<p>Beyond rendering, BVHs are used in physics engines for broad-phase collision detection, in robotics for motion planning, and in spatial databases. Modern GPUs implement dedicated BVH traversal hardware, as in real-time ray tracing APIs such as DirectX Raytracing and Vulkan RT.</p>
+<p>See also: <a href="../Ray_tracing_(graphics)/index.html">Ray tracing</a>, <a href="../Bounding_volume/index.html">Bounding volume</a>, <a href="../Octree/index.html">Octree</a>, <a href="../Collision_detection/index.html">Collision detection</a>.</p>
+</body></html>

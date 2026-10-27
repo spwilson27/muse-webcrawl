@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Digital Signature Algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:24px;color:#202122;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:1.4em}
+.hero{display:block;margin:16px auto;max-width:480px;width:100%;background:#eaecf0;border:1px solid #a2a9b1;padding:40px 0;text-align:center;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:monospace;background:#f8f9fa;padding:0 3px}
+</style>
+</head>
+<body>
+<h1>Digital Signature Algorithm</h1>
+<img class="hero" src="images/Digital_Signature_Algorithm.png" alt="Diagram of DSA key generation, signing and verification steps">
+<p>The <b>Digital Signature Algorithm</b> (DSA) is a public-key cryptosystem and Federal Information Processing Standard for digital signatures, based on the mathematical concept of modular exponentiation and the discrete logarithm problem. DSA is a variant of the Schnorr and ElGamal signature schemes.</p>
+<p>It was proposed by the United States National Institute of Standards and Technology (NIST) in 1991 and adopted as FIPS 186 in 1994. Four revisions to the standard have been released, most recently FIPS 186-5 in 2023, which removed DSA's approval for signature generation while retaining it for verification of legacy signatures.</p>
+<h2>Key generation</h2>
+<p>DSA works in a subgroup of a finite field. Parameters consist of primes <i>p</i> and <i>q</i>, where <i>q</i> divides <i>p</i> − 1, and a generator <i>g</i> of the order-<i>q</i> subgroup. The signer selects a private key <i>x</i> at random from 1 to <i>q</i> − 1 and computes the public key <i>y</i> = <i>g</i><sup><i>x</i></sup> mod <i>p</i>. In the original standard, <i>p</i> was between 512 and 1024 bits; later versions permit 2048- and 3072-bit primes.</p>
+<h2>Signing and verification</h2>
+<p>To sign a message, the signer hashes the message, chooses a fresh random per-message value <i>k</i>, and computes a pair (<i>r</i>, <i>s</i>) from <i>k</i>, the private key and the hash. The verifier uses the public key to check an algebraic relation that holds only if <i>s</i> was produced with knowledge of the private key and the exact message hash. Security depends critically on the secrecy and uniqueness of <i>k</i>: reusing <i>k</i> for two different messages, as happened in a well-known games-console compromise of a related scheme, reveals the private key.</p>
+<h2>History and controversy</h2>
+<p>DSA was developed by the National Security Agency and patented by the US government (the patent was later made available royalty-free worldwide). Its introduction generated debate in the cryptography community, partly because the initial standard only allowed 512-bit keys and partly because some suspected the parameters might conceal a trapdoor; NIST maintained the design drew on published work by Claus Schnorr and Taher ElGamal.</p>
+<h2>Related algorithms</h2>
+<p>The Elliptic Curve Digital Signature Algorithm (ECDSA) is the elliptic-curve analogue of DSA and is widely used in certificates, secure messaging and cryptocurrencies. EdDSA, based on twisted Edwards curves, offers deterministic per-signature values that remove the <i>k</i>-reuse hazard.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Digital_currency/index.html">Digital currency</a></li>
+<li><a href="../Digital_twin/index.html">Digital twin</a></li>
+<li><a href="../Digital_distribution/index.html">Digital distribution</a></li>
+</ul>
+</body>
+</html>

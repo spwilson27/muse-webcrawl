@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ECDSA - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:880px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+img.hero{display:block;max-width:420px;width:100%;height:auto;background:#f8f9fa;border:1px solid #c8ccd1;padding:.5em;margin:1em 0}
+</style>
+</head>
+<body>
+<h1>ECDSA</h1>
+<img class="hero" src="images/ECDSA.png" alt="Diagram of an elliptic curve used in ECDSA">
+<p>The <b>Elliptic Curve Digital Signature Algorithm</b> (<b>ECDSA</b>) offers a variant of the Digital Signature Algorithm (DSA) which uses elliptic curve cryptography. Proposed by Scott Vanstone in 1992, it was standardised by ANSI, IEEE, NIST and ISO, and provides equivalent security to RSA with much shorter keys — a 256-bit ECDSA key is roughly comparable to a 3072-bit RSA key.</p>
+<h2>Algorithm</h2>
+<p>Working on a standardised curve such as NIST P-256 or secp256k1, the signer uses a private key d and public point Q = dG. To sign a message hash, the signer chooses a random per-message nonce k and computes the signature pair (r, s) from the curve point kG. Verification checks an algebraic relation between the message hash, r, s and Q.</p>
+<h2>Security considerations</h2>
+<p>ECDSA critically depends on the quality and secrecy of the nonce k: reusing k for two signatures, or a biased random generator, leaks the private key. This flaw caused the 2010 PlayStation 3 signing-key compromise and several thefts of Bitcoin funds from faulty Android wallets. Deterministic nonces (RFC 6979) mitigate the risk.</p>
+<h2>Applications</h2>
+<p>ECDSA is used in TLS certificates, SSH, DNSSEC, smart cards and cryptocurrencies, notably Bitcoin (secp256k1) and Ethereum.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Elliptic-curve_cryptography/index.html">Elliptic-curve cryptography</a></li>
+<li><a href="../Digital_Signature_Algorithm/index.html">Digital Signature Algorithm</a></li>
+<li><a href="../EdDSA/index.html">EdDSA</a></li>
+</ul>
+</body>
+</html>

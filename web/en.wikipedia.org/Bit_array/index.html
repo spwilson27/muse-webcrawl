@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bit array - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; padding: 0; background: #f6f6f6; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: sans-serif; font-size: 1.2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; }
+p { line-height: 1.6; }
+img.hero { display: block; margin: 16px auto; max-width: 480px; background: #eaecf0; padding: 60px 0; text-align: center; color: #54595d; font-family: sans-serif; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Bit array</h1>
+<img class="hero" src="images/bit-array.png" alt="A row of bits packed into machine words">
+<p>A <b>bit array</b> (also known as a bitmask, bit map, bit set, bit string, or bit vector) is an array data structure that compactly stores bits and can be used to implement a simple set data structure. A bit array is effective at exploiting bit-level parallelism in hardware to perform operations quickly. A typical bit array stores <i>kw</i> bits, where <i>w</i> is the number of bits in the unit of storage, such as a byte or word, and <i>k</i> is some nonnegative integer.</p>
+<h2>Basic operations</h2>
+<p>Bit arrays support fast operations through bitwise instructions: AND, OR, XOR, and NOT can be applied to entire words at once, making set union, intersection, and difference efficient. Individual bits are set, cleared, and tested by combining a word selection with a mask containing a single set bit. Population count (popcount) instructions allow the number of set bits to be counted quickly.</p>
+<h2>Applications</h2>
+<p>Bit arrays are used in priority queues, operating-system structures such as page allocation bitmaps, image processing masks, and Bloom filters. They are also used in the classic sieve of Eratosthenes for finding prime numbers, and as a compact representation of sets whose elements come from a small fixed universe.</p>
+<h2>Compression</h2>
+<p>For sparse or clustered bit arrays, run-length encoding and hybrid compressed formats can greatly reduce space while still supporting fast random access and rank/select queries, which are fundamental to succinct data structures.</p>
+<p>See also: <a href="../Bit/index.html">Bit</a>, <a href="../Bloom_filter/index.html">Bloom filter</a>, <a href="../Bitwise_operation/index.html">Bitwise operation</a></p>
+</div>
+</body>
+</html>

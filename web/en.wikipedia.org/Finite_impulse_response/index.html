@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Finite impulse response - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 480px; border: 1px solid #c8ccd1; background: #eaecf0; padding: 8px; }
+.caption { font-size: 0.85em; color: #54595d; }
+a { color: #3366cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Finite impulse response</h1>
+<div class="hero">
+<img src="images/finite_impulse_response.png" alt="Block diagram of a direct-form finite impulse response filter with delay elements and tap coefficients">
+<div class="caption">Direct-form structure of an FIR filter.</div>
+</div>
+<p>In signal processing, a <b>finite impulse response</b> (<b>FIR</b>) <b>filter</b> is a filter whose impulse response (or response to any finite length input) is of <i>finite</i> duration, because it settles to zero in finite time. This is in contrast to infinite impulse response (IIR) filters, which may have internal feedback and may continue to respond indefinitely (usually decaying).</p>
+<h2>Definition</h2>
+<p>The output of an FIR filter of order <i>N</i> is a weighted sum of the current and a finite number of previous input values:</p>
+<p style="text-align:center;">y[n] = b<sub>0</sub>x[n] + b<sub>1</sub>x[n−1] + … + b<sub>N</sub>x[n−N]</p>
+<p>The coefficients b<sub>i</sub> are the filter's tap coefficients, and they are also the values of its impulse response. FIR filters are inherently stable, because the output is a sum of a finite number of finite input values multiplied by finite coefficients.</p>
+<h2>Properties</h2>
+<p>An important property of FIR filters is that they can be designed to have exactly linear phase, meaning that all frequency components of a signal are delayed by the same amount; this is achieved when the coefficient sequence is symmetric or antisymmetric. FIR filters require no feedback, so rounding errors in implementation do not accumulate through recursion. Their main disadvantage compared with IIR filters is that they generally require a higher filter order to achieve a given level of performance, and hence more computation and memory.</p>
+<h2>Design methods</h2>
+<p>Common design techniques include the window method (in which the ideal, infinite impulse response is truncated and multiplied by a window function such as the Hamming or Blackman window), the frequency sampling method, and optimal equiripple design using the Parks–McClellan algorithm (also known as the Remez exchange algorithm).</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Infinite_impulse_response/index.html">Infinite impulse response</a></li>
+<li><a href="../Digital_filter/index.html">Digital filter</a></li>
+<li><a href="../Signal_processing/index.html">Signal processing</a></li>
+<li><a href="../Moving_average/index.html">Moving average</a></li>
+</ul>
+</div>
+</body>
+</html>

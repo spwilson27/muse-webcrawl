@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SELinux - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 60px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 28px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-size: 22px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { float: right; margin: 0 0 12px 16px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 6px; text-align: center; font-size: 12px; color: #54595d; }
+.hero img { display: block; width: 260px; height: 160px; background: #eaecf0; }
+.ref { font-size: 13px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>SELinux</h1>
+<div class="hero"><img src="images/selinux.png" alt="SELinux mandatory access control architecture diagram"><div>SELinux enforces mandatory access control in the Linux kernel</div></div>
+<p><b>Security-Enhanced Linux</b> (<b>SELinux</b>) is a Linux kernel security module that provides a mechanism for supporting access control security policies, including mandatory access controls (MAC). SELinux is a set of kernel modifications and user-space tools that can be added to various Linux distributions. Its architecture strives to separate enforcement of security decisions from the security policy itself, and streamlines the amount of software involved with security policy enforcement.</p>
+<h2>History</h2>
+<p>SELinux was originally developed by the United States National Security Agency (NSA), building on the Flask security architecture developed at the University of Utah and elsewhere. It was released to the open source community in December 2000 and integrated into the mainline Linux kernel in 2003 (kernel 2.6), using the Linux Security Modules (LSM) interface. Red Hat Enterprise Linux adopted it as a flagship feature, shipping it enabled by default from RHEL 4 in 2005. SELinux technology also underlies the SEAndroid enhancements used to confine applications in the Android operating system.</p>
+<h2>How it works</h2>
+<p>Under SELinux, every process and file is assigned a security context containing a user, role, type, and optionally a sensitivity level. Access decisions are made by comparing contexts against a compiled policy, principally using <b>type enforcement</b>: a process running in a given domain type may perform only the operations on object types that the policy explicitly permits. Unlike traditional discretionary access control based on users and permissions, the policy applies to all users including root, so a compromised service remains confined to the resources its policy allows. SELinux operates in <b>enforcing</b>, <b>permissive</b> (logging-only), or disabled modes, and distributions typically ship a <i>targeted</i> policy confining network-facing services, or a stricter multi-level security (MLS) policy.</p>
+<h2>Criticism</h2>
+<p>SELinux has been criticised for complexity: writing and debugging policies is difficult, and administrators have often disabled it rather than resolve denials, a practice widely advised against by distributions.</p>
+<h2>See also</h2>
+<p><a href="../Mandatory_access_control/index.html">Mandatory access control</a> · <a href="../AppArmor/index.html">AppArmor</a> · <a href="../Linux_Security_Modules/index.html">Linux Security Modules</a> · <a href="../Access_control/index.html">Access control</a></p>
+<p class="ref">From Wikipedia, the free encyclopedia.</p>
+</div>
+</body>
+</html>

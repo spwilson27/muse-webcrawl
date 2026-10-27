@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Functional dependency</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:820px;margin:0 auto;padding:24px;line-height:1.55;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:6px;margin-bottom:4px}
+h2{font-size:1.35em;border-bottom:1px solid #c8ccd1;padding-bottom:3px;margin-top:28px}
+.hero{display:block;margin:18px auto;max-width:420px;width:100%;border:1px solid #c8ccd1;background:#f8f9fa;padding:8px;box-sizing:border-box}
+.tag{color:#54595d;font-size:.9em}
+a{color:#0645ad}
+</style>
+</head>
+<body>
+<h1>Functional dependency</h1>
+<p class="tag">Constraint in relational database theory</p>
+<img class="hero" src="images/functional-dependency.png" alt="Diagram showing attributes of a database table with arrows indicating functional dependencies">
+<p>In relational database theory, a <strong>functional dependency</strong> is a constraint between two sets of attributes in a relation (table). A set of attributes X functionally determines a set Y — written X → Y — if, whenever two tuples agree on all the attributes of X, they must also agree on all the attributes of Y. For example, in an employee table, an employee ID functionally determines the employee's name, because each ID belongs to exactly one person.</p>
+<h2>Properties</h2>
+<p>A functional dependency is <em>trivial</em> if the determined attributes are a subset of the determining ones. A dependency is <em>full</em> if no proper subset of the determinant suffices. William W. Armstrong showed in 1974 that dependencies can be reasoned about with three inference rules — reflexivity, augmentation and transitivity — which are sound and complete; derived rules include union, decomposition and pseudotransitivity. From a set of dependencies one can compute the <em>closure</em> of a set of attributes, which identifies candidate keys: a set whose closure is the entire relation.</p>
+<h2>Role in normalisation</h2>
+<p>Functional dependencies are the basis of database normalisation. Edgar F. Codd's normal forms are defined in terms of them: second normal form forbids partial dependencies on part of a composite key, third normal form and Boyce–Codd normal form progressively eliminate transitive and anomalous dependencies, so that each fact is stored once and update anomalies are avoided. Multivalued dependencies generalise the concept and underlie fourth normal form.</p>
+<h2>See also</h2>
+<p><a href="../Database_normalization/index.html">Database normalisation</a> · <a href="../Relational_model/index.html">Relational model</a> · <a href="../Candidate_key/index.html">Candidate key</a> · <a href="../Armstrong's_axioms/index.html">Armstrong's axioms</a></p>
+</body>
+</html>

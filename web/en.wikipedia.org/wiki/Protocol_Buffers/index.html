@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Protocol Buffers - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:820px;margin:0 auto;background:#fff;padding:28px 36px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:6px;margin:0 0 14px}
+h2{font-size:1.35em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:28px}
+p{line-height:1.6}
+.hero{text-align:center;background:#f0f0f0;border:1px solid #c8ccd1;padding:18px;margin:16px 0;color:#54595d;font-style:italic}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+pre{background:#f0f0f0;border:1px solid #c8ccd1;padding:12px;overflow-x:auto;font-size:.9em}
+ul{line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Protocol Buffers</h1>
+<p><b>Protocol Buffers</b>, abbreviated as <b>protobuf</b>, is a free and open-source cross-platform data format used to serialize structured data. It is developed by Google and is language-neutral, platform-neutral, and extensible. Protobuf is similar to XML, JSON or Thrift, but smaller, faster, and simpler; users define how data should be structured once, and code generators then produce source code in a variety of languages to read and write the structured data.</p>
+<div class="hero"><img src="images/protocol-buffers.png" alt="Diagram of a message definition compiled to generated code in several languages"></div>
+<h2>Design</h2>
+<p>Data structures are described in <i>.proto</i> files as <b>messages</b>, each a logical record of name–value pairs called fields. Every field has a unique number used to identify it in the binary encoding, along with a name and a type (integers, floating-point numbers, strings, bytes, booleans, enumerations, or other messages).</p>
+<pre>message Person {
+  string name = 1;
+  int32 id = 2;
+  string email = 3;
+}</pre>
+<p>The field numbers, not the names, appear in the encoded data, so schemas can evolve: new fields can be added without breaking readers of the old schema, and removed field numbers are reserved to prevent reuse. The binary wire format uses variable-length integer encoding and a key–value structure in which each key combines the field number and a wire type.</p>
+<h2>History</h2>
+<p>Protocol Buffers were developed internally at Google beginning in 2001 for use in indexing and communication protocols, and were released to the public as open source in 2008 under the name Protocol Buffers version 2 (proto2). A simplified syntax, proto3, followed in 2016, dropping required fields and field-presence tracking for scalars in favour of simpler semantics across languages. The format underpins gRPC, Google's widely used remote procedure call framework, and is used extensively in microservices, storage systems and mobile applications.</p>
+<h2>Language support</h2>
+<p>The official compiler, <i>protoc</i>, generates code for C++, Java, Python, Go, C#, Ruby, PHP, Objective-C and JavaScript, among others, and third-party implementations cover many additional languages. Compared with JSON or XML, protobuf messages are typically several times smaller and an order of magnitude faster to parse, at the cost of not being human-readable. Alternatives include Apache Thrift, Avro, Cap'n Proto, and CBOR. See also <a href="../Serialization/index.html">serialization</a> and <a href="../JSON/index.html">JSON</a>.</p>
+</div>
+</body>
+</html>

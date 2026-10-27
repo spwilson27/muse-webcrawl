@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Euler equations (fluid dynamics) - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+img.hero{float:right;width:300px;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px}
+.eq{background:#f8f9fa;border:1px solid #eaecf0;padding:10px 14px;font-family:'Courier New',monospace;overflow-x:auto}
+.toc{background:#f8f9fa;border:1px solid #a2a9b1;padding:10px 16px;display:inline-block}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Euler equations (fluid dynamics)</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/euler_equations.png" alt="Streamlines of an inviscid flow around an obstacle computed from the Euler equations">
+<p>In <a href="../Fluid_dynamics/index.html">fluid dynamics</a>, the <b>Euler equations</b> are a set of partial differential equations governing adiabatic and inviscid flow. They are named after <a href="../Leonhard_Euler/index.html">Leonhard Euler</a>, who derived them in the 18th century. The equations represent the conservation of mass, momentum, and energy in a fluid with no viscosity and no heat conduction, and they form a simplification of the more general <a href="../Navier–Stokes_equations/index.html">Navier–Stokes equations</a> obtained by setting the viscosity to zero.</p>
+<p>Because they neglect viscous dissipation, the Euler equations are well suited to flows in which viscous effects are confined to thin boundary layers, such as high-Reynolds-number aerodynamics, compressible gas dynamics, and much of classical hydrodynamics.</p>
+<h2>Equations</h2>
+<p>The Euler equations in conservation form are:</p>
+<div class="eq">
+∂ρ/∂t + ∇·(ρ<b>u</b>) = 0<br>
+∂(ρ<b>u</b>)/∂t + ∇·(<b>u</b> ⊗ (ρ<b>u</b>) + p<b>I</b>) = ρ<b>g</b><br>
+∂E/∂t + ∇·(<b>u</b>(E + p)) = ρ<b>g</b>·<b>u</b>
+</div>
+<p>where ρ is the fluid density, <b>u</b> is the flow velocity vector, p is the pressure, E is the total energy per unit volume, and <b>g</b> represents body forces such as gravity. The system is closed by an equation of state relating pressure to density and internal energy; for an ideal gas, p = (γ − 1)(E/ρ − |<b>u</b>|²/2)ρ, with γ the ratio of specific heats.</p>
+<h2>Properties</h2>
+<p>The Euler equations are hyperbolic for subsonic and supersonic compressible flow, and they support discontinuous solutions such as shock waves and contact discontinuities. Along streamlines in steady, incompressible, inviscid flow they reduce to <a href="../Bernoulli's_principle/index.html">Bernoulli's principle</a>. Because they lack viscous terms, solutions of the Euler equations cannot satisfy the no-slip boundary condition at solid walls; only the no-penetration condition (zero normal velocity) applies.</p>
+<p>In rotational form, the momentum equation can be rewritten using the vorticity ω = ∇ × <b>u</b>, which leads to Kelvin's circulation theorem: in an inviscid, barotropic flow under conservative body forces, the circulation around a material contour is conserved.</p>
+<h2>Applications</h2>
+<p>The Euler equations are widely used in computational fluid dynamics as the governing model for transonic and supersonic aerodynamics, turbomachinery design, astrophysical flows, and ocean and atmosphere models where viscosity plays a secondary role. Numerical methods for the Euler equations include finite-volume schemes with approximate Riemann solvers such as the Roe and HLLC fluxes.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Navier–Stokes_equations/index.html">Navier–Stokes equations</a></li>
+<li><a href="../Bernoulli's_principle/index.html">Bernoulli's principle</a></li>
+<li><a href="../Continuity_equation/index.html">Continuity equation</a></li>
+<li><a href="../Computational_fluid_dynamics/index.html">Computational fluid dynamics</a></li>
+</ul>
+<p class="small">This article is about the inviscid-flow equations. For the equations of rigid-body rotation, see Euler's equations (rigid body dynamics).</p>
+</div>
+</body>
+</html>

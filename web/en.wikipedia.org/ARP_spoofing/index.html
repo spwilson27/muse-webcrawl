@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ARP spoofing - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 920px; padding: 0 1em; color: #202122; line-height: 1.6; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+img.hero { display: block; margin: 1em auto; max-width: 400px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 1em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>ARP spoofing</h1>
+<img class="hero" src="images/ARP_spoofing.png" alt="Diagram showing an attacker intercepting traffic between two hosts by poisoning their ARP caches">
+<p><b>ARP spoofing</b>, also called <b>ARP cache poisoning</b> or <b>ARP poison routing</b>, is a technique by which an attacker sends falsified Address Resolution Protocol (ARP) messages onto a local area network. The aim is to associate the attacker's MAC address with the IP address of another host, such as the default gateway, causing traffic meant for that IP address to be sent to the attacker instead.</p>
+<h2>Background</h2>
+<p>ARP resolves IPv4 addresses to link-layer MAC addresses on a local network. It is stateless and unauthenticated: hosts accept ARP replies even when they have not sent a request ("gratuitous" ARP), and they update their ARP caches with the most recent information received. These design properties, acceptable in ARP's original trusted-network context, make the protocol vulnerable to spoofing on any network where an attacker can send frames.</p>
+<h2>Attack uses</h2>
+<p>Once a victim's ARP cache is poisoned, the attacker can perform a man-in-the-middle attack by forwarding the intercepted traffic to its real destination so the connection continues to work while being observed or modified. Variants include denial-of-service attacks, in which a target IP is mapped to a nonexistent MAC address; session hijacking; and redirection of traffic to credential-harvesting pages. Tools such as arpspoof (part of dsniff), Ettercap, Bettercap, and Cain and Abel have long automated the technique. ARP spoofing works only within the local broadcast domain and cannot directly cross routers.</p>
+<h2>Defenses</h2>
+<p>Defenses include static ARP entries for critical hosts, Dynamic ARP Inspection on managed switches (which validates ARP packets against a DHCP-snooping binding table), port security, network segmentation, and monitoring tools such as arpwatch and XArp that flag changing IP-to-MAC mappings. Encrypting application traffic with TLS or using VPNs does not stop the redirection but sharply limits what an interceptor can read or alter. The long-term architectural answer, IPv6 with Secure Neighbor Discovery, has seen little deployment.</p>
+<h2>Legitimate uses</h2>
+<p>The same gratuitous-ARP mechanisms are used legitimately for high-availability failover, in which a standby device announces that it has taken over an IP address, and by some network-management and redirection systems such as hotel and hotspot portals.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Address_Resolution_Protocol/index.html">Address Resolution Protocol</a></li>
+<li><a href="../Man-in-the-middle_attack/index.html">Man-in-the-middle attack</a></li>
+<li><a href="../MAC_spoofing/index.html">MAC spoofing</a></li>
+<li><a href="../Spoofing_attack/index.html">Spoofing attack</a></li>
+</ul>
+</body>
+</html>

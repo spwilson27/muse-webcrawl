@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Buffer overflow - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#f8f9fa;color:#202122;margin:0;padding:0 1em;}
+main{max-width:960px;margin:0 auto;background:#fff;padding:1.5em 2em;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9;}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em;}
+a{color:#0645ad;text-decoration:none;} a:hover{text-decoration:underline;}
+img.hero{display:block;max-width:420px;width:100%;background:#eef;border:1px solid #a2a9b1;padding:.5em;margin:1em 0;}
+</style>
+</head>
+<body>
+<main>
+<h1>Buffer overflow</h1>
+<img class="hero" src="images/Buffer_overflow.png" alt="Diagram of a stack buffer being overwritten beyond its bounds">
+<p>In computer security and programming, a <b>buffer overflow</b>, or <b>buffer overrun</b>, occurs when a program writes data to a buffer beyond the buffer's allocated boundary, overwriting adjacent memory locations. Buffers are areas of memory set aside to hold data; because languages such as C and C++ perform no automatic bounds checking, buggy code that copies input without verifying its length can corrupt data, crash the program, or be exploited to execute arbitrary code.</p>
+<h2>Exploitation</h2>
+<p>A classic stack-based buffer overflow overwrites the saved return address of a function with an address chosen by the attacker, redirecting execution to injected machine code (shellcode) stored in the buffer itself. The 1988 Morris worm used a buffer overflow in the Unix finger daemon as one of its propagation methods, and Elias Levy's 1996 article "Smashing the Stack for Fun and Profit" in <i>Phrack</i> popularized the technique. Heap-based overflows, format string vulnerabilities, and integer overflows are related classes of attack.</p>
+<h2>Protective countermeasures</h2>
+<p>Defenses include writing software in memory-safe languages or with bounds-checked libraries; compiler-inserted stack canaries that detect return-address corruption; marking memory non-executable (DEP/NX bit); address space layout randomization (ASLR); and control-flow integrity mechanisms. Operating systems and compilers such as GCC and Microsoft Visual C++ enable several of these by default, and return-oriented programming was developed in response to non-executable memory.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Stack_buffer_overflow/index.html">Stack buffer overflow</a></li>
+<li><a href="../Shellcode/index.html">Shellcode</a></li>
+<li><a href="../Address_space_layout_randomization/index.html">Address space layout randomization</a></li>
+<li><a href="../Morris_worm/index.html">Morris worm</a></li>
+</ul>
+</main>
+</body>
+</html>

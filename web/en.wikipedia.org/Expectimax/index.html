@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Expectimax - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-size: 2em; }
+h2 { border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 1.2em; }
+img.hero { display: block; width: 300px; margin: 0 auto 12px; background: #eaecf0; padding: 6px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Expectimax</h1>
+<img class="hero" src="images/Expectimax.png" alt="Game tree diagram with max, min and chance nodes labeled">
+<p>The <b>expectimax</b> algorithm is a variation of the minimax algorithm for use in artificial intelligence systems that play two-player zero-sum games, such as backgammon, in which the expected outcome depends partly on chance. In addition to the "max" and "min" nodes of the traditional minimax tree, expectimax introduces "chance" nodes, whose value is the expected value (probability-weighted average) of the outcomes of all possible random events below them — for example, all possible dice rolls.</p>
+<h2>How it differs from minimax</h2>
+<p>In minimax, each node takes either the maximum (at the player's nodes) or minimum (at the opponent's nodes) of its children's values. In expectimax, chance nodes take the weighted average instead, reflecting that the dice do not conspire against the player the way an opponent does. Because averaging intervenes, the alpha-beta pruning used to speed up minimax does not directly apply, though bounds on leaf values allow related pruning techniques ("*"-minimax) to cut off some branches. The algorithm was introduced by Donald Michie in 1966.</p>
+<h2>Pseudocode outline</h2>
+<p>Expectimax(node, depth): if depth is zero or the node is terminal, return the heuristic value. If the node is a chance node, return the probability-weighted sum of Expectimax over its children. If it is a max node, return the maximum of the children's values; if a min node, the minimum. Expectimax search was notably used in computer backgammon programs and in the analysis of games with dice or card draws, and underlies agents for the game 2048.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Existential_risk/index.html">Existential risk</a></li>
+<li><a href="../Expander_graph/index.html">Expander graph</a></li>
+<li><a href="../Evolution_of_cooperation/index.html">Evolution of cooperation</a></li>
+</ul>
+</div>
+</body>
+</html>

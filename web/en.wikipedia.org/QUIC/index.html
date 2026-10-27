@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>QUIC - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+header { background: #f8f9fa; border-bottom: 1px solid #a2a9b1; padding: 12px 24px; }
+header .site { font-family: sans-serif; font-size: 13px; color: #54595d; }
+main { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-size: 32px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 6px; }
+h2 { font-size: 24px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+h3 { font-size: 19px; margin-top: 20px; }
+p, li { line-height: 1.6; font-size: 16px; }
+.infobox { float: right; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; font-family: sans-serif; font-size: 13px; margin: 0 0 16px 20px; padding: 8px; }
+.infobox th { text-align: left; padding: 3px 6px; }
+.infobox td { padding: 3px 6px; }
+.infobox caption { font-weight: bold; font-size: 15px; padding: 6px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+figure { text-align: center; margin: 16px 0; }
+figcaption { font-family: sans-serif; font-size: 13px; color: #54595d; }
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia — The Free Encyclopedia</span></header>
+<main>
+<h1>QUIC</h1>
+<table class="infobox">
+<caption>QUIC</caption>
+<tr><th>Purpose</th><td>Transport layer network protocol</td></tr>
+<tr><th>Developer(s)</th><td>IETF; originally Google</td></tr>
+<tr><th>Introduced</th><td>2012 (Google); standardized 2021 (RFC 9000)</td></tr>
+<tr><th>Based on</th><td>UDP</td></tr>
+<tr><th>OSI layer</th><td>Transport layer</td></tr>
+<tr><th>Port(s)</th><td>UDP 443</td></tr>
+</table>
+<figure><img src="images/QUIC.png" alt="Diagram of a QUIC connection handshake"><figcaption>A QUIC connection combines the transport and cryptographic handshakes.</figcaption></figure>
+<p><b>QUIC</b> is a general-purpose transport layer network protocol initially designed by Jim Roskind at Google and first deployed in 2012. It was standardized by the Internet Engineering Task Force (IETF) in May 2021 as RFC 9000. QUIC runs on top of the User Datagram Protocol (UDP) and implements reliable, ordered delivery of streams of data, congestion control, and mandatory encryption using TLS 1.3.</p>
+<p>QUIC was designed to reduce connection establishment latency compared with TCP combined with TLS: by merging the transport and cryptographic handshakes, a new connection can often be established in a single round trip, and a resumed connection in zero round trips. It is the transport protocol underlying HTTP/3.</p>
+<h2>Background</h2>
+<p>Transmission Control Protocol (TCP) had been the dominant transport protocol for the web for decades, but its evolution was hampered by ossification: middleboxes and operating system kernels made it difficult to deploy changes. Google engineers sought a protocol that could be implemented in user space, encrypted by default, and iterated quickly. QUIC's experiments in Chrome, beginning around 2013, showed measurable reductions in search latency and video rebuffering, which motivated standardization.</p>
+<h2>Features</h2>
+<h3>Reduced connection establishment time</h3>
+<p>Because QUIC integrates the TLS 1.3 handshake into its own handshake, it avoids the sequential round trips required by TCP plus TLS. Repeat connections can send application data immediately ("0-RTT"), subject to replay considerations.</p>
+<h3>Multiplexing without head-of-line blocking</h3>
+<p>QUIC provides multiple independent streams within a single connection. Packet loss on one stream does not block delivery of data on other streams, unlike HTTP/2 over TCP, where a single lost packet stalls all multiplexed streams at the TCP layer.</p>
+<h3>Connection migration</h3>
+<p>QUIC connections are identified by connection IDs rather than by the IP address and port four-tuple. A connection can therefore survive changes in the client's network address, such as moving from Wi-Fi to a cellular network.</p>
+<h3>Encryption and authentication</h3>
+<p>QUIC encrypts nearly all of its headers and payload using TLS 1.3 keys. This improves privacy and prevents middlebox interference, at the cost of making network management and troubleshooting more difficult for operators.</p>
+<h2>Standardization</h2>
+<p>The IETF QUIC working group was chartered in 2016. The core specifications were published in May 2021: RFC 8999 (version-independent properties), RFC 9000 (transport), RFC 9001 (TLS usage), and RFC 9002 (loss detection and congestion control). HTTP/3, which maps HTTP semantics onto QUIC streams, followed as RFC 9114 in 2022.</p>
+<h2>Adoption</h2>
+<p>QUIC is supported by major browsers including Chrome, Firefox, Safari, and Edge, and is served by large content providers and content delivery networks. A substantial share of web traffic, particularly to Google and Meta properties, is carried over QUIC.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../HTTP/3/index.html">HTTP/3</a></li>
+<li><a href="../Transmission_Control_Protocol/index.html">Transmission Control Protocol</a></li>
+<li><a href="../User_Datagram_Protocol/index.html">User Datagram Protocol</a></li>
+<li><a href="../TLS_1.3/index.html">TLS 1.3</a></li>
+<li><a href="../SPDY/index.html">SPDY</a></li>
+</ul>
+</main>
+</body>
+</html>

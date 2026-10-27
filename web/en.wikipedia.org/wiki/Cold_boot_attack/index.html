@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cold boot attack - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:24px 20px 60px}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:32px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-family:Georgia,serif;font-weight:normal;font-size:24px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+p,li{font-size:15px;line-height:1.6}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{margin:16px 0;text-align:center}
+.hero img{max-width:100%;border:1px solid #c8ccd1;background:#f8f9fa}
+.caption{font-size:12px;color:#54595d}
+.toc{background:#f8f9fa;border:1px solid #a2a9b1;padding:10px 18px;display:inline-block;font-size:14px}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+.ref{font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Cold boot attack</h1>
+<p>In computer security, a <b>cold boot attack</b> (or, less exactly, a <b>cold-booting attack</b>, <b>cold boot attack</b>, or <b>platform reset attack</b>) is a type of side channel attack in which an attacker with physical access to a computer performs a memory dump of the computer's random-access memory (RAM) by performing a hard reset of the target machine. Typically, cold boot attacks are used for retrieving encryption keys from a running operating system for malicious or criminal investigative reasons.</p>
+<div class="hero"><img src="images/cold-boot-attack.png" alt="A RAM module being cooled with compressed air to preserve its contents during a cold boot attack"><div class="caption">Cooling a memory module with inverted compressed air slows the decay of data in DRAM after power is removed.</div></div>
+<div class="toc"><b>Contents</b><ol>
+<li>Background</li>
+<li>Technique</li>
+<li>Mitigation</li>
+<li>See also</li>
+</ol></div>
+<h2>Background</h2>
+<p>The attack relies on the <b>data remanence</b> property of DRAM and SRAM: memory contents are not erased instantly when power is removed, but decay over seconds to minutes, and decay far more slowly at low temperatures. In February 2008, researchers led by J. Alex Halderman at Princeton University published "Lest We Remember: Cold Boot Attacks on Encryption Keys", demonstrating that the contents of RAM could be recovered after a machine was powered off and rebooted into a lightweight operating system, and that disk encryption keys for systems such as BitLocker, FileVault, dm-crypt and TrueCrypt could be reconstructed from the recovered memory images despite errors introduced by decay.</p>
+<h2>Technique</h2>
+<p>An attacker typically interrupts the target machine's power or resets it, then boots it from removable media running a small program that copies the contents of RAM to external storage before they decay. Cooling the memory chips — for example with inverted cans of compressed air, reaching temperatures around −50 °C — slows bit decay and extends the window for recovery. The recovered image is then analysed: encryption keys can be located and reconstructed using algorithms that exploit the redundancy in the key schedule, tolerating a substantial fraction of flipped bits. In some variants the memory modules are physically transplanted into a machine controlled by the attacker.</p>
+<h2>Mitigation</h2>
+<p>Because the attack assumes physical access, defences include keeping machines physically secure, shutting them down fully (rather than sleeping) when unattended, and configuring systems to overwrite memory on boot. Full memory encryption — in which RAM contents are encrypted with keys held in the CPU, as in AMD's Secure Memory Encryption or Intel's Total Memory Encryption — defeats the attack by making recovered memory images unintelligible. Some systems also employ the Trusted Computing Group's "memory overwrite request" (MOR) bit, which instructs the firmware to wipe memory on the next boot after an unexpected shutdown; this was bypassed in later research on certain implementations. Scrubbing keys from memory when a system locks, and keeping keys in CPU registers or caches instead of RAM, are additional countermeasures used by some tools.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Data_remanence/index.html">Data remanence</a></li>
+<li><a href="../Disk_encryption/index.html">Disk encryption</a></li>
+<li><a href="../Side-channel_attack/index.html">Side-channel attack</a></li>
+<li><a href="../DMA_attack/index.html">DMA attack</a></li>
+<li><a href="../Direct_memory_access/index.html">Direct memory access</a></li>
+</ul>
+<p class="ref">From Wikipedia, the free encyclopedia. This page was recreated from memory for the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

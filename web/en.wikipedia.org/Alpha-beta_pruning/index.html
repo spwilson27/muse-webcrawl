@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Alpha–beta pruning - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 30px 60px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 480px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 12px; }
+.caption { font-size: 0.8em; color: #54595d; }
+pre { background: #f8f9fa; border: 1px solid #c8ccd1; padding: 10px; font-size: 0.85em; overflow-x: auto; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Alpha–beta pruning</h1>
+<div class="hero"><img src="images/alpha-beta-pruning.png" alt="A game tree with branches shaded to show those pruned by alpha-beta search"></div>
+<p class="caption">A minimax tree with the branches pruned by alpha–beta pruning shown in grey.</p>
+<p><b>Alpha–beta pruning</b> is a search algorithm that decreases the number of nodes evaluated by the minimax algorithm in a game tree. It is an adversarial search used in two-player games such as chess, checkers and Go, and it returns exactly the same move as minimax while skipping branches that cannot influence the final decision.</p>
+<h2>Principle</h2>
+<p>The algorithm maintains two values, alpha and beta, representing respectively the minimum score the maximising player is already assured of and the maximum score the minimising player is already assured of. When a node's value is found to lie outside the current alpha–beta window, the remaining children of that node need not be examined, because the opponent will never allow that line to be reached.</p>
+<h2>Efficiency</h2>
+<p>With optimal move ordering, alpha–beta pruning reduces the effective branching factor from <i>b</i> to roughly the square root of <i>b</i>, allowing a search about twice as deep in the same time. In practice, ordering heuristics such as trying captures and "killer moves" first approach this optimum.</p>
+<h2>History</h2>
+<p>The idea was developed in the 1950s by researchers including John McCarthy, Alexander Brudno, and Allen Newell and Herbert Simon, and was described in print in connection with early chess programs. It remains a core component of classical game-playing engines, often combined with transposition tables, iterative deepening and quiescence search.</p>
+<pre>function alphabeta(node, depth, alpha, beta, maximising)
+    if depth = 0: return evaluate(node)
+    ...</pre>
+<p><i>See also:</i> <a href="../Minimax/index.html">Minimax</a>, <a href="../Game_tree/index.html">Game tree</a>, <a href="../Negamax/index.html">Negamax</a>, <a href="../Branch_and_bound/index.html">Branch and bound</a></p>
+</div>
+</body>
+</html>

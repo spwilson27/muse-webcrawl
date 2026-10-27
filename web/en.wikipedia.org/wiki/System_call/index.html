@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>System call - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 8px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; font-weight: normal; }
+p { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; background: #eaecf0; border: 1px solid #c8ccd1; padding: 24px; box-sizing: border-box; }
+.caption { font-size: 0.8em; color: #54595d; margin-top: 4px; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>System call</h1>
+<div class="hero">
+<img src="images/system-call.png" alt="Diagram showing a user process requesting a service from the operating system kernel via a system call">
+<div class="caption">A system call is the controlled gateway between user programs and the kernel.</div>
+</div>
+<p>In computing, a <b>system call</b> (<b>syscall</b>) is the programmatic way in which a computer program requests a service from the operating system on which it is executed. This may include hardware-related services (for example, accessing a hard disk drive or accessing the device's camera), creation and execution of new processes, and communication with integral kernel services such as process scheduling.</p>
+<p>System calls provide an essential interface between a process and the operating system. In most systems, system calls can only be made from userspace processes, while in some systems, OS/360 and successors, privileged system code also issues system calls.</p>
+<h2>Mechanism</h2>
+<p>System calls are usually invoked through a software interrupt or special trap instruction (such as <code>syscall</code> on x86-64) that switches the CPU from user mode to kernel mode. The application specifies a system call number and arguments; the kernel validates the request, performs the service, and returns a result. Typical examples on Unix-like systems include <code>read</code>, <code>write</code>, <code>open</code>, <code>fork</code>, and <code>exec</code>.</p>
+<h2>Library wrappers</h2>
+<p>Programs rarely invoke system calls directly. Instead, they call functions in the standard library (such as the C library), which wrap the low-level trap mechanism and handle details like setting up registers and reporting errors via <code>errno</code>.</p>
+<h2>Categories</h2>
+<p>System calls are commonly grouped into process control, file management, device management, information maintenance, communications, and protection.</p>
+<h2>See also</h2>
+<p><a href="../Kernel_(operating_system)/index.html">Kernel (operating system)</a> &middot; <a href="../User_space_and_kernel_space/index.html">User space and kernel space</a> &middot; <a href="../Application_programming_interface/index.html">API</a> &middot; <a href="../Interrupt/index.html">Interrupt</a></p>
+</div>
+</body>
+</html>
