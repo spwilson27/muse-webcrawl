@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bootstrapping (compilers) - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 0 auto; padding: 24px; line-height: 1.6; color: #202122; background: #fff; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; margin-top: 1.2em; }
+img.hero { display: block; margin: 16px auto; max-width: 480px; width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 8px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Bootstrapping (compilers)</h1>
+<img class="hero" src="images/bootstrapping-compilers.png" alt="Diagram of a compiler compiling its own source code in stages">
+<p>In computer science, <b>bootstrapping</b> is the process of writing a compiler (or assembler) in the programming language that it is intended to compile. Once a language exists in some initial form — perhaps via an interpreter or a compiler written in another language — the compiler can be rewritten in its own language and thereafter compiled by itself.</p>
+<h2>The process</h2>
+<p>A typical bootstrap proceeds in stages. Stage 0 is a compiler for a subset of the language written in some other language or machine code. That subset compiler compiles a fuller version of the compiler written in the subset, and the new compiler then compiles the complete compiler source. Languages commonly bootstrapped include C, Rust, Go and OCaml; GCC, for instance, builds itself in multiple stages and compares the outputs of the later stages as a correctness check.</p>
+<h2>Trust</h2>
+<p>Bootstrapping raises a security question famously explored in Ken Thompson's 1984 lecture "Reflections on Trusting Trust": a malicious modification could in principle be hidden in a self-hosting compiler's binary while being absent from its source. Reproducible builds and diverse double-compiling are proposed defences.</p>
+<p>See also: <a href="../Compiler/index.html">Compiler</a>, <a href="../Cross_compiler/index.html">Cross compiler</a>, <a href="../Self-hosting/index.html">Self-hosting</a>.</p>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>IPsec</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #c8ccd1;padding-bottom:.15em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.thumb{float:right;border:1px solid #c8ccd1;background:#f8f9fa;padding:.5em;margin:.5em 0 .5em 1em;font-size:.85em;text-align:center;width:240px}
+.references{font-size:.85em}
+</style>
+</head>
+<body>
+<h1>IPsec</h1>
+<div class="thumb"><img src="images/ipsec.png" alt="Diagram showing IPsec tunnel mode encapsulating an IP packet between two security gateways"><br>IPsec tunnel mode between two gateways.</div>
+<p><b>Internet Protocol Security</b> (<b>IPsec</b>) is a secure network protocol suite that authenticates and encrypts packets of data to provide secure encrypted communication between two computers over an Internet Protocol network. It is used in virtual private networks (VPNs).</p>
+<p>IPsec includes protocols for establishing mutual authentication between agents at the beginning of a session and negotiation of cryptographic keys to use during the session. IPsec can protect data flows between a pair of hosts (<i>host-to-host</i>), between a pair of security gateways (<i>network-to-network</i>), or between a security gateway and a host (<i>network-to-host</i>).</p>
+<h2>Protocols</h2>
+<ul>
+<li><b>Authentication Header (AH)</b> — provides connectionless integrity and data origin authentication for IP datagrams and protection against replay attacks (RFC 4302).</li>
+<li><b>Encapsulating Security Payload (ESP)</b> — provides confidentiality (encryption), origin authentication, integrity, and anti-replay protection (RFC 4303).</li>
+<li><b>Internet Key Exchange (IKE/IKEv2)</b> — negotiates security associations (SAs) and exchanges keys, typically building on ISAKMP and using Diffie–Hellman key exchange.</li>
+</ul>
+<h2>Modes of operation</h2>
+<p>In <b>transport mode</b>, only the payload of the IP packet is usually encrypted and/or authenticated; routing remains intact because the IP header itself is neither modified nor encrypted. In <b>tunnel mode</b>, the entire IP packet is encrypted and authenticated, then encapsulated in a new IP packet with a new IP header; tunnel mode is used to create virtual private networks for network-to-network, host-to-network, and host-to-host communications.</p>
+<h2>History</h2>
+<p>The IPsec suite was developed in the 1990s by the Internet Engineering Task Force (IETF), initially for IPv6, where support was originally mandatory, and later widely deployed for IPv4 as well. The current architecture is documented in RFC 4301 (2005) and updated documents.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Virtual_private_network/index.html">Virtual private network</a></li>
+<li><a href="../IPv6/index.html">IPv6</a></li>
+<li><a href="../Internet_Key_Exchange/index.html">Internet Key Exchange</a></li>
+<li><a href="../Transport_Layer_Security/index.html">Transport Layer Security</a></li>
+</ul>
+<p class="references">References: RFC 4301, "Security Architecture for the Internet Protocol" (2005); RFC 7296, "Internet Key Exchange Protocol Version 2 (IKEv2)" (2014).</p>
+</body>
+</html>

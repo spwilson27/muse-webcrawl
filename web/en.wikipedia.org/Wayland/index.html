@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wayland - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:800px;margin:2em auto;padding:0 1em;color:#202122;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:.15em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{display:block;max-width:400px;margin:1em auto;border:1px solid #ccc;padding:4px}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.5em 1em;margin:0 0 1em 1em;font-size:.9em;max-width:260px}
+</style>
+</head>
+<body>
+<h1>Wayland</h1>
+<img class="hero" src="images/wayland.png" alt="Depiction of Wayland the Smith at his forge">
+<p><b>Wayland</b> is a display server protocol and a reference implementation of a windowing
+system for Linux and other Unix-like operating systems. It is intended to replace the
+<a href="../X_Window_System/index.html">X Window System</a> as the standard display technology
+on the Linux desktop, offering a simpler architecture in which the compositor is the display
+server itself.</p>
+
+<h2>History</h2>
+<p>Wayland was started in 2008 by Kristian Høgsberg, then a developer at Red Hat, as a personal
+project to rethink how graphical desktops draw to the screen. Under X11, applications render into
+off-screen buffers managed by a separate server and compositor, adding latency and complexity.
+Wayland collapses these roles: every frame is rendered by the client into a buffer, and the
+compositor combines those buffers directly for display.</p>
+
+<h2>Architecture</h2>
+<div class="infobox"><b>Developer:</b> Kristian Høgsberg and contributors<br>
+<b>Initial release:</b> 2012 (1.0)<br>
+<b>Written in:</b> C<br>
+<b>License:</b> MIT License<br>
+<b>Type:</b> Display server protocol</div>
+<p>The Wayland protocol defines communication between a compositor and its clients over Unix
+domain sockets. The core protocol is deliberately minimal; functionality such as window
+management, screenshots, and global shortcuts is provided by protocol extensions, including
+those developed under the wlroots and xdg-shell efforts. Clients typically use libraries such as
+GTK, Qt, or SDL, which hide the protocol details.</p>
+<p>Applications written for X11 can still run through <b>XWayland</b>, a compatibility layer that
+runs a nested X server as a Wayland client.</p>
+
+<h2>Adoption</h2>
+<p>GNOME and KDE Plasma both support Wayland sessions, and major distributions such as Fedora
+have shipped Wayland as the default session since 2016. The Weston compositor serves as the
+reference implementation of a Wayland compositor.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Mir_(software)/index.html">Mir</a></li>
+<li><a href="../X.Org_Server/index.html">X.Org Server</a></li>
+<li><a href="../Simple_DirectMedia_Layer/index.html">Simple DirectMedia Layer</a></li>
+</ul>
+</body>
+</html>

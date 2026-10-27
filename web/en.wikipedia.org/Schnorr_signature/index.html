@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Schnorr signature - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#fff;color:#202122;margin:0 auto;max-width:860px;padding:24px;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.35em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:16px auto;max-width:520px;width:100%;border:1px solid #c8ccd1;background:#f8f9fa}
+.caption{font-size:0.85em;color:#54595d;text-align:center}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<h1>Schnorr signature</h1>
+<img class="hero" src="images/schnorr-signature.png" alt="Diagram of the Schnorr signature scheme">
+<p class="caption">The Schnorr signature scheme, built on the discrete logarithm problem.</p>
+<p>In cryptography, a <b>Schnorr signature</b> is a digital signature produced by the Schnorr signature algorithm, invented by Claus Schnorr. It is a signature scheme whose security is based on the intractability of certain discrete logarithm problems. The scheme is notable for its simplicity and efficiency, and for generating short signatures. Schnorr signatures also have the property of <i>linearity</i>, which allows multiple signatures to be aggregated into a single signature.</p>
+<h2>Algorithm</h2>
+<p>The scheme works in a cyclic group of prime order. A signer with private key <code>x</code> and public key <code>y = g^x</code> signs a message by choosing a random nonce <code>k</code>, computing a commitment <code>r = g^k</code>, hashing the commitment together with the message to obtain a challenge <code>e</code>, and computing the response <code>s = k + x·e</code>. The signature is the pair <code>(r, s)</code>, verified by checking that the hash matches a recomputed challenge.</p>
+<h2>Patent and adoption</h2>
+<p>Schnorr's patent, filed in 1989, expired in 2008, which delayed the scheme's widespread adoption during the 1990s and 2000s. In 2021, Schnorr signatures were activated in Bitcoin through the Taproot upgrade (BIP 340), enabling signature aggregation and improved privacy via protocols such as MuSig.</p>
+<h2>Security</h2>
+<p>Schnorr signatures are provably secure in the random oracle model under the discrete logarithm assumption, and are strongly unforgeable under chosen-message attacks. Correct nonce generation is essential: reusing a nonce across two signatures reveals the private key.</p>
+<p><i>See also:</i> <a href="../Digital_signature/index.html">Digital signature</a>, <a href="../Discrete_logarithm/index.html">Discrete logarithm</a>, <a href="../Bitcoin/index.html">Bitcoin</a></p>
+</body>
+</html>

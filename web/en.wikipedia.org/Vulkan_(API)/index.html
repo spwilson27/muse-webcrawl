@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vulkan (API)</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:1.9em;border-bottom:2px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.35em;border-bottom:1px solid #c8ccd1;padding-bottom:.15em;margin-top:1.4em}
+img.hero{display:block;max-width:100%;height:auto;background:#f8f9fa;border:1px solid #c8ccd1;margin:1em 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Vulkan (API)</h1>
+<img class="hero" src="images/vulkan-api.png" alt="The Vulkan API logo and architecture diagram">
+<p><b>Vulkan</b> is a low-overhead, cross-platform application programming interface (API) for 3D graphics and compute, developed by the Khronos Group. First released in February 2016, Vulkan gives applications explicit control over GPU operations — memory, synchronisation, and command submission — reducing driver overhead and enabling better use of multi-core CPUs compared with its predecessor, OpenGL.</p>
+<h2>History</h2>
+<p>Vulkan grew out of AMD's Mantle API, which AMD donated to the Khronos Group in 2014 as the foundation of a new open standard. Announced at the Game Developers Conference in 2015 under the working name "glNext", Vulkan 1.0 shipped on 16 February 2016. Later releases added features including ray tracing extensions (later folded into Vulkan 1.2 and beyond), mesh shaders, and video encode/decode. Vulkan is supported on Windows, Linux, Android, and — via translation layers such as MoltenVK — on macOS and iOS.</p>
+<h2>Design</h2>
+<p>Vulkan is explicit: applications allocate GPU memory, record command buffers (which can be built in parallel across threads), and submit them to queues with explicit synchronisation via fences, semaphores, and events. Shaders are usually distributed as SPIR-V, an intermediate bytecode compiled ahead of time. Rendering uses fixed-function pipelines described by pipeline state objects, and render passes define how framebuffer attachments are used. This explicitness makes Vulkan more verbose than OpenGL or Direct3D 11, but dramatically reduces hidden driver work and frame-time spikes.</p>
+<h2>Adoption</h2>
+<p>Vulkan is the primary graphics API on Android and Linux gaming (including the Steam Deck via Proton/DXVK), and is supported by engines such as Unity, Unreal Engine, and id Tech. Valve's DXVK and VKD3D-Proton translate Direct3D calls to Vulkan, and Google selected Vulkan for Stadia and for its Android graphics stack.</p>
+<p>See also: <a href="../OpenGL/index.html">OpenGL</a>, <a href="../Khronos_Group/index.html">Khronos Group</a>, <a href="../SPIR-V/index.html">SPIR-V</a>, <a href="../Direct3D/index.html">Direct3D</a>.</p>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Zstandard - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 36px 48px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 1.4em; }
+p { line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { margin: 12px 0; }
+.hero img { max-width: 100%; background: #eef; border: 1px solid #a2a9b1; padding: 6px; }
+.caption { font-size: 0.85em; color: #54595d; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 12px 16px; font-size: 0.9em; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+code { background: #f8f9fa; padding: 1px 4px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Zstandard</h1>
+<div class="infobox">
+<table>
+<tr><th>Original author</th><td>Yann Collet</td></tr>
+<tr><th>Developer</th><td>Meta (Facebook)</td></tr>
+<tr><th>Initial release</th><td>2015 (open source); version 1.0 in 2016</td></tr>
+<tr><th>Written in</th><td>C</td></tr>
+<tr><th>Type</th><td>Data compression</td></tr>
+<tr><th>License</th><td>BSD-3-Clause / GPL-2.0 dual license</td></tr>
+<tr><th>Filename extensions</th><td><code>.zst</code>, <code>.tzst</code></td></tr>
+</table>
+</div>
+<p><b>Zstandard</b>, commonly known by the name of its reference implementation <b>zstd</b>, is a lossless data compression algorithm developed by Yann Collet at Facebook and first released open source in 2015. It is designed to give compression ratios comparable to or better than <a href="../DEFLATE/index.html">DEFLATE</a> (as used in gzip and ZIP) while offering much faster compression and especially decompression speeds.</p>
+<div class="hero"><img src="images/zstandard.png" alt="Benchmark comparison chart of compression algorithms showing Zstandard's speed and ratio trade-offs"></div>
+<p class="caption">Zstandard offers a wide range of speed-versus-ratio trade-offs through its compression levels.</p>
+<h2>Design</h2>
+<p>Zstandard combines a dictionary-matching stage (LZ77) with finite-state entropy coding, using both tANS (via the FSE library) and Huffman coding. It offers 22 compression levels, from very fast low-ratio modes to slow high-ratio modes, plus a training mode that builds custom dictionaries for compressing many small, similar files. A newer range-matching mode at high levels improves ratios substantially on large inputs.</p>
+<h2>Format and adoption</h2>
+<p>The Zstandard compressed data format is specified in RFC 8878 (2021), with media type <code>application/zstd</code>. The format was adopted by the <a href="../Linux_kernel/index.html">Linux kernel</a> (for kernel, initramfs and filesystem compression, e.g. Btrfs), software package formats such as Debian's .deb and RPM, container and archive tools, databases, and content-encoding in HTTP. Its media type and file format have made it one of the most widely deployed modern compression schemes.</p>
+<h2>See also</h2>
+<p><a href="../LZ4_(compression_algorithm)/index.html">LZ4</a> &middot; <a href="../Brotli/index.html">Brotli</a> &middot; <a href="../Gzip/index.html">gzip</a></p>
+</div>
+</body>
+</html>

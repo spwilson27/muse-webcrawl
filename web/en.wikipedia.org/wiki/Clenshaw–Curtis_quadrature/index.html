@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Clenshaw–Curtis quadrature - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0 auto;max-width:820px;padding:1.5em;line-height:1.6;color:#202122;background:#fff}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;margin-bottom:.4em}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+img.hero{display:block;max-width:320px;width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:4px;margin:0 0 1em 1em;float:right}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Clenshaw–Curtis quadrature</h1>
+<img class="hero" src="images/Clenshaw–Curtis_quadrature.png" alt="Chebyshev–Lobatto points clustered near the endpoints of an interval">
+<p><b>Clenshaw–Curtis quadrature</b> is a <a href="../Numerical_integration/index.html">numerical integration</a> method based on an expansion of the integrand in terms of Chebyshev polynomials. It was introduced by C. W. Clenshaw and A. R. Curtis in 1960. The method evaluates the integrand at the Chebyshev–Lobatto points — the extrema of the Chebyshev polynomial of the first kind, cos(<i>j</i>π/<i>N</i>) for <i>j</i> = 0, …, <i>N</i> — fits the unique interpolating polynomial through those points, and integrates the polynomial exactly using the known integrals of the Chebyshev expansion.</p>
+<h2>Computation</h2>
+<p>Because the sample points are cosines, the Chebyshev coefficients of the interpolant can be computed rapidly with a discrete cosine transform (FFT), giving an overall cost of O(<i>N</i> log <i>N</i>). The quadrature weights have closed forms and, like those of Gauss–Legendre quadrature, are all positive. Unlike Gaussian quadrature, the nodes are nested: doubling <i>N</i> reuses the previously computed function values, which makes adaptive refinement and error estimation convenient.</p>
+<h2>Accuracy</h2>
+<p>Clenshaw and Curtis originally presented the method as inferior to Gaussian quadrature, and for decades it was widely regarded as a second-rate scheme. Later analysis, notably by Lloyd N. Trefethen, showed that for most practical purposes Clenshaw–Curtis quadrature is comparable in accuracy to Gauss quadrature for the same number of points: both converge geometrically for analytic integrands, and the supposed advantage of Gauss's higher polynomial exactness degree rarely matters because error is dominated by the first omitted Chebyshev coefficients of the integrand.</p>
+<h2>Related methods</h2>
+<p>The closely related Fejér quadrature rules use the roots (rather than extrema) of Chebyshev polynomials; Fejér's second rule is essentially identical in construction. Clenshaw–Curtis quadrature is also the one-dimensional engine behind sparse-grid (Smolyak) methods for high-dimensional integration and is implemented in software libraries and in Chebfun.</p>
+</body>
+</html>

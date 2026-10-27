@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Runge–Kutta methods - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 60px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.4em; }
+p { line-height: 1.6; font-size: 0.95em; }
+a { color: #3366cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 16px auto; max-width: 420px; width: 100%; height: 220px; background: #eaecf0; border: 1px solid #a2a9b1; }
+.caption { text-align: center; font-size: 0.8em; color: #54595d; margin-top: -8px; }
+.eq { font-family: 'Courier New', monospace; background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px 14px; margin: 12px 0; font-size: 0.9em; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Runge–Kutta methods</h1>
+<p>In numerical analysis, <b>Runge–Kutta methods</b> are a family of implicit and explicit iterative methods used in the temporal discretization of solutions to ordinary differential equations. They were developed around 1900 by the German mathematicians Carl Runge and Wilhelm Kutta. Runge–Kutta methods advance an approximate solution by taking a weighted average of several estimated slopes (derivatives) evaluated within each step.</p>
+<img class="hero" src="images/runge-kutta.png" alt="Diagram of sample slopes used in a fourth-order Runge–Kutta step">
+<p class="caption">A single step of the classic fourth-order Runge–Kutta method samples the slope at four points.</p>
+<h2>The fourth-order method</h2>
+<p>The most widely used member of the family, often called "the Runge–Kutta method" or RK4, advances the solution of y′ = f(t, y) by a step h using four increments:</p>
+<div class="eq">k1 = f(tn, yn)
+k2 = f(tn + h/2, yn + h·k1/2)
+k3 = f(tn + h/2, yn + h·k2/2)
+k4 = f(tn + h, yn + h·k3)
+y(n+1) = yn + (h/6)(k1 + 2k2 + 2k3 + k4)</div>
+<p>The weighted average gives an accuracy of fourth order: the total accumulated error scales as h<sup>4</sup>. General Runge–Kutta schemes are conveniently summarised in a Butcher tableau of coefficients.</p>
+<h2>Adaptive and implicit variants</h2>
+<p>Embedded pairs such as the Runge–Kutta–Fehlberg method (RKF45) and the Dormand–Prince method (the default in many software packages, including MATLAB's ode45) compute two estimates of different orders to control error and adapt the step size automatically. Implicit Runge–Kutta methods, in which each stage depends on other stages of the same step, are valuable for stiff equations; they include the Gauss–Legendre methods, which have excellent stability and conservation properties.</p>
+<p>See also: <a href="../Euler_method">Euler method</a>, <a href="../Ordinary_differential_equation">Ordinary differential equation</a>, <a href="../Numerical_analysis">Numerical analysis</a>, <a href="../Carl_Runge">Carl Runge</a>.</p>
+</div>
+</body>
+</html>

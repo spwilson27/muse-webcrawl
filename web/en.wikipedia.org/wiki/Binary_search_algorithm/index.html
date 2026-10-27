@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Binary search algorithm - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #fff; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p, li { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { float: right; margin: 0 0 12px 16px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 8px; text-align: center; font-size: 12px; max-width: 260px; }
+.hero img { width: 240px; height: 140px; display: block; margin: 0 auto 6px; background: #eaecf0; object-fit: cover; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px; font-size: 13px; overflow-x: auto; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Binary search algorithm</h1>
+<div class="hero"><img src="images/binary_search_algorithm.png" alt="Diagram of a binary search repeatedly halving a sorted array"><div>Binary search halves the search interval at each step.</div></div>
+<p>In computer science, <b>binary search</b>, also known as half-interval search, is a search algorithm that finds the position of a target value within a sorted array. It compares the target with the middle element of the array; if they are unequal, the half in which the target cannot lie is eliminated, and the search continues on the remaining half until the target is found or the interval is empty.</p>
+<h2>Procedure</h2>
+<p>The algorithm maintains the invariant that the target, if present, lies within the current search interval. Each step computes the middle element and narrows the interval to either the lower or upper half. Because the interval shrinks by a factor of two at every iteration, the algorithm runs in logarithmic time.</p>
+<pre>function binary_search(A, n, T):
+    L := 0
+    R := n − 1
+    while L ≤ R:
+        m := floor((L + R) / 2)
+        if A[m] &lt; T: L := m + 1
+        else if A[m] &gt; T: R := m − 1
+        else: return m
+    return unsuccessful</pre>
+<h2>Complexity</h2>
+<p>Binary search runs in O(log n) time and, in its iterative form, O(1) extra space. It is dramatically faster than linear search for large data sets: searching a billion elements requires at most about 30 comparisons. The data must be sorted, and the array must support random access; for linked lists binary search is impractical.</p>
+<h2>History and pitfalls</h2>
+<p>Although the idea is old, the first published binary search algorithm that works for all array sizes appeared in 1960, in a paper by Derrick Henry Lehmer. The algorithm is famously easy to describe but hard to implement correctly: Jon Bentley reported that most professional programmers given the task produced code containing overflow or off-by-one bugs, notably when computing the midpoint of very large arrays.</p>
+<p>See also: <a href="../Search_algorithm/index.html">Search algorithm</a>, <a href="../Binary_search_tree/index.html">Binary search tree</a>, <a href="../Divide-and-conquer_algorithm/index.html">Divide-and-conquer algorithm</a>.</p>
+</div>
+</body>
+</html>

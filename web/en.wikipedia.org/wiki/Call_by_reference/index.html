@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Call by reference - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; padding: 0 0 2em 0; color: #202122; background: #fff; }
+.mw-body { max-width: 960px; margin: 0 auto; padding: 1em 1.5em; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { text-align: center; margin: 1em 0; }
+.thumb img { max-width: 420px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 4px; }
+.thumbcaption { font-size: 0.85em; color: #54595d; font-family: sans-serif; }
+pre { background: #f8f9fa; border: 1px solid #a2a9b1; padding: 0.6em; font-size: 0.85em; overflow-x: auto; }
+.hatnote { font-style: italic; font-family: sans-serif; font-size: 0.9em; margin-left: 1em; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Call by reference</h1>
+<p class="hatnote">This article is about the parameter-passing strategy. For the evaluation strategy in functional programming, see Evaluation strategy.</p>
+<div class="thumb"><img src="images/call-by-reference.png" alt="Illustration placeholder diagram showing a function parameter pointing to the caller's variable in memory"></div>
+<p><b>Call by reference</b> (or <b>pass by reference</b>) is an evaluation strategy in computer programming in which a function receives an implicit reference to a variable used as an argument, rather than a copy of its value. This means that modifications the function makes to the parameter are visible in the caller's variable, because the parameter and the argument are aliases for the same memory location. Call by reference is contrasted with call by value, in which the argument is an independent copy.</p>
+<h2>Semantics</h2>
+<p>Under call by reference, the address of the argument is passed implicitly. Assignments through the formal parameter write directly to the caller's storage:</p>
+<pre>
+procedure swap(ref x, ref y):
+    temp := x
+    x := y
+    y := temp
+
+a := 3; b := 4
+swap(a, b)
+// now a = 4, b = 3
+</pre>
+<p>Because the parameter aliases the argument, call by reference also allows a function to &ldquo;return&rdquo; several results by writing to multiple reference parameters, a pattern common in older procedural languages. A consequence is that programmers must be careful: it is not visible at the call site whether an argument may be modified, and aliasing can create subtle bugs.</p>
+<h2>Language support</h2>
+<p>Fortran passes arguments by reference by default. C achieves reference-like behaviour explicitly with pointers (passing the address by value), while C++ provides true reference types denoted with <code>&amp;</code>. Pascal uses the <code>var</code> keyword, C# uses <code>ref</code> and <code>out</code>, and Visual Basic historically defaulted to <code>ByRef</code>. Languages such as Java and Python are sometimes loosely described as &ldquo;pass by reference&rdquo; for objects, but strictly they use <i>call by sharing</i>: references (object identities) are passed by value, so rebinding the parameter does not affect the caller, although mutating the shared object does.</p>
+<h2>See also</h2>
+<p><a href="../Evaluation_strategy/index.html">Evaluation strategy</a> &middot; <a href="../Pointer_(computer_programming)/index.html">Pointer</a> &middot; <a href="../Reference_(computer_science)/index.html">Reference</a> &middot; <a href="../Parameter_(computer_programming)/index.html">Parameter</a> &middot; <a href="../Side_effect_(computer_science)/index.html">Side effect</a></p>
+<h2>References</h2>
+<p>Scott, Michael L. (2009). <i>Programming Language Pragmatics</i>. Morgan Kaufmann.</p>
+</div>
+</body>
+</html>

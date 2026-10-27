@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Network packet - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 30px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+figure { float: right; margin: 0 0 15px 20px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 5px; font-size: 13px; text-align: center; max-width: 280px; }
+figure img { max-width: 270px; background: #eaecf0; display: block; height: 160px; width: 270px; object-fit: cover; }
+figcaption { padding: 5px; line-height: 1.4; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Network packet</h1>
+<figure>
+<img src="images/network_packet.png" alt="Diagram of a packet showing header, payload and trailer fields">
+<figcaption>Structure of a typical network packet.</figcaption>
+</figure>
+<p>A <b>network packet</b> is a formatted unit of data carried by a <a href="../Packet-switched_network/index.html">packet-switched network</a>. A packet consists of control information and user data: the control information, held in the packet's <b>header</b> (and sometimes a trailer), provides the data the network needs to deliver the payload — such as source and destination addresses, sequence numbers, and error-checking codes — while the user data is known as the <b>payload</b>. Packets are the fundamental unit of communication over the <a href="../Internet/index.html">Internet</a> and virtually all modern data networks.</p>
+<h2>Structure and encapsulation</h2>
+<p>As data passes down the <a href="../Internet_protocol_suite/index.html">protocol stack</a>, each layer wraps it in its own header — a process called encapsulation. A segment from the transport layer (e.g. <a href="../Transmission_Control_Protocol/index.html">TCP</a> or <a href="../User_Datagram_Protocol/index.html">UDP</a>) is encapsulated in an <a href="../Internet_Protocol/index.html">IP</a> packet, which is in turn carried inside a link-layer frame such as an <a href="../Ethernet_frame/index.html">Ethernet frame</a>. At each hop, routers read the IP header to forward the packet toward its destination, where the layers are peeled away in reverse.</p>
+<h2>Packet switching</h2>
+<p>In packet switching, messages are broken into packets that may travel over different routes and be reassembled at the destination; links are shared statistically among many flows, making far more efficient use of capacity than reserving a circuit. Packet size is limited by the path's <a href="../Maximum_transmission_unit/index.html">maximum transmission unit</a> (MTU) — 1500 bytes on standard Ethernet — with larger payloads fragmented or handled by path MTU discovery. Packets may be lost, delayed, duplicated, or reordered by the network; reliable protocols such as TCP detect and repair these problems using sequence numbers, acknowledgements, and retransmission.</p>
+<h2>See also</h2>
+<p><a href="../Packet_switching/index.html">Packet switching</a> &middot; <a href="../Internet_Protocol/index.html">Internet Protocol</a> &middot; <a href="../Datagram/index.html">Datagram</a> &middot; <a href="../Maximum_transmission_unit/index.html">MTU</a></p>
+</div>
+</body>
+</html>

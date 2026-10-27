@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Behavior tree (artificial intelligence, robotics and control) - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 900px; margin: 0 auto; padding: 20px; color: #202122; line-height: 1.6; background: #fff; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; font-weight: normal; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 12px auto; max-width: 480px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 24px 0; text-align: center; }
+</style>
+</head>
+<body>
+<h1>Behavior tree (artificial intelligence, robotics and control)</h1>
+<img class="hero" src="images/behavior-tree.png" alt="Diagram of a behavior tree with selector, sequence and leaf nodes">
+<p>A <b>behavior tree</b> is a mathematical model of plan execution used in <a href="../Artificial_intelligence/index.html">artificial intelligence</a>, robotics and control systems, and computer games. It is a directed tree whose leaf nodes are executable tasks and whose internal nodes control the flow of execution. Behavior trees originated in the video game industry as a powerful way to model the behaviour of non-player characters, and have since been adopted in robotics — for example in the Robot Operating System (ROS) ecosystem — because of their modularity, reusability and reactivity.</p>
+
+<h2>Structure</h2>
+<p>Execution begins at the root and proceeds through periodic signals called <i>ticks</i>. Each node, when ticked, returns one of three statuses: <b>success</b>, <b>failure</b>, or <b>running</b>. The principal control-flow nodes are:</p>
+<ul>
+<li><b>Sequence</b> — ticks children in order; fails if any child fails, succeeds only if all succeed.</li>
+<li><b>Selector</b> (or fallback) — ticks children in order; succeeds if any child succeeds, fails only if all fail.</li>
+<li><b>Decorator</b> — modifies the behaviour of a single child, e.g. inverting its result or repeating it.</li>
+<li><b>Parallel</b> — ticks several children simultaneously against a success threshold.</li>
+</ul>
+<p>Leaf nodes are of two types: condition nodes, which check a proposition about the world and return success or failure, and action nodes, which perform a task and may return "running" while the task is in progress.</p>
+
+<h2>Advantages and comparison</h2>
+<p>Compared with <a href="../Finite-state_machine/index.html">finite-state machines</a>, behavior trees scale better with complexity: subtrees are self-contained and can be reused, and the tree structure avoids the explosion of transitions between states. Compared with decision trees, behavior trees permit actions that take time and support reactive replanning at every tick. Their graphical, hierarchical nature also makes them accessible to designers who are not programmers, which helped their popularity in games such as Halo and in animation and robotics tooling.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Decision_tree/index.html">Decision tree</a></li>
+<li><a href="../Finite-state_machine/index.html">Finite-state machine</a></li>
+<li><a href="../Game_artificial_intelligence/index.html">Game artificial intelligence</a></li>
+<li><a href="../Robot_Operating_System/index.html">Robot Operating System</a></li>
+</ul>
+</body>
+</html>

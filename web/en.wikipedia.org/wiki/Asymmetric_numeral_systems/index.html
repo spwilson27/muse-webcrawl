@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Asymmetric numeral systems - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:12px auto;max-width:100%}
+.caption{text-align:center;font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Asymmetric numeral systems</h1>
+<img class="hero" src="images/asymmetric-numeral-systems.png" alt="Illustration of the ANS coding process mapping symbols to intervals of natural numbers">
+<p class="caption">ANS encodes symbols as natural numbers whose density matches symbol probabilities.</p>
+<p><b>Asymmetric numeral systems</b> (ANS) is a family of entropy encoding methods introduced by Polish computer scientist Jarek Duda in the late 2000s. ANS combines the near-optimal compression ratio of arithmetic coding with processing speed comparable to Huffman coding, and has been widely adopted in modern compressors. Its key idea is to encode information in a single natural number whose distribution over ranges reflects the probabilities of the symbols being coded.</p>
+<h2>Variants</h2>
+<p>Three main variants are used in practice:</p>
+<ul>
+<li><b>uABS</b> — the uniform binary variant, for coding binary alphabets with unequal probabilities.</li>
+<li><b>rANS</b> — the range variant, suited to larger alphabets and popular in high-performance codecs.</li>
+<li><b>tANS</b> — the tabled variant, which precomputes a finite-state automaton, giving very fast decoding; it underlies the FSE (Finite State Entropy) library.</li>
+</ul>
+<h2>Adoption</h2>
+<p>ANS-based schemes appear in Facebook's Zstandard compressor (via FSE), Apple's LZFSE, JPEG XL image coding, CRAM DNA-sequence archives, and many game and middleware compression libraries. Because the inventor placed the core techniques in the public domain, ANS spread rapidly despite early patent disputes concerning some applications.</p>
+<h2>Principle</h2>
+<p>In ANS, the encoder maintains a state number <i>x</i>. Symbols are distributed over the natural numbers with a density roughly equal to their probability: common symbols occupy most of the number line, so adding them increases the state only slightly, while rare symbols expand it by many bits. Decoding reverses the process, so the coder works as a stack (LIFO), unlike the queue-like behaviour of arithmetic coders.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Arithmetic_coding/index.html">Arithmetic coding</a></li>
+<li><a href="../Huffman_coding/index.html">Huffman coding</a></li>
+<li><a href="../Zstandard/index.html">Zstandard</a></li>
+</ul>
+</body>
+</html>

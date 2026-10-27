@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Web ARChive - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:800px;margin:2em auto;padding:0 1em;color:#202122;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:.15em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{display:block;max-width:400px;margin:1em auto;border:1px solid #ccc;padding:4px}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.5em 1em;margin:0 0 1em 1em;font-size:.9em;max-width:260px}
+</style>
+</head>
+<body>
+<h1>Web ARChive</h1>
+<img class="hero" src="images/web-archive-format.png" alt="Diagram placeholder of records stored in a WARC file">
+<p>The <b>Web ARChive</b> (<b>WARC</b>) archive format specifies a method for combining multiple
+digital resources into an aggregate archive file together with related information. The WARC
+format is a revision of the Internet Archive's ARC format, which has been used since 1996 to
+store web crawl data. WARC was standardized as ISO 28500 in 2009 and revised in 2017.</p>
+
+<h2>Format</h2>
+<div class="infobox"><b>Filename extension:</b> .warc, .warc.gz<br>
+<b>Developed by:</b> Internet Archive / IIPC<br>
+<b>Standard:</b> ISO 28500<br>
+<b>Type:</b> Web archive container</div>
+<p>A WARC file is a concatenation of records, each with a header containing a record type, a
+unique record ID, a date, and a content length, followed by the content block and a separator.
+Record types include <i>warcinfo</i> (describing the file itself), <i>response</i> and
+<i>request</i> (captured HTTP traffic), <i>metadata</i>, <i>revisit</i> (for unchanged content),
+<i>resource</i>, <i>conversion</i>, and <i>continuation</i>. Files are usually compressed with
+gzip, one record per gzip member, so individual records can be retrieved by byte offset.</p>
+
+<h2>Use</h2>
+<p>WARC is the standard format of the International Internet Preservation Consortium (IIPC)
+members, including national libraries running legal-deposit web archives. Open-source tools
+such as the Heritrix crawler write WARC natively; replay systems such as OpenWayback, pywb, and
+webrecorder.io read it; and the Common Crawl dataset distributes its crawls as WARC files.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Internet_Archive/index.html">Internet Archive</a></li>
+<li><a href="../Web_archiving/index.html">Web archiving</a></li>
+<li><a href="../Heritrix/index.html">Heritrix</a></li>
+</ul>
+</body>
+</html>

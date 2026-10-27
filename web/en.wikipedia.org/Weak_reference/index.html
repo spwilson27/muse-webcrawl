@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Weak reference - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:800px;margin:2em auto;padding:0 1em;color:#202122;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:.15em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{display:block;max-width:400px;margin:1em auto;border:1px solid #ccc;padding:4px}
+</style>
+</head>
+<body>
+<h1>Weak reference</h1>
+<img class="hero" src="images/weak-reference.png" alt="Diagram placeholder showing a weak reference to an object">
+<p>In computer programming, a <b>weak reference</b> is a reference to an object that does not
+prevent the object from being reclaimed by a <a href="../Garbage_collection_(computer_science)/index.html">garbage collector</a>,
+unlike a <b>strong reference</b>, which keeps its referent alive as long as the reference exists.
+Weak references are used to build data structures such as caches and observer registries that
+must not extend the lifetime of the objects they point to.</p>
+
+<h2>Uses</h2>
+<p>A common use is the <i>weak hash map</i>, in which entries disappear automatically when their
+keys are no longer referenced elsewhere; Java's <code>java.util.WeakHashMap</code> is a standard
+example. Weak references also implement canonicalizing mappings, where a program keeps one shared
+instance of an object per value: if a weak reference has been cleared, the object can be recreated.
+Event listener and callback registries use weak references so that registering an observer does
+not itself keep the observer alive, avoiding a common source of memory leaks.</p>
+
+<h2>Language support</h2>
+<p>Java provides three strengths of non-strong reference through the
+<code>java.lang.ref</code> package: weak references, soft references (cleared only under memory
+pressure), and phantom references. The .NET Framework offers <code>WeakReference</code> and
+<code>WeakReference&lt;T&gt;</code>; Python's <code>weakref</code> module provides proxies and
+weak-key dictionaries for most user-defined classes. In C++, <code>std::weak_ptr</code> pairs
+with <code>std::shared_ptr</code> to break reference cycles.</p>
+
+<h2>Semantics</h2>
+<p>Accessing a weak reference is a two-step operation: the program must check whether the
+referent still exists and obtain a strong reference to it before use. In Java, a cleared weak
+reference returns <code>null</code> from <code>get()</code>; a C++ <code>weak_ptr</code> must be
+<code>lock()</code>ed into a <code>shared_ptr</code>. If an object has only weak references, the
+collector may reclaim it at the next collection cycle, and the weak references are cleared.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Reference_counting/index.html">Reference counting</a></li>
+<li><a href="../Dangling_pointer/index.html">Dangling pointer</a></li>
+<li><a href="../Finalizer/index.html">Finalizer</a></li>
+</ul>
+</body>
+</html>

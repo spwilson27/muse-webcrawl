@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Block cipher mode of operation - Wikipedia (recreated from memory)</title>
+<style>
+body{font-family:Georgia,serif;margin:0 auto;max-width:820px;padding:24px;line-height:1.6;color:#202122}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #c8ccd1;padding-bottom:2px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:16px auto;max-width:420px;background:#eef3f8;border:1px solid #a2a9b1;padding:24px;text-align:center;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Block cipher mode of operation</h1>
+<span class="hero"><img src="images/block-cipher-modes.png" alt="Diagrams comparing the ECB, CBC, CFB, OFB and CTR modes of operation for a block cipher"></span>
+<p>In cryptography, a <b>block cipher mode of operation</b> is an algorithm that uses a block cipher — which by itself encrypts only a single fixed-size block of data under a key — to securely encrypt messages of arbitrary length. Modes also determine how errors propagate, whether encryption can be parallelised, and whether identical plaintext blocks produce identical ciphertext.</p>
+<h2>Common modes</h2>
+<p><b>Electronic codebook (ECB)</b> encrypts each block independently. It is insecure for most purposes because patterns in the plaintext remain visible in the ciphertext — famously illustrated by an image whose outline remains recognisable when ECB-encrypted.</p>
+<p><b>Cipher block chaining (CBC)</b> XORs each plaintext block with the previous ciphertext block before encryption, starting from a random initialisation vector (IV). CBC was widely used in TLS and disk encryption but decryption of chosen ciphertexts can be vulnerable to padding oracle attacks.</p>
+<p><b>Cipher feedback (CFB)</b> and <b>output feedback (OFB)</b> turn a block cipher into a self-synchronising or synchronous stream cipher respectively. <b>Counter mode (CTR)</b> encrypts successive values of a counter and XORs the result with the plaintext, allowing random access and full parallelisation; it requires that a nonce–counter combination never be reused with the same key.</p>
+<h2>Authenticated modes</h2>
+<p>Modern practice favours authenticated encryption modes that provide confidentiality and integrity together, such as <b>Galois/Counter Mode (GCM)</b>, which combines CTR encryption with a polynomial hash, and the <b>XTS</b> mode specialised for storage devices. NIST standardises modes in its SP 800-38 series of publications.</p>
+<p>See also: <a href="../Block_cipher/index.html">Block cipher</a>, <a href="../Advanced_Encryption_Standard/index.html">AES</a>, <a href="../Initialisation_vector/index.html">Initialisation vector</a>, <a href="../Authenticated_encryption/index.html">Authenticated encryption</a>.</p>
+</body>
+</html>

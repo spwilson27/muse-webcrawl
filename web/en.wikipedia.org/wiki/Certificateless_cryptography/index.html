@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Certificateless cryptography - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;color:#202122;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;margin-bottom:.4em}
+h2{font-size:1.35em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.2em}
+img.hero{float:right;width:260px;margin:0 0 1em 1em;border:1px solid #c8ccd1;background:#f8f9fa}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Certificateless cryptography</h1>
+<img class="hero" src="images/Certificateless_cryptography.png" alt="Diagram of key generation in a certificateless public-key system">
+<p><b>Certificateless cryptography</b> is a variant of identity-based cryptography intended to avoid the key escrow problem of identity-based systems while also avoiding the need for digital certificates used in conventional public-key infrastructure. It was introduced by Sattam Al-Riyami and Kenneth Paterson in 2003.</p>
+<h2>Motivation</h2>
+<p>In a traditional public-key infrastructure, a certificate authority binds a public key to an identity with a signed certificate, which must be stored, distributed, and checked for revocation. In identity-based cryptography, the public key is simply the user's identity, but a trusted Key Generation Center (KGC) computes the user's full private key and therefore can decrypt or sign on behalf of any user — the key escrow problem. Certificateless cryptography splits key generation between the KGC and the user.</p>
+<h2>How it works</h2>
+<p>The KGC generates system parameters and, for a given identity, computes a <i>partial private key</i> from the KGC's master secret. The user independently chooses a secret value and combines it with the partial private key to form the full private key, and likewise computes a public key from the secret value and the system parameters. Because the KGC never learns the user's secret value, it cannot compute the full private key, eliminating escrow; because the public key is derived in part from the KGC-issued partial key, no certificate is needed to bind it to the identity.</p>
+<h2>Security model and applications</h2>
+<p>Security analyses of certificateless schemes typically consider two adversary types: an outsider who may replace users' public keys but does not know the master secret, and a malicious-but-passive KGC that knows the master secret but cannot replace public keys. Certificateless encryption, signatures, key agreement, and signcryption schemes have been proposed, and the approach has attracted interest for resource-constrained environments such as wireless sensor networks, vehicular networks, and cloud computing, where certificate management is burdensome.</p>
+<p>See also: Identity-based cryptography; Public-key infrastructure; Key escrow.</p>
+</body>
+</html>

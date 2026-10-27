@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AWS Lambda - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:24px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:1.4em}
+.hero{display:block;margin:16px auto;max-width:480px;width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:8px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+footer{margin-top:2em;font-size:0.85em;color:#54595d;border-top:1px solid #a2a9b1;padding-top:8px}
+</style>
+</head>
+<body>
+<h1>AWS Lambda</h1>
+<img class="hero" src="images/AWS_Lambda.png" alt="AWS Lambda logo and event-driven function execution diagram">
+<p><b>AWS Lambda</b> is an event-driven, serverless computing platform provided by <a href="../Amazon_Web_Services/index.html">Amazon Web Services</a> (AWS) since 2014. It runs code in response to events and automatically manages the underlying compute resources. Users upload functions and Lambda handles provisioning, scaling, patching and high availability, charging only for the compute time consumed, measured in millisecond increments.</p>
+<h2>History</h2>
+<p>Lambda was announced at AWS re:Invent in November 2014, initially supporting code written in Node.js, with Java added in 2015 and Python and C# (.NET) in 2016. Go and Ruby support followed, and in 2018 AWS announced custom runtimes and the open-source Firecracker microVM technology that underpins Lambda's isolation. In 2020, Lambda added support for container images as a packaging format and for billing granularity of one millisecond.</p>
+<h2>Features</h2>
+<p>Lambda functions are stateless and are triggered by events from AWS services such as <a href="../Amazon_S3/index.html">Amazon S3</a>, <a href="../Amazon_DynamoDB/index.html">DynamoDB</a>, <a href="../Amazon_API_Gateway/index.html">API Gateway</a>, <a href="../Amazon_SQS/index.html">SQS</a> and EventBridge, or by direct invocation through the AWS API. Each function runs in an isolated execution environment based on Firecracker microVMs. Functions can be allocated between 128 MB and 10 GB of memory, with CPU scaled proportionally, and may run for up to 15 minutes per invocation.</p>
+<p>Common use cases include web backends, data processing pipelines, stream processing, file transformation, scheduled tasks, and glue logic between managed services. The programming model encourages small, single-purpose functions composed into applications using services such as AWS Step Functions.</p>
+<h2>Limitations</h2>
+<p>Criticisms of Lambda have included cold-start latency for infrequently invoked functions, the 15-minute execution limit, debugging complexity in distributed systems, and the risk of vendor lock-in. Provisioned concurrency and SnapStart (for Java) were introduced to mitigate cold starts.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Serverless_computing/index.html">Serverless computing</a></li>
+<li><a href="../Amazon_Web_Services/index.html">Amazon Web Services</a></li>
+<li><a href="../Function_as_a_service/index.html">Function as a service</a></li>
+</ul>
+<footer>From Wikipedia, the free encyclopedia.</footer>
+</body>
+</html>

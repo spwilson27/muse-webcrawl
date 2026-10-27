@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Simplex algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;min-height:100vh}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:6px;margin-top:0}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:28px}
+p,li{line-height:1.6;font-size:15px}
+img.hero{display:block;max-width:100%;height:auto;background:#eaecf0;border:1px solid #c8ccd1;padding:12px;box-sizing:border-box;margin:12px 0}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:12px;margin:0 0 12px 16px;font-size:13px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Simplex algorithm</h1>
+<img class="hero" src="images/Simplex_algorithm.png" alt="Path of the simplex algorithm along the edges of a polytope to the optimal vertex">
+<p>In mathematical optimisation, the <b>simplex algorithm</b> (or <b>simplex method</b>) is a widely used procedure for solving linear programming problems. It was developed by George Dantzig in 1947 and is named for the fact that it can be interpreted geometrically in terms of simplices. In 2000 it was listed among the top ten algorithms of the twentieth century.</p>
+<h2>Overview</h2>
+<p>A linear programming problem asks for the point maximising (or minimising) a linear objective function over a convex polytope defined by linear equality and inequality constraints. Because the objective is linear, an optimum — if one exists — occurs at a vertex (corner point) of the polytope, called a basic feasible solution. The simplex algorithm moves from vertex to adjacent vertex along edges, at each step choosing an entering variable that improves the objective and a leaving variable that preserves feasibility (a "pivot"). It stops when no improving edge exists, certifying optimality; it also detects infeasible and unbounded problems.</p>
+<h2>Implementation and variants</h2>
+<p>In practice the algorithm is implemented with the revised simplex method and sparse LU factorisation of the basis matrix, with pivot rules such as Bland's rule to avoid cycling in degenerate problems, and pricing strategies such as steepest edge. The dual simplex method, used heavily in mixed-integer programming and after adding cuts or constraints, maintains dual feasibility instead.</p>
+<h2>Complexity</h2>
+<p>Although the simplex algorithm can require exponentially many steps in the worst case (as shown by the Klee–Minty cube in 1972), it is extremely fast in practice — a phenomenon explained partly by smoothed analysis (Spielman and Teng, 2001). Polynomial-time alternatives such as Khachiyan's ellipsoid method (1979) and Karmarkar's interior-point method (1984) compete with simplex on very large problems, but the simplex algorithm remains a cornerstone of commercial solvers.</p>
+<p class="small">See also: <a href="../Linear_programming/index.html">Linear programming</a> · <a href="../George_Dantzig/index.html">George Dantzig</a> · <a href="../Interior-point_method/index.html">Interior-point method</a></p>
+</div>
+</body>
+</html>

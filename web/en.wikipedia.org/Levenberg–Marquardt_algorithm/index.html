@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Levenberg–Marquardt algorithm - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#fff;color:#202122}
+.header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:10px 20px}
+.content{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:5px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;text-align:center;margin:15px 0}
+.footer{border-top:1px solid #a2a9b1;padding:10px 20px;font-size:0.85em;color:#54595d;background:#f8f9fa}
+</style>
+</head>
+<body>
+<div class="header"><strong>Wikipedia</strong> — The Free Encyclopedia</div>
+<div class="content">
+<h1>Levenberg–Marquardt algorithm</h1>
+<p>The <b>Levenberg–Marquardt algorithm</b> (LMA or LM), also known as the damped least-squares method, is used to solve non-linear <a href="../Least_squares/index.html">least squares</a> problems, most commonly in least-squares curve fitting. It interpolates between the Gauss–Newton algorithm and the method of gradient descent, combining the stability of the latter with the speed of the former.</p>
+<div class="hero"><img src="images/levenberg-marquardt-algorithm.png" alt="Convergence of the Levenberg–Marquardt algorithm on a curve-fitting problem"></div>
+<h2>Method</h2>
+<p>At each iteration the algorithm solves a damped version of the normal equations, (J<sup>T</sup>J + λI)δ = J<sup>T</sup>r, where J is the Jacobian of the residuals and λ is a damping parameter adjusted dynamically: when λ is small the step resembles Gauss–Newton; when a step fails to reduce the error, λ is increased, rotating the step toward gradient descent. The method was first published by Kenneth Levenberg in 1944, rediscovered by Donald Marquardt in 1963, and further developed by others; Marquardt's version scales the damping by the diagonal of J<sup>T</sup>J, improving performance when parameters differ greatly in magnitude.</p>
+<h2>Applications</h2>
+<p>LMA is a standard solver in scientific software — it underlies MINPACK's widely ported <code>lmder</code> and <code>lmdif</code> routines and implementations in SciPy, Ceres Solver and many curve-fitting packages — and is used in fields from spectroscopy and photogrammetry to training small neural networks.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Gauss-Newton_algorithm/index.html">Gauss–Newton algorithm</a></li>
+<li><a href="../Non-linear_least_squares/index.html">Non-linear least squares</a></li>
+<li><a href="../Gradient_descent/index.html">Gradient descent</a></li>
+</ul>
+</div>
+<div class="footer">This page was last edited on 26 February 2025. Text is available under the Creative Commons Attribution-ShareAlike License.</div>
+</body>
+</html>

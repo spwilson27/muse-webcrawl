@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Series acceleration</title>
+<style>body{font-family:Georgia,serif;max-width:760px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{font-size:1.3em;border-bottom:1px solid #c8ccd1}.hero{display:block;margin:1em auto;max-width:100%}.caption{text-align:center;color:#54595d;font-size:.9em}nav{font-size:.95em}</style>
+</head>
+<body>
+<h1>Series acceleration</h1>
+<img class="hero" src="images/Series_acceleration.png" alt="Graph showing a slowly converging series and its accelerated transformation approaching the limit faster">
+<p class="caption">Partial sums of a series and an accelerated estimate of its limit.</p>
+<p><strong>Series acceleration</strong> is a collection of techniques in numerical analysis for improving the rate of convergence of a sequence or series. A slowly converging series may require an impractical number of terms to reach a desired accuracy, so acceleration methods transform the partial sums into a new sequence that approaches the same limit more rapidly.</p>
+<h2>Motivation</h2>
+<p>Many important constants and functions are defined by infinite series whose terms decrease too slowly for direct summation. The alternating harmonic series, for example, converges to ln&nbsp;2 but its error after <em>n</em> terms is roughly 1/(2<em>n</em>), so millions of terms would be needed for high precision. Acceleration extracts more information from the terms already computed, exploiting patterns in the remainders.</p>
+<h2>Methods</h2>
+<p>Classical methods include Kummer's transformation, which compares a series with a known series of similar behaviour, and the Euler transform for alternating series. Aitken's delta-squared process and its generalisation, Wynn's epsilon algorithm, build extrapolations from consecutive partial sums and are closely related to Padé approximants and continued fractions. Richardson extrapolation, originally devised for finite-difference calculations, applies whenever the error admits an expansion in powers of a step parameter. For divergent series, summation methods such as Borel summation and Levin's transformations assign generalised sums.</p>
+<h2>Applications</h2>
+<p>Series acceleration is used in computing mathematical constants, evaluating special functions, summing perturbation expansions in physics, and speeding up iterative algorithms. Its effectiveness depends on the structure of the series: methods tuned to alternating, monotone, or logarithmically convergent sequences can fail or even diverge when applied outside their intended class, so error estimates and stability checks remain essential.</p>
+<nav><h2>See also</h2><ul>
+<li><a href="../Rate_of_convergence/index.html">Rate of convergence</a></li>
+<li><a href="../Richardson_extrapolation/index.html">Richardson extrapolation</a></li>
+<li><a href="../Pad%C3%A9_approximant/index.html">Padé approximant</a></li>
+<li><a href="../Divergent_series/index.html">Divergent series</a></li>
+</ul></nav>
+</body>
+</html>

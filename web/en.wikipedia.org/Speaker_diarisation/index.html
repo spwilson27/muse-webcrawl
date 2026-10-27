@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Speaker diarisation - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0 auto; max-width: 900px; padding: 20px; line-height: 1.6; color: #202122; background: #fff; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+.hero { display: block; margin: 10px auto; max-width: 420px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 8px; text-align: center; font-size: 0.85em; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px; margin: 0 0 12px 16px; font-size: 0.85em; width: 240px; }
+</style>
+</head>
+<body>
+<h1>Speaker diarisation</h1>
+<div class="infobox"><b>Speaker diarisation</b><br>Task: "Who spoke when?"<br>Field: Speech processing, machine learning<br>Metric: Diarisation error rate (DER)</div>
+<p><b>Speaker diarisation</b> (or <b>diarization</b>) is the task of partitioning an audio recording into homogeneous segments according to speaker identity — answering the question "who spoke when?". It typically identifies speech regions and the number of distinct speakers, and attributes each speech segment to one of them, without necessarily knowing the speakers' identities in advance.</p>
+<img class="hero" src="images/speaker_diarisation.png" alt="Waveform segmented and colour-coded by speaker">
+<h2>Approach</h2>
+<p>A classical diarisation pipeline combines several modules. Speech activity detection separates speech from silence and noise. Segmentation or speaker-change detection finds boundaries where the speaker changes. Short segments are then represented by speaker embeddings — historically i-vectors, now usually neural x-vectors or d-vectors — and clustered (for example by agglomerative hierarchical clustering or spectral clustering) so that segments assigned to the same cluster share a speaker label. Overlapping speech, in which two people talk at once, is a major source of error and is handled by dedicated overlap detectors or end-to-end neural diarisation models.</p>
+<h2>Evaluation</h2>
+<p>Systems are scored with the diarisation error rate (DER), which sums missed speech, false-alarm speech, and speaker-confusion time as a proportion of total speech time. Benchmarks have been organised through the NIST Rich Transcription evaluations and the DIHARD challenges.</p>
+<h2>Applications</h2>
+<p>Diarisation supports meeting and broadcast transcription, call-centre analytics, podcast indexing, and richer automatic speech recognition output in which transcripts are labelled by speaker.</p>
+<h2>See also</h2>
+<p><a href="../Speaking_in_tongues/index.html">Speaking in tongues</a> · Speech recognition · Speaker recognition</p>
+</body>
+</html>

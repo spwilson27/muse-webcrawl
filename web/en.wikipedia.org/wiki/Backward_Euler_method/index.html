@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Backward Euler method - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 800px; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a7d7f9; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #c8ccd1; }
+a { color: #0645ad; text-decoration: none; }
+.hero { display: block; margin: 1em auto; max-width: 400px; border: 1px solid #ccc; }
+code { background: #f8f9fa; padding: 0.1em 0.3em; }
+</style>
+</head>
+<body>
+<h1>Backward Euler method</h1>
+<img class="hero" src="images/backward-euler.png" alt="Graph comparing the backward Euler method with the exact solution of a decay equation">
+<p>In numerical analysis and scientific computing, the <b>backward Euler method</b> (or <b>implicit Euler method</b>) is one of the most basic numerical methods for the solution of ordinary differential equations. It is similar to the (standard) <a href="../Euler_method/index.html">Euler method</a>, but differs in being an implicit method: each step requires solving an equation involving the unknown new value,</p>
+<p style="text-align:center;"><code>y<sub>n+1</sub> = y<sub>n</sub> + h f(t<sub>n+1</sub>, y<sub>n+1</sub>)</code></p>
+<p>where <i>h</i> is the step size and <i>f</i> gives the derivative of the solution.</p>
+<h2>Properties</h2>
+<p>The backward Euler method is first-order accurate and is A-stable and L-stable: its stability region includes the entire left half of the complex plane, and it damps stiff components without oscillation. This makes it a standard choice for stiff equations, where explicit methods would require prohibitively small steps. The price is that an algebraic (generally nonlinear) equation must be solved at each step, usually by Newton iteration.</p>
+<h2>Applications</h2>
+<p>The method is widely used in circuit simulation, chemical kinetics, and the time integration of diffusion problems, and forms the basis for more sophisticated implicit schemes such as the trapezoidal rule and backward differentiation formulas (BDFs).</p>
+<p>See also: <a href="../Euler_method/index.html">Euler method</a>, <a href="../Stiff_equation/index.html">Stiff equation</a>, <a href="../Numerical_methods_for_ordinary_differential_equations/index.html">Numerical methods for ordinary differential equations</a>.</p>
+</body>
+</html>

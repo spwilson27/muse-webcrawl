@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Canny edge detector - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0 auto; max-width: 960px; padding: 20px 40px; color: #202122; line-height: 1.6; background: #fff; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 480px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 8px; }
+.caption { font-size: 0.85em; color: #54595d; }
+.mono { font-family: monospace; background: #f8f9fa; padding: 2px 4px; }
+</style>
+</head>
+<body>
+<h1>Canny edge detector</h1>
+<p>The <b>Canny edge detector</b> is an <a href="../Edge_detection/index.html">edge detection</a> operator that uses a multi-stage algorithm to detect a wide range of edges in images. It was developed by <a href="../John_Canny/index.html">John F. Canny</a> in 1986. Canny also produced a computational theory of edge detection explaining why the technique works.</p>
+<div class="hero"><img src="images/canny_edge_detector.png" alt="An image and its edges extracted by the Canny edge detector"><div class="caption">Placeholder image: edge map produced by the Canny algorithm.</div></div>
+<h2>The algorithm</h2>
+<p>The Canny algorithm proceeds in five stages:</p>
+<ol>
+<li><b>Noise reduction</b> — the image is smoothed with a Gaussian filter to remove noise.</li>
+<li><b>Gradient calculation</b> — intensity gradients are computed to find areas of sharp change.</li>
+<li><b>Non-maximum suppression</b> — spurious responses are removed, thinning edges to single-pixel lines.</li>
+<li><b>Double threshold</b> — pixels are classified as strong edges, weak edges, or non-edges using high and low thresholds.</li>
+<li><b>Edge tracking by hysteresis</b> — weak edge pixels connected to strong edges are kept; isolated weak pixels are discarded.</li>
+</ol>
+<h2>Design criteria</h2>
+<p>Canny formulated edge detection as an optimisation problem based on three criteria: good detection (low error rate), good localisation (detected edges close to true edges), and minimal response (one detector response per true edge). The resulting operator approximates the first derivative of a Gaussian and remains one of the most widely used edge detectors in <a href="../Computer_vision/index.html">computer vision</a>, implemented in libraries such as <a href="../OpenCV/index.html">OpenCV</a>.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Edge_detection/index.html">Edge detection</a></li>
+<li><a href="../Sobel_operator/index.html">Sobel operator</a></li>
+<li><a href="../Gaussian_blur/index.html">Gaussian blur</a></li>
+<li><a href="../Computer_vision/index.html">Computer vision</a></li>
+</ul>
+</body>
+</html>

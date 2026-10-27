@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LZMA2 - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: sans-serif; font-size: 1.25em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.2em; }
+p { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { display: block; margin: 12px auto; max-width: 100%; }
+.small { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>LZMA2</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/lzma2.png" alt="Diagram of LZMA2 container chunks interleaving compressed and uncompressed data">
+<p><b>LZMA2</b> is a lossless data compression format that provides a container format for LZMA (Lempel–Ziv–Markov chain algorithm) data. It was introduced with version 9 of the .xz file format and the XZ Utils software, and is intended as a successor container to the original ".lzma" format used by 7-Zip.</p>
+<h2>Design</h2>
+<p>Unlike LZMA, which is a raw stream, LZMA2 structures data into chunks of up to 2 MiB of uncompressed data. Each chunk is independently compressed with LZMA1 (with resettable dictionary and encoder state), or stored uncompressed when compression would not help; this makes it possible to decompress (and, with limits, compress) data in parallel threads and to seek within a stream. LZMA2 also avoids the possibility of expansion of incompressible data that exists with plain LZMA streams.</p>
+<h2>Use</h2>
+<p>LZMA2 is the default compression method of the .xz format and is widely used for distributing software source code, Linux kernel archives and package repositories, where its high compression ratio is prized and its relatively slow, memory-hungry compression is acceptable because decompression is faster and data is compressed once and read many times.</p>
+<p>See also: <a href="../LZMA/index.html">LZMA</a>, <a href="../Xz/index.html">xz</a>, <a href="../7-Zip/index.html">7-Zip</a>, <a href="../Data_compression/index.html">Data compression</a>.</p>
+</div>
+</body>
+</html>

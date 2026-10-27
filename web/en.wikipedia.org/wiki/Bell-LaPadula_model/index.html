@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bell–LaPadula model - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 900px; margin: 0 auto; padding: 20px; color: #202122; line-height: 1.6; background: #fff; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; font-weight: normal; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 12px auto; max-width: 480px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 24px 0; text-align: center; }
+</style>
+</head>
+<body>
+<h1>Bell–LaPadula model</h1>
+<img class="hero" src="images/bell-lapadula-model.png" alt="Diagram showing security levels with no-read-up and no-write-down arrows">
+<p>The <b>Bell–LaPadula model</b> (BLP) is a state-machine model used for enforcing access control in government and military applications, focused on preserving the <a href="../Confidentiality/index.html">confidentiality</a> of classified information. It was developed by David Elliott Bell and Leonard J. LaPadula, working for the MITRE Corporation, in a series of reports published between 1973 and 1976. The model formalises the multilevel security policies used for documents classified at levels such as Unclassified, Confidential, Secret and Top Secret.</p>
+
+<h2>Rules</h2>
+<p>The model assigns every subject (process) and object (file) a security level and enforces two mandatory properties:</p>
+<ul>
+<li><b>Simple security property</b> ("no read up"): a subject cannot read an object at a higher security level than its own.</li>
+<li><b>Star (*) property</b> ("no write down"): a subject cannot write information into an object at a lower security level than its own, preventing secrets from leaking downward.</li>
+</ul>
+<p>A third, discretionary security property governs access through an access-control matrix. The Basic Security Theorem states that if a system starts in a secure state and all state transitions obey these rules, the system remains secure.</p>
+
+<h2>Discussion</h2>
+<p>Bell–LaPadula became the theoretical foundation of the U.S. Department of Defense's "Orange Book" Trusted Computer System Evaluation Criteria. Its limitations are well known: it addresses only confidentiality, not integrity (the complementary concern addressed by the <a href="../Biba_model/index.html">Biba model</a>); it does not handle the problem of authorised administrators changing security levels ("tranquility"); and covert channels lie outside the model. Nevertheless it remains a standard teaching model in computer security.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Biba_model/index.html">Biba model</a></li>
+<li><a href="../Multilevel_security/index.html">Multilevel security</a></li>
+<li><a href="../Access_control/index.html">Access control</a></li>
+<li><a href="../Trusted_Computer_System_Evaluation_Criteria/index.html">Trusted Computer System Evaluation Criteria</a></li>
+</ul>
+</body>
+</html>

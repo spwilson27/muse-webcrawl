@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Channel I/O - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0 auto; max-width: 960px; padding: 20px 32px; color: #202122; line-height: 1.6; background: #fff; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; border: 1px solid #c8ccd1; }
+.caption { font-size: 12px; color: #54595d; }
+</style>
+</head>
+<body>
+<h1>Channel I/O</h1>
+<p><b>Channel I/O</b> is a high-performance <a href="../../Input/output/index.html">input/output</a> architecture used by IBM and compatible mainframe computers. In a channel system, input and output operations are handled by specialized processors, called <b>channels</b>, which execute their own small programs (channel programs) stored in main memory. This frees the central processing unit (CPU) from the details of data transfer: the CPU merely initiates an I/O operation and is interrupted when it completes. Channel I/O was introduced with the IBM 709 in 1958, generalized by the <a href="../IBM_System/360/index.html">System/360</a> in 1964, and is still used, in modernized form, by <a href="../IBM_Z/index.html">IBM Z</a> systems.</p>
+<div class="hero"><img src="images/channel-io.png" alt="Diagram showing CPU, channels, control units and devices in a mainframe I/O configuration"><div class="caption">Organization of a channel-based I/O system</div></div>
+<h2>Concepts</h2>
+<ul>
+<li><b>Channel</b> &ndash; an independent processor that executes channel programs and transfers data between devices and main storage (see <a href="../Direct_memory_access/index.html">direct memory access</a>).</li>
+<li><b>Channel program</b> &ndash; a sequence of channel command words (CCWs) specifying operations such as read, write, control, and sense, with command chaining and data chaining.</li>
+<li><b>Subchannel</b> &ndash; the channel subsystem's representation of a single device, holding its status and I/O state.</li>
+<li><b>Control unit</b> &ndash; logic that manages one or more physical devices and presents them to the channel through a standard interface.</li>
+</ul>
+<h2>Operation</h2>
+<p>To start I/O, the operating system builds a channel program in memory and issues a start instruction (START I/O on early systems, START SUBCHANNEL on later ones). The channel subsystem fetches and executes the CCWs, arbitrating for storage cycles, and the device transfers data concurrently with CPU execution. Completion, errors, and device events are reported through I/O interruptions and status words, allowing deep overlap of computation and I/O across hundreds of devices.</p>
+<h2>Implementations</h2>
+<p>Early channels were separate cabinets; later they were integrated into the processor as a channel subsystem. Physical channel technologies progressed from the parallel (bus-and-tag) interface through ESCON to <a href="../FICON/index.html">FICON</a> over Fibre Channel. Similar channel concepts appeared on computers from CDC, UNIVAC, and other mainframe manufacturers, but the term is most closely associated with the IBM mainframe line.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Direct_memory_access/index.html">Direct memory access in channel I/O</a></li>
+<li><a href="../FICON/index.html">FICON</a></li>
+<li><a href="../IBM_Z/index.html">Channels on IBM Z</a></li>
+</ul>
+</body>
+</html>

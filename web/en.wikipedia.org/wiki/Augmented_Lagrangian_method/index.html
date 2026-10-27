@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Augmented Lagrangian method - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;color:#202122;background:#fff}
+header{border-bottom:1px solid #a7d7f9;padding:12px 24px}
+h1{font-size:28px;margin:0 0 4px;font-weight:normal}
+main{max-width:960px;margin:0 auto;padding:16px 24px;line-height:1.6}
+h2{font-family:sans-serif;font-size:20px;border-bottom:1px solid #a2a9b1;padding-bottom:2px}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.hero{float:right;margin:0 0 12px 16px;max-width:280px;background:#f8f9fa;border:1px solid #c8ccd1;padding:8px;font-size:13px;text-align:center}
+.hero img{max-width:100%}
+.eq{background:#f8f9fa;border:1px solid #eaecf0;padding:10px 14px;font-family:'Courier New',monospace;text-align:center}
+.ref{font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<header><h1>Augmented Lagrangian method</h1><div class="ref">From Wikipedia, the free encyclopedia</div></header>
+<main>
+<div class="hero"><img src="images/augmented-lagrangian-method.png" alt="Diagram of an iterative optimisation path converging to a constrained optimum"></div>
+<p>The <b>augmented Lagrangian method</b> is a certain class of algorithms for solving <a href="../Constrained_optimization/index.html">constrained optimization</a> problems. They have similarities to penalty methods in that they replace a constrained optimization problem by a series of unconstrained problems and add a penalty term to the objective; the difference is that the augmented Lagrangian method adds yet another term, designed to mimic a <a href="../Lagrange_multiplier/index.html">Lagrange multiplier</a>. The augmented Lagrangian is related to, but not identical with, the <a href="../Method_of_Lagrange_multipliers/index.html">method of Lagrange multipliers</a>.</p>
+<p>Viewed differently, the unconstrained objective is the <a href="../Lagrangian_relaxation/index.html">Lagrangian</a> of the constrained problem, with an additional penalty term (the <b>augmentation</b>).</p>
+<h2>Formulation</h2>
+<p>For the problem of minimizing f(x) subject to equality constraints c<sub>i</sub>(x) = 0, the augmented Lagrangian is:</p>
+<div class="eq">L<sub>A</sub>(x, λ, μ) = f(x) + Σ λ<sub>i</sub> c<sub>i</sub>(x) + (μ/2) Σ c<sub>i</sub>(x)<sup>2</sup></div>
+<p>The method proceeds by approximately minimizing L<sub>A</sub> over x, then updating the multiplier estimates λ by λ<sub>i</sub> ← λ<sub>i</sub> + μ c<sub>i</sub>(x), and increasing the penalty parameter μ as needed.</p>
+<h2>History</h2>
+<p>The method was originally known as the <b>method of multipliers</b> and was introduced independently by Magnus Hestenes and Michael J. D. Powell in 1969. R. Tyrrell Rockafellar extended the approach to inequality constraints and connected it with proximal point algorithms and monotone operator theory.</p>
+<h2>Advantages</h2>
+<p>Unlike pure penalty methods, the augmented Lagrangian method can converge to an accurate solution without driving the penalty parameter to infinity, which avoids ill-conditioning. The multiplier estimates converge to the true Lagrange multipliers, giving useful sensitivity information. A closely related modern variant is the alternating direction method of multipliers (<a href="../Alternating_direction_method_of_multipliers/index.html">ADMM</a>), widely used in machine learning and signal processing, which splits the minimization step across blocks of variables.</p>
+<p class="ref">See also: <a href="../Penalty_method/index.html">Penalty method</a> · <a href="../Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions/index.html">Karush–Kuhn–Tucker conditions</a> · <a href="../Interior-point_method/index.html">Interior-point method</a></p>
+</main>
+</body>
+</html>

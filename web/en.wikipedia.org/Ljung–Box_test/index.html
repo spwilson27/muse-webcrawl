@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ljung–Box test - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:2em auto;padding:0 1em;color:#202122;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.4em}
+img.hero{display:block;max-width:100%;height:auto;border:1px solid #c8ccd1;background:#f8f9fa;padding:.5em;text-align:center}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.formula{font-style:italic;text-align:center;margin:1em 0}
+</style>
+</head>
+<body>
+<h1>Ljung–Box test</h1>
+<img class="hero" src="images/Ljung–Box_test.png" alt="Residual autocorrelation plot used with the Ljung–Box test">
+<p>The <b>Ljung–Box test</b> (named for Greta M. Ljung and George E. P. Box) is a statistical test of whether any of a group of autocorrelations of a time series are different from zero. Instead of testing randomness at each distinct lag, it tests the "overall" randomness based on a number of lags, and is therefore a portmanteau test.</p>
+<h2>Definition</h2>
+<p>The test statistic is:</p>
+<p class="formula">Q = n(n + 2) Σ<sub>k=1</sub><sup>h</sup> ρ̂²<sub>k</sub> / (n − k)</p>
+<p>where <i>n</i> is the sample size, ρ̂<sub>k</sub> is the sample autocorrelation at lag <i>k</i>, and <i>h</i> is the number of lags tested. Under the null hypothesis that the data are independently distributed, Q approximately follows a chi-squared distribution with h degrees of freedom (adjusted downward by the number of fitted parameters when the test is applied to residuals of an ARMA model).</p>
+<h2>Use</h2>
+<p>The test is applied in econometrics and time-series modelling to check whether residuals from a fitted ARIMA model remain autocorrelated — evidence that the model has failed to capture the structure of the data. It is an improvement on the earlier Box–Pierce test, whose statistic lacked the (n + 2)/(n − k) correction and performed poorly in small samples. The choice of the number of lags h affects the power of the test; values around ln(n) or a fixed number relevant to seasonal periodicity are common in practice.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Box–Jenkins_method">Box–Jenkins method</a></li>
+<li><a href="../Autocorrelation">Autocorrelation</a></li>
+<li><a href="../Durbin–Watson_statistic">Durbin–Watson statistic</a></li>
+</ul>
+</body>
+</html>

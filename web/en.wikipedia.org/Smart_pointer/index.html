@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Smart pointer - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 2em auto; padding: 0 1em; line-height: 1.6; color: #202122; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #c8ccd1; padding-bottom: 0.15em; margin-top: 1.4em; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 1.5em; box-sizing: border-box; }
+.caption { font-size: 0.85em; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 0 0.2em; }
+</style>
+</head>
+<body>
+<h1>Smart pointer</h1>
+<div class="hero"><img src="images/smart-pointer.png" alt="Diagram of a smart pointer object wrapping a raw pointer to heap memory"><div class="caption">A smart pointer wraps a raw pointer and manages the lifetime of the pointed-to object</div></div>
+<p>In computer science, a <b>smart pointer</b> is an abstract data type that simulates a pointer while providing added features, such as automatic memory management or bounds checking. Such features are intended to reduce bugs caused by the misuse of pointers, such as memory leaks and dangling pointers, while retaining efficiency. Smart pointers typically keep track of the memory they point to, and may also be used to manage other resources, such as network connections and file handles.</p>
+<h2>In C++</h2>
+<p>The <a href="../C%2B%2B/index.html">C++</a> standard library provides several smart pointers in the <code>&lt;memory&gt;</code> header. <code>std::unique_ptr</code> expresses unique ownership: it cannot be copied, only moved, and deletes its object when it goes out of scope. <code>std::shared_ptr</code> implements shared ownership through reference counting, deleting the object when the last owner is destroyed. <code>std::weak_ptr</code> observes a <code>shared_ptr</code>-managed object without extending its lifetime, which allows reference cycles to be broken. The older <code>std::auto_ptr</code> was deprecated in C++11 and removed in C++17.</p>
+<h2>Ownership and RAII</h2>
+<p>Smart pointers are a central application of the <a href="../Resource_acquisition_is_initialization/index.html">RAII</a> idiom (resource acquisition is initialization): a resource is tied to the lifetime of a stack object, and the destructor releases it automatically, including during stack unwinding when exceptions are thrown. Guidelines in modern C++ recommend expressing ownership with smart pointers and using raw pointers only as non-owning observers.</p>
+<h2>Other languages</h2>
+<p>Other languages provide similar facilities: Rust's standard library offers <code>Box</code>, <code>Rc</code> and <code>Arc</code> smart pointer types, while languages with garbage collection, such as Java and C#, nonetheless offer weak references that resemble weak pointers.</p>
+<h2>See also</h2>
+<p><a href="../Pointer_(computer_programming)/index.html">Pointer</a> · <a href="../Reference_counting/index.html">Reference counting</a> · <a href="../Garbage_collection_(computer_science)/index.html">Garbage collection</a> · <a href="../Resource_acquisition_is_initialization/index.html">RAII</a></p>
+</body>
+</html>

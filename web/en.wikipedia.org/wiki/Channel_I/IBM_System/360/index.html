@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Channel architecture of the IBM System/360 - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0 auto; max-width: 960px; padding: 20px 32px; color: #202122; line-height: 1.6; background: #fff; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; border: 1px solid #c8ccd1; }
+.caption { font-size: 12px; color: #54595d; }
+table.data { border-collapse: collapse; margin: 12px 0; }
+table.data th, table.data td { border: 1px solid #a2a9b1; padding: 5px 10px; font-size: 14px; }
+table.data th { background: #eaecf0; }
+</style>
+</head>
+<body>
+<h1>Channel architecture of the IBM System/360</h1>
+<p>The <a href="../../../IBM_System/360/index.html">IBM System/360</a>, announced in 1964, generalized the concept of the I/O <b>channel</b>: a self-contained processor, sharing the machine's main storage, that executes I/O programs independently of the central processing unit. Channels connected to control units and devices through a standard I/O interface, so that the same peripherals could be attached across the whole range of System/360 models. The architecture defined on the System/360 remains the basis of <a href="../../Input/output/index.html">input/output</a> on IBM mainframes today.</p>
+<div class="hero"><img src="images/system360-channel.png" alt="System/360 processor with selector and multiplexor channels connected to tape and disk control units"><div class="caption">Channels connect the System/360 CPU to its control units and devices</div></div>
+<h2>Channel types</h2>
+<table class="data">
+<tr><th>Type</th><th>Behaviour</th><th>Typical devices</th></tr>
+<tr><td>Selector channel</td><td>Transfers data with one device at a time in burst mode, monopolizing the channel for the duration of a block transfer</td><td>Magnetic tape drives, disk storage</td></tr>
+<tr><td>Byte multiplexor channel</td><td>Interleaves bytes from many slow devices, so dozens of low-speed devices share one channel</td><td>Card readers, printers, terminals</td></tr>
+<tr><td>Block multiplexor channel</td><td>Introduced later; interleaves blocks rather than bytes and can disconnect during device delays such as disk seeks</td><td>Disk and tape storage</td></tr>
+</table>
+<h2>Channel programs</h2>
+<p>The CPU starts an I/O operation with the privileged START I/O instruction, pointing to a channel address word (CAW) that locates the first channel command word (CCW). The channel fetches and executes the CCW chain itself: each CCW commands an operation such as READ, WRITE, CONTROL (for example, rewind a tape or seek a disk), or SENSE, and specifies the main-storage area and byte count for the transfer. Command chaining links successive operations into one channel program; data chaining lets one operation scatter data across discontiguous storage areas. When the program ends, the channel causes an I/O interruption and stores a channel status word (CSW) reporting device and channel status.</p>
+<h2>Legacy</h2>
+<p>Later systems &mdash; System/370, System/390, and <a href="../../IBM_Z/index.html">IBM Z</a> &mdash; kept the programming model while replacing the physical implementation: the channel subsystem, subchannels, and fibre-optic <a href="../../FICON/index.html">FICON</a> channels all descend directly from the System/360 design.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../../IBM_System/360/index.html">IBM System/360</a></li>
+<li><a href="../../Input/output/index.html">Channel I/O</a></li>
+<li><a href="../../FICON/index.html">FICON</a></li>
+</ul>
+</body>
+</html>

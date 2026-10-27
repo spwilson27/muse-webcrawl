@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Clock and data recovery - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0 auto;max-width:820px;padding:1.5em;line-height:1.6;color:#202122;background:#fff}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;margin-bottom:.4em}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+img.hero{display:block;max-width:320px;width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:4px;margin:0 0 1em 1em;float:right}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Clock and data recovery</h1>
+<img class="hero" src="images/Clock_and_data_recovery.png" alt="Block diagram of a phase-locked-loop based clock and data recovery circuit">
+<p><b>Clock and data recovery</b> (<b>CDR</b>) is the process, in serial digital communication, of extracting timing information from a data stream to allow the receiving circuit to decode the transmitted symbols. Because high-speed serial links such as Ethernet, PCI Express, USB, SATA, and optical fibre standards generally send no separate clock signal, the receiver must reconstruct the clock from transitions in the data itself and use it to decide where the centre of each bit period lies.</p>
+<h2>Operation</h2>
+<p>Most CDR circuits are built around a phase-locked loop (PLL) or delay-locked loop containing a phase detector, a loop filter, and a voltage-controlled oscillator. The phase detector compares transitions in the incoming data with the recovered clock and steers the oscillator so that its sampling edge tracks the middle of the data eye. Common phase-detector designs include the linear Hogge detector and the binary (bang-bang) Alexander detector, widely used in high-speed integrated CDRs because it works with simple digital logic.</p>
+<h2>Requirements on the data</h2>
+<p>For recovery to work, the stream must contain enough transitions. Line codes such as 8b/10b encoding guarantee frequent transitions and bound the run length of identical bits; other systems use scrambling to make long runs statistically improbable. The receiver must also tolerate jitter — short-term timing variation accumulated along the link — and CDR specifications define jitter tolerance, jitter transfer, and jitter generation masks that compliant receivers must meet.</p>
+<p>Burst-mode CDRs, used in passive optical networks, must lock within a few bits at the start of each packet, and typically use gated oscillators or oversampling phase-picking rather than a slow PLL.</p>
+</body>
+</html>

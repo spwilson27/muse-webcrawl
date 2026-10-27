@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Radiosity (computer graphics) - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 50em; line-height: 1.6; color: #202122; }
+h1 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+.thumb { float: right; margin: 0 0 1em 1em; border: 1px solid #c8ccd1; padding: 4px; background: #f8f9fa; font-size: 0.85em; text-align: center; max-width: 220px; }
+.thumb img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Radiosity (computer graphics)</h1>
+<div class="thumb"><img src="images/radiosity.png" alt="A scene rendered with radiosity showing soft diffuse interreflection">
+<div>A classic Cornell-box-like scene rendered with radiosity; note colour bleeding on the walls.</div></div>
+<p>In 3D computer graphics, <b>radiosity</b> is an application of the finite element method to solving the rendering equation for scenes with surfaces that reflect light diffusely. Unlike specular algorithms such as ray tracing, radiosity accounts for <i>global illumination</i>: light that has been reflected one or more times between surfaces, producing soft shadows and "colour bleeding", where the colour of a bright surface tints nearby surfaces.</p>
+<h2>Method</h2>
+<p>The method, introduced to graphics in 1984 by researchers at Cornell University (adapting techniques from heat-transfer engineering), divides scene surfaces into small patches and computes form factors describing how much light passes between each pair. The resulting large linear system gives the radiosity (energy leaving) of every patch, independent of viewpoint, so the solution can be computed once and the scene then viewed from any angle. Progressive refinement radiosity (1988) speeds convergence by shooting energy from the brightest patches first.</p>
+<h2>Limitations and use</h2>
+<p>Radiosity handles only diffuse reflection, assumes a static scene, and can produce meshing artefacts. It was influential in architectural visualisation and precomputed lighting ("lightmaps") in games, and its ideas are incorporated into modern global-illumination systems alongside photon mapping and path tracing.</p>
+<p>See also: <a href="../Global_illumination/index.html">Global illumination</a>, <a href="../Rendering_equation/index.html">Rendering equation</a>, <a href="../Ray_tracing_(graphics)/index.html">Ray tracing</a>.</p>
+</body>
+</html>

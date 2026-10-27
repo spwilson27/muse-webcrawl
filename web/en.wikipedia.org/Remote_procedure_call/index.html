@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Remote procedure call - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.4em; }
+p { line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; padding: 8px; }
+.caption { font-size: 0.85em; color: #54595d; }
+code { background: #f8f9fa; padding: 1px 4px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Remote procedure call</h1>
+<p>In distributed computing, a <b>remote procedure call</b> (<b>RPC</b>) is when a computer program causes a procedure (subroutine) to execute in a different address space (commonly on another computer on a shared network), which is written as if it were a normal (local) procedure call, without the programmer explicitly writing the details for the remote interaction.</p>
+<div class="hero"><img src="images/remote-procedure-call.png" alt="Diagram of a client making a remote procedure call to a server over a network"></div>
+<p class="caption">In RPC, a client stub packages the parameters of a call and sends them to a server, whose skeleton dispatches the call to the actual procedure.</p>
+<h2>History</h2>
+<p>The idea of RPC goes back at least to Bruce Nelson's 1976 work and was formalized in his 1981 PhD dissertation at Carnegie Mellon University. The first widely used implementation was Sun Microsystems' Open Network Computing RPC (ONC RPC), which underpinned the Network File System (NFS). Other influential systems include the Distributed Computing Environment (DCE/RPC), Microsoft's MSRPC, CORBA, Java's Remote Method Invocation (RMI), XML-RPC, SOAP, and more recently gRPC, developed by Google and based on the earlier Stubby system.</p>
+<h2>Mechanism</h2>
+<p>An RPC is initiated by the client, which sends a request message to a known remote server to execute a specified procedure with supplied parameters. The remote server sends a response to the client, and the application continues its process. Marshalling (serialization) converts the parameters into a wire format; client and server stubs, often generated from an interface description language (IDL), hide the details of the network communication. Key concerns include partial failure, differing data representations, security, and the fact that remote calls are far slower and less reliable than local ones — a critique summarized in the well-known essay "A Note on Distributed Computing."</p>
+<h2>See also</h2>
+<p><a href="../GRPC/index.html">gRPC</a> &middot; <a href="../SOAP/index.html">SOAP</a> &middot; <a href="../Distributed_computing/index.html">Distributed computing</a> &middot; <a href="../Serialization/index.html">Serialization</a></p>
+</div>
+</body>
+</html>

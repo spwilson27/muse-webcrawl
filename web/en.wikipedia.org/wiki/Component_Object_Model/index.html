@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Component Object Model - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: sans-serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+p, li { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 480px; width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; }
+.caption { font-size: 12px; color: #54595d; font-family: sans-serif; }
+.small { font-size: 13px; color: #54595d; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Component Object Model</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="hero"><img src="images/component-object-model.png" alt="Diagram of a COM object exposing several interfaces"><div class="caption">A COM object and its interfaces, identified by GUIDs</div></div>
+<p><b>Component Object Model</b> (<b>COM</b>) is a binary-interface standard for software components introduced by Microsoft in 1993. It is used to enable inter-process communication and dynamic object creation in a large range of programming languages. COM is the basis for several other Microsoft technologies and frameworks, including OLE, OLE Automation, ActiveX, COM+, and DCOM, and it underlies much of the Windows API surface (including the Windows Runtime).</p>
+<h2>Overview</h2>
+<p>COM specifies an object model and programming requirements that enable COM objects to interact with other objects. A COM object is a chunk of compiled code — usually in a DLL or executable — that exposes its functionality through one or more <b>interfaces</b>: groups of related methods addressed through a table of function pointers (a vtable). Every interface and class is identified by a globally unique identifier (GUID): interfaces by IIDs and coclasses by CLSIDs.</p>
+<p>All COM interfaces derive from <code>IUnknown</code>, which provides reference counting (<code>AddRef</code> and <code>Release</code>) and the ability to query an object for its other interfaces (<code>QueryInterface</code>). Because the standard is binary, components written in different languages — C++, Visual Basic, Delphi, and many others — can interoperate without recompilation.</p>
+<h2>Related technologies</h2>
+<ul>
+<li><b>OLE</b> (Object Linking and Embedding) — built on COM for compound documents.</li>
+<li><b>OLE Automation</b> and the <code>IDispatch</code> interface — late-bound, scriptable components.</li>
+<li><b>ActiveX</b> — COM components usable in applications and (historically) web pages.</li>
+<li><b>DCOM</b> (Distributed COM) — extends COM across machine boundaries.</li>
+<li><b>COM+</b> — adds services such as transactions and object pooling for enterprise applications.</li>
+<li><b>Windows Runtime (WinRT)</b> — a modern descendant of COM used by Universal Windows Platform apps.</li>
+</ul>
+<h2>History</h2>
+<p>Microsoft introduced COM with Windows NT 3.1 and Windows 95 in the early 1990s, evolving it from the earlier OLE 1.0 and the work of engineers including Tony Williams and Craig Wittenberg. COM was a central part of Microsoft's component strategy during the 1990s, competing with standards such as CORBA. Although newer .NET technologies have displaced COM for much application development, COM remains pervasive in Windows itself and in enterprise and industrial software, and most modern Windows APIs continue to be COM-based.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Object_Linking_and_Embedding/index.html">Object Linking and Embedding</a></li>
+<li><a href="../ActiveX/index.html">ActiveX</a></li>
+<li><a href="../Distributed_Component_Object_Model/index.html">Distributed Component Object Model</a></li>
+<li><a href="../Windows_Runtime/index.html">Windows Runtime</a></li>
+</ul>
+</div>
+</body>
+</html>

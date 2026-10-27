@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Clause (logic) - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; color: #202122; background: #fff; }
+header { border-bottom: 1px solid #a7d7f9; padding: 12px 24px; font-family: sans-serif; }
+header .site { color: #54595d; font-size: 13px; }
+main { max-width: 960px; margin: 0 auto; padding: 16px 24px 48px; line-height: 1.6; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+.hero { float: right; margin: 0 0 12px 16px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 6px; text-align: center; font-family: sans-serif; font-size: 12px; color: #54595d; width: 220px; }
+.hero img { max-width: 100%; display: block; margin-bottom: 6px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.small { font-size: 13px; color: #54595d; font-family: sans-serif; }
+</style>
+</head>
+<body>
+<header><span class="site">From Wikipedia, the free encyclopedia</span></header>
+<main>
+<h1>Clause (logic)</h1>
+<div class="hero"><img src="images/Clause_(logic).png" alt="A clause as a disjunction of literals">In logic, a clause is a disjunction of literals, the building block of conjunctive normal form.</div>
+<p>In logic, a <b>clause</b> is a propositional formula formed from a finite collection of literals (atoms or their negations), typically understood as their disjunction. In first-order logic, a clause is a disjunction of literals whose variables are implicitly universally quantified. Clauses are the standard representation used in <a href="../Conjunctive_normal_form/index.html">conjunctive normal form</a> (CNF), where a formula is a conjunction of clauses, and they underpin automated theorem proving by resolution.</p>
+<h2>Definitions</h2>
+<p>A <b>literal</b> is an atomic formula or its negation. A (disjunctive) clause is a finite set (or sequence) of literals L<sub>1</sub>, …, L<sub>n</sub> interpreted as the disjunction L<sub>1</sub> ∨ … ∨ L<sub>n</sub>. Special cases include:</p>
+<ul>
+<li>The <b>empty clause</b>, written □, containing no literals; it is unsatisfiable and plays the role of falsum in resolution proofs.</li>
+<li>A <b>unit clause</b>, containing exactly one literal.</li>
+<li>A <b>Horn clause</b>, containing at most one positive literal; Horn clauses are the logical basis of the programming language Prolog.</li>
+<li>A <b>definite clause</b>, containing exactly one positive literal.</li>
+</ul>
+<p>Sometimes the term is used dually for a conjunction of literals; this <i>conjunctive clause</i> convention appears in some logic programming and circumscription literature, but the disjunctive usage is standard in theorem proving and SAT solving.</p>
+<h2>Use in automated reasoning</h2>
+<p>Any first-order formula can be transformed into a set of clauses via Skolemisation and conversion to prenex and conjunctive normal form, at the cost of potential exponential growth (mitigated by definitional, or Tseitin, transformations). The <b>resolution</b> rule then operates on pairs of clauses: from clauses containing complementary literals P and ¬P, it infers a new clause (the resolvent) with those literals removed. Resolution is refutation-complete for first-order clauses, and efficient clause-learning SAT solvers (CDCL) make clause sets the practical input format for problems such as the Boolean satisfiability problem, expressed in the DIMACS format.</p>
+<p class="small">See also: <a href="../Conjunctive_normal_form/index.html">Conjunctive normal form</a>, <a href="../Horn_clause/index.html">Horn clause</a>, <a href="../Resolution_(logic)/index.html">Resolution (logic)</a>, <a href="../Literal_(mathematical_logic)/index.html">Literal</a></p>
+</main>
+</body>
+</html>

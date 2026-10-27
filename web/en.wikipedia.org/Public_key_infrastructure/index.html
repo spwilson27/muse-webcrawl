@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Public key infrastructure - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 0 auto; padding: 20px; color: #202122; line-height: 1.6; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; max-width: 320px; margin: 10px auto; border: 1px solid #c8ccd1; padding: 4px; background: #f8f9fa; }
+.caption { text-align: center; font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<h1>Public key infrastructure</h1>
+<img class="hero" src="images/public-key-infrastructure.png" alt="Diagram showing a certificate authority validating a registration request and issuing a digital certificate">
+<p class="caption">A simplified PKI: a certificate authority issues certificates binding identities to public keys.</p>
+<p>A <b>public key infrastructure</b> (<b>PKI</b>) is the set of roles, policies, hardware, software, and procedures needed to create, manage, distribute, store, and revoke digital certificates and manage public-key encryption. Its central purpose is to bind public keys to identities — people, devices, organisations, or websites — so that strangers can establish trust over insecure networks, for example to authenticate a website in TLS or to verify a digitally signed document.</p>
+<h2>Components</h2>
+<p>The core component is the <b>certificate authority</b> (CA), which issues X.509 certificates after a <b>registration authority</b> (RA) verifies the applicant's identity. Certificates, certificate revocation lists (CRLs), and status responders using OCSP are published so relying parties can check validity. Trust is organised hierarchically: devices ship with a store of self-signed root CA certificates; roots delegate to intermediate CAs, which issue end-entity (leaf) certificates. Key ceremonies, hardware security modules, and certificate policies govern the protection of CA private keys.</p>
+<h2>Applications and problems</h2>
+<p>The largest PKI is the Web PKI that underlies HTTPS: browsers trust hundreds of root CAs, and any of them can in principle issue a certificate for any domain — a weakness highlighted by breaches such as the 2011 compromise of DigiNotar, which issued fraudulent certificates used in interception attacks and soon went bankrupt. Mitigations include Certificate Transparency logs (public, append-only records of issued certificates), CAA DNS records restricting which CAs may issue for a domain, and shorter certificate lifetimes. Automated issuance via the ACME protocol, popularised by Let's Encrypt (launched 2015), made certificates free and ubiquitous and drove HTTPS adoption. PKI also secures email (S/MIME), code signing, smart cards and e-passports, and enterprise device management. An alternative trust model, the web of trust used by PGP, replaces central authorities with peer endorsements.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../X.509/index.html">X.509</a></li>
+<li><a href="../Certificate_authority/index.html">Certificate authority</a></li>
+<li><a href="../Transport_Layer_Security/index.html">Transport Layer Security</a></li>
+<li><a href="../Let's_Encrypt/index.html">Let's Encrypt</a></li>
+</ul>
+</body>
+</html>

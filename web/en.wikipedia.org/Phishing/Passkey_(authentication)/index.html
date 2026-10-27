@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Passkey (authentication) — Phishing</title>
+<style>
+body { font-family: Georgia, serif; margin: 2em auto; max-width: 46em; padding: 0 1em; line-height: 1.6; color: #222; }
+h1 { border-bottom: 2px solid #a2a9b1; padding-bottom: .2em; }
+h2 { border-bottom: 1px solid #a2a9b1; }
+img.hero { display: block; margin: 1em auto; border: 1px solid #888; padding: 2em; background: #f8f9fa; text-align: center; }
+a { color: #0645ad; }
+.nav { font-size: .9em; color: #555; }
+</style>
+</head>
+<body>
+<p class="nav">Phishing &rsaquo; Passkey (authentication)</p>
+<h1>Passkey (authentication)</h1>
+<img class="hero" src="images/Passkey_(authentication).png" alt="Phone using a fingerprint to approve a passkey sign-in">
+<p>A <b>passkey</b> is a FIDO2/WebAuthn credential: a cryptographic key pair in which the private key stays on the user's device (or in a synced keychain) and is released by a fingerprint, face scan or PIN. Passkeys are promoted as the phishing-resistant successor to passwords and <a href="../One-time_password/index.html">one-time passwords</a>, and as a direct countermeasure to <a href="../../Phishing/index.html">phishing</a>.</p>
+<h2>Why passkeys resist phishing</h2>
+<p>When a passkey is created, it is registered for a specific origin. During sign-in, the browser or operating system checks that the site requesting <a href="../Authentication/index.html">authentication</a> matches that origin and only then lets the device sign the challenge. A phishing page on a look-alike domain therefore gets nothing: there is no shared secret to type, nothing to relay in real time, and no code that can be replayed at the genuine site. Unlike a password, the credential cannot be harvested by a fake form, leaked in a <a href="../Data_breach/index.html">data breach</a> of server-side hashes in a reusable form, or guessed.</p>
+<h2>Deployment</h2>
+<p>Major platforms — Apple, Google and Microsoft — synchronise passkeys across a user's devices, and most large consumer services now offer them. Hardware <a href="../Security_token/index.html">security tokens</a> implement the same protocol for high-assurance use. Adoption is incomplete, and fallback methods such as SMS codes can reintroduce the phishing weakness; nevertheless, security agencies recommend passkeys as the strongest widely available defence against credential phishing, including the spear-phishing used in <a href="../Whaling_(computer_security)/index.html">whaling</a> attacks on executives.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Authentication/index.html">Authentication</a></li>
+<li><a href="../Security_token/index.html">Security token</a></li>
+<li><a href="../One-time_password/index.html">One-time password</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Type conversion — Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine",Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px}
+h2{font-size:1.35em;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:1.2em}
+p{line-height:1.6;font-size:0.95em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:16px auto;max-width:100%}
+.figcap{text-align:center;font-size:0.85em;color:#54595d;margin-bottom:16px}
+code,pre{font-family:monospace;background:#f8f9fa;font-size:0.9em}
+pre{border:1px solid #a2a9b1;padding:10px;overflow-x:auto}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Type conversion</h1>
+<img class="hero" src="images/type-conversion.png" alt="Diagram showing an integer value being converted to a floating-point value">
+<div class="figcap">Conversion of a value from one data type to another.</div>
+<p>In computer science, <b>type conversion</b>, <b>type casting</b>, <b>type coercion</b>, and <b>type juggling</b> are ways of changing an expression from one data type to another. An example is the conversion of an integer value into a floating-point value, or its textual representation as a string, and vice versa. Type conversions can take advantage of certain features of type hierarchies or data representations, but may also introduce precision loss or runtime errors if performed unsafely.</p>
+<h2>Implicit and explicit conversion</h2>
+<p><b>Implicit conversion</b>, or coercion, is performed automatically by the compiler or interpreter, usually when it is "safe" — for instance, widening an integer to a larger floating-point type in a mixed expression. In C, adding an <code>int</code> and a <code>double</code> converts the integer to <code>double</code> before the addition.</p>
+<p><b>Explicit conversion</b>, or casting, is requested by the programmer, for example with C-style casts such as <code>(int)3.99</code>, which truncates to 3, or with constructor-like syntax in C++ and Rust (<code>as</code>). Explicit casts can also reinterpret bit patterns, as with pointer casts, which are a frequent source of undefined behaviour when misused.</p>
+<h2>Checking and safety</h2>
+<p>Languages differ in how aggressively they coerce: weakly typed languages such as JavaScript convert operands across types freely (the string <code>"5"</code> minus the number 3 yields 2), which can surprise; strongly typed languages restrict conversions to a defined set. Conversions between object types in class hierarchies are handled by upcasts (always safe) and downcasts (which require runtime type checking, e.g. Java's <code>instanceof</code> or C++'s <code>dynamic_cast</code>).</p>
+<p>See also: <a href="../Type_system/index.html">Type system</a>, <a href="../Data_type/index.html">Data type</a>, <a href="../Type_safety/index.html">Type safety</a>.</p>
+</div>
+</body>
+</html>

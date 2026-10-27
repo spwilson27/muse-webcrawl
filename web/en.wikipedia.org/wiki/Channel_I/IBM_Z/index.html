@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Channels on IBM Z - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0 auto; max-width: 960px; padding: 20px 32px; color: #202122; line-height: 1.6; background: #fff; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; border: 1px solid #c8ccd1; }
+.caption { font-size: 12px; color: #54595d; }
+table.data { border-collapse: collapse; margin: 12px 0; }
+table.data th, table.data td { border: 1px solid #a2a9b1; padding: 5px 10px; font-size: 14px; }
+table.data th { background: #eaecf0; }
+</style>
+</head>
+<body>
+<h1>Channels on IBM Z</h1>
+<p><a href="../../IBM_Z/index.html">IBM Z</a> mainframes retain the channel I/O architecture introduced with the <a href="../IBM_System/360/index.html">System/360</a>: all input and output is performed by a channel subsystem made up of subchannels and channel paths, which execute channel programs concurrently with the central processors. Modern IBM Z systems support several hundred channel paths and tens of thousands of subchannels (devices) per machine.</p>
+<div class="hero"><img src="images/ibm-z-channels.png" alt="IBM Z processor drawer and FICON channel cabling"><div class="caption">FICON and OSA channel features in an IBM Z system</div></div>
+<h2>Channel types</h2>
+<table class="data">
+<tr><th>Type</th><th>Purpose</th></tr>
+<tr><td><a href="../FICON/index.html">FICON</a> (FC/FCP)</td><td>Storage and peripheral attachment over Fibre Channel; FCP mode connects SCSI devices for Linux on IBM Z</td></tr>
+<tr><td>OSA (Open Systems Adapter)</td><td>Integrated LAN adapters providing Ethernet connectivity, including 25 GbE OSA-Express7S features</td></tr>
+<tr><td>HiperSockets</td><td>Internal, memory-speed TCP/IP connections between logical partitions, implemented in firmware</td></tr>
+<tr><td>Coupling links</td><td>High-bandwidth links to the coupling facility for Parallel Sysplex data sharing (short-distance PCIe-based links and longer-distance interconnects)</td></tr>
+<tr><td>RoCE / zEDC and other PCIe features</td><td>RDMA over Converged Ethernet Express and hardware compression, attached as channel-like I/O features</td></tr>
+</table>
+<h2>Channel subsystem</h2>
+<p>The channel subsystem is implemented by dedicated system-assist processors and I/O firmware. Each device is represented by a subchannel that stores its status and pending I/O state; the operating system (z/OS, z/VM, or Linux on IBM Z) starts work with START SUBCHANNEL and receives completion through I/O interruptions or the transport-mode protocols used by zHPF. I/O configuration is defined with the Hardware Configuration Definition (HCD) and loaded as the I/O configuration data set (IOCDS) at power-on reset.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../IBM_Z/index.html">IBM Z</a></li>
+<li><a href="../FICON/index.html">FICON</a></li>
+<li><a href="../Input/output/index.html">Channel I/O</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kleptography - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 900px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { display: block; margin: 12px auto; max-width: 480px; }
+.caption { text-align: center; font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<h1>Kleptography</h1>
+<img class="hero" src="images/kleptography.png" alt="Illustration of a cryptographic device leaking its secret key hidden inside apparently random output values">
+<p class="caption">A kleptographic backdoor can leak secret keys through values that look random to everyone except the attacker.</p>
+<p><b>Kleptography</b> is the study of stealing cryptographic information securely and subliminally — that is, of building cryptographic systems that appear secure to their users while secretly leaking their secret keys to an attacker through the system's own outputs. The term was introduced by Adam L. Young and Moti Yung, who presented the theory at Crypto '96, extending earlier military research on subliminal channels in digital signatures.</p>
+<h2>SETUP attacks</h2>
+<p>The central construction is the SETUP (Secretly Embedded Trapdoor with Embedded Protection) attack: a modified implementation of a sound algorithm — for example RSA key generation or a digital signature scheme — whose outputs are indistinguishable from those of the genuine algorithm to anyone who does not hold the attacker's private key, yet which encode the user's secret key in public values such as signatures or generated primes. Unlike an ordinary backdoor, a SETUP cannot be detected or exploited even if an adversary reverse-engineers the device, because the leaked information is encrypted under the attacker's key.</p>
+<h2>Real-world echoes</h2>
+<p>The 2013 revelations about the Dual EC DRBG random number generator — a standardised algorithm whose constants could allow an attacker who chose them to predict its output — were widely analysed as a real-world kleptographic design. Defences include using implementations from independent, auditable sources, generating keys on separate trusted devices, and cryptographic protocols that constrain the freedom of the implementation. Young and Yung later generalised the field as "cryptovirology" and proposed defensive "anti-kleptography" measures.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Dual_EC_DRBG/index.html">Dual EC DRBG</a></li>
+<li><a href="../Backdoor_(computing)/index.html">Backdoor (computing)</a></li>
+<li><a href="../Subliminal_channel/index.html">Subliminal channel</a></li>
+</ul>
+</body>
+</html>

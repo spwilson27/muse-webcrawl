@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hindley–Milner type system - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0 auto; max-width: 860px; padding: 20px; color: #202122; background: #fff; line-height: 1.6; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; }
+h2 { font-family: sans-serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 10px auto; max-width: 400px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 8px; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<h1>Hindley–Milner type system</h1>
+<img class="hero" src="images/Hindley–Milner_type_system.png" alt="Type inference rules of the Hindley–Milner system">
+<p>A <b>Hindley–Milner</b> (<b>HM</b>) <b>type system</b> is a classical type system for the lambda calculus with parametric polymorphism, described by J. Roger Hindley (1969) and independently discovered by Robin Milner (1978). Its defining feature is complete type inference: a program written without any type annotations can be assigned the most general possible type (the <i>principal type</i>) automatically.</p>
+<h2>Type inference</h2>
+<p>The inference algorithm, known as <b>Algorithm W</b> (Milner), or Algorithm J (Damas), works by generating equations between type expressions containing unknowns (type variables) and solving them by unification. Because the principal type is always inferable, HM-typed languages can offer static type safety with almost no annotation burden.</p>
+<h2>Let-polymorphism</h2>
+<p>The system extends the simply typed lambda calculus with <i>let-polymorphism</i>: a value bound by a <code>let</code> expression may be given a polymorphic type scheme (universally quantified over type variables), so it can be used at several different types in the body. Polymorphism is restricted to let-bindings — lambda-bound variables remain monomorphic — which keeps inference decidable and complete.</p>
+<h2>Influence</h2>
+<p>The HM system underlies the type systems of the ML family of languages — Standard ML, OCaml, and Milner's original ML for the LCF theorem prover — as well as Haskell (with type classes extending the basic system), F#, and the inference engines of languages such as Scala, Rust, and Swift in adapted forms. Limitations, such as the difficulty of combining it with subtyping or mutable references (addressed in ML by the value restriction), have motivated many extensions studied in programming language theory.</p>
+<p>See also: <a href="../Type_inference/index.html">Type inference</a> · <a href="../ML_(programming_language)/index.html">ML</a> · <a href="../Parametric_polymorphism/index.html">Parametric polymorphism</a></p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Solovay–Strassen primality test - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; margin: 0.6em 0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Solovay–Strassen primality test</h1>
+<div class="hero"><img src="images/Solovay–Strassen_primality_test.png" alt="Flowchart of the probabilistic Solovay–Strassen primality test with random witnesses"></div>
+<p>The <b>Solovay–Strassen primality test</b>, developed by Robert M. Solovay and Volker Strassen in 1977, is a probabilistic test to determine if a number is composite or probably prime. The concept behind the test was a landmark in computational number theory: it was the first widely known probabilistic primality test and paved the way for the more widely used <a href="../../Miller–Rabin_primality_test/index.html">Miller–Rabin test</a>.</p>
+<h2>Method</h2>
+<p>Given an odd integer <i>n</i>, the test picks a random base <i>a</i> and compares the Jacobi symbol (a/n) with the value a<sup>(n−1)/2</sup> mod n. For a prime <i>n</i>, Euler's criterion guarantees that these agree for every <i>a</i> coprime to <i>n</i>. If they disagree, <i>n</i> is certainly composite and <i>a</i> is called an Euler witness. If <i>n</i> is composite, at least half of all possible bases are witnesses, so after <i>k</i> independent rounds the probability that a composite passes all rounds is at most 2<sup>−k</sup>.</p>
+<h2>Euler pseudoprimes</h2>
+<p>Composite numbers that pass the test for a given base are called Euler pseudoprimes to that base. Unlike Fermat pseudoprimes, no analogue of Carmichael numbers exists for this test: every composite has many witnesses, which is what makes the probabilistic bound possible.</p>
+<h2>Significance</h2>
+<p>The test showed that primality could be decided efficiently with randomness, an insight that predated the deterministic polynomial-time AKS test by 25 years. Although superseded in practice by Miller–Rabin and Baillie–PSW, it remains of historical and pedagogical importance.</p>
+<h2>See also</h2>
+<p><a href="../../Primality_test/index.html">Primality test</a> &middot; <a href="../../Miller–Rabin_primality_test/index.html">Miller–Rabin primality test</a> &middot; <a href="../../Jacobi_symbol/index.html">Jacobi symbol</a> &middot; <a href="../../Euler's_criterion/index.html">Euler's criterion</a></p>
+</div>
+</body>
+</html>

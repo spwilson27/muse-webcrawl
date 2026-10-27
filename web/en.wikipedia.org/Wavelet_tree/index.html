@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wavelet tree - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:800px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;margin-bottom:.4em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.2em}
+.hero{display:block;width:100%;max-height:320px;background:#f8f9fa;border:1px solid #c8ccd1;text-align:center;padding:3em 0;color:#72777d;font-style:italic}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<img class="hero" src="images/wavelet-tree.png" alt="Diagram of a wavelet tree partitioning a sequence by symbol ranges">
+<h1>Wavelet tree</h1>
+<p>A <b>wavelet tree</b> is a succinct data structure in computer science that stores a sequence of symbols over an alphabet and supports queries in logarithmic time. It was introduced by Roberto Grossi, Ankur Gupta, and Jeffrey Scott Vitter in 2003, by analogy with wavelet transforms in signal processing.</p>
+<h2>Structure</h2>
+<p>The wavelet tree recursively partitions the alphabet into two halves. Each node stores a bitvector marking, for each element of the subsequence reaching that node, whether the element belongs to the lower or upper half of the node's alphabet range; the elements are then passed stably to the corresponding child nodes. The tree has height O(log σ) for an alphabet of size σ, and its total space is close to n log σ bits, similar to storing the sequence directly.</p>
+<h2>Operations</h2>
+<p>Using rank and select operations on the bitvectors, the wavelet tree supports, in O(log σ) time: <i>access</i> (return the element at a position), <i>rank</i> (count occurrences of a symbol up to a position), and <i>select</i> (find the position of the k-th occurrence of a symbol). It can also answer range counting and quantile queries. Wavelet trees are a building block of compressed full-text indexes, range-query data structures, and dynamic sequence representations; variants such as the wavelet matrix improve practical performance.</p>
+<h2>See also</h2>
+<p><a href="../Succinct_data_structure/index.html">Succinct data structure</a> &middot; <a href="../Wavelet/index.html">Wavelet</a> &middot; <a href="../Binary_tree/index.html">Binary tree</a></p>
+</body>
+</html>

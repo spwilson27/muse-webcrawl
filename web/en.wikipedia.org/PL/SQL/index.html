@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PL/SQL - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122;background:#fff}
+h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;font-weight:normal}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{display:block;max-width:400px;width:100%;height:auto;background:#f8f9fa;border:1px solid #c8ccd1;padding:.5em;margin:1em 0}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.5em 1em;margin:0 0 1em 1em;font-size:.85em;max-width:250px}
+pre{background:#f8f9fa;border:1px solid #c8ccd1;padding:.8em;overflow-x:auto;font-size:.9em}
+</style>
+</head>
+<body>
+<h1>PL/SQL</h1>
+<div class="infobox"><b>PL/SQL</b><br>Paradigm: Procedural, imperative<br>Developer: Oracle Corporation<br>First appeared: 1991<br>Typing discipline: Static, strong<br>Influenced by: Ada, SQL</div>
+<p><b>PL/SQL</b> (Procedural Language for SQL) is Oracle Corporation's procedural extension for SQL and the Oracle relational database. PL/SQL is available in Oracle Database (since version 6 — stored PL/SQL procedures/functions/packages/triggers since version 7), TimesTen in-memory database (since version 11.2.1), and IBM Db2 (since version 9.7). Oracle Corporation usually extends PL/SQL functionality with each successive release of the Oracle Database.</p>
+<img class="hero" src="images/pl-sql.png" alt="A PL/SQL anonymous block showing DECLARE, BEGIN and EXCEPTION sections">
+<p>PL/SQL includes procedural language elements such as conditions and loops, and can handle exceptions (run-time errors). It allows declaration of constants and variables, procedures and functions, types and variables of those types, and triggers. Arrays are supported involving the use of PL/SQL collections. It can make use of SQL's data manipulation language (DML) statements directly within procedural code.</p>
+<h2>Program units</h2>
+<p>The basic unit of a PL/SQL source program is the block, which groups together related declarations and statements. A PL/SQL block is defined by the keywords DECLARE, BEGIN, EXCEPTION, and END. Key program units include anonymous blocks, procedures, functions, packages (which group related procedures, functions, variables and cursors), and triggers that execute in response to database events.</p>
+<pre>DECLARE
+  v_message VARCHAR2(50) := 'Hello, World!';
+BEGIN
+  DBMS_OUTPUT.PUT_LINE(v_message);
+EXCEPTION
+  WHEN OTHERS THEN
+    DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+END;</pre>
+<h2>Similar languages</h2>
+<p>PL/SQL is closely modelled on Ada. Comparable procedural SQL extensions include Microsoft's Transact-SQL (T-SQL) for SQL Server, and PL/pgSQL for PostgreSQL, which was deliberately designed to resemble PL/SQL.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Oracle_Database/index.html">Oracle Database</a></li>
+<li><a href="../SQL/index.html">SQL</a></li>
+<li><a href="../PL/pgSQL/index.html">PL/pgSQL</a></li>
+<li><a href="../Transact-SQL/index.html">Transact-SQL</a></li>
+</ul>
+</body>
+</html>

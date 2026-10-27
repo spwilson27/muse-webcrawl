@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Clark–Wilson model - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; color: #202122; background: #fff; }
+header { border-bottom: 1px solid #a7d7f9; padding: 12px 24px; font-family: sans-serif; }
+header .site { color: #54595d; font-size: 13px; }
+main { max-width: 960px; margin: 0 auto; padding: 16px 24px 48px; line-height: 1.6; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+.hero { float: right; margin: 0 0 12px 16px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 6px; text-align: center; font-family: sans-serif; font-size: 12px; color: #54595d; width: 220px; }
+.hero img { max-width: 100%; display: block; margin-bottom: 6px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.small { font-size: 13px; color: #54595d; font-family: sans-serif; }
+</style>
+</head>
+<body>
+<header><span class="site">From Wikipedia, the free encyclopedia</span></header>
+<main>
+<h1>Clark–Wilson model</h1>
+<div class="hero"><img src="images/Clark-Wilson_model.png" alt="Diagram of the Clark-Wilson integrity model">The Clark–Wilson model enforces data integrity through well-formed transactions and separation of duties.</div>
+<p>The <b>Clark–Wilson integrity model</b> provides a foundation for specifying and analyzing an integrity policy for a computing system. It was proposed by David D. Clark and David R. Wilson in their 1987 paper "A Comparison of Commercial and Military Computer Security Policies", which argued that the military security models of the time, designed to protect confidentiality, did not address the integrity requirements of commercial data processing.</p>
+<p>The model is based on the notion of a transaction: a series of operations that moves data from one consistent state to another. Its central concepts are:</p>
+<ul>
+<li><b>Constrained data items (CDIs)</b> — data whose integrity must be protected.</li>
+<li><b>Unconstrained data items (UDIs)</b> — data not (yet) subject to integrity controls, such as raw user input.</li>
+<li><b>Integrity verification procedures (IVPs)</b> — procedures that check that CDIs satisfy specified integrity constraints.</li>
+<li><b>Transformation procedures (TPs)</b> — the only means permitted to modify CDIs; they must implement well-formed transactions and enforce separation of duties.</li>
+</ul>
+<h2>Rules</h2>
+<p>Clark and Wilson defined certification rules (checked by the security officer or system owner) and enforcement rules (enforced by the system itself). In outline: the system must ensure that TPs only manipulate CDIs as authorized; users may only execute TPs for which they are authorized, and only on specified data items (access triples of user, TP, CDI); users must be authenticated; separation of duties must be enforced so that the user who certifies a TP cannot execute it on production data; and TPs must write to a protected audit log. UDIs must be validated by a TP (or rejected) before becoming CDIs.</p>
+<h2>Comparison with other models</h2>
+<p>Unlike the <a href="../Biba_model/index.html">Biba model</a>, which imposes a lattice of integrity labels, Clark–Wilson is oriented to the commercial practices of double-entry bookkeeping, well-formed transactions and separation of duties. It complements confidentiality models such as <a href="../Bell%E2%80%93LaPadula_model/index.html">Bell–LaPadula</a>, and has strongly influenced practical integrity controls in banking and enterprise systems.</p>
+<p class="small">See also: <a href="../Biba_model/index.html">Biba model</a>, <a href="../Computer_security_model/index.html">Computer security model</a></p>
+</main>
+</body>
+</html>

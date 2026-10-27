@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ziegler–Nichols method - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 820px; padding: 0 1em; line-height: 1.6; color: #202122; }
+h1 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.4em; }
+img.hero { width: 100%; max-height: 320px; object-fit: cover; background: #f8f9fa; border: 1px solid #c8ccd1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.6em; margin: 0 0 1em 1em; width: 240px; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<h1>Ziegler–Nichols method</h1>
+<img class="hero" src="images/ziegler-nichols-method.png" alt="A process response curve oscillating at the ultimate gain used for PID tuning">
+<p>The <b>Ziegler–Nichols method</b> is a heuristic method of tuning a PID controller. It was developed by John G. Ziegler and Nathaniel B. Nichols of the Taylor Instrument Company and presented in their 1942 paper "Optimum settings for automatic controllers". The method remains one of the most widely taught and used starting points for PID tuning.</p>
+<h2>Closed-loop (ultimate gain) method</h2>
+<p>In the best-known version, the integral and derivative actions are disabled, and the proportional gain is increased until the system output oscillates with constant amplitude. The gain at which this occurs is the <i>ultimate gain</i>, K<sub>u</sub>, and the oscillation period is the <i>ultimate period</i>, T<sub>u</sub>. Controller settings are then computed from a table: for a classic PID controller, K<sub>p</sub> = 0.6 K<sub>u</sub>, T<sub>i</sub> = T<sub>u</sub>/2, and T<sub>d</sub> = T<sub>u</sub>/8. The original rules aim for a "quarter-wave decay" response, in which each successive overshoot is about a quarter of the previous one.</p>
+<h2>Open-loop method</h2>
+<p>Ziegler and Nichols also proposed a method based on the open-loop step response: the process reaction curve is approximated by its maximum slope and apparent dead time, and gains are chosen from those two parameters. Variants by later authors, such as Cohen–Coon and Tyreus–Luyben, adjust the settings because the classic rules can be overly aggressive and produce highly oscillatory responses for many processes.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../PID_controller/index.html">PID controller</a></li>
+<li><a href="../Control_theory/index.html">Control theory</a></li>
+<li><a href="../Cohen–Coon_method/index.html">Cohen–Coon method</a></li>
+</ul>
+</body>
+</html>

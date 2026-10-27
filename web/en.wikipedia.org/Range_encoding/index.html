@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Range encoding - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.4em}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+.hero{display:block;max-width:100%;border:1px solid #c8ccd1;background:#eaecf0;padding:8px;text-align:center}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Range encoding</h1>
+<div class="infobox">
+<table>
+<tr><th>Type</th><td>Entropy encoding / lossless data compression</td></tr>
+<tr><th>Described by</th><td>G. Nigel N. Martin (1979)</td></tr>
+<tr><th>Related</th><td>Arithmetic coding</td></tr>
+<tr><th>Uses</th><td>Entropy stage of compressors and codecs (e.g. PAQ-family, some video codecs)</td></tr>
+</table>
+</div>
+<img class="hero" src="images/Range_encoding.png" alt="Diagram showing an interval being subdivided during range encoding">
+<p><b>Range encoding</b> is a form of entropy encoding used in lossless data compression. It was defined by G. Nigel N. Martin in a 1979 paper and is effectively a rediscovery and generalisation of the earlier FIFO arithmetic coding concept. Range encoding encodes an entire message as a single interval of numbers, much like <a href="../Arithmetic_coding/index.html">arithmetic coding</a>, but performs the arithmetic using larger, byte-oriented chunks of the output stream, which makes it fast in software.</p>
+<h2>How it works</h2>
+<p>The encoder maintains a current range (interval), initially [0, 1). For each symbol, the interval is subdivided in proportion to the symbol's estimated probability, and the subinterval corresponding to the actual symbol is selected. As the interval shrinks, its leading digits become determined and can be emitted. Implementations keep the range as a fixed-width integer (commonly 32 bits), outputting the top byte whenever the range grows small and renormalising — a trick that avoids the arbitrary-precision arithmetic of classical arithmetic coding.</p>
+<h2>Relation to arithmetic coding</h2>
+<p>Range coding and arithmetic coding are mathematically almost identical; many authors treat them as different implementations of the same method. Range encoding attracted attention historically because key arithmetic-coding patents did not clearly cover it, and implementations such as those in the PAQ data compression family and various image and video codecs have used range coders as their entropy stage.</p>
+<p><i>See also: <a href="../Arithmetic_coding/index.html">Arithmetic coding</a>, <a href="../Entropy_encoding/index.html">Entropy encoding</a>, <a href="../Data_compression/index.html">Data compression</a></i></p>
+</body>
+</html>

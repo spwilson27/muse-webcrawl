@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Xen</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#222}
+h1{border-bottom:2px solid #333;padding-bottom:.2em}
+h2{color:#333;border-bottom:1px solid #ccc;padding-bottom:.15em}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.imgbox{background:#f4f4f4;border:1px solid #ccc;padding:1em;text-align:center;color:#666;font-style:italic}
+</style>
+</head>
+<body>
+<h1>Xen</h1>
+<div class="imgbox"><img src="images/xen.png" alt="Xen hypervisor architecture diagram"></div>
+<p><b>Xen</b> is a free and open-source type-1 (bare-metal) hypervisor that allows multiple operating systems to run concurrently on the same computer hardware. Developed originally at the University of Cambridge, Xen is now maintained by the Xen Project, a collaborative project hosted by the Linux Foundation.</p>
+<h2>History</h2>
+<p>Xen grew out of the XenoServers research project led by Ian Pratt at the Cambridge Computer Laboratory. The first public release came in 2003, accompanied by the influential paper "Xen and the Art of Virtualization" presented at SOSP. XenSource, Inc. was founded to commercialize the technology and was acquired by Citrix Systems in 2007 for approximately $500 million.</p>
+<h2>Architecture</h2>
+<p>The Xen hypervisor is a small software layer running directly on hardware, managing CPU scheduling, memory, and interrupts. Guest operating systems run in unprivileged domains called <i>domU</i>s. A privileged control domain, <i>dom0</i> — typically a Linux system — hosts device drivers and the management toolstack.</p>
+<p>Xen originally relied on <b>paravirtualization</b>, in which the guest kernel is modified to make hypercalls instead of executing privileged instructions. With the arrival of hardware virtualization extensions (Intel VT-x and AMD-V), Xen added support for unmodified guests (HVM), and later hybrid modes such as PVH that combine paravirtual devices with hardware-assisted paging.</p>
+<h2>Usage</h2>
+<p>Xen underpinned much of the early cloud computing industry: Amazon EC2 ran on Xen for its first decade, and Rackspace and other providers built large Xen clouds. Citrix XenServer (now Citrix Hypervisor) and Oracle VM are commercial products based on Xen. The open-source XCP-ng platform is a popular community fork. Xen is also used in security-focused systems such as Qubes OS, which isolates applications in separate virtual machines.</p>
+<p>See also: <a href="../Xerox_Star/index.html">Xerox Star</a>, <a href="../Xcode/index.html">Xcode</a></p>
+</body>
+</html>

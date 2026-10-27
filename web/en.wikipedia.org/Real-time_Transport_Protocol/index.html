@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Real-time Transport Protocol - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 36px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-top: 0; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 480px; width: 100%; background: #eaecf0; border: 1px solid #c8ccd1; padding: 8px; }
+.caption { font-size: 12px; color: #54595d; margin-top: 4px; }
+table.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 13px; margin: 0 0 12px 18px; border-collapse: collapse; }
+table.infobox th, table.infobox td { border: 1px solid #a2a9b1; padding: 4px 8px; text-align: left; }
+table.infobox th { background: #eaecf0; }
+code { background: #eaecf0; padding: 0 3px; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Real-time Transport Protocol</h1>
+<table class="infobox">
+<tr><th colspan="2">Real-time Transport Protocol</th></tr>
+<tr><th>Abbreviation</th><td>RTP</td></tr>
+<tr><th>Developer(s)</th><td>Audio/Video Transport working group, IETF</td></tr>
+<tr><th>First published</th><td>1996 (RFC 1889); revised 2003 (RFC 3550)</td></tr>
+<tr><th>Port(s)</th><td>UDP, typically ephemeral even ports 1024–65535</td></tr>
+<tr><th>Layer</th><td>Application layer</td></tr>
+</table>
+<div class="hero"><img src="images/rtp-packet.png" alt="Diagram of an RTP packet header showing the version, sequence number, timestamp, SSRC identifier and payload fields"><div class="caption">The RTP header carries sequence numbers and timestamps so receivers can reorder packets and reconstruct media timing.</div></div>
+<p>The <b>Real-time Transport Protocol</b> (<b>RTP</b>) is a network protocol for delivering audio and video over IP networks. RTP is used in communication and entertainment systems that involve streaming media, such as telephony, video teleconference applications including WebRTC, television services and web-based push-to-talk features. It is specified in RFC 3550, which obsoleted RFC 1889.</p>
+<h2>Overview</h2>
+<p>RTP typically runs over the User Datagram Protocol (UDP). RTP does not guarantee delivery or prevent out-of-order delivery, nor does it reserve network resources; instead it provides sequence numbers, timestamps, payload-type identification and source identifiers that let a receiver detect packet loss, restore timing and synchronize multiple media streams, such as the audio and video of a call. Losses are usually concealed or tolerated rather than retransmitted, because for live media timely arrival matters more than perfect reliability.</p>
+<h2>Companion protocols</h2>
+<p>RTP is used in conjunction with the <b>RTP Control Protocol</b> (RTCP), which periodically sends statistics and feedback about transmission quality and helps synchronize separate streams. Session setup and media negotiation are typically handled by other protocols such as SIP or, in WebRTC, by SDP exchanged through an application-specific signalling channel. The Secure Real-time Transport Protocol (SRTP), defined in RFC 3711, adds encryption, authentication and integrity protection.</p>
+<h2>Packet header</h2>
+<p>The fixed 12-byte header includes a 2-bit version field, a marker bit whose meaning depends on the profile, a 7-bit payload type, a 16-bit sequence number incremented for each packet, a 32-bit timestamp reflecting the sampling instant of the first octet of the payload, and a 32-bit synchronization source (SSRC) identifier distinguishing sources within a session. Optional contributing source (CSRC) identifiers support mixers and translators.</p>
+<h2>Applications</h2>
+<p>RTP underlies VoIP systems, videoconferencing standards such as H.323 and SIP-based services, IPTV distribution, and the media transport of <a href="../WebRTC/index.html">WebRTC</a>, which mandates encrypted RTP through SRTP with DTLS key exchange.</p>
+<h2>See also</h2>
+<p><a href="../RTP_Control_Protocol/index.html">RTP Control Protocol</a> · <a href="../Secure_Real-time_Transport_Protocol/index.html">Secure Real-time Transport Protocol</a> · <a href="../Session_Initiation_Protocol/index.html">Session Initiation Protocol</a> · <a href="../User_Datagram_Protocol/index.html">User Datagram Protocol</a> · <a href="../Voice_over_IP/index.html">Voice over IP</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sampling (signal processing) - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 60px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; font-size: 30px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 6px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; font-size: 22px; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+.tagline { font-size: 13px; color: #54595d; margin-bottom: 16px; }
+p, li { font-size: 15px; line-height: 1.65; }
+.hero { display: block; width: 100%; max-width: 640px; margin: 12px 0; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 8px; }
+.hero img { width: 100%; height: auto; display: block; }
+.caption { font-size: 12.5px; color: #54595d; margin-top: 6px; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px 14px; margin: 4px 0 16px 20px; font-size: 13.5px; }
+.infobox h3 { margin: 4px 0 8px; font-size: 15px; text-align: center; }
+a { color: #3366cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Sampling (signal processing)</h1>
+<div class="tagline">From Wikipedia, the free encyclopedia</div>
+
+<div class="infobox">
+<h3>Sampling</h3>
+<p><b>Field:</b> Signal processing</p>
+<p><b>Input:</b> Continuous-time signal</p>
+<p><b>Output:</b> Discrete-time signal (sequence of samples)</p>
+<p><b>Key result:</b> Nyquist&ndash;Shannon sampling theorem</p>
+</div>
+
+<p>In signal processing, <b>sampling</b> is the reduction of a continuous-time signal to a discrete-time signal. A common example is the conversion of a sound wave to a sequence of &ldquo;samples&rdquo; &mdash; values measured at equally spaced points in time. A <b>sample</b> is a value of the signal at one point in time and/or space; a <b>sampler</b> is a device or process that extracts samples from a continuous signal. Together with quantization, sampling is the essential first step in analog-to-digital conversion.</p>
+
+<figure class="hero">
+<img src="images/Sampling_(signal_processing).png" alt="A continuous waveform with discrete sample points marked at regular intervals">
+<div class="caption">Signal sampling: a continuous signal (top) represented by its samples (bottom).</div>
+</figure>
+
+<h2>Sampling theorem</h2>
+<p>The Nyquist&ndash;Shannon sampling theorem states that a band-limited signal containing no frequencies above B hertz can be reconstructed exactly from samples taken at a rate greater than 2B samples per second. The threshold rate of 2B is called the Nyquist rate; half the sampling frequency is the Nyquist frequency. Harry Nyquist derived the criterion in 1928 in the context of telegraph transmission, and Claude Shannon&rsquo;s 1949 proof made it a foundation of information theory. Reconstruction uses band-limited interpolation, for instance the Whittaker&ndash;Shannon interpolation formula, which sums shifted sinc functions weighted by the samples.</p>
+
+<h2>Aliasing</h2>
+<p>If a signal is sampled below its Nyquist rate, frequency components above half the sampling rate are &ldquo;folded&rdquo; into lower frequencies, a distortion called <a href="../Sampling_rate/">aliasing</a>. Practical systems therefore filter the input with an anti-aliasing (low-pass) filter before sampling. Aliasing is visible in everyday life as the apparent backward rotation of wagon wheels and helicopter blades in film and video.</p>
+
+<h2>Types of sampling</h2>
+<ul>
+<li><b>Uniform (periodic) sampling</b> at a fixed interval T, the standard in audio and most data acquisition.</li>
+<li><b>Oversampling</b>, sampling far above the Nyquist rate to relax filter requirements and reduce quantization noise, as in sigma-delta converters.</li>
+<li><b>Undersampling (bandpass sampling)</b>, deliberately sampling a bandpass signal below twice its highest frequency to shift it to a lower band.</li>
+<li><b>Non-uniform and compressed sampling</b>, used where samples are expensive or the signal is sparse.</li>
+</ul>
+<p>In digital audio, the compact disc standard samples at 44,100 Hz with 16-bit quantization, capturing frequencies up to about 20 kHz; video, radar, medical imaging and software radio all rest on the same sampling principles.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Sampling_rate/">Sampling rate</a></li>
+<li><a href="../Sampling_distribution/">Sampling distribution</a></li>
+<li><a href="../Nyquist_frequency/">Nyquist frequency</a></li>
+</ul>
+</div>
+</body>
+</html>

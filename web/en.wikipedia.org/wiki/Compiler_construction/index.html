@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Compiler construction - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: sans-serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+p, li { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 480px; width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; }
+.caption { font-size: 12px; color: #54595d; font-family: sans-serif; }
+.small { font-size: 13px; color: #54595d; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Compiler construction</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="hero"><img src="images/compiler-construction.png" alt="Diagram of the phases of a compiler"><div class="caption">The classic phases of compilation: analysis, intermediate representation, and code generation</div></div>
+<p><b>Compiler construction</b> is the area of computer science concerned with the theory and practice of designing and implementing <a href="../Compiler/index.html">compilers</a> — programs that translate source code written in one programming language into another language, usually machine code or a lower-level language. The field draws on formal language theory, algorithms, and computer architecture, and it is a standard subject in undergraduate computer science curricula.</p>
+<h2>Structure of a compiler</h2>
+<p>A compiler is conventionally divided into a <b>front end</b>, which analyses the source program, and a <b>back end</b>, which synthesizes the target program, often with an intermediate representation (IR) between them.</p>
+<h3>Front end</h3>
+<ul>
+<li><b>Lexical analysis</b> — a scanner or lexer groups characters into tokens such as identifiers, keywords, and operators.</li>
+<li><b>Syntax analysis</b> — a parser checks the token stream against the grammar of the language and builds a parse tree or abstract syntax tree (AST), using techniques such as LL and LR parsing.</li>
+<li><b>Semantic analysis</b> — type checking and other context-sensitive checks are performed, with information stored in a symbol table.</li>
+</ul>
+<h3>Middle end and back end</h3>
+<ul>
+<li><b>Intermediate code generation</b> — the AST is translated into an IR such as three-address code or static single assignment (SSA) form.</li>
+<li><b>Optimization</b> — machine-independent transformations (constant folding, dead-code elimination, loop optimizations) improve the IR.</li>
+<li><b>Code generation</b> — target machine instructions are selected, registers allocated, and instructions scheduled.</li>
+</ul>
+<h2>Tools and theory</h2>
+<p>Compiler writers use generator tools — historically Lex and Yacc, and their modern successors such as Flex and Bison, or frameworks like ANTLR and LLVM — to build scanners and parsers from formal grammars. The theory behind these tools rests on automata theory and the Chomsky hierarchy: regular expressions describe tokens, and context-free grammars describe syntax.</p>
+<h2>History</h2>
+<p>The first compilers were written in the 1950s, notably Grace Hopper's A-0 system and the FORTRAN compiler led by John Backus at IBM in 1957, which demonstrated that compiled code could rival hand-written assembly. The 1960s and 1970s brought formal parsing theory and influential systems such as ALGOL. Aho, Sethi, and Ullman's textbook <i>Compilers: Principles, Techniques, and Tools</i> (1986), the "Dragon Book", became the field's best-known reference. Modern construction emphasizes retargetable back ends, just-in-time compilation, and verified compilers such as CompCert.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Compiler/index.html">Compiler</a></li>
+<li><a href="../Parsing/index.html">Parsing</a></li>
+<li><a href="../Intermediate_representation/index.html">Intermediate representation</a></li>
+<li><a href="../Optimizing_compiler/index.html">Optimizing compiler</a></li>
+</ul>
+</div>
+</body>
+</html>

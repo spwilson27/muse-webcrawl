@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AT Protocol - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:24px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:1.4em}
+.hero{display:block;margin:16px auto;max-width:480px;width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:8px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.9em;max-width:260px}
+footer{margin-top:2em;font-size:0.85em;color:#54595d;border-top:1px solid #a2a9b1;padding-top:8px}
+</style>
+</head>
+<body>
+<h1>AT Protocol</h1>
+<img class="hero" src="images/AT_Protocol.png" alt="Diagram of the AT Protocol's federated network architecture">
+<p>The <b>AT Protocol</b> (Authenticated Transfer Protocol, pronounced "at protocol") is an open, decentralized social networking protocol developed by Bluesky Social PBC. It is designed to support federated social applications in which users can move their identities and data between servers without losing their social graph, and in which multiple applications can interoperate over shared data repositories.</p>
+<h2>Overview</h2>
+<p>The protocol was announced in 2022 as an evolution of the earlier "ADX" experimental protocol. Its best-known application is <a href="../Bluesky/index.html">Bluesky</a>, a microblogging service whose user base grew rapidly after it opened to the public in early 2024. Unlike the <a href="../ActivityPub/index.html">ActivityPub</a> protocol used by Mastodon and the wider Fediverse, the AT Protocol separates data hosting from application logic, using what its designers call a "big world" model of aggregation.</p>
+<h2>Architecture</h2>
+<p>Key components of the AT Protocol include:</p>
+<ul>
+<li><b>Decentralized identifiers (DIDs)</b> — portable user identities, typically anchored to domain names via the <code>did:plc</code> or <code>did:web</code> methods.</li>
+<li><b>Personal Data Servers (PDS)</b> — servers that host user data repositories, which are signed, versioned collections of records stored as Merkle trees.</li>
+<li><b>Relays</b> — services that aggregate the "firehose" of updates from many PDSs.</li>
+<li><b>App Views</b> — indexing services that assemble feeds, search results and other application-level views from the relay stream.</li>
+<li><b>Lexicon</b> — a schema language defining record types and API endpoints (XRPC) for interoperable applications.</li>
+</ul>
+<h2>Design goals</h2>
+<p>The protocol aims for account portability, algorithmic choice (users may select among multiple feed generators), and composable moderation, in which labelling and filtering services can be layered independently of hosting. Critics have noted that operating relays and App Views at scale is expensive, which may concentrate infrastructure in practice.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Bluesky/index.html">Bluesky</a></li>
+<li><a href="../ActivityPub/index.html">ActivityPub</a></li>
+<li><a href="../Decentralized_social_network/index.html">Decentralized social network</a></li>
+</ul>
+<footer>From Wikipedia, the free encyclopedia.</footer>
+</body>
+</html>

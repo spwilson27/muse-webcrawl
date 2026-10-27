@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Paging - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122;background:#fff}
+h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;font-weight:normal}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{display:block;max-width:400px;width:100%;height:auto;background:#f8f9fa;border:1px solid #c8ccd1;padding:.5em;margin:1em 0}
+</style>
+</head>
+<body>
+<h1>Paging</h1>
+<p>In computer operating systems, <b>paging</b> is a memory management scheme by which a computer stores and retrieves data from secondary storage for use in main memory. In this scheme, the operating system retrieves data from secondary storage in same-size blocks called <i>pages</i>. Paging is an important part of virtual memory implementations in modern operating systems, using secondary storage to let programs exceed the size of available physical memory.</p>
+<img class="hero" src="images/paging.png" alt="Diagram of paging: a virtual address space divided into pages mapped through a page table to frames in physical memory">
+<h2>Overview</h2>
+<p>A process's virtual address space is divided into fixed-size pages (commonly 4 KiB), and physical memory is divided into frames of the same size. The memory management unit (MMU) translates virtual addresses to physical addresses using a page table maintained by the operating system. Pages not currently in physical memory are held in a page file or swap partition on disk; when a program accesses such a page, a <i>page fault</i> occurs and the operating system loads the page, possibly evicting another page using a page replacement algorithm such as least recently used (LRU).</p>
+<h2>Advantages</h2>
+<p>Paging eliminates external fragmentation, allows memory to be allocated non-contiguously, enables sharing of pages between processes (for example shared libraries), and underpins protection: each page can carry read, write and execute permission bits. Techniques built on paging include demand paging, copy-on-write, and memory-mapped files. Multi-level page tables and translation lookaside buffers (TLBs) make address translation efficient on large address spaces.</p>
+<h2>History</h2>
+<p>Paging was first implemented on the Atlas computer at the University of Manchester, operational in 1962, and became a standard feature of operating systems with systems such as Multics and later Unix and Windows.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Virtual_memory/index.html">Virtual memory</a></li>
+<li><a href="../Page_fault/index.html">Page fault</a></li>
+<li><a href="../Memory_management_unit/index.html">Memory management unit</a></li>
+<li><a href="../Page_replacement_algorithm/index.html">Page replacement algorithm</a></li>
+</ul>
+</body>
+</html>

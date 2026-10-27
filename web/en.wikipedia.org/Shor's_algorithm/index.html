@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shor's algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.hero{float:right;margin:0 0 12px 16px;width:260px;background:#f8f9fa;border:1px solid #c8ccd1;padding:8px;text-align:center;font-size:13px}
+.hero img{width:100%;background:#e8e8e8;display:block;padding:40px 0}
+.small{font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Shor's algorithm</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="hero"><img src="images/shors-algorithm.png" alt="Diagram of a quantum circuit for period finding">[Image: quantum circuit diagram for Shor's algorithm]</div>
+<p><b>Shor's algorithm</b> is a quantum algorithm for finding the prime factors of an integer. It was developed in 1994 by the mathematician Peter Shor and runs in polynomial time on a quantum computer, whereas the best-known classical factoring algorithms (such as the general number field sieve) run in super-polynomial time. Because widely used public-key cryptosystems such as RSA depend on the practical difficulty of factoring, Shor's algorithm is one of the principal motivations for building large-scale quantum computers and for developing post-quantum cryptography.</p>
+<h2>How it works</h2>
+<p>The algorithm reduces factoring a composite number N to finding the period of the function f(x) = a<sup>x</sup> mod N for a randomly chosen a. The quantum part of the procedure uses quantum superposition and the quantum Fourier transform to extract this period efficiently; the remaining computation (continued fractions and greatest common divisors) is classical. Once the period r is known, the factors gcd(a<sup>r/2</sup> − 1, N) and gcd(a<sup>r/2</sup> + 1, N) are computed.</p>
+<h2>Implementation</h2>
+<p>Experimental demonstrations have factored tiny numbers such as 15 and 21 using a few qubits, often with heavily compiled circuits. Factoring cryptographically relevant integers would require millions of physical qubits with error correction, far beyond present devices, though steady progress continues.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Quantum_computing/index.html">Quantum computing</a></li>
+<li><a href="../Integer_factorization/index.html">Integer factorization</a></li>
+<li><a href="../RSA_(cryptosystem)/index.html">RSA (cryptosystem)</a></li>
+<li><a href="../Post-quantum_cryptography/index.html">Post-quantum cryptography</a></li>
+</ul>
+<p class="small">This article is a recreation produced from memory for the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

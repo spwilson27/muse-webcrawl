@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>One-time password — Phishing</title>
+<style>
+body { font-family: Georgia, serif; margin: 2em auto; max-width: 46em; padding: 0 1em; line-height: 1.6; color: #222; }
+h1 { border-bottom: 2px solid #a2a9b1; padding-bottom: .2em; }
+h2 { border-bottom: 1px solid #a2a9b1; }
+img.hero { display: block; margin: 1em auto; border: 1px solid #888; padding: 2em; background: #f8f9fa; text-align: center; }
+a { color: #0645ad; }
+.nav { font-size: .9em; color: #555; }
+</style>
+</head>
+<body>
+<p class="nav">Phishing &rsaquo; One-time password</p>
+<h1>One-time password</h1>
+<img class="hero" src="images/One-time_password.png" alt="Smartphone displaying a six-digit one-time authentication code">
+<p>A <b>one-time password</b> (OTP) is an automatically generated code, valid for a single login session or transaction, used as an additional factor of <a href="../Authentication/index.html">authentication</a>. Common forms are time-based codes (TOTP) from authenticator apps, which change every thirty seconds, event-based codes (HOTP), and codes delivered by SMS or email.</p>
+<h2>Why one-time passwords do not stop phishing</h2>
+<p>OTPs defeat replay of stolen static passwords, because an old code is worthless. Against <a href="../../Phishing/index.html">phishing</a>, however, they have a structural weakness: the code is a shared secret typed by the user wherever the page asks. Modern phishing kits operate as real-time relays — the victim enters the password and code on the fake site, the kit immediately submits them to the genuine service, and the resulting authenticated session cookie is captured. The code was used exactly once, but by the attacker. SMS codes are additionally vulnerable to SIM-swapping and interception, which is why standards bodies discourage them.</p>
+<h2>Phishing-resistant successors</h2>
+<p>The recognised fix is to bind the second factor to the legitimate site's origin, as FIDO2 <a href="../Passkey_(authentication)/index.html">passkeys</a> and hardware <a href="../Security_token/index.html">security tokens</a> do: the authenticator signs a challenge for the real domain only, so a relay site receives nothing it can reuse. Until such methods are universal, OTPs remain a useful but partial defence, especially valued against bulk credential theft from a <a href="../Data_breach/index.html">data breach</a>.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Authentication/index.html">Authentication</a></li>
+<li><a href="../Passkey_(authentication)/index.html">Passkey (authentication)</a></li>
+<li><a href="../Security_token/index.html">Security token</a></li>
+</ul>
+</body>
+</html>

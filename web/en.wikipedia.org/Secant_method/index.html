@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Secant method - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; background: #eaecf0; padding: 8px; }
+.caption { font-size: 0.85em; color: #54595d; }
+.formula { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px 14px; font-family: monospace; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Secant method</h1>
+<p>The <b>secant method</b> is a root-finding algorithm that uses a succession of roots of secant lines to better approximate a root of a function <i>f</i>. It can be thought of as a finite-difference approximation of <a href="../Newton%27s_method/index.html">Newton's method</a>, in which the derivative is replaced by a quotient of function values at two previously computed points. The secant method requires two initial approximations but, unlike Newton's method, does not require evaluating any derivative.</p>
+<div class="hero"><img src="images/secant-method.png" alt="Geometric illustration of the secant method approximating a root with secant lines"></div>
+<p class="caption">The secant method uses secant lines through pairs of points to approach a root.</p>
+<h2>The method</h2>
+<p>Given two initial approximations <i>x</i><sub>0</sub> and <i>x</i><sub>1</sub>, the iteration is defined by the recurrence</p>
+<div class="formula">x<sub>n+1</sub> = x<sub>n</sub> &minus; f(x<sub>n</sub>) &middot; (x<sub>n</sub> &minus; x<sub>n&minus;1</sub>) / (f(x<sub>n</sub>) &minus; f(x<sub>n&minus;1</sub>))</div>
+<p>The process is repeated until the approximations converge to a root of <i>f</i> or the difference between consecutive iterates is sufficiently small.</p>
+<h2>Convergence</h2>
+<p>If the initial values are close enough to a simple root and the function is sufficiently smooth, the secant method converges superlinearly with order equal to the golden ratio, approximately 1.618. This is faster than the linear convergence of the <a href="../Bisection_method/index.html">bisection method</a> but slower than the quadratic convergence of Newton's method. Because each iteration needs only one new function evaluation, the secant method is often more efficient in practice when derivatives are expensive to compute.</p>
+<h2>Comparison with related methods</h2>
+<p>The secant method is closely related to the <a href="../False_position_method/index.html">false position method</a> (regula falsi), which brackets the root between two points of opposite sign. Variants such as the Illinois algorithm improve on false position by modifying retained function values. The secant method does not guarantee that the root remains bracketed, and it can fail if the denominator becomes zero or if the iterates diverge.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Newton%27s_method/index.html">Newton's method</a></li>
+<li><a href="../Root-finding_algorithm/index.html">Root-finding algorithm</a></li>
+<li><a href="../Brent%27s_method/index.html">Brent's method</a></li>
+</ul>
+</div>
+</body>
+</html>

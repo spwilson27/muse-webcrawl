@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hoare logic - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0 auto;max-width:960px;padding:20px 32px;color:#202122;line-height:1.6;background:#fff}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:2px;font-weight:normal;margin-top:28px}
+p{margin:10px 0;font-size:15px}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.hero{float:right;margin:0 0 12px 20px;width:280px;background:#f8f9fa;border:1px solid #a2a9b1;padding:6px;text-align:center;font-size:12px;color:#54595d}
+.hero img{width:100%;height:160px;background:#eaecf0;display:block}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+.ref{font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Hoare logic</h1>
+<div class="hero"><img src="images/hoare_logic.png" alt="Illustration placeholder: a Hoare triple {P} C {Q} diagram"><br>A Hoare triple: if P holds before command C, then Q holds after</div>
+<p><b>Hoare logic</b> (also known as <b>Floyd–Hoare logic</b>) is a formal system of axioms and inference rules for reasoning rigorously about the correctness of computer programs. It was introduced by Tony Hoare in his 1969 paper "An Axiomatic Basis for Computer Programming", building on Robert Floyd's 1967 method of assigning assertions to flowchart nodes. Hoare logic underpins much of formal verification and influenced programming language design, including Hoare's own work on CSP.</p>
+<h2>Hoare triples</h2>
+<p>The central notion is the Hoare triple <code>{P} C {Q}</code>, where <code>C</code> is a command (program fragment), and <code>P</code> and <code>Q</code> are assertions — the precondition and postcondition. The triple asserts partial correctness: if <code>P</code> holds before executing <code>C</code>, and <code>C</code> terminates, then <code>Q</code> holds afterwards. For example, <code>{x = n} x := x + 1 {x = n + 1}</code>. Total correctness additionally requires a proof of termination.</p>
+<h2>Principal rules</h2>
+<p>The system includes an axiom for assignment — <code>{P[E/x]} x := E {P}</code>, substituting backwards — and rules of composition (sequencing), consequence (weakening/strengthening assertions), conditional (if-then-else) and iteration (while loops). The loop rule uses a loop invariant <code>P</code>: if <code>{P ∧ B} C {P}</code> for guard <code>B</code>, then <code>{P} while B do C {P ∧ ¬B}</code>. Finding good invariants is the creative core of program verification.</p>
+<h2>Extensions and legacy</h2>
+<p>Extensions handle arrays, pointers, procedures, concurrency and object-orientation. Notable descendants include Dijkstra's weakest-precondition calculus (1975), dynamic logic, and separation logic (Reynolds, O'Hearn, 2000s), which reasons locally about heap memory and supports tools such as Infer. Automated and interactive verification systems — Dafny, Frama-C, Coq-based verifiers and the seL4 microkernel proof — trace their foundations to Hoare logic, which remains a standard topic in computer science education.</p>
+<p class="ref">See also: <a href="../History_of_mathematics/index.html">History of mathematics</a>, <a href="../History_of_computing_hardware/index.html">History of computing hardware</a></p>
+</body>
+</html>

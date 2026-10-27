@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Direct memory access (channel I/O) - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0 auto; max-width: 960px; padding: 20px 32px; color: #202122; line-height: 1.6; background: #fff; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; border: 1px solid #c8ccd1; }
+.caption { font-size: 12px; color: #54595d; }
+</style>
+</head>
+<body>
+<h1>Direct memory access in channel I/O</h1>
+<p><b>Direct memory access</b> (DMA) is the defining capability of the <a href="../../Channel_I/index.html">channel I/O</a> architecture used by IBM mainframe computers: once an I/O operation has been started, a specialized processor called a <a href="../../Channel_I/index.html">channel</a> transfers data directly between an input/output device and main storage (memory), without the central processing unit (CPU) having to move each byte or word itself. The CPU is interrupted only when the operation completes or an error occurs.</p>
+<div class="hero"><img src="images/channel-dma.png" alt="Diagram of a channel transferring data directly between a disk device and main storage"><div class="caption">A channel moves data between a device and main storage independently of the CPU</div></div>
+<h2>Operation</h2>
+<p>An I/O operation begins when the CPU executes a START I/O instruction naming a subchannel. The channel subsystem then fetches a chain of channel command words (CCWs) &mdash; the channel program &mdash; from memory. Each CCW specifies a command (read, write, control, sense), a main-storage address, a byte count, and flags for chaining. The channel executes the program autonomously: it arbitrates for storage accesses, moves data in bursts, assembles and disassembles records, and posts status in the subchannel when finished.</p>
+<p>Because the channel fetches its commands from memory and scatters or gathers data using CCW data chaining, a single START I/O can fill an arbitrary set of buffers. Address translation and protection are applied by the channel subsystem so that a channel program operating on behalf of one program cannot access another program's storage.</p>
+<h2>Comparison with programmed I/O</h2>
+<p>On smaller computers, DMA is usually provided by a simple DMA controller that moves a contiguous block between a device and memory. Mainframe channel DMA is more general: the channel is itself a programmable processor executing command chains, handling device-specific control operations, retry, and error recovery in parallel with normal CPU work. This offload was essential to the throughput of systems such as the System/360, whose selector and multiplexor channels sustained many simultaneous device transfers while the CPU continued executing application programs.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../Direct_memory_access/index.html">Direct memory access</a></li>
+<li><a href="../../Channel_I/index.html">Channel I/O</a></li>
+<li><a href="../FICON/index.html">FICON</a></li>
+</ul>
+</body>
+</html>

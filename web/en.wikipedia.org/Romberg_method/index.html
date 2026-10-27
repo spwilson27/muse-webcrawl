@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Romberg's method - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:860px;margin:2em auto;padding:0 1em;line-height:1.6;color:#222}h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #a2a9b1;margin-top:1.4em}a{color:#0645ad}.hero{text-align:center;background:#f0f0f0;padding:1em;border:1px solid #ccc}code{background:#f4f4f4;padding:.1em .3em}</style></head>
+<body>
+<h1>Romberg's method</h1>
+<p>In numerical analysis, <b>Romberg's method</b> (Romberg integration) is a technique for approximating a definite integral by applying Richardson extrapolation repeatedly to the trapezoidal rule or the midpoint rule. It is named after Werner Romberg, who published the method in 1955.</p>
+<div class="hero"><img src="images/Romberg_method.png" alt="Romberg extrapolation table diagram"></div>
+<h2>Method</h2>
+<p>Starting from trapezoidal estimates <code>R(n,0)</code> computed with successively halved step sizes, extrapolated values are built as <code>R(n,m) = R(n,m−1) + (R(n,m−1) − R(n−1,m−1)) / (4^m − 1)</code>. Each column of the resulting triangular table eliminates a higher-order error term, so diagonal entries converge far faster than the raw trapezoidal estimates — effectively producing high-order accuracy from a simple rule.</p>
+<h2>Properties</h2>
+<p>The method works best for smooth integrands over finite intervals and was a standard library routine for quadrature before adaptive <a href="../Gaussian_quadrature/index.html">Gaussian quadrature</a> became widespread. Endpoint singularities or non-smooth behaviour degrade the extrapolation. See also <a href="../Numerical_integration/index.html">numerical integration</a> and <a href="../Richardson_extrapolation/index.html">Richardson extrapolation</a>.</p>
+</body></html>

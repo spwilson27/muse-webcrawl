@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bicubic interpolation - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 480px; width: 100%; background: #eaecf0; border: 1px solid #c8ccd1; padding: 24px 0; }
+.caption { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Bicubic interpolation</h1>
+<p><b>Bicubic interpolation</b> is an extension of cubic interpolation for interpolating data points on a two-dimensional regular grid. The interpolated surface is smoother than surfaces obtained by <a href="../Bilinear_interpolation/index.html">bilinear interpolation</a> or nearest-neighbour interpolation. Bicubic interpolation is widely used in image processing for resampling images, where it generally produces sharper results than bilinear interpolation at greater computational cost.</p>
+<div class="hero"><img src="images/Bicubic_interpolation.png" alt="Diagram placeholder of a 4 by 4 grid of sample points used in bicubic interpolation"></div>
+<p class="caption">Bicubic interpolation uses the 16 nearest neighbours of a point.</p>
+<h2>Computation</h2>
+<p>To estimate the value at a point within a unit square, bicubic interpolation fits a bicubic surface of the form of a sum over terms x^i y^j for i, j from 0 to 3, giving sixteen coefficients. These are determined from the function values at the four corners of the square and from estimates of the derivatives (in x, in y, and the cross-derivative) at those corners, which are usually computed from the surrounding 4×4 block of samples using finite differences.</p>
+<h2>Bicubic convolution</h2>
+<p>An alternative formulation, the bicubic convolution algorithm described by Keys (1981), uses a separable cubic convolution kernel. The common Catmull–Rom spline is a special case frequently used in graphics because it passes through the sample points and is computationally convenient.</p>
+<h2>Comparison</h2>
+<p>Compared with bilinear interpolation, bicubic interpolation better preserves fine detail and produces fewer blocky artefacts, though it can overshoot near sharp edges, sometimes producing values outside the range of the samples. Lanczos resampling may give still better quality at higher cost.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Bilinear_interpolation/index.html">Bilinear interpolation</a></li>
+<li><a href="../Bilateral_filter/index.html">Bilateral filter</a></li>
+<li><a href="../Image_scaling/index.html">Image scaling</a></li>
+<li><a href="../Spline_interpolation/index.html">Spline interpolation</a></li>
+</ul>
+</div>
+</body>
+</html>

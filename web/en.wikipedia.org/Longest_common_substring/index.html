@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Longest common substring - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:900px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:5px}
+h2{font-size:1.5em;border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 15px 15px;width:280px;font-size:0.9em}
+.infobox th{text-align:left;background:#eaecf0;padding:4px}
+.infobox td{padding:4px}
+.hero{text-align:center;margin:15px 0}
+.hero img{max-width:100%;border:1px solid #a2a9b1}
+.caption{font-size:0.85em;color:#54595d}
+.code{background:#f8f9fa;border:1px solid #eaecf0;padding:8px 12px;margin:10px 0;font-family:'Courier New',monospace;font-size:0.9em;white-space:pre;overflow-x:auto}
+</style>
+</head>
+<body>
+<h1>Longest common substring</h1>
+<div class="hero"><img src="images/longest-common-substring.png" alt="Diagram showing a common substring highlighted within two strings"><p class="caption">Finding the longest string that appears contiguously in two or more strings</p></div>
+<p>In computer science, the <b>longest common substring problem</b> is to find the longest string (or strings) that is a <a href="../Substring/index.html">substring</a> of two or more given strings. It should not be confused with the <a href="../Longest_common_subsequence_problem/index.html">longest common subsequence</a> problem: a substring must consist of consecutive characters, whereas a subsequence need not.</p>
+<h2>Example</h2>
+<p>The longest common substrings of "ABABC", "BABCA" and "ABCBA" are "ABC" and "BCA" (length 3); for the strings pictured in typical examples such as "ABAB" and "BABA", the answer is "ABA" or "BAB" (length 3).</p>
+<h2>Algorithms</h2>
+<p>For two strings of lengths m and n, the problem can be solved in O(mn) time and space by <a href="../Dynamic_programming/index.html">dynamic programming</a>: build a table where each cell records the length of the longest common suffix ending at the corresponding positions, and track the maximum.</p>
+<div class="code">LCSuff(x[i..], y[j..]) = LCSuff(x[i+1..], y[j+1..]) + 1   if x[i] = y[j]
+                        = 0                                otherwise
+answer = max over all i, j of LCSuff(x[i..], y[j..])</div>
+<p>More efficient algorithms exist: using a generalised suffix tree or a suffix array with LCP (longest common prefix) data, the longest common substring of a set of strings with total length n can be found in O(n) time. A suffix automaton likewise gives a linear-time solution.</p>
+<h2>Applications</h2>
+<p>The problem arises in bioinformatics (comparing DNA or protein sequences), plagiarism detection, data deduplication and compression, file comparison tools, and pattern matching in large text collections.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Substring/index.html">Substring</a></li>
+<li><a href="../Longest_common_subsequence_problem/index.html">Longest common subsequence problem</a></li>
+<li><a href="../Suffix_tree/index.html">Suffix tree</a></li>
+<li><a href="../Longest_palindromic_substring/index.html">Longest palindromic substring</a></li>
+</ul>
+</body>
+</html>
