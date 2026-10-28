@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Atomic commit - Wikipedia</title>
+<style>body{font-family:Georgia,serif;margin:0 auto;max-width:960px;padding:20px;line-height:1.6;color:#202122}h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;font-weight:normal}h2{border-bottom:1px solid #a2a9b1;font-weight:normal}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;width:260px;font-size:90%}a{color:#3366cc;text-decoration:none}</style></head>
+<body>
+<h1>Atomic commit</h1>
+<img src="images/atomic-commit.png" alt="Atomic commit (image placeholder)">
+<div class="infobox"><b>Atomic commit</b><br>Field: Distributed computing, databases<br>Problem: All participants agree to commit or abort a transaction<br>Protocols: Two-phase commit, three-phase commit, Paxos commit</div>
+<p>In distributed computing and databases, an <b>atomic commit</b> is an operation that applies a set of changes as a single indivisible unit across multiple participants: either all participants commit the transaction or all of them abort it, even in the presence of failures. It is the "A" (atomicity) of the ACID properties extended across a distributed system.</p>
+<h2>Protocols</h2>
+<p>The classic solution is the two-phase commit protocol, in which a coordinator first asks all participants to vote (the prepare phase) and then broadcasts the decision to commit if all voted yes, or to abort otherwise. Its weakness is blocking: if the coordinator fails after participants have voted, they may be unable to resolve the transaction until it recovers. Three-phase commit reduces blocking under some failure assumptions, while consensus-based approaches such as Paxos commit replicate the decision so that coordinator failure can be tolerated.</p>
+<h2>Atomic commit problem</h2>
+<p>The atomic commit problem is closely related to consensus; it can be shown that no protocol guarantees termination in a fully asynchronous system with even one faulty process (the FLP impossibility result), so practical systems rely on timeouts, failure detectors, and consensus algorithms.</p>
+<h2>See also</h2>
+<p><a href="../Two-phase_commit_protocol/index.html">Two-phase commit protocol</a> &middot; <a href="../ACID/index.html">ACID</a> &middot; <a href="../Distributed_transaction/index.html">Distributed transaction</a></p>
+</body></html>

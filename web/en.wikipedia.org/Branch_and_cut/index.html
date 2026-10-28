@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Branch and cut</title>
+<style>body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}h2{font-size:1.4em;border-bottom:1px solid #a2a9b1}.infobox{float:right;width:250px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:.88em}.infobox th{text-align:left}img.hero{width:100%;border:1px solid #ccc}</style></head>
+<body>
+<h1>Branch and cut</h1>
+<img class="hero" src="images/branch-and-cut.png" alt="Branch and cut (image placeholder)">
+<div class="infobox"><table>
+<tr><th>Field</th><td>Mathematical optimization</td></tr>
+<tr><th>Solves</th><td>Mixed-integer linear programs</td></tr>
+<tr><th>Combines</th><td>Branch and bound; cutting planes</td></tr>
+</table></div>
+<p><b>Branch and cut</b> is a method of combinatorial optimization for solving integer linear programs (ILPs) and mixed-integer linear programs (MILPs). It combines the branch-and-bound search framework with cutting-plane methods, and is the basis of most commercial and open-source MILP solvers.</p>
+<h2>How it works</h2>
+<p>The algorithm relaxes the integer constraints and solves the resulting linear program. If the solution is fractional, it attempts to add <b>cutting planes</b> — valid inequalities (such as Gomory cuts or problem-specific cuts) that separate the fractional solution from the integer hull without removing any feasible integer point. If cuts fail to produce an integer solution, the algorithm <b>branches</b>: it splits the problem on a fractional variable, creating subproblems solved recursively, using bounds to prune the search tree.</p>
+<h2>Applications</h2>
+<p>Branch and cut underlies large-scale logistics, scheduling, network design, and production planning. Its efficiency depends heavily on strong formulations, good cut selection, branching rules, and primal heuristics; with these, problems with tens of thousands of integer variables can often be solved to proven optimality.</p>
+</body></html>

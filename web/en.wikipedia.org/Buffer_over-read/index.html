@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Buffer over-read - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.content{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;padding-bottom:5px}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Buffer over-read</h1>
+<img src="images/buffer-over-read.png" alt="Memory buffer diagram (image placeholder)">
+<p>In computer security and programming, a <b>buffer over-read</b> or out-of-bounds read is an anomaly where a program, while reading data from a buffer, accesses memory past the end of the buffer. It is the read-side counterpart of the better-known buffer overflow, which involves writing past a buffer's end.</p>
+<h2>Causes</h2>
+<p>Buffer over-reads typically result from incorrect assumptions about the size or termination of incoming data — for example, trusting a length field in a network packet without validating it against the amount of data actually received, or reading past the end of a string that lacks a terminating null byte.</p>
+<h2>Consequences</h2>
+<p>An over-read can cause a program to crash if it reaches unmapped memory, or it can leak sensitive information stored adjacent to the buffer back to an attacker. The most famous example is the Heartbleed bug (CVE-2014-0160), disclosed in 2014, in which a missing bounds check in the OpenSSL implementation of the TLS heartbeat extension allowed attackers to read up to 64 kilobytes of server memory per request, potentially exposing private keys and passwords.</p>
+<h2>Prevention</h2>
+<p>Over-reads are mitigated by careful bounds checking, use of memory-safe languages, fuzz testing, and analysis tools such as AddressSanitizer, which detect out-of-bounds accesses at runtime.</p>
+</div>
+</body>
+</html>

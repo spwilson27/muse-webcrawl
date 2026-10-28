@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>C string - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:960px;margin:0 auto;padding:20px;color:#202122;line-height:1.6;background:#fff}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.heroimg{display:block;max-width:100%;height:auto;background:#eaecf0;border:1px solid #c8ccd1;padding:8px;text-align:center;color:#54595d}
+</style>
+</head>
+<body>
+<h1>C string</h1>
+<img class="heroimg" src="images/c-string.png" alt="C string (image placeholder)">
+<p>In the C programming language, a <b>string</b> is a sequence of characters stored as an array of <code>char</code> values terminated by a null character (<code>'\0'</code>). This null-terminated representation, often called a <b>C string</b>, contrasts with string types in other languages that store an explicit length.</p>
+<h2>Representation</h2>
+<p>Because the length of a C string is not stored, functions operating on strings must scan for the terminating null byte; the standard library function <code>strlen</code> computes length in this way. A string literal such as <code>"hello"</code> is stored as an array of six characters, including the implicit terminator.</p>
+<h2>Standard library functions</h2>
+<p>The header <code>&lt;string.h&gt;</code> declares functions including <code>strcpy</code> (copy), <code>strcat</code> (concatenate), <code>strcmp</code> (compare), and <code>strchr</code> (search). Several of these functions do not check destination buffer sizes, and their misuse is a classic source of buffer overflow vulnerabilities; bounded alternatives such as <code>strncpy</code> and, in C11, the optional Annex K functions were introduced in response.</p>
+<h2>Limitations</h2>
+<p>C strings cannot contain embedded null characters, determining length is an O(n) operation, and the programmer is responsible for allocating sufficient memory. These limitations motivate the use of alternative string libraries in C and the distinct string types of C++ and other languages influenced by C.</p>
+</body>
+</html>

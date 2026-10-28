@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Atomicity (database systems) - Wikipedia</title>
+<style>body{font-family:Georgia,serif;margin:0 auto;max-width:960px;padding:20px;line-height:1.6;color:#202122}h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;font-weight:normal}h2{border-bottom:1px solid #a2a9b1;font-weight:normal}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;width:260px;font-size:90%}a{color:#3366cc;text-decoration:none}</style></head>
+<body>
+<h1>Atomicity (database systems)</h1>
+<img src="images/atomicity-database.png" alt="Atomicity (database systems) (image placeholder)">
+<div class="infobox"><b>Atomicity</b><br>Field: Database systems<br>Part of: ACID (atomicity, consistency, isolation, durability)<br>Implementation: Write-ahead logging, shadow paging, rollback</div>
+<p>In database systems, <b>atomicity</b> is one of the ACID transaction properties. An atomic transaction is an indivisible and irreducible series of database operations such that either all occur, or none occur. A guarantee of atomicity prevents updates to the database from occurring only partially, which can cause greater problems than rejecting the whole series outright.</p>
+<h2>Example</h2>
+<p>The canonical example is a bank transfer: money must be debited from one account and credited to another. If the system fails after the debit but before the credit, the money would vanish. Atomicity ensures the transfer either completes in full or is rolled back as if it never began.</p>
+<h2>Implementation</h2>
+<p>Database systems typically implement atomicity with a transaction log: changes are recorded in a write-ahead log before being applied, and on recovery after a crash, incomplete transactions are undone using the log. An alternative technique is shadow paging, in which modified pages are written to new locations and the database pointer is switched atomically when the transaction commits. In distributed databases, atomicity across nodes is provided by the atomic commit protocols, such as two-phase commit.</p>
+<h2>See also</h2>
+<p><a href="../ACID/index.html">ACID</a> &middot; <a href="../Database_transaction/index.html">Database transaction</a> &middot; <a href="../Atomic_commit/index.html">Atomic commit</a></p>
+</body></html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSMA/CA - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:960px;margin:0 auto;padding:20px;color:#202122;line-height:1.6;background:#fff}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.heroimg{display:block;max-width:100%;height:auto;background:#eaecf0;border:1px solid #c8ccd1;padding:8px;text-align:center;color:#54595d}
+</style>
+</head>
+<body>
+<h1>CSMA/CA</h1>
+<img class="heroimg" src="images/csma-ca.png" alt="CSMA/CA (image placeholder)">
+<p><b>Carrier-sense multiple access with collision avoidance</b> (<b>CSMA/CA</b>) is a network multiple access method in which a device attempts to avoid collisions by transmitting only when the channel is sensed to be idle. It is used in radio networks, such as IEEE 802.11 wireless LANs, where collision detection is impractical because a transmitting station cannot reliably hear other stations while sending.</p>
+<h2>Operation</h2>
+<p>A station wishing to transmit first listens to the channel. If the channel is busy, the station defers until it becomes idle, then waits for a fixed interframe space plus a random backoff interval before transmitting. The random backoff, drawn from a contention window that grows after collisions, reduces the chance that two waiting stations transmit simultaneously.</p>
+<h2>RTS/CTS</h2>
+<p>CSMA/CA is often augmented with a request-to-send/clear-to-send (RTS/CTS) handshake. The sender first transmits a short RTS frame; the receiver replies with a CTS frame that reserves the channel for the duration of the exchange. This mechanism helps mitigate the hidden node problem, in which two stations cannot hear each other but both can reach the access point.</p>
+<h2>Comparison with CSMA/CD</h2>
+<p>Unlike <a href="../CSMA/CD/index.html">CSMA/CD</a>, used historically by wired Ethernet, CSMA/CA cannot detect collisions while transmitting, so it relies on positive acknowledgements: a receiver sends an ACK frame after successful reception, and the absence of an ACK triggers retransmission by the sender.</p>
+</body>
+</html>

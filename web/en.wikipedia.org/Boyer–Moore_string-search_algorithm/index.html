@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Boyer–Moore string-search algorithm</title>
+<style>body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}h2{font-size:1.4em;border-bottom:1px solid #a2a9b1}.infobox{float:right;width:250px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:.88em}.infobox th{text-align:left}img.hero{width:100%;border:1px solid #ccc}</style></head>
+<body>
+<h1>Boyer–Moore string-search algorithm</h1>
+<img class="hero" src="images/boyer-moore.png" alt="Boyer–Moore string-search algorithm (image placeholder)">
+<div class="infobox"><table>
+<tr><th>Class</th><td>String-search algorithm</td></tr>
+<tr><th>Inventors</th><td>Robert S. Boyer, J Strother Moore</td></tr>
+<tr><th>Published</th><td>1977</td></tr>
+<tr><th>Worst case</th><td>O(nm) (with Galil rule: O(n))</td></tr>
+</table></div>
+<p>The <b>Boyer–Moore string-search algorithm</b> is an efficient algorithm for finding occurrences of a pattern string within a larger text, developed by Robert S. Boyer and J Strother Moore in 1977. It is a standard benchmark for practical string-searching and underlies the search functions of many text editors.</p>
+<h2>How it works</h2>
+<p>Unlike naive algorithms, Boyer–Moore compares the pattern against the text from right to left. On a mismatch it uses two precomputed heuristics — the <b>bad-character rule</b>, which shifts the pattern so the mismatched text character aligns with its last occurrence in the pattern, and the <b>good-suffix rule</b>, which shifts based on the matched suffix — and takes the larger of the two shifts.</p>
+<h2>Performance</h2>
+<p>Because it can skip large portions of the text, the algorithm often inspects only a fraction of the characters, giving sublinear performance in typical cases: roughly n/m comparisons for a text of length n and pattern of length m. The longer the pattern, the faster it tends to run, the opposite behaviour of many other search algorithms.</p>
+</body></html>
