@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tricubic interpolation - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;color:#202122;background:#fff}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header .site{font-family:sans-serif;font-size:14px;color:#54595d}
+main{max-width:960px;margin:0 auto;padding:20px 24px;line-height:1.6;font-size:16px}
+h1{font-size:30px;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px}
+h2{font-size:22px;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+.hero{float:right;margin:0 0 12px 16px;text-align:center;font-family:sans-serif;font-size:12px;color:#54595d}
+.hero img{width:280px;height:180px;background:#eaecf0;border:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.ref{font-family:sans-serif;font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia — The Free Encyclopedia</span></header>
+<main>
+<h1>Tricubic interpolation</h1>
+<figure class="hero"><img src="images/tricubic-interpolation.png" alt="Image placeholder: a 3D grid cell with corner points used in tricubic interpolation"><figcaption>Image placeholder: a grid cell and its corners</figcaption></figure>
+<p>In mathematics, <b>tricubic interpolation</b> is a method for obtaining values at arbitrary points in three-dimensional space from data defined on a regular grid, by fitting a cubic polynomial within each grid cell. It is the three-dimensional extension of <a href="../Bicubic_interpolation/index.html">bicubic interpolation</a> and <a href="../Cubic_Hermite_spline/index.html">cubic Hermite interpolation</a>.</p>
+<h2>Method</h2>
+<p>Within a unit cube, the interpolant is a polynomial of the form <i>p</i>(<i>x</i>,<i>y</i>,<i>z</i>) = Σ<sub>i,j,k≤3</sub> a<sub>ijk</sub> x<sup>i</sup> y<sup>j</sup> z<sup>k</sup>, with 64 coefficients. These are determined by matching, at the eight corners of the cube, the function values, the three first derivatives, the three mixed second derivatives, and the third mixed derivative — or by deriving the needed derivatives from the corner values with finite differences (the Catmull–Rom style approach). Tricubic interpolation is C<sup>1</sup>-continuous across cell boundaries, giving smoother results than <a href="../Trilinear_interpolation/index.html">trilinear interpolation</a>, at greater computational cost.</p>
+<h2>Applications</h2>
+<p>Tricubic interpolation is used in medical imaging (resampling CT and MRI volumes), volume rendering, fluid simulation, and texture mapping in computer graphics, wherever smooth reconstruction of volumetric data is needed.</p>
+<h2>See also</h2>
+<p><a href="../Interpolation/index.html">Interpolation</a> · <a href="../Trilinear_interpolation/index.html">Trilinear interpolation</a> · <a href="../Bicubic_interpolation/index.html">Bicubic interpolation</a></p>
+<p class="ref">Recreated from memory for the muse-webcrawl project.</p>
+</main>
+</body>
+</html>

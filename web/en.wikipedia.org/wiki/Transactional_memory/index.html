@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Transactional memory - Wikipedia</title>
+<style>
+body { font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; line-height: 1.6; color: #202122; max-width: 960px; margin: 0 auto; padding: 20px; background: #fff; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 30px; }
+h3 { font-size: 18px; }
+img.hero { display: block; max-width: 400px; width: 100%; height: 200px; background: #eaecf0; border: 1px solid #a2a9b1; margin: 15px 0; object-fit: cover; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.references { font-size: 13px; color: #54595d; }
+</style>
+</head>
+<body>
+<h1>Transactional memory</h1>
+<img class="hero" src="images/transactional-memory.png" alt="Diagram of a memory transaction">
+<p><b>Transactional memory</b> is a concurrency control mechanism in concurrent computing that simplifies parallel programming by allowing a group of load and store operations to execute in an atomic way. It is a concurrency control mechanism analogous to database transactions for controlling access to shared memory in concurrent computing. Transactional memory systems provide high-level abstraction as an alternative to low-level thread synchronization constructs such as locks.</p>
+<h2>Motivation</h2>
+<p>Writing correct and efficient concurrent programs with locks is difficult: coarse-grained locking serializes execution, while fine-grained locking is error-prone and can lead to deadlock and other hazards. Transactional memory lets programmers declare a block of code as atomic; the underlying system executes it speculatively, tracking the memory locations read and written. If two concurrent transactions conflict, one is aborted and re-executed, guaranteeing that committed transactions appear to have executed serially (serializability) and without intermediate states visible to others.</p>
+<h2>Hardware transactional memory</h2>
+<p>Hardware transactional memory (HTM) implements transactions using cache coherence machinery and speculative buffering in the processor. Commercial implementations include IBM's Blue Gene/Q and POWER8 processors, and Intel's Transactional Synchronization Extensions (TSX), introduced with the Haswell microarchitecture, which provide instructions such as XBEGIN, XEND and XABORT. HTM is fast but typically best-effort: transactions may abort for capacity or implementation reasons, requiring a software fallback path.</p>
+<h2>Software transactional memory</h2>
+<p>Software transactional memory (STM) implements the mechanism in a library or language runtime, commonly using versioning, ownership records, or word-based locks, and conflict detection at commit time. STM is available in languages such as Haskell (where it is part of the standard platform), Clojure, and through libraries for C, C++, Java and Scala.</p>
+<h2>Comparison with locking</h2>
+<p>Transactions offer composability — atomic blocks can be nested and combined without knowledge of their contents — and avoid many deadlock scenarios. However, they face difficulties with irrevocable operations such as I/O, interactions with non-transactional code, and worst-case performance under high contention.</p>
+<h2>History</h2>
+<p>The idea originated in a 1993 paper by Maurice Herlihy and J. Eliot B. Moss, who proposed transactional memory as an extension of cache coherence protocols. Software transactional memory grew through research systems in the 1990s and 2000s, and hardware support reached commercial processors in the early 2010s.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Database_transaction/index.html">Database transaction</a></li>
+<li><a href="../Lock_(computer_science)/index.html">Lock (computer science)</a></li>
+<li><a href="../Software_transactional_memory/index.html">Software transactional memory</a></li>
+<li><a href="../Concurrency_control/index.html">Concurrency control</a></li>
+<li><a href="../Transactional_Synchronization_Extensions/index.html">Transactional Synchronization Extensions</a></li>
+</ul>
+<p class="references">References: Herlihy &amp; Moss, "Transactional Memory: Architectural Support for Lock-Free Data Structures" (1993); Harris, Larus &amp; Rajwar, <i>Transactional Memory</i> (2010).</p>
+</body>
+</html>

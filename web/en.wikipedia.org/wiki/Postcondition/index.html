@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Postcondition - Wikipedia</title>
+<style>body{font-family:sans-serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.55;color:#202122}h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #c8ccd1;margin-top:1.4em}a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}.hero{display:block;max-width:100%;margin:1em auto;background:#eaecf0;border:1px solid #c8ccd1;padding:2em;text-align:center;color:#54595d}</style></head>
+<body>
+<h1>Postcondition</h1>
+<img class="hero" src="images/postcondition.png" alt="Diagram of a program contract with preconditions and postconditions">
+<p>In computer programming, a <b>postcondition</b> is a condition or predicate that must always be true just after the execution of some section of code or after an operation in a formal specification. Postconditions are part of the <a href="../Design_by_contract/index.html">design by contract</a> method created by Bertrand Meyer, and are typically described in documentation and checked with assertions.</p>
+<h2>Role in contracts</h2>
+<p>A routine's contract consists of <a href="../Precondition/index.html">preconditions</a>, which the caller must guarantee, and postconditions, which the routine in turn guarantees if the preconditions were met. If a precondition is violated the routine is not obliged to keep its postconditions; if the preconditions hold but the postcondition fails, the routine itself is at fault. Postconditions may refer to the result value, to the state of objects before the call (the "old" values in Eiffel), and to side effects such as files written or counters incremented.</p>
+<h2>Example</h2>
+<p>For a routine that computes a square root, a postcondition might state that the returned value squared is approximately equal to the input, and that the result is non-negative. A stack's <code>push</code> operation has the postcondition that the stack is not empty and its count has increased by one.</p>
+<h2>Inheritance</h2>
+<p>In object-oriented programming, postconditions follow the principle of contravariance of contracts: a subclass may strengthen a postcondition (guarantee more) but must not weaken it, so that clients relying on the superclass contract remain safe.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Precondition/index.html">Precondition</a></li>
+<li><a href="../Design_by_contract/index.html">Design by contract</a></li>
+<li><a href="../Hoare_logic/index.html">Hoare logic</a></li>
+<li><a href="../Invariant_(computer_science)/index.html">Invariant (computer science)</a></li>
+</ul>
+</body></html>

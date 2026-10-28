@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scale-invariant feature transform - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 960px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; background: #fff; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { display: block; margin: 16px auto; max-width: 480px; width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 8px; box-sizing: border-box; }
+.caption { text-align: center; font-size: 0.85em; color: #54595d; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px; margin: 0 0 12px 16px; width: 240px; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<h1>Scale-invariant feature transform</h1>
+<img class="hero" src="images/sift.png" alt="Image keypoints detected by the SIFT algorithm shown as circles of varying scale and orientation">
+<p class="caption">Keypoints detected by SIFT in a sample image.</p>
+<p>The <b>scale-invariant feature transform</b> (<b>SIFT</b>) is a computer vision algorithm to detect, describe, and match local features in images, invented by David Lowe in 1999. SIFT keypoints and descriptors are invariant to image scale and rotation, and partially robust to changes in illumination, noise and viewpoint, making the method widely used for object recognition, image stitching, 3D modelling, gesture recognition and video tracking.</p>
+<h2>Algorithm</h2>
+<p>SIFT proceeds in four main stages. First, potential interest points are located as extrema in a difference-of-Gaussians scale space built from progressively blurred copies of the image. Second, unstable and edge-located points are filtered out and each keypoint is localised precisely. Third, one or more dominant orientations are assigned to each keypoint from local gradient directions. Fourth, a descriptor is computed from the gradient orientations in a region around the keypoint, conventionally a 128-dimensional vector from a 4×4 grid of orientation histograms.</p>
+<h2>Matching and applications</h2>
+<p>Descriptors from two images can be matched, typically by nearest-neighbour search with a ratio test, and geometric verification with RANSAC used to reject false correspondences. Matching SIFT features allows images of the same object or scene to be recognised under different scales, rotations and partial occlusion. SIFT was patented in the United States until the patent expired in March 2020, and alternatives such as SURF and later learned features were developed partly in response.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Computer_vision/index.html">Computer vision</a></li>
+<li><a href="../Feature_detection_(computer_vision)/index.html">Feature detection</a></li>
+<li><a href="../SURF/index.html">SURF</a></li>
+<li><a href="../David_G._Lowe/index.html">David G. Lowe</a></li>
+<li><a href="../Image_stitching/index.html">Image stitching</a></li>
+</ul>
+</body>
+</html>

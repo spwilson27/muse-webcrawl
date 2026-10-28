@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Session fixation - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 800px; line-height: 1.6; color: #202122; }
+h1 { border-bottom: 1px solid #a2a9b1; font-family: serif; }
+h2 { border-bottom: 1px solid #a2a9b1; font-family: serif; }
+img.hero { max-width: 300px; border: 1px solid #c8ccd1; padding: 4px; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em; margin: 0 0 1em 1em; width: 250px; font-size: 90%; }
+a { color: #0645ad; }
+</style>
+</head>
+<body>
+<h1>Session fixation</h1>
+<img class="hero" src="images/session-fixation.png" alt="Diagram of a session fixation attack">
+<p><b>Session fixation</b> is a class of web application security vulnerability in which an attacker is able to set ("fix") a user's session identifier before the user authenticates, and then use that known identifier to hijack the victim's session once the victim has logged in. It is closely related to <a href="../Session_hijacking/index.html">session hijacking</a>, but differs in that the attacker chooses the session ID in advance rather than stealing one that already exists.</p>
+<h2>How the attack works</h2>
+<p>A typical session fixation attack proceeds in three steps:</p>
+<ol>
+<li>The attacker obtains a valid session identifier from the target website, or causes the application to accept an attacker-chosen identifier (for example via a URL parameter, a cookie set from a vulnerable subdomain, or a hidden form field).</li>
+<li>The attacker tricks the victim into using that identifier — for instance by sending a link such as <code>http://example.com/login?SID=attacker_chosen_id</code>.</li>
+<li>The victim authenticates with the fixed identifier. Because many applications historically did not regenerate the session ID after login, the attacker, who already knows the ID, can now present it and be treated as the authenticated victim.</li>
+</ol>
+<h2>Countermeasures</h2>
+<p>The principal defence is for the application to generate a fresh, unpredictable session identifier whenever the privilege level of a session changes — most importantly at login — and to invalidate the old identifier. Other defences include:</p>
+<ul>
+<li>Refusing session identifiers supplied by the client before authentication (e.g. in URLs or POST data).</li>
+<li>Binding the session to additional attributes, while recognising this alone is not sufficient.</li>
+<li>Setting cookies with the <code>HttpOnly</code> and <code>Secure</code> attributes to reduce related attacks such as cross-site scripting based theft.</li>
+<li>Rejecting cookies set for a parent domain by less-trusted subdomains where possible.</li>
+</ul>
+<h2>See also</h2>
+<ul>
+<li><a href="../Session_hijacking/index.html">Session hijacking</a></li>
+<li><a href="../Cross-site_request_forgery/index.html">Cross-site request forgery</a></li>
+<li><a href="../Cross-site_scripting/index.html">Cross-site scripting</a></li>
+</ul>
+</body>
+</html>

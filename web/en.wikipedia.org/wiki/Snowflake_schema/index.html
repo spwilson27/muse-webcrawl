@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Snowflake schema - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:800px;margin:0 auto;padding:20px;line-height:1.6;color:#222}
+h1{font-family:sans-serif;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:sans-serif;border-bottom:1px solid #a2a9b1;padding-bottom:2px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+figure{float:right;margin:0 0 1em 1em;padding:8px;border:1px solid #c8ccd1;background:#f8f9fa;text-align:center;max-width:250px}
+figcaption{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Snowflake schema</h1>
+<figure><img src="images/snowflake-schema.png" alt="Snowflake schema diagram"><figcaption>A snowflake schema</figcaption></figure>
+<p>In computing, a <b>snowflake schema</b> is a logical arrangement of tables in a multidimensional database such that the entity relationship diagram resembles a snowflake shape. It is the result of normalizing the dimension tables of a <a href="../Star_schema/index.html">star schema</a>: instead of keeping each dimension in a single denormalized table, dimension hierarchies are split out into multiple related tables.</p>
+<h2>Description</h2>
+<p>A central fact table connects to dimension tables, and those dimension tables connect onward to further tables describing higher levels of the hierarchy. For example, a product dimension might be split into product, product subcategory, product category and department tables.</p>
+<h2>Advantages and disadvantages</h2>
+<p>Snowflaking reduces data redundancy and can save storage, and it can make some dimension maintenance easier. Its principal drawback is query complexity and performance: queries must traverse more joins than in a flat star schema, and the storage savings are usually small compared with the size of the fact table. For these reasons, many data warehouse designers prefer the star schema, reserving snowflaking for very large or shared dimensions.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Star_schema/index.html">Star schema</a></li>
+<li><a href="../Data_warehouse/index.html">Data warehouse</a></li>
+<li><a href="../Dimension_(data_warehouse)/index.html">Dimension (data warehouse)</a></li>
+<li><a href="../Fact_table/index.html">Fact table</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Observer pattern - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; padding: 20px 30px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 2em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; }
+p { line-height: 1.6; font-size: 0.95em; }
+a { color: #3366cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 15px 0; }
+.hero img { max-width: 400px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 10px; }
+.caption { font-size: 0.8em; color: #54595d; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 0.9em; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px; overflow-x: auto; font-size: 0.85em; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 15px 15px; font-size: 0.85em; width: 240px; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Observer pattern</h1>
+<div class="hero"><img src="images/observer_pattern.png" alt="Diagram of the observer design pattern showing a subject notifying multiple observers"><div class="caption">The observer pattern: a subject maintains a list of observers and notifies them of state changes.</div></div>
+<p>The <b>observer pattern</b> is a software design pattern in which an object, named the <b>subject</b>, maintains a list of its dependents, called <b>observers</b>, and notifies them automatically of any state changes, usually by calling one of their methods. It is one of the behavioral design patterns identified by the "Gang of Four" in their 1994 book <i>Design Patterns</i>.</p>
+<p>The pattern is mainly used for implementing distributed event handling systems, in "event driven" software. In such systems, the pattern is usually implemented using callbacks, publish/subscribe mechanisms, or signals and slots. Most modern programming libraries and frameworks for graphical user interfaces support some form of the observer pattern, since GUIs are naturally event-driven: a button click, for instance, is an event to which registered handler functions subscribe.</p>
+<h2>Structure</h2>
+<p>The main components of the pattern are the <b>Subject</b> (or Observable), which provides an interface for attaching and detaching observers and for notifying them, and the <b>Observer</b>, which defines an updating interface for objects that should be notified of changes in a subject. Concrete subjects store state of interest and send notifications when that state changes; concrete observers keep a reference to a concrete subject and implement the update interface so their state stays consistent with the subject's.</p>
+<h2>Advantages and disadvantages</h2>
+<p>The observer pattern promotes loose coupling: the subject knows only that observers implement a certain interface, and observers can be added or removed at runtime without modifying the subject. However, the pattern can lead to unexpected update cascades, memory leaks when observers are not properly deregistered (the "lapsed listener problem"), and difficulty in determining what changed, since notifications may carry no information about the specific change.</p>
+<h2>See also</h2>
+<p><a href="../publish_subscribe_pattern/index.html">Publish–subscribe pattern</a> · <a href="../design_patterns/index.html">Design patterns</a> · <a href="../event-driven_programming/index.html">Event-driven programming</a> · <a href="../model_view_controller/index.html">Model–view–controller</a></p>
+</div>
+</body>
+</html>

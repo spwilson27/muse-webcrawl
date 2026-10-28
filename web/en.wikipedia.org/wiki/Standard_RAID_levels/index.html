@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Standard RAID levels - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;padding:0 1.5em;line-height:1.5;background:#fff;color:#202122}
+h1{font-size:180%;border-bottom:1px solid #a7d7f9;padding-bottom:.2em}
+h2{border-bottom:1px solid #a7d7f9;font-size:130%}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+table.data{border-collapse:collapse;margin:1em 0}
+table.data th,table.data td{border:1px solid #a2a9b1;padding:.3em .6em;text-align:left}
+table.data th{background:#f8f9fa}
+.imgph{border:1px dashed #a2a9b1;background:#f8f9fa;text-align:center;padding:1em;color:#72777d;font-size:90%;max-width:400px}
+</style>
+</head>
+<body>
+<h1>Standard RAID levels</h1>
+<p>In computer storage, the <b>standard RAID levels</b> comprise a basic set of <a href="../RAID/index.html">RAID</a> (redundant array of independent disks) configurations that employ the techniques of striping, mirroring, or parity to create large reliable data stores from multiple general-purpose computer hard disk drives (HDDs). The term derives from the 1988 paper "A Case for Redundant Arrays of Inexpensive Disks" by Patterson, Gibson and Katz at UC Berkeley, which defined RAID levels 1 through 5.</p>
+
+<div class="imgph"><img src="images/standard-raid-levels.png" alt="Diagrams of common RAID layouts (placeholder image)"></div>
+
+<h2>RAID 0</h2>
+<p>Data is striped across two or more disks with no redundancy. Capacity is fully used and performance is high, but the failure of any one disk destroys the whole array; strictly, RAID 0 is not redundant.</p>
+
+<h2>RAID 1</h2>
+<p>Data is mirrored — each disk has an exact copy on another. Provides excellent availability and read performance at the cost of half the raw capacity.</p>
+
+<h2>RAID 2</h2>
+<p>Bit-level striping with dedicated Hamming-code parity disks. Historically interesting but rarely implemented.</p>
+
+<h2>RAID 3</h2>
+<p>Byte-level striping with a dedicated parity disk. Its synchronised spindles and single-disk parity limit its use, largely superseded by RAID 5.</p>
+
+<h2>RAID 4</h2>
+<p>Block-level striping with a dedicated parity disk. The parity disk can become a write bottleneck; used notably in some NetApp systems.</p>
+
+<h2>RAID 5</h2>
+<p>Block-level striping with parity distributed across all disks. Tolerates one disk failure, is economical with capacity, but suffers slow write performance due to the read–modify–write cycle and long rebuild times.</p>
+
+<h2>RAID 6</h2>
+<p>As RAID 5 but with dual distributed parity, tolerating two simultaneous disk failures.</p>
+
+<h2>Comparison</h2>
+<table class="data">
+<tr><th>Level</th><th>Min. disks</th><th>Fault tolerance</th><th>Space efficiency</th></tr>
+<tr><td>RAID 0</td><td>2</td><td>None</td><td>100%</td></tr>
+<tr><td>RAID 1</td><td>2</td><td>1 disk</td><td>50%</td></tr>
+<tr><td>RAID 5</td><td>3</td><td>1 disk</td><td>(n−1)/n</td></tr>
+<tr><td>RAID 6</td><td>4</td><td>2 disks</td><td>(n−2)/n</td></tr>
+</table>
+
+<p>Combinations of levels, such as RAID 10 (1+0) and RAID 01 (0+1), are described under nested RAID.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../RAID/index.html">RAID</a></li>
+<li><a href="../Nested_RAID_levels/index.html">Nested RAID levels</a></li>
+<li><a href="../Non-RAID_drive_architectures/index.html">Non-RAID drive architectures</a></li>
+</ul>
+
+<p><i>This article is a recreation from memory.</i></p>
+</body>
+</html>

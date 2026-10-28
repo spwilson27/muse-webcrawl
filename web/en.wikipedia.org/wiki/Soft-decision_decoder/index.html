@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Soft-decision decoder - Wikipedia</title>
+<style>
+body { font-family: sans-serif; max-width: 900px; margin: 2em auto; padding: 0 1em; line-height: 1.6; color: #202122; }
+h1 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 400px; border: 1px solid #c8ccd1; background: #f8f9fa; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em; margin: 0 0 1em 1em; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<h1>Soft-decision decoder</h1>
+<div class="hero"><img src="images/soft-decision-decoder.png" alt="Illustration of soft-decision decoding comparing likelihood values"></div>
+<p>A <b>soft-decision decoder</b> is a class of <a href="../Error_detection_and_correction/index.html">error correction</a> decoder that uses additional information about the reliability of each received symbol, in contrast to a hard-decision decoder, which makes a binary decision (0 or 1) on each bit before decoding. In digital communications, the demodulator can supply not only a hard bit decision but also a confidence measure, often expressed as a log-likelihood ratio (LLR), indicating how likely the transmitted bit was a 0 or a 1.</p>
+<p>By passing these soft values to the decoder, algorithms such as the <a href="../Viterbi_algorithm/index.html">Viterbi algorithm</a> applied to <a href="../Convolutional_code/index.html">convolutional codes</a>, or message-passing decoders for <a href="../Low-density_parity-check_code/index.html">LDPC codes</a> and <a href="../Turbo_code/index.html">turbo codes</a>, can achieve significantly better error performance. Soft-decision decoding typically provides a gain of about 2 dB over hard-decision decoding at the same code rate on the additive white Gaussian noise channel, at the cost of increased implementation complexity.</p>
+<h2>Principle</h2>
+<p>In a hard-decision receiver, the demodulator output for each bit is quantized to a single bit. Information about how close the received signal was to the decision threshold is discarded. A soft-decision receiver instead quantizes the received value to several bits (commonly three or four bits, or an essentially unquantized LLR), preserving reliability information. The decoder then computes the codeword that is most consistent with the observed soft values, typically by maximizing correlation or minimizing a Euclidean-distance-like metric weighted by the likelihoods.</p>
+<h2>Applications</h2>
+<p>Soft-decision decoding is standard in modern communication systems, including deep-space links (where the Viterbi decoder with soft inputs was used for missions such as Voyager), cellular standards such as LTE and 5G, Wi-Fi, and digital storage systems. Modern iterative decoders for turbo and LDPC codes are inherently soft-input, soft-output, exchanging extrinsic information between component decoders.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Forward_error_correction/index.html">Forward error correction</a></li>
+<li><a href="../Soft-decision_decoding/index.html">Soft-decision decoding</a></li>
+<li><a href="../Log-likelihood_ratio/index.html">Log-likelihood ratio</a></li>
+</ul>
+</body>
+</html>

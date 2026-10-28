@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Schönhage–Strassen algorithm - Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:800px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}
+h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{border-bottom:1px solid #c8ccd1;padding-bottom:.15em}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:1em auto;max-width:100%}
+</style>
+</head>
+<body>
+<h1>Schönhage–Strassen algorithm</h1>
+<img class="hero" src="images/schonhage-strassen-algorithm.png" alt="Diagram of the recursive Fourier transform structure used in large integer multiplication">
+<p>The <b>Schönhage–Strassen algorithm</b> is an asymptotically fast <a href="../Multiplication_algorithm/index.html">multiplication algorithm</a> for large integers, developed by Arnold Schönhage and Volker Strassen in 1971. It uses the <a href="../Fast_Fourier_transform/index.html">fast Fourier transform</a> (FFT) over a ring of integers modulo a Fermat-like number to compute convolutions efficiently.</p>
+<h2>Complexity</h2>
+<p>To multiply two <i>n</i>-bit numbers, the algorithm runs in O(<i>n</i> log <i>n</i> log log <i>n</i>) bit operations. It was the fastest known multiplication method from its publication until 2007, when it was superseded by Fürer's algorithm, and it remained the algorithm used in practice for very large integers for decades — implementations such as the GNU Multiple Precision Arithmetic Library (GMP) switch to it for numbers with tens of thousands of digits.</p>
+<h2>Method</h2>
+<p>The two factors are split into pieces, which are treated as the coefficients of polynomials. Their product is the convolution of these coefficient sequences, computed with a number theoretic transform: the algorithm works modulo numbers of the form 2<sup>2<sup>k</sup></sup> + 1, in which suitable roots of unity allow FFTs of power-of-two length with cheap shifts instead of general multiplications. The recursion is applied to the coefficient multiplications arising inside the transform.</p>
+<h2>Significance</h2>
+<p>Schönhage and Strassen also conjectured that multiplication could be done in O(<i>n</i> log <i>n</i>) operations; this bound was finally achieved in 2019 by Harvey and van der Hoeven. The algorithm is a workhorse of computational number theory, used in searches for large prime numbers and in high-precision computation of mathematical constants.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Multiplication_algorithm/index.html">Multiplication algorithm</a></li>
+<li><a href="../Fast_Fourier_transform/index.html">Fast Fourier transform</a></li>
+<li><a href="../Karatsuba_algorithm/index.html">Karatsuba algorithm</a></li>
+</ul>
+</body>
+</html>

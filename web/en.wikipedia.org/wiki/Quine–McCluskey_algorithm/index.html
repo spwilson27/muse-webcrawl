@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Quine–McCluskey algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0 auto;max-width:860px;padding:1em 1.5em;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;margin-bottom:.3em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{text-align:center;margin:1em 0}
+.hero img{max-width:320px;border:1px solid #c8ccd1;background:#f8f9fa;padding:.5em}
+.caption{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Quine–McCluskey algorithm</h1>
+<p>The <b>Quine–McCluskey algorithm</b> (QMC), also known as the method of prime implicants, is a method used for the minimization of Boolean functions. It was developed by Willard V. Quine in 1952 and extended by Edward J. McCluskey in 1956. The algorithm gives exactly the same results as a Karnaugh map but in a tabular form that makes it suitable for computer implementation, and it provides a deterministic way to check that a minimal form of a Boolean function has been reached.</p>
+<div class="hero"><img src="images/quine-mccluskey-algorithm.png" alt="Tabular reduction of minterms in the Quine-McCluskey algorithm"><div class="caption">Combining minterms that differ in one variable</div></div>
+<h2>Method</h2>
+<p>The algorithm proceeds in two stages. First, all prime implicants of the function are found: minterms are grouped by the number of 1s in their binary representation, and terms differing in exactly one variable are repeatedly combined, eliminating that variable, until no further combinations are possible. Second, the prime implicants are placed in a chart against the minterms they cover; essential prime implicants are selected, and the remaining minterms are covered with as few additional implicants as possible (a set-cover problem, sometimes solved exactly by Petrick's method).</p>
+<h2>Complexity</h2>
+<p>Although systematic and exact, the algorithm's complexity grows rapidly with the number of input variables, since the number of prime implicants can explode combinatorially. In practice it is most useful for functions of a modest number of variables; industrial logic synthesis usually relies on heuristic minimizers such as Espresso. QMC remains a standard topic in digital logic courses.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Karnaugh_map/index.html">Karnaugh map</a></li>
+<li><a href="../Boolean_function/index.html">Boolean function</a></li>
+<li><a href="../Espresso_heuristic_logic_minimizer/index.html">Espresso heuristic logic minimizer</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Semidefinite programming - Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:860px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}
+h1{font-size:1.9em;border-bottom:1px solid #a7d7f9;padding-bottom:.2em}
+h2{font-size:1.3em;border-bottom:1px solid #c8ccd1;padding-bottom:.15em;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{text-align:center;margin:1em 0}
+.hero img{max-width:480px;width:100%;border:1px solid #c8ccd1;background:#f8f9fa}
+.caption{font-size:.85em;color:#54595d}
+.eqn{text-align:center;font-style:italic;margin:.8em 0}
+</style>
+</head>
+<body>
+<h1>Semidefinite programming</h1>
+<p><b>Semidefinite programming</b> (<b>SDP</b>) is a subfield of convex optimization concerned with optimizing a linear objective function over the cone of positive semidefinite matrices, subject to linear equality constraints. It generalizes linear programming — whose feasible sets are polyhedra — to spectrahedra, and many problems in control theory, combinatorial optimization, and quantum information are formulated most naturally as SDPs.</p>
+<div class="hero"><img src="images/Semidefinite_programming.png" alt="A spectrahedron: the convex feasible region of a semidefinite program, formed by intersecting the positive semidefinite cone with an affine subspace [image placeholder]"></div>
+<p class="caption">The feasible set of an SDP is a spectrahedron.</p>
+<h2>Formulation</h2>
+<p>A standard-form SDP optimizes over a symmetric matrix variable X:</p>
+<p class="eqn">minimize ⟨C, X⟩ subject to ⟨Aᵢ, X⟩ = bᵢ (i = 1…m), X ⪰ 0,</p>
+<p>where X ⪰ 0 means X is positive semidefinite. Equivalently, variables may appear as a vector x whose linear matrix inequality F₀ + x₁F₁ + … + xₙFₙ ⪰ 0 must hold. SDP has a well-developed duality theory similar to that of linear programming, with a zero duality gap under constraint qualifications such as Slater's condition.</p>
+<h2>Algorithms</h2>
+<p>SDPs can be solved in polynomial time to arbitrary precision by interior-point methods, which dominated the field from the 1990s work of Nesterov and Nemirovski and of Alizadeh. Practical solvers include SeDuMi, SDPT3, MOSEK, and SCS; for very large or low-rank problems, first-order and specialized algorithms are used. Determining whether an SDP is feasible to high accuracy has subtle complexity status — it lies between P and PSPACE-related classes, related to the existential theory of the reals.</p>
+<h2>Applications</h2>
+<ul>
+<li><b>Control theory:</b> linear matrix inequalities for stability and H∞ control (the original motivation).</li>
+<li><b>Combinatorial optimization:</b> the celebrated Goemans–Williamson SDP relaxation gives a 0.878-approximation for Max-Cut, and SDP hierarchies (Lasserre/sum-of-squares) approximate polynomial optimization problems.</li>
+<li><b>Quantum information:</b> entanglement detection, quantum channel capacities, and Bell inequality bounds (the NPA hierarchy).</li>
+<li><b>Statistics and geometry:</b> matrix completion, phase retrieval, sensor network localization, and structural design.</li>
+</ul>
+<h2>See also</h2>
+<ul>
+<li><a href="../Convex_optimization/index.html">Convex optimization</a></li>
+<li><a href="../Linear_programming/index.html">Linear programming</a></li>
+<li><a href="../Linear_matrix_inequality/index.html">Linear matrix inequality</a></li>
+<li><a href="../Second-order_cone_programming/index.html">Second-order cone programming</a></li>
+</ul>
+</body>
+</html>

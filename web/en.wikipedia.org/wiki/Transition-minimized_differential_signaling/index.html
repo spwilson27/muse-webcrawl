@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Transition-minimized differential signaling - Wikipedia</title>
+<style>
+body { font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; line-height: 1.6; color: #202122; max-width: 960px; margin: 0 auto; padding: 20px; background: #fff; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 30px; }
+h3 { font-size: 18px; }
+img.hero { display: block; max-width: 400px; width: 100%; height: 200px; background: #eaecf0; border: 1px solid #a2a9b1; margin: 15px 0; object-fit: cover; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.references { font-size: 13px; color: #54595d; }
+</style>
+</head>
+<body>
+<h1>Transition-minimized differential signaling</h1>
+<img class="hero" src="images/transition-minimized-differential-signaling.png" alt="TMDS link diagram">
+<p><b>Transition-minimized differential signaling</b> (<b>TMDS</b>) is a technology for transmitting high-speed serial data, used by the DVI and HDMI video interfaces, and also by other systems such as FireWire serial buses in some variants. The transmitter incorporates an advanced coding algorithm which reduces electromagnetic interference (EMI) over copper cables and enables robust clock recovery at the receiver, allowing operation at higher skew tolerances than standard technology.</p>
+<h2>Coding method</h2>
+<p>TMDS uses an 8b/10b-like encoding that is not identical to the original IBM 8b/10b code. The encoding is performed in two stages. In the first stage, each 8-bit input byte is transformed, using XOR or XNOR logic chosen to minimize the number of transitions in the resulting word while keeping track of the accumulated transition count. In the second stage, the running disparity is evaluated and some words may be inverted to maintain DC balance in the stream. The result is a 10-bit character that has few transitions and is approximately DC-balanced.</p>
+<p>During control periods, four special control characters are transmitted, encoding two control bits per channel (which in DVI and HDMI carry horizontal sync, vertical sync, and control signals). During video periods, pixel data is encoded as described. Blanking intervals use a fixed guard-band character sequence in HDMI data islands.</p>
+<h2>Physical layer</h2>
+<p>TMDS uses current-mode logic with differential signalling over twisted pairs, terminated at 50 ohms to a supply of 3.3 volts. Three data pairs carry the encoded red, green and blue channels, and a fourth pair carries the pixel clock. TMDS forms the basis of the DVI and HDMI physical layers, with HDMI extending the scheme with data islands for audio and auxiliary data.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Digital_Visual_Interface/index.html">Digital Visual Interface</a></li>
+<li><a href="../HDMI/index.html">HDMI</a></li>
+<li><a href="../Differential_signaling/index.html">Differential signaling</a></li>
+<li><a href="../8b/10b_encoding/index.html">8b/10b encoding</a></li>
+<li><a href="../Low-voltage_differential_signaling/index.html">Low-voltage differential signaling</a></li>
+</ul>
+<p class="references">References: Digital Display Working Group, DVI 1.0 specification; HDMI Licensing, HDMI specification documents.</p>
+</body>
+</html>

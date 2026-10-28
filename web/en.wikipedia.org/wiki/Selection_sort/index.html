@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Selection sort - Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:860px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}
+h1{font-size:1.9em;border-bottom:1px solid #a7d7f9;padding-bottom:.2em}
+h2{font-size:1.3em;border-bottom:1px solid #c8ccd1;padding-bottom:.15em;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{text-align:center;margin:1em 0}
+.hero img{max-width:480px;width:100%;border:1px solid #c8ccd1;background:#f8f9fa}
+.caption{font-size:.85em;color:#54595d}
+pre{background:#f8f9fa;border:1px solid #c8ccd1;padding:.8em;overflow-x:auto}
+table{border-collapse:collapse;margin:1em 0}
+td,th{border:1px solid #c8ccd1;padding:.3em .6em}
+</style>
+</head>
+<body>
+<h1>Selection sort</h1>
+<p><b>Selection sort</b> is a simple in-place comparison sorting algorithm. It divides the input list into a sorted part at the front and an unsorted part at the back. Repeatedly, it finds the smallest (or largest) element in the unsorted part and swaps it into position at the end of the sorted part, until nothing remains unsorted.</p>
+<div class="hero"><img src="images/Selection_sort.png" alt="Animation of selection sort repeatedly selecting the minimum of the unsorted suffix and moving it to the front [image placeholder]"></div>
+<p class="caption">Selection sort grows a sorted prefix by repeatedly selecting the minimum remaining element.</p>
+<h2>Algorithm</h2>
+<pre>
+for i = 0 to n-2:
+    minIndex = i
+    for j = i+1 to n-1:
+        if a[j] &lt; a[minIndex]: minIndex = j
+    swap a[i] and a[minIndex]
+</pre>
+<h2>Analysis</h2>
+<table>
+<tr><th>Best case</th><td>O(n²)</td></tr>
+<tr><th>Average case</th><td>O(n²)</td></tr>
+<tr><th>Worst case</th><td>O(n²)</td></tr>
+<tr><th>Extra space</th><td>O(1)</td></tr>
+<tr><th>Stable</th><td>Not in the standard form</td></tr>
+</table>
+<p>Selection sort performs exactly n(n−1)/2 comparisons, but at most n−1 swaps — the minimum possible number of exchanges — which makes it useful where writing data is expensive but reading is cheap, such as flash memory with limited write cycles. Its quadratic time makes it impractical for large inputs; it is mainly of pedagogical interest and for tiny arrays. A variant using a heap data structure to find the minimum efficiently becomes heapsort. Another variant, double selection sort, selects both minimum and maximum on each pass.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Sorting_algorithm/index.html">Sorting algorithm</a></li>
+<li><a href="../Insertion_sort/index.html">Insertion sort</a></li>
+<li><a href="../Heapsort/index.html">Heapsort</a></li>
+<li><a href="../Bubble_sort/index.html">Bubble sort</a></li>
+</ul>
+</body>
+</html>

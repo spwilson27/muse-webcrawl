@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Timsort - Wikipedia</title>
+<style>body{font-family:sans-serif;margin:2em auto;max-width:52em;padding:0 1em;line-height:1.55;color:#202122}h1{font-family:Georgia,serif;font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{font-family:Georgia,serif;border-bottom:1px solid #a2a9b1}img{max-width:100%;border:1px solid #c8ccd1;padding:4px;background:#f8f9fa}a{color:#0645ad}code{background:#f8f9fa}</style>
+</head><body>
+<h1>Timsort</h1>
+<p><img src="images/timsort.png" alt="Diagram of Timsort runs being merged"></p>
+<p><b>Timsort</b> is a hybrid, stable sorting algorithm derived from merge sort and insertion sort, designed to perform well on many kinds of real-world data. It was implemented by Tim Peters in 2002 for use in the Python programming language, and has been Python's standard sort since version 2.3. It is also used to sort arrays of non-primitive types in Java SE 7, the Android platform, GNU Octave, V8, Swift and Rust.</p>
+<h2>Operation</h2>
+<p>Timsort finds subsequences of the data that are already ordered — <i>runs</i> — and uses them to sort the remainder more efficiently. A run that is too short is extended using insertion sort to a minimum length (<i>minrun</i>, typically 32–64). Runs are then merged pairwise, in an order chosen to keep the stack of pending runs balanced, using a modified merge step that can "gallop" through one run when many consecutive elements come from it.</p>
+<h2>Complexity</h2>
+<p>In the worst case Timsort performs O(n log n) comparisons and takes O(n) space; on already-sorted or nearly sorted data it degrades gracefully to O(n). It is an adaptive, stable sort.</p>
+<h2>History and analysis</h2>
+<p>In 2015, researchers formally verifying the Java implementation found that the invariants chosen for the merge stack were insufficient, allowing an array-bound violation for very large inputs; the issue led to adjusted invariants in both the Java and Python implementations. A 2018–2019 line of work further characterised the algorithm as an instance of "stacksort"-style merging and refined its analysis.</p>
+<h2>See also</h2>
+<ul><li><a href="../Merge_sort/index.html">Merge sort</a></li><li><a href="../Insertion_sort/index.html">Insertion sort</a></li><li><a href="../Sorting_algorithm/index.html">Sorting algorithm</a></li><li><a href="../Python_(programming_language)/index.html">Python (programming language)</a></li></ul>
+</body></html>

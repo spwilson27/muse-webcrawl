@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Same-origin policy - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.1em; font-weight: normal; margin-top: 1.2em; }
+p, li { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; }
+.caption { font-size: 0.8em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Same-origin policy</h1>
+<p>In computing, the <b>same-origin policy</b> (<b>SOP</b>) is a fundamental security mechanism of the Web that restricts how a document or script loaded from one <i>origin</i> can interact with resources from another origin. A browser permits scripts contained in a first web page to access data in a second web page only if both pages have the same origin — defined as the combination of scheme (protocol), host (domain), and port of the URL. The policy prevents malicious scripts on one page from obtaining access to sensitive data on another page through that page's Document Object Model.</p>
+<div class="hero"><img src="images/same-origin-policy.png" alt="Diagram showing scripts blocked from accessing a document of a different origin"></div>
+<p class="caption">Under the same-origin policy, a script may freely access a same-origin document's DOM but is denied access to a cross-origin one.</p>
+<h2>History</h2>
+<p>The concept was introduced by Netscape Navigator 2.0 in 1995 alongside JavaScript, and was progressively extended to other browser features: XMLHttpRequest and fetch responses, cookies in some contexts, canvases, Web Storage, and more. The policy is specified today across the HTML and Fetch standards maintained by the WHATWG.</p>
+<h2>Definition of an origin</h2>
+<p>Two URLs are said to have the same origin if the protocol, port (defaulting by scheme), and host are the same for both. Thus <i>http://example.com/page1</i> and <i>http://example.com/page2</i> are same-origin, while <i>https://example.com</i>, <i>http://sub.example.com</i>, and <i>http://example.com:8080</i> are all different origins from it. URLs with the <i>file:</i> scheme and opaque origins such as sandboxed iframes receive special treatment.</p>
+<h2>Relaxing the policy</h2>
+<p>Because legitimate applications often need controlled cross-origin communication, several standardized mechanisms relax the policy safely:</p>
+<ul>
+<li><b>Cross-Origin Resource Sharing (CORS)</b> — servers opt in via HTTP headers to allow cross-origin reads of responses.</li>
+<li><b>window.postMessage</b> — allows scripts from different origins to exchange messages explicitly.</li>
+<li><b>JSONP</b> — an older technique exploiting the fact that script tags may be loaded cross-origin (now largely superseded by CORS).</li>
+<li><b>document.domain</b> — a legacy mechanism allowing subdomains of a common parent domain to share an origin, now deprecated and disabled by default in modern browsers.</li>
+</ul>
+<h2>Security significance</h2>
+<p>The same-origin policy underpins much of web security: without it, a malicious site open in one tab could read a user's webmail or banking pages open in another. It is distinct from, but works together with, defenses against cross-site scripting (XSS) and cross-site request forgery (CSRF).</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Cross-origin_resource_sharing/index.html">Cross-origin resource sharing</a></li>
+<li><a href="../Cross-site_scripting/index.html">Cross-site scripting</a></li>
+<li><a href="../Content_Security_Policy/index.html">Content Security Policy</a></li>
+</ul>
+</div>
+</body>
+</html>

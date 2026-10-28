@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>x86 assembly language - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:12px;margin:0 0 12px 16px;width:260px;font-size:0.9em}
+figure{margin:16px 0}
+figcaption{font-size:0.85em;color:#54595d}
+img{border:1px solid #c8ccd1;background:#eaecf0;padding:8px}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;overflow:auto}
+</style>
+</head>
+<body>
+<h1>x86 assembly language</h1>
+<div class="infobox"><b>x86 assembly language</b><br>Family: Assembly language<br>Platform: x86 (8086 through x86-64)<br>Syntax styles: Intel syntax, AT&amp;T syntax<br>Assemblers: MASM, NASM, GAS, FASM</div>
+<p><b>x86 assembly language</b> is the family of assembly languages for the x86 family of processors, which originated with the Intel 8086 in 1978 and grew through the 80386, Pentium, and the 64-bit x86-64 extension. Assembly language is a human-readable mnemonic representation of the machine code executed by the processor; an assembler translates it into binary instructions.</p>
+<figure><img src="images/x86-assembly.png" alt="x86 assembly code in an editor"><figcaption>x86 assembly source code (image placeholder).</figcaption></figure>
+<h2>Syntax</h2>
+<p>Two syntax traditions exist. Intel syntax, used by MASM and NASM, writes the destination operand first: <code>mov eax, ebx</code>. AT&amp;T syntax, used by the GNU Assembler, reverses the order and decorates register names with % and immediates with $. A classic "Hello, world" in 32-bit Linux Intel syntax begins:</p>
+<pre>section .text
+global _start
+_start:
+    mov edx, len   ; message length
+    mov ecx, msg   ; message
+    mov ebx, 1     ; stdout
+    mov eax, 4     ; sys_write
+    int 0x80</pre>
+<h2>Registers and instruction set</h2>
+<p>The architecture provides general-purpose registers (EAX, EBX, ECX, EDX, ESI, EDI, EBP, ESP in 32-bit mode; extended to RAX–R15 in 64-bit mode), segment registers, the instruction pointer, and a flags register recording arithmetic outcomes used by conditional jumps. Common instructions include MOV, ADD, SUB, CMP, JMP and the conditional jumps, CALL/RET, PUSH/POP for the stack, and string and SIMD instructions added over successive generations (MMX, SSE, AVX).</p>
+<h2>Uses</h2>
+<p>Although most software is now written in high-level languages, x86 assembly remains essential in operating system kernels, boot code, device drivers, reverse engineering, exploit development, performance-critical routines, and understanding compiler output.</p>
+<h2>See also</h2>
+<p><a href="../Assembly_language/index.html">Assembly language</a> &middot; <a href="../X86/index.html">x86</a> &middot; <a href="../X86-64/index.html">x86-64</a> &middot; <a href="../Machine_code/index.html">Machine code</a></p>
+</body>
+</html>

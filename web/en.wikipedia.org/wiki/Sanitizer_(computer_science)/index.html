@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sanitizer (computer science) - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #fff; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 30px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+.infobox { float: right; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 15px 20px; font-size: 13px; }
+.infobox th { text-align: left; padding: 3px 8px 3px 0; vertical-align: top; }
+.infobox td { padding: 3px 0; }
+.hero { text-align: center; margin: 15px 0; }
+.hero img { max-width: 100%; border: 1px solid #a2a9b1; background: #eaecf0; }
+.caption { font-size: 12px; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Sanitizer (computer science)</h1>
+<p>In computer science, a <b>sanitizer</b> is a programming tool that detects bugs in program code, typically at run time, by instrumenting the program and checking its behaviour against correctness criteria. Sanitizers are widely used in testing and fuzzing workflows, especially for languages such as C and C++ that lack memory safety.</p>
+<div class="hero"><img src="images/sanitizer.png" alt="Terminal output showing a sanitizer error report for a heap buffer overflow"><div class="caption">An AddressSanitizer report identifying a heap buffer overflow</div></div>
+<h2>Types</h2>
+<p>Well-known sanitizers, largely developed at Google and integrated into LLVM/Clang and GCC, include:</p>
+<p><b>AddressSanitizer (ASan)</b> detects memory errors such as buffer overflows and use-after-free by surrounding allocations with poisoned "redzone" memory and shadowing checks. <b>MemorySanitizer (MSan)</b> detects reads of uninitialized memory. <b>ThreadSanitizer (TSan)</b> detects data races between threads. <b>UndefinedBehaviorSanitizer (UBSan)</b> detects signed integer overflow, invalid shifts, misaligned accesses, and other undefined behaviour. <b>LeakSanitizer (LSan)</b> detects memory leaks.</p>
+<h2>Usage</h2>
+<p>Sanitizers are enabled with compiler flags (for example, <code>-fsanitize=address</code>) and trade execution speed and memory usage for detailed diagnostic reports. They are standard components of continuous-fuzzing infrastructure such as OSS-Fuzz, and have been credited with finding tens of thousands of bugs — many of them security vulnerabilities — in major open-source projects.</p>
+<h2>See also</h2>
+<p><a href="../AddressSanitizer/index.html">AddressSanitizer</a> · <a href="../Fuzzing/index.html">Fuzzing</a> · <a href="../Valgrind/index.html">Valgrind</a> · <a href="../Memory_safety/index.html">Memory safety</a></p>
+</div>
+</body>
+</html>

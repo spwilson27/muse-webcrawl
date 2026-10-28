@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Symbolic link - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:2px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:16px auto;max-width:480px;background:#f8f9fa;border:1px solid #c8ccd1;padding:24px;text-align:center;color:#72777d}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.9em}
+</style>
+</head>
+<body>
+<h1>Symbolic link</h1>
+<img class="hero" src="images/symbolic-link.png" alt="Diagram of a symbolic link pointing to a target file">
+<p>A <b>symbolic link</b> (also <b>symlink</b> or <b>soft link</b>) is a term for any file that contains a reference to another file or directory in the form of an absolute or relative path and that affects pathname resolution. Symbolic links were already present by 1978 in minicomputer operating systems from DEC and Data General's RDOS. Today they are supported by the POSIX operating-system standard, most Unix and Unix-like operating systems such as FreeBSD and Linux, and Microsoft Windows (with some limitations).</p>
+<h2>Overview</h2>
+<p>A symbolic link contains a text string that is automatically interpreted and followed by the operating system as a path to another file or directory. This other file or directory is called the "target". The symbolic link is a second file that exists independently of its target. If a symbolic link is deleted, its target remains unaffected. If a symbolic link points to a target, and sometime later that target is moved, renamed or deleted, the symbolic link is not automatically updated or deleted, but becomes a "dangling" link that points to a nonexistent target.</p>
+<p>Symbolic links are different from <a href="../Hard_link/index.html">hard links</a>, which directly reference the underlying data of a file. Hard links may not normally refer to directories and cannot refer to files on different filesystems or volumes. Symbolic links can be created with the <code>ln -s</code> command in Unix-like systems, and with <code>mklink</code> on Windows.</p>
+<h2>POSIX and Unix</h2>
+<p>POSIX-compliant operating systems provide the <code>symlink()</code> system call to create symbolic links. The <code>readlink()</code> call returns the contents of the link itself rather than following it. Shell commands such as <code>ls -l</code> display the target of a link after an arrow, for example <code>link_name -&gt; target_path</code>.</p>
+<h2>Microsoft Windows</h2>
+<p>Windows Vista and later versions support true symbolic links through the <code>CreateSymbolicLink</code> API and the <code>mklink</code> command, for both files and directories. Earlier versions of Windows used "shortcuts", which are plain files interpreted only by the shell, and junction points, which work only for directories on local volumes.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Hard_link/index.html">Hard link</a></li>
+<li><a href="../Filesystem/index.html">Filesystem</a></li>
+<li><a href="../Unix/index.html">Unix</a></li>
+</ul>
+</body>
+</html>

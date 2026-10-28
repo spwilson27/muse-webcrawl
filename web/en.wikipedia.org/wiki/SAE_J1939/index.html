@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SAE J1939 - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0 auto; max-width: 960px; padding: 20px; color: #202122; background: #fff; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; }
+.infobox { float: right; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 12px 16px; font-size: 0.85em; }
+.infobox th { text-align: left; vertical-align: top; padding-right: 8px; }
+.hero { text-align: center; margin: 12px 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+p { line-height: 1.6; }
+</style>
+</head>
+<body>
+<h1>SAE J1939</h1>
+<div class="infobox">
+<table>
+<tr><th>Publisher</th><td>SAE International</td></tr>
+<tr><th>Physical layer</th><td>CAN (ISO 11898), typically 250 kbit/s</td></tr>
+<tr><th>Application</th><td>Heavy-duty vehicles, diesel engines, agriculture, construction</td></tr>
+<tr><th>Derived standards</th><td>ISO 11783 (ISOBUS), NMEA 2000</td></tr>
+</table>
+</div>
+<div class="hero"><img src="images/sae_j1939.png" alt="Diagram of an SAE J1939 vehicle network"></div>
+<p><b>SAE J1939</b> is a set of standards maintained by <a href="../SAE_International/index.html">SAE International</a> that defines a communications network for heavy-duty vehicles based on the <a href="../CAN_bus/index.html">Controller Area Network</a> (CAN). It is widely used in diesel-powered vehicles, trucks, buses, agricultural machinery, and off-highway equipment for communication between electronic control units (ECUs) such as engine, transmission, and braking controllers.</p>
+<h2>Overview</h2>
+<p>J1939 uses the extended 29-bit CAN identifier. Each message carries a Parameter Group Number (PGN) that identifies its content, while individual data items within a parameter group are described by Suspect Parameter Numbers (SPNs). The standard defines physical layer options, data link and network layer functions including address claiming, application-layer parameter groups, diagnostics (notably diagnostic messages reporting Diagnostic Trouble Codes), and network management.</p>
+<p>The protocol normally operates at 250 kbit/s on a shielded twisted pair, with later revisions supporting 500 kbit/s. Multi-packet messages larger than eight bytes are sent using transport protocol functions defined in the standard.</p>
+<h2>Parameter groups</h2>
+<p>Commonly used parameter groups include electronic engine controller messages broadcasting engine speed, torque, coolant temperature, and oil pressure, as well as vehicle speed, cruise control, and transmission data. Manufacturers may also define proprietary parameter groups within reserved ranges.</p>
+<h2>Applications and related standards</h2>
+<p>Beyond road vehicles, J1939 forms the basis for <a href="../ISO_11783/index.html">ISO 11783</a> (ISOBUS) in agricultural equipment and for NMEA 2000 in marine electronics. It is also used in generator sets, military vehicles, and rail applications. Diagnostic tools commonly connect through the J1939 9-pin Deutsch connector found on heavy-duty trucks.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../CAN_bus/index.html">CAN bus</a></li>
+<li><a href="../On-board_diagnostics/index.html">On-board diagnostics</a></li>
+<li><a href="../ISO_11783/index.html">ISO 11783</a></li>
+</ul>
+</body>
+</html>

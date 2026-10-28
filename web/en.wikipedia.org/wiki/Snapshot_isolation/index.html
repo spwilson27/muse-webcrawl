@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Snapshot isolation - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:800px;margin:0 auto;padding:20px;line-height:1.6;color:#222}
+h1{font-family:sans-serif;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:sans-serif;border-bottom:1px solid #a2a9b1;padding-bottom:2px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+figure{float:right;margin:0 0 1em 1em;padding:8px;border:1px solid #c8ccd1;background:#f8f9fa;text-align:center;max-width:250px}
+figcaption{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Snapshot isolation</h1>
+<figure><img src="images/snapshot-isolation.png" alt="Diagram of transactions reading from a consistent snapshot"><figcaption>Transactions reading from a snapshot</figcaption></figure>
+<p>In <a href="../Database/index.html">databases</a>, and transaction processing (transaction management), <b>snapshot isolation</b> is a guarantee that all reads made in a transaction will see a consistent snapshot of the database (in practice, the values it read as of the start of the transaction), and the transaction itself will successfully commit only if no updates it made conflict with any concurrent updates made since that snapshot.</p>
+<h2>Description</h2>
+<p>Snapshot isolation is implemented using multiversion concurrency control (MVCC): each transaction reads from a version of the data committed before it began, so readers never block writers and writers never block readers. When a transaction commits, the system checks whether any other transaction that committed concurrently updated the same rows ("first committer wins"); if so, the later transaction is aborted and must retry.</p>
+<h2>Properties and anomalies</h2>
+<p>Snapshot isolation prevents the classic read anomalies of dirty reads, non-repeatable reads and phantom reads. However, it is not equivalent to full serializability: it permits the <i>write skew</i> anomaly, in which two concurrent transactions each read a shared state, make updates that are individually consistent, and together violate a constraint spanning the data both read. An extension called serializable snapshot isolation (SSI), implemented in PostgreSQL since version 9.1, detects dangerous read–write dependency patterns and aborts transactions to guarantee true serializability.</p>
+<h2>Adoption</h2>
+<p>Snapshot isolation is provided, under various names, by many database systems, including Oracle ("serializable"), PostgreSQL, Microsoft SQL Server (as an explicit isolation level), MySQL's InnoDB in effect via MVCC for consistent reads, and numerous distributed databases.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Isolation_(database_systems)/index.html">Isolation (database systems)</a></li>
+<li><a href="../Multiversion_concurrency_control/index.html">Multiversion concurrency control</a></li>
+<li><a href="../Database_transaction/index.html">Database transaction</a></li>
+</ul>
+</body>
+</html>

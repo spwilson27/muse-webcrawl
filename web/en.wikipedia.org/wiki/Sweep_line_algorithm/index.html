@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sweep line algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;font-size:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:420px;margin:12px auto;background:#eaecf0;border:1px solid #a2a9b1;padding:24px;text-align:center;color:#54595d}
+.footer{font-size:.85em;color:#54595d;border-top:1px solid #a2a9b1;margin-top:24px;padding-top:8px}
+</style>
+</head>
+<body>
+<h1>Sweep line algorithm</h1>
+<img class="hero" src="images/sweep-line-algorithm.png" alt="A vertical sweep line moving across a set of line segments">
+<p>In <a href="../Computational_geometry/index.html">computational geometry</a>, a <b>sweep line algorithm</b> or <b>plane sweep algorithm</b> is an <a href="../Algorithmic_paradigm/index.html">algorithmic paradigm</a> that uses a conceptual <i>sweep line</i>, or <i>sweep surface</i>, to solve various problems in Euclidean space. It is one of the key techniques in computational geometry.</p>
+<p>The idea behind algorithms of this type is to imagine that a line (often a vertical line) is swept or moved across the plane, stopping at various points. Geometric operations are restricted to geometric objects that either intersect or are in the immediate vicinity of the sweep line whenever it stops, and the complete solution is formulated once the line has passed over all objects.</p>
+<h2>Applications</h2>
+<p>The sweep line technique underlies several classic results, including <a href="../Fortune's_algorithm/index.html">Fortune's algorithm</a> for computing <a href="../Voronoi_diagram/index.html">Voronoi diagrams</a> in O(n log n) time, <a href="../Bentley%E2%80%93Ottmann_algorithm/index.html">Bentley–Ottmann</a> segment-intersection reporting, algorithms for finding the closest pair of points, and computation of the area of a union of rectangles. An application of this approach led to a breakthrough in the history of <a href="../Computer_graphics/index.html">computer graphics</a>, since algorithms for hidden-surface removal can be implemented using sweep techniques.</p>
+<h2>Implementation</h2>
+<p>A sweep algorithm typically maintains two data structures: an <i>event queue</i>, usually a <a href="../Priority_queue/index.html">priority queue</a> of future points at which the sweep line will stop, and a <i>status structure</i>, usually a <a href="../Self-balancing_binary_search_tree/index.html">balanced binary search tree</a> holding the objects currently intersected by the sweep line in sorted order. Processing events in order lets the algorithm answer questions about pairs of neighbouring objects only, which is what gives the method its efficiency.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Fortune's_algorithm/index.html">Fortune's algorithm</a></li>
+<li><a href="../Bentley%E2%80%93Ottmann_algorithm/index.html">Bentley–Ottmann algorithm</a></li>
+<li><a href="../Computational_geometry/index.html">Computational geometry</a></li>
+</ul>
+<div class="footer">This article is a recreation from memory of the Wikipedia article on sweep line algorithms.</div>
+</body>
+</html>

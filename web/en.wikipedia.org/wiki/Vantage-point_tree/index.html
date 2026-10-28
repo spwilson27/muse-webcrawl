@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Vantage-point tree - Wikipedia</title><style>body{font-family:sans-serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1}img{max-width:100%;background:#eee;padding:1em}a{color:#0645ad}</style></head><body>
+<h1>Vantage-point tree</h1>
+<img src="images/vantage-point-tree.png" alt="Diagram of a vantage-point tree partitioning points by distance">
+<p>A <b>vantage-point tree</b> (or <b>VP tree</b>) is a metric tree that segregates data in a metric space by choosing a position in the space (the "vantage point") and partitioning the data points into two sets: those that are nearer to the vantage point than a threshold, and those that are farther away.</p>
+<p>VP trees, described by Peter Yianilos in 1993, support efficient <a href="../Nearest_neighbor_search/index.html">nearest neighbor search</a> in spaces where only a distance function satisfying the triangle inequality is available, without requiring coordinates. By recursively applying the partitioning, the search can prune entire subtrees whose distance bounds cannot contain a closer point than the best found so far.</p>
+<h2>Construction</h2>
+<p>To build a VP tree, a vantage point is selected, the median distance to the remaining points is computed, and points are split into inside and outside subsets around that median. The process repeats recursively for each subset. Variants such as the multi-vantage-point tree use several vantage points per node to improve pruning.</p>
+<h2>See also</h2>
+<ul><li><a href="../Metric_tree/index.html">Metric tree</a></li><li><a href="../Kd-tree/index.html">k-d tree</a></li><li><a href="../Ball_tree/index.html">Ball tree</a></li></ul>
+</body></html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>View (SQL) - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 960px; margin: 0 auto; padding: 20px; color: #202122; line-height: 1.6; background: #fff; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 12px 0; }
+.hero img { max-width: 100%; border: 1px solid #a2a9b1; background: #eaecf0; }
+.caption { font-size: 0.85em; color: #54595d; }
+pre { background: #f8f9fa; border: 1px solid #a2a9b1; padding: 10px; overflow-x: auto; }
+</style>
+</head>
+<body>
+<h1>View (SQL)</h1>
+<p>In a <a href="../Database/index.html">database</a>, a <b>view</b> is the result set of a stored query. A view is a virtual <a href="../Table_(database)/index.html">table</a> that is defined by a query and can be referenced like a normal table in subsequent queries. Unlike ordinary tables, a view does not store data itself (in most database systems); instead, the data is computed each time the view is queried. Views can join and simplify multiple tables into a single virtual table, and can act as aggregated tables, where the database engine aggregates data (sums, averages, and so on) and presents the calculated results as part of the data.</p>
+<div class="hero"><img src="images/view-sql.png" alt="Diagram of a database view combining two tables"><div class="caption">A view presents the result of a stored query as a virtual table</div></div>
+<h2>Creation</h2>
+<p>A view is created with the <code>CREATE VIEW</code> statement:</p>
+<pre>CREATE VIEW employee_details AS
+SELECT e.id, e.name, d.department_name
+FROM employees e
+JOIN departments d ON e.department_id = d.id;</pre>
+<p>Once created, the view can be queried as though it were a table: <code>SELECT * FROM employee_details;</code></p>
+<h2>Advantages</h2>
+<p>Views simplify complex queries by encapsulating joins and calculations; provide a layer of abstraction and security by restricting access to specific columns or rows; ensure a consistent, unchanged view of the structure of the database even if underlying tables are split or restructured; and can present data in a different format or with calculated values to applications.</p>
+<h2>Read-only and updatable views</h2>
+<p>Not all views are updatable. Views based on a single table without aggregates or distinct clauses can often accept <code>INSERT</code>, <code>UPDATE</code> and <code>DELETE</code> operations, whereas views involving joins, groupings or set operations are generally read-only. A <a href="../Materialized_view/index.html">materialized view</a>, by contrast, physically stores the result set and is refreshed periodically.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../SQL/index.html">SQL</a></li>
+<li><a href="../Materialized_view/index.html">Materialized view</a></li>
+<li><a href="../Join_(SQL)/index.html">Join (SQL)</a></li>
+<li><a href="../Relational_database/index.html">Relational database</a></li>
+</ul>
+</body>
+</html>

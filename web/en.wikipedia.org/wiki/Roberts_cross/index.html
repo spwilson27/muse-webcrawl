@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Roberts cross - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+figure{margin:12px auto;width:300px;background:#f8f9fa;border:1px solid #c8ccd1;padding:6px;font-size:12px;text-align:center}
+figure img{max-width:100%;background:#eef}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;font-size:13px;overflow:auto}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Roberts cross</h1>
+<figure><img src="images/roberts-cross.png" alt="Example output of a Roberts cross edge detector (placeholder)"><figcaption>Edge detection using the Roberts cross operator</figcaption></figure>
+<p>The <b>Roberts cross</b> operator is used in image processing and computer vision for edge detection. It was one of the first edge detectors, proposed by Lawrence Roberts in 1963, and is a differential operator that computes an approximation of the gradient of an image by discrete differentiation achieved by summing the squares of the differences between diagonally adjacent pixels.</p>
+<h2>Motivation</h2>
+<p>According to Roberts, an ideal edge detector should mark edge points clearly, produce as little noise as possible, and place the response close to the true edge location. Because the operator uses only a 2×2 neighbourhood, it is computationally very fast, though it is correspondingly sensitive to noise and produces weaker responses to edges than larger operators such as <a href="../Sobel_operator/index.html">Sobel</a> or <a href="../Prewitt_operator/index.html">Prewitt</a>.</p>
+<h2>Formulation</h2>
+<p>The operator uses two 2×2 convolution kernels, rotated 45° versions of one another:</p>
+<pre>Gx = [ +1  0 ]      Gy = [ 0 +1 ]
+     [  0 -1 ]           [ -1  0 ]</pre>
+<p>The approximate gradient magnitude is then computed from the two filtered images, commonly as |Gx| + |Gy| or as the square root of Gx² + Gy².</p>
+<h2>See also</h2>
+<p><a href="../Edge_detection/index.html">Edge detection</a> · <a href="../Sobel_operator/index.html">Sobel operator</a> · <a href="../Prewitt_operator/index.html">Prewitt operator</a> · <a href="../Roberts_cross/index.html">Roberts cross</a></p>
+</div>
+</body>
+</html>

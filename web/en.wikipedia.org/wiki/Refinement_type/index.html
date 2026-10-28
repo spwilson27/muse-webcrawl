@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refinement type - Wikipedia</title>
+<style>
+  body { font-family: Georgia, serif; margin: 0; padding: 0; background: #f8f9fa; color: #202122; }
+  #content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+  h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 4px; }
+  h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+  p { line-height: 1.6; }
+  code, pre { font-family: monospace; background: #f8f9fa; }
+  pre { border: 1px solid #a2a9b1; padding: 10px; overflow-x: auto; }
+  .hero { text-align: center; margin: 12px 0; }
+  .hero img { max-width: 100%; border: 1px solid #a2a9b1; background: #eaecf0; }
+  .caption { font-size: 0.85em; color: #54595d; font-family: sans-serif; }
+  a { color: #0645ad; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { line-height: 1.6; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Refinement type</h1>
+<p>In computer science, a <b>refinement type</b> is a type endowed with a predicate which is assumed to hold for any element of the refined type. Refinement types can express preconditions and postconditions for functions, and invariants for data; when combined with automatic theorem proving, they support static program verification beyond what ordinary type systems can guarantee.</p>
+
+<div class="hero">
+<img src="images/refinement-type.png" alt="Diagram of a base type refined by a logical predicate">
+<p class="caption">A refinement type {x : τ | p(x)} restricts a base type τ by a predicate p. [Image placeholder]</p>
+</div>
+
+<h2>Form</h2>
+<p>A refinement type is typically written {x : τ | p}, where τ is a base type (such as the integers) and p is a logical formula over x. For example, the type of natural numbers can be expressed as a refinement of the integers:</p>
+<pre>{x : int | 0 ≤ x}</pre>
+<p>A function's specification can then require a positive divisor, e.g. a division function with the type <code>int → {y : int | y ≠ 0} → int</code>, so that a type checker can statically rule out division by zero.</p>
+
+<h2>Checking</h2>
+<p>Refinement type checking reduces subtyping questions to logical validity, discharged by SMT solvers such as Z3. Systems implementing refinement types include Liquid Haskell, Liquid types for OCaml, F* (which generalises the idea with dependent types), Stainless for Scala, and the Dafny language, whose types are paired with verification conditions.</p>
+
+<h2>History</h2>
+<p>The concept traces to work on indexed and dependent types in the late 1980s and 1990s, including Freeman and Pfenning's "Refinement types for ML" (1991), and was popularised for practical verification by the Liquid Types line of research from UC San Diego in the 2000s.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Dependent_type/index.html">Dependent type</a></li>
+<li><a href="../Type_system/index.html">Type system</a></li>
+<li><a href="../Formal_verification/index.html">Formal verification</a></li>
+<li><a href="../Liquid_Haskell/index.html">Liquid Haskell</a></li>
+</ul>
+</div>
+</body>
+</html>

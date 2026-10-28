@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Prewitt operator - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px; margin: 0 0 12px 16px; font-size: 0.9em; }
+.infobox th { background: #b0c4de; text-align: center; padding: 4px; }
+.infobox td { padding: 3px 6px; vertical-align: top; }
+.hero { display: block; margin: 12px auto; max-width: 100%; border: 1px solid #a2a9b1; background: #eaecf0; padding: 24px 0; text-align: center; color: #72777d; }
+p { line-height: 1.6; }
+code { background: #f8f9fa; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Prewitt operator</h1>
+<img class="hero" src="images/prewitt-operator.png" alt="[Image: A photograph and its horizontal and vertical Prewitt edge responses]">
+<table class="infobox">
+<tr><th colspan="2">Prewitt operator</th></tr>
+<tr><td><b>Type</b></td><td>Discrete differentiation operator</td></tr>
+<tr><td><b>Field</b></td><td>Image processing, computer vision</td></tr>
+<tr><td><b>Named after</b></td><td>Judith M. S. Prewitt</td></tr>
+<tr><td><b>Related</b></td><td>Sobel operator, Roberts cross</td></tr>
+</table>
+<p>The <b>Prewitt operator</b> is used in image processing, particularly within <a href="../Edge_detection/index.html">edge detection</a> algorithms. Technically, it is a discrete differentiation operator that computes an approximation of the gradient of the image intensity function. It was proposed by Judith M. S. Prewitt in 1966 for detecting boundaries in medical (cell) images. At each point in the image, the result of the Prewitt operator is either the corresponding gradient vector or the norm of this vector.</p>
+<h2>Description</h2>
+<p>The operator uses two 3×3 convolution kernels. One estimates the horizontal derivative:</p>
+<p><code>Gx = [−1 0 +1; −1 0 +1; −1 0 +1] * A</code></p>
+<p>and the other the vertical derivative:</p>
+<p><code>Gy = [−1 −1 −1; 0 0 0; +1 +1 +1] * A</code></p>
+<p>where <i>A</i> is the source image. The gradient magnitude is commonly computed as |G| = √(Gx² + Gy²), or approximated by |Gx| + |Gy|, and the direction as θ = atan2(Gy, Gx). Because the kernels give equal weight to all three rows (or columns), the Prewitt operator averages uniformly, whereas the closely related <a href="../Sobel_operator/index.html">Sobel operator</a> weights the central row or column more heavily (by a factor of 2), giving slightly better noise suppression and rotational symmetry. Premultiplying the smoothing and derivative parts shows the Prewitt kernel factors as a box blur along one axis and a central difference along the other.</p>
+<h2>Applications</h2>
+<p>Prewitt filtering is a cheap first step in many edge-detection pipelines, feature extraction, and introductory computer-vision teaching. It is implemented in major libraries (for example the <code>Prewitt</code> method in MATLAB's image processing toolbox and various OpenCV examples) and is often compared with the Sobel, Roberts cross, Laplacian of Gaussian, and <a href="../Canny_edge_detector/index.html">Canny</a> operators.</p>
+<h2>See also</h2>
+<p><a href="../Sobel_operator/index.html">Sobel operator</a>, <a href="../Roberts_cross/index.html">Roberts cross</a>, <a href="../Image_gradient/index.html">Image gradient</a></p>
+</div>
+</body>
+</html>
