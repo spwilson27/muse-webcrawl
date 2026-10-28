@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hash function - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 2em auto; padding: 0 1em; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.4em; }
+img.hero { float: right; margin: 0 0 1em 1em; max-width: 300px; border: 1px solid #a2a9b1; background: #f8f9fa; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Hash function</h1>
+<img class="hero" src="images/Hash_function.png" alt="Diagram of a hash function mapping names to indices in a hash table">
+<p>A <b>hash function</b> is any function that can be used to map data of arbitrary size to fixed-size values. The values returned by a hash function are called <b>hash values</b>, <b>hash codes</b>, <b>digests</b>, or simply <b>hashes</b>. Hash functions are used in data structures such as <a href="../Hash_table/">hash tables</a> to rapidly locate data, and, in specialised cryptographic forms, for integrity checking, password storage, and digital signatures.</p>
+<h2>Properties</h2>
+<p>A good non-cryptographic hash function is deterministic, fast to compute, and distributes inputs roughly uniformly over the output range so as to minimise <b>collisions</b> — cases in which two different inputs produce the same hash. Because the output space is smaller than the input space, collisions are inevitable (by the pigeonhole principle), so systems using hashes must handle them, e.g. by chaining or open addressing in hash tables.</p>
+<h2>Applications</h2>
+<ul>
+<li><b>Hash tables and databases</b>: indexing keys for average constant-time insertion and lookup.</li>
+<li><b>Checksums and data integrity</b>: detecting accidental corruption of files and messages.</li>
+<li><b>Caching and deduplication</b>: identifying identical data blocks, as in content-addressed storage and version control (Git).</li>
+<li><b>Cryptography</b>: cryptographic hash functions such as <a href="../SHA-2/">SHA-256</a> additionally provide preimage resistance, second-preimage resistance, and collision resistance, enabling digital signatures, message authentication, password hashing (with salted, slow constructions such as bcrypt), and proof-of-work in cryptocurrencies.</li>
+</ul>
+<h2>Algorithms</h2>
+<p>Simple hash functions include modular arithmetic on integer keys, multiplicative hashing, and polynomial rolling hashes used for string searching. Historical cryptographic hashes include MD5 (now considered broken for collision resistance) and SHA-1 (likewise deprecated after practical collision attacks), superseded by the SHA-2 and SHA-3 families.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Hash_table/">Hash table</a></li>
+<li><a href="../Cryptographic_hash_function/">Cryptographic hash function</a></li>
+<li><a href="../Checksum/">Checksum</a></li>
+<li><a href="../SHA-2/">SHA-2</a></li>
+</ul>
+</body>
+</html>

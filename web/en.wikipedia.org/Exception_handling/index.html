@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Exception handling - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+.mw-body { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+.infobox { float: right; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px; margin: 0 0 12px 16px; font-size: 0.88em; }
+.infobox img { width: 100%; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 8px; overflow-x: auto; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Exception handling</h1>
+<div class="infobox">
+<img src="images/Exception_handling.png" alt="Diagram of a try-catch block intercepting an exception">
+<p><b>Exception handling</b> — the process of responding to anomalous or exceptional conditions during program execution.</p>
+</div>
+<p><b>Exception handling</b> is the process of responding to the occurrence of <i>exceptions</i> — anomalous or exceptional conditions requiring special processing — during the execution of a program. In general, an exception breaks the normal flow of execution and executes a pre-registered <i>exception handler</i>; the details of how this is done depend on whether it is a hardware or software exception.</p>
+<p>Exception handling, if provided, is facilitated by specialized programming language constructs, hardware mechanisms like interrupts, or operating system inter-process communication facilities such as signals. Some exceptions, especially hardware ones, may be handled so gracefully that execution can resume where it was interrupted.</p>
+<h2>Definition</h2>
+<p>An exception is a problem that arises during the execution of a program. A programming language mechanism for exception handling is generally expected to support raising an exception, which transfers control to a handler, and to allow the handler to inspect information about the exceptional condition, typically carried in an <i>exception object</i>.</p>
+<h2>Language mechanisms</h2>
+<p>Many modern languages provide <code>try</code>, <code>catch</code> (or <code>except</code>) and <code>finally</code> constructs derived from work in languages such as CLU and Ada:</p>
+<pre>try {
+    riskyOperation();
+} catch (IOException e) {
+    log(e);
+} finally {
+    cleanup();
+}</pre>
+<p>In languages such as <a href="../C%2B%2B/index.html">C++</a>, <a href="../Java_(programming_language)/index.html">Java</a>, <a href="../C_Sharp_(programming_language)/index.html">C#</a>, <a href="../Python_(programming_language)/index.html">Python</a> and <a href="../Ruby_(programming_language)/index.html">Ruby</a>, exceptions are thrown with a <code>throw</code> or <code>raise</code> statement and caught by syntactically enclosing handlers.</p>
+<h2>Checked and unchecked exceptions</h2>
+<p>Java introduced the notion of <i>checked exceptions</i>, which must be declared in a method's signature and handled by callers. Most other languages chose unchecked exceptions only, and the merits of checked exceptions remain debated.</p>
+<h2>Exception safety</h2>
+<p>In C++, <i>exception safety</i> describes guarantees a component provides about program state when an exception is thrown, commonly classified as no-throw, strong, basic and no guarantees.</p>
+<h2>Alternatives</h2>
+<p>Other error-handling styles include returning error codes, option/maybe types, result types, and condition systems (as in Common Lisp) that allow restarting computation from the point of failure.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Interrupt/index.html">Interrupt</a></li>
+<li><a href="../Signal_(computing)/index.html">Signal (computing)</a></li>
+<li><a href="../Defensive_programming/index.html">Defensive programming</a></li>
+</ul>
+</div>
+</body>
+</html>

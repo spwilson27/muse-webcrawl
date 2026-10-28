@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Clock synchronization - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; max-width: 960px; margin: 0 auto; padding: 1em 2em; color: #202122; line-height: 1.6; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; }
+figure.hero { float: right; margin: 0 0 1em 1em; width: 280px; }
+figure.hero img { width: 100%; border: 1px solid #a2a9b1; background: #eaecf0; }
+figcaption { font-size: 0.85em; color: #54595d; }
+a { color: #3366cc; text-decoration: none; }
+</style>
+</head>
+<body>
+<h1>Clock synchronization</h1>
+<figure class="hero"><img src="images/Clock_synchronization.png" alt="Synchronized clocks in a network"><figcaption>Clock synchronization keeps the clocks of distributed systems in agreement.</figcaption></figure>
+<p><b>Clock synchronization</b> is a topic in computer science and engineering that aims to coordinate otherwise independent clocks. Even when initially set accurately, real clocks will differ after some amount of time due to clock drift, caused by clocks counting time at slightly different rates. There are several problems that arise from clock rate differences and several solutions.</p>
+<h2>Problems</h2>
+<p>In a centralized system, clock synchronization is comparatively easy. In distributed systems, however, each node has its own clock, and messages take unpredictable time to travel between nodes, so determining the order of events and the current time becomes difficult. Unsynchronized clocks can cause problems in applications such as file systems, distributed databases, and financial trading systems, where the correct ordering of events matters.</p>
+<h2>Algorithms and protocols</h2>
+<p><b>Berkeley algorithm:</b> a coordinator polls the clocks of participating machines, averages the reported times (ignoring outliers), and instructs each machine to adjust.</p>
+<p><b>Cristian's algorithm:</b> a client requests the time from a server and estimates the round-trip delay to correct its own clock.</p>
+<p><b>Network Time Protocol (NTP):</b> the most widely used protocol on the Internet, developed by David Mills, synchronizes clocks to within milliseconds of Coordinated Universal Time using a hierarchy of time servers.</p>
+<p><b>Precision Time Protocol (PTP):</b> defined in IEEE 1588, achieves sub-microsecond accuracy on local networks, and is used in industrial automation and telecommunications.</p>
+<h2>Relativity</h2>
+<p>Albert Einstein's theory of relativity shows that there is no absolute simultaneity: clocks in relative motion or in different gravitational potentials tick at different rates. The Global Positioning System must correct for both special and general relativistic effects to keep its satellite clocks synchronized with those on Earth.</p>
+</body>
+</html>

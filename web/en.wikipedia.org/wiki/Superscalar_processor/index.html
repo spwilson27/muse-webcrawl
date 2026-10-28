@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Superscalar processor - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; line-height: 1.6; }
+#content { max-width: 960px; margin: 0 auto; padding: 24px 32px 64px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 8px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; font-size: 1.5em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+h3 { font-size: 1.15em; margin-top: 20px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px 14px; margin: 0 0 16px 24px; font-size: 0.9em; }
+.infobox h3 { margin-top: 0; text-align: center; }
+img { max-width: 100%; }
+.caption { font-size: 0.85em; color: #54595d; }
+.small { font-size: 0.85em; color: #54595d; }
+ul { margin: 8px 0; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Superscalar processor</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+
+<div class="infobox">
+<h3>Superscalar processor</h3>
+<p><b>Architecture class:</b> Instruction-level parallelism</p>
+<p><b>First examples:</b> CDC 6600 (1964), IBM System/360 Model 91 (1967)</p>
+<p><b>Key features:</b> Multiple instruction issue per clock cycle; dynamic scheduling; out-of-order execution</p>
+<p><b>Related:</b> <a href="../Instruction_pipelining/index.html">Instruction pipelining</a>, <a href="../Very_long_instruction_word/index.html">VLIW</a>, <a href="../Out-of-order_execution/index.html">Out-of-order execution</a></p>
+</div>
+
+<p>A <b>superscalar processor</b> (or <b>superscalar architecture</b>) is a type of <a href="../Central_processing_unit/index.html">central processing unit</a> (CPU) that implements a form of parallelism called <a href="../Instruction-level_parallelism/index.html">instruction-level parallelism</a> within a single processor. In contrast to a <a href="../Scalar_processor/index.html">scalar processor</a>, which can execute at most one single instruction per <a href="../Clock_cycle/index.html">clock cycle</a>, a superscalar processor can execute more than one instruction during a clock cycle by simultaneously dispatching multiple instructions to different execution units on the processor chip. Each execution unit is not a separate processor (or a core), but an execution resource within a single CPU, such as an <a href="../Arithmetic_logic_unit/index.html">arithmetic logic unit</a>, a bit shifter, or a multiplier.</p>
+
+<img src="images/superscalar_processor.png" alt="[Image: Diagram of a superscalar pipeline showing multiple instructions being fetched, decoded, and issued to several execution units in a single clock cycle]">
+<p class="caption">A superscalar pipeline issues several instructions per cycle to multiple execution units.</p>
+
+<p>Whereas a scalar processor must execute each instruction in a strict sequence, and different instructions can be at different stages of execution at a given time (that is, pipelined), a superscalar processor can be executing several instructions at the same stage of the pipeline at the same time. The superscalar architecture is closely related to the degree of parallelism the compiler and the hardware can extract from ordinary sequential programs: because most modern programs are written as sequences of instructions with data dependencies between them, the hardware must analyze the instruction stream at run time, identify instructions that do not depend on one another, and issue them in parallel. This dynamic discovery of parallelism distinguishes superscalar designs from <a href="../Very_long_instruction_word/index.html">very long instruction word</a> (VLIW) processors, in which the compiler packages independent operations into wide instructions in advance.</p>
+
+<p>Superscalar designs dominate general-purpose computing: essentially all desktop, laptop, server, and mobile processors introduced since the mid-1990s — including the <a href="../Intel_Core/index.html">Intel Core</a> family, <a href="../AMD_Zen/index.html">AMD Zen</a> processors, and <a href="../ARM_architecture/index.html">ARM</a> cores such as the Cortex and Apple silicon series — are superscalar, typically issuing between three and ten instructions per cycle.</p>
+
+<h2>History</h2>
+<p>The earliest machine widely regarded as superscalar was the <a href="../CDC_6600/index.html">CDC 6600</a>, designed by <a href="../Seymour_Cray/index.html">Seymour Cray</a> and released in 1964. The CDC 6600 used a central processor with ten independent functional units — including separate units for floating-point addition, multiplication, division, and increment operations — coordinated by a mechanism called a <i>scoreboard</i>, which tracked register usage and allowed instructions to be issued to idle units as soon as their operands were available and no conflicts existed. Although the 6600's instruction <i>issue</i> logic was in-order and limited to one instruction per cycle, its ten parallel functional units and scoreboard-based dispatch made it, in effect, the first superscalar design; later analysts such as John H. Crawford and others have classified it as a superscalar machine in the broad sense.</p>
+
+<p>The <a href="../IBM_System/360/index.html">IBM System/360 Model 91</a>, announced in 1964 and delivered in 1967, introduced <a href="../Tomasulo's_algorithm/index.html">Tomasulo's algorithm</a>, a hardware technique for dynamic scheduling using reservation stations and register renaming. Tomasulo's algorithm allows instructions to execute out of order as soon as their operands are ready, while preserving the appearance of sequential execution. Together, scoreboarding and Tomasulo's algorithm form the foundation of virtually all later superscalar scheduling logic.</p>
+
+<p>Through the 1970s and 1980s, superscalar techniques were confined mainly to mainframes, supercomputers, and high-end minicomputers, because they demanded large numbers of transistors. The advent of <a href="../Reduced_instruction_set_computer/index.html">RISC</a> architectures, whose simple, regular instruction formats made decoding and issuing several instructions per cycle much easier, brought superscalar designs to workstations and personal computers. The Intel i960CA (1989) is often cited as the first commercial superscalar microprocessor; the <a href="../Intel_P5/index.html">Pentium</a> (1993) brought dual-issue superscalar execution to the mass-market PC, and the <a href="../Pentium_Pro/index.html">Pentium Pro</a> (1995) combined superscalar issue with out-of-order execution and register renaming in the x86 line. By the late 1990s, superscalar design had become the default organization for high-performance general-purpose processors.</p>
+
+<h2>Design</h2>
+<h3>Instruction fetch and decode</h3>
+<p>A superscalar front end must fetch and decode several instructions per cycle. This places heavy demands on the <a href="../Instruction_cache/index.html">instruction cache</a> and on <a href="../Branch_predictor/index.html">branch prediction</a>: a mispredicted branch wastes not only the instructions behind the branch but an entire fetch window several instructions wide. Modern designs therefore employ sophisticated two-level adaptive branch predictors, branch target buffers, and trace caches or micro-operation caches that store already-decoded instructions so that the decode work need not be repeated.</p>
+
+<h3>Dispatch, renaming, and scheduling</h3>
+<p>After decoding, instructions are renamed: architectural registers named by the instructions are mapped onto a larger pool of physical registers, removing false dependencies (write-after-read and write-after-write hazards) that would otherwise serialize execution. Renamed instructions enter reservation stations or an instruction window, where the scheduler continuously checks which instructions have all operands ready and issues them to free execution units. Because the scheduler must compare many instructions against many results each cycle, its complexity grows roughly with the square of the issue width, which is one of the principal practical limits on superscalar width.</p>
+
+<h3>Execution units and retirement</h3>
+<p>A typical superscalar core contains several integer ALUs, one or more floating-point and <a href="../SIMD/index.html">SIMD</a> units, load and store units connected to the data cache and load-store queue, and branch units. Instructions complete out of order but are <i>retired</i> (committed to the architectural state) in program order using a reorder buffer, so that interrupts and exceptions appear to occur between instructions exactly as in a sequential machine. Speculative results from instructions following an unresolved branch can thus be discarded cleanly if the prediction proves wrong.</p>
+
+<h2>Limitations</h2>
+<p>The achievable parallelism in ordinary programs is limited. Studies of instruction-level parallelism have repeatedly shown that while idealized machines with perfect branch prediction, unlimited windows, and perfect memory disambiguation could in principle sustain very high issue rates, realistic programs — dense with branches, pointer-based memory accesses, and true data dependencies — typically offer only a few independent instructions per cycle on average. Each doubling of issue width yields diminishing returns, while costs in power, die area, verification effort, and scheduling complexity grow steeply.</p>
+
+<p>Memory latency is a second fundamental limit: when an instruction waits on a cache miss, downstream dependent instructions stall, and although large instruction windows can find independent work, they cannot create parallelism that the program does not contain. This is part of the so-called <i>memory wall</i>. Power consumption is a third limit: much of a superscalar core's energy goes not into arithmetic but into fetching, decoding, renaming, scheduling, and moving operands — overhead that grows with width. These constraints motivated the industry's shift, beginning around 2004–2005, toward <a href="../Multi-core_processor/index.html">multi-core processors</a> (thread-level parallelism) and wider <a href="../SIMD/index.html">vector units</a> (data-level parallelism) as complements to moderate-width superscalar cores.</p>
+
+<h2>Alternatives and related architectures</h2>
+<ul>
+<li><b><a href="../Very_long_instruction_word/index.html">Very long instruction word</a> (VLIW)</b> — the compiler, rather than the hardware, finds and bundles parallel operations. This simplifies hardware but requires recompilation for different implementations and struggles with unpredictable latencies such as cache misses.</li>
+<li><b>Explicitly parallel instruction computing (EPIC)</b> — exemplified by Intel's <a href="../Itanium/index.html">Itanium</a>, an attempt to combine compiler-scheduled bundles with hardware support for speculation.</li>
+<li><b><a href="../Simultaneous_multithreading/index.html">Simultaneous multithreading</a></b> — issues instructions from multiple threads into the same superscalar core, filling issue slots that a single thread leaves empty.</li>
+<li><b><a href="../Vector_processor/index.html">Vector processors</a> and GPUs</b> — exploit data parallelism rather than instruction parallelism within a scalar instruction stream.</li>
+</ul>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Instruction_pipelining/index.html">Instruction pipelining</a></li>
+<li><a href="../Out-of-order_execution/index.html">Out-of-order execution</a></li>
+<li><a href="../Register_renaming/index.html">Register renaming</a></li>
+<li><a href="../Speculative_execution/index.html">Speculative execution</a></li>
+<li><a href="../Scalar_processor/index.html">Scalar processor</a></li>
+<li><a href="../Superscalar_processor/index.html#History">Scoreboarding</a></li>
+</ul>
+
+<h2>References</h2>
+<ul>
+<li>Flynn, Michael J. (1995). <i>Computer Architecture: Pipelined and Parallel Processor Design</i>. Jones &amp; Bartlett.</li>
+<li>Hennessy, John L.; Patterson, David A. <i>Computer Architecture: A Quantitative Approach</i> — standard treatment of superscalar design, Tomasulo's algorithm, and limits of instruction-level parallelism.</li>
+<li>Johnson, Mike (1991). <i>Superscalar Microprocessor Design</i>. Prentice Hall.</li>
+<li>Wall, David W. (1991). "Limits of Instruction-Level Parallelism". <i>ASPLOS-IV Proceedings</i>.</li>
+</ul>
+
+<p class="small">This article is a recreation based on general knowledge of the topic.</p>
+</div>
+</body>
+</html>

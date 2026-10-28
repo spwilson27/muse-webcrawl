@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Conjunctive normal form - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 52em; line-height: 1.6; color: #202122; }
+h1, h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 320px; border: 1px solid #c8ccd1; background: #f8f9fa; }
+.math { font-family: serif; }
+</style>
+</head>
+<body>
+<h1>Conjunctive normal form</h1>
+<div class="hero"><img src="images/Conjunctive_normal_form.png" alt="A Boolean formula written as a conjunction of clauses"></div>
+<p>In Boolean logic, a formula is in <b>conjunctive normal form</b> (<b>CNF</b>) or <b>clausal normal form</b> if it is a conjunction of one or more clauses, where a clause is a disjunction of literals, where a literal is a variable or its negation. As a normal form, it is useful in automated theorem proving and circuit theory.</p>
+<p>For example, the following formulas are in CNF:</p>
+<ul>
+<li class="math">(A ∨ ¬B ∨ ¬C) ∧ (¬D ∨ E ∨ F)</li>
+<li class="math">(A ∨ B) ∧ (¬B ∨ C ∨ ¬D) ∧ (D ∨ ¬E)</li>
+<li class="math">A ∧ ¬B</li>
+<li class="math">A ∨ B</li>
+</ul>
+<p>while the following are not:</p>
+<ul>
+<li class="math">¬(A ∧ B) — the negation applies to a conjunction;</li>
+<li class="math">A ∧ (B ∨ (C ∧ D)) — a conjunction nested inside a disjunction.</li>
+</ul>
+
+<h2>Conversion into CNF</h2>
+<p>Every propositional formula can be converted into an equivalent formula in CNF. A standard conversion replaces implications and biconditionals using their definitions, drives negations inward with De Morgan's laws and double-negation elimination, and distributes disjunction over conjunction. This conversion may cause an exponential increase in formula size. The Tseitin transformation produces an equisatisfiable CNF formula with only linear growth by introducing fresh variables for subformulas.</p>
+
+<h2>Use in theorem proving</h2>
+<p>CNF is the input format of SAT solvers: the Boolean satisfiability problem is canonically posed over CNF formulas, with each clause a set of literals. In first-order logic, formulas are commonly converted to clausal normal form for resolution refutation. A <b>Horn clause</b> is a clause with at most one positive literal; Horn formulas can be solved in polynomial time and underlie logic programming languages such as Prolog.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Disjunctive_normal_form/index.html">Disjunctive normal form</a></li>
+<li><a href="../Boolean_satisfiability_problem/index.html">Boolean satisfiability problem</a></li>
+<li><a href="../Horn_clause/index.html">Horn clause</a></li>
+<li><a href="../Tseitin_transformation/index.html">Tseitin transformation</a></li>
+</ul>
+</body>
+</html>

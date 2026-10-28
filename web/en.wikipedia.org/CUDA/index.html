@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CUDA - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; }
+h2 { border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 320px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 8px; }
+.caption { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<h1>CUDA</h1>
+<div class="hero"><img src="images/CUDA.png" alt="Diagram of CUDA processing flow between CPU and GPU"><div class="caption">CUDA processing flow: data is copied to the GPU, processed by thousands of parallel threads, and copied back.</div></div>
+<p><b>CUDA</b> (Compute Unified Device Architecture) is a proprietary parallel computing platform and application programming interface (API) created by <a href="../Nvidia/index.html">Nvidia</a> that allows software to use certain types of graphics processing units (GPUs) for accelerated general-purpose processing, an approach known as GPGPU. First released in 2007 with the GeForce 8800 series, CUDA provides a software layer giving direct access to the GPU's virtual instruction set and parallel computational elements, letting developers write kernels in extensions of C, C++ and Fortran.</p>
+<h2>Programming model</h2>
+<p>In CUDA, computations are organised into <i>kernels</i> — functions executed on the GPU by large numbers of threads arranged in a hierarchy of thread blocks and grids. Threads within a block can cooperate through fast on-chip shared memory and synchronisation, while separate memory spaces (global, constant, texture, local) have different performance characteristics that programmers must manage. Nvidia provides the nvcc compiler, the CUDA Toolkit, and optimised libraries such as cuBLAS, cuFFT, cuDNN and Thrust.</p>
+<h2>Applications</h2>
+<p>CUDA underpins much of modern GPU computing: scientific simulation and computational fluid dynamics, weather modelling, molecular dynamics, and — most prominently — <a href="../Deep_learning/index.html">deep learning</a>, where frameworks such as PyTorch and TensorFlow execute the bulk of their operations through CUDA, making Nvidia GPUs and the CUDA ecosystem the dominant platform for training large AI models. CUDA's proprietary nature and restriction to Nvidia hardware have motivated alternatives such as OpenCL, AMD's ROCm/HIP and SYCL, though CUDA's mature library ecosystem has kept it the de facto standard in high-performance and AI computing.</p>
+<h2>History</h2>
+<p>CUDA began with Nvidia's research into general-purpose GPU computing and was announced in November 2006 alongside the G80 architecture, the first GPU designed with compute in mind. Successive versions added C++ support, unified memory, cooperative groups and hardware features for tensor operations, and the platform extended to embedded (Jetson) and data-centre accelerators. Its chief architect in its early years was Ian Buck, whose BrookGPU research informed the design.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../General-purpose_computing_on_graphics_processing_units/index.html">General-purpose computing on GPUs</a></li>
+<li><a href="../OpenCL/index.html">OpenCL</a></li>
+<li><a href="../Nvidia/index.html">Nvidia</a></li>
+<li><a href="../Stream_processing/index.html">Stream processing</a></li>
+</ul>
+</body>
+</html>

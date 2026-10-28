@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Broadcast domain - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; }
+h2 { border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 320px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 8px; }
+.caption { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<h1>Broadcast domain</h1>
+<div class="hero"><img src="images/Broadcast_domain.png" alt="Diagram showing a broadcast domain bounded by a router"><div class="caption">A broadcast domain: broadcasts are forwarded by switches within the domain but stopped by routers at its boundary.</div></div>
+<p>A <b>broadcast domain</b> is a logical division of a computer network in which all nodes can reach each other by <a href="../Broadcasting_(networking)/index.html">broadcast</a> at the data link layer (OSI layer 2). In other words, it is the set of devices that will receive a broadcast frame sent by any device in the set. A broadcast domain can be within the same LAN segment or bridged to other LAN segments.</p>
+<h2>Boundaries and devices</h2>
+<p>Network switches and bridges forward broadcasts to all ports, so devices connected through them share one broadcast domain. Routers, which operate at layer 3, do not forward layer-2 broadcasts, so each router interface bounds a separate broadcast domain. A <a href="../Virtual_LAN/index.html">VLAN</a> partitions a switched network into multiple broadcast domains, one per VLAN. Devices such as hubs merely repeat traffic and also share both broadcast and collision domains; switches separate collision domains but not broadcast domains.</p>
+<h2>Broadcast domain vs collision domain</h2>
+<p>A <b>collision domain</b> is a network segment where data packets can collide with one another — a concept of half-duplex shared media such as hub-based Ethernet. Every port of a switch constitutes its own collision domain (eliminated entirely with full-duplex links), whereas all ports in a VLAN belong to a single broadcast domain. Confusing the two is a common error: broadcast domains concern the reach of broadcast frames, collision domains the reach of simultaneous-transmission conflicts.</p>
+<h2>Practical considerations</h2>
+<p>Large broadcast domains suffer from "broadcast radiation": protocols such as ARP and DHCP generate traffic delivered to every host, consuming bandwidth and CPU as the domain grows, and increasing the impact of broadcast storms and loops. Network designers therefore limit broadcast domain size using routers and VLANs, trading off against the convenience of flat addressing and protocols that rely on local broadcast.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Collision_domain/index.html">Collision domain</a></li>
+<li><a href="../Virtual_LAN/index.html">Virtual LAN</a></li>
+<li><a href="../Network_switch/index.html">Network switch</a></li>
+<li><a href="../Router_(computing)/index.html">Router (computing)</a></li>
+</ul>
+</body>
+</html>

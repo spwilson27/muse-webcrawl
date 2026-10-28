@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Parallel computing - Wikipedia</title>
+<style>
+body { font-family: sans-serif; line-height: 1.6; margin: 2em auto; max-width: 60em; padding: 0 1em; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0 0 1em 1em; border: 1px solid #c8ccd1; padding: 0.4em; background: #f8f9fa; font-size: 0.85em; max-width: 280px; }
+.thumb img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Parallel computing</h1>
+<p><b>Parallel computing</b> is a type of computation in which many calculations or processes are carried out simultaneously. Large problems can often be divided into smaller ones, which can then be solved at the same time. There are several different forms of parallel computing: bit-level, instruction-level, data, and task parallelism. Parallelism has been employed for many years, mainly in <a href="../High-performance_computing/index.html">high-performance computing</a>, but it has gained broader interest since the mid-2000s, when physical constraints prevented further large gains from <a href="../Frequency_scaling/index.html">frequency scaling</a> in single processors, and manufacturers turned to <a href="../Multi-core_processor/index.html">multi-core processors</a> for consumer hardware.</p>
+
+<div class="thumb"><img src="images/parallel_computing.png" alt="[Image: Diagram of a supercomputer cluster with many processing nodes connected by a high-speed network]"><br>A parallel computer cluster with many interconnected nodes.</div>
+
+<h2>Background</h2>
+<p>Traditionally, computer software has been written for serial computation: a problem is broken into a discrete series of instructions executed sequentially on a single processor. Parallel computing uses multiple processing elements simultaneously. The theoretical speedup from parallelizing a program is governed by <a href="../Amdahl's_law/index.html">Amdahl's law</a>, which shows that gains are limited by the fraction of the program that must run serially; Gustafson's law argues that larger problems run in fixed time can nonetheless scale well. Parallelism is closely related to, but distinct from, concurrent computing, which concerns managing multiple interleaved tasks.</p>
+
+<h2>Types of parallelism</h2>
+<ul>
+<li><b>Bit-level parallelism</b> — increasing processor word size (from 4-bit to 64-bit) reduces the number of instructions needed for large numbers.</li>
+<li><b>Instruction-level parallelism</b> — pipelines, superscalar execution, and out-of-order execution allow multiple instructions per clock cycle within one processor.</li>
+<li><b>Data parallelism</b> — the same operation is applied to many data elements at once, in SIMD units, vector processors, and GPUs; described by Flynn's taxonomy as SIMD and SPMD styles.</li>
+<li><b>Task parallelism</b> — different tasks or functions run concurrently on different processors, often communicating through messages or shared memory.</li>
+</ul>
+<p>Computer architectures are commonly divided into shared-memory multiprocessors (including modern multicore chips), distributed-memory clusters of networked nodes, and accelerators such as graphics processing units (GPUs), which provide thousands of simple cores for data-parallel workloads — increasingly used for scientific simulation and machine learning.</p>
+
+<h2>Programming models</h2>
+<p>Parallel programs are written with shared-memory models (such as <a href="../OpenMP/index.html">OpenMP</a> and POSIX threads), message-passing models (such as the Message Passing Interface, <a href="../Message_Passing_Interface/index.html">MPI</a>), data-parallel languages and frameworks (such as CUDA for GPUs and MapReduce and Spark for distributed data processing), and high-level constructs in languages with built-in concurrency support. Coordination introduces hazards absent in serial code — race conditions, deadlocks, and nondeterministic ordering — addressed with locks, atomic operations, barriers, and transactional memory. Correctness and performance must also account for communication costs, load balancing, and memory consistency models.</p>
+
+<h2>History</h2>
+<p>Early parallel machines included the ILLIAC IV (completed 1970s) and experimental systems of the 1960s; commercial development in the 1970s and 1980s produced vector supercomputers such as the Cray-1 (1976) and massively parallel machines such as the Connection Machine. By the 1990s, clusters of commodity computers ("Beowulf" clusters) and standard message passing made parallel computing affordable to laboratories and companies. The end of Dennard scaling around 2005–2006, when power limits stalled clock-speed increases, made multicore parallelism mainstream in desktops and phones. Modern supercomputers — measured by the TOP500 list, led in the 2020s by exascale systems such as Frontier and El Capitan — combine millions of CPU and GPU cores to reach over 10<sup>18</sup> floating-point operations per second.</p>
+
+<h2>Applications</h2>
+<p>Parallel computing underlies weather forecasting and climate modelling, computational fluid dynamics, structural and molecular simulation, genome analysis, seismic processing, financial modelling, cryptanalysis, large-scale databases and search engines, and the training of large artificial neural networks.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Amdahl's_law/index.html">Amdahl's law</a></li>
+<li><a href="../Supercomputer/index.html">Supercomputer</a></li>
+<li><a href="../Multi-core_processor/index.html">Multi-core processor</a></li>
+<li><a href="../Distributed_computing/index.html">Distributed computing</a></li>
+<li><a href="../Concurrency_(computer_science)/index.html">Concurrency (computer science)</a></li>
+</ul>
+</body>
+</html>

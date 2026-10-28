@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Content Security Policy - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 1.4em; }
+p, li { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+code { background: #f8f9fa; border: 1px solid #eaecf0; padding: 1px 4px; font-size: 0.9em; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; background: #eaecf0; border: 1px solid #a2a9b1; padding: 24px 0; }
+.caption { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Content Security Policy</h1>
+<div class="hero"><img src="images/Content_Security_Policy.png" alt="Diagram of a browser enforcing a Content Security Policy"><div class="caption">CSP lets a site declare which sources of content the browser may load.</div></div>
+<p><b>Content Security Policy</b> (<b>CSP</b>) is a computer security standard introduced to prevent cross-site scripting (XSS), clickjacking and other code injection attacks resulting from execution of malicious content in the trusted web page context. It is a Candidate Recommendation of the W3C working group on Web Application Security, widely supported by modern web browsers.</p>
+<h2>Mechanism</h2>
+<p>A website administrator specifies a policy in an HTTP response header, <code>Content-Security-Policy</code>, or in a <code>&lt;meta&gt;</code> element. The policy consists of directives such as <code>default-src</code>, <code>script-src</code>, <code>style-src</code>, <code>img-src</code> and <code>connect-src</code>, each listing the origins or schemes from which that type of resource may be loaded. By, for example, disallowing inline scripts and scripts from untrusted origins, CSP makes it much harder for an attacker who has injected markup into a page to execute arbitrary code.</p>
+<h2>Reporting</h2>
+<p>CSP supports a report-only mode, delivered with the <code>Content-Security-Policy-Report-Only</code> header, in which violations are reported to a specified endpoint but not enforced. Reporting directives allow administrators to test policies and to detect attacks in progress before deploying enforcement.</p>
+<h2>History</h2>
+<p>The concept originated at Mozilla; an early version was implemented in Firefox 4 in 2011 under the header <code>X-Content-Security-Policy</code>. The W3C published CSP Level 1 as a Candidate Recommendation in 2012, followed by Level 2 in 2016, with Level 3 adding further directives and refinements. CSP is now considered a core defence-in-depth measure for web applications, complementing output encoding and other XSS mitigations.</p>
+<p>See also: <a href="../Cross-site_scripting/index.html">Cross-site scripting</a>, <a href="../HTTP_cookie/index.html">HTTP cookie</a>, <a href="../Same-origin_policy/index.html">Same-origin policy</a>.</p>
+</div>
+</body>
+</html>

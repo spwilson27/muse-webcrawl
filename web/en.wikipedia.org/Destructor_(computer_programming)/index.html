@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Destructor (computer programming) - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;margin:0;background:#f6f6f6;color:#202122}
+.mw{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px}
+h2{font-family:Georgia,serif;font-weight:400;border-bottom:1px solid #a2a9b1;margin-top:28px}
+.infobox{float:right;width:280px;background:#f8f9fa;border:1px solid #a2a9b1;padding:8px;margin:0 0 12px 16px;font-size:90%}
+.infobox th{background:#eaf3ff;text-align:left;padding:4px 6px}
+.infobox td{padding:4px 6px}
+img.hero{display:block;max-width:100%;height:auto;background:#eaecf0;border:1px solid #c8ccd1;padding:6px;margin:8px 0}
+.caption{font-size:85%;color:#54595d;margin-bottom:12px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.refs{font-size:88%}
+code{background:#f8f9fa;border:1px solid #eaecf0;padding:1px 4px}
+</style>
+</head>
+<body>
+<div class="mw">
+<h1>Destructor (computer programming)</h1>
+<img class="hero" src="images/Destructor_(computer_programming).png" alt="Diagram of an object lifecycle ending with destructor invocation">
+<div class="caption">A destructor runs automatically when an object's lifetime ends, releasing resources the object holds.</div>
+<p>In object-oriented programming, a <b>destructor</b> is a method which is invoked mechanically just before the memory of an object is released. It can happen when the object's lifecycle is bound to a scope and the execution leaves the scope, when the object is embedded in another object whose lifetime ends, or when the object is explicitly released by calling <code>delete</code> or <code>free</code>. Its main purpose is to free the resources (memory allocations, open files and database connections, network connections, and so on) which were acquired by the object along its lifecycle and/or to delegate the release of resources to other objects.</p>
+<h2>By language</h2>
+<p><b>C++</b> gives destructors a central role: a destructor, written <code>~ClassName()</code>, is invoked deterministically when an object goes out of scope or is deleted, and underpins the RAII (Resource Acquisition Is Initialization) idiom. Virtual destructors are needed when deleting polymorphically through a base-class pointer. In garbage-collected languages, cleanup is less deterministic: Java's <code>Object.finalize()</code> (deprecated since Java 9) and C#'s finalizers run at the garbage collector's discretion, so these languages instead emphasize explicit disposal patterns (<code>AutoCloseable</code>/try-with-resources in Java, <code>IDisposable</code>/<code>using</code> in C#). Python calls <code>__del__</code> when an object is destroyed, Rust drops values deterministically via the <code>Drop</code> trait, and D and Objective-C provide their own destructor or <code>dealloc</code> conventions.</p>
+<h2>Critical aspects</h2>
+<p>Because destructors often run during stack unwinding or at program exit, throwing an exception from a destructor is dangerous — in C++ it leads to <code>std::terminate</code> if it escapes during unwinding, so destructors are implicitly <code>noexcept</code> since C++11. Destructors must also handle partial construction: a destructor runs for fully constructed subobjects even if a constructor threw.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Constructor_(object-oriented_programming)/index.html">Constructor (object-oriented programming)</a></li>
+<li><a href="../Resource_acquisition_is_initialization/index.html">Resource acquisition is initialization</a></li>
+<li><a href="../Finalizer/index.html">Finalizer</a></li>
+<li><a href="../Garbage_collection_(computer_science)/index.html">Garbage collection (computer science)</a></li>
+<li><a href="../Object_lifetime/index.html">Object lifetime</a></li>
+</ul>
+<h2>References</h2>
+<ol class="refs">
+<li>Stroustrup, Bjarne. <i>The C++ Programming Language</i> (4th ed., 2013).</li>
+<li>ISO/IEC 14882:2020, Programming languages — C++, §11.4.7 (destructors).</li>
+</ol>
+</div>
+</body>
+</html>

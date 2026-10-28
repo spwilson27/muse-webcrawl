@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dynamic linker - Wikipedia</title>
+<style>
+body{font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff}
+.content{max-width:960px;margin:0 auto;padding:20px 24px 60px;line-height:1.6}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:normal;font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-family:Georgia,"Times New Roman",serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.thumb{float:right;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;font-size:0.85em;width:240px;text-align:center}
+.thumb img{max-width:100%;background:#eaecf0;display:block;margin:0 auto 4px}
+.small{font-size:0.9em;color:#54595d}
+code{font-family:monospace;background:#f8f9fa;padding:0 3px}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Dynamic linker</h1>
+<p>In computing, a <b>dynamic linker</b> is the part of an operating system that loads and links the shared libraries needed by an executable when it is started (at "run time" or "load time") or, on request, while it is running. Dynamic linking defers much of the linking process until a program starts, in contrast to static linking, in which the linker copies all library routines into the executable at build time. On Unix-like systems the dynamic linker is itself a small program — for example <code>ld-linux.so</code> for the glibc loader on Linux — whose pathname is recorded in the executable's <code>PT_INTERP</code> segment; on Windows the linking is performed by the system loader with DLLs.</p>
+
+<div class="thumb"><img src="images/dynamic-linker.png" alt="[Image: A diagram showing an executable and several shared library files being loaded and linked into a running process's memory]"><div>The dynamic linker maps shared libraries into a process and resolves its symbols at load time.</div></div>
+
+<h2>How it works</h2>
+<p>When a dynamically linked program is executed, the kernel loads the dynamic linker, which reads the program's dynamic section to find its needed libraries, searches the standard paths (and configuration files such as <code>/etc/ld.so.cache</code> on Linux, plus environment settings like <code>LD_LIBRARY_PATH</code>), maps each library into memory, and applies relocations so that references to functions and variables point to the correct addresses. Position-independent code and the procedure linkage table (PLT) and global offset table (GOT) allow code pages to be shared between processes while each process keeps its own data pointers. Many systems resolve function addresses lazily, binding a symbol the first time it is actually called, which speeds program startup.</p>
+<p>Programs can also load libraries explicitly at run time using <code>dlopen</code> and look up symbols with <code>dlsym</code> on POSIX systems (or <code>LoadLibrary</code>/<code>GetProcAddress</code> on Windows), enabling plugins, drivers, and optional features.</p>
+
+<h2>Advantages and disadvantages</h2>
+<p>Dynamic linking saves disk space and memory because one copy of a library serves many programs; library bug fixes and security patches take effect for all programs at once; and programs can be extended with modules loaded on demand. The costs include startup overhead, fragility when libraries change incompatibly ("DLL hell"), security risks if library search paths are subverted, and more complex deployment. Static linking remains common for system-critical tools and self-contained distribution, and is the default in some languages' toolchains such as Go's.</p>
+
+<h2>Implementations</h2>
+<p>On ELF-based systems the dynamic linker is provided by the C library: glibc's <code>ld.so</code> on most Linux distributions, musl's loader, the linkers in the BSD systems, and macOS's <code>dyld</code> for Mach-O binaries. The Windows loader (<code>ntdll.dll</code>) performs analogous work for DLLs, applying import address tables and side-by-side assemblies in later versions to mitigate versioning conflicts.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Linker_(computing)/index.html">Linker (computing)</a></li>
+<li><a href="../Library_(computing)/index.html">Library (computing)</a></li>
+<li><a href="../Dynamic_loading/index.html">Dynamic loading</a></li>
+<li><a href="../Executable_and_Linkable_Format/index.html">Executable and Linkable Format</a></li>
+<li><a href="../DLL_hell/index.html">DLL hell</a></li>
+</ul>
+<p class="small">Text adapted from memory of the Wikipedia article on the dynamic linker.</p>
+</div>
+</body>
+</html>

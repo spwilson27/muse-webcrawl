@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Directory service - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; line-height: 1.6; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 24px 28px 60px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 6px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; font-size: 1.5em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+h3 { font-size: 1.15em; margin-top: 20px; }
+p { margin: 10px 0; font-size: 0.95em; }
+ul, ol { font-size: 0.95em; }
+a { color: #3366cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 4px 0 12px 18px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 6px; width: 260px; font-size: 0.82em; text-align: center; }
+.thumb img { max-width: 100%; }
+.infobox { float: right; margin: 4px 0 12px 18px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px 12px; width: 250px; font-size: 0.85em; }
+.infobox th { text-align: left; padding-right: 8px; }
+.toc { border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px 18px; display: inline-block; font-size: 0.9em; }
+.small { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Directory service</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+
+<div class="thumb">
+<img src="images/directory-service.png" alt="[Image: Diagram of a hierarchical directory tree with organizational units, users, and resources branching from a root node]">
+<div>A directory organises names and attributes in a hierarchical tree.</div>
+</div>
+
+<p>A <b>directory service</b> (or <b>name service</b>) is a software system that stores, organises, and provides access to information in a computer system's directory. In software engineering, a directory is a map between names and values, much like a telephone directory, which maps the name of a person to their telephone number and address. Directory services allow network administrators to manage access to information and resources across a network, and they are a central component of network operating systems and identity management infrastructures.</p>
+
+<p>The most widely deployed directory service protocol is the <a href="../Lightweight_Directory_Access_Protocol/index.html">Lightweight Directory Access Protocol</a> (LDAP), which descends from the X.500 directory standards developed for telecommunications networks. Well-known implementations and products include <a href="../Microsoft/index.html">Microsoft</a>'s <a href="../Active_Directory/index.html">Active Directory</a>, the open-source <a href="../OpenLDAP/index.html">OpenLDAP</a>, Apple's Open Directory, and the historical <a href="../Novell/index.html">Novell</a> eDirectory (formerly Novell Directory Services). Related and predecessor technologies include Sun's Network Information Service (NIS), Banyan VINES StreetTalk, and DNS, which is itself a specialised, globally distributed directory service for host names.</p>
+
+<div class="toc">
+<b>Contents</b>
+<ol>
+<li>History</li>
+<li>Concepts</li>
+<li>LDAP and X.500</li>
+<li>Replication and distribution</li>
+<li>Uses</li>
+<li>Comparison with relational databases</li>
+<li>See also</li>
+<li>References</li>
+</ol>
+</div>
+
+<h2>History</h2>
+<p>The idea of a network directory arose with the growth of computer networks in the 1970s and 1980s. As organisations connected more computers, the need to locate users, printers, file servers, and other resources in a systematic way became pressing. The ARPANET community maintained a central hosts file at the Network Information Center, an approach that did not scale; the <a href="../Domain_Name_System/index.html">Domain Name System</a> (DNS), introduced in the 1980s, solved the analogous problem for host naming by distributing the directory hierarchically.</p>
+<p>For general-purpose directory information, the ITU-T and ISO developed the X.500 series of standards beginning in 1988. X.500 specified a comprehensive Directory Access Protocol (DAP), a data model based on entries and attributes, and a global naming scheme. The full X.500 protocol stack, designed to run over the OSI network model, proved heavy for the desktop computers of the early 1990s. Researchers at the University of Michigan therefore developed LDAP, a lighter protocol that ran over TCP/IP and offered most of X.500's functionality; LDAP was first described in RFC 1487 in 1993 and became the dominant access method.</p>
+<p>Commercial directory products proliferated in the 1990s. Novell's NetWare Directory Services (later eDirectory) was an early success. Microsoft entered the field with Active Directory in Windows 2000, which combined an LDAP-accessible directory with Kerberos authentication and DNS-based location, and became the standard directory for Windows networks. Sun Microsystems, Netscape, and others marketed directory servers for Internet and enterprise use, and directory technology was absorbed into broader identity and access management platforms.</p>
+
+<h2>Concepts</h2>
+<h3>Entries, attributes, and naming</h3>
+<p>A directory stores information as a collection of <i>entries</i>. Each entry is a set of attributes describing an object such as a person, a group, a printer, or a computer. Every attribute has a type and one or more values; a person's entry might include attributes for common name (<i>cn</i>), surname (<i>sn</i>), telephone number, and email address. Entries are organised into a hierarchical tree called the <b>Directory Information Tree</b> (DIT). Each entry has a unique <b>distinguished name</b> (DN) formed from a naming attribute of the entry itself (its relative distinguished name, RDN) together with the DNs of its ancestors, for example <i>cn=Alice Smith, ou=Engineering, dc=example, dc=com</i>.</p>
+<h3>Schema</h3>
+<p>A <b>schema</b> defines the kinds of objects a directory may contain and the attributes each may or must carry. Object classes describe categories of entries: the widely used <i>inetOrgPerson</i> class, for instance, extends the generic <i>person</i> class with attributes suited to Internet-era contact information. Schemas can be extended by administrators, though careless extension complicates interoperability.</p>
+<h3>Operations</h3>
+<p>Clients interact with a directory through operations such as <b>search</b> (retrieving entries matching a filter within a subtree), <b>compare</b>, <b>add</b>, <b>delete</b>, <b>modify</b>, and <b>bind</b>, the operation by which a client authenticates itself to the server. Directory workloads are typically read-heavy: searches vastly outnumber updates, and directory implementations are optimised accordingly.</p>
+
+<h2>LDAP and X.500</h2>
+<p>LDAP, currently specified in RFC 4510 and companion documents (version 3), retained the X.500 data model while simplifying the protocol. An LDAP directory can be queried and modified from almost any platform, and LDAP serves as the lingua franca by which applications — mail servers, web applications, VPN gateways, and operating system logons — look up identity information. Active Directory, although it has proprietary extensions, exposes an LDAP interface, as do OpenLDAP, the 389 Directory Server, and Apache Directory Server.</p>
+<p>Because LDAP defines only the access protocol and information model, products differ in replication, access control, and management tooling. Standards-adjacent technologies include DSML (an XML representation of directory data) and SPML for provisioning.</p>
+
+<h2>Replication and distribution</h2>
+<p>Directories are usually <b>replicated</b> so that copies of the data exist on multiple servers for availability and performance. Replication models range from single-master (one writable server, many read-only replicas) to multi-master, in which updates may be accepted at several replicas and reconciled, with the risk of conflicts. A large directory may also be <b>partitioned</b>: different subtrees held by different servers, with <b>referrals</b> directing clients from one server to another when a query crosses a partition boundary. Replication is one of the features that distinguishes enterprise directory servers from simple LDAP front ends to databases.</p>
+
+<h2>Uses</h2>
+<ul>
+<li><b>Authentication and single sign-on:</b> verifying user credentials and providing a central account store for many applications.</li>
+<li><b>Authorisation:</b> group memberships and attributes in the directory drive access-control decisions.</li>
+<li><b>Resource location:</b> finding printers, servers, and shared folders on a network.</li>
+<li><b>Address books:</b> email clients query directories for contact information.</li>
+<li><b>Public key infrastructure:</b> directories publish certificates and revocation lists.</li>
+<li><b>Configuration stores:</b> applications and operating systems keep settings and policies in directory entries.</li>
+</ul>
+<p>The rise of cloud computing moved many directory functions into hosted identity providers, which expose directories through web protocols such as SAML, OAuth 2.0, and OpenID Connect, and through the SCIM provisioning standard. Microsoft's cloud directory (Microsoft Entra ID, formerly Azure Active Directory) and services such as Okta follow this model while retaining synchronisation with on-premises LDAP directories in many deployments.</p>
+
+<h2>Comparison with relational databases</h2>
+<p>Directory services differ from general-purpose relational databases in several respects. Directories are optimised for read-mostly workloads and for hierarchical, rather than relational, organisation of data. They offer a standardised network protocol and schema conventions that promote interoperability between vendors, built-in replication, and fine-grained access control on entries and attributes. Conversely, they generally lack transactions spanning multiple entries, joins, and the ad-hoc query flexibility of SQL. For applications centred on identity and lookup, the directory model remains a natural fit; attempts to use directories as general databases, or databases as directories, usually produce poor results.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Lightweight_Directory_Access_Protocol/index.html">Lightweight Directory Access Protocol</a></li>
+<li><a href="../Active_Directory/index.html">Active Directory</a></li>
+<li><a href="../OpenLDAP/index.html">OpenLDAP</a></li>
+<li><a href="../Domain_Name_System/index.html">Domain Name System</a></li>
+<li><a href="../Kerberos_(protocol)/index.html">Kerberos (protocol)</a></li>
+<li><a href="../Identity_management/index.html">Identity management</a></li>
+<li><a href="../Single_sign-on/index.html">Single sign-on</a></li>
+<li><a href="../X.500/index.html">X.500</a></li>
+</ul>
+
+<h2>References</h2>
+<ol>
+<li>Carter, Gerald (2003). <i>LDAP System Administration</i>. O'Reilly Media.</li>
+<li>Howes, Timothy A. (1997). <i>Understanding and Deploying LDAP Directory Services</i>. Macmillan.</li>
+<li>RFC 4510, "Lightweight Directory Access Protocol (LDAP): Technical Specification Road Map", IETF, 2006.</li>
+<li>Wahl, M., Howes, T., Kille, S. (1997). RFC 2251, "Lightweight Directory Access Protocol (v3)".</li>
+</ol>
+<p class="small">This article is a recreation written from memory for archival purposes.</p>
+</div>
+</body>
+</html>

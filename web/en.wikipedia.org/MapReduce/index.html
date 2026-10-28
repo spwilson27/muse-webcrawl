@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MapReduce - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; padding: 0; color: #202122; background: #fff; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 20px 28px 60px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0 0 12px 18px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 6px; font-size: 12px; text-align: center; }
+.thumb img { display: block; width: 220px; height: 140px; background: #eaecf0; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>MapReduce</h1>
+<p><b>MapReduce</b> is a programming model and an associated implementation for processing and generating big data sets with a parallel, distributed algorithm on a cluster. A MapReduce program is composed of a <i>map</i> procedure, which performs filtering and sorting, and a <i>reduce</i> procedure, which performs a summary operation.</p>
+<div class="thumb"><img src="images/MapReduce.png" alt="Diagram of the MapReduce data flow: map, shuffle and reduce"></div>
+<h2>Overview</h2>
+<p>The model was popularised by a 2004 paper by Jeffrey Dean and Sanjay Ghemawat of Google, drawing inspiration from the <code>map</code> and <code>reduce</code> functions common in functional programming. The framework takes care of scheduling tasks, data distribution and handling machine failures, allowing programmers without experience of distributed systems to use large clusters.</p>
+<h2>Dataflow</h2>
+<p>The computation takes a set of input key/value pairs and produces a set of output key/value pairs. The user expresses the computation as two functions:</p>
+<p><b>Map</b>: takes an input pair and produces a set of intermediate key/value pairs. The library groups together all intermediate values associated with the same intermediate key and passes them to the reduce function.</p>
+<p><b>Reduce</b>: accepts an intermediate key and a set of values for that key. It merges these values together to form a possibly smaller set of values.</p>
+<p>Between the two phases, a shuffle step redistributes the intermediate data across the nodes of the cluster based on the keys. A canonical example is counting word frequencies: mappers emit (word, 1) pairs, and reducers sum the counts for each word.</p>
+<h2>Implementations and successors</h2>
+<p>The best-known open-source implementation is <a href="../Apache_Hadoop/index.html">Apache Hadoop</a> MapReduce. MapReduce proved highly influential for large-scale batch processing, but its disk-heavy, batch-oriented design led to successors such as Apache Spark, which keeps intermediate results in memory and supports a richer set of operations. Google itself moved to newer systems for many workloads, while the model remains widely used and taught.</p>
+</div>
+</body>
+</html>
