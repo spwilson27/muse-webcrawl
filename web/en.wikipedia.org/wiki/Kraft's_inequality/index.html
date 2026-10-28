@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kraft's inequality - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:1em 1.5em}
+h1{font-size:1.9em;border-bottom:1px solid #a7d7f9;padding-bottom:0.15em;margin-bottom:0.3em;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:0.1em;margin-top:1.2em;font-weight:normal}
+p{margin:0.5em 0}
+.infobox{float:right;width:300px;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em;margin:0 0 1em 1em;font-size:0.9em}
+.infobox th{background:#b0c4de;text-align:center;padding:0.3em;font-size:1.05em}
+.infobox td{padding:0.25em 0.4em;vertical-align:top}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.ref{font-size:0.85em;color:#54595d}
+.formula{text-align:center;font-size:1.15em;margin:1em 0;font-style:italic}
+.hero{display:block;max-width:100%;margin:0.5em 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Kraft's inequality</h1>
+<table class="infobox">
+<tr><th colspan="2">Kraft's inequality</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/krafts-inequality.png" alt="A binary prefix tree illustrating Kraft's inequality"></td></tr>
+<tr><td><b>Field</b></td><td>Information theory, coding theory</td></tr>
+<tr><td><b>Named after</b></td><td>Leon G. Kraft</td></tr>
+<tr><td><b>Published</b></td><td>1949 (Kraft's master's thesis, MIT)</td></tr>
+<tr><td><b>Generalisation</b></td><td>McMillan's inequality (1956)</td></tr>
+</table>
+<p>In coding theory, <b>Kraft's inequality</b> gives a necessary and sufficient condition for the existence of a prefix code with a given set of codeword lengths. It is named after Leon G. Kraft, who stated it in his 1949 master's thesis at MIT.</p>
+<h2>Statement</h2>
+<p>If a prefix-free code over an alphabet of size r has codeword lengths l<sub>1</sub>, l<sub>2</sub>, …, l<sub>n</sub>, then</p>
+<p class="formula">Σ<sub>i=1..n</sub> r<sup>−l<sub>i</sub></sup> ≤ 1</p>
+<p>Conversely, if positive integers l<sub>1</sub>, …, l<sub>n</sub> satisfy this inequality, then there exists a prefix code over an r-letter alphabet with exactly those codeword lengths.</p>
+<h2>Proof idea</h2>
+<p>Represent the code as a complete r-ary tree of depth max(l<sub>i</sub>). A codeword of length l<sub>i</sub> at depth l<sub>i</sub> excludes r<sup>L−l<sub>i</sub></sup> leaves at full depth L from use by any other codeword. Counting excluded leaves against the total r<sup>L</sup> leaves and dividing through by r<sup>L</sup> gives the inequality. For the converse, one constructs the code greedily, assigning the shortest codewords first; the inequality guarantees a free node is always available.</p>
+<h2>Applications</h2>
+<p>Kraft's inequality underlies the theory of lossless data compression: it bounds the achievable codeword lengths in prefix codes such as Huffman codes and Shannon–Fano codes, and it is a stepping stone to Shannon's source coding theorem. McMillan's inequality extends the same bound to all uniquely decodable codes, showing that restricting attention to prefix codes costs nothing in achievable lengths.</p>
+<h2>See also</h2>
+<p><a href="../Prefix_code/index.html">Prefix code</a> · <a href="../Huffman_coding/index.html">Huffman coding</a> · <a href="../McMillan's_inequality/index.html">McMillan's inequality</a> · <a href="../Shannon's_source_coding_theorem/index.html">Shannon's source coding theorem</a></p>
+<p class="ref">References: Kraft, L. G. (1949). <i>A device for quantizing, grouping, and coding amplitude-modulated pulses</i>. MIT thesis. — Cover, T. M. &amp; Thomas, J. A. (2006). <i>Elements of Information Theory</i>.</p>
+</div>
+</body>
+</html>

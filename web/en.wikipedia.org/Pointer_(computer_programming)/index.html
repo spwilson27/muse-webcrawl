@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pointer (computer programming) - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #fff; color: #202122; }
+.mw-body { max-width: 960px; margin: 0 auto; padding: 20px 30px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { font-family: sans-serif; font-size: 14px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 10px 0; }
+.hero img { max-width: 420px; background: #eaecf0; border: 1px solid #a2a9b1; padding: 20px; }
+.caption { font-family: sans-serif; font-size: 11px; color: #54595d; }
+code { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0 3px; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Pointer (computer programming)</h1>
+<div class="hero"><img src="images/pointer-programming.png" alt="Diagram of a pointer variable containing a memory address that refers to a value stored elsewhere">
+<div class="caption">A pointer stores the address of another value in memory</div></div>
+<p>In computer science, a <b>pointer</b> is an object in many programming languages that stores a memory address. This can be that of another value located in computer memory, or in some cases, that of memory-mapped hardware. A pointer <i>references</i> a location in memory, and obtaining the value stored at that location is known as <i>dereferencing</i> the pointer. As an analogy, a page number in a book's index could be considered a pointer to the corresponding page; dereferencing such a pointer would be done by flipping to the page with the given page number and reading the text found on that page.</p>
+<p>Pointers to data significantly improve performance for repetitive operations, like traversing iterable data structures (e.g. strings, lookup tables, control tables, and tree structures). Pointers are also used to implement dynamic memory allocation, linked data structures and pass-by-reference semantics.</p>
+<h2>History and use in C</h2>
+<p>Explicit pointers became central to programming with the C language (1972), in which the operators <code>&amp;</code> (address-of) and <code>*</code> (dereference) expose machine addresses directly, and pointer arithmetic allows a pointer to be advanced through an array — in C, arrays and pointers are closely related, so that <code>a[i]</code> is equivalent to <code>*(a + i)</code>. C++ retained pointers while adding references and, later, smart pointers such as <code>std::unique_ptr</code> and <code>std::shared_ptr</code> that manage object lifetimes automatically. Function pointers store the address of executable code, enabling callbacks and tables of operations. The <i>null pointer</i> designates an intentionally invalid reference; dereferencing it is undefined behaviour that typically crashes the program — Tony Hoare called his invention of the null reference his "billion-dollar mistake".</p>
+<h2>Hazards</h2>
+<p>Because pointers expose raw addresses, misuse is a major source of software defects and security vulnerabilities: dangling pointers that reference freed memory, memory leaks from unfreed allocations, buffer overflows from unchecked pointer arithmetic, and use-after-free errors have all been exploited in attacks. Memory-safe languages such as Java, C# and Go therefore replace general pointers with restricted references that cannot be forged or arithmetically manipulated, and rely on garbage collection for reclamation; Rust instead enforces pointer safety at compile time through its ownership and borrowing rules while retaining explicit pointer types for low-level code.</p>
+<h2>Special kinds of pointers</h2>
+<p>Variants include <i>void pointers</i> (a pointer without a specified data type, as in C's <code>void *</code>), double pointers (pointers to pointers), near and far pointers in segmented memory architectures, and opaque pointers that hide an object's representation from clients of a library. In databases and filesystems, analogous recorded addresses serve as persistent pointers to stored records.</p>
+<h2>See also</h2>
+<p><a href="../Reference_(computer_science)/index.html">Reference (computer science)</a> &middot; <a href="../Memory_management/index.html">Memory management</a> &middot; <a href="../Null_pointer/index.html">Null pointer</a> &middot; <a href="../C_(programming_language)/index.html">C (programming language)</a> &middot; <a href="../Dangling_pointer/index.html">Dangling pointer</a></p>
+</div>
+</body>
+</html>

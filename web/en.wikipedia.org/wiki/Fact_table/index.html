@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fact table - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:0}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:2px}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 12px 16px}
+.infobox th{background:#b0c4de;padding:6px;text-align:center}
+.infobox td{padding:4px 6px;vertical-align:top}
+.hero{display:block;max-width:300px;margin:12px auto;border:1px solid #c8ccd1;background:#eef;padding:8px;text-align:center}
+p{line-height:1.6}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Fact table</h1>
+<img class="hero" src="images/fact-table.png" alt="Diagram of a star schema with a central fact table (image placeholder)">
+<table class="infobox">
+<tr><th colspan="2">Fact table</th></tr>
+<tr><td><b>Context</b></td><td>Data warehousing, dimensional modeling</td></tr>
+<tr><td><b>Key components</b></td><td>Measures, foreign keys to dimensions</td></tr>
+<tr><td><b>Related concepts</b></td><td>Dimension table, star schema, snowflake schema</td></tr>
+</table>
+<p>In data warehousing, a <b>fact table</b> is the central table in a star schema or snowflake schema, surrounded by dimension tables. A fact table contains the quantitative data — the measurements, metrics, or "facts" — of a business process, together with foreign keys that link each row to the dimension tables describing the context of the measurement.</p>
+<h2>Structure</h2>
+<p>Each row in a fact table represents a single business event or measurement at a declared level of detail known as the <i>grain</i> of the table. A retail sales fact table, for example, might have one row per product sold on a receipt line, with measures such as quantity sold, unit price, discount amount and total sales amount. The primary key of a fact table is usually a composite of the foreign keys referencing its dimensions, sometimes supplemented by a degenerate dimension such as a transaction number.</p>
+<h2>Types of facts</h2>
+<p>Measures stored in fact tables are commonly classified as <i>additive</i> (can be summed across all dimensions, e.g. sales revenue), <i>semi-additive</i> (can be summed across some but not all dimensions, e.g. account balances over time), and <i>non-additive</i> (cannot be summed, e.g. ratios or percentages, which are typically derived from stored additive components).</p>
+<h2>Types of fact tables</h2>
+<p>Ralph Kimball's dimensional modeling methodology distinguishes several fact table types: transaction fact tables, which record one row per event; periodic snapshot fact tables, which summarise measures over regular time intervals; and accumulating snapshot fact tables, which track the progress of a process through defined milestones, updating rows as the process advances. Factless fact tables record events that have no numeric measures, such as student attendance, using only dimension keys.</p>
+<h2>Design considerations</h2>
+<p>Fact tables are typically the largest tables in a data warehouse, often containing billions of rows, and are usually kept narrow — few columns, many rows — to support fast aggregation. Surrogate keys are used for dimension references so that changes in source-system keys do not corrupt the warehouse history.</p>
+</div>
+</body>
+</html>

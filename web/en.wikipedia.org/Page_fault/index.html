@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Page fault - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;background:#fff;color:#202122;margin:0;padding:0 1.5em;}
+h1{font-family:"Linux Libertine",Georgia,serif;border-bottom:1px solid #a2a9b1;font-weight:normal;}
+h2{font-family:"Linux Libertine",Georgia,serif;border-bottom:1px solid #a2a9b1;font-weight:normal;}
+.infobox{float:right;width:22em;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em;margin:0 0 1em 1em;font-size:90%;}
+.infobox th{background:#c8ccd1;padding:0.3em;}
+a{color:#0645ad;text-decoration:none;}
+figure.hero{text-align:center;margin:1em 0;}
+figure.hero img{max-width:400px;border:1px solid #a2a9b1;background:#eaecf0;padding:1em;}
+figcaption{font-size:85%;color:#54595d;}
+</style>
+</head>
+<body>
+<h1>Page fault</h1>
+<table class="infobox">
+<tr><th colspan="2">Page fault</th></tr>
+<tr><td><b>Type</b></td><td>Hardware exception / trap</td></tr>
+<tr><td><b>Occurs in</b></td><td>Paged virtual memory systems</td></tr>
+<tr><td><b>Handled by</b></td><td>Operating system kernel</td></tr>
+</table>
+<p>A <b>page fault</b> is a type of exception raised by computer hardware when a running program accesses a memory page that is not currently mapped into the process's virtual address space. Despite the name, a page fault is not necessarily an error: it is the normal mechanism by which demand paging loads data into memory only when needed.</p>
+<figure class="hero"><img src="images/page-fault-diagram.png" alt="Diagram of a page fault being serviced from disk"><figcaption>Servicing a page fault: the page is read from secondary storage into physical memory</figcaption></figure>
+<h2>Types</h2>
+<p>A <b>minor</b> (soft) page fault occurs when the page is already in physical memory — for example in the page cache or another process's address space — and only the page table entry needs updating; these are inexpensive. A <b>major</b> (hard) page fault requires reading the page from disk or another backing store, which is orders of magnitude slower. An <b>invalid</b> page fault arises when the address is not part of the process's address space at all; on Unix-like systems the kernel typically responds with a segmentation fault (SIGSEGV), and Microsoft Windows reports an access violation.</p>
+<h2>Handling</h2>
+<p>When a page fault occurs, control passes to the operating system's page fault handler, which validates the access, locates the page on disk or in the swap area, finds a free frame (evicting another page via a page replacement algorithm if necessary), schedules the transfer, updates the page tables, and restarts the faulting instruction. If faults happen excessively because the working set exceeds available RAM, the system is said to thrash, and performance collapses.</p>
+</body>
+</html>

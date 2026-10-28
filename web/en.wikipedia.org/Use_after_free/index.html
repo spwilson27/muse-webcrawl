@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Use after free - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;color:#202122;background:#fff}
+.topbar{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:8px 20px;font-family:sans-serif;font-size:13px}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;margin-top:26px}
+p{line-height:1.6;font-size:15px}
+.infobox{float:right;width:270px;background:#f8f9fa;border:1px solid #a2a9b1;font-family:sans-serif;font-size:13px;margin:0 0 12px 16px}
+.infobox th{background:#f2d5d5;padding:6px;text-align:center}
+.infobox td{padding:4px 6px;vertical-align:top}
+code{font-family:monospace;background:#f8f9fa}
+.hero{display:block;margin:12px auto;max-width:420px;width:100%}
+.caption{text-align:center;font-size:12px;color:#54595d;font-family:sans-serif}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="topbar">From Wikipedia, the free encyclopedia</div>
+<div class="wrap">
+<h1>Use after free</h1>
+<img class="hero" src="images/use-after-free.png" alt="Diagram showing a pointer used after its memory was freed">
+<p class="caption">A pointer remains after its object is freed; the memory may be reallocated</p>
+<table class="infobox">
+<tr><th colspan="2">Use after free</th></tr>
+<tr><td><b>Type</b></td><td>Memory safety bug (temporal)</td></tr>
+<tr><td><b>CWE</b></td><td>CWE-416</td></tr>
+<tr><td><b>Related</b></td><td>Dangling pointer, double free, null pointer dereference</td></tr>
+<tr><td><b>Common in</b></td><td>C, C++ and other manually memory-managed languages</td></tr>
+</table>
+<p><b>Use after free</b> is a class of software bug in which a program continues to use a pointer to memory after that memory has been freed (deallocated). Because the allocator may reuse the freed region for another object, the stale pointer can read or write data belonging to a different object, causing crashes, data corruption, or — in security contexts — privilege escalation and arbitrary code execution.</p>
+<h2>Causes</h2>
+<p>Typical causes include error paths that free an object while other code still holds pointers to it, complex ownership relationships without a clear discipline, premature deallocation callbacks, and the related <b>double free</b> error, in which memory is freed twice. Use-after-free vulnerabilities have featured prominently among serious browser, kernel and operating-system exploits, and are regularly assigned CVE identifiers.</p>
+<h2>Detection and prevention</h2>
+<p>Mitigations and defences include setting pointers to null after freeing (which converts some errors into more detectable null dereferences), smart pointers and ownership systems such as C++'s <code>unique_ptr</code> and the borrow checker of Rust, garbage collection, sanitizers such as AddressSanitizer, hardened allocators that quarantine freed memory, and type-safe designs such as generational handles. Static analysis and fuzzing are widely used to find use-after-free bugs before release.</p>
+<h2>See also</h2>
+<p><a href="../Use_tax/index.html">Use tax</a> · Dangling pointer · Double free · Memory safety · Buffer overflow · AddressSanitizer</p>
+</div>
+</body>
+</html>

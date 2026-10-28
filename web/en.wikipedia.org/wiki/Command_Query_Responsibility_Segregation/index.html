@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Command Query Responsibility Segregation - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine','Georgia',serif;margin:0;padding:0;background:#fff;color:#202122;line-height:1.6}
+#content{margin:0 auto;max-width:960px;padding:16px 24px}
+h1{font-size:28px;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:22px;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:2px}
+h3{font-size:18px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{display:block;max-width:400px;margin:10px auto}
+.caption{text-align:center;font-size:small;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Command Query Responsibility Segregation</h1>
+<p><b>Command Query Responsibility Segregation</b> (<b>CQRS</b>) is a software architecture pattern that separates the model used to <i>update</i> information (commands) from the model used to <i>read</i> information (queries). The pattern was described and popularised by Greg Young, building on Bertrand Meyer's earlier command–query separation principle from object-oriented design. CQRS is frequently combined with event sourcing, in which state changes are stored as a sequence of events.</p>
+<img class="hero" src="images/command-query-responsibility-segregation.png" alt="Diagram of CQRS showing separate command and query models synchronised through events">
+<p class="caption">CQRS: writes (left) and reads (right) use different models, synchronised by events.</p>
+<h2>Principles</h2>
+<p>In a traditional CRUD architecture, a single data model both reads and modifies state. CQRS splits these responsibilities: the <b>command side</b> handles writes using a rich domain model that enforces business rules, while the <b>query side</b> uses a separate, often denormalised read model optimised for display and reporting. Because the two models are independent, each can be scaled, optimised, and even stored in different technologies. Updates to the read model are usually propagated asynchronously, making the system eventually consistent rather than immediately consistent.</p>
+<h2>Relation to event sourcing</h2>
+<p>CQRS is often paired with <a href="../Event_sourcing/index.html">event sourcing</a>: instead of storing current state, the command side stores a stream of domain events. Read models are then projections built by replaying or subscribing to those events. This combination yields a complete audit log and enables rebuilding read models in new shapes, at the cost of greater architectural complexity.</p>
+<h2>Benefits and drawbacks</h2>
+<p>Benefits include independent scaling of read and write workloads, read models tailored to specific queries, and a natural fit with domain-driven design's collaborative, task-based user interfaces. Drawbacks include substantially increased complexity, eventual consistency that developers and users must understand, and duplicated modelling effort. Critics, including some of the pattern's early advocates in particular contexts, note that CQRS is usually appropriate only for the bounded contexts of a system with genuinely divergent read/write requirements, rather than as a whole-system default.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Command-query_separation/index.html">Command-query separation</a></li>
+<li><a href="../Event_sourcing/index.html">Event sourcing</a></li>
+<li><a href="../Domain-driven_design/index.html">Domain-driven design</a></li>
+<li><a href="../Software_architecture/index.html">Software architecture</a></li>
+</ul>
+</div>
+</body>
+</html>

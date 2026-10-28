@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Online transaction processing - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; max-width: 900px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 15px 15px; width: 280px; font-size: 0.9em; }
+.infobox th { background: #ccf; text-align: left; padding: 4px; }
+.infobox td { padding: 4px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { width: 100%; height: auto; display: block; margin: 10px 0; }
+.caption { font-size: 0.85em; color: #54595d; text-align: center; }
+</style>
+</head>
+<body>
+<h1>Online transaction processing</h1>
+<img class="hero" src="images/online-transaction-processing.png" alt="Terminals submitting short transactions to a central database system">
+<p class="caption">OLTP systems handle many short, concurrent transactions</p>
+<p><b>Online transaction processing</b> (<b>OLTP</b>) is a class of information systems that manage transaction-oriented applications, typically for data entry and retrieval in real time. OLTP systems power much of everyday commerce: airline reservations, bank ATM networks, point-of-sale systems, e-commerce checkouts, and order processing. They are characterised by large numbers of concurrent users issuing short, simple transactions that each read or modify a small amount of data and must complete in fractions of a second.</p>
+<h2>Characteristics</h2>
+<ul>
+<li><b>Short, atomic transactions</b> — each transaction is an indivisible unit satisfying the ACID properties (atomicity, consistency, isolation, durability).</li>
+<li><b>High concurrency</b> — thousands of simultaneous users, coordinated by locking or multiversion concurrency control.</li>
+<li><b>Current, detailed data</b> — records reflect the present state of the business, updated continuously.</li>
+<li><b>High availability</b> — downtime directly halts commerce, so systems are engineered for reliability and fast recovery.</li>
+</ul>
+<h2>OLTP versus OLAP</h2>
+<p>OLTP is conventionally contrasted with online analytical processing (OLAP). OLTP databases are optimised for fast writes and point lookups on normalised schemas and hold current operational data; OLAP systems run long, complex queries over large volumes of historical, often denormalised data for reporting and analysis. Organisations typically replicate OLTP data into data warehouses or lakes for OLAP workloads so that analysis does not slow down operations.</p>
+<h2>Technology</h2>
+<p>Classic OLTP platforms include IBM's CICS and IMS on mainframes and relational databases such as Oracle, Microsoft SQL Server, PostgreSQL, and MySQL. Transaction monitors and, later, application servers coordinate distributed transactions using protocols such as two-phase commit. Modern systems may use in-memory databases and sharding to reach millions of transactions per second, benchmarked by the industry-standard TPC-C test administered by the Transaction Processing Performance Council.</p>
+<p>See also: <a href="../Transaction_processing/index.html">Transaction processing</a> · <a href="../OLAP/index.html">OLAP</a> · <a href="../ACID/index.html">ACID</a> · <a href="../Database/index.html">Database</a> · <a href="../CICS/index.html">CICS</a></p>
+</body>
+</html>

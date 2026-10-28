@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Atomic transaction - Wikipedia</title>
+<style>
+body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff}
+#content{max-width:960px;margin:0 auto;padding:1em 1.5em 3em}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:Georgia,"Times New Roman",serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+.hero{display:block;margin:1em auto;max-width:420px;background:#eaecf0;border:1px solid #c8ccd1;padding:1.5em;text-align:center;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Atomic transaction</h1>
+<img class="hero" src="images/atomic-transaction.png" alt="Diagram of a transaction committing or rolling back as a single unit">
+<p>An <b>atomic transaction</b> is an indivisible and irreducible series of database operations such that either <i>all</i> occur, or <i>none</i> occur. A guarantee of atomicity prevents updates to the database from occurring only partially, which can cause greater problems than rejecting the whole series outright. Atomicity is the first of the four ACID properties (atomicity, consistency, isolation, durability) that define correct transaction processing.</p>
+<h2>Example</h2>
+<p>Consider transferring money between two bank accounts: the debit from one account and the credit to the other must happen together. If the system fails after the debit but before the credit, the money would vanish from the database's point of view. An atomic transaction guarantees that either both operations are recorded (the transaction <i>commits</i>) or the partial work is undone (the transaction <i>rolls back</i> or <i>aborts</i>), leaving the database as though the transaction had never started.</p>
+<h2>Implementation</h2>
+<p>Atomicity is typically implemented using a <b>write-ahead log</b>: before modifying data in place, the system records the intended changes in a durable log. After a crash, the log is replayed to redo committed transactions and to undo those that were in progress. Shadow paging is an alternative technique in which modified pages are written to new locations and made visible by atomically updating a root pointer.</p>
+<h2>Distributed transactions</h2>
+<p>When a transaction spans several databases or services, atomicity is harder to achieve. The classic solution is the <b>two-phase commit protocol</b>, in which a coordinator asks all participants to prepare and then either commit or abort unanimously. Because two-phase commit can block if the coordinator fails, many modern distributed systems instead relax strict atomicity in favour of eventual consistency and compensation-based designs such as sagas.</p>
+<h2>Outside databases</h2>
+<p>The concept also appears in operating systems and programming languages: atomic operations in concurrent programming, transactional memory, and atomic file-system updates all borrow the same all-or-nothing guarantee, implemented with mechanisms such as compare-and-swap instructions and journaling.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../ACID/index.html">ACID</a></li>
+<li><a href="../Database_transaction/index.html">Database transaction</a></li>
+<li><a href="../Two-phase_commit_protocol/index.html">Two-phase commit protocol</a></li>
+<li><a href="../Write-ahead_logging/index.html">Write-ahead logging</a></li>
+</ul>
+<p class="small">From Wikipedia, the free encyclopedia.</p>
+</div>
+</body>
+</html>

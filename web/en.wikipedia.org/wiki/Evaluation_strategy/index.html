@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Evaluation strategy - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f6f6f6;color:#202122}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;margin-top:28px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:12px;margin:0 0 16px 16px;font-size:90%}
+.infobox th{text-align:left;background:#eaf3ff;padding:4px}
+.infobox td{padding:4px}
+a{color:#36c}
+.hero{display:block;max-width:320px;margin:12px 0;border:1px solid #a2a9b1}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Evaluation strategy</h1>
+<img class="hero" src="images/evaluation-strategy.png" alt="Evaluation strategy diagram placeholder">
+<table class="infobox">
+<tr><th colspan="2">Evaluation strategy</th></tr>
+<tr><td><b>Field</b></td><td>Programming language semantics</td></tr>
+<tr><td><b>Main variants</b></td><td>Call by value, call by name, call by reference, call by sharing, call by need</td></tr>
+</table>
+<p>An <b>evaluation strategy</b> is a set of rules for the semantics of a programming language: specifically, for evaluating the arguments of a function call and for determining when the expressions passed as arguments are evaluated and what values they may be bound to. Evaluation strategies are divided into <i>strict</i> strategies, in which arguments are always evaluated before the function is applied, and <i>non-strict</i> strategies, in which arguments are not evaluated unless their values are actually needed.</p>
+<h2>Strict evaluation</h2>
+<p>In <b>call by value</b>, the argument expression is evaluated and the resulting value is bound to the corresponding parameter; this is the most common strategy, used by languages such as C, Java, and Scheme. In <b>call by reference</b>, the function receives a reference to the argument variable, so assignments to the parameter modify the caller's variable. <b>Call by sharing</b>, used for objects in languages such as Python and Java, passes a reference by value: the callee can mutate a shared object but cannot rebind the caller's variable.</p>
+<h2>Non-strict evaluation</h2>
+<p>In <b>call by name</b>, the argument expression is substituted into the function body and re-evaluated each time the parameter is used; it was used in Algol 60 and can be simulated with macros or thunks. <b>Call by need</b> is an optimised version in which the result of evaluating an argument is memoised and shared between uses; it is the strategy used by lazy languages such as <a href="../Haskell/index.html">Haskell</a>. Non-strict evaluation permits working with infinite data structures and can avoid wasted computation, but makes reasoning about time, space, and side effects more difficult.</p>
+<h2>Other strategies</h2>
+<p>Other strategies include call by copy-restore (used historically in Fortran and Ada), call by result, and nondeterministic or futures-based evaluation in concurrent languages, in which an argument is evaluated in parallel with the rest of the program and its value is demanded only when needed.</p>
+</div>
+</body>
+</html>

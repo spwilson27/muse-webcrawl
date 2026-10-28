@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shannon-Hartley theorem - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 60px; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.5em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+h3 { font-size: 1.2em; font-weight: bold; margin-top: 1em; }
+p { line-height: 1.6; margin: 0.6em 0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { float: right; margin: 0 0 12px 16px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 6px; text-align: center; font-size: 0.85em; max-width: 240px; }
+.hero img { max-width: 220px; display: block; margin: 0 auto 4px; background: #eaecf0; }
+.formula { text-align: center; font-size: 1.3em; margin: 1em 0; font-style: italic; }
+ul { line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Shannon-Hartley theorem</h1>
+<div class="hero"><img src="images/shannon-hartley-theorem.png" alt="Graph of channel capacity versus signal-to-noise ratio">Channel capacity grows logarithmically with signal-to-noise ratio</div>
+<p>In <a href="../Information_theory/index.html">information theory</a>, the <b>Shannon–Hartley theorem</b> tells the maximum rate at which information can be transmitted over a communications channel of a specified bandwidth in the presence of noise. It is an application of the noisy-channel coding theorem to the archetypal case of a continuous-time analogue communications channel subject to Gaussian noise. The theorem establishes <a href="../Claude_Shannon/index.html">Claude Shannon</a>'s channel capacity for a communication link, a bound on the maximum amount of error-free information per time unit that can be transmitted with a specified bandwidth in the presence of noise interference, assuming that the signal power is bounded, and that the Gaussian noise process is characterized by a known power or power spectral density.</p>
+<p>The law is named after Claude Shannon and <a href="../Ralph_Hartley/index.html">Ralph Hartley</a>. Because of the theorem, a channel of given bandwidth and signal-to-noise ratio can never carry more than a definite quantity of information per second, no matter how sophisticated the encoding; modern error-correcting codes such as turbo codes and LDPC codes can approach this limit closely.</p>
+<h2>Statement of the theorem</h2>
+<p>The Shannon–Hartley theorem states the channel capacity <i>C</i>, meaning the theoretical tightest upper bound on the information rate <i>R</i> of clean (error-free) data that can be communicated at an arbitrarily low error rate over an analogue channel subject to additive white Gaussian noise (AWGN) of power <i>N</i>:</p>
+<p class="formula">C = B log<sub>2</sub>(1 + S/N)</p>
+<p>where <i>C</i> is the channel capacity in bits per second, <i>B</i> is the bandwidth of the channel in hertz, <i>S</i> is the average received signal power, <i>N</i> is the average power of the noise, and S/N is the signal-to-noise ratio expressed as a linear power ratio (not in decibels).</p>
+<h2>History</h2>
+<p>During the late 1920s, <a href="../Harry_Nyquist/index.html">Harry Nyquist</a> and Ralph Hartley developed ideas about the maximum rate of transmission over a telegraph channel; Hartley's 1928 paper "Transmission of Information" stated that the total amount of information transmissible is proportional to the frequency range transmitted and to the time. In 1948 Shannon published "A Mathematical Theory of Communication", deriving the capacity formula for the band-limited AWGN channel and proving, through the noisy-channel coding theorem, that rates below capacity can be achieved with arbitrarily small error probability given sufficiently sophisticated coding.</p>
+<h2>Implications and examples</h2>
+<p>A standard telephone line with about 3.4 kHz of bandwidth and a signal-to-noise ratio of 30 dB has a capacity of roughly 34 kbit/s — close to the maximum rate actually achieved by the fastest dial-up modems (56 kbit/s modems exploited digital parts of the network to do slightly better). The formula shows that capacity grows only logarithmically with signal power, so beyond a point, adding bandwidth is far more effective than adding power — a principle that guides the design of DSL, cable, Wi-Fi, and cellular systems. In the limit of infinite bandwidth, capacity approaches 1.44 × S/N<sub>0</sub>, giving rise to the ultimate Shannon limit on energy per bit: E<sub>b</sub>/N<sub>0</sub> ≥ ln 2, or about −1.59 dB.</p>
+<h2>Frequency-domain statement</h2>
+<p>For channels whose noise varies with frequency, the capacity is obtained by integrating B log<sub>2</sub>(1 + S(f)/N(f)) over the band, which leads to the principle of water-filling: transmit power should be allocated preferentially to the frequencies where the noise is lowest.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Nyquist–Shannon_sampling_theorem/index.html">Nyquist–Shannon sampling theorem</a></li>
+<li><a href="../Noisy-channel_coding_theorem/index.html">Noisy-channel coding theorem</a></li>
+<li><a href="../Channel_capacity/index.html">Channel capacity</a></li>
+<li><a href="../Signal-to-noise_ratio/index.html">Signal-to-noise ratio</a></li>
+</ul>
+</div>
+</body>
+</html>

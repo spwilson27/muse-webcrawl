@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Software-defined networking - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 960px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; background: #fff; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.2em; }
+h3 { font-size: 1.15em; margin-top: 1em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { display: block; margin: 16px auto; max-width: 480px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 8px; text-align: center; }
+.first { font-size: 1.02em; }
+</style>
+</head>
+<body>
+<h1>Software-defined networking</h1>
+<img class="hero" src="images/software-defined-networking.png" alt="Diagram of a software-defined network showing a central controller managing multiple switches">
+<p class="first"><b>Software-defined networking</b> (<b>SDN</b>) is an approach to network management that uses abstractions to enable dynamic and programmatically efficient network configuration to improve network performance and monitoring. It does this by decoupling the network control plane from the data forwarding plane, allowing network administrators to control network services through software rather than by configuring individual hardware devices.</p>
+<p>In a traditional network, each switch or router makes its own forwarding decisions based on distributed protocols. In an SDN architecture, a logically centralized <b>controller</b> computes forwarding rules and installs them in the underlying switches, which simply forward packets according to flow tables. This separation makes networks more flexible, easier to program, and simpler to manage at scale.</p>
+<h2>History</h2>
+<p>The principles of SDN trace back to research on programmable networks in the 1990s, including active networks and efforts to separate control and forwarding such as the ForCES and PCE working groups in the IETF. A key milestone was the development of the <a href="../../OpenFlow/index.html">OpenFlow</a> protocol at Stanford University around 2008, which gave researchers a standardized way to experiment with new routing and security policies on production networks. The Open Networking Foundation (ONF) was formed in 2011 by companies including Google, Facebook, Microsoft, Yahoo!, Verizon, and Deutsche Telekom to promote SDN and OpenFlow.</p>
+<p>Google's deployment of OpenFlow-based networking in its internal backbone, known as B4, was publicly described in 2012–2013 and demonstrated that SDN could operate at very large scale. Since then, SDN concepts have been widely adopted in data centers, wide-area networks, and campus networks.</p>
+<h2>Architecture</h2>
+<h3>Application plane</h3>
+<p>At the top of the architecture, network applications communicate their requirements to the controller through <b>northbound interfaces</b>, typically RESTful APIs. Applications may implement functions such as load balancing, traffic engineering, firewalls, and network virtualization.</p>
+<h3>Control plane</h3>
+<p>The SDN controller maintains a global view of the network topology and state. It translates application-level policies into concrete forwarding rules and pushes them to devices. Controllers may be physically distributed for scalability and fault tolerance while remaining logically centralized.</p>
+<h3>Data plane</h3>
+<p>The data plane consists of forwarding devices — physical or virtual switches — that forward traffic according to flow tables installed by the controller via a <b>southbound interface</b> such as OpenFlow, NETCONF, or P4Runtime. When a switch encounters a packet that matches no rule, it may forward the packet to the controller for a decision.</p>
+<h2>Applications</h2>
+<p>SDN is used in data center networks to support virtualization and multi-tenancy, in wide-area networks (SD-WAN) to route traffic intelligently across links, in campus and enterprise networks for access control and monitoring, and in 5G mobile networks where flexible slicing and orchestration are required. It is closely related to <a href="../../Network_function_virtualization/index.html">network function virtualization</a> (NFV).</p>
+<h2>Advantages and challenges</h2>
+<p>Advocates cite centralized visibility, faster innovation, vendor independence, and the ability to automate network operations. Critics note challenges in controller scalability and reliability, the security risk of a centralized control point, and the difficulty of migrating legacy networks. Despite these concerns, SDN has become a foundational concept in modern networking.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../OpenFlow/index.html">OpenFlow</a></li>
+<li><a href="../../Network_function_virtualization/index.html">Network function virtualization</a></li>
+<li><a href="../../Computer_network/index.html">Computer network</a></li>
+<li><a href="../../Software_engineering/index.html">Software engineering</a></li>
+</ul>
+</body>
+</html>

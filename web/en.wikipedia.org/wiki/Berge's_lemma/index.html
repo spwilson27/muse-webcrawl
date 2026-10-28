@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Berge's lemma - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p, li { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 270px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px 12px; margin: 0 0 14px 18px; font-size: 13px; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+.infobox caption { font-weight: bold; font-size: 15px; padding-bottom: 6px; }
+.hero { text-align: center; margin: 14px 0; }
+.hero img { max-width: 420px; width: 100%; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Berge's lemma</h1>
+<table class="infobox">
+<caption>Berge's lemma</caption>
+<tr><th>Field</th><td><a href="../Graph_theory/index.html">Graph theory</a></td></tr>
+<tr><th>Proved by</th><td><a href="../Claude_Berge/index.html">Claude Berge</a> (1957)</td></tr>
+<tr><th>Statement</th><td>A matching is maximum iff it admits no augmenting path</td></tr>
+</table>
+<p>In <a href="../Graph_theory/index.html">graph theory</a>, <b>Berge's lemma</b> is a fundamental result about <a href="../Matching_(graph_theory)/index.html">matchings</a>. It states that a matching <i>M</i> in a graph is a maximum matching — that is, a matching of the largest possible cardinality — if and only if there is no <b>augmenting path</b> with respect to <i>M</i>: a path that starts and ends at free (unmatched) vertices and whose edges alternate between edges outside <i>M</i> and edges inside <i>M</i>. The lemma was proved by the French mathematician Claude Berge in 1957.</p>
+<div class="hero"><img src="images/berges-lemma.png" alt="Diagram of an augmenting path with respect to a matching"></div>
+<h2>Proof idea</h2>
+<p>If an augmenting path exists, the matching can be enlarged by symmetric difference with the path: edges of the path belonging to <i>M</i> are removed and the remaining edges of the path are added, increasing the size of the matching by one. Hence a maximum matching has no augmenting path.</p>
+<p>Conversely, if <i>M</i> is not maximum, let <i>M&prime;</i> be a larger matching. Consider the symmetric difference of <i>M</i> and <i>M&prime;</i>, which decomposes into alternating paths and even cycles. Because <i>M&prime;</i> has more edges than <i>M</i>, some component must be a path containing more edges of <i>M&prime;</i> than of <i>M</i>; such a path begins and ends at vertices free with respect to <i>M</i>, so it is an augmenting path for <i>M</i>.</p>
+<h2>Applications</h2>
+<p>Berge's lemma underlies augmenting-path algorithms for maximum matching, including the Hungarian search method for bipartite graphs and <a href="../Edmonds%27_blossom_algorithm/index.html">Edmonds' blossom algorithm</a> for general graphs. It is also the basis of the standard proof of the <a href="../K%C5%91nig%27s_theorem_(graph_theory)/index.html">König–Egerváry theorem</a> characterisation of bipartite matching.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Matching_(graph_theory)/index.html">Matching (graph theory)</a></li>
+<li><a href="../Claude_Berge/index.html">Claude Berge</a></li>
+<li><a href="../Hopcroft%E2%80%93Karp_algorithm/index.html">Hopcroft–Karp algorithm</a></li>
+</ul>
+</div>
+</body>
+</html>

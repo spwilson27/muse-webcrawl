@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tagged union - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0 auto; max-width: 960px; padding: 20px; color: #202122; line-height: 1.6; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 8px; }
+.caption { font-size: 13px; color: #54595d; }
+</style>
+</head>
+<body>
+<h1>Tagged union</h1>
+<p>In computer science, a <b>tagged union</b>, also called a <b>variant</b>, <b>choice type</b>, <b>discriminated union</b>, or <b>sum type</b>, is a data structure used to hold a value that could take on several different, but fixed, types. Only one of the types can be in use at any one time, and a <i>tag</i> field explicitly indicates which one is in use. Tagged unions are a central feature of functional programming languages such as ML and Haskell, where they are called algebraic data types, and appear in modern systems languages such as Rust as enums.</p>
+<div class="hero"><img src="images/tagged-union.png" alt="Diagram of a tagged union showing a tag selecting one of several payload types"><div class="caption">A tagged union: the tag records which of the possible payload types is active</div></div>
+<h2>Concept</h2>
+<p>A tagged union can be thought of as a type that has several "cases", each carrying data of possibly different types. The tag makes the structure type-safe: programs must inspect the tag—typically through pattern matching—before accessing the payload, so the error of interpreting the data as the wrong type (possible with C's untagged <a href="../../Union_type/index.html">unions</a>) is prevented. Conceptually, tagged unions are the type-theoretic "sum", dual to the "product" of records or tuples.</p>
+<h2>Language support</h2>
+<p>Haskell and ML define algebraic data types with named constructors; Rust's <code>enum</code> types (such as <code>Option</code> and <code>Result</code>) are tagged unions; Swift, Kotlin (sealed classes), and Scala offer similar constructs. C++17 added <code>std::variant</code> to its standard library, and TypeScript supports discriminated unions through literal discriminant properties. Pattern matching over tagged unions lets compilers check exhaustiveness, warning when a case is unhandled.</p>
+<h2>Uses</h2>
+<p>Tagged unions are used to model optional values, success-or-error results, abstract syntax trees in compilers, messages in actor systems, and states in protocols and parsers—anywhere a value is one of a known set of alternatives.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../Algebraic_data_type/index.html">Algebraic data type</a></li>
+<li><a href="../../Union_type/index.html">Union type</a></li>
+<li><a href="../../Pattern_matching/index.html">Pattern matching</a></li>
+</ul>
+</body>
+</html>

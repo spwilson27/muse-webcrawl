@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>2–3–4 tree - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+p{font-family:sans-serif;font-size:14px;line-height:1.6}
+ul,ol{font-family:sans-serif;font-size:14px;line-height:1.6}
+.hero{display:block;max-width:420px;background:#eaecf0;border:1px solid #c8ccd1;text-align:center;padding:18px 0;color:#72777d;font-family:sans-serif;font-size:12px;margin:8px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>2–3–4 tree</h1>
+<span class="hero"><img src="images/2-3-4-tree.png" alt="Example of a 2–3–4 tree"></span>
+<p>A <b>2–3–4 tree</b> (also called a <b>2–4 tree</b>) is a self-balancing data structure that is commonly used to implement dictionaries. The numbers mean that a tree node can have two, three, or four child links and one, two, or three data elements respectively. 2–3–4 trees are <a href="../../B-tree/index.html">B-trees</a> of order 4 — that is, every internal node can store up to three elements and point to up to four subtrees.</p>
+<h2>Properties</h2>
+<p>In a 2–3–4 tree:</p>
+<ul>
+<li>Every node stores one, two or three keys in sorted order.</li>
+<li>An internal node with <i>k</i> keys has <i>k</i> + 1 children, each covering the key range between successive stored keys.</li>
+<li>All leaves are at the same depth, so the tree is perfectly balanced.</li>
+<li>Nodes are classed by their occupancy: a 2-node has one key and two children, a 3-node has two keys and three children, and a 4-node has three keys and four children.</li>
+</ul>
+<h2>Operations</h2>
+<p>Searching a 2–3–4 tree proceeds as in any multiway search tree, comparing the target key against the keys stored in each node and descending into the appropriate child; this takes logarithmic time in the number of elements. Insertion maintains balance by splitting 4-nodes: when a full node is encountered on the way down (or on the way back up, depending on the variant), it is divided into two 2-nodes and its middle key is promoted into the parent. Splitting the root increases the height of the tree by one — the only way the tree grows — which keeps all leaves level. Deletion is more involved, using rotations and fusions of sibling nodes to guarantee that no node underflows.</p>
+<h2>Relation to red–black trees</h2>
+<p>2–3–4 trees are closely related to <a href="../../Red%E2%80%93black_tree/index.html">red–black trees</a>: every 2–3–4 tree has an equivalent red–black representation in which 3-nodes and 4-nodes are encoded using red links. Red–black trees are often preferred in practice because they require less storage overhead and simpler splitting logic, but the 2–3–4 tree remains a standard pedagogical route into balanced search trees and into the B-trees used in databases and file systems.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../2%E2%80%933_tree/index.html">2–3 tree</a></li>
+<li><a href="../../B-tree/index.html">B-tree</a></li>
+<li><a href="../../Red%E2%80%93black_tree/index.html">Red–black tree</a></li>
+<li><a href="../../Self-balancing_binary_search_tree/index.html">Self-balancing binary search tree</a></li>
+</ul>
+<h2>References</h2>
+<ol>
+<li>Cormen, T. H.; Leiserson, C. E.; Rivest, R. L.; Stein, C. (2009). <i>Introduction to Algorithms</i> (3rd ed.). MIT Press.</li>
+<li>Sedgewick, R.; Wayne, K. (2011). <i>Algorithms</i> (4th ed.). Addison-Wesley.</li>
+</ol>
+</div>
+</body>
+</html>

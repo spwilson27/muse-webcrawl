@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>at (command) - Wikipedia</title>
+<style>
+body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff}
+#content{max-width:960px;margin:0 auto;padding:1em 1.5em 3em}
+h1{font-family:Georgia,"Times New Roman",serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:Georgia,"Times New Roman",serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:.8em;overflow:auto}
+.hero{display:block;margin:1em auto;max-width:420px;background:#eaecf0;border:1px solid #c8ccd1;padding:1.5em;text-align:center;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>at (command)</h1>
+<img class="hero" src="images/at-command.png" alt="Terminal showing a job submitted with the at command">
+<p>In computing, <b><code>at</code></b> is a command in Unix-like operating systems that schedules commands or scripts to be run automatically at a specified time in the future, once only. It is the one-shot counterpart of <a href="../Cron/index.html">cron</a>, which runs jobs on a recurring schedule. Windows has a similar command, also called <code>at</code>, which was deprecated in favour of <code>schtasks</code>.</p>
+<h2>Usage</h2>
+<p><code>at</code> reads a list of commands from standard input or from a file given with the <code>-f</code> option, and executes them at the requested time via the <code>atd</code> daemon. Times can be given in many formats, including clock times, dates, and relative expressions:</p>
+<pre>$ echo "shutdown -h now" | at 22:00
+$ at now + 1 hour
+$ atq        # list pending jobs
+$ atrm 3     # remove job 3</pre>
+<p>The related command <code>batch</code> works like <code>at</code> but runs the job as soon as the system load average drops below a threshold. <code>atq</code> lists the user's pending jobs, and <code>atrm</code> removes jobs from the queue. When a job finishes, any output it produced is mailed to the user.</p>
+<h2>Access control</h2>
+<p>Access to <code>at</code> is controlled by the files <code>/etc/at.allow</code> and <code>/etc/at.deny</code>. Jobs are stored in a spool directory (for example <code>/var/spool/at</code> or <code>/var/spool/cron/atjobs</code>), together with the environment in which they were submitted, so that each job runs with the environment the user had when scheduling it.</p>
+<h2>Design</h2>
+<p>The command dates to early Unix and was standardised by POSIX. On Linux, a widely used implementation was written by Thomas Koenig. Because many modern systems use systemd, the same task can also be achieved with transient timers (<code>systemd-run --on-calendar</code>), but <code>at</code> remains simpler for one-off jobs.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Cron/index.html">cron</a></li>
+<li><a href="../Systemd/index.html">systemd</a></li>
+<li><a href="../Job_scheduler/index.html">Job scheduler</a></li>
+<li><a href="../List_of_Unix_commands/index.html">List of Unix commands</a></li>
+</ul>
+<p class="small">From Wikipedia, the free encyclopedia.</p>
+</div>
+</body>
+</html>

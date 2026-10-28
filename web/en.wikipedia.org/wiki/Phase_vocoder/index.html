@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Phase vocoder - Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{display:block;max-width:100%;margin:1em auto}
+.caption{text-align:center;font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Phase vocoder</h1>
+<img class="hero" src="images/phase-vocoder.png" alt="Spectrogram of audio being time-stretched by a phase vocoder">
+<p class="caption">The phase vocoder analyses audio into spectral frames whose phases can be advanced to change duration.</p>
+<p>A <b>phase vocoder</b> is a type of <a href="../Vocoder/index.html">vocoder</a> that can scale the tempo of an audio signal without affecting its pitch, or shift its pitch without changing its tempo. It works by analysing the signal with a short-time Fourier transform (STFT), modifying the phase values of the resulting spectral frames, and resynthesising the signal with an inverse STFT.</p>
+<h2>Principle of operation</h2>
+<p>The algorithm separates into an analysis stage, in which overlapping windowed frames of the signal are transformed into the frequency domain, and a synthesis stage, in which modified frames are transformed back. To time-stretch a signal, new interpolated frames are computed; phases are advanced in proportion to the true frequencies of each spectral bin, estimated from the phase differences between consecutive frames. This phase coherence preserves the perceived pitch and timbre far better than simple resampling.</p>
+<h2>History and applications</h2>
+<p>The phase vocoder was developed in the 1960s at Bell Labs by James L. Flanagan and colleagues, and later refined and popularised for computer music through the work of Dolson, Laroche, and others. It is widely used in music production for time-stretching loops, pitch correction software, DJ applications, and speech processing. Known artefacts include a characteristic "phasiness" or transient smearing, which modern variants attempt to reduce with phase-locking techniques.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Vocoder/index.html">Vocoder</a></li>
+<li><a href="../Audio_time_stretching_and_pitch_scaling/index.html">Audio time stretching and pitch scaling</a></li>
+<li><a href="../Short-time_Fourier_transform/index.html">Short-time Fourier transform</a></li>
+</ul>
+</body>
+</html>

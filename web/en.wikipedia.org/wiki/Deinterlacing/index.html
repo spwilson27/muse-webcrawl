@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Deinterlacing - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.6;color:#222}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+img.hero{width:100%;max-height:320px;object-fit:cover;background:#eef;border:1px solid #ccc;display:block}
+a{color:#0645ad}
+.small{font-size:.85em;color:#555}
+</style>
+</head>
+<body>
+<h1>Deinterlacing</h1>
+<img class="hero" src="images/Deinterlacing.png" alt="Placeholder image: combing artefacts in an interlaced video frame">
+<p><b>Deinterlacing</b> is the process of converting <a href="../Interlaced_video/index.html">interlaced video</a> into a non-interlaced or <a href="../Progressive_scan/index.html">progressive</a> form, in which each frame consists of a complete image rather than alternating fields of odd and even lines. It is required when displaying older television material — such as <a href="../576i/index.html">576i</a> and <a href="../1080i/index.html">1080i</a> broadcasts — on progressive displays such as computer monitors and modern flat-panel televisions.</p>
+<h2>Background</h2>
+<p>Interlaced video was developed to reduce broadcast bandwidth while maintaining refresh rate: each frame is split into two <i>fields</i>, captured at different instants. When the fields are displayed as a single frame without processing, motion between fields produces horizontal "combing" (or "tearing") artefacts along moving edges.</p>
+<h2>Methods</h2>
+<ul>
+<li><b>Weaving</b> — simply combines two fields into one frame. Works perfectly for static images but produces combing on motion.</li>
+<li><b>Bobbing</b> — scales each field to full frame height by interpolation (<i>line doubling</i>), preserving motion smoothness at the cost of vertical resolution.</li>
+<li><b>Blending</b> — averages pairs of fields, avoiding combing but creating ghosting on motion.</li>
+<li><b>Motion compensation</b> — analyses motion between fields and reconstructs a full frame by aligning moving objects; the most accurate and most computationally expensive approach, used in quality scalers and broadcast converters.</li>
+<li><b>Inverse telecine</b> — for film material transferred to video, the original progressive frames can often be perfectly reconstructed by re-matching the fields.</li>
+</ul>
+<h2>Applications</h2>
+<p>Deinterlacing is performed by televisions, media players, video editing software, and open-source processing tools such as <a href="../FFmpeg/index.html">FFmpeg</a> (which includes filters such as yadif and bwdif), and it is an important step in the upscaling and archiving of legacy broadcast material.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Interlaced_video/index.html">Interlaced video</a></li>
+<li><a href="../Telecine/index.html">Telecine</a></li>
+<li><a href="../Video_scaler/index.html">Video scaler</a></li>
+</ul>
+<p class="small">Deinterlacing. Article recreated from memory for the muse-webcrawl project.</p>
+</body>
+</html>

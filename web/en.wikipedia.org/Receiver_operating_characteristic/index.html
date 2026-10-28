@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Receiver operating characteristic - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #fff; color: #202122; }
+.header { background: #f8f9fa; border-bottom: 1px solid #a2a9b1; padding: 10px 24px; font-family: sans-serif; }
+.header .logo { font-size: 22px; font-weight: bold; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #eaecf0; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; border: 1px solid #c8ccd1; background: #eaecf0; }
+.caption { font-size: 12px; color: #54595d; font-family: sans-serif; }
+</style>
+</head>
+<body>
+<div class="header"><span class="logo">Wikipedia</span> &nbsp; The Free Encyclopedia</div>
+<div class="content">
+<h1>Receiver operating characteristic</h1>
+<div class="hero"><img src="images/roc-curve.png" alt="Graph of several ROC curves plotting true positive rate against false positive rate, with a diagonal chance line"><div class="caption">ROC curves for three classifiers; the closer a curve approaches the top-left corner, the better the classifier.</div></div>
+<p>A <b>receiver operating characteristic</b> curve, or <b>ROC curve</b>, is a graphical plot that illustrates the performance of a <a href="../Binary_classification/index.html">binary classifier</a> as its discrimination threshold is varied. The curve is created by plotting the <a href="../Sensitivity_(test)/index.html">true positive rate</a> (sensitivity) against the <a href="../False_positive_rate/index.html">false positive rate</a> (1 − specificity) at various threshold settings. The ROC curve and the summary measure derived from it, the <b>area under the curve</b> (AUC), are widely used in <a href="../Machine_learning/index.html">machine learning</a>, medical diagnostics and signal detection theory.</p>
+<h2>History</h2>
+<p>The technique originated in the Second World War in the analysis of <a href="../Radar/index.html">radar</a> signals, where operators had to decide whether a blip on a screen represented an enemy aircraft or noise. The name reflects the characteristics of the receiver operator making that judgement. It was subsequently developed within <a href="../Signal_detection_theory/index.html">signal detection theory</a> in psychology and adopted in medicine from the 1960s onward to evaluate diagnostic tests, before becoming a standard evaluation tool in machine learning.</p>
+<h2>Area under the curve</h2>
+<p>The AUC summarises the curve in a single number between 0 and 1. It can be interpreted as the probability that the classifier will rank a randomly chosen positive instance higher than a randomly chosen negative one. An AUC of 0.5 corresponds to chance performance (the diagonal line), while 1.0 represents perfect separation. The AUC is equivalent to the <a href="../Mann–Whitney_U_test/index.html">Mann–Whitney U statistic</a> and is related to the <a href="../Gini_coefficient/index.html">Gini coefficient</a> by Gini = 2·AUC − 1.</p>
+<h2>Choosing a threshold</h2>
+<p>Any single classifier applied at a fixed threshold corresponds to one point on the curve. Selecting an operating point involves trading sensitivity against specificity according to the relative costs of false positives and false negatives; a common statistical criterion is Youden's J statistic, which maximises the sum of sensitivity and specificity minus one. In clinical settings the choice is guided by the consequences of missed diagnoses versus unnecessary treatment.</p>
+<h2>Limitations and variants</h2>
+<p>ROC analysis can be misleading for highly imbalanced datasets, where a large number of true negatives can mask poor performance on the minority class; precision–recall curves are often preferred in such cases. Extensions include multi-class ROC surfaces, partial AUC over a restricted range of false positive rates, and cost curves, which display expected cost directly.</p>
+<p><i>See also:</i> <a href="../Confusion_matrix/index.html">Confusion matrix</a>, <a href="../Precision_and_recall/index.html">Precision and recall</a>, <a href="../Detection_theory/index.html">Detection theory</a></p>
+</div>
+</body>
+</html>

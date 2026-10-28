@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dimensional modeling - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 820px; margin: 0 auto; padding: 24px; line-height: 1.6; color: #202122; background: #fff; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 1.2em; }
+img.hero { display: block; margin: 16px auto; max-width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 40px 0; text-align: center; color: #72777d; }
+a { color: #3366cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Dimensional modeling</h1>
+<img class="hero" src="images/Dimensional_modeling.png" alt="Example of a dimensional model with fact and dimension tables">
+<p><b>Dimensional modeling</b> (<b>DM</b>) is part of the <i>Business Dimensional Lifecycle</i> methodology developed by Ralph Kimball which includes a set of methods, techniques and concepts for use in data warehouse design. The approach focuses on identifying the key business processes within a business and modelling and implementing these first before adding additional business processes — a bottom-up approach, in contrast to the top-down normalised enterprise data warehouse approach of Bill Inmon.</p>
+<h2>Concepts</h2>
+<p>Dimensional models are built around <b>facts</b> — numeric business measurements (such as sales amount or quantity) stored in fact tables at a declared <b>grain</b> — and <b>dimensions</b>, the descriptive contexts for those measurements. Facts are typically surrounded by denormalised dimension tables in a <b>star schema</b>, or, when dimensions are normalised into multiple tables, a <b>snowflake schema</b>. The technique is optimised for query performance and understandability for analytic users rather than for transaction processing.</p>
+<h2>The Kimball four-step process</h2>
+<ol>
+<li>Select the business process to model (e.g., orders, claims).</li>
+<li>Declare the grain — the exact level of detail of a fact-table row.</li>
+<li>Identify the dimensions that apply to each fact-table row.</li>
+<li>Identify the numeric facts to populate each row.</li>
+</ol>
+<h2>Techniques</h2>
+<p>Established techniques include conformed dimensions shared across the enterprise "bus architecture" of data marts, surrogate keys, slowly changing dimensions to track attribute history, aggregate fact tables for performance, and bridge tables for multi-valued dimensions. Dimensional modeling remains widely used in relational warehouses and has influenced semantic-layer design in modern BI tools and analytics engineering frameworks.</p>
+<h2>Criticism</h2>
+<p>Critics note that dimensional models can duplicate data, complicate handling of many-to-many relationships and rapidly changing dimensions, and — in the Inmon tradition — argue that a normalised enterprise warehouse should precede dimensional delivery marts. Alternative approaches such as Data Vault and wide-table ("one big table") modelling address some of the same problems differently.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Dimension_(data_warehouse)/index.html">Dimension (data warehouse)</a></li>
+<li><a href="../Fact_table/index.html">Fact table</a></li>
+<li><a href="../Star_schema/index.html">Star schema</a></li>
+<li><a href="../Ralph_Kimball/index.html">Ralph Kimball</a></li>
+</ul>
+</body>
+</html>

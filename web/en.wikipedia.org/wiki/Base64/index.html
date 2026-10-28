@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Base64 - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 0 auto; padding: 20px; color: #202122; line-height: 1.6; background: #fff; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px; margin: 0 0 12px 16px; font-size: 0.88em; }
+.infobox th { background: #dfe3eb; padding: 4px; text-align: center; }
+.infobox td { padding: 2px 4px; vertical-align: top; }
+img.hero { width: 100%; border: 1px solid #a2a9b1; background: #eef; display: block; min-height: 120px; }
+.caption { font-size: 0.85em; color: #54595d; text-align: center; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Base64</h1>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Base64</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/base64.png" alt="Diagram showing three bytes of binary data converted into four Base64 characters"></td></tr>
+<tr><td><b>Type</b></td><td>Binary-to-text encoding</td></tr>
+<tr><td><b>Alphabet</b></td><td>A–Z, a–z, 0–9, + and / (standard)</td></tr>
+<tr><td><b>Padding</b></td><td>=</td></tr>
+<tr><td><b>Overhead</b></td><td>about 33%</td></tr>
+<tr><td><b>Standard</b></td><td>RFC 4648</td></tr>
+</table>
+</div>
+<p><b>Base64</b> is a group of binary-to-text encoding schemes that transforms binary data into a sequence of printable characters, limited to a set of 64 common characters. More specifically, the source binary data is taken 6 bits at a time, and each group is mapped to one of 64 characters from an alphabet consisting of the uppercase and lowercase Latin letters, the digits, and two additional symbols — typically <code>+</code> and <code>/</code>. Base64 is widely used to embed binary data, such as images and attachments, in text-based formats such as email, XML and JSON.</p>
+<h2>Encoding</h2>
+<p>The encoder processes the input in groups of three bytes (24 bits), producing four 6-bit values and hence four output characters — an expansion of about 33 percent. If the final group contains only one or two bytes, the output is completed with two or one <code>=</code> padding characters respectively. For example, the ASCII text "Man" encodes to <code>TWFu</code>, "Ma" to <code>TWE=</code>, and "M" to <code>TQ==</code>.</p>
+<h2>History and variants</h2>
+<p>Base64 originated in the Privacy-Enhanced Mail (PEM) standard and was adopted by <a href="../MIME/index.html">MIME</a> for encoding email attachments so that binary data could pass through mail systems designed for 7-bit ASCII text. RFC 4648 (2006) codified the scheme and its variants, including a URL- and filename-safe alphabet that replaces <code>+</code> and <code>/</code> with <code>-</code> and <code>_</code>. Other variants appear in Unix password files, UTF-7, and the "data:" URL scheme, which lets small files be embedded directly in web pages.</p>
+<h2>Applications</h2>
+<p>Base64 is used in email attachments, embedded images in HTML and CSS, basic access authentication headers, JSON Web Tokens, cryptographic certificates and keys distributed in PEM format, and countless APIs that move binary content through text channels. It is an encoding, not encryption: anyone can decode Base64 data, a point often misunderstood in security contexts.</p>
+<p>See also: <a href="../Binary-to-text_encoding/index.html">Binary-to-text encoding</a>, <a href="../Base32/index.html">Base32</a>, <a href="../Hexadecimal/index.html">Hexadecimal</a>, <a href="../Quoted-printable/index.html">Quoted-printable</a>.</p>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Cohen–Coon process reaction method - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #a2a9b1}img{max-width:100%}.thumb{float:right;margin:0 0 1em 1em;width:280px;background:#f8f9fa;border:1px solid #c8ccd1;padding:.5em;font-size:.85em}a{color:#0645ad}</style></head>
+<body>
+<h1>Cohen–Coon process reaction method</h1>
+<div class="thumb"><img src="images/Cohen–Coon_process_reaction_method.png" alt="S-shaped process reaction curve with tangent line, dead time and time constant marked"><div>An open-loop step response (process reaction curve) used to extract gain, dead time and time constant.</div></div>
+<p>The <b>Cohen–Coon process reaction method</b> is an empirical procedure for tuning <a href="../PID_controller/index.html">PID controllers</a>, developed by G. H. Cohen and G. A. Coon and published in 1953. Like the earlier <a href="../Ziegler–Nichols_method/index.html">Ziegler–Nichols</a> open-loop method, it uses a single step test of the process in open loop, but its tuning rules were designed to give good disturbance rejection for processes with appreciable dead time.</p>
+<h2>Procedure</h2>
+<p>With the controller in manual, a step change is applied to the manipulated variable and the process output is recorded until it settles. The resulting S-shaped reaction curve is fitted with a first-order-plus-dead-time model: a tangent drawn at the inflection point gives the apparent dead time θ and time constant τ, and the overall change gives the process gain K.</p>
+<h2>Tuning rules</h2>
+<p>Cohen and Coon published formulas expressing the proportional gain, integral time and derivative time of P, PI, PD and PID controllers as functions of K, τ and θ, optimised for quarter-amplitude decay in response to load disturbances. Compared with Ziegler–Nichols rules, the settings tend to be less oscillatory for processes whose dead time is a substantial fraction of the time constant, though they can still be aggressive for processes with small dead time.</p>
+<h2>Limitations</h2>
+<p>The method assumes a stable, self-regulating process well approximated by a first-order lag plus dead time. It is unsuitable for integrating or unstable processes, and the tangent construction is sensitive to measurement noise, so modern practice often fits the model by regression instead.</p>
+<h2>See also</h2>
+<ul><li><a href="../Control_theory/index.html">Control theory</a></li><li><a href="../Process_control/index.html">Process control</a></li></ul>
+</body></html>

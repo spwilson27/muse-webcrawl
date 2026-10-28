@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shannon–Hartley theorem - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 60px; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.5em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+h3 { font-size: 1.2em; font-weight: bold; margin-top: 1em; }
+p { line-height: 1.6; margin: 0.6em 0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { float: right; margin: 0 0 12px 16px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 6px; text-align: center; font-size: 0.85em; max-width: 240px; }
+.hero img { max-width: 220px; display: block; margin: 0 auto 4px; background: #eaecf0; }
+.formula { text-align: center; font-size: 1.3em; margin: 1em 0; font-style: italic; }
+ul { line-height: 1.6; }
+.note { background: #f8f9fa; border: 1px solid #a2a9b1; padding: 8px 12px; font-size: 0.92em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Shannon–Hartley theorem</h1>
+<div class="hero"><img src="images/shannon-hartley-theorem.png" alt="Capacity of an AWGN channel as a function of bandwidth and signal-to-noise ratio">Capacity of a Gaussian channel versus bandwidth</div>
+<p class="note">This article's title uses an en dash. The theorem itself is also written with a hyphen, "Shannon-Hartley theorem".</p>
+<p>In <a href="../Information_theory/index.html">information theory</a>, the <b>Shannon–Hartley theorem</b> gives the maximum rate at which information can be transmitted over a communications channel of a specified bandwidth in the presence of noise. It is the application of the <a href="../Noisy-channel_coding_theorem/index.html">noisy-channel coding theorem</a> to a continuous-time analogue channel subject to additive white Gaussian noise (AWGN). The theorem establishes <a href="../Claude_Shannon/index.html">Claude Shannon's</a> channel capacity for such a link: a bound on the maximum amount of error-free information per unit time that can be transmitted with a specified bandwidth in the presence of noise interference, assuming that the signal power is bounded and that the Gaussian noise process is characterized by a known power or power spectral density.</p>
+<p>The law is named after Claude Shannon and <a href="../Ralph_Hartley/index.html">Ralph Hartley</a>.</p>
+<h2>Statement of the theorem</h2>
+<p>The channel capacity <i>C</i> of a band-limited AWGN channel is:</p>
+<p class="formula">C = B log<sub>2</sub>(1 + S/N)</p>
+<p>where <i>C</i> is the channel capacity in bits per second (the theoretical tightest upper bound on the error-free information rate), <i>B</i> is the bandwidth in hertz (passband bandwidth for a passband signal), <i>S</i> is the average received signal power over the bandwidth, and <i>N</i> is the average noise power over the bandwidth; the ratio S/N is the signal-to-noise ratio expressed as a linear power ratio rather than in decibels.</p>
+<h2>Historical development</h2>
+<p><a href="../Harry_Nyquist/index.html">Harry Nyquist</a> determined in 1924 that a telegraph channel of bandwidth <i>B</i> supports at most 2<i>B</i> independent pulses per second. Ralph Hartley, in 1928, related the amount of information to the bandwidth and the number of distinguishable amplitude levels. Shannon's 1948 landmark paper "A Mathematical Theory of Communication" combined these insights with a statistical model of noise to give the capacity formula and proved that, by using suitable encoding, data can be sent at any rate below capacity with an arbitrarily small probability of error — a surprising result, since before Shannon it was commonly assumed that reducing errors required reducing the rate toward zero.</p>
+<h2>Band-limited versus power-limited regimes</h2>
+<p>At high signal-to-noise ratios, capacity grows linearly with bandwidth and only logarithmically with power: each 3 dB of extra power buys roughly one additional bit per second per hertz only if bandwidth is fixed at high SNR. At low SNR, capacity is approximately proportional to signal power (C ≈ 1.44 S/N₀) and nearly independent of bandwidth once bandwidth is large — the power-limited regime exploited by deep-space communications and spread-spectrum systems. The boundary between the regimes and the minimum possible energy per bit, E<sub>b</sub>/N<sub>0</sub> = ln 2 ≈ −1.59 dB, follow directly from the theorem.</p>
+<h2>Channel coding</h2>
+<p>The theorem is non-constructive: it proves the existence of codes achieving rates near capacity without giving them. For decades engineers worked far from the limit; the invention of turbo codes (1993) and the rediscovery of LDPC codes brought practical systems within a fraction of a decibel of the Shannon limit, and polar codes (2009) were the first codes provably achieving capacity for a class of channels.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Shannon-Hartley_theorem/index.html">Shannon-Hartley theorem</a> (hyphenated spelling)</li>
+<li><a href="../Nyquist–Shannon_sampling_theorem/index.html">Nyquist–Shannon sampling theorem</a></li>
+<li><a href="../Channel_capacity/index.html">Channel capacity</a></li>
+<li><a href="../Hartley's_law/index.html">Hartley's law</a></li>
+</ul>
+</div>
+</body>
+</html>

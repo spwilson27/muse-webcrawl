@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Background process - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.4em}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.9em;font-family:sans-serif}
+.infobox th{text-align:left;background:#eaecf0;padding:3px 6px}
+.infobox td{padding:3px 6px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{width:100%;border:1px solid #c8ccd1;background:#eef;display:block}
+.caption{font-size:0.85em;color:#54595d;text-align:center;font-family:sans-serif}
+</style>
+</head>
+<body>
+<h1>Background process</h1>
+<div class="infobox">
+<img class="hero" src="images/background-process.png" alt="A terminal listing background jobs on a Unix system">
+<div class="caption">Listing background jobs in a Unix shell</div>
+<table>
+<tr><th>Type</th><td>Computer process</td></tr>
+<tr><th>Related concepts</th><td>Foreground process, daemon, job control</td></tr>
+</table>
+</div>
+<p>A <b>background process</b> is a computer process that runs in the background of an operating system without direct user interaction, in contrast to a foreground process, which occupies the user's terminal or window. Background processes allow a user or system to carry out other tasks concurrently; they are fundamental to multitasking and underpin system services, batch jobs, and long-running computations.</p>
+<h2>In Unix and Linux</h2>
+<p>In Unix shells, a command can be launched in the background by appending an ampersand (<code>&amp;</code>) to the command line. The shell's job control facilities let users list jobs (<code>jobs</code>), bring a job to the foreground (<code>fg</code>), resume a stopped job in the background (<code>bg</code>), and suspend the foreground job with Ctrl-Z. Utilities such as <code>nohup</code> and <code>disown</code> detach a process from the terminal so it survives logout, while schedulers like <code>cron</code> and <code>at</code> start background processes at specified times.</p>
+<h2>Daemons and services</h2>
+<p>Long-lived background processes that provide system services are called <a href="../Daemon_(computing)/index.html">daemons</a> on Unix-like systems and <i>services</i> on Microsoft Windows. Examples include web servers, database servers, print spoolers, and system logging. Modern init systems such as systemd manage their startup, restart policies, and logging.</p>
+<h2>On other platforms</h2>
+<p>On desktop and mobile platforms, background execution is more tightly controlled. iOS and Android restrict background activity to preserve battery life, permitting limited background tasks such as audio playback, location updates, and background fetch under operating-system supervision. On Windows, applications may run minimized in the system tray, and the Task Manager displays background processes separately from interactive apps.</p>
+<h2>Priority</h2>
+<p>Background processes are often scheduled at lower priority so interactive work remains responsive. On Unix systems the <code>nice</code> command adjusts a process's scheduling priority; CPU- and I/O-intensive background jobs can likewise be throttled by resource control mechanisms such as cgroups.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Process_(computing)/index.html">Process (computing)</a></li>
+<li><a href="../Daemon_(computing)/index.html">Daemon (computing)</a></li>
+<li><a href="../Job_control_(Unix)/index.html">Job control</a></li>
+<li><a href="../Batch_processing/index.html">Batch processing</a></li>
+</ul>
+</body>
+</html>

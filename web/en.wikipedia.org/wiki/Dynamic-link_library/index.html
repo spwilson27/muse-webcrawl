@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dynamic-link library - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 960px; padding: 0 1em; color: #202122; line-height: 1.6; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em; margin: 0 0 1em 1em; width: 260px; font-size: 90%; }
+.infobox th { background: #c8ccd1; text-align: center; }
+.infobox td, .infobox th { padding: 0.2em 0.4em; }
+a { color: #0645ad; text-decoration: none; }
+.hero { width: 100%; }
+</style>
+</head>
+<body>
+<h1>Dynamic-link library</h1>
+<table class="infobox">
+<tr><th colspan="2">Dynamic-link library</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/dynamic-link-library.png" alt="Diagram of programs sharing a DLL"></td></tr>
+<tr><td><b>Filename extension</b></td><td>.dll</td></tr>
+<tr><td><b>Platform</b></td><td>Microsoft Windows, OS/2</td></tr>
+<tr><td><b>Type</b></td><td>Dynamically loaded shared library</td></tr>
+<tr><td><b>Format</b></td><td>Portable Executable (PE)</td></tr>
+</table>
+<p>A <b>dynamic-link library</b> (<b>DLL</b>) is a type of shared library in the Microsoft Windows and OS/2 operating systems. A DLL file contains code, data and resources that multiple programs can use simultaneously, and it is loaded into a process's address space at run time rather than being linked into an executable at compile time.</p>
+<h2>Characteristics</h2>
+<p>DLLs use the same Portable Executable file format as Windows executables and export functions that programs import by name or ordinal. They enable modular software design: common functionality such as the Windows API itself is provided in system DLLs (such as kernel32.dll and user32.dll), updates to a DLL can benefit all programs using it, and a single in-memory copy of a DLL's code pages can be shared between processes, saving RAM and disk space.</p>
+<h2>Versioning problems</h2>
+<p>Because programs share DLLs, replacing a DLL with an incompatible version can break applications that depend on it — a notorious problem of 1990s Windows known as "DLL hell". Microsoft addressed it with mechanisms including Windows File Protection, side-by-side assemblies and manifests, private DLL copies shipped with applications, and later the component-based servicing model.</p>
+<h2>Comparison</h2>
+<p>Unix-like systems provide analogous functionality through shared objects (.so files) and dynamic libraries (.dylib on macOS). DLLs additionally support features such as delayed loading, explicit run-time linking via LoadLibrary and GetProcAddress, and the hosting of ActiveX controls and other COM components.</p>
+<p>See also: <a href="../Shared_library/index.html">Shared library</a>, <a href="../Portable_Executable/index.html">Portable Executable</a>, <a href="../DLL_hell/index.html">DLL hell</a>, <a href="../Windows_API/index.html">Windows API</a>.</p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>64b/66b encoding - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;background:#f8f9fa;color:#202122;margin:0;padding:0}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:2em;border:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{border-bottom:1px solid #a2a9b1;font-family:'Linux Libertine',Georgia,serif}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:.5em;margin:0 0 1em 1em;font-size:.85em}
+.infobox th{background:#b0c4de;text-align:center}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{max-width:100%;height:auto;display:block;margin:1em auto}
+table.wikitable{border-collapse:collapse;margin:1em 0}
+table.wikitable th,table.wikitable td{border:1px solid #a2a9b1;padding:.4em .8em}
+table.wikitable th{background:#eaecf0}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>64b/66b encoding</h1>
+<img class="hero" src="images/64b-66b-encoding.png" alt="Diagram of a 66-bit block in 64b/66b encoding">
+<p>In data networking and transmission, <b>64b/66b encoding</b> is a line code that transforms 64-bit data into a 66-bit line code in order to provide clock recovery and alignment of the data stream. Unlike the older 8b/10b encoding, which carries a 25% overhead, 64b/66b has an overhead of only about 3%, making it well suited to high-speed links.</p>
+<h2>Operation</h2>
+<p>Each 66-bit block consists of a 2-bit synchronization header followed by a 64-bit payload. A sync header of "01" indicates a pure data block, while "10" indicates a block containing eight control characters (or a mixture of control and data, identified by a block-type field). The payload is scrambled with a self-synchronous scrambler polynomial (x<sup>58</sup> + x<sup>39</sup> + 1) to ensure adequate transition density for clock recovery; the sync header itself is not scrambled, which guarantees that block boundaries can be found regardless of the payload content.</p>
+<h2>Applications</h2>
+<p>64b/66b was introduced with 10 Gigabit Ethernet (IEEE 802.3ae) and has since been adopted by many other standards, including later Ethernet variants, Fibre Channel, InfiniBand, Thunderbolt, Serial RapidIO, and many Aurora and inter-chip links. A variant, 128b/130b encoding, is used by PCI Express 3.0 and later, and 128b/132b is used by USB 3.1.</p>
+<p>See also: <a href="../../Line_code/index.html">Line code</a>, <a href="../../8b/10b_encoding/index.html">8b/10b encoding</a>, <a href="../../10_Gigabit_Ethernet/index.html">10 Gigabit Ethernet</a>.</p>
+</div>
+</body>
+</html>

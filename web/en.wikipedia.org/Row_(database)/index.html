@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Row (database) - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;color:#202122;background:#fff}
+.mw-body{max-width:960px;margin:0 auto;padding:20px 24px;line-height:1.6}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+table.wikitable{border-collapse:collapse;margin:12px 0}
+table.wikitable td,table.wikitable th{border:1px solid #a2a9b1;padding:5px 10px}
+table.wikitable th{background:#eaecf0}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;text-align:center;font-size:88%;color:#54595d;max-width:340px}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Row (database)</h1>
+<div class="thumb"><img src="images/row-database.png" alt="A database table diagram highlighting a single horizontal row representing one employee record"><br>One highlighted row of an employee table</div>
+<p>In a <a href="../Relational_database/index.html">relational database</a>, a <b>row</b> — formally a <b>tuple</b> — is a single, implicitly structured data item in a table. A row represents one instance of the entity the table describes (for example, one employee or one order), and consists of a value for each of the table's <a href="../Column_(database)/index.html">columns</a>.</p>
+<h2>In the relational model</h2>
+<p>In the formal relational model, a table corresponds to a relation, mathematically a set of tuples. Because a set has no duplicate members and no intrinsic ordering, a relation strictly cannot contain two identical rows, and rows have no meaningful sequence — although real SQL databases permit duplicate rows in tables without keys and impose order only when a query specifies it with an ORDER BY clause.</p>
+<table class="wikitable">
+<tr><th>EmployeeID</th><th>FirstName</th><th>LastName</th><th>Department</th></tr>
+<tr><td>101</td><td>Ada</td><td>Lovelace</td><td>Engineering</td></tr>
+<tr><td>102</td><td>Alan</td><td>Turing</td><td>Research</td></tr>
+<tr><td>103</td><td>Grace</td><td>Hopper</td><td>Engineering</td></tr>
+</table>
+<p style="font-size:90%">Each horizontal line of the table is one row: a value for every column, all describing a single employee.</p>
+<h2>Working with rows</h2>
+<p>In <a href="../SQL/index.html">SQL</a>, rows are retrieved with SELECT, added with INSERT, changed with UPDATE and removed with DELETE. A <a href="../Primary_key/index.html">primary key</a> uniquely identifies each row, allowing other tables to reference it through foreign keys, and allowing individual records to be updated or joined unambiguously. Systems may also attach internal identifiers, such as Oracle's ROWID or PostgreSQL's ctid, to physical rows.</p>
+<h2>Storage</h2>
+<p>Most traditional database engines store data row-by-row: all values of one row are kept together on disk, which suits transactional workloads that read or write whole records. In contrast, <b>column-oriented databases</b> store each column separately and reconstruct rows at query time, favouring analytical queries that scan few columns over many rows.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Column_(database)/index.html">Column (database)</a></li>
+<li><a href="../Table_(database)/index.html">Table (database)</a></li>
+<li><a href="../Tuple/index.html">Tuple</a></li>
+</ul>
+<p><i>Categories: Databases; Relational model</i></p>
+</div>
+</body>
+</html>

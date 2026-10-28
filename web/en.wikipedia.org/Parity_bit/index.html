@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Parity bit - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-top: 8px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p, li { line-height: 1.6; font-size: 0.98em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; }
+.caption { font-size: 0.85em; color: #54595d; margin-top: 4px; }
+code { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0 3px; font-family: monospace; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Parity bit</h1>
+<p>A <b>parity bit</b>, or <b>check bit</b>, is a bit added to a string of binary code to ensure that the total number of 1-bits in the string has a chosen <a href="../Parity_(mathematics)/index.html">parity</a> — either even ("even parity") or odd ("odd parity"). It is the simplest form of error-detecting code: it can detect any odd number of bit errors in the output, most simply a single flipped bit, but it cannot correct errors and cannot detect an even number of errors.</p>
+<div class="hero"><img src="images/parity-bit.png" alt="Diagram of a 7-bit data word with an added parity bit forming an 8-bit byte"><div class="caption">Seven data bits plus one parity bit (shown at right) under even parity.</div></div>
+<h2>Even and odd parity</h2>
+<p>Under even parity, the parity bit is set to 1 if the number of 1-bits in the data is odd, so that the total count, including the parity bit, is even. Under odd parity the reverse applies: the bit is chosen so that the total count of 1-bits is odd. For example, the 7-bit data word <code>0110100</code> contains three 1-bits; its even-parity bit is 1 and its odd-parity bit is 0.</p>
+<h2>Use</h2>
+<p>Parity bits were widely used in asynchronous serial communication, where each transmitted character carried a parity bit, and in early computer memory: many systems stored 9 bits per byte, the ninth being parity, so that a single-bit memory fault would be caught. RAID storage arrays traditionally used parity information distributed across disks so a failed drive could be reconstructed (though RAID parity is computed with XOR across many bits rather than a single check bit). Parity checking survives in some modern systems, though it has largely been superseded by more powerful error-correcting codes such as ECC memory and checksums with retransmission protocols.</p>
+<h2>Limitations</h2>
+<p>Because parity records only whether the number of errors is odd or even, two simultaneous bit flips pass undetected, and the receiver cannot tell which bit is wrong. For this reason parity is classed as an error-detecting, not error-correcting, code, and robust systems layer additional checks — such as the cyclic redundancy checks used in networking and storage — on top of or in place of simple parity.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Parity_(mathematics)/index.html">Parity (mathematics)</a></li>
+<li><a href="../Error_detection_and_correction/index.html">Error detection and correction</a></li>
+<li><a href="../Checksum/index.html">Checksum</a></li>
+<li><a href="../Hamming_code/index.html">Hamming code</a></li>
+</ul>
+</div>
+</body>
+</html>

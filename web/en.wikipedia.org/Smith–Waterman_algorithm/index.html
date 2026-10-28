@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Smith–Waterman algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.mw-body{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{text-align:center;margin:16px 0}
+.hero img{max-width:460px;border:1px solid #c8ccd1;background:#eaecf0;padding:8px}
+.caption{font-size:0.85em;color:#54595d}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;overflow:auto;font-size:0.9em}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Smith–Waterman algorithm</h1>
+<p>The <b>Smith–Waterman algorithm</b> performs local sequence alignment; that is, it determines similar regions between two strings of nucleic acid sequences or protein sequences. Instead of looking at the entire sequence, the Smith–Waterman algorithm compares segments of all possible lengths and optimizes the similarity measure. The algorithm was first proposed by Temple F. Smith and Michael S. Waterman in 1981.</p>
+<div class="hero"><img src="images/smith-waterman.png" alt="Dynamic programming matrix for local sequence alignment"><div class="caption">The scoring matrix used in the Smith–Waterman dynamic program</div></div>
+<h2>Explanation</h2>
+<p>Like the <a href="../../Needleman–Wunsch_algorithm/index.html">Needleman–Wunsch algorithm</a>, of which it is a variation, Smith–Waterman is a <a href="../../Dynamic_programming/index.html">dynamic programming</a> algorithm. A scoring matrix H is built in which negative scores are replaced by zero, so that only positive-scoring local alignments are retained. The optimal local alignment is found by locating the cell with the maximum score and tracing back until a cell with score zero is reached.</p>
+<pre>
+H(i,j) = max { 0,
+               H(i-1,j-1) + s(a_i, b_j),
+               H(i-1,j) - d,
+               H(i,j-1) - d }
+</pre>
+<p>Here s is a substitution score from a scoring matrix such as <a href="../../BLOSUM/index.html">BLOSUM</a> or <a href="../../Point_accepted_mutation/index.html">PAM</a>, and d is a gap penalty. The algorithm runs in O(mn) time for sequences of lengths m and n, which motivated accelerated implementations and heuristics such as <a href="../../BLAST_(biotechnology)/index.html">BLAST</a> and <a href="../../FASTA/index.html">FASTA</a> for database searching.</p>
+<h2>Applications</h2>
+<p>Smith–Waterman alignment is a standard step in DNA read mapping, protein homology detection, and the alignment of sequencing reads to reference genomes. Hardware and GPU implementations, as well as striped vectorized variants, have reduced its practical cost substantially.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../Sequence_alignment/index.html">Sequence alignment</a></li>
+<li><a href="../../Needleman–Wunsch_algorithm/index.html">Needleman–Wunsch algorithm</a></li>
+<li><a href="../../BLAST_(biotechnology)/index.html">BLAST</a></li>
+<li><a href="../../Levenshtein_distance/index.html">Levenshtein distance</a></li>
+</ul>
+</div>
+</body>
+</html>

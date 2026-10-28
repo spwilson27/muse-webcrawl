@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SOCKS - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; padding: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 40px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { font-size: 15px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 16px 16px; font-size: 13px; }
+.infobox th { background: #eaecf0; padding: 4px; text-align: left; }
+.infobox td { padding: 4px; }
+img.hero { display: block; max-width: 100%; background: #eaecf0; border: 1px solid #a2a9b1; }
+.caption { font-size: 12px; color: #54595d; text-align: center; padding: 4px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>SOCKS</h1>
+<div class="infobox">
+<table>
+<tr><th colspan="2">SOCKS protocol</th></tr>
+<tr><td><b>Developer</b></td><td>David Koblas, MIPS Computer Systems</td></tr>
+<tr><td><b>Standard</b></td><td>RFC 1928 (SOCKS5)</td></tr>
+<tr><td><b>Default port</b></td><td>1080</td></tr>
+<tr><td><b>OSI layer</b></td><td>Session layer (Layer 5)</td></tr>
+</table>
+</div>
+<p><b>SOCKS</b> is an Internet protocol that exchanges network packets between a client and server through a <a href="../Proxy_server/index.html">proxy server</a>. <b>SOCKS5</b>, the current version, additionally provides authentication so only authorized users may access the proxy. Practically, a SOCKS server proxies TCP connections to an arbitrary IP address, and provides a means for UDP packets to be forwarded. SOCKS operates at a lower level than HTTP proxying: it is agnostic to the application-layer protocol being tunnelled, which makes it suitable for arbitrary traffic, not just web browsing.</p>
+<img class="hero" src="images/socks.png" alt="Diagram of a client exchanging traffic with a destination server through a SOCKS proxy">
+<p class="caption">A SOCKS proxy relays arbitrary TCP and UDP traffic between client and server.</p>
+<h2>History</h2>
+<p>The protocol was originally developed by David Koblas, a system administrator of MIPS Computer Systems, and was publicly described in a 1992 Usenix security symposium paper by Koblas and Michelle R. Koblas. SOCKS version 4 extended the protocol to support TCP-based client-server applications. SOCKS5, published as RFC 1928 in 1996 by Marcus Leech of NEC, added support for UDP, authentication, and address resolution by hostname within the proxy, superseding earlier versions.</p>
+<h2>Comparison with HTTP proxies</h2>
+<p>An HTTP proxy understands and may interpret the HTTP traffic passing through it, and is generally limited to HTTP applications. A SOCKS proxy simply forwards raw packets without interpreting the application protocol, so it can carry any TCP or UDP traffic, including email, peer-to-peer and SSH connections. SSH clients commonly use SOCKS via the dynamic port forwarding feature of the OpenSSH client, and the Tor network exposes a SOCKS interface for applications.</p>
+<h2>See also</h2>
+<p><a href="../Proxy_server/index.html">Proxy server</a> &middot; <a href="../Tor_(network)/index.html">Tor</a> &middot; <a href="../Port_forwarding/index.html">Port forwarding</a></p>
+</div>
+</body>
+</html>

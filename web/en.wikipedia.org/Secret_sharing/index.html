@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Secret sharing - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:24px 20px 60px}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px}
+h2{font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:1.5em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+p{line-height:1.65;font-size:0.95em}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{float:right;margin:4px 0 16px 24px;width:280px;background:#f8f9fa;border:1px solid #c8ccd1;padding:8px;text-align:center;font-size:0.85em;color:#54595d}
+.hero img{width:100%;height:160px;object-fit:cover;background:#eaecf0;display:block}
+ul{line-height:1.6;font-size:0.95em}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Secret sharing</h1>
+<div class="hero"><img src="images/secret-sharing.png" alt="Diagram of a threshold secret sharing scheme"><br>A (t, n) threshold scheme: any t shares reconstruct the secret</div>
+<p><b>Secret sharing</b> (also called <b>secret splitting</b>) refers to methods for distributing a secret among a group, in which each individual is allocated a share of the secret. The secret can be reconstructed only when a sufficient number, of possibly different types, of shares are combined together; individual shares are of no use on their own.</p>
+<p>In one type of secret sharing scheme there is one <i>dealer</i> and <i>n</i> <i>players</i>. The dealer gives a share of the secret to the players, but only when specific conditions are fulfilled will the players be able to reconstruct the secret from their shares. The dealer accomplishes this by giving each player a share in such a way that any group of <i>t</i> (for <i>threshold</i>) or more players can together reconstruct the secret but no group of fewer than <i>t</i> players can. Such a system is called a (<i>t</i>, <i>n</i>)-threshold scheme (sometimes written (<i>n</i>, <i>t</i>)-threshold scheme).</p>
+<h2>History</h2>
+<p>Secret sharing was invented independently by Adi Shamir and George Blakley in 1979. Shamir's scheme is based on polynomial interpolation over a finite field; Blakley's uses intersecting hyperplanes.</p>
+<h2>Shamir's scheme</h2>
+<p>In Shamir's threshold scheme, the dealer chooses a random polynomial of degree t−1 whose constant term is the secret, and gives each player the value of the polynomial at a distinct nonzero point. Any t shares determine the polynomial uniquely (e.g., via Lagrange interpolation) and hence the secret; fewer shares give no information about the secret in an information-theoretic sense.</p>
+<h2>Applications</h2>
+<p>Secret sharing is used to protect cryptographic keys, distribute control of critical systems (such as missile launch or root certificate authorities), secure multiparty computation, and threshold cryptosystems, in which operations such as decryption or signing require cooperation of a quorum. It is also applied to secure storage systems, where data is split across servers so that no subset below the threshold reveals anything.</p>
+<h2>Limitations</h2>
+<p>Basic schemes do not protect against a player submitting a false share (cheating); verifiable secret sharing schemes add commitments so participants can check the consistency of their shares. Proactive schemes periodically refresh shares to defeat adversaries who compromise players over time.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Cryptography/index.html">Cryptography</a></li>
+<li><a href="../Shamir's_secret_sharing/index.html">Shamir's secret sharing</a></li>
+<li><a href="../Public-key_cryptography/index.html">Public-key cryptography</a></li>
+<li><a href="../Information-theoretic_security/index.html">Information-theoretic security</a></li>
+</ul>
+</div>
+</body>
+</html>

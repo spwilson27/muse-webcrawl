@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Surface code - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;padding:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;width:100%;height:180px;background:#eef2f5;border:1px solid #c8ccd1;text-align:center;line-height:180px;color:#54595d;margin-bottom:12px}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Surface code</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<span class="hero"><img src="images/surface-code.png" alt="A lattice of data and measurement qubits in a surface code patch"></span>
+<p>The <b>surface code</b> is a leading family of quantum error-correcting codes used in <a href="../../Quantum_computing/index.html">quantum computing</a>. It encodes a logical qubit into many physical qubits arranged on a two-dimensional lattice, using local measurements of neighbouring qubits to detect errors without disturbing the encoded information. The surface code is notable for its high error threshold — around one percent per operation under standard noise models — and for requiring only nearest-neighbour interactions on a planar grid, which makes it well suited to superconducting and other solid-state qubit platforms.</p>
+<h2>History</h2>
+<p>The surface code grew out of Alexei Kitaev's toric code, introduced in the late 1990s, in which qubits sit on the edges of a torus and stabilizer measurements are performed on each vertex and face. Later work by many researchers developed planar versions with boundaries — the surface code proper — together with practical decoding methods, fault-tolerant logical operations by lattice surgery and braiding of defects, and resource estimates for large-scale algorithms.</p>
+<h2>Structure</h2>
+<p>In a standard implementation, <b>data qubits</b> occupy the sites (or edges) of a square lattice, and interleaved <b>measurement qubits</b> (ancillas) each couple to up to four neighbouring data qubits. Two kinds of stabilizer checks are measured repeatedly: plaquette-type (Z) checks and star-type (X) checks. Comparing successive rounds of measurement outcomes reveals a <i>syndrome</i>: a pattern of changed checks that indicates where errors have occurred, while the actual data remain unmeasured. Error correction cycles repeat on the timescale of the hardware — in superconducting implementations, roughly every microsecond.</p>
+<h2>Decoding</h2>
+<p>A classical <b>decoder</b> processes the syndrome history to infer the most likely set of physical errors and applies (or tracks) a corresponding correction. The most widely used algorithm is minimum-weight perfect matching, which pairs up syndrome defects on a graph with weights derived from error probabilities. Neural-network and other decoders have also been studied. Errors are corrected successfully as long as they do not combine into chains connecting opposite boundaries of the lattice, which would enact an undetectable logical error.</p>
+<h2>Logical qubits and scaling</h2>
+<p>The <i>code distance</i> <i>d</i> of a patch is the minimum number of physical errors needed to cause a logical error. The logical error rate falls exponentially with distance as long as the physical error rate is below threshold, at the cost of roughly 2<i>d</i>² physical qubits per logical qubit. Practical fault-tolerant computations may require distances of 25 or more, hence on the order of a thousand or more physical qubits per logical qubit, plus additional patches — "qubit factories" — devoted to distilling magic states for non-Clifford gates.</p>
+<h2>Experimental progress</h2>
+<p>In 2023, Google Quantum AI reported that scaling a surface code logical qubit from distance 3 to distance 5 reduced the logical error rate, a milestone toward demonstrating error suppression by scaling. In December 2024, Google reported with its Willow processor a distance-7 logical qubit whose error rate decreased by a factor of about two with each increase in code distance (3, 5, 7), operating below threshold with real-time decoding.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../Quantum_error_correction/index.html">Quantum error correction</a></li>
+<li><a href="../../Toric_code/index.html">Toric code</a></li>
+<li><a href="../../Stabilizer_code/index.html">Stabilizer code</a></li>
+<li><a href="../../Qubit/index.html">Qubit</a></li>
+</ul>
+</div>
+</body>
+</html>

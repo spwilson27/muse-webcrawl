@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Out-of-order execution - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; max-width: 900px; margin: 2em auto; padding: 0 1em; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.6em; margin: 0 0 1em 1em; font-size: 0.9em; }
+.infobox img { width: 100%; }
+.caption { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<h1>Out-of-order execution</h1>
+<div class="infobox">
+<img src="images/out-of-order-execution.png" alt="Diagram of instructions being executed out of program order">
+<p class="caption">Instructions may complete in a different order than issued, but retire in order</p>
+</div>
+<p>In computer engineering, <b>out-of-order execution</b> (or <b>dynamic execution</b>) is a paradigm used in most high-performance central processing units to make use of instruction cycles that would otherwise be wasted. In this paradigm, a processor executes instructions in an order determined by the availability of input data and execution units, rather than by their original order in a program. In doing so, the processor can avoid being idle while waiting for preceding instructions to complete and can, in the meantime, process next instructions that are able to run immediately and independently.</p>
+<h2>History</h2>
+<p>Out-of-order execution was pioneered in the CDC 6600 (1964), which used a scoreboard to resolve conflicts, and in IBM's System/360 Model 91 (1967), which introduced Tomasulo's algorithm and register renaming. The technique became widespread in personal computing with processors such as the Intel Pentium Pro (1995).</p>
+<h2>Basic concept</h2>
+<p>An out-of-order processor typically divides instruction processing into issue and dispatch, execution, and in-order retirement (commit) through a reorder buffer, which preserves the illusion of sequential execution and supports precise exceptions. Register renaming eliminates false (write-after-read and write-after-write) dependencies so that only true data dependencies constrain scheduling. Reservation stations hold instructions until their operands and an execution unit are ready.</p>
+<p>The added complexity comes with costs: more silicon area, higher power consumption, and — as shown by the Spectre vulnerabilities disclosed in 2018 — speculative and out-of-order execution can leak information through microarchitectural side channels.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Tomasulo's_algorithm/index.html">Tomasulo's algorithm</a></li>
+<li><a href="../Register_renaming/index.html">Register renaming</a></li>
+<li><a href="../Instruction_pipelining/index.html">Instruction pipelining</a></li>
+<li><a href="../Superscalar_processor/index.html">Superscalar processor</a></li>
+<li><a href="../Spectre_(security_vulnerability)/index.html">Spectre (security vulnerability)</a></li>
+</ul>
+</body>
+</html>

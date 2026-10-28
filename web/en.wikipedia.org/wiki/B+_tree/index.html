@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>B+ tree - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #fff; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 30px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 0.95em; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; margin: 0 0 1em 1.5em; padding: 8px; font-family: sans-serif; font-size: 0.85em; }
+.infobox th { text-align: left; padding: 3px 6px; }
+.infobox td { padding: 3px 6px; }
+.infobox .title { text-align: center; font-weight: bold; background: #e8e8e8; padding: 6px; font-size: 1.05em; }
+img.hero { width: 100%; border: 1px solid #c8ccd1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 1px 3px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>B+ tree</h1>
+<div class="infobox">
+<div class="title">B+ tree</div>
+<img class="hero" src="images/b-plus-tree.png" alt="Diagram of a B+ tree">
+<table>
+<tr><th>Type</th><td>Tree (data structure)</td></tr>
+<tr><th>Invented</th><td>1970s (variant of B-tree)</td></tr>
+<tr><th>Search</th><td>O(log n)</td></tr>
+<tr><th>Insert</th><td>O(log n)</td></tr>
+<tr><th>Delete</th><td>O(log n)</td></tr>
+</table>
+</div>
+<p>A <b>B+ tree</b> is an n-ary tree with a variable but often large number of children per node. A B+ tree consists of a root, internal nodes and leaves. It is a self-balancing tree data structure that maintains sorted data and allows searches, sequential access, insertions, and deletions in logarithmic time. The B+ tree is a variant of the B-tree in which all data records are stored only in the leaf nodes, while internal nodes store only keys that guide the search.</p>
+<h2>Characteristics</h2>
+<p>In a B+ tree, internal nodes contain separator keys and pointers to child nodes, but no data. All records reside in the leaves, and the leaves are typically linked together in a linked list, which makes range queries and ordered sequential scans efficient. Because internal nodes hold only keys, more keys fit in each node, increasing the fan-out and reducing the height of the tree for a given number of records.</p>
+<h2>Uses</h2>
+<p>B+ trees are widely used for indexes in relational database systems — including MySQL's InnoDB storage engine, PostgreSQL, and Oracle — and in the metadata structures of many filesystems, such as NTFS, ext4 (for directory indexing), and XFS. Their shallow depth minimizes the number of disk accesses needed to locate a record, since each node can be sized to match a disk block.</p>
+<h2>Comparison with B-trees</h2>
+<p>Unlike a B-tree, in which every node may store data, the B+ tree stores data pointers only in leaves. This separation produces higher fan-out, uniform access paths (every search ends at a leaf), and efficient sequential traversal through the linked leaf level. The trade-off is that a search can never terminate early at an internal node.</p>
+<h2>See also</h2>
+<p><a href="../B-tree/index.html">B-tree</a> · <a href="../Database_index/index.html">Database index</a> · <a href="../Binary_search_tree/index.html">Binary search tree</a> · <a href="../Log-structured_merge-tree/index.html">Log-structured merge-tree</a></p>
+</div>
+</body>
+</html>

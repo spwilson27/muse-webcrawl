@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Alternating direction method of multipliers - Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:960px;margin:0 auto;padding:16px;line-height:1.6;color:#202122;background:#fff}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;text-align:center;font-size:85%}
+</style>
+</head>
+<body>
+<h1>Alternating direction method of multipliers</h1>
+<p>In mathematical optimization, the <b>alternating direction method of multipliers</b> (<b>ADMM</b>) is an algorithm that solves convex optimization problems by breaking them into smaller subproblems, each of which is easier to handle. It combines the decomposability of dual ascent with the convergence guarantees of the method of multipliers (augmented Lagrangian methods). ADMM is widely used for large-scale distributed problems in statistics, machine learning and signal processing, including the lasso, sparse inverse covariance estimation, and total variation denoising.</p>
+<div class="thumb"><img src="images/admm.png" alt="Diagram of the alternating updates performed by ADMM"><br>ADMM alternates minimising over two blocks of variables, then updates the dual variable</div>
+<h2>Problem form</h2>
+<p>ADMM addresses problems of the form</p>
+<p style="text-align:center">minimize&nbsp;&nbsp; f(x) + g(z)&nbsp;&nbsp; subject to&nbsp;&nbsp; Ax + Bz = c,</p>
+<p>where <i>f</i> and <i>g</i> are convex functions and the variables are split into two blocks, <i>x</i> and <i>z</i>, coupled by a linear constraint.</p>
+<h2>Algorithm</h2>
+<p>Using the augmented Lagrangian with penalty parameter ρ &gt; 0 and scaled dual variable <i>u</i>, ADMM iterates:</p>
+<ol>
+<li><b>x-update:</b> minimise the augmented Lagrangian over <i>x</i> with <i>z</i>, <i>u</i> fixed;</li>
+<li><b>z-update:</b> minimise the augmented Lagrangian over <i>z</i> with the new <i>x</i> and <i>u</i> fixed;</li>
+<li><b>dual update:</b> <i>u</i> ← <i>u</i> + Ax + Bz − c.</li>
+</ol>
+<p>Progress is monitored with primal and dual residuals, r = Ax + Bz − c and s = ρA<sup>T</sup>B(z − z<sub>prev</sub>), which both converge to zero under mild convexity assumptions. The penalty parameter ρ can be adapted during the iterations to balance the residuals.</p>
+<h2>History</h2>
+<p>The method originates in work by Gabay and Mercier (1976) and Glowinski and Marroco (1975) on splitting methods for partial differential equations, building on augmented Lagrangian ideas of Hestenes and Powell (1969). Interest revived dramatically after about 2010, driven by a widely cited survey by Boyd, Parikh, Chu, Peleato and Eckstein (2011), which demonstrated ADMM's effectiveness for distributed convex optimization and machine learning.</p>
+<h2>Applications</h2>
+<ul>
+<li>Distributed model fitting and consensus optimization across many machines.</li>
+<li>Compressed sensing and sparse regression (lasso).</li>
+<li>Image processing: denoising, deblurring and inpainting with total variation penalties.</li>
+<li>Optimal power flow, model predictive control, and portfolio optimization.</li>
+</ul>
+<h2>See also</h2>
+<ul>
+<li><a href="../Augmented_Lagrangian_method/index.html">Augmented Lagrangian method</a></li>
+<li><a href="../Convex_optimization/index.html">Convex optimization</a></li>
+<li><a href="../Proximal_gradient_method/index.html">Proximal gradient method</a></li>
+<li><a href="../Douglas-Rachford_splitting/index.html">Douglas–Rachford splitting</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pipeline (Unix) - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+header{background:#fff;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header .site{font-family:sans-serif;font-size:14px;color:#54595d}
+main{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{font-size:21px;border-bottom:1px solid #c8ccd1;padding-bottom:4px;margin-top:28px}
+p{line-height:1.6}
+code{font-family:monospace;background:#f0f0f0;padding:1px 4px}
+.hero{display:block;width:100%;margin:12px 0;border:1px solid #c8ccd1;background:#eaecf0;text-align:center;padding:24px 0;color:#54595d;font-family:sans-serif}
+a{color:#0645ad;text-decoration:none}
+footer{max-width:960px;margin:0 auto;padding:16px 32px;font-family:sans-serif;font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia, the free encyclopedia</span></header>
+<main>
+<h1>Pipeline (Unix)</h1>
+<img class="hero" src="images/unix-pipeline.png" alt="Diagram of three programs connected by pipes in a shell">
+<p>In Unix-like computer operating systems, a <b>pipeline</b> is a mechanism for inter-process communication using message passing: a chain of processes arranged so that the output of each element (its standard output) feeds directly as input to the next (its standard input). The concept was introduced by Douglas McIlroy and implemented in Unix shells, where pipelines are written with the vertical bar character: <code>command1 | command2 | command3</code>.</p>
+<h2>Concept</h2>
+<p>Each process in the pipeline runs concurrently, connected by operating-system pipes — anonymous buffers through which data streams. A process blocks when it writes to a full pipe or reads from an empty one, which synchronizes the chain automatically. Pipelines embody the Unix philosophy of composing simple, single-purpose tools: for example, <code>ls | grep ".txt" | wc -l</code> lists files, filters those whose names contain ".txt", and counts them.</p>
+<h2>History</h2>
+<p>McIlroy had proposed "coupling programs like a garden hose" as early as 1964 and pressed for the idea for years; pipelines were implemented in Unix in 1973. The notation influenced later shells and operating systems, including DOS, Windows PowerShell (which passes objects rather than text), and dataflow programming environments.</p>
+<h2>Named pipes and variants</h2>
+<p>A related mechanism is the named pipe or FIFO, a pipe that exists as a file in the filesystem and lets unrelated processes communicate. Shells also support process substitution and "pipelines" that capture exit statuses (such as bash's PIPESTATUS), while anonymous pipes remain one of the basic primitives created by the <code>pipe()</code> system call.</p>
+<p>See also: <a href="../Unix_philosophy/index.html">Unix philosophy</a>, <a href="../Inter-process_communication/index.html">Inter-process communication</a>, <a href="../Redirection_(computing)/index.html">Redirection (computing)</a>.</p>
+</main>
+<footer>From Wikipedia, the free encyclopedia.</footer>
+</body>
+</html>

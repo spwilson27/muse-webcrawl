@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fiber (computer science) - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+p{line-height:1.6;font-family:sans-serif;font-size:0.95em}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-family:sans-serif;font-size:0.85em;margin:0 0 12px 16px;padding:8px}
+.infobox th{background:#b0c4de;text-align:center;padding:4px}
+.infobox td{padding:3px 6px;vertical-align:top}
+.hero{display:block;margin:12px auto;max-width:420px;border:1px solid #c8ccd1;background:#eaecf0;padding:18px;text-align:center;color:#54595d;font-family:sans-serif}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Fiber (computer science)</h1>
+<img class="hero" src="images/fiber-computer-science.png" alt="Diagram placeholder showing cooperatively scheduled fibers within a thread">
+<table class="infobox">
+<tr><th colspan="2">Fiber</th></tr>
+<tr><td><b>Category</b></td><td>Concurrency primitive</td></tr>
+<tr><td><b>Scheduling</b></td><td>Cooperative (manual yield)</td></tr>
+<tr><td><b>Related concepts</b></td><td>Thread, coroutine, green thread, process</td></tr>
+</table>
+<p>In computer science, a <b>fiber</b> is a particularly lightweight thread of execution. Like threads, fibers share the same address space within a process. Unlike threads, however, fibers use <b>cooperative multitasking</b>: a running fiber must explicitly "yield" to allow another fiber to execute, rather than being preempted by the operating system scheduler.</p>
+<h2>Description</h2>
+<p>A fiber is typically implemented entirely in userspace library code. Each fiber maintains its own stack and saved register context, but because switching is cooperative and deterministic, fibers do not need the synchronisation primitives required when preemptive threads share data. A scheduler library decides which fiber to run when the current one yields or blocks.</p>
+<h2>Comparison with threads and coroutines</h2>
+<p>Fibers occupy a middle ground between operating-system threads and coroutines. They resemble coroutines in that control transfer is explicit, but differ in that any fiber can yield to any other fiber, whereas coroutines transfer control only back to their caller. Microsoft Windows provides a fibers API (<code>CreateFiber</code>, <code>SwitchToFiber</code>), and several programming-language runtimes—including Ruby (since 1.9) and Win32-based event frameworks—use fibers to implement efficient asynchronous I/O and "green thread" models.</p>
+<h2>Advantages and disadvantages</h2>
+<p>Because fiber switches avoid kernel transitions and are deterministic, fibers can be far cheaper than threads and simplify reasoning about shared state. However, a fiber that fails to yield blocks every other fiber in its thread, and fibers cannot by themselves exploit multiple processor cores unless combined with multiple OS threads.</p>
+<p><i>This article is a recreation written from memory for archival purposes.</i></p>
+</div>
+</body>
+</html>

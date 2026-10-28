@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pseudoinverse - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff;line-height:1.6}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:12px 24px}
+.header .site{font-size:1.4em;font-weight:bold;color:#000}
+.content{max-width:960px;margin:0 auto;padding:20px 24px}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,'Times New Roman',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+figure.thumb{margin:0 0 12px 0;text-align:center}
+figure.thumb img{max-width:100%;background:#eaecf0;padding:6px}
+figcaption{font-size:0.85em;color:#54595d}
+.footer{border-top:1px solid #a2a9b1;margin-top:32px;padding:12px 24px;font-size:0.85em;color:#54595d;background:#f8f9fa}
+.math{font-family:'Times New Roman',serif;font-style:italic}
+</style>
+</head>
+<body>
+<div class="header"><span class="site">Wikipedia</span> — The Free Encyclopedia</div>
+<div class="content">
+<h1>Pseudoinverse</h1>
+<figure class="thumb"><img src="images/pseudoinverse.png" alt="Diagram of a least-squares projection onto a column space"></figure>
+<p>In mathematics, and in particular <a href="../Linear_algebra/index.html">linear algebra</a>, a <b>pseudoinverse</b> <span class="math">A</span><sup>+</sup> of a matrix <span class="math">A</span> is a generalization of the inverse matrix. The most widely known type is the <b>Moore–Penrose inverse</b>, described independently by E. H. Moore in 1920, Arne Bjerhammar in 1951, and Roger Penrose in 1955. Pseudoinverses exist for any matrix, including singular and non-square matrices for which no ordinary inverse exists.</p>
+<h2>Definition</h2>
+<p>The Moore–Penrose inverse of an <span class="math">m × n</span> matrix <span class="math">A</span> is the unique <span class="math">n × m</span> matrix <span class="math">A</span><sup>+</sup> satisfying the four Penrose conditions: <span class="math">AA</span><sup>+</sup><span class="math">A = A</span>; <span class="math">A</span><sup>+</sup><span class="math">AA</span><sup>+</sup> = <span class="math">A</span><sup>+</sup>; (<span class="math">AA</span><sup>+</sup>)* = <span class="math">AA</span><sup>+</sup>; and (<span class="math">A</span><sup>+</sup><span class="math">A</span>)* = <span class="math">A</span><sup>+</sup><span class="math">A</span>, where * denotes the conjugate transpose.</p>
+<h2>Computation</h2>
+<p>A practical method of computing the pseudoinverse uses the <a href="../Singular_value_decomposition/index.html">singular value decomposition</a> (SVD). If <span class="math">A = UΣV</span>*, then <span class="math">A</span><sup>+</sup> = <span class="math">VΣ</span><sup>+</sup><span class="math">U</span>*, where Σ<sup>+</sup> is obtained by taking the reciprocal of each nonzero diagonal entry and transposing the matrix. For a full-column-rank matrix, the simpler formula <span class="math">A</span><sup>+</sup> = (<span class="math">A</span>*<span class="math">A</span>)<sup>−1</sup><span class="math">A</span>* applies.</p>
+<h2>Applications</h2>
+<p>The best-known application is the solution of systems of linear equations by <a href="../Least_squares/index.html">least squares</a>: for an overdetermined system <span class="math">Ax = b</span>, the vector <span class="math">x = A</span><sup>+</sup><span class="math">b</span> minimizes ‖<span class="math">Ax − b</span>‖, and among all minimizers it has the smallest norm. Pseudoinverses are therefore central to <a href="../Linear_regression/index.html">linear regression</a>, signal processing, control theory, and statistical estimation, and appear in the theory of the Kalman filter and in solving ill-posed inverse problems.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Inverse_matrix/index.html">Inverse matrix</a></li>
+<li><a href="../Least_squares/index.html">Least squares</a></li>
+<li><a href="../Singular_value_decomposition/index.html">Singular value decomposition</a></li>
+<li><a href="../Generalized_inverse/index.html">Generalized inverse</a></li>
+</ul>
+</div>
+<div class="footer">This page was last edited as part of the free encyclopedia project. Content is available under the Creative Commons Attribution-ShareAlike License.</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Prolog - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;color:#202122;background:#fff}
+#content{max-width:960px;margin:0 auto;padding:20px 30px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+p{font-size:15px;line-height:1.6;font-family:sans-serif}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:16px auto;max-width:420px;width:100%;background:#f8f9fa;border:1px solid #c8ccd1;padding:8px;text-align:center;font-family:sans-serif;font-size:13px;color:#54595d}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 20px;font-family:sans-serif;font-size:13px}
+.infobox th{text-align:left;padding-right:8px}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;font-size:13px;overflow:auto}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Prolog</h1>
+<div class="infobox"><table>
+<tr><th>Paradigm</th><td>Logic programming, declarative</td></tr>
+<tr><th>First appeared</th><td>1972</td></tr>
+<tr><th>Designed by</th><td>Alain Colmerauer, Robert Kowalski, Philippe Roussel</td></tr>
+<tr><th>Typing</th><td>Untyped (single data type: term)</td></tr>
+</table></div>
+<img class="hero" src="images/prolog.png" alt="Screenshot of a Prolog interpreter answering a query">
+<p><b>Prolog</b> is a logic programming language associated with artificial intelligence and computational linguistics. It has its roots in first-order logic — a formal logic — and, unlike many other programming languages, Prolog is intended primarily as a declarative programming language: the program is composed of relations, represented as facts and rules. A computation is initiated by running a query over the relations. The name <i>Prolog</i> is short for <i>Programmation en logique</i> (French for "programming in logic").</p>
+<h2>History</h2>
+<p>Prolog was created around 1972 by Alain Colmerauer and Philippe Roussel, based on Robert Kowalski's procedural interpretation of Horn clauses. It was motivated partly by a desire to use logic as a knowledge representation language for natural language processing. The language was famously chosen as the core of the Japanese Fifth Generation Computer Systems project in the 1980s, and implementations such as SWI-Prolog and GNU Prolog remain in use for symbolic AI, expert systems, theorem proving, and term rewriting.</p>
+<h2>Example</h2>
+<pre>mother_child(trude, sally).
+father_child(tom, sally).
+sibling(X, Y) :- parent_child(Z, X), parent_child(Z, Y), X \= Y.</pre>
+<p>Here, facts state parent–child relations and a rule defines when two people are siblings. Querying the program can infer relationships not stated explicitly — the hallmark of Prolog's execution model, which is based on unification and backtracking search.</p>
+<h2>Features</h2>
+<p>Prolog's single data type is the term, which includes atoms, numbers, variables, and compound terms. Pattern matching is by unification, and control flow relies on depth-first search with backtracking, moderated by the cut operator. Features such as definite clause grammars make Prolog well suited to parsing and computational linguistics. Its declarative style allows some programs to be run "backwards," using the same rules to answer different kinds of questions.</p>
+<h2>See also</h2>
+<p><a href="../Logic_programming/index.html">Logic programming</a> &middot; <a href="../Horn_clause/index.html">Horn clause</a> &middot; <a href="../Unification_(computer_science)/index.html">Unification</a> &middot; <a href="../SWI-Prolog/index.html">SWI-Prolog</a> &middot; <a href="../Fifth_Generation_Computer_Systems/index.html">Fifth Generation Computer Systems</a></p>
+</div>
+</body>
+</html>

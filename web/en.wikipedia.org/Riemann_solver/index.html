@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Riemann solver - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 24px; line-height: 1.6; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 24px 0; }
+.thumbcaption { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Riemann solver</h1>
+<p>A <b>Riemann solver</b> is a numerical method used to solve a <a href="../Riemann_problem/index.html">Riemann problem</a>: the evolution of a hyperbolic system of <a href="../Conservation_law/index.html">conservation laws</a> from initial data consisting of two constant states separated by a single discontinuity. Riemann solvers are a key ingredient of <a href="../Godunov%27s_scheme/index.html">Godunov-type schemes</a> in <a href="../Computational_fluid_dynamics/index.html">computational fluid dynamics</a>.</p>
+<div class="hero"><img src="images/riemann-solver.png" alt="Wave pattern produced by the solution of a Riemann problem for the Euler equations"><div class="thumbcaption">Wave structure (shock, contact discontinuity and rarefaction) resolved by a Riemann solver.</div></div>
+<h2>Exact and approximate solvers</h2>
+<p>An <b>exact Riemann solver</b> computes the true solution of the Riemann problem, typically by iteratively solving nonlinear algebraic equations for the pressure and velocity in the "star region" between the outgoing waves, as in the exact solver for the <a href="../Euler_equations_(fluid_dynamics)/index.html">Euler equations</a> described by Toro. Because exact solutions are expensive and sometimes difficult to obtain, practical codes usually employ <b>approximate Riemann solvers</b>, which replace the exact wave structure with a simplified model.</p>
+<h2>Common approximate solvers</h2>
+<ul>
+<li><b>Roe solver</b> — based on a linearised Jacobian matrix with averaged ("Roe averaged") states; efficient but can admit non-physical expansion shocks without an entropy fix.</li>
+<li><b>HLL solver</b> (Harten–Lax–van Leer) — assumes two waves bounding a single constant intermediate state; robust and simple.</li>
+<li><b>HLLC solver</b> — restores the missing contact wave of the HLL model, improving resolution of contact discontinuities and shear waves.</li>
+<li><b>Rusanov (local Lax–Friedrichs) solver</b> — uses only the largest wave speed; very robust but highly diffusive.</li>
+<li><b>AUSM family</b> — advection upstream splitting methods that split the flux into convective and pressure parts.</li>
+</ul>
+<h2>Applications</h2>
+<p>Riemann solvers are used in simulations of compressible gas dynamics, astrophysical flows, shallow-water equations and <a href="../Magnetohydrodynamics/index.html">magnetohydrodynamics</a>, where capturing <a href="../Shock_wave/index.html">shock waves</a> sharply and robustly is essential.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Riemann_problem/index.html">Riemann problem</a></li>
+<li><a href="../Godunov%27s_scheme/index.html">Godunov's scheme</a></li>
+<li><a href="../Finite_volume_method/index.html">Finite volume method</a></li>
+</ul>
+</div>
+</body>
+</html>

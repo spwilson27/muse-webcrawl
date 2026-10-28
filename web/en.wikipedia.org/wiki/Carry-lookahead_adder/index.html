@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Carry-lookahead adder - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;color:#202122;background:#fff}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:18px 28px}
+main{max-width:960px;margin:0 auto;padding:24px}
+h1{font-size:2.1em;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+.hero{float:right;margin:0 0 14px 18px;max-width:300px;background:#f8f9fa;border:1px solid #c8ccd1;padding:8px;text-align:center;font-size:.85em}
+.hero img{max-width:100%;background:#eaecf0;display:block;min-height:140px}
+a{color:#0645ad;text-decoration:none}
+.small{font-size:.9em;color:#54595d}
+code{font-family:monospace}
+</style>
+</head>
+<body>
+<header><div class="small">From Wikipedia, the free encyclopedia</div></header>
+<main>
+<h1>Carry-lookahead adder</h1>
+<div class="hero"><img src="images/Carry-lookahead_adder.png" alt="Logic diagram of a four-bit carry-lookahead adder"><div>A carry-lookahead adder computes carries in parallel rather than waiting for a ripple.</div></div>
+<p>A <b>carry-lookahead adder</b> (<b>CLA</b>) is a digital adder that speeds up binary addition by computing carry signals for groups of bits in parallel. Unlike a ripple-carry adder, where each full adder waits for the carry from the previous position, the CLA uses generate and propagate signals to predict carries with a shallower logic network.</p>
+<h2>Generate and propagate</h2>
+<p>For input bits <code>A<sub>i</sub></code> and <code>B<sub>i</sub></code>, a bit generates a carry when both are 1: <code>G<sub>i</sub> = A<sub>i</sub> B<sub>i</sub></code>. It propagates an incoming carry when at least one input is 1: <code>P<sub>i</sub> = A<sub>i</sub> + B<sub>i</sub></code> (or, in some formulations, XOR). The carry into the next position is <code>C<sub>i+1</sub> = G<sub>i</sub> + P<sub>i</sub>C<sub>i</sub></code>. Expanding this recurrence lets hardware compute all carries from the inputs and the initial carry.</p>
+<h2>Architecture</h2>
+<p>Because fan-in grows rapidly, wide CLAs are usually hierarchical: small blocks produce block generate and block propagate signals, and a lookahead unit combines them. This structure trades additional gates and wiring for much lower delay than a long ripple chain.</p>
+<h2>Comparison</h2>
+<p>Carry-lookahead adders are faster than ripple-carry adders for medium and wide words, but more complex. Related designs include carry-select adders, carry-save adders, and parallel-prefix adders such as Kogge–Stone and Brent–Kung, which generalize the carry computation.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Adder_(electronics)/index.html">Adder (electronics)</a></li>
+<li><a href="../Ripple-carry_adder/index.html">Ripple-carry adder</a></li>
+<li><a href="../Carry-save_adder/index.html">Carry-save adder</a></li>
+<li><a href="../Kogge–Stone_adder/index.html">Kogge–Stone adder</a></li>
+</ul>
+</main>
+</body>
+</html>

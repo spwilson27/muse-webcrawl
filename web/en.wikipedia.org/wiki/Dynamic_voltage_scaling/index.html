@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dynamic voltage scaling - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 960px; padding: 0 1em; color: #202122; line-height: 1.6; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em; margin: 0 0 1em 1em; width: 260px; font-size: 90%; }
+.infobox th { background: #c8ccd1; text-align: center; }
+.infobox td, .infobox th { padding: 0.2em 0.4em; }
+a { color: #0645ad; text-decoration: none; }
+.hero { width: 100%; }
+</style>
+</head>
+<body>
+<h1>Dynamic voltage scaling</h1>
+<table class="infobox">
+<tr><th colspan="2">Dynamic voltage scaling</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/dynamic-voltage-scaling.png" alt="Graph of power versus supply voltage and frequency"></td></tr>
+<tr><td><b>Field</b></td><td>Computer architecture; power management</td></tr>
+<tr><td><b>Effect</b></td><td>Dynamic power rises with the square of voltage</td></tr>
+<tr><td><b>Related</b></td><td>Dynamic frequency scaling; DVFS</td></tr>
+</table>
+<p><b>Dynamic voltage scaling</b> is a power management technique in computer architecture whereby the voltage used in a component is increased or decreased depending on the circumstances. It is usually combined with dynamic frequency scaling in a combined technique known as <b>DVFS</b> (dynamic voltage and frequency scaling).</p>
+<h2>Rationale</h2>
+<p>The dynamic power consumption of a CMOS circuit is approximately proportional to the product of capacitance, the square of the supply voltage, and the clock frequency (P &asymp; C V&sup2; f). Since frequency can be reduced roughly in proportion to voltage, lowering both when full performance is unnecessary yields quadratic power savings in voltage on top of the linear saving from frequency. Conversely, raising the voltage temporarily allows higher clock speeds, as in processor "turbo" modes and overclocking.</p>
+<h2>Implementation</h2>
+<p>Modern processors expose a set of operating performance points — combinations of voltage and frequency — and software governors in the operating system switch between them according to load. Techniques range from coarse, OS-driven policies to fine-grained on-chip regulators and per-core voltage islands. Undervolting, the deliberate reduction of voltage below specification, is used by enthusiasts to cut power and heat but risks instability, since too low a voltage for a given frequency causes timing errors.</p>
+<h2>Significance</h2>
+<p>Voltage scaling was historically a principal lever for improving energy efficiency as transistor scaling slowed: because power density constraints ("the power wall") limited clock frequencies from the mid-2000s onward, adjusting voltage dynamically to match workload demand became central to the design of mobile and server processors alike.</p>
+<p>See also: <a href="../Dynamic_frequency_scaling/index.html">Dynamic frequency scaling</a>, <a href="../Voltage_scaling/index.html">Voltage scaling</a>, <a href="../CPU_power_dissipation/index.html">CPU power dissipation</a>, <a href="../Underclocking/index.html">Underclocking</a>.</p>
+</body>
+</html>

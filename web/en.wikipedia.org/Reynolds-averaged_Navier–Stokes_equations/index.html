@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Reynolds-averaged Navier–Stokes equations - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.1em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0 0 1em 1em; border: 1px solid #c8ccd1; padding: 4px; background: #f8f9fa; font-size: 0.85em; text-align: center; max-width: 260px; }
+.eq { text-align: center; font-style: italic; margin: 1em 0; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Reynolds-averaged Navier–Stokes equations</h1>
+<p>The <b>Reynolds-averaged Navier–Stokes equations</b> (<b>RANS equations</b>) are time-averaged equations of motion for fluid flow. The idea behind the equations is Reynolds decomposition, whereby an instantaneous quantity is decomposed into its time-averaged and fluctuating quantities. The RANS equations are primarily used to describe turbulent flows, and form the basis of most practical computational fluid dynamics (CFD) simulations of turbulence.</p>
+<div class="thumb"><img src="images/rans-turbulent-flow.png" alt="Visualisation of a turbulent flow field computed with a RANS model"><div>Turbulent flow computed using RANS</div></div>
+<h2>Derivation</h2>
+<p>Following Osborne Reynolds (1895), each instantaneous variable φ is decomposed as φ = φ̄ + φ′, where φ̄ is the time average and φ′ is the fluctuation. Averaging the incompressible Navier–Stokes equations yields a momentum equation for the mean velocity that contains an additional term, the divergence of the <b>Reynolds stress</b> tensor:</p>
+<p class="eq">∂(ρū<sub>i</sub>)/∂t + ∂(ρū<sub>i</sub>ū<sub>j</sub>)/∂x<sub>j</sub> = −∂p̄/∂x<sub>i</sub> + ∂/∂x<sub>j</sub>[ μ(∂ū<sub>i</sub>/∂x<sub>j</sub> + ∂ū<sub>j</sub>/∂x<sub>i</sub>) − ρ u′<sub>i</sub>u′<sub>j</sub>̅ ] + f<sub>i</sub></p>
+<p>The Reynolds stresses −ρ u′<sub>i</sub>u′<sub>j</sub>̅ are unknown a priori, giving rise to the <b>closure problem</b>: the averaged equations contain more unknowns than equations and cannot be solved without additional modelling assumptions.</p>
+<h2>Turbulence models</h2>
+<p>The Boussinesq hypothesis (1877) relates the Reynolds stresses to the mean strain rate through an eddy viscosity. Widely used eddy-viscosity models include:</p>
+<ul>
+<li><b>Spalart–Allmaras</b> – a one-equation model popular in aerospace applications.</li>
+<li><b>k–ε model</b> – a two-equation model solving for turbulent kinetic energy <i>k</i> and its dissipation rate ε.</li>
+<li><b>k–ω model</b> and its <b>SST</b> (shear stress transport) variant – two-equation models solving for <i>k</i> and the specific dissipation rate ω.</li>
+<li><b>Reynolds stress models</b> – which solve transport equations for each Reynolds stress component, at greater computational cost.</li>
+</ul>
+<h2>Applications</h2>
+<p>RANS modelling remains the workhorse of industrial CFD — in aerodynamics, turbomachinery, ship hydrodynamics, automotive design and building ventilation — because it provides engineering accuracy at a fraction of the cost of large eddy simulation (LES) or direct numerical simulation (DNS). Its weaknesses include poor prediction of strongly separated flows, swirl and transition, motivating hybrid RANS–LES approaches.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Navier–Stokes_equations/index.html">Navier–Stokes equations</a></li>
+<li><a href="../Turbulence/index.html">Turbulence</a></li>
+<li><a href="../Computational_fluid_dynamics/index.html">Computational fluid dynamics</a></li>
+<li><a href="../Osborne_Reynolds/index.html">Osborne Reynolds</a></li>
+<li><a href="../Large_eddy_simulation/index.html">Large eddy simulation</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Copy constructor - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:960px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:2px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{max-width:100%;border:1px solid #c8ccd1;background:#f8f9fa}
+pre{background:#f8f9fa;border:1px solid #c8ccd1;padding:10px;overflow-x:auto}
+</style>
+</head>
+<body>
+<h1>Copy constructor</h1>
+<img class="hero" src="images/Copy_constructor.png" alt="Hero image placeholder for Copy constructor">
+<p>In the C++ programming language, a <b>copy constructor</b> is a special constructor for creating a new object as a copy of an existing object. Copy constructors are the standard way of copying objects in C++, as opposed to assignment, and are used in various contexts, including passing objects by value and returning them from functions.</p>
+<pre>class Example {
+public:
+    Example(const Example&amp; other); // copy constructor
+};</pre>
+<p>The first argument of such a constructor is a reference to an object of the same type as the class (typically a const reference), and the constructor may take additional arguments if they have default values. If a copy constructor is not defined by the programmer, the compiler generates an implicitly declared copy constructor that performs memberwise copying — a <i>shallow copy</i>. Classes that manage resources such as dynamically allocated memory often need a user-defined copy constructor to perform a <i>deep copy</i>, alongside a destructor and copy assignment operator, a principle known as the rule of three.</p>
+<h2>Uses</h2>
+<p>Copy constructors are invoked when an object is initialized from another of the same type, when an object is passed by value to a function, and when an object is returned by value. Copy elision optimizations, standardized in C++17 for some cases, can eliminate unnecessary copies. Since C++11, move constructors provide an alternative for transferring resources from temporary objects.</p>
+<h2>Bitwise copy</h2>
+<p>Some objects can be safely copied bit-for-bit; types satisfying the trivially copyable requirements can be copied with functions like memcpy. Types with pointers to owned resources generally cannot.</p>
+<p>See also: <a href="../Constructor_(object-oriented_programming)/index.html">Constructor</a>, <a href="../Copy_elision/index.html">Copy elision</a>, <a href="../Rule_of_three_(C++_programming)/index.html">Rule of three</a>.</p>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Second-order cone programming - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.hero{text-align:center;margin:16px 0}
+.hero img{max-width:420px;width:100%;border:1px solid #c8ccd1;background:#eaecf0}
+.caption{font-size:0.85em;color:#54595d;text-align:center}
+math{font-style:italic}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Second-order cone programming</h1>
+<div class="hero"><img src="images/second-order-cone-programming.png" alt="A three-dimensional second-order (Lorentz) cone"></div>
+<p class="caption">The second-order cone in three dimensions.</p>
+<p>A <b>second-order cone program</b> (<b>SOCP</b>) is a <a href="../../Convex_optimization/index.html">convex optimization</a> problem of the form: minimize a linear function <i>c</i><sup>T</sup><i>x</i> subject to constraints that affine functions of the variable <i>x</i> lie in second-order cones, ‖<i>A</i><sub>i</sub><i>x</i> + <i>b</i><sub>i</sub>‖<sub>2</sub> ≤ <i>c</i><sub>i</sub><sup>T</sup><i>x</i> + <i>d</i><sub>i</sub>, together with linear equality constraints.</p>
+<h2>The second-order cone</h2>
+<p>The second-order cone (also called the Lorentz cone or ice-cream cone) is the set of points (<i>x</i>, <i>t</i>) with ‖<i>x</i>‖<sub>2</sub> ≤ <i>t</i>. It is a proper convex cone, and in three dimensions it has the shape of an infinite circular cone, giving the problem its geometry.</p>
+<h2>Relation to other problem classes</h2>
+<p>SOCPs generalise <a href="../../Linear_programming/index.html">linear programs</a> and convex quadratically constrained quadratic programs: a convex quadratic constraint can be rewritten as a second-order cone constraint, and linear constraints are SOC constraints with zero left-hand side. In turn, every SOCP can be formulated as a <a href="../../Semidefinite_programming/index.html">semidefinite program</a>, though specialised SOCP solvers are typically much faster.</p>
+<h2>Solution methods</h2>
+<p>Like other conic programs, SOCPs are solved efficiently by primal-dual <a href="../../Interior-point_method/index.html">interior-point methods</a>, which converge in a polynomial number of iterations. Commercial and open-source solvers including MOSEK, ECOS and SCS implement SOCP directly, and modelling tools such as CVX and CVXPY recognise and transform problems into SOCP form automatically.</p>
+<h2>Applications</h2>
+<p>SOCPs arise in robust optimisation, portfolio selection with risk constraints, antenna array design, structural optimisation (truss design), filter design, facility location, and machine learning problems such as the formulation of robust support vector machines and portfolio optimisation under the <a href="../../Markowitz_model/index.html">Markowitz model</a>.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../Quadratic_programming/index.html">Quadratic programming</a></li>
+<li><a href="../../Conic_optimization/index.html">Conic optimization</a></li>
+<li><a href="../../Lorentz_cone/index.html">Lorentz cone</a></li>
+</ul>
+</div>
+</body>
+</html>

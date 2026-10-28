@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MOESI protocol - Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:900px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:2px}
+table.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.9em;margin:0 0 1em 1em;border-collapse:collapse}
+table.infobox th,table.infobox td{border:1px solid #a2a9b1;padding:4px 6px;text-align:left;vertical-align:top}
+table.infobox th{background:#eaecf0}
+.infobox-title{text-align:center;font-weight:bold;background:#eaecf0;font-size:1.05em}
+figure.hero{margin:0 0 1em 0;text-align:center}
+figure.hero img{max-width:320px;width:100%;border:1px solid #ccc;background:#eee;min-height:140px}
+figcaption{font-size:0.85em;color:#54595d}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>MOESI protocol</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<tr><th colspan="2" class="infobox-title">MOESI protocol</th></tr>
+<tr><th>Type</th><td>Cache coherence protocol</td></tr>
+<tr><th>States</th><td>Modified, Owned, Exclusive, Shared, Invalid</td></tr>
+<tr><th>Extends</th><td>MESI protocol</td></tr>
+<tr><th>Used by</th><td>AMD Opteron (and related designs)</td></tr>
+</table>
+<figure class="hero"><img src="images/moesi.png" alt="MOESI protocol state diagram placeholder"><figcaption>The five states of the MOESI cache coherence protocol.</figcaption></figure>
+<p>The <b>MOESI protocol</b> is a cache coherence protocol used in multiprocessor computer systems. It is a full extension of the MESI protocol that adds an <b>Owned</b> state, allowing a cache line that has been modified in one cache to be shared with other caches without first being written back to main memory.</p>
+<h2>States</h2>
+<p>Each cache line can be in one of five states:</p>
+<ul>
+<li><b>Modified</b> — the line is present only in this cache and is dirty; its value differs from main memory.</li>
+<li><b>Owned</b> — the line is dirty and may be present in other caches in the Shared state; this cache is responsible for supplying the current value and eventually writing it back.</li>
+<li><b>Exclusive</b> — the line is present only in this cache and is clean, matching memory.</li>
+<li><b>Shared</b> — the line may be present in several caches; it is clean unless held as Owned elsewhere.</li>
+<li><b>Invalid</b> — the line is not valid in this cache.</li>
+</ul>
+<h2>Advantage of the Owned state</h2>
+<p>In plain MESI, when a modified line is read by another processor it must be written back to memory (or the state changed and data forwarded with extra traffic). MOESI's Owned state lets the modifying cache keep responsibility for the dirty data while supplying it directly to other caches, reducing memory bandwidth and latency in workloads where dirty data is shared. The protocol is associated with AMD's multiprocessor designs, including the Opteron family.</p>
+<p class="small">References: standard texts on computer architecture and cache coherence.</p>
+</body>
+</html>

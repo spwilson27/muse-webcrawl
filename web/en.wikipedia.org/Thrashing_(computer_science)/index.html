@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Thrashing (computer science) - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f8f9fa;color:#202122}
+main{max-width:880px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:88%;margin:0 0 16px 20px;padding:6px}
+.infobox th{background:#b0c4de;text-align:center;padding:4px}
+.infobox td{padding:3px 6px;vertical-align:top}
+.hero{display:block;max-width:100%;margin:12px auto;border:1px solid #c8ccd1;background:#eaecf0;padding:24px;text-align:center;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.tag{font-size:92%;color:#54595d}
+</style>
+</head>
+<body>
+<main>
+<h1>Thrashing (computer science)</h1>
+<p class="tag">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/thrashing.png" alt="Hero image: a graph showing system throughput collapsing as multiprogramming increases">
+<table class="infobox">
+<tr><th colspan="2">Thrashing</th></tr>
+<tr><td><b>Field</b></td><td>Operating systems, virtual memory</td></tr>
+<tr><td><b>Cause</b></td><td>Working sets of active processes exceed available physical memory</td></tr>
+<tr><td><b>Symptoms</b></td><td>Excessive paging, high disk activity, low CPU utilisation</td></tr>
+</table>
+<p>In computer science, <b>thrashing</b> is a state in which a computer's resources are consumed by the process of swapping data in and out of memory rather than by executing applications. It typically occurs in virtual memory systems when the combined working sets of the running processes exceed the amount of available physical memory (RAM), so the system spends most of its time servicing page faults.</p>
+<h2>Mechanism</h2>
+<p>Modern operating systems move pages between RAM and a backing store such as a hard disk or SSD. If processes are continually forced to evict pages that they will need again almost immediately, the page fault rate rises sharply: the disk queue saturates, CPU utilisation paradoxically falls because processes are blocked waiting for pages, and a naive scheduler may respond by admitting still more processes, worsening the problem. The classic analysis is associated with Peter Denning's working set model (1968), which showed that each process needs its current working set of pages resident to run efficiently.</p>
+<h2>Causes and remedies</h2>
+<p>Thrashing can result from running too many memory-hungry programs at once, from poor locality of reference in application code, or from global page-replacement policies that let one process steal frames from all others. Remedies include adding physical memory, reducing the degree of multiprogramming, using working-set or page-fault-frequency replacement strategies, swapping out entire processes, and, on personal computers, simply closing applications. Solid-state drives mitigate the penalty of paging but do not remove the underlying imbalance.</p>
+<h2>Other contexts</h2>
+<p>The term is also used for analogous behaviour in other resource systems: cache thrashing, when competing data repeatedly evicts useful entries from a CPU cache, and thrashing in databases or TLBs. In each case a shared fast resource is over-committed so that overhead dominates useful work.</p>
+<p>See also: <a href="../Virtual_memory/index.html">Virtual memory</a>, <a href="../Paging/index.html">Paging</a>, <a href="../Working_set/index.html">Working set</a>, <a href="../Page_fault/index.html">Page fault</a>.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Adiantum (cryptography) - Wikipedia</title>
+<style>body{font-family:sans-serif;max-width:800px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a7d7f9;padding-bottom:.2em}.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.9em}.infobox th{text-align:left;background:#eaecf0;padding:.2em .4em}.hero{display:block;width:100%;background:#eee;border:1px dashed #888;text-align:center;padding:2em 0;color:#555}a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}</style></head>
+<body>
+<h1>Adiantum (cryptography)</h1>
+<div class="infobox"><table><tr><th>Designer</th><td>Paul Crowley and Eric Biggers (Google)</td></tr><tr><th>Published</th><td>2018</td></tr><tr><th>Purpose</th><td>Disk encryption mode</td></tr><tr><th>Components</th><td>ChaCha, AES, Poly1305 / NH hashing</td></tr></table></div>
+<img class="hero" src="images/adiantum.png" alt="Structure of the Adiantum encryption construction">
+<p><b>Adiantum</b> is a disk encryption mode designed by Paul Crowley and Eric Biggers at Google, announced in 2018 and formally presented at the IACR Transactions on Symmetric Cryptology in 2019. It is intended for low-end devices — such as entry-level Android phones, smartwatches, and Internet-of-things hardware — whose processors lack the dedicated AES acceleration instructions used by conventional disk encryption.</p>
+<h2>Design</h2>
+<p>Adiantum is a wide-block cipher construction built within the HBSH framework (hash, block cipher, stream cipher, hash). It combines the ChaCha stream cipher (in its XChaCha variant), a single AES round function used as a mixing step, and fast hashing based on Poly1305 and the NH universal hash family. Because most of the work is done by ChaCha and the hashes, Adiantum encrypts data several times faster than AES-XTS on processors without AES instructions, while still providing strong, length-preserving, tweakable encryption suitable for sector-based storage.</p>
+<h2>Deployment</h2>
+<p>Google announced Adiantum for Android devices that cannot use hardware-accelerated AES; support was merged into the Linux kernel (version 5.0) in the dm-crypt and fscrypt subsystems. The name comes from <i>Adiantum</i>, a genus of maidenhair ferns, following a naming theme of plants symbolizing sincerity.</p>
+<h2>Security</h2>
+<p>Adiantum is designed to be at least as secure as the standard AES-XTS mode under its stated assumptions, with a security proof based on the underlying primitives. It provides no integrity protection, which is the same limitation as other common disk encryption modes.</p>
+<h2>See also</h2>
+<ul><li><a href="../Disk_encryption/index.html">Disk encryption</a></li><li><a href="../ChaCha20-Poly1305/index.html">ChaCha</a></li><li><a href="../Advanced_Encryption_Standard/index.html">Advanced Encryption Standard</a></li><li><a href="../XTS/index.html">XTS</a></li></ul>
+</body></html>

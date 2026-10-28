@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>PCI passthrough - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#222}h1{border-bottom:1px solid #aaa;font-size:1.9em}h2{border-bottom:1px solid #ddd;font-size:1.3em}.infobox{float:right;border:1px solid #aaa;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;width:250px;font-size:.88em}img.hero{width:100%;background:#eef;border:1px solid #ccc}small{color:#555}</style></head>
+<body><h1>PCI passthrough</h1>
+<div class="infobox"><img class="hero" src="images/pci-passthrough.png" alt="Diagram of a PCI device assigned directly to a virtual machine"><br><b>Requires:</b> IOMMU (Intel VT-d / AMD-Vi). <b>Used by:</b> KVM, Xen, VMware ESXi, Hyper-V.</div>
+<p><b>PCI passthrough</b> is a virtualization technique that allows a virtual machine to have direct, exclusive access to a physical PCI or PCI Express device, such as a graphics card, network adapter, or storage controller, rather than sharing an emulated or paravirtual device provided by the hypervisor.</p>
+<h2>How it works</h2>
+<p>Passthrough relies on an IOMMU — Intel VT-d or AMD-Vi — which remaps the device's DMA accesses into the guest's address space and isolates the device so it cannot read or write host memory outside the guest. On Linux the device is typically bound to a stub or VFIO driver on the host, then assigned to a guest under <a href="../Kernel-based_Virtual_Machine/index.html">KVM</a>/QEMU; Xen and VMware ESXi (DirectPath I/O) provide equivalent facilities.</p>
+<h2>Uses</h2>
+<p>The most common consumer use is GPU passthrough, giving a guest near-native graphics performance for gaming or GPU computing while the host runs another operating system. In data centres, passthrough of network interfaces and NVMe controllers reduces virtualization overhead for latency-sensitive workloads. Related technology, SR-IOV, lets a single device present multiple virtual functions that can each be passed through to different guests.</p>
+<h2>Limitations</h2>
+<p>A passed-through device is unavailable to the host and cannot easily be shared or live-migrated with the guest. Faulty or malicious devices historically posed isolation risks, mitigated by IOMMU grouping and Access Control Services (ACS) on PCIe switches.</p>
+<p><small>See also: <a href="../IOMMU/index.html">IOMMU</a> · <a href="../Single-root_input/output_virtualization/index.html">SR-IOV</a> · <a href="../Hypervisor/index.html">Hypervisor</a></small></p>
+</body></html>

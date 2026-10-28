@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Reverse proxy - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.1em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0 0 1em 1em; border: 1px solid #c8ccd1; padding: 4px; background: #f8f9fa; font-size: 0.85em; text-align: center; max-width: 280px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Reverse proxy</h1>
+<p>In computer networks, a <b>reverse proxy</b> is an application that sits in front of back-end applications and forwards client (e.g. browser) requests to those applications. Reverse proxies help increase scalability, performance, resilience and security. The resources returned to the client appear as if they originated from the web server itself.</p>
+<div class="thumb"><img src="images/reverse-proxy-diagram.png" alt="Diagram of clients sending requests through a reverse proxy to backend servers"><div>A reverse proxy forwarding requests to backend servers</div></div>
+<h2>Uses</h2>
+<ul>
+<li><b>Load balancing</b> – distributing incoming requests among several backend servers to improve responsiveness and availability.</li>
+<li><b>Caching</b> – storing copies of responses so that repeated requests can be served quickly without contacting the backend.</li>
+<li><b>TLS termination</b> – decrypting incoming HTTPS connections (and encrypting responses) so backend servers need not perform this computationally expensive task.</li>
+<li><b>Compression</b> – compressing responses to reduce bandwidth.</li>
+<li><b>Security</b> – hiding the identity and characteristics of backend servers, and acting as a point at which malicious traffic can be filtered; web application firewalls are often deployed as reverse proxies.</li>
+<li><b>Single point of access</b> – presenting multiple services under one domain, and centralising authentication and logging.</li>
+</ul>
+<h2>Comparison with forward proxies</h2>
+<p>A <i>forward proxy</i> sits in front of clients and forwards their requests to servers on the wider internet; it represents the clients to the servers. A reverse proxy, by contrast, sits in front of servers and represents them to clients. The two play opposite roles, a fact reflected in their names. Organisations may use both at once.</p>
+<h2>Implementations</h2>
+<p>Popular software that can act as a reverse proxy includes <a href="../Nginx/index.html">nginx</a>, Apache HTTP Server (with mod_proxy), HAProxy, Varnish (a caching reverse proxy), and Caddy. Content delivery networks such as Cloudflare and Akamai also operate, in effect, as globally distributed reverse proxies, caching content near users and absorbing hostile traffic.</p>
+<h2>Risks</h2>
+<p>A reverse proxy can track all IP addresses making requests through it and can also read and modify any traffic passing through it if not properly secured. A compromised or malicious reverse proxy places the privacy and security of data passing through it at risk. If a reverse proxy accepts connections on behalf of servers that do not encrypt, or fails to validate the backend connection, clients may be exposed to interception.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Proxy_server/index.html">Proxy server</a></li>
+<li><a href="../Load_balancing_(computing)/index.html">Load balancing (computing)</a></li>
+<li><a href="../Content_delivery_network/index.html">Content delivery network</a></li>
+<li><a href="../Nginx/index.html">Nginx</a></li>
+<li><a href="../Web_cache/index.html">Web cache</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Training, validation, and test data sets - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:0}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:28px}
+h3{font-size:17px;margin-top:20px}
+p{line-height:1.6;font-size:15px}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 16px 20px;font-size:13px}
+.infobox th{background:#b0c4de;padding:6px;text-align:center;font-size:14px}
+.infobox td{padding:4px 6px;vertical-align:top}
+.hero{display:block;margin:12px auto;max-width:420px;width:100%;border:1px solid #ccc;background:#eee}
+.caption{text-align:center;font-size:12px;color:#54595d;margin-bottom:16px}
+ul{line-height:1.6;font-size:15px}
+.small{font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Training, validation, and test data sets</h1>
+<img class="hero" src="images/train-validation-test.png" alt="Diagram showing a data set split into training, validation, and test subsets">
+<p class="caption">A common workflow splits available data into training, validation, and test subsets.</p>
+<p>In machine learning, a common task is the study and construction of algorithms that can learn from and make predictions on data. Such algorithms learn by optimising a mathematical model from example data, known as <b>training data</b>. In order to measure how well a model generalises to new data, the available data are commonly split into three subsets: a <b>training set</b>, a <b>validation set</b>, and a <b>test set</b>.</p>
+<h2>Training data set</h2>
+<p>A training data set is the sample of data used to fit the model: the model's parameters (for example, the weights of a neural network) are adjusted according to performance on this set. The training set is the largest of the three subsets, often comprising 60–80% of the available examples.</p>
+<h2>Validation data set</h2>
+<p>A validation data set is used to evaluate a model fitted on the training set while tuning the model's hyperparameters—settings that are not learned directly, such as learning rate, network architecture, or regularisation strength. Validation performance guides model selection and techniques such as early stopping. Because information from the validation set indirectly influences the model, a separate test set is still needed for an unbiased final estimate.</p>
+<h2>Test data set</h2>
+<p>A test data set is a set of examples used only to assess the performance of a fully specified model. It should be independent of the training and validation data and should ideally be used only once, at the end of the modelling process, to estimate how the model will perform on genuinely unseen data. Repeated evaluation on a test set can lead to overfitting to that set.</p>
+<h2>Cross-validation</h2>
+<p>When data are scarce, <a href="../Cross-validation_(statistics)/index.html">cross-validation</a> is used instead of a single fixed split: the data are partitioned into k folds, and each fold in turn serves as the validation set while the remainder are used for training. This produces a more reliable estimate of model performance at higher computational cost.</p>
+<h2>Terminology and pitfalls</h2>
+<p>The terms "validation" and "test" are sometimes used interchangeably in industry, which can cause confusion. A common pitfall is <b>data leakage</b>, in which information from the validation or test data contaminates training—for example through preprocessing fitted on the whole data set—leading to overly optimistic performance estimates.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Machine_learning/index.html">Machine learning</a></li>
+<li><a href="../Cross-validation_(statistics)/index.html">Cross-validation (statistics)</a></li>
+<li><a href="../Overfitting/index.html">Overfitting</a></li>
+<li><a href="../Hyperparameter_optimization/index.html">Hyperparameter optimization</a></li>
+</ul>
+<p class="small">From Wikipedia, the free encyclopedia.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Stack buffer overflow - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; max-width: 960px; margin: 0 auto; padding: 20px; color: #202122; line-height: 1.6; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.2em; }
+img.hero { display: block; margin: 16px auto; max-width: 420px; border: 1px solid #c8ccd1; padding: 4px; background: #f8f9fa; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Stack buffer overflow</h1>
+<img class="hero" src="images/stack_buffer_overflow.png" alt="Memory diagram of a stack frame overwritten by an oversized buffer">
+<p>In software, a <b>stack buffer overflow</b> or <b>stack buffer overrun</b> occurs when a program writes to a memory address on the program's <a href="../../Call_stack/index.html">call stack</a> outside of the intended data structure, which is usually a buffer of fixed length. Stack buffer overflow bugs are caused when a program writes more data to a buffer located on the stack than has been allocated for that buffer. This almost always results in corruption of adjacent data on the stack, and in cases where the overflow was triggered by mistake, will often cause the program to crash or operate incorrectly.</p>
+<p>Stack buffer overflow is a type of the more general programming malfunction known as <a href="../../Buffer_overflow/index.html">buffer overflow</a> (or buffer overrun). Overfilling a buffer on the stack is more likely to derail program execution than overfilling a buffer on the heap because the stack contains the return addresses for all active function calls.</p>
+<h2>Exploitation</h2>
+<p>A stack buffer overflow can be caused deliberately as part of an attack known as stack smashing. If the affected program is running with special privileges, or accepts data from untrusted network hosts (e.g. a webserver), then the bug is a potential security vulnerability. If the buffer on the stack is filled with data supplied from an untrusted user, that user may be able to corrupt the stack in such a way as to inject executable code into the running program and take control of the process, by overwriting the saved return address with the address of attacker-supplied code.</p>
+<p>The canonical method for exploiting a stack-based buffer overflow was described in the 1996 article "Smashing the Stack for Fun and Profit" by Aleph One in <i>Phrack</i> magazine, building on earlier discussions in the security community.</p>
+<h2>Mitigations</h2>
+<p>Defenses against stack buffer overflows include stack canaries, which place a known value between the buffer and the saved return address and check it before returning; non-executable stack protections such as the NX bit; address space layout randomization (ASLR); and bounds-checking compilation, safer string functions, and languages with memory safety guarantees.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../Buffer_overflow/index.html">Buffer overflow</a></li>
+<li><a href="../../Stack_overflow/index.html">Stack overflow</a></li>
+<li><a href="../../Return-to-libc_attack/index.html">Return-to-libc attack</a></li>
+<li><a href="../../Exploit_(computer_security)/index.html">Exploit (computer security)</a></li>
+</ul>
+</body>
+</html>

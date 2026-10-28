@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LuaJIT - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;padding:0 1em;color:#202122;background:#fff;line-height:1.6}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-bottom:0.25em}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+.infobox{float:right;width:22em;background:#f8f9fa;border:1px solid #a2a9b1;margin:0.5em 0 1em 1em;padding:0.4em;font-size:88%}
+.infobox th{text-align:left;vertical-align:top;padding-right:0.6em}
+.infobox caption{font-weight:bold;font-size:110%;padding:0.3em}
+.thumb{margin:0.5em 0;color:#54595d;font-size:88%}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.refs{font-size:90%}
+</style>
+</head>
+<body>
+<h1>LuaJIT</h1>
+<table class="infobox">
+<caption>LuaJIT</caption>
+<tr><th>Original author</th><td>Mike Pall</td></tr>
+<tr><th>Initial release</th><td>2005</td></tr>
+<tr><th>Written in</th><td>C, assembly</td></tr>
+<tr><th>Platform</th><td>x86, x86-64, ARM, MIPS, PowerPC, SPARC</td></tr>
+<tr><th>Type</th><td>Just-in-time compiler / interpreter</td></tr>
+<tr><th>License</th><td>MIT License</td></tr>
+</table>
+<div class="thumb"><img src="images/luajit.png" alt="LuaJIT logo and trace-compiler diagram"></div>
+<p><b>LuaJIT</b> is a just-in-time (JIT) compiler for the <a href="../Lua_(programming_language)/index.html">Lua</a> programming language. It is designed to be embedded into other programs and is notable for achieving performance close to compiled C code while retaining Lua's flexibility and small footprint. LuaJIT is largely compatible with Lua 5.1, with many features from later versions backported as extensions.</p>
+<h2>Architecture</h2>
+<p>LuaJIT combines a fast interpreter, written in hand-tuned assembly for each supported architecture, with a trace-based JIT compiler. Hot loops are recorded as traces, optimized—using techniques such as allocation sinking, store sinking and constant folding—and compiled into machine code. If a guard in a trace fails, execution falls back to the interpreter. LuaJIT also includes an FFI (foreign function interface) library that lets Lua code call C functions and use C data types directly, without writing binding glue code.</p>
+<h2>History</h2>
+<p>The project was started by Mike Pall in 2005. LuaJIT 1.x provided a tracing compiler for x86; LuaJIT 2.0, released in 2012, rewrote the VM and extended support to many architectures. The project is used in production by companies and projects including Cloudflare, OpenResty (nginx with Lua), Neovim-facing plugin systems, game engines and networking equipment. After many years as principal developer, Mike Pall stepped down as project leader in 2025, with the project continuing under community maintainership at the LuaJIT GitHub organization.</p>
+<h2>Performance</h2>
+<p>LuaJIT is frequently cited among the fastest dynamic-language implementations; on micro-benchmarks its compiled traces often run within a small factor of optimized C, and its interpreter alone is typically several times faster than the reference Lua interpreter.</p>
+<h2>References</h2>
+<ol class="refs">
+<li>Pall, Mike. "LuaJIT project website and technical documentation."</li>
+<li>LuaJIT GitHub repository, LuaJIT/LuaJIT.</li>
+</ol>
+</body>
+</html>

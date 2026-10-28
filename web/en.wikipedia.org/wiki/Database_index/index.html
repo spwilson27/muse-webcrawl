@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Database index - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;font-size:1.5em;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:28px}
+h3{font-size:1.15em;margin-top:20px}
+p{margin:8px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{float:right;margin:0 0 12px 20px;width:300px;background:#f8f9fa;border:1px solid #c8ccd1;padding:6px;text-align:center;font-size:0.85em}
+.hero img{width:100%;height:auto;background:#eaecf0;display:block}
+.toc{background:#f8f9fa;border:1px solid #a2a9b1;padding:8px 16px;display:inline-block;font-size:0.9em}
+ul{margin:6px 0 6px 0}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Database index</h1>
+<div class="hero"><img src="images/Database_index.png" alt="Illustration of a B-tree index structure used by a database"><div>Diagram of a B-tree, the most common index structure in relational databases</div></div>
+<p>A <b>database index</b> is a data structure that improves the speed of data retrieval operations on a database table at the cost of additional writes and storage space to maintain the index data structure. Indexes are used to quickly locate data without having to search every row in a database table every time a database table is accessed. Indexes can be created using one or more columns of a database table, providing the basis for both rapid random lookups and efficient access of ordered records.</p>
+<p>An index is a copy of selected columns of data, from a table, that is designed to enable very efficient search. An index normally includes a "key" or direct link to the original row of data from which it was copied, to allow the complete row to be retrieved efficiently. Some databases extend the power of indexing by letting developers create indexes on column values that have been transformed by functions or expressions. For example, an index could be created on <code>upper(last_name)</code>, which would only store the upper-case versions of the <code>last_name</code> field in the index. Another option sometimes supported is the use of partial indexes, where index entries are created only for those records that satisfy some conditional expression. A further aspect of flexibility is to permit indexing on user-defined functions, as well as expressions formed from an assortment of built-in functions.</p>
+<h2>Index architecture and methods</h2>
+<h3>Clustered and non-clustered indexes</h3>
+<p>A <b>clustered index</b> determines the physical order of data in a table. Because of this, a table can have only one clustered index. The leaf nodes of a clustered index contain the actual data pages. A <b>non-clustered index</b>, by contrast, is stored separately from the data rows; its leaf nodes contain pointers (row locators) to the data rows rather than the data itself. A table may have many non-clustered indexes.</p>
+<h3>B-tree indexes</h3>
+<p>The <a href="../Database_model/index.html">relational model</a> implementations most commonly use the <b>B-tree</b> (and its variant, the B+ tree) as the underlying index structure. A B-tree is a balanced tree that keeps data sorted and allows searches, sequential access, insertions, and deletions in logarithmic time. The branching factor of a B-tree can be large, so the depth of the tree stays small even for very large tables.</p>
+<h3>Hash indexes</h3>
+<p>A <b>hash index</b> uses a hash function to map keys to locations. Hash indexes are efficient for equality comparisons but cannot be used for range queries or ordering, because the hash values do not preserve the sort order of the keys.</p>
+<h3>Bitmap indexes</h3>
+<p>A <b>bitmap index</b> uses bitmaps (bit arrays) to represent the rows in which a particular key value occurs. Bitmap indexes are especially efficient on columns with a low number of distinct values (low cardinality), such as gender or status flags, and are commonly used in data warehousing environments.</p>
+<h3>Spatial indexes</h3>
+<p><b>Spatial indexes</b>, often based on R-trees, are used to index multidimensional information such as geographical coordinates, rectangles, and polygons.</p>
+<h2>Index types by column composition</h2>
+<p>A <b>unique index</b> guarantees that the index key contains no duplicate values and therefore that every row in the table is in some way unique. A <b>composite index</b> (also called a concatenated or multi-column index) is an index on more than one column; the order of the columns in the index definition matters for which queries can use it. A <b>covering index</b> contains all the columns needed to answer a query, so the database engine can satisfy the query entirely from the index without reading the table rows.</p>
+<h2>Advantages and disadvantages</h2>
+<p>Indexes speed up <code>SELECT</code> queries and <code>WHERE</code> clauses, but they slow down data input operations such as <code>INSERT</code>, <code>UPDATE</code>, and <code>DELETE</code>, because the index must be updated whenever the data changes. Indexes also consume additional storage space. Creating an index is therefore a trade-off that the database administrator or designer must weigh: indexes on columns frequently used in search conditions and joins usually pay for themselves, while indexes on rarely queried columns are a net cost.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Database_model/index.html">Database model</a></li>
+<li>Primary key</li>
+<li>Foreign key</li>
+<li>Query optimization</li>
+<li>Search tree</li>
+</ul>
+<p class="small">From Wikipedia, the free encyclopedia.</p>
+</div>
+</body>
+</html>

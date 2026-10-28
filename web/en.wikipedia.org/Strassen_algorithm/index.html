@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Strassen algorithm - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:960px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}h2{border-bottom:1px solid #a2a9b1}a{color:#0645ad}img.hero{display:block;max-width:400px;background:#f8f9fa;border:1px solid #c8ccd1;padding:10px;text-align:center}</style></head>
+<body>
+<h1>Strassen algorithm</h1>
+<img class="hero" src="images/strassen-algorithm.png" alt="Block diagram of the Strassen algorithm's seven products">
+<p>In <a href="../../Linear_algebra/index.html">linear algebra</a>, the <b>Strassen algorithm</b>, named after <a href="../../Volker_Strassen/index.html">Volker Strassen</a>, is an <a href="../../Algorithm/index.html">algorithm</a> for matrix multiplication. It is faster than the standard matrix multiplication algorithm for large matrices and is the basis of practical implementations for fast matrix multiplication. Strassen published the algorithm in 1969, the first result showing that the naive O(n³) algorithm was not optimal.</p>
+<h2>Description</h2>
+<p>The algorithm divides each matrix into four blocks and computes the product using only <b>seven</b> multiplications of blocks (rather than the eight required by the naive block method), at the cost of extra additions and subtractions. Applied recursively, this gives a running time of O(n<sup>log₂7</sup>) ≈ O(n<sup>2.807</sup>).</p>
+<p>For two 2×2 block matrices, the seven products M₁ through M₇ are formed from sums and differences of the blocks; the four blocks of the result are then assembled from these products. Because additions are cheaper than multiplications for large matrices, trading one multiplication for several additions yields a net saving at each level of recursion.</p>
+<h2>Complexity and practice</h2>
+<p>Strassen's result opened the study of the matrix multiplication exponent ω; subsequent methods, down to the Coppersmith–Winograd family of algorithms, pushed the exponent below 2.38, though those "galactic" algorithms are impractical. Strassen's algorithm itself is used in practice for matrices above a crossover size (often a few hundred rows), but it has drawbacks: larger constant factors, extra memory for intermediate results, and reduced numerical stability compared with the naive method.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../Matrix_multiplication_algorithm/index.html">Matrix multiplication algorithm</a></li>
+<li><a href="../../Volker_Strassen/index.html">Volker Strassen</a></li>
+<li><a href="../../Coppersmith-Winograd_algorithm/index.html">Coppersmith–Winograd algorithm</a></li>
+<li><a href="../../Divide-and-conquer_algorithm/index.html">Divide-and-conquer algorithm</a></li>
+</ul>
+</body></html>

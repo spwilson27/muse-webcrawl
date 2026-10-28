@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lazy evaluation - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;margin:0;padding:0 1.5em;color:#202122;line-height:1.6;background:#fff}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-size:1.8em}
+h2{font-family:Georgia,'Times New Roman',serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:2px;font-size:1.4em}
+.infobox{float:right;width:22em;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em;margin:0.2em 0 1em 1em;font-size:0.9em}
+.infobox caption{font-weight:bold;font-size:1.05em;padding:0.3em}
+.infobox th{text-align:left;vertical-align:top;padding:0.2em 0.4em;background:#eaecf0}
+.infobox td{padding:0.2em 0.4em}
+.hero{text-align:center;padding:0.6em;background:#f8f9fa;border:1px solid #c8ccd1;color:#72777d;font-size:0.9em}
+a{color:#36c;text-decoration:none}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Lazy evaluation</h1>
+<div class="infobox">
+<caption>Lazy evaluation</caption>
+<div class="hero"><img src="images/Lazy_evaluation.png" alt="Diagram of a thunk being forced on first demand"></div>
+<table>
+<tr><th>Paradigm</th><td>Evaluation strategy</td></tr>
+<tr><th>Also known as</th><td>Call-by-need</td></tr>
+<tr><th>First described</th><td>1970s (Wadsworth; Henderson &amp; Morris)</td></tr>
+<tr><th>Used by</th><td>Haskell (default); lazy features in many languages</td></tr>
+</table>
+</div>
+<p>In programming language theory, <b>lazy evaluation</b>, or <b>call-by-need</b>, is an evaluation strategy which delays the evaluation of an expression until its value is needed (non-strict evaluation) and which avoids repeated evaluations (by the use of sharing). Lazy evaluation is the default strategy in the functional programming language Haskell and can be opted into in many other languages through libraries or special constructs.</p>
+<p>The opposite of lazy evaluation is eager evaluation, sometimes called strict evaluation, in which expressions are evaluated as soon as they are bound to variables. Lazy evaluation holds the potential for avoiding unnecessary work, enables infinite data structures such as lazy lists and streams, and can improve modularity by separating the generation of data from the control of its consumption.</p>
+<h2>History</h2>
+<p>Lazy evaluation was introduced independently by Peter Henderson and James H. Morris in 1971, and by Daniel P. Friedman and David S. Wise in 1974/76 in the context of cons cells and lambda calculus. Christopher Wadsworth had earlier proposed a related call-by-need semantics for the lambda calculus (1971). The strategy underlies Miranda, Lazy ML and Haskell.</p>
+<h2>Implementation</h2>
+<p>In an implementation that uses lazy evaluation, expressions are compiled into <i>thunks</i> — closures capturing the unevaluated expression and its environment. When a value is demanded, the thunk is <i>forced</i>; after evaluation, the thunk is overwritten with its result (memoised), so subsequent demands are free. Graph reduction is a classic implementation model. A known hazard is the "space leak", where long chains of unevaluated thunks accumulate instead of values.</p>
+<h2>Uses and drawbacks</h2>
+<p>Lazy evaluation makes it natural to define infinite lists (e.g., the Fibonacci sequence as a self-referential stream), supports demand-driven I/O and short-circuiting control structures as ordinary functions, and can avoid computing values that a program never uses. Drawbacks include unpredictable performance and memory behaviour, and difficulty reasoning about side effects and evaluation order, which is why most mainstream languages default to eager evaluation.</p>
+<h2>See also</h2>
+<p><a href="../Evaluation_strategy/index.html">Evaluation strategy</a> · <a href="../Eager_evaluation/index.html">Eager evaluation</a> · <a href="../Haskell/index.html">Haskell</a> · <a href="../Thunk/index.html">Thunk</a> · <a href="../Short-circuit_evaluation/index.html">Short-circuit evaluation</a></p>
+<h2>References</h2>
+<p class="small">Henderson &amp; Morris, "A Lazy Evaluator" (1976); Peyton Jones, <i>The Implementation of Functional Programming Languages</i> (1987).</p>
+</body>
+</html>

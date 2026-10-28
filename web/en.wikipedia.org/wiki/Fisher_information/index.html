@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fisher information - Wikipedia</title>
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; margin: 0; padding: 0; background: #fff; color: #202122; line-height: 1.6; }
+  .content { max-width: 960px; margin: 0 auto; padding: 20px 30px 60px; }
+  h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 6px; }
+  h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.4em; }
+  .site-sub { font-size: 0.85em; color: #54595d; }
+  .infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px 14px; margin: 0 0 14px 18px; font-size: 0.88em; }
+  .infobox h3 { margin: 4px 0 8px; font-size: 1.05em; text-align: center; }
+  .infobox table { border-collapse: collapse; width: 100%; }
+  .infobox td { padding: 2px 4px; vertical-align: top; }
+  .hero { text-align: center; margin: 16px 0; }
+  .hero img { max-width: 420px; width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; }
+  .hero figcaption { font-size: 0.85em; color: #54595d; margin-top: 4px; }
+  a { color: #0645ad; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .formula { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px 16px; font-family: 'Courier New', monospace; overflow-x: auto; }
+  .reflist { font-size: 0.9em; }
+</style>
+</head>
+<body>
+<div class="content">
+<p class="site-sub">From Wikipedia, the free encyclopedia</p>
+<h1>Fisher information</h1>
+
+<div class="infobox">
+<h3>Fisher information</h3>
+<table>
+<tr><td><b>Field</b></td><td>Mathematical statistics</td></tr>
+<tr><td><b>Named after</b></td><td>Ronald Fisher</td></tr>
+<tr><td><b>Key result</b></td><td>Cram&eacute;r&ndash;Rao bound</td></tr>
+</table>
+</div>
+
+<figure class="hero">
+<img src="images/fisher-information.png" alt="Graph of log-likelihood curves showing curvature related to Fisher information">
+<figcaption>Placeholder image: the curvature of the log-likelihood function determines the Fisher information.</figcaption>
+</figure>
+
+<p>In mathematical <a href="../Statistics/index.html">statistics</a>, the <b>Fisher information</b> is a way of measuring the amount of information that an observable random variable <i>X</i> carries about an unknown parameter <i>&theta;</i> of a distribution that models <i>X</i>. Formally, it is the variance of the score, or the expected value of the observed information.</p>
+
+<p>The Fisher information was introduced by the statistician <a href="../Ronald_Fisher/index.html">Ronald Fisher</a> in the early twentieth century. Unlike the entropy of a distribution, which does not involve any unknown parameter, the Fisher information depends on the parameter to be estimated and quantifies how sensitively the data distribution responds to changes in that parameter.</p>
+
+<h2>Definition</h2>
+<p>If <i>f</i>(<i>x</i>; <i>&theta;</i>) is the probability density (or mass) function of <i>X</i> conditional on the value of <i>&theta;</i>, the score is the gradient of the log-likelihood with respect to <i>&theta;</i>. The Fisher information is the expected value of the squared score:</p>
+<p class="formula">I(&theta;) = E[ (&part;/&part;&theta; ln f(X; &theta;))&sup2; | &theta; ]</p>
+<p>Under regularity conditions it equals the negative expected value of the second derivative of the log-likelihood:</p>
+<p class="formula">I(&theta;) = &minus;E[ &part;&sup2;/&part;&theta;&sup2; ln f(X; &theta;) | &theta; ]</p>
+
+<h2>Cram&eacute;r&ndash;Rao bound</h2>
+<p>The Fisher information appears in the <a href="../Cram%C3%A9r%E2%80%93Rao_bound/index.html">Cram&eacute;r&ndash;Rao bound</a>, which states that the variance of any unbiased estimator of <i>&theta;</i> is at least the reciprocal of the Fisher information. Estimators that attain the bound are called efficient. Thus a large Fisher information implies that the parameter can be estimated precisely, while a small Fisher information implies that the data are relatively uninformative about the parameter.</p>
+
+<h2>Matrix form</h2>
+<p>When the parameter is a vector, the Fisher information generalises to the <b>Fisher information matrix</b>, whose entries are covariances of the components of the score vector. The matrix is central to asymptotic theory, defining the covariance of maximum likelihood estimators in the large-sample limit, and it serves as a Riemannian metric on statistical manifolds in the field of information geometry.</p>
+
+<h2>Applications</h2>
+<p>Fisher information is used in experimental design, where designs may be chosen to maximise information about parameters of interest; in the theory of Jeffreys priors in Bayesian statistics; in information geometry; and in physics, where it has been applied to problems ranging from measurement theory to the derivation of physical laws. It is also related to the concept of <i>observed information</i>, the negative Hessian of the log-likelihood evaluated at the observed data and the maximum likelihood estimate.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Fisher's_principle/index.html">Fisher's principle</a></li>
+<li><a href="../Maximum_likelihood_estimation/index.html">Maximum likelihood estimation</a></li>
+<li><a href="../Score_(statistics)/index.html">Score (statistics)</a></li>
+<li><a href="../Information_geometry/index.html">Information geometry</a></li>
+</ul>
+
+<h2>References</h2>
+<ol class="reflist">
+<li>Fisher, R. A. (1925). &ldquo;Theory of statistical estimation&rdquo;. <i>Proceedings of the Cambridge Philosophical Society</i>. 22 (5): 700&ndash;725.</li>
+<li>Lehmann, E. L.; Casella, G. (1998). <i>Theory of Point Estimation</i> (2nd ed.). Springer.</li>
+<li>Amari, S. (2016). <i>Information Geometry and Its Applications</i>. Springer.</li>
+</ol>
+</div>
+</body>
+</html>

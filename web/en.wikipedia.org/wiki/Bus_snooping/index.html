@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bus snooping - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 0 auto; padding: 24px; color: #202122; line-height: 1.6; background: #fff; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #c8ccd1; padding-bottom: 4px; margin-top: 1.4em; }
+img.hero { display: block; max-width: 420px; width: 100%; height: 240px; object-fit: cover; background: #eaecf0; border: 1px solid #a2a9b1; margin: 12px 0; }
+.caption { font-size: 0.85em; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Bus snooping</h1>
+<img class="hero" src="images/Bus_snooping.png" alt="Bus snooping - diagram of processors monitoring a shared bus">
+<p class="caption">Placeholder image: caches snooping a shared system bus.</p>
+<p><b>Bus snooping</b>, also called <b>bus sniffing</b>, is a technique used in distributed shared memory and multiprocessor systems in which each <a href="../CPU_cache/index.html">cache</a> monitors (<i>snoops</i>) the shared <a href="../Bus_(computing)/index.html">bus</a> for memory accesses that could affect the validity of its own cached data. It is the mechanism underpinning snoopy cache-coherence protocols such as <a href="../MESI_protocol/index.html">MESI</a>.</p>
+<h2>How it works</h2>
+<p>Every cache controller watches all transactions on the bus. When a processor issues a read or write to an address, the snooping hardware in each other cache checks whether it holds a copy of that cache block. Depending on the protocol, the cache may invalidate its copy, update it, or supply the data itself. When a processor writes to a block that other caches hold, a bus transaction broadcasts the invalidation or update so that no processor reads stale data.</p>
+<h2>Snoop filters</h2>
+<p>To reduce the bandwidth and power cost of checking every transaction against every tag, many designs add <b>snoop filters</b>: coarse-grained directories that track which caches may hold a block and direct snoops only to those caches. This approximates a directory-based protocol while retaining bus broadcast semantics.</p>
+<h2>Limitations</h2>
+<p>Because the bus is a shared medium, snooping does not scale to large numbers of processors: every coherence event consumes bus bandwidth visible to all nodes. Large multiprocessors therefore generally use directory-based coherence instead, while bus snooping remains common in small multicore chips and symmetric multiprocessing systems.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Cache_coherence/index.html">Cache coherence</a></li>
+<li><a href="../MESI_protocol/index.html">MESI protocol</a></li>
+<li><a href="../Multiprocessor/index.html">Multiprocessor</a></li>
+</ul>
+</body>
+</html>

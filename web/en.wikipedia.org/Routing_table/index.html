@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Routing table - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;color:#202122;background:#fff}
+.mw-body{max-width:960px;margin:0 auto;padding:20px 24px;line-height:1.6}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+table.wikitable{border-collapse:collapse;margin:12px 0}
+table.wikitable td,table.wikitable th{border:1px solid #a2a9b1;padding:5px 10px}
+table.wikitable th{background:#eaecf0}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;overflow:auto}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Routing table</h1>
+<p>In computer networking, a <b>routing table</b> (or routing information base, RIB) is a data table stored in a <a href="../Router_(computing)/index.html">router</a> or network host that lists the routes to particular network destinations and, in some cases, metrics associated with those routes. The information in the table guides the forwarding of packets: for each packet, the destination address is matched against the table and the packet is sent toward the listed next hop.</p>
+<h2>Contents of an entry</h2>
+<p>A typical routing-table entry contains:</p>
+<ul>
+<li><b>Destination network</b> — the IP network or prefix the entry applies to, with its subnet mask.</li>
+<li><b>Next hop</b> — the address of the next router on the path, or an indication that the destination is directly connected.</li>
+<li><b>Output interface</b> — the local network interface through which the packet should leave.</li>
+<li><b>Metric</b> — the cost of the route as computed by the <a href="../Routing_protocol/index.html">routing protocol</a>.</li>
+<li><b>Source</b> — how the route was learned (directly connected, static configuration, or a named dynamic protocol), together with its administrative distance.</li>
+</ul>
+<table class="wikitable">
+<tr><th>Destination</th><th>Gateway (next hop)</th><th>Interface</th><th>Metric</th></tr>
+<tr><td>0.0.0.0/0 (default)</td><td>203.0.113.1</td><td>eth0</td><td>—</td></tr>
+<tr><td>192.0.2.0/24</td><td>Directly connected</td><td>eth1</td><td>0</td></tr>
+<tr><td>198.51.100.0/24</td><td>203.0.113.2</td><td>eth0</td><td>2</td></tr>
+</table>
+<h2>Longest prefix match</h2>
+<p>Because several entries may match one destination, forwarding uses <b>longest prefix match</b>: the entry whose network mask is longest (most specific) wins. The least specific entry, the <a href="../Default_route/index.html">default route</a> (0.0.0.0/0 for IPv4), matches everything and acts as the route of last resort.</p>
+<h2>RIB and FIB</h2>
+<p>The routing table proper (RIB) holds all candidate routes from every source. From it the router builds a <b>forwarding information base</b> (FIB) containing only the single best route per destination, optimised for fast lookup in the forwarding plane — implemented in software tries or in hardware content-addressable memory on high-end routers.</p>
+<h2>Managing the table</h2>
+<p>Entries arrive from directly connected interfaces, static configuration by an administrator, or dynamic <a href="../Routing_protocol/index.html">routing protocols</a> such as <a href="../Open_Shortest_Path_First/index.html">OSPF</a> and <a href="../Border_Gateway_Protocol/index.html">BGP</a>. On Unix-like systems the table can be inspected with commands such as <code>ip route</code> or <code>netstat -r</code>; the global Internet routing table carried by BGP contains approaching one million IPv4 prefixes.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Routing/index.html">Routing</a></li>
+<li><a href="../Prefix_match/index.html">Longest prefix match</a></li>
+<li><a href="../Static_routing/index.html">Static routing</a></li>
+</ul>
+<p><i>Categories: Routing; Computer networking</i></p>
+</div>
+</body>
+</html>

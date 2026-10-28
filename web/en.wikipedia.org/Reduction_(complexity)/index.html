@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Reduction (complexity) - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; color: #202122; background: #fff; }
+#content { max-width: 960px; margin: 0 auto; padding: 24px; }
+h1 { font-size: 28px; font-weight: normal; border-bottom: 1px solid #a7d7f9; padding-bottom: 4px; }
+h2 { font-size: 21px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; }
+p { font-family: sans-serif; font-size: 14px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 12px 0; }
+.hero img { max-width: 100%; border: 1px solid #a2a9b1; }
+.caption { font-size: 12px; color: #54595d; font-family: sans-serif; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Reduction (complexity)</h1>
+<div class="hero">
+<img src="images/reduction-diagram.png" alt="Diagram of a polynomial-time reduction transforming an instance of problem A into an instance of problem B">
+<p class="caption">A reduction transforms instances of one problem into instances of another so that a solution to the second yields a solution to the first.</p>
+</div>
+<p>In <a href="../Computability_theory">computability theory</a> and <a href="../Computational_complexity_theory">computational complexity theory</a>, a <b>reduction</b> is an algorithm for transforming one problem into another problem. A sufficiently efficient reduction from one problem to another may be used to show that the second problem is at least as difficult as the first. Reductions are the principal tool used to prove that problems are complete for complexity classes such as <a href="../NP-completeness">NP</a>.</p>
+<h2>Types of reduction</h2>
+<p>Different notions of reduction impose different limits on the resources the transformation may use. A <b>many-one reduction</b> (or mapping reduction) converts each instance of problem A into a single instance of problem B, preserving the yes/no answer. A <b>Turing reduction</b> allows an algorithm for A to call a subroutine for B multiple times. Complexity theory commonly restricts attention to reductions that run in polynomial time, or even in logarithmic space, so that the comparison of difficulty is meaningful.</p>
+<h2>Uses</h2>
+<p>To prove a problem is NP-hard, one reduces from a known NP-hard problem to it: if the new problem could be solved efficiently, the known problem could be solved efficiently too, by first transforming instances and then applying the new solver. The classic chain began with the Cook–Levin theorem, which showed that the Boolean satisfiability problem (SAT) is NP-complete, and Richard Karp's 1972 list of 21 NP-complete problems, each established by reduction from earlier ones. Reductions are likewise used to show undecidability — for example, reducing the halting problem to another problem proves that problem undecidable.</p>
+<h2>Properties</h2>
+<p>Reductions are transitive: if A reduces to B and B reduces to C, then A reduces to C. This property lets hardness results propagate along chains of reductions. The choice of reduction matters: polynomial-time many-one reductions define NP-completeness, while weaker reductions are needed to distinguish finer classes such as L, NL and P.</p>
+<h2>See also</h2>
+<p><a href="../NP-completeness">NP-completeness</a> · <a href="../Polynomial-time_reduction">Polynomial-time reduction</a> · <a href="../Cook%E2%80%93Levin_theorem">Cook–Levin theorem</a> · <a href="../Halting_problem">Halting problem</a></p>
+</div>
+</body>
+</html>

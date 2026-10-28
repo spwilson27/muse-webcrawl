@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Defensive programming - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 820px; margin: 2em auto; padding: 0 1.2em; line-height: 1.55; color: #202122; background: #fff; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.4em; }
+.hero { display: block; margin: 1em auto; max-width: 480px; width: 100%; background: #f8f9fa; border: 1px solid #c8ccd1; padding: 2.5em 0; text-align: center; color: #72777d; font-style: italic; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul, ol { margin: 0.4em 0 0.8em 1.6em; padding: 0; }
+</style>
+</head>
+<body>
+<h1>Defensive programming</h1>
+<img class="hero" src="images/Defensive_programming.png" alt="Image placeholder: source code containing input validation checks and assertions">
+<p><b>Defensive programming</b> is a form of defensive design intended to develop programs that continue to function under unforeseen circumstances. Defensive programming practices are often used where high availability, safety, or security is needed: the programmer assumes that mistakes, invalid inputs, misuse of the software, and hostile actions will occur, and structures the code so that such problems are detected early and handled gracefully rather than causing unpredictable behaviour.</p>
+<h2>Practices</h2>
+<p>Common defensive programming techniques include:</p>
+<ul>
+<li><b>Input validation</b> — checking all data arriving from outside the program (users, files, networks, other processes) against explicit criteria before use, rejecting or sanitising invalid data.</li>
+<li><b>Assertions</b> — statements that check conditions the programmer believes must be true, so violations are caught during development and testing.</li>
+<li><b>Checking return values and error codes</b> — never assuming that operations such as file access, memory allocation, or network calls have succeeded.</li>
+<li><b>Exception handling</b> — structuring the program so that errors propagate to code that can respond meaningfully.</li>
+<li><b>Design by contract</b> — documenting and enforcing preconditions, postconditions, and invariants of functions.</li>
+<li><b>Fail-safe defaults</b> — for example, denying access by default, and using secure defaults in configuration.</li>
+</ul>
+<h2>Relation to secure programming</h2>
+<p>Defensive programming overlaps heavily with secure programming: many software vulnerabilities, such as buffer overflows and injection attacks, arise precisely where input was trusted without validation. The contrasting style is sometimes called "offensive programming", in which programmers let unexpected conditions fail loudly and immediately, on the theory that defensive checks can mask bugs and accumulate into "defensive" code that is itself complex and error-prone. In practice, safety- and security-critical code tends to combine both: validate all external inputs rigorously while asserting internal invariants.</p>
+<h2>Criticism</h2>
+<p>Critics argue that excessive defensive programming can reduce code clarity, hide defects that would be better fixed at the source, and introduce redundant checks that add maintenance burden and performance cost. The balance depends on the domain: pacemakers, avionics, and financial systems are usually written far more defensively than internal tools.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Defensive_design/index.html">Defensive design</a></li>
+<li><a href="../Assertion_(software_development)/index.html">Assertion (software development)</a></li>
+<li><a href="../Design_by_contract/index.html">Design by contract</a></li>
+<li><a href="../Input_validation/index.html">Input validation</a></li>
+</ul>
+</body>
+</html>

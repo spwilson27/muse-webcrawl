@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shared library - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 24px 20px 60px; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.5em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+h3 { font-size: 1.2em; font-weight: bold; margin-top: 1em; }
+p { line-height: 1.6; margin: 0.6em 0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { float: right; margin: 0 0 12px 16px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 6px; text-align: center; font-size: 0.85em; max-width: 240px; }
+.hero img { max-width: 220px; display: block; margin: 0 auto 4px; background: #eaecf0; }
+ul { line-height: 1.6; }
+code { font-family: monospace; background: #f8f9fa; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Shared library</h1>
+<div class="hero"><img src="images/shared-library.png" alt="Diagram of programs sharing a common library in memory">Several programs using one shared library in memory</div>
+<p>A <b>shared library</b> or <b>shared object</b> is a file intended to be shared by executable files and other shared object files. Modules used by a program are loaded from individual shared libraries into memory at load time or runtime, rather than being copied into a single monolithic executable file. Shared libraries can be statically linked during program composition into an executable (in which case they behave much like plain object files) but are more commonly loaded dynamically, so that a single copy of the library code can serve many programs at once and can be updated without recompiling the programs that use it.</p>
+<h2>Benefits</h2>
+<ul>
+<li><b>Memory savings:</b> the library's code pages are mapped into many processes at once, so the physical memory cost is paid roughly once.</li>
+<li><b>Disk savings:</b> executables contain references to the library rather than copies of it.</li>
+<li><b>Maintainability:</b> security fixes and improvements to a library propagate to all programs using it when the shared library is upgraded.</li>
+<li><b>Modularity:</b> libraries provide a natural plugin and extension mechanism.</li>
+</ul>
+<h2>Risks and drawbacks</h2>
+<p>Sharing introduces dependency risks: an incompatible update to a shared library can break applications that rely on it — a problem colloquially known as "DLL hell" on Windows. Versioning schemes, symbol versioning, and side-by-side installation of multiple versions attempt to mitigate it. Dynamic loading also carries a small runtime cost and, historically, complicated the security model through search-path hijacking attacks when library lookup paths are not controlled.</p>
+<h2>Implementation by platform</h2>
+<h3>Unix and Linux</h3>
+<p>On Unix-like systems, shared libraries are <a href="../Executable_and_Linkable_Format/index.html">ELF</a> files with the suffix <code>.so</code> (shared object), conventionally named <code>lib<i>name</i>.so.<i>version</i></code> with a SONAME recorded inside the file. The dynamic linker/loader (<code>ld.so</code>) resolves symbols at program startup, searching directories in <code>/etc/ld.so.cache</code>, the <code>LD_LIBRARY_PATH</code> environment variable, and built-in default paths; tools such as <code>ldd</code> list a binary's library dependencies. Position-independent code (PIC) allows the same library pages to be shared even when mapped at different addresses in each process.</p>
+<h3>Windows</h3>
+<p>On Microsoft Windows, shared libraries are <b>dynamic-link libraries</b> (DLLs) with the <code>.dll</code> extension. Windows searches the application's directory, system directories, and the PATH; modern versions support side-by-side assemblies and private (application-local) copies to avoid version conflicts.</p>
+<h3>macOS</h3>
+<p>macOS uses dynamically linked libraries with the <code>.dylib</code> extension and frameworks bundling libraries with their resources, resolved by the dynamic linker <code>dyld</code>.</p>
+<h2>History</h2>
+<p>Shared libraries became mainstream with <a href="../Multics/index.html">Multics</a> and later Unix System V and SunOS in the 1980s, which introduced the modern <code>.so</code> model, and with Windows 3.x and OS/2, which popularised DLLs. They contrast with static libraries (<code>.a</code>, <code>.lib</code>), whose code is copied into the executable at link time, and with the practice of shipping fully self-contained (" vendored") binaries.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Library_(computing)/index.html">Library (computing)</a></li>
+<li><a href="../Dynamic_linker/index.html">Dynamic linker</a></li>
+<li><a href="../DLL_hell/index.html">DLL hell</a></li>
+<li><a href="../Static_library/index.html">Static library</a></li>
+</ul>
+</div>
+</body>
+</html>

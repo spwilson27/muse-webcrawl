@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nadaraya–Watson estimator - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0 auto; max-width: 960px; padding: 20px; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; }
+img.hero { max-width: 300px; float: right; margin: 0 0 1em 1em; border: 1px solid #c8ccd1; padding: 4px; background: #f8f9fa; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<img class="hero" src="images/nadaraya-watson.png" alt="Nadaraya–Watson kernel regression fitted to a scatter of data points">
+<h1>Nadaraya–Watson estimator</h1>
+<p>The <b>Nadaraya–Watson estimator</b> is a <a href="../Nonparametric_statistics/index.html">nonparametric</a> method for estimating a <a href="../Regression_analysis/index.html">regression</a> function — the conditional expectation of a random variable given the value of another — without assuming a fixed functional form such as a line or polynomial. It was proposed independently by Elizbar Nadaraya (1964) and Geoffrey Watson (1964) and is the classic example of <b>kernel regression</b>.</p>
+<h2>Definition</h2>
+<p>Given data pairs (x<sub>i</sub>, y<sub>i</sub>), the estimator of the regression function m(x) = E[Y | X = x] is a locally weighted average:</p>
+<p>m̂(x) = Σ<sub>i</sub> K<sub>h</sub>(x − x<sub>i</sub>) y<sub>i</sub> / Σ<sub>i</sub> K<sub>h</sub>(x − x<sub>i</sub>),</p>
+<p>where K is a kernel function (commonly the Gaussian kernel) and h is the bandwidth, which controls the smoothness of the estimate. Points near x receive large weights; distant points receive little or none. Small bandwidths follow the data closely but are noisy (high variance), while large bandwidths are smooth but oversimplified (high bias) — the classic bias–variance trade-off.</p>
+<h2>Properties and variants</h2>
+<p>The estimator can be derived using kernel density estimates of the joint and marginal densities of X and Y. It suffers from bias at the boundaries of the data range and in regions where the density of X changes rapidly; local linear (and local polynomial) regression was developed partly to correct these boundary and design biases while retaining the nonparametric flexibility. Bandwidth selection is usually performed by cross-validation.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Kernel_regression/index.html">Kernel regression</a></li>
+<li><a href="../Kernel_density_estimation/index.html">Kernel density estimation</a></li>
+<li><a href="../Nonparametric_statistics/index.html">Nonparametric statistics</a></li>
+<li><a href="../Local_regression/index.html">Local regression</a></li>
+</ul>
+</body>
+</html>

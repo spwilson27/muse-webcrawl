@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Occupancy grid mapping - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f6f6f6;color:#202122}
+#content{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px;line-height:1.6}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-bottom:6px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+.hero{display:block;margin:16px auto;max-width:480px;background:#eaecf0;border:1px solid #c8ccd1;padding:32px;text-align:center;color:#54595d}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.infobox{float:right;background:#f8f9fa;border:1px solid #a2a9b1;padding:10px;margin:0 0 12px 16px;width:240px;font-size:90%}
+.caption{font-size:85%;color:#54595d;text-align:center}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Occupancy grid mapping</h1>
+<p><b>Occupancy grid mapping</b> refers to a family of computer algorithms in probabilistic robotics for mobile robots which address the problem of generating maps from noisy and uncertain sensor measurement data, with the assumption that the robot pose is known. Occupancy grids were first proposed by Hans Moravec and Alberto Elfes in 1985.</p>
+<img class="hero" src="images/occupancy-grid.png" alt="Occupancy grid map of an indoor environment, with cells shaded by probability of occupancy">
+<p class="caption">An occupancy grid representing a room; darker cells are more likely to be occupied.</p>
+<p>The basic idea of an occupancy grid is to represent a map of the environment as an evenly spaced field of binary random variables, each representing the presence of an obstacle at that location in the environment. Occupancy grid algorithms compute approximate posterior estimates for these random variables.</p>
+<h2>Algorithm outline</h2>
+<p>There are four major components to occupancy grid mapping: interpretation, integration, pose model, and exploration. In the standard formulation, the map is divided into cells, and each cell stores a probability that the corresponding region of space is occupied. Sensor readings, typically from a laser range finder or sonar, are fused over time using Bayes' rule, often in log-odds form for numerical convenience.</p>
+<h2>Extensions</h2>
+<p>Because the standard algorithm assumes a known robot pose, it is frequently combined with simultaneous localization and mapping (SLAM) techniques. Three-dimensional occupancy grids generalize the same idea to voxels, as in the OctoMap framework built on <a href="../Octree/index.html">octrees</a>.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Octree/index.html">Octree</a></li>
+<li>Simultaneous localization and mapping</li>
+<li>Mobile robot</li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Softmax function - Wikipedia</title>
+<style>body{font-family:sans-serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.55;color:#202122}h1{border-bottom:1px solid #a2a9b1}h2{border-bottom:1px solid #eaecf0}a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}.math{font-family:serif;font-style:italic}</style>
+</head>
+<body>
+<h1>Softmax function</h1>
+<img src="images/softmax-function.png" alt="Graph of softmax probabilities for three classes as inputs vary">
+<p>The <b>softmax function</b>, also known as <b>softargmax</b> or the <b>normalized exponential function</b>, converts a vector of real numbers into a <a href="../../Probability_distribution/index.html">probability distribution</a>. Each output value lies between 0 and 1 and the outputs sum to 1, so they can be interpreted as class probabilities. It is a generalization of the <a href="../../Logistic_function/index.html">logistic function</a> to multiple dimensions.</p>
+<h2>Definition</h2>
+<p>For an input vector <span class="math">z = (z<sub>1</sub>, …, z<sub>K</sub>)</span>, the softmax is</p>
+<p class="math">&sigma;(z)<sub>i</sub> = e<sup>z<sub>i</sub></sup> / &Sigma;<sub>j</sub> e<sup>z<sub>j</sub></sup></p>
+<p>Exponentiating amplifies differences between inputs while normalization ensures a valid distribution. A "temperature" parameter can sharpen or soften the output.</p>
+<h2>Applications</h2>
+<p>Softmax is the standard output <a href="../../Activation_function/index.html">activation function</a> for the final layer of a <a href="../../Neural_network/index.html">neural network</a> classifier, where it is paired with the <a href="../../Cross_entropy/index.html">cross-entropy</a> loss; the combination simplifies the gradient. It is also used in multinomial logistic regression, in reinforcement learning action selection, and in the attention mechanism of <a href="../../Transformer_(machine_learning_model)/index.html">transformer</a> models, where it weights the relevance of tokens. For numerical stability, implementations subtract the maximum input before exponentiating.</p>
+<h2>Relation to argmax</h2>
+<p>Whereas argmax returns a single index, softmax returns a smooth, differentiable distribution that "softly" approximates it; as inputs are scaled up, the distribution converges to the argmax one-hot vector.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../Sigmoid_function/index.html">Sigmoid function</a></li>
+<li><a href="../../Multinomial_logistic_regression/index.html">Multinomial logistic regression</a></li>
+<li><a href="../../Partition_function_(statistical_mechanics)/index.html">Partition function</a></li>
+</ul>
+</body>
+</html>

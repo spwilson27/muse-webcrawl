@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Logical Volume Manager (Linux) - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{background:#b0c4de;text-align:center;padding:4px}
+.infobox td{padding:2px 4px;vertical-align:top}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:12px auto;max-width:480px;width:100%;background:#eef;border:1px solid #a2a9b1;padding:24px 0;text-align:center;color:#54595d}
+.small{font-size:0.85em;color:#54595d}
+ul{line-height:1.5}
+p{line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Logical Volume Manager (Linux)</h1>
+<table class="infobox">
+<tr><th colspan="2">Logical Volume Manager (LVM)</th></tr>
+<tr><td><b>Original author</b></td><td>Heinz Mauelshagen</td></tr>
+<tr><td><b>Developer</b></td><td>Red Hat / Linux community</td></tr>
+<tr><td><b>Initial release</b></td><td>1998 (LVM1); LVM2 from 2003</td></tr>
+<tr><td><b>Written in</b></td><td>C</td></tr>
+<tr><td><b>Operating system</b></td><td>Linux</td></tr>
+<tr><td><b>Type</b></td><td>Logical volume management, device mapper</td></tr>
+<tr><td><b>License</b></td><td>GPL</td></tr>
+</table>
+<img class="hero" src="images/Logical_Volume_Manager_Linux.png" alt="Diagram of LVM layers: physical volumes, a volume group and logical volumes">
+<p>The <b>Logical Volume Manager</b> (<b>LVM</b>) is a device mapper target in the Linux kernel that provides logical volume management, allowing system administrators to allocate storage space more flexibly than with conventional disk partitioning. LVM creates an abstraction layer in which physical storage devices are pooled and then carved into virtual partitions — logical volumes — that can be created, resized, moved and snapshotted while the system is running.</p>
+<h2>Architecture</h2>
+<ul>
+<li><b>Physical volumes (PV)</b> — disks or disk partitions initialised for LVM use</li>
+<li><b>Volume groups (VG)</b> — pools combining one or more physical volumes; storage is allocated from a VG in units called physical extents</li>
+<li><b>Logical volumes (LV)</b> — the virtual block devices carved out of a VG, on which filesystems are created; each LV is composed of logical extents mapped to physical extents</li>
+</ul>
+<p>The kernel's device-mapper framework implements the mapping, and the LVM2 userspace tools (commands such as <code>pvcreate</code>, <code>vgcreate</code>, <code>lvcreate</code>, <code>lvextend</code> and <code>lvreduce</code>) manage the on-disk metadata.</p>
+<h2>Features</h2>
+<ul>
+<li>Online resizing of volumes and filesystems (growing; shrinking where the filesystem supports it)</li>
+<li><b>Snapshots</b> — point-in-time, copy-on-write copies of a logical volume, widely used for consistent backups</li>
+<li>Striping and mirroring of volumes across physical devices</li>
+<li>Thin provisioning (thin pools), caching (dm-cache integration via cache volumes), and RAID levels implemented through device mapper</li>
+<li>pvmove — live migration of data off a failing or retiring disk</li>
+</ul>
+<h2>History and adoption</h2>
+<p>LVM for Linux was written by Heinz Mauelshagen beginning in 1997, inspired by the volume manager of HP-UX, and merged into the Linux 2.4 kernel series. LVM2, using the device-mapper, superseded it in the 2.6 kernel (2003). Most major Linux distributions offer or default to LVM-based layouts in server installs, and LVM underlies many virtualisation and cloud image setups because of its snapshot and resizing flexibility. Criticisms focus on added complexity and recovery difficulty compared with plain partitions, and newer filesystems such as Btrfs and ZFS integrate similar volume-management functions directly.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Logical_volume_management/index.html">Logical volume management</a></li>
+<li><a href="../Device_mapper/index.html">Device mapper</a></li>
+<li><a href="../Disk_partitioning/index.html">Disk partitioning</a></li>
+<li><a href="../Btrfs/index.html">Btrfs</a></li>
+</ul>
+<p class="small">References: Mauelshagen, H. et al., <i>LVM HOWTO</i>, Linux Documentation Project; Red Hat Enterprise Linux <i>Logical Volume Manager Administration</i> guide. Categories: Linux, Storage software, Disk management.</p>
+</div>
+</body>
+</html>

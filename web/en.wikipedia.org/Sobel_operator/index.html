@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sobel operator - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.mw-body{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{text-align:center;margin:16px 0}
+.hero img{max-width:420px;border:1px solid #c8ccd1;background:#eaecf0;padding:8px}
+.caption{font-size:0.85em;color:#54595d}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;overflow:auto;font-size:0.92em}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Sobel operator</h1>
+<p>The <b>Sobel operator</b>, sometimes called the <b>Sobel–Feldman operator</b> or the <b>Sobel filter</b>, is used in image processing and computer vision, particularly within <a href="../../Edge_detection/index.html">edge detection</a> algorithms where it creates an image emphasising edges. It is named after Irwin Sobel and Gary M. Feldman, who presented the idea in 1968 at the Stanford Artificial Intelligence Laboratory.</p>
+<div class="hero"><img src="images/sobel-operator.png" alt="A photograph and its Sobel edge map"><div class="caption">Gradient magnitude image produced with the Sobel operator</div></div>
+<h2>Formulation</h2>
+<p>Technically, the operator uses two 3×3 kernels which are convolved with the original image to calculate approximations of the horizontal and vertical derivatives:</p>
+<pre>
+Gx = [ -1  0  +1 ]        Gy = [ +1  +2  +1 ]
+     [ -2  0  +2 ]  * A        [  0   0   0 ]  * A
+     [ -1  0  +1 ]             [ -1  -2  -1 ]
+</pre>
+<p>The gradient magnitude is computed as G = √(Gx² + Gy²), and its direction as θ = atan2(Gy, Gx). Because each kernel can be decomposed into a smoothing and a derivative component, the Sobel operator combines Gaussian smoothing with differentiation, making it relatively robust to noise for such a small kernel. It is computationally cheap and remains widely used, although <a href="../../Canny_edge_detector/index.html">Canny</a>, Scharr, and Prewitt operators may be chosen for particular accuracy requirements.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../Edge_detection/index.html">Edge detection</a></li>
+<li><a href="../../Canny_edge_detector/index.html">Canny edge detector</a></li>
+<li><a href="../../Prewitt_operator/index.html">Prewitt operator</a></li>
+<li><a href="../../Image_gradient/index.html">Image gradient</a></li>
+</ul>
+</div>
+</body>
+</html>

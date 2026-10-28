@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Null-terminated string - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:10px 24px;font-family:sans-serif}
+header .logo{font-size:22px;font-weight:bold}
+main{max-width:960px;margin:0 auto;padding:20px 24px}
+h1{font-size:32px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:0}
+h2{font-size:24px;border-bottom:1px solid #a2a9b1;padding-bottom:2px}
+.infobox{float:right;width:300px;border:1px solid #a2a9b1;background:#f8f9fa;margin:0 0 16px 16px;padding:10px;font-size:14px;font-family:sans-serif}
+.infobox img{width:100%}
+.infobox th{text-align:left;padding-right:8px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:16px auto;max-width:520px;width:100%}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<header><span class="logo">Wikipedia</span> — The Free Encyclopedia</header>
+<main>
+<h1>Null-terminated string</h1>
+<div class="infobox">
+<img src="images/null_terminated_string.png" alt="Memory layout of a null-terminated string">
+<table>
+<tr><th>Type</th><td>Data representation</td></tr>
+<tr><th>Used in</th><td>C, C++, assembly languages, Unix APIs</td></tr>
+<tr><th>Sentinel</th><td>NUL character (0x00)</td></tr>
+</table>
+</div>
+<p>In computer programming, a <b>null-terminated string</b> is a character string stored as an array of characters terminated by a <b>null character</b> (a character with the value zero, written <code>'\0'</code> in C). This representation is the native string format of the C programming language and is consequently often called a <b>C string</b>.</p>
+<img class="hero" src="images/null_terminated_string.png" alt="Array of characters ending with a zero byte">
+<h2>Characteristics</h2>
+<p>Because the length of the string is not stored, finding it requires scanning the array until the terminator is found, an O(n) operation performed by functions such as <code>strlen</code>. The format requires only one byte of overhead regardless of string length, but it cannot contain embedded null characters, which makes it unsuitable for arbitrary binary data. Operations such as concatenation can be inefficient because the lengths of the operands must be recomputed by scanning.</p>
+<h2>History</h2>
+<p>Null-terminated strings descend from the <code>.ASCIZ</code> directive in PDP-11 assembly languages, where the "Z" indicated the zero-terminated form of ASCII text. The representation was adopted by C in the early 1970s and, through C's influence, by Unix system calls and many file formats and network protocols.</p>
+<h2>Security issues</h2>
+<p>Failure to ensure null termination, or trusting terminators in untrusted input, has been the source of many buffer overflow vulnerabilities. Functions such as <code>strcpy</code> copy until they find a terminator and will overrun the destination buffer if the source is too long; bounded alternatives such as <code>strncpy</code>, <code>strlcpy</code>, and <code>snprintf</code> are preferred. The alternative length-prefixed (Pascal string) representation avoids scanning but historically limited strings to 255 characters.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../C_string/index.html">C string</a></li>
+<li><a href="../String_(computer_science)/index.html">String (computer science)</a></li>
+<li><a href="../Buffer_overflow/index.html">Buffer overflow</a></li>
+</ul>
+</main>
+</body>
+</html>

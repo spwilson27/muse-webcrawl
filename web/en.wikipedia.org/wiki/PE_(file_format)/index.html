@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Portable Executable - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#222}h1{border-bottom:1px solid #aaa;font-size:1.9em}h2{border-bottom:1px solid #ddd;font-size:1.3em}.infobox{float:right;border:1px solid #aaa;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;width:250px;font-size:.88em}img.hero{width:100%;background:#eef;border:1px solid #ccc}small{color:#555}</style></head>
+<body><h1>Portable Executable</h1>
+<div class="infobox"><img class="hero" src="images/portable-executable.png" alt="Structure diagram of a Portable Executable file"><br><b>Filename extensions:</b> .exe, .dll, .sys, .ocx, .cpl. <b>Developed by:</b> Microsoft. <b>Based on:</b> COFF.</div>
+<p>The <b>Portable Executable</b> (<b>PE</b>) format is a file format for executables, object code, and DLLs used in 32-bit and 64-bit versions of Microsoft Windows. The 64-bit extension is called PE32+. The format is a data structure that encapsulates the information the Windows loader needs to manage executable code, and derives from the Unix COFF (Common Object File Format) tradition.</p>
+<h2>Structure</h2>
+<p>A PE file begins with a legacy MS-DOS header and stub (starting with the "MZ" signature), followed by the PE signature ("PE\0\0"), a COFF file header, and an "optional header" that is in practice required for images and contains the entry-point address, image base, and data directories. These directories point to tables for imports, exports, resources, relocations, debug data, and the certificate table used for Authenticode signatures. The body is divided into named sections such as .text (code), .data, .rdata, and .rsrc (resources).</p>
+<h2>Use</h2>
+<p>PE is the native executable format of Windows NT and all its successors, and is also used by Windows CE, the UEFI firmware environment (which loads PE images), and the .NET framework, whose assemblies are PE files containing CIL bytecode and metadata. Toolchains such as MinGW produce PE files on non-Windows hosts, and projects like Wine parse the format to run Windows binaries elsewhere.</p>
+<p><small>See also: <a href="../COFF/index.html">COFF</a> · <a href="../Executable_and_Linkable_Format/index.html">Executable and Linkable Format</a> · <a href="../Dynamic-link_library/index.html">Dynamic-link library</a></small></p>
+</body></html>

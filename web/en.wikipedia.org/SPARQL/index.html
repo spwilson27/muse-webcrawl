@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SPARQL - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; padding: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 40px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { font-size: 15px; line-height: 1.6; }
+pre { background: #f8f9fa; border: 1px solid #a2a9b1; padding: 10px; font-size: 13px; overflow-x: auto; }
+a { color: #0645ad; text-decoration: none; }
+img.hero { display: block; max-width: 100%; background: #eaecf0; border: 1px solid #a2a9b1; }
+.caption { font-size: 12px; color: #54595d; text-align: center; padding: 4px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>SPARQL</h1>
+<p><b>SPARQL</b> (pronounced "sparkle", a recursive acronym for <b>SPARQL Protocol and RDF Query Language</b>) is an RDF query language — that is, a semantic query language for databases — able to retrieve and manipulate data stored in Resource Description Framework (RDF) format. It was made a W3C standard by the RDF Data Access Working Group on 15 January 2008, and version 1.1 was published in March 2013.</p>
+<img class="hero" src="images/sparql.png" alt="A SPARQL query matching triple patterns against an RDF graph">
+<p class="caption">SPARQL queries match patterns of subject&ndash;predicate&ndash;object triples against an RDF graph.</p>
+<h2>Overview</h2>
+<p>SPARQL allows users to write queries against what can loosely be called "key-value" data or, more specifically, data that follows the RDF specification of the W3C. The entire database is thus a set of "subject&ndash;predicate&ndash;object" triples. Queries specify graph patterns containing variables, and the engine returns bindings for those variables. SPARQL supports four query forms: SELECT, CONSTRUCT, ASK and DESCRIBE, as well as update operations in SPARQL 1.1.</p>
+<pre>SELECT ?name ?birthplace
+WHERE {
+  ?person a &lt;http://xmlns.com/foaf/0.1/Person&gt; .
+  ?person &lt;http://xmlns.com/foaf/0.1/name&gt; ?name .
+  ?person &lt;http://example.org/bornIn&gt; ?birthplace .
+}</pre>
+<h2>Use</h2>
+<p>SPARQL endpoints power public knowledge bases such as Wikidata and DBpedia, enabling structured queries over the data behind Wikipedia infoboxes and the Linked Open Data cloud. Because queries can be federated, a single SPARQL query can combine results from multiple endpoints across the web.</p>
+<h2>See also</h2>
+<p><a href="../Resource_Description_Framework/index.html">Resource Description Framework</a> &middot; <a href="../Wikidata/index.html">Wikidata</a> &middot; <a href="../Semantic_Web/index.html">Semantic Web</a> &middot; <a href="../DBpedia/index.html">DBpedia</a></p>
+</div>
+</body>
+</html>

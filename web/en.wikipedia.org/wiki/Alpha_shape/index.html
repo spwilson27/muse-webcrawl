@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Alpha shape - Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:960px;margin:0 auto;padding:16px;line-height:1.6;color:#202122;background:#fff}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;text-align:center;font-size:85%}
+</style>
+</head>
+<body>
+<h1>Alpha shape</h1>
+<p>In computational geometry, an <b>alpha shape</b>, or <b>α-shape</b>, is a family of piecewise linear simple curves in the Euclidean plane associated with the shape of a finite set of points. Alpha shapes generalise the notion of the <a href="../Convex_hull/index.html">convex hull</a>: whereas the convex hull is the smallest convex set containing the points, an alpha shape can be non-convex and even disconnected, capturing concavities, holes and separate components of the point set's "shape".</p>
+<div class="thumb"><img src="images/alpha-shape.png" alt="Alpha shapes of a point set for decreasing values of alpha"><br>Alpha shapes of one point set at several values of α; as α decreases, concavities and holes appear</div>
+<h2>History and intuition</h2>
+<p>Alpha shapes were introduced by Herbert Edelsbrunner and co-workers in the early 1980s (Edelsbrunner, Kirkpatrick and Seidel, 1983) as a tool for shape reconstruction from unorganised point samples. The intuitive model is to imagine carving away space with a spherical "eraser" of radius α: an edge between two points belongs to the alpha shape if a disc of radius α can be placed so that it touches both points without containing any other point of the set.</p>
+<h2>Definition</h2>
+<p>Given a finite point set <i>S</i> and a parameter α &gt; 0, the α-shape is derived from the Delaunay triangulation of <i>S</i>. A simplex of the triangulation is part of the α-complex if its circumradius is at most α (with appropriate conventions for lower-dimensional simplices); the α-shape is the boundary of the union of the simplices of the α-complex. For very large α the α-shape is the convex hull of <i>S</i>; for α = 0 it degenerates to the point set itself. Varying α produces a filtration of shapes at different scales of detail.</p>
+<h2>Applications</h2>
+<ul>
+<li><b>Molecular modelling:</b> computing the shape, volume and surface area of molecules, including pockets and voids in proteins.</li>
+<li><b>Surface reconstruction:</b> building meshes from 3D scanner point clouds.</li>
+<li><b>Geographic information systems:</b> delineating the footprint of scattered observations, e.g. species ranges or clusters of events.</li>
+<li><b>Astronomy and materials science:</b> characterising the geometry of point distributions such as galaxy clusters and porous media.</li>
+</ul>
+<h2>Generalizations</h2>
+<p>The concept extends to three dimensions, where alpha shapes are polyhedral surfaces, and to weighted point sets (weighted alpha shapes), used for unions of balls of different radii such as atoms in a molecule. Alpha shapes are implemented in libraries such as CGAL.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Convex_hull/index.html">Convex hull</a></li>
+<li><a href="../Delaunay_triangulation/index.html">Delaunay triangulation</a></li>
+<li><a href="../Beta_skeleton/index.html">Beta skeleton</a></li>
+<li><a href="../Concave_hull/index.html">Concave hull</a></li>
+</ul>
+</body>
+</html>

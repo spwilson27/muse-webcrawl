@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Linux Unified Key Setup - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine",Georgia,serif;margin:2em auto;max-width:960px;color:#202122;line-height:1.6;padding:0 1em}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;width:280px;padding:.5em;margin:0 0 1em 1em;font-size:.85em}
+.infobox th{text-align:left;background:#e7eaf2;padding:.3em}
+.infobox td{padding:.3em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:1em 0;max-width:400px}
+.ref{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Linux Unified Key Setup</h1>
+<img class="hero" src="images/luks.png" alt="LUKS disk encryption setup">
+<p>The <b>Linux Unified Key Setup</b> (LUKS) is a disk encryption specification created by Clemens Fruhwirth in 2004 and developed for Linux. It provides a standard on-disk format that is independent of any particular implementation, allowing compatibility between different tools and a secure management of multiple user passwords.</p>
+<p>LUKS is the standard format used by <code>cryptsetup</code> together with the kernel's dm-crypt device-mapper target, and is the usual way to encrypt disks and partitions on Linux systems, including full-disk encryption during installation.</p>
+<h2>Design</h2>
+<p>A LUKS device begins with a header that stores the cipher specification and up to eight (LUKS1) or thirty-two (LUKS2) key slots. Each key slot holds the volume key encrypted with a user's passphrase, strengthened by a key derivation function (PBKDF2, or Argon2 in LUKS2) and anti-forensic splitting of key material. LUKS2, released with cryptsetup 2.0 in 2017, adds features such as integrity considerations, JSON metadata, and improved resilience.</p>
+<h2>See also</h2>
+<p>Dm-crypt; Disk encryption; Cryptsetup; Full disk encryption.</p>
+<p class="ref">References: Fruhwirth, C., "LUKS On-Disk Format Specification"; cryptsetup project documentation.</p>
+</body>
+</html>

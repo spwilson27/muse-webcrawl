@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SIMD - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; padding: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 40px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { font-size: 15px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 16px 16px; font-size: 13px; }
+.infobox th { background: #eaecf0; padding: 4px; text-align: left; }
+.infobox td { padding: 4px; }
+img.hero { display: block; max-width: 100%; background: #eaecf0; border: 1px solid #a2a9b1; }
+.caption { font-size: 12px; color: #54595d; text-align: center; padding: 4px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>SIMD</h1>
+<p><b>Single instruction, multiple data</b> (<b>SIMD</b>) is a type of <a href="../Parallel_computing/index.html">parallel processing</a> in Flynn's taxonomy. SIMD describes computers with multiple processing elements that perform the same operation on multiple data points simultaneously. Such machines exploit <a href="../Data_parallelism/index.html">data level parallelism</a>, but not concurrency: there are simultaneous (parallel) computations, but each unit performs the exact same instruction at any given moment (just with different data). SIMD is particularly applicable to common tasks such as adjusting the contrast in a digital image or adjusting the volume of digital audio. Most modern CPU designs include SIMD instructions to improve the performance of multimedia use.</p>
+<img class="hero" src="images/simd.png" alt="Diagram of a SIMD processor applying one instruction to four data lanes at once">
+<p class="caption">A SIMD operation applies a single instruction across multiple data elements simultaneously.</p>
+<h2>History</h2>
+<p>The first use of SIMD instructions was in the ILLIAC IV, completed in 1966. SIMD was the basis for vector supercomputers of the early 1970s such as the CDC Star-100 and the Texas Instruments ASC, which could operate on a "vector" of data with a single instruction. Vector processing was especially popularized by Cray in the 1970s and 1980s. SIMD remained relatively obscure on personal computers until the late 1990s, when Intel added the MMX instruction set to its Pentium processors, followed by SSE, AVX, and AVX-512 extensions.</p>
+<h2>Advantages</h2>
+<p>An application that may take advantage of SIMD is one where the same value is being added to (or subtracted from) a large number of data points, a common operation in many multimedia applications. One example is changing the brightness of an image. Each pixel of an image consists of three values for the brightness of the red (R), green (G) and blue (B) portions of the color. To change the brightness, the R, G and B values are read from memory, a value is added to (or subtracted from) them, and the resulting values are written back out to memory. With SIMD, a block of these values can be loaded, operated on, and written back in a single instruction stream, greatly reducing the number of instructions required.</p>
+<h2>SIMD instruction sets</h2>
+<p>Modern general-purpose processors commonly include SIMD units: x86 processors offer MMX, SSE, SSE2, AVX, AVX2 and AVX-512; ARM processors offer NEON and the Scalable Vector Extension (SVE); RISC-V defines a vector extension. Graphics processing units (GPUs) are built around a related model sometimes called SIMT (single instruction, multiple threads).</p>
+<h2>See also</h2>
+<p><a href="../Flynn%27s_taxonomy/index.html">Flynn's taxonomy</a> &middot; <a href="../Vector_processor/index.html">Vector processor</a> &middot; <a href="../Streaming_SIMD_Extensions/index.html">Streaming SIMD Extensions</a> &middot; <a href="../Advanced_Vector_Extensions/index.html">Advanced Vector Extensions</a></p>
+</div>
+</body>
+</html>

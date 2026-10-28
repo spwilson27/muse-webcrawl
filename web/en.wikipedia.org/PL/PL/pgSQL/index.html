@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PL/pgSQL - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:24px}
+h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:32px;border-bottom:1px solid #a2a9b1;margin:0 0 12px;padding-bottom:4px}
+h2{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:22px;border-bottom:1px solid #a2a9b1;margin-top:28px}
+p,li{line-height:1.6;font-size:15px}
+img.hero{display:block;max-width:420px;width:100%;height:220px;object-fit:cover;background:#eaecf0;border:1px solid #a2a9b1;margin:12px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>PL/pgSQL</h1>
+<img class="hero" src="images/plpgsql.png" alt="Illustration placeholder: a PL/pgSQL function definition in a PostgreSQL client window">
+<p><b>PL/pgSQL</b> (<b>Procedural Language/PostgreSQL Structured Query Language</b>) is a procedural programming language supported by the PostgreSQL relational database management system. It closely resembles Oracle's PL/SQL language. PL/pgSQL was designed by Jan Wieck and first appeared in PostgreSQL 6.4, released on October 30, 1998.</p>
+<p>PL/pgSQL is the default procedural language for PostgreSQL and is installed by default in modern versions. It allows SQL queries and commands to be combined with procedural constructs — variables, conditional statements, loops, and exception handling — inside functions, procedures, triggers and DO blocks executed on the database server.</p>
+<h2>Design goals</h2>
+<ul>
+<li>Create functions and trigger procedures that perform complex computations and enforce business logic in the database</li>
+<li>Bring computation closer to the data, reducing round trips between client and server</li>
+<li>Reuse the server's SQL parser: individual SQL statements in a PL/pgSQL function are planned much like prepared statements</li>
+</ul>
+<h2>Structure</h2>
+<p>A PL/pgSQL function body is a block with an optional DECLARE section, a BEGIN ... END body, and an optional EXCEPTION section. SQL statements can be embedded directly; dynamic SQL is available through EXECUTE. Control structures include IF, CASE, LOOP, WHILE, FOR (over ranges or query results), RETURN and RETURN NEXT/QUERY for set-returning functions. Errors and notices are raised with RAISE, and GET DIAGNOSTICS exposes stack and status information.</p>
+<h2>Comparison</h2>
+<p>Compared with plain SQL functions, PL/pgSQL trades the optimiser's ability to inline function bodies for full procedural control. Other PostgreSQL procedural languages include PL/Perl, PL/Python and PL/Tcl; PL/pgSQL remains the most commonly used because it needs no external runtime and handles SQL natively.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../PostgreSQL/index.html">PostgreSQL</a></li>
+<li><a href="../PL/SQL/index.html">PL/SQL</a></li>
+<li><a href="../Stored_procedure/index.html">Stored procedure</a></li>
+<li><a href="../Transact-SQL/index.html">Transact-SQL</a></li>
+</ul>
+<p style="font-size:13px;color:#54595d">Categories: PostgreSQL · Procedural programming languages · SQL · Scripting languages</p>
+</div>
+</body>
+</html>

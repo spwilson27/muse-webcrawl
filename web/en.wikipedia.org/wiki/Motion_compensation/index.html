@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Motion compensation - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; color: #222; background: #fff; }
+header { background: #f8f9fa; border-bottom: 1px solid #a7d7f9; padding: 12px 24px; font-family: sans-serif; }
+header a { color: #0645ad; text-decoration: none; font-size: 0.9em; }
+main { max-width: 860px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 1.35em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 1.4em; }
+p { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #ccc; background: #eee; min-height: 180px; }
+.caption { font-size: 0.8em; color: #555; font-family: sans-serif; }
+footer { border-top: 1px solid #a2a9b1; font-size: 0.8em; color: #555; padding: 12px 24px; font-family: sans-serif; }
+</style>
+</head>
+<body>
+<header><a href="../../index.html">Wikipedia</a> &middot; The Free Encyclopedia</header>
+<main>
+<h1>Motion compensation</h1>
+<div class="hero">
+<img src="images/motion-compensation.png" alt="Diagram of motion-compensated prediction between video frames">
+<div class="caption">Motion compensation predicts a frame from a reference frame using motion vectors</div>
+</div>
+<p><b>Motion compensation</b> is an algorithmic technique used to predict a frame in a video, given the previous and/or future frames, by accounting for motion of the camera and/or objects in the video. It is employed in the encoding of video data for <a href="../Video_compression/index.html">video compression</a>, for example in the generation of <a href="../MPEG/index.html">MPEG</a> files, and is the counterpart of <a href="../Motion_estimation/index.html">motion estimation</a>.</p>
+<h2>Function</h2>
+<p>Motion compensation describes a picture in terms of the transformation of a reference picture to the current picture. The reference picture may be a previous frame or one that has yet to occur. When images can be accurately synthesised from previously transmitted ones, compression efficiency improves, because only the motion vectors and a small residual error need to be stored or transmitted rather than the full image.</p>
+<h2>Block motion compensation</h2>
+<p>In block motion compensation, the current frame is partitioned into blocks of pixels (macroblocks in older standards, coding tree units in newer ones). Each block is predicted from a block of equal size in the reference frame, offset by a motion vector. The transformation is often limited to pure translation, though modern codecs such as <a href="../H.264/MPEG-4_AVC/index.html">H.264</a> and <a href="../High_Efficiency_Video_Coding/index.html">HEVC</a> support sub-pixel accuracy, multiple reference frames, and variable block sizes.</p>
+<h2>Global motion compensation</h2>
+<p>Global motion compensation models camera movement &mdash; panning, tilting, rotation and zoom &mdash; with a small set of parameters applied to the whole frame, allowing complex camera motion to be described with very few bits. It was included in MPEG-4 Part 2 but saw limited adoption in practice.</p>
+<h2>See also</h2>
+<p><a href="../Motion_estimation/index.html">Motion estimation</a> &middot; <a href="../Video_compression/index.html">Video compression</a> &middot; <a href="../Inter_frame/index.html">Inter frame</a></p>
+</main>
+<footer>From Wikipedia, the free encyclopedia.</footer>
+</body>
+</html>

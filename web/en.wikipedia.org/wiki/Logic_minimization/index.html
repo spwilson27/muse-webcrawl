@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Logic optimization - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+.infobox{float:right;width:270px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{background:#b0c4de;text-align:center;padding:4px}
+.infobox td{padding:2px 4px;vertical-align:top}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:12px auto;max-width:480px;width:100%;background:#eef;border:1px solid #a2a9b1;padding:24px 0;text-align:center;color:#54595d}
+.small{font-size:0.85em;color:#54595d}
+ul{line-height:1.5}
+p{line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Logic optimization</h1>
+<table class="infobox">
+<tr><th colspan="2">Logic optimization (minimization)</th></tr>
+<tr><td><b>Field</b></td><td>Digital electronics, electronic design automation</td></tr>
+<tr><td><b>Goal</b></td><td>Reduce gate count, area, delay or power of a logic circuit without changing its function</td></tr>
+<tr><td><b>Classical methods</b></td><td>Karnaugh maps, Quine–McCluskey algorithm, Espresso heuristic</td></tr>
+<tr><td><b>Used in</b></td><td>Logic synthesis within EDA tool flows</td></tr>
+</table>
+<img class="hero" src="images/Logic_minimization.png" alt="A Karnaugh map used to minimise a Boolean function">
+<p><b>Logic optimization</b>, also called <b>logic minimization</b>, is a process of finding an equivalent representation of a specified logic circuit that is simpler — using fewer logic gates, literals, or levels of logic — under some cost criterion such as area, delay or power consumption. It is a central step in the design of digital integrated circuits, performed automatically by logic synthesis tools within electronic design automation (EDA) flows, and traditionally taught through hand methods for small functions.</p>
+<h2>Two-level minimization</h2>
+<p>For functions expressed as a sum of products (or product of sums), the classical approaches are:</p>
+<ul>
+<li><b>Karnaugh maps</b> (1953) — a graphical technique in which adjacent cells of a truth-table grid that differ in one variable are grouped, visually simplifying functions of up to about six variables.</li>
+<li><b>Quine–McCluskey algorithm</b> (1952–1956) — a tabular, algorithmic method that finds all prime implicants and then solves a covering problem to obtain a minimal form; exact but exponential in the worst case.</li>
+<li><b>Espresso</b> (developed at IBM and UC Berkeley in the 1980s) — a heuristic minimizer using expand, irredundant cover and reduce operations, which handles functions with hundreds of variables and outputs near-minimal results quickly; its variants (e.g., Espresso-II) became standard in synthesis tools.</li>
+</ul>
+<h2>Multi-level optimization</h2>
+<p>Modern circuits are rarely implemented as two-level AND–OR networks. Multi-level synthesis factors common subexpressions, decomposes functions, and maps networks onto the cells available in a technology library (technology mapping), optimising the trade-off between area and timing along critical paths. Algebraic methods treat expressions with Boolean algebra rules, while Boolean methods exploit don't-care conditions — combinations of inputs that never occur, or outputs that are unobserved — to gain additional freedom for simplification.</p>
+<h2>Complexity and practice</h2>
+<p>Finding a provably minimal circuit is computationally hard, so practical flows rely on heuristics and on representations such as binary decision diagrams (BDDs) and AND-inverter graphs (AIGs), as in the ABC synthesis system. Optimization interacts with later steps — placement, routing and timing closure — so modern flows iterate between logical and physical information.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Karnaugh_map/index.html">Karnaugh map</a></li>
+<li><a href="../Quine–McCluskey_algorithm/index.html">Quine–McCluskey algorithm</a></li>
+<li><a href="../Logic_synthesis/index.html">Logic synthesis</a></li>
+<li><a href="../Boolean_function/index.html">Boolean function</a></li>
+</ul>
+<p class="small">References: De Micheli, G. <i>Synthesis and Optimization of Digital Circuits</i> (1994); Brayton, R.K. et al. <i>Logic Minimization Algorithms for VLSI Synthesis</i> (1984); Hassoun, S. &amp; Sasao, T. (eds.) <i>Logic Synthesis and Verification</i> (2002). Categories: Electronic design automation, Digital electronics, Boolean algebra.</p>
+</div>
+</body>
+</html>

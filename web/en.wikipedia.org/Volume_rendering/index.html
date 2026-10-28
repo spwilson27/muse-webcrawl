@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Volume rendering - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; padding: 0; color: #202122; background: #f8f9fa; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a7d7f9; padding-bottom: 6px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 16px 16px; font-size: 90%; }
+.infobox img { width: 100%; }
+.infobox th { text-align: left; padding: 2px 6px; }
+.infobox td { padding: 2px 6px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { width: 100%; max-width: 500px; display: block; margin: 12px 0; }
+.caption { font-size: 85%; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Volume rendering</h1>
+<p>In scientific visualisation and computer graphics, <b>volume rendering</b> is a set of techniques used to display a 2D projection of a 3D discretely sampled data set, typically a grid of voxels. A typical data set is a stack of images from a CT, MRI, or industrial scanner, or the result of a three-dimensional simulation. Rather than extracting surfaces, volume rendering models the data as a semi-transparent, light-emitting and absorbing medium, allowing internal structures to be seen in context.</p>
+
+<div class="infobox">
+<img src="images/Volume_rendering.png" alt="Volume-rendered CT scan of a human head">
+<table>
+<tr><th>Field</th><td>Computer graphics, scientific visualisation</td></tr>
+<tr><th>Input data</th><td>3D voxel grids (CT, MRI, simulations)</td></tr>
+<tr><th>Key methods</th><td>Ray casting, splatting, texture slicing, shear warp</td></tr>
+<tr><th>Applications</th><td>Medical imaging, geology, meteorology, CFD</td></tr>
+</table>
+</div>
+
+<img class="hero" src="images/Volume_rendering.png" alt="A volume-rendered medical data set">
+<p class="caption">Volume rendering of a CT data set, showing bone and soft tissue.</p>
+
+<h2>Methods</h2>
+<p>The most common technique is ray casting: for each pixel, a ray is cast through the volume, samples are accumulated along the ray according to a transfer function that maps data values to colour and opacity, and the samples are composited front-to-back or back-to-front. Other approaches include splatting, in which each voxel is projected onto the image plane as a small footprint; texture-based slicing, which draws stacks of planar slices through the volume; and the shear-warp factorisation, which accelerates rendering by separating the viewing transformation.</p>
+
+<h2>Transfer functions and classification</h2>
+<p>The visual result depends heavily on the transfer function, which classifies data values into materials — for example, rendering bone opaque and white while keeping soft tissue translucent. Designing effective transfer functions, including multidimensional ones based on gradient magnitude, is a major topic in visualisation research. Modern GPUs make interactive volume rendering routine in radiology workstations, surgical planning, reservoir engineering, and weather visualisation.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Scientific_visualization/index.html">Scientific visualization</a></li>
+<li><a href="../Ray_casting/index.html">Ray casting</a></li>
+<li><a href="../Voxel/index.html">Voxel</a></li>
+<li><a href="../Marching_cubes/index.html">Marching cubes</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Function composition (computer science) - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.mw-body { max-width: 960px; margin: 0 auto; padding: 20px 28px 60px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 1.9em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.2em; }
+p { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; margin: 0 0 1em 1.5em; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px 12px; font-size: 0.85em; width: 260px; font-family: sans-serif; }
+.infobox th { text-align: left; padding: 2px 6px; vertical-align: top; }
+.infobox td { padding: 2px 6px; }
+.infobox .ib-title { text-align: center; font-weight: bold; font-size: 1.05em; padding: 4px; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 420px; width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; min-height: 160px; }
+.hero figcaption { font-size: 0.8em; color: #54595d; font-family: sans-serif; }
+ul { line-height: 1.6; font-size: 0.95em; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px; overflow-x: auto; font-size: 0.88em; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Function composition (computer science)</h1>
+<p>In computer science, <b>function composition</b> is an act or mechanism to combine simple functions to build more complicated ones. Like the usual composition of functions in mathematics, the result of each function is passed as the argument of the next, and the result of the whole composition is the result of the last one.</p>
+<figure class="hero"><img src="images/function-composition.png" alt="Diagram of two functions composed in a pipeline"><figcaption>Composing functions f and g: the output of g feeds the input of f.</figcaption></figure>
+<h2>Overview</h2>
+<p>Function composition is a fundamental building block of functional programming. Programs are constructed by composing functions that operate on data, with the composition operator usually written in one of the following ways:</p>
+<pre>-- Haskell: (f . g) x = f (g x)
+compose f g = \x -> f (g x)</pre>
+<pre>// JavaScript
+const compose = (f, g) => x => f(g(x));</pre>
+<p>Many languages provide built-in composition operations. Unix pipelines are a shell-level form of composition, in which the standard output of each program becomes the standard input of the next. In object-oriented and concurrent programming, related patterns include function chaining, pipelines and the use of higher-order functions such as <i>map</i>, <i>filter</i> and <i>fold</i>, which can themselves be composed to build data transformations.</p>
+<h2>Composition operators</h2>
+<p>Two styles of composition appear in practice. <b>Point-free</b> (or tacit) composition defines a function directly as a composition of others without naming its argument, as in Haskell's <code>(.)</code> operator. Piping operators — such as F#'s <code>|&gt;</code> or Elixir's <code>|&gt;</code> — apply functions left-to-right in the order data flows, which many programmers find more readable for long transformation chains.</p>
+<h2>Related concepts</h2>
+<p>Function composition is closely related to currying and partial application, which make it easier to build specialised functions for use in compositions, and to the monadic <i>bind</i> operation, which generalises composition to functions returning values wrapped in a context. In category-theoretic terms, composition in most programming languages is modelled on composition of morphisms in the category of types and functions.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Function_composition/index.html">Function composition (mathematics)</a></li>
+<li><a href="../Functional_programming/index.html">Functional programming</a></li>
+<li><a href="../Pipeline_(Unix)/index.html">Pipeline (Unix)</a></li>
+<li><a href="../Higher-order_function/index.html">Higher-order function</a></li>
+<li><a href="../Currying/index.html">Currying</a></li>
+</ul>
+</div>
+</body>
+</html>

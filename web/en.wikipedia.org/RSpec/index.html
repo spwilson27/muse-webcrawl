@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RSpec - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; }
+.mw-body { margin: 0 auto; max-width: 960px; padding: 1.2em 1.5em 3em; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0.5em 0 1em 1.5em; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; width: 260px; font-size: 0.85em; }
+.thumb img { width: 100%; height: 160px; background: #eaecf0; display: block; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0.8em; overflow-x: auto; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>RSpec</h1>
+<div class="thumb"><img src="images/rspec.png" alt="Terminal output of an RSpec test run showing passing examples in documentation format"><div>Output of an RSpec run in documentation format.</div></div>
+<p><b>RSpec</b> is a computer <a href="../Domain-specific_language">domain-specific language</a> (DSL) <a href="../Software_testing">testing</a> tool written in the <a href="../Ruby_(programming_language)">Ruby programming language</a> to test Ruby code. It is a <a href="../Behavior-driven_development">behavior-driven development</a> (BDD) framework which is extensively used in production applications. The basic idea behind this concept is that of test-driven development (TDD), where the tests are written first and the development is based on writing just enough code to pass the tests.</p>
+<p>RSpec was created in 2005 by Steven Baker, growing out of ideas in Dave Astels' and David Chelimsky's work on behaviour-driven development. David Chelimsky led the project for many years, and the framework became the most widely used testing library in the Ruby community, shipped by default in the tooling of many <a href="../Ruby_on_Rails">Rails</a> developers.</p>
+<h2>Syntax</h2>
+<p>RSpec examples are organised into groups introduced by <code>describe</code> blocks, with individual examples written with <code>it</code>. Expectations are expressed in a readable syntax:</p>
+<pre>describe Bowling do
+  it "scores 0 for gutter games" do
+    bowling = Bowling.new
+    20.times { bowling.hit(0) }
+    expect(bowling.score).to eq 0
+  end
+end</pre>
+<p>The framework provides matchers such as <code>eq</code>, <code>include</code>, <code>raise_error</code> and <code>be_within</code>, test doubles (mocks and stubs), shared examples, hooks, and a command-line runner that reports failures with diffs.</p>
+<h2>Ecosystem</h2>
+<p>RSpec is split into several gems: <code>rspec-core</code> (the runner), <code>rspec-expectations</code> (the matcher syntax) and <code>rspec-mocks</code> (test doubles). Companion libraries such as <code>rspec-rails</code>, FactoryBot and Capybara integrate it with web frameworks and browser-driven acceptance tests. Its chief alternative in the Ruby world is <a href="../Minitest">Minitest</a>, which ships with Ruby itself.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Behavior-driven_development">Behavior-driven development</a></li>
+<li><a href="../Test-driven_development">Test-driven development</a></li>
+<li><a href="../Unit_testing">Unit testing</a></li>
+<li><a href="../Cucumber_(software)">Cucumber (software)</a></li>
+</ul>
+</div>
+</body>
+</html>

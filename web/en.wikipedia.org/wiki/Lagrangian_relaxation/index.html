@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lagrangian relaxation - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:860px;margin:0 auto;padding:20px;color:#202122;line-height:1.6;background:#fff}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:20px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 14px 18px;font-size:13px;font-family:sans-serif}
+.infobox th{text-align:left;padding:2px 6px;vertical-align:top}
+.infobox .title{background:#b0c4de;text-align:center;font-size:15px;padding:5px}
+.hero{display:block;width:100%;height:140px;background:#eaecf0;border:1px solid #c8ccd1;text-align:center;line-height:140px;color:#72777d;font-family:sans-serif;font-size:13px;margin-bottom:8px}
+a{color:#0645ad;text-decoration:none}
+.refs{font-size:13px;color:#54595d}
+.math{font-family:'Cambria Math',serif;font-style:italic}
+</style>
+</head>
+<body>
+<h1>Lagrangian relaxation</h1>
+<div class="infobox">
+<div class="title">Lagrangian relaxation</div>
+<img class="hero" src="images/lagrangian_relaxation.png" alt="Diagram of a problem decomposed by Lagrangian relaxation">
+<table>
+<tr><th>Field</th><td>Mathematical optimization, operations research</td></tr>
+<tr><th>Key idea</th><td>Move complicating constraints into the objective with penalty prices (multipliers)</td></tr>
+<tr><th>Provides</th><td>Lower (or upper) bounds and approximate solutions for hard problems</td></tr>
+<tr><th>Related</th><td>Lagrangian duality, subgradient method, branch and bound</td></tr>
+</table>
+</div>
+<p><b>Lagrangian relaxation</b> is a relaxation method which approximates a difficult problem of constrained optimization by a simpler problem. A solution to the relaxed problem is an approximate solution to the original problem, and provides useful information.</p>
+<p>The method penalizes violations of inequality constraints using a Lagrange multiplier, which imposes a cost on violations. These added costs are used instead of the strict inequality constraints in the optimization. In practice, this relaxed problem can often be solved more easily than the original problem.</p>
+<h2>Method</h2>
+<p>Given an integer programming problem of the form: maximize <span class="math">c<sup>T</sup>x</span> subject to <span class="math">Ax ≤ b</span> and <span class="math">Dx ≤ d</span>, where the constraints <span class="math">Dx ≤ d</span> are the "complicating" ones, Lagrangian relaxation removes those constraints from the feasible set and instead subtracts a penalty term <span class="math">λ<sup>T</sup>(Dx − d)</span> from the objective, for non-negative multipliers <span class="math">λ</span>. The relaxed problem is easier — for example it may decompose into independent subproblems — and for any choice of multipliers its optimal value bounds the optimal value of the original problem.</p>
+<h2>The Lagrangian dual</h2>
+<p>Choosing the multipliers to make the bound as tight as possible is itself an optimization problem, called the Lagrangian dual. Because the bound is a concave but typically non-smooth function of the multipliers, subgradient methods are commonly used to solve the dual. The gap between the best dual bound and the optimum of the original problem is the Lagrangian duality gap; it is zero for convex problems satisfying constraint qualifications, but can be positive for integer programs.</p>
+<h2>Applications</h2>
+<p>Lagrangian relaxation is widely used in operations research: for the travelling salesman problem (the Held–Karp bound obtained from a minimum 1-tree relaxation), facility location, scheduling, vehicle routing, and network design. It is frequently embedded in branch-and-price and branch-and-bound algorithms, where it supplies strong bounds at each node.</p>
+<h2>History</h2>
+<p>The technique grew out of Lagrangian duality theory and was popularised for combinatorial optimization in the 1970s, notably by Held and Karp's work on the travelling salesman problem (1970–71) and Geoffrion's formalisation of Lagrangian relaxation for integer programming (1974).</p>
+<h2>See also</h2>
+<p><a href="../Lagrange_multiplier/index.html">Lagrange multiplier</a> · <a href="../Linear_programming_relaxation/index.html">Linear programming relaxation</a> · <a href="../Travelling_salesman_problem/index.html">Travelling salesman problem</a> · <a href="../Branch_and_bound/index.html">Branch and bound</a></p>
+<p class="refs">References: Geoffrion, A.M. (1974). "Lagrangean Relaxation for Integer Programming." Mathematical Programming Studies. Fisher, M.L. (1981). "The Lagrangian Relaxation Method for Solving Integer Programming Problems." Management Science.</p>
+</body>
+</html>

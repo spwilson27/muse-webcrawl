@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Logging (computing) - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{background:#b0c4de;text-align:center;padding:4px}
+.infobox td{padding:2px 4px;vertical-align:top}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:12px auto;max-width:480px;width:100%;background:#eef;border:1px solid #a2a9b1;padding:24px 0;text-align:center;color:#54595d}
+.small{font-size:0.85em;color:#54595d}
+ul{line-height:1.5}
+p{line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Logging (computing)</h1>
+<table class="infobox">
+<tr><th colspan="2">Logging</th></tr>
+<tr><td><b>Outputs</b></td><td>Log files, system journal, event logs, consoles</td></tr>
+<tr><td><b>Common levels</b></td><td>TRACE, DEBUG, INFO, WARN, ERROR, FATAL</td></tr>
+<tr><td><b>Standard facilities</b></td><td>syslog, Windows Event Log, systemd journal</td></tr>
+<tr><td><b>Purposes</b></td><td>Debugging, auditing, security monitoring, analytics</td></tr>
+</table>
+<img class="hero" src="images/Logging_computing.png" alt="A server log file scrolling with timestamped event entries">
+<p>In computing, <b>logging</b> is the act of keeping a <b>log</b>: a record of events that occur in a computer system, such as problems, errors or information about current operations. These events may occur in the operating system, in software, or over a communications network. A log message commonly consists of a timestamp, a severity level, a component identifier and a description of the event. Logs are typically written to files, a system journal, or transmitted to a remote logging server for aggregation and analysis.</p>
+<h2>Purposes</h2>
+<ul>
+<li><b>Debugging and problem diagnosis</b> — reconstructing the state of a program before a failure</li>
+<li><b>Security</b> — recording authentication attempts, access and administrative actions for intrusion detection and forensics</li>
+<li><b>Auditing and compliance</b> — demonstrating who did what, when, in regulated industries</li>
+<li><b>Operations</b> — health monitoring, alerting, and capacity planning</li>
+<li><b>Analytics</b> — web server access logs underpin traffic measurement</li>
+</ul>
+<h2>Severity levels and facilities</h2>
+<p>The syslog standard (RFC 5424) defines eight severity levels, from <i>Emergency</i> (system unusable) down to <i>Debug</i>. Application frameworks such as Log4j, java.util.logging, Python's <code>logging</code> module and Microsoft's Event Tracing use comparable scales (FATAL, ERROR, WARN, INFO, DEBUG, TRACE) and let developers route messages by level and logger name to appenders (files, consoles, sockets, databases). Log rotation utilities such as <code>logrotate</code> archive and discard old files so logs do not exhaust disk space.</p>
+<h2>Analysis and aggregation</h2>
+<p>In distributed systems, logs from many machines are shipped to central platforms (for example the ELK/Elasticsearch–Logstash–Kibana stack, Splunk, or cloud logging services) where they are indexed and queried. Structured logging — emitting entries as JSON with consistent fields rather than free text — makes automated parsing and correlation across services far more reliable. Log management overlaps with metrics and tracing in the discipline of observability, and with security information and event management (SIEM) in security operations.</p>
+<h2>Challenges</h2>
+<p>Excessive logging can degrade performance and bury important events in noise; insufficient logging hampers incident response. Logs may contain sensitive data (credentials, personal information), making retention, access control and redaction important governance concerns.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Syslog/index.html">Syslog</a></li>
+<li><a href="../Log_file/index.html">Log file</a></li>
+<li><a href="../Event_Viewer/index.html">Event Viewer</a></li>
+<li><a href="../Observability_(software)/index.html">Observability (software)</a></li>
+</ul>
+<p class="small">References: IETF RFC 5424, <i>The Syslog Protocol</i> (2009); Chuvakin, A., Schmidt, K. &amp; Phillips, C. <i>Logging and Log Management</i> (2013). Categories: System administration, Data logging, Computer security.</p>
+</div>
+</body>
+</html>

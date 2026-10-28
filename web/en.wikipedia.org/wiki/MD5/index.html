@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MD5 - Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:900px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:2px}
+table.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.9em;margin:0 0 1em 1em;border-collapse:collapse}
+table.infobox th,table.infobox td{border:1px solid #a2a9b1;padding:4px 6px;text-align:left;vertical-align:top}
+table.infobox th{background:#eaecf0}
+.infobox-title{text-align:center;font-weight:bold;background:#eaecf0;font-size:1.05em}
+figure.hero{margin:0 0 1em 0;text-align:center}
+figure.hero img{max-width:320px;width:100%;border:1px solid #ccc;background:#eee;min-height:140px}
+figcaption{font-size:0.85em;color:#54595d}
+.small{font-size:0.85em;color:#54595d}
+code{font-family:monospace;background:#f8f9fa}
+</style>
+</head>
+<body>
+<h1>MD5</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<tr><th colspan="2" class="infobox-title">MD5</th></tr>
+<tr><th>Designers</th><td>Ronald Rivest</td></tr>
+<tr><th>First published</th><td>April 1992 (RFC 1321)</td></tr>
+<tr><th>Series</th><td>MD2, MD3 (unpublished), MD4, MD5, MD6</td></tr>
+<tr><th>Digest size</th><td>128 bits</td></tr>
+<tr><th>Structure</th><td>Merkle–Damgård construction</td></tr>
+<tr><th>Rounds</th><td>4 rounds of 16 operations</td></tr>
+</table>
+<figure class="hero"><img src="images/md5.png" alt="Diagram placeholder of the MD5 compression function"><figcaption>One operation within the MD5 compression function.</figcaption></figure>
+<p>The <b>MD5 message-digest algorithm</b> is a widely used hash function producing a 128-bit hash value, typically expressed as a 32-digit hexadecimal number. Designed by Ronald Rivest in 1991 and published as RFC 1321 in 1992, MD5 was intended as a secure replacement for the earlier MD4. It has since been shown to be severely compromised: collision attacks are practical, and MD5 is no longer considered suitable for cryptographic security such as digital signatures.</p>
+<h2>History</h2>
+<p>MD5 was designed by Rivest at MIT in 1991 and standardised in April 1992. Doubts about its collision resistance emerged as early as 1996, when collisions were found in its compression function. In 2004 researchers demonstrated full MD5 collisions, and by 2008 a forged X.509 certificate had been created using an MD5 chosen-prefix collision. In 2012 the Flame malware exploited an MD5 collision to forge a Microsoft code-signing certificate.</p>
+<h2>Algorithm</h2>
+<p>MD5 processes a variable-length message, padded so that its length is congruent to 448 modulo 512 bits, in successive 512-bit blocks. A 128-bit state, divided into four 32-bit words, is updated over four rounds of sixteen operations each, using nonlinear functions, per-step constants and message words, in a Merkle–Damgård construction. The final state is the digest.</p>
+<h2>Example</h2>
+<p>The MD5 hash of the empty string is <code>d41d8cd98f00b204e9800998ecf8427e</code>, and even a small change to a message produces a completely different digest, illustrating the avalanche effect.</p>
+<h2>Applications</h2>
+<p>Despite its cryptographic weaknesses, MD5 remains common for non-security purposes such as checksums for detecting accidental data corruption, fingerprinting files, and as a component of legacy protocols and password-storage schemes that are no longer recommended.</p>
+<p class="small">References: RFC 1321, "The MD5 Message-Digest Algorithm" (1992); published collision research of Wang et al.</p>
+</body>
+</html>

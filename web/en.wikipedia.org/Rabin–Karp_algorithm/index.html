@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rabin–Karp algorithm - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; }
+.mw-body { margin: 0 auto; max-width: 960px; padding: 1.2em 1.5em 3em; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0.5em 0 1em 1.5em; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; width: 260px; font-size: 0.85em; }
+.thumb img { width: 100%; height: 160px; background: #eaecf0; display: block; }
+code { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0 3px; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Rabin–Karp algorithm</h1>
+<div class="thumb"><img src="images/rabin-karp-algorithm.png" alt="Diagram of a sliding window over a text with a rolling hash value computed for each position"><div>The Rabin–Karp algorithm slides a window across the text, comparing rolling hash values instead of the substrings themselves.</div></div>
+<p>The <b>Rabin–Karp algorithm</b> or <b>Karp–Rabin algorithm</b> is a <a href="../String-searching_algorithm">string-searching algorithm</a> created by Richard Karp and Michael O. Rabin in 1987 that uses <a href="../Hash_function">hashing</a> to find an exact match of a pattern string in a text. It uses a <a href="../Rolling_hash">rolling hash</a> to quickly filter out positions of the text that cannot match the pattern, and then checks for a match at the remaining positions. Generalisations of the same idea can find more than one pattern, or patterns of multiple lengths, in a single pass.</p>
+<h2>Outline</h2>
+<p>The algorithm first computes the hash of the pattern, then slides a window of the same length along the text. Because the hash is a rolling hash (for example a polynomial hash computed modulo a large prime), the hash of each new window can be derived from the previous one in constant time by removing the contribution of the outgoing character and adding the incoming one. If the window's hash differs from the pattern's hash, the window cannot match. If the hashes agree, the algorithm compares the strings directly to confirm the match and rule out a hash collision.</p>
+<h2>Complexity</h2>
+<p>With a good hash function, hash mismatches reject almost all positions, so the average running time is linear, O(<i>n</i> + <i>m</i>) for a text of length <i>n</i> and a pattern of length <i>m</i>. In the worst case — for example with a deliberately weak hash or an adversarial input — many positions may require full comparison, giving O(<i>nm</i>) time. Choosing the modulus at random, or using two independent hashes, makes such worst cases improbable.</p>
+<h2>Applications</h2>
+<p>The algorithm is particularly useful for <a href="../Plagiarism_detection">plagiarism detection</a> and for searching for many patterns at once: by hashing a whole set of patterns of equal length, a single pass through the text can flag all of them. Rolling-hash fingerprints of documents are the basis of widely used document-similarity systems such as MOSS for detecting copied code.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Knuth–Morris–Pratt_algorithm">Knuth–Morris–Pratt algorithm</a></li>
+<li><a href="../Boyer–Moore_string-search_algorithm">Boyer–Moore string-search algorithm</a></li>
+<li><a href="../Rolling_hash">Rolling hash</a></li>
+<li><a href="../Rabin_fingerprint">Rabin fingerprint</a></li>
+</ul>
+</div>
+</body>
+</html>

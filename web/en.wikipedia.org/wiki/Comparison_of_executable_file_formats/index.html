@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Comparison of executable file formats - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 24px; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; max-width: 320px; width: 100%; margin: 12px auto; border: 1px solid #c8ccd1; background: #f8f9fa; }
+table.cmp { border-collapse: collapse; font-size: 0.85em; margin: 12px 0; }
+table.cmp th, table.cmp td { border: 1px solid #a2a9b1; padding: 4px 8px; text-align: left; }
+table.cmp th { background: #eaecf0; }
+ul { line-height: 1.6; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Comparison of executable file formats</h1>
+<img class="hero" src="images/executable-formats.png" alt="Hex dump comparison placeholder of executable file headers">
+<p>This is a <b>comparison of executable file formats</b> — the binary formats used to store programs that an operating system can load and run. Formats differ in their support for features such as dynamic linking, position-independent code, debugging metadata, digital signatures, architecture-independent ("fat") binaries, and metadata resources.</p>
+<h2>Major formats</h2>
+<table class="cmp">
+<tr><th>Format</th><th>Full name</th><th>Primary platform</th><th>Fat/multi-arch</th><th>Metadata</th></tr>
+<tr><td><a href="../Executable_and_Linkable_Format/index.html">ELF</a></td><td>Executable and Linkable Format</td><td>Linux, Unix, many embedded systems</td><td>No (single arch per file)</td><td>Sections, program headers, DWARF debug info</td></tr>
+<tr><td><a href="../Portable_Executable/index.html">PE</a></td><td>Portable Executable</td><td>Windows</td><td>No</td><td>Resources, Authenticode signatures, .NET metadata in PE32</td></tr>
+<tr><td><a href="../Mach-O/index.html">Mach-O</a></td><td>Mach object file format</td><td>macOS, iOS</td><td>Yes (Universal binaries)</td><td>Load commands, code signatures</td></tr>
+<tr><td>COFF</td><td>Common Object File Format</td><td>Historic Unix; ancestor of PE</td><td>No</td><td>Symbol table</td></tr>
+<tr><td>a.out</td><td>Assembler output</td><td>Historic Unix</td><td>No</td><td>Minimal</td></tr>
+<tr><td>COM / MZ</td><td>—</td><td>DOS</td><td>No</td><td>Minimal</td></tr>
+<tr><td>WebAssembly</td><td>Wasm binary format</td><td>Web browsers, WASI runtimes</td><td>Architecture-independent by design</td><td>Custom sections, name section</td></tr>
+</table>
+<h2>Feature discussion</h2>
+<p>ELF dominates the Unix-like world and is also used for kernel images, firmware and game consoles. It organises files into sections for linking and segments for loading, and supports shared libraries, position-independent executables and rich debugging information. PE, derived from COFF, underlies Windows executables and DLLs; it embeds Win32 resources such as icons and dialogs, and supports Authenticode digital signatures. Mach-O serves Apple's platforms and, via Universal binaries, can bundle several architecture slices in one file. WebAssembly represents a portable bytecode target rather than a native object format, prioritising sandboxing and portability over direct machine code.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Executable/index.html">Executable</a></li>
+<li><a href="../Object_file/index.html">Object file</a></li>
+<li><a href="../Dynamic_linker/index.html">Dynamic linker</a></li>
+</ul>
+</div>
+</body>
+</html>

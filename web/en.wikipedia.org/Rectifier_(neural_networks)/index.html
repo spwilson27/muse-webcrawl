@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rectifier (neural networks) - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #fff; color: #202122; }
+.header { background: #f8f9fa; border-bottom: 1px solid #a2a9b1; padding: 10px 24px; font-family: sans-serif; }
+.header .logo { font-size: 22px; font-weight: bold; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #eaecf0; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; border: 1px solid #c8ccd1; background: #eaecf0; }
+.caption { font-size: 12px; color: #54595d; font-family: sans-serif; }
+.math { font-style: italic; }
+</style>
+</head>
+<body>
+<div class="header"><span class="logo">Wikipedia</span> &nbsp; The Free Encyclopedia</div>
+<div class="content">
+<h1>Rectifier (neural networks)</h1>
+<div class="hero"><img src="images/rectifier-neural-networks.png" alt="Graph of the rectified linear unit function, zero for negative inputs and linear for positive inputs"><div class="caption">The ReLU activation function: <i>f</i>(<i>x</i>) = max(0, <i>x</i>).</div></div>
+<p>In the context of <a href="../Artificial_neural_network/index.html">artificial neural networks</a>, a <b>rectifier</b> is an <a href="../Activation_function/index.html">activation function</a> defined as the positive part of its argument: <span class="math">f(x) = x⁺ = max(0, x)</span>, where <span class="math">x</span> is the input to a neuron. A unit employing this function is called a <b>rectified linear unit</b> (<b>ReLU</b>). Since its popularisation around 2010–2012, the ReLU has become the most widely used activation function in <a href="../Deep_learning/index.html">deep learning</a>, displacing the traditional sigmoid and hyperbolic tangent functions in most architectures.</p>
+<h2>Advantages</h2>
+<p>The ReLU is cheap to compute and, unlike saturating functions, does not squash large positive inputs: its derivative is exactly 1 for positive inputs, which helps gradients flow through deep networks and mitigates the <a href="../Vanishing_gradient_problem/index.html">vanishing gradient problem</a>. Networks using ReLUs often train several times faster than equivalent networks with tanh units; the 2012 <a href="../AlexNet/index.html">AlexNet</a> paper, which used ReLUs in winning the ImageNet competition, reported reaching the same training error roughly six times faster. ReLUs also produce sparse activations, since all negative inputs give exactly zero.</p>
+<h2>The dying ReLU problem and variants</h2>
+<p>A unit can "die" if its inputs are always negative, for example after a large gradient step pushes its bias too far: its gradient is then permanently zero and it never recovers. Numerous variants address this. The <b>leaky ReLU</b> allows a small slope (such as 0.01) for negative inputs; the <b>parametric ReLU</b> learns that slope; <b>ELU</b> and <b>SELU</b> use exponential curves below zero; and the <b>GELU</b> and <b>SiLU (Swish)</b> functions provide smooth approximations that have become common in transformer models. The name "rectifier" is borrowed from electrical engineering, by analogy with the half-wave <a href="../Rectifier/index.html">rectifier</a> circuit that passes only the positive half of a signal.</p>
+<h2>History</h2>
+<p>Rectified linear units appeared in early work on neural modelling, including Kunihiko Fukushima's neocognitron (1969) and restricted Boltzmann machine training by Geoffrey Hinton and colleagues. Vinod Nair and Hinton's 2010 paper on rectified linear units in Boltzmann machines, and Xavier Glorot, Antoine Bordes and Yoshua Bengio's 2011 study of deep sparse rectifier networks, established their effectiveness for supervised deep learning shortly before the AlexNet breakthrough.</p>
+<p><i>See also:</i> <a href="../Activation_function/index.html">Activation function</a>, <a href="../Softmax_function/index.html">Softmax function</a>, <a href="../Vanishing_gradient_problem/index.html">Vanishing gradient problem</a></p>
+</div>
+</body>
+</html>

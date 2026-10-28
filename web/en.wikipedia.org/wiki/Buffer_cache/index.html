@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Buffer cache - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;color:#202122;background:#fff}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:12px 24px}
+header .site{font-family:sans-serif;font-size:13px;color:#54595d}
+h1{font-size:28px;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+main{max-width:960px;margin:0 auto;padding:16px 24px;line-height:1.6}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+figure{float:right;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#f8f9fa;padding:6px;max-width:280px}
+figure img{width:100%;height:auto;display:block}
+figcaption{font-size:12px;font-family:sans-serif;color:#54595d;padding-top:4px}
+footer{border-top:1px solid #a2a9b1;margin-top:24px;padding:12px 24px;font-size:12px;color:#54595d;font-family:sans-serif}
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia, the free encyclopedia</span></header>
+<main>
+<h1>Buffer cache</h1>
+<figure><img src="images/buffer-cache.png" alt="Diagram of an operating system kernel buffering disk blocks in main memory"><figcaption>The buffer cache sits between file systems and block devices in the kernel.</figcaption></figure>
+<p>In computing, a <b>buffer cache</b> is a region of main memory used by an operating system kernel to cache blocks read from, or written to, block devices such as hard disks and solid-state drives. By keeping copies of recently used disk blocks in RAM, the kernel can satisfy subsequent reads without accessing the comparatively slow device, and can batch and reorder writes.</p>
+<h2>Operation</h2>
+<p>When a process requests data from a file, the kernel first searches the buffer cache. On a hit, the data is copied directly from memory; on a miss, a free buffer is allocated (evicting the least recently used buffer if necessary), the block is read from the device, and the data is both delivered to the caller and retained in the cache. Writes may be handled write-through, appearing on the device immediately, or write-back (delayed), in which modified ("dirty") buffers are flushed to the device later by a daemon or on demand, for example through the <i>sync</i> system call or at unmount.</p>
+<h2>History</h2>
+<p>The buffer cache was a central structure of early Unix kernels, which maintained a fixed pool of buffer headers organised in hash queues and a free list, protected by sleep/wakeup synchronisation. Classic Unix used the <i>update</i> daemon to flush dirty buffers every 30 seconds. Later systems integrated the buffer cache with the virtual memory system into a unified page cache, as in SunOS, SVR4 and modern <a href="../Linux_kernel/index.html">Linux</a>, so that file data and memory-mapped pages share the same cache pages. Monitoring tools such as <i>free</i> and <i>top</i> report memory held in buffers and cache separately from memory used by applications, since cache memory can be reclaimed under pressure.</p>
+<h2>See also</h2>
+<p><a href="../Page_cache/index.html">Page cache</a>, <a href="../Cache_(computing)/index.html">Cache (computing)</a>, <a href="../Disk_buffer/index.html">Disk buffer</a>, <a href="../Virtual_memory/index.html">Virtual memory</a>.</p>
+</main>
+<footer>From Wikipedia, the free encyclopedia. This page was recreated from memory for the muse-webcrawl project.</footer>
+</body>
+</html>

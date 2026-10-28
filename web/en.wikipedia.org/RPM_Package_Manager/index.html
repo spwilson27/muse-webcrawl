@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RPM Package Manager - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; }
+.mw-body { margin: 0 auto; max-width: 960px; padding: 1.2em 1.5em 3em; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0.5em 0 1em 1.5em; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; width: 260px; font-size: 0.85em; }
+.thumb img { width: 100%; height: 160px; background: #eaecf0; display: block; }
+code { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0 3px; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>RPM Package Manager</h1>
+<div class="thumb"><img src="images/rpm-package-manager.png" alt="Terminal window showing the rpm command listing installed software packages"><div>The <code>rpm</code> command-line tool managing packages on an RPM-based Linux system.</div></div>
+<p>The <b>RPM Package Manager</b> (<b>RPM</b>; originally <b>Red Hat Package Manager</b>) is a powerful command-line package management system capable of installing, uninstalling, verifying, querying, and updating computer software packages. Each software package consists of an archive of files along with information about the package like its version, a description, and a list of dependencies.</p>
+<p>RPM was created in 1995 by Erik Troan, Marc Ewing and the <a href="../Red_Hat">Red Hat</a> community for use in <a href="../Red_Hat_Linux">Red Hat Linux</a>. It is now the package management system used by the <a href="../Linux_Standard_Base">Linux Standard Base</a> and by distributions including <a href="../Fedora_Linux">Fedora</a>, <a href="../Red_Hat_Enterprise_Linux">Red Hat Enterprise Linux</a>, <a href="../CentOS">CentOS</a>, <a href="../SUSE_Linux">SUSE Linux</a> and <a href="../OpenSUSE">openSUSE</a>.</p>
+<h2>Features</h2>
+<p>For a system administrator performing software installation, using package managers rather than building from source provides several advantages: packages are easy to install, upgrade and remove; file conflicts and dependencies can be tracked in a central database; and packages can be cryptographically verified using <a href="../GNU_Privacy_Guard">GnuPG</a> signatures. RPM files carry the <code>.rpm</code> extension and consist of a header containing metadata and a compressed archive of files, nowadays typically compressed with <a href="../Xz">xz</a> or <a href="../Zstandard">zstd</a>.</p>
+<h2>Front ends</h2>
+<p>While <code>rpm</code> itself resolves no dependencies automatically, higher-level tools have been built on top of it. <a href="../Yum">YUM</a> and its successor <a href="../DNF_(software)">DNF</a> manage software repositories and dependency resolution on Fedora- and RHEL-based systems, while <a href="../ZYpp">ZYpp</a> (with its <code>zypper</code> front end) performs the same role on SUSE systems. Graphical front ends such as GNOME Software use these libraries through PackageKit.</p>
+<h2>Package building</h2>
+<p>Packages are built from a human-readable recipe called a <i>spec file</i>, which describes how source code is compiled, which files are installed, and what scripts run at install and removal time. The <code>rpmbuild</code> tool turns a spec file plus sources into binary and source RPMs (SRPMs). Build environments such as <code>mock</code> are used to produce packages in clean chroots.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Dpkg">dpkg</a></li>
+<li><a href="../Package_manager">Package manager</a></li>
+<li><a href="../Linux_distribution">Linux distribution</a></li>
+</ul>
+</div>
+</body>
+</html>

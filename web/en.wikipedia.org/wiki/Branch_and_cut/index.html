@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Branch and cut - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 48px; }
+h1 { font-family: "Linux Libertine", Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; }
+h2 { font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+img.hero { float: right; margin: 0 0 16px 20px; max-width: 280px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 6px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.small { font-size: 92%; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Branch and cut</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+
+<img class="hero" src="images/Branch_and_cut.png" alt="Branch-and-cut search tree with cutting planes tightening a linear programming relaxation">
+<p><b>Branch and cut</b> is a method of combinatorial optimization for solving <a href="../Integer_programming/index.html">integer linear programs</a> (ILPs): linear programming (LP) problems in which some or all the unknowns are restricted to integer values. It is a hybrid of <a href="../Branch_and_bound/index.html">branch and bound</a> and the <a href="../Cutting-plane_method/index.html">cutting plane method</a>, and is the core algorithm implemented in most modern commercial and open-source mixed-integer programming (MIP) solvers.</p>
+
+<h2>Method</h2>
+<p>The algorithm first solves the LP relaxation of the problem — the same problem with the integer constraints removed. If the optimal solution happens to be integral, it is optimal for the ILP. Otherwise, the solver attempts to tighten the relaxation by generating <b>cutting planes</b>: linear inequalities that are satisfied by all integer-feasible solutions but violated by the current fractional LP optimum, thereby "cutting off" part of the relaxed feasible region without excluding any integer point. Classes of cuts include Gomory cuts and problem-specific families such as the subtour elimination constraints used for the <a href="../Travelling_salesman_problem/index.html">travelling salesman problem</a>.</p>
+
+<p>If cuts fail to produce an integral solution, the algorithm <b>branches</b>: it selects a variable with a fractional value and creates two subproblems, one with the variable rounded down and one with it rounded up, forming a search tree. Cutting planes may be generated at every node of the tree, and nodes are pruned when their LP bound is worse than the best integer solution found so far. Pre-solving, heuristics for finding good integer solutions, and careful cut selection are essential to practical performance.</p>
+
+<h2>History</h2>
+<p>The method grew out of the cutting-plane algorithm of Ralph Gomory (1958) and the branch-and-bound procedure of Land and Doig (1960). The integrated "branch-and-cut" framework was developed and named in the 1980s, notably through the work of Manfred Padberg and Giovanni Rinaldi on large-scale travelling salesman problems, and it became the basis of state-of-the-art MIP solvers such as CPLEX and Gurobi.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Branch_and_bound/index.html">Branch and bound</a></li>
+<li><a href="../Branch_and_price/index.html">Branch and price</a></li>
+<li><a href="../Cutting-plane_method/index.html">Cutting-plane method</a></li>
+<li><a href="../Integer_programming/index.html">Integer programming</a></li>
+</ul>
+
+<p class="small">Categories: Optimization algorithms and methods | Combinatorial optimization</p>
+</div>
+</body>
+</html>

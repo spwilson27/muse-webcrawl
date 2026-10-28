@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Semi-supervised learning - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 900px; line-height: 1.6; color: #202122; background: #fff; }
+h1 { font-family: serif; border-bottom: 1px solid #a7d7f9; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+img.hero { max-width: 300px; float: right; margin: 0 0 1em 1em; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Semi-supervised learning</h1>
+<img class="hero" src="images/semi-supervised-learning.png" alt="Diagram of labeled and unlabeled data used together in training">
+<p><b>Semi-supervised learning</b> is an approach to <a href="../../Machine_learning/index.html">machine learning</a> that combines a small amount of labeled data with a large amount of unlabeled data during training. Specialized algorithms are used in this process. Semi-supervised learning falls between <a href="../../Unsupervised_learning/index.html">unsupervised learning</a> (with no labeled training data) and <a href="../../Supervised_learning/index.html">supervised learning</a> (with only labeled training data).</p>
+<p>It is a special instance of <a href="../../Weak_supervision/index.html">weak supervision</a> with the idea that unlabeled data, when used in conjunction with a small amount of labeled data, can produce a considerable improvement in learning accuracy. The acquisition of labeled data for a learning problem often requires a skilled human agent (e.g., to transcribe an audio segment) or a physical experiment (e.g., determining the 3D structure of a protein). The cost associated with the labeling process may render large, fully labeled training sets infeasible, whereas acquisition of unlabeled data is relatively inexpensive.</p>
+<h2>Assumptions</h2>
+<p>Semi-supervised methods rely on assumptions linking the distribution of inputs to the classification task: the <i>smoothness assumption</i> (nearby points tend to share labels), the <i>cluster assumption</i> (points in the same cluster are more likely to share a label, implying decision boundaries lie in low-density regions), and the <i>manifold assumption</i> (data lie on a low-dimensional manifold). If these assumptions are violated, unlabeled data can actually degrade performance.</p>
+<h2>Approaches</h2>
+<ul>
+<li><b>Self-training:</b> a classifier is trained on labeled data and used to label the unlabeled data; its most confident predictions are added to the training set.</li>
+<li><b>Co-training:</b> two classifiers trained on different views of the data teach each other.</li>
+<li><b>Generative models:</b> mixture models fitted by the <a href="../../Expectation–maximization_algorithm/index.html">EM algorithm</a> using both labeled and unlabeled examples.</li>
+<li><b>Graph-based methods:</b> labels propagate over a similarity graph built from all data points.</li>
+<li><b>Semi-supervised support vector machines</b> (transductive SVMs), which seek a decision boundary through low-density regions.</li>
+</ul>
+<h2>Applications</h2>
+<p>Applications include text classification, speech recognition, image classification, and bioinformatics, where unlabeled examples (e.g., web pages or protein sequences) are abundant but labels are scarce.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../Supervised_learning/index.html">Supervised learning</a></li>
+<li><a href="../../Active_learning_(machine_learning)/index.html">Active learning</a></li>
+<li><a href="../../Transduction_(machine_learning)/index.html">Transduction</a></li>
+</ul>
+</body>
+</html>

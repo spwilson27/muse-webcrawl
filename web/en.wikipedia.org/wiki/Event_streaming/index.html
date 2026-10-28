@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Event streaming - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f6f6f6;color:#202122}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;margin-top:28px}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:12px;margin:0 0 16px 16px;font-size:90%}
+.infobox th{text-align:left;background:#eaf3ff;padding:4px}
+.infobox td{padding:4px}
+a{color:#36c}
+.hero{display:block;max-width:320px;margin:12px 0;border:1px solid #a2a9b1}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Event streaming</h1>
+<img class="hero" src="images/event-streaming.png" alt="Event streaming diagram placeholder">
+<table class="infobox">
+<tr><th colspan="2">Event streaming</th></tr>
+<tr><td><b>Field</b></td><td>Distributed systems, data engineering</td></tr>
+<tr><td><b>Key technologies</b></td><td>Apache Kafka, Apache Flink, Apache Spark Streaming, ksqlDB</td></tr>
+<tr><td><b>Related concepts</b></td><td>Publish–subscribe, event sourcing, stream processing</td></tr>
+</table>
+<p><b>Event streaming</b> is the practice of capturing data in real time from event sources — such as databases, sensors, mobile devices, and applications — in the form of streams of events, storing those streams durably for later retrieval, and processing and reacting to them as they occur. An event is a record of something that happened, typically containing a key, a value, and a timestamp. Event streaming platforms combine messaging, storage, and stream processing in a single system, in contrast to traditional message queues, which deliver messages to consumers and then discard them.</p>
+<h2>Architecture</h2>
+<p>In an event streaming architecture, <i>producers</i> publish events to named streams (called topics in <a href="../Apache_Kafka/index.html">Apache Kafka</a>), which are stored as ordered, immutable, append-only logs, partitioned for scalability. <i>Consumers</i> read events at their own pace and can replay them from any point in the log. Stream processing frameworks allow continuous computation over the streams — filtering, aggregation, joins, and windowing — to produce derived streams and materialised views.</p>
+<h2>Use cases</h2>
+<p>Common use cases include real-time analytics and monitoring, fraud detection, log aggregation, change data capture from databases, decoupling microservices through event-driven communication, and feeding data pipelines and machine-learning systems with fresh data.</p>
+<h2>History</h2>
+<p>The approach was popularised by Apache Kafka, developed at LinkedIn and open-sourced in 2011, which reframed the commit log as a unifying abstraction for data integration. The associated design philosophy — sometimes called "the log" or streaming-first architecture — influenced a generation of tools, and the related pattern of event sourcing stores the state of a system as a sequence of events.</p>
+</div>
+</body>
+</html>

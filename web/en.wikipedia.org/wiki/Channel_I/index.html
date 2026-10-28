@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Channel I/O - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+img.hero { display: block; max-width: 320px; margin: 12px auto; border: 1px solid #a2a9b1; padding: 4px; background: #f8f9fa; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.caption { text-align: center; font-size: 13px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Channel I/O</h1>
+<img class="hero" src="images/Channel_I.png" alt="Diagram of IBM channel I/O architecture">
+<p class="caption">Channel I/O offloads data transfer work from the CPU</p>
+<p><b>Channel I/O</b> is a generic term for a high-performance input/output (I/O) architecture used on mainframe computers, most famously in IBM's System/360 and its successors. Instead of requiring the central processing unit to manage every transfer, channel I/O delegates I/O operations to specialized processors called channels (or channel subsystems).</p>
+<h2>Operation</h2>
+<p>The CPU issues a single Start I/O instruction pointing to a program of channel command words (CCWs) stored in memory. The channel then executes this program autonomously&mdash;transferring data between memory and peripheral devices, chaining commands, and handling device-specific details&mdash;and interrupts the CPU only when the whole operation completes or an error occurs.</p>
+<h2>Advantages</h2>
+<p>By freeing the CPU from byte-by-byte supervision of slow peripheral devices, channel I/O lets the processor spend its time on computation while many transfers proceed concurrently. The design strongly influenced later bus-mastering and direct memory access schemes.</p>
+<h2>See also</h2>
+<p><a href="Input/Direct_memory_access/index.html">Direct memory access</a> &middot; <a href="Input/FICON/index.html">FICON</a> &middot; <a href="Input/IBM_System/360/index.html">IBM System/360</a> &middot; <a href="Input/IBM_Z/index.html">IBM Z</a></p>
+</div>
+</body>
+</html>

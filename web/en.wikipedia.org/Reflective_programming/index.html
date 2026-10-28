@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Reflective programming - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; color: #202122; background: #fff; }
+#content { max-width: 960px; margin: 0 auto; padding: 24px; }
+h1 { font-size: 28px; font-weight: normal; border-bottom: 1px solid #a7d7f9; padding-bottom: 4px; }
+h2 { font-size: 21px; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; }
+p { font-family: sans-serif; font-size: 14px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 12px 0; }
+.hero img { max-width: 100%; border: 1px solid #a2a9b1; }
+.caption { font-size: 12px; color: #54595d; font-family: sans-serif; }
+code { font-family: monospace; font-size: 13px; background: #f8f9fa; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Reflective programming</h1>
+<div class="hero">
+<img src="images/reflection-programming.png" alt="A program inspecting its own class structure at runtime">
+<p class="caption">Reflection lets a program examine and modify its own structure and behaviour at runtime.</p>
+</div>
+<p>In computer science, <b>reflective programming</b> or <b>reflection</b> is the ability of a process to examine, introspect, and modify its own structure and behaviour. Programs written in languages supporting reflection can treat code as data: they can enumerate the methods and fields of a class, construct objects from a class name supplied at runtime, invoke methods by name, and sometimes generate new code dynamically. Reflection is a cornerstone of <a href="../Metaprogramming">metaprogramming</a>.</p>
+<h2>Types</h2>
+<p><b>Introspection</b> is the ability of a program to observe its own structure — for example, asking an object for its class or listing an object's methods. <b>Intercession</b> goes further, letting the program alter that structure, such as adding methods or changing behaviour at runtime. Languages differ widely in how much reflection they permit: Smalltalk and Lisp expose nearly everything, Java and C# provide rich reflection APIs over class metadata, Python exposes objects' attributes through functions such as <code>getattr</code> and modules such as <code>inspect</code>, while C++ offers only limited runtime type information, supplemented by compile-time template metaprogramming.</p>
+<h2>Uses</h2>
+<p>Reflection powers frameworks that must work with user code generically: object-relational mappers that map database tables to classes, dependency-injection containers, serialisation libraries, unit-testing frameworks that discover test methods by naming conventions, remote-procedure-call systems, and plug-in architectures that load classes named in configuration files. It is also used in debugging and development tools, mock objects, and aspect-oriented programming.</p>
+<h2>Trade-offs</h2>
+<p>Reflection generally costs performance — reflective calls bypass static type checking and many optimisations — and can undermine encapsulation and security, since private members can be accessed or altered where the runtime permits it. Reflective code can also be harder to analyse, refactor and verify than statically resolved code, so most style guidance recommends using it sparingly and mainly in framework code.</p>
+<h2>See also</h2>
+<p><a href="../Metaprogramming">Metaprogramming</a> · <a href="../Introspection_(computer_science)">Introspection</a> · <a href="../Runtime_system">Runtime system</a> · <a href="../Dynamic_programming_language">Dynamic programming language</a></p>
+</div>
+</body>
+</html>

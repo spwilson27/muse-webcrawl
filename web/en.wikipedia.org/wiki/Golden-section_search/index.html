@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Golden-section search - Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; max-width: 960px; margin: 0 auto; padding: 1em 2em; color: #202122; line-height: 1.6; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.6em; margin: 0 0 1em 1em; width: 250px; font-size: 0.88em; font-family: sans-serif; }
+.infobox th { text-align: left; }
+.hero { display: block; margin: 1em auto; max-width: 420px; border: 1px solid #c8ccd1; background: #eef; padding: 2em 1em; text-align: center; color: #555; }
+.small { font-size: 0.85em; color: #54595d; }
+.math { font-style: italic; }
+</style>
+</head>
+<body>
+<h1>Golden-section search</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/golden-section-search.png" alt="Diagram showing the golden-section search narrowing an interval">
+<p>The <b>golden-section search</b> is a technique for finding an extremum (minimum or maximum) of a strictly unimodal function by successively narrowing the range of values inside which the extremum is known to exist. The method owes its name to the fact that the algorithm maintains the function values for triples of points whose distances form a <a href="../Golden_ratio/index.html">golden ratio</a>. The technique derives from the Fibonacci search technique of Kiefer (1953), and it is closely related to the <a href="../Ternary_search/index.html">ternary search</a>.</p>
+<h2>Description</h2>
+<p>Let <span class="math">f</span> be a unimodal function on an interval <span class="math">[a, b]</span>. Two interior points are chosen so that the interval is divided in the golden ratio φ = (1 + √5)/2 ≈ 1.618. Depending on which interior point gives the better function value, one end of the interval is discarded, and the surviving interior point is reused — so each iteration after the first costs only one new function evaluation. The interval shrinks by a constant factor of about 0.618 per iteration, giving linear convergence.</p>
+<h2>Algorithm</h2>
+<p>With φ satisfying 1/φ = φ − 1 ≈ 0.618, the interior points are placed at <span class="math">c = b − (b − a)/φ</span> and <span class="math">d = a + (b − a)/φ</span>. To find a minimum, if <span class="math">f(c) &lt; f(d)</span> the new interval is <span class="math">[a, d]</span>, otherwise it is <span class="math">[c, b]</span>. The iteration continues until the interval is smaller than a prescribed tolerance.</p>
+<h2>Related methods</h2>
+<p>The golden-section search is essentially the limit of the Fibonacci search as the number of iterations grows, and it shares its worst-case efficiency. For smooth functions, methods using derivative information, such as parabolic interpolation and Brent's method, generally converge faster.</p>
+</body>
+</html>

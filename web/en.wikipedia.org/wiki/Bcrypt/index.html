@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>bcrypt - Wikipedia</title>
+<style>body{font-family:sans-serif;line-height:1.6;max-width:800px;margin:0 auto;padding:1em;color:#202122}h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #a2a9b1}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.5em;margin:0 0 1em 1em;font-size:90%;width:260px}.infobox th{background:#c3d6ef;text-align:center;padding:.3em}img{max-width:100%}</style>
+</head><body>
+<h1>bcrypt</h1>
+<table class="infobox"><tr><th colspan="2">bcrypt</th></tr>
+<tr><td><b>Designers</b></td><td>Niels Provos, David Mazières</td></tr>
+<tr><td><b>Published</b></td><td>1999</td></tr>
+<tr><td><b>Derived from</b></td><td>Blowfish cipher</td></tr>
+<tr><td><b>Key features</b></td><td>Salt, adaptive cost factor</td></tr></table>
+<img src="images/bcrypt.png" alt="Diagram of the bcrypt password hashing process">
+<p><b>bcrypt</b> is a password-hashing function designed by Niels Provos and David Mazières, based on the Blowfish cipher, and presented at the USENIX Annual Technical Conference in 1999. Besides incorporating a salt to protect against rainbow table attacks, bcrypt is an adaptive function: over time, the iteration count can be increased to make it slower, so it remains resistant to brute-force search attacks even with increasing computation power.</p>
+<h2>Algorithm</h2>
+<p>bcrypt uses the EksBlowfish key setup, an expensive variant of the Blowfish key schedule that takes both a 128-bit salt and the password as inputs. The configured cost parameter determines how many iterations of the key expansion are performed (2 raised to the cost power). After the key schedule, the algorithm encrypts the 24-byte text "OrpheanBeholderScryDoubt" 64 times to produce the hash output. The standard output string encodes the cost, the salt and the hash in a custom base-64 alphabet in the form <code>$2b$10$...</code>, where the version identifier has evolved through $2a$, $2x$ and $2y$ variants.</p>
+<h2>Usage and limitations</h2>
+<p>bcrypt became the default password hash in OpenBSD and is widely available in libraries for most programming languages. It only uses the first 72 bytes of a password, a limitation that has led to workarounds and to the development of successor functions. Newer password hashing schemes such as scrypt and Argon2 were designed to be memory-hard as well as computationally expensive, offering greater resistance to GPU and ASIC attacks; nevertheless bcrypt remains widely deployed and accepted for password storage.</p>
+<p>See also: <a href="../Blowfish_(cipher)/index.html">Blowfish (cipher)</a>, <a href="../Password_hashing/index.html">Password hashing</a>, <a href="../Argon2/index.html">Argon2</a>, <a href="../Scrypt/index.html">scrypt</a>, <a href="../Key_stretching/index.html">Key stretching</a>.</p>
+</body></html>

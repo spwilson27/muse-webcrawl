@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Secure Real-time Transport Protocol - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;padding:0;background:#fff;color:#202122}
+.wrap{max-width:960px;margin:0 auto;padding:20px 30px}
+h1{font-family:sans-serif;font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:5px}
+h2{font-family:sans-serif;font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:16px auto;max-width:480px}
+.caption{text-align:center;font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Secure Real-time Transport Protocol</h1>
+<img class="hero" src="images/secure-real-time-transport-protocol.png" alt="Diagram of an SRTP packet showing the encrypted payload and authentication tag">
+<p class="caption">SRTP encrypts the RTP payload and appends an authentication tag, protecting voice and video streams in transit.</p>
+<p>The <b>Secure Real-time Transport Protocol</b> (<b>SRTP</b>) is a profile of the <a href="../../Real-time_Transport_Protocol/index.html">Real-time Transport Protocol</a> (RTP) intended to provide encryption, message authentication and integrity, and replay protection for RTP traffic in both unicast and multicast applications. It was published by the IETF in March 2004 as RFC 3711. A companion protocol, Secure RTCP (SRTCP), applies the same protections to the <a href="../../RTP_Control_Protocol/index.html">RTP Control Protocol</a>.</p>
+<h2>Features</h2>
+<p>SRTP provides confidentiality by encrypting the RTP payload, historically with the Advanced Encryption Standard in counter mode or Segmented Integer Counter Mode, and in later profiles with AES in Galois/Counter Mode, which combines encryption and authentication. Integrity and authentication are provided by an HMAC-SHA1 authentication tag when a non-AEAD cipher is used. Replay protection uses a sliding window over packet sequence numbers. Only the payload is encrypted; the RTP header remains readable so that header compression and network monitoring can still function.</p>
+<h2>Key management</h2>
+<p>SRTP itself does not define how session keys are exchanged. Common key-management schemes include SDES (Security Descriptions, carried in SDP), DTLS-SRTP, in which keys are negotiated by a <a href="../../Datagram_Transport_Layer_Security/index.html">DTLS</a> handshake, and ZRTP, developed by Phil Zimmermann, which negotiates keys in the media path itself. DTLS-SRTP is the mandatory approach in <a href="../../WebRTC/index.html">WebRTC</a>, where SRTP support is required in all implementations.</p>
+<h2>Applications</h2>
+<p>SRTP is widely used to secure <a href="../../Voice_over_IP/index.html">Voice over IP</a> calls, videoconferencing systems, and browser-based real-time communication. Because it adds only a small per-packet overhead, typically a few bytes for the authentication tag, it is well suited to latency-sensitive media.</p>
+<h2>See also</h2>
+<p><a href="../../ZRTP/index.html">ZRTP</a> · <a href="../../Transport_Layer_Security/index.html">Transport Layer Security</a> · <a href="../../Session_Initiation_Protocol/index.html">Session Initiation Protocol</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Routing protocol - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;color:#202122;background:#fff}
+.mw-body{max-width:960px;margin:0 auto;padding:20px 24px;line-height:1.6}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+table.wikitable{border-collapse:collapse;margin:12px 0}
+table.wikitable td,table.wikitable th{border:1px solid #a2a9b1;padding:5px 10px}
+table.wikitable th{background:#eaecf0}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;text-align:center;font-size:88%;color:#54595d;max-width:340px}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Routing protocol</h1>
+<div class="thumb"><img src="images/routing-protocol.png" alt="Routers exchanging routing protocol messages to build a shared map of network topology"><br>Routing protocols let routers share reachability information</div>
+<p>A <b>routing protocol</b> specifies how <a href="../Router_(computing)/index.html">routers</a> communicate with each other to distribute information that allows them to select routes between nodes on a computer network. Each router starts with knowledge only of its directly attached networks; routing protocols spread that knowledge so every router can build a <a href="../Routing_table/index.html">routing table</a> describing the topology and the best next hop toward each destination.</p>
+<h2>Classification</h2>
+<h3>Interior and exterior protocols</h3>
+<p>An <b>interior gateway protocol</b> (IGP) operates within a single <a href="../Autonomous_system_(Internet)/index.html">autonomous system</a>, such as a corporate network or an ISP's backbone. An <b>exterior gateway protocol</b> (EGP) operates between autonomous systems; the only EGP in wide use on the Internet is the <a href="../Border_Gateway_Protocol/index.html">Border Gateway Protocol</a> (BGP).</p>
+<h3>Distance-vector protocols</h3>
+<p>Distance-vector protocols compute routes from information supplied by neighbours: each router knows the <i>distance</i> (metric) and <i>vector</i> (direction) to destinations but nothing about the complete path. Examples include the <a href="../Routing_Information_Protocol/index.html">Routing Information Protocol</a> (RIP) and Cisco's <a href="../Enhanced_Interior_Gateway_Routing_Protocol/index.html">EIGRP</a>. They are simple but can converge slowly and are prone to routing loops, mitigated by techniques such as split horizon and poison reverse.</p>
+<h3>Link-state protocols</h3>
+<p>Link-state protocols flood descriptions of each router's local links throughout the network, so every router holds an identical map of the topology and independently runs <a href="../Dijkstra%27s_algorithm/index.html">Dijkstra's algorithm</a> to build a shortest-path tree. The principal examples are <a href="../Open_Shortest_Path_First/index.html">OSPF</a> and <a href="../IS-IS/index.html">IS-IS</a>. They converge faster and scale better than distance-vector protocols but demand more memory and processing.</p>
+<h3>Path-vector protocols</h3>
+<p>Path-vector protocols, of which BGP is the archetype, advertise the full sequence of autonomous systems along each route, enabling loop detection and extensive policy control over which routes are accepted and propagated.</p>
+<h2>Metrics and administrative distance</h2>
+<p>Protocols quantify path quality with metrics such as hop count, bandwidth, delay, reliability and cost. Where a router learns the same destination from several protocols, <b>administrative distance</b> decides which source is trusted most.</p>
+<table class="wikitable">
+<tr><th>Protocol</th><th>Type</th><th>Algorithm</th></tr>
+<tr><td>RIP</td><td>IGP</td><td>Distance-vector</td></tr>
+<tr><td>OSPF</td><td>IGP</td><td>Link-state</td></tr>
+<tr><td>IS-IS</td><td>IGP</td><td>Link-state</td></tr>
+<tr><td>EIGRP</td><td>IGP</td><td>Advanced distance-vector</td></tr>
+<tr><td>BGP</td><td>EGP</td><td>Path-vector</td></tr>
+</table>
+<h2>See also</h2>
+<ul>
+<li><a href="../Routing/index.html">Routing</a></li>
+<li><a href="../Routing_table/index.html">Routing table</a></li>
+<li><a href="../Convergence_(routing)/index.html">Convergence (routing)</a></li>
+</ul>
+<p><i>Categories: Routing protocols; Computer networking</i></p>
+</div>
+</body>
+</html>

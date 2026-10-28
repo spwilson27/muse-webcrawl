@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Count–min sketch - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.4em; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 100%; border: 1px solid #c8ccd1; background: #eaecf0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Count–min sketch</h1>
+<div class="hero"><img src="images/count-min-sketch.png" alt="Diagram of a count-min sketch table with hash functions">[Image placeholder: count-min sketch structure]</div>
+<p>The <b>count–min sketch</b> is a probabilistic data structure, introduced by Graham Cormode and S. Muthukrishnan in 2003–2005, that serves as a frequency table of events in a stream of data. It uses sub-linear space to estimate the frequency of individual items, trading a small, one-sided overestimation error for very large savings in memory compared with an exact counter array.</p>
+<p>The structure is a two-dimensional array of counters of width w and depth d, together with d independent hash functions. To record an occurrence of an item, the item is hashed once by each function and the corresponding counter in each row is incremented. To estimate an item's frequency, the minimum of its d counters is returned — hence the name. Hash collisions can only inflate counters, so the estimate never underestimates the true count, and with w ≈ e/ε and d ≈ ln(1/δ) the estimate exceeds the true frequency by more than ε times the total stream length with probability at most δ.</p>
+<h2>Applications</h2>
+<p>Count–min sketches are used for finding heavy hitters in data streams, approximate query processing in databases, network traffic measurement, natural language processing (for approximate word-frequency counts), and in systems such as Redis and Apache Spark, which provide sketch implementations for high-volume counting tasks.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Bloom_filter/index.html">Bloom filter</a></li>
+<li><a href="../Count_sketch/index.html">Count sketch</a></li>
+<li><a href="../HyperLogLog/index.html">HyperLogLog</a></li>
+<li><a href="../Streaming_algorithm/index.html">Streaming algorithm</a></li>
+</ul>
+</div>
+</body>
+</html>

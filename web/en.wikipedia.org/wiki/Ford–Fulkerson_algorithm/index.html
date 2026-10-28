@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ford–Fulkerson algorithm - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:1em 2em 3em}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.5em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em;margin:0 0 1em 1em;font-size:90%;width:270px}
+.infobox th{background:#cedff2;text-align:center;padding:0.3em}
+.infobox td{padding:0.2em 0.4em;vertical-align:top}
+.small{font-size:90%;color:#54595d}
+code{background:#f8f9fa;border:1px solid #eaecf0;padding:0 2px}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:0.6em;overflow:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Ford–Fulkerson algorithm</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Ford–Fulkerson algorithm</th></tr>
+<tr><td><b>Named after</b></td><td>L. R. Ford Jr. and D. R. Fulkerson</td></tr>
+<tr><td><b>Published</b></td><td>1956</td></tr>
+<tr><td><b>Problem</b></td><td>Maximum flow in a flow network</td></tr>
+<tr><td><b>Class</b></td><td>Greedy / augmenting-path method</td></tr>
+</table>
+</div>
+<p>The <b>Ford–Fulkerson algorithm</b> is a greedy algorithm that computes the maximum flow in a flow network. It was published in 1956 by L. R. Ford Jr. and D. R. Fulkerson. The algorithm works by repeatedly finding an <i>augmenting path</i> from source to sink in the residual graph and pushing as much additional flow along it as possible, until no such path remains.</p>
+<h2>Algorithm</h2>
+<p>Given a network with capacities, maintain a residual graph in which each edge records the remaining capacity, together with reverse edges representing flow that can be cancelled. While there exists a path from the source <i>s</i> to the sink <i>t</i> in the residual graph, find the bottleneck (minimum residual capacity) along the path and augment the flow by that amount. When no augmenting path exists, the flow is maximal; this follows from the <a href="../Max-flow_min-cut_theorem/index.html">max-flow min-cut theorem</a>, which Ford and Fulkerson's work established.</p>
+<pre>
+flow = 0
+while there is an s–t path P in the residual graph:
+    b = minimum residual capacity on P
+    send b units of flow along P
+    flow = flow + b
+return flow
+</pre>
+<h2>Complexity</h2>
+<p>If capacities are integers, each augmentation increases the flow by at least one unit, so the running time is O(E · f), where E is the number of edges and f the value of the maximum flow — a pseudo-polynomial bound. With irrational capacities the naive method may fail to terminate. Choosing augmenting paths by breadth-first search (fewest edges) gives the <a href="../Edmonds–Karp_algorithm/index.html">Edmonds–Karp algorithm</a>, which runs in O(VE²); choosing the shortest path in terms of residual capacity gives Dinic's algorithm, which is faster still.</p>
+<h2>Applications</h2>
+<p>Beyond transport and network-flow problems, the method underlies solutions to bipartite matching, circulation and assignment problems, image segmentation in computer vision, and the analysis of connectivity in networks.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Maximum_flow_problem/index.html">Maximum flow problem</a></li>
+<li><a href="../Max-flow_min-cut_theorem/index.html">Max-flow min-cut theorem</a></li>
+<li><a href="../Edmonds–Karp_algorithm/index.html">Edmonds–Karp algorithm</a></li>
+<li><a href="../Dinic's_algorithm/index.html">Dinic's algorithm</a></li>
+</ul>
+</div>
+</body>
+</html>

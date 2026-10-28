@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Self-signed certificate - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 900px; line-height: 1.6; color: #202122; background: #fff; }
+h1 { font-family: serif; border-bottom: 1px solid #a7d7f9; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+img.hero { max-width: 300px; float: right; margin: 0 0 1em 1em; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Self-signed certificate</h1>
+<img class="hero" src="images/self-signed-certificate.png" alt="Browser warning about a self-signed certificate">
+<p>In <a href="../../Cryptography/index.html">cryptography</a> and computer security, <b>self-signed certificates</b> are <a href="../../Public_key_certificate/index.html">public key certificates</a> that are not issued by a <a href="../../Certificate_authority/index.html">certificate authority</a> (CA). These self-signed certificates are easy to make and do not cost money. However, they do not provide any trust value.</p>
+<p>For instance, if a website owner uses a self-signed certificate to provide <a href="../../HTTPS/index.html">HTTPS</a> services, people who visit that website cannot be certain that they are connected to their intended destination. For all they know, a malicious third-party could be redirecting the connection using another self-signed certificate bearing the same holder name. The connection is encrypted, but does not lead to its intended recipient. In comparison, a certificate signed by a trusted CA prevents this attack.</p>
+<h2>Security issues</h2>
+<p>In a CA-based <a href="../../Public_key_infrastructure/index.html">PKI</a> system, the CA must be trusted by both parties. This is usually accomplished by placing the CA's root certificate in a <i>trust store</i> of pre-configured, trustworthy certificates. A self-signed certificate, by contrast, is essentially a claim of identity with no third-party verification. Web browsers therefore display warnings for self-signed certificates, unless the user adds an exception.</p>
+<h2>Uses</h2>
+<p>Self-signed certificates are useful in many contexts:</p>
+<ul>
+<li>Testing and development environments, where verification is unnecessary.</li>
+<li>Internal networks, where the certificate can be distributed and trusted manually.</li>
+<li>Root CA certificates are themselves self-signed.</li>
+<li>Personal and small-scale uses, such as local mail servers or embedded devices.</li>
+</ul>
+<p>For root certificates, an organization vouches for itself; users decide whether to trust it. The <a href="../../Web_of_trust/index.html">web of trust</a> model used by <a href="../../Pretty_Good_Privacy/index.html">PGP</a> also relies partly on self-signed keys endorsed by others.</p>
+<h2>Comparison with CA certificates</h2>
+<p>Both types of certificates provide the same encryption. The difference lies solely in trust: CA-signed certificates are automatically trusted by browsers and operating systems that trust the issuing CA, whereas self-signed certificates require out-of-band verification, such as checking a fingerprint through a separate channel.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../X.509/index.html">X.509</a></li>
+<li><a href="../../Transport_Layer_Security/index.html">Transport Layer Security</a></li>
+<li><a href="../../Let's_Encrypt/index.html">Let's Encrypt</a></li>
+</ul>
+</body>
+</html>

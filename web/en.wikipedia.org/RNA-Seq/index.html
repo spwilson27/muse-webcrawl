@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RNA-Seq - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; }
+.mw-body { margin: 0 auto; max-width: 960px; padding: 1.2em 1.5em 3em; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0.5em 0 1em 1.5em; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; width: 260px; font-size: 0.85em; }
+.thumb img { width: 100%; height: 160px; background: #eaecf0; display: block; }
+.toc { background: #f8f9fa; border: 1px solid #a2a9b1; padding: 0.6em 1em; display: inline-block; font-size: 0.9em; }
+.infobox { float: right; width: 250px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 0.85em; margin: 0 0 1em 1.5em; padding: 0.5em; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>RNA-Seq</h1>
+<div class="thumb"><img src="images/rna-seq.png" alt="Flow diagram of an RNA sequencing experiment, from RNA extraction to data analysis"><div>Overview of an RNA-Seq workflow, from sample preparation through library construction, sequencing and downstream analysis.</div></div>
+<p><b>RNA-Seq</b> (named as an abbreviation of <b>RNA sequencing</b>) is a technique based on <a href="../Next-generation_sequencing">next-generation sequencing</a> (NGS) that provides a snapshot of <a href="../RNA">RNA</a> presence and quantity from a genome at a given moment in time. It is used to study the continuously changing cellular <a href="../Transcriptome">transcriptome</a>. Specifically, RNA-Seq facilitates the ability to look at alternative gene spliced transcripts, post-transcriptional modifications, gene fusion, mutations/SNPs and changes in gene expression over time, or differences in gene expression in different groups or treatments.</p>
+<p>In addition to mRNA transcripts, RNA-Seq can look at different populations of RNA including total RNA, small RNA, such as <a href="../MicroRNA">miRNA</a>, <a href="../Transfer_RNA">tRNA</a>, and ribosomal profiling. RNA-Seq can also be used to determine exon/intron boundaries and verify or amend previously annotated 5' and 3' gene boundaries.</p>
+<div class="toc"><b>Contents</b><ol><li>History</li><li>Methods</li><li>Analysis</li><li>Applications</li><li>See also</li></ol></div>
+<h2>History</h2>
+<p>RNA sequencing was developed during the mid-2000s as next-generation sequencing technologies became widely available. Early landmark studies in 2008 demonstrated the technology in yeast, mouse and <i>Arabidopsis</i> tissues, showing that RNA-Seq could map transcribed regions, quantify transcript abundance and reveal extensive alternative splicing. Compared with <a href="../DNA_microarray">microarray</a>-based methods, RNA-Seq offered an unbiased view of the transcriptome, a wider dynamic range, and the ability to discover novel transcripts.</p>
+<h2>Methods</h2>
+<p>A typical RNA-Seq experiment begins with the isolation of RNA from a sample, followed by conversion of the RNA to complementary DNA (<a href="../Complementary_DNA">cDNA</a>) using <a href="../Reverse_transcriptase">reverse transcriptase</a>. Because ribosomal RNA accounts for the great majority of total RNA, samples are usually subjected to poly(A) selection, which enriches for mature <a href="../Messenger_RNA">mRNA</a>, or to ribosomal RNA depletion. The cDNA is fragmented, ligated to sequencing adapters, amplified and sequenced, typically producing tens of millions of short reads per sample.</p>
+<p>Libraries may be sequenced from one end (single-end) or both ends (paired-end). Strand-specific protocols preserve information about which strand of DNA a transcript was transcribed from, which helps to resolve overlapping genes transcribed in opposite directions.</p>
+<h2>Analysis</h2>
+<p>Raw reads are first assessed for quality and trimmed of adapter sequences. Reads are then either aligned to a reference <a href="../Genome">genome</a> using splice-aware aligners such as STAR or HISAT2, assembled <i>de novo</i> with tools such as Trinity, or quantified at the transcript level with lightweight methods such as Salmon or kallisto. Counts of reads per gene are then tested for differential expression using statistical packages such as DESeq2 or edgeR, which model counts with negative binomial distributions.</p>
+<h2>Applications</h2>
+<p>RNA-Seq is now a standard tool in molecular biology. It is used to annotate genomes, to study development and disease, to identify biomarkers in cancer, to characterise host–pathogen interactions, and to profile gene expression in single cells (<a href="../Single-cell_sequencing">single-cell RNA-Seq</a>). Variants of the technique, including total RNA-Seq, small RNA-Seq and long-read sequencing of full-length transcripts, continue to expand its range.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Transcriptomics">Transcriptomics</a></li>
+<li><a href="../Gene_expression">Gene expression</a></li>
+<li><a href="../DNA_sequencing">DNA sequencing</a></li>
+<li><a href="../Bioinformatics">Bioinformatics</a></li>
+</ul>
+</div>
+</body>
+</html>

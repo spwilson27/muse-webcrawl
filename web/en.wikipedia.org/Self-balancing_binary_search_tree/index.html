@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Self-balancing binary search tree - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;padding:0;background:#fff;color:#202122}
+.wrap{max-width:960px;margin:0 auto;padding:20px 30px}
+h1{font-family:sans-serif;font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:5px}
+h2{font-family:sans-serif;font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:16px auto;max-width:480px}
+.caption{text-align:center;font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Self-balancing binary search tree</h1>
+<img class="hero" src="images/self-balancing-binary-search-tree.png" alt="A rotation operation rebalancing a binary search tree">
+<p class="caption">Tree rotations keep a self-balancing binary search tree's height logarithmic in the number of nodes.</p>
+<p>In computer science, a <b>self-balancing binary search tree</b> is any node-based <a href="../../Binary_search_tree/index.html">binary search tree</a> that automatically keeps its height small in the face of arbitrary insertions and deletions. A plain binary search tree degrades to a linked list with linear-time operations if keys are inserted in sorted order; a self-balancing tree performs local restructuring operations — typically <a href="../../Tree_rotation/index.html">tree rotations</a> — after updates so that the height remains O(log n), guaranteeing logarithmic worst-case or amortised time for search, insertion and deletion.</p>
+<h2>Implementations</h2>
+<p>Popular height-balanced schemes include the <b>AVL tree</b> (1962), the first self-balancing tree invented, which enforces a strict balance factor at every node; the <b>red–black tree</b>, which uses node colours to enforce looser balance with fewer rotations, and underlies ordered maps in the C++ Standard Template Library, Java's TreeMap and the Linux kernel's rbtree; the <b>splay tree</b>, which moves recently accessed nodes to the root; and randomized <b>treaps</b>. Weight-balanced trees, scapegoat trees and B-trees (used in databases and file systems) follow the same general principle of maintaining bounded height.</p>
+<h2>Comparison</h2>
+<p>Different schemes trade off strictness of balance against update cost: AVL trees give marginally faster lookups but more rotations on insertion, while red–black trees perform at most a constant number of rotations per update. All provide the same asymptotic guarantees and support ordered operations (minimum, maximum, successor, predecessor, and range iteration) that hash tables cannot.</p>
+<h2>Applications</h2>
+<p>Self-balancing trees are used in standard library associative containers, database indexes, file systems, memory allocators, interval and geometry data structures, and anywhere an ordered set with guaranteed performance is needed.</p>
+<h2>See also</h2>
+<p><a href="../../AVL_tree/index.html">AVL tree</a> · <a href="../../Red%E2%80%93black_tree/index.html">Red–black tree</a> · <a href="../../Splay_tree/index.html">Splay tree</a> · <a href="../../B-tree/index.html">B-tree</a></p>
+</div>
+</body>
+</html>

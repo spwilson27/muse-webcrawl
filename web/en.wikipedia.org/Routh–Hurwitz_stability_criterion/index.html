@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Routh–Hurwitz stability criterion - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;color:#202122;background:#fff}
+.mw-body{max-width:960px;margin:0 auto;padding:20px 24px;line-height:1.6}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+table.routh{border-collapse:collapse;margin:12px 0}
+table.routh td,table.routh th{border:1px solid #a2a9b1;padding:4px 10px;text-align:center}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;text-align:center;font-size:88%;color:#54595d;max-width:340px}
+.math{font-family:Georgia,serif;font-style:italic}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Routh–Hurwitz stability criterion</h1>
+<div class="thumb"><img src="images/routh-hurwitz.png" alt="Diagram of complex-plane poles of a stable system lying in the left half-plane"><br>A system is stable if all its poles lie in the open left half-plane</div>
+<p>In <a href="../Control_theory/index.html">control theory</a> and stability theory, the <b>Routh–Hurwitz stability criterion</b> is a mathematical test that gives necessary and sufficient conditions for all roots of the characteristic polynomial of a linear time-invariant (LTI) system to have negative real parts — that is, for the system to be <a href="../BIBO_stability/index.html">stable</a>. The criterion was established independently by Edward John Routh in 1877 and Adolf Hurwitz in 1895.</p>
+<h2>Statement</h2>
+<p>Given a polynomial with real coefficients</p>
+<p class="math">p(s) = a<sub>n</sub>s<sup>n</sup> + a<sub>n−1</sub>s<sup>n−1</sup> + ⋯ + a<sub>1</sub>s + a<sub>0</sub>,</p>
+<p>the coefficients are arranged in the <b>Routh array</b>, a triangular table whose first two rows come directly from the polynomial and whose later entries are computed from determinants of the rows above. The <b>Routh–Hurwitz criterion</b> states that the number of roots in the right half-plane equals the number of sign changes in the first column of the array. The system is stable if and only if there are no sign changes, which (in the regular case) requires every entry in the first column to have the same sign.</p>
+<h2>Special cases</h2>
+<p>Two irregular situations arise. If an element of the first column is zero but its row is not, a small positive quantity ε is substituted and the test completed by examining signs as ε → 0. If an entire row vanishes, the derivative of an auxiliary polynomial formed from the row above is used instead; this case indicates roots lying symmetrically about the origin, such as poles on the imaginary axis or in mirror-image pairs.</p>
+<h2>Hurwitz determinants</h2>
+<p>Hurwitz's equivalent formulation uses a family of determinants built from the coefficients, the Hurwitz determinants. The polynomial is stable (a <i>Hurwitz polynomial</i>) if and only if all leading principal minors of the Hurwitz matrix are positive.</p>
+<h2>Applications</h2>
+<p>The criterion is a standard tool in control engineering for testing closed-loop stability without factoring the characteristic equation, and for finding ranges of controller gains (such as the proportional gain in a <a href="../PID_controller/index.html">PID controller</a>) over which a feedback system remains stable. It applies only to polynomial characteristic equations, so systems with time delays must first be approximated, for example with a Padé approximant.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Nyquist_stability_criterion/index.html">Nyquist stability criterion</a></li>
+<li><a href="../Root_locus/index.html">Root locus</a></li>
+<li><a href="../Lyapunov_stability/index.html">Lyapunov stability</a></li>
+<li><a href="../Jury_stability_criterion/index.html">Jury stability criterion</a></li>
+</ul>
+<p><i>Categories: Stability theory; Control theory; Polynomials</i></p>
+</div>
+</body>
+</html>

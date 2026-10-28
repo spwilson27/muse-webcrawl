@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Routing Information Protocol - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;color:#202122;background:#fff}
+.mw-body{max-width:960px;margin:0 auto;padding:20px 24px;line-height:1.6}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:90%}
+.infobox th{background:#cedff2;padding:4px;text-align:center}
+.infobox td{padding:3px 6px;vertical-align:top}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Routing Information Protocol</h1>
+<table class="infobox">
+<tr><th colspan="2">Routing Information Protocol</th></tr>
+<tr><td><b>Abbreviation</b></td><td>RIP</td></tr>
+<tr><td><b>Type</b></td><td>Interior gateway protocol (distance-vector)</td></tr>
+<tr><td><b>Metric</b></td><td>Hop count (maximum 15)</td></tr>
+<tr><td><b>Transport</b></td><td>UDP port 520</td></tr>
+<tr><td><b>Standards</b></td><td>RFC 1058 (RIPv1); RFC 2453 (RIPv2); RFC 2080 (RIPng)</td></tr>
+</table>
+<p>The <b>Routing Information Protocol</b> (<b>RIP</b>) is one of the oldest distance-vector <a href="../Routing_protocol/index.html">routing protocols</a> used in computer networks. It employs hop count as its routing metric: each router a packet crosses counts as one hop, and routes with more than 15 hops are considered unreachable, which limits RIP to relatively small networks.</p>
+<h2>Operation</h2>
+<p>RIP routers periodically broadcast (RIPv1) or multicast (RIPv2) their entire <a href="../Routing_table/index.html">routing tables</a> to directly connected neighbours, by default every 30 seconds over <a href="../User_Datagram_Protocol/index.html">UDP</a> port 520. Each receiving router adds one to the advertised hop counts and installs better (lower-count) routes. The algorithm is a distributed implementation of the Bellman–Ford shortest-path computation.</p>
+<p>Because information propagates slowly, RIP can suffer from slow convergence and counting-to-infinity problems after a failure. Standard mitigations include <b>split horizon</b>, <b>route poisoning</b> and <b>hold-down timers</b>, along with triggered updates sent immediately when a metric changes.</p>
+<h2>Versions</h2>
+<p><b>RIPv1</b> (1988, RFC 1058) is classful: updates carry no subnet masks, so all subnets of a network must be the same size. <b>RIPv2</b> (1998, RFC 2453) supports <a href="../Classless_Inter-Domain_Routing/index.html">classless</a> addressing, route tags, next-hop addresses and simple password or MD5 authentication, sending updates to the multicast address 224.0.0.9. <b>RIPng</b> (RFC 2080) extends the protocol for <a href="../IPv6/index.html">IPv6</a>.</p>
+<h2>History and use</h2>
+<p>RIP derives from the gateway information protocol used on the <a href="../ARPANET/index.html">ARPANET</a> and from the routing daemon <i>routed</i> distributed with BSD Unix in the early 1980s. Although largely superseded by link-state protocols such as <a href="../Open_Shortest_Path_First/index.html">OSPF</a> in larger networks, RIP remains in use in small and legacy networks because of its simplicity and near-universal support.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Routing/index.html">Routing</a></li>
+<li><a href="../Enhanced_Interior_Gateway_Routing_Protocol/index.html">EIGRP</a></li>
+<li><a href="../Border_Gateway_Protocol/index.html">Border Gateway Protocol</a></li>
+</ul>
+<p><i>Categories: Routing protocols; Internet protocols</i></p>
+</div>
+</body>
+</html>

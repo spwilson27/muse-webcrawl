@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>VXLAN - Wikipedia</title>
+<style>
+body{font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.6;color:#202122;margin:0;background:#fff}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+main{max-width:960px;margin:0 auto;padding:16px 24px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #c8ccd1;padding-bottom:3px;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+.hero{display:block;max-width:100%;height:auto;background:#eaecf0;border:1px solid #c8ccd1;padding:24px;text-align:center;color:#54595d;margin:12px 0}
+footer{border-top:1px solid #a2a9b1;margin-top:32px;padding:12px 24px;font-size:0.85em;color:#54595d;background:#f8f9fa}
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> — The Free Encyclopedia</header>
+<main>
+<h1>VXLAN</h1>
+<img class="hero" src="images/vxlan.png" alt="Diagram showing Ethernet frames encapsulated in UDP packets across an IP network">
+<aside class="infobox">
+<table>
+<tr><th>Full name</th><td>Virtual Extensible LAN</td></tr>
+<tr><th>Standard</th><td>RFC 7348</td></tr>
+<tr><th>Published</th><td>August 2014</td></tr>
+<tr><th>Transport</th><td>UDP (destination port 4789)</td></tr>
+<tr><th>Segment ID</th><td>24-bit VNI (up to ~16 million segments)</td></tr>
+</table>
+</aside>
+<p><b>Virtual Extensible LAN</b> (<b>VXLAN</b>) is a network virtualization technology that uses encapsulation to run an overlay layer-2 network over an existing layer-3 infrastructure. It is specified in RFC 7348, published in 2014, and was developed by VMware, Cisco Systems, and other vendors to address the scalability limits of VLANs in large cloud computing and data center deployments.</p>
+<h2>Overview</h2>
+<p>VXLAN encapsulates an original Ethernet frame inside a UDP packet, adding a VXLAN header that contains a 24-bit VXLAN Network Identifier (VNI). Whereas a conventional VLAN identifier is only 12 bits — limiting a network to 4,094 segments — the VNI permits roughly 16 million isolated logical networks to coexist on the same physical infrastructure. Endpoints that perform the encapsulation and decapsulation are called VXLAN Tunnel Endpoints (VTEPs).</p>
+<h2>Operation</h2>
+<p>When a virtual machine sends a frame on a VXLAN segment, its local VTEP wraps the frame in a VXLAN header, an outer UDP header, and an outer IP header, then forwards it across the routed network to the destination VTEP, which strips the headers and delivers the original frame. Broadcast, unknown-unicast, and multicast traffic within a segment can be handled with IP multicast groups or by head-end replication in the control plane. Extensions such as BGP EVPN provide a standards-based control plane for learning MAC and IP addresses, reducing reliance on flood-and-learn behaviour.</p>
+<h2>Comparison with other technologies</h2>
+<p>VXLAN is similar in purpose to NVGRE and to Geneve, which later sought to unify overlay encapsulation formats. Compared with IEEE 802.1ad (Q-in-Q) or spanning-tree-based designs, VXLAN allows layer-2 segments to span routed layer-3 networks and makes full use of equal-cost multipath routing.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Virtual_LAN/index.html">Virtual LAN</a></li>
+<li><a href="../Network_virtualization/index.html">Network virtualization</a></li>
+<li><a href="../Overlay_network/index.html">Overlay network</a></li>
+<li><a href="../Ethernet_VPN/index.html">Ethernet VPN</a></li>
+</ul>
+</main>
+<footer>From Wikipedia, the free encyclopedia.</footer>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Struct (C programming language) - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:900px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+img.hero{display:block;max-width:100%;margin:1em auto;border:1px solid #ccc;padding:4px;background:#f8f9fa}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;overflow-x:auto;font-size:0.9em}
+code{font-family:monospace}
+</style>
+</head>
+<body>
+<h1>Struct (C programming language)</h1>
+<img class="hero" src="images/struct-c.png" alt="Example C source code declaring and using a struct">
+<p>In the <a href="../../C_(programming_language)/index.html">C programming language</a>, a <b>struct</b> is a composite <a href="../../Data_type/index.html">data type</a> (or record) declaration that defines a physically grouped list of variables under one name in a block of memory, allowing the different variables to be accessed via a single <a href="../../Pointer_(computer_programming)/index.html">pointer</a> or by the struct declared name which returns the same address. The struct data type can contain other data types, so it is used for mixed-data-type records; however, some other types of records, such as unions, are also available in C.</p>
+<h2>Declaration</h2>
+<p>A struct declaration consists of the keyword <code>struct</code>, an optional tag name, and a list of member declarations enclosed in braces, followed by optional variable declarations and a semicolon:</p>
+<pre>struct point {
+    int x;
+    int y;
+};</pre>
+<p>Members are accessed using the dot operator for struct values and the arrow operator (<code>-&gt;</code>) for pointers to structs. Structures can be nested, initialised with designated initialisers (since C99), assigned wholesale, passed to and returned from functions by value.</p>
+<h2>Memory layout</h2>
+<p>Members are stored in memory in the order in which they are declared, but the compiler may insert padding bytes between members to satisfy <a href="../../Data_structure_alignment/index.html">alignment</a> requirements of the target architecture. Because of padding, the size of a struct (computed with the <code>sizeof</code> operator) can exceed the sum of the sizes of its members. The exact layout is implementation-defined apart from the guarantee that the first member lies at offset zero and members appear in declaration order.</p>
+<h2>Bit fields</h2>
+<p>C allows members of integer type to be declared with a specified width in bits, called <b>bit fields</b>, enabling compact storage of flags and small quantities. Bit fields are commonly used in low-level programming to model hardware registers and file or protocol formats.</p>
+<h2>Usage</h2>
+<p>Structs are the principal mechanism in C for building user-defined aggregate types. They serve as the basis for the library types such as <code>struct tm</code> (broken-down calendar time) and <code>FILE</code>, and in other languages the concept evolved into classes and records.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../Union_(computer_science)/index.html">Union (computer science)</a></li>
+<li><a href="../../Typedef/index.html">Typedef</a></li>
+<li><a href="../../Record_(computer_science)/index.html">Record (computer science)</a></li>
+<li><a href="../../C%2B%2B/index.html">C++</a></li>
+</ul>
+</body>
+</html>

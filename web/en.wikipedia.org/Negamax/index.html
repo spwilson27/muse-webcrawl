@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Negamax - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:840px;margin:40px auto;padding:0 20px;color:#202122;line-height:1.6}
+h1{font-size:32px;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-weight:normal}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;margin-top:28px;font-weight:normal}
+a{color:#0645ad;text-decoration:none}
+.small{font-size:13px;color:#54595d}
+.hero{display:block;margin:20px auto;max-width:420px;width:100%;height:auto;background:#eaecf0;border:1px solid #c8ccd1;padding:24px;text-align:center;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Negamax</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/negamax.png" alt="Game tree illustrating the negamax principle">
+<p><b>Negamax</b> search is a variant form of minimax search that relies on the zero-sum property of a two-player game. It simplifies the implementation of the minimax algorithm by observing that the value of a position for the player to move is the negation of its value for the opponent: max(a, b) = −min(−a, −b). A single function can thus evaluate both players' turns by negating the scores returned from recursive calls.</p>
+<h2>Algorithm</h2>
+<p>In pseudocode, negamax at a node returns the maximum over all legal moves of the negated negamax value of the resulting child node, with terminal nodes scored from the perspective of the player to move. The formulation is especially valuable when combined with alpha–beta pruning, yielding compact code used in most chess and board-game engines: because the bounds are simply negated and swapped at each ply, the pruning logic stays simple.</p>
+<h2>History</h2>
+<p>The principle underlies much of computer game-playing research after Claude Shannon's 1950 paper on computer chess; the explicit negamax formulation with alpha–beta cutoffs was popularised in the 1970s and 1980s chess-programming literature and remains standard in engine development today. See also <a href="../Minimax/index.html">Minimax</a> and <a href="../Alpha–beta_pruning/index.html">Alpha–beta pruning</a>.</p>
+</body>
+</html>

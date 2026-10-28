@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenPGP - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:12px 24px}
+header h1{font-size:1.8em;margin:0;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+main{max-width:960px;margin:0 auto;padding:16px 24px}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal}
+.hero{display:block;background:#eaecf0;border:1px solid #c8ccd1;text-align:center;padding:40px 0;color:#54595d;font-style:italic;margin-bottom:12px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<header><h1>OpenPGP</h1></header>
+<main>
+<div class="hero"><img src="images/openpgp.png" alt="Diagram of OpenPGP hybrid encryption: a session key encrypted with the recipient's public key"></div>
+<p><b>OpenPGP</b> is an open standard for encrypting and signing data, derived from the Pretty Good Privacy (PGP) software originally created by Phil Zimmermann in 1991. It was standardised by the Internet Engineering Task Force (IETF), first as RFC 2440 (1998) and then RFC 4880 (2007), and a major revision, RFC 9580 (2024), incorporated the "crypto-refresh" update with modern algorithms. OpenPGP defines the formats for encrypted messages, digital signatures, certificates (keys), and a trust model often called the "web of trust".</p>
+<h2>How it works</h2>
+<p>OpenPGP uses hybrid encryption: a message is encrypted once with a random symmetric session key, and that session key is then encrypted with each recipient's public key. Supported algorithms have evolved from RSA, DSA, and ElGamal to modern elliptic-curve cryptography including Curve25519. Signatures are created with the sender's private key and can be verified using the corresponding public key, providing authenticity and integrity as well as confidentiality. Data may be compressed before encryption, and an ASCII-armour encoding allows binary material to travel through text-based channels such as email.</p>
+<h2>Implementations</h2>
+<p>The best-known implementation is GnuPG (GPG), the GNU Project's free software suite, which ships with most Linux distributions and underlies much OpenPGP usage. Others include the commercial PGP lineage (now owned by Broadcom), the Java Bouncy Castle libraries, OpenKeychain for Android, GPGTools for macOS, Sequoia PGP, and the JavaScript library OpenPGP.js, which powers several encrypted email services. The EFAIL vulnerabilities disclosed in 2018 highlighted risks in how some email clients rendered decrypted content, though the core standard was not broken.</p>
+<h2>Uses</h2>
+<p>OpenPGP is used for encrypting email and files, signing software releases (Linux package repositories rely on it extensively), verifying downloads, and managing identities in developer workflows such as signed Git commits. Its decentralised trust model contrasts with the hierarchical certificate-authority model of S/MIME and TLS.</p>
+<p class="small">See also: <a href="../Pretty_Good_Privacy/index.html">Pretty Good Privacy</a> · <a href="../GNU_Privacy_Guard/index.html">GNU Privacy Guard</a> · <a href="../Public-key_cryptography/index.html">Public-key cryptography</a> · <a href="../Web_of_trust/index.html">Web of trust</a></p>
+</main>
+</body>
+</html>

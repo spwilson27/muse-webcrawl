@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Subliminal channel - Wikipedia</title>
+<style>body{font-family:sans-serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1}h2{border-bottom:1px solid #a2a9b1}a{color:#0645ad}.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:0.5em;text-align:center;font-size:0.9em;color:#54595d}</style>
+</head>
+<body>
+<h1>Subliminal channel</h1>
+<div class="thumb"><img src="images/subliminal-channel.png" alt="Diagram showing a hidden message embedded inside a digital signature"></div>
+<p>In <a href="../../Cryptography/index.html">cryptography</a>, a <b>subliminal channel</b> is a covert communication channel that is created within an otherwise secure and authenticated channel — most famously within a <a href="../../Digital_signature/index.html">digital signature</a> scheme. The concept was introduced by Gustavus Simmons in the 1980s, partly motivated by the "prisoners' problem," in which two parties must communicate under the eye of a warden who permits only authenticated messages.</p>
+<h2>Mechanism</h2>
+<p>Many signature schemes, such as the <a href="../../Digital_Signature_Algorithm/index.html">Digital Signature Algorithm</a> (DSA) and <a href="../../ElGamal_signature_scheme/index.html">ElGamal signatures</a>, require a random or pseudorandom value for each signature. A signer who controls that randomness can bias it so that the resulting signature encodes a hidden message, recoverable by a receiver who shares a secret key. To an outside observer the signatures appear ordinary and valid.</p>
+<h2>Broadband and narrowband channels</h2>
+<p>Simmons distinguished <i>broadband</i> subliminal channels, which can carry a full message (for example, leaking an entire private key over a few signatures), from <i>narrowband</i> channels carrying only a few bits per signature. Broadband channels are especially dangerous because a malicious implementation of a signature standard could leak the signer's secret key undetectably; this risk was a major argument in debates over the design of DSA.</p>
+<h2>Countermeasures</h2>
+<p>Defenses include deterministic signature schemes (in which the ephemeral value is derived from the message and key, as in <a href="../../EdDSA/index.html">EdDSA</a> and deterministic <a href="../../ECDSA/index.html">ECDSA</a> under RFC 6979), zero-knowledge "subliminal-free" protocols designed by Simmons and refined by others, and trusted hardware or warden participation in generating the randomness.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../../Covert_channel/index.html">Covert channel</a></li>
+<li><a href="../../Steganography/index.html">Steganography</a></li>
+<li><a href="../../Kleptography/index.html">Kleptography</a></li>
+</ul>
+</body>
+</html>

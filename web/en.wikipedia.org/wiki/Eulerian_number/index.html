@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Eulerian number - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+table.triangle { border-collapse: collapse; margin: 1em 0; }
+table.triangle td, table.triangle th { border: 1px solid #a2a9b1; padding: 0.3em 0.7em; text-align: center; }
+img.hero { display: block; max-width: 100%; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Eulerian number</h1>
+<p>In combinatorics, the <b>Eulerian number</b> A(<i>n</i>, <i>m</i>), often written ⟨<i>n</i> <i>m</i>⟩, is the number of <a href="../Permutation/index.html">permutations</a> of the numbers 1 through <i>n</i> in which exactly <i>m</i> elements are greater than the previous element. Such elements are called <b>ascents</b> (or rises). The Eulerian numbers are named after <a href="../Leonhard_Euler/index.html">Leonhard Euler</a>, who studied them in his 1736 paper on the sums of powers and related counting problems.</p>
+<img class="hero" src="images/eulerian-triangle.png" alt="Triangle of Eulerian numbers for small values of n">
+<h2>Basic properties</h2>
+<p>For <i>m</i> &gt; <i>n</i> the Eulerian number is zero, and A(<i>n</i>, 0) = 1 for all <i>n</i>, corresponding to the unique decreasing permutation. The Eulerian numbers obey the symmetry A(<i>n</i>, <i>m</i>) = A(<i>n</i>, <i>n</i> − 1 − <i>m</i>), and summing over all <i>m</i> gives the factorial: Σ<sub>m</sub> A(<i>n</i>, <i>m</i>) = <i>n</i>!.</p>
+<h2>Recurrence relation</h2>
+<p>The Eulerian numbers satisfy the recurrence</p>
+<p>A(<i>n</i>, <i>m</i>) = (<i>n</i> − <i>m</i>) A(<i>n</i> − 1, <i>m</i> − 1) + (<i>m</i> + 1) A(<i>n</i> − 1, <i>m</i>),</p>
+<p>which is reminiscent of the recurrence for the binomial coefficients and Stirling numbers.</p>
+<h2>Triangle of values</h2>
+<table class="triangle">
+<tr><th>n \ m</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr>
+<tr><th>1</th><td>1</td><td></td><td></td><td></td><td></td></tr>
+<tr><th>2</th><td>1</td><td>1</td><td></td><td></td><td></td></tr>
+<tr><th>3</th><td>1</td><td>4</td><td>1</td><td></td><td></td></tr>
+<tr><th>4</th><td>1</td><td>11</td><td>11</td><td>1</td><td></td></tr>
+<tr><th>5</th><td>1</td><td>26</td><td>66</td><td>26</td><td>1</td></tr>
+</table>
+<h2>Worpitzky identity</h2>
+<p>The Eulerian numbers appear in the <b>Worpitzky identity</b>, which expresses powers in terms of binomial coefficients: <i>x<sup>n</sup></i> = Σ<sub>m</sub> A(<i>n</i>, <i>m</i>) C(<i>x</i> + <i>m</i>, <i>n</i>). This identity underlies Euler's formulas for sums of powers of integers.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Stirling_numbers_of_the_first_kind/index.html">Stirling numbers of the first kind</a></li>
+<li><a href="../Eulerian_path/index.html">Eulerian path</a></li>
+<li><a href="../Permutation/index.html">Permutation</a></li>
+</ul>
+</div>
+</body>
+</html>

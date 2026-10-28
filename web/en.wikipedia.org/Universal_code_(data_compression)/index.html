@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Universal code (data compression) - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine','Georgia',serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+p,li{font-family:sans-serif;font-size:0.95em;line-height:1.6}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-family:sans-serif;font-size:0.85em;width:280px}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+.hero{display:block;max-width:100%;margin:10px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.caption{font-family:sans-serif;font-size:0.8em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Universal code (data compression)</h1>
+<img class="hero" src="images/universal-code.png" alt="Diagram comparing lengths of universal codes for integers">
+<p class="caption">Codeword lengths of common universal codes grow logarithmically with the encoded integer.</p>
+<table class="infobox">
+<tr><th>Field</th><td>Data compression, information theory</td></tr>
+<tr><th>Key examples</th><td>Elias gamma, Elias delta, Elias omega, Fibonacci coding</td></tr>
+</table>
+<p>In <a href="../Data_compression/index.html">data compression</a>, a <b>universal code</b> is a prefix code whose words are assigned to positive integers in such a way that the expected codeword length is within a constant factor of the entropy of any monotonic probability distribution on the integers. Universal codes allow arbitrarily large integers to be encoded without knowing a maximum in advance, and they are a basic tool in lossless compression algorithms.</p>
+<h2>Definition</h2>
+<p>A prefix code for the positive integers is universal if, for every non-increasing distribution p on the integers, the ratio of the expected codeword length to the entropy of p is bounded above, approaching 1 as the entropy grows. Equivalently, the length of the codeword for n should grow like log n plus lower-order terms, so that no integer is assigned an extravagantly long codeword.</p>
+<h2>Examples</h2>
+<ul>
+<li><b>Elias gamma coding</b> writes n in binary preceded by a unary count of its length; the code is simple but not optimal asymptotically.</li>
+<li><b>Elias delta coding</b> encodes the length itself with a gamma code, improving efficiency for large n.</li>
+<li><b>Elias omega coding</b> applies the length-encoding idea recursively.</li>
+<li><b>Fibonacci coding</b> represents integers in the Zeckendorf system based on Fibonacci numbers; it is robust against certain errors.</li>
+<li><b>Exponential-Golomb coding</b> generalizes unary coding with a parameter k.</li>
+</ul>
+<h2>Applications</h2>
+<p>Universal codes appear in the Lempel–Ziv compression methods, in image and video standards (Exp-Golomb codes are used in H.264/AVC), and wherever data of unknown range must be encoded compactly and uniquely decodably.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Prefix_code/index.html">Prefix code</a></li>
+<li><a href="../Elias_gamma_coding/index.html">Elias gamma coding</a></li>
+<li><a href="../Fibonacci_coding/index.html">Fibonacci coding</a></li>
+<li><a href="../Entropy_(information_theory)/index.html">Entropy (information theory)</a></li>
+</ul>
+</div>
+</body>
+</html>

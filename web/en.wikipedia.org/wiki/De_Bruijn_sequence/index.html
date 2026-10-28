@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>De Bruijn sequence - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;font-size:1.5em;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:28px}
+p{margin:8px 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{float:right;margin:0 0 12px 20px;width:300px;background:#f8f9fa;border:1px solid #c8ccd1;padding:6px;text-align:center;font-size:0.85em}
+.hero img{width:100%;height:auto;background:#eaecf0;display:block}
+ul{margin:6px 0}
+.small{font-size:0.85em;color:#54595d}
+code{font-family:monospace}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>De Bruijn sequence</h1>
+<div class="hero"><img src="images/De_Bruijn_sequence.png" alt="De Bruijn graph for alphabet size 2 and substrings of length 3"><div>A De Bruijn graph: an Eulerian cycle through it yields a De Bruijn sequence</div></div>
+<p>In combinatorial mathematics, a <b>De Bruijn sequence</b> of order <i>n</i> on a size-<i>k</i> alphabet <i>A</i> is a cyclic sequence in which every possible length-<i>n</i> string on <i>A</i> occurs exactly once as a substring (that is, as a contiguous subsequence). Such a sequence is denoted <i>B</i>(<i>k</i>, <i>n</i>) and has length <i>k</i><sup><i>n</i></sup>, which is also the number of distinct substrings of length <i>n</i> on a size-<i>k</i> alphabet; De Bruijn sequences are therefore optimally short. The sequence is named after the Dutch mathematician Nicolaas Govert de Bruijn, who studied the problem in 1946, though the binary case had been described earlier.</p>
+<h2>Example</h2>
+<p>For a binary alphabet (<i>k</i> = 2) and <i>n</i> = 3, one De Bruijn sequence is <code>00010111</code>. Read cyclically, its eight substrings of length 3 are 000, 001, 010, 101, 011, 111, 110 and 100 — every possible 3-bit string exactly once.</p>
+<h2>Construction</h2>
+<p>De Bruijn sequences can be constructed by taking an Eulerian cycle of a De Bruijn graph: the directed graph whose vertices are the strings of length <i>n</i> − 1 and whose edges represent appending one symbol. Because the graph is Eulerian, a cycle using every edge exactly once always exists, and concatenating the symbols along such a cycle yields a De Bruijn sequence. The number of distinct <i>B</i>(<i>k</i>, <i>n</i>) sequences is (<i>k</i>!)<sup><i>k</i><sup><i>n</i>−1</sup></sup> / <i>k</i><sup><i>n</i></sup>. A simple constructive rule is the "prefer one" algorithm: starting with <i>n</i> zeros, repeatedly append a 1 if the resulting length-<i>n</i> string has not appeared before, otherwise append a 0. Related constructions include shift-register sequences and the lexicographically smallest De Bruijn sequence, produced by concatenating Lyndon words.</p>
+<h2>Applications</h2>
+<p>De Bruijn sequences have applications in many fields. They can encode the position of a rotating shaft or linear encoder with a minimal number of sensors: reading <i>n</i> consecutive symbols uniquely determines absolute position. In genomics, De Bruijn graphs (a related concept using substrings of reads) are the standard data structure for genome assembly. De Bruijn sequences also appear in card tricks, in testing of digital circuits, in the design of experiments, and in robotic localization.</p>
+<h2>De Bruijn torus</h2>
+<p>A two-dimensional generalisation, a <b>De Bruijn torus</b>, is an array in which every possible <i>m</i>-by-<i>n</i> submatrix over the alphabet occurs exactly once (wrapping around the edges). Such arrays can be used for two-dimensional position encoding.</p>
+<p class="small">From Wikipedia, the free encyclopedia.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>sed - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;padding:0;background:#fff;color:#202122}
+.wrap{max-width:960px;margin:0 auto;padding:20px 30px}
+h1{font-family:sans-serif;font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:5px}
+h2{font-family:sans-serif;font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+pre{font-family:monospace;background:#f8f9fa;padding:10px;overflow-x:auto;font-size:13px}
+.hero{display:block;margin:16px auto;max-width:480px}
+.caption{text-align:center;font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>sed</h1>
+<img class="hero" src="images/sed.png" alt="A terminal session demonstrating sed substitution commands">
+<p class="caption">sed performing a substitution on a stream of text in a terminal.</p>
+<p><b>sed</b> ("stream editor") is a <a href="../../Unix/index.html">Unix</a> utility that parses and transforms text, using a compact programming language developed by Lee E. McMahon of Bell Labs in 1973–74. It was one of the earliest tools to support <a href="../../Regular_expression/index.html">regular expressions</a> and remains ubiquitous in shell scripts for one-off, non-interactive text editing, such as find-and-replace operations over files or piped output.</p>
+<h2>Operation</h2>
+<p>sed reads input sequentially, line by line, into a buffer called the <i>pattern space</i>. For each line it applies the commands in the script whose address — a line number or a regular-expression match — selects that line, then prints the result. A second buffer, the <i>hold space</i>, allows limited state to be carried between lines. Although sed scripts can be written with branching and labels and the language is Turing-complete, in practice it is used for short substitutions and deletions.</p>
+<h2>Usage</h2>
+<p>The most common command is substitution, <code>s/regexp/replacement/</code>. For example:</p>
+<pre>sed 's/old/new/g' file.txt</pre>
+<p>replaces every occurrence of "old" with "new". The <code>-i</code> option (GNU sed) edits files in place, and <code>-n</code> suppresses automatic printing so that only lines selected by the <code>p</code> command are output, making sed act like a filter similar to <a href="../../Grep/index.html">grep</a>.</p>
+<h2>History and influence</h2>
+<p>sed was inspired by the interactive editor <a href="../../Ed_(software)/index.html">ed</a> and by the earlier qed editor. Its substitution syntax and regex flavour influenced later tools including <a href="../../Perl/index.html">Perl</a> and <a href="../../AWK/index.html">AWK</a>. GNU sed, maintained by the Free Software Foundation, is the most widely used implementation, with additional extensions beyond the POSIX standard.</p>
+<h2>See also</h2>
+<p><a href="../../Grep/index.html">grep</a> · <a href="../../AWK/index.html">AWK</a> · <a href="../../Tr_(Unix)/index.html">tr (Unix)</a> · <a href="../../Cut_(Unix)/index.html">cut (Unix)</a></p>
+</div>
+</body>
+</html>

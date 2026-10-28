@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WebSocket - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 24px; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 0.95em; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 16px 16px; font-family: sans-serif; font-size: 0.85em; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+.hero { text-align: center; background: #eaecf0; padding: 12px; margin-bottom: 8px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 0 3px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>WebSocket</h1>
+<div class="infobox">
+<div class="hero"><img src="images/websocket.png" alt="Diagram of a WebSocket handshake and full-duplex connection"></div>
+<table>
+<tr><th>Standard</th><td>RFC 6455 (protocol); W3C/WHATWG API</td></tr>
+<tr><th>Published</th><td>2011</td></tr>
+<tr><th>URI schemes</th><td>ws: and wss: (secure)</td></tr>
+<tr><th>Default ports</th><td>80 and 443</td></tr>
+<tr><th>Transport</th><td>TCP, single long-lived connection</td></tr>
+</table>
+</div>
+<p><b>WebSocket</b> is a computer communications protocol providing full-duplex communication channels over a single TCP connection. It was standardized by the IETF as RFC 6455 in 2011; the companion WebSocket API for web pages is maintained by the WHATWG. WebSocket is distinct from HTTP, but is designed to work over HTTP ports 80 and 443 and to be compatible with existing web infrastructure such as proxies.</p>
+<h2>How it works</h2>
+<p>A WebSocket connection begins with an HTTP "upgrade" handshake: the client sends a request with an <code>Upgrade: websocket</code> header, and if the server agrees it replies with status 101 Switching Protocols. Thereafter both parties exchange small framed messages — text or binary — at any time, in either direction, until the connection is closed. Because the connection persists, data can be pushed from server to client instantly, with per-message overhead of as little as two bytes, instead of the heavy request headers of HTTP polling.</p>
+<h2>Motivation and uses</h2>
+<p>Before WebSocket, real-time web applications relied on workarounds such as long polling and the Comet techniques, which wasted bandwidth and added latency. WebSocket enables live chat, multiplayer games, collaborative editing, financial tickers, sports updates and live notifications. Higher-level libraries and protocols, such as Socket.IO and MQTT over WebSocket, add reconnection, rooms and messaging patterns on top.</p>
+<h2>Security</h2>
+<p>The <code>wss:</code> scheme encrypts traffic with TLS. The protocol includes origin-based safeguards and masking of client frames to protect against cache-poisoning attacks on intermediaries.</p>
+<h2>See also</h2>
+<p><a href="../Hypertext_Transfer_Protocol/index.html">HTTP</a> · <a href="../WHATWG/index.html">WHATWG</a> · <a href="../Server-sent_events/index.html">Server-sent events</a> · <a href="../WebRTC/index.html">WebRTC</a> · <a href="../Push_technology/index.html">Push technology</a></p>
+</div>
+</body>
+</html>

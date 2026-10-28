@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>QR algorithm - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0 auto; max-width: 960px; padding: 0 1em 2em; color: #202122; line-height: 1.6; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { float: right; margin: 0 0 1em 1em; max-width: 300px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 4px; }
+.tagline { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<p class="tagline">From Wikipedia, the free encyclopedia</p>
+<h1>QR algorithm</h1>
+<img class="hero" src="images/qr-algorithm.png" alt="Diagram of successive QR iterations converging a matrix toward upper triangular Schur form">
+<p>In <a href="../Numerical_linear_algebra/index.html">numerical linear algebra</a>, the <b>QR algorithm</b> or <b>QR iteration</b> is an <a href="../Eigenvalue_algorithm/index.html">eigenvalue algorithm</a>: that is, a procedure to calculate the <a href="../Eigenvalues_and_eigenvectors/index.html">eigenvalues and eigenvectors</a> of a <a href="../Matrix_(mathematics)/index.html">matrix</a>. The idea is based on the fact that, under suitable conditions, a sequence of matrices formed by repeatedly computing the <a href="../QR_decomposition/index.html">QR decomposition</a> of a matrix and multiplying the factors in reverse order converges to a triangular matrix, the <a href="../Schur_decomposition/index.html">Schur form</a> of the original matrix, from which the eigenvalues can be read off the diagonal.</p>
+<p>The QR algorithm was developed in the late 1950s by John G. F. Francis and by Vera N. Kublanovskaya, working independently. It is regarded as one of the most important algorithms of the twentieth century and is the method underlying the eigenvalue computations in software libraries such as <a href="../LAPACK/index.html">LAPACK</a>.</p>
+<h2>The basic algorithm</h2>
+<p>Starting with a matrix A<sub>0</sub> = A, each step computes the QR decomposition A<sub>k</sub> = Q<sub>k</sub>R<sub>k</sub>, where Q<sub>k</sub> is orthogonal and R<sub>k</sub> is upper triangular, and then forms A<sub>k+1</sub> = R<sub>k</sub>Q<sub>k</sub>. Since A<sub>k+1</sub> = Q<sub>k</sub><sup>T</sup>A<sub>k</sub>Q<sub>k</sub>, all iterates are orthogonally similar to A and therefore share its eigenvalues. For a symmetric matrix the iterates converge to a diagonal matrix; in general they converge to block upper triangular form.</p>
+<h2>Practical implementations</h2>
+<p>In practice, the matrix is first reduced to upper Hessenberg form (or tridiagonal form in the symmetric case) by orthogonal similarity transformations, which makes each QR step much cheaper. Convergence is accelerated by shifts, typically taken from the eigenvalues of the trailing 2×2 submatrix (the Wilkinson shift), and by implicit double-shift steps that handle complex conjugate eigenvalue pairs using only real arithmetic. Deflation is applied when subdiagonal entries become negligible, splitting the problem into smaller subproblems.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../QR_decomposition/index.html">QR decomposition</a></li>
+<li><a href="../Eigenvalue_algorithm/index.html">Eigenvalue algorithm</a></li>
+<li><a href="../Power_iteration/index.html">Power iteration</a></li>
+</ul>
+</body>
+</html>

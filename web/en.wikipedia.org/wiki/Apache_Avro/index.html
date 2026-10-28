@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Apache Avro - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; padding: 20px 40px; color: #202122; background: #fff; line-height: 1.6; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+h3 { font-size: 17px; margin-top: 20px; }
+p { font-size: 14px; font-family: sans-serif; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 16px 20px; font-size: 13px; font-family: sans-serif; }
+.infobox th { text-align: left; padding: 2px 6px; vertical-align: top; }
+.infobox td { padding: 2px 6px; }
+.infobox .title { font-weight: bold; text-align: center; font-size: 15px; padding-bottom: 8px; }
+img.hero { display: block; margin: 12px auto; max-width: 300px; }
+.caption { font-size: 12px; color: #54595d; text-align: center; font-family: sans-serif; }
+ul, ol { font-size: 14px; font-family: sans-serif; }
+</style>
+</head>
+<body>
+<h1>Apache Avro</h1>
+<div class="infobox">
+<div class="title">Apache Avro</div>
+<table>
+<tr><th>Developer</th><td>Apache Software Foundation</td></tr>
+<tr><th>Initial release</th><td>2009 (as a Hadoop subproject)</td></tr>
+<tr><th>Type</th><td>Data serialization system</td></tr>
+<tr><th>License</th><td>Apache License 2.0</td></tr>
+</table>
+</div>
+<p><b>Apache Avro</b> is a row-oriented remote procedure call and data serialization framework developed within the Apache Hadoop ecosystem. Avro provides a compact binary data format, a container file format for persistent data, and rich data structures described by schemas written in JSON. It is widely used in big-data pipelines, including with Apache Kafka, for exchanging and storing large volumes of structured data efficiently.</p>
+<img class="hero" src="images/apache-avro.png" alt="Apache Avro logo">
+<div class="caption">Avro data is always accompanied by its JSON schema</div>
+<h2>Features</h2>
+<p>Avro's central design principle is that data is always read using a schema: when Avro data is written, its schema is stored with it (in the file header for container files), and readers interpret the bytes accordingly. This enables <i>schema evolution</i>: readers and writers may use different but compatible versions of a schema, with rules for resolving differences such as added or removed fields with defaults. Supported types include primitive types (null, boolean, int, long, float, double, bytes, string) and complex types (records, enums, arrays, maps, unions, and fixed).</p>
+<h2>Comparison with other systems</h2>
+<p>Avro is frequently compared with Apache Thrift and Protocol Buffers. Unlike those systems, Avro does not require code generation for basic use, supports dynamic typing, and was designed around schemas stored in JSON rather than an interface definition language. Its tight integration with Hadoop made it a common storage format alongside columnar formats such as Parquet and ORC.</p>
+<h2>History</h2>
+<p>Avro was created in 2009, principally by Doug Cutting and the Hadoop community, initially to provide a serialization format for Hadoop's data storage and communication needs. It became a top-level project of the Apache Software Foundation in 2010 and has library implementations in many languages, including Java, C, C++, C#, Python, Ruby, and PHP.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Apache_Hadoop/index.html">Apache Hadoop</a></li>
+<li><a href="../Apache_Kafka/index.html">Apache Kafka</a></li>
+<li><a href="../Protocol_Buffers/index.html">Protocol Buffers</a></li>
+<li><a href="../Apache_Thrift/index.html">Apache Thrift</a></li>
+<li><a href="../Serialization/index.html">Serialization</a></li>
+</ul>
+</body>
+</html>

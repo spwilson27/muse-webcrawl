@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Interrupt handler - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:900px;margin:2em auto;padding:0 1em;line-height:1.6;color:#222}h1{font-size:1.9em;border-bottom:1px solid #a2a9b1}h2{border-bottom:1px solid #c8ccd1}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.9em;max-width:280px}img.hero{width:100%;background:#eee;display:block;min-height:120px}</style></head>
+<body>
+<h1>Interrupt handler</h1>
+<div class="infobox"><img class="hero" src="images/Interrupt_handler.png" alt="Diagram of a processor dispatching to an interrupt handler"><br><b>Also called:</b> Interrupt service routine (ISR)<br><b>Field:</b> Operating systems, embedded systems</div>
+<p>In computer systems programming, an <b>interrupt handler</b>, also known as an <b>interrupt service routine</b> (ISR), is a special block of code associated with a specific interrupt condition. Interrupt handlers are initiated by hardware interrupts, software interrupt instructions, or software exceptions, and are used for implementing device drivers and transitions between protected modes of operation, such as system calls.</p>
+<h2>Operation</h2>
+<p>When an interrupt occurs, the processor suspends its current activity, saves its state, and transfers control to the handler registered for that interrupt vector. The handler performs the urgent work — for example reading data from a device or acknowledging a timer tick — and then returns, restoring the saved state so the interrupted program resumes. Because handlers run with some interrupts disabled and must not block, they are typically kept short; longer processing is deferred to a lower-priority routine, a pattern known in the Linux kernel as "top half" and "bottom half" (softirqs, tasklets, and workqueues).</p>
+<h2>Types</h2>
+<p>Handlers may service hardware interrupts from devices, software interrupts invoked deliberately by an instruction, and exceptions caused by faults such as division by zero or page faults. In many operating systems, device drivers register a handler along with the interrupt request line (IRQ) the device uses.</p>
+<h2>Design constraints</h2>
+<p>Interrupt handlers generally cannot sleep, allocate memory that might block, or call most ordinary kernel services. Shared interrupts, interrupt latency, and re-entrancy must all be handled carefully to avoid lost interrupts and race conditions.</p>
+<h2>See also</h2>
+<p><a href="../Interrupt/index.html">Interrupt</a> &middot; <a href="../Device_driver/index.html">Device driver</a></p>
+<p><i>References: Silberschatz, Galvin &amp; Gagne, Operating System Concepts; Bovet &amp; Cesati, Understanding the Linux Kernel.</i></p>
+</body></html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Photon mapping - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+#content{max-width:960px;margin:0 auto;padding:20px 30px}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:5px;font-weight:normal}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal}
+img.hero{display:block;max-width:400px;width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:10px;text-align:center}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Photon mapping</h1>
+<img class="hero" src="images/photon-mapping.png" alt="[Image: A rendered image using photon mapping showing caustics through a glass object]">
+<p>In computer graphics, <b>photon mapping</b> is a two-pass global illumination rendering algorithm developed by Henrik Wann Jensen between 1995 and 2001 that approximately solves the rendering equation. It is able to simulate the effects of caustics, diffuse interreflection, and scattering in participating media such as smoke or water.</p>
+<h2>Algorithm</h2>
+<p>In the first pass, photons are traced from light sources into the scene and stored in a data structure called a <i>photon map</i> whenever they strike a surface. Separate photon maps are typically built for caustics (photons focused through specular surfaces) and for general global illumination. In the second pass, the scene is rendered using ray tracing, and the photon map is queried to estimate the radiance at each visible point by gathering nearby photons.</p>
+<p>Photon mapping is a "biased" rendering algorithm: the result is not exact, but converges to the correct solution as the number of photons increases. Because photons are stored and reused, the method is particularly efficient for effects like caustics, which are difficult for pure path tracing, but the density estimation can produce blurring and light leaking artefacts if parameters are poorly chosen.</p>
+<h2>Variants and legacy</h2>
+<p>Extensions include progressive photon mapping, which progressively refines the estimate over many iterations, and vertex connection and merging, which combines photon mapping with bidirectional path tracing. Photon mapping has been implemented in renderers such as Mental Ray and was widely used in production rendering before unbiased methods became faster.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Global_illumination/index.html">Global illumination</a></li>
+<li><a href="../Ray_tracing_(graphics)/index.html">Ray tracing (graphics)</a></li>
+<li><a href="../Radiosity_(computer_graphics)/index.html">Radiosity</a></li>
+<li><a href="../Rendering_equation/index.html">Rendering equation</a></li>
+</ul>
+</div>
+</body>
+</html>
