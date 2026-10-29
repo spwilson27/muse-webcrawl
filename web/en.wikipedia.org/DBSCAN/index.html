@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DBSCAN - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.mw-body { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; margin: 0 0 12px 16px; padding: 8px; font-size: 0.85em; font-family: sans-serif; }
+.infobox th { background: #b0c4de; text-align: center; padding: 4px; }
+.infobox td { padding: 2px 4px; vertical-align: top; }
+img.hero { display: block; max-width: 300px; margin: 8px 0; border: 1px solid #c8ccd1; }
+p { line-height: 1.6; }
+a { color: #3366cc; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>DBSCAN</h1>
+<img class="hero" src="images/dbscan.png" alt="DBSCAN (image placeholder)">
+<table class="infobox">
+<tr><th colspan="2">DBSCAN</th></tr>
+<tr><td><b>Type</b></td><td>Density-based clustering algorithm</td></tr>
+<tr><td><b>Proposed</b></td><td>1996 (Ester, Kriegel, Sander, Xu)</td></tr>
+<tr><td><b>Parameters</b></td><td>&epsilon; (neighbourhood radius), minPts (minimum points)</td></tr>
+<tr><td><b>Output</b></td><td>Clusters of arbitrary shape plus noise points</td></tr>
+<tr><td><b>Award</b></td><td>SIGKDD Test of Time Award (2014)</td></tr>
+</table>
+<p><b>DBSCAN</b> (Density-Based Spatial Clustering of Applications with Noise) is a data clustering algorithm proposed by Martin Ester, Hans-Peter Kriegel, Jörg Sander, and Xiaowei Xu in 1996. It groups together points that are closely packed, marking as outliers points that lie alone in low-density regions. Unlike k-means, DBSCAN does not require the number of clusters to be specified in advance and can find clusters of arbitrary shape.</p>
+<h2>Algorithm</h2>
+<p>The algorithm uses two parameters: &epsilon; (epsilon), the radius of a neighbourhood around a point, and minPts, the minimum number of points required to form a dense region. A point is a <i>core point</i> if at least minPts points lie within distance &epsilon; of it; points in a core point's neighbourhood that are not themselves core are <i>border points</i>; all others are <i>noise</i>. Clusters are formed by linking core points that are within &epsilon; of one another (density-connectivity) and attaching their border points. With a spatial index the average runtime is O(n log n); the worst case is O(n&sup2;).</p>
+<h2>Advantages and limitations</h2>
+<p>DBSCAN naturally identifies outliers as noise and can separate clusters of complex shapes, making it popular in spatial data mining, image analysis, and anomaly detection. Its weaknesses include difficulty with clusters of widely varying density, sensitivity to the choice of &epsilon; and minPts, and degraded performance in high-dimensional data. Extensions and successors include OPTICS, which handles varying density through a reachability ordering, and HDBSCAN, a hierarchical variant that selects stable clusters over a range of densities. The original paper received the 2014 SIGKDD Test of Time Award.</p>
+<p><i>See also:</i> <a href="../DECT/index.html">DECT</a></p>
+</div>
+</body>
+</html>

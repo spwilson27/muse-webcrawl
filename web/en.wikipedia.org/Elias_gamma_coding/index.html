@@ -1,0 +1,11 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Elias gamma coding - Wikipedia</title><style>body{font-family:Georgia,serif;max-width:960px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}h1{font-family:"Linux Libertine",Georgia,serif;border-bottom:1px solid #a2a9b1;font-weight:normal}h2{border-bottom:1px solid #a2a9b1;font-weight:normal}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 10px 15px;width:260px;font-size:90%}.infobox th{text-align:left;background:#eaecf0;padding:3px}.infobox td{padding:3px}img.hero{max-width:100%;height:auto}</style></head><body>
+<h1>Elias gamma coding</h1>
+<img class="hero" src="images/elias-gamma-coding.png" alt="Elias gamma coding (image placeholder)">
+<p><b>Elias gamma code</b> or <b>Elias γ code</b> is a universal code encoding positive integers developed by Peter Elias. It is used most commonly when coding integers whose upper-bound cannot be determined beforehand. It is one of a family of universal codes that also includes Elias delta coding and Elias omega coding.</p>
+<h2>Encoding</h2>
+<p>To code a number <i>x</i> ≥ 1: let N = ⌊log<sub>2</sub> x⌋ be the highest power of 2 contained in x, so 2<sup>N</sup> ≤ x &lt; 2<sup>N+1</sup>. Write out N in unary — that is, N zeroes followed by a one, or equivalently a one followed by N zeroes read in reverse convention. Then append the binary form of x − 2<sup>N</sup>, an (N)-digit binary number. The implicit probability distribution for the code lengths follows a power law, making the code well suited to data whose values cluster near small numbers.</p>
+<h2>Decoding</h2>
+<p>To decode, the decoder first counts the leading zeros to determine N, reads the single 1 bit, and then reads N additional bits, interpreting the result as 2<sup>N</sup> plus the value of those bits. Gamma coding is a prefix code, so a stream of concatenated codewords can be decoded unambiguously left to right.</p>
+<h2>Applications</h2>
+<p>Elias gamma coding is used in data compression contexts where values are predominantly small but occasionally large, and it forms the basis of more efficient variants such as Elias delta coding, which replaces the unary part with a gamma code of the length itself.</p>
+</body></html>

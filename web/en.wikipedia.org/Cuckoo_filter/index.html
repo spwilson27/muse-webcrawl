@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cuckoo filter - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine','Georgia',serif;margin:0;background:#f8f9fa;color:#202122}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;margin-bottom:8px;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+p,li{font-family:sans-serif;font-size:0.95em;line-height:1.6}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.85em;font-family:sans-serif}
+.infobox th{text-align:left;background:#e8eaf6;padding:4px}
+.infobox td{padding:4px}
+.hero{display:block;width:100%;max-width:300px;border:1px solid #a2a9b1;background:#eaecf0;text-align:center;padding:6px;margin-bottom:8px;font-size:0.8em;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Cuckoo filter</h1>
+<div class="infobox">
+<span class="hero"><img src="images/cuckoo_filter.png" alt="Cuckoo filter (image placeholder)"><br>Diagram of cuckoo filter insertion</span>
+<table>
+<tr><th>Type</th><td>Probabilistic data structure</td></tr>
+<tr><th>Introduced</th><td>2014, by Fan, Andersen, Kaminsky and Mitzenmacher</td></tr>
+<tr><th>Purpose</th><td>Approximate set membership</td></tr>
+<tr><th>Operations</th><td>Insert, lookup, delete</td></tr>
+</table>
+</div>
+<p>A <b>cuckoo filter</b> is a space-efficient probabilistic data structure used to test whether an element is a member of a set, in the same family as the Bloom filter. Introduced in 2014, it stores short hash "fingerprints" of items in a cuckoo hash table and, unlike a standard Bloom filter, supports deletion of items and typically achieves lower false-positive rates at small fingerprint sizes, with better locality of reference.</p>
+<h2>How it works</h2>
+<p>For each item, the filter computes a short fingerprint and two candidate buckets derived from the item's hash and the fingerprint itself (partial-key cuckoo hashing). The fingerprint is placed in one of the two buckets; if both are full, an existing fingerprint is "kicked out" and relocated to its own alternate bucket, echoing the cuckoo's habit of displacing eggs. Lookup checks only the two candidate buckets, and deletion removes a matching fingerprint from either.</p>
+<h2>Comparison with Bloom filters</h2>
+<p>Cuckoo filters offer deletion, bounded lookup cost (two bucket reads), and better space efficiency when target false-positive rates are below about 3%. They are used in databases, networks and storage systems as an alternative to Bloom filters where deletions are required or lookup speed matters.</p>
+<p>See also: <a href="../Bloom_filter/index.html">Bloom filter</a> &middot; <a href="../Cuckoo_hashing/index.html">Cuckoo hashing</a> &middot; <a href="../Probabilistic_data_structure/index.html">Probabilistic data structure</a></p>
+</div>
+</body>
+</html>

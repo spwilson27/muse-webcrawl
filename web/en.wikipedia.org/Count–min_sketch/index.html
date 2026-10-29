@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Count–min sketch - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 960px; padding: 0 1em; line-height: 1.6; color: #222; }
+h1 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; }
+h2 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.5em; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em 1em; margin: 0 0 1em 1em; width: 260px; font-size: 0.9em; }
+.infobox caption { font-weight: bold; text-align: center; background: #c7dbf3; padding: 0.3em; }
+a { color: #0645ad; text-decoration: none; }
+.hero { text-align: center; margin: 1em 0; }
+.hero img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Count–min sketch</h1>
+<table class="infobox">
+<caption>Count–min sketch</caption>
+<tr><td><b>Type</b></td><td>Probabilistic data structure</td></tr>
+<tr><td><b>Invented</b></td><td>2003, by Graham Cormode and S. Muthu Muthukrishnan</td></tr>
+<tr><td><b>Purpose</b></td><td>Approximate frequency counts in data streams</td></tr>
+<tr><td><b>Error</b></td><td>Overestimates only; bounded with high probability</td></tr>
+</table>
+<div class="hero"><img src="images/count-min-sketch.png" alt="Count–min sketch (image placeholder)"></div>
+<p>The <b>count–min sketch</b> is a probabilistic data structure that serves as a frequency table of events in a stream of data. It uses hash functions to map events to frequencies, trading a controlled amount of accuracy for drastically reduced space compared with exact counting.</p>
+<h2>Structure</h2>
+<p>The sketch is a two-dimensional array of counters with width w and depth d. Each incoming item is hashed by d independent hash functions, one per row, and the corresponding counter in each row is incremented. To estimate an item's count, the structure takes the minimum of its d counters — hence the name.</p>
+<h2>Error properties</h2>
+<p>Because different items can collide, estimates may be too high but never too low. With width proportional to e/ε and depth proportional to ln(1/δ), the estimate exceeds the true count by more than ε times the total stream count with probability at most δ. This makes the sketch ideal for finding "heavy hitters" — items with high frequency — in massive streams.</p>
+<h2>Applications</h2>
+<p>Count–min sketches are used in network traffic monitoring, database query optimisation, natural-language statistics, and large-scale systems such as content-delivery and advertising platforms, where exact counts over huge vocabularies are infeasible. Related structures include the Count sketch and Bloom filters.</p>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Conflict-driven clause learning - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:1.8em;margin:0 0 4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;font-size:1.4em;margin-top:1.2em}
+p{line-height:1.6;margin:0.5em 0}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px 12px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+.hero{display:block;margin:12px auto;max-width:420px}
+.caption{text-align:center;font-size:0.85em;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Conflict-driven clause learning</h1>
+<img class="hero" src="images/conflict-driven-clause-learning.png" alt="Conflict-driven clause learning (image placeholder)">
+<p class="caption">An implication graph generated during CDCL search.</p>
+<p><b>Conflict-driven clause learning</b> (CDCL) is an algorithm for solving the Boolean satisfiability problem (SAT) that underlies most modern high-performance SAT solvers. Building on the DPLL algorithm, CDCL solvers search by assigning variables, propagating forced assignments, and, when a conflict arises, analysing the conflict to learn a new clause that prevents the same failure from recurring, then backjumping non-chronologically to an earlier decision level.</p>
+<h2>Algorithm</h2>
+<p>The solver repeatedly picks an unassigned variable and assigns it a value (a decision), then performs Boolean constraint propagation: any clause reduced to a single unassigned literal forces that literal's value (an implication). Implications are recorded in an implication graph. When propagation derives both a literal and its negation, a conflict has occurred. Conflict analysis resolves the conflicting clause with the clauses that caused the implications, typically stopping at the first unique implication point (1UIP), to produce a learnt clause and a backjump level. The solver undoes assignments above that level, and the learnt clause immediately forces a new implication. Search terminates when all variables are assigned without conflict (satisfiable) or a conflict occurs at decision level zero (unsatisfiable).</p>
+<h2>Enhancements</h2>
+<p>Practical CDCL solvers add activity-based branching heuristics such as VSIDS, watched literals for fast propagation, periodic restarts, and deletion policies that prune the growing database of learnt clauses. Solvers such as MiniSat, Glucose, and CaDiCaL, widely used in hardware verification, software analysis, and planning, implement these ideas and have made SAT technology effective on industrial instances with millions of variables.</p>
+<h2>Theory</h2>
+<p>With suitable policies, CDCL is as powerful as general resolution: the learnt clauses correspond to resolution steps, so CDCL solvers can in principle reproduce any resolution proof, which helps explain their strength compared with tree-like DPLL search.</p>
+<h2>See also</h2>
+<p><a href="../DPLL_algorithm/index.html">DPLL algorithm</a> &middot; <a href="../Boolean_satisfiability_problem/index.html">Boolean satisfiability problem</a> &middot; <a href="../Backjumping/index.html">Backjumping</a></p>
+</div>
+</body>
+</html>

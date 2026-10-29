@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DLL Hell - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.mw-body { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; margin: 0 0 12px 16px; padding: 8px; font-size: 0.85em; font-family: sans-serif; }
+.infobox th { background: #b0c4de; text-align: center; padding: 4px; }
+.infobox td { padding: 2px 4px; vertical-align: top; }
+img.hero { display: block; max-width: 300px; margin: 8px 0; border: 1px solid #c8ccd1; }
+p { line-height: 1.6; }
+a { color: #3366cc; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>DLL Hell</h1>
+<img class="hero" src="images/dll-hell.png" alt="DLL Hell (image placeholder)">
+<table class="infobox">
+<tr><th colspan="2">DLL Hell</th></tr>
+<tr><td><b>Domain</b></td><td>Software dependency management</td></tr>
+<tr><td><b>Platform</b></td><td>Microsoft Windows (dynamic-link libraries)</td></tr>
+<tr><td><b>Problem</b></td><td>Conflicting shared library versions break applications</td></tr>
+<tr><td><b>Remedies</b></td><td>Private assemblies, side-by-side (WinSxS), Windows File Protection, .NET strong naming, package managers</td></tr>
+</table>
+<p><b>DLL Hell</b> is a term for the complications that arise when working with dynamic-link libraries (DLLs) on Microsoft Windows, especially the classic problem in which installing one application overwrites a shared system DLL with a version incompatible with other installed applications, causing them to malfunction or fail to run. Because early versions of Windows used a single shared directory for system libraries and allowed installers to replace them freely — and because 16-bit Windows could load only one version of a given DLL at a time — such conflicts were common in the 1990s.</p>
+<h2>Causes</h2>
+<p>Several factors contributed: shared libraries without enforced version management; installers that downgraded shared components; applications that depended on specific bugs or behaviours of a particular library version; and insufficient access controls, so that any installer could modify system files. The result was a system whose reliability degraded as more software was installed or uninstalled.</p>
+<h2>Solutions</h2>
+<p>Microsoft attacked the problem on several fronts: Windows File Protection (introduced with Windows 2000 and Me) prevents replacement of protected system files; side-by-side assemblies and the WinSxS store (Windows XP onward) allow multiple versions of a component to coexist, with applications binding to the version they need via manifests; and the .NET Framework's Global Assembly Cache uses strong names and versioning, while encouraging private copies of assemblies in application directories. More generally, modern practice favours private application-local dependencies and package management, an approach echoed on other platforms where analogous problems are known as "dependency hell" (for example JAR hell in Java or conflicts in Python environments).</p>
+<p><i>See also:</i> <a href="../DJI/index.html">DJI</a> &middot; <a href="../DHARMA_Initiative/index.html">DHARMA Initiative</a></p>
+</div>
+</body>
+</html>

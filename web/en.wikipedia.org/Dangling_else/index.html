@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Dangling else - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:960px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:4px}h2{border-bottom:1px solid #a2a9b1}pre{background:#f8f9fa;border:1px solid #a2a9b1;padding:10px;overflow:auto}img.hero{width:100%;border:1px solid #a2a9b1}</style></head>
+<body>
+<h1>Dangling else</h1>
+<img class="hero" src="images/dangling-else.png" alt="Dangling else (image placeholder)">
+<p>The <b>dangling else</b> is a problem in computer programming in which an <code>else</code> clause in a nested conditional statement is ambiguous: it is unclear to which <code>if</code> the <code>else</code> belongs. It arises in languages (such as C and its descendants) whose conditional grammar allows nested if-then and if-then-else forms without explicit delimiters.</p>
+<h2>Example</h2>
+<pre>if (a == 1)
+    if (b == 2)
+        x = 1;
+    else
+        x = 2;</pre>
+<p>Readers may assume the <code>else</code> pairs with the outer <code>if</code>, but by the usual convention it pairs with the nearest unmatched <code>if</code> — the inner one. If <code>a</code> is not 1, nothing happens; if <code>a</code> is 1 and <code>b</code> is not 2, <code>x</code> becomes 2.</p>
+<h2>Resolutions</h2>
+<p>Languages resolve the ambiguity in various ways: by convention (else binds to the innermost if, as in C, Java, and ALGOL 60), by requiring blocks or terminators such as <code>end if</code> or <code>fi</code> (as in Ada, shell, and ALGOL 68), by requiring braces (Perl, Rust), or by making indentation syntactically significant (Python). Compiler grammars typically handle the construct via the "shift" preference in shift-reduce parsing. Programmers also avoid confusion by using braces and consistent indentation.</p>
+</body></html>

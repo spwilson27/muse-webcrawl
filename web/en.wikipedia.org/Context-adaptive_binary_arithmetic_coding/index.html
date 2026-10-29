@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Context-adaptive binary arithmetic coding</title><style>body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:20px;color:#202122;line-height:1.6}h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}h2{font-size:1.4em;border-bottom:1px solid #a2a9b1}h3{font-size:1.15em}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px 14px;margin:0 0 12px 18px;width:250px;font-size:0.88em}.infobox th{text-align:left;vertical-align:top;padding-right:8px}.infobox caption{font-weight:bold;font-size:1.05em;padding-bottom:6px}img.hero{max-width:100%;border:1px solid #ccc}a{color:#0645ad;text-decoration:none}ul,ol{margin:0.4em 0 0.4em 1.6em;padding:0}</style></head><body>
+<h1>Context-adaptive binary arithmetic coding</h1>
+<img class="hero" src="images/cabac.png" alt="Context-adaptive binary arithmetic coding (image placeholder)">
+<table class="infobox"><caption>CABAC</caption>
+<tr><th>Field</th><td>Data compression; video coding</td></tr>
+<tr><th>Type</th><td>Entropy coding (lossless)</td></tr>
+<tr><th>Used in</th><td>H.264/AVC, H.265/HEVC, H.266/VVC, AV1 (related schemes)</td></tr>
+<tr><th>Gain</th><td>Typically 5–15% bit-rate saving over CAVLC in H.264</td></tr>
+</table>
+<p><b>Context-adaptive binary arithmetic coding</b> (<b>CABAC</b>) is a form of entropy encoding used in video compression. It combines arithmetic coding with adaptive probability models that are selected and updated according to the context of the symbols being coded. CABAC is a key source of the compression efficiency of the H.264/AVC and HEVC video standards.</p>
+<h2>How it works</h2>
+<p>CABAC operates in three stages. First, non-binary syntax elements (such as motion vector differences or quantised coefficients) are <b>binarised</b> — converted into a sequence of binary decisions called bins. Second, for each bin a <b>context model</b> is chosen based on neighbouring, previously coded information, and the model's probability estimate is updated as coding proceeds. Third, a binary <b>arithmetic coder</b> encodes each bin using its estimated probabilities, with special fast "bypass" coding for bins assumed to be equally likely.</p>
+<h2>Performance and cost</h2>
+<p>In H.264, CABAC typically saves around 5–15% of bit rate compared with the simpler context-adaptive variable-length coding (CAVLC) option, with the largest gains at higher quality levels. The cost is greater computational complexity and serial dependencies that complicate parallel decoding; later standards such as HEVC retained CABAC while redesigning its contexts and throughput, and VVC improved it further.</p>
+<h2>Applications</h2>
+<p>Beyond broadcast and streaming video in H.264, HEVC and VVC, CABAC-like schemes are used in other compression standards and image codecs. The technique exemplifies the general principle that accurate, adaptive probability modelling is as important to compression as the coder itself.</p>
+<p>See also: <a href="../Arithmetic_coding/index.html">Arithmetic coding</a>, <a href="../Entropy_encoding/index.html">Entropy encoding</a>, <a href="../H.264/index.html">H.264</a>, <a href="../High_Efficiency_Video_Coding/index.html">High Efficiency Video Coding</a>.</p>
+</body></html>
