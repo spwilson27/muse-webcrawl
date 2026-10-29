@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Linear-quadratic regulator</title><style>body{font-family:Georgia,serif;margin:2em auto;max-width:800px;padding:0 1em;line-height:1.6;color:#202122}h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{font-size:1.4em;border-bottom:1px solid #a2a9b1}a{color:#0645ad}</style></head>
+<body><h1>Linear-quadratic regulator</h1>
+<img src="images/linear-quadratic-regulator-hyphen.png" alt="Linear-quadratic regulator (image placeholder)">
+<p>The <b>linear-quadratic regulator</b> (LQR) is an algorithm in optimal control that computes the state-feedback controller minimising a quadratic cost function for a linear time-invariant system. For the system ẋ = Ax + Bu, the cost J = ∫₀<sup>∞</sup>(xᵀQx + uᵀRu)dt balances performance (small state error) against economy of control effort through the weighting matrices Q and R.</p>
+<h2>Derivation</h2>
+<p>The optimal feedback is u = −Kx with K = R<sup>−1</sup>BᵀP, P being the stabilising solution of the continuous algebraic Riccati equation. Tuning is intuitive: increasing Q relative to R penalises state deviations more and produces a faster, more aggressive controller; increasing R produces a gentler one using less actuator effort.</p>
+<h2>Extensions</h2>
+<p>Important variants include the finite-horizon LQR, the discrete-time LQR for computer-controlled systems, output-feedback and tracking versions, and iterative LQR (iLQR), which applies the method successively to linearisations of a nonlinear problem and is popular in trajectory optimisation for robotics. Together with optimal state estimation by the Kalman filter, LQR forms the LQG control design used in many flight-control and industrial applications.</p>
+</body></html>

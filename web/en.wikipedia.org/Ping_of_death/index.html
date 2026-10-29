@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ping of death - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; }
+p { line-height: 1.6; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 12px 16px; font-size: 0.9em; }
+.infobox th { text-align: left; padding-right: 8px; }
+img.hero { display: block; max-width: 100%; margin: 8px 0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Ping of death</h1>
+<img class="hero" src="images/ping-of-death.png" alt="Ping of death (image placeholder)">
+<p>A <b>ping of death</b> is a type of attack on a computer system that involves sending a malformed or otherwise malicious ping to a computer. It exploits the way early implementations of the Internet Protocol handled oversized ICMP packets.</p>
+<h2>Mechanism</h2>
+<p>The maximum size of an IP packet is 65,535 bytes. By sending a ping packet larger than this, split into fragments, a victim machine would attempt to reassemble a packet exceeding the maximum size, causing buffer overflows that could crash the system or, in some cases, allow code execution. The attack became widely known in 1996–1997, when it could crash many popular operating systems of the day.</p>
+<h2>Mitigation</h2>
+<p>Operating system vendors patched their IP stacks to check fragment sizes during reassembly, and firewalls routinely block ICMP echo requests, making the classic ping of death ineffective on modern systems. A related IPv6 issue surfaced in some systems in 2013 and was likewise patched.</p>
+</div>
+</body>
+</html>

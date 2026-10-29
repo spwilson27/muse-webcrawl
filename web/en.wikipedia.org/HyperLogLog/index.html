@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>HyperLogLog - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:90%}
+.infobox th{text-align:left;background:#eaf3ff;padding:2px 4px}
+.hero{width:100%;border:1px solid #a2a9b1}
+.small{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>HyperLogLog</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/hyperloglog.png" alt="HyperLogLog (image placeholder)">
+<table class="infobox">
+<tr><th colspan="2">HyperLogLog</th></tr>
+<tr><th>Type</th><td>Probabilistic data structure</td></tr>
+<tr><th>Purpose</th><td>Approximate cardinality estimation</td></tr>
+<tr><th>Inventors</th><td>Philippe Flajolet, Éric Fusy, Olivier Gandouet, Frédéric Meunier (2007)</td></tr>
+<tr><th>Predecessor</th><td>LogLog (Durand &amp; Flajolet, 2003)</td></tr>
+<tr><th>Typical memory</th><td>≈ 12 KB for ~2% error</td></tr>
+</table>
+<p><b>HyperLogLog</b> is an algorithm for the count-distinct problem, approximating the number of distinct elements in a multiset. It was published in 2007 by Philippe Flajolet and co-authors, refining the earlier LogLog algorithm of Marianne Durand and Flajolet (2003). Like other cardinality estimators, HyperLogLog trades exactness for a dramatic reduction in memory: it can estimate cardinalities well beyond 10<sup>9</sup> with a typical standard error of about 2% using only around 1.5 kilobytes of memory.</p>
+<h2>Principle</h2>
+<p>The algorithm hashes each item and observes the maximum number of leading zeros seen in hash values routed to a set of substreams (stochastic averaging). Rare patterns — a hash with many leading zeros — are evidence of a large number of distinct items. HyperLogLog improves on LogLog by using the harmonic mean of the substream maxima, which suppresses the influence of large outliers, and by applying bias corrections for small and large cardinalities.</p>
+<h2>Operations</h2>
+<p>HyperLogLog sketches are mergeable: the union of two sets is estimated by taking the register-wise maximum of their sketches, which makes the structure well suited to distributed systems and streaming databases. Implementations are built into systems such as Redis (the PFADD/PFCOUNT commands), PostgreSQL extensions, Apache Spark, and Google BigQuery's approximate count distinct functions. Extensions such as HyperLogLog++ (used by Google) refine the bias correction for small cardinalities.</p>
+<p class="small">See also: <a href="../Count-distinct_problem/index.html">Count-distinct problem</a> &middot; <a href="../MinHash/index.html">MinHash</a> &middot; <a href="../Probabilistic_data_structure/index.html">Probabilistic data structure</a></p>
+</div>
+</body>
+</html>

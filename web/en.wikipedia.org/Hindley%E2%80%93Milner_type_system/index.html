@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hindley–Milner type system - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine",Georgia,serif;margin:0;padding:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:1em 1.5em}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+p{line-height:1.6;font-size:.95em}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;width:240px;font-size:.85em}
+.infobox th{text-align:left;padding-right:.5em}
+a{color:#0645ad;text-decoration:none}
+img.hero{display:block;max-width:320px;border:1px solid #c8ccd1;padding:4px;background:#f8f9fa}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Hindley–Milner type system</h1>
+<img class="hero" src="images/hindley-milner.png" alt="Hindley–Milner type system (image placeholder)">
+<div class="infobox"><table>
+<tr><th>Family</th><td>Type systems for typed lambda calculus</td></tr>
+<tr><th>Devised by</th><td>J. Roger Hindley (1969); Robin Milner (1978)</td></tr>
+<tr><th>Key features</th><td>Parametric polymorphism, principal types, type inference</td></tr>
+</table></div>
+<p>The <b>Hindley–Milner type system</b> (HM) is a classical type system for the lambda calculus with parametric polymorphism. It is notable because a complete and decidable type inference algorithm exists for it: given a term without any type annotations, the algorithm can deduce the most general type of the term. The system was described independently by J. Roger Hindley in 1969 and Robin Milner in 1978, and it forms the theoretical basis of the type systems of languages such as <a href="../ML_(programming_language)/index.html">ML</a>, Haskell, and OCaml.</p>
+<h2>Description</h2>
+<p>HM extends the simply typed lambda calculus with let-polymorphism: a value bound by a let expression may be used at several different types, because its type may be generalised into a type scheme containing universally quantified type variables. Type schemes of the form ∀α₁…αₙ.τ allow a single definition, such as the identity function, to be used at every type.</p>
+<h2>Type inference</h2>
+<p>Milner's <b>Algorithm W</b> (1978) computes the principal type of an expression by generating and solving type equations using unification. Because the inferred type is principal — the most general type possible — any other valid typing of the term is an instance of it. Extensions such as type classes, row polymorphism, and higher-rank types build on the HM foundation.</p>
+<h2>Properties</h2>
+<p>Type inference for HM is decidable but can be EXPTIME-complete in the worst case, though it is nearly linear in practice. The system guarantees type safety: well-typed programs cannot produce certain classes of runtime errors.</p>
+</div>
+</body>
+</html>

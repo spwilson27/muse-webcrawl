@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Internet Control Message Protocol - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em;color:#202122;line-height:1.6}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em;margin:0 0 1em 1em;font-size:0.9em;width:250px}
+.infobox th{background:#cee0f2;padding:0.3em;text-align:center}
+.infobox td{padding:0.2em 0.4em}
+a{color:#0645ad;text-decoration:none}
+img.hero{display:block;max-width:400px;margin:1em 0;background:#eaecf0;border:1px solid #a2a9b1}
+</style>
+</head>
+<body>
+<h1>Internet Control Message Protocol</h1>
+<img class="hero" src="images/internet-control-message-protocol.png" alt="Internet Control Message Protocol (image placeholder)">
+<p>The <b>Internet Control Message Protocol</b> (<b>ICMP</b>) is a network-layer protocol in the Internet protocol suite used by routers and hosts to send error messages and operational information about network conditions. It is specified in RFC 792 (1981) and is integral to both IPv4 and, in a revised form called ICMPv6, to IPv6.</p>
+<table class="infobox">
+<tr><th colspan="2">Internet Control Message Protocol</th></tr>
+<tr><td><b>Abbreviation</b></td><td>ICMP</td></tr>
+<tr><td><b>Purpose</b></td><td>Error reporting and diagnostics</td></tr>
+<tr><td><b>Introduced</b></td><td>1981 (RFC 792)</td></tr>
+<tr><td><b>Layer</b></td><td>Network layer</td></tr>
+<tr><td><b>IP protocol number</b></td><td>1</td></tr>
+</table>
+<h2>Functions</h2>
+<p>ICMP messages are carried inside IP datagrams. Common message types include Destination Unreachable, Time Exceeded (sent when a packet's time-to-live reaches zero), Redirect, and Echo Request and Echo Reply, which are used by the <i>ping</i> utility to test reachability. The <i>traceroute</i> tool exploits Time Exceeded messages to map the route packets take across a network.</p>
+<p>Unlike TCP or UDP, ICMP is not normally used to exchange application data, and it has no concept of ports. It is a supporting protocol: IP implementations are required to generate and process ICMP messages.</p>
+<h2>ICMPv6</h2>
+<p>For IPv6, ICMPv6 (RFC 4443) performs the same error-reporting role and additionally carries the Neighbour Discovery Protocol functions that replace ARP, including router advertisements and neighbour solicitations, making it essential to basic IPv6 operation.</p>
+<h2>Security</h2>
+<p>Because ICMP can reveal network structure and redirect traffic, firewalls often filter or rate-limit it. Some ICMP-based attacks, such as ping floods and the historical "ping of death", have led administrators to block certain message types, though blanket blocking can break path MTU discovery.</p>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Graphics Device Interface - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine','Georgia',serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+p{font-family:sans-serif;font-size:0.92em;line-height:1.6}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-family:sans-serif;font-size:0.82em}
+.infobox th{background:#b0c4de;padding:4px;text-align:center}
+.infobox td{padding:3px 6px;vertical-align:top}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{width:100%;max-width:320px;display:block;margin:6px auto;background:#eef;border:1px solid #ccc}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Graphics Device Interface</h1>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Graphics Device Interface (GDI)</th></tr>
+<tr><td><b>Developer</b></td><td>Microsoft</td></tr>
+<tr><td><b>First release</b></td><td>1985 (Windows 1.0)</td></tr>
+<tr><td><b>Type</b></td><td>Graphics API / system component</td></tr>
+<tr><td><b>Successor</b></td><td>Direct2D / Windows Imaging Component</td></tr>
+</table>
+</div>
+<img class="hero" src="images/graphics-device-interface.png" alt="Graphics Device Interface (image placeholder)">
+<p>The <b>Graphics Device Interface</b> (GDI) is a legacy Microsoft Windows application programming interface and core operating system component responsible for representing graphical objects and transmitting them to output devices such as monitors and printers. Introduced with Windows 1.0 in 1985, GDI allowed applications to draw in a device-independent way: the same drawing calls could target a screen, a printer or a memory bitmap, with device drivers translating the abstract operations to specific hardware.</p>
+<h2>Architecture</h2>
+<p>Applications draw through a <i>device context</i> (DC), an object that encapsulates a drawing surface and a set of selected tools &mdash; pens, brushes, fonts, bitmaps and regions. GDI primitives include lines, curves, rectangles, polygons, text output and bit-block transfers (BitBlt). The interface is implemented principally in the file Gdi32.dll, with a kernel-mode counterpart historically located in Win32k.sys. GDI+, released with Windows XP, added anti-aliasing, gradient fills and improved image handling on top of the classic API.</p>
+<h2>Limitations and legacy</h2>
+<p>GDI is a largely CPU-bound, immediate-mode 2D API without direct access to modern GPU acceleration. Microsoft introduced Direct2D and DirectWrite as hardware-accelerated successors, but GDI remains deeply embedded in Windows: the classic desktop window manager rendered through GDI for decades, and countless applications still depend on it, so it continues to be supported in current Windows versions. GDI objects are a limited resource, and leaks of handles are a classic source of application instability.</p>
+<p><i>See also:</i> <a href="../Direct2D/index.html">Direct2D</a> &middot; <a href="../Windows_API/index.html">Windows API</a> &middot; <a href="../Device_context/index.html">Device context</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Font hinting - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0 auto;max-width:960px;padding:0 1.2em;color:#202122;background:#fff}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+p{line-height:1.6}
+img.hero{float:right;margin:0 0 1em 1em;max-width:300px;border:1px solid #a2a9b1;padding:3px;background:#f8f9fa}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>Font hinting</h1>
+<img class="hero" src="images/font-hinting.png" alt="Font hinting (image placeholder)">
+<p><b>Font hinting</b>, also known as <b>instructing</b>, is the use of mathematical instructions to adjust the rendering of an outline font so that it lines up with a rasterised grid. At small sizes and low resolutions, the rules of a typeface design can produce uneven or illegible results when an outline is simply scaled and filled in; hints modify the outline on the fly so that stems align with pixel boundaries, counters stay open, and features such as baselines and x-heights remain consistent.</p>
+<h2>Implementation</h2>
+<p>In TrueType fonts, hints are expressed as small programs in a stack-based bytecode language, executed by the rasteriser for each glyph at each size. A font developer, or automated tools, can add instructions controlling the positions of points relative to reference heights stored in the font. PostScript Type 1 and CFF fonts use a more declarative system of hints describing stem positions and alignment zones. The FreeType library, used on Linux and other platforms, offers both native interpretation and an "autohinter" that generates hints automatically.</p>
+<h2>Trade-offs</h2>
+<p>Hinting improves legibility at small sizes but can distort letterforms, so well-hinted fonts are a compromise between fidelity to the design and clarity on screen. With the spread of high-density ("Retina"-class) displays, the need for aggressive hinting has diminished, and some modern rendering pipelines use little or none, relying on resolution and subpixel antialiasing instead.</p>
+<h2>See also</h2>
+<p>See also <a href="../Fomite/index.html">fomite</a>.</p>
+</body>
+</html>

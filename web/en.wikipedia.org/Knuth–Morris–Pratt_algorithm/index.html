@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Knuth–Morris–Pratt algorithm - Wikipedia</title><style>body{font-family:"Linux Libertine",Georgia,serif;margin:0;background:#fff;color:#202122}header{border-bottom:1px solid #a7d7f9;padding:10px 24px}h1{font-size:1.9em;margin:0.2em 0}main{max-width:960px;margin:0 auto;padding:16px 24px;line-height:1.6}h2{border-bottom:1px solid #a2a9b1;font-size:1.4em;margin-top:1.2em}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px 12px;margin:0 0 12px 16px;font-size:0.9em;max-width:260px}.infobox th{text-align:left;padding-right:8px;vertical-align:top}.hero{display:block;max-width:320px;margin:8px auto}a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}.caption{text-align:center;font-size:0.85em;color:#54595d}</style></head>
+<body><header><h1>Knuth–Morris–Pratt algorithm</h1></header><main>
+<img class="hero" src="images/knuth-morris-pratt-algorithm.png" alt="Knuth–Morris–Pratt algorithm (image placeholder)">
+<p>The <b>Knuth–Morris–Pratt algorithm</b> (KMP) searches for occurrences of a pattern string within a main text string by exploiting the information in the pattern itself to avoid re-examining characters that are already known to match.</p>
+<div class="infobox"><table><tr><th>Class</th><td>String searching algorithm</td></tr><tr><th>Inventors</th><td>Donald Knuth, Vaughan Pratt, James H. Morris</td></tr><tr><th>Published</th><td>1977</td></tr><tr><th>Time complexity</th><td>O(n + m)</td></tr></table></div>
+<h2>Description</h2>
+<p>Before searching, the algorithm precomputes a "partial match" table (the failure function) recording, for each prefix of the pattern, the longest proper prefix that is also a suffix. When a mismatch occurs, the pattern is shifted according to this table so that no text character is compared more than a constant number of times.</p>
+<h2>Complexity</h2>
+<p>Preprocessing takes time proportional to the pattern length m, and the search itself takes time proportional to the text length n, giving overall linear time — an improvement over the worst case of naive search.</p>
+</main></body></html>

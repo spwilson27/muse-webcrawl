@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>SYN cookies - Wikipedia</title>
+<style>body{font-family:sans-serif;max-width:960px;margin:0 auto;padding:16px;line-height:1.55;color:#202122}h1{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}h2{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}img.hero{max-width:100%}</style></head>
+<body>
+<h1>SYN cookies</h1>
+<img class="hero" src="images/syn_cookies.png" alt="SYN cookies (image placeholder)">
+<p><b>SYN cookies</b> are a technique used to resist SYN flood denial-of-service attacks against TCP servers. Invented by Daniel J. Bernstein in 1996, the method avoids allocating connection state when a SYN packet arrives, instead encoding the necessary connection information into the sequence number of the SYN-ACK response — the "cookie".</p>
+<h2>Operation</h2>
+<p>When a client sends a SYN, the server computes a cryptographic hash of the source and destination addresses and ports plus a secret value and a timestamp, and uses part of it as the initial sequence number. No memory is allocated. If the client completes the handshake by returning the cookie incremented by one in its ACK, the server validates it and only then creates the connection state, reconstructing the limited options that could be encoded.</p>
+<h2>Trade-offs</h2>
+<p>Because only a few bits are available, some TCP options cannot be preserved when cookies are in use. Implementations such as the Linux kernel therefore enable SYN cookies only when the connection queue overflows, using them as a fallback under attack rather than for every connection.</p>
+<h2>See also</h2>
+<p><a href="../SYN_flood/index.html">SYN flood</a> · <a href="../Transmission_Control_Protocol/index.html">Transmission Control Protocol</a> · <a href="../Denial-of-service_attack/index.html">Denial-of-service attack</a></p>
+</body></html>

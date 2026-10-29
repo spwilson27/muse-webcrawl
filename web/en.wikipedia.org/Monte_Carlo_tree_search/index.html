@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Monte Carlo tree search - Wikipedia</title><style>body{font-family:sans-serif;margin:2em auto;max-width:820px;padding:0 1em;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #a2a9b1}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;width:260px;font-size:.9em}.infobox th{text-align:left;vertical-align:top;padding-right:.5em}img.hero{max-width:100%}.toc{background:#f8f9fa;border:1px solid #a2a9b1;padding:.5em 1em;display:inline-block}</style></head><body>
+<h1>Monte Carlo tree search</h1>
+<img class="hero" src="images/monte-carlo-tree-search.png" alt="Monte Carlo tree search (image placeholder)">
+<p><b>Monte Carlo tree search</b> (MCTS) is a heuristic search algorithm for decision processes, most notably employed in software that plays board games. It combines the generality of random simulation with the precision of tree search, building a game tree incrementally and asymmetrically in favour of promising moves.</p>
+<table class="infobox"><tr><th>Class</th><td>Search algorithm</td></tr><tr><th>Phases</th><td>Selection, expansion, simulation, backpropagation</td></tr><tr><th>Notable use</th><td>AlphaGo, game-playing programs</td></tr></table>
+<h2>Method</h2>
+<p>Each iteration of MCTS performs four steps. In <b>selection</b>, the algorithm descends the existing tree choosing child nodes by a policy such as UCT (upper confidence bounds applied to trees). In <b>expansion</b>, one or more new nodes are added. In <b>simulation</b>, a playout is run from the new node, often with random or lightly guided moves. In <b>backpropagation</b>, the result is propagated back up the tree, updating visit counts and value estimates.</p>
+<h2>History</h2>
+<p>The method gained prominence after 2006, when it revolutionised computer Go; programs such as Crazy Stone and MoGo used MCTS with UCT to reach strong amateur dan levels. In 2016, DeepMind's AlphaGo combined Monte Carlo tree search with deep neural networks to defeat world-class human Go players.</p>
+<h2>Advantages and disadvantages</h2>
+<p>MCTS requires no handcrafted evaluation function beyond the rules of the game, and it can be stopped at any time to return the currently best move. Its weakness is that it may overlook deep tactical traps if simulations rarely reach them.</p>
+<h2>See also</h2>
+<ul><li><a href="../../wiki/Monte_Carlo_method">Monte Carlo method</a></li><li><a href="../../wiki/AlphaGo">AlphaGo</a></li><li><a href="../../wiki/Minimax">Minimax</a></li></ul>
+</body></html>

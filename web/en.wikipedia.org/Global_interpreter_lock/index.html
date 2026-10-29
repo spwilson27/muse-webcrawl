@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Global interpreter lock - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; line-height: 1.6; }
+h1 { font-family: Georgia, 'Times New Roman', serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 1.9em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 0.88em; margin: 0 0 12px 16px; padding: 8px; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+.hero { display: block; max-width: 320px; border: 1px solid #c8ccd1; background: #eaecf0; padding: 6px; font-size: 0.85em; color: #54595d; margin: 8px 0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Global interpreter lock</h1>
+<img class="hero" src="images/global-interpreter-lock.png" alt="Global interpreter lock (image placeholder)">
+<p>A <b>global interpreter lock</b> (<b>GIL</b>) is a mechanism used in computer-language interpreters to synchronize the execution of threads so that only one native thread (per process) can execute at a time. An interpreter that uses a GIL will always allow exactly one thread to execute at a time, even if run on a multi-core processor. Some popular interpreters that have a GIL are <a href="../CPython/index.html">CPython</a>, the most widely used implementation of the <a href="../Python_(programming_language)/index.html">Python programming language</a>, and Ruby MRI, the reference implementation of the Ruby programming language.</p>
+<table class="infobox">
+<tr><th colspan="2">Global interpreter lock</th></tr>
+<tr><th>Type</th><td>Mutual exclusion lock</td></tr>
+<tr><th>Used in</th><td><a href="../CPython/index.html">CPython</a>, Ruby MRI</td></tr>
+<tr><th>Purpose</th><td>Thread synchronization in interpreters</td></tr>
+</table>
+<h2>Rationale</h2>
+<p>Interpreter implementations that use a GIL typically do so to simplify their internal memory management. In CPython, for example, object reference counts are manipulated by many internal operations, and a single global lock makes it unnecessary to add fine-grained locking around every object. The GIL also makes it easier to integrate extension libraries written in C that are not themselves thread-safe.</p>
+<h2>Effect on multi-threaded programs</h2>
+<p>Because the GIL prevents multiple threads from executing Python bytecode simultaneously, CPU-bound multi-threaded programs in CPython do not gain speed from additional processor cores, and may even run slightly slower than a single-threaded equivalent. Programs that spend much of their time waiting on input/output can still benefit from threads, since the GIL is released while a thread blocks on I/O. For CPU-bound parallelism, programmers commonly use multiple processes, via libraries such as multiprocessing, or move hot code into C extensions that release the GIL.</p>
+<h2>Alternatives and removal efforts</h2>
+<p>Other Python implementations, such as Jython and IronPython, do not have a GIL because they rely on the underlying Java or .NET runtimes. Over the years there have been repeated proposals to remove the GIL from CPython; experiments historically showed unacceptable slowdowns for single-threaded code. In 2023, PEP 703 proposed making the GIL optional in CPython through a separate "free-threaded" build, and the Python Steering Council accepted the proposal, with an experimental free-threaded build first shipped in Python 3.13.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Giant_lock/index.html">Giant lock</a></li>
+<li><a href="../Concurrency_(computer_science)/index.html">Concurrency</a></li>
+<li><a href="../Thread_(computing)/index.html">Thread (computing)</a></li>
+</ul>
+</div>
+</body>
+</html>

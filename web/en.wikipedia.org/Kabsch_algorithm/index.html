@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Kabsch algorithm - Wikipedia</title>
+<style>body{font-family:Georgia,serif;margin:2em auto;max-width:760px;line-height:1.6;color:#222}h1{font-family:Helvetica,Arial,sans-serif;border-bottom:1px solid #a2a9b1}h2{font-family:Helvetica,Arial,sans-serif;border-bottom:1px solid #a2a9b1}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em 1em;margin:0 0 1em 1em;font-size:0.9em}a{color:#0645ad}</style></head>
+<body>
+<h1>Kabsch algorithm</h1>
+<img src="images/kabsch-algorithm.png" alt="Kabsch algorithm (image placeholder)">
+<p>The <b>Kabsch algorithm</b>, named after Wolfgang Kabsch, is a method for calculating the optimal rotation matrix that minimizes the root mean square deviation (RMSD) between two paired sets of points. It is widely used in computational biology and cheminformatics to compare the three-dimensional structures of molecules, and in computer vision and robotics for point set registration.</p>
+<h2>Problem statement</h2>
+<p>Given two sets of corresponding points P and Q, each consisting of N points in three-dimensional space, the problem is to find the rotation matrix R and translation vector t that best map P onto Q in the least-squares sense. The Kabsch algorithm solves this in closed form using the singular value decomposition (SVD) of the covariance matrix of the two centered point sets.</p>
+<h2>Algorithm</h2>
+<p>The procedure first translates both point sets so that their centroids coincide with the origin. The cross-covariance matrix H is then computed as the sum over all points of the outer products of corresponding centered coordinates. Taking the SVD of H gives H = U S V-transpose, from which the optimal rotation is R = V D U-transpose, where D corrects for the case in which the rotation would otherwise be an improper rotation (a reflection), by flipping the sign of the smallest singular value when the determinant would be negative.</p>
+<h2>Applications</h2>
+<p>The algorithm is a standard tool for structural alignment of proteins, measuring similarity between molecular conformations, and aligning scanned point clouds. Extensions handle weighted points, partial correspondences, and scaling, the latter being known as the Umeyama algorithm.</p>
+<p>See also: <a href="../Procrustes_analysis/index.html">Procrustes analysis</a>, <a href="../Root-mean-square_deviation/index.html">Root-mean-square deviation</a></p>
+</body></html>

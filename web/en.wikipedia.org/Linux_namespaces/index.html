@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Linux namespaces</title><style>body{font-family:Georgia,serif;margin:2em auto;max-width:800px;padding:0 1em;line-height:1.6;color:#202122}h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{font-size:1.4em;border-bottom:1px solid #a2a9b1}a{color:#0645ad}</style></head>
+<body><h1>Linux namespaces</h1>
+<img src="images/linux-namespaces.png" alt="Linux namespaces (image placeholder)">
+<p><b>Namespaces</b> are a feature of the Linux kernel that partition kernel resources so that one set of processes sees one set of resources while another set sees a different set. Resources — such as process IDs, hostnames, user IDs, network interfaces, and mount points — are wrapped in separate namespaces, providing a lightweight form of isolation that is the foundation of Linux containers.</p>
+<h2>Types of namespace</h2>
+<p>The kernel provides several namespace types: mount (filesystem mount points), PID (process IDs), network (interfaces, routing tables, firewall rules), IPC (System V IPC and POSIX message queues), UTS (hostname and domain name), user (UID/GID mapping), cgroup (cgroup root visibility), and time (system clocks). Processes are placed in namespaces via the clone(), unshare(), and setns() system calls, and namespaces are visible under /proc/[pid]/ns/.</p>
+<h2>Use in containers</h2>
+<p>Container runtimes such as Docker, LXC, and containerd combine namespaces (for isolation of views) with cgroups (for resource limits) to run processes in environments that appear to be separate machines. User namespaces additionally allow unprivileged users to create namespaces in which they have virtual root privileges, enabling rootless containers.</p>
+</body></html>

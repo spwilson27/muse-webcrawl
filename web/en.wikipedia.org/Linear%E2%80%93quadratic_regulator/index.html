@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Linear–quadratic regulator</title><style>body{font-family:Georgia,serif;margin:2em auto;max-width:800px;padding:0 1em;line-height:1.6;color:#202122}h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{font-size:1.4em;border-bottom:1px solid #a2a9b1}a{color:#0645ad}</style></head>
+<body><h1>Linear–quadratic regulator</h1>
+<img src="images/linear-quadratic-regulator.png" alt="Linear–quadratic regulator (image placeholder)">
+<p>The <b>linear–quadratic regulator</b> (LQR) is a foundational method of optimal control theory for designing feedback controllers for linear dynamical systems. Given a linear system ẋ = Ax + Bu and a quadratic cost functional penalising state deviations and control effort, J = ∫(xᵀQx + uᵀRu)dt with Q positive semidefinite and R positive definite, the optimal control law is a linear state feedback u = −Kx.</p>
+<h2>Solution</h2>
+<p>The feedback gain is K = R<sup>−1</sup>BᵀP, where P is the unique positive semidefinite solution of the algebraic Riccati equation AᵀP + PA − PBR<sup>−1</sup>BᵀP + Q = 0. For the finite-horizon problem, P instead solves a differential Riccati equation integrated backwards from a terminal condition. Discrete-time versions exist for sampled-data systems.</p>
+<h2>Properties and use</h2>
+<p>Under standard stabilisability and detectability assumptions, the resulting closed-loop system is asymptotically stable, and the classical continuous-time LQR has guaranteed robustness margins (gain margin from ½ to infinity, and phase margin of at least 60° at the plant input). LQR is used widely in aerospace, robotics, and process control, and combined with a Kalman filter it yields the linear–quadratic–Gaussian (LQG) controller.</p>
+</body></html>

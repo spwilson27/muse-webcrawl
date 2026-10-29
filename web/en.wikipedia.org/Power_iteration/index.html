@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Power iteration - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 30px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; font-weight: normal; }
+p { line-height: 1.6; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 15px 15px; width: 260px; font-size: 0.9em; }
+.infobox h3 { margin-top: 0; text-align: center; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { width: 100%; border: 1px solid #c8ccd1; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Power iteration</h1>
+<div class="infobox">
+<h3>Power iteration</h3>
+<img class="hero" src="images/power-iteration.png" alt="Power iteration (image placeholder)">
+<p><b>Also known as:</b> Power method, Von Mises iteration</p>
+<p><b>Field:</b> Numerical linear algebra</p>
+<p><b>Finds:</b> Dominant eigenvalue and eigenvector</p>
+<p><b>Convergence:</b> Geometric, ratio |λ₂/λ₁|</p>
+</div>
+<p>In mathematics, <b>power iteration</b> (also known as the <b>power method</b>) is an eigenvalue algorithm: given a diagonalizable matrix <i>A</i>, the algorithm produces a number λ, the greatest (in absolute value) eigenvalue of <i>A</i>, and a nonzero vector <i>v</i>, its corresponding eigenvector, such that <i>Av = λv</i>.</p>
+<p>The method is simple: start with a random vector and repeatedly multiply it by <i>A</i>, normalising at each step. Because the component of the vector along the dominant eigenvector is amplified relative to all others by a factor of |λ₂/λ₁| at each step, the iterates align with the dominant eigenvector, and the Rayleigh quotient gives the eigenvalue.</p>
+<h2>Convergence and limitations</h2>
+<p>Convergence is slow when the two largest eigenvalues are close in magnitude. The method fails or behaves poorly when the dominant eigenvalue is not unique in magnitude — for example a pair of complex-conjugate eigenvalues of equal modulus. Shifts, deflation and acceleration techniques (such as the Rayleigh quotient iteration and the Lanczos and Arnoldi methods) extend the basic idea to harder problems.</p>
+<h2>Applications</h2>
+<p>Power iteration underlies Google's original PageRank computation, where the dominant eigenvector of a huge, sparse link matrix ranks web pages, and it remains in use for large-scale eigenvalue problems, principal component analysis and spectral clustering.</p>
+</div>
+</body>
+</html>

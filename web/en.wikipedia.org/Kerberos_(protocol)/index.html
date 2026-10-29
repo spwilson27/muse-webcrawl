@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kerberos (protocol) - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#f8f9fa;color:#202122;margin:0;padding:0}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+p{line-height:1.6;font-size:15px}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:13px;margin:0 0 12px 16px;padding:8px}
+.infobox th{background:#b0c4de;text-align:center;padding:4px}
+.infobox td{padding:3px 6px;vertical-align:top}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:12px auto;max-width:400px}
+.caption{text-align:center;font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Kerberos (protocol)</h1>
+<table class="infobox">
+<tr><th colspan="2">Kerberos</th></tr>
+<tr><td><b>Purpose</b></td><td>Network authentication</td></tr>
+<tr><td><b>Developer</b></td><td>MIT</td></tr>
+<tr><td><b>Introduced</b></td><td>1980s (Project Athena); version 5 standardized 1993</td></tr>
+<tr><td><b>Port</b></td><td>88 (UDP/TCP)</td></tr>
+</table>
+<img class="hero" src="images/kerberos-protocol.png" alt="Kerberos (protocol) (image placeholder)">
+<p class="caption">Diagram of the Kerberos ticket exchange between client, authentication server, and service.</p>
+<p><b>Kerberos</b> is a computer-network authentication protocol that works on the basis of tickets to allow nodes communicating over a non-secure network to prove their identity to one another in a secure manner. It is named after Cerberus, the three-headed dog of Greek mythology, reflecting its three parties: the client, the server, and the trusted Key Distribution Center (KDC).</p>
+<h2>How it works</h2>
+<p>A user authenticates to an Authentication Server and receives a Ticket Granting Ticket (TGT). When the user wants to access a service, the Ticket Granting Service issues a service ticket for that specific server. The client presents the ticket to the service, which can verify it using its own secret key shared with the KDC. Passwords are never sent over the network, and sessions are protected with symmetric-key cryptography.</p>
+<h2>History and use</h2>
+<p>Kerberos was developed at the Massachusetts Institute of Technology as part of Project Athena in the 1980s. Version 5, described in RFC 4120 (superseding RFC 1510), is the dominant standard. Microsoft adopted Kerberos as the default authentication protocol for Windows domains and Active Directory, and it is widely used in Unix environments through implementations such as MIT Kerberos and Heimdal.</p>
+<h2>Limitations</h2>
+<p>Kerberos requires a continuously available and trusted KDC, loose clock synchronization between participants, and is vulnerable if a user's credentials or a service key are stolen — attacks such as "Kerberoasting" and pass-the-ticket exploit weaknesses in deployments.</p>
+<h2>See also</h2>
+<p><a href="../Active_Directory/index.html">Active Directory</a> &middot; <a href="../Single_sign-on/index.html">Single sign-on</a></p>
+</div>
+</body>
+</html>

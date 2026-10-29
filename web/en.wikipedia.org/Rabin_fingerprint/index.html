@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Rabin fingerprint</title><style>body{font-family:Georgia,serif;margin:0 auto;max-width:960px;padding:20px;color:#202122}h1{font-family:"Linux Libertine",Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:4px}h2{border-bottom:1px solid #a2a9b1}img.hero{max-width:100%;border:1px solid #a2a9b1;background:#f8f9fa}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 12px;width:260px;font-size:90%}a{color:#0645ad;text-decoration:none}</style></head><body>
+<h1>Rabin fingerprint</h1>
+<img class="hero" src="images/rabin-fingerprint.png" alt="Rabin fingerprint (image placeholder)">
+<div class="infobox"><b>Rabin fingerprint</b><br>Type: Rolling hash / fingerprinting scheme<br>Proposed by: Michael O. Rabin (1981)<br>Basis: Polynomial arithmetic over GF(2)</div>
+<p>The <b>Rabin fingerprint</b> is a fingerprinting scheme proposed by Michael O. Rabin in 1981. It treats the input as a polynomial over the finite field GF(2) and computes its remainder modulo a randomly chosen irreducible polynomial. The resulting value serves as a compact fingerprint with provably low collision probability.</p>
+<h2>Method</h2>
+<p>An <i>n</i>-bit message is interpreted as a polynomial of degree less than <i>n</i> over GF(2). Dividing by a fixed irreducible polynomial of degree <i>k</i> yields a <i>k</i>-bit fingerprint. Because the computation is linear and incremental, the fingerprint can be computed as a rolling hash over a sliding window of data, similar in spirit to the Rabin–Karp string-search algorithm.</p>
+<h2>Applications</h2>
+<p>Rabin fingerprints underpin content-defined chunking in deduplication and backup systems (such as the approach used in LBFS and many modern storage systems), where rolling-hash boundaries split files into chunks whose average size is stable under insertions and deletions. They are also used in file-similarity detection and caching.</p>
+</body></html>

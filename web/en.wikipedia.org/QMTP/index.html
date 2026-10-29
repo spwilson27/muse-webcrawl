@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>QMTP - Wikipedia</title>
+<style>body{font-family:sans-serif;margin:2em auto;max-width:900px;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;width:240px;font-size:.9em}h2{border-bottom:1px solid #a2a9b1}img.hero{display:block;margin:1em auto;max-width:100%}a{color:#0645ad;text-decoration:none}</style>
+</head><body>
+<h1>QMTP</h1>
+<img class="hero" src="images/qmtp.png" alt="QMTP (image placeholder)">
+<p><b>QMTP</b> (<b>Quick Mail Transfer Protocol</b>) is an e-mail transmission protocol designed by Daniel J. Bernstein, the author of the qmail mail transfer agent. QMTP was created as a faster, simpler alternative to SMTP for mail submission and relay between servers that both support it, particularly over reliable high-speed links.</p>
+<div class="infobox"><b>QMTP</b><br>Type: E-mail transfer protocol<br>Designer: Daniel J. Bernstein<br>Default port: 209 (TCP)<br>Associated software: qmail (qmail-qmtpd)<br>Status: Experimental / niche use</div>
+<h2>Design</h2>
+<p>QMTP replaces SMTP's verbose, chat-driven exchanges with compact netstring-encoded transactions: the client sends the message and envelope in a small number of length-prefixed strings, and the server replies with a single response per recipient. This drastically reduces round trips compared with SMTP's greeting, HELO, MAIL FROM, RCPT TO, and DATA phases. QMTP runs on TCP port 209, assigned for the purpose, and is implemented by the qmail-qmtpd component of qmail and by some other servers.</p>
+<h2>Deployment</h2>
+<p>Because QMTP requires support on both ends, it never achieved the ubiquity of SMTP and is used mainly between cooperating servers, sometimes discovered through MX records pointing to hosts known to run qmail. It is documented in an Internet Draft authored by Bernstein rather than a formal RFC standard.</p>
+<h2>See also</h2>
+<ul><li><a href="../Simple_Mail_Transfer_Protocol">SMTP</a></li><li><a href="../Qmail">qmail</a></li><li><a href="../Daniel_J._Bernstein">Daniel J. Bernstein</a></li></ul>
+</body></html>

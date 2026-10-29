@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Fold (higher-order function)</title><style>body{font-family:"Linux Libertine",Georgia,serif;margin:0;background:#f8f9fa;color:#202122}main{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px}h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:28px}p,li{font-family:sans-serif;font-size:14.5px;line-height:1.6}code,pre{font-family:monospace;font-size:13.5px;background:#f8f9fa}pre{border:1px solid #eaecf0;padding:10px;overflow:auto}img.hero{max-width:100%;display:block;margin:6px auto}.refs{font-size:12.5px;color:#54595d}</style></head><body><main>
+<h1>Fold (higher-order function)</h1>
+<img class="hero" src="images/fold-higher-order-function.png" alt="Fold operation diagram (image placeholder)">
+<p>In functional programming, a <b>fold</b> (also termed <b>reduce</b>, <b>accumulate</b>, <b>aggregate</b>, <b>compress</b>, or <b>inject</b>) is a family of higher-order functions that analyze a recursive data structure — typically a list — and, by applying a combining operation to the elements and a starting value, build up a single return value. Folding is one of the most general patterns of computation over lists, corresponding to the catamorphism in category theory.</p>
+<h2>Left and right folds</h2>
+<p>A <b>left fold</b> (foldl) processes elements from the head of the list, threading an accumulator through the list in order: foldl f z [a,b,c] = f (f (f z a) b) c. A <b>right fold</b> (foldr) associates from the end: foldr f z [a,b,c] = f a (f b (f c z)). In lazy languages such as Haskell, right folds can operate on infinite lists when the combining function is lazy in its second argument, whereas left folds run in constant stack space but cannot return results before consuming the whole input.</p>
+<h2>Examples</h2>
+<pre>sum     = foldl (+) 0
+product = foldr (*) 1
+length  = foldl (\acc _ -> acc + 1) 0</pre>
+<p>Many familiar list functions — map, filter, reverse, maximum — can be expressed as folds, a fact formalized in the "universality of fold" and exploited in program-transformation systems. Parallel variants such as MapReduce generalize the same idea to distributed data.</p>
+<h2>Other structures</h2>
+<p>The concept extends beyond lists: fold-like operations exist for trees, options (Maybe), and other algebraic data types, where the fold replaces each constructor of the structure with a corresponding function.</p>
+<p class="refs">See also: Map (higher-order function); Catamorphism; Higher-order function.</p>
+</main></body></html>

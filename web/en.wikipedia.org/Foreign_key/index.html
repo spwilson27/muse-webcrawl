@@ -1,0 +1,11 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Foreign key</title><style>body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.6;color:#202122}h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.9em}.infobox th{background:#eaecf0;text-align:left;padding:2px 6px}.infobox td{padding:2px 6px}a{color:#0645ad;text-decoration:none}</style></head><body>
+<h1>Foreign key</h1>
+<img src="images/foreign-key.png" alt="Foreign key in a relational database (image placeholder)">
+<p>A <b>foreign key</b> is a set of attributes in a relational database table that references the primary key of another table (or, in a self-referencing relationship, the same table). The foreign key links the two tables together, enforcing referential integrity: the values in the referencing attributes must match values in the referenced primary key, or be null.</p>
+<h2>Referential integrity</h2>
+<p>Foreign keys are the principal mechanism for representing relationships between entities in the relational model. For example, an <i>orders</i> table may contain a <i>customer_id</i> column declared as a foreign key referencing the primary key of a <i>customers</i> table, guaranteeing that every order belongs to an existing customer.</p>
+<h2>Referential actions</h2>
+<p>When a referenced row is updated or deleted, the database can respond according to rules declared with the constraint: CASCADE (propagate the change), SET NULL, SET DEFAULT, RESTRICT, or NO ACTION. These rules are specified in SQL with the ON UPDATE and ON DELETE clauses of the FOREIGN KEY constraint.</p>
+<h2>Definition in SQL</h2>
+<p>Foreign keys are defined either when a table is created (CREATE TABLE) or added later (ALTER TABLE). Most relational database management systems enforce foreign key constraints automatically during INSERT, UPDATE, and DELETE operations.</p>
+</body></html>

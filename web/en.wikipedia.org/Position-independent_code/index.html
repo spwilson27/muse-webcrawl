@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Position-independent code - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;width:260px;font-size:88%}
+.infobox th{background:#b0c4de;padding:4px;text-align:center}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{max-width:100%;display:block;margin:0 auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Position-independent code</h1>
+<img class="hero" src="images/position-independent-code.png" alt="Position-independent code (image placeholder)">
+<p><b>Position-independent code</b> (<b>PIC</b>) or <b>position-independent executable</b> (<b>PIE</b>) is a body of machine code that executes properly regardless of its memory address. PIC is commonly used for shared libraries, so that the same library code can be loaded in a location in each program address space where it does not overlap with other memory used by that program.</p>
+<h2>Mechanism</h2>
+<p>Position-independent code avoids absolute addresses by referring to data and code through offsets relative to the current instruction pointer, or through indirection tables such as the Global Offset Table (GOT) and Procedure Linkage Table (PLT) used in ELF-based systems. Because the code itself never needs modification at load time, a single copy of a shared library's text segment can be shared between processes.</p>
+<h2>Uses</h2>
+<p>PIC enables address space layout randomization (ASLR), a security technique that randomizes the locations of executables and libraries to make exploitation harder. It is also essential for shared libraries on most Unix-like systems and for code stored in ROM. Writing PIC traditionally carried a small performance cost on some architectures, notably 32-bit x86, due to the reservation of a register for the GOT pointer; modern architectures such as x86-64 support instruction-pointer-relative addressing that largely removes this cost.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Shared_library/index.html">Shared library</a></li>
+<li><a href="../Address_space_layout_randomization/index.html">Address space layout randomization</a></li>
+<li><a href="../Relocation_(computing)/index.html">Relocation</a></li>
+</ul>
+</div>
+</body>
+</html>

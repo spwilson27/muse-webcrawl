@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Point set registration - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f8f9fa;color:#202122}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:20px 30px}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 10px 15px;font-size:90%;width:250px}
+a{color:#3366cc;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Point set registration</h1>
+<img src="images/point-set-registration.png" alt="Two point clouds being aligned by registration (image placeholder)">
+<p><b>Point set registration</b> is the process of finding a spatial transformation (such as rotation, translation, and possibly scaling or more general deformations) that aligns two point sets. Given two point clouds — for example from 3D scans, image features, or anatomical landmarks — the goal is to compute the transformation that best maps one onto the other, usually by minimizing a distance measure between corresponding points.</p>
+<h2>Problem formulation</h2>
+<p>Rigid registration seeks a rotation matrix and translation vector minimizing the sum of squared distances between matched points; when correspondences are known, the optimal solution is given by the Kabsch algorithm via singular value decomposition. When correspondences are unknown, the problem is much harder and algorithms alternate between estimating correspondences and estimating the transform.</p>
+<h2>Algorithms</h2>
+<p>The best-known method is <b>iterative closest point</b> (ICP), introduced in 1992, which repeatedly matches each point to the nearest point in the other set and recomputes the optimal transform. Variants include point-to-plane ICP, robust kernels for outliers, probabilistic methods such as Coherent Point Drift, and global methods based on branch-and-bound or feature matching (e.g., FPFH with RANSAC).</p>
+<h2>Applications</h2>
+<p>Registration is fundamental in computer vision, robotics (scan matching for SLAM), medical imaging (aligning scans of a patient), and computer graphics (merging partial scans into complete models).</p>
+<h2>See also</h2>
+<p>Iterative closest point &middot; Kabsch algorithm &middot; Image registration &middot; <a href="../Point_process/index.html">Point process</a></p>
+</div>
+</body>
+</html>

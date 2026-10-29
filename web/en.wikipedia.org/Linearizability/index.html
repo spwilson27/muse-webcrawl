@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Linearizability</title><style>body{font-family:Georgia,serif;margin:2em auto;max-width:800px;padding:0 1em;line-height:1.6;color:#202122}h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{font-size:1.4em;border-bottom:1px solid #a2a9b1}a{color:#0645ad}</style></head>
+<body><h1>Linearizability</h1>
+<img src="images/linearizability.png" alt="Linearizability (image placeholder)">
+<p><b>Linearizability</b> is a consistency model for concurrent programming and distributed systems, introduced by Maurice Herlihy and Jeannette Wing in 1990. A system is linearizable if every operation appears to take effect instantaneously at some point — its "linearization point" — between the operation's invocation and its response, so that the concurrent execution is equivalent to some sequential execution respecting real-time order.</p>
+<h2>Definition and properties</h2>
+<p>Linearizability is a safety property: it constrains what results concurrent operations may return, but says nothing about liveness. It is composable ("local"), meaning a system built from linearizable objects is itself linearizable, a property not shared by some weaker models. Unlike sequential consistency, linearizability respects the real-time ordering of non-overlapping operations: once a write completes, subsequent reads must observe it.</p>
+<h2>Use in distributed systems</h2>
+<p>In distributed systems, linearizability provides "strong consistency": the system behaves as if there were a single copy of the data. Consensus-based systems such as those using Paxos or Raft (e.g. etcd, ZooKeeper) provide linearizable operations, usually at the cost of higher latency or reduced availability during network partitions — a tension formalised by the CAP theorem.</p>
+</body></html>

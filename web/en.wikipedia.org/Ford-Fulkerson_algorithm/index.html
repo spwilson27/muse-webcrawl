@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ford-Fulkerson algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0 auto;max-width:960px;padding:0 1.2em;color:#202122;background:#fff}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+p{line-height:1.6}
+img.hero{float:right;margin:0 0 1em 1em;max-width:300px;border:1px solid #a2a9b1;padding:3px;background:#f8f9fa}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>Ford–Fulkerson algorithm</h1>
+<img class="hero" src="images/ford-fulkerson.png" alt="Ford-Fulkerson algorithm (image placeholder)">
+<p>The <b>Ford–Fulkerson algorithm</b> is a greedy algorithm that computes the maximum flow in a flow network. It was published in 1956 by L. R. Ford Jr. and D. R. Fulkerson. The idea is to repeatedly find an augmenting path from the source to the sink along which additional flow can be pushed, and to add that flow, until no such path exists in the residual network.</p>
+<h2>Algorithm</h2>
+<p>Starting from zero flow, the algorithm searches the residual graph — which includes reverse edges allowing flow to be "undone" — for a path with available capacity. The minimum residual capacity along the path (the bottleneck) is added to the flow on each edge. When no augmenting path remains, the flow is maximal; this is guaranteed by the max-flow min-cut theorem, also proved by Ford and Fulkerson, which states that the value of a maximum flow equals the capacity of a minimum cut.</p>
+<h2>Complexity</h2>
+<p>The running time depends on how augmenting paths are chosen. With integer capacities and poor path choices, the algorithm can be slow, and with irrational capacities it may fail to terminate. Choosing shortest augmenting paths by breadth-first search gives the Edmonds–Karp algorithm, which runs in polynomial time.</p>
+<h2>Applications</h2>
+<p>Maximum-flow methods underpin applications in transport, telecommunications, bipartite matching, and scheduling.</p>
+<h2>See also</h2>
+<p>See also <a href="../Ford_Sierra/index.html">Ford Sierra</a>.</p>
+</body>
+</html>
