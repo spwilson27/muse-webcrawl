@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Collision attack - Wikipedia</title>
+<style>body{font-family:sans-serif;margin:2em;color:#222;line-height:1.6}h1{border-bottom:1px solid #a2a9b1;font-size:1.8em}h2{border-bottom:1px solid #a2a9b1;font-size:1.3em;margin-top:1.5em}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:1em;margin:0 0 1em 1em;width:240px;font-size:0.9em}</style>
+</head><body>
+<h1>Collision attack</h1>
+<img src="images/collision-attack.png" alt="Collision attack (image placeholder)">
+<div class="infobox"><b>Collision attack</b><br>Field: Cryptanalysis<br>Target: Cryptographic hash functions<br>Related: Preimage attack, birthday attack</div>
+<p>A <b>collision attack</b> on a cryptographic hash function is an attempt to find two distinct inputs that produce the same hash output, known as a collision. A secure hash function should make finding collisions computationally infeasible; a successful collision attack therefore breaks one of the function's core security properties.</p>
+<h2>Birthday bound</h2>
+<p>Because of the birthday paradox, a generic collision search against an n-bit hash requires only about 2^(n/2) evaluations, far fewer than the 2^n needed for a preimage attack. This birthday bound is why output sizes are chosen generously: a 256-bit hash offers roughly 128-bit collision resistance.</p>
+<h2>Real-world attacks</h2>
+<p>Differential cryptanalysis enabled practical collisions in MD5 by 2004, and MD5 collisions were later used to forge certificates and by the Flame malware. In 2017 the SHAttered attack produced the first public collision for SHA-1, and chosen-prefix SHA-1 collisions followed in 2020. These results accelerated migration to the SHA-2 and SHA-3 families.</p>
+<h2>Types</h2>
+<p>In a classic collision attack the attacker controls both inputs freely. In a chosen-prefix collision attack, the attacker is given two different prefixes and must find suffixes making the complete messages collide, a stronger and more dangerous result. A preimage attack, by contrast, targets a fixed output.</p>
+<h2>Consequences</h2>
+<p>Collisions undermine digital signatures and certificates, because a signature computed for one document can be transferred to a colliding, malicious document.</p>
+</body></html>

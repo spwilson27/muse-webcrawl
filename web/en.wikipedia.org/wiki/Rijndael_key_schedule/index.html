@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Rijndael key schedule</title><style>body{font-family:Georgia,serif;max-width:900px;margin:0 auto;padding:20px;color:#202122;line-height:1.6}h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}h2{border-bottom:1px solid #a2a9b1;padding-bottom:3px}img.hero{max-width:100%;height:auto;background:#eaecf0;display:block;min-height:120px}.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.9em}.infobox th{text-align:left}</style></head><body>
+<h1>Rijndael key schedule</h1>
+<img class="hero" src="images/rijndael-key-schedule.png" alt="Rijndael key schedule (image placeholder)">
+<p>The <b>Rijndael key schedule</b> is the algorithm by which the <a href="../Advanced_Encryption_Standard/index.html">Advanced Encryption Standard</a> (AES) cipher, based on the <a href="../Rijndael/index.html">Rijndael</a> design of Joan Daemen and Vincent Rijmen, expands a short cipher key into the series of round keys used in each round of encryption and decryption.</p>
+<h2>Overview</h2>
+<p>AES operates on 128-bit blocks with keys of 128, 192, or 256 bits, requiring 10, 12, or 14 rounds respectively. The key schedule generates 128 bits of round key material for each round plus an initial key addition.</p>
+<h2>Operations</h2>
+<p>The expansion treats the key as a sequence of 4-byte words. New words are produced iteratively: every <i>Nk</i>-th word passes through a core transformation involving rotation of the word, byte substitution via the AES S-box, and XOR with a round constant (Rcon), a power of x in the finite field GF(2<sup>8</sup>). For 256-bit keys an additional S-box substitution is applied midway through each block.</p>
+<h2>Properties</h2>
+<p>The schedule is designed to be simple, fast in both hardware and software, and to resist related-key attacks through its nonlinear S-box step and round constants, although AES-192 and AES-256 have been shown to be somewhat weaker against related-key cryptanalysis than originally hoped.</p>
+</body></html>

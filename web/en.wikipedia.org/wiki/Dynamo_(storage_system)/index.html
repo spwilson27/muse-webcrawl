@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dynamo (storage system) - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:960px;line-height:1.6;color:#202122;padding:0 1em}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;margin-bottom:.3em}
+h2{border-bottom:1px solid #a2a9b1;font-size:1.5em}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.5em;margin:0 0 1em 1em;width:280px;font-size:.9em}
+.infobox th{text-align:left;background:#eaecf0;padding:.3em}
+.infobox td{padding:.3em}
+.hero{display:block;margin:1em auto;max-width:400px;border:1px solid #ccc}
+a{color:#0645ad}
+</style>
+</head>
+<body>
+<h1>Dynamo (storage system)</h1>
+<table class="infobox">
+<tr><th colspan="2">Dynamo</th></tr>
+<tr><th>Developer</th><td>Amazon.com</td></tr>
+<tr><th>Described</th><td>2007 (SOSP paper)</td></tr>
+<tr><th>Type</th><td>Distributed key–value store</td></tr>
+<tr><th>Successor service</th><td>Amazon DynamoDB</td></tr>
+</table>
+<img class="hero" src="images/Dynamo_(storage_system).png" alt="Dynamo (storage system) (image placeholder)">
+<p><b>Dynamo</b> is a highly available, distributed key–value storage system developed by Amazon to support core e-commerce services such as the shopping cart. It was described in an influential 2007 paper presented at the ACM Symposium on Operating Systems Principles, "Dynamo: Amazon's Highly Available Key-value Store".</p>
+<h2>Design principles</h2>
+<p>Dynamo prioritises availability and partition tolerance over strong consistency, offering eventual consistency so that writes are essentially never rejected — a "shopping cart" must always accept items. Its techniques include consistent hashing with virtual nodes to partition data across a ring of servers, quorum-based replication (parameterised by N, R and W), vector clocks to detect conflicting versions, hinted handoff and gossip-based membership, and Merkle trees (anti-entropy) for replica synchronisation.</p>
+<h2>Influence</h2>
+<p>Dynamo's design strongly influenced the NoSQL movement: Apache Cassandra, Riak and Voldemort all adopted variants of its architecture. Amazon later offered its ideas as a managed cloud service in Amazon DynamoDB (2012), which differs in several respects, including offering optional strong consistency.</p>
+<p>See also: <a href="../Amazon_DynamoDB/index.html">Amazon DynamoDB</a>, <a href="../Consistent_hashing/index.html">Consistent hashing</a>, <a href="../Eventual_consistency/index.html">Eventual consistency</a>.</p>
+</body>
+</html>

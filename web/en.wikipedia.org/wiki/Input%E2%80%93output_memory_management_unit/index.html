@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Input–output memory management unit</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:2em auto;max-width:760px;line-height:1.6;color:#202122;padding:0 1em}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:0.2em}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+img.hero{display:block;margin:1em auto;max-width:320px;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em}
+</style>
+</head>
+<body>
+<h1>Input–output memory management unit</h1>
+<img class="hero" src="images/iommu.png" alt="Input–output memory management unit (image placeholder)">
+<p>An <b>input–output memory management unit</b> (<b>IOMMU</b>) is a hardware component that connects DMA-capable input/output devices to main memory and translates the addresses they use, much as a CPU's memory management unit (MMU) translates virtual addresses for programs. By mapping device-visible addresses to physical memory through page tables, an IOMMU lets devices work with simplified or virtualised address spaces.</p>
+<h2>Functions</h2>
+<p>An IOMMU provides several benefits. It allows a device with limited addressing capability (for example, a 32-bit DMA engine) to access memory anywhere in the machine by remapping a contiguous device-side region onto scattered physical pages ("scatter–gather" without driver workarounds such as bounce buffers). It improves security and reliability by restricting each device to the memory regions it has been granted, so a malfunctioning or malicious device cannot read or corrupt arbitrary memory. It is also a key enabling technology for device passthrough in virtualisation, letting a virtual machine use a physical device directly and safely: Intel markets the technology as VT-d and AMD as AMD-Vi, while ARM designs include the SMMU.</p>
+<h2>History</h2>
+<p>Address-translation hardware for I/O appeared in early systems such as the IBM System/360 Model 67 and in later workstations and servers (for example, the IOMMUs of Sun SPARC systems and the GART of AMD Athlon 64 chipsets) before becoming standard in mainstream x86 platforms in the 2000s.</p>
+<h2>See also</h2>
+<p>Memory management unit; Direct memory access; Virtualisation; Intel VT-d; DMA attack.</p>
+</body>
+</html>

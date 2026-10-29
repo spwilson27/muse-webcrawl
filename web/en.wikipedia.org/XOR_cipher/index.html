@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>XOR cipher - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.9em;width:260px}
+.infobox th{text-align:left;vertical-align:top}
+img.hero{display:block;max-width:100%;margin:1em auto}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>XOR cipher</h1>
+<img class="hero" src="images/xor-cipher.png" alt="XOR cipher (image placeholder)">
+<table class="infobox">
+<tr><th>Operation</th><td>Bitwise exclusive or (XOR)</td></tr>
+<tr><th>Key</th><td>Repeating byte string (weak) or one-time pad</td></tr>
+<tr><th>Encryption</th><td>ciphertext = plaintext XOR key</td></tr>
+<tr><th>Decryption</th><td>plaintext = ciphertext XOR key</td></tr>
+</table>
+<p>In cryptography, the <b>XOR cipher</b> is a simple additive cipher in which each bit or byte of the plaintext is combined with a corresponding bit or byte of a key stream using the exclusive-or (XOR) operation. Because XOR is its own inverse — applying the same operation twice restores the original value — a single algorithm serves for both encryption and decryption.</p>
+<h2>Operation</h2>
+<p>If the key is a short string repeated to cover the message, the cipher is a form of polyalphabetic cipher that is trivially broken: an attacker can recover the key length by counting coincidences and then solve each position as a simple substitution. If, however, the key is as long as the message, truly random, and never reused, the result is the one-time pad, which is information-theoretically secure.</p>
+<h2>Uses</h2>
+<p>The XOR combination step appears throughout serious cryptography: stream ciphers generate a keystream that is XORed with the plaintext, and block ciphers in modes such as counter mode do the same. XOR ciphers with repeating keys survive mainly in obfuscation and copy-protection schemes, where they provide no real security. The operation is also used in RAID storage (for parity) and in checksums.</p>
+<h2>Example</h2>
+<p>Encrypting the letter "A" (0x41) with the key byte 0x2A yields 0x6B; XORing 0x6B with 0x2A again yields 0x41, "A".</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Xanthan_gum/index.html">Xanthan gum</a></li>
+<li><a href="../XML_namespace/index.html">XML namespace</a></li>
+</ul>
+</body>
+</html>

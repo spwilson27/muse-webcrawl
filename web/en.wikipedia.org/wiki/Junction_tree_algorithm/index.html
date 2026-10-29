@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Junction tree algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:900px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 15px 15px;width:250px;font-size:0.9em}
+.infobox th{text-align:left;padding-right:10px}
+img.hero{display:block;width:100%;max-width:600px;margin:10px 0}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>Junction tree algorithm</h1>
+<img class="hero" src="images/Junction_tree_algorithm.png" alt="Junction tree algorithm (image placeholder)">
+<table class="infobox">
+<tr><th>Type</th><td>Probabilistic inference algorithm</td></tr>
+<tr><th>Used for</th><td>Computing marginal distributions in graphical models</td></tr>
+<tr><th>Related</th><td>Belief propagation, variable elimination, clique tree</td></tr>
+</table>
+<p>The <b>junction tree algorithm</b> (also known as the clique tree algorithm) is a method for exact inference in probabilistic graphical models such as Bayesian networks and Markov random fields. It generalizes belief propagation from trees to arbitrary graphs by reorganizing the graph into a tree of clusters.</p>
+<h2>Description</h2>
+<p>The algorithm proceeds by moralizing and triangulating the graph, identifying its maximal cliques, and arranging those cliques into a junction tree that satisfies the running intersection property. Probability potentials are assigned to cliques, and evidence is incorporated before a two-phase message-passing procedure — a collect (inward) pass and a distribute (outward) pass — calibrates the tree so that each clique's beliefs are consistent with its neighbors.</p>
+<h2>Properties</h2>
+<p>After calibration, the marginal distribution of any variable can be read from a clique containing it. The computational cost is exponential in the size of the largest clique (related to the graph's treewidth), which limits the method to models of modest treewidth. The algorithm was developed from the work of Lauritzen and Spiegelhalter and of Jensen and colleagues in the late 1980s.</p>
+</body>
+</html>

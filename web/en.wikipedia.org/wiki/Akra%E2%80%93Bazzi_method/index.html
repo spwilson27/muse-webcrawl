@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Akra–Bazzi method - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine",Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+#content{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+p{font-family:sans-serif;font-size:14px;line-height:1.6}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-family:sans-serif;font-size:13px}
+.infobox th{background:#cedff2;padding:4px;text-align:center}
+.infobox td{padding:3px 6px;vertical-align:top}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;margin:12px auto;max-width:420px}
+.caption{text-align:center;font-family:sans-serif;font-size:12px;color:#54595d}
+.mono{font-family:monospace;background:#f8f9fa;padding:2px 4px}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Akra–Bazzi method</h1>
+<img class="hero" src="images/akra-bazzi-method.png" alt="Akra–Bazzi method (image placeholder)">
+<p class="caption">Recursion tree of a divide-and-conquer recurrence</p>
+<p>In computer science, the <b>Akra–Bazzi method</b>, or <b>Akra–Bazzi theorem</b>, is used to analyze the asymptotic behavior of divide-and-conquer recurrences whose subproblems have substantially different sizes. It is a generalization of the master theorem for divide-and-conquer recurrences, which assumes subproblems are of equal size. The method was described by Mohamad Akra and Louay Bazzi in 1998.</p>
+<table class="infobox">
+<tr><th colspan="2">Akra–Bazzi method</th></tr>
+<tr><td><b>Field</b></td><td>Analysis of algorithms</td></tr>
+<tr><td><b>Formulated by</b></td><td>Mohamad Akra, Louay Bazzi (1998)</td></tr>
+<tr><td><b>Generalizes</b></td><td>Master theorem</td></tr>
+</table>
+<h2>Formulation</h2>
+<p>The method applies to recurrences of the form T(x) = g(x) + Σ a<sub>i</sub> T(b<sub>i</sub> x + h<sub>i</sub>(x)), where the subproblem sizes b<sub>i</sub> x differ by small perturbations h<sub>i</sub>. One first finds the unique real number p such that Σ a<sub>i</sub> b<sub>i</sub><sup>p</sup> = 1. The solution then is T(x) = Θ( x<sup>p</sup> ( 1 + ∫<sub>1</sub><sup>x</sup> g(u)/u<sup>p+1</sup> du ) ).</p>
+<h2>Application</h2>
+<p>The Akra–Bazzi method handles recurrences arising from algorithms whose splits are unbalanced or randomized, such as quickselect variants or recurrences in which the problem is divided into unequal pieces — for example a split into one-third and two-thirds subproblems with polynomial overhead. Because the master theorem requires all subproblems to have the same size, such recurrences previously demanded ad-hoc analysis; Akra–Bazzi gives a single formula covering both the balanced and unbalanced cases.</p>
+<h2>See also</h2>
+<p><a href="../Master_theorem_(analysis_of_algorithms)/index.html">Master theorem (analysis of algorithms)</a> &middot; <a href="../Recurrence_relation/index.html">Recurrence relation</a> &middot; <a href="../Divide-and-conquer_algorithm/index.html">Divide-and-conquer algorithm</a></p>
+</div>
+</body>
+</html>

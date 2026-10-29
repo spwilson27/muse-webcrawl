@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SPIN model checker - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.content{max-width:960px;margin:0 auto;padding:24px}
+h1{font-size:2em;border-bottom:1px solid #a7d7f9;padding-bottom:4px;margin-bottom:8px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:2px;margin-top:1.2em}
+p{font-size:0.95em}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.85em;margin:0 0 12px 16px;border-collapse:collapse}
+.infobox th,.infobox td{padding:4px 8px;border-bottom:1px solid #eaecf0;text-align:left;vertical-align:top}
+.infobox caption{background:#eef;padding:6px;font-weight:bold}
+.hero{display:block;margin:12px auto;max-width:480px;width:100%}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+ul{font-size:0.95em}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>SPIN model checker</h1>
+<img class="hero" src="images/SPIN_model_checker.png" alt="SPIN model checker (image placeholder)">
+<table class="infobox">
+<caption>SPIN</caption>
+<tr><th>Original author</th><td>Gerard J. Holzmann</td></tr>
+<tr><th>Initial release</th><td>1991</td></tr>
+<tr><th>Written in</th><td>C</td></tr>
+<tr><th>Operating system</th><td>Cross-platform</td></tr>
+<tr><th>Type</th><td>Model checker / formal verification</td></tr>
+<tr><th>Licence</th><td>BSD (open source since version 6)</td></tr>
+</table>
+<p><b>SPIN</b> (Simple Promela Interpreter) is a widely used software tool for the formal verification of concurrent and distributed systems. It was developed by Gerard J. Holzmann at Bell Laboratories, beginning in the 1980s, and released publicly in 1991. SPIN checks a model of a system, written in the Promela modelling language, against correctness properties expressed in linear temporal logic (LTL), exhaustively exploring the system's state space for violations such as deadlocks, race conditions and assertion failures.</p>
+<h2>How it works</h2>
+<p>The user writes an abstract model of the system in Promela (Process Meta Language), which supports nondeterministic processes communicating over synchronous and asynchronous message channels. SPIN translates the Promela model into a C program (a specialised verifier) that is compiled and executed; the verifier performs an exhaustive search, typically using depth-first search with partial order reduction to reduce the number of interleavings that must be examined. If a property is violated, SPIN produces a counterexample trail that can be replayed as a guided simulation to debug the design.</p>
+<h2>Features and influence</h2>
+<p>SPIN introduced or popularised several techniques in practical model checking, including on-the-fly verification, partial order reduction and bitstate hashing, which trades completeness for drastic memory savings on very large problems. Holzmann received the 2001 ACM Software System Award for SPIN. The tool has been applied to verify protocols, distributed algorithms and mission-critical software, including software for NASA spacecraft. Its ideas influenced later verifiers and the design of the Promela-based workflow remains a standard teaching example in formal methods courses.</p>
+<h2>See also</h2>
+<ul>
+<li>Model checking</li>
+<li>Linear temporal logic</li>
+<li>Promela</li>
+<li>Formal verification</li>
+</ul>
+</div>
+</body>
+</html>

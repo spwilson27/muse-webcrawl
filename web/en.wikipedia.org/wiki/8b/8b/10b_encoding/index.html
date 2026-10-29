@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>8b/10b encoding — Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#fff;color:#202122;margin:0 auto;max-width:960px;padding:20px;line-height:1.6}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+img.hero{display:block;max-width:100%;margin:10px 0}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>8b/10b encoding</h1>
+<img class="hero" src="images/8b-10b-encoding.png" alt="8b/10b encoding (image placeholder)">
+<p>In telecommunications, <b>8b/10b</b> is a line code that maps 8-bit words to 10-bit symbols to achieve DC balance and bounded running disparity, while providing enough state changes to allow reasonable clock recovery. It was invented by Al Widmer and Peter Franaszek of IBM in 1983, and IBM holds a patent on one implementation of it.</p>
+<h2>How it works</h2>
+<p>The encoder splits each byte into a 5-bit and a 3-bit part, which are encoded as 6-bit and 4-bit symbols (5b/6b and 3b/4b encoding). The encoder tracks the running disparity — the difference between the number of ones and zeros sent — and selects symbol encodings to keep the transmitted signal DC-balanced, which prevents baseline wander in AC-coupled links and guarantees frequent transitions for clock recovery.</p>
+<h2>Control symbols</h2>
+<p>Some 10-bit symbols are reserved as control characters (the K codes, such as K28.5) that cannot result from encoding any data byte. These are used for framing, alignment, and special functions such as the comma character used for symbol synchronization.</p>
+<h2>Applications</h2>
+<p>8b/10b encoding has been widely used in Fibre Channel, Gigabit Ethernet (1000BASE-X), InfiniBand, Serial ATA, PCI Express (generations 1 and 2), USB 3.0, and DisplayPort. Later high-speed standards largely moved to more efficient schemes such as 64b/66b and 128b/132b encoding, which carry much lower overhead than 8b/10b's 25%.</p>
+<p class="small">See also: 64b/66b encoding; Line code; Running disparity; Gigabit Ethernet.</p>
+</body>
+</html>

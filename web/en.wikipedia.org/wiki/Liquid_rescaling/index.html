@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Liquid rescaling - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 12px 16px; font-size: 90%; }
+.infobox h3 { margin-top: 0; text-align: center; }
+.hero { text-align: center; margin: 12px 0; }
+.hero img { max-width: 320px; border: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Liquid rescaling</h1>
+<div class="infobox">
+<h3>Liquid rescaling</h3>
+<p><b>Type:</b> Content-aware image resizing technique</p>
+<p><b>Also known as:</b> Seam carving (related)</p>
+<p><b>Field:</b> Computer graphics, image processing</p>
+</div>
+<p><b>Liquid rescaling</b> is a content-aware image resizing technique in which an image is resized non-uniformly, with less visually important regions being compressed or expanded more than salient regions. The best-known algorithm of this family is seam carving, introduced by Shai Avidan and Ariel Shamir in 2007, in which a connected path of pixels (a "seam") of minimal total energy is repeatedly removed or inserted, preserving the main subjects of the photograph while changing its aspect ratio.</p>
+<div class="hero"><img src="images/Liquid_rescaling.png" alt="Liquid rescaling (image placeholder)"></div>
+<h2>Method</h2>
+<p>An energy map is computed from the image, typically based on gradient magnitude, so that edges and detailed areas receive high energy. Dynamic programming finds the minimal-energy connected seam from one side of the image to the other. Removing seams shrinks the image; duplicating seams enlarges it. More advanced variants combine seam carving with forward energy (measuring the artifacts introduced by removal) and with object detection to protect faces and other important content.</p>
+<h2>Applications</h2>
+<p>Liquid rescaling was popularized by its inclusion in Adobe Photoshop (as "Content-Aware Scaling") and in the GIMP through plugins. It is used for retargeting images to different aspect ratios for web and mobile layouts.</p>
+<h2>See also</h2>
+<p>See also <a href="../Seam_carving/index.html">seam carving</a> and <a href="../Image_scaling/index.html">image scaling</a>.</p>
+</div>
+</body>
+</html>

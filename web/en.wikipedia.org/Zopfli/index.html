@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Zopfli - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:88%;margin:0 0 12px 16px;padding:6px}
+.infobox th{text-align:left;background:#eaecf0;padding:3px}
+.infobox td{padding:3px}
+img.hero{display:block;margin:12px auto;max-width:100%}
+a{color:#0645ad;text-decoration:none}
+.small{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Zopfli</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/zopfli.png" alt="Zopfli (image placeholder)">
+<table class="infobox">
+<tr><th colspan="2">Zopfli</th></tr>
+<tr><th>Developer</th><td>Google (Jyrki Alakuijala, Lode Vandevenne)</td></tr>
+<tr><th>Initial release</th><td>February 2013</td></tr>
+<tr><th>Written in</th><td>C</td></tr>
+<tr><th>License</th><td>Apache License 2.0</td></tr>
+<tr><th>Type</th><td>Data compression software</td></tr>
+</table>
+<p><b>Zopfli</b> is a data compression library and program developed by Google that performs data compression using the Deflate algorithm. Zopfli is named after zopf, a Swiss German word for a braided bread (literally "little braid"), following the pattern of naming compression tools after foods. It was released as free and open-source software under the Apache License, Version 2.0, in February 2013.</p>
+<h2>Properties</h2>
+<p>Zopfli produces output files that are fully compatible with the gzip, zlib and Deflate formats used by ordinary decompressors, but it expends far more computation time to find a denser encoding. It typically produces files about 3–8% smaller than the maximum-compression output of zlib, at the cost of being roughly two orders of magnitude slower. Decompression speed is unaffected. Because of this asymmetry, Zopfli is best suited to one-time compression of content that will be decompressed many times, such as static web assets, software packages and PNG images (via the companion zopflipng tool).</p>
+<h2>Technique</h2>
+<p>The encoder uses extensive iterative optimisation: it models the costs of literal/length and distance symbols, performs exhaustive searches for good LZ77 matches and repeatedly refines the block splitting and Huffman code choices until the output converges. Google later applied similar techniques in the Brotli format.</p>
+<p class="small">Categories: Data compression software | Free software programmed in C | Google software</p>
+</div>
+</body>
+</html>

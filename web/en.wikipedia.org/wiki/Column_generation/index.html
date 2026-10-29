@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Column generation - Wikipedia</title>
+<style>body{font-family:sans-serif;margin:2em;color:#222;line-height:1.6}h1{border-bottom:1px solid #a2a9b1;font-size:1.8em}h2{border-bottom:1px solid #a2a9b1;font-size:1.3em;margin-top:1.5em}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:1em;margin:0 0 1em 1em;width:240px;font-size:0.9em}</style>
+</head><body>
+<h1>Column generation</h1>
+<img src="images/column-generation.png" alt="Column generation (image placeholder)">
+<div class="infobox"><b>Column generation</b><br>Field: Operations research, linear programming<br>Related: Dantzig–Wolfe decomposition, branch and price, cutting stock problem</div>
+<p><b>Column generation</b> is a solution technique for large linear programming problems in which the number of variables (columns) is so large that they cannot all be enumerated in advance. Instead, the algorithm works with a small restricted master problem and generates new columns only as they are needed to improve the solution.</p>
+<h2>Method</h2>
+<p>The restricted master problem is solved to optimality, and its dual values are passed to a pricing subproblem, which searches for a variable with negative reduced cost (for a minimisation problem). If such a column exists, it is added to the master problem and the process repeats; if none exists, the current solution is optimal for the full problem. The method is closely tied to Dantzig–Wolfe decomposition.</p>
+<h2>Applications</h2>
+<p>Column generation was first demonstrated on the cutting stock problem by Gilmore and Gomory in the early 1960s. It is now standard for vehicle routing, airline crew scheduling and pairing, bin packing, and other problems whose natural formulations contain exponentially many variables, such as possible routes or schedules.</p>
+<h2>Branch and price</h2>
+<p>When the underlying problem requires integer solutions, column generation is embedded within branch and bound in a framework called branch and price, where branching rules must be chosen so that the pricing subproblem remains tractable.</p>
+</body></html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Run-time type information</title><style>body{font-family:sans-serif;margin:0 auto;max-width:880px;padding:1em 1.5em;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1;font-weight:normal}h2{border-bottom:1px solid #a2a9b1;font-weight:normal}.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;margin:0 0 1em 1em;padding:.5em;font-size:.9em}.infobox th{text-align:left}figure{margin:1em 0;text-align:center}figure img{max-width:100%;background:#eee;border:1px solid #ccc;padding:2em;box-sizing:border-box}.toc{background:#f8f9fa;border:1px solid #a2a9b1;padding:.5em 1em;width:fit-content;font-size:.9em}footer{font-size:.85em;color:#54595d;border-top:1px solid #a2a9b1;margin-top:2em;padding-top:.5em}</style></head><body>
+<h1>Run-time type information</h1>
+<figure><img src="images/run-time-type-information.png" alt="Run-time type information (image placeholder)"></figure>
+<p><b>Run-time type information</b> or <b>run-time type identification</b> (<b>RTTI</b>) is a feature of some programming languages (such as C++, Object Pascal, and Ada) that exposes information about an object's data type at runtime. While available in many languages via reflection or similar mechanisms, the term RTTI is commonly used for the C++ implementation.</p>
+<h2>In C++</h2>
+<p>In C++, RTTI is provided through the <code>typeid</code> operator, which returns an object of type <code>std::type_info</code>, and the <code>dynamic_cast</code> operator, which safely converts pointers and references between classes in an inheritance hierarchy. RTTI is only available for polymorphic classes — those with at least one virtual function — because instances of such classes carry a pointer to a virtual function table that also points to type information.</p>
+<h2>Costs and alternatives</h2>
+<p>RTTI can add overhead in code size and, in some implementations, run time, so many projects disable it (for example with the GNU compiler option <code>-fno-rtti</code>). Critics argue that heavy use of RTTI may indicate a design that should instead use polymorphism, the visitor pattern, or pattern matching. Nevertheless, it remains useful for debugging, serialization fallback, and interoperability code.</p>
+<h2>See also</h2>
+<ul><li><a href="../Reflection_(computer_programming)/index.html">Reflection</a></li><li><a href="../Type_introspection/index.html">Type introspection</a></li></ul>
+<footer>From Wikipedia, the free encyclopedia.</footer>
+</body></html>

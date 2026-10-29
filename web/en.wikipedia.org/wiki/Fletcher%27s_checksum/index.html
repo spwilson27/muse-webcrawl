@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fletcher's checksum - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:24px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 16px 16px;font-size:0.9em}
+.infobox th{text-align:left;background:#eaecf0;padding:4px}
+.infobox td{padding:4px}
+.hero{text-align:center;margin:16px 0}
+.hero img{max-width:100%;border:1px solid #a2a9b1;background:#f8f9fa}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Fletcher's checksum</h1>
+<div class="hero"><img src="images/Fletcher's_checksum.png" alt="Fletcher's checksum (image placeholder)"></div>
+<table class="infobox">
+<tr><th colspan="2">Fletcher's checksum</th></tr>
+<tr><td><b>Type</b></td><td>Error-detection algorithm</td></tr>
+<tr><td><b>Inventor</b></td><td>John G. Fletcher</td></tr>
+<tr><td><b>Variants</b></td><td>Fletcher-16, Fletcher-32, Fletcher-64</td></tr>
+</table>
+<p><b>Fletcher's checksum</b> is an error-detection algorithm developed by John G. Fletcher at Lawrence Livermore Labs in the late 1970s. It computes a position-dependent checksum from two running sums of the data blocks: the first is a simple sum of the blocks, and the second is a sum of the values of the first sum at each step, all computed modulo 255 (or 65535 in the 32-bit variant).</p>
+<h2>Properties</h2>
+<p>Because the second sum depends on the order of the data, Fletcher's checksum can detect errors that a simple additive checksum cannot, such as reordered blocks and inserted zero words. Its error-detection capability is comparable to a cyclic redundancy check of the same size, while being computable with only additions. Weaknesses include insensitivity to certain patterns of 0x00 and 0xFF blocks.</p>
+<h2>Applications</h2>
+<p>The algorithm is specified in ISO/IEC TR 13233 and has been used in protocols and systems including the ZFS file system, which uses Fletcher checksums for data integrity, and in various networking standards. Variants are named by their output size: Fletcher-16, Fletcher-32 and Fletcher-64.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Checksum/index.html">Checksum</a></li>
+<li><a href="../Adler-32/index.html">Adler-32</a></li>
+<li><a href="../Cyclic_redundancy_check/index.html">Cyclic redundancy check</a></li>
+</ul>
+</div>
+</body>
+</html>

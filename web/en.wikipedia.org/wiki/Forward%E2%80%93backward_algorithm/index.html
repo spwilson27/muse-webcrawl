@@ -1,0 +1,14 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Forward–backward algorithm</title><style>body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.9em;max-width:260px}.infobox th{text-align:left;padding-right:.6em}img.hero{max-width:100%;display:block;margin:1em auto}a{color:#0645ad}</style></head><body>
+<h1>Forward–backward algorithm</h1>
+<img class="hero" src="images/Forward–backward_algorithm.png" alt="Forward–backward algorithm (image placeholder)">
+<table class="infobox"><tr><th>Class</th><td>Dynamic programming algorithm</td></tr><tr><th>Used for</th><td>Inference in hidden Markov models</td></tr><tr><th>Related</th><td>Baum–Welch algorithm, Viterbi algorithm</td></tr></table>
+<p>The <b>forward–backward algorithm</b> is an inference algorithm for hidden Markov models which computes the posterior marginals of all hidden state variables given a sequence of observations. The algorithm makes use of the principle of dynamic programming and has two passes: a forward pass, which computes a set of "forward probabilities" summarizing the probability of the observations up to each point in time, and a backward pass, which computes "backward probabilities" for the observations following each point.</p>
+<h2>Overview</h2>
+<p>By multiplying the forward and backward probabilities for each state at each time step and normalizing, one obtains the smoothed probability of being in that state given the entire observation sequence. This smoothing problem is one of the three canonical problems of hidden Markov models, alongside filtering and most-likely-sequence decoding.</p>
+<h2>Applications</h2>
+<p>The forward–backward algorithm is a core part of the Baum–Welch algorithm for training hidden Markov models, and it has been applied in speech recognition, bioinformatics (including gene prediction and sequence alignment), and computational linguistics.</p>
+<h2>Complexity</h2>
+<p>For a model with N states and a sequence of length T, the algorithm runs in O(N²T) time, a dramatic improvement over the exponential cost of enumerating all state sequences.</p>
+<h2>See also</h2>
+<p><a href="../Hidden_Markov_model/index.html">Hidden Markov model</a> · <a href="../Viterbi_algorithm/index.html">Viterbi algorithm</a> · <a href="../Baum%E2%80%93Welch_algorithm/index.html">Baum–Welch algorithm</a></p>
+</body></html>

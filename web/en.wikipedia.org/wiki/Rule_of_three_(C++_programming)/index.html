@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Rule of three (C++ programming) - Wikipedia</title><style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+.infobox{float:right;width:260px;background:#f8f9fa;border:1px solid #a2a9b1;padding:8px 12px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{text-align:left;vertical-align:top;padding-right:8px}
+img.hero{max-width:100%;display:block;margin:12px 0}
+p{line-height:1.6}
+a{color:#0645ad;text-decoration:none}
+ul{line-height:1.6}
+</style></head>
+<body><div id="content">
+<h1>Rule of three (C++ programming)</h1>
+<table class="infobox"><tr><th>Field</th><td>Software engineering / C++</td></tr><tr><th>Related</th><td>Rule of five, rule of zero</td></tr><tr><th>Concerns</th><td>Destructor, copy constructor, copy assignment operator</td></tr></table>
+<img class="hero" src="images/Rule_of_three_(C++_programming).png" alt="Rule of three (C++ programming) (image placeholder)">
+<p>The <b>rule of three</b> is a rule of thumb in C++ programming: if a class defines any one of the following, it should probably explicitly define all three — the <b>destructor</b>, the <b>copy constructor</b> and the <b>copy assignment operator</b>.</p>
+<h2>Rationale</h2>
+<p>Needing to define one of these special member functions usually signals that the class manages a resource, such as a heap allocation, that the compiler-generated defaults handle incorrectly: default copying copies the pointer rather than the resource, leading to double deletion or dangling handles. Defining all three ensures the resource is released exactly once and copies are made safely.</p>
+<h2>Successors</h2>
+<p>With C++11's move semantics, the rule was extended to the <b>rule of five</b>, adding the move constructor and move assignment operator. Modern guidance prefers the <b>rule of zero</b>: classes should delegate resource management to dedicated members such as smart pointers and standard containers, avoiding user-declared special member functions altogether.</p>
+</div></body></html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Schönhage–Strassen algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;background:#f8f9fa;color:#202122;margin:0}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a2a9b1}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:0}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+p{line-height:1.6}
+img.hero{width:100%;max-width:640px;display:block;margin:12px 0}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Schönhage&ndash;Strassen algorithm</h1>
+<img class="hero" src="images/Schonhage-Strassen_algorithm.png" alt="Schönhage–Strassen algorithm (image placeholder)">
+<p>The <b>Sch&ouml;nhage&ndash;Strassen algorithm</b> is an asymptotically fast multiplication algorithm for large integers. It was developed by Arnold Sch&ouml;nhage and Volker Strassen in 1971 and became the standard for multiplying very large numbers until it was outperformed by the Harvey&ndash;van der Hoeven algorithm published in 2019.</p>
+<h2>Method</h2>
+<p>The algorithm uses fast Fourier transforms over rings of the form Z/(2<sup>2<sup>n</sup></sup> + 1) (Fermat-number rings), where roots of unity of large power-of-two order are simply powers of 2, so multiplications by them reduce to cheap shifts. The two input integers are split into many small pieces, convolved via the transform, and reassembled; recursion applies the same method to the coefficient arithmetic.</p>
+<h2>Complexity</h2>
+<p>Multiplying two n-bit numbers takes O(n log n log log n) bit operations, far faster than the O(n<sup>2</sup>) of schoolbook multiplication or the O(n<sup>log<sub>2</sub> 3</sup>) of the Karatsuba algorithm. Sch&ouml;nhage and Strassen conjectured that an O(n log n) bound should be achievable, which the 2019 algorithm of David Harvey and Joris van der Hoeven finally established.</p>
+<h2>Practical use</h2>
+<p>The algorithm is used for numbers with tens of thousands of digits or more, for example in computations of &pi; and searches for large Mersenne primes. Libraries such as GMP switch to an FFT-based method in this size range.</p>
+<p>See also: <a href="../Multiplication_algorithm/index.html">Multiplication algorithm</a> &middot; <a href="../Fast_Fourier_transform/index.html">Fast Fourier transform</a></p>
+</div>
+</body>
+</html>

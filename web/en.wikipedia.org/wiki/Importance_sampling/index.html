@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Importance sampling - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+#content{max-width:960px;margin:0 auto;padding:20px 30px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:5px;font-weight:normal}
+h2{font-size:1.5em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1em}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:5px;text-align:center;font-size:0.85em;color:#54595d;margin:10px 0}
+.thumb img{max-width:100%;background:#eaecf0}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Importance sampling</h1>
+<div class="thumb"><img src="images/importance-sampling.png" alt="Importance sampling (image placeholder)"><br>Importance sampling concept</div>
+<p><b>Importance sampling</b> is a variance-reduction technique used in Monte Carlo methods to estimate properties of a probability distribution while sampling from a different, more convenient distribution. By drawing samples from a proposal distribution that over-samples the regions that contribute most to the quantity of interest, and weighting each sample by the ratio of the target and proposal densities, the estimator can achieve far lower variance than direct sampling.</p>
+<h2>Basic principle</h2>
+<p>To estimate the expected value of a function f(X) where X has density p, samples are instead drawn from a proposal density q, and the expectation is rewritten as the expectation under q of f(X)·p(X)/q(X). The factor p(X)/q(X) is called the importance weight. The method requires that q(x) be nonzero wherever f(x)p(x) is nonzero.</p>
+<h2>Applications</h2>
+<p>Importance sampling is widely used for estimating the probability of rare events, where direct simulation would require prohibitively many samples; in Bayesian inference and filtering, where sequential importance sampling forms the basis of particle filters; and in computer graphics, where it guides ray sampling toward important light paths in rendering. Related techniques include importance resampling and adaptive schemes that learn a good proposal distribution during simulation.</p>
+<h2>Limitations</h2>
+<p>A poorly chosen proposal distribution can increase variance rather than reduce it, and in high dimensions the importance weights may degenerate so that effectively only a few samples contribute. Careful design or adaptation of the proposal is therefore essential.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Monte_Carlo_method/index.html">Monte Carlo method</a></li>
+<li><a href="../Particle_filter/index.html">Particle filter</a></li>
+<li><a href="../Variance_reduction/index.html">Variance reduction</a></li>
+</ul>
+</div>
+</body>
+</html>

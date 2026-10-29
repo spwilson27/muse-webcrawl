@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Three-phase commit protocol - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Three-phase commit protocol</h1>
+<img src="images/three-phase_commit_protocol.png" alt="Three-phase commit protocol (image placeholder)">
+<p>In computer networking and databases, the <b>three-phase commit protocol</b> (3PC) is a distributed algorithm which lets all nodes in a distributed system agree to commit a transaction. It is an extension of the two-phase commit protocol (2PC) designed to reduce the risk that a failure of the coordinator blocks the transaction indefinitely.</p>
+<h2>Phases</h2>
+<p>Like 2PC, 3PC begins with a voting phase in which the coordinator asks all cohorts whether they can commit. It then inserts a second phase — the pre-commit (or "prepared to commit") phase — in which the coordinator informs cohorts that all have voted yes. Only after cohorts acknowledge the pre-commit does the coordinator issue the final commit decision.</p>
+<h2>Advantages and limitations</h2>
+<p>The extra phase means that if the coordinator fails after sending pre-commit messages, a recovery coordinator can determine that the transaction was proceeding to commit and safely complete it, avoiding the blocking problem of 2PC. However, 3PC is vulnerable to network partitions, in which different subsets of nodes may reach different decisions, and for that reason it is less widely deployed in practice than 2PC.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Two-phase_commit_protocol/index.html">Two-phase commit protocol</a></li>
+<li><a href="../Atomic_commit/index.html">Atomic commit</a></li>
+<li><a href="../Paxos_(computer_science)/index.html">Paxos</a></li>
+</ul>
+</div>
+</body>
+</html>

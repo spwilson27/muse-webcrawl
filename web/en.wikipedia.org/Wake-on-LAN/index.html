@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wake-on-LAN - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#fff;color:#202122;margin:0;padding:20px 40px;line-height:1.6}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+p{font-family:sans-serif;font-size:14px}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 15px 20px;width:260px;font-family:sans-serif;font-size:13px}
+.infobox th{text-align:left;background:#eaf3ff;padding:4px}
+.infobox td{padding:4px}
+img.hero{display:block;max-width:320px;margin:10px 0}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>Wake-on-LAN</h1>
+<img class="hero" src="images/wake-on-lan.png" alt="Wake-on-LAN (image placeholder)">
+<p><b>Wake-on-LAN</b> (<b>WoL</b>) is an Ethernet networking standard that allows a computer to be turned on or awakened from a low-power state by a network message. The message is typically a specially formed "magic packet" broadcast on the local network containing the target machine's MAC address.</p>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Wake-on-LAN</th></tr>
+<tr><td><b>Introduced</b></td><td>1997 (AMD/HP Magic Packet technology)</td></tr>
+<tr><td><b>Packet</b></td><td>"Magic packet" — 6 bytes of 0xFF + MAC address ×16</td></tr>
+<tr><td><b>Typical ports</b></td><td>UDP 7 and 9</td></tr>
+<tr><td><b>Requirement</b></td><td>Standby power to network interface</td></tr>
+</table>
+</div>
+<h2>How it works</h2>
+<p>The magic packet consists of six bytes of all 255 (0xFF) followed by sixteen repetitions of the destination computer's 48-bit MAC address. When the machine is asleep or soft-off (ACPI states S3–S5), its network interface continues to draw standby power and listens for the packet; on receipt, it signals the system to power up. Support must usually be enabled in the computer's firmware (BIOS/UEFI) settings and operating system.</p>
+<h2>Uses and limitations</h2>
+<p>WoL is used by system administrators to patch, back up, or access machines outside working hours without leaving them fully powered. Because magic packets are normally broadcast frames, they do not route across the Internet by default; remote waking requires a router, gateway, or another always-on device on the LAN to relay the packet. Variants and successors include Wake-on-Wireless-LAN and vendor management technologies.</p>
+<p><i>See also:</i> <a href="../Magic_packet/index.html">Magic packet</a>, <a href="../Advanced_Configuration_and_Power_Interface/index.html">ACPI</a></p>
+</body>
+</html>

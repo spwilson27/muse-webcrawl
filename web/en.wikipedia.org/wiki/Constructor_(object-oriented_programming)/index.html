@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Constructor (object-oriented programming) - Wikipedia</title>
+<style>
+body{font-family:sans-serif;color:#202122;background:#fff;max-width:960px;margin:0 auto;padding:1em 2em;line-height:1.6}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-bottom:.25em}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.5em 1em;font-size:88%;width:280px;margin:.5em 0 1em 1em}
+.infobox th{text-align:left;vertical-align:top}
+img.hero{max-width:220px;display:block;margin:0 auto}
+pre{background:#f8f9fa;border:1px solid #a2a9b1;padding:.5em;overflow-x:auto}
+</style>
+</head>
+<body>
+<h1>Constructor (object-oriented programming)</h1>
+<p>In class-based object-oriented programming, a <b>constructor</b> (abbreviation: <i>ctor</i>) is a special type of function called to create an object. It prepares the new object for use, often accepting arguments that the constructor uses to set required member variables. A constructor resembles an instance method, but it differs in that it has no explicit return type, is not implicitly inherited, and usually has different rules for scope modifiers.</p>
+<img class="hero" src="images/constructor_object_oriented_programming.png" alt="Constructor (object-oriented programming) (image placeholder)">
+<div class="infobox">
+<table><tr><th>Kind</th><td>Special member function</td></tr>
+<tr><th>Purpose</th><td>Object initialization</td></tr>
+<tr><th>Counterpart</th><td>Destructor</td></tr></table>
+</div>
+<h2>Types</h2>
+<p>Common varieties include the <b>default constructor</b>, which takes no arguments; the <b>parameterized constructor</b>, which accepts arguments to initialise fields; the <b>copy constructor</b>, which creates an object from another object of the same class; and, in C++11 and later, the <b>move constructor</b>. Languages differ: Java and C# constructors share the name of the class, Python uses the <code>__init__</code> method after the <code>__new__</code> allocator, and JavaScript historically used constructor functions with the <code>new</code> operator before class syntax was added.</p>
+<h2>Example</h2>
+<pre>public class Point {
+    private final int x;
+    private final int y;
+
+    // Constructor
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+}</pre>
+<h2>Constructor chaining and inheritance</h2>
+<p>In many languages a constructor can invoke another constructor of the same class or of the superclass, a practice called constructor chaining. Because constructors are not inherited, a subclass must explicitly call an appropriate superclass constructor to initialise inherited state.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Destructor_(computer_programming)/index.html">Destructor (computer programming)</a></li>
+<li><a href="../Factory_method_pattern/index.html">Factory method pattern</a></li>
+<li><a href="../Object-oriented_programming/index.html">Object-oriented programming</a></li>
+</ul>
+</body>
+</html>

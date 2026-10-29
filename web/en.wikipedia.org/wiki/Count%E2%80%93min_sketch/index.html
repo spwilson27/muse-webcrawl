@@ -1,0 +1,10 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>Count–min sketch</title><style>body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}h1{border-bottom:2px solid #a2a9b1;padding-bottom:6px}h2{border-bottom:1px solid #a2a9b1}.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:.9em}img.hero{max-width:100%}.refs{font-size:.85em;color:#555}</style></head><body>
+<h1>Count–min sketch</h1>
+<img class="hero" src="images/count-min.png" alt="Count-min sketch diagram (image placeholder)">
+<p>The <b>count–min sketch</b> is a probabilistic data structure, introduced by Graham Cormode and S. Muthu Muthukrishnan in 2003, that serves as a frequency table of events in a stream of data. It uses hash functions to map events to frequencies and occupies sub-linear space.</p>
+<h2>Operation</h2>
+<p>The structure is a two-dimensional array of counters of width <i>w</i> and depth <i>d</i>. Each arriving item is hashed once per row and the corresponding counters are incremented; the estimated count of an item is the minimum of its counters across rows, which can overestimate but never underestimate the true count.</p>
+<h2>Applications</h2>
+<p>Count–min sketches are used in databases, network traffic measurement and natural language processing to track frequent items in massive data streams.</p>
+<p class="refs">See also: Bloom filter; count sketch; streaming algorithm.</p>
+</body></html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Bloom filter</title>
+<style>body{font-family:sans-serif;max-width:820px;margin:2em auto;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1;font-family:serif;font-weight:normal}h2{border-bottom:1px solid #a2a9b1;font-family:serif;font-weight:normal}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em;width:260px;font-size:90%;margin:0 0 1em 1em}a{color:#0645ad;text-decoration:none}</style></head>
+<body>
+<h1>Bloom filter</h1>
+<img src="images/bloom-filter.png" alt="Bloom filter (image placeholder)">
+<div class="infobox"><b>Type:</b> Probabilistic data structure<br><b>Invented by:</b> Burton Howard Bloom (1970)<br><b>Time complexity:</b> O(k) insertion and query</div>
+<p>A <b>Bloom filter</b> is a space-efficient probabilistic data structure, conceived by Burton Howard Bloom in 1970, that is used to test whether an element is a member of a set. False positives are possible, but false negatives are not.</p>
+<h2>Algorithm</h2>
+<p>An empty Bloom filter is a bit array of <i>m</i> bits, all set to 0, together with <i>k</i> independent hash functions mapping each element to <i>k</i> bit positions. Inserting an element sets all its <i>k</i> bits to 1; querying checks whether all of an element's bits are 1—if any is 0, the element is definitely absent.</p>
+<h2>Applications</h2>
+<p>Bloom filters are used to avoid expensive lookups, for example in database systems checking whether a key exists on disk, in web browsers detecting malicious URLs, and in spell checkers. Their chief limitation is that elements ordinarily cannot be deleted without a counting variant.</p>
+</body></html>

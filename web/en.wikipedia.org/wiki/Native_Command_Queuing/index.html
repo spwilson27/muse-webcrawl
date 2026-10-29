@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Native Command Queuing</title><style>body{font-family:Georgia,serif;max-width:960px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}h2{border-bottom:1px solid #a2a9b1;font-size:1.4em}.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 15px 15px;font-size:0.9em}.infobox th{text-align:left;background:#eaecf0;padding:4px}.infobox td{padding:4px}img.hero{width:100%;max-width:300px;display:block;margin:10px auto}a{color:#0645ad}</style></head><body>
+<h1>Native Command Queuing</h1>
+<table class="infobox"><tr><th colspan="2">Native Command Queuing</th></tr><tr><th>Standard</th><td>Serial ATA (from SATA 2.0 / AHCI)</td></tr><tr><th>Queue depth</th><td>Up to 32 commands</td></tr><tr><th>Purpose</th><td>Reordering of read/write commands to improve disk performance</td></tr></table>
+<img class="hero" src="images/Native_Command_Queuing.png" alt="Native Command Queuing (image placeholder)">
+<p><b>Native Command Queuing</b> (NCQ) is a technology designed to increase the performance of SATA hard disk drives by allowing the drive to internally optimise the order in which received read and write commands are executed. It was introduced with the Serial ATA II specification and requires a host controller operating in AHCI or RAID mode.</p>
+<h2>Operation</h2>
+<p>With NCQ, the host can issue up to 32 commands to the drive at once, tagging each one. The drive's firmware then reorders those commands — for example, by sorting them by logical block address to minimise rotational latency and head movement — and signals completion as each finishes rather than in strict order.</p>
+<h2>Benefits and use</h2>
+<p>Reordering is most beneficial under random, multi-threaded workloads such as servers and busy desktops, where it can substantially raise throughput and reduce latency. NCQ also incorporates features such as DMA setup and interrupt aggregation to reduce CPU overhead. For solid-state drives, queuing concepts carried over into the NVMe protocol, which supports vastly deeper queues across many cores.</p>
+<h2>History</h2>
+<p>NCQ superseded the simpler Tagged Command Queuing used in SCSI and Parallel ATA. Early implementations occasionally caused problems with certain operating systems and drive firmware, but the technology became a standard, transparent feature of modern storage stacks.</p>
+</body></html>

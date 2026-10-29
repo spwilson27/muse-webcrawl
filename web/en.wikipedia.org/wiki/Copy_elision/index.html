@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Copy elision - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 20px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px; margin: 0 0 12px 16px; width: 260px; font-size: 90%; }
+.infobox th { background: #b0c4de; padding: 4px; text-align: center; }
+figure.hero { margin: 0 0 12px 0; }
+figure.hero img { width: 100%; height: auto; background: #eaecf0; border: 1px solid #c8ccd1; }
+figcaption { font-size: 85%; color: #54595d; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Copy elision</h1>
+<figure class="hero"><img src="images/copy-elision.png" alt="Copy elision (image placeholder)"><figcaption>Omitting a copy or move construction when returning an object.</figcaption></figure>
+<p>In C++ computer programming, <b>copy elision</b> is a compiler optimization technique that eliminates unnecessary copying of objects. The best-known form is the <b>return value optimization</b> (RVO), in which a function returning an object by value constructs the result directly in the caller's storage rather than creating a temporary and copying or moving it.</p>
+<table class="infobox">
+<tr><th colspan="2">Copy elision</th></tr>
+<tr><td><b>Language</b></td><td>C++</td></tr>
+<tr><td><b>Forms</b></td><td>RVO, NRVO, temporary-to-parameter elision</td></tr>
+<tr><td><b>Status</b></td><td>Permitted since C++98; partly mandatory since C++17</td></tr>
+</table>
+<h2>Forms</h2>
+<p>In <i>unnamed</i> RVO, a function returns a temporary object, and the compiler constructs it in place. In the <i>named</i> return value optimization (NRVO), the returned object is a local variable; most compilers perform this optimization as well, though it historically was not guaranteed. Copy elision may also apply when a temporary is passed by value or thrown as an exception.</p>
+<h2>Language rules</h2>
+<p>Copy elision is unusual among optimizations because it can change observable behaviour: the skipped copy or move constructor and destructor may have side effects that then do not occur. For that reason the standard explicitly permits it even when the constructor has side effects. Since C++17, elision is guaranteed in certain cases — returning a prvalue of the same type — through revised value-category rules, and no copy or move constructor need even be accessible in those cases.</p>
+<h2>Interaction with move semantics</h2>
+<p>Where elision is not performed, move semantics (introduced in C++11) reduce the cost of the remaining transfers by moving resources out of temporaries instead of copying them.</p>
+<p>See also: <a href="../Move_semantics/index.html">Move semantics</a>, <a href="../Return_value_optimization/index.html">Return value optimization</a>.</p>
+</div>
+</body>
+</html>

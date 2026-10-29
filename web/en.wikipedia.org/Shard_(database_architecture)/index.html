@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Shard (database architecture) - Wikipedia</title>
+<style>body{font-family:'Linux Libertine',Georgia,serif;margin:0;color:#202122}main{max-width:960px;margin:0 auto;padding:16px}h1{font-size:28px;border-bottom:1px solid #a2a9b1;font-weight:normal}h2{font-size:22px;border-bottom:1px solid #a2a9b1;font-weight:normal}a{color:#0645ad;text-decoration:none}img.hero{max-width:320px;float:right;margin:0 0 12px 16px}</style></head>
+<body><main>
+<h1>Shard (database architecture)</h1>
+<img class="hero" src="images/shard-database.png" alt="Shard (database architecture) (image placeholder)">
+<p>A <b>shard</b> is a horizontal partition of data in a database or search engine. Each shard is held on a separate database server instance, distributing the load; together the shards form a single logical database. <b>Sharding</b> is thus a method of horizontal scaling, in contrast to vertical scaling (increasing the capacity of a single server).</p>
+<h2>Architecture</h2>
+<p>In a sharded system, rows of a table are distributed across servers according to a shard key — for example, customer ID ranges (range sharding) or a hash of the key (hash sharding). Each shard holds the same schema but a disjoint subset of the data, typically replicated for availability. Queries that include the shard key can be routed to a single shard, while cross-shard queries require the application or middleware to scatter and gather results.</p>
+<h2>Advantages and drawbacks</h2>
+<p>Sharding reduces the data per server, improves write throughput, and limits the blast radius of failures. However, it complicates joins across shards, rebalancing when shards become uneven, maintaining unique constraints, and operational management. Many distributed SQL and NoSQL systems — such as MongoDB, Cassandra, Vitess, and Google's Spanner — automate parts of sharding.</p>
+<h2>Etymology</h2>
+<p>The term is often said to derive from "SHARD" (System for Highly Available Replicated Data), a 1980s research project, though it also evokes the image of a database broken into shards like fragments of pottery.</p>
+</main></body></html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Booth's multiplication algorithm - Wikipedia</title>
+<style>body{font-family:sans-serif;margin:2em auto;max-width:800px;line-height:1.6;color:#202122}h1{font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}h2{font-weight:normal;border-bottom:1px solid #a2a9b1}img.hero{display:block;max-width:100%;background:#eaecf0;padding:1em;text-align:center;color:#72777d}.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:.5em;margin:0 0 1em 1em;font-size:.9em}</style></head>
+<body>
+<h1>Booth's multiplication algorithm</h1>
+<img class="hero" src="images/Booths_multiplication_algorithm.png" alt="Booth's multiplication algorithm (image placeholder)">
+<div class="infobox"><b>Booth's multiplication algorithm</b><br>Field: Computer arithmetic<br>Invented by: Andrew Donald Booth (1951)<br>Purpose: Multiplying two signed binary numbers in two's complement<br>Key idea: Encode runs of 1s as a single subtraction and addition</div>
+<p><b>Booth's multiplication algorithm</b> is an algorithm for multiplying two signed binary numbers represented in two's complement notation. It was invented by Andrew Donald Booth in 1951 while he was doing research on crystallography at Birkbeck College, London, motivated by the slow multiplication speeds of the desk calculators he used.</p>
+<h2>Principle</h2>
+<p>The algorithm examines pairs of bits of the multiplier, together with an extra appended bit, and depending on the pattern either adds the multiplicand to, subtracts it from, or leaves unchanged an accumulator, followed by an arithmetic right shift. A run of consecutive 1s in the multiplier, such as 0011110, is handled with just one subtraction (at the start of the run) and one addition (past its end), rather than an addition for every 1 bit, because a block of k ones equals 2<sup>k</sup> − 1. This works uniformly for positive and negative multipliers in two's complement.</p>
+<h2>Variants and use</h2>
+<p>The modified Booth algorithm (radix-4 Booth encoding) examines three bits at a time and halves the number of partial products, and is widely used in hardware multipliers; higher-radix variants exist as well. Booth encoding appears in the multiplier units of many processors, though Wallace trees and other parallel structures handle the summation of partial products.</p>
+<h2>See also</h2>
+<p><a href="../Multiplication_algorithm/index.html">Multiplication algorithm</a> &middot; <a href="../Two's_complement/index.html">Two's complement</a> &middot; <a href="../Andrew_Donald_Booth/index.html">Andrew Donald Booth</a></p>
+</body></html>

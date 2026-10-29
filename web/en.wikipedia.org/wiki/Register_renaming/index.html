@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Register renaming - Wikipedia</title>
+<style>body{font-family:sans-serif;margin:2em auto;max-width:900px;line-height:1.6;padding:0 1em}h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.5em 1em;margin:0 0 1em 1em;font-size:90%}img{max-width:300px;display:block;margin:1em 0}</style></head>
+<body>
+<h1>Register renaming</h1>
+<img src="images/Register_renaming.png" alt="Register renaming (image placeholder)">
+<div class="infobox"><b>Field</b>: Computer architecture<br><b>Purpose</b>: Eliminate false data dependencies<br><b>Used in</b>: Out-of-order superscalar processors<br><b>Related</b>: Tomasulo's algorithm, reorder buffer</div>
+<p><b>Register renaming</b> is a technique used in high-performance microprocessors to eliminate false data dependencies — write-after-read and write-after-write hazards — between instructions that use the same architectural register. The processor maps the small set of programmer-visible registers onto a larger pool of physical registers, giving each new write to a register a fresh physical register.</p>
+<h2>Problem addressed</h2>
+<p>In an out-of-order processor, instructions that merely reuse a register name create artificial ordering constraints. For example, if one instruction writes register R1 and a later, independent instruction also writes R1, the second write appears to depend on earlier reads of the first value. Such name dependencies limit instruction-level parallelism even though the instructions exchange no data.</p>
+<h2>Mechanism</h2>
+<p>At the decode stage, the processor consults a rename map table to translate each source register to the physical register holding its current value, allocates a new free physical register for each destination, and records the mapping so that the result can later be committed in program order, typically with the help of a reorder buffer. Superscalar designs such as the Intel P6 family and modern ARM and RISC-V processors all rely on renaming.</p>
+<h2>See also</h2>
+<p><a href="../Out-of-order_execution/index.html">Out-of-order execution</a> · <a href="../Tomasulo%27s_algorithm/index.html">Tomasulo's algorithm</a> · <a href="../Processor_register/index.html">Processor register</a></p>
+</body></html>

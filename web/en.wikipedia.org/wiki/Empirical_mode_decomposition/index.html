@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Empirical mode decomposition - Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #fff; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em; font-family: sans-serif; font-size: 0.95em; line-height: 1.6; }
+h1 { font-family: "Linux Libertine", Georgia, serif; font-weight: normal; font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: "Linux Libertine", Georgia, serif; font-weight: normal; font-size: 1.4em; border-bottom: 1px solid #a2a9b1; }
+figure.hero { text-align: center; margin: 1em 0; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Empirical mode decomposition</h1>
+<figure class="hero"><img src="images/Empirical_mode_decomposition.png" alt="Empirical mode decomposition (image placeholder)"></figure>
+<p>The <b>empirical mode decomposition</b> (EMD) is a method of breaking down a signal into a set of oscillatory components called intrinsic mode functions (IMFs) without leaving the time domain. It was introduced by Norden E. Huang and colleagues at NASA in 1998 as the key part of the Hilbert–Huang transform. Unlike Fourier or wavelet analysis, EMD derives its basis functions from the data itself, making it suited to nonlinear and non-stationary signals.</p>
+<h2>Method</h2>
+<p>EMD proceeds by a "sifting" process. All local maxima of the signal are connected by a cubic spline to form an upper envelope, and all local minima likewise form a lower envelope. The mean of the two envelopes is subtracted from the data; the procedure is repeated on the result until it satisfies the IMF conditions: the number of extrema and zero crossings differs by at most one, and the mean of the envelopes is approximately zero. The IMF is then removed from the signal and the process is applied to the residual, yielding further IMFs and eventually a monotonic trend.</p>
+<h2>Applications and limitations</h2>
+<p>EMD and the Hilbert–Huang transform have been applied in geophysics, oceanography, biomedical signal processing, finance, and structural health monitoring. Known difficulties include mode mixing, sensitivity to noise and sampling, end effects, and the lack of a complete mathematical theory. Variants such as ensemble EMD (EEMD) and complete ensemble EMD with adaptive noise (CEEMDAN) add noise realizations to reduce mode mixing.</p>
+<p>See also: <a href="../Hilbert%E2%80%93Huang_transform/index.html">Hilbert–Huang transform</a>, <a href="../Signal_processing/index.html">Signal processing</a>, <a href="../Wavelet_transform/index.html">Wavelet transform</a>.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Quoted-printable</title><style>body{font-family:Georgia,serif;max-width:760px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1;font-size:1.9em}h2{border-bottom:1px solid #a2a9b1}</style></head><body>
+<h1>Quoted-printable</h1>
+<img src="images/quoted-printable.png" alt="Quoted-printable (image placeholder)">
+<p><b>Quoted-printable</b> (or QP encoding) is a binary-to-text encoding defined in the MIME standard (RFC 2045) for representing 8-bit data as printable ASCII characters in email message bodies. It is designed for data that is mostly ASCII text, so that the encoded form remains largely readable by humans.</p>
+<h2>Encoding rules</h2>
+<p>Printable ASCII characters (except "=") may represent themselves. Any other byte is encoded as "=" followed by two uppercase hexadecimal digits; for example, "=" itself becomes "=3D". Spaces and tabs may appear literally but must be encoded at the end of a line. Long lines are wrapped with "soft line breaks": an "=" at the end of a line indicates that the break is an artefact of encoding, and lines are limited to 76 characters.</p>
+<h2>Comparison with Base64</h2>
+<p>Unlike Base64, which expands all data by about a third uniformly, quoted-printable adds little overhead when the input is plain English text but triples the size of non-ASCII bytes, making it inefficient for binary data or text in languages using many non-ASCII characters. It remains common in email for bodies in European languages and in combination with charsets such as ISO-8859-1 and UTF-8.</p>
+</body></html>

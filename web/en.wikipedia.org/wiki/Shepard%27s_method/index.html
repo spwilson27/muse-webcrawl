@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Shepard's method - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background:#fff; color:#202122; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+.hero { display:block; margin: 12px auto; max-width: 420px; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Shepard's method</h1>
+<img class="hero" src="images/shepards-method.png" alt="Shepard interpolation surface (image placeholder)">
+<p><b>Shepard's method</b>, also known as <b>inverse distance weighting</b> (IDW), is a form of multivariate interpolation for scattered data points. It was introduced by Donald Shepard in a 1968 paper describing a two-dimensional interpolation function for irregularly spaced data.</p>
+<p>Given a set of sample points with known values, the interpolated value at an unknown point is computed as a weighted average of the known values, where each weight decreases with distance from the interpolation point.</p>
+<h2>Formulation</h2>
+<p>For sample points (x<sub>i</sub>, f<sub>i</sub>), the interpolant is f(x) = Σ w<sub>i</sub>(x) f<sub>i</sub> / Σ w<sub>i</sub>(x), where the weights are w<sub>i</sub>(x) = 1 / ||x − x<sub>i</sub>||<sup>p</sup>. The power parameter p controls how rapidly influence falls off with distance; p = 2 is a common choice. If the interpolation point coincides with a sample point, the function returns that sample value.</p>
+<h2>Properties and variants</h2>
+<p>Shepard's method is simple and robust but produces surfaces that are flat (zero gradient) at the data points themselves, sometimes described as "bull's-eye" artefacts around sample locations. Modified versions, such as those of Franke and Nielson, incorporate local least-squares approximations and directional derivatives to improve smoothness. The method is widely used in geographic information systems for interpolating terrain, rainfall and other spatially distributed quantities.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Inverse_distance_weighting/index.html">Inverse distance weighting</a></li>
+<li><a href="../Kriging/index.html">Kriging</a></li>
+<li><a href="../Multivariate_interpolation/index.html">Multivariate interpolation</a></li>
+</ul>
+</div>
+</body>
+</html>
