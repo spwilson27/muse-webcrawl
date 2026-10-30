@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Inverted index - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;color:#202122;background:#fff}
+.mw-body{max-width:960px;margin:0 auto;padding:1em 1.5em 3em;line-height:1.6}
+h1{font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:.85em;color:#54595d}
+.hero{display:block;max-width:320px;margin:0 0 1em 1em;float:right;border:1px solid #c8ccd1;padding:4px;background:#f8f9fa;font-size:.8em;text-align:center}
+code{font-family:monospace;background:#f8f9fa}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Inverted index</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="hero"><img src="images/inverted-index.png" alt="Inverted index hero image (placeholder)"><br>An inverted index maps terms to the documents containing them</div>
+<p>An <b>inverted index</b> (also referred to as a <b>postings file</b> or <b>inverted file</b>) is a database index storing a mapping from content — such as words or numbers — to its locations in a set of documents. It is the core data structure of full-text search engines and information retrieval systems: whereas a forward index lists, for each document, the words it contains, an inverted index lists, for each word, the documents (and often the positions) in which it occurs.</p>
+<h2>Structure</h2>
+<p>The index consists of a dictionary (or lexicon) of terms and, for each term, a <i>postings list</i> of document identifiers, usually stored in increasing order so that set operations needed to answer Boolean queries — intersection and union — can be performed efficiently by merging lists. Postings may also record term frequency and the positions of the term within each document, enabling phrase and proximity queries. Indexes are typically compressed (for example with variable-byte or frame-of-reference encodings) because they can be comparable in size to the text itself.</p>
+<h2>Construction and use</h2>
+<p>Documents are tokenised, normalised (case folding, stop-word removal, stemming) and each term occurrence is recorded; the resulting postings are sorted and merged. Block-based and distributed algorithms allow indexes of web scale to be built across clusters. At query time the engine retrieves the postings for the query terms, scores candidate documents — commonly with TF–IDF or BM25 weighting — and returns the top-ranked results; early-termination and caching techniques keep latency low.</p>
+<p>Inverted indexes are implemented in systems such as Apache Lucene (and the Elasticsearch and Solr platforms built on it), and historically underpinned early web search engines. Variants include the inverted lists used by database systems for full-text columns and indexes over structured fields such as dates or categories.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Information_retrieval/index.html">Information retrieval</a></li>
+<li><a href="../Search_engine_indexing/index.html">Search engine indexing</a></li>
+<li><a href="../Tf%E2%80%93idf/index.html">tf–idf</a></li>
+</ul>
+<p class="small">Categories: Index (information technology) · Information retrieval · Search algorithms</p>
+</div>
+</body>
+</html>

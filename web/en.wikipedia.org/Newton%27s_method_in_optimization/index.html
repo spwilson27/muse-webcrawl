@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Newton's method in optimization - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 2em auto; max-width: 800px; line-height: 1.6; color: #202122; padding: 0 1em; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; }
+img.hero { display: block; max-width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 1em; text-align: center; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<h1>Newton's method in optimization</h1>
+<img class="hero" src="images/newton-method-optimization.png" alt="Newton's method in optimization hero image (placeholder)">
+<p>In calculus, <b>Newton's method</b> (also called the <b>Newton–Raphson method</b>) is an iterative method for finding the roots of a differentiable function f, which are the solutions to f(x) = 0. In <b>optimization</b>, the method is applied to the derivative f′ of a twice-differentiable function f in order to find the roots of the derivative — that is, the stationary points of f, which include its local maxima and minima.</p>
+<h2>The method</h2>
+<p>Starting from a guess x<sub>0</sub>, the iteration is x<sub>n+1</sub> = x<sub>n</sub> − f′(x<sub>n</sub>) / f″(x<sub>n</sub>). In multiple dimensions, the scalar second derivative is replaced by the inverse of the Hessian matrix of second derivatives, giving the Newton step −[∇²f(x)]<sup>−1</sup>∇f(x). Near a well-behaved optimum the method converges quadratically, much faster than gradient descent.</p>
+<h2>Advantages and drawbacks</h2>
+<p>Newton's method uses curvature information, so it is affine-invariant and typically needs few iterations. However, computing and inverting the Hessian is expensive in high dimensions; the Hessian may not be positive definite far from the solution, so the Newton direction may not be a descent direction; and the method can converge to a saddle point or maximum, or fail to converge from poor starting points. Practical implementations modify the Hessian, add line searches or trust regions, and quasi-Newton methods such as BFGS approximate the Hessian instead of computing it exactly.</p>
+<h2>See also</h2>
+<ul>
+<li>Newton's method</li>
+<li>Quasi-Newton method</li>
+<li>BFGS method</li>
+<li>Gradient descent</li>
+<li>Hessian matrix</li>
+</ul>
+</body>
+</html>

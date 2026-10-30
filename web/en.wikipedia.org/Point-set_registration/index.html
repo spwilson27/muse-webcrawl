@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Point-set registration - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 960px; margin: 0 auto; padding: 20px; color: #202122; background: #fff; line-height: 1.6; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; margin-bottom: 10px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.2em; font-weight: normal; }
+img.hero { display: block; max-width: 400px; margin: 10px auto; border: 1px solid #a2a9b1; padding: 5px; background: #f8f9fa; }
+.infobox { float: right; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 15px 15px; font-size: 0.9em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Point-set registration</h1>
+<img class="hero" src="images/point-set-registration.png" alt="Point-set registration hero image (placeholder)">
+<p><b>Point-set registration</b>, also known as point-cloud registration or scan matching, is the process of finding a spatial transformation (such as a rotation and translation, or more generally an affine or non-rigid deformation) that aligns two point sets. Given two sets of points—typically obtained from 3D scans, computer vision feature detection, or medical imaging—the goal is to estimate the transformation that maps one set onto the other, minimizing some measure of discrepancy. Point-set registration is a fundamental problem in computer vision, robotics, medical image analysis, and remote sensing.</p>
+<h2>Problem formulation</h2>
+<p>In the rigid case, the transformation is a rotation matrix and a translation vector, and correspondences between points may be known or unknown. When correspondences are known, a least-squares closed-form solution exists via the singular value decomposition (the Kabsch algorithm). When correspondences are unknown, they must be estimated jointly with the transformation, making the problem substantially harder.</p>
+<h2>Algorithms</h2>
+<p>The most widely used method is the Iterative Closest Point (ICP) algorithm, introduced in 1992, which alternates between assigning each point in one set to its nearest neighbour in the other and computing the optimal transformation for those pairs. Many variants address ICP's sensitivity to initialization, outliers, and local minima. Probabilistic methods such as Coherent Point Drift treat the alignment as probability density estimation; feature-based approaches first match distinctive local descriptors (as in RANSAC-based pipelines); and learning-based methods have become prominent since the 2010s.</p>
+<h2>Applications</h2>
+<p>Applications include aligning successive LiDAR scans for localization and mapping (SLAM), registering pre-operative and intra-operative images in image-guided surgery, merging partial 3D scans into complete object models, face and fingerprint recognition, and aligning satellite or aerial imagery.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Iterative_closest_point/index.html">Iterative closest point</a></li>
+<li><a href="../Image_registration/index.html">Image registration</a></li>
+<li><a href="../Point_cloud/index.html">Point cloud</a></li>
+</ul>
+</body>
+</html>

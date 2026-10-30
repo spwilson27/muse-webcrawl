@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Version space — Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; color: #202122; background: #fff; }
+header { background: #f8f9fa; border-bottom: 1px solid #a7d7f9; padding: 10px 24px; font-family: sans-serif; font-size: 14px; }
+main { max-width: 960px; margin: 0 auto; padding: 16px 24px 48px; line-height: 1.6; }
+h1 { font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 28px; }
+h2 { font-weight: normal; border-bottom: 1px solid #a2a9b1; font-size: 22px; margin-top: 28px; }
+p { font-family: sans-serif; font-size: 15px; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; margin: 0 0 16px 16px; padding: 8px; font-family: sans-serif; font-size: 13px; }
+.infobox img { width: 100%; }
+.infobox th { text-align: left; vertical-align: top; padding-right: 8px; }
+a { color: #3366cc; text-decoration: none; }
+</style>
+</head>
+<body>
+<header>Wikipedia — The Free Encyclopedia</header>
+<main>
+<h1>Version space</h1>
+<div class="infobox">
+<img src="images/version-space.png" alt="Version space (image placeholder)">
+<table>
+<tr><th>Field</th><td>Machine learning</td></tr>
+<tr><th>Introduced by</th><td>Tom M. Mitchell (1977–1982)</td></tr>
+<tr><th>Boundaries</th><td>S (most specific), G (most general)</td></tr>
+</table>
+</div>
+<p>A <strong>version space</strong> is a concept in machine learning, introduced by Tom M. Mitchell, denoting the set of all hypotheses in a hypothesis space that are consistent with a given set of training examples — that is, every hypothesis that correctly classifies all the examples seen so far.</p>
+<h2>Boundary representation</h2>
+<p>Rather than enumerating the version space, Mitchell showed it can be represented compactly by two boundary sets: S, the set of maximally specific consistent hypotheses, and G, the set of maximally general consistent hypotheses, within a partial ordering of hypotheses from more specific to more general. Every hypothesis between the boundaries is in the version space.</p>
+<h2>Candidate elimination algorithm</h2>
+<p>The candidate-elimination algorithm maintains the S and G boundaries as examples arrive. A positive example causes over-specific hypotheses in S to be minimally generalised; a negative example causes over-general hypotheses in G to be minimally specialised. Learning has converged when the version space collapses to a single hypothesis, and the algorithm has failed (the version space "collapses") if the boundaries cross, meaning no hypothesis in the space is consistent with the data — for instance because of noise or an inadequate hypothesis language.</p>
+<p>See also: <a href="../Concept_learning/index.html">Concept learning</a>, <a href="../Inductive_bias/index.html">Inductive bias</a>, <a href="../Machine_learning/index.html">Machine learning</a>.</p>
+</main>
+</body>
+</html>

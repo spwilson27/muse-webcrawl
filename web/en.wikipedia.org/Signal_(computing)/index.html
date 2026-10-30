@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Signal (computing) - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; background: #ffffff; color: #202122; margin: 0; padding: 0 1.5em 2em 1.5em; line-height: 1.6; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin: 0.3em 0 0.2em 0; padding-bottom: 0.15em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.2em; }
+.content { max-width: 980px; margin: 0 auto; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 1em auto; max-width: 480px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.4em; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0.6em; font-size: 0.88em; overflow-x: auto; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Signal (computing)</h1>
+<img class="hero" src="images/signal-computing.png" alt="Signal (computing) hero image (placeholder)">
+<p>In computing, a <b>signal</b> is an asynchronous notification sent to a process or to a specific thread within the same process to notify it of an event that occurred. Signals originated in 1970s Bell Labs Unix and were later specified in the POSIX standard.</p>
+<p>When a signal is sent, the operating system interrupts the target process's normal flow of execution to deliver the signal. Execution can be interrupted during any non-atomic instruction. If the process has previously registered a signal handler, that routine is executed. Otherwise, the default signal handler is executed.</p>
+<h2>Common signals</h2>
+<ul>
+<li><b>SIGHUP</b> (1) — hangup detected on the controlling terminal or death of the controlling process.</li>
+<li><b>SIGINT</b> (2) — interrupt from the keyboard (typically Ctrl+C).</li>
+<li><b>SIGKILL</b> (9) — kill signal; cannot be caught, blocked, or ignored.</li>
+<li><b>SIGSEGV</b> (11) — invalid memory reference (segmentation fault).</li>
+<li><b>SIGTERM</b> (15) — termination signal, the default sent by the <i>kill</i> command.</li>
+<li><b>SIGSTOP</b> (19) — stop the process; cannot be caught or ignored.</li>
+</ul>
+<h2>Sending signals</h2>
+<p>Signals can be sent from the shell with the <i>kill</i> utility, from a keyboard shortcut, or by the kernel when a process performs an illegal operation such as dividing by zero or accessing invalid memory. A process can send a signal to itself or another process with the <i>kill</i> system call, subject to permission checks.</p>
+<pre>$ kill -TERM 1234   # ask process 1234 to terminate
+$ kill -9 1234      # force process 1234 to terminate</pre>
+</div>
+</body>
+</html>

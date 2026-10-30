@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Branch prediction - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:2em 1.5em;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;margin-bottom:.3em}
+h2{font-size:1.35em;border-bottom:1px solid #c8ccd1;padding-bottom:.15em;margin-top:1.2em}
+h3{font-size:1.1em;margin-top:1em}
+img.hero{display:block;max-width:100%;height:auto;margin:1em auto;border:1px solid #c8ccd1;background:#f8f9fa;padding:.5em}
+p{margin:.6em 0}
+ul{margin:.5em 0 .5em 1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.note{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Branch prediction</h1>
+<img class="hero" src="images/branch-prediction.png" alt="Branch prediction hero image (placeholder)">
+<p>In computer architecture, a <b>branch predictor</b> is a digital circuit that tries to guess which way a branch (e.g., an if–then–else structure) will go before this is known definitively. The purpose of the branch predictor is to improve the flow in the instruction pipeline. Branch predictors play a critical role in achieving high effective performance in many modern pipelined microprocessor architectures.</p>
+<p>Two-way branching is usually implemented with a conditional jump instruction. A conditional jump can either be "taken" and jump to a different place in program memory, or it can be "not taken" and continue execution immediately after the conditional jump instruction. It is not known for certain whether a branch will be taken or not taken until the condition has been calculated and the conditional jump has passed the execution stage in the instruction pipeline.</p>
+<p>Without branch prediction, the processor would have to wait until the conditional jump instruction has passed the execute stage before the next instruction can be fetched into the decode stage in the pipeline. The branch predictor attempts to avoid this waste of time by trying to guess whether the conditional jump is most likely to be taken or not taken. The branch that is guessed to be the most likely is then fetched and speculatively executed. If it is later detected that the guess was wrong, then the speculatively executed or partially executed instructions are discarded and the pipeline starts over with the correct branch, incurring a delay.</p>
+<h2>Implementation</h2>
+<h3>Static branch prediction</h3>
+<p>Static prediction makes the same prediction for a given branch every time, based on heuristics — for example, predicting that backward branches (loops) are taken and forward branches are not, or using hints encoded by the compiler in the instruction stream.</p>
+<h3>Dynamic branch prediction</h3>
+<p>Dynamic predictors learn the behaviour of branches at run time. The simplest form is a one-bit saturating counter that records the last outcome of the branch; a two-bit counter is more tolerant of occasional exceptions. More sophisticated schemes include local history predictors, which track the recent outcomes of an individual branch, and global history predictors, which correlate the outcome of a branch with the outcomes of recently executed branches elsewhere in the program. Tournament predictors combine several predictors and choose between them.</p>
+<h3>Branch target prediction</h3>
+<p>A branch target buffer (BTB) caches the destination addresses of recently taken branches so that the processor can begin fetching from the target before the branch instruction itself has been fully decoded.</p>
+<h2>History</h2>
+<p>Branch prediction has been an important feature of high-performance processors since the early 1960s, when the IBM 7030 Stretch employed a form of it. The technique became widespread in the 1990s as pipelines deepened, and modern processors employ highly sophisticated multi-level predictors. In 2018, speculative execution — the mechanism branch prediction relies on — was shown to leak information across security boundaries in the Spectre vulnerabilities, prompting significant mitigations in hardware and software design.</p>
+<h2>See also</h2>
+<ul>
+<li>Branch (computer science)</li>
+<li>Speculative execution</li>
+<li>Instruction pipelining</li>
+<li>Spectre (vulnerability)</li>
+</ul>
+<p class="note">Categories: Computer architecture | Instruction processing</p>
+</body>
+</html>

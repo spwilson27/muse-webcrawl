@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Confusion and diffusion - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 4px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p { line-height: 1.65; font-size: 0.98em; }
+img.hero { max-width: 100%; border: 1px solid #c8ccd1; display: block; margin: 16px 0; }
+.small { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Confusion and diffusion</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/confusion-and-diffusion.png" alt="Confusion and diffusion hero image (placeholder)">
+<p>In cryptography, <b>confusion</b> and <b>diffusion</b> are two properties of a secure cipher identified by Claude Shannon in his 1949 paper "Communication Theory of Secrecy Systems." Together they describe how a cipher's design frustrates statistical analysis by an attacker: the goal is that the relationship between the key, the plaintext, and the ciphertext be as complex and thoroughly interwoven as possible.</p>
+<h2>Definitions</h2>
+<p><b>Confusion</b> refers to making the relationship between the ciphertext and the symmetric key as complex and involved as possible. It is typically achieved through substitution: in a block cipher, S-boxes replace symbols or bits in a nonlinear, key-dependent way, so that each ciphertext bit depends on several parts of the key in a complicated fashion. <b>Diffusion</b> refers to dissipating the statistical structure of the plaintext over a large part of the ciphertext: ideally, changing a single plaintext bit changes about half of the ciphertext bits (the avalanche effect), and each ciphertext bit depends on many plaintext bits. Diffusion is typically achieved through permutation and mixing operations, such as the permutation boxes of a Feistel network or the MixColumns step of AES.</p>
+<h2>Product ciphers</h2>
+<p>Shannon proposed combining simple operations repeatedly &mdash; a "product cipher" &mdash; so that neither substitution nor permutation alone needs to be strong. Modern block ciphers embody this idea: DES iterates substitution and permutation over 16 Feistel rounds, and AES applies SubBytes, ShiftRows, MixColumns, and AddRoundKey over 10&ndash;14 rounds in a substitution&ndash;permutation network. The composition of many rounds of weak confusion and diffusion yields a cipher that is believed to be a strong pseudorandom permutation.</p>
+<h2>See also</h2>
+<p>Avalanche effect &middot; Substitution&ndash;permutation network &middot; Feistel cipher &middot; Claude Shannon &middot; Block cipher</p>
+</div>
+</body>
+</html>

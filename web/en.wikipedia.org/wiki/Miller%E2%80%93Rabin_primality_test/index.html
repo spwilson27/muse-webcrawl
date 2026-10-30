@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Miller–Rabin primality test - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 88%; margin: 0 0 12px 16px; padding: 8px; }
+.infobox th { text-align: left; }
+a { color: #0645ad; text-decoration: none; }
+.hero { display: block; margin: 8px 0; max-width: 100%; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Miller–Rabin primality test</h1>
+<img class="hero" src="images/miller-rabin.png" alt="Miller–Rabin primality test (image placeholder)">
+<p>The <b>Miller–Rabin primality test</b> is a probabilistic primality test: an algorithm that determines whether a given number is likely to be prime. It was developed from Gary Miller's deterministic test (1976) by Michael O. Rabin (1980), who turned it into an efficient randomised algorithm. The test is widely used in computer algebra systems and cryptographic software, for instance to generate large prime numbers for RSA.</p>
+<h2>Principle</h2>
+<p>To test an odd integer n &gt; 2, write n − 1 = 2<sup>s</sup>·d with d odd, and pick a random base a. If a<sup>d</sup> ≡ 1 (mod n) or a<sup>2<sup>r</sup>d</sup> ≡ −1 (mod n) for some 0 ≤ r &lt; s, then n is a probable prime to base a; otherwise a is a witness that n is composite. A composite that passes is called a strong pseudoprime to base a.</p>
+<h2>Accuracy</h2>
+<p>For a composite odd n, at most one quarter of the bases are "liars" that fail to detect compositeness, so k independent rounds give an error probability of at most 4<sup>−k</sup>. For fixed input sizes, small deterministic sets of bases are known that make the test exact — for example, testing the first few prime bases suffices for all 64-bit integers.</p>
+<h2>History</h2>
+<p>Miller's original test was deterministic but relied on the unproven generalised Riemann hypothesis. Rabin's probabilistic version removed that assumption and is the form used in practice.</p>
+</div>
+</body>
+</html>

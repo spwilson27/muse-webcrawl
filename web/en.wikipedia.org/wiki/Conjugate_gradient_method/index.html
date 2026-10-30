@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Conjugate gradient method - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 4px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p { line-height: 1.65; font-size: 0.98em; }
+img.hero { max-width: 100%; border: 1px solid #c8ccd1; display: block; margin: 16px 0; }
+.small { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Conjugate gradient method</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/conjugate-gradient.png" alt="Conjugate gradient method hero image (placeholder)">
+<p>The <b>conjugate gradient method</b> is an algorithm for the numerical solution of systems of linear equations whose matrix is positive-definite. It was developed by Magnus Hestenes and Eduard Stiefel, who published it jointly in 1952 after working at the Institute for Numerical Analysis in Los Angeles. The method is an iterative Krylov subspace method: it generates a sequence of approximations that converges to the exact solution of an n-dimensional system in at most n steps in exact arithmetic, and usually far fewer in practice when the matrix's eigenvalues are well clustered.</p>
+<h2>Description</h2>
+<p>The method can be understood as minimising the quadratic form f(x) = &frac12; x<sup>T</sup>Ax &minus; b<sup>T</sup>x, whose gradient vanishes at the solution of Ax = b. Starting from an initial guess, the algorithm maintains a residual and a search direction; each new direction is chosen to be A-conjugate (orthogonal in the inner product induced by A) to all previous directions, so previously minimised components are never revisited. Each iteration requires only one matrix&ndash;vector product plus a few vector operations, making it ideal for large sparse systems arising from discretised partial differential equations, where forming or factoring the matrix is infeasible. In practice the method is almost always used with a preconditioner, giving the preconditioned conjugate gradient (PCG) method.</p>
+<h2>Variants and applications</h2>
+<p>Related algorithms include the biconjugate gradient method and its stabilised variant BiCGSTAB for nonsymmetric systems, MINRES for symmetric indefinite systems, and nonlinear conjugate gradient methods (such as Fletcher&ndash;Reeves and Polak&ndash;Ribi&egrave;re) for optimisation. Conjugate gradients are among the most widely used iterative solvers in scientific computing, with applications in structural analysis, fluid dynamics, image processing, and machine learning.</p>
+<h2>See also</h2>
+<p>Krylov subspace &middot; Iterative method &middot; Preconditioner &middot; Gradient descent</p>
+</div>
+</body>
+</html>

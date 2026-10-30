@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Count-distinct problem - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:2em auto;max-width:820px;padding:0 1em;color:#222;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #aaa;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #ccc;padding-bottom:.15em;margin-top:1.4em}
+.infobox{float:right;width:280px;border:1px solid #aaa;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.9em}
+.infobox th{text-align:left;vertical-align:top;padding-right:.5em}
+a{color:#0645ad;text-decoration:none}
+ul{margin:.4em 0}
+code{font-family:monospace;background:#f4f4f4;padding:0 .2em}
+</style>
+</head>
+<body>
+<h1>Count-distinct problem</h1>
+<img src="images/count-distinct-problem.png" alt="Count-distinct problem hero image (placeholder)">
+<table class="infobox">
+<tr><th>Field</th><td>Computer science, streaming algorithms</td></tr>
+<tr><th>Also known as</th><td>Cardinality estimation, F<sub>0</sub> estimation</td></tr>
+<tr><th>Key algorithms</th><td>Flajolet–Martin, HyperLogLog, MinCount</td></tr>
+</table>
+<p>In computer science, the <b>count-distinct problem</b> is the problem of finding the number of distinct elements in a data stream that may contain repeated elements. It is also called <b>cardinality estimation</b> or <b>F<sub>0</sub> estimation</b> (the zeroth frequency moment). Exact solutions require memory proportional to the number of distinct elements, so practical interest lies in randomised algorithms that give an approximate answer using very little memory.</p>
+<h2>Algorithms</h2>
+<p>Early work by Flajolet and Martin (1985) hashed each element and recorded the maximum number of trailing (or leading) zeros seen, estimating the cardinality as roughly 2 raised to that value, averaged over multiple hash functions. The LogLog and HyperLogLog algorithms refined this idea using harmonic means of many registers, achieving errors of a few percent with kilobytes of memory. Other approaches include MinCount (KMV), which keeps the k smallest hash values, and adaptive sampling.</p>
+<h2>Optimality</h2>
+<p>Theory shows that approximating the number of distinct elements within a factor (1 ± ε) requires space on the order of ε<sup>−2</sup> plus logarithmic terms; refined bounds were established by Kane, Nelson, and Woodruff, whose algorithm is essentially optimal. A deterministic exact algorithm needs space linear in the stream's distinct count.</p>
+<h2>Applications</h2>
+<p>Cardinality estimation is used in database query optimisers, network monitoring (counting distinct flows or visitors), and large-scale web analytics, where systems such as Redis implement HyperLogLog natively.</p>
+<h2>See also</h2>
+<ul>
+<li>HyperLogLog</li>
+<li>Count–min sketch</li>
+<li>Streaming algorithm</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Conditional random field - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #a2a9b1}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.9em}img.hero{max-width:100%;border:1px solid #ccc}</style>
+</head>
+<body>
+<h1>Conditional random field</h1>
+<img class="hero" src="images/conditional-random-field.png" alt="Conditional random field hero image (placeholder)">
+<p><b>Conditional random fields</b> (CRFs) are a class of statistical modeling methods often applied in pattern recognition and machine learning, where they are used for structured prediction. Unlike ordinary classifiers, which predict a label for a single sample without regard to neighboring samples, a CRF can take context into account. CRFs were introduced by John Lafferty, Andrew McCallum, and Fernando Pereira in 2001.</p>
+<h2>Overview</h2>
+<p>A CRF is a discriminative undirected graphical model. It is a type of Markov random field whose graph structure can be arbitrary, with the conditional distribution over labels modeled given observations. The most common form used in practice is the linear-chain CRF, which models sequences and is closely related to the hidden Markov model (HMM), but generalizes it by allowing arbitrary, overlapping features of the observations and by avoiding the HMM's assumption of conditional independence between observations.</p>
+<h2>Model</h2>
+<p>Given observation sequence X and label sequence Y, a linear-chain CRF defines the probability of Y given X proportional to the exponential of a weighted sum of feature functions over adjacent labels and observations, normalized by a partition function Z(X) that sums over all possible label sequences. Training typically maximizes the log-likelihood of labeled training data, often with L2 regularization, using gradient-based methods such as L-BFGS; inference over sequences uses the Viterbi algorithm.</p>
+<h2>Applications</h2>
+<p>CRFs have been widely used in natural language processing for part-of-speech tagging, named entity recognition, and shallow parsing; in bioinformatics for gene prediction and protein labeling; and in computer vision for image segmentation and object recognition. Extensions include skip-chain CRFs, which add long-range edges between labels, and higher-order CRFs.</p>
+</body>
+</html>

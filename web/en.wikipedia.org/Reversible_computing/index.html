@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Reversible computing - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;padding:0;background:#fff;color:#202122;line-height:1.6}
+#content{max-width:960px;margin:0 auto;padding:1em 1.5em}
+h1{font-family:"Linux Libertine",Georgia,serif;font-size:1.9em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-bottom:.2em}
+h2{font-family:"Linux Libertine",Georgia,serif;font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+h3{font-size:1.15em;margin-top:1em}
+p{margin:.5em 0}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;background:#f8f9fa;border:1px solid #a2a9b1;padding:.5em 1em;margin:0 0 1em 1.5em;font-size:.85em;max-width:260px}
+.toc{background:#f8f9fa;border:1px solid #a2a9b1;padding:.5em 1em;display:inline-block;font-size:.9em}
+.toc ul{margin:.2em 0;padding-left:1.2em}
+.small{font-size:.85em;color:#54595d}
+img{max-width:100%}
+.ref{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Reversible computing</h1>
+<p><b>Reversible computing</b> is a form of unconventional computing in which the computational process is largely or entirely reversible in a physical sense. A computation is logically reversible if the input can always be deduced from the output — that is, if no information is erased. Landauer's principle states that erasing a bit of information necessarily dissipates a minimum amount of heat (kT ln 2 per bit), so a computer that avoids erasing information could in principle operate with arbitrarily little energy dissipation, escaping this fundamental limit.</p>
+<p>Interest in reversible computing arises both from the long-term physics of computation — as transistors shrink, energy per operation approaches fundamental limits — and from quantum computing, in which unitary evolution is necessarily reversible, so quantum circuits are built from reversible gates.</p>
+<img src="images/reversible-computing.png" alt="Reversible computing hero image (placeholder)">
+<h2>Contents</h2>
+<div class="toc"><ul>
+<li>Background</li>
+<li>Reversible logic gates</li>
+<li>Reversible circuits and architectures</li>
+<li>Reversing computations</li>
+<li>See also</li>
+</ul></div>
+<h2>Background</h2>
+<p>In 1961 Rolf Landauer showed that irreversible bit erasure has a minimum thermodynamic cost, while logically reversible operations need not have one. Charles Bennett demonstrated in 1973 that any Turing-machine computation can be made reversible by keeping a history of intermediate steps and then uncomputing them to clear scratch space, avoiding erasure. Edward Fredkin and Tommaso Toffoli developed conservative logic and billiard-ball models of reversible computation around 1980, showing that reversible gates can implement any Boolean function.</p>
+<h2>Reversible logic gates</h2>
+<p>A reversible gate must have the same number of inputs and outputs and a bijective input–output mapping. Ordinary AND and OR gates are irreversible (two inputs, one output; information is lost). Standard reversible gates include the NOT gate (one bit), the controlled NOT (CNOT, two bits), the Toffoli gate (controlled-controlled NOT, three bits — universal for classical reversible computation), and the Fredkin gate (controlled swap, also universal and "conservative," preserving the number of 1 bits). Any Boolean circuit can be embedded in a reversible one using ancilla bits and garbage outputs managed by Bennett's uncomputation trick.</p>
+<h2>Reversible circuits and architectures</h2>
+<p>Experimentally, adiabatic and charge-recovery CMOS logic families approximate reversibility by changing voltages slowly, recovering much of the energy stored on capacitances; fully reversible experimental processors have been built at nanowatt scales. Reversible programming languages such as Janus, and reversible extensions of hardware description methods, compile programs into reversible circuits. Practical challenges include the overhead of ancilla bits, sensitivity to noise and manufacturing imperfections, and the inconvenient fact that saving all intermediate results trades energy for time and memory.</p>
+<h2>Reversing computations</h2>
+<p>Reversibility is also useful at the software level: reversible debugging lets a program be run backward to its bug; simulations of reversible cellular automata and lattice gases (such as the HPP and FHP models) exploit exact reversibility; and in quantum algorithms, "uncompute" steps are routinely required to disentangle temporary registers before interference can occur.</p>
+<h2>See also</h2>
+<p><a href="#">Landauer's principle</a> · <a href="#">Toffoli gate</a> · <a href="#">Fredkin gate</a> · <a href="#">Quantum computing</a> · <a href="#">Adiabatic circuit</a> · <a href="#">Charles H. Bennett (physicist)</a></p>
+<p class="ref">This article is a recreation from memory.</p>
+</div>
+</body>
+</html>

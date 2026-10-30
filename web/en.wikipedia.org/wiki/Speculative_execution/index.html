@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Speculative execution - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:860px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #a2a9b1;font-size:1.4em}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;width:250px;font-size:.9em}img{max-width:100%}</style></head>
+<body>
+<h1>Speculative execution</h1>
+<div class="infobox"><img src="images/speculative-execution.png" alt="Speculative execution (image placeholder)"><br><b>Field:</b> Computer architecture<br><b>Techniques:</b> Branch prediction, speculative loading, value prediction<br><b>Known risks:</b> Spectre and related side-channel attacks</div>
+<p><b>Speculative execution</b> is an optimisation technique in which a computer system performs work that may not be needed, in advance of knowing whether the result will be used. Modern processors speculatively execute instructions past predicted branches so that the pipeline need not stall while waiting for conditions to resolve.</p>
+<h2>How it works</h2>
+<p>When a branch is encountered, the branch predictor guesses the outcome and the processor continues executing along the predicted path, holding results in a reorder buffer. If the prediction proves correct, results are committed; otherwise the speculative state is discarded and execution restarts along the correct path.</p>
+<h2>Security implications</h2>
+<p>Although discarded speculative work leaves no architectural trace, it can affect caches and other microarchitectural state. In 2018 the Spectre vulnerabilities showed that attackers could exploit this to leak memory contents across security boundaries via timing side channels, prompting extensive software and hardware mitigations.</p>
+<p>See also: <a href="../Branch_predictor/index.html">Branch predictor</a> &middot; <a href="../Spectre_(security_vulnerability)/index.html">Spectre</a> &middot; <a href="../Out-of-order_execution/index.html">Out-of-order execution</a></p>
+</body></html>

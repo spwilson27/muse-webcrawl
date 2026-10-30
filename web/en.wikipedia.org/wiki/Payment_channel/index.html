@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Payment channel - Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:860px;margin:2em auto;padding:0 1em;line-height:1.6;color:#222}h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{font-size:1.4em;border-bottom:1px solid #eaecf0;padding-bottom:.15em}</style>
+</head>
+<body>
+<h1>Payment channel</h1>
+<p>A <b>payment channel</b> is a class of techniques designed to allow two parties to make multiple cryptocurrency payments to each other without committing all of the transactions to the blockchain. In a typical payment channel, only two transactions are recorded on-chain: one that opens the channel by depositing funds, and one that closes it and settles the final balances. All intermediate payments occur off-chain by exchanging signed, enforceable commitments.</p>
+<h2>Operation</h2>
+<p>Two parties lock funds into a shared (typically multisignature) address. They then exchange successively updated, signed balance statements off-chain; each new state supersedes the previous one. Either party can close the channel at any time by broadcasting the latest state, and mechanisms such as timelocks and revocation keys penalise attempts to publish outdated states that would cheat the counterparty.</p>
+<h2>Networks</h2>
+<p>Payment channels can be linked into networks so that payments can be routed between parties who share no direct channel, using multi-hop techniques secured by hashed timelock contracts (HTLCs). The best-known implementation for Bitcoin is the <b>Lightning Network</b>; similar systems include Raiden for Ethereum. Such networks aim to provide fast, low-cost, high-volume micropayments that base-layer blockchains cannot process directly.</p>
+<h2>Advantages and limitations</h2>
+<p>Advantages include near-instant settlement, very low fees, improved scalability, and some privacy benefits because intermediate transfers are not publicly recorded. Limitations include the need to lock up liquidity, monitor the chain for fraudulent closures (or delegate this to watchtowers), routing difficulties for large payments, and the requirement that parties be online to receive funds in many designs.</p>
+<h2>History</h2>
+<p>Payment channel concepts were discussed in early Bitcoin development, but practical secure designs depended on protocol upgrades addressing transaction malleability, such as Segregated Witness (activated 2017). The Lightning Network white paper by Joseph Poon and Thaddeus Dryja was published in 2015–2016, with mainnet implementations following from 2018.</p>
+</body>
+</html>

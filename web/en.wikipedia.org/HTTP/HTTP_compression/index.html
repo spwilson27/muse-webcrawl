@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTTP compression - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;max-width:960px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+figure{text-align:center;margin:16px 0}
+figcaption{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>HTTP compression</h1>
+<p><b>HTTP compression</b> is a capability that can be built into web servers and web clients to reduce the amount of data that needs to be transferred, improving bandwidth usage and page-load speed. Data is compressed before it is sent from the server; a compliant client announces which compression schemes it supports in the <code>Accept-Encoding</code> request header, and the server replies with the <code>Content-Encoding</code> header identifying the scheme applied.</p>
+<figure>
+<img src="images/http-compression.png" alt="HTTP compression hero image (placeholder)">
+<figcaption>Negotiation of a compressed HTTP response between client and server (placeholder image).</figcaption>
+</figure>
+<h2>Compression schemes</h2>
+<ul>
+<li><b>gzip</b> — the most widely used scheme for many years, based on the DEFLATE algorithm (LZ77 plus Huffman coding).</li>
+<li><b>deflate</b> — the raw zlib/DEFLATE format; historically implemented inconsistently by some clients.</li>
+<li><b>Brotli</b> (<code>br</code>) — developed by Google, standardised in RFC 7932; with a built-in dictionary of common web content, it usually compresses text better than gzip and is now supported by all major browsers, generally over HTTPS only.</li>
+<li><b>Zstandard</b> (<code>zstd</code>, RFC 8878) — a fast modern algorithm added to browsers and servers in the mid-2020s.</li>
+<li><b>compress</b> (LZW) and <b>identity</b> (no compression) are defined but rarely used.</li>
+</ul>
+<h2>Negotiation and proxies</h2>
+<p>Clients send an <code>Accept-Encoding</code> header listing supported schemes, optionally with quality values. Servers select the best mutually supported scheme and mark the response with <code>Content-Encoding</code> and a <code>Vary: Accept-Encoding</code> header so caches store variants correctly. Compression is typically applied to text-based formats (HTML, CSS, JavaScript, JSON, XML) and skipped for already-compressed media such as JPEG, PNG, and most video.</p>
+<h2>Security considerations</h2>
+<p>Compression combined with encryption has enabled side-channel attacks such as CRIME and BREACH, in which an attacker who can inject chosen text and observe ciphertext sizes infers secrets. Mitigations include disabling compression for sensitive responses, separating secrets from user input, and adding random padding. Header compression in HTTP/2 (HPACK) and HTTP/3 (QPACK) is a separate mechanism targeting header fields rather than message bodies.</p>
+<h2>See also</h2>
+<ul>
+<li>HTTP</li>
+<li>Gzip</li>
+<li>Brotli</li>
+<li>HTTP/2</li>
+<li>BREACH</li>
+</ul>
+</body>
+</html>

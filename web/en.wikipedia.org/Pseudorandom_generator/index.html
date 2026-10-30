@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pseudorandom generator - Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; max-width: 960px; margin: 0 auto; padding: 20px; color: #202122; background: #fff; line-height: 1.6; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; }
+h2 { font-size: 1.5em; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 15px 15px; width: 260px; font-size: 0.9em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { width: 100%; border: 1px solid #a2a9b1; }
+</style>
+</head>
+<body>
+<h1>Pseudorandom generator</h1>
+<div class="infobox">
+<img class="hero" src="images/pseudorandom-generator.png" alt="Pseudorandom generator hero image (placeholder)">
+<p>In theoretical computer science, a <b>pseudorandom generator</b> (PRG) deterministically stretches a short random seed into a much longer output that no efficient algorithm can distinguish from truly random.</p>
+</div>
+<p>In theoretical computer science and cryptography, a <b>pseudorandom generator</b> (PRG) is a deterministic algorithm that takes a short uniformly random seed and expands it into a longer string whose distribution cannot be distinguished from uniform by any computationally bounded test, except with negligible advantage. Pseudorandom generators are distinct from pseudorandom number generators used in simulation: in the theoretical setting, security is defined against all efficient distinguishing algorithms.</p>
+<h2>Definition</h2>
+<p>Formally, a function G mapping seeds of length n to outputs of length l(n) &gt; n is a pseudorandom generator if, for every probabilistic polynomial-time distinguisher, the probability of distinguishing G(U<sub>n</sub>) from U<sub>l(n)</sub> is negligibly small. The existence of strong PRGs is closely tied to the existence of one-way functions: one-way functions exist if and only if pseudorandom generators exist.</p>
+<h2>Constructions</h2>
+<p>The Blum–Micali construction builds a PRG from a one-way permutation using a hard-core predicate, iterating the permutation and outputting one pseudorandom bit at a time. The Håstad–Impagliazzo–Levin–Luby theorem showed that PRGs can be constructed from any one-way function. In derandomization, Nisan–Wigderson generators fool specific classes of algorithms, such as those using limited space, based on hardness assumptions.</p>
+<h2>Applications</h2>
+<p>Pseudorandom generators underlie stream ciphers and secure key expansion in cryptography, and in complexity theory they are central to efforts to derandomize algorithms — to show, for example, that BPP = P.</p>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Probabilistic roadmap - Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;padding:0;background:#fff;color:#202122;line-height:1.6}
+#content{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:Georgia,serif;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,serif;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+.hero{display:block;max-width:400px;margin:16px auto;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;text-align:center}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Probabilistic roadmap</h1>
+<p>The <b>probabilistic roadmap</b> planner (<b>PRM</b>) is a motion planning algorithm in robotics, which solves the problem of determining a path between a starting configuration of the robot and a goal configuration while avoiding collisions. It was introduced in the mid-1990s by Lydia Kavraki, Petr Švestka, Jean-Claude Latombe, Mark Overmars and colleagues.</p>
+<img class="hero" src="images/probabilistic-roadmap-hero.png" alt="Probabilistic roadmap hero image (placeholder)">
+<h2>Algorithm</h2>
+<p>The basic idea is to take random samples from the robot's configuration space, test them for being collision-free, and use a local planner to connect the sample configurations to nearby configurations. In a <b>learning phase</b>, the planner builds a graph (the roadmap) whose vertices are collision-free configurations and whose edges are feasible local paths. In the <b>query phase</b>, start and goal configurations are connected to the roadmap and a graph search (for example Dijkstra's algorithm or A*) finds a path between them.</p>
+<h2>Properties</h2>
+<p>PRM is probabilistically complete: if a solution exists and enough samples are taken, the probability of finding it approaches one. The roadmap is reusable for many queries in the same environment, which makes the method especially attractive for manipulators with many degrees of freedom moving among static obstacles. Variants include single-query versions, lazy collision checking (Lazy PRM), and optimal versions such as PRM*, which connect samples within a shrinking radius to guarantee asymptotic optimality.</p>
+<h2>Applications</h2>
+<p>Probabilistic roadmaps are used in robot path planning, animated characters and virtual prototyping, computational biology (for example, modelling molecular motions), and other high-dimensional search problems. Related sampling-based planners include rapidly-exploring random trees (RRTs).</p>
+<h2>See also</h2>
+<ul>
+<li>Motion planning</li>
+<li>Rapidly-exploring random tree</li>
+<li>Configuration space</li>
+<li>Lydia Kavraki</li>
+</ul>
+</div>
+</body>
+</html>

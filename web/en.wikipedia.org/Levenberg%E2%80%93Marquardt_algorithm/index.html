@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Levenberg–Marquardt algorithm - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 900px; margin: 0 auto; padding: 20px 30px 60px; line-height: 1.6; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 8px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+img.hero { display: block; max-width: 320px; margin: 12px 0; border: 1px solid #c8ccd1; padding: 4px; background: #f8f9fa; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.small { font-size: 85%; color: #54595d; }
+code { font-family: monospace; background: #f8f9fa; padding: 0 3px; }
+.formula { text-align: center; font-style: italic; margin: 14px 0; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Levenberg–Marquardt algorithm</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/levenberg-marquardt.png" alt="Levenberg–Marquardt algorithm hero image (placeholder)">
+<p>In mathematics and computing, the <b>Levenberg–Marquardt algorithm</b> (<b>LMA</b> or just <b>LM</b>), also known as the <b>damped least-squares</b> (<b>DLS</b>) method, is used to solve non-linear least squares problems. These minimization problems arise especially in least squares curve fitting. The LMA interpolates between the Gauss–Newton algorithm (GNA) and the method of gradient descent. The LMA is more robust than the GNA, meaning that in many cases it finds a solution even if it starts very far off the final minimum. For well-behaved functions and reasonable starting parameters, the LMA tends to be a bit slower than the GNA. LMA can also be viewed as Gauss–Newton using a trust region approach.</p>
+<p>The algorithm was first published in 1944 by Kenneth Levenberg, while working at the Frankford Army Arsenal. It was rediscovered in 1963 by Donald Marquardt, who worked as a statistician at DuPont and independently by Girard, Wynne and Morrison.</p>
+<h2>The problem</h2>
+<p>The primary application of the Levenberg–Marquardt algorithm is in the least-squares curve fitting problem: given a set of <i>m</i> empirical pairs (<i>x<sub>i</sub></i>, <i>y<sub>i</sub></i>) of independent and dependent variables, find the parameters <b>β</b> of the model curve <i>f</i>(<i>x</i>, <b>β</b>) so that the sum of the squares of the deviations <i>S</i>(<b>β</b>) is minimized:</p>
+<p class="formula">Ŝ(β) = argmin<sub>β</sub> Σ<sub>i=1..m</sub> [ y<sub>i</sub> − f(x<sub>i</sub>, β) ]²</p>
+<h2>The solution</h2>
+<p>Like other numeric minimization algorithms, the Levenberg–Marquardt algorithm is an iterative procedure. To start a minimization, the user has to provide an initial guess for the parameter vector. In each iteration step, the parameter vector is replaced by a new estimate. To determine the step, the model function is approximated by its linearization around the current parameters using the Jacobian <b>J</b> of the residuals.</p>
+<p>The key step of the algorithm is the solution of the damped normal equations:</p>
+<p class="formula">(J<sup>T</sup>J + λ diag(J<sup>T</sup>J)) δ = J<sup>T</sup> [ y − f(β) ]</p>
+<p>where <i>λ</i> is the damping parameter. When <i>λ</i> is zero, the method reduces to Gauss–Newton; when <i>λ</i> is large, the step approaches a small gradient-descent step. After each trial step, if the sum of squares decreased, <i>λ</i> is reduced (moving closer to Gauss–Newton); if it increased, the step is rejected and <i>λ</i> is increased.</p>
+<h2>Choice of damping parameter</h2>
+<p>Heuristics for adapting <i>λ</i> were given by Marquardt, who suggested starting with some value <i>λ</i><sub>0</sub> and a factor <i>ν</i> &gt; 1, multiplying or dividing λ by ν depending on whether the trial step improves the fit. Nielsen introduced a smoother update rule based on the ratio of actual to predicted reduction, related to trust-region methods.</p>
+<h2>Applications</h2>
+<p>The algorithm is widely used for nonlinear regression and parameter estimation in science and engineering, in training small neural networks, in photogrammetry and computer vision (where related ideas appear in bundle adjustment), and in inverse problems. Implementations are available in libraries such as MINPACK (whose <code>lmder</code> routine is a classic reference implementation), GNU Scientific Library, SciPy (<code>scipy.optimize.least_squares</code> with method <code>'lm'</code>), and Ceres Solver.</p>
+<h2>See also</h2>
+<ul>
+<li>Gauss–Newton algorithm</li>
+<li>Gradient descent</li>
+<li>Nonlinear least squares</li>
+<li>Trust region</li>
+<li>MINPACK</li>
+</ul>
+<p class="small">Categories: Optimization algorithms · Least squares · Numerical analysis</p>
+</div>
+</body>
+</html>

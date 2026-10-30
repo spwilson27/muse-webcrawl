@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chaos engineering - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 20px 28px 60px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.35em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 0.95em; }
+img.hero { max-width: 320px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; float: right; margin: 0 0 12px 16px; }
+.caption { font-size: 0.8em; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Chaos engineering</h1>
+<img class="hero" src="images/chaos-engineering.png" alt="Chaos engineering hero image (placeholder)">
+<p><b>Chaos engineering</b> is the discipline of experimenting on a distributed system in order to build confidence in the system's capability to withstand turbulent conditions in production. It involves deliberately injecting faults — killing processes, severing network links, adding latency, or terminating virtual machines — and observing whether the system maintains its steady-state behavior.</p>
+<h2>Origins</h2>
+<p>The practice emerged at Netflix during its migration to the cloud in the late 2000s. Netflix created <b>Chaos Monkey</b> (2011) to randomly terminate production instances so that engineers would design services that survive instance failure; it later joined the open-source <b>Simian Army</b> (with tools such as Latency Monkey and Chaos Gorilla, which simulates the loss of an availability zone). Netflix engineers Casey Rosenthal and Nora Jones popularized the formal discipline in their 2016–2020 writings, including the "Principles of Chaos Engineering" manifesto.</p>
+<h2>Method</h2>
+<p>A chaos experiment typically follows a scientific pattern: define a measurable steady-state hypothesis for the system; form a hypothesis about behavior under fault; inject realistic failure variables (server crash, network partition, clock skew, dependency outage); run the experiment in production or production-like environments with a controlled blast radius and automatic rollback; and analyze differences between the control and experimental behavior. Experiments are run continuously, often through "Game Days" and automated fault-injection platforms.</p>
+<h2>Tools and adoption</h2>
+<p>Beyond the Simian Army, tools include Litmus, Chaos Mesh and kube-monkey for Kubernetes, AWS Fault Injection Service, Azure Chaos Studio, and commercial platforms such as Gremlin. Chaos engineering is closely related to site reliability engineering (SRE) and is distinguished from traditional testing in that it validates assumptions about live sociotechnical systems rather than checking predefined expected outputs.</p>
+<p class="caption">Recreated from memory for the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

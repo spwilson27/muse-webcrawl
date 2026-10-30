@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Type of service - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;color:#202122;background:#fff}
+#mw-head{border-bottom:1px solid #a2a9b1;padding:0.6em 1em;background:#f8f9fa}
+#mw-head h1{font-size:1.6em;margin:0;font-weight:normal}
+#content{max-width:960px;margin:0 auto;padding:1em 1.5em 3em;line-height:1.6}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.4em}
+img.hero{display:block;max-width:420px;width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:1em;margin:0.5em 0 1em 1em;float:right;clear:right}
+.infobox{float:right;clear:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em 1em;margin:0 0 1em 1em;font-size:0.9em;width:260px}
+.infobox th{text-align:left;padding-right:0.7em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div id="mw-head"><h1>Type of service</h1></div>
+<div id="content">
+<img class="hero" src="images/type-of-service.png" alt="Type of service hero image (placeholder)">
+<table class="infobox">
+<tr><th colspan="2">Type of Service (ToS)</th></tr>
+<tr><th>Location</th><td>IPv4 header, second byte (bits 8–15)</td></tr>
+<tr><th>Defined by</th><td>RFC 791 (1981); refined by RFC 1349</td></tr>
+<tr><th>Superseded by</th><td>Differentiated Services field (RFC 2474, 1998)</td></tr>
+</table>
+<p>The <b>Type of Service</b> (<b>ToS</b>) field is the second byte of the IPv4 header, originally defined in RFC 791 (1981) to let hosts specify how their datagrams should be handled — trading off delay, throughput, and reliability — as packets traversed the network. In practice the field was little used end-to-end, and in 1998 it was redefined as the <b>Differentiated Services</b> (DS) field by RFC 2474; together with the ECN bits, this new interpretation covers the same byte in modern IPv4 (and corresponds to the Traffic Class field in IPv6).</p>
+<h2>Original layout</h2>
+<p>As originally specified, the byte's high-order bits gave a 3-bit <b>Precedence</b> value (0–7, from "routine" to "network control") indicating the datagram's priority; three following bits flagged desired qualities: low <b>D</b>elay, high <b>T</b>hroughput, and high <b>R</b>eliability; one bit remained reserved, and RFC 1349 (1992) added a fourth flag for low monetary <b>C</b>ost. Applications such as Telnet would request low delay while FTP requested high throughput. Routers were permitted — but not required — to honour these hints, and inconsistent implementations across vendors and providers meant the markings rarely had predictable end-to-end effects.</p>
+<h2>Replacement</h2>
+<p>The Differentiated Services architecture reinterpreted the top six bits as the DS Code Point (DSCP), a label used for per-hop behaviours (such as Expedited Forwarding and Assured Forwarding) within a provider's network, and the low two bits became Explicit Congestion Notification (ECN). The terms "ToS byte" and "ToS field" persist informally: operating systems and packet-capture tools still display the byte as "Type of Service", and utilities like <code>ping</code> retain a <code>-Q</code> option to set it, even though its semantics are now those of DiffServ.</p>
+<h2>See also</h2>
+<p><a href="../Differentiated_services/index.html">Differentiated services</a> &middot; <a href="../IPv4_header/index.html">IPv4 header</a> &middot; <a href="../Quality_of_service/index.html">Quality of service</a> &middot; <a href="../Explicit_Congestion_Notification/index.html">Explicit Congestion Notification</a></p>
+<p class="small">Recreated from memory for the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

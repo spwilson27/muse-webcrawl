@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Job control (Unix) - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 960px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; background: #fff; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; font-weight: normal; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 15px 15px; width: 260px; font-size: 0.9em; }
+.infobox img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Job control (Unix)</h1>
+<p>In Unix and Unix-like operating systems, <b>job control</b> refers to the control of <b>jobs</b> by a shell, especially interactively, where a "job" is a shell's representation for a process group. Job control allows the user to start, suspend, and resume multiple command pipelines from a single terminal session — capabilities made possible by the process group and session mechanisms of the kernel together with a controlling terminal.</p>
+<img src="images/job-control-unix.png" alt="Job control (Unix) hero image (placeholder)">
+<h2>Usage</h2>
+<p>A command followed by an ampersand (<code>&amp;</code>) runs in the background. The built-in commands <code>jobs</code>, <code>fg</code>, <code>bg</code>, and <code>disown</code> list and manipulate jobs; typing Control-Z suspends the foreground job (sending SIGTSTP), and signals such as SIGCONT resume it. Job control was developed for BSD Unix, appearing with the C shell and the 4.2BSD kernel support, and it was later standardized in POSIX shells.</p>
+<h2>Implementation</h2>
+<p>The kernel associates each process with a process group and each session with a controlling terminal; only the foreground process group may read from the terminal or receive terminal-generated signals, while background processes attempting terminal input are stopped by SIGTTIN. The shell uses these primitives, plus <code>wait</code> and the termios interface, to present multiple jobs to the user.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Unix_shell/index.html">Unix shell</a></li>
+<li><a href="../Process_group/index.html">Process group</a></li>
+<li><a href="../Signal_(computing)/index.html">Signal (computing)</a></li>
+</ul>
+</body>
+</html>

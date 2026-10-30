@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Simple Mail Transfer Protocol - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; max-width: 860px; margin: 0 auto; padding: 20px 24px; line-height: 1.6; color: #202122; background: #fff; }
+h1 { font-family: "Linux Libertine", Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.4em; }
+img.hero { max-width: 100%; border: 1px solid #c8ccd1; padding: 4px; background: #f8f9fa; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 1px 3px; }
+</style>
+</head>
+<body>
+<h1>Simple Mail Transfer Protocol</h1>
+<img class="hero" src="images/smtp-mail-flow.png" alt="Simple Mail Transfer Protocol hero image (placeholder)">
+<p>The <b>Simple Mail Transfer Protocol</b> (<b>SMTP</b>) is an Internet standard communication protocol for electronic mail transmission. Mail servers and other message transfer agents use SMTP to send and receive mail messages. User-level email clients typically use SMTP only for sending messages to a mail server for relaying, and submit outgoing email to the mail server on port 587 or 465 per RFC 8314. Retrieval of messages is usually done with protocols such as <a href="../Internet_Message_Access_Protocol">IMAP</a> or <a href="../Post_Office_Protocol">POP</a>.</p>
+<h2>History</h2>
+<p>SMTP grew out of earlier mail delivery systems on the ARPANET in the 1970s. It was first defined by Jon Postel in RFC 788 in November 1981 and updated in RFC 821 (1982). SMTP was widely used by the mid-1980s, and the current specification is RFC 5321 (2008). Extensions, known collectively as Extended SMTP (ESMTP), add capabilities such as the <code>EHLO</code> greeting, message size declaration, and <a href="../Opportunistic_TLS">STARTTLS</a> encryption.</p>
+<h2>Protocol overview</h2>
+<p>SMTP is a connection-oriented, text-based protocol in which a mail sender communicates with a mail receiver by issuing command strings and supplying necessary data over a reliable ordered data stream, typically a <a href="../Transmission_Control_Protocol">TCP</a> connection on port 25. Commands include <code>HELO</code>/<code>EHLO</code>, <code>MAIL FROM</code>, <code>RCPT TO</code>, and <code>DATA</code>. An SMTP session may include zero or more transactions, and servers reply with numeric codes such as 250 (OK) and 354 (start mail input).</p>
+<h2>Security and anti-spam measures</h2>
+<p>The original SMTP design had no authentication, which spammers exploited through open relays. Modern deployments use SMTP Authentication, and validation frameworks such as <a href="../Sender_Policy_Framework">SPF</a>, <a href="../DKIM">DKIM</a>, and <a href="../DMARC">DMARC</a> to verify sender identity.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Email">Email</a></li>
+<li><a href="../Internet_Message_Access_Protocol">IMAP</a></li>
+<li><a href="../Post_Office_Protocol">POP</a></li>
+</ul>
+</body>
+</html>

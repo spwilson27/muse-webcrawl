@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Magic packet - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;color:#202122;background:#fff}
+header{border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header .site{font-family:sans-serif;font-size:13px;color:#54595d}
+main{max-width:960px;margin:0 auto;padding:16px 24px 48px;line-height:1.6}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 18px;font-family:sans-serif;font-size:13px;line-height:1.4}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+pre{background:#f8f9fa;border:1px solid #a2a9b1;padding:10px;overflow:auto;font-size:13px}
+a{color:#0645ad}
+.thumb{border:1px solid #a2a9b1;background:#f8f9fa;padding:6px;text-align:center;font-family:sans-serif;font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia &mdash; The Free Encyclopedia</span></header>
+<main>
+<h1>Magic packet</h1>
+<div class="infobox">
+<table>
+<tr><th>Type</th><td>Network frame</td></tr>
+<tr><th>Used for</th><td>Wake-on-LAN</td></tr>
+<tr><th>Origin</th><td>AMD / Hewlett-Packard, 1995 publication</td></tr>
+<tr><th>Typical port</th><td>UDP 7 and 9 (conventional)</td></tr>
+<tr><th>Payload</th><td>102 bytes (48-bit MAC repeated 16 times, after 6&nbsp;&times;&nbsp;FF header)</td></tr>
+</table>
+</div>
+<p>A <b>magic packet</b> is the special network frame used to implement Wake-on-LAN (WoL), a standard that allows a computer to be switched on, or awakened from a low-power state, by a network message. The technology was published in 1995 by AMD in cooperation with Hewlett-Packard and became a standard feature of Ethernet adapters and motherboard firmware.</p>
+<div class="thumb"><img src="images/magic-packet-hero.png" alt="Magic packet hero image (placeholder)"><br>Magic packet hero image (placeholder)</div>
+<h2>Format</h2>
+<p>The packet's payload consists of six bytes of value 0xFF (the "synchronisation stream"), followed by the target computer's 48-bit MAC address repeated sixteen times, for a total of 102 bytes. An optional password of four or six bytes (the SecureOn feature) may follow.</p>
+<pre>FF FF FF FF FF FF | MAC MAC MAC MAC MAC MAC MAC MAC
+                   MAC MAC MAC MAC MAC MAC MAC MAC [password]</pre>
+<p>The magic packet is usually sent as a UDP datagram to port 7 or 9, or directly as an Ethernet frame; because the target machine's operating system is not running, the packet is commonly sent to the network's broadcast address, and the powered-but-sleeping network interface card scans incoming frames for the magic pattern matching its own MAC address. On recognizing it, the NIC signals the machine to power up.</p>
+<h2>Limitations</h2>
+<p>Because broadcast packets generally do not cross routers, wake-on-LAN historically worked only within a local subnet; workarounds use directed broadcasts, relay agents, or "Wake over the Internet" configurations with port forwarding. The mechanism itself provides no authentication apart from the optional SecureOn password, and many modern low-power states (notably on laptops and under "connected standby") limit which sleep states accept wake signals.</p>
+<h2>See also</h2>
+<p>Wake-on-LAN; MAC address; Ethernet; UDP (User Datagram Protocol).</p>
+</main>
+</body>
+</html>

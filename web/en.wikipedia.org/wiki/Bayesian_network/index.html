@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bayesian network - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 800px; line-height: 1.6; color: #202122; }
+h1 { border-bottom: 1px solid #a2a9b1; }
+img.hero { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Bayesian network</h1>
+<img class="hero" src="images/bayesian-network-diagram.png" alt="Bayesian network hero image (placeholder)">
+<p>A <b>Bayesian network</b> (also called a <b>belief network</b>, <b>Bayes net</b> or <b>probabilistic directed acyclic graphical model</b>) is a probabilistic graphical model that represents a set of random variables and their conditional dependencies by means of a directed acyclic graph (DAG). Bayesian networks are widely used for reasoning under uncertainty in artificial intelligence, statistics, medicine, bioinformatics and engineering.</p>
+<h2>Definition</h2>
+<p>In a Bayesian network each node represents a random variable — which may be observable, latent, or a known parameter — and each directed edge represents a direct conditional dependence. The joint probability distribution factorises into the product, over all variables, of the probability of each variable given its parents in the graph:</p>
+<p style="text-align:center"><i>P</i>(x<sub>1</sub>, …, x<sub>n</sub>) = Π <i>P</i>(x<sub>i</sub> | parents(x<sub>i</sub>))</p>
+<p>This factorisation encodes the conditional independence assumptions of the model: each variable is independent of its non-descendants given its parents. Missing edges thus represent independence assumptions that make the model compact and tractable.</p>
+<h2>Inference</h2>
+<p>Probabilistic inference in a Bayesian network means computing the posterior distribution of some variables given observed evidence on others. Exact algorithms include variable elimination and the junction tree algorithm; for large or dense networks, approximate methods such as loopy belief propagation and Markov chain Monte Carlo sampling are used. A classic illustrative example is the "sprinkler" network, in which rain and a garden sprinkler are competing explanations for wet grass, demonstrating the phenomenon of explaining away.</p>
+<h2>Learning</h2>
+<p>Networks can be built by expert elicitation or learned from data. Parameter learning estimates the conditional probability tables (often by maximum likelihood or Bayesian estimation with Dirichlet priors), while structure learning searches over graph structures using scoring functions or constraint-based tests of conditional independence. Dynamic Bayesian networks extend the framework to time series by replicating the network across time slices.</p>
+<h2>History</h2>
+<p>The framework was consolidated in the 1980s, above all by Judea Pearl, whose 1988 book <i>Probabilistic Reasoning in Intelligent Systems</i> established Bayesian networks as a central formalism for uncertain reasoning, superseding earlier rule-based expert-system approaches. Pearl received the Turing Award in 2011 in part for this work.</p>
+<p><i>Recreated from memory for the muse-webcrawl project.</i></p>
+</body>
+</html>

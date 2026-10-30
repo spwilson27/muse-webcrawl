@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ziegler–Nichols method - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;background:#fff;color:#202122;margin:0;padding:0 1em;}
+.content{max-width:960px;margin:0 auto;}
+h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;font-weight:normal;}
+h2{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;font-weight:normal;}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:6px;margin:0 0 1em 1em;font-size:90%;width:260px;}
+.infobox th{text-align:left;vertical-align:top;padding:2px 6px;}
+.infobox caption{font-weight:bold;background:#cedff2;padding:4px;}
+.small{font-size:90%;color:#54595d;}
+a{color:#0645ad;text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Ziegler–Nichols method</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img src="images/ziegler-nichols.png" alt="Ziegler–Nichols method (image placeholder)">
+<p>The <b>Ziegler–Nichols method</b> is a heuristic method of tuning a PID controller. It was developed by John G. Ziegler and Nathaniel B. Nichols and presented in their 1942 paper "Optimum Settings for Automatic Controllers". The method provides simple rules for choosing the proportional, integral and derivative gains of a controller based on the observed response of the controlled process.</p>
+<h2>Ultimate gain method</h2>
+<p>In the best-known version, the <i>closed-loop</i> or <i>ultimate gain</i> method, the integral and derivative actions are first disabled. The proportional gain K<sub>p</sub> is then increased from zero until the output of the loop exhibits sustained oscillations of constant amplitude. The gain at which this occurs is the <b>ultimate gain</b> K<sub>u</sub>, and the period of the oscillation is the <b>ultimate period</b> T<sub>u</sub>. Controller parameters are then set from K<sub>u</sub> and T<sub>u</sub>: for a classic PID controller, K<sub>p</sub> = 0.6 K<sub>u</sub>, the integral time T<sub>i</sub> = T<sub>u</sub>/2, and the derivative time T<sub>d</sub> = T<sub>u</sub>/8.</p>
+<h2>Process reaction curve method</h2>
+<p>Ziegler and Nichols also described an open-loop method based on the process reaction curve: the step response of the plant is approximated by a delay L and a time constant T, and tuning rules are given in terms of these quantities and the process gain.</p>
+<h2>Criticism and variants</h2>
+<p>The Ziegler–Nichols rules aim for a quarter-amplitude decay response, which is often too oscillatory and aggressive for process control applications. Numerous modifications — such as the Tyreus–Luyben rules and the "some overshoot" and "no overshoot" variants — have been proposed to give less aggressive tuning. Despite its limitations, the method remains a common starting point for PID tuning in practice and teaching.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../PID_controller/index.html">PID controller</a></li>
+<li><a href="../Control_theory/index.html">Control theory</a></li>
+</ul>
+</div>
+</body>
+</html>

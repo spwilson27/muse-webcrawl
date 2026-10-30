@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Publish–subscribe pattern - Wikipedia</title>
+<style>
+body{font-family:'Segoe UI',Tahoma,sans-serif;max-width:900px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:5px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.imgbox{float:right;margin:0 0 1em 1em;background:#f8f9fa;border:1px solid #c8ccd1;padding:5px;width:250px;text-align:center;font-size:0.85em}
+pre{background:#f8f9fa;border:1px solid #c8ccd1;padding:10px;overflow-x:auto}
+</style>
+</head>
+<body>
+<h1>Publish–subscribe pattern</h1>
+<div class="imgbox"><img src="images/publish-subscribe-diagram.png" alt="Publish–subscribe pattern hero image (placeholder)"><br>Publishers send messages to a broker; subscribers receive topics of interest</div>
+<p>In software architecture, <b>publish–subscribe</b> is a messaging pattern where publishers categorise messages into classes (topics) without knowledge of which subscribers, if any, there may be. Similarly, subscribers express interest in one or more classes and only receive messages that are of interest, without knowledge of which publishers, if any, there are.</p>
+<p>Publish–subscribe is a sibling of the message queue paradigm, and is typically one part of a larger message-oriented middleware system. Most messaging systems support both the pub/sub and message queue models in their API, e.g. Java Message Service (JMS).</p>
+<h2>Advantages</h2>
+<p><b>Loose coupling:</b> publishers are loosely coupled to subscribers, and need not even know of their existence. <b>Scalability:</b> publish–subscribe provides the opportunity for better scalability than traditional client–server through parallel operation, message caching, and tree-based or network-based routing.</p>
+<h2>Disadvantages</h2>
+<p>The broker in a publish–subscribe system may be a bottleneck or single point of failure. Because delivery is decoupled, the publisher cannot guarantee a message reached any particular subscriber, and the addition of subscribers may produce unintended side effects — the "semantic coupling" problem.</p>
+<h2>Filtering</h2>
+<p>In topic-based systems, subscribers receive messages published to named topics. In content-based systems, messages are delivered only if their attributes match constraints defined by the subscriber. Hybrid systems combine both approaches.</p>
+<h2>Implementations</h2>
+<p>Examples include MQTT, used in Internet of Things messaging; Redis Pub/Sub; Apache Kafka (often used in a pub/sub fashion); Amazon SNS; and Google Cloud Pub/Sub. The pattern is also used in event-driven user interfaces through the observer pattern, a related one-to-many dependency mechanism.</p>
+</body>
+</html>

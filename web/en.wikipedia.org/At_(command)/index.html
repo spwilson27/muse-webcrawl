@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>at (command) - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+p { line-height: 1.6; }
+code, pre { font-family: monospace; background: #f8f9fa; }
+a { color: #0645ad; text-decoration: none; }
+img.hero { max-width: 100%; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>at (command)</h1>
+<img class="hero" src="images/at-command.png" alt="at (command) hero image (placeholder)">
+<p>In Unix-like computer operating systems, <b>at</b> is a command that is used to schedule commands to be executed once, at a particular time in the future. The related commands <b>batch</b>, <b>atq</b> and <b>atrm</b> respectively schedule commands to run when system load permits, list pending jobs, and remove pending jobs. Jobs are executed by the <code>atd</code> daemon, which reads them from a spool directory (traditionally <code>/var/spool/at</code> or <code>/var/spool/cron/atjobs</code>). Unlike <code>cron</code>, which schedules recurring tasks, <code>at</code> is designed for one-off execution.</p>
+<h2>Usage</h2>
+<p>The user supplies a time specification and then types the commands to run, ending the input with Ctrl+D (or redirecting commands from a file with <code>-f</code>). Time formats are flexible; examples include <code>at 22:00</code>, <code>at midnight</code>, <code>at teatime</code> (16:00), <code>at now + 30 minutes</code> and <code>at 14:30 31.12.2030</code>. For example:</p>
+<pre>$ echo "shut down database" | at 02:00 tomorrow
+$ atq
+$ atrm 3</pre>
+<p>Access to <code>at</code> can be controlled through the files <code>/etc/at.allow</code> and <code>/etc/at.deny</code>. When a job runs, its standard output and error are normally mailed to the user with the local mail system, unless redirected. The environment (working directory, variables, umask) captured at submission time is reproduced when the job executes.</p>
+<h2>Other platforms</h2>
+<p>Microsoft Windows historically included an <code>AT</code> command for scheduling tasks, which was deprecated in favour of <code>schtasks</code>; the Services snap-in and Task Scheduler provide the equivalent functionality. Variants of <code>at</code> are standard on Linux (where it is provided by the at package, originally by Thomas Koenig), the BSDs, macOS (where <code>atrun</code> is disabled by default in favour of launchd) and other Unix systems, and the command is specified by POSIX.</p>
+<p><i>See also:</i> cron; systemd; Job scheduler; List of Unix commands.</p>
+</div>
+</body>
+</html>

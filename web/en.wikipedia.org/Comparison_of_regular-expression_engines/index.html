@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Comparison of regular-expression engines - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+img.hero { display: block; max-width: 320px; float: right; margin: 0 0 16px 20px; border: 1px solid #c8ccd1; background: #eaecf0; padding: 8px; }
+p { line-height: 1.6; font-size: 15px; }
+table.cmp { border-collapse: collapse; font-size: 14px; margin: 12px 0; }
+table.cmp th, table.cmp td { border: 1px solid #a2a9b1; padding: 4px 8px; text-align: left; }
+table.cmp th { background: #eaecf0; }
+a { color: #0645ad; text-decoration: none; }
+code { background: #f8f9fa; padding: 0 3px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Comparison of regular-expression engines</h1>
+<img class="hero" src="images/regex-engines.png" alt="Comparison of regular-expression engines hero image (placeholder)">
+<p>A <b>regular expression engine</b> is software that interprets regular expressions and searches text for matches. Engines differ in the syntax they support, in their feature sets — such as capturing groups, backreferences, lookahead, and Unicode support — and in their matching algorithms. This article compares prominent engines used in programming languages, editors, and command-line tools.</p>
+<h2>Implementation approaches</h2>
+<p>Two broad families of algorithms dominate. <b>Backtracking</b> engines, exemplified by PCRE and the regex libraries of Perl, Python, Java, and .NET, support rich features such as backreferences and look-around assertions, but can suffer exponential runtimes on pathological patterns (catastrophic backtracking). <b>Finite automaton</b> engines — typically based on Thompson NFA simulation or DFA construction, as in RE2, Rust's regex crate, and the engines in Go — guarantee linear-time matching but traditionally lack backreferences and look-around.</p>
+<h2>Selected engines</h2>
+<table class="cmp">
+<tr><th>Engine</th><th>Used by / language</th><th>Approach</th><th>Notable features</th></tr>
+<tr><td>PCRE / PCRE2</td><td>PHP, R, many tools</td><td>Backtracking</td><td>Very full Perl-compatible syntax, recursion, conditionals</td></tr>
+<tr><td>Perl core regex</td><td>Perl</td><td>Backtracking</td><td>Reference implementation for "Perl-like" syntax</td></tr>
+<tr><td>RE2</td><td>Google products, Go (similar)</td><td>Automaton</td><td>Linear-time guarantee, no backreferences</td></tr>
+<tr><td>ICU Regex</td><td>Unicode libraries</td><td>Backtracking</td><td>Deep Unicode support, UTS #18 features</td></tr>
+<tr><td>.NET Regex</td><td>C# / .NET</td><td>Backtracking (plus source-generated and nonbacktracking modes)</td><td>Balancing groups, right-to-left matching</td></tr>
+<tr><td>Java java.util.regex</td><td>Java</td><td>Backtracking</td><td>Possessive quantifiers, extensive character classes</td></tr>
+<tr><td>Onigmo / Oniguruma</td><td>Ruby (historically), editors</td><td>Backtracking</td><td>Multiple encodings, Ruby syntax extensions</td></tr>
+<tr><td>Hyperscan</td><td>Network security tools</td><td>Automaton</td><td>Very fast simultaneous matching of many patterns</td></tr>
+</table>
+<h2>Feature differences</h2>
+<p>Key points of variation include support for named capture groups, possessive quantifiers, atomic groups, conditionals, recursion, character class set operations, Unicode properties and grapheme clusters, and possessive behaviour around newlines. POSIX defines two simpler syntaxes — Basic Regular Expressions (BRE) and Extended Regular Expressions (ERE) — implemented by tools such as grep, sed, and awk, which avoid most extensions. Because "regular expression" dialects are not standardised, expressions often require adjustment when moved between engines.</p>
+</div>
+</body>
+</html>

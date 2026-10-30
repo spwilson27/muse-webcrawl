@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Okapi BM25 - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:40px auto;max-width:960px;padding:0 20px;color:#202122;line-height:1.6}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a7d7f9;padding-bottom:4px}
+h2{font-weight:normal;border-bottom:1px solid #c8ccd1}
+a{color:#0645ad;text-decoration:none}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 10px 20px;font-size:90%;width:260px}
+.infobox th{background:#cedff2;padding:4px}
+.hero{display:block;max-width:100%;border:1px solid #c8ccd1;background:#eef3f8;text-align:center;padding:30px 0;color:#54595d;font-style:italic}
+</style>
+</head>
+<body>
+<h1>Okapi BM25</h1>
+<table class="infobox">
+<tr><th colspan="2">Okapi BM25</th></tr>
+<tr><td><b>Field</b></td><td>Information retrieval</td></tr>
+<tr><td><b>Type</b></td><td>Ranking function</td></tr>
+<tr><td><b>Origin</b></td><td>Okapi IR system, City University London, 1980s–1990s</td></tr>
+<tr><td><b>Key parameters</b></td><td>k<sub>1</sub> (term-frequency saturation), b (length normalization)</td></tr>
+</table>
+<img class="hero" src="images/bm25.png" alt="Okapi BM25 (image placeholder)">
+<p>In information retrieval, <b>Okapi BM25</b> (BM is an abbreviation of <i>best matching</i>) is a ranking function used by search engines to estimate the relevance of documents to a given search query. It is based on the probabilistic retrieval framework developed in the 1970s and 1980s by Stephen E. Robertson, Karen Spärck Jones, and others, and was implemented in the Okapi system at City University London, where it performed strongly in the TREC evaluations of the 1990s.</p>
+<h2>The scoring function</h2>
+<p>Given a query Q containing keywords q<sub>1</sub>, …, q<sub>n</sub>, the BM25 score of a document D is the sum over query terms of IDF(q<sub>i</sub>) × f(q<sub>i</sub>, D)(k<sub>1</sub> + 1) / (f(q<sub>i</sub>, D) + k<sub>1</sub>(1 − b + b·|D|/avgdl)), where f is the term's frequency in D, |D| is the document length, avgdl is the average document length in the collection, and IDF measures the term's rarity across the corpus. Typical values are k<sub>1</sub> in [1.2, 2.0] and b = 0.75.</p>
+<h2>Properties and use</h2>
+<p>The formula improves on simple TF–IDF scoring by saturating term frequency (repeated occurrences give diminishing returns) and normalizing for document length. BM25 remains a strong and widely used baseline: it is the default similarity function in Lucene, Elasticsearch, and many other search systems. Variants include BM25F, which weights fields such as titles separately, and BM25+, which corrects score behaviour for long documents.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Tf%E2%80%93idf/index.html">tf–idf</a></li>
+<li><a href="../Ranking_(information_retrieval)/index.html">Ranking (information retrieval)</a></li>
+<li><a href="../Apache_Lucene/index.html">Apache Lucene</a></li>
+</ul>
+</body>
+</html>

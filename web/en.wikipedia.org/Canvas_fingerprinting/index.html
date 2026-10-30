@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Canvas fingerprinting - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 30px 60px; }
+h1 { font-size: 1.9em; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 1.4em; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+p, li { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 16px 0; }
+.hero img { max-width: 420px; border: 1px solid #c8ccd1; background: #f8f9fa; }
+.caption { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Canvas fingerprinting</h1>
+<div class="hero">
+<img src="images/canvas-fingerprinting-diagram.png" alt="Canvas fingerprinting hero image (placeholder)">
+<div class="caption">How small rendering differences produce a device fingerprint (placeholder)</div>
+</div>
+<p><b>Canvas fingerprinting</b> is one of a number of browser fingerprinting techniques used by websites to track visitors. It works by exploiting the HTML5 canvas element: a website instructs the visitor's browser to draw a hidden image and text, and because the exact pixel output depends on the browser, operating system, graphics hardware, drivers, and installed fonts, the result renders slightly differently on different systems. Reading back the pixels yields a largely unique identifier for the device, which can be hashed and used for tracking without cookies.</p>
+<h2>Technique</h2>
+<p>The script typically draws text with a specified font and background, sometimes combined with WebGL rendering. The canvas data is extracted (for example via <i>toDataURL</i>) and hashed. Variations in anti-aliasing, sub-pixel rendering, and graphics processing units make the output stable for a given machine yet different across machines, providing enough entropy to distinguish a large fraction of users.</p>
+<h2>History</h2>
+<p>The technique was described in a 2012 paper by Keaton Mowery and Hovav Shacham of the University of California, San Diego. It gained wide public attention in 2014 after researchers at Princeton University and KU Leuven published a large-scale study ("The Web never forgets") finding canvas fingerprinting scripts on thousands of popular websites, including those of major companies and government sites.</p>
+<h2>Countermeasures</h2>
+<p>Because fingerprinting is difficult for users to detect, browser vendors and privacy tools have introduced defences: the Tor Browser asks permission before allowing canvas readout and returns blank data by default; Firefox includes fingerprinting resistance options; Brave randomises canvas output; and extensions such as CanvasBlocker can spoof or block readouts. Randomising the output per session undermines the stability the technique depends on.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Browser_fingerprint/index.html">Browser fingerprint</a></li>
+<li><a href="../Device_fingerprint/index.html">Device fingerprint</a></li>
+<li><a href="../Web_tracking/index.html">Web tracking</a></li>
+<li><a href="../Evercookie/index.html">Evercookie</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Miller–Rabin primality test - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:40px auto;max-width:960px;padding:0 20px;color:#202122;line-height:1.6}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a7d7f9;padding-bottom:4px}
+h2{font-weight:normal;border-bottom:1px solid #c8ccd1}
+a{color:#0645ad;text-decoration:none}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 10px 20px;font-size:90%;width:260px}
+.infobox th{background:#cedff2;padding:4px}
+.hero{display:block;max-width:100%;border:1px solid #c8ccd1;background:#eef3f8;text-align:center;padding:30px 0;color:#54595d;font-style:italic}
+</style>
+</head>
+<body>
+<h1>Miller–Rabin primality test</h1>
+<table class="infobox">
+<tr><th colspan="2">Miller–Rabin primality test</th></tr>
+<tr><td><b>Type</b></td><td>Probabilistic primality test</td></tr>
+<tr><td><b>Named after</b></td><td>Gary L. Miller, Michael O. Rabin</td></tr>
+<tr><td><b>Published</b></td><td>1976 (Miller), 1980 (Rabin)</td></tr>
+<tr><td><b>Output</b></td><td>Composite or probably prime</td></tr>
+</table>
+<img class="hero" src="images/miller-rabin.png" alt="Miller–Rabin primality test (image placeholder)">
+<p>The <b>Miller–Rabin primality test</b>, also called the <b>Rabin–Miller primality test</b>, is a probabilistic primality test: an algorithm for determining whether a given number is likely prime. It is based on an equivalence, or a property of prime numbers, that can be turned into a test of primality: if a number does not obey the property, it is certainly composite, but numbers that obey it are only probably prime.</p>
+<p>The test is one of the most commonly used primality tests in practice, appearing in cryptographic libraries such as OpenSSL and GMP. Variants of the test are due to Gary Miller (1976), who conditionalized it on the generalized Riemann hypothesis, and Michael Rabin (1980), who made it unconditionally probabilistic.</p>
+<h2>Description</h2>
+<p>To test an odd integer <i>n</i> &gt; 2, write <i>n</i> − 1 as 2<sup>s</sup>·<i>d</i> with <i>d</i> odd. Choose a random base <i>a</i> between 2 and <i>n</i> − 2 and compute <i>x</i> = <i>a</i><sup>d</sup> mod <i>n</i>. If <i>x</i> is 1 or <i>n</i> − 1, the test passes for this base. Otherwise square <i>x</i> repeatedly up to <i>s</i> − 1 times; if <i>n</i> − 1 is never reached, <i>n</i> is composite and <i>a</i> is called a witness. If <i>n</i> is composite, at least three quarters of bases are witnesses, so repeating the test with several random bases drives the error probability below 4<sup>−k</sup> after <i>k</i> rounds.</p>
+<h2>Deterministic variants</h2>
+<p>For fixed-size integers, testing a small set of predetermined bases is deterministic and exact. For numbers below 2<sup>64</sup>, testing the first twelve prime bases (or a known seven-base set) is sufficient. Miller's original version is deterministic assuming the generalized Riemann hypothesis, needing only bases up to O((log <i>n</i>)<sup>2</sup>).</p>
+<h2>Applications</h2>
+<p>The test is used to generate large prime numbers for public-key cryptography, including RSA key generation, where candidates are sieved and then subjected to repeated Miller–Rabin rounds until the probability of error is negligible.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Fermat_primality_test/index.html">Fermat primality test</a></li>
+<li><a href="../AKS_primality_test/index.html">AKS primality test</a></li>
+<li><a href="../Solovay%E2%80%93Strassen_primality_test/index.html">Solovay–Strassen primality test</a></li>
+</ul>
+</body>
+</html>

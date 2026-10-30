@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MinHash - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; line-height: 1.6; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: "Linux Libertine", Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 8px; }
+h2 { font-family: sans-serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+.imgph { text-align: center; margin: 16px 0; }
+.imgph img { max-width: 100%; border: 1px solid #ccc; background: #eee; padding: 40px 10px; color: #666; }
+.small { font-size: 90%; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>MinHash</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<div class="imgph"><img src="images/minhash.png" alt="MinHash hero image (placeholder)"></div>
+<p><b>MinHash</b> (or min-wise independent permutations locality-sensitive hashing) is a technique for quickly estimating the similarity of two sets, measured by their Jaccard index. Invented by Andrei Broder in 1997 while at AltaVista, it became a foundational method for detecting near-duplicate documents and is closely related to locality-sensitive hashing.</p>
+<h2>Method</h2>
+<p>Given a random permutation of the universe of elements, the minhash of a set is the first element of the set under that permutation. A key property is that for two sets A and B, the probability that their minhashes coincide equals their Jaccard similarity, |A &cap; B| / |A &cup; B|. Applying many independent hash functions (rather than explicit permutations) and recording the minimum hash value under each produces a short "sketch" or signature of the set; the fraction of positions at which two signatures agree estimates the similarity. Subsets of matching positions, called bands, let candidate pairs be found efficiently.</p>
+<h2>Applications</h2>
+<p>MinHash was created to remove near-duplicate pages from web search results and cluster similar pages. It is now used in document deduplication, plagiarism detection, recommendation systems, bioinformatics (for example comparing genome sequences in the Mash tool), and as a building block for large-scale machine-learning data preprocessing, including deduplication of training corpora for language models.</p>
+<h2>See also</h2>
+<ul>
+<li>Jaccard index</li>
+<li>Locality-sensitive hashing</li>
+<li>HyperLogLog</li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tunneling protocol - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0 auto; max-width: 860px; padding: 20px 30px; line-height: 1.6; color: #202122; background: #fff; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.imgwrap { text-align: center; margin: 12px 0; }
+.imgwrap img { max-width: 480px; width: 100%; border: 1px solid #ccc; background: #f0f0f0; }
+.caption { font-size: 0.85em; color: #54595d; }
+ul { padding-left: 1.6em; }
+</style>
+</head>
+<body>
+<h1>Tunneling protocol</h1>
+<div class="imgwrap"><img src="images/tunneling-protocol-diagram.png" alt="Tunneling protocol hero image (placeholder)"><div class="caption">In tunneling, a payload protocol is encapsulated inside a delivery protocol so it can traverse a network it could not otherwise cross.</div></div>
+<p>In computer networks, a <b>tunneling protocol</b> is a communication protocol that allows the movement of data from one network to another by encapsulating the payload of one protocol (the "passenger" or payload protocol) within the packets of another (the "delivery" protocol). The tunneled data can cross intermediate networks that do not support the payload protocol directly, or can be carried securely across an untrusted network such as the public Internet.</p>
+<h2>How tunneling works</h2>
+<p>The transmitting endpoint of the tunnel encapsulates each packet of the payload protocol inside a new packet with a header of the delivery protocol, and sends it across the intermediate network. The receiving endpoint strips the outer header and forwards the original packet onto its destination network. To the payload packets, the tunnel appears to be a single link, regardless of how many hops the delivery packets traverse.</p>
+<h2>Uses</h2>
+<ul>
+<li><b>Virtual private networks (VPNs):</b> Protocols such as IPsec, OpenVPN, WireGuard, PPTP and L2TP tunnel private traffic across the public Internet, usually with encryption.</li>
+<li><b>Protocol transition:</b> IPv6 traffic is tunneled over IPv4 networks (and vice versa) with mechanisms such as 6to4, Teredo and 6in4.</li>
+<li><b>Carrying incompatible protocols:</b> Tunnels carry multicast traffic, legacy protocols, or traffic between separated segments of a network (for example GRE, VXLAN and MPLS-based services in provider networks).</li>
+<li><b>Bypassing restrictions:</b> SSH port forwarding and HTTP tunnels can carry traffic through firewalls, sometimes legitimately for administration and sometimes to evade policy.</li>
+</ul>
+<h2>Examples</h2>
+<p>Widely used tunneling protocols include the Generic Routing Encapsulation (GRE), IP-in-IP, L2TP, SSTP, IPsec tunnel mode, and SSH tunnels. Tunneling adds overhead (extra headers reduce the effective MTU, sometimes causing fragmentation) and can complicate troubleshooting, but it remains one of the most versatile tools in network engineering.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Virtual_private_network/index.html">Virtual private network</a></li>
+<li><a href="../Generic_Routing_Encapsulation/index.html">Generic Routing Encapsulation</a></li>
+<li><a href="../IPsec/index.html">IPsec</a></li>
+<li><a href="../Encapsulation_(networking)/index.html">Encapsulation (networking)</a></li>
+</ul>
+</body>
+</html>

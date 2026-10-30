@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Message transfer agent - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;color:#202122;background:#fff}
+header{border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header .site{font-family:sans-serif;font-size:13px;color:#54595d}
+main{max-width:960px;margin:0 auto;padding:16px 24px 48px;line-height:1.6}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 18px;font-family:sans-serif;font-size:13px;line-height:1.4}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+a{color:#0645ad}
+.thumb{border:1px solid #a2a9b1;background:#f8f9fa;padding:6px;text-align:center;font-family:sans-serif;font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia &mdash; The Free Encyclopedia</span></header>
+<main>
+<h1>Message transfer agent</h1>
+<div class="infobox">
+<table>
+<tr><th>Abbreviations</th><td>MTA; also mail transfer agent, mail server</td></tr>
+<tr><th>Function</th><td>Transfers email between computers using SMTP</td></tr>
+<tr><th>Well-known software</th><td>Sendmail, Postfix, Exim, qmail, Microsoft Exchange</td></tr>
+<tr><th>Default port</th><td>TCP 25 (server-to-server)</td></tr>
+</table>
+</div>
+<p>A <b>message transfer agent</b> (<b>MTA</b>), or <b>mail transfer agent</b>, is software that transfers electronic mail messages from one computer to another using the Simple Mail Transfer Protocol (SMTP). Within Internet mail architecture, MTAs form the relay backbone: a sender's mail submission agent hands the message to an MTA, which looks up the recipient domain's MX records in the Domain Name System, and relays the message from MTA to MTA until it reaches the destination mail delivery agent (MDA).</p>
+<div class="thumb"><img src="images/mta-hero.png" alt="Message transfer agent hero image (placeholder)"><br>Message transfer agent hero image (placeholder)</div>
+<h2>Operation</h2>
+<p>An MTA accepts messages from local users, other MTAs, or submission services; determines routing by parsing recipient addresses; queues messages when a destination is temporarily unreachable, retrying with backoff; and generates delivery status notifications (bounces) for undeliverable mail. MTAs prepend "Received:" header fields, which create an auditable hop-by-hop trace of a message's path.</p>
+<h2>History and implementations</h2>
+<p>Sendmail, written by Eric Allman at the University of California, Berkeley in the early 1980s, dominated Internet mail routing for decades and remains in use. Later MTAs emphasized modularity and security: qmail (1995) by Daniel J. Bernstein, Exim (1995) from the University of Cambridge, and Postfix (1998) by Wietse Venema, the default on many Linux distributions. Microsoft Exchange Server combines MTA functions with mailbox and calendaring services.</p>
+<h2>Spam and abuse control</h2>
+<p>Early MTAs acted as "open relays," forwarding mail for anyone, a practice shut down in the late 1990s as spammers exploited it. Modern MTAs implement authentication (SMTP AUTH), encryption (STARTTLS), sender frameworks and scoring (SPF, DKIM, DMARC), rate limiting, and blocklist checks to control abuse.</p>
+<h2>See also</h2>
+<p>Simple Mail Transfer Protocol; Mail delivery agent; Mail user agent; MX record; Sendmail; Postfix.</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Branch misprediction - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 900px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+img.hero { max-width: 100%; border: 1px solid #ccc; }
+.ref { font-size: 0.85em; }
+</style>
+</head>
+<body>
+<h1>Branch misprediction</h1>
+<img class="hero" src="images/branch-misprediction.png" alt="Branch misprediction hero image (placeholder)">
+<p>A <b>branch misprediction</b> occurs when a central processing unit (CPU) mispredicts the direction or target of a branch instruction, so that the speculatively executed instructions fetched down the wrong path must be discarded and the pipeline refilled from the correct path. In modern pipelined processors this penalty is typically on the order of ten to twenty clock cycles, depending on pipeline depth.</p>
+<h2>Branch prediction</h2>
+<p>Because instructions are fetched before earlier branches are resolved, CPUs use branch predictors — hardware structures such as pattern history tables, branch target buffers and, in recent designs, perceptron- or TAGE-based predictors — to guess the outcome of conditional branches and the targets of indirect branches. High-end processors achieve prediction accuracies above 95% on typical code, but data-dependent branches with unpredictable outcomes (such as branches on random or hash values) remain a major source of performance loss.</p>
+<h2>Mitigation</h2>
+<p>Software techniques include restructuring code to make branches predictable, replacing branches with conditional-move or arithmetic (branchless) code, profile-guided optimisation, and arranging hot paths to fall through. Mispredicted speculative execution was central to the Spectre security vulnerabilities disclosed in 2018, since instructions executed down a mispredicted path can leave observable traces in the cache.</p>
+<p class="ref">See also: Branch predictor; Instruction pipelining; Speculative execution; Spectre (security vulnerability).</p>
+</body>
+</html>

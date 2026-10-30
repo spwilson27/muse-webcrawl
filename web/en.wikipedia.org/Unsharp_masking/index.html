@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Unsharp masking - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+#content { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+.thumb { border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; margin: 10px 0; max-width: 640px; }
+.thumb img { width: 100%; display: block; background: #eaecf0; }
+.caption { font-size: 12.5px; padding: 4px 2px 0; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+ul { line-height: 1.6; font-size: 15px; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 13.5px; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Unsharp masking</h1>
+<p><b>Unsharp masking</b> (USM) is an image sharpening technique, first implemented in the darkroom and now available in most digital image editing software. Despite its name, the technique uses a blurred, or "unsharp," copy of the image as a mask to increase the apparent sharpness by enhancing contrast along edges. It does not actually increase the information content or true resolution of an image; rather, it exploits the way the human visual system perceives acutance at boundaries.</p>
+<div class="thumb"><img src="images/unsharp-masking-example.png" alt="Unsharp masking hero image (placeholder)"><div class="caption">Comparison of an original image and the same image after unsharp masking.</div></div>
+<h2>Principle</h2>
+<p>The procedure subtracts a blurred version of the image from the original to isolate high-frequency detail (the "unsharp mask"), then adds a scaled portion of that detail back to the original. Formally, the sharpened image can be written as the original plus an amount <i>k</i> times the difference between the original and its Gaussian-blurred version. Subtracting the blurred copy leaves edges and fine texture; adding it back overshoots the brightness on either side of an edge, producing light and dark halos that read perceptually as increased sharpness.</p>
+<h2>Parameters</h2>
+<p>Digital implementations, such as the Unsharp Mask filter in Adobe Photoshop and GIMP, expose three controls:</p>
+<ul>
+<li><b>Amount</b> — the strength of the contrast increase along edges, typically expressed as a percentage.</li>
+<li><b>Radius</b> — the size of the blur used to create the mask, which determines the width of the halos and the scale of detail affected.</li>
+<li><b>Threshold</b> — the minimum brightness difference between neighbouring pixels before the effect is applied, used to avoid amplifying noise in smooth areas such as skies and skin.</li>
+</ul>
+<p>Excessive amounts produce conspicuous halos and amplified noise; small-radius, low-amount sharpening is typical for correcting the softness introduced by sensors and anti-aliasing filters ("capture sharpening"), while larger amounts are used for output sharpening matched to print size.</p>
+<h2>History</h2>
+<p>The technique originated in German photomechanical reproduction in the 1930s and was widely used in mid-twentieth-century darkroom practice: a low-contrast positive mask was made from the negative on film, deliberately slightly out of register or blurred, and sandwiched with the negative during printing to boost edge contrast. A related method, using radioactive or dye-based masking, was used in radiology to enhance X-ray detail. Software implementations appeared with the first desktop image editors in the late 1980s and early 1990s, carrying over the darkroom name.</p>
+<h2>Related techniques</h2>
+<p>Unsharp masking is one of several sharpening approaches; alternatives include deconvolution sharpening, high-pass filtering, and clarity/local-contrast adjustments, which apply a similar method with a much larger radius to enhance mid-tone contrast rather than fine edges.</p>
+</div>
+</body>
+</html>

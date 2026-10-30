@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bateman equations - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 800px; line-height: 1.6; color: #202122; }
+h1 { border-bottom: 1px solid #a2a9b1; }
+img.hero { max-width: 100%; }
+.eq { text-align: center; font-style: italic; margin: 1em 0; }
+</style>
+</head>
+<body>
+<h1>Bateman equations</h1>
+<img class="hero" src="images/bateman-decay-chain.png" alt="Bateman equations hero image (placeholder)">
+<p>In nuclear physics, the <b>Bateman equations</b> are a set of first-order differential equations describing the abundances of nuclides as a function of time in a radioactive decay chain. The system was solved analytically by the English mathematician Harry Bateman in 1910, giving explicit expressions for the number of atoms of each member of a decay series.</p>
+<h2>Formulation</h2>
+<p>Consider a decay chain of <i>n</i> nuclides, where nuclide <i>i</i> decays into nuclide <i>i</i>+1 with decay constant λ<sub>i</sub>. Letting N<sub>i</sub>(t) denote the number of atoms of nuclide <i>i</i> at time <i>t</i>, the equations are:</p>
+<p class="eq">dN<sub>1</sub>/dt = −λ<sub>1</sub>N<sub>1</sub></p>
+<p class="eq">dN<sub>i</sub>/dt = λ<sub>i−1</sub>N<sub>i−1</sub> − λ<sub>i</sub>N<sub>i</sub> &nbsp;&nbsp;(for 1 &lt; i &lt; n)</p>
+<p class="eq">dN<sub>n</sub>/dt = λ<sub>n−1</sub>N<sub>n−1</sub></p>
+<p>The last nuclide is assumed stable (λ<sub>n</sub> = 0).</p>
+<h2>Solution</h2>
+<p>Bateman's solution for the abundance of the <i>i</i>-th nuclide, given an initial quantity N<sub>1</sub>(0) = N<sub>0</sub> of the pure parent and zero initial quantities of the daughters, is a sum of exponential terms:</p>
+<p class="eq">N<sub>i</sub>(t) = (N<sub>0</sub>/λ<sub>i</sub>) · Σ<sub>j=1..i</sub> [ λ<sub>j</sub> C<sub>ij</sub> exp(−λ<sub>j</sub>t) ]</p>
+<p>where the coefficients C<sub>ij</sub> are products of ratios of the decay constants, C<sub>ij</sub> = Π<sub>k=1, k≠j..i</sub> λ<sub>k</sub> / (λ<sub>k</sub> − λ<sub>j</sub>). The solution fails in its simple form when two decay constants in the chain are equal, in which case limiting forms involving terms of the type t·exp(−λt) appear.</p>
+<h2>Applications</h2>
+<p>The Bateman equations underpin calculations of radioactive decay and transmutation in nuclear engineering, including nuclear fuel burnup, the ingrowth of decay products in spent fuel, fission-product yields, and radiometric dating. Modern depletion codes solve far larger coupled systems — including neutron-induced transmutation alongside decay — numerically, but the analytic Bateman solution remains the benchmark and the conceptual basis for the treatment of linear decay chains.</p>
+<p>Closely related phenomena described by special cases of the equations include secular equilibrium, in which a long-lived parent maintains a nearly constant daughter activity, and transient equilibrium between parent and daughter of comparable half-life.</p>
+<p><i>Recreated from memory for the muse-webcrawl project.</i></p>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Types of mesh - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;margin:0;color:#202122;background:#fff}
+#mw-head{border-bottom:1px solid #a2a9b1;padding:0.6em 1em;background:#f8f9fa}
+#mw-head h1{font-size:1.6em;margin:0;font-weight:normal}
+#content{max-width:960px;margin:0 auto;padding:1em 1.5em 3em;line-height:1.6}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.4em}
+img.hero{display:block;max-width:420px;width:100%;background:#eaecf0;border:1px solid #c8ccd1;padding:1em;margin:0.5em 0 1em 1em;float:right;clear:right}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div id="mw-head"><h1>Types of mesh</h1></div>
+<div id="content">
+<img class="hero" src="images/types-of-mesh.png" alt="Types of mesh hero image (placeholder)">
+<p>A <b>mesh</b> is a discretisation of a geometric domain into simple pieces — cells or elements — used in numerical simulation (finite element and finite volume methods), computer graphics, and scientific computing. Meshes are classified by the shape of their elements and by how regular their connectivity is. Choosing a mesh type is a trade-off between accuracy, geometric flexibility, element quality, and computational cost, and it is one of the central practical concerns of computational fluid dynamics and structural analysis.</p>
+<h2>By element shape</h2>
+<ul>
+<li><b>Triangular (2D) / tetrahedral (3D) meshes</b> — fill almost any geometry automatically; the workhorse of automatic meshing, though needing many elements and being prone to poor-quality ("sliver") elements.</li>
+<li><b>Quadrilateral (2D) / hexahedral (3D) meshes</b> — generally more accurate and efficient per element and align well with flow directions, but much harder to generate automatically for complex shapes.</li>
+<li><b>Polygonal and polyhedral meshes</b> — cells with arbitrary numbers of faces; increasingly supported by modern solvers and mesh generators, including Voronoi-based meshes.</li>
+<li><b>Hybrid or mixed meshes</b> — combine types, e.g. prismatic (boundary-layer) cells near walls with tetrahedra in the far field, tetrahedra being joined through pyramidal elements.</li>
+</ul>
+<h2>By connectivity</h2>
+<ul>
+<li><b>Structured meshes</b> — the grid has a regular (i, j, k) indexing, like a deformed Cartesian grid. Fast solvers and high accuracy, but limited to simple topologies, often requiring multi-block decomposition.</li>
+<li><b>Unstructured meshes</b> — elements are stored as an explicit connectivity list with no implicit ordering; they conform to arbitrary geometry at the price of more memory and solver overhead.</li>
+<li><b>Block-structured and hybrid meshes</b> — combine structured blocks with unstructured regions or transitions.</li>
+<li><b>Adaptive meshes</b> — refined or coarsened where needed (adaptive mesh refinement, AMR), including hanging-node and moving meshes.</li>
+</ul>
+<h2>In computer graphics</h2>
+<p>In 3D modelling the analogous notions are polygon meshes: <b>triangle meshes</b> (the standard for rendering), <b>quad meshes</b> (preferred for subdivision modelling and animation because edge loops follow form), and non-manifold or "polygon soup" representations. Graphics meshes are typically surfaces only, whereas simulation meshes usually fill volumes.</p>
+<h2>See also</h2>
+<p><a href="../Mesh_generation/index.html">Mesh generation</a> &middot; <a href="../Polygon_mesh/index.html">Polygon mesh</a> &middot; <a href="../Finite_element_method/index.html">Finite element method</a> &middot; <a href="../Regular_grid/index.html">Regular grid</a></p>
+<p class="small">Recreated from memory for the muse-webcrawl project.</p>
+</div>
+</body>
+</html>

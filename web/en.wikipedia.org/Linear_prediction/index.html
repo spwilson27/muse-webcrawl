@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Linear prediction - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 2em auto; max-width: 820px; padding: 0 1em; line-height: 1.6; color: #202122; }
+h1 { font-family: "Linux Libertine", serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; margin-top: 1.4em; }
+a { color: #36c; text-decoration: none; }
+img { max-width: 100%; background: #f8f9fa; border: 1px solid #eaecf0; padding: 0.5em; }
+.math { font-family: "Times New Roman", serif; font-style: italic; }
+</style>
+</head>
+<body>
+<h1>Linear prediction</h1>
+<img src="images/linear-prediction.png" alt="Linear prediction hero image (placeholder)">
+<p><b>Linear prediction</b> is a mathematical operation where future values of a discrete-time signal are estimated as a linear function of previous samples. In digital signal processing, linear prediction is often called linear predictive coding (LPC) and can thus be viewed as a subset of filter theory. In system analysis (a subfield of mathematics), linear prediction can be viewed as a component of mathematical modelling or optimization.</p>
+
+<h2>The prediction model</h2>
+<p>The most common representation is the autoregressive (AR) model, in which the predicted value of a signal sample x<sub>n</sub> is computed from a weighted sum of p previous samples:</p>
+<p class="math">x̂<sub>n</sub> = a<sub>1</sub>x<sub>n−1</sub> + a<sub>2</sub>x<sub>n−2</sub> + ⋯ + a<sub>p</sub>x<sub>n−p</sub></p>
+<p>where the coefficients a<sub>1</sub>, …, a<sub>p</sub> are called the predictor coefficients and p is the prediction order. The difference between the actual value and the predicted value is the prediction error e<sub>n</sub> = x<sub>n</sub> − x̂<sub>n</sub>.</p>
+
+<h2>Estimating the parameters</h2>
+<p>The most common choice in optimizing the parameters a<sub>j</sub> is the root mean square criterion, also called the autocorrelation criterion. In this method the expected value of the squared prediction error E[e<sub>n</sub><sup>2</sup>] is minimized, giving rise to the system of linear equations known as the Yule–Walker equations, which can be solved efficiently with the Levinson–Durbin algorithm. The autocorrelation method produces a predictor that is guaranteed to be stable.</p>
+
+<h2>Applications</h2>
+<p>Linear prediction is used in speech coding (linear predictive coding in standards such as GSM and VoIP codecs), spectral estimation, data compression, echo cancellation, and in time-series analysis in econometrics. Because the predictor coefficients can be derived from the autocorrelation of the signal, the method is closely related to the modelling of a signal as the output of an all-pole filter driven by white noise.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Linear_predictive_coding/index.html">Linear predictive coding</a></li>
+<li><a href="../Autoregressive_model/index.html">Autoregressive model</a></li>
+<li><a href="../Levinson_recursion/index.html">Levinson recursion</a></li>
+</ul>
+</body>
+</html>

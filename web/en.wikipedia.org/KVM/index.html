@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kernel-based Virtual Machine - Wikipedia (recreated from memory)</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 860px; margin: 2em auto; padding: 0 1em; line-height: 1.6; color: #202122; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; }
+img.hero { display: block; max-width: 100%; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 0.5em; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<h1>Kernel-based Virtual Machine</h1>
+<img class="hero" src="images/kvm.png" alt="Kernel-based Virtual Machine hero image (placeholder)">
+<p><b>Kernel-based Virtual Machine</b> (<b>KVM</b>) is a virtualization module in the Linux kernel that allows the kernel to function as a hypervisor. It was merged into the Linux kernel mainline in version 2.6.20, released in February 2007. KVM requires a processor with hardware virtualization extensions, such as Intel VT-x or AMD-V.</p>
+<h2>Operation</h2>
+<p>KVM itself provides no emulation: it exposes the /dev/kvm interface, through which a userspace program can create virtual machines, allocate their memory, and run virtual CPUs using hardware support. In practice KVM is almost always used with QEMU, which supplies device emulation, or with lighter-weight tools such as crosvm and Firecracker. Each virtual machine is implemented as a regular Linux process, so it benefits from the kernel's scheduler, memory management, cgroups and security modules.</p>
+<h2>Features</h2>
+<p>Supported features include live migration of running virtual machines, memory ballooning, CPU and memory hotplug, paravirtualised drivers (virtio), and nested virtualization. KVM supports guest operating systems including Linux, Windows, BSD variants, and others, on x86, ARM, s390, PowerPC and RISC-V architectures.</p>
+<h2>History</h2>
+<p>KVM was developed by Qumranet, a start-up acquired by Red Hat in 2008. It underpins much of the open-source cloud infrastructure built on Linux, including OpenStack deployments, Google Cloud's Compute Engine, and the microVM technology used by AWS Lambda (Firecracker).</p>
+</body>
+</html>

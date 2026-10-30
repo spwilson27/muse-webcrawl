@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Factory method pattern - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+img.hero { display: block; max-width: 100%; margin: 12px 0; border: 1px solid #c8ccd1; background: #eaecf0; min-height: 120px; }
+p, li { line-height: 1.6; }
+code { background: #f8f9fa; padding: 1px 4px; }
+pre { background: #f8f9fa; border: 1px solid #a2a9b1; padding: 10px 14px; overflow-x: auto; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Factory method pattern</h1>
+<img class="hero" src="images/factory-method-uml.png" alt="Factory method pattern hero image (placeholder)">
+<p>In class-based programming, the <b>factory method pattern</b> is a creational pattern that uses factory methods to deal with the problem of creating objects without having to specify the exact class of the object that will be created. This is done by creating objects by calling a factory method — either specified in an interface and implemented by child classes, or implemented in a base class and optionally overridden by derived classes — rather than by calling a constructor directly.</p>
+<h2>Overview</h2>
+<p>The pattern was popularized by the 1994 book <i>Design Patterns: Elements of Reusable Object-Oriented Software</i> by the "Gang of Four" (Gamma, Helm, Johnson, and Vlissides), where it appears as one of the five creational patterns. It is distinct from the simpler "simple factory" idiom (a single static method that chooses a concrete class) and from the abstract factory pattern, which creates families of related objects.</p>
+<h2>Structure</h2>
+<ul>
+<li><b>Product</b> — the interface (or abstract class) of objects the factory method creates.</li>
+<li><b>Concrete Product</b> — implementations of the Product interface.</li>
+<li><b>Creator</b> — declares the factory method, which returns a Product; the Creator may also define a default implementation and uses the factory method within its own operations.</li>
+<li><b>Concrete Creator</b> — overrides the factory method to return a particular Concrete Product.</li>
+</ul>
+<h2>Example</h2>
+<p>A classic example is a document-processing framework: an <code>Application</code> class declares a factory method <code>createDocument()</code>; subclasses such as a word processor or spreadsheet application override it to instantiate their own document types, while shared framework code works with the abstract document interface. GUI toolkits use the same idea to create platform-specific widgets from abstract factories and factory methods.</p>
+<pre>// Pseudocode
+abstract class Dialog {
+    abstract Button createButton();  // factory method
+    void render() { Button b = createButton(); b.show(); }
+}
+class WindowsDialog extends Dialog {
+    Button createButton() { return new WindowsButton(); }
+}
+class WebDialog extends Dialog {
+    Button createButton() { return new HTMLButton(); }
+}</pre>
+<h2>Advantages and disadvantages</h2>
+<p>The pattern decouples client code from concrete classes, follows the open/closed principle (new product types are added by adding subclasses), and gives a single point of control over instantiation. Its costs include an explosion of subclasses — one creator per product — and added indirection that can complicate simple programs. In modern practice, dependency-injection frameworks and language features such as first-class functions often cover the same needs, but the factory method remains fundamental in frameworks and libraries.</p>
+</div>
+</body>
+</html>

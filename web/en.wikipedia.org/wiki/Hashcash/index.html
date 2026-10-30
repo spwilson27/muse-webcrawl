@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hashcash - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+img.hero { max-width: 100%; display: block; margin: 8px 0; }
+a { color: #0645ad; text-decoration: none; }
+ul { line-height: 1.6; font-size: 15px; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 13px; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Hashcash</h1>
+<img class="hero" src="images/hashcash.png" alt="Hashcash hero image (placeholder)">
+<p><b>Hashcash</b> is a proof-of-work system used to limit email spam and denial-of-service attacks, proposed in 1997 by Adam Back. It requires a sender to perform a moderate amount of computational work — finding a partial hash collision — before sending a message, while allowing a recipient to verify the work with a single hash computation. Hashcash was an important forerunner of the proof-of-work system used in Bitcoin mining.</p>
+<h2>History</h2>
+<p>Adam Back proposed Hashcash in a 1997 announcement, formalised in the 2002 paper "Hashcash — A Denial of Service Counter-Measure." The idea built on earlier work by Cynthia Dwork and Moni Naor on "pricing via processing" to combat junk mail. Similar systems had been explored under the names micropayment of computational effort and client puzzles.</p>
+<h2>How it works</h2>
+<p>A Hashcash stamp is a line of text, typically carried in an email header such as <code>X-Hashcash</code>, containing a version number, a difficulty (the number of leading zero bits required in the hash), a timestamp, a resource string (usually the recipient's email address), and a random counter. The sender varies the counter until the SHA-1 hash of the whole stamp has the required number of leading zero bits. Verification requires only one hash computation, but minting is expected to take a noticeable amount of processor time on average.</p>
+<h2>Advantages and disadvantages</h2>
+<p>Because minting is cheap for an individual sender but expensive at the scale of millions of messages, Hashcash raises the cost of bulk spam. Critics note that botnets can steal computing power from infected machines, that fast machines are favoured over slow ones (such as phones), and that legitimate bulk senders such as mailing lists are also penalised. Implementations appeared in SpamAssassin scoring rules and in the Penny Post project.</p>
+<h2>Relation to Bitcoin</h2>
+<p>Satoshi Nakamoto's 2008 Bitcoin whitepaper cited Hashcash, and Bitcoin's mining process is essentially a Hashcash-style proof of work applied to block headers with an adjustable difficulty target and a monetary reward.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Proof_of_work/index.html">Proof of work</a></li>
+<li><a href="../Adam_Back/index.html">Adam Back</a></li>
+<li><a href="../Guide_to_anti-spam_techniques/index.html">Guide to anti-spam techniques</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Extended Display Identification Data - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+img.hero { display: block; max-width: 100%; margin: 12px 0; border: 1px solid #c8ccd1; background: #eaecf0; min-height: 120px; }
+p, li { line-height: 1.6; }
+code { background: #f8f9fa; padding: 1px 4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Extended Display Identification Data</h1>
+<img class="hero" src="images/edid-data-structure.png" alt="Extended Display Identification Data hero image (placeholder)">
+<p><b>Extended Display Identification Data</b> (<b>EDID</b>) is a metadata format for display devices to describe their capabilities to a video source (for example, a graphics card or set-top box). The format is defined by a standard published by the Video Electronics Standards Association (VESA). EDID data includes the manufacturer's name and serial number, product type, phosphor or filter type (for older displays), timings supported by the display, display size, luminance data, and (for digital displays) pixel mapping data.</p>
+<h2>Transmission</h2>
+<p>The video source reads the EDID over the Display Data Channel (DDC), an I²C bus carried on VGA, DVI, HDMI, and DisplayPort connections. When a display is connected, the source retrieves the EDID block and uses it to select a video mode — resolution and refresh rate — that the display supports, enabling plug-and-play operation without manual configuration.</p>
+<h2>Structure</h2>
+<p>The base EDID block is 128 bytes long. It begins with the fixed header <code>00 FF FF FF FF FF FF 00</code>, followed by manufacturer and product identifiers, serial number, date of manufacture, display parameters (size, gamma, supported features), chromaticity coordinates for the display's color primaries, established timing bitmaps, standard timing information, and up to four 18-byte detailed timing descriptors, one of which typically gives the native (preferred) resolution. A final byte is a checksum; the sum of all 128 bytes must equal zero modulo 256.</p>
+<h2>Extensions</h2>
+<p>An optional extension count byte indicates additional 128-byte extension blocks. The most common is the CTA-861 extension (formerly CEA-861), used with HDMI equipment to declare supported video formats (such as 720p, 1080p, and 4K modes), audio capabilities (formats, channel counts, speaker allocation), colorimetry, and HDR metadata support. Other extensions cover detailed timings and display transfer characteristics.</p>
+<h2>Versions and successors</h2>
+<p>EDID structure versions 1.0 through 1.4 refined the data fields over time. VESA's DisplayID standard was designed as a more flexible successor with variable-length, tagged data blocks, and is used in some modern displays and embedded DisplayPort (eDP) applications, while EDID remains near-universal in consumer equipment.</p>
+<h2>Problems and overrides</h2>
+<p>Incorrect or incomplete EDID data from a display can cause a source to select a suboptimal or unsupported resolution. Operating systems therefore provide "EDID overrides" that substitute corrected data. KVM switches and long cable runs can also interfere with the DDC connection, preventing EDID from being read at all.</p>
+</div>
+</body>
+</html>

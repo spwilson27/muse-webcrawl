@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>F1 score - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+img.hero { display: block; max-width: 100%; margin: 12px 0; border: 1px solid #c8ccd1; background: #eaecf0; min-height: 120px; }
+p, li { line-height: 1.6; }
+.formula { background: #f8f9fa; border: 1px solid #a2a9b1; padding: 10px 14px; font-family: 'Courier New', monospace; display: inline-block; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>F1 score</h1>
+<img class="hero" src="images/f1-score-precision-recall.png" alt="F1 score hero image (placeholder)">
+<p>In statistical analysis of binary classification and information retrieval, the <b>F-score</b> or <b>F-measure</b> is a measure of a test's accuracy. The most common form, the <b>F1 score</b>, is the harmonic mean of the precision and recall of the test. It is widely used to evaluate machine learning classifiers and search or recommendation systems, especially when class distributions are imbalanced.</p>
+<h2>Definition</h2>
+<p>Precision is the fraction of retrieved (predicted positive) instances that are actually positive; recall is the fraction of actual positives that were retrieved. The F1 score combines them:</p>
+<p><span class="formula">F1 = 2 · (precision · recall) / (precision + recall)</span></p>
+<p>Equivalently, in terms of true positives (TP), false positives (FP), and false negatives (FN):</p>
+<p><span class="formula">F1 = 2TP / (2TP + FP + FN)</span></p>
+<p>The harmonic mean, unlike the arithmetic mean, strongly penalizes extreme imbalance: a classifier with very high precision but very low recall (or vice versa) receives a low F1 score. The score ranges from 0 (worst) to 1 (best).</p>
+<h2>General F-beta score</h2>
+<p>The general F<sub>β</sub> score weights recall β times as much as precision. F2 emphasizes recall, while F0.5 emphasizes precision. The family traces to the effectiveness measure proposed by C. J. van Rijsbergen in information retrieval research in the 1970s.</p>
+<h2>Applications</h2>
+<p>F1 is a standard benchmark metric in natural language processing tasks such as named entity recognition, question answering (token-level F1), and machine translation evaluation variants, and in computer vision and medical diagnosis tasks. Variants include macro-F1 (averaged across classes, treating each class equally) and micro-F1 (aggregating counts across classes, which in single-label multiclass problems equals accuracy).</p>
+<h2>Criticism</h2>
+<p>F1 ignores true negatives, so it can be misleading when the negative class matters. It also does not correspond to performance at any particular decision threshold, and comparisons between F1 scores computed on different datasets or with different class prevalences are unreliable. Alternatives include the Matthews correlation coefficient, balanced accuracy, Cohen's kappa, and precision–recall curves summarized by average precision.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Godunov's scheme - Wikipedia</title>
+<style>
+body{font-family:'Segoe UI',Arial,sans-serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+.hero{display:block;max-width:100%;border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;text-align:center}
+a{color:#0645ad;text-decoration:none}
+code{background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Godunov's scheme</h1>
+<p>In numerical analysis and computational fluid dynamics, <b>Godunov's scheme</b> is a conservative numerical scheme for solving partial differential equations, suggested by Sergei Godunov in 1959. It was the first scheme to use the idea of solving a Riemann problem at each cell interface, and it forms the basis of most modern shock-capturing methods used in fluid dynamics.</p>
+<div class="hero"><img src="images/godunovs-scheme.png" alt="Godunov's scheme cell interface diagram (image placeholder)"></div>
+<h2>Description</h2>
+<p>The domain is divided into cells, and the solution within each cell is approximated by a constant value (piecewise constant data). At each time step, the exact (or approximate) solution of the Riemann problem at every cell boundary is computed, the resulting fluxes are used to update the cell averages, and the process is repeated. Because the scheme builds fluxes from the wave structure of the governing equations, it can represent discontinuities such as shock waves without spurious oscillations, at the price of being only first-order accurate.</p>
+<h2>Godunov's theorem</h2>
+<p>Godunov also proved a related barrier result, often called <b>Godunov's theorem</b>: a linear numerical scheme for solving partial differential equations that has the property of never generating new extrema (a monotone scheme) can be at most first-order accurate. This theorem motivated the later development of nonlinear high-resolution schemes using slope limiters, such as MUSCL and total-variation-diminishing (TVD) methods, which retain Godunov-type upwinding while achieving second-order accuracy away from discontinuities.</p>
+<h2>Applications</h2>
+<p>Godunov-type methods are widely used for compressible flow problems, including aerodynamics, astrophysics, magnetohydrodynamics, and multi-phase flows. Variants replace the exact Riemann solver with approximate solvers such as those of Roe, Harten–Lax–van Leer (HLL), and Rusanov to reduce computational cost.</p>
+</div>
+</body>
+</html>

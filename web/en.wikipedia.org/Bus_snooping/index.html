@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bus snooping - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 36px 48px; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; font-weight: normal; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 0.95em; }
+.infobox { float: right; width: 270px; border: 1px solid #a2a9b1; background: #f8f9fa; margin: 0 0 16px 20px; padding: 10px; font-size: 0.85em; font-family: sans-serif; }
+.infobox th { background: #cedff2; padding: 5px; text-align: center; }
+.infobox td, .infobox th.plain { padding: 4px 6px; vertical-align: top; }
+.hat { font-size: 0.85em; color: #54595d; font-style: italic; }
+img.hero { width: 100%; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Bus snooping</h1>
+<p class="hat">From Wikipedia, the free encyclopedia</p>
+<table class="infobox">
+<tr><th colspan="2">Bus snooping</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/bus-snooping.png" alt="Bus snooping hero image (placeholder)"></td></tr>
+<tr><th class="plain">Field</th><td>Computer architecture</td></tr>
+<tr><th class="plain">Purpose</th><td>Cache coherence in multiprocessor systems</td></tr>
+<tr><th class="plain">Also called</th><td>Bus sniffing; snoopy protocols</td></tr>
+<tr><th class="plain">Protocols</th><td>MSI, MESI, MOSI, MOESI, MESIF</td></tr>
+</table>
+<p>In computing, <b>bus snooping</b> or <b>bus sniffing</b> is a technique used in distributed shared memory and multiprocessor systems for achieving cache coherency. Every cache that has a copy of the data from a block of the physical memory also has a copy of the cache state of that block and its hardware snoops the bus for transactions by other processors, reacting when another processor requests or modifies the same memory location.</p>
+<h2>How snooping works</h2>
+<p>Each cache controller monitors ("snoops") all bus activity. When a processor issues a read or write, the snooping caches check whether they hold the addressed line and take action according to a coherence protocol: a cache holding a line that another processor wants to write will invalidate its copy (or supply the up-to-date data), and a cache holding a modified line that another processor wants to read will flush or forward the current value. Snooping protocols are commonly described by the states a line can occupy, as in <b>MESI</b>: Modified, Exclusive, Shared, and Invalid.</p>
+<h2>Advantages and limits</h2>
+<p>Snooping is simple and fast because the shared bus provides a natural broadcast and ordering point, which is why classic symmetric multiprocessors and modern on-chip interconnects use snoopy coherence for small processor counts. However, every processor's traffic must be observed by every cache, so snooping consumes bus bandwidth and does not scale to large systems; big multiprocessors instead use directory-based coherence, and many modern designs combine snooping within a node with directories between nodes.</p>
+<h2>See also</h2>
+<p>Cache coherence &middot; MESI protocol &middot; Multiprocessor &middot; Bus (computing) &middot; Directory-based coherence</p>
+</div>
+</body>
+</html>

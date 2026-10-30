@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fraggle attack - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header h1{font-size:28px;margin:0}
+main{max-width:960px;margin:0 auto;padding:20px 24px}
+h2{border-bottom:1px solid #a2a9b1;font-size:22px;margin-top:28px;padding-bottom:4px}
+img.hero{max-width:100%;height:auto;background:#f8f9fa;border:1px solid #c8ccd1}
+a{color:#0645ad;text-decoration:none}
+.small{font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<header><h1>Fraggle attack</h1></header>
+<main>
+<img class="hero" src="images/fraggle-attack.png" alt="Fraggle attack hero image (placeholder)">
+<p>A <b>Fraggle attack</b> is a type of distributed denial-of-service (DDoS) attack that uses UDP amplification to flood a target with traffic. It is a variant of the Smurf attack, substituting the User Datagram Protocol (UDP) for ICMP.</p>
+<h2>Mechanism</h2>
+<p>In a Fraggle attack, the attacker sends UDP packets with a spoofed source address — the victim's address — to the broadcast address of a network, typically aimed at UDP ports 7 (echo) and 19 (chargen). Hosts on the network that run these services respond to the victim rather than the attacker, amplifying the traffic volume and overwhelming the victim's bandwidth and processing capacity. Because the replies come from many reflectors, the attack is difficult to trace and filter.</p>
+<h2>Mitigation</h2>
+<p>Standard defenses include disabling directed broadcast forwarding on routers, turning off unused UDP echo and chargen services, ingress filtering to block spoofed source addresses (as recommended in BCP 38), and rate limiting at network edges. Modern operating systems and router defaults disable the vulnerable services, making classic Fraggle attacks far less common than in the late 1990s when they were first publicized.</p>
+<p class="small">See also: Smurf attack; Denial-of-service attack; UDP flood attack; IP address spoofing.</p>
+</main>
+</body>
+</html>

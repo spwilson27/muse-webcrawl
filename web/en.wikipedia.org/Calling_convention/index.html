@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Calling convention - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; }
+.header { background: #f8f9fa; border-bottom: 1px solid #a7d7f9; padding: 10px 20px; }
+.header h1 { font-size: 1.8em; margin: 0; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+h2 { border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { text-align: center; margin: 15px 0; }
+.hero img { max-width: 100%; background: #eaecf0; padding: 40px 20px; }
+code { background: #f8f9fa; padding: 1px 4px; }
+</style>
+</head>
+<body>
+<div class="header"><h1>Calling convention</h1></div>
+<div class="content">
+<p>In computer science, a <b>calling convention</b> is an implementation-level (low-level) scheme for how subroutines or functions receive parameters from their caller and how they return a result. Calling conventions are usually part of a platform's application binary interface (ABI) and differ among architectures, operating systems, and compilers. When some code calls a function, the convention specifies, among other things, where parameters are placed (in registers, on the call stack, or both), in what order, how return values are delivered, which registers the called function must preserve, and who is responsible for cleaning up the stack — the caller or the callee.</p>
+<div class="hero"><img src="images/calling-convention.png" alt="Calling convention hero image (placeholder)"></div>
+<h2>Examples</h2>
+<p>On 32-bit x86, numerous conventions coexisted: <code>cdecl</code> (arguments pushed right-to-left on the stack, caller cleans up), <code>stdcall</code> (callee cleans up, used by the Windows API), <code>fastcall</code> (first arguments in registers), and Microsoft's <code>thiscall</code> for C++ member functions. On x86-64 the field consolidated: the System V AMD64 ABI (used by Linux and most Unix-like systems) passes the first six integer or pointer arguments in registers RDI, RSI, RDX, RCX, R8, and R9, while Microsoft's x64 convention uses RCX, RDX, R8, and R9 with a mandatory 32-byte "shadow space" on the stack. ARM's AAPCS similarly assigns the first arguments to registers R0–R3 (or X0–X7 in AArch64).</p>
+<h2>Importance</h2>
+<p>Calling conventions matter whenever separately compiled code must interoperate — for example, when linking libraries, writing assembly routines called from C, making operating-system calls, or implementing foreign function interfaces. A mismatch between what a caller expects and what a callee does typically corrupts the stack and crashes the program, so adherence to the platform ABI is a strict requirement rather than a stylistic choice. Compilers may use private, optimised conventions for internal functions whose callers they control.</p>
+<p>See also: <a href="../Application_binary_interface/index.html">Application binary interface</a> · <a href="../Call_stack/index.html">Call stack</a> · <a href="../X86_calling_conventions/index.html">x86 calling conventions</a> · <a href="../Name_mangling/index.html">Name mangling</a></p>
+</div>
+</body>
+</html>

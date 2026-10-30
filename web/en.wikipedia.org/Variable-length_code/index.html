@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Variable-length code - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 60px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+img.hero { width: 100%; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Variable-length code</h1>
+<p>In coding theory, a <b>variable-length code</b> is a code which maps source symbols to a variable number of bits. Unlike fixed-length codes, which assign the same number of bits to every symbol, variable-length codes assign shorter codewords to more frequent symbols and longer codewords to less frequent ones, thereby reducing the average number of bits needed to represent the source. This principle is central to lossless data compression.</p>
+<img class="hero" src="images/variable-length-code.png" alt="Variable-length code hero image (placeholder)">
+<h2>Prefix codes</h2>
+<p>The most common class of variable-length codes are prefix codes (also called prefix-free codes), in which no codeword is a prefix of another. This property allows the encoded sequence to be decoded unambiguously from left to right without lookahead. Prefix codes can be represented as binary trees whose leaves are the source symbols. The lengths of codewords in a prefix code must satisfy Kraft's inequality.</p>
+<h2>Examples</h2>
+<p>Morse code is an early example of a variable-length code: common letters such as E and T receive very short codes, while rare letters such as Q and J receive longer ones. Huffman coding, introduced by David A. Huffman in 1952, constructs an optimal prefix code for a given symbol probability distribution. Other schemes include Shannon–Fano coding, arithmetic coding (which is not strictly a per-symbol code), and the universal codes used for integers, such as Elias gamma and Fibonacci coding. UTF-8 is a variable-length encoding of Unicode characters.</p>
+<h2>Properties</h2>
+<p>By Shannon's source coding theorem, the average codeword length of an optimal code approaches the entropy of the source. Variable-length codes are vulnerable to error propagation: a single bit error can desynchronise the decoder and corrupt subsequent symbols, which has motivated the study of self-synchronising and reversible variable-length codes.</p>
+</div>
+</body>
+</html>

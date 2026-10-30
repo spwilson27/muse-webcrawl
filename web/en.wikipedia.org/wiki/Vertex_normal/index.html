@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vertex normal - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 0; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; }
+p { line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+.caption { font-size: 0.85em; color: #54595d; text-align: center; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Vertex normal</h1>
+<p>In the geometry of computer graphics, a <b>vertex normal</b> at a vertex of a polygon mesh is a direction vector associated with the vertex, intended as a replacement for the true geometric normal of the surface. Typically it is computed as the normalised average of the surface normals of the polygons that meet at the vertex, sometimes weighted by the area of each polygon or by the angle each polygon subtends at the vertex.</p>
+<img src="images/vertex-normal-hero.png" alt="Vertex normal hero image (placeholder)">
+<p class="caption">Vertex normals (blue) interpolated across a mesh, compared with flat face normals.</p>
+<h2>Purpose</h2>
+<p>Vertex normals are used in smooth shading techniques such as Gouraud shading and Phong shading. By interpolating the vertex normals across each polygon during rendering, the lighting calculation produces smooth gradients that make a faceted mesh appear to be a smooth curved surface, even though the underlying geometry is unchanged.</p>
+<h2>Computation</h2>
+<p>The simplest method takes the unweighted average of the normals of all faces sharing the vertex. Weighted schemes — by face area, or by the corner angle of each face at the vertex — give better results on irregular meshes. Where a hard edge is desired, a vertex may be split so that different faces use different normals, a technique known as smoothing groups.</p>
+<p>Vertex normals are a standard part of mesh data in formats such as OBJ and are used throughout real-time rendering in APIs including OpenGL, Direct3D, and Vulkan. They are distinct from, but related to, normal maps, which perturb shading normals per-pixel using a texture.</p>
+<h2>See also</h2>
+<p><a href="../Polygon_mesh/index.html">Polygon mesh</a> &middot; <a href="../Phong_shading/index.html">Phong shading</a> &middot; <a href="../Gouraud_shading/index.html">Gouraud shading</a> &middot; <a href="../Normal_mapping/index.html">Normal mapping</a></p>
+</div>
+</body>
+</html>

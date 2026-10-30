@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ln (Unix) - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; padding: 20px 40px; background: #fff; color: #202122; line-height: 1.6; max-width: 960px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 24px; }
+a { color: #3366cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 1px 4px; font-family: monospace; }
+pre { background: #f8f9fa; border: 1px solid #a2a9b1; padding: 10px; overflow-x: auto; }
+img.hero { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>ln (Unix)</h1>
+<img class="hero" src="images/ln-unix.png" alt="ln (Unix) hero image (placeholder)">
+<p>The <b><code>ln</code></b> command is a standard Unix command used to create links to files. It can create both <b>hard links</b>, which are additional directory entries pointing to the same inode, and <b>symbolic links</b> (symlinks or soft links), which are special files containing a pathname reference to another file. <code>ln</code> is part of the GNU Core Utilities on Linux and is specified by POSIX.</p>
+<h2>Usage</h2>
+<pre>ln [OPTION]... [-T] TARGET LINK_NAME
+ln [OPTION]... TARGET
+ln [OPTION]... TARGET... DIRECTORY
+ln [OPTION]... -t DIRECTORY TARGET...</pre>
+<p>By default, <code>ln</code> creates hard links. The most common option is:</p>
+<ul>
+<li><code>-s</code>, <code>--symbolic</code> — create symbolic links instead of hard links.</li>
+<li><code>-f</code>, <code>--force</code> — remove existing destination files.</li>
+<li><code>-i</code>, <code>--interactive</code> — prompt whether to remove destinations.</li>
+<li><code>-n</code>, <code>--no-dereference</code> — treat a symlink to a directory as if it were a file.</li>
+<li><code>-v</code>, <code>--verbose</code> — print the name of each linked file.</li>
+<li><code>-r</code>, <code>--relative</code> — create symbolic links relative to the link location (GNU extension).</li>
+</ul>
+<h2>Hard vs. symbolic links</h2>
+<p>A hard link shares the target's inode: the data remains available as long as at least one link exists, and hard links generally cannot cross filesystems or refer to directories. A symbolic link is a separate file storing a path; it can cross filesystems and point to directories, but becomes "dangling" if its target is removed.</p>
+<h2>Examples</h2>
+<pre>$ ln -s /usr/share/doc/example.txt ~/example-link
+$ ln file1 file2        # hard link: file2 is another name for file1</pre>
+<h2>History</h2>
+<p><code>ln</code> appeared in early versions of Unix (present by Version 1 AT&amp;T Unix, 1971). Symbolic links were introduced with 4.2BSD in 1983. The behavior of <code>ln</code> is standardized in the POSIX specification.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Symbolic_link/index.html">Symbolic link</a></li>
+<li><a href="../Hard_link/index.html">Hard link</a></li>
+<li><a href="../Cp_(Unix)/index.html">cp (Unix)</a></li>
+<li><a href="../Mv_(Unix)/index.html">mv (Unix)</a></li>
+</ul>
+</body>
+</html>

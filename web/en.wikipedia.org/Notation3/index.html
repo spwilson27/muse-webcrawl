@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Notation3 - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; padding: 0 1.5em; color: #202122; line-height: 1.6; background: #fff; }
+header { border-bottom: 1px solid #a2a9b1; padding: 0.5em 0; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-bottom: 0.3em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em 1em; margin: 0 0 1em 1em; width: 260px; font-size: 0.9em; }
+.infobox th { text-align: left; }
+img.hero { max-width: 100%; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0.5em; }
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> — The Free Encyclopedia</header>
+<h1>Notation3</h1>
+<table class="infobox">
+<tr><th colspan="2">Notation3 (N3)</th></tr>
+<tr><td colspan="2"><img class="hero" src="images/notation3.png" alt="Notation3 hero image (placeholder)"></td></tr>
+<tr><th>Filename extension</th><td>.n3</td></tr>
+<tr><th>Designed by</th><td>Tim Berners-Lee</td></tr>
+<tr><th>Purpose</th><td>Serialisation of RDF data; rules language</td></tr>
+</table>
+<p><b>Notation3</b>, or <b>N3</b> as it is more commonly known, is a shorthand non-XML serialisation of the Resource Description Framework (RDF) model, designed for human read-writeability by Tim Berners-Lee and colleagues as part of the Semantic Web programme. N3 extends the simpler Turtle language by adding the ability to express rules — formulae and logical implication — within the same syntax.</p>
+<h2>Features</h2>
+<p>Like Turtle, N3 omits much of the verbosity of RDF/XML: namespaces are declared as prefixes, repeated subjects are grouped with semicolons, and lists use shortcut syntax. N3 goes further by supporting:</p>
+<ul>
+<li>Variables and quantification within formulae, enclosed in braces;</li>
+<li>The implication predicate <code>log:implies</code>, allowing N3 documents to state rules ("if these triples hold, then that triple holds");</li>
+<li>Quoting of graphs and literals in several datatypes, and built-in functions from vocabularies such as the <i>log</i> and <i>math</i> namespaces.</li>
+</ul>
+<h2>Example</h2>
+<pre>@prefix : &lt;#&gt; .
+:Socrates a :Man .
+{ ?x a :Man } =&gt; { ?x a :Mortal } .</pre>
+<p>This states that Socrates is a man, together with a rule from which a reasoner can infer that Socrates is mortal.</p>
+<h2>Use and standardisation</h2>
+<p>N3 has been used in Semantic Web tools and reasoners such as cwm and EYE. Although N3 itself was never elevated to a full W3C Recommendation, its subset Turtle became a W3C standard in 2014, and N3 continued to be developed by a W3C community group towards a formal specification.</p>
+<p><i>See also:</i> <a href="../Turtle_(syntax)/index.html">Turtle (syntax)</a>, <a href="../Resource_Description_Framework/index.html">Resource Description Framework</a>, <a href="../Semantic_Web/index.html">Semantic Web</a></p>
+</body>
+</html>

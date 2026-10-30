@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>S/MIME - Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine",Georgia,serif;margin:0 auto;max-width:960px;padding:24px;color:#202122;line-height:1.6;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;font-size:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:300px;border:1px solid #a2a9b1;background:#f8f9fa;font-size:0.9em;margin:0 0 12px 16px;padding:8px}
+.infobox th{text-align:left;background:#eef;padding:4px}
+.infobox td{padding:4px}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>S/MIME</h1>
+<p><b>S/MIME</b> (<b>Secure/Multipurpose Internet Mail Extensions</b>) is a standard for public-key encryption and signing of MIME data used in email. It provides cryptographic security services for electronic messaging applications: authentication, message integrity, non-repudiation of origin (using digital signatures), and privacy and data security (using encryption). S/MIME is defined in a series of IETF RFCs and is built into most modern email clients, including Microsoft Outlook, Apple Mail and Mozilla Thunderbird.</p>
+<img src="images/smime-email-security.png" alt="S/MIME hero image (placeholder)">
+
+<table class="infobox">
+<tr><th>Type</th><td>Cryptographic email standard</td></tr>
+<tr><th>Current version</th><td>S/MIME 4.0 (RFC 8551, 2019)</td></tr>
+<tr><th>Underlying syntax</th><td>Cryptographic Message Syntax (CMS)</td></tr>
+<tr><th>Certificates</th><td>X.509 public-key certificates</td></tr>
+</table>
+
+<h2>History</h2>
+<p>S/MIME was originally developed by RSA Data Security. Version 2 was published as informational RFCs in 1998; version 3 moved the specification onto the IETF standards track in 1999, based on the Cryptographic Message Syntax derived from PKCS#7. S/MIME 3.1 (2004) added support for AES; S/MIME 3.2 (2011) updated algorithm requirements; and S/MIME 4.0 (2019) modernised the algorithm suite with stronger hashes (SHA-256 and above) and authenticated encryption choices, deprecating weaker algorithms such as RC2/40 and SHA-1.</p>
+
+<h2>Function</h2>
+<p>To sign or encrypt mail with S/MIME, users hold an X.509 certificate and private key, typically issued by a certificate authority (organisation-issued or commercial "email certificates"), though self-signed certificates are possible. A digital signature is produced by hashing the message and signing with the sender's private key; recipients verify it with the public key in the sender's certificate, which is attached to signed messages&#8212;so addresses can then encrypt replies. Encryption uses a randomly generated symmetric content-encryption key, which is itself encrypted for each recipient with their public key.</p>
+<p>S/MIME provides end-to-end protection at the message level, so secured messages can pass through untrusted mail servers without exposing contents. Downsides include certificate cost and management, the need to keep private keys safe, the exposure of message metadata, and the difficulty of scanning encrypted mail for malware at gateways.</p>
+
+<h2>Comparison with OpenPGP</h2>
+<p>S/MIME and OpenPGP are the two dominant standards for email encryption. They differ in trust models: S/MIME relies on a hierarchical certificate-authority system, while OpenPGP traditionally uses a decentralised "web of trust". The two formats are not interoperable, though many clients support both.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../MIME/index.html">MIME</a></li>
+<li><a href="../Pretty_Good_Privacy/index.html">Pretty Good Privacy</a></li>
+<li><a href="../X.509/index.html">X.509</a></li>
+</ul>
+<p class="small">This page was recreated from memory as part of the muse-webcrawl project.</p>
+</body>
+</html>

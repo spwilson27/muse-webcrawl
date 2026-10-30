@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Zeckendorf's theorem - Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #ffffff; color: #202122; }
+#content { margin-left: 176px; padding: 1em 2em 2em; max-width: 960px; }
+#sidebar { float: left; width: 160px; background: #f6f6f6; padding: 1em 0.5em; font-size: 0.8em; min-height: 100vh; box-sizing: border-box; }
+#sidebar ul { list-style: none; padding-left: 0.5em; }
+#sidebar li { margin: 0.3em 0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; font-weight: normal; padding-bottom: 0.1em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; }
+.hero { display: block; margin: 1em auto; max-width: 480px; width: 100%; }
+code { font-family: monospace; }
+</style>
+</head>
+<body>
+<div id="sidebar">
+<p><strong>Wikipedia</strong></p>
+<ul>
+<li>Main page</li>
+<li>Contents</li>
+<li>Current events</li>
+<li>Random article</li>
+<li>About Wikipedia</li>
+<li>Contact us</li>
+<li>Donate</li>
+</ul>
+</div>
+<div id="content">
+<h1>Zeckendorf's theorem</h1>
+<p><b>Zeckendorf's theorem</b>, named after the Belgian mathematician Édouard Zeckendorf, states that every positive integer can be represented uniquely as the sum of one or more distinct Fibonacci numbers in such a way that the sum does not include any two consecutive Fibonacci numbers. Such a representation is called a <b>Zeckendorf representation</b> (or Zeckendorf numeration system).</p>
+<img class="hero" src="images/zeckendorfs-theorem.png" alt="Zeckendorf's theorem hero image (placeholder)">
+<h2>Statement</h2>
+<p>For the theorem, the Fibonacci numbers are taken with F<sub>1</sub> = 1, F<sub>2</sub> = 2, and F<sub>k</sub> = F<sub>k−1</sub> + F<sub>k−2</sub> (equivalently, the standard Fibonacci sequence with the duplicate 1 removed). Then every positive integer N has a unique representation as a sum of a set of these numbers, no two of which are consecutive in the sequence. For example, 100 = 89 + 8 + 3, where 3, 8, and 89 are pairwise non-consecutive Fibonacci numbers.</p>
+<h2>Finding the representation</h2>
+<p>The Zeckendorf representation can be found by a greedy algorithm: repeatedly subtract the largest Fibonacci number not exceeding the remainder. For example, for 100: subtract 89, leaving 11; subtract 8, leaving 3; subtract 3, leaving 0. Uniqueness follows from the identity that the sum of any set of non-consecutive Fibonacci numbers below F<sub>k</sub> is strictly less than F<sub>k</sub>, so a greedy choice can never be improved or contradicted later.</p>
+<h2>Zeckendorf representation and arithmetic</h2>
+<p>Writing the representation as a binary string (a 1 for each Fibonacci number used) gives a numeration system with no two consecutive 1s, closely related to the golden ratio and to the Fibonacci coding used in data compression. Addition in this system can be performed by local rewrite rules (such as 110 → 001 and 200 → 1001 in digitized form), leading to the "Zeckendorf game" studied in modern combinatorics and to generalizations for other linear recurrences, such as representations using Lucas numbers.</p>
+<h2>History</h2>
+<p>Zeckendorf stated the theorem in 1939; it was published in 1952. The same result had been obtained earlier by Gerrit Lekkerkerker, and Zeckendorf's name became attached to it through the work of Cornelis Lekkerkerker and later popularization; it is sometimes called the Lekkerkerker–Zeckendorf theorem.</p>
+<p><i>See also:</i> Fibonacci number; Fibonacci coding; Ostrowski numeration; Greedy algorithm.</p>
+</div>
+</body>
+</html>

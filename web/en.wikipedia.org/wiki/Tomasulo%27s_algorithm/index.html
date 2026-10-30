@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tomasulo's algorithm - Wikipedia</title>
+<style>
+body{font-family:'Segoe UI',Georgia,serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:8px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 14px 18px;width:260px;font-size:.9em}
+.infobox th{text-align:left;background:#eaecf0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{display:block;max-width:100%;margin:10px auto}
+</style>
+</head>
+<body>
+<h1>Tomasulo's algorithm</h1>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Tomasulo's algorithm</th></tr>
+<tr><th>Inventor</th><td>Robert Tomasulo (IBM)</td></tr>
+<tr><th>First used</th><td>IBM System/360 Model 91 (1967)</td></tr>
+<tr><th>Purpose</th><td>Dynamic scheduling for out-of-order execution</td></tr>
+</table>
+<img class="hero" src="images/tomasulo-algorithm-diagram.png" alt="Tomasulo's algorithm hero image (placeholder)">
+</div>
+<p><b>Tomasulo's algorithm</b> is a computer architecture technique for dynamic scheduling of instructions that allows out-of-order execution and enables more efficient use of multiple execution units. It was developed by Robert Tomasulo at IBM and first implemented in the IBM System/360 Model 91's floating-point unit in 1967.</p>
+<h2>Concepts</h2>
+<p>The algorithm distributes control of instruction execution to <b>reservation stations</b> attached to each functional unit. Instructions are issued in order but execute as soon as their operands are available. Operands are tracked by tags rather than register numbers, so register renaming is implicit: when an instruction issues, it either captures the current value of its source registers or records the tag of the instruction that will produce the value. Results are broadcast to all waiting reservation stations over a <b>common data bus</b> (CDB). By removing name dependencies (write-after-read and write-after-write hazards) and stalling only on true data dependencies, the algorithm extracts instruction-level parallelism that a static scoreboard cannot.</p>
+<h2>Influence</h2>
+<p>Tomasulo's algorithm underlies the design of virtually all modern high-performance superscalar processors, usually combined with a reorder buffer to support precise exceptions and speculative execution.</p>
+<h2>See also</h2>
+<ul>
+<li>Out-of-order execution</li>
+<li>Scoreboarding</li>
+<li>Register renaming</li>
+<li>Reorder buffer</li>
+</ul>
+</body>
+</html>

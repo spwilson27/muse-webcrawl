@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IntServ - Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a7d7f9; padding-bottom: 4px; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; }
+p { font-size: 15px; line-height: 1.6; }
+.hero { display: block; margin: 12px 0; max-width: 100%; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>IntServ</h1>
+<img class="hero" src="images/intserv.png" alt="IntServ hero image (placeholder)">
+<p><b>IntServ</b> (<b>Integrated Services</b>) is an architecture developed by the Internet Engineering Task Force in the mid-1990s for providing quality of service (QoS) guarantees to individual application sessions over IP networks. In the IntServ model, applications request reservations of network resources before sending data, and routers along the path keep per-flow state and either admit or reject each request.</p>
+<h2>Mechanism</h2>
+<p>Reservations are typically signalled with the Resource Reservation Protocol (RSVP, RFC 2205). A sender describes its traffic with a TSpec (token-bucket parameters), a receiver requests a service level with an RSpec, and routers perform admission control: if sufficient capacity cannot be guaranteed on every hop, the reservation fails. The IntServ framework is defined in RFC 1633, with two standard service classes beyond best effort: <b>Guaranteed Service</b> (RFC 2212), providing a firm bound on delay for real-time applications, and <b>Controlled Load Service</b> (RFC 2211), which makes the network behave as lightly loaded for applications tolerant of some variation.</p>
+<h2>Scalability problems</h2>
+<p>Because every router must store state for every individual flow and classify, schedule and refresh reservations for each, IntServ does not scale to the Internet core, where millions of simultaneous flows would overwhelm router memory and processing. The refresh messaging of RSVP adds further overhead. For these reasons IntServ saw little deployment in public networks, surviving mainly in enterprise backbones, videoconferencing systems and research testbeds.</p>
+<h2>Successors</h2>
+<p>The scalability critique led the IETF to develop Differentiated Services (DiffServ), which abandons per-flow state: packets are marked with a small set of per-hop behaviours and routers treat aggregates of traffic by class. DiffServ became the dominant QoS architecture in the Internet, though it offers relative rather than absolute guarantees. IntServ concepts persist in multiprotocol label switching (MPLS) traffic engineering and in IntServ-over-DiffServ hybrid designs, and RSVP-TE remains widely used for signalling MPLS tunnels.</p>
+</div>
+</body>
+</html>

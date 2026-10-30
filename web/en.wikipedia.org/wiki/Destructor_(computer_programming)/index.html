@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Destructor (computer programming) - Wikipedia</title>
+<style>body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}main{max-width:860px;margin:0 auto;background:#fff;padding:24px 32px}h1{font-family:sans-serif;font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:6px}h2{font-family:sans-serif;font-size:20px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:28px}a{color:#0645ad;text-decoration:none}img.hero{max-width:100%;height:auto;background:#eaecf0;padding:12px}code{background:#f8f9fa;font-family:monospace}</style>
+</head>
+<body>
+<main>
+<h1>Destructor (computer programming)</h1>
+<img class="hero" src="images/destructor-computer-programming.png" alt="Destructor (computer programming) hero image (placeholder)">
+<p>In object-oriented programming, a <b>destructor</b> is a method which is invoked mechanically just before the memory of an object is released. It can be used to clean up resources — such as closing file handles, releasing locks, or freeing heap memory — that were allocated during the object's lifetime.</p>
+<h2>Syntax and semantics</h2>
+<p>In C++, a destructor is declared with the name of the class preceded by a tilde, e.g. <code>~Widget()</code>. It takes no arguments, returns nothing, and cannot be overloaded. Destructors are invoked automatically when a stack-allocated object goes out of scope, when <code>delete</code> is applied to a heap object, and for member objects in reverse order of construction. A class with virtual functions that is used polymorphically should declare a virtual destructor so that the derived class's destructor runs correctly.</p>
+<h2>RAII</h2>
+<p>Destructors are the cornerstone of the RAII (Resource Acquisition Is Initialization) idiom, in which resource lifetime is bound to object lifetime, guaranteeing cleanup even when exceptions are thrown. In languages with garbage collection, such as C# and Java, analogous finalizers exist but run non-deterministically, so deterministic disposal patterns (e.g. <code>IDisposable</code>, try-with-resources) are preferred.</p>
+</main>
+</body>
+</html>

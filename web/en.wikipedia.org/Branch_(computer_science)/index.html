@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Branch (computer science) - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:2em 1.5em;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;margin-bottom:.3em}
+h2{font-size:1.35em;border-bottom:1px solid #c8ccd1;padding-bottom:.15em;margin-top:1.2em}
+h3{font-size:1.1em;margin-top:1em}
+img.hero{display:block;max-width:100%;height:auto;margin:1em auto;border:1px solid #c8ccd1;background:#f8f9fa;padding:.5em}
+p{margin:.6em 0}
+ul{margin:.5em 0 .5em 1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:monospace;background:#f8f9fa;padding:0 .2em}
+pre{font-family:monospace;background:#f8f9fa;border:1px solid #eaecf0;padding:.6em;overflow-x:auto}
+.note{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Branch (computer science)</h1>
+<img class="hero" src="images/branch-computer-science.png" alt="Branch (computer science) hero image (placeholder)">
+<p>A <b>branch</b> is an instruction in a computer program that can cause a computer to begin executing a different instruction sequence and thus deviate from its default behaviour of executing instructions in order. Branch (or <i>branching</i>, <i>branched</i>) may also refer to the act of switching execution to a different instruction sequence as a result of executing a branch instruction. Branch instructions are used to implement control flow in program loops and conditionals (i.e., executing a particular sequence of instructions only if certain conditions are satisfied).</p>
+<p>A branch instruction can be either an <i>unconditional branch</i>, which always results in branching, or a <i>conditional branch</i>, which may or may not cause branching depending on some condition. Also, depending on how it modifies the program counter, a branch instruction may be a <i>direct branch</i> (the effective address is specified in the instruction) or an <i>indirect branch</i> (the effective address is specified in a register or memory location, whose value can change at runtime).</p>
+<h2>Implementation</h2>
+<p>Mechanically, a branch instruction can change the instruction pointer (IP) register of the CPU. The new value of the IP then causes the CPU to fetch the next instruction from the indicated location in memory, thus altering the flow of control. Branch instructions come in a variety of forms:</p>
+<ul>
+<li><b>Conditional branches</b> — taken or not taken depending on the state of condition code flags, such as zero, carry, or sign.</li>
+<li><b>Unconditional branches</b> — always transfer control, often called jumps.</li>
+<li><b>Call instructions</b> — branch while saving the return address, used to invoke subroutines.</li>
+<li><b>Return instructions</b> — branch back to a saved address.</li>
+</ul>
+<h2>Performance</h2>
+<p>In modern pipelined processors, branches can be expensive. If the processor must wait to learn whether a conditional branch is taken before fetching the next instructions, the pipeline stalls and performance suffers. To mitigate this, processors use <i>branch prediction</i> hardware that guesses the outcome of a branch and speculatively fetches and executes instructions along the predicted path. When the prediction is correct, the branch costs almost nothing; when wrong, the speculatively executed work must be discarded, incurring a <i>misprediction penalty</i>.</p>
+<p>Branch predication and conditional move instructions offer an alternative in some instruction set architectures, allowing short sequences to execute without an actual branch.</p>
+<h2>Examples</h2>
+<p>In x86 assembly language, the <code>JMP</code> instruction is an unconditional branch, while instructions such as <code>JE</code> (jump if equal) and <code>JNE</code> (jump if not equal) are conditional branches that test the flags set by a preceding comparison. In high-level languages, <code>if</code> statements, loops such as <code>while</code> and <code>for</code>, and function calls all ultimately compile down to branch instructions.</p>
+<h2>See also</h2>
+<ul>
+<li>Branch prediction</li>
+<li>Control flow</li>
+<li>Conditional (computer programming)</li>
+<li>Program counter</li>
+</ul>
+<p class="note">Categories: Computer architecture | Instruction set architectures | Control flow</p>
+</body>
+</html>

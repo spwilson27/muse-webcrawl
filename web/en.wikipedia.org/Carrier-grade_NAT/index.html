@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Carrier-grade NAT - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:6px;margin-bottom:10px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hero{text-align:center;margin:16px 0}
+.hero img{max-width:100%;border:1px solid #c8ccd1;background:#eaecf0}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:.9em}
+.infobox th{text-align:left;padding:2px 6px}
+.infobox td{padding:2px 6px}
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Carrier-grade NAT</h1>
+<div class="hero"><img src="images/carrier-grade-nat.png" alt="Carrier-grade NAT hero image (placeholder)"></div>
+<table class="infobox">
+<tr><th>Also known as</th><td>Large-scale NAT (LSN)</td></tr>
+<tr><th>Type</th><td>Network address translation</td></tr>
+<tr><th>Defined in</th><td>RFC 6598 (shared address space); RFC 6888 (requirements)</td></tr>
+<tr><th>Purpose</th><td>IPv4 address conservation by ISPs</td></tr>
+</table>
+<p><b>Carrier-grade NAT</b> (<b>CGN</b> or <b>CGNAT</b>), also known as <b>large-scale NAT</b> (LSN), is a type of network address translation used by Internet service providers in IPv4 network design. With CGN, end sites — in particular residential networks — are configured with private network addresses that are translated to public IPv4 addresses by middlebox network address translator devices embedded in the network operator's network, permitting the sharing of small pools of public addresses among many end sites.</p>
+<h2>Motivation</h2>
+<p>CGN became widespread as the pool of unallocated IPv4 addresses approached exhaustion. By placing a second layer of translation inside the ISP network — producing a "NAT444" arrangement in which traffic passes through customer-premises NAT and then carrier NAT — a single public IPv4 address can serve many subscribers simultaneously through port multiplexing.</p>
+<h2>Shared address space</h2>
+<p>RFC 6598 reserved the 100.64.0.0/10 address block specifically for use between customer-premises equipment and the carrier-grade NAT, so that the range would not clash with private RFC 1918 addresses used inside homes. RFC 6888 sets out common requirements for CGN devices, and RFC 6264 describes incremental deployment strategies.</p>
+<h2>Drawbacks</h2>
+<p>CGN complicates applications that require inbound connections, such as hosting servers, some online games, and peer-to-peer software. It also makes it harder to identify individual subscribers from an IP address alone, which has legal and law-enforcement implications; ISPs must log port allocations to comply with data-retention requirements. These difficulties are among the arguments for migration to IPv6, under which CGN is unnecessary.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Modified Huffman coding - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; padding: 0; background: #f8f9fa; color: #202122; line-height: 1.6; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 20px 30px; }
+h1 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; }
+h2 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #3366cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { border: 1px solid #c8ccd1; background: #f8f9fa; padding: 3px; text-align: center; font-size: 94%; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Modified Huffman coding</h1>
+<p><b>Modified Huffman coding</b> (<b>MH</b>) is a data compression algorithm used for lossless compression of images. It was standardized as part of the CCITT (now ITU-T) Group 3 fax standard, Recommendation T.4, and is sometimes called the T.4 or one-dimensional coding scheme.</p>
+<p>Modified Huffman coding is a variant of run-length encoding combined with Huffman coding. Each scan line of a bi-level (black-and-white) image is encoded as a sequence of alternating runs of white and black pixels. Run lengths from 0 to 63 are encoded with specific terminating codes, while longer runs are expressed as a makeup code (representing a multiple of 64) followed by a terminating code. Separate code tables are used for white and black runs, reflecting their different statistical distributions in typical documents.</p>
+<h2>Use in fax</h2>
+<p>Because most document scan lines begin with a white run, each line starts with a white run-length code, which may be zero. An end-of-line (EOL) marker synchronizes the decoder at each line. Modified Huffman coding was later extended by Modified READ (MR, two-dimensional) and Modified Modified READ (MMR) coding, which exploit correlation between adjacent scan lines to achieve higher compression, and which are used in Group 3 and Group 4 fax respectively.</p>
+<h2>Characteristics</h2>
+<p>MH achieves typical compression ratios of roughly 5:1 to 10:1 on typed business documents. It is simple to implement in hardware, which made it well suited to early facsimile machines.</p>
+<p><img src="images/modified-huffman-coding.png" alt="Modified Huffman coding hero image (placeholder)"></p>
+</div>
+</body>
+</html>

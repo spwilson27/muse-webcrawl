@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lucas–Lehmer primality test</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:2em auto;padding:0 1.2em;line-height:1.6;color:#222;background:#fdfdfa}
+h1{font-size:2em;border-bottom:2px solid #888;padding-bottom:.2em}
+h2{font-size:1.35em;border-bottom:1px solid #ccc;padding-bottom:.15em;margin-top:1.4em}
+img.hero{max-width:100%;height:auto;display:block;margin:1em auto;border:1px solid #bbb;background:#eee}
+.formula{text-align:center;font-style:italic;font-size:1.05em;margin:.8em 0}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Lucas–Lehmer primality test</h1>
+<img class="hero" src="images/lucas-lehmer-test.png" alt="Lucas–Lehmer primality test hero image (placeholder)">
+<p>The <b>Lucas–Lehmer test</b> is a primality test for Mersenne numbers — numbers of the form M<sub>p</sub> = 2<sup>p</sup> − 1. It was developed by Édouard Lucas in 1878 and refined by Derrick Henry Lehmer in the 1930s. Because it is fast and deterministic for these special-form numbers, it is the test used by the Great Internet Mersenne Prime Search (GIMPS) to find record-breaking prime numbers.</p>
+<h2>The test</h2>
+<p>Let p be an odd prime and define the sequence s<sub>0</sub> = 4, s<sub>n</sub> = s<sub>n−1</sub>² − 2 (mod M<sub>p</sub>). Then M<sub>p</sub> is prime if and only if</p>
+<p class="formula">s<sub>p−2</sub> ≡ 0 (mod M<sub>p</sub>)</p>
+<p>Each step requires only squaring a number of the size of M<sub>p</sub> and reduction modulo M<sub>p</sub>, which for powers of two has a particularly efficient form. The sequence relates to Lucas sequences, and Lucas's original proof used properties of these sequences in algebraic number fields.</p>
+<h2>Record primes</h2>
+<p>Nearly all of the largest known primes are Mersenne primes verified with this test. Volunteer computing through GIMPS has discovered the largest known primes of recent decades, each with tens of millions of digits. In recent years the GIMPS project has shifted toward a probable-prime (Fermat) test with rigorous error checking for first-time tests, reserving Lucas–Lehmer for double-checking, because the classic test lacks built-in error detection.</p>
+<h2>See also</h2>
+<p>Mersenne prime; Édouard Lucas; Derrick Henry Lehmer; GIMPS; Primality test; Lucas sequence.</p>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Move semantics - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 50em; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a7d7f9; padding-bottom: 0.2em; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Move semantics</h1>
+<img src="images/move-semantics.png" alt="Move semantics hero image (placeholder)">
+<p><b>Move semantics</b> is a feature of some programming languages, most prominently C++ (introduced in C++11), that allows the resources of a temporary or expiring object to be transferred ("moved") to another object instead of being copied. When a class manages a resource such as heap-allocated memory, a file handle or a socket, copying requires duplicating the resource, whereas moving simply reassigns ownership — typically by copying a pointer and nulling out the source.</p>
+<p>In C++, move semantics are implemented through rvalue references (declared with <code>&amp;&amp;</code>) and move constructors and move assignment operators, which are selected when the argument is an rvalue — for example a temporary, or an object cast with <code>std::move</code>. The moved-from object is left in a valid but unspecified state, safe to destroy or reassign.</p>
+<p>The mechanism avoids expensive deep copies when returning large objects from functions, inserting elements into containers, or transferring unique ownership, complementing copy elision and return-value optimisation. Related designs appear in other languages: Rust's default move semantics transfer ownership on assignment for non-<i>Copy</i> types, enforced at compile time by the borrow checker.</p>
+</body>
+</html>

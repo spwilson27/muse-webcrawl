@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Inode - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine','Georgia',serif;background:#fff;color:#202122;margin:0;padding:20px 40px;line-height:1.6}
+.mw-body{max-width:960px;margin:0 auto}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-weight:normal}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+p{font-size:15px;margin:10px 0}
+ul{font-size:15px}
+img.hero{display:block;max-width:420px;width:100%;border:1px solid #c8ccd1;background:#f8f9fa;padding:8px;margin:10px 0}
+.siteSub{font-size:12px;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<p class="siteSub">From Wikipedia, the free encyclopedia</p>
+<h1>Inode</h1>
+<img class="hero" src="images/inode.png" alt="Inode hero image (placeholder)">
+<p>An <b>inode</b> (index node) is a data structure in a Unix-style file system that describes a file-system object such as a file or a directory. Each inode stores the attributes and disk block location(s) of the object's data. Every object is identified by an inode number within its file system.</p>
+<h2>Details</h2>
+<p>An inode typically contains metadata including file type and permissions, owner and group identifiers, size, timestamps (access, modification, and inode change times), a link count, and pointers to the data blocks. In classic designs, inodes hold direct block pointers plus single, double, and triple indirect pointers for large files; modern file systems such as ext4 may use extents instead.</p>
+<h2>Names and directories</h2>
+<p>File names are not stored in the inode itself but in directory entries that map names to inode numbers. This separation allows multiple directory entries—hard links—to refer to the same inode. The inode number of a file can be displayed with the <code>ls -i</code> command and with <code>stat</code>.</p>
+<h2>Implications</h2>
+<p>Because the number of inodes is fixed when a traditional file system is created, a volume can run out of inodes—preventing new file creation—even when disk space remains free. File systems such as XFS and Btrfs allocate inodes dynamically.</p>
+<h2>See also</h2>
+<ul>
+<li>File system</li>
+<li>Hard link</li>
+<li>ext4</li>
+<li>stat (system call)</li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bayesian optimization - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+header{background:#fff;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;margin:0;font-size:28px}
+main{max-width:960px;margin:0 auto;background:#fff;padding:24px;border-left:1px solid #a2a9b1;border-right:1px solid #a2a9b1}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:12px;margin:0 0 12px 16px;width:260px;font-size:14px}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+figure{margin:0 0 16px}
+figure img{max-width:100%;border:1px solid #c8ccd1;background:#eaecf0}
+figcaption{font-size:13px;color:#54595d;padding:4px 0}
+footer{max-width:960px;margin:0 auto;padding:16px 24px;font-size:13px;color:#54595d}
+</style>
+</head>
+<body>
+<header><h1>Bayesian optimization</h1></header>
+<main>
+<figure>
+<img src="images/bayesian-optimization.png" alt="Bayesian optimization hero image (placeholder)">
+<figcaption>A Gaussian process surrogate model with an acquisition function guiding the next sample point.</figcaption>
+</figure>
+<table class="infobox">
+<tr><th>Field</th><td>Machine learning, global optimization</td></tr>
+<tr><th>Surrogate model</th><td>Usually a Gaussian process</td></tr>
+<tr><th>Key component</th><td>Acquisition function (e.g. expected improvement)</td></tr>
+<tr><th>Typical use</th><td>Hyperparameter tuning of machine learning models</td></tr>
+</table>
+<p><b>Bayesian optimization</b> is a sequential, model-based strategy for the global optimization of black-box functions that are expensive to evaluate and for which no closed form or derivatives are available. It works by building a probabilistic surrogate model of the objective function — most commonly a Gaussian process — and using an acquisition function, which balances exploration of uncertain regions against exploitation of regions predicted to be good, to decide where to evaluate the function next.</p>
+<h2>Method</h2>
+<p>Bayesian optimization maintains a posterior distribution over functions consistent with the observations made so far. At each iteration, the acquisition function is maximized to select the next query point; the objective is evaluated there, and the posterior is updated. Common acquisition functions include the probability of improvement, expected improvement (popularized by Mockus and by Jones, Schonlau and Welch's "efficient global optimization" of 1998), Gaussian process upper confidence bound (GP-UCB), and entropy-based criteria such as predictive entropy search. Gaussian process kernels such as the squared exponential and Matérn families encode assumptions about smoothness; alternatives to Gaussian processes include random forests, tree-structured Parzen estimators (TPE), and Bayesian neural networks.</p>
+<h2>Applications</h2>
+<p>The method became a standard tool for hyperparameter optimization of machine learning algorithms, where each evaluation may require training a model. Systems such as Google's Vizier service applied Bayesian optimization at scale, and it has been used in robotics, experimental design, materials and drug discovery, A/B testing, sensor placement, and even tuning the recipes of physical experiments. Its main limitations are difficulty scaling to high-dimensional spaces and to very large numbers of evaluations, since fitting the surrogate grows cubically with the number of observations; extensions address these through local models, trust regions, random embeddings and multi-fidelity evaluations.</p>
+<h2>History</h2>
+<p>The roots of Bayesian optimization lie in Harold Kushner's work of the 1960s and Jonas Mockus's expected-improvement criterion in the 1970s; the modern framework crystallized with the 1998 efficient global optimization paper for expensive computer experiments.</p>
+<h2>See also</h2>
+<p><a href="../Hyperparameter_optimization/index.html">Hyperparameter optimization</a> &middot; <a href="../Gaussian_process/index.html">Gaussian process</a> &middot; <a href="../Multi-armed_bandit/index.html">Multi-armed bandit</a> &middot; <a href="../Global_optimization/index.html">Global optimization</a></p>
+</main>
+<footer>From Wikipedia, the free encyclopedia (recreated from memory).</footer>
+</body>
+</html>

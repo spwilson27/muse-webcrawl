@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cuckoo hashing - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122;line-height:1.6}
+.mw-body{max-width:960px;margin:0 auto;background:#fff;padding:24px 36px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:"Linux Libertine",Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-bottom:4px}
+h2{font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{display:block;margin:16px auto;max-width:100%}
+.small{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Cuckoo hashing</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/cuckoo-hashing.png" alt="Cuckoo hashing hero image (placeholder)">
+<p><b>Cuckoo hashing</b> is a scheme in computer programming for resolving hash collisions of values of hash functions inside a hash table, using worst-case constant-time lookups. The name derives from the behaviour of some species of cuckoo, in which the cuckoo chick pushes other eggs or young out of the nest when it hatches — an incoming key likewise evicts the occupant of its cell. Cuckoo hashing was first described by Rasmus Pagh and Flemming Friche Rodler in 2001.</p>
+<h2>Operation</h2>
+<p>The scheme uses two hash functions, giving each key two possible locations in the table. Lookup examines only those two cells, guaranteeing constant worst-case time. Insertion places the new key in one of its positions; if occupied, the displaced key is moved to its alternative position, possibly displacing another key in turn, and the process continues until a free cell is found. If a cycle is detected after too many displacements, the table is rehashed with new hash functions. Deletion simply removes the key from whichever cell holds it.</p>
+<h2>Properties</h2>
+<p>Because lookups and deletions are constant-time in the worst case, cuckoo hashing is attractive for applications that cannot tolerate the variable latency of chaining. With the table kept less than about half full, insertions succeed in expected constant time. Variants use more than two hash functions, buckets holding several keys, or a small auxiliary stash for keys that would otherwise cause failure.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Hash_table">Hash table</a></li>
+<li><a href="../Hash_collision">Hash collision</a></li>
+<li><a href="../Cuckoo_filter">Cuckoo filter</a></li>
+<li><a href="../Linear_probing">Linear probing</a></li>
+</ul>
+</div>
+</body>
+</html>

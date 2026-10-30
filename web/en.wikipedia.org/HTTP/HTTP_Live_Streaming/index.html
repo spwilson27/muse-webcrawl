@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTTP Live Streaming - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;max-width:960px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.85em;font-family:sans-serif}
+.infobox th{text-align:left;padding:2px 6px}
+.infobox td{padding:2px 6px}
+.infobox .title{background:#cedff2;text-align:center;font-weight:bold;padding:6px}
+figure{text-align:center;margin:16px 0}
+figcaption{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>HTTP Live Streaming</h1>
+<div class="infobox">
+<div class="title">HTTP Live Streaming (HLS)</div>
+<table>
+<tr><th>Developer</th><td>Apple Inc.</td></tr>
+<tr><th>Initial release</th><td>2009 (iPhone OS 3.0)</td></tr>
+<tr><th>Standard</th><td>RFC 8216 (2017, version 7)</td></tr>
+<tr><th>Playlist format</th><td>M3U / M3U8</td></tr>
+<tr><th>Container</th><td>MPEG-TS; fragmented MP4 (fMP4)</td></tr>
+</table>
+</div>
+<p><b>HTTP Live Streaming</b> (also known as <b>HLS</b>) is an HTTP-based adaptive bitrate streaming communications protocol developed by Apple Inc. and released in 2009. It is used for delivering live and on-demand audio and video over the internet and is supported natively on Apple's devices and operating systems, as well as through players and libraries on Android, the web, and most connected TVs.</p>
+<figure>
+<img src="images/hls-streaming.png" alt="HTTP Live Streaming hero image (placeholder)">
+<figcaption>How HLS segments media and serves variant playlists over HTTP (placeholder image).</figcaption>
+</figure>
+<h2>Architecture</h2>
+<p>With HLS, a media stream is encoded at multiple bitrates and split by a segmenter into short chunks — traditionally MPEG transport stream files of about 2–10 seconds, and in newer deployments fragmented MP4 segments. The server publishes an M3U8 index file (playlist) listing the segments; for adaptive streaming, a master playlist lists variant playlists at different bitrates and resolutions. A client player downloads the playlist, requests segments over ordinary HTTP, monitors network throughput, and switches between variants to balance quality and smooth playback. Because it uses standard web servers and caches, HLS scales easily through content delivery networks and passes through firewalls and NATs. Live broadcasts appear as a sliding window of the most recent segments in a continuously updated playlist; an end marker converts the same structure for video on demand.</p>
+<h2>History and features</h2>
+<p>Apple submitted HLS to the IETF as an Informational RFC in 2017 (RFC 8216). Later additions include support for HEVC and AV1-era codecs, low-latency HLS (LL-HLS) using partial segments and blocking playlist reloads, content encryption (AES-128 and SAMPLE-AES) with FairPlay DRM, timed metadata, and subtitle and alternate-audio tracks. HLS and the competing MPEG-DASH standard dominate adaptive streaming delivery.</p>
+<h2>See also</h2>
+<ul>
+<li>HTTP</li>
+<li>Adaptive bitrate streaming</li>
+<li>MPEG-DASH</li>
+<li>Real-Time Messaging Protocol</li>
+<li>Streaming media</li>
+</ul>
+</body>
+</html>

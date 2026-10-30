@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>FPGA - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+img.hero { display: block; max-width: 100%; margin: 12px 0; border: 1px solid #c8ccd1; background: #eaecf0; min-height: 120px; }
+p, li { line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Field-programmable gate array</h1>
+<img class="hero" src="images/fpga-chip.png" alt="FPGA hero image (placeholder)">
+<p>A <b>field-programmable gate array</b> (<b>FPGA</b>) is a type of configurable integrated circuit that can be repeatedly programmed after manufacturing. Unlike application-specific integrated circuits (ASICs), which have fixed functionality etched at fabrication, an FPGA contains an array of programmable logic blocks and reconfigurable interconnects that allow the circuit to be "rewired" in the field to implement different digital functions.</p>
+<h2>Architecture</h2>
+<p>A typical FPGA consists of:</p>
+<ul>
+<li><b>Configurable logic blocks (CLBs/LEs)</b> — arrays of look-up tables (LUTs), multiplexers, and flip-flops that implement combinational and sequential logic.</li>
+<li><b>Programmable interconnect</b> — routing channels and switch matrices connecting the logic blocks.</li>
+<li><b>I/O blocks</b> — configurable pins supporting many electrical standards.</li>
+<li><b>Dedicated resources</b> — block RAM, DSP slices (multipliers/accumulators), clock management (PLLs), high-speed serial transceivers, and sometimes hard processor cores (as in SoC FPGAs such as AMD Xilinx Zynq).</li>
+</ul>
+<p>Configuration is usually stored in SRAM cells loaded at power-up from an external bitstream file, so most FPGAs are volatile and must be reconfigured on each boot.</p>
+<h2>Design flow</h2>
+<p>Designers describe hardware using a hardware description language such as Verilog, SystemVerilog, or VHDL, or through high-level synthesis from C/C++. Vendor tools — including AMD Vivado, Intel Quartus Prime, and Lattice Radiant — perform synthesis, technology mapping, placement, and routing, then generate the bitstream. The openness of bitstream formats has also enabled open-source toolchains such as Yosys with nextpnr for certain device families.</p>
+<h2>History</h2>
+<p>The FPGA concept grew out of programmable logic devices (PLAs, PALs, and CPLDs) of the 1970s and early 1980s. Xilinx, co-founded by Ross Freeman, introduced the first commercial FPGA, the XC2064, in 1985. Altera (acquired by Intel in 2015), Lattice Semiconductor, and Microchip are other major vendors; Xilinx was acquired by AMD in 2022.</p>
+<h2>Applications</h2>
+<p>FPGAs are used where flexibility, parallelism, or deterministic low latency matters: digital signal processing, telecommunications infrastructure, data-center acceleration (search ranking, networking, AI inference), aerospace and defense systems, automotive driver assistance, industrial control, medical imaging, software-defined radio, and ASIC prototyping and emulation. Their reconfigurability makes them attractive where standards evolve or volumes do not justify an ASIC, at the cost of higher per-unit price, larger area, and greater power consumption than an equivalent ASIC.</p>
+</div>
+</body>
+</html>

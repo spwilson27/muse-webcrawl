@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Spectral leakage - Wikipedia</title>
+<style>
+body { font-family: sans-serif; max-width: 860px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; }
+h1, h2, h3 { border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-family: Georgia, serif; }
+a { color: #0645ad; text-decoration: none; }
+img.hero { display: block; margin: 10px auto; max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Spectral leakage</h1>
+<img class="hero" src="images/spectral-leakage.png" alt="Spectral leakage hero image (placeholder)">
+<p>The Fourier transform of a function of time, <i>s</i>(<i>t</i>), is a complex-valued function of frequency, S(<i>f</i>), often referred to as a frequency spectrum. Any linear time-invariant operation on <i>s</i>(<i>t</i>) causes a new spectrum, so there is not really a distinction between the signal and its spectrum. But in practice we only have a finite segment of a signal, and we multiply the signal by a window function before computing the discrete Fourier transform (DFT). The result is that the spectrum of the windowed segment is the true spectrum convolved with the transform of the window — so energy from one frequency appears to "leak" into neighbouring frequencies. This effect is called <b>spectral leakage</b>.</p>
+<h2>Cause</h2>
+<p>Leakage occurs when the observed segment of a sinusoid does not contain an integer number of cycles; the implicit periodic repetition then contains a discontinuity, whose spectrum spreads across all frequencies. The amount and shape of leakage depends on the window: a rectangular window gives a narrow main lobe but high sidelobes (the sinc function), so strong components mask weak nearby ones. Windowing functions such as Hann, Hamming, and Blackman–Harris trade main-lobe width for much lower sidelobes, reducing leakage at the cost of frequency resolution.</p>
+<h2>Mitigation</h2>
+<p>Leakage is minimised by choosing a window function with low sidelobes, by zero-padding (which interpolates the spectrum but does not add information), by synchronous sampling so that an integer number of cycles is captured, and by windowing tapered at the segment edges. The related picket-fence effect describes the error when a signal frequency falls between DFT bins.</p>
+<p><i>This article is a recreation from memory of the Wikipedia article "Spectral leakage".</i></p>
+</body>
+</html>

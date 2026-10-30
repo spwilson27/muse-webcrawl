@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Asynchronous method invocation - Wikipedia</title>
+<style>
+body{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;margin:0;color:#222;background:#fff;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:Georgia,serif;font-size:32px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-family:Georgia,serif;font-size:22px;border-bottom:1px solid #a2a9b1;margin-top:26px}
+a{color:#06c;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{max-width:100%;border:1px solid #ccc;background:#f8f9fa}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;margin:0 0 12px 16px;padding:10px;font-size:13px}
+.infobox th{text-align:left;padding-right:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Asynchronous method invocation</h1>
+<img class="hero" src="images/asynchronous-method-invocation-hero.png" alt="Asynchronous method invocation hero image (placeholder)">
+<p>In multithreaded computer programming, <b>asynchronous method invocation</b> (<b>AMI</b>), also known as asynchronous method calls or the asynchronous pattern, is a design pattern in which the call site is not blocked while waiting for the called code to finish. Instead, the calling thread is notified when the reply arrives. Polling for a reply is an undesired option.</p>
+<h2>Background</h2>
+<p>Most method calls are synchronous, meaning that when the method is invoked the calling method waits (blocks) until the callee returns control. Long-running operations, such as reading a large file, querying a remote service, or performing a lengthy computation, can therefore stall the caller — in a graphical user interface this makes the application appear frozen. Asynchronous invocation lets the caller continue with other work while the operation proceeds.</p>
+<h2>Implementations</h2>
+<p>Common mechanisms for asynchronous invocation include:</p>
+<ul>
+<li><b>Futures and promises</b> — the call returns a placeholder object immediately; the caller can later block on, poll, or chain continuations to the placeholder.</li>
+<li><b>Callbacks</b> — the caller supplies a function to be invoked when the operation completes, as in event-driven JavaScript and Node.js.</li>
+<li><b>async/await</b> — language-level syntax (e.g. in C#, Python, JavaScript, Rust) that lets asynchronous code be written in a sequential style.</li>
+<li><b>Message passing and actor systems</b> — requests are sent as messages and replies delivered as further messages.</li>
+</ul>
+<p>Middleware frameworks such as CORBA, the Internet Communications Engine (Ice), and .NET Remoting/WCF provide AMI facilities, often generating proxy code that hides the threading and marshalling details from the caller.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Asynchronous_I%2FO/index.html">Asynchronous I/O</a></li>
+<li><a href="../Future_(programming)/index.html">Future (programming)</a></li>
+<li><a href="../Callback_(computer_programming)/index.html">Callback (computer programming)</a></li>
+<li><a href="../Remote_procedure_call/index.html">Remote procedure call</a></li>
+<li><a href="../Concurrency_(computer_science)/index.html">Concurrency (computer science)</a></li>
+</ul>
+</div>
+</body>
+</html>

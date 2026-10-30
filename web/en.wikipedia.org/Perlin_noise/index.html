@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Perlin noise - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:28px}
+p{line-height:1.6}
+.hero{display:block;width:100%;max-width:520px;margin:16px auto;border:1px solid #c8ccd1;background:#eaecf0}
+.caption{text-align:center;font-size:85%;color:#54595d;margin-bottom:16px}
+a{color:#0645ad;text-decoration:none}
+ul{line-height:1.6}
+pre{background:#f6f6f6;border:1px solid #ddd;padding:10px;overflow-x:auto;font-size:88%}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Perlin noise</h1>
+<img class="hero" src="images/perlin-noise.png" alt="Perlin noise hero image (placeholder)">
+<p class="caption">A two-dimensional slice of Perlin noise, showing its smooth, cloud-like gradients.</p>
+<p><b>Perlin noise</b> is a type of gradient noise developed by Ken Perlin in 1983. It has many uses, including, but not limited to, procedurally generating terrain, applying pseudo-random changes to a variable, and assisting in the creation of image textures in computer graphics. It is a standard primitive in many graphics packages and game engines.</p>
+<h2>History</h2>
+<p>Ken Perlin developed the algorithm while working on the 1982 film <i>Tron</i> at the Mathematical Applications Group (MAGI), seeking a way to give computer-generated surfaces a more natural, less machine-like appearance. The resulting technique was published in 1985 and became a foundational tool in procedural texture generation. Perlin later received an Academy Award for Technical Achievement in 1997 for the algorithm's contribution to motion pictures. In 2001 he published an improved version, and he separately developed simplex noise, a related algorithm designed to overcome some of Perlin noise's limitations, particularly in higher dimensions.</p>
+<h2>Algorithm</h2>
+<p>Perlin noise is implemented as a function of one, two, three, or four dimensions. In outline, the algorithm:</p>
+<ul>
+<li>Defines a grid of points, each assigned a pseudorandom gradient vector</li>
+<li>For an input point, computes the vectors from the surrounding grid corners to the point</li>
+<li>Takes the dot product of each gradient with its corresponding offset vector</li>
+<li>Interpolates these values smoothly (traditionally with a fade curve such as 6t<sup>5</sup> − 15t<sup>4</sup> + 10t<sup>3</sup>) to produce a continuous noise value</li>
+</ul>
+<p>Because the gradient directions vary across space, the resulting field undulates smoothly rather than producing blocky artifacts. Multiple octaves of the noise at increasing frequency and decreasing amplitude can be summed (fractal Brownian motion) to create detail at many scales.</p>
+<h2>Uses</h2>
+<p>Perlin noise is used to generate procedural terrain and landscapes, textures resembling clouds, fire, marble, and wood grain, and to animate organic motion such as flowing water or fluttering cloth. Its controllable frequency content makes it a staple of shader programming and procedural content generation in video games.</p>
+<h2>See also</h2>
+<ul>
+<li>Simplex noise</li>
+<li>Gradient noise</li>
+<li>Procedural generation</li>
+<li>Fractal Brownian motion</li>
+<li>Worley noise</li>
+</ul>
+</div>
+</body>
+</html>

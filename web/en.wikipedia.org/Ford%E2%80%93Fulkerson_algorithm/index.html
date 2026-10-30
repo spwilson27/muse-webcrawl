@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ford–Fulkerson algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:24px;line-height:1.6;color:#202122}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.hatnote{font-style:italic;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Ford–Fulkerson algorithm</h1>
+<p class="hatnote">From Wikipedia, the free encyclopedia</p>
+<img src="images/ford-fulkerson-algorithm.png" alt="Ford–Fulkerson algorithm hero image (placeholder)">
+<p>The <b>Ford–Fulkerson method</b> or <b>Ford–Fulkerson algorithm</b> (<b>FFA</b>) is a greedy algorithm that computes the maximum flow in a flow network. It is sometimes called a "method" rather than an "algorithm" because the approach to finding augmenting paths in the residual graph is not fully specified. It is due to L. R. Ford Jr. and D. R. Fulkerson, who published it in 1956.</p>
+<h2>Description</h2>
+<p>The idea behind the algorithm is as follows: as long as there is a path from the source (start node) to the sink (end node), with available capacity on all edges in the path, send flow along one of the paths. Then find another path, and so on. A path with available capacity is called an augmenting path. The algorithm operates on the <i>residual graph</i>, which records for each edge how much additional flow can still be pushed, including "reverse" edges that allow previously sent flow to be cancelled.</p>
+<h2>Correctness and complexity</h2>
+<p>By the max-flow min-cut theorem, when no augmenting path remains in the residual graph, the flow is a maximum flow. If capacities are integers, the running time is O(E·f), where E is the number of edges and f is the value of the maximum flow; this can be slow if f is large, and with irrational capacities the algorithm may fail to terminate. Choosing augmenting paths by breadth-first search yields the Edmonds–Karp algorithm, which runs in polynomial time O(VE²); choosing them by depth-first search with capacity scaling improves the bound further.</p>
+<h2>Applications</h2>
+<p>Maximum-flow methods model transportation and communication networks, circulation problems, bipartite matching, image segmentation, and project selection, among many others.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Max-flow_min-cut_theorem/index.html">Max-flow min-cut theorem</a></li>
+<li><a href="../Edmonds%E2%80%93Karp_algorithm/index.html">Edmonds–Karp algorithm</a></li>
+<li><a href="../Flow_network/index.html">Flow network</a></li>
+</ul>
+</body>
+</html>

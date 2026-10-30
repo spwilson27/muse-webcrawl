@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Box blur</title>
+<style>
+body{font-family:Georgia,serif;max-width:760px;margin:2em auto;padding:0 1em;line-height:1.6;color:#222}
+h1{font-size:1.8em;border-bottom:2px solid #444;padding-bottom:.2em}
+h2{font-size:1.25em;margin-top:1.4em}
+img.hero{display:block;width:100%;max-height:320px;object-fit:cover;background:#ddd;border:1px solid #999}
+a{color:#0645ad}
+code{background:#eee;padding:0 .2em}
+</style>
+</head>
+<body>
+<h1>Box blur</h1>
+<img class="hero" src="images/box-blur.png" alt="Box blur hero image (placeholder)">
+<p>A <strong>box blur</strong> (also known as a box linear filter) is a spatial-domain image filter in which each pixel in the output image has a value equal to the average value of its neighbouring pixels in the input image. It is a form of low-pass ("blurring") filter and a simple example of a convolution.</p>
+<h2>Definition</h2>
+<p>For a box blur of radius <em>r</em>, each output pixel is the arithmetic mean of the (2r + 1)² input pixels in the square window centred on it. The corresponding convolution kernel is a square matrix filled with the constant value 1/(2r + 1)², so the filter is separable: it can be computed as a horizontal pass followed by a vertical pass.</p>
+<h2>Efficient computation and properties</h2>
+<p>Because the kernel is uniform, box blurs can be computed in constant time per pixel regardless of radius using sliding-window sums or summed-area tables (integral images). Applying a box blur repeatedly (three times is a common trick) approximates a Gaussian blur, an application of the central limit theorem. Unlike a true Gaussian blur, however, a single box blur can produce visible artefacts such as ringing and square-shaped bokeh. Box blurs are widely used in image editors, real-time graphics, and as a preprocessing step in computer vision.</p>
+</body>
+</html>

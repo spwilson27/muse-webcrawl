@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Variance reduction - Wikipedia</title>
+<style>
+body { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background:#f8f9fa; color:#202122; margin:0; }
+#content { max-width:960px; margin:0 auto; background:#fff; padding:1.5em 2em 3em; }
+h1 { font-size:1.9em; border-bottom:1px solid #a2a9b1; padding-bottom:0.2em; font-family:"Linux Libertine","Georgia",serif; }
+h2 { font-size:1.4em; border-bottom:1px solid #a2a9b1; padding-bottom:0.15em; font-family:"Linux Libertine","Georgia",serif; }
+p { line-height:1.6; }
+.hero { text-align:center; margin:1em 0; }
+.hero img { max-width:100%; height:auto; background:#eaecf0; border:1px solid #c8ccd1; padding:0.5em; }
+a { color:#0645ad; text-decoration:none; }
+a:hover { text-decoration:underline; }
+.notes { font-size:0.85em; color:#54595d; border-top:1px solid #a2a9b1; margin-top:2em; padding-top:0.5em; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Variance reduction</h1>
+<div class="hero"><img src="images/variance-reduction-diagram.png" alt="Variance reduction hero image (placeholder)"></div>
+<p><b>Variance reduction</b> is a collection of procedures in experimental design and simulation, especially Monte Carlo methods, designed to increase the precision of estimates obtainable for a given number of iterations or observations. Output from simulations is analysed using statistical techniques so that the same computational budget yields tighter confidence intervals.</p>
+<h2>Common techniques</h2>
+<p><b>Antithetic variates</b> pair each random draw with a negatively correlated counterpart (for example, using both <i>U</i> and 1−<i>U</i>), so errors tend to cancel. <b>Control variates</b> exploit a correlated quantity whose exact expectation is known, adjusting the estimate by the difference between the simulated and true values of the control. <b>Importance sampling</b> draws from an alternative distribution that oversamples the important region of the integrand, correcting with likelihood ratios. <b>Stratified sampling</b> divides the sample space into strata — Latin hypercube sampling is a related scheme — ensuring even coverage. <b>Rao–Blackwellization</b> replaces random variables by their conditional expectations where feasible.</p>
+<h2>Applications</h2>
+<p>These techniques are widely used in computational finance (option pricing), reliability analysis, queueing simulation, and particle transport, where crude Monte Carlo converges slowly at rate proportional to the inverse square root of the number of samples.</p>
+<p class="notes">Article recreated from memory as part of the muse-webcrawl project. Placeholder image only; no original photographs are included.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Windows Remote Management</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:24px;color:#222;background:#fdfdfd;line-height:1.6}
+h1{border-bottom:2px solid #a2a9b1;padding-bottom:6px}
+h2{border-bottom:1px solid #c8ccd1;padding-bottom:4px}
+.hero{width:100%;max-height:340px;object-fit:cover;background:#e8e8e8;display:block;margin:16px 0}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{text-align:left;padding-right:8px}
+a{color:#0645ad}
+code{background:#f0f0f0;padding:0 3px}
+</style>
+</head>
+<body>
+<h1>Windows Remote Management</h1>
+<img class="hero" src="images/windows-remote-management.png" alt="Windows Remote Management hero image (placeholder)">
+<div class="infobox">
+<table>
+<tr><th>Developer</th><td>Microsoft</td></tr>
+<tr><th>Type</th><td>Remote administration service</td></tr>
+<tr><th>Protocol</th><td>WS-Management (SOAP over HTTP/HTTPS)</td></tr>
+<tr><th>Ports</th><td>5985 (HTTP), 5986 (HTTPS)</td></tr>
+<tr><th>Included in</th><td>Windows Vista / Server 2008 and later</td></tr>
+</table>
+</div>
+<p><strong>Windows Remote Management</strong> (<strong>WinRM</strong>) is Microsoft's implementation of the WS-Management protocol, a standard SOAP-based protocol that allows hardware and operating systems to interoperate for remote administration. WinRM is the server component used by Windows PowerShell remoting and by the command-line tools <code>winrm</code> and <code>winrs</code>.</p>
+<h2>Components</h2>
+<ul>
+<li><strong>WinRM service</strong> — listens for WS-Management requests, by default on TCP port 5985 for HTTP and 5986 for HTTPS.</li>
+<li><strong>winrm.exe</strong> — the command-line tool used to configure listeners, certificates, authentication settings and the service itself (for example <code>winrm quickconfig</code>).</li>
+<li><strong>winrs.exe</strong> — Windows Remote Shell, which runs a command on a remote machine through WinRM.</li>
+<li><strong>PowerShell Remoting</strong> — <code>Enter-PSSession</code> and <code>Invoke-Command</code> run over WinRM, making it the default remoting transport for Windows administration.</li>
+<li><strong>WMI plug-in</strong> — allows remote WMI access through WS-Management rather than DCOM.</li>
+</ul>
+<h2>Security</h2>
+<p>WinRM supports Kerberos, NTLM (including Negotiate), CredSSP, Digest and certificate-based authentication. Within a domain, Kerberos is typical; for workgroup machines, HTTPS listeners with certificates or explicitly configured TrustedHosts lists are commonly used. Traffic over HTTP is authenticated and the payload is encrypted by the authentication layer in domain scenarios, but HTTPS is recommended for stronger guarantees.</p>
+<h2>History</h2>
+<p>WinRM 1.1 shipped with Windows Vista and Server 2008; version 2.0, bundled with Windows 7 and PowerShell 2.0, added the PowerShell remoting architecture. Later versions shipped in the Windows Management Framework packages.</p>
+</body>
+</html>

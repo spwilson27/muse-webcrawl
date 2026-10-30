@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MOESI protocol - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;color:#202122;background:#fff}
+header{border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header .site{font-family:sans-serif;font-size:13px;color:#54595d}
+main{max-width:960px;margin:0 auto;padding:16px 24px 48px;line-height:1.6}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:28px}
+.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 18px;font-family:sans-serif;font-size:13px;line-height:1.4}
+.infobox th{text-align:left;padding-right:8px;vertical-align:top}
+table.states{border-collapse:collapse;margin:12px 0;font-family:sans-serif;font-size:13px}
+table.states th,table.states td{border:1px solid #a2a9b1;padding:5px 9px;text-align:left}
+a{color:#0645ad}
+.thumb{border:1px solid #a2a9b1;background:#f8f9fa;padding:6px;text-align:center;font-family:sans-serif;font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia &mdash; The Free Encyclopedia</span></header>
+<main>
+<h1>MOESI protocol</h1>
+<div class="infobox">
+<table>
+<tr><th>Type</th><td>Cache coherency protocol</td></tr>
+<tr><th>States</th><td>Modified, Owned, Exclusive, Shared, Invalid</td></tr>
+<tr><th>Extends</th><td>MESI protocol</td></tr>
+<tr><th>Used in</th><td>AMD Opteron / HyperTransport systems</td></tr>
+</table>
+</div>
+<p>The <b>MOESI protocol</b> is a full cache coherency protocol used in multiprocessor computer systems to maintain consistency between the caches of different processors and main memory. It is an extension of the simpler MESI protocol, adding a fifth state, <i>Owned</i>, which allows a cache line to be both modified with respect to main memory and shared among several caches, so that the owner cache can supply the data to other caches without writing it back to memory first.</p>
+<div class="thumb"><img src="images/moesi-states-hero.png" alt="MOESI protocol hero image (placeholder)"><br>MOESI protocol hero image (placeholder)</div>
+<h2>States</h2>
+<p>Each cache line is in exactly one of five states:</p>
+<table class="states">
+<tr><th>State</th><th>Meaning</th></tr>
+<tr><td><b>Modified (M)</b></td><td>The line is present only in this cache and is dirty; it differs from main memory, and this cache must write it back before any other cache may read the memory location.</td></tr>
+<tr><td><b>Owned (O)</b></td><td>The line is present in this cache and possibly in other caches in the Shared state, and is dirty with respect to main memory. This cache is responsible for supplying the data to requesters and for eventually updating memory.</td></tr>
+<tr><td><b>Exclusive (E)</b></td><td>The line is present only in this cache and is clean; it matches main memory.</td></tr>
+<tr><td><b>Shared (S)</b></td><td>The line may be present in other caches as well; it may be clean or, when another cache holds it in the Owned state, stale with respect to memory.</td></tr>
+<tr><td><b>Invalid (I)</b></td><td>The line is not present or not usable in this cache.</td></tr>
+</table>
+<h2>Advantages</h2>
+<p>In the MESI protocol, when a modified line held by one cache is requested by another, the line generally has to be written back to main memory (or at least pass through a shared level of cache) before the requester can use it. MOESI avoids this traffic: the owning cache transitions from Modified to Owned and forwards the data directly to the requester, which takes the line in the Shared state. This cache-to-cache transfer reduces latency and memory bandwidth consumption, which is particularly valuable in NUMA systems such as AMD's Opteron processors, which used a MOESI variant over the HyperTransport interconnect.</p>
+<h2>Comparison with other protocols</h2>
+<p>MOESI is one of a family of snooping and directory-based protocols that includes MSI, MESI, MOSI and MESIF. The Intel-developed MESIF protocol instead adds a "Forward" state designating one shared copy as the designated responder. MOESI's Owned state is somewhat more powerful, because the owner retains responsibility for a dirty line across an arbitrary number of subsequent reads by other caches.</p>
+<h2>See also</h2>
+<p>Cache coherence; MESI protocol; Cache (computing); Multiprocessing.</p>
+</main>
+</body>
+</html>

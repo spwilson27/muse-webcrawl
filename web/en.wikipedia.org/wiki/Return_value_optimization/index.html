@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Return value optimization - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #fff; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; padding: 20px 30px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 300px; float: right; margin: 0 0 15px 20px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 5px; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px; font-size: 13px; overflow-x: auto; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Return value optimization</h1>
+<img class="hero" src="images/return-value-optimization.png" alt="Return value optimization hero image (placeholder)">
+<p><b>Return value optimization (RVO)</b> is a compiler optimization that involves eliminating the temporary object created to hold a function's return value. In C++, it is particularly notable for being allowed to change the observable behaviour of the resulting program — copy elision is one of the few optimizations permitted to produce side-effect differences (for example, skipping calls to copy constructors and destructors) even in strict standard-conforming mode.</p>
+<h2>Named return value optimization</h2>
+<p><b>Named return value optimization (NRVO)</b> extends the idea to a named local variable that is returned by value: the compiler allocates the variable directly in the caller's storage for the return value, eliminating both the copy from the local to the return slot and the destruction of the local. RVO for unnamed temporaries has been effectively mandatory in many cases since C++17's guaranteed copy elision rules for prvalues; NRVO remains an optional (though widely implemented) optimization because it depends on all return paths returning the same named object.</p>
+<pre>
+std::string build() {
+    std::string result = "data";  // NRVO: constructed in place
+    return result;                // no copy or move needed
+}
+</pre>
+<h2>Interaction with move semantics</h2>
+<p>When neither RVO nor NRVO applies, returning a local variable is still treated as an implicit move in modern C++, falling back to the move constructor rather than the (potentially far more expensive) copy constructor.</p>
+<h2>See also</h2>
+<p><a href="../Copy_elision.html">Copy elision</a> &middot; <a href="../Move_semantics.html">Move semantics</a> &middot; <a href="../Optimizing_compiler.html">Optimizing compiler</a></p>
+</div>
+</body>
+</html>

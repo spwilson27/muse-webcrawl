@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Addition-chain exponentiation - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:860px;margin:0 auto;padding:24px;line-height:1.6;color:#202122;background:#fff}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+img{max-width:100%}
+.ref{font-size:0.85em;color:#54595d}
+code{background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<h1>Addition-chain exponentiation</h1>
+<p>In mathematics and computer science, <b>optimal addition-chain exponentiation</b> is a method of exponentiation by a positive integer power that requires the fewest number of multiplications. Using an <i>addition chain</i> — a sequence of positive integers beginning with 1, in which each element is the sum of two (not necessarily distinct) earlier elements — one computes each successive power by multiplying two previously computed powers. The shortest addition chain for the exponent gives the minimal number of multiplications.</p>
+<img src="images/addition-chain-exponentiation.png" alt="Addition-chain exponentiation hero image (placeholder)">
+<h2>Example</h2>
+<p>To compute <i>x</i><sup>15</sup>, the binary method uses six multiplications, but the addition chain 1, 2, 3, 6, 12, 15 requires only five: <i>x</i><sup>2</sup> = x·x, <i>x</i><sup>3</sup> = x<sup>2</sup>·x, <i>x</i><sup>6</sup> = x<sup>3</sup>·x<sup>3</sup>, <i>x</i><sup>12</sup> = x<sup>6</sup>·x<sup>6</sup>, <i>x</i><sup>15</sup> = x<sup>12</sup>·x<sup>3</sup>. In general, the minimal chain length l(<i>n</i>) satisfies ⌊log<sub>2</sub> n⌋ + (number of 1 bits in n) − 1 ≥ l(<i>n</i>) ≥ log<sub>2</sub> n + log<sub>2</sub>(number of 1 bits) − small terms, but finding provably shortest chains is computationally hard for large exponents.</p>
+<h2>Methods and applications</h2>
+<p>Heuristic strategies include the binary method (square-and-multiply), the factor method, and window methods; Brauer's star-chain restriction (each new element must use the immediately preceding element) simplifies the search and is conjectured — the Scholz–Brauer conjecture, l(<i>n</i>) ≤ l*(2<sup><i>n</i></sup> − 1) ≤ l(<i>n</i>) + <i>n</i> − 1 — but not yet proven in general. Shortest chains are tabulated for exponents into the thousands. Addition chains matter practically in cryptography, where exponentiation in groups is a core operation, and in compiler optimisation of power computations. The related addition-subtraction chain, allowing subtraction, can be shorter still, as when computing <i>x</i><sup>15</sup> via <i>x</i><sup>16</sup>/<i>x</i>.</p>
+<p class="ref">See also: Addition chain; Exponentiation by squaring; Scholz conjecture; Modular exponentiation.</p>
+</body>
+</html>

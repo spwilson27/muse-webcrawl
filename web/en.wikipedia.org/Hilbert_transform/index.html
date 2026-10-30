@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hilbert transform - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; line-height: 1.6; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 20px 30px 60px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 32px; margin-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-size: 24px; margin-top: 28px; }
+h3 { font-size: 19px; margin-top: 22px; }
+.tagline { font-size: 13px; color: #54595d; margin-bottom: 16px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.formula { text-align: center; font-size: 18px; margin: 18px 0; font-style: italic; }
+.hero { max-width: 640px; display: block; margin: 10px 0; }
+.note { font-size: 13px; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Hilbert transform</h1>
+<div class="tagline">From Wikipedia, the free encyclopedia</div>
+
+<img class="hero" src="images/hilbert-transform.png" alt="Hilbert transform hero image (placeholder)">
+
+<p>In mathematics and signal processing, the <b>Hilbert transform</b> is a specific singular integral that takes a function, <i>u</i>(<i>t</i>), of a real variable and produces another function of a real variable, <i>H</i>(<i>u</i>)(<i>t</i>). It is given by the convolution of <i>u</i> with the function 1/(π<i>t</i>), interpreted as a Cauchy principal value. The Hilbert transform has a particularly simple representation in the frequency domain: it imparts a phase shift of −90° (π/2 radians) to every positive frequency component of a function, and +90° to every negative frequency component.</p>
+
+<p class="formula">H(u)(t) = (1/π) PV ∫<sub>−∞</sub><sup>∞</sup> u(τ)/(t − τ) dτ</p>
+
+<p>The transform is named after David Hilbert, who first introduced the operator in 1905 in work on Riemann–Hilbert problems for analytic functions. It is a basic tool in Fourier analysis and complex analysis, and is widely used in signal processing, communications, and the theory of partial differential equations.</p>
+
+<h2>Definition and properties</h2>
+<p>The Hilbert transform can also be defined as a Fourier multiplier: the Fourier transform of <i>H</i>(<i>u</i>) equals −i·sgn(ω) times the Fourier transform of <i>u</i>, where sgn is the signum function. Applying the transform twice returns the negative of the original function: <i>H</i>(<i>H</i>(<i>u</i>)) = −<i>u</i>, so (up to sign) the Hilbert transform is its own inverse. Important examples include the Hilbert transform of a cosine, which is a sine of the same frequency, and of a sine, which is the negative cosine.</p>
+<p>For a function defined on the unit circle, the Hilbert transform gives the harmonically conjugate function; this connects the transform to the theory of Hardy spaces and to the boundary values of analytic functions in the unit disc. The relation between a function and its Hilbert transform is expressed by the Kramers–Kronig relations in physics, linking the real and imaginary parts of causal response functions.</p>
+
+<h2>Analytic signal</h2>
+<p>Combining a real signal with its Hilbert transform as the imaginary part yields the <b>analytic signal</b>: <i>u</i><sub>a</sub>(<i>t</i>) = <i>u</i>(<i>t</i>) + i<i>H</i>(<i>u</i>)(<i>t</i>). The analytic signal provides the instantaneous amplitude (envelope) and instantaneous phase of a signal, which are fundamental in modulation theory, demodulation of amplitude- and frequency-modulated signals, and single-sideband modulation. Gabor introduced this construction in 1946.</p>
+
+<h2>Applications</h2>
+<ul>
+<li>Single-sideband (SSB) modulation and demodulation in communications</li>
+<li>Envelope detection and instantaneous frequency estimation</li>
+<li>Phase-shifting ("Hilbert transformer") filters in digital signal processing</li>
+<li>Kramers–Kronig analysis in spectroscopy and materials science</li>
+<li>Edge enhancement and phase congruency in image processing</li>
+<li>Boundary integral methods and singular integral equations</li>
+</ul>
+
+<h2>Discrete Hilbert transform</h2>
+<p>In digital signal processing, the discrete Hilbert transform is approximated with finite impulse response (FIR) filters or computed via the fast Fourier transform by zeroing negative frequencies, doubling positive ones, and inverting. These algorithms underlie software-defined radio and many biomedical signal analyses, such as instantaneous phase estimation for EEG.</p>
+
+<p class="note">References and external links omitted in this recreation.</p>
+</div>
+</body>
+</html>

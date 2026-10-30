@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ZPP - Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #ffffff; color: #202122; }
+#content { margin-left: 176px; padding: 1em 2em 2em; max-width: 960px; }
+#sidebar { float: left; width: 160px; background: #f6f6f6; padding: 1em 0.5em; font-size: 0.8em; min-height: 100vh; box-sizing: border-box; }
+#sidebar ul { list-style: none; padding-left: 0.5em; }
+#sidebar li { margin: 0.3em 0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; font-weight: normal; padding-bottom: 0.1em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; }
+.hero { display: block; margin: 1em auto; max-width: 480px; width: 100%; }
+</style>
+</head>
+<body>
+<div id="sidebar">
+<p><strong>Wikipedia</strong></p>
+<ul>
+<li>Main page</li>
+<li>Contents</li>
+<li>Current events</li>
+<li>Random article</li>
+<li>About Wikipedia</li>
+<li>Contact us</li>
+<li>Donate</li>
+</ul>
+</div>
+<div id="content">
+<h1>ZPP</h1>
+<p>In computational complexity theory, <b>ZPP</b> (zero-error probabilistic polynomial time) is the complexity class of problems for which a probabilistic Turing machine exists with these properties:</p>
+<ul>
+<li>It always outputs the correct YES or NO answer.</li>
+<li>Its expected running time is polynomial in the size of the input (though it may on occasion run longer).</li>
+</ul>
+<p>Equivalently, ZPP is the class of problems that can be solved by a Las Vegas algorithm — a randomized algorithm that never errs but whose running time is guaranteed only in expectation. The machine may also be allowed to output "don't know" with bounded probability on any given run, provided the expected number of repetitions needed to get a definite answer is polynomial.</p>
+<img class="hero" src="images/zpp.png" alt="ZPP hero image (placeholder)">
+<h2>Definition and relations</h2>
+<p>ZPP equals the intersection of the classes RP and co-RP: a problem is in ZPP if and only if it has both a one-sided-error randomized polynomial-time algorithm that never falsely accepts and one that never falsely rejects. Consequently ZPP is contained in both RP and BPP, and in turn contains P, since deterministic polynomial-time algorithms are a special case of Las Vegas algorithms. Whether ZPP equals P or is strictly larger is an open question, connected with the broader problem of derandomization.</p>
+<h2>Witness viewpoint</h2>
+<p>An alternative characterization uses a polynomial-time probabilistic "witness" algorithm: the problem is in ZPP if the algorithm outputs YES, NO, or "unknown," is correct whenever it commits to an answer, and answers "unknown" with probability at most one half, so that a constant expected number of independent repetitions yields an answer with high probability.</p>
+<h2>History</h2>
+<p>The class was introduced by John Gill in his 1977 work on probabilistic Turing machines, which also introduced RP, co-RP, and BPP. ZPP's name derives from "zero-error probabilistic polynomial time".</p>
+<p><i>See also:</i> RP (complexity); BPP (complexity); Las Vegas algorithm; Computational complexity theory; Derandomization.</p>
+</div>
+</body>
+</html>

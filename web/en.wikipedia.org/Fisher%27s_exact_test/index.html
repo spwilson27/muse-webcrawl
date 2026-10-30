@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fisher's exact test - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+.mw-body { background: #fff; max-width: 960px; margin: 0 auto; padding: 24px 32px 48px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.4em; }
+figure.hero { text-align: center; margin: 12px 0; }
+figure.hero img { max-width: 420px; width: 100%; background: #eaecf0; border: 1px solid #a2a9b1; padding: 24px 0; }
+figcaption { font-size: 85%; color: #54595d; font-family: sans-serif; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.small { font-size: 85%; color: #54595d; }
+table.data { border-collapse: collapse; margin: 12px auto; font-family: sans-serif; font-size: 90%; }
+table.data td, table.data th { border: 1px solid #a2a9b1; padding: 4px 12px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Fisher's exact test</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<figure class="hero"><img src="images/fishers-exact-test.png" alt="Fisher's exact test hero image (placeholder)"><figcaption>Fisher's exact test assesses association in a contingency table using the hypergeometric distribution.</figcaption></figure>
+<p><b>Fisher's exact test</b> is a statistical significance test used in the analysis of contingency tables. Although in practice it is employed when sample sizes are small, it is valid for all sample sizes. It is named after its inventor, Ronald Fisher, and is called "exact" because the significance of the deviation from a null hypothesis (such as independence between two categorical variables) can be calculated exactly, rather than relying on an approximation whose validity increases with sample size.</p>
+<h2>Purpose and assumptions</h2>
+<p>The test is applied to categorical data arranged in a contingency table, most commonly a 2 × 2 table, and evaluates whether the row and column variables are independent. Conditioning on the observed marginal totals, the count in a cell follows a hypergeometric distribution under the null hypothesis, which allows exact p-values to be computed by summing the probabilities of all tables with the same margins that are as extreme as, or more extreme than, the table observed.</p>
+<table class="data">
+<tr><th></th><th>Group A</th><th>Group B</th><th>Total</th></tr>
+<tr><th>Outcome 1</th><td>a</td><td>b</td><td>a + b</td></tr>
+<tr><th>Outcome 2</th><td>c</td><td>d</td><td>c + d</td></tr>
+<tr><th>Total</th><td>a + c</td><td>b + d</td><td>n</td></tr>
+</table>
+<h2>Example: the lady tasting tea</h2>
+<p>Fisher introduced the test in <i>The Design of Experiments</i> (1935) through the famous "lady tasting tea" experiment, in which Muriel Bristol claimed she could tell whether milk had been added to a cup before or after the tea. Fisher designed an experiment with eight cups to determine whether her success could plausibly be attributed to chance, computing the exact probability of each possible outcome under the null hypothesis of random guessing.</p>
+<h2>Comparison with the chi-squared test</h2>
+<p>Unlike Pearson's chi-squared test, which relies on a large-sample approximation and becomes unreliable when expected cell counts are small (conventionally below about five), Fisher's test gives an exact probability for any table size. For large tables and large samples the computation historically was prohibitive, but network algorithms and modern software have extended exact methods to larger problems; generalizations include the Fisher–Freeman–Halton test for r × c tables. Whether the test's conditioning on both margins is appropriate remains debated, and alternative unconditional exact tests, such as Barnard's test, are sometimes preferred for 2 × 2 tables.</p>
+<p class="small">See also: <a href="../Chi-squared_test/index.html">Chi-squared test</a> · <a href="../Contingency_table/index.html">Contingency table</a></p>
+</div>
+</body>
+</html>

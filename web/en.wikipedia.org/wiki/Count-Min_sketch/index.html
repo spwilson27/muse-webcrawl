@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Count–min sketch - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 8px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; }
+.infobox { float: right; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px; margin: 0 0 12px 16px; font-size: 0.88em; }
+.infobox img { width: 100%; height: auto; background: #eaecf0; }
+.infobox .caption { text-align: center; color: #54595d; font-size: 0.9em; }
+p { line-height: 1.6; }
+ul { line-height: 1.6; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Count–min sketch</h1>
+<div class="infobox">
+<img src="images/count-min-sketch.png" alt="Count–min sketch hero image (placeholder)">
+<div class="caption">A count–min sketch: each item increments one counter in every row; the estimate is the minimum.</div>
+</div>
+<p>The <b>count–min sketch</b> is a probabilistic data structure that serves as a frequency table of events in a stream of data. It was invented in 2003 by Graham Cormode and S. Muthu Muthukrishnan. Instead of storing an exact count for every item, it uses a fixed-size two-dimensional array of counters together with several different hash functions, trading a small, one-sided error for greatly reduced memory.</p>
+<h2>Structure and operations</h2>
+<p>The sketch is a table of width w and depth d. To update an item, the item is hashed by each of the d hash functions, and the counter at the hashed position in each row is incremented. To estimate the frequency of an item, the values of its d counters are read and the minimum is returned. Because collisions can only add counts, the estimate never under-counts; with w = ⌈e/ε⌉ and d = ⌈ln(1/δ)⌉, the estimate is within an additive ε of the true count with probability at least 1 &minus; δ.</p>
+<h2>Applications</h2>
+<p>Count–min sketches are used for finding frequent items ("heavy hitters") in data streams, network traffic measurement, natural language processing, and approximate query processing in databases and streaming systems. Variants include the count sketch and conservative-update sketches, and the structure underlies approximate frequency tracking in systems such as Redis and Apache Spark.</p>
+<p><i>This article is a recreation from memory for archival purposes.</i></p>
+</div>
+</body>
+</html>

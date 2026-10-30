@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Superscalar processor - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 24px 32px 64px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; font-weight: normal; margin-top: 1.4em; }
+p { line-height: 1.6; font-size: 0.95em; }
+ul { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0 0 12px 16px; border: 1px solid #c8ccd1; padding: 4px; background: #f8f9fa; width: 240px; font-size: 0.8em; }
+.thumb img { width: 100%; }
+.infobox { float: right; clear: right; margin: 0 0 12px 16px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px; width: 260px; font-size: 0.85em; }
+.ref { font-size: 0.8em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Superscalar processor</h1>
+<div class="thumb"><img src="images/superscalar-processor.png" alt="Superscalar processor hero image (placeholder)"><div>Diagram of a superscalar pipeline issuing multiple instructions per clock cycle to parallel execution units.</div></div>
+<p>A <b>superscalar processor</b> is a CPU design that implements a form of parallelism called instruction-level parallelism within a single processor, allowing it to execute more than one instruction per clock cycle. The processor fetches, decodes, and dispatches several instructions at once to multiple redundant functional units — such as several arithmetic logic units, load-store units, and floating-point units — provided the instructions are independent and do not contend for the same resources.</p>
+<h2>History</h2>
+<p>The CDC 6600 (1964), designed by Seymour Cray, is often cited as an early superscalar-like design because it could issue one instruction per cycle to multiple functional units. The term "superscalar" entered common use in the late 1980s. Early commercial superscalar machines included the IBM RS/6000 (1990) and the Intel Pentium (1993), which had dual integer pipelines. Superscalar design, combined with deep pipelining, became the dominant approach to high-performance general-purpose computing in the 1990s.</p>
+<h2>Design considerations</h2>
+<p>To sustain multiple instruction issues per cycle, a superscalar processor must check for data dependencies (hazards) between instructions in the issue window, predict branches, fetch instructions across predicted paths, and often rename registers to remove false dependencies. Many designs execute instructions out of order, buffering them in reservation stations or reorder buffers so that independent instructions can proceed while others wait on memory or long-latency operations. The width of the machine — the maximum number of instructions issued per cycle — is limited by dependency checking complexity, power consumption, and the amount of parallelism available in typical programs.</p>
+<h2>Limitations</h2>
+<p>Superscalar execution is bounded by the instruction-level parallelism inherent in code: control dependencies, memory dependencies, and long-latency cache misses reduce achievable throughput. Increasing issue width yields diminishing returns, which led the industry toward multicore designs in the mid-2000s once power and complexity walls were reached.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Instruction-level_parallelism/index.html">Instruction-level parallelism</a></li>
+<li><a href="../Out-of-order_execution/index.html">Out-of-order execution</a></li>
+<li><a href="../Very_long_instruction_word/index.html">Very long instruction word</a></li>
+<li><a href="../Pipeline_(computing)/index.html">Pipelining</a></li>
+</ul>
+<p class="ref">Categories: Computer architecture | Instruction processing</p>
+</div>
+</body>
+</html>

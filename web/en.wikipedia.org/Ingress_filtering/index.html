@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ingress filtering - Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a7d7f9; padding-bottom: 4px; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; }
+p { font-size: 15px; line-height: 1.6; }
+.hero { display: block; margin: 12px 0; max-width: 100%; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Ingress filtering</h1>
+<img class="hero" src="images/ingress-filtering.png" alt="Ingress filtering hero image (placeholder)">
+<p>In computer networking, <b>ingress filtering</b> is a technique used to ensure that incoming packets are actually from the networks from which they claim to originate. A router or firewall performing ingress filtering checks the source address of packets entering a network against the prefixes expected on that interface and drops packets whose source addresses do not belong — for example, packets arriving from the Internet that claim internal private source addresses, or packets arriving from a customer that claim addresses not assigned to that customer.</p>
+<h2>Purpose</h2>
+<p>Ingress filtering is a principal defence against IP address spoofing. Spoofed source addresses are used in many attacks, including reflection and amplification denial-of-service attacks, in which responses are directed at a victim whose address was forged. The related practice of <b>egress filtering</b> applies the same check to outbound traffic: an Internet service provider blocks packets leaving its network whose source addresses are not legitimately assigned to its customers, preventing its own subscribers from spoofing others.</p>
+<h2>Best current practice</h2>
+<p>The technique is codified in the IETF's Best Current Practice documents: RFC 2827 (BCP 38, "Network Ingress Filtering: Defeating Denial of Service Attacks which employ IP Source Address Spoofing", 2000) and RFC 3704 (BCP 84), which extends the guidance to multihomed networks. Implementation methods include explicit access control lists, strict unicast reverse path forwarding (uRPF), which verifies that a route back to the source exists via the receiving interface, and feasible-path uRPF variants that tolerate asymmetric routing.</p>
+<h2>Deployment</h2>
+<p>Despite long-standing recommendations, ingress filtering is far from universal, partly because it offers the deploying network little direct benefit while benefiting everyone else — a classic collective-action problem. Measurement projects such as CAIDA's Spoofer project track the fraction of networks that permit spoofed traffic to leave or enter. Wide deployment of source address validation is regarded as one of the most effective structural measures for reducing spoofed-source denial-of-service traffic on the Internet.</p>
+</div>
+</body>
+</html>

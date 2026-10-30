@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FASTQ format - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+.mw-body { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-bottom: 0.25em; }
+h2 { font-size: 1.5em; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1em; }
+p { line-height: 1.6; font-size: 0.95em; }
+img.hero { max-width: 100%; }
+a { color: #3366cc; text-decoration: none; }
+ul { line-height: 1.6; font-size: 0.95em; }
+pre { background: #f8f9fa; border: 1px solid #a2a9b1; padding: 10px; overflow-x: auto; font-size: 0.85em; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>FASTQ format</h1>
+<img class="hero" src="images/fastq-format.png" alt="FASTQ format hero image (placeholder)">
+<p><b>FASTQ format</b> is a text-based format for storing both a biological sequence (usually nucleotide sequence) and its corresponding quality scores. Both the sequence letter and quality score are encoded with a single ASCII character for brevity. The format was originally developed at the Wellcome Trust Sanger Institute to bundle a FASTA-formatted sequence and its quality data, and has become the de facto standard for storing the output of high-throughput sequencing instruments such as the Illumina Genome Analyzer.</p>
+<h2>Format</h2>
+<p>A FASTQ file normally uses four lines per sequence:</p>
+<pre>@SEQ_ID
+GATTTGGGGTTCAAAGCAGTATCGATCAAATAGTAAATCCATTTGTTCAACTCACAGTTT
++
+!''*((((***+))%%%++)(%%%%).1***-+*''))**55CCF&gt;&gt;&gt;&gt;&gt;CCCCCCC65</pre>
+<p>Line 1 begins with '@' and is followed by a sequence identifier and optional description. Line 2 is the raw sequence. Line 3 begins with '+' and is optionally followed by the same identifier. Line 4 encodes the quality values for the sequence in line 2, with the same number of symbols.</p>
+<h2>Quality encoding</h2>
+<p>Quality scores represent the probability that the corresponding base call is incorrect, conventionally on the Phred scale, Q = −10 log<sub>10</sub> P. Different platforms and eras have used different ASCII offsets and ranges: the original Sanger (Phred+33) encoding, Illumina's earlier Phred+64 pipelines, and Solexa scores — a source of historic incompatibility. Modern data overwhelmingly uses Phred+33, standardized in part through the Sequence Read Archive. A formal description of the format and its variants was published by Cock et al. in 2010, "The Sanger FASTQ file format for sequences with quality scores."</p>
+<h2>Usage</h2>
+<p>FASTQ files are the input to read alignment, variant calling, and transcriptomics pipelines (often compressed with gzip), and are archived by the major sequence repositories. Paired-end data is stored in two files of matching reads, conventionally suffixed _1 and _2.</p>
+<h2>See also</h2>
+<ul>
+<li>FASTA format</li>
+<li>Phred quality score</li>
+<li>DNA sequencing</li>
+<li>Sequence Read Archive</li>
+</ul>
+</div>
+</body>
+</html>

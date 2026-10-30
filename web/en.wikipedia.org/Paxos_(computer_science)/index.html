@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Paxos (computer science) - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:2em auto;max-width:50em;padding:0 1em;line-height:1.6;color:#202122}
+h1{border-bottom:2px solid #a2a9b1;font-weight:normal}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal}
+.thumb{float:right;margin:0 0 1em 1em;border:1px solid #ccc;padding:.3em;background:#f8f9fa;font-size:.85em;max-width:16em}
+a{color:#0645ad;text-decoration:none}
+code{font-family:monospace;background:#f8f9fa;padding:0 .2em}
+</style>
+</head>
+<body>
+<h1>Paxos (computer science)</h1>
+<div class="thumb"><img src="images/paxos.png" alt="Paxos (computer science) hero image (placeholder)"><br>Paxos uses majority quorums to reach consensus</div>
+<p><b>Paxos</b> is a family of protocols for solving consensus in a network of unreliable or fallible processors. Consensus means agreeing on one result, and it is fundamental to distributed systems such as replicated databases, distributed locks, and leader election. The protocol was first described by Leslie Lamport in his 1998 paper "The Part-Time Parliament", written as the record of an imaginary legislature on the Greek island of Paxos, and later explained in "Paxos Made Simple" (2001).</p>
+<h2>Basic Paxos</h2>
+<p>In the simplest form, Basic Paxos, a set of processes takes three roles: <b>proposers</b>, which propose values; <b>acceptors</b>, which vote on proposals; and <b>learners</b>, which learn the chosen value. The protocol runs in two phases. In the <i>prepare</i> phase, a proposer selects a unique proposal number <i>n</i> and asks acceptors to promise not to accept proposals numbered lower than <i>n</i>; acceptors reply with any value they have already accepted. In the <i>accept</i> phase, the proposer sends a value — its own, or the value of the highest-numbered previously accepted proposal — and the value is chosen once a majority (quorum) of acceptors accepts it.</p>
+<p>Because any two majorities overlap, at most one value can be chosen, which guarantees safety. Progress (liveness) is not guaranteed if competing proposers keep pre-empting each other, so practical systems elect a distinguished leader.</p>
+<h2>Variants and use</h2>
+<p><b>Multi-Paxos</b> runs a sequence of Basic Paxos instances, typically under a stable leader, to build a replicated log or state machine. Related protocols include Fast Paxos, Cheap Paxos, and the alternative <b>Raft</b> algorithm, designed for understandability. Paxos or Paxos-like protocols underpin systems such as Google's Chubby and Spanner, Apache ZooKeeper (whose Zab protocol is closely related), and many consensus libraries used in production distributed systems.</p>
+</body>
+</html>

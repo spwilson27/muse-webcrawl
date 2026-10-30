@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Instruction cache - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine','Georgia',serif;background:#fff;color:#202122;margin:0;padding:20px 40px;line-height:1.6}
+.mw-body{max-width:960px;margin:0 auto}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:6px;font-weight:normal}
+h2{font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+p{font-size:15px;margin:10px 0}
+ul{font-size:15px}
+img.hero{display:block;max-width:420px;width:100%;border:1px solid #c8ccd1;background:#f8f9fa;padding:8px;margin:10px 0}
+.siteSub{font-size:12px;color:#54595d}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="mw-body">
+<p class="siteSub">From Wikipedia, the free encyclopedia</p>
+<h1>Instruction cache</h1>
+<img class="hero" src="images/instruction-cache.png" alt="Instruction cache hero image (placeholder)">
+<p>An <b>instruction cache</b>, commonly called an <b>I-cache</b>, is a hardware cache used by a CPU to speed up access to instructions stored in slower main memory. It holds copies of recently or frequently fetched instructions so that the fetch stage of the processor pipeline can proceed without waiting for memory.</p>
+<h2>Design</h2>
+<p>Instruction caches exploit the locality of reference of program code: loops and frequently called routines tend to be executed repeatedly, so their instructions remain in the cache. Modern processors use a split L1 cache design, with separate instruction and data caches (a modified Harvard architecture), which allows simultaneous instruction fetch and data access. Larger, unified caches at the L2 and L3 levels back the L1 I-cache.</p>
+<h2>Operation</h2>
+<p>When the processor fetches an instruction at a given virtual or physical address, it first checks the I-cache. On a hit, the instruction is delivered immediately; on a miss, a cache line (typically 32–128 bytes) is loaded from a lower level of the memory hierarchy. Prefetching and branch prediction work with the I-cache to keep the pipeline supplied, fetching instructions along predicted execution paths.</p>
+<h2>Coherence issues</h2>
+<p>Because instruction caches may hold copies of code that is modified in memory—by a loader writing a new program, a just-in-time compiler, or self-modifying code—architectures must ensure coherence between the data and instruction caches, sometimes requiring explicit cache-flush or "fence" instructions.</p>
+<h2>See also</h2>
+<ul>
+<li>CPU cache</li>
+<li>Cache (computing)</li>
+<li>Branch predictor</li>
+<li>Memory hierarchy</li>
+</ul>
+</div>
+</body>
+</html>

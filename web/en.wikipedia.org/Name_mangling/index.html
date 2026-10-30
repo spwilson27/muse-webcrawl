@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Name mangling - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f8f9fa;color:#202122}
+header{background:#fff;border-bottom:1px solid #a7d7f9;padding:14px 28px}
+h1{font-size:1.9em;margin:0;font-family:'Linux Libertine',Georgia,serif}
+main{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;line-height:1.6}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-family:'Linux Libertine',Georgia,serif}
+.hero{display:block;max-width:480px;width:100%;margin:16px auto;border:1px solid #c8ccd1;background:#eaecf0;padding:8px;text-align:center}
+a{color:#0645ad;text-decoration:none}
+code{background:#eaecf0;padding:1px 4px}
+footer{max-width:960px;margin:0 auto;padding:16px 32px;font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<header><h1>Name mangling</h1></header>
+<main>
+<img class="hero" src="images/name-mangling.png" alt="Name mangling hero image (placeholder)">
+<p>In compiler construction, <b>name mangling</b> (also called <b>name decoration</b>) is a technique used to solve various problems caused by the need to resolve unique names for programming entities in modern programming languages. It provides a way of encoding additional information in the name of a function, structure, class or another data type in order to pass more semantic information from the compiler to the linker.</p>
+<h2>Rationale</h2>
+<p>Languages such as C++ support function overloading, namespaces and classes, so several distinct entities can share the same source-level name. Because linkers traditionally work with flat, unique symbol names inherited from C, the compiler encodes the namespace, class, and parameter types into the symbol itself. For example, in the Itanium C++ ABI used by GCC and Clang, a function <code>void f(int)</code> in namespace <code>ns</code> becomes a symbol resembling <code>_ZN2ns1fEi</code>.</p>
+<h2>Schemes</h2>
+<p>There is no single standard: Microsoft Visual C++ uses a different scheme (symbols beginning with <code>?</code>) from the Itanium ABI, and languages such as Rust and Swift define their own mangling. Tools such as <code>c++filt</code> can demangle names back into human-readable form. Mangling also affects interoperability: functions intended to be called from C are declared <code>extern "C"</code> to disable mangling, and differences between compilers' schemes are a major reason C++ libraries are generally not binary-compatible across compilers.</p>
+</main>
+<footer>From Wikipedia, the free encyclopedia (recreated from memory).</footer>
+</body>
+</html>

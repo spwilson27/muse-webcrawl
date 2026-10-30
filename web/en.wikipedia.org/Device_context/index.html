@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Device context - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 900px; margin: 0 auto; background: #fff; padding: 24px 32px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 8px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 0.95em; }
+img.hero { max-width: 300px; float: right; margin: 0 0 12px 16px; border: 1px solid #a2a9b1; padding: 4px; background: #f8f9fa; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Device context</h1>
+<img class="hero" src="images/device-context.png" alt="Device context hero image (placeholder)">
+<p>A <b>device context</b> (DC) is a structure in the Microsoft Windows Graphics Device Interface (GDI) that defines a set of graphic objects and their associated attributes, plus the graphic modes that affect output. It provides a layer of abstraction that allows an application to draw on a screen, printer, or other output device using the same drawing calls, regardless of the underlying hardware.</p>
+<h2>Concepts</h2>
+<p>A device context holds the currently selected pen, brush, font, bitmap, palette, and region, along with drawing attributes such as colours, mapping mode, and clipping. Applications obtain a device context — represented by a handle of type HDC — before painting and release it afterwards; functions such as BeginPaint or GetDC return one for a window's client area, while the CreateDC and CreateCompatibleDC functions create display or memory device contexts for offscreen drawing.</p>
+<h2>Usage</h2>
+<p>Because the device context stores state, typical GDI programming consists of selecting objects into the DC, issuing drawing primitives (lines, rectangles, text), and restoring the previous state. Modern Windows graphics frameworks such as Direct2D, WPF, and WinUI supersede GDI device contexts with device-independent rendering models, but the DC remains foundational to Win32 programming and is still used by much legacy and systems software.</p>
+<h2>See also</h2>
+<p><a href="../Graphics_Device_Interface/index.html">Graphics Device Interface</a> &middot; <a href="../Windows_API/index.html">Windows API</a></p>
+</div>
+</body>
+</html>

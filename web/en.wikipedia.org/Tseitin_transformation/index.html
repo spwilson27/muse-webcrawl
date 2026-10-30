@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tseitin transformation - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0 auto; max-width: 860px; padding: 20px 30px; line-height: 1.6; color: #202122; background: #fff; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.imgwrap { text-align: center; margin: 12px 0; }
+.imgwrap img { max-width: 480px; width: 100%; border: 1px solid #ccc; background: #f0f0f0; }
+.caption { font-size: 0.85em; color: #54595d; }
+ul { padding-left: 1.6em; }
+code { background: #f8f9fa; padding: 0 3px; }
+</style>
+</head>
+<body>
+<h1>Tseitin transformation</h1>
+<div class="imgwrap"><img src="images/tseitin-transformation-circuit.png" alt="Tseitin transformation hero image (placeholder)"><div class="caption">The Tseitin transformation introduces a fresh variable for each gate or subformula of a circuit and encodes their relationships in CNF.</div></div>
+<p>The <b>Tseitin transformation</b> (also called the <b>Tseitin encoding</b>) is a technique in mathematical logic and computer science for converting an arbitrary Boolean formula or circuit into an equisatisfiable formula in conjunctive normal form (CNF). It is named after the Russian mathematician Grigori Tseitin, who introduced it in 1968. Unlike naive CNF conversion, which can cause an exponential blow-up in formula size, the Tseitin transformation produces a CNF formula whose size is linear in the size of the original formula.</p>
+<h2>Method</h2>
+<p>The transformation works by introducing a fresh auxiliary variable for each subformula (or each gate of a Boolean circuit). For a subformula such as <code>c = a ∧ b</code>, clauses are added that enforce the equivalence between the new variable and the combination of the variables representing its inputs: <code>(¬c ∨ a)</code>, <code>(¬c ∨ b)</code> and <code>(c ∨ ¬a ∨ ¬b)</code>. Similar small clause sets encode disjunction, negation and other connectives. Finally, a unit clause asserts that the variable representing the whole formula is true.</p>
+<h2>Properties</h2>
+<p>The resulting CNF is <i>equisatisfiable</i> with the original formula — it is satisfiable if and only if the original is — but it is not logically equivalent, because it contains extra variables. Every satisfying assignment of the original can be extended to one of the CNF, and restricting a satisfying assignment of the CNF to the original variables satisfies the original. The transformation is fundamental to the practical use of SAT solvers, which require CNF input: hardware circuits, planning problems and verification conditions are routinely encoded into CNF using Tseitin-style introduction of auxiliary variables. A related polynomial-size encoding was also described by J. Plaisted and S. Greenbaum.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Conjunctive_normal_form/index.html">Conjunctive normal form</a></li>
+<li><a href="../Boolean_satisfiability_problem/index.html">Boolean satisfiability problem</a></li>
+<li><a href="../SAT_solver/index.html">SAT solver</a></li>
+</ul>
+</body>
+</html>

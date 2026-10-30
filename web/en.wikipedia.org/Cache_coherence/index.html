@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cache coherence - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:760px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}
+h1{font-family:'Linux Libertine',Georgia,serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal}
+a{color:#0645ad;text-decoration:none}
+.hero{display:block;margin:1em auto;max-width:100%}
+</style>
+</head>
+<body>
+<h1>Cache coherence</h1>
+<img class="hero" src="images/cache-coherence.png" alt="Cache coherence hero image (placeholder)">
+<p>In computer architecture, <b>cache coherence</b> is the uniformity of shared resource data that ends up stored in multiple local caches. In a multiprocessor system, each processor has its own cache of main memory; when one processor modifies data, other copies must be invalidated or updated so that every processor sees a consistent view. Maintaining coherence is one of the central problems of shared-memory multiprocessor design.</p>
+<h2>Coherence requirements</h2>
+<p>A system is coherent if a read of a location returns the most recent write to that location (from any processor), writes to the same location are serialized in the same order for all processors, and causality is preserved. Coherence is distinct from the broader memory consistency model, which governs the ordering of accesses to different locations.</p>
+<h2>Mechanisms</h2>
+<p>Two main strategies are used. <b>Snooping</b> protocols suit bus-based systems: each cache controller monitors ("snoops") a shared bus for transactions affecting lines it holds, updating their state. <b>Directory-based</b> protocols scale to larger systems by keeping, in a central or distributed directory, a record of which caches hold each block and its state, so updates and invalidations can be sent point-to-point.</p>
+<p>Protocols track each cache line in states such as those of the widely used MESI protocol — Modified (dirty, exclusive), Exclusive (clean, exclusive), Shared (clean, possibly replicated) and Invalid — and its extensions (MOESI, MESIF) add states to reduce traffic. Invalidation-based protocols discard other copies on write; update protocols instead broadcast new values, which generally wastes bandwidth and is less common.</p>
+</body>
+</html>

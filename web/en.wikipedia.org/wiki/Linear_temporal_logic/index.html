@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Linear temporal logic - Wikipedia</title>
+<style>
+body { font-family: -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #202122; background: #fff; }
+.mw-body { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; }
+h1 { font-family: Georgia, 'Times New Roman', serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 28px; margin-bottom: 4px; }
+h2 { font-family: Georgia, 'Times New Roman', serif; font-weight: normal; border-bottom: 1px solid #eaecf0; padding-bottom: 3px; font-size: 22px; margin-top: 28px; }
+p { margin: 8px 0; }
+.hero { width: 100%; max-width: 400px; border: 1px solid #c8ccd1; background: #eaecf0; display: block; margin: 12px 0; }
+ul { margin: 6px 0 6px 20px; }
+a { color: #3366cc; text-decoration: none; }
+.note { font-size: 90%; color: #54595d; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Linear temporal logic</h1>
+<p class="note">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/linear-temporal-logic.png" alt="Linear temporal logic hero image (placeholder)">
+<p>In logic, <b>linear temporal logic</b> (<b>LTL</b>) is a modal temporal logic with modalities referring to time. It is used to encode statements about the future of paths in a system, such as "a request will eventually be granted" or "an event always eventually occurs." LTL was proposed by Amir Pnueli in 1977 for the formal verification of computer programs.</p>
+<h2>Syntax and operators</h2>
+<p>LTL extends propositional logic with unary temporal operators: <b>X</b> φ ("next": φ holds at the next moment), <b>G</b> φ ("globally": φ always holds from now on), <b>F</b> φ ("finally/eventually": φ will hold at some future moment), and the binary operator φ <b>U</b> ψ ("until": φ holds continuously until ψ becomes true). Formulas are evaluated over infinite sequences of states (paths), which is what makes the logic "linear": at any moment the future is a single sequence rather than a branching tree.</p>
+<h2>Applications</h2>
+<p>LTL is the principal specification language of the model checker SPIN and is widely used in hardware and software verification, together with its branching-time counterpart CTL. Properties such as safety (nothing bad ever happens, G¬bad) and liveness (something good eventually happens, F good) are canonically expressed in LTL. Model checking an LTL formula against a finite-state system is PSPACE-complete; the standard algorithm translates the negated formula into a Büchi automaton and checks emptiness of its product with the system.</p>
+<h2>See also</h2>
+<ul>
+<li>Computation tree logic</li>
+<li>Model checking</li>
+<li>Temporal logic</li>
+<li>Büchi automaton</li>
+</ul>
+</div>
+</body>
+</html>

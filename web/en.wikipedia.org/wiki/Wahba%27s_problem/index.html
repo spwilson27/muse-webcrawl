@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wahba's Problem - Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+.mw-body { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+p { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.catlinks { border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.4em; font-size: 0.85em; margin-top: 1.5em; }
+</style>
+</head>
+<body>
+<div class="mw-body">
+<h1>Wahba's problem</h1>
+<p><b>Wahba's problem</b>, first posed by Grace Wahba in 1965, concerns the determination of a rotation matrix (attitude) from a set of vector observations. Given two sets of vectors — measurements made in a body-fixed frame and corresponding reference vectors known in an inertial frame — the problem is to find the rotation matrix <i>R</i> that best maps one set onto the other in a least-squares sense, minimizing a loss function weighted by the confidence in each measurement.</p>
+<img src="images/wahba-problem.png" alt="Wahba's problem hero image (placeholder)">
+<h2>Formulation</h2>
+<p>Given reference vectors <i>v<sub>i</sub></i> and observed vectors <i>w<sub>i</sub></i>, with weights <i>a<sub>i</sub></i> summing to one, Wahba's loss function is:</p>
+<p><i>L(R) = &frac12; &Sigma; a<sub>i</sub> |w<sub>i</sub> &minus; R v<sub>i</sub>|&sup2;</i></p>
+<p>The optimal rotation minimizes this loss subject to <i>R</i> being an orthogonal matrix with determinant +1.</p>
+<h2>Solutions</h2>
+<p>Several algorithms solve Wahba's problem, including:</p>
+<ul>
+<li><b>Davenport's q-method</b> – formulates the problem using quaternions and finds the optimal attitude as the eigenvector of a 4&times;4 matrix.</li>
+<li><b>QUEST</b> (Quaternion Estimator) – a computationally faster algorithm by Malcolm Shuster, widely used in spacecraft.</li>
+<li><b>SVD method</b> – based on the singular value decomposition of the attitude profile matrix.</li>
+<li><b>FOAM, ESOQ and related methods</b> – later refinements for speed and robustness.</li>
+</ul>
+<h2>Applications</h2>
+<p>Wahba's problem is central to spacecraft attitude determination using star trackers, sun sensors, and magnetometers, and also appears in robotics, computer vision, and point set registration.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Grace_Wahba">Grace Wahba</a></li>
+<li><a href="../Orthogonal_Procrustes_problem">Orthogonal Procrustes problem</a></li>
+<li><a href="../Attitude_control">Attitude control</a></li>
+</ul>
+<div class="catlinks">Categories: Rotation in three dimensions | Spaceflight | Estimation theory</div>
+</div>
+</body>
+</html>

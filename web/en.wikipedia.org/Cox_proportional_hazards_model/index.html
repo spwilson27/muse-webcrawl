@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cox proportional hazards model - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:2em auto;max-width:820px;padding:0 1em;color:#222;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #aaa;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #ccc;padding-bottom:.15em;margin-top:1.4em}
+.infobox{float:right;width:280px;border:1px solid #aaa;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.9em}
+.infobox th{text-align:left;vertical-align:top;padding-right:.5em}
+a{color:#0645ad;text-decoration:none}
+ul{margin:.4em 0}
+code{font-family:monospace;background:#f4f4f4;padding:0 .2em}
+</style>
+</head>
+<body>
+<h1>Cox proportional hazards model</h1>
+<img src="images/cox-proportional-hazards-model.png" alt="Cox proportional hazards model hero image (placeholder)">
+<table class="infobox">
+<tr><th>Field</th><td>Statistics, survival analysis</td></tr>
+<tr><th>Proposed by</th><td>David Cox (1972)</td></tr>
+<tr><th>Estimator</th><td>Partial likelihood</td></tr>
+</table>
+<p>The <b>Cox proportional hazards model</b> is a regression model commonly used in medical statistics for investigating the association between the survival time of patients and one or more predictor variables. Proposed by Sir David Cox in his landmark 1972 paper "Regression Models and Life-Tables", it is a semiparametric model: the hazard at time t for an individual with covariates X is modelled as h(t|X) = h<sub>0</sub>(t) · exp(β<sub>1</sub>X<sub>1</sub> + … + β<sub>p</sub>X<sub>p</sub>), where the baseline hazard h<sub>0</sub>(t) is left unspecified.</p>
+<h2>Proportional hazards assumption</h2>
+<p>The model assumes that the hazard ratio between any two individuals is constant over time — covariates act multiplicatively on the hazard. This assumption can be checked, for example, using Schoenfeld residuals or by inspecting log-log survival plots. Extensions allow time-varying coefficients and time-dependent covariates when the assumption fails.</p>
+<h2>Estimation</h2>
+<p>Cox showed that the regression coefficients β can be estimated by maximising a <b>partial likelihood</b> that depends only on the ordering of event times, without estimating the baseline hazard. Exponentiated coefficients are interpreted as hazard ratios: a value above 1 indicates a higher instantaneous event rate associated with the covariate. Ties in event times are handled by the Breslow or Efron approximations.</p>
+<h2>Applications</h2>
+<p>The model is a standard tool in clinical trials, epidemiology, and reliability engineering, and is implemented in all major statistical packages. The baseline survival function can subsequently be estimated with the Breslow estimator.</p>
+<h2>See also</h2>
+<ul>
+<li>Survival analysis</li>
+<li>Hazard ratio</li>
+<li>Log-rank test</li>
+</ul>
+</body>
+</html>

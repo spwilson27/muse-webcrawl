@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Object lifetime - Wikipedia</title>
+<style>
+body { font-family: 'Linux Libertine', Georgia, serif; max-width: 860px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; background: #fff; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; }
+h2 { font-size: 1.5em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.2em; }
+img { max-width: 100%; }
+a { color: #0645ad; text-decoration: none; }
+.refs { font-size: 0.85em; }
+</style>
+</head>
+<body>
+<h1>Object lifetime</h1>
+<img src="images/object-lifetime.png" alt="Object lifetime hero image (placeholder)">
+<p>In object-oriented programming, the <b>object lifetime</b> (or life cycle) of an object is the time between an object's creation and its destruction. Object lifetime is a central concern in languages with manual memory management, where it is the programmer's responsibility to destroy objects that are no longer needed; in languages with garbage collection, objects are destroyed automatically when they become unreachable.</p>
+<h2>Creation</h2>
+<p>Objects are created by allocating memory and then initialising it, typically via a constructor. The details of allocation and initialisation order differ between languages; in some, such as C++, creation can partly fail, raising questions about the state of a partially constructed object.</p>
+<h2>Destruction</h2>
+<p>Destruction generally involves finalisation — in C++, a destructor; in languages such as Java and C#, a finalizer — followed by deallocation of the memory. Deterministic destruction, as in C++, allows the RAII (Resource Acquisition Is Initialization) idiom, in which an object's destructor releases resources such as files or locks. Garbage-collected environments typically provide non-deterministic finalisation, so explicit resource management (for example, try-with-resources or <i>using</i> blocks) is used instead.</p>
+<h2>Lifetime problems</h2>
+<p>Errors in lifetime management include memory leaks, use-after-free, double free, and dangling references. Static program analysis, smart pointers, ownership systems (as in Rust), and conservative garbage collection are all techniques used to mitigate such errors.</p>
+<h2>See also</h2>
+<ul>
+<li>Memory management</li>
+<li>Garbage collection (computer science)</li>
+<li>Resource Acquisition Is Initialization</li>
+<li>Constructor (object-oriented programming)</li>
+</ul>
+<p class="refs"><i>This article is a recreation from memory of the Wikipedia article on object lifetime.</i></p>
+</body>
+</html>

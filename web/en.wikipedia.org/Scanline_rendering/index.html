@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scanline rendering - Wikipedia</title>
+<style>
+body { font-family: 'Segoe UI', Georgia, serif; margin: 0 auto; max-width: 980px; padding: 20px; color: #202122; line-height: 1.6; background: #fff; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.2em; }
+.hero { display: block; margin: 8px 0; max-width: 100%; }
+.small { font-size: 0.85em; color: #54595d; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<h1>Scanline rendering</h1>
+<img class="hero" src="images/scanline-rendering.png" alt="Scanline rendering hero image (placeholder)">
+<p><b>Scanline rendering</b> is an algorithm for visible surface determination in 3D computer graphics in which the rows (scanlines) of pixels of an image are processed sequentially, rather than the polygons of the scene one by one or each pixel individually. The geometry intersecting a given scanline is sorted and rendered as the scanline sweeps down the image.</p>
+<h2>Technique</h2>
+<p>In a typical implementation, polygons are projected and their edges inserted into an edge table bucketed by scanline. For each scanline, an active edge list maintains the polygon edges currently crossed by the line, sorted by depth or x-coordinate. Spans between edge intersections are filled, applying shading, texture mapping, and hidden-surface removal. Variants incorporate z-buffering or painter's-algorithm depth sorting within each scanline.</p>
+<h2>History and use</h2>
+<p>Scanline algorithms were foundational in early computer graphics because they required little memory at a time when storing a full framebuffer depth buffer was expensive. They underpinned production renderers such as Pixar's RenderMan (in its REYES architecture, which dices geometry into micropolygons processed largely scanline by scanline), and they remain relevant in embedded and real-time rasterisation where memory bandwidth is constrained.</p>
+<h2>Relation to other methods</h2>
+<p>Scanline rendering contrasts with ray tracing, which traces a ray per pixel, and with pure z-buffer rasterisation, which processes primitives in arbitrary order. Modern GPUs combine tiling and scanline-order traversal with per-pixel depth tests.</p>
+<p class="small">From Wikipedia, the free encyclopedia (recreated from memory).</p>
+</body>
+</html>
