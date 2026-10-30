@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Copy elision - Wikipedia</title><style>body{font-family:Georgia,serif;max-width:52em;margin:2em auto;padding:0 1em;line-height:1.6;color:#222}h1{font-family:sans-serif;border-bottom:2px solid #a2a9b1;padding-bottom:.2em}h2{font-family:sans-serif;border-bottom:1px solid #a2a9b1}.img{text-align:center;background:#f8f9fa;border:1px solid #c8ccd1;padding:1em;margin:1em 0;color:#555;font-style:italic}.ref{font-size:.9em;color:#555}</style></head>
+<body><h1>Copy elision</h1>
+<div class="img"><img src="images/copy-elision.png" alt="Copy elision (image placeholder)"><br>Image placeholder: Copy elision</div>
+<p><b>Copy elision</b>, also known as <b>copy omission</b>, is a compiler optimization technique used in the C++ programming language that allows the compiler to eliminate the copying of objects in certain situations, even if the copy would have visible side effects such as printing to standard output. It is one of the few exceptions to the "as-if" rule that permits a compiler to change program behaviour from the abstract machine semantics.</p>
+<h2>Return value optimization</h2>
+<p>The most common form of copy elision is <b>return value optimization</b> (RVO), where a function that returns an object by value constructs the returned object directly in the storage location where the caller expects the result, rather than constructing a temporary and copying or moving it. A related optimization, <b>named return value optimization</b> (NRVO), applies when a named local variable is returned.</p>
+<h2>History and standardization</h2>
+<p>Copy elision was permitted by the C++ standard since C++98 in specific cases, but compilers were free to choose whether to apply it. In C++17, certain forms of elision — notably for temporaries used to initialize an object of the same type (so-called "guaranteed copy elision") — became mandatory, changing the semantics so that no copy or move constructor need even exist in those cases.</p>
+<p class="ref">This page was recreated from memory as part of the muse-webcrawl project.</p>
+</body></html>

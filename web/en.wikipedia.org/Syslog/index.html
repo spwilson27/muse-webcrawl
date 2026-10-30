@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Syslog - Wikipedia</title><style>body{font-family:Georgia,serif;max-width:860px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{font-family:'Linux Libertine',serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #a2a9b1}img.hero{max-width:320px;float:right;margin:0 0 1em 1em;border:1px solid #c8ccd1;padding:4px;background:#f8f9fa}figure{float:right;margin:0 0 1em 1em}figcaption{font-size:.85em;color:#54595d;text-align:center}</style></head>
+<body><h1>Syslog</h1>
+<figure><img class="hero" src="images/syslog.png" alt="Syslog"><figcaption>Syslog</figcaption></figure>
+
+<p>In computing, <b>syslog</b> (short for "system log") is a standard for message logging that allows separation of the software that generates messages, the system that stores them, and the software that reports and analyses them. Each message is tagged with a facility code identifying the type of program generating it and assigned a severity level.</p>
+<h2>History</h2>
+<p>Syslog originated in the 1980s as part of the Sendmail project, written by Eric Allman, and became the de facto logging standard on Unix and Unix-like systems through the syslogd daemon, before being documented by the IETF in RFC 3164 (2001, the "BSD syslog" protocol) and standardised in RFC 5424 (2009).</p>
+<h2>Mechanism</h2>
+<p>Programs send short log messages, traditionally under 1 KB, to a local syslog daemon, which may write them to files (commonly under /var/log), display them on a console, or forward them over a network to a central log host, typically on UDP port 514. Messages carry a priority value encoding one of 24 facilities (such as kern, user, mail, daemon, auth, and local0–local7) and one of eight severity levels, from Emergency (0) down to Debug (7).</p>
+<h2>Successors and related tools</h2>
+<p>Modern implementations such as rsyslog and syslog-ng add reliable transport over TCP, TLS encryption, filtering, and structured output. On Linux systems using systemd, the journal (journald) largely supersedes syslog for local logging while retaining compatibility interfaces.</p>
+
+</body></html>

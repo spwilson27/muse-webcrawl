@@ -1,0 +1,11 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Asynchronous I/O - Wikipedia</title><style>body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}main{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px}h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:6px}h2{font-size:20px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:28px}p,li{line-height:1.6;font-size:15px}.hero{display:block;max-width:100%;margin:16px auto;border:1px solid #c8ccd1}.caption{text-align:center;font-size:12px;color:#54595d;margin-bottom:16px}.infobox{float:right;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 12px 16px;font-size:13px}.infobox th{text-align:left;padding-right:8px}footer{font-size:12px;color:#54595d;border-top:1px solid #a2a9b1;margin-top:32px;padding-top:8px}</style></head><body><main>
+<h1>Asynchronous I/O</h1>
+<img class="hero" src="images/asynchronous-io.png" alt="Hero image: diagram of non-blocking input/output operations">
+<div class="caption">Asynchronous I/O lets a process continue while transfers complete in the background</div>
+<p>In computer science, <b>asynchronous I/O</b> (also <b>non-blocking I/O</b>) is a form of input/output processing that permits other work to proceed before a transfer finishes, with completion signalled later. It contrasts with synchronous (blocking) I/O, in which a thread waits until each operation completes.</p>
+<h2>Forms and mechanisms</h2>
+<p>Approaches include readiness-based event notification (select, poll, epoll on Linux, kqueue on BSD, IOCP on Windows), completion-based interfaces (POSIX AIO, Linux io_uring, Windows overlapped I/O), and language-level constructs such as futures, promises, and async/await. Event-driven designs use these mechanisms to build servers that handle many connections per thread, avoiding the limits of the thread-per-connection model highlighted by the C10k problem.</p>
+<h2>Trade-offs</h2>
+<p>Asynchronous designs improve scalability and resource use but add complexity: control flow is fragmented into callbacks or state machines, error handling is harder, and for fast NVMe storage the distinction between blocking and non-blocking calls narrows.</p>
+<footer>Recreated from memory for the muse-webcrawl project.</footer>
+</main></body></html>
