@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NewtonScript - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:820px;margin:0 auto;padding:20px;background:#fff;color:#202122;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{max-width:100%;border:1px solid #c8ccd1;background:#f8f9fa}
+pre{background:#f8f9fa;border:1px solid #c8ccd1;padding:10px;overflow:auto;font-size:0.9em}
+.infobox{float:right;width:260px;background:#f8f9fa;border:1px solid #a2a9b1;padding:10px;margin:0 0 12px 16px;font-size:0.88em}
+.infobox th{text-align:left;padding-right:8px}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>NewtonScript</h1>
+<p><b>NewtonScript</b> is a prototype-based programming language created by Walter Smith at Apple Computer for the Newton platform, which powered the MessagePad personal digital assistants released in the 1990s. The language was derived from the Self programming language but modified to be more practical for resource-constrained handheld devices and for programmers accustomed to procedural languages.</p>
+<img class="hero" src="images/newtonscript.png" alt="[image placeholder: Apple Newton MessagePad running a NewtonScript application]">
+<div class="infobox">
+<table>
+<tr><th>Paradigm</th><td>Prototype-based, object-oriented</td></tr>
+<tr><th>Designed by</th><td>Walter Smith</td></tr>
+<tr><th>Developer</th><td>Apple Computer</td></tr>
+<tr><th>First appeared</th><td>1993</td></tr>
+<tr><th>Influenced by</th><td>Self, Dylan, Lisp</td></tr>
+</table>
+</div>
+<h2>Design</h2>
+<p>NewtonScript uses prototype-based inheritance: objects, called <i>frames</i>, are slot-based structures that inherit from other frames through a <code>_proto</code> slot. Functions are first-class values, and the language integrates tightly with the Newton view system and its persistent object store known as "soups". Garbage collection and a compact bytecode virtual machine allowed programs to run within the MessagePad's limited memory.</p>
+<h2>Example</h2>
+<pre>
+helloWorld := { _proto: protoTextButton,
+               text: "Hello World",
+               buttonClickScript: func()
+                 begin
+                   :Notify(kNotifyAlert, "NewtonScript", "Hello World!");
+                 end };
+</pre>
+<h2>Legacy</h2>
+<p>Although the Newton line was discontinued in 1998, NewtonScript influenced later prototype-based languages and remains of interest to retrocomputing enthusiasts, with emulators and community toolchains keeping the platform accessible.</p>
+<p class="small">From Wikipedia, the free encyclopedia (recreated from memory).</p>
+</body>
+</html>
