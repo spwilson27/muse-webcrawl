@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Structural recursion - Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine','Georgia',serif;margin:0;color:#202122;background:#fff}
+.wrap{max-width:960px;margin:0 auto;padding:24px}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{font-size:1.5em;border-bottom:1px solid #a2a9b1;font-weight:normal}
+p,li{font-family:sans-serif;font-size:0.95em;line-height:1.6}
+.hero{display:block;margin:16px auto;max-width:480px;background:#eaecf0;border:1px solid #c8ccd1;padding:40px;text-align:center;color:#54595d;font-family:sans-serif}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Structural recursion</h1>
+<img class="hero" src="images/structural-recursion.png" alt="Recursion over a tree data structure">
+<p>In computer science, <b>structural recursion</b> is a method of recursion where the recursive call is made on a structurally smaller piece of the input — a subterm of the original data, such as the tail of a list or a subtree of a tree. Because the data consumed is finite and each call operates on a strictly smaller component, functions defined by structural recursion are guaranteed to terminate, provided their other operations terminate.</p>
+<h2>Examples</h2>
+<p>Computing the length of a list is structurally recursive: the length of an empty list is zero, and the length of a list with head x and tail xs is one plus the length of xs. Similarly, summing the nodes of a binary tree recurses on the left and right subtrees. These definitions mirror the inductive definition of the data type itself, and in functional programming they correspond to the <i>fold</i> or <i>catamorphism</i> pattern.</p>
+<h2>Relation to primitive recursion</h2>
+<p>Structural recursion is closely related to primitive recursion on the natural numbers, where the recursive call is on the immediate predecessor. Languages and proof assistants that enforce totality — such as Agda and Coq — accept recursive definitions that are structurally decreasing, allowing them to guarantee that every well-typed program terminates.</p>
+<h2>Limitations</h2>
+<p>Some natural algorithms do not obviously recurse on direct subcomponents: quicksort recurses on partitions of its input, and the Ackermann function recurses with arguments that are smaller only in a lexicographic sense. Such programs require more general termination arguments, such as well-founded recursion, and fall outside the simplest form of structural recursion.</p>
+<p><i>This article is a recreation from memory of the Wikipedia article on structural recursion.</i></p>
+</div>
+</body>
+</html>
