@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Kleptography - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:900px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Kleptography</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Kleptography</b> is the study of stealing information securely and subliminally, in particular through the design of cryptographic systems that secretly leak information to an attacker. The term was introduced by Adam Young and Moti Yung in 1996, in the context of "cryptovirology". A kleptographic attack embeds a hidden "backdoor" in a cryptosystem such that the outputs appear secure to every observer except the attacker, who can recover secret keys from public outputs alone.</p>
+<h2>SETUP attacks</h2>
+<p>Young and Yung formalised the notion with the <b>SETUP</b> (Secretly Embedded Trapdoor with Universal Protection) attack. In a SETUP attack, a device's key generation is modified so that generated keys leak the device's secret through apparently random public values — for example, by encrypting the secret key under the attacker's public key and embedding the ciphertext in a nonce or public key. The leakage is computationally indistinguishable from honest behaviour, so even the device's owner cannot detect it by black-box testing.</p>
+<h2>Examples and relevance</h2>
+<p>The canonical real-world case debated in this framework is the Dual_EC_DRBG random number generator, standardised by NIST and later shown to contain constants that could serve as a kleptographic backdoor — a possibility confirmed by documents leaked in 2013, after which the standard was withdrawn. Kleptography motivates the practice of using "nothing-up-my-sleeve" numbers and verifiable, transparent parameter generation in standards.</p>
+<h2>Countermeasures</h2>
+<p>Defences include open implementations, reproducible key generation, algorithms whose parameters are derived from public seeds, and protocols that combine randomness from multiple independent parties so that no single implementer can bias the output.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Cryptovirology/index.html">Cryptovirology</a></li>
+<li><a href="../Dual_EC_DRBG/index.html">Dual EC DRBG</a></li>
+<li><a href="../Backdoor_(computing)/index.html">Backdoor (computing)</a></li>
+</ul>
+</body>
+</html>

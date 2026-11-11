@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Estimating equations - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1em 2em 3em; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: 'Linux Libertine','Georgia',serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: 'Linux Libertine','Georgia',serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.math { font-family: 'Times New Roman', serif; font-style: italic; }
+img { max-width: 100%; }
+.lead { font-size: 95%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Estimating equations</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p class="lead">In <a href="../Statistics/index.html">statistics</a>, the method of <b>estimating equations</b> is a way of specifying how the parameters of a statistical model should be estimated. The term is most often associated with the generalized estimating equations (GEE) approach introduced by Liang and Zeger in 1986 for analysing correlated data, especially longitudinal data.</p>
+
+<h2>Definition</h2>
+<p>An estimating equation is an equation of the form <span class="math">&Sigma;<sub>i</sub> &psi;(X<sub>i</sub>, &theta;) = 0</span>, where <span class="math">&psi;</span> is a vector-valued function of the data and the unknown parameters <span class="math">&theta;</span>, chosen so that its expectation is zero at the true parameter value. Solving the equation yields an estimator of <span class="math">&theta;</span>. Many classical estimation procedures can be written in this form: the score equations of <a href="../Maximum_likelihood_estimation/index.html">maximum likelihood estimation</a>, the normal equations of <a href="../Least_squares/index.html">least squares</a>, and the moment conditions of the <a href="../Method_of_moments_(statistics)/index.html">method of moments</a> are all estimating equations.</p>
+<p>Because the estimating function is unbiased (has expectation zero at the truth), the resulting estimator is generally consistent under mild regularity conditions, and its asymptotic variance can be estimated using the so-called sandwich (or robust) variance estimator, which combines a model-based "bread" matrix with an empirical "meat" matrix based on the observed estimating functions.</p>
+
+<h2>Generalized estimating equations</h2>
+<p>Generalized estimating equations extend <a href="../Generalized_linear_model/index.html">generalized linear models</a> to situations where observations are correlated within clusters, as in longitudinal studies where the same subject is measured repeatedly. The method, proposed by Kung-Yee Liang and Scott Zeger in a pair of 1986 papers, specifies only the mean structure of the response and a "working" correlation matrix describing the within-cluster association; it does not require a full likelihood for the joint distribution.</p>
+<p>A notable consequence is that the estimator of the regression parameters remains consistent even if the working correlation structure is misspecified, provided the mean model is correct, because the sandwich variance estimator corrects the standard errors. This robustness made GEE a standard tool for population-averaged models in biostatistics and epidemiology, where interest centres on the average response across the population rather than on subject-specific effects.</p>
+
+<h2>Properties and theory</h2>
+<p>The asymptotic theory of estimating equations is closely related to that of M-estimators. Godambe's work on optimal estimating functions introduced a criterion for choosing the estimating function that minimises the asymptotic variance of the resulting estimator, anticipating the theory of quasi-likelihood. Quasi-likelihood, developed by Wedderburn in the 1970s, constructs estimating equations from a specified mean–variance relationship without specifying a full probability distribution, and GEE can be viewed as its multivariate extension to correlated responses.</p>
+
+<h2>Applications</h2>
+<p>Estimating equations are used widely in longitudinal and clustered data analysis, survey sampling, econometrics (via the generalized method of moments), and survival analysis. In econometrics, Hansen's generalized method of moments is a closely related framework in which parameters are estimated by setting sample analogues of population moment conditions to zero or as close to zero as possible.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Generalized_method_of_moments/index.html">Generalized method of moments</a></li>
+<li><a href="../M-estimator/index.html">M-estimator</a></li>
+<li><a href="../Quasi-likelihood/index.html">Quasi-likelihood</a></li>
+<li><a href="../Longitudinal_study/index.html">Longitudinal study</a></li>
+</ul>
+</div>
+</body>
+</html>

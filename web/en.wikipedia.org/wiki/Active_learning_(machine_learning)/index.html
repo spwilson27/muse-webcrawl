@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Active learning (machine learning) - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 960px; line-height: 1.6; color: #202122; }
+h1 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Active learning (machine learning)</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Active learning</b> is a special case of <a href="../Machine_learning/index.html">machine learning</a> in which a learning algorithm can interactively query a user (or some other information source) to label new data points with the desired outputs. In statistics literature, it is sometimes also called optimal experimental design. The information source is also called teacher or oracle.</p>
+<p>There are situations in which unlabeled data is abundant but manual labeling is expensive. In such a scenario, learning algorithms can actively query the user/teacher for labels. This type of iterative supervised learning is called active learning. Since the learner chooses the examples, the number of examples to learn a concept can often be much lower than the number required in normal supervised learning; with this approach, there is a risk that the algorithm is overwhelmed by uninformative examples.</p>
+<h2>Scenarios</h2>
+<p>Three main query scenarios are usually distinguished. In <i>stream-based selective sampling</i>, unlabeled examples arrive one at a time and the learner must decide immediately whether to request a label. In <i>pool-based sampling</i>, the learner ranks a large pool of unlabeled examples and selects the most informative ones for labeling in batches. In <i>membership query synthesis</i>, the learner generates its own examples and asks for their labels, which is practical in some domains but can produce instances that a human oracle finds meaningless.</p>
+<h2>Query strategies</h2>
+<p>Common criteria for selecting examples include <i>uncertainty sampling</i> — labeling the examples about which the current model is least confident; <i>query by committee</i> — training several models and labeling examples on which they disagree most; and <i>expected model change</i> or <i>expected error reduction</i>, which weigh the effect a label is expected to have on the model. Density-weighted methods combine informativeness with representativeness to avoid querying outliers.</p>
+<h2>Applications</h2>
+<p>Active learning is used in natural language processing, speech recognition, information extraction, image classification, and drug discovery — fields where labeling requires scarce expert time. It is conceptually related to reinforcement learning from human feedback and to human-in-the-loop machine learning more generally.</p>
+<p>See also: <a href="../Semi-supervised_learning/index.html">Semi-supervised learning</a> · <a href="../Supervised_learning/index.html">Supervised learning</a></p>
+</body>
+</html>

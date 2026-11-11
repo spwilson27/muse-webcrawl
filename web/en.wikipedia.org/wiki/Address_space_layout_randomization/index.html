@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Address space layout randomization - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 960px; line-height: 1.6; color: #202122; }
+h1 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Address space layout randomization</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Address space layout randomization</b> (<b>ASLR</b>) is a computer security technique involved in preventing exploitation of memory corruption vulnerabilities. In order to prevent an attacker from reliably jumping to, for example, a particular exploited function in memory, ASLR randomly arranges the address space positions of key data areas of a process, including the base of the executable and the positions of the stack, heap and libraries.</p>
+<h2>History</h2>
+<p>The PaX project first proposed and implemented ASLR for the Linux kernel in 2001. Address space randomisation subsequently entered mainstream operating systems: OpenBSD enabled it by default in 2003, the Linux kernel merged a basic form in 2005, Windows Vista added ASLR in 2007, and Mac OS X introduced partial library randomisation in Leopard with fuller randomisation in Lion. Mobile systems adopted it as well; iOS implemented ASLR from version 4.3, and Android from version 4.0 (with full support for position-independent executables in 5.0).</p>
+<h2>Effectiveness and limitations</h2>
+<p>ASLR works best on 64-bit systems, where the address space is large enough to provide substantial entropy. On 32-bit systems the number of bits available for randomisation is small, and researchers have shown that brute-force or partial-pointer-overwrite attacks can defeat it. Information leaks that disclose a single runtime address can also undermine ASLR, because libraries are often loaded at a consistent offset from a known base; this motivates complementary defences such as position-independent executables (PIE), which randomise the main executable's base, and fine-grained randomisation schemes proposed in the research literature.</p>
+<h2>Related techniques</h2>
+<p>ASLR is normally deployed together with a non-executable stack and heap (NX bit / DEP), stack canaries, and control-flow integrity measures as part of a defence-in-depth strategy against buffer overflow and return-oriented programming attacks.</p>
+<p>See also: <a href="../Buffer_overflow/index.html">Buffer overflow</a> · <a href="../Return-oriented_programming/index.html">Return-oriented programming</a> · <a href="../NX_bit/index.html">NX bit</a></p>
+</body>
+</html>

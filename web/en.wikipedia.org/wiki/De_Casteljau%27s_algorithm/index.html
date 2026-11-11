@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>De Casteljau's algorithm - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+header { background: #fff; border-bottom: 1px solid #a2a9b1; padding: 12px 24px; }
+header .site { font-family: sans-serif; font-size: 20px; }
+main { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 21px; border-bottom: 1px solid #eaecf0; padding-bottom: 3px; margin-top: 28px; }
+p, li { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px; font-size: 13px; overflow-x: auto; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia</span></header>
+<main>
+<h1>De Casteljau's algorithm</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>In the mathematical field of numerical analysis, <b>De Casteljau's algorithm</b> is a recursive method to evaluate polynomials in Bernstein form or Bézier curves, named after its inventor Paul de Casteljau. The algorithm is a numerically stable way to compute points on a Bézier curve by repeated linear interpolation between its control points.</p>
+<h2>Description</h2>
+<p>Given a Bézier curve of degree <i>n</i> with control points P<sub>0</sub>, …, P<sub>n</sub> and a parameter value <i>t</i>, the algorithm repeatedly interpolates between adjacent points of the current polygon:</p>
+<pre>P_i^(k) = (1 - t) * P_i^(k-1) + t * P_{i+1}^(k-1)</pre>
+<p>After <i>n</i> rounds, a single point remains: that point is the point B(<i>t</i>) on the curve. For a quadratic curve (three control points), one computes two interpolated points Q<sub>0</sub> and Q<sub>1</sub> along the control polygon, then interpolates between them to obtain the curve point. For a cubic, the process runs through three levels.</p>
+<h2>Subdivision and history</h2>
+<p>The intermediate points produced along the way are exactly the control points of two smaller Bézier curves that together make up the original curve split at B(<i>t</i>), which makes the algorithm the standard tool for subdividing curves in computer-aided design and rendering. De Casteljau developed the method in 1959 while working at the French car manufacturer Citroën, where he used it to design car body shapes; his work remained an unpublished company secret for years, while Pierre Bézier at Renault published a closely related formulation that gave the curves their name. The algorithm generalises to Bézier surfaces (via successive application along rows and columns) and to rational Bézier curves.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Bézier_curve/index.html">Bézier curve</a></li>
+<li><a href="../Paul_de_Casteljau/index.html">Paul de Casteljau</a></li>
+<li><a href="../Bernstein_polynomial/index.html">Bernstein polynomial</a></li>
+</ul>
+</main>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Stack frame - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+header { background: #f8f9fa; border-bottom: 1px solid #a2a9b1; padding: 12px 24px; }
+header .site { font-size: 1.4em; font-weight: bold; }
+main { max-width: 960px; margin: 0 auto; padding: 20px 24px; line-height: 1.6; }
+h1 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; border-bottom: 1px solid #eaecf0; padding-bottom: 3px; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+footer { border-top: 1px solid #a2a9b1; margin-top: 40px; padding: 12px 24px; font-size: 0.85em; color: #54595d; background: #f8f9fa; }
+code { background: #f8f9fa; padding: 1px 4px; }
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia</span> — The Free Encyclopedia</header>
+<main>
+<h1>Stack frame</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>A <b>stack frame</b> (also called an <b>activation record</b>) is a region of the call stack that stores the data associated with a single invocation of a subroutine: its parameters, local variables, saved registers, the return address, and often a pointer to the caller's frame. Stack frames are created when a function is called and destroyed when it returns, which makes the call stack a natural structure for nested and recursive calls.</p>
+
+<h2>Structure</h2>
+<p>A typical frame, as on x86 with the cdecl calling convention, contains (from high to low addresses, since the stack usually grows downward): the arguments pushed by the caller, the return address pushed by the call instruction, the saved value of the caller's frame pointer (base pointer, EBP/RBP), and space for local variables and saved callee-saved registers. The <b>stack pointer</b> (ESP/RSP) marks the current top of the stack, while the frame pointer provides a stable base from which arguments and locals are reached at fixed offsets during the function's execution.</p>
+
+<h2>Function prologue and epilogue</h2>
+<p>On entry, a compiled function executes a <i>prologue</i>: it pushes the old frame pointer, copies the stack pointer into the frame pointer, and subtracts from the stack pointer to reserve space for locals. Variants such as the "leaf" functions may skip the frame pointer entirely, using the stack pointer directly. The <i>epilogue</i> reverses the process, restoring registers and the caller's frame before returning. Debuggers and stack traces walk the chain of linked frames (sometimes using separate unwind metadata when frame pointers are omitted, as in optimized 64-bit code) to reconstruct the sequence of calls.</p>
+
+<h2>Overhead and security</h2>
+<p>Frames make recursion and reentrancy straightforward but cost memory per call, so very deep recursion can overflow the stack. Because frames place control data (return addresses, saved frame pointers) adjacent to writable buffers, they are the classic target of stack buffer overflow exploits; mitigations include stack canaries, non-executable stacks, and address-space layout randomization.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Call_stack/index.html">Call stack</a></li>
+<li><a href="../Calling_convention/index.html">Calling convention</a></li>
+<li><a href="../Stack_overflow/index.html">Stack overflow</a></li>
+<li><a href="../Tail_call/index.html">Tail call</a></li>
+</ul>
+</main>
+<footer>From Wikipedia, the free encyclopedia.</footer>
+</body>
+</html>

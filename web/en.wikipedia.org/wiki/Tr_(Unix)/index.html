@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>tr (Unix) - Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;max-width:860px;margin:0 auto;padding:20px 28px;color:#202122;background:#fff;line-height:1.6}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-bottom:6px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:26px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px 14px;margin:0 0 14px 18px;font-size:0.9em;width:250px}
+.infobox th{text-align:left;padding-right:10px;vertical-align:top}
+img{max-width:100%}
+.small{font-size:0.85em;color:#54595d}
+code{background:#f8f9fa;padding:1px 4px;font-size:0.95em}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;overflow-x:auto}
+</style>
+</head>
+<body>
+<h1>tr (Unix)</h1>
+<p class="small">From Wikipedia, the free encyclopedia</p>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<table class="infobox">
+<tr><th>Original author</th><td>Bell Labs</td></tr>
+<tr><th>Developers</th><td>Various open-source and commercial developers</td></tr>
+<tr><th>Platform</th><td>Unix, Unix-like</td></tr>
+<tr><th>Type</th><td>Command</td></tr>
+</table>
+<p><b>tr</b> is a command in Unix, Plan 9, Inferno, and Unix-like operating systems. It is an abbreviation of the word <i>translate</i> or <i>transliterate</i>, indicating its operation of replacing or removing specific characters in its input data set. The utility performs three main operations: translation of characters, deletion of characters, and squeezing of repeated characters into one.</p>
+<h2>Usage</h2>
+<p>The command reads standard input and writes to standard output. Its syntax is:</p>
+<pre>tr [options] "string1" ["string2"]</pre>
+<p>The first string specifies the characters to be replaced or deleted, and the second string, if present, specifies the characters they are replaced with, matched positionally. Character ranges such as <code>a-z</code> and character classes such as <code>[:upper:]</code> are supported.</p>
+<h2>Examples</h2>
+<p>Convert lowercase letters to uppercase:</p>
+<pre>$ echo 'hello' | tr 'a-z' 'A-Z'
+HELLO</pre>
+<p>Delete a set of characters with the <code>-d</code> option:</p>
+<pre>$ echo 'hello123' | tr -d '0-9'
+hello</pre>
+<p>Squeeze repeated characters into one with the <code>-s</code> option:</p>
+<pre>$ echo 'booook' | tr -s 'o'
+bok</pre>
+<h2>History</h2>
+<p>The tr utility first appeared in early versions of Unix developed at Bell Labs and was modeled on similar character-translation functions found in earlier systems. It is specified by POSIX and is included in the GNU coreutils package on Linux systems.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Sed/index.html">sed</a></li>
+<li><a href="../Coreutils/index.html">Coreutils</a></li>
+</ul>
+</body>
+</html>

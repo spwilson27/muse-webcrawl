@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>typedef - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; line-height: 1.6; }
+.container { max-width: 960px; margin: 0 auto; padding: 20px 40px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px; font-family: monospace; font-size: 0.9em; overflow-x: auto; }
+code { font-family: monospace; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 10px auto; max-width: 300px; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>typedef</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>typedef</b> is a reserved keyword in the programming languages C, C++, and Objective-C. It is used to create an additional name (<i>alias</i>) for another data type; it does not create a new type. As such, it is often used to simplify the syntax of declaring complex data structures consisting of <code>struct</code> and <code>union</code> types, although it is also commonly used to provide specific descriptive type names for integer data types of varying sizes.</p>
+<h2>Usage in C</h2>
+<p>The syntax of a typedef declaration follows the syntax of an ordinary variable declaration, preceded by the keyword <code>typedef</code>; the identifier that would name the variable instead names the new type alias. For example:</p>
+<pre>typedef int Length;
+Length l = 42;</pre>
+<p>A common use is to remove the need for the <code>struct</code> keyword in C when declaring variables of a structure type:</p>
+<pre>typedef struct {
+    int x;
+    int y;
+} Point;
+
+Point p = {10, 20};</pre>
+<p>typedef is also frequently used for function pointer types, which can otherwise have confusing syntax, and in portable code to define fixed-width integer aliases such as those standardized in the <code>&lt;stdint.h&gt;</code> header.</p>
+<h2>In C++</h2>
+<p>In C++, typedef remains available, but the <code>using</code> alias declaration introduced in C++11 is often preferred, especially because it supports alias templates:</p>
+<pre>using Length = int;</pre>
+<h2>See also</h2>
+<ul>
+<li><a href="../C_(programming_language)/index.html">C (programming language)</a></li>
+<li><a href="../Data_type/index.html">Data type</a></li>
+<li><a href="../Struct_(C_programming_language)/index.html">Struct (C programming language)</a></li>
+</ul>
+</div>
+</body>
+</html>

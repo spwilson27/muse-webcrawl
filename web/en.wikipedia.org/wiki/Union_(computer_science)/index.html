@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Union (computer science) - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fff; color: #202122; line-height: 1.6; }
+.container { max-width: 960px; margin: 0 auto; padding: 20px 40px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px; font-family: monospace; font-size: 0.9em; overflow-x: auto; }
+code { font-family: monospace; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 10px auto; max-width: 300px; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Union (computer science)</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>In computer science, a <b>union</b> is a value that may have any of several representations or formats within the same area of memory; that is, a data structure that can hold data of one of several types, but only one at a time. A program can treat the value as any of the types, although it is responsible for knowing which type it currently holds. Unions are supported in many programming languages, including C, C++, Pascal, and Rust, and contrast with records (structs), in which values of all members are stored simultaneously.</p>
+<h2>In C and C++</h2>
+<p>In C, a union is declared with the <code>union</code> keyword. All members share the same memory location, so the size of a union is the size of its largest member. Writing to one member and reading another reinterprets the stored bytes, a practice known as type punning:</p>
+<pre>union Value {
+    int i;
+    float f;
+    char str[20];
+};</pre>
+<p>Because only one member is valid at a time and the language does not track which one, programmers often combine a union with an enumerated "tag" in a surrounding struct, forming a <i>tagged union</i> (also called a variant or sum type). Since C11, C also supports anonymous unions. In C++, unions have additional rules: members with non-trivial constructors or destructors were historically prohibited, though restrictions were relaxed in C++11.</p>
+<h2>Uses</h2>
+<p>Unions are used to save memory when a value takes one of several mutually exclusive forms, to implement low-level views of the same data (for example, examining the bytes of a floating-point number), and in systems programming for hardware registers and protocol messages. Many modern languages provide safer sum types instead — such as Rust's <code>enum</code> or Haskell's algebraic data types — which check the active variant at compile or run time.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Tagged_union/index.html">Tagged union</a></li>
+<li><a href="../Algebraic_data_type/index.html">Algebraic data type</a></li>
+<li><a href="../Struct_(C_programming_language)/index.html">Struct (C programming language)</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DTS-HD Master Audio</title>
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f6f6f6; color: #202122; }
+  .wrap { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+  h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 4px; }
+  h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+  h3 { font-size: 17px; margin-top: 20px; }
+  p, li { line-height: 1.6; font-size: 15px; }
+  .infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 13px; margin: 0 0 16px 20px; }
+  .infobox caption, .infobox th { background: #b0c4de; padding: 6px; text-align: left; font-weight: bold; }
+  .infobox td, .infobox th { padding: 5px 8px; vertical-align: top; }
+  .infobox th[colspan] { text-align: center; }
+  img.hero { width: 100%; max-width: 640px; display: block; margin: 12px 0; background: #eaecf0; }
+  table.data { border-collapse: collapse; margin: 12px 0; }
+  table.data th, table.data td { border: 1px solid #a2a9b1; padding: 6px 10px; font-size: 14px; }
+  table.data th { background: #eaecf0; }
+  a { color: #0645ad; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .toc { border: 1px solid #a2a9b1; background: #f8f9fa; display: inline-block; padding: 10px 24px 10px 10px; font-size: 14px; }
+  .footer { color: #72777d; font-size: 12px; border-top: 1px solid #a2a9b1; margin-top: 40px; padding-top: 8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>DTS-HD Master Audio</h1>
+<p><b>DTS-HD Master Audio</b> is a multi-channel, lossless audio codec developed by DTS, Inc. (now part of Xperi). It is used principally on Blu-ray Disc titles, where it serves as one of the two principal lossless surround formats alongside its chief competitor, <a href="../index.html">Dolby TrueHD</a>. DTS-HD Master Audio delivers audio performance that is bit-for-bit identical to the original studio master recording, while still retaining a conventional DTS core stream so that titles remain playable on older equipment.</p>
+
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+
+<table class="infobox">
+  <tr><th colspan="2">DTS-HD Master Audio</th></tr>
+  <tr><th>Developer</th><td>DTS, Inc. (Xperi)</td></tr>
+  <tr><th>Type</th><td>Audio codec (lossless)</td></tr>
+  <tr><th>Released</th><td>2006 (with Blu-ray and HD DVD)</td></tr>
+  <tr><th>Container</th><td>Blu-ray Disc, Ultra HD Blu-ray, digital files</td></tr>
+  <tr><th>Max. bitrate</th><td>24.5 Mbit/s (Blu-ray); 18.0 Mbit/s (HD DVD)</td></tr>
+  <tr><th>Channels</th><td>Up to 7.1 on Blu-ray (format supports more)</td></tr>
+  <tr><th>Sampling rates</th><td>48, 96, 192 kHz</td></tr>
+  <tr><th>Bit depth</th><td>Up to 24-bit</td></tr>
+</table>
+
+<div class="toc">
+<b>Contents</b>
+<ol>
+  <li>History</li>
+  <li>Technical details</li>
+  <li>Core + extension structure</li>
+  <li>Comparison with Dolby TrueHD</li>
+  <li>See also</li>
+</ol>
+</div>
+
+<h2>History</h2>
+<p>DTS-HD Master Audio was introduced in the mid-2000s as the lossless flagship of the DTS-HD family, at the launch of the high-definition optical disc formats, Blu-ray Disc and HD DVD. Both formats mandated support for conventional DTS decoding, and Blu-ray players were required to handle the DTS core stream even where full Master Audio decoding was optional. As Blu-ray won the format war, DTS-HD Master Audio became the dominant lossless soundtrack format on commercial discs, helped by the fact that a single encode carried both the lossless extension and a legacy core. With the arrival of Ultra HD Blu-ray, Master Audio tracks continued to be widely used, frequently as the carrier for DTS:X object-based immersive audio.</p>
+
+<h2>Technical details</h2>
+<p>The codec uses a lossless compression algorithm that typically reduces the size of a raw PCM master by a factor of roughly two, with the exact ratio varying by content. On Blu-ray, DTS-HD Master Audio streams may run at variable bitrates up to a ceiling of 24.5 Mbit/s; on HD DVD the ceiling was 18.0 Mbit/s. Sampling rates of 48 kHz and 96 kHz are supported for multi-channel material, and 192 kHz for stereo. Audio may be encoded at up to 24 bits per sample.</p>
+<p>Although the DTS-HD specification itself permits a larger number of channels and flexible speaker remapping, the Blu-ray implementation is limited to 7.1 discrete channels: front left and right, center, low-frequency effects (LFE), side surrounds, and rear surrounds. A distinctive feature of the format is its ability to store a secondary, differently arranged mix—such as a 5.1 or stereo downmix—within the extension data, allowing the player to select the configuration that matches the listener's <a href="../Home_theater/index.html">home theater</a> setup.</p>
+
+<h2>Core + extension structure</h2>
+<p>Every DTS-HD Master Audio stream is built in two layers:</p>
+<ul>
+  <li><b>Core</b> — a standard DTS Digital Surround stream (up to 5.1 channels at 48 kHz, at bitrates up to 1,509 kbit/s) that any DTS decoder can play.</li>
+  <li><b>Extension</b> — additional residual data which, when combined with the decoded core, reconstructs the original master bit-for-bit. The extension can also carry extra channels (such as the two additional channels that expand 5.1 to 7.1) and higher sampling rates.</li>
+</ul>
+<p>This architecture guaranteed backward compatibility across the installed base of AV receivers: listeners without a Master Audio decoder still heard full-quality core DTS, while equipped systems reproduced the lossless master.</p>
+
+<h2>Comparison with Dolby TrueHD</h2>
+<table class="data">
+  <tr><th>Feature</th><th>DTS-HD Master Audio</th><th>Dolby TrueHD</th></tr>
+  <tr><td>Compression</td><td>Lossless (core + extension)</td><td>Lossless (MLP-based)</td></tr>
+  <tr><td>Mandatory legacy core</td><td>Yes — DTS core always included</td><td>No — separate Dolby Digital track usually authored</td></tr>
+  <tr><td>Max. bitrate on Blu-ray</td><td>24.5 Mbit/s</td><td>18.0 Mbit/s</td></tr>
+  <tr><td>Immersive extension</td><td>DTS:X</td><td>Dolby Atmos</td></tr>
+</table>
+<p>Both codecs reproduce the studio master without loss, so differences in practice arise from authoring choices, dialog normalization metadata, and the immersive-audio extensions layered on top rather than from the base lossless coding.</p>
+
+<h2>See also</h2>
+<ul>
+  <li><a href="../index.html">Dolby TrueHD</a></li>
+  <li><a href="../Home_theater/index.html">Home theater</a></li>
+  <li>Blu-ray Disc</li>
+  <li>DTS (sound system)</li>
+  <li>Surround sound</li>
+</ul>
+
+<p class="footer">From Wikipedia, the free encyclopedia.</p>
+
+</div>
+</body>
+</html>

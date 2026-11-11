@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Return-to-libc attack - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 24px 40px; line-height: 1.6; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 1.9em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 1px 4px; border-radius: 2px; font-family: monospace; }
+img.hero { display: block; margin: 12px 0; max-width: 100%; }
+.tagline { color: #54595d; font-size: 0.9em; margin-top: -8px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Return-to-libc attack</h1>
+<p class="tagline">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>A <b>return-to-libc attack</b> is a computer security attack usually starting with a <a href="../Buffer_overflow/index.html">buffer overflow</a> in which a subroutine return address on a call stack is replaced by an address of a subroutine that is already loaded in the process's memory, bypassing the <a href="../Executable_space_protection/index.html">NX bit</a> feature (if present) and ridding the attacker of the need to inject their own code. The first attack of this type was described in 1997, in a post to the Bugtraq mailing list by Alexander Peslyak (Solar Designer).</p>
+
+<h2>How it works</h2>
+<p>On Unix-like systems, the C library <a href="../Libc/index.html">libc</a> is almost always linked with the target process, and contains useful functions such as <code>system()</code>, which executes a shell command. In a classic return-to-libc attack, the attacker overflows a stack buffer so that the saved return address is overwritten with the address of <code>system()</code>, followed by a dummy return address and a pointer to a string such as <code>"/bin/sh"</code> placed where the function expects its argument. When the vulnerable function returns, control passes to <code>system()</code>, which runs the attacker's chosen command with the privileges of the exploited process. Because all executed code resides in existing, executable memory, non-executable stack protections do not stop the attack.</p>
+
+<h2>Variations and generalizations</h2>
+<p>Return-to-libc is the forerunner of more general code-reuse attacks. Return-oriented programming (ROP) chains together short existing instruction sequences ("gadgets") ending in return instructions to achieve arbitrary computation. Variants include borrowing chunks from other libraries, "ret2csu" techniques using routines in <code>__libc_csu_init</code>, and jump-oriented programming. Attackers may also call functions such as <code>mprotect()</code> to make injected shellcode executable and then jump to it.</p>
+
+<h2>Countermeasures</h2>
+<p>Defenses include <a href="../Address_space_layout_randomization/index.html">address space layout randomization</a> (ASLR), which randomizes the base address of libc so the attacker cannot reliably predict function addresses; stack canaries; control-flow integrity; and position-independent executables enabling full ASLR. ASLR is weakened by information leaks and is limited on 32-bit systems, so return-to-libc and its descendants remain important exploitation techniques.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Return-oriented_programming/index.html">Return-oriented programming</a></li>
+<li><a href="../Buffer_overflow/index.html">Buffer overflow</a></li>
+<li><a href="../Stack_buffer_overflow/index.html">Stack buffer overflow</a></li>
+<li><a href="../Address_space_layout_randomization/index.html">Address space layout randomization</a></li>
+</ul>
+</div>
+</body>
+</html>

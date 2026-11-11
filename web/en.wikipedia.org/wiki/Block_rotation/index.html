@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Block rotation - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 50em; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Block rotation</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Block rotation</b> is an in-place algorithm for rotating an array — that is, exchanging two adjacent blocks of elements of possibly different lengths — using only a constant amount of additional storage. Rotating an array is a fundamental operation used in algorithms such as in-place merging during merge sort, and block rotation is the key primitive behind several in-place stable sorting methods.</p>
+<h2>Problem</h2>
+<p>Given an array containing two contiguous blocks A and B, the rotation replaces the sequence A B with B A while preserving the internal order of each block. A naive implementation copies one block to a temporary buffer, but a true block rotation uses only O(1) extra space.</p>
+<h2>Algorithms</h2>
+<h3>Reversal algorithm</h3>
+<p>The best-known method uses three reversals: reverse A, reverse B, then reverse the whole array. Reversing each element range is a simple in-place operation, so the total running time is linear and the extra space is constant.</p>
+<h3>Juggling algorithm</h3>
+<p>The juggling (or dolphin) algorithm moves elements one at a time along cycles determined by the greatest common divisor of the array length and the rotation distance. It touches each element exactly once but accesses memory in a less cache-friendly pattern.</p>
+<h3>Gries–Mills algorithm</h3>
+<p>The Gries–Mills algorithm repeatedly swaps the smaller block with an equal-sized portion of the larger block, reducing the problem until both blocks are equal in size and can be exchanged directly. It performs more swaps than the reversal method but is the basis of some in-place merge procedures.</p>
+<h2>Applications</h2>
+<p>Block rotation is used in in-place stable merge sort, in implementations of the C++ standard library <code>std::rotate</code>, and in buffer management where contiguous regions must be exchanged without auxiliary storage.</p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Burrows–Wheeler transform - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; max-width: 860px; margin: 2em auto; padding: 0 1em; line-height: 1.6; color: #222; }
+h1 { font-size: 2em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; margin-top: 1.4em; }
+img { max-width: 320px; float: right; margin: 0 0 1em 1em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 0 0.2em; }
+</style>
+</head>
+<body>
+<h1>Burrows–Wheeler transform</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>The <b>Burrows–Wheeler transform</b> (<b>BWT</b>, also called <b>block-sorting compression</b>) rearranges a character string into runs of similar characters. This is useful for compression, since it tends to be easy to compress a string that has runs of repeated characters by techniques such as move-to-front transform and run-length encoding. More importantly, the transformation is reversible, without needing to store any additional data except the position of the first original character. The BWT is thus a "free" method of improving the efficiency of text compression algorithms, on par with increasing the alphabet size.</p>
+<p>The transform was invented by Michael Burrows and David Wheeler in 1994 while Burrows was working at DEC Systems Research Center in Palo Alto, California. It is based on a previously unpublished transformation discovered by Wheeler in 1983.</p>
+<h2>Description</h2>
+<p>The BWT is accomplished by creating a matrix whose rows are all the cyclic rotations of the input string, sorting the rows lexicographically, and taking the last column of the matrix as the output, together with the index of the row that equals the original string. Because strings with repeated patterns produce many similar rotations, sorting groups identical characters together in the last column, producing runs that compress well.</p>
+<p>For example, the text ".BANANA" transforms to "ANNB.A" after sorting its rotations. The inverse transform reconstructs the original string from the sorted first column and the last column using repeated sorting and prepending.</p>
+<h2>Applications</h2>
+<p>The BWT is the key step in the <a href="../Bzip2/index.html">bzip2</a> compression utility, where it is followed by a move-to-front transform and Huffman coding. It is also used in bioinformatics: the aligners <a href="../Bowtie_(sequence_analysis)/index.html">Bowtie</a> and BWA use the FM-index, a compressed full-text index based on the BWT, to map short sequencing reads to a reference genome efficiently.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Bzip2/index.html">bzip2</a></li>
+<li><a href="../Suffix_array/index.html">Suffix array</a></li>
+<li><a href="../Data_compression/index.html">Data compression</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Red–black tree - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 24px 40px; line-height: 1.6; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 1.9em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 1px 4px; border-radius: 2px; font-family: monospace; }
+img.hero { display: block; margin: 12px 0; max-width: 100%; }
+.tagline { color: #54595d; font-size: 0.9em; margin-top: -8px; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Red–black tree</h1>
+<p class="tagline">From Wikipedia, the free encyclopedia</p>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>In <a href="../Computer_science/index.html">computer science</a>, a <b>red–black tree</b> is a <a href="../Binary_search_tree/index.html">binary search tree</a> data structure, a type of self-balancing binary search tree. Each node stores a color attribute, either <i>red</i> or <i>black</i>, and the tree maintains balance through a set of coloring rules enforced during insertion and deletion. Red–black trees guarantee that search, insertion, and deletion operations take O(log n) time in the worst case, where n is the number of nodes.</p>
+
+<h2>History</h2>
+<p>Red–black trees were invented in 1972 by Rudolf Bayer, who called them "symmetric binary B-trees". The modern name and the red–black coloring scheme derive from a 1978 paper by Leonidas J. Guibas and Robert Sedgewick, who used red and black pens in their analysis; the colors are also often said to have been chosen because red and black were the best-looking colors produced by the laser printer at Xerox PARC, or because they were the colors of pens available. Chris Okasaki popularized a purely functional formulation in 1999.</p>
+
+<h2>Properties</h2>
+<p>In addition to the requirements imposed on a binary search tree, a red–black tree satisfies the following properties:</p>
+<ol>
+<li>Every node is either red or black.</li>
+<li>All null leaves (NIL nodes) are considered black.</li>
+<li>A red node does not have a red child (no two red nodes are adjacent).</li>
+<li>Every path from a given node to any of its descendant NIL nodes contains the same number of black nodes (the <i>black height</i>).</li>
+<li>(In some conventions) The root is black.</li>
+</ol>
+<p>These constraints ensure that the longest possible path from the root to a leaf is no more than twice as long as the shortest possible path, meaning the tree remains approximately balanced. The height of a red–black tree with n internal nodes is at most 2 log<sub>2</sub>(n + 1).</p>
+
+<h2>Operations</h2>
+<p>Search in a red–black tree proceeds exactly as in an ordinary binary search tree. Insertion and deletion, however, may violate the red–black properties; balance is restored by recoloring nodes and performing tree rotations (left and right). At most two rotations are required after an insertion, and at most three after a deletion, so the restructuring is cheap compared to the O(log n) descent.</p>
+
+<h2>Applications</h2>
+<p>Red–black trees are widely used in practice. They underlie the implementation of associative containers in several standard libraries: <code>std::map</code> and <code>std::set</code> in C++, <code>TreeMap</code> and <code>TreeSet</code> in Java, and the Completely Fair Scheduler in the Linux kernel historically used a red–black tree to organize runnable tasks. They are closely related to <a href="../B-tree/index.html">B-trees</a>: a red–black tree is equivalent to a B-tree of order 4.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../AVL_tree/index.html">AVL tree</a></li>
+<li><a href="../B-tree/index.html">B-tree</a></li>
+<li><a href="../Splay_tree/index.html">Splay tree</a></li>
+<li><a href="../2%E2%80%933%E2%80%934_tree/index.html">2–3–4 tree</a></li>
+</ul>
+</div>
+</body>
+</html>

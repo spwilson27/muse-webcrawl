@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>cut (Unix) - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+header { background: #fff; border-bottom: 1px solid #a2a9b1; padding: 12px 24px; }
+header .site { font-family: sans-serif; font-size: 20px; }
+main { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 21px; border-bottom: 1px solid #eaecf0; padding-bottom: 3px; margin-top: 28px; }
+p, li { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px; font-size: 13px; overflow-x: auto; }
+code { font-family: monospace; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia</span></header>
+<main>
+<h1>cut (Unix)</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>cut</b> is a command line utility on Unix and Unix-like operating systems used to extract sections from each line of input — usually from a file. It is part of the GNU coreutils package and the BSD Base System, and it originated in AT&amp;T Bell Laboratories' System III, one of the early versions of Unix.</p>
+<h2>Usage</h2>
+<p>The cut command can extract text by bytes, by characters, or by delimiter-separated fields:</p>
+<ul>
+<li><code>cut -b LIST</code> — select only the bytes at the positions given in LIST.</li>
+<li><code>cut -c LIST</code> — select only the characters at the positions given in LIST.</li>
+<li><code>cut -f LIST [-d DELIM]</code> — select fields; DELIM is the field delimiter (the tab character by default).</li>
+</ul>
+<p>Lists may be single positions, ranges such as <code>1-4</code>, or open-ended ranges such as <code>5-</code> or <code>-8</code>. The <code>-s</code> option suppresses lines that contain no delimiter character, and <code>--complement</code> inverts the selection.</p>
+<h2>Examples</h2>
+<pre>$ echo "foo:bar:baz" | cut -d: -f2
+bar
+$ cut -c1-3 /etc/passwd
+roo
+dai
+...</pre>
+<p>A common use is extracting columns from structured text files such as <code>/etc/passwd</code>, often in combination with other text utilities in a pipeline. For more complex field processing, administrators generally turn to <a href="../Awk/index.html">awk</a> or <a href="../Sed/index.html">sed</a>.</p>
+<h2>History</h2>
+<p>cut first appeared in System III UNIX and was later standardized by POSIX. The GNU implementation, provided by coreutils, adds conveniences such as the <code>--output-delimiter</code> option.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Paste_(Unix)/index.html">paste (Unix)</a></li>
+<li><a href="../Grep/index.html">grep</a></li>
+<li><a href="../Coreutils/index.html">Coreutils</a></li>
+</ul>
+</main>
+</body>
+</html>

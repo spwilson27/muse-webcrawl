@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Coppersmith–Winograd algorithm - Wikipedia</title>
+<style>
+body { font-family: Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: sans-serif; border-bottom: 1px solid #a2a9b1; }
+p { line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+code { background: #f8f9fa; padding: 1px 4px; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Coppersmith–Winograd algorithm</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>In linear algebra, the <b>Coppersmith–Winograd algorithm</b>, named after Don Coppersmith and Shmuel Winograd, is a matrix multiplication algorithm published in 1990. For many years it was the asymptotically fastest known algorithm for multiplying two <i>n</i> × <i>n</i> matrices, improving on <a href="../Strassen_algorithm/index.html">Strassen's algorithm</a> (1969), which runs in O(<i>n</i><sup>2.807</sup>) time.</p>
+<h2>Complexity</h2>
+<p>The algorithm runs in O(<i>n</i><sup>2.3755</sup>) time in its original 1990 form. It was long the record holder for the exponent of matrix multiplication, usually denoted ω. Improvements by Andrew Stothers (2010), Virginia Vassilevska Williams (2012), François Le Gall (2014), and later researchers using refinements of the "laser method" built directly on the Coppersmith–Winograd framework, gradually lowering the bound on ω; as of the early 2020s the best known bound stood around ω &lt; 2.372, with further small improvements announced in 2024.</p>
+<h2>The laser method</h2>
+<p>The Coppersmith–Winograd algorithm is based on the laser method, a technique for analyzing tensor powers of a bilinear operation. The starting point is a particular tensor — essentially, an identity-like tensor describing a matrix multiplication problem of a special structure — whose high tensor powers can be "degenerated" to extract many disjoint copies of a smaller matrix multiplication problem. Schönhage's asymptotic sum inequality then converts this combinatorial extraction into a bound on ω. The method produces bounds via a subtle probabilistic/concentration argument (Salem–Spencer type sets) that selects index triples avoiding collisions.</p>
+<h2>Practical significance</h2>
+<p>Like most algorithms in this family, the Coppersmith–Winograd algorithm is a "galactic algorithm": it outperforms Strassen's algorithm only for matrices of astronomically large size, far beyond anything encountered in practice, because of enormous constant factors. Its importance is theoretical, bearing on the central open question of determining the exact value of ω, which lies between 2 and 2.372.</p>
+<p><i>See also: <a href="../Matrix_multiplication_algorithm/index.html">Matrix multiplication algorithm</a>, <a href="../Computational_complexity_of_matrix_multiplication/index.html">Computational complexity of matrix multiplication</a></i></p>
+</div>
+</body>
+</html>

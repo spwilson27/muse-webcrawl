@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Knuth–Morris–Pratt algorithm - Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:900px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;overflow-x:auto}
+</style>
+</head>
+<body>
+<h1>Knuth–Morris–Pratt algorithm</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>The <b>Knuth–Morris–Pratt algorithm</b> (<b>KMP algorithm</b>) is a string-searching algorithm that searches for occurrences of a "word" <i>W</i> within a main "text string" <i>S</i>. It exploits the observation that when a mismatch occurs, the word itself embodies sufficient information to determine where the next match could begin, thus bypassing re-examination of previously matched characters. The algorithm was conceived in 1970 by Donald Knuth and Vaughan Pratt, and independently by James H. Morris; the three published it jointly in 1977.</p>
+<h2>How it works</h2>
+<p>A naive search backs up in the text whenever a partial match fails, giving worst-case quadratic behaviour. KMP instead precomputes a <b>partial match table</b> (also called the failure function or prefix function) for the pattern. The table records, for each position in the pattern, the length of the longest proper prefix of the pattern that is also a suffix of the substring ending at that position. On a mismatch, the algorithm shifts the pattern forward by the amount indicated in the table without ever moving backwards in the text.</p>
+<h2>Complexity</h2>
+<p>Building the table takes O(m) time and space, where m is the length of the pattern, and the search itself takes O(n) time for a text of length n — linear overall, regardless of the input. This makes KMP one of the classic efficient substring-search algorithms, alongside the Boyer–Moore algorithm, which is often faster in practice for long alphabets but has a worse worst case.</p>
+<h2>Example</h2>
+<p>For the pattern "ABABCABAB", the prefix function values are 0, 0, 1, 2, 0, 1, 2, 3, 4. When a mismatch occurs after the partial match "ABAB", the algorithm knows the first two characters "AB" are already re-matched and resumes comparison from pattern position 2 instead of starting over.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Boyer-Moore_string-search_algorithm/index.html">Boyer–Moore string-search algorithm</a></li>
+<li><a href="../Rabin-Karp_algorithm/index.html">Rabin–Karp algorithm</a></li>
+<li><a href="../String-searching_algorithm/index.html">String-searching algorithm</a></li>
+</ul>
+</body>
+</html>

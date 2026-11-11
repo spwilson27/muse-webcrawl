@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>FM-index - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1em 2em 3em; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: 'Linux Libertine','Georgia',serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: 'Linux Libertine','Georgia',serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.math { font-family: 'Times New Roman', serif; font-style: italic; }
+img { max-width: 100%; }
+.lead { font-size: 95%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>FM-index</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p class="lead">In computer science, an <b>FM-index</b> is a compressed full-text substring <a href="../Index_(publishing)/index.html">index</a> based on the <a href="../Burrows–Wheeler_transform/index.html">Burrows–Wheeler transform</a> (BWT), with some similarities to the <a href="../Suffix_array/index.html">suffix array</a>. It was created by Paolo Ferragina and Giovanni Manzini in 2000, from whom the "FM" in the name derives. The FM-index can count the occurrences of a pattern in the compressed text and locate the position of each occurrence, all within space roughly proportional to the compressed size of the text itself.</p>
+
+<h2>Structure</h2>
+<p>The index stores the BWT of the text — a permutation of its characters obtained by sorting all rotations of the text — together with auxiliary rank data structures. Two arrays or functions suffice for searching: <span class="math">C[c]</span>, the number of characters in the text lexicographically smaller than character <span class="math">c</span>, and <span class="math">Occ(c, k)</span>, the number of occurrences of <span class="math">c</span> in the first <span class="math">k</span> characters of the transformed string. Combining these gives the LF-mapping, which maps a position in the transformed string to the position of the preceding character in the original text, allowing one to step through the text backwards.</p>
+
+<h2>Search</h2>
+<p>To count occurrences of a pattern, the index processes the pattern from its last character to its first, repeatedly narrowing an interval of the suffix array that corresponds to suffixes beginning with the already-processed suffix of the pattern. This backward search takes time linear in the length of the pattern (with fast rank queries). Locating each occurrence then requires sampling: the index stores the text positions of a subset of rows and recovers other positions by iterating the LF-mapping until a sampled row is reached, trading space for time.</p>
+
+<h2>Applications</h2>
+<p>Because the FM-index compresses while it indexes, it became fundamental in <a href="../Bioinformatics/index.html">bioinformatics</a>, where texts are genomes of billions of characters. The popular sequence aligners Bowtie and BWA use FM-index-based algorithms (the Burrows–Wheeler Aligner) to map short DNA sequencing reads to a reference genome quickly in modest memory. Variants such as the compressed suffix array, the r-index (which scales with the number of runs in the BWT and excels on collections of similar genomes), and bidirectional FM-indexes extend the basic scheme to support richer queries and pangenome data structures.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Burrows–Wheeler_transform/index.html">Burrows–Wheeler transform</a></li>
+<li><a href="../Suffix_array/index.html">Suffix array</a></li>
+<li><a href="../Suffix_tree/index.html">Suffix tree</a></li>
+<li><a href="../Compressed_data_structure/index.html">Compressed data structure</a></li>
+</ul>
+</div>
+</body>
+</html>

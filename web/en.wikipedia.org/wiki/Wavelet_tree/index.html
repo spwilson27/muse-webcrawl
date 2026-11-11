@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wavelet tree - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 960px; line-height: 1.6; color: #202122; padding: 0 1em; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0 0 1em 1em; border: 1px solid #c8ccd1; padding: 4px; background: #f8f9fa; font-size: 0.85em; text-align: center; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em; margin: 0 0 1em 1em; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<h1>Wavelet tree</h1>
+<p>The <b>wavelet tree</b> is a succinct data structure to store strings in compressed space. It generalizes the access, rank, and select operations defined on binary vectors to alphabets of arbitrary size. Originally introduced to represent compressed suffix arrays, it has found application in many contexts. The tree is a balanced binary tree with as many leaves as there are symbols in the alphabet; at each node, a bitvector stores the symbols of its string that are represented by the left and right children.</p>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h2>Properties</h2>
+<p>The wavelet tree can be used to answer queries about the original string without decompressing it. Given a string S of length n over an alphabet of size σ, the wavelet tree uses n log σ + o(n log σ) bits of space, which is asymptotically optimal in the information-theoretic sense. The fundamental operations supported are access (returning the symbol at a given position), rank (counting the occurrences of a symbol up to a given position), and select (finding the position of the k-th occurrence of a symbol), each in O(log σ) time.</p>
+<h2>Construction</h2>
+<p>Construction proceeds recursively. The root of the tree holds the whole string, together with a bitvector indicating for each character whether it belongs to the first or second half of the alphabet. The characters are then stably partitioned according to this split, and the two resulting subsequences are processed recursively by the left and right children until each leaf represents a single symbol of the alphabet.</p>
+<h2>Extensions</h2>
+<p>Variants include the wavelet matrix, which rearranges the bitvectors to improve query times in practice while using the same space, and multiary wavelet trees, which use larger branching factors to reduce the height of the tree. Wavelet trees also form the basis of range-quantile and two-dimensional orthogonal range counting queries.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Succinct_data_structure/index.html">Succinct data structure</a></li>
+<li><a href="../Suffix_array/index.html">Suffix array</a></li>
+<li><a href="../Wavelet/index.html">Wavelet</a></li>
+</ul>
+</body>
+</html>

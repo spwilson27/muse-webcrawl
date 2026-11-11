@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Aho–Corasick algorithm - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 960px; line-height: 1.6; color: #202122; }
+h1 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Aho–Corasick algorithm</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>In computer science, the <b>Aho–Corasick algorithm</b> is a string-searching algorithm invented by Alfred V. Aho and Margaret J. Corasick of Bell Labs in 1975. It is a kind of dictionary-matching algorithm that locates elements of a finite set of strings (the "dictionary") within an input text. It matches all strings of the set simultaneously, generalising the single-pattern Knuth–Morris–Pratt algorithm to many patterns.</p>
+<h2>Description</h2>
+<p>The algorithm first constructs a finite-state machine resembling a trie of the dictionary patterns, augmented with <i>failure links</i>: for each state, a pointer to the state representing the longest proper suffix of the current string that is also a prefix of some pattern. Output links record which patterns end at each state (or are reachable via suffix links). The text is then processed in a single left-to-right pass; on each character the machine follows transitions or failure links, and every time an output state is reached, a match of the corresponding pattern is reported.</p>
+<h2>Complexity</h2>
+<p>Building the automaton takes time proportional to the total length of the patterns, and scanning takes time linear in the length of the text plus the number of matches found — formally O(n + m + z), where n is the text length, m the total pattern length, and z the number of matches. This contrasts with running a single-pattern search once per dictionary word and makes Aho–Corasick the standard approach for matching large keyword sets.</p>
+<h2>Applications</h2>
+<p>The algorithm is used in intrusion detection systems (the Snort network IDS originally used it for signature matching), antivirus and malware scanning, text filtering, bibliographic search (its original application was a bibliographic search system), bioinformatics motif search, and spell-checking and full-text search libraries.</p>
+<p>See also: <a href="../Alfred_Aho/index.html">Alfred Aho</a> · <a href="../String-searching_algorithm/index.html">String-searching algorithm</a> · <a href="../Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm/index.html">Knuth–Morris–Pratt algorithm</a> · <a href="../Trie/index.html">Trie</a></p>
+</body>
+</html>

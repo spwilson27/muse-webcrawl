@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Riemann solver - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-bottom: 6px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; font-weight: normal; }
+p, li { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 12px auto; max-width: 100%; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Riemann solver</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>A <b>Riemann solver</b> is a numerical method used to solve a Riemann problem—that is, a system of conservation laws with piecewise-constant initial data separated by a single discontinuity. Such solvers form the core of Godunov-type finite-volume schemes in computational fluid dynamics, where the flux of the conserved quantities across each cell boundary is computed from the solution of the local Riemann problem between the states in the two adjacent cells.</p>
+<h2>Background</h2>
+<p>Sergei Godunov introduced the idea in 1959: update each cell average by solving, exactly or approximately, the Riemann problem at every cell interface over a time step short enough that waves from neighbouring interfaces do not interact. Averaging the resulting solution back onto the grid yields a stable, conservative, and (in its basic form) first-order accurate scheme. The scheme's inherent upwinding—information travels in the direction dictated by the wave structure—underlies most modern shock-capturing methods.</p>
+<h2>Exact solvers</h2>
+<p>For the Euler equations of gas dynamics, the exact solution of the Riemann problem involves two nonlinear waves (shocks or rarefactions) separated by a contact discontinuity, with constant pressure and velocity in the "star region" between the waves. An exact solver finds the star-region pressure by iteratively solving a nonlinear equation (for example by Newton–Raphson iteration), then reconstructs the full solution. Exact solvers are accurate but comparatively expensive, and may fail for near-vacuum states, so they are often used as reference solutions for testing.</p>
+<h2>Approximate solvers</h2>
+<h3>Roe solver</h3>
+<p>Phil Roe's solver (1981) linearises the problem about an averaged state chosen so that the linearisation conserves the jump across the discontinuity (the "Roe average"). The flux is then computed from the eigen-decomposition of the linearised system. The Roe solver resolves isolated stationary contacts exactly but can produce unphysical expansion shocks unless an entropy fix is applied, and it can fail (producing negative densities or pressures) in very strong rarefactions.</p>
+<h3>HLL and HLLC solvers</h3>
+<p>The HLL solver of Harten, Lax, and van Leer estimates only the fastest left- and right-going wave speeds and assumes a single constant state between them. It is robust and positivity-preserving but smears contact discontinuities. The HLLC variant (developed by Toro and others) restores the missing contact (and shear) waves, giving sharper resolution of contacts while retaining robustness, and is very widely used in astrophysics and engineering codes.</p>
+<h3>Other solvers</h3>
+<p>Other widely used approximate Riemann solvers include the Rusanov (local Lax–Friedrichs) solver, the simplest and most dissipative; the Osher solver, based on a generalised Riemann invariant integration; the AUSM family (Advection Upstream Splitting Method), which splits convective and pressure fluxes; and the exact iterative solver used as a benchmark. Flux-vector splitting methods such as that of Steger and Warming occupy a related role.</p>
+<h2>Applications</h2>
+<p>Riemann solvers are standard in compressible-flow simulation: aerodynamics, astrophysics (supernovae, accretion), magnetohydrodynamics, shallow-water hydraulics (where the Riemann problem models dam breaks), detonation and combustion, and multiphase flow. Higher-order accuracy is obtained by combining the solver with piecewise-linear or higher-order reconstructions (such as MUSCL or WENO) and strong-stability-preserving time integration.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Riemann_problem/index.html">Riemann problem</a></li>
+<li><a href="../Godunov%27s_scheme/index.html">Godunov's scheme</a></li>
+<li><a href="../Finite_volume_method/index.html">Finite volume method</a></li>
+</ul>
+</div>
+</body>
+</html>

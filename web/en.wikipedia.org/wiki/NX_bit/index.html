@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NX bit - Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 60px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 28px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; font-size: 22px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 100%; display: block; margin: 8px auto; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 13px; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>NX bit</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>The <b>NX bit</b> (no-execute bit) is a technology used in CPUs to segregate areas of memory for use by either storage of processor instructions (code) or storage of data. Memory pages marked with the NX attribute cannot be executed as code, so an attempt to run instructions stored in such a page causes a fault. The feature is a key defence against <a href="../Buffer_overflow/index.html">buffer overflow</a> attacks, in which an attacker injects malicious code into a program's data and tricks the processor into executing it.</p>
+<h2>Terminology</h2>
+<p>AMD introduced the bit as "NX" (Enhanced Virus Protection) with its Athlon 64 and Opteron processors in 2003. Intel markets the equivalent feature as the "XD bit" (execute disable), and ARM architecture implements it as "XN" (execute never). Microsoft Windows refers to the software policy built on the hardware feature as Data Execution Prevention (DEP).</p>
+<h2>Implementation</h2>
+<p>In the x86-64 architecture the NX bit is bit 63 of each page-table entry, available when the processor operates in PAE or long mode. Operating systems set the bit on stacks, heaps, and other data pages. Software support arrived in Linux 2.6.8 (2004), Windows XP Service Pack 2 (2004), and later versions of macOS. Where hardware lacks the feature, some systems emulate it in software — OpenBSD's W^X policy and the PaX project's PAGEEXEC are notable examples.</p>
+<h2>Limitations</h2>
+<p>NX prevents executing injected data but does not stop attacks that reuse existing code, such as return-to-libc and return-oriented programming (ROP), which is why it is typically combined with address space layout randomisation (ASLR) and stack canaries.</p>
+<h2>See also</h2>
+<p><a href="../Buffer_overflow/index.html">Buffer overflow</a> · <a href="../Data_Execution_Prevention/index.html">Data Execution Prevention</a> · <a href="../Address_space_layout_randomization/index.html">Address space layout randomisation</a></p>
+</div>
+</body>
+</html>

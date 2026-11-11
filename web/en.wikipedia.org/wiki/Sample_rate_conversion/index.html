@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sample-rate conversion - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+ul { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Sample-rate conversion</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Sample-rate conversion</b> is the process of changing the sampling rate of a discrete signal to obtain a new discrete representation of the underlying continuous signal. It is a routine operation in digital signal processing and digital audio, for example when audio recorded at 48 kHz (video and broadcast standard) must be played on a system running at 44.1 kHz (CD audio standard), or when a digital communication receiver must match a transmitter's symbol rate.</p>
+<h2>Processes</h2>
+<p>The two basic operations are:</p>
+<ul>
+<li><b>Decimation (downsampling):</b> reducing the sample rate by an integer factor M, preceded by a low-pass anti-aliasing filter that removes frequencies above the new Nyquist limit to prevent aliasing.</li>
+<li><b>Interpolation (upsampling):</b> increasing the sample rate by an integer factor L, by inserting zeros between samples and then low-pass filtering (an anti-imaging filter) to reconstruct the values of the new samples.</li>
+</ul>
+<p>Combining the two — upsampling by L, filtering, then downsampling by M — achieves conversion by any rational factor L/M. Conversion by arbitrary or time-varying ratios (asynchronous sample-rate conversion) uses polyphase filter banks or interpolation filters such as windowed-sinc filters whose coefficients are computed or selected on the fly.</p>
+<h2>Quality considerations</h2>
+<p>The quality of a converter is measured by its passband ripple, stopband attenuation (aliasing and imaging rejection), phase linearity and transient response. High-quality converters may achieve alias rejection of 120 dB or more, while cheap converters can introduce audible artefacts. In oversampling A/D and D/A converters, sample-rate conversion is an integral part of the conversion chain, trading a high internal sample rate for relaxed analogue filtering.</p>
+<h2>Applications</h2>
+<ul>
+<li>Digital audio workstations, media players and broadcast chains mixing 44.1, 48 and 96 kHz material.</li>
+<li>Software-defined radio and digital communications receivers.</li>
+<li>Image resizing and video frame-rate conversion (the two-dimensional analogue of the same problem).</li>
+</ul>
+<h2>See also</h2>
+<ul>
+<li><a href="../Sampling_(signal_processing)/index.html">Sampling (signal processing)</a></li>
+<li><a href="../Nyquist–Shannon_sampling_theorem/index.html">Nyquist–Shannon sampling theorem</a></li>
+</ul>
+</div>
+</body>
+</html>

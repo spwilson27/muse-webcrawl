@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Marshalling (computer science) - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1em 2em 3em; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+code { background: #f8f9fa; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Marshalling (computer science)</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>In computer science, <b>marshalling</b> or <b>marshaling</b> is the process of transforming the memory representation of an object into a data format suitable for storage or transmission, typically across a network or between different parts or languages of a program. It is similar to <a href="../Serialization/index.html">serialization</a> and is used to communicate to remote objects with an object, for example parameters, messages, or return values. The inverse process is <b>unmarshalling</b>.</p>
+<h2>Usage</h2>
+<p>Marshalling is central to remote procedure calls (RPC), remote method invocation (such as Java RMI and .NET Remoting), and component technologies like COM and CORBA, where arguments to a call made in one address space (or apartment) must be packaged, possibly converted, and delivered to code running in another. In Microsoft's Component Object Model, "marshalling" specifically refers to the code — often generated proxy and stub objects — that transfers interface method calls and their parameters across apartment, process, or machine boundaries.</p>
+<p>Marshalling also occurs in foreign function interfaces: when a managed runtime such as the .NET CLR calls native code, data types must be converted between representations (for example, a managed string to a null-terminated C string); .NET's Platform Invocation Services (P/Invoke) perform this via an interop marshaller that applies layout and conversion rules, which can be customised with attributes such as <code>MarshalAs</code>.</p>
+<h2>Comparison with serialization</h2>
+<p>The terms overlap, but a common distinction is one of intent: serialization encodes an object's state so it can be stored or recreated later, while marshalling is oriented toward passing parameters and results between remote or foreign execution contexts, and may include extra remote-specific information such as object references or code location. Marshalling also implies handling of references — a marshalled object graph can preserve remote references rather than copying every reachable object.</p>
+<h2>Security considerations</h2>
+<p>Unmarshalling untrusted data is a well-known attack surface: historical vulnerabilities in Java deserialization and in RPC marshaller implementations allowed remote code execution when crafted byte streams tricked the unmarshaller into constructing dangerous objects. Defensive practice recommends allow-lists of permitted types and avoiding native unmarshalling of untrusted input.</p>
+<h2>See also</h2>
+<ul>
+<li><a href="../Serialization/index.html">Serialization</a></li>
+<li><a href="../Remote_procedure_call/index.html">Remote procedure call</a></li>
+<li><a href="../Component_Object_Model/index.html">Component Object Model</a></li>
+<li><a href="../Foreign_function_interface/index.html">Foreign function interface</a></li>
+</ul>
+</div>
+</body>
+</html>

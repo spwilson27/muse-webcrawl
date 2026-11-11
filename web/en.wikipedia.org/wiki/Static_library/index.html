@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Static library - Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+header { background: #f8f9fa; border-bottom: 1px solid #a2a9b1; padding: 12px 24px; }
+header .site { font-size: 1.4em; font-weight: bold; }
+main { max-width: 960px; margin: 0 auto; padding: 20px 24px; line-height: 1.6; }
+h1 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; border-bottom: 1px solid #eaecf0; padding-bottom: 3px; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+footer { border-top: 1px solid #a2a9b1; margin-top: 40px; padding: 12px 24px; font-size: 0.85em; color: #54595d; background: #f8f9fa; }
+code { background: #f8f9fa; padding: 1px 4px; }
+</style>
+</head>
+<body>
+<header><span class="site">Wikipedia</span> — The Free Encyclopedia</header>
+<main>
+<h1>Static library</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>A <b>static library</b> (or <b>archive</b>) is a collection of object files that a linker copies, in whole or in needed part, directly into the executable being built — a process called <b>static linking</b>. The resulting program is self-contained with respect to that library's routines: it does not need the library file to be present at run time. Static libraries contrast with shared (dynamic) libraries, whose code is loaded and linked when the program runs.</p>
+
+<h2>Formats and tools</h2>
+<p>On Unix-like systems, static libraries conventionally have the <code>.a</code> extension and are created with the <code>ar</code> archiver, which bundles relocatable object files (plus a symbol index, generated with <code>ranlib</code>) into one file; the linker <code>ld</code> then searches archives given with the <code>-l</code> option and extracts only the members that resolve undefined symbols. On Windows, static libraries use the <code>.lib</code> extension and the COFF format, created by the LIB tool. If the linker is given an import library (also <code>.lib</code>) for a DLL, that is a different mechanism despite the shared extension.</p>
+
+<h2>Advantages and disadvantages</h2>
+<p>Statically linked programs avoid the "dependency hell" of matching shared library versions at run time, start without library search costs, and can see small performance benefits because calls need no indirection through a procedure linkage table; link-time optimization across the whole program is also easier. The disadvantages are larger executables (each program carries its own copy of the code), higher memory use when many programs run simultaneously, and poor maintainability: a security fix in a library requires relinking and redistributing every application that uses it, whereas a shared library can be updated once. Modern "fat" or "thin" archives and linker options that keep whole archives (<code>--whole-archive</code>) address some edge cases, such as registering statically linked plug-ins.</p>
+
+<h2>Usage</h2>
+<p>Static libraries remain common for small utilities, embedded systems, system-critical binaries that must run before shared libraries are available, and languages such as Go and Rust, which favor static linking by default. Operating-system distributions generally prefer dynamic linking for the reasons above.</p>
+
+<h2>See also</h2>
+<ul>
+<li><a href="../Library_(computing)/index.html">Library (computing)</a></li>
+<li><a href="../Dynamic_linker/index.html">Dynamic linker</a></li>
+<li><a href="../Linker_(computing)/index.html">Linker (computing)</a></li>
+<li><a href="../Object_file/index.html">Object file</a></li>
+</ul>
+</main>
+<footer>From Wikipedia, the free encyclopedia.</footer>
+</body>
+</html>
