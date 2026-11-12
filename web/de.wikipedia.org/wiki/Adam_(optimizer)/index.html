@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Adam (Optimierungsalgorithmus) – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; font-size: 0.95em; }
+ul { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 12px auto; max-width: 100%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Adam (Optimierungsalgorithmus)</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Adam</b> (kurz für <i>Adaptive Moment Estimation</i>) ist ein iterativer Optimierungsalgorithmus, der vor allem zum Training neuronaler Netze und anderer Modelle des maschinellen Lernens verwendet wird. Er wurde 2014 von Diederik P. Kingma und Jimmy Ba vorgestellt und ist einer der am häufigsten eingesetzten Optimierer im Deep Learning.</p>
+<h2>Verfahren</h2>
+<p>Adam kombiniert Ideen aus den Verfahren RMSProp und Adagrad. Für jeden Parameter führt der Algorithmus zwei exponentiell abklingende gleitende Mittelwerte: den Mittelwert der Gradienten (erstes Moment, als Impuls- bzw. Momentum-Term) und den Mittelwert der quadrierten Gradienten (zweites Moment). Aus diesen Schätzungen wird für jeden Parameter eine individuelle, adaptive Lernrate berechnet. Da die Momentenschätzungen zu Beginn gegen null verzerrt sind, enthält Adam eine Verzerrungskorrektur (bias correction).</p>
+<h2>Eigenschaften</h2>
+<ul>
+<li>Adaptive Lernraten für jeden Parameter einzeln</li>
+<li>Geringer Speicherbedarf und rechentechnisch effizient</li>
+<li>Gut geeignet für Probleme mit verrauschten oder spärlichen Gradienten</li>
+<li>Typische Standard-Hyperparameter: β₁ = 0,9, β₂ = 0,999, ε = 10⁻⁸, Lernrate 0,001</li>
+</ul>
+<h2>Varianten</h2>
+<p>Bekannte Weiterentwicklungen sind unter anderem AdamW, das eine entkoppelte Gewichtsabnahme (weight decay) einführt, sowie AMSGrad und Nadam. Adam und AdamW sind in praktisch allen gängigen Deep-Learning-Bibliotheken wie TensorFlow und PyTorch implementiert.</p>
+</div>
+</body>
+</html>

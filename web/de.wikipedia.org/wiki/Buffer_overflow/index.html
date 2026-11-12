@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Pufferüberlauf – Wikipedia</title>
+<style>body{font-family:sans-serif;max-width:900px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1;padding-bottom:5px}h2{border-bottom:1px solid #a2a9b1}a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 15px 15px;width:280px;font-size:0.9em}</style>
+</head>
+<body>
+<h1>Pufferüberlauf</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>Pufferüberlauf</b> (englisch <i>buffer overflow</i>) ist ein Programmierfehler, bei dem ein Programm mehr Daten in einen dafür vorgesehenen Speicherbereich (Puffer) schreibt, als dieser fassen kann. Die überschüssigen Daten überschreiben benachbarte Speicherbereiche und können das Programmverhalten verändern, zum Absturz führen oder einem Angreifer die Ausführung beliebigen Codes ermöglichen.</p>
+<h2>Ursachen</h2>
+<p>Pufferüberläufe treten vor allem in Sprachen ohne automatische Bereichsprüfung auf, etwa C und C++. Klassische Ursachen sind Funktionen, die die Länge der Eingabe nicht prüfen – berüchtigt ist die C-Funktion <i>strcpy</i> –, sowie falsche Längenberechnungen und ganzzahlige Überläufe. Man unterscheidet Stapel-basierte Überläufe (<i>stack overflow</i> im engeren Sinn, die die Rücksprungadresse auf dem Aufrufstapel überschreiben) und Heap-basierte Überläufe.</p>
+<h2>Angriffstechnik</h2>
+<p>Bei einem klassischen Angriff füllt der Angreifer einen Puffer mit Shellcode und überschreibt die gespeicherte Rücksprungadresse mit der Adresse dieses Codes, so dass das Programm bei der Rückkehr aus der Funktion in den eingeschleusten Code springt. Die Technik wurde 1996 durch den Artikel <i>Smashing the Stack for Fun and Profit</i> von Aleph One weithin bekannt. Der Morris-Wurm (1988) und spätere Würmer wie Code Red und SQL Slammer nutzten Pufferüberläufe zur Verbreitung.</p>
+<h2>Gegenmaßnahmen</h2>
+<ul>
+<li>Verwendung sicherer Bibliotheksfunktionen mit Längenprüfung und moderner Sprachen mit Speicher­sicherheit</li>
+<li>Stack Canaries: Kontrollwerte auf dem Stapel, die Manipulationen erkennen</li>
+<li>Nicht-ausführbarer Speicher (NX/DEP) und Adressraum-Randomisierung (ASLR)</li>
+<li>Compiler- und Laufzeitprüfungen sowie statische Codeanalyse</li>
+</ul>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Shellcode/index.html">Shellcode</a></li>
+<li><a href="../Exploit/index.html">Exploit</a></li>
+<li><a href="../Computerwurm/index.html">Computerwurm</a></li>
+</ul>
+</body>
+</html>

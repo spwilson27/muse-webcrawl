@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Buffer Cache – Wikipedia</title>
+<style>body{font-family:sans-serif;max-width:900px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1;padding-bottom:5px}h2{border-bottom:1px solid #a2a9b1}a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 15px 15px;width:280px;font-size:0.9em}</style>
+</head>
+<body>
+<h1>Buffer Cache</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Der <b>Buffer Cache</b> ist ein Bereich des Hauptspeichers, in dem ein Betriebssystem Kopien von Datenblöcken eines Massenspeichers (Festplatte, SSD) vorhält, um langsame Zugriffe auf das Speichermedium zu vermeiden. Er gehört zu den ältesten Caching-Mechanismen der Unix-Systeme und ist konzeptionell eng mit dem Page Cache moderner Betriebssysteme verwandt.</p>
+<h2>Arbeitsweise</h2>
+<p>Beim Lesen eines Datenblocks prüft der Kernel zunächst, ob sich der Block bereits im Buffer Cache befindet (<i>cache hit</i>); dann kann er direkt aus dem RAM geliefert werden. Andernfalls wird er vom Datenträger gelesen und im Cache abgelegt. Schreibzugriffe werden häufig zunächst nur im Cache vermerkt (<i>write-back</i>) und erst zeitverzögert auf den Datenträger übertragen, was die gefühlte Schreibgeschwindigkeit deutlich erhöht, aber bei einem Systemabsturz ein Risiko für die Datenintegrität darstellt. Werkzeuge wie <i>sync</i> und <i>fsync</i> erzwingen das Ausschreiben der gepufferten Daten.</p>
+<h2>Geschichte</h2>
+<p>In klassischen Unix-Systemen verwaltete der Buffer Cache Dateisystem-Metadaten und Dateiinhalte in Blöcken fester Größe. Moderne Systeme wie Linux vereinen Buffer Cache und Page Cache weitgehend: Der Page Cache verwaltet dateiinhaltliche Seiten, während Pufferköpfe (<i>buffer heads</i>) den Zustand einzelner Dateisystemblöcke beschreiben. Nicht belegter Hauptspeicher wird unter Linux dynamisch als Cache verwendet und bei Bedarf von Anwendungen verdrängt, weshalb ein „voller“ Cache dort keinen Mangel an freiem Speicher bedeutet.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Page_Cache/index.html">Page Cache</a></li>
+<li><a href="../Cache/index.html">Cache</a></li>
+<li><a href="../Dateisystem/index.html">Dateisystem</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>AES-GCM – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; max-width: 100%; margin: 12px auto; }
+.footer { font-size: 85%; color: #54595d; border-top: 1px solid #a2a9b1; margin-top: 24px; padding-top: 8px; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>AES-GCM</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>AES-GCM</b> ist eine Betriebsart (Mode of Operation) für den Verschlüsselungsalgorithmus Advanced Encryption Standard (AES), die Vertraulichkeit und Authentizität der Daten gleichzeitig gewährleistet (sogenanntes AEAD-Verfahren). GCM steht für <i>Galois/Counter Mode</i>.</p>
+<h2>Funktionsweise</h2>
+<p>Die Verschlüsselung erfolgt im Counter-Modus (CTR): Ein Zähler wird mit AES verschlüsselt und das Ergebnis per XOR mit dem Klartext verknüpft. Zusätzlich wird eine Authentifizierung berechnet, die auf Multiplikationen im Galois-Körper GF(2<sup>128</sup>) beruht (GHASH). Das Ergebnis ist ein Authentication Tag, mit dem der Empfänger die Unverfälschtheit der Nachricht prüfen kann. Zusätzlich authentifiziert werden können auch nicht verschlüsselte Zusatzdaten (AAD).</p>
+<h2>Eigenschaften</h2>
+<p>AES-GCM ist gut parallelisierbar und erreicht auf moderner Hardware mit AES-Befehlssatzerweiterungen (AES-NI) sehr hohe Datenraten. Standardisiert ist das Verfahren in der NIST-Publikation SP 800-38D (2007). Es wird unter anderem in TLS 1.2 und TLS 1.3, IPsec und SSH eingesetzt.</p>
+<h2>Sicherheit</h2>
+<p>Die Sicherheit von AES-GCM hängt entscheidend davon ab, dass ein Initialisierungsvektor (Nonce) unter einem Schlüssel niemals wiederverwendet wird. Eine Wiederverwendung offenbart den Authentifizierungsschlüssel und ermöglicht Fälschungen. Aus diesem Grund wurden robustere Varianten wie AES-GCM-SIV entwickelt.</p>
+<div class="footer">Siehe auch: Advanced Encryption Standard, Betriebsart (Kryptologie), Authenticated Encryption.</div>
+</div>
+</body>
+</html>

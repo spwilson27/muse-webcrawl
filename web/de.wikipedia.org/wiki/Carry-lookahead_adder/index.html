@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Carry-Lookahead-Addierer – Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine","Georgia",serif;margin:0;color:#202122;background:#fff}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:12px 24px}
+header .site{font-size:0.85em;color:#54595d}
+main{max-width:960px;margin:0 auto;padding:16px 24px 48px}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;font-weight:normal;margin-top:1.2em}
+p{line-height:1.6;font-family:sans-serif;font-size:0.95em}
+ul{font-family:sans-serif;font-size:0.95em;line-height:1.6}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{max-width:320px;display:block;margin:12px 0}
+</style>
+</head>
+<body>
+<header><div class="site">Wikipedia – Die freie Enzyklopädie</div></header>
+<main>
+<h1>Carry-Lookahead-Addierer</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>Carry-Lookahead-Addierer</b> (CLA, auch Übertrag-Vorausschau-Addierer oder Manchester-Addierer) ist ein digitaler Addierer, der zwei Binärzahlen deutlich schneller addiert als ein einfacher Ripple-Carry-Addierer, weil er die Überträge (Carries) für alle Bitpositionen parallel im Voraus berechnet, statt sie der Reihe nach durch die Bitstellen laufen zu lassen.</p>
+<h2>Grundprinzip</h2>
+<p>Für jede Bitposition werden zwei Hilfssignale gebildet: das Erzeugungs-Signal (generate) g = a UND b, das angibt, dass an dieser Stelle ein Übertrag entsteht, und das Weitergabe-Signal (propagate) p = a XOR b, das angibt, dass ein ankommender Übertrag weitergeleitet wird. Der Übertrag der nächsten Stelle ergibt sich dann zu c<sub>i+1</sub> = g<sub>i</sub> ODER (p<sub>i</sub> UND c<sub>i</sub>). Durch Einsetzen entstehen Gleichungen, mit denen sich alle Überträge direkt aus den Eingängen und dem Anfangsübertrag berechnen lassen.</p>
+<h2>Aufwand und Blockbauweise</h2>
+<p>Die Gleichungen werden mit wachsender Bitbreite immer komplexer, so dass ein flacher Lookahead praktisch nur für etwa vier Bit sinnvoll ist. Deshalb werden CLA-Blöcke hierarchisch zusammengesetzt: Mehrere 4-Bit-Blöcke erzeugen Gruppen-Generate- und Gruppen-Propagate-Signale, aus denen eine übergeordnete Lookahead-Schaltung die Blocküberträge berechnet. Bekannte Bausteine sind der 74181 (ALU) und der 74182 (Lookahead-Carry-Generator).</p>
+<h2>Anwendung</h2>
+<p>Carry-Lookahead-Logik ist Bestandteil nahezu aller modernen Prozessoren und arithmetisch-logischen Einheiten, oft kombiniert mit anderen Verfahren wie dem <a href="../Carry-save_adder/index.html">Carry-Save-Addierer</a> in Multiplizierern oder Baumaddierern nach Brent und Kung beziehungsweise Kogge und Stone.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Addierwerk/index.html">Addierwerk</a></li>
+<li><a href="../Carry-save_adder/index.html">Carry-Save-Addierer</a></li>
+<li><a href="../Arithmetisch-logische_Einheit/index.html">Arithmetisch-logische Einheit</a></li>
+</ul>
+</main>
+</body>
+</html>

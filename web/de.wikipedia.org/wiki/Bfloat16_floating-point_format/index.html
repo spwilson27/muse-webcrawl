@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Bfloat16 – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #fff; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; padding: 20px 30px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 14px; }
+ul { font-family: sans-serif; font-size: 14px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 15px 20px; width: 250px; font-family: sans-serif; font-size: 13px; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Bfloat16</h1>
+<table class="infobox">
+<tr><th>Bitbreite</th><td>16 Bit</td></tr>
+<tr><th>Vorzeichen</th><td>1 Bit</td></tr>
+<tr><th>Exponent</th><td>8 Bit</td></tr>
+<tr><th>Mantisse</th><td>7 Bit</td></tr>
+<tr><th>Entwickler</th><td>Google Brain</td></tr>
+</table>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Bfloat16</b> (englisch <i>brain floating point</i>) ist ein 16-Bit-Gleitkommazahlenformat, das von der Forschungsabteilung Google Brain entwickelt wurde und vor allem beim maschinellen Lernen eingesetzt wird. Es entsteht aus dem 32-Bit-Format IEEE 754 binary32 (float), indem die unteren 16 Mantissenbits abgeschnitten werden; dadurch bleiben der Zahlenbereich und der Exponent des Ausgangsformats erhalten, während die Genauigkeit sinkt.</p>
+<h2>Eigenschaften</h2>
+<p>Ein bfloat16-Wert besteht aus einem Vorzeichenbit, acht Exponentenbits und sieben Mantissenbits. Weil der Exponent ebenso breit ist wie bei float32, besitzt bfloat16 denselben Wertebereich (etwa bis 3,4 × 10<sup>38</sup>), aber nur etwa zwei bis drei Dezimalstellen Genauigkeit. Gegenüber dem ebenfalls 16 Bit breiten Half-Format (binary16 mit fünf Exponenten- und zehn Mantissenbits) vermeidet bfloat16 Über- und Unterläufe beim Training neuronaler Netze und erleichtert die Umwandlung: Die Konvertierung von float32 erfolgt durch bloßes Abschneiden der Bits.</p>
+<h2>Verwendung</h2>
+<p>Das Format wird in den Tensor Processing Units (TPU) von Google rechnerisch verwendet und wird inzwischen von zahlreichen Prozessoren, Grafikkarten und Beschleunigern unterstützt, darunter Intel-, ARM-, AMD- und NVIDIA-Architekturen. Beim Training großer Sprachmodelle hat sich bfloat16 als bevorzugtes Niedrigpräzisionsformat durchgesetzt, weil es numerisch stabiler ist als das Half-Format.</p>
+</div>
+</body>
+</html>

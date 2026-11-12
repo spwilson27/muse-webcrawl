@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Asynchronous method invocation – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Asynchronous method invocation</h1>
+<p><b>Asynchronous method invocation</b> (asynchroner Methodenaufruf, AMI) ist ein Entwurfsmuster der Softwareentwicklung, bei dem ein Methodenaufruf nicht blockiert, bis das Ergebnis vorliegt. Stattdessen kehrt der Aufruf sofort zurück und stellt dem Aufrufer eine Möglichkeit bereit, das Ergebnis später abzurufen – etwa über ein Future-Objekt, ein Promise oder einen Callback.</p>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h2>Anwendung</h2>
+<p>Das Muster wird vor allem in verteilten Systemen und Middleware-Technologien wie CORBA und ICE eingesetzt, wo Netzwerklatenzen synchrone Aufrufe teuer machen. Auch in der asynchronen Programmierung moderner Sprachen spielt das Konzept eine zentrale Rolle: Ein asynchroner Methodenaufruf erlaubt es, parallel andere Aufgaben zu bearbeiten, während eine lang laufende Operation – etwa eine Datenbankabfrage oder ein Netzaufruf – ausgeführt wird.</p>
+<h2>Varianten</h2>
+<ul>
+<li><b>Future/Promise:</b> Der Aufrufer erhält ein Platzhalterobjekt, über das er das Ergebnis blockierend oder nicht-blockierend abfragen kann.</li>
+<li><b>Callback:</b> Der Aufrufer übergibt eine Rückruffunktion, die bei Fertigstellung automatisch aufgerufen wird.</li>
+<li><b>Fire and forget:</b> Ein Ergebnis wird gar nicht erwartet.</li>
+</ul>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Prozedurfernaufruf/index.html">Prozedurfernaufruf</a></li>
+<li><a href="../Entwurfsmuster/index.html">Entwurfsmuster</a></li>
+<li><a href="../CORBA/index.html">CORBA</a></li>
+</ul>
+</div>
+</body>
+</html>

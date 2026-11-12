@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Binäre Suche – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; padding: 0; background: #f8f9fa; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 1.5em 2em 3em; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { display: block; margin: 1em auto; max-width: 100%; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 1em; overflow-x: auto; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Binäre Suche</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>binäre Suche</b> ist ein effizienter Suchalgorithmus, der die Position eines Zielwerts in einer sortierten Liste (einem sortierten Array) findet. Er arbeitet nach dem Prinzip „Teile und herrsche“: In jedem Schritt wird das mittlere Element des verbleibenden Suchintervalls mit dem Zielwert verglichen; ist es kleiner, wird in der rechten Hälfte weitergesucht, ist es größer, in der linken Hälfte. Das Verfahren endet, wenn der Zielwert gefunden wurde oder das Intervall leer ist.</p>
+<h2>Komplexität</h2>
+<p>Da sich der Suchraum in jedem Schritt halbiert, benötigt die binäre Suche im schlechtesten Fall O(log <i>n</i>) Vergleiche, wobei <i>n</i> die Anzahl der Elemente ist. Der Speicherbedarf beträgt bei iterativer Implementierung O(1).</p>
+<h2>Voraussetzung</h2>
+<p>Voraussetzung ist, dass die Daten sortiert vorliegen und ein direkter (wahlfreier) Zugriff auf Elemente möglich ist. Bei verketteten Listen ist die binäre Suche daher nicht effizient einsetzbar.</p>
+<h2>Pseudocode</h2>
+<pre>
+funktion binaereSuche(A, ziel):
+    links = 0
+    rechts = laenge(A) - 1
+    solange links &lt;= rechts:
+        mitte = (links + rechts) / 2
+        wenn A[mitte] == ziel: return mitte
+        wenn A[mitte] &lt; ziel: links = mitte + 1
+        sonst: rechts = mitte - 1
+    return nicht gefunden
+</pre>
+<h2>Anwendungen</h2>
+<p>Die binäre Suche wird unter anderem in Wörterbüchern, in Datenbanken, beim Suchen in sortierten Dateien und in numerischen Verfahren wie der Bisektion zur Nullstellensuche verwendet. Der zugehörige Datenstruktur-Ansatz führt auf den <a href="../Binary_search_tree/index.html">binären Suchbaum</a>.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Binary_search_algorithm/index.html">Binärer Suchalgorithmus</a></li>
+<li><a href="../Lineare_Suche/index.html">Lineare Suche</a></li>
+<li><a href="../Interpolationssuche/index.html">Interpolationssuche</a></li>
+</ul>
+</div>
+</body>
+</html>

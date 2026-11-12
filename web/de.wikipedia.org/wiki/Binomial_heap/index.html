@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Binomial-Heap – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 20px 32px 48px; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Binomial-Heap</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>Binomial-Heap</b> ist eine Datenstruktur der Informatik, die als Prioritätswarteschlange eingesetzt wird. Er wurde 1978 von Jean Vuillemin eingeführt und besteht aus einer Menge von Binomialbäumen, deren Struktur eng mit der Binärdarstellung der Elementanzahl zusammenhängt — daher der Name, der auch auf die <a href="../Binomial_coefficient/index.html">Binomialkoeffizienten</a> verweist, da ein Binomialbaum der Ordnung k genau ( k über i ) Knoten auf Tiefe i besitzt.</p>
+
+<h2>Binomialbäume</h2>
+<p>Ein Binomialbaum der Ordnung 0 besteht aus einem einzigen Knoten. Ein Binomialbaum der Ordnung k entsteht, indem man die Wurzel eines Binomialbaums der Ordnung k−1 als Kind an die Wurzel eines anderen Binomialbaums der Ordnung k−1 hängt. Ein solcher Baum enthält 2<sup>k</sup> Knoten und erfüllt die Heap-Eigenschaft: Der Schlüssel eines Knotens ist kleiner oder gleich den Schlüsseln seiner Kinder (Min-Heap).</p>
+
+<h2>Aufbau des Heaps</h2>
+<p>Ein Binomial-Heap über n Elementen enthält höchstens ⌊log₂ n⌋ + 1 Binomialbäume, und zwar zu jeder Ordnung höchstens einen. Die Wurzeln der Bäume werden in einer Liste nach aufsteigender Ordnung verwaltet — analog zu den gesetzten Bits der Binärdarstellung von n.</p>
+
+<h2>Operationen</h2>
+<ul>
+<li><b>Einfügen:</b> Erzeugen eines neuen Heaps mit einem Element und anschließendes Verschmelzen.</li>
+<li><b>Verschmelzen (Meld):</b> Wie bei der Addition von Binärzahlen werden gleichrangige Bäume paarweise verknüpft; Laufzeit O(log n).</li>
+<li><b>Minimum entnehmen:</b> Die kleinste Wurzel wird entfernt, ihre Kinder bilden einen neuen Heap, der mit dem Rest verschmolzen wird.</li>
+<li><b>Schlüssel verkleinern:</b> Der Knoten wird wie in einem binären Heap nach oben „durchgereicht“.</li>
+</ul>
+<p>Alle wesentlichen Operationen haben eine (amortisierte bzw. worst-case) Laufzeit von O(log n). Gegenüber dem Fibonacci-Heap ist der Binomial-Heap einfacher zu implementieren, bietet aber für das Verkleinern von Schlüsseln keine konstante amortisierte Laufzeit.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Heap_(Datenstruktur)/index.html">Heap (Datenstruktur)</a></li>
+<li><a href="../Fibonacci-Heap/index.html">Fibonacci-Heap</a></li>
+<li><a href="../Prioritätswarteschlange/index.html">Prioritätswarteschlange</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Apache Kafka – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; max-width: 960px; margin: 0 auto; padding: 16px; color: #202122; background: #fff; line-height: 1.6; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 12px 16px; width: 260px; font-size: 0.85em; }
+img.hero { display: block; margin: 12px 0; }
+</style>
+</head>
+<body>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Apache Kafka</h1>
+<div class="infobox">
+<b>Apache Kafka</b><br>
+Entwickler: Apache Software Foundation<br>
+Programmiersprache: Scala, Java<br>
+Kategorie: Streaming-Plattform, Nachrichtenbroker<br>
+Lizenz: Apache License 2.0
+</div>
+<p><b>Apache Kafka</b> ist eine verteilte Plattform für Ereignis-Streaming (Event Streaming). Sie wurde bei LinkedIn entwickelt – federführend von Jay Kreps, Neha Narkhede und Jun Rao –, nach dem Schriftsteller Franz Kafka benannt und 2011 als Open Source veröffentlicht; seit 2012 ist sie ein Top-Level-Projekt der Apache Software Foundation. Aus dem Projekt ging das Unternehmen Confluent hervor.</p>
+
+<h2>Architektur</h2>
+<p>Kafka speichert Nachrichtenströme dauerhaft in sogenannten Topics, die in Partitionen unterteilt und über mehrere Server (Broker) verteilt und repliziert werden. Produzenten (<i>Producer</i>) schreiben Datensätze in Topics, Konsumenten (<i>Consumer</i>) lesen sie – organisiert in Consumer-Gruppen, die sich die Partitionen teilen. Im Gegensatz zu klassischen Warteschlangen werden Nachrichten nach dem Lesen nicht gelöscht, sondern bis zum Ablauf einer einstellbaren Aufbewahrungsfrist vorgehalten; Konsumenten verfolgen ihre Position über einen Offset. Dadurch eignet sich Kafka als zentrales, verlustarmes Protokoll (Commit Log) für Datenströme mit hohem Durchsatz und geringer Latenz.</p>
+<p>Ergänzende Komponenten sind Kafka Connect zum Anbinden externer Systeme, die Kafka-Streams-Bibliothek zur Verarbeitung von Datenströmen sowie die Abfragesprache ksqlDB. Die Koordination des Clusters erfolgte ursprünglich über ZooKeeper und wird zunehmend durch den integrierten KRaft-Modus (auf Basis des Raft-Konsensverfahrens) ersetzt.</p>
+
+<h2>Einsatz</h2>
+<p>Kafka wird für Echtzeit-Datenpipelines, ereignisgesteuerte Architekturen, Protokollaggregation, Metriken und Aktivitätsverfolgung eingesetzt und gehört zu den am weitesten verbreiteten Streaming-Systemen; große Betreiber sind unter anderem LinkedIn, Uber, Netflix und zahlreiche Banken und Handelsplattformen.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Datenstrom/index.html">Datenstrom</a></li>
+<li><a href="../Publish-Subscribe/index.html">Publish-Subscribe</a></li>
+<li><a href="../Apache_Spark/index.html">Apache Spark</a></li>
+</ul>
+</body>
+</html>

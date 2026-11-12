@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Bus Snooping – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 1.5em 2em; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.2em; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 0.95em; }
+ul { font-family: sans-serif; font-size: 0.95em; line-height: 1.6; }
+img.hero { max-width: 100%; }
+.mw-parser-output a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<div id="content" class="mw-parser-output">
+<h1>Bus Snooping</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Bus Snooping</b> (englisch für „Bus-Lauschen“) ist ein Verfahren zur Sicherstellung der Cache-Kohärenz in Mehrprozessorsystemen. Dabei beobachten („snoopen“) alle Caches eines Systems sämtliche Transaktionen auf dem gemeinsamen Bus. Erkennt ein Cache, dass auf eine von ihm gehaltene Cachezeile zugegriffen wird, kann er entsprechend reagieren – etwa eine geänderte Zeile bereitstellen oder seine Kopie für ungültig erklären.</p>
+<h2>Funktionsweise</h2>
+<p>Jede Cachezeile befindet sich in einem definierten Zustand. Bekannte Protokolle auf Basis von Snooping sind die Zustandsautomaten <b>MESI</b> (Modified, Exclusive, Shared, Invalid) und seine Erweiterung <b>MOSI</b> sowie <b>MOESI</b>. Greift ein Prozessor lesend auf eine Zeile zu, die ein anderer Cache im Zustand „Modified“ hält, meldet dieser sich auf dem Bus und liefert die aktuellen Daten; bei einem Schreibzugriff auf eine gemeinsam gehaltene Zeile wird eine Invalidierungsnachricht an alle anderen Caches gesendet.</p>
+<h2>Vor- und Nachteile</h2>
+<p>Snooping-Protokolle sind relativ einfach zu implementieren und arbeiten mit geringer Latenz, solange alle Prozessoren einen gemeinsamen Bus teilen. Ihre Skalierbarkeit ist jedoch begrenzt, weil jeder Zugriff von allen Caches überwacht werden muss und die Busbandbreite mit der Prozessorzahl zum Engpass wird. In modernen Systemen mit vielen Kernen werden daher zunehmend verzeichnisbasierte (directory-based) Kohärenzverfahren oder hierarchische Kombinationen eingesetzt.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Byte Order Mark – Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine',Georgia,serif;background:#f8f9fa;color:#202122;margin:0;padding:0}
+.container{max-width:960px;margin:0 auto;background:#fff;padding:2em 2.5em;border:1px solid #a7d7f9;min-height:100vh}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;margin-top:0}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+p{line-height:1.6;font-size:1.05em}
+code{background:#f8f9fa;border:1px solid #eaecf0;padding:0 .3em;font-family:monospace}
+table.wikitable{border-collapse:collapse;margin:1em 0}
+table.wikitable th,table.wikitable td{border:1px solid #a2a9b1;padding:.4em .8em}
+table.wikitable th{background:#eaecf0}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Byte Order Mark</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>Byte Order Mark</b> (<b>BOM</b>, deutsch „Byte-Reihenfolge-Markierung") ist eine spezielle Bytefolge am Anfang eines Datenstroms, mit der die Byte-Reihenfolge (Endianness) und teilweise auch die verwendete Zeichenkodierung von Unicode-Text kenntlich gemacht wird. Sie entspricht dem Unicode-Zeichen U+FEFF (<i>ZERO WIDTH NO-BREAK SPACE</i>).</p>
+<h2>Darstellung in verschiedenen Kodierungen</h2>
+<table class="wikitable">
+<tr><th>Kodierung</th><th>Bytefolge (hexadezimal)</th></tr>
+<tr><td>UTF-8</td><td>EF BB BF</td></tr>
+<tr><td>UTF-16 Big Endian</td><td>FE FF</td></tr>
+<tr><td>UTF-16 Little Endian</td><td>FF FE</td></tr>
+<tr><td>UTF-32 Big Endian</td><td>00 00 FE FF</td></tr>
+<tr><td>UTF-32 Little Endian</td><td>FF FE 00 00</td></tr>
+</table>
+<h2>Verwendung und Probleme</h2>
+<p>In UTF-16 und UTF-32 dient die BOM zur Unterscheidung zwischen Big-Endian- und Little-Endian-Darstellung. In UTF-8 ist sie zur Erkennung der Kodierung nicht nötig, wird aber von manchen Programmen – insbesondere unter Windows – vorangestellt. Sie kann dort Probleme verursachen, etwa wenn ein Parser sie als Inhalt interpretiert, in Skriptsprachen („Headers already sent") oder bei der Konkatenation von Dateien. Der Unicode-Standard empfiehlt die BOM für UTF-8 nicht.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Boyer-Moore-Algorithmus – Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#f6f6f6;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.img{border:1px solid #c8ccd1;background:#f8f9fa;padding:8px;float:right;margin:0 0 12px 16px;width:220px;text-align:center;font-size:12px}
+table.info{border:1px solid #a2a9b1;background:#f8f9fa;float:right;margin:0 0 12px 16px;font-size:13px;border-collapse:collapse}
+table.info td,table.info th{border:1px solid #a2a9b1;padding:4px 8px}
+code{font-family:monospace;background:#f8f9fa;padding:1px 4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Boyer-Moore-Algorithmus</h1>
+<div class="img"><img src="images/hero.png" alt="Hero image (placeholder)"><br>Schematische Darstellung der Zeichenketten-Suche</div>
+<p>Der <b>Boyer-Moore-Algorithmus</b> ist ein effizientes Verfahren zur Suche eines Musters (Pattern) in einem Text. Er wurde 1977 von Robert S. Boyer und J Strother Moore veröffentlicht und gehört zu den wichtigsten Algorithmen der Stringverarbeitung.</p>
+<h2>Prinzip</h2>
+<p>Im Gegensatz zu naiven Verfahren vergleicht der Algorithmus das Muster von rechts nach links mit dem unterlegten Textabschnitt. Bei einer Nichtübereinstimmung kann das Muster mithilfe zweier Vorverarbeitungstabellen um mehr als eine Position verschoben werden:</p>
+<ul>
+<li>Die <b>Bad-Character-Regel</b> verschiebt das Muster so, dass das abweichende Textzeichen mit seinem letzten Vorkommen im Muster übereinstimmt.</li>
+<li>Die <b>Good-Suffix-Regel</b> nutzt bereits übereinstimmende Suffixe, um eine größere Verschiebung zu erreichen.</li>
+</ul>
+<h2>Komplexität</h2>
+<p>Im besten Fall erreicht der Algorithmus eine sublineare Laufzeit von O(n/m), weil nicht jedes Textzeichen gelesen werden muss. Im schlechtesten Fall beträgt die Laufzeit O(n·m), sofern die Good-Suffix-Regel nicht angewendet wird; mit ihr bleibt der Algorithmus linear.</p>
+<h2>Varianten und Anwendung</h2>
+<p>Bekannte Varianten sind der Boyer-Moore-Horspool-Algorithmus und der Turbo-Boyer-Moore-Algorithmus. Das Verfahren wird unter anderem in Texteditoren, Suchprogrammen und Bibliotheksfunktionen zur Zeichenkettensuche eingesetzt.</p>
+<p>Siehe auch: <a href="../Rabin-Karp-Algorithmus/index.html">Rabin-Karp-Algorithmus</a>, <a href="../Zeichenketten-Suchalgorithmus/index.html">Zeichenketten-Suchalgorithmus</a>.</p>
+</div>
+</body>
+</html>

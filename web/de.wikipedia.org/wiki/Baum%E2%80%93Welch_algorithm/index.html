@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Baum-Welch-Algorithmus – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #fff; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; padding: 20px 30px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p, li { font-family: sans-serif; font-size: 14px; line-height: 1.6; }
+.infobox { float: right; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 15px 20px; font-size: 13px; font-family: sans-serif; }
+.infobox th { text-align: left; padding: 2px 6px; vertical-align: top; }
+.infobox td { padding: 2px 6px; }
+.infobox .title { background: #b0c4de; text-align: center; font-weight: bold; padding: 5px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Baum-Welch-Algorithmus</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<table class="infobox">
+<tr><td class="title" colspan="2">Baum-Welch-Algorithmus</td></tr>
+<tr><th>Verfahrenstyp</th><td>Expectation-Maximization-Algorithmus</td></tr>
+<tr><th>Anwendung</th><td>Training von Hidden-Markov-Modellen</td></tr>
+<tr><th>Benannt nach</th><td>Leonard E. Baum, Lloyd R. Welch</td></tr>
+</table>
+<p>Der <b>Baum-Welch-Algorithmus</b> ist ein Verfahren zum Trainieren von Hidden-Markov-Modellen (HMM). Er schätzt aus einer gegebenen Beobachtungsfolge diejenigen Modellparameter – Anfangswahrscheinlichkeiten, Übergangswahrscheinlichkeiten und Emissionswahrscheinlichkeiten –, die die Wahrscheinlichkeit der Beobachtungen maximieren. Der Algorithmus ist ein Spezialfall des Expectation-Maximization-Verfahrens und geht auf Arbeiten von Leonard E. Baum und seinen Kollegen aus den 1960er Jahren zurück; Lloyd R. Welch trug wesentlich zu seiner Verbreitung bei.</p>
+
+<h2>Verfahren</h2>
+<p>Der Algorithmus arbeitet iterativ. Im Erwartungsschritt (E-Schritt) werden mit dem Vorwärts-Rückwärts-Verfahren (Forward-Backward) die Wahrscheinlichkeiten dafür berechnet, sich zu jedem Zeitpunkt in einem bestimmten Zustand zu befinden und einen bestimmten Übergang zu vollziehen. Im Maximierungsschritt (M-Schritt) werden aus diesen Größen neue Parameterschätzungen gebildet. Das Verfahren wird wiederholt, bis die Likelihood konvergiert; garantiert ist nur ein lokales Optimum, weshalb das Ergebnis von der Initialisierung abhängt.</p>
+
+<h2>Anwendungen</h2>
+<p>Der Baum-Welch-Algorithmus war lange das Standardverfahren zum Training von Spracherkennungssystemen auf HMM-Basis. Weitere Anwendungen liegen in der Bioinformatik, etwa bei der Genfindung und der Analyse von Sequenzfamilien mit Profil-HMMs, sowie in der Gesten- und Schrifterkennung.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Baumé_scale/index.html">Baumé-Skala</a></li>
+</ul>
+</div>
+</body>
+</html>

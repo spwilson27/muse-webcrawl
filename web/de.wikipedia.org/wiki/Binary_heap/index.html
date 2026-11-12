@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Binärer Heap – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 1.5em 2em; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; font-size: 0.85em; margin: 0 0 1em 1em; padding: 0.5em; }
+.infobox th { text-align: left; padding-right: 0.5em; vertical-align: top; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 1em auto; max-width: 100%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Binärer Heap</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>binärer Heap</b> (englisch <i>binary heap</i>) ist eine Datenstruktur der Informatik, die einen Binärbaum nutzt, um Elemente nach ihrer Priorität zu verwalten. Er dient vor allem als Implementierung einer Vorrangwarteschlange (Prioritätswarteschlange).</p>
+<h2>Heap-Eigenschaft</h2>
+<p>Entscheidend ist die <i>Heap-Eigenschaft</i>: Beim Min-Heap ist der Schlüssel jedes Knotens kleiner oder gleich den Schlüsseln seiner Kinder, sodass das kleinste Element an der Wurzel steht; beim Max-Heap gilt die umgekehrte Ordnung. Der Baum ist zudem ein fast vollständiger Binärbaum – alle Ebenen sind vollständig gefüllt, bis auf die letzte, die von links her gefüllt wird.</p>
+<h2>Darstellung im Array</h2>
+<p>Weil der Baum nahezu vollständig ist, lässt er sich ohne Zeiger in einem Array speichern: Für den Knoten an Position <i>i</i> (bei 1-basierter Indizierung) liegen die Kinder an den Positionen 2<i>i</i> und 2<i>i</i>+1, der Elternknoten an Position ⌊<i>i</i>/2⌋.</p>
+<h2>Operationen</h2>
+<ul>
+<li><b>Einfügen:</b> Das neue Element wird ans Ende gesetzt und steigt („bubble up“) so lange auf, bis die Heap-Eigenschaft wieder gilt – Laufzeit O(log n).</li>
+<li><b>Minimum/Maximum entnehmen:</b> Die Wurzel wird durch das letzte Element ersetzt und versinkt („heapify“) – Laufzeit O(log n).</li>
+<li><b>Heap aufbauen:</b> Aus einem unsortierten Array in linearer Zeit O(n) möglich.</li>
+</ul>
+<p>Der binäre Heap ist Grundlage des Sortierverfahrens Heapsort und wird in Algorithmen wie Dijkstras Kürzeste-Wege-Verfahren eingesetzt.</p>
+</div>
+</body>
+</html>

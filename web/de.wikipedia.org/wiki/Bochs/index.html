@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Bochs – Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 4px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p { line-height: 1.6; margin: 0.6em 0; }
+ul { line-height: 1.6; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; margin: 0 0 16px 20px; font-size: 0.85em; }
+.infobox th, .infobox td { padding: 4px 8px; text-align: left; vertical-align: top; }
+.infobox caption { font-weight: bold; background: #eaecf0; padding: 6px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { text-align: center; margin: 16px 0; }
+.thumb img { max-width: 400px; border: 1px solid #c8ccd1; }
+.small { font-size: 0.85em; color: #54595d; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px; overflow-x: auto; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Bochs</h1>
+<p class="small">Aus Wikipedia, der freien Enzyklopädie</p>
+<table class="infobox">
+<caption>Bochs</caption>
+<tr><th>Entwickler</th><td>Kevin Lawton u. a.</td></tr>
+<tr><th>Erstveröffentlichung</th><td>1994</td></tr>
+<tr><th>Programmiersprache</th><td>C++</td></tr>
+<tr><th>Plattform</th><td>plattformunabhängig (u. a. Windows, Linux, macOS)</td></tr>
+<tr><th>Kategorie</th><td>Emulator, virtuelle Maschine</td></tr>
+<tr><th>Lizenz</th><td>GNU LGPL</td></tr>
+</table>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"></div>
+<p><b>Bochs</b> (gesprochen wie englisch „box") ist ein freier, in C++ geschriebener Emulator für die x86- und x86-64-Architektur. Im Gegensatz zu Virtualisierungslösungen wie VMware oder VirtualBox emuliert Bochs den gesamten Prozessor und die übrige Hardware eines PCs in Software, statt Befehle direkt auf der realen CPU auszuführen. Deshalb kann Bochs ein x86-Gastsystem auch auf Computern mit völlig anderer Prozessorarchitektur ausführen, ist jedoch deutlich langsamer als eine Virtualisierung.</p>
+
+<h2>Geschichte</h2>
+<p>Bochs wurde von Kevin Lawton entwickelt und 1994 zunächst als kommerzielles Produkt veröffentlicht. Im Jahr 2000 wurde das Projekt unter der GNU Lesser General Public License (LGPL) als freie Software freigegeben, nachdem das Unternehmen Mandrakesoft (später Mandriva) die Rechte erworben und den Quelltext offengelegt hatte. Seitdem wird Bochs von einem Entwicklerteam auf SourceForge weitergepflegt. Aus Bochs bzw. in Konkurrenz dazu entstanden weitere Projekte: Kevin Lawton gründete später das Virtualisierungsprojekt Plex86, und der bekannte Emulator QEMU übernahm in seinen Anfängen Teile des BIOS- und Hardwarecodes von Bochs.</p>
+
+<h2>Funktionsweise</h2>
+<p>Bochs bildet einen kompletten IBM-PC-kompatiblen Computer nach: Hauptprozessor (je nach Konfiguration von 8086 bis zu modernen Mehrkern-x86-64-CPUs mit Erweiterungen wie MMX, SSE und AVX), Speicher, Chipsatz, Grafikkarte (VGA und SVGA-Standards), Festplatten- und CD-ROM-Controller (IDE/ATA, teils SATA), Diskettenlaufwerke, Netzwerkkarte (u. a. NE2000- und E1000-Emulation), Soundkarten (Sound Blaster) sowie USB- und PCI-Geräte.</p>
+<p>Beim Start liest Bochs eine Konfigurationsdatei (standardmäßig <i>.bochsrc</i>), in der unter anderem die Größe des Arbeitsspeichers, die Bootreihenfolge und die einzuhängenden Festplatten-Images festgelegt werden. Als Firmware kommt ein eigenes BIOS (Bochs BIOS) zum Einsatz; es kann aber auch SeaBIOS verwendet werden. Gastbetriebssysteme wie DOS, Windows, Linux, BSD-Derivate und viele andere lassen sich installieren und booten.</p>
+
+<h2>Einsatzgebiete</h2>
+<p>Wegen der vollständigen Emulation eignet sich Bochs besonders für:</p>
+<ul>
+<li><b>Betriebssystementwicklung</b>: Der integrierte Debugger erlaubt es, das Gastsystem Befehl für Befehl zu untersuchen – ein Grund, warum Bochs in der Hobby-OS-Entwicklerszene und in der Lehre beliebt ist.</li>
+<li><b>Debugging und Analyse</b>: Fehler lassen sich reproduzierbar untersuchen, ohne reale Hardware zu gefährden.</li>
+<li><b>Ausführung alter Software</b> auf modernen oder fremden Architekturen.</li>
+<li><b>Sicherheitsforschung</b>, etwa zur kontrollierten Untersuchung von Schadsoftware.</li>
+</ul>
+<p>Für den produktiven Einsatz ist Bochs wegen der geringen Geschwindigkeit meist zu langsam: Die Emulation erreicht typischerweise nur einen Bruchteil der Leistung einer nativen CPU, während Virtualisierer nahezu native Geschwindigkeit bieten.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../QEMU/index.html">QEMU</a></li>
+<li><a href="../VirtualBox/index.html">VirtualBox</a></li>
+<li><a href="../Emulator/index.html">Emulator</a></li>
+<li><a href="../Virtuelle_Maschine/index.html">Virtuelle Maschine</a></li>
+</ul>
+</div>
+</body>
+</html>

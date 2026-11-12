@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>ChaCha20 – Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine","Georgia",serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:1.5em 2em;border:1px solid #a7d7f9}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em;margin-top:1.2em}
+p{line-height:1.6}
+.infobox{float:right;border:1px solid #a7d7f9;background:#f8f9fa;padding:.5em 1em;margin:0 0 1em 1em;font-size:.9em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%}
+code{font-family:monospace;background:#f0f0f0;padding:0 .2em}
+</style>
+</head>
+<body>
+<div id="content">
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h1>ChaCha20</h1>
+<table class="infobox">
+<tr><th>ChaCha20</th></tr>
+<tr><td><b>Typ:</b> Stromchiffre</td></tr>
+<tr><td><b>Entwickler:</b> Daniel J. Bernstein</td></tr>
+<tr><td><b>Veröffentlichung:</b> 2008</td></tr>
+<tr><td><b>Schlüssellänge:</b> 256 Bit</td></tr>
+<tr><td><b>Standard:</b> RFC 8439</td></tr>
+</table>
+<p><b>ChaCha20</b> ist eine Stromchiffre, die 2008 von Daniel J. Bernstein entwickelt wurde. Sie ist eine Weiterentwicklung der 2005 vorgestellten Chiffre Salsa20 und zeichnet sich durch hohe Geschwindigkeit in Software sowie ein einfaches, konstantes Laufzeitverhalten aus, das Seitenkanalangriffe erschwert.</p>
+<h2>Aufbau</h2>
+<p>ChaCha20 arbeitet auf einem 512-Bit-Zustand aus 16 Wörtern zu je 32 Bit: acht Schlüsselmaterial-Wörter (256-Bit-Schlüssel), vier Konstanten („expand 32-byte k"), ein Zählerwort und drei Nonce-Wörter. Die Kernfunktion besteht aus 20 Runden (10 Doppelrunden) von „Quarter-Round"-Operationen aus Addition, XOR und Rotation (ARX-Struktur). Gegenüber Salsa20 verbessert eine geänderte Anordnung der Eingabewörter die Diffusion pro Runde.</p>
+<h2>Verwendung</h2>
+<p>ChaCha20 wird häufig in Kombination mit dem Authentifikator Poly1305 als AEAD-Verfahren ChaCha20-Poly1305 eingesetzt, das in RFC 8439 beschrieben ist. Es ist Bestandteil von TLS 1.3, wird in Protokollen wie WireGuard und SSH verwendet und dient in Betriebssystemen als Grundlage für Zufallszahlengeneratoren (etwa im Linux-Kernel).</p>
+<h2>Sicherheit</h2>
+<p>Für die volle Rundenzahl von ChaCha20 sind keine praktikablen Angriffe bekannt. Reduzierte Varianten mit 12 oder 8 Runden (ChaCha12, ChaCha8) bieten geringere Sicherheitsreserven bei höherer Geschwindigkeit.</p>
+<h2>Siehe auch</h2>
+<p><a href="../ChaCha20-Poly1305/index.html">ChaCha20-Poly1305</a> · <a href="../ChaCha_(cipher)/index.html">ChaCha (Chiffre)</a> · <a href="../Salsa20/index.html">Salsa20</a></p>
+</div>
+</body>
+</html>

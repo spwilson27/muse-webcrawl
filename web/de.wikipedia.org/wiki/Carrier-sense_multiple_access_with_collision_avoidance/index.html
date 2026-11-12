@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Carrier Sense Multiple Access/Collision Avoidance – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; margin: 0 auto; max-width: 960px; padding: 1em 2em 2em; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0 0 1em 1em; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 3px; font-size: 90%; text-align: center; }
+.thumb img { max-width: 250px; display: block; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Carrier Sense Multiple Access/Collision Avoidance</h1>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"><div>Ablauf von CSMA/CA mit Backoff-Zähler</div></div>
+<p><b>Carrier Sense Multiple Access/Collision Avoidance</b> (<b>CSMA/CA</b>) ist ein Zugriffsverfahren für Funknetze, bei dem Kollisionen möglichst vermieden statt nur erkannt werden. Es ist das grundlegende Medienzugriffsverfahren der WLAN-Standards IEEE 802.11 (Distributed Coordination Function, DCF).</p>
+<h2>Ablauf</h2>
+<p>Eine sendewillige Station hört den Funkkanal ab. Ist er für die Dauer eines DIFS-Intervalls frei, darf gesendet werden; andernfalls wählt die Station eine zufällige Backoff-Zeit (in Zeitslots), zählt diese bei freiem Kanal herunter und friert den Zähler bei belegtem Kanal ein. Erreicht der Zähler null, wird der Rahmen gesendet. Der Empfänger bestätigt den Empfang nach einem SIFS-Intervall mit einem ACK-Rahmen; bleibt die Bestätigung aus, wird ein erneuter Sendeversuch mit vergrößertem Zufallsfenster gestartet.</p>
+<h2>RTS/CTS</h2>
+<p>Gegen das Problem versteckter Stationen (Hidden Node) kann optional ein RTS/CTS-Handshake vorgeschaltet werden: Die Station reserviert das Medium mit einem kurzen „Request to Send“, der Access Point antwortet mit „Clear to Send“, woraufhin alle mithörenden Stationen ihre Sender für die angegebene Dauer sperren (Network Allocation Vector).</p>
+<h2>Unterschied zu CSMA/CD</h2>
+<p>Da eine Funkstation während des Sendens keine fremden Signale zuverlässig erkennen kann und Kollisionen auf der Empfängerseite auftreten, ist eine Kollisionserkennung wie bei <a href="../Carrier-sense_multiple_access_with_collision_detection/index.html">CSMA/CD</a> im Funkbereich nicht praktikabel – daher die Vermeidung durch Abhören, Backoff und Bestätigungen.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Carrier-sense_multiple_access/index.html">Carrier Sense Multiple Access</a></li>
+<li><a href="../Carrier-sense_multiple_access_with_collision_detection/index.html">CSMA/CD</a></li>
+</ul>
+</div>
+</body>
+</html>

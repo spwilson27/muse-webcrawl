@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Automatische Differentiation – Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f8f9fa;color:#202122}
+#content{background:#fff;max-width:960px;margin:0 auto;padding:1em 2em;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:serif;font-size:1.9em;border-bottom:1px solid #a2a9b1;margin-bottom:.3em}
+h2{font-family:serif;font-size:1.4em;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img.hero{max-width:100%;height:auto;display:block;margin:0 auto 1em}
+ul{line-height:1.5}
+p{line-height:1.6}
+</style>
+</head>
+<body>
+<div id="content">
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Automatische Differentiation</h1>
+<p>Die <b>automatische Differentiation</b> (englisch <i>automatic differentiation</i>, AD; auch algorithmische Differentiation) ist eine Technik zur computergestützten Berechnung exakter Ableitungen einer durch ein Programm definierten Funktion. Sie unterscheidet sich sowohl von der numerischen Differentiation über Differenzenquotienten, die unter Rundungs- und Abschneidefehlern leidet, als auch von der symbolischen Differentiation, die mit geschlossenen Formeln arbeitet und zu sehr großen Ausdrücken führen kann.</p>
+<h2>Prinzip</h2>
+<p>Jedes Computerprogramm führt eine Folge elementarer Operationen (Addition, Multiplikation, Sinus, Exponentialfunktion usw.) aus, deren Ableitungen bekannt sind. Durch systematisches Anwenden der Kettenregel auf diese Elementaroperationen berechnet AD die Ableitung der Gesamtfunktion bis auf die Genauigkeit der Arithmetik exakt. Dargestellt wird die Berechnung als Rechengraph (computational graph), dessen Knoten Zwischenergebnisse und dessen Kanten die Abhängigkeiten darstellen.</p>
+<h2>Forward- und Reverse-Modus</h2>
+<ul>
+<li><b>Vorwärtsmodus (forward mode)</b>: Die Ableitungen werden entlang der Programmausführung mitgeführt; ein Durchlauf liefert die Richtungsableitung für jeweils einen Eingabewert. Der Aufwand wächst linear mit der Zahl der Eingaben. Realisiert wird er häufig mit dualen Zahlen oder Operatorüberladung.</li>
+<li><b>Rückwärtsmodus (reverse mode)</b>: Nach einem Vorwärtsdurchlauf, bei dem Zwischenergebnisse gespeichert werden, wird der Graph rückwärts durchlaufen. Ein Durchlauf liefert den vollständigen Gradienten bezüglich aller Eingaben – bei hohem Speicherbedarf. Dies ist das Prinzip der Backpropagation in neuronalen Netzen.</li>
+</ul>
+<h2>Implementierungen und Anwendung</h2>
+<p>AD wird über Operatorüberladung, Quellcode-Transformation oder Kompilierung zur Laufzeit umgesetzt. Bekannte Werkzeuge und Bibliotheken sind ADOL-C, Tapenade sowie die in Frameworks des maschinellen Lernens integrierten Systeme wie TensorFlow, PyTorch (Autograd) und JAX, in denen automatische Differentiation die Grundlage des Trainings tiefer neuronaler Netze bildet. Weitere Anwendungen sind Optimierung, Sensitivitätsanalysen, Robotik und Computergrafik.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li>Backpropagation</li>
+<li>Numerische Differentiation</li>
+<li>Symbolische Mathematik</li>
+<li>Gradientenverfahren</li>
+</ul>
+</div>
+</body>
+</html>

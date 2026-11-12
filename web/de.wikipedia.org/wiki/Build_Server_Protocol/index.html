@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Build Server Protocol – Wikipedia</title>
+<style>body{font-family:sans-serif;max-width:900px;margin:0 auto;padding:1em;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em}h2{border-bottom:1px solid #a2a9b1}a{color:#0645ad;text-decoration:none}</style>
+</head>
+<body>
+<h1>Build Server Protocol</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Das <b>Build Server Protocol</b> (BSP) ist ein offenes Protokoll, das die Kommunikation zwischen Entwicklungsumgebungen (IDEs) und Build-Werkzeugen standardisiert. Es wurde ab 2018 von JetBrains, dem Scala Center und weiteren Beteiligten entwickelt und ist konzeptionell am Language Server Protocol (LSP) orientiert.</p>
+<h2>Funktionsweise</h2>
+<p>Die Kommunikation erfolgt über JSON-RPC 2.0. Die IDE als Client startet das Build-Werkzeug als Server und fragt Fähigkeiten und Ziele (Targets) ab. Über Methoden wie <i>buildTarget/compile</i>, <i>buildTarget/test</i> und <i>buildTarget/run</i> lassen sich Kompilierung, Tests und Programmstarts auslösen. Der Server meldet Diagnosen, Fortschritt und Ergebnisse asynchron an den Client zurück.</p>
+<h2>Ziele</h2>
+<p>Vor BSP musste jede IDE jedes Build-System (etwa sbt, Maven, Gradle, Bazel oder Bloop) eigens integrieren. Mit BSP genügt eine Implementierung pro Seite, damit beliebige Kombinationen funktionieren. Es ergänzt das LSP: Während das LSP die Sprachebene abdeckt, beschreibt BSP Projektstruktur, Abhängigkeiten und Build-Abläufe.</p>
+<h2>Verbreitung</h2>
+<p>Unterstützt wird das Protokoll unter anderem von sbt, Bloop, Bazel (über Erweiterungen), Mill und Pants sowie auf IDE-Seite von IntelliJ IDEA und Metals. Die Spezifikation liegt in der Version 2.x vor.</p>
+</body>
+</html>

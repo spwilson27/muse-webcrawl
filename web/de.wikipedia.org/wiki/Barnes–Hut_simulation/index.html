@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Barnes-Hut-Simulation – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+code { background: #f8f9fa; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Barnes-Hut-Simulation</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>Barnes-Hut-Simulation</b> ist ein Algorithmus zur näherungsweisen Berechnung der Wechselwirkungen im N-Körper-Problem, der 1986 von Josh Barnes und Piet Hut vorgestellt wurde. Er reduziert die rechnerische Komplexität einer direkten Summation von O(n²) auf O(n log n) und ermöglicht so die Simulation großer Teilchenzahlen, etwa bei der Untersuchung von Galaxien und Sternsystemen.</p>
+<h2>Prinzip</h2>
+<p>Bei der direkten Berechnung wirkt auf jedes Teilchen die Kraft aller übrigen Teilchen, was n² Wechselwirkungspaare ergibt. Der Barnes-Hut-Algorithmus fasst dagegen weit entfernte Teilchengruppen zu einem einzigen Pseudoteilchen in ihrem gemeinsamen Massenschwerpunkt zusammen und behandelt diese Gruppe näherungsweise als eine einzige Punktmasse.</p>
+<h2>Baumstruktur</h2>
+<p>Der Raum wird rekursiv in Zellen unterteilt: im Zweidimensionalen in einen Quadtree, im Dreidimensionalen in einen Octree. Jede Zelle speichert die Gesamtmasse und den Schwerpunkt der in ihr enthaltenen Teilchen. Zur Kraftberechnung für ein einzelnes Teilchen wird der Baum durchlaufen; ist eine Zelle klein genug im Verhältnis zu ihrem Abstand (Öffnungskriterium s/d &lt; θ, wobei s die Zellgröße, d der Abstand und θ der Öffnungswinkel ist), wird sie als Ganzes verwendet, andernfalls werden ihre Kindzellen einzeln geprüft.</p>
+<h2>Genauigkeit</h2>
+<p>Der Parameter θ steuert den Kompromiss zwischen Geschwindigkeit und Genauigkeit: θ = 0 entspricht der exakten Direktberechnung, während größere Werte (typisch 0,5 bis 1,0) die Rechnung beschleunigen, aber den Approximationsfehler erhöhen.</p>
+<h2>Anwendung</h2>
+<p>Der Algorithmus wird in der Astrophysik für Gravitationssimulationen sowie in anderen Gebieten mit weitreichenden Wechselwirkungen eingesetzt, beispielsweise bei der Molekulardynamik und in abgewandelter Form bei Methoden des maschinellen Lernens wie t-SNE.</p>
+</div>
+</body>
+</html>

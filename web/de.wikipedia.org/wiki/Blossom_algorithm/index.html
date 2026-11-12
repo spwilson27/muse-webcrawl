@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Blossom-Algorithmus – Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:0}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:2px}
+h3{font-size:1.15em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%}
+.small{font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Blossom-Algorithmus</h1>
+<p><img src="images/hero.png" alt="Hero image (placeholder)"></p>
+<p>Der <b>Blossom-Algorithmus</b> ist ein Algorithmus aus der Graphentheorie, der ein Matching maximaler Kardinalität in einem beliebigen (nicht notwendigerweise bipartiten) Graphen berechnet. Er wurde 1961 von Jack Edmonds veröffentlicht und gilt als einer der Grundsteine der kombinatorischen Optimierung und der Polyeder-Kombinatorik. Der Name rührt von den im Verfahren aufgefundenen ungeraden Kreisen her, die im Englischen als <i>blossoms</i> („Blüten") bezeichnet werden.</p>
+<h2>Problemstellung</h2>
+<p>Ein Matching in einem Graphen ist eine Menge paarweise disjunkter Kanten. Gesucht ist ein Matching mit möglichst vielen Kanten. Für bipartite Graphen lässt sich das Problem relativ einfach über augmentierende Pfade lösen. In allgemeinen Graphen scheitert dieses Vorgehen an ungeraden Kreisen: Ein augmentierender Pfad, der einen solchen Kreis durchläuft, lässt sich nicht direkt zur Vergrößerung des Matchings verwenden.</p>
+<h2>Idee</h2>
+<p>Edmonds' entscheidender Einfall besteht darin, einen gefundenen ungeraden Kreis, dessen Knoten bis auf einen alle gematcht sind, zu einem einzigen Pseudoknoten zusammenzuziehen (Kontraktion). Ein augmentierender Pfad im kontrahierten Graphen kann anschließend durch geeignetes Drehen der Matching-Kanten im Kreis wieder zu einem augmentierenden Pfad im ursprünglichen Graphen „aufgefaltet" werden. Diese Schrumpfung wird rekursiv angewandt, bis ein augmentierender Pfad gefunden wird oder feststeht, dass keiner existiert. Das Verfahren läuft in polynomieller Zeit; moderne Implementierungen erreichen je nach Variante Laufzeiten um O(n³) beziehungsweise besser mit Gewichten.</p>
+<h2>Bedeutung und Erweiterungen</h2>
+<p>Mit dem Blossom-Algorithmus zeigte Edmonds eines der ersten Beispiele eines „guten" (polynomiellen) Algorithmus und prägte die Auffassung, dass Polynomzeitlaufzeit mit praktischer Effizienz gleichzusetzen sei – ein Gedanke, der für die Komplexitätstheorie zentral wurde. Der gewichtete Fall (Maximum-Weight-Matching in allgemeinen Graphen) wurde ebenfalls von Edmonds gelöst; verbreitete Implementierungen sind etwa „Blossom V" von Vladimir Kolmogorov, die in der Computer Vision, etwa zur Bildrekonstruktion, eingesetzt wird. Anwendungen reichen von der Zuordnungsplanung über Bioinformatik bis zur Rekonstruktion von Stereo-Bildern.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Matching_(Graphentheorie)/index.html">Matching (Graphentheorie)</a></li>
+<li><a href="../Jack_Edmonds/index.html">Jack Edmonds</a></li>
+<li><a href="../Graphentheorie/index.html">Graphentheorie</a></li>
+</ul>
+<p class="small">Kategorie: Graphentheorie | Algorithmus</p>
+</div>
+</body>
+</html>

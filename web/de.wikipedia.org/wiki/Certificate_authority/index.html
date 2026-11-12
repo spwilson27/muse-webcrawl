@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Zertifizierungsstelle (Certificate Authority) – Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#fff;color:#202122}
+.wrap{max-width:960px;margin:0 auto;padding:20px}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#3056a9;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Zertifizierungsstelle (Certificate Authority)</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Eine <b>Zertifizierungsstelle</b> (englisch <i>certificate authority</i>, kurz <i>CA</i>) ist im Bereich der <a href="../Public-Key-Infrastruktur/index.html">Public-Key-Infrastruktur</a> (PKI) eine Instanz, die digitale Zertifikate ausstellt, beglaubigt und wieder zurückziehen kann. Mit einem Zertifikat bestätigt die Zertifizierungsstelle die Zuordnung eines öffentlichen Schlüssels zu einer Identität, beispielsweise zu einer Person, einer Organisation oder einem Webserver.</p>
+<h2>Aufgaben</h2>
+<p>Zu den Kernaufgaben einer Zertifizierungsstelle gehören:</p>
+<ul>
+<li>Prüfung der Identität des Antragstellers (Identitätsfeststellung),</li>
+<li>Ausstellung des Zertifikats nach dem Standard X.509,</li>
+<li>Veröffentlichung von Zertifikaten und Informationen über deren Gültigkeit,</li>
+<li>Sperrung (Widerruf) von Zertifikaten, etwa bei Schlüsselkompromittierung, und Veröffentlichung von Sperrlisten (Certificate Revocation Lists, CRL) oder Statusauskünften über das Online Certificate Status Protocol (OCSP).</li>
+</ul>
+<h2>Vertrauensmodell</h2>
+<p>Zertifizierungsstellen bilden eine Hierarchie: Eine Wurzelzertifizierungsstelle (Root CA) signiert ihr eigenes Zertifikat selbst und zertifiziert nachgeordnete Zwischenzertifizierungsstellen (Intermediate CAs). Betriebssysteme und Webbrowser enthalten einen Vertrauensspeicher (Trust Store) mit den Wurzelzertifikaten anerkannter CAs; eine Vertrauenskette führt vom Endzertifikat bis zur vertrauten Wurzel. Das im Web eingesetzte Verfahren wird auch als Web PKI bezeichnet und bildet die Grundlage für TLS-verschlüsselte Verbindungen (HTTPS).</p>
+<h2>Validierungsarten</h2>
+<p>Je nach Prüfungstiefe unterscheidet man domänenvalidierte (DV), organisationsvalidierte (OV) und erweitert validierte (EV) Zertifikate. Seit den 2010er-Jahren hat die gemeinnützige Zertifizierungsstelle Let's Encrypt die kostenlose automatisierte Ausstellung von DV-Zertifikaten massiv verbreitet.</p>
+<h2>Sicherheitsvorfälle</h2>
+<p>Kompromittierungen von Zertifizierungsstellen können schwerwiegende Folgen haben, da Angreifer dann gefälschte Zertifikate für beliebige Domains ausstellen können. Bekannt wurde der Fall des niederländischen Anbieters DigiNotar im Jahr 2011, der nach einem Einbruch Insolvenz anmelden musste und aus den Vertrauensspeichern entfernt wurde. Maßnahmen wie Certificate Transparency (öffentliche Protokolle aller ausgestellten Zertifikate) sollen Fehlverhalten aufdecken.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Digitales_Zertifikat/index.html">Digitales Zertifikat</a></li>
+<li><a href="../Public-Key-Infrastruktur/index.html">Public-Key-Infrastruktur</a></li>
+<li><a href="../Transport_Layer_Security/index.html">Transport Layer Security</a></li>
+<li><a href="../X.509/index.html">X.509</a></li>
+</ul>
+</div>
+</body>
+</html>

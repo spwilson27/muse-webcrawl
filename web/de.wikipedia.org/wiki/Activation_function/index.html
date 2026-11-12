@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Aktivierungsfunktion – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0 auto; max-width: 960px; padding: 20px; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 10px auto; }
+</style>
+</head>
+<body>
+<h1>Aktivierungsfunktion</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Eine <b>Aktivierungsfunktion</b> (englisch <i>activation function</i>) bestimmt in einem künstlichen neuronalen Netz, wie die gewichtete Summe der Eingaben eines Neurons in dessen Ausgabe überführt wird. Aktivierungsfunktionen sind in der Regel nichtlinear; erst durch sie können neuronale Netze nichtlineare Zusammenhänge erlernen, da eine Verkettung rein linearer Funktionen wieder linear wäre.</p>
+<h2>Gängige Funktionen</h2>
+<ul>
+<li><b>Sigmoidfunktion:</b> σ(x) = 1 / (1 + e<sup>−x</sup>); bildet auf das Intervall (0, 1) ab. Früher weit verbreitet, heute wegen des Problems verschwindender Gradienten seltener in verborgenen Schichten verwendet.</li>
+<li><b>Tangens hyperbolicus (tanh):</b> bildet auf (−1, 1) ab und ist um den Nullpunkt zentriert.</li>
+<li><b>ReLU</b> (Rectified Linear Unit): f(x) = max(0, x); seit den 2010er Jahren die Standardfunktion in vielen tiefen Netzen, da sie einfach zu berechnen ist und Gradienten für positive Eingaben unverändert durchlässt. Varianten sind Leaky ReLU, ELU und GELU.</li>
+<li><b>Softmax:</b> wird in der Ausgabeschicht bei Klassifikationsaufgaben verwendet, um die Ausgaben in eine Wahrscheinlichkeitsverteilung zu überführen.</li>
+</ul>
+<h2>Eigenschaften</h2>
+<p>Für das Training mit Backpropagation sollte die Aktivierungsfunktion differenzierbar (oder fast überall differenzierbar) sein. Die Wahl der Funktion beeinflusst Konvergenzgeschwindigkeit und Leistungsfähigkeit des Netzes. Bei ReLU kann das Problem „sterbender Neuronen" auftreten, deren Gradient für alle Eingaben null ist.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Künstliches_neuronales_Netz/index.html">Künstliches neuronales Netz</a></li>
+<li><a href="../Backpropagation/index.html">Backpropagation</a></li>
+<li><a href="../Perzeptron/index.html">Perzeptron</a></li>
+<li><a href="../Sigmoidfunktion/index.html">Sigmoidfunktion</a></li>
+</ul>
+</body>
+</html>

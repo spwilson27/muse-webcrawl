@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Assertion (Softwareentwicklung) – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em; }
+h1 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0 0 1em 1.5em; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; font-size: 0.85em; text-align: center; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.6em; margin: 0 0 1em 1.5em; font-size: 0.9em; }
+code { background: #f8f9fa; border: 1px solid #eaecf0; padding: 1px 4px; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0.5em; overflow-x: auto; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Assertion (Softwareentwicklung)</h1>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"><br>Quelltext mit einer Assertion</div>
+<p>Eine <b>Assertion</b> (deutsch <i>Zusicherung</i>) ist in der Softwareentwicklung ein Ausdruck im Quelltext, der eine Bedingung formuliert, die an dieser Stelle des Programms stets wahr sein muss. Wird die Bedingung zur Laufzeit verletzt, meldet das Programm einen Fehler – in der Regel durch Abbruch oder durch Auslösen einer Ausnahme. Assertions dienen vor allem der Fehlersuche während der Entwicklung und der Dokumentation von Annahmen des Programmierers.</p>
+<h2>Verwendung</h2>
+<p>Assertions werden eingesetzt, um Vorbedingungen, Nachbedingungen und Invarianten zu überprüfen. Ein einfaches Beispiel in C:</p>
+<pre>#include &lt;assert.h&gt;
+assert(zeiger != NULL);</pre>
+<p>In vielen Sprachen lassen sich Assertions für den Produktivbetrieb deaktivieren, etwa in Java über das Fehlen der Option <code>-ea</code> oder in C durch Definieren von <code>NDEBUG</code>. Sie eignen sich daher nicht zur Überprüfung von Benutzereingaben, sondern zum Aufspüren von Programmierfehlern.</p>
+<h2>Abgrenzung</h2>
+<p>Im Unterschied zu Assertions prüfen Unit-Tests das Verhalten eines Programms von außen; Assertions sind dagegen Teil des Programms selbst. In der testgetriebenen Entwicklung und in Testframeworks bezeichnet „Assertion“ außerdem die Prüfanweisungen innerhalb eines Tests, etwa <code>assertEquals</code> in JUnit.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Design_by_contract/index.html">Design by contract</a></li>
+<li><a href="../Unit_testing/index.html">Modultest</a></li>
+<li><a href="../Invariant_(mathematics)/index.html">Invariante</a></li>
+</ul>
+</div>
+</body>
+</html>

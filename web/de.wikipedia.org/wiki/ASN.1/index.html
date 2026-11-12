@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>ASN.1 – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0.7em; overflow-x: auto; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>ASN.1</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>ASN.1</b> (<i>Abstract Syntax Notation One</i>) ist eine Beschreibungssprache zur Definition abstrakter Datentypen und Datenstrukturen, die unabhängig von einer konkreten Kodierung ist. Sie wird vor allem in der Telekommunikation und in der Kryptografie eingesetzt, etwa im Rahmen von X.509-Zertifikaten, SNMP, LDAP und Mobilfunkprotokollen. ASN.1 ist in den ITU-T-Empfehlungen der X.680-Reihe und als ISO/IEC 8824 genormt.</p>
+<h2>Beschreibung</h2>
+<p>Mit ASN.1 lassen sich einfache Typen (z. B. INTEGER, BOOLEAN, OCTET STRING) und zusammengesetzte Typen (SEQUENCE, SET, CHOICE) definieren. Die Notation beschreibt nur die abstrakte Struktur der Daten; für die Übertragung ist eine konkrete Kodierung erforderlich.</p>
+<pre>Person ::= SEQUENCE {
+    name    UTF8String,
+    alter   INTEGER,
+    verheiratet BOOLEAN DEFAULT FALSE
+}</pre>
+<h2>Kodierungsregeln</h2>
+<ul>
+<li><b>BER</b> (Basic Encoding Rules): die ursprüngliche, flexible Kodierung nach dem TLV-Prinzip (Tag, Length, Value)</li>
+<li><b>DER</b> (Distinguished Encoding Rules): eine eindeutige Teilmenge der BER, verwendet u. a. bei X.509-Zertifikaten</li>
+<li><b>CER</b> (Canonical Encoding Rules)</li>
+<li><b>PER</b> (Packed Encoding Rules): besonders kompakte Kodierung, z. B. im Mobilfunk</li>
+<li><b>XER</b> (XML Encoding Rules): Darstellung als XML</li>
+<li><b>JER</b> (JSON Encoding Rules): Darstellung als JSON</li>
+</ul>
+<h2>Anwendungen</h2>
+<p>ASN.1 kommt unter anderem in den Protokollen SNMP und LDAP, in der Public-Key-Infrastruktur (X.509, PKCS), in Mobilfunkstandards (UMTS, LTE, 5G) sowie in der Flugsicherung und im Bankwesen zum Einsatz.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../X.509/index.html">X.509</a></li>
+<li><a href="../Simple_Network_Management_Protocol/index.html">Simple Network Management Protocol</a></li>
+</ul>
+</div>
+</body>
+</html>

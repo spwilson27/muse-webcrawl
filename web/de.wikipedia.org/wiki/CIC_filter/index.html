@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>CIC-Filter – Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;background:#f8f9fa;color:#202122;margin:0;padding:0}
+.container{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:'Linux Libertine',Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%}
+.small{font-size:85%;color:#54595d}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>CIC-Filter</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>CIC-Filter</b> (<i>Cascaded Integrator-Comb</i>, „kaskadiertes Integrator-Kammfilter“) ist ein effizienter digitaler Filtertyp der Signalverarbeitung, der vor allem zur Abtastratenwandlung – Dezimation und Interpolation – eingesetzt wird. Bekannt wurde die Struktur durch Eugene B. Hogenauer (1981), weshalb sie auch als Hogenauer-Filter bezeichnet wird.</p>
+<h2>Aufbau</h2>
+<p>Das Filter besteht aus einer Kaskade von Integratorstufen auf der Seite der hohen Abtastrate und einer Kaskade von Kammfiltern (Differenzierern) auf der Seite der niedrigen Abtastrate, dazwischen liegt die Ratenwandlung. Entscheidender Vorteil: Die Realisierung kommt ohne Multiplikationen aus – sie benötigt nur Additionen und Verzögerungselemente – und ist daher in Hardware (z. B. FPGAs, ASICs) sehr sparsam.</p>
+<h2>Eigenschaften</h2>
+<p>Die Übertragungsfunktion entspricht einem gleitenden Mittelwert höherer Ordnung; der Frequenzgang ist sinc-förmig mit Nullstellen bei Vielfachen der Ausgangsabtastrate, was Spiegel- und Aliasanteile unterdrückt. Nachteil ist ein merklicher Abfall des Frequenzgangs im Durchlassbereich („Droop“), der häufig durch ein nachgeschaltetes Kompensations-FIR-Filter ausgeglichen wird. Integratoren können bei großen Dezimationsfaktoren überlaufen, was durch Zweierkomplement-Arithmetik mit ausreichender Wortbreite beherrscht wird.</p>
+<h2>Anwendung</h2>
+<p>CIC-Filter sind Standard in digitalen Abwärtsmischern (DDC), Software Defined Radio, Sigma-Delta-Wandlern und Kommunikationsempfängern, wo hohe Überabtastverhältnisse vorliegen.</p>
+<p class="small">Siehe auch: Dezimation (Signalverarbeitung), Digitaler Filter, Software Defined Radio</p>
+</div>
+</body>
+</html>

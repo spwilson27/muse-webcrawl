@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Adler-32 – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 52em; line-height: 1.6; color: #202122; padding: 0 1em; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 300px; float: right; margin: 0 0 1em 1em; }
+.formel { font-family: serif; font-style: italic; background: #f8f9fa; padding: 0.5em 1em; }
+</style>
+</head>
+<body>
+<h1>Adler-32</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Adler-32</b> ist ein <a href="../Prüfsumme/index.html">Prüfsummenalgorithmus</a>, der 1995 von Mark Adler entwickelt wurde. Er berechnet aus beliebigen Daten eine 32 Bit lange Prüfsumme und wird unter anderem in der Kompressionsbibliothek <a href="../Zlib/index.html">zlib</a> und im Grafikformat <a href="../Portable_Network_Graphics/index.html">PNG</a> (über zlib-Datenströme) verwendet. Im Vergleich zum zyklischen Redundanzcode <a href="../CRC-32/index.html">CRC-32</a> ist Adler-32 deutlich schneller zu berechnen, erkennt bestimmte Fehlerarten aber schlechter.</p>
+
+<h2>Algorithmus</h2>
+<p>Die Prüfsumme besteht aus zwei 16-Bit-Summen A und B, die modulo 65521 (der größten Primzahl kleiner als 2<sup>16</sup>) berechnet werden:</p>
+<ul>
+<li>A beginnt bei 1 und addiert nacheinander alle Datenbytes.</li>
+<li>B addiert nach jedem Byte den jeweils aktuellen Wert von A.</li>
+</ul>
+<p class="formel">A = 1 + Σ D<sub>i</sub> (mod 65521), &nbsp; B = Σ A<sub>i</sub> (mod 65521)</p>
+<p>Das Ergebnis wird als <span class="formel">(B &lt;&lt; 16) | A</span> ausgegeben. Da die Modulo-Operation teuer ist, wird sie in Implementierungen nur alle 5552 Bytes durchgeführt – der größten Anzahl von Bytes, bei der die Summen noch in 32-Bit-Registern ohne Überlauf Platz finden.</p>
+
+<h2>Schwächen</h2>
+<p>Bei sehr kurzen Eingaben (wenige hundert Bytes) nutzt die Prüfsumme den 32-Bit-Wertebereich schlecht aus: A kann seinen Maximalwert nicht erreichen und B bleibt klein, sodass viele Bitmuster nie auftreten und Fehler schlechter erkannt werden. Adler-32 ist daher für kurze Daten weniger zuverlässig als CRC-32. Für kryptographische Zwecke ist keiner der beiden Algorithmen geeignet.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Fletcher-Prüfsumme/index.html">Fletcher-Prüfsumme</a></li>
+<li><a href="../Deflate/index.html">Deflate</a></li>
+</ul>
+</body>
+</html>

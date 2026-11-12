@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>AddressSanitizer – Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:serif;font-weight:normal;font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-weight:normal;font-size:22px;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:28px}
+p{line-height:1.6;font-size:14.5px}
+img.hero{max-width:300px;float:right;margin:0 0 12px 16px;border:1px solid #c8ccd1;background:#eaecf0;padding:4px}
+ul{line-height:1.6;font-size:14.5px}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>AddressSanitizer</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>AddressSanitizer</b> (kurz ASan) ist ein von Google entwickelter Detektor für Speicherfehler in Programmen, die in C und C++ geschrieben sind. Er wurde 2012 veröffentlicht und als Compilerinstrumentierung in LLVM/Clang sowie in die GNU Compiler Collection (GCC) integriert. AddressSanitizer findet typischerweise Fehler, die mit herkömmlichen Debuggern schwer zu fassen sind.</p>
+<h2>Erkannte Fehler</h2>
+<ul>
+<li>Heap-, Stack- und Globalpufferüberläufe</li>
+<li>Use-after-free (Zugriff auf freigegebenen Speicher)</li>
+<li>Use-after-return und Use-after-scope</li>
+<li>Doppelte Freigabe (Double free)</li>
+<li>Speicherlecks (über den integrierten LeakSanitizer)</li>
+</ul>
+<h2>Funktionsweise</h2>
+<p>Beim Kompilieren mit der Option <i>-fsanitize=address</i> fügt der Compiler Prüfungen vor Speicherzugriffen ein. Dazu wird ein Schatten Speicher (shadow memory) verwaltet, der für jeweils acht Byte Anwendungsspeicher mit einem Byte beschreibt, ob diese adressierbar sind. Nicht adressierbare Bereiche („red zones") umgeben Speicherblöcke. Die Laufzeiteinbußen liegen typischerweise bei etwa dem Faktor zwei, der Mehrbedarf an Speicher ist deutlich geringer als bei vergleichbaren Werkzeugen.</p>
+<h2>Verbreitung</h2>
+<p>AddressSanitizer wird unter anderem in Projekten wie Chromium und Firefox sowie in groß angelegten Fuzzing-Kampagnen (etwa OSS-Fuzz) eingesetzt. Verwandte Sanitizer sind ThreadSanitizer, MemorySanitizer und UndefinedBehaviorSanitizer.</p>
+</div>
+</body>
+</html>

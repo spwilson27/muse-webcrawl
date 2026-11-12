@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Aho-Corasick-Algorithmus – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 50em; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+img.hero { max-width: 300px; float: right; margin: 0 0 1em 1em; }
+a { color: #0645ad; text-decoration: none; }
+code { background: #f8f9fa; padding: 0.1em 0.3em; }
+</style>
+</head>
+<body>
+<h1>Aho-Corasick-Algorithmus</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Der <b>Aho-Corasick-Algorithmus</b> ist ein Algorithmus zur Zeichenkettensuche, der eine Menge von Suchmustern (ein „Wörterbuch“) in einem Text in linearer Zeit findet. Er wurde 1975 von Alfred V. Aho und Margaret J. Corasick veröffentlicht und ist eine Verallgemeinerung des Knuth-Morris-Pratt-Algorithmus auf viele Muster.</p>
+<h2>Vorgehen</h2>
+<p>Zunächst wird aus allen Suchmustern ein Trie (Präfixbaum) aufgebaut, der als endlicher Automat interpretiert wird. Zusätzlich erhält jeder Knoten einen sogenannten Fehlerlink (Suffixlink), der auf den Knoten zeigt, der dem längsten echten Suffix des bisherigen Pfades entspricht, das zugleich Präfix eines Musters ist. Bei der Suche wird der Text nur einmal von links nach rechts gelesen; bei einem Mismatch folgt der Automat den Fehlerlinks, statt Zeichen erneut zu vergleichen.</p>
+<h2>Komplexität</h2>
+<p>Der Aufbau des Automaten ist linear in der Gesamtlänge aller Muster. Die Suche läuft in Zeit O(n + z), wobei n die Textlänge und z die Zahl der gefundenen Vorkommen ist. Damit ist das Verfahren besonders effizient, wenn sehr viele Muster gleichzeitig gesucht werden.</p>
+<h2>Anwendungen</h2>
+<p>Der Algorithmus wird unter anderem in Texteditoren und Suchwerkzeugen, in Intrusion-Detection-Systemen wie Snort zur Signaturerkennung, in Virenscannern, bei der Rechtschreibprüfung und in bioinformatischen Anwendungen zur Mustersuche in Sequenzen eingesetzt.</p>
+</body>
+</html>

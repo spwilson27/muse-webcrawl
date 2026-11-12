@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Hüllkörper (Bounding Volume) – Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0 auto;max-width:800px;padding:20px;line-height:1.6;color:#202122}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;padding-bottom:2px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%}
+</style>
+</head>
+<body>
+<h1>Hüllkörper (Bounding Volume)</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>Hüllkörper</b> (englisch <i>bounding volume</i>) ist in der <a href="../Computergrafik/index.html">Computergrafik</a> und der <a href="../Computergeometrie/index.html">computationalen Geometrie</a> ein einfacher geometrischer Körper, der ein komplexeres Objekt vollständig umschließt. Hüllkörper dienen dazu, teure geometrische Tests – etwa Schnitttests beim <a href="../Raytracing/index.html">Raytracing</a> oder Kollisionstests in <a href="../Physik-Engine/index.html">Physik-Engines</a> – zunächst an einer billigen Näherung durchzuführen.</p>
+<h2>Gebräuchliche Hüllkörper</h2>
+<ul>
+<li><b>Hüllkugel</b> (<i>bounding sphere</i>): Eine Kugel, die das Objekt enthält. Rotationstests sind trivial, die Näherung ist aber oft grob.</li>
+<li><b>Achsenparalleler Quader</b> (<i>axis-aligned bounding box</i>, AABB): Ein Quader, dessen Kanten parallel zu den Koordinatenachsen liegen. Einfach zu berechnen und zu testen, muss aber bei Rotation des Objekts neu bestimmt werden.</li>
+<li><b>Orientierter Quader</b> (<i>oriented bounding box</i>, OBB): Ein Quader beliebiger Orientierung, der sich enger an das Objekt anschmiegt, dessen Schnitttests jedoch aufwendiger sind.</li>
+<li><b>Konvexe Hülle</b>: Die kleinste konvexe Menge, die das Objekt enthält; genaueste, aber teuerste Variante.</li>
+<li><b>Kapsel</b> und <b>Zylinder</b>: Häufig für Figuren in Computerspielen.</li>
+</ul>
+<h2>Anwendung</h2>
+<p>Beim Raytracing wird ein Strahl zunächst gegen den Hüllkörper getestet; nur bei einem Treffer erfolgt der teure Test gegen die eigentliche Geometrie. In der <a href="../Kollisionserkennung/index.html">Kollisionserkennung</a> werden Hierarchien aus Hüllkörpern (<a href="../Bounding_volume_hierarchy/index.html">bounding volume hierarchies</a>) verwendet, um die Zahl der paarweisen Tests zu reduzieren. Auch beim <a href="../Frustum_Culling/index.html">Frustum Culling</a> und beim <a href="../Level_of_Detail/index.html">Level of Detail</a> kommen Hüllkörper zum Einsatz.</p>
+<h2>Literatur</h2>
+<p>Christer Ericson: <i>Real-Time Collision Detection</i>. Morgan Kaufmann, 2005.</p>
+</body>
+</html>

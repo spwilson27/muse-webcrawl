@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>ANSI-Escape-Sequenz – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 24px 32px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 28px; }
+p, li { font-family: sans-serif; font-size: 14px; line-height: 1.6; }
+pre { background: #f8f9fa; border: 1px solid #a2a9b1; padding: 12px; overflow-x: auto; font-family: monospace; font-size: 13px; }
+img.hero { width: 100%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>ANSI-Escape-Sequenz</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>ANSI-Escape-Sequenzen</b> sind Zeichenfolgen, die mit dem Escape-Zeichen (ESC, Code 0x1B) beginnen und zur Steuerung von Textterminals verwendet werden. Sie ermöglichen unter anderem die Positionierung des Cursors, das Löschen von Bildschirmbereichen sowie die Änderung von Textfarben und -attributen. Sie gehen auf den Standard ANSI X3.64 beziehungsweise ECMA-48 zurück und wurden durch die weit verbreiteten VT-Terminals von DEC populär.</p>
+<h2>Codierung</h2>
+<p>Die bekannteste Gruppe sind die CSI-Sequenzen (Control Sequence Introducer), die mit <code>ESC [</code> eingeleitet werden, gefolgt von Parametern und einem Schlusszeichen. Beispiele:</p>
+<pre>ESC [ 2 J   Bildschirm löschen
+ESC [ 1 ; 31 m   Text fett und rot darstellen
+ESC [ 5 ; 10 H   Cursor in Zeile 5, Spalte 10 positionieren</pre>
+<p>Die sogenannten SGR-Sequenzen (Select Graphic Rendition) enden auf <code>m</code> und legen Farben und Attribute fest. Der ursprüngliche ANSI-Standard sah acht Vordergrundfarben vor; später kamen helle Varianten sowie 256-Farben- und 24-Bit-Truecolor-Modi hinzu.</p>
+<h2>Verwendung</h2>
+<p>ANSI-Escape-Sequenzen werden von nahezu allen Terminal-Emulatoren unter Unix/Linux unterstützt; unter Windows setzte Microsoft sie ab Windows 10 weitgehend in der Konsole um. Sie bilden die Grundlage für textbasierte Benutzeroberflächen (Curses), farbige Kommandozeilenausgaben und ANSI-Art.</p>
+</div>
+</body>
+</html>

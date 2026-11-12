@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Border Gateway Protocol – Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:800px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}
+h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:.1em;margin-top:1.2em}
+a{color:#36c;text-decoration:none}
+a:hover{text-decoration:underline}
+table.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;margin:0 0 1em 1em;font-size:.9em;border-collapse:collapse}
+table.infobox th,table.infobox td{padding:.3em .6em;border:1px solid #eaecf0;text-align:left}
+img{max-width:100%}
+</style>
+</head>
+<body>
+<h1>Border Gateway Protocol</h1>
+<table class="infobox">
+<tr><th colspan="2">Border Gateway Protocol (BGP)</th></tr>
+<tr><td colspan="2"><img src="images/hero.png" alt="Hero image (placeholder)"></td></tr>
+<tr><th>Art</th><td>Routingprotokoll</td></tr>
+<tr><th>OSI-Schicht</th><td>Anwendungsschicht (nutzt TCP, Port 179)</td></tr>
+<tr><th>Standard</th><td>RFC 4271 (BGP-4)</td></tr>
+<tr><th>Einsatz</th><td>Routing zwischen Autonomen Systemen</td></tr>
+</table>
+<p>Das <b>Border Gateway Protocol</b> (<b>BGP</b>) ist das Routingprotokoll, das den Datenverkehr zwischen den Autonomen Systemen (AS) des Internets steuert und damit gewissermaßen das Rückgrat des weltweiten Netzes bildet. Die heute gebräuchliche Version BGP-4 ist in RFC 4271 spezifiziert und unterstützt klassenloses Routing (CIDR) sowie Routenaggregation.</p>
+<h2>Funktionsweise</h2>
+<p>BGP ist ein Pfadvektorprotokoll: Router benachbarter Autonomer Systeme („Peers“) tauschen über dauerhafte TCP-Verbindungen (Port 179) Informationen darüber aus, welche IP-Präfixe über welche Folge von Autonomen Systemen (AS-Pfad) erreichbar sind. Aus den angebotenen Routen wählt jeder Router nach konfigurierbaren Richtlinien (Policies) die beste aus und gibt nur diese an seine Nachbarn weiter. BGP trifft seine Entscheidungen damit nicht allein nach kürzesten Wegen, sondern nach wirtschaftlichen und politischen Vorgaben der Netzbetreiber, etwa nach Transit- und Peering-Verträgen.</p>
+<h2>Varianten</h2>
+<p>Zwischen verschiedenen Autonomen Systemen eingesetztes BGP heißt <i>External BGP</i> (eBGP); innerhalb eines Autonomen Systems spricht man von <i>Internal BGP</i> (iBGP), das die an den Rändern gelernten Routen im eigenen Netz verteilt. Durch Multiprotocol Extensions (MP-BGP) kann BGP neben IPv4 auch IPv6- und andere Adressfamilien transportieren.</p>
+<h2>Sicherheit und Störungen</h2>
+<p>BGP beruht weitgehend auf Vertrauen zwischen den Betreibern und verfügt in seiner Grundform über keine kryptographische Absicherung der Routenankündigungen. Fehlkonfigurationen oder böswillige Ankündigungen fremder Präfixe („BGP Hijacking“) haben wiederholt zu großflächigen Störungen geführt; bekannt wurde etwa der Vorfall von 2008, bei dem Pakistan Telecom eine YouTube-Route weltweit umleitete. Die Resource Public Key Infrastructure (RPKI) soll die Herkunft von Präfixankündigungen absichern.</p>
+</body>
+</html>

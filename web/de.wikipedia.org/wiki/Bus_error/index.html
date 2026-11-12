@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Bus error – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 1.5em 2em; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.2em; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 0.95em; }
+ul { font-family: sans-serif; font-size: 0.95em; line-height: 1.6; }
+code { font-family: monospace; }
+img.hero { max-width: 100%; }
+.mw-parser-output a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<div id="content" class="mw-parser-output">
+<h1>Bus error</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>Bus error</b> (deutsch: Busfehler) ist in der Informatik ein Hardware-Fehler, den der Prozessor beim Zugriff auf den Hauptspeicher feststellt und der unter Unix-ähnlichen Betriebssystemen als Signal <b>SIGBUS</b> an den betroffenen Prozess gemeldet wird. Er ist vom Segmentierungsfehler (SIGSEGV) zu unterscheiden.</p>
+<h2>Ursachen</h2>
+<ul>
+<li><b>Nicht ausgerichteter Speicherzugriff</b> (unaligned access): Auf Architekturen wie SPARC oder älteren ARM-Systemen muss der Zugriff auf Mehrbyte-Datentypen an einer Adresse erfolgen, die ein Vielfaches der Datengröße ist. Auch auf x86-Prozessoren können bestimmte SIMD-Befehle bei falscher Ausrichtung einen Busfehler auslösen.</li>
+<li><b>Zugriff auf nicht existierenden physikalischen Speicher</b>, etwa über eine Speicherabbilddatei (mmap), die über ihr Ende hinaus adressiert wird, oder wenn eine eingeblendete Datei verkürzt wurde.</li>
+<li><b>Hardwarefehler</b>, beispielsweise defekte Speichermodule.</li>
+</ul>
+<h2>Verhalten</h2>
+<p>Erhält ein Prozess SIGBUS und behandelt das Signal nicht, beendet das Betriebssystem den Prozess – unter Unix üblicherweise mit einem Core Dump. Die Fehlermeldung der Shell lautet dann „Bus error (core dumped)“. Programmierer beheben Busfehler typischerweise mit einem Debugger, indem sie die fehlerhafte Speicheroperation lokalisieren.</p>
+</div>
+</body>
+</html>

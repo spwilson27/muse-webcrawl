@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Akra-Bazzi-Methode – Wikipedia</title>
+<style>
+body { font-family: sans-serif; max-width: 960px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 1px 4px; }
+</style>
+</head>
+<body>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Akra-Bazzi-Methode</h1>
+<p>Die <b>Akra-Bazzi-Methode</b> (nach Mohamad Akra und Louay Bazzi) ist ein Verfahren der theoretischen Informatik zur Lösung von Rekurrenzgleichungen der Form, wie sie bei der Analyse von Teile-und-herrsche-Algorithmen auftreten. Sie verallgemeinert das bekanntere <a href="../Master-Theorem/index.html">Master-Theorem</a>, weil sie auch ungleich große Teilprobleme und nichtkonstante Anzahlen von Teilproblemen zulässt.</p>
+<h2>Aussage</h2>
+<p>Betrachtet wird eine Rekurrenz der Gestalt</p>
+<p style="text-align:center;"><code>T(x) = g(x) + Σ<sub>i=1..k</sub> a<sub>i</sub> · T(b<sub>i</sub> · x)</code></p>
+<p>mit Konstanten a<sub>i</sub> &gt; 0 und 0 &lt; b<sub>i</sub> &lt; 1. Man bestimme die (eindeutig existierende) Zahl p mit</p>
+<p style="text-align:center;"><code>Σ<sub>i=1..k</sub> a<sub>i</sub> · b<sub>i</sub><sup>p</sup> = 1</code>.</p>
+<p>Dann gilt asymptotisch</p>
+<p style="text-align:center;"><code>T(x) = Θ( x<sup>p</sup> · ( 1 + ∫<sub>1</sub><sup>x</sup> g(u) / u<sup>p+1</sup> du ) )</code>.</p>
+<h2>Voraussetzungen</h2>
+<p>Die Methode erfordert unter anderem, dass die Funktion g hinreichend glatt ist (etwa polynomial beschränkt mit begrenzter Ableitung) und dass die Störterme der Teilproblemgrößen kontrolliert wachsen. Die ursprüngliche Veröffentlichung von Akra und Bazzi stammt aus dem Jahr 1998; ein korrigierter und vereinfachter Beweis wurde später unter anderem von Tom Leighton in Vorlesungsnotizen verbreitet.</p>
+<h2>Beispiel</h2>
+<p>Für die Rekurrenz T(x) = T(0,4x) + T(0,6x) + x² ergibt sich p aus 0,4<sup>p</sup> + 0,6<sup>p</sup> = 1, also p = 1. Die Methode liefert T(x) = Θ(x² · …) nach Auswertung des Integrals, hier T(x) ∈ Θ(x² · log x) im Grenzfall, in der Regel wird der Term direkt ausgerechnet.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Master-Theorem/index.html">Master-Theorem</a></li>
+<li><a href="../Rekurrenzgleichung/index.html">Rekurrenzgleichung</a></li>
+<li><a href="../Landau-Symbole/index.html">Landau-Symbole</a></li>
+</ul>
+</body>
+</html>

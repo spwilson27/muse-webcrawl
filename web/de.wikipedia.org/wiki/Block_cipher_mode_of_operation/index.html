@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Betriebsmodus (Kryptographie) – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 52em; line-height: 1.55; color: #202122; padding: 0 1em; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.4em; }
+img { max-width: 100%; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+table { border-collapse: collapse; }
+td, th { border: 1px solid #a2a9b1; padding: 0.3em 0.6em; }
+</style>
+</head>
+<body>
+<h1>Betriebsmodus (Kryptographie)</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>Betriebsmodus</b> (englisch <i>mode of operation</i>) beschreibt in der Kryptographie, wie eine Blockchiffre wiederholt angewendet wird, um Nachrichten zu verschlüsseln, die länger als ein einzelner Block sind, und um gegebenenfalls die Authentizität der Daten sicherzustellen. Der Modus legt fest, wie die Blöcke miteinander verknüpft werden und welche Zusatzwerte (etwa Initialisierungsvektoren) verwendet werden.</p>
+<h2>Klassische Modi</h2>
+<table>
+<tr><th>Modus</th><th>Beschreibung</th></tr>
+<tr><td>ECB (Electronic Codebook)</td><td>Jeder Block wird unabhängig verschlüsselt. Gleiche Klartextblöcke ergeben gleiche Chiffretextblöcke; gilt als unsicher für strukturierte Daten.</td></tr>
+<tr><td>CBC (Cipher Block Chaining)</td><td>Jeder Klartextblock wird vor der Verschlüsselung mit dem vorigen Chiffretextblock XOR-verknüpft; benötigt einen zufälligen Initialisierungsvektor (IV).</td></tr>
+<tr><td>CFB (Cipher Feedback)</td><td>Verwandelt die Blockchiffre in eine selbstsynchronisierende Stromchiffre.</td></tr>
+<tr><td>OFB (Output Feedback)</td><td>Erzeugt einen Schlüsselstrom aus wiederholter Verschlüsselung des IV.</td></tr>
+<tr><td>CTR (Counter Mode)</td><td>Verschlüsselt einen fortlaufenden Zähler; parallelisierbar und mit wahlfreiem Zugriff.</td></tr>
+</table>
+<h2>Authentifizierte Verschlüsselung</h2>
+<p>Moderne Modi wie GCM (Galois/Counter Mode), CCM oder ChaCha20-Poly1305 (bei Blockchiffren vor allem GCM) bieten zusätzlich Integritätsschutz (AEAD). Sie erzeugen ein Authentifizierungstag, mit dem Manipulationen erkannt werden.</p>
+<h2>Padding</h2>
+<p>Modi, die ganze Blöcke verlangen (ECB, CBC), benötigen ein Füllverfahren, wenn die Nachrichtenlänge kein Vielfaches der Blocklänge ist; verbreitet ist PKCS#7-Padding. Unsachgemäßes Padding führte historisch zu Padding-Oracle-Angriffen.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Block_cipher/index.html">Blockchiffre</a></li>
+<li>Initialisierungsvektor</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Bloomfilter – Wikipedia</title>
+<style>
+body{font-family:Georgia,'Times New Roman',serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px 48px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:0}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:2px}
+h3{font-size:1.15em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%}
+.small{font-size:0.85em;color:#54595d}
+code{font-family:monospace;background:#f8f9fa}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Bloomfilter</h1>
+<p><img src="images/hero.png" alt="Hero image (placeholder)"></p>
+<p>Ein <b>Bloomfilter</b> (englisch <i>Bloom filter</i>) ist eine platzsparende, probabilistische Datenstruktur, die 1970 von Burton Howard Bloom vorgestellt wurde. Sie dient dazu zu testen, ob ein Element möglicherweise zu einer Menge gehört oder definitiv nicht zu ihr gehört. Falsche positive Ergebnisse sind möglich, falsche negative dagegen nicht: Meldet der Filter „nicht enthalten", so ist dies sicher; meldet er „enthalten", so besteht nur eine gewisse Wahrscheinlichkeit dafür.</p>
+<h2>Funktionsweise</h2>
+<p>Ein Bloomfilter besteht aus einem Bitfeld der Länge <i>m</i>, das anfangs nur Nullen enthält, sowie <i>k</i> verschiedenen Hashfunktionen, die jede auf eine Position im Bitfeld abbilden. Zum Einfügen eines Elements werden alle <i>k</i> Positionen, die seine Hashwerte bezeichnen, auf 1 gesetzt. Zur Abfrage eines Elements werden dieselben Positionen geprüft: Ist mindestens eine davon 0, ist das Element garantiert nicht enthalten. Sind alle 1, ist das Element mit hoher Wahrscheinlichkeit enthalten – die Einsen könnten jedoch auch durch andere Elemente gesetzt worden sein.</p>
+<h2>Fehlerwahrscheinlichkeit</h2>
+<p>Die Wahrscheinlichkeit eines falsch positiven Ergebnisses hängt von der Größe des Bitfelds, der Zahl der eingefügten Elemente und der Zahl der Hashfunktionen ab. Für ein gegebenes Verhältnis von Bits zu Elementen existiert ein optimales <i>k</i>; näherungsweise gilt eine Fehlerrate von etwa (1/2)<sup>k</sup> bei optimaler Dimensionierung. Verdoppelt man den Speicherplatz, sinkt die Fehlerrate deutlich, sodass Bloomfilter bei großen Datenmengen sehr effizient sind.</p>
+<h2>Anwendungen</h2>
+<p>Bloomfilter werden eingesetzt, wo teure Zugriffe vermieden werden sollen, solange ein Element sehr wahrscheinlich gar nicht vorhanden ist. Beispiele sind Datenbanken (etwa in LSM-Tree-basierten Systemen wie Cassandra oder HBase), Webbrowser, die gefährliche URLs prüfen, Spamfilter, Caches und verteilte Systeme zur Vermeidung doppelter Arbeit. Der Browser Google Chrome nutzte zeitweise einen Bloomfilter zum Abgleich schädlicher Websites.</p>
+<h2>Varianten und Grenzen</h2>
+<p>Standard-Bloomfilter unterstützen kein Löschen, weil das Zurücksetzen von Bits auch andere Elemente betreffen könnte. Der Counting Bloom Filter ersetzt die Bits durch Zähler und erlaubt so Entfernungen. Weitere Varianten sind skalierbare und komprimierte Bloomfilter sowie der Cuckoo-Filter, der bei ähnlicher Platzeffizienz ebenfalls Löschungen unterstützt.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Hashfunktion/index.html">Hashfunktion</a></li>
+<li><a href="../Datenstruktur/index.html">Datenstruktur</a></li>
+<li><a href="../HyperLogLog/index.html">HyperLogLog</a></li>
+</ul>
+<p class="small">Kategorie: Datenstruktur | Algorithmus</p>
+</div>
+</body>
+</html>

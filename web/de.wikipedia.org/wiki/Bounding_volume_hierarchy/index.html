@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Bounding Volume Hierarchy – Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0 auto;max-width:800px;padding:20px;line-height:1.6;color:#202122}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;padding-bottom:2px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%}
+</style>
+</head>
+<body>
+<h1>Bounding Volume Hierarchy</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Eine <b>Bounding Volume Hierarchy</b> (<b>BVH</b>, deutsch etwa <i>Hüllkörperhierarchie</i>) ist eine Baumstruktur, in der geometrische Objekte in <a href="../Bounding_volume/index.html">Hüllkörpern</a> zusammengefasst werden. Sie ist eine der wichtigsten Beschleunigungsstrukturen in der <a href="../Computergrafik/index.html">Computergrafik</a>, insbesondere beim <a href="../Raytracing/index.html">Raytracing</a>, sowie in der <a href="../Kollisionserkennung/index.html">Kollisionserkennung</a>.</p>
+<h2>Aufbau</h2>
+<p>Die Blätter des Baums enthalten die eigentlichen Objekte (häufig Dreiecke). Jeder innere Knoten speichert einen Hüllkörper, der die Hüllkörper seiner Kinder umschließt; die Wurzel umschließt die gesamte Szene. Als Hüllkörper werden meist achsenparallele Quader (AABB) oder Hüllkugeln verwendet.</p>
+<h2>Traversierung</h2>
+<p>Ein Strahl oder ein anderes Testobjekt wird zunächst gegen den Hüllkörper der Wurzel getestet. Nur die Kinder, deren Hüllkörper getroffen werden, werden weiter untersucht. Dadurch lässt sich ein großer Teil der Szene mit wenigen Tests ausschließen. Die Kosten einer Anfrage wachsen typischerweise logarithmisch mit der Anzahl der Objekte, sofern die Hierarchie ausgewogen ist.</p>
+<h2>Aufbauverfahren</h2>
+<p>Zum Aufbau einer BVH existieren verschiedene Heuristiken. Die bekannteste ist die <i>Surface Area Heuristic</i> (SAH), die die Aufteilung so wählt, dass die erwarteten Traversierungskosten minimiert werden. Für dynamische Szenen werden BVHs entweder neu aufgebaut, nachträglich angepasst (<i>refitting</i>) oder es werden lokal begrenzte Aktualisierungen vorgenommen. Moderne Hardware-Raytracing-Einheiten in <a href="../Grafikprozessor/index.html">Grafikprozessoren</a> traversieren BVHs direkt in Hardware.</p>
+<h2>Vergleich mit anderen Strukturen</h2>
+<p>Alternativen zur BVH sind <a href="../Kd-Baum/index.html">kd-Bäume</a>, <a href="../Octree/index.html">Octrees</a> und regelmäßige Gitter. BVHs haben den Vorteil, dass sie sich der Objektverteilung anpassen und für sich bewegende oder verformende Geometrie leichter zu aktualisieren sind.</p>
+</body>
+</html>

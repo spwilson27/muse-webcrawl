@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Amazon Simple Queue Service – Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:90%;width:260px}
+.infobox th{text-align:left;padding-right:8px}
+img{max-width:100%}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Amazon Simple Queue Service</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Amazon Simple Queue Service</b> (<b>Amazon SQS</b>) ist ein vollständig verwalteter Nachrichtenwarteschlangen-Dienst der <a href="../../Amazon_Web_Services/index.html">Amazon Web Services</a> (AWS). Er wurde 2004 eingeführt und gehörte damit zu den ersten AWS-Diensten. SQS ermöglicht die Entkopplung verteilter Softwarekomponenten, indem Nachrichten zuverlässig zwischengespeichert und asynchron verarbeitet werden.</p>
+<table class="infobox">
+<tr><th>Entwickler</th><td>Amazon Web Services</td></tr>
+<tr><th>Erstveröffentlichung</th><td>2004</td></tr>
+<tr><th>Typ</th><td>Nachrichtenwarteschlange</td></tr>
+</table>
+
+<h2>Warteschlangentypen</h2>
+<ul>
+<li><b>Standard Queues</b> bieten nahezu unbegrenzten Durchsatz und liefern Nachrichten mindestens einmal aus; die Reihenfolge wird bestmöglich, aber nicht garantiert eingehalten, und Dubletten sind möglich.</li>
+<li><b>FIFO Queues</b> (seit 2016) garantieren die strikte Einhaltung der Reihenfolge und eine genau-einmalige Verarbeitung, allerdings bei begrenztem Durchsatz.</li>
+</ul>
+
+<h2>Eigenschaften</h2>
+<p>Empfangene Nachrichten werden für eine Sichtbarkeitszeit („visibility timeout“) für andere Empfänger gesperrt und müssen nach der Verarbeitung aktiv gelöscht werden; andernfalls werden sie erneut zugestellt. Nicht zustellbare Nachrichten können nach mehreren Versuchen in eine Dead-Letter Queue verschoben werden. Nachrichten dürfen bis zu 256 KB groß sein und bis zu 14 Tage in der Warteschlange verbleiben.</p>
+<p>SQS wird häufig in ereignisgesteuerten Architekturen gemeinsam mit AWS Lambda, <a href="../../Amazon_EC2/index.html">EC2</a>-Diensten und dem Benachrichtigungsdienst <a href="../../Amazon_Simple_Notification_Service/index.html">Amazon SNS</a> eingesetzt, etwa um Lastspitzen abzufedern oder Arbeitsschritte asynchron zu verknüpfen.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../../Amazon_Web_Services/index.html">Amazon Web Services</a></li>
+<li><a href="../../Amazon_Simple_Notification_Service/index.html">Amazon Simple Notification Service</a></li>
+<li><a href="../../Amazon_S3/index.html">Amazon S3</a></li>
+</ul>
+</div>
+</body>
+</html>

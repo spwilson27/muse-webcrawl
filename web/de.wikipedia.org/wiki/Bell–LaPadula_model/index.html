@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Bell-LaPadula-Modell – Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:0;background:#fff;color:#202122;line-height:1.6}
+header{background:#f8f9fa;border-bottom:1px solid #a7d7f9;padding:12px 24px}
+header h1{font-size:1.7em;margin:0;font-weight:normal}
+main{max-width:960px;margin:0 auto;padding:16px 24px}
+h2{border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.4em}
+img{max-width:100%}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<header><h1>Bell-LaPadula-Modell</h1></header>
+<main>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Das <b>Bell-LaPadula-Modell</b> ist ein formelles Sicherheitsmodell für Computersysteme, das der Vertraulichkeit von Informationen dient. Es wurde in den 1970er Jahren von David Elliott Bell und Len LaPadula bei der MITRE Corporation im Auftrag des US-Militärs entwickelt und beschreibt ein System mehrstufiger Sicherheit (Multilevel Security), wie es für klassifizierte Daten („Top Secret“, „Secret“ usw.) erforderlich ist.</p>
+<h2>Grundregeln</h2>
+<p>Das Modell weist jedem Subjekt (Benutzer, Prozess) und jedem Objekt (Datei, Ressource) eine Sicherheitsstufe zu. Zwei zentrale Eigenschaften sichern die Vertraulichkeit:</p>
+<ul>
+<li><b>Simple Security Property („no read up“):</b> Ein Subjekt darf nur Objekte lesen, deren Stufe nicht höher ist als seine eigene.</li>
+<li><b>Star Property („no write down“):</b> Ein Subjekt darf nur in Objekte schreiben, deren Stufe nicht niedriger ist als seine eigene – so kann Geheimes nicht auf eine niedrigere Stufe „durchsickern“.</li>
+</ul>
+<p>Ergänzend regelt eine Diskretions-Eigenschaft den Zugriff über eine Zugriffsmatrix.</p>
+<h2>Bedeutung und Grenzen</h2>
+<p>Bell-LaPadula ist das klassische Modell der Vertraulichkeit und prägte die Sicherheitskriterien des „Orange Book“ (TCSEC) sowie Entwicklungen wie SELinux in MLS-Ausprägungen. Es schützt jedoch nur die Geheimhaltung, nicht die Integrität – dafür steht das Biba-Modell als spiegelbildliches Gegenstück – und verhindert keine verdeckten Kanäle. Auch ist es statisch und kennt keine Abwertung von Informationen im laufenden Betrieb.</p>
+</main>
+</body>
+</html>
