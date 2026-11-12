@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Passwort-Hashing – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0 auto; max-width: 960px; padding: 1em 2em; line-height: 1.6; color: #202122; }
+h1 { font-family: "Linux Libertine", Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 0.5em auto; max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Passwort-Hashing</h1>
+<p><b>Passwort-Hashing</b> bezeichnet das Verfahren, <a href="../Password/index.html">Passwörter</a> nicht im Klartext zu speichern, sondern lediglich einen mit einer kryptographischen Hashfunktion berechneten Prüfsummenwert. Bei der Anmeldung wird das eingegebene Passwort erneut gehasht und mit dem gespeicherten Wert verglichen. Aus dem Hash lässt sich das ursprüngliche Passwort nicht rechnerisch zurückgewinnen, sodass bei einem Datenleck nicht unmittelbar alle Passwörter offengelegt werden.</p>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<h2>Anforderungen</h2>
+<p>Da Angreifer eine erbeutete Hash-Datenbank offline durchprobieren können (<a href="../Password_cracking/index.html">Passwortknacken</a>), muss ein geeignetes Verfahren drei Eigenschaften haben:</p>
+<ul>
+<li><b>Salt:</b> Jedem Passwort wird ein zufälliger Wert beigemischt, der mitgespeichert wird. So erhalten gleiche Passwörter unterschiedliche Hashes, und vorberechnete Rainbow Tables werden wirkungslos.</li>
+<li><b>Arbeitsfaktor:</b> Die Berechnung soll absichtlich Zeit (und idealerweise Speicher) kosten, damit Milliarden von Versuchen unwirtschaftlich werden.</li>
+<li><b>Anpassbarkeit:</b> Die Kostenparameter müssen sich mit wachsender Rechenleistung erhöhen lassen.</li>
+</ul>
+<h2>Verfahren</h2>
+<p>Allgemeine Hashfunktionen wie MD5, SHA-1 oder SHA-2 sind für Geschwindigkeit entworfen und daher für Passwörter ungeeignet. Speziell entwickelte Verfahren sind:</p>
+<ul>
+<li><b>bcrypt</b> (1999, von Niels Provos und David Mazières), mit einstellbarem Kostenfaktor,</li>
+<li><b>scrypt</b> (2009, Colin Percival), das zusätzlich viel Arbeitsspeicher verlangt,</li>
+<li><b>Argon2</b> (2015), Sieger der Password Hashing Competition und in der Variante Argon2id vom IETF in RFC 9106 empfohlen,</li>
+<li><b>PBKDF2</b>, ein älteres, weit verbreitetes Verfahren auf Basis iterierter HMAC-Berechnungen.</li>
+</ul>
+<p>Historisch speicherte Unix ab den 1970er Jahren Passwörter mit der auf DES beruhenden Funktion <i>crypt</i> und führte dabei den Salt ein; Morris und Thompson dokumentierten 1979 erstmals systematisch die Anforderungen an die Passwortspeicherung.</p>
+<h2>Praxis</h2>
+<p>Anleitungen wie die des OWASP empfehlen Argon2id als erste Wahl, gefolgt von scrypt und bcrypt, jeweils mit dokumentierten Mindestparametern. Ergänzend kann ein serverseitig geheim gehaltener Zusatzwert („Pepper") die Datenbank zusätzlich absichern.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Password/index.html">Passwort</a></li>
+<li><a href="../Cryptographic_hash_function/index.html">Kryptographische Hashfunktion</a></li>
+<li><a href="../Argon2/index.html">Argon2</a></li>
+<li><a href="../Bcrypt/index.html">bcrypt</a></li>
+</ul>
+</body>
+</html>

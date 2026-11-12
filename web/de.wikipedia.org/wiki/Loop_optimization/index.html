@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Schleifenoptimierung – Wikipedia</title>
+<style>
+body { font-family: sans-serif; line-height: 1.6; max-width: 960px; margin: 0 auto; padding: 20px; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Schleifenoptimierung</h1>
+<p><b>Schleifenoptimierungen</b> sind Verfahren im Compilerbau, die den in Schleifen ausgeführten Programmcode beschleunigen. Da Programme den größten Teil ihrer Laufzeit in Schleifen verbringen, haben diese Optimierungen eine besondere Bedeutung für die Effizienz des erzeugten Codes.</p>
+<h2>Verfahren</h2>
+<ul>
+<li><b>Schleifeninvarianter Code (Code Motion):</b> Berechnungen, deren Ergebnis sich innerhalb der Schleife nicht ändert, werden vor die Schleife gezogen.</li>
+<li><b>Induktionsvariablen-Eliminierung:</b> Laufvariablen, die linear von der Schleifenvariable abhängen, werden durch einfachere Operationen ersetzt, etwa die Ersetzung von Multiplikationen durch Additionen.</li>
+<li><b>Schleifenentrollung (Loop Unrolling):</b> Der Schleifenrumpf wird mehrfach hintereinander ausgeführt, um Verwaltungsaufwand und Sprungbefehle zu verringern.</li>
+<li><b>Schleifenspaltung und -fusion (Loop Fission/Fusion):</b> Schleifen werden aufgeteilt oder zusammengelegt, um die Cache-Nutzung zu verbessern.</li>
+<li><b>Loop Interchange:</b> Bei geschachtelten Schleifen wird die Reihenfolge der Laufvariablen vertauscht, um die Datenlokalität zu erhöhen.</li>
+<li><b>Loop Tiling (Blocking):</b> Die Iterationsmenge wird in Blöcke unterteilt, die in den Cache passen.</li>
+</ul>
+<h2>Voraussetzungen</h2>
+<p>Grundlage der meisten Schleifenoptimierungen ist die Abhängigkeitsanalyse, die prüft, ob Zugriffe auf Daten in verschiedenen Iterationen voneinander abhängen. Nur wenn keine gefährlichen Abhängigkeiten bestehen, dürfen Iterationen umgeordnet oder parallelisiert werden. Schleifenoptimierung ist eine wichtige Voraussetzung für die automatische Vektorisierung und Parallelisierung durch den Compiler.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Compiler/index.html">Compiler</a></li>
+<li><a href="../Loop_invariant/index.html">Schleifeninvariante</a></li>
+<li><a href="../Vektorisierung/index.html">Vektorisierung</a></li>
+</ul>
+</body>
+</html>

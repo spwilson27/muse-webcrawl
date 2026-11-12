@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Kademlia – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1em 2em 3em; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.5em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 1em 0; max-width: 100%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Kademlia</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Kademlia</b> ist ein Protokoll für eine verteilte Hashtabelle (englisch <i>Distributed Hash Table</i>, DHT), das 2002 von Petar Maymounkov und David Mazières vorgestellt wurde. Es bildet die Grundlage zahlreicher Peer-to-Peer-Systeme, unter anderem des <a href="../Kad_network/index.html">Kad-Netzwerks</a> von eMule und der DHT von BitTorrent.</p>
+<h2>Grundprinzip</h2>
+<p>Jeder Knoten erhält eine zufällige ID von 160 Bit. Der Abstand zweier Knoten wird als bitweises XOR ihrer IDs interpretiert. Jeder Knoten verwaltet sogenannte <i>k-buckets</i>: Listen mit Kontakten zu Knoten in bestimmten Abstandsbereichen. Durch diese Struktur kennt ein Knoten die Topologie des Netzwerks in seiner „Nähe“ sehr genau und weiter entfernte Bereiche zunehmend grob.</p>
+<h2>Operationen</h2>
+<p>Das Protokoll definiert vier entfernte Prozeduraufrufe: PING (Verfügbarkeitsprüfung), STORE (Wert speichern), FIND_NODE (Knoten suchen) und FIND_VALUE (Wert suchen). Suchvorgänge laufen iterativ und parallel ab, sodass Schlüssel-Wert-Paare in logarithmisch vielen Schritten gefunden werden.</p>
+<h2>Eigenschaften und Verwendung</h2>
+<p>Kademlia ist gegen Störungen und Knotenausfälle robust, weil die Informationen redundant gespeichert werden und die Routing-Tabellen sich kontinuierlich selbst aktualisieren. Neben Filesharing wird die DHT-Technik heute auch in verteilten Systemen und Blockchain-Netzwerken verwendet, etwa zur Knotensuche im Ethereum-Netzwerk über eine Kademlia-Variante.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Kad_network/index.html">Kad-Netzwerk</a></li>
+<li><a href="../Verteilte_Hashtabelle/index.html">Verteilte Hashtabelle</a></li>
+<li><a href="../BitTorrent/index.html">BitTorrent</a></li>
+</ul>
+</div>
+</body>
+</html>

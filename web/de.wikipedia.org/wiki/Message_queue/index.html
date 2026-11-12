@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Message Queue – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em 3em; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; margin-top: 0.2em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; font-weight: normal; margin-top: 1.2em; }
+p, li { font-size: 0.95em; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 320px; float: right; margin: 0 0 1em 1em; border: 1px solid #c8ccd1; background: #eaecf0; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Message Queue</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Eine <b>Message Queue</b> (Nachrichtenwarteschlange) ist eine Datenstruktur beziehungsweise ein Kommunikationsmuster der <a href="../Message-oriented_middleware/index.html">nachrichtenorientierten Middleware</a>, bei dem Nachrichten von einem Sender (Producer) in einer Warteschlange abgelegt und von einem Empfänger (Consumer) zu einem späteren Zeitpunkt abgerufen und verarbeitet werden. Dadurch werden Sender und Empfänger zeitlich entkoppelt.</p>
+<h2>Funktionsweise</h2>
+<p>Der Producer stellt Nachrichten in die Warteschlange ein, ohne darauf zu warten, dass sie verarbeitet werden. Der Consumer entnimmt sie – meist in Reihenfolge der Ankunft (FIFO) – und bestätigt die Verarbeitung. Kann eine Nachricht nicht erfolgreich verarbeitet werden, wird sie je nach Konfiguration erneut zugestellt oder in eine spezielle <i>Dead-Letter-Queue</i> verschoben. Viele Systeme speichern Nachrichten persistent ab, sodass sie auch einen Ausfall des Warteschlangenservers überdauern.</p>
+<h2>Vorteile</h2>
+<ul>
+<li>Entkopplung der Komponenten und ihrer Verfügbarkeit</li>
+<li>Lastspitzen können gepuffert werden (Backpressure-Pufferung)</li>
+<li>Skalierung durch parallele Konsumenten</li>
+<li>Erhöhte Ausfallsicherheit durch Zwischenspeicherung</li>
+</ul>
+<h2>Beispiele</h2>
+<p>Verbreitete Message-Queue-Systeme sind RabbitMQ, Apache Kafka (das zusätzlich ein verteiltes Log-Konzept verfolgt), Apache ActiveMQ, Amazon SQS und Redis-basierte Warteschlangen. Auch Betriebssysteme stellen Message Queues zur Interprozesskommunikation bereit, etwa die POSIX Message Queues unter Linux.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Message-oriented_middleware/index.html">Message-oriented Middleware</a></li>
+<li><a href="../Warteschlange_(Datenstruktur)/index.html">Warteschlange (Datenstruktur)</a></li>
+<li><a href="../Publish-Subscribe/index.html">Publish-Subscribe</a></li>
+</ul>
+</div>
+</body>
+</html>

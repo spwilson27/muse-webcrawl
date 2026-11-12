@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>patch (Unix) – Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:800px;padding:0 1em;line-height:1.6;color:#202122}
+h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:.1em;margin-top:1.4em}
+img{max-width:200px;float:right;margin:0 0 1em 1em;border:1px solid #a2a9b1;padding:2px}
+a{color:#3056a9;text-decoration:none}
+a:hover{text-decoration:underline}
+code{background:#f8f9fa;padding:0 .2em}
+</style>
+</head>
+<body>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h1>patch (Unix)</h1>
+<p><strong>patch</strong> ist ein Unix-Programm, das Textdateien anhand einer Änderungsdatei (ebenfalls Patch genannt) aktualisiert. Die Änderungsdatei enthält die Unterschiede zwischen Original und neuer Version, meist im von <code>diff</code> erzeugten Format. Das Programm war ursprünglich für die Verteilung von Quelltext-Änderungen konzipiert.</p>
+<h2>Geschichte</h2>
+<p>Die ursprüngliche Version wurde 1985 von Larry Wall geschrieben, der später die Programmiersprache Perl entwarf. Heute wird <code>patch</code> als Teil der GNU-Dienstprogramme (GNU patch) gepflegt und ist auf praktisch allen unixoiden Systemen verfügbar.</p>
+<h2>Arbeitsweise</h2>
+<p>Ein Aufruf wie <code>patch &lt; aenderung.patch</code> liest die Patchdatei, lokalisiert die zu ändernden Stellen („Hunks") im Zieltext und ersetzt sie durch die neue Fassung. Ist eine Stelle durch zwischenzeitliche Bearbeitungen verschoben, versucht das Programm, sie anhand des Kontextes wiederzufinden; schlägt dies fehl, wird die Änderung in einer <code>.rej</code>-Datei (Rejects) abgelegt. Mit der Option <code>-p</code> lassen sich führende Pfadbestandteile der in der Patchdatei genannten Dateinamen entfernen, was beim Einspielen von Patches aus anderen Verzeichnissen üblich ist. Unterstützt werden unter anderem das Kontext-, das Unified- und das Normalformat von <code>diff</code> sowie das ed-Skript-Format.</p>
+<h2>Bedeutung</h2>
+<p>Zusammen mit <code>diff</code> bildet <code>patch</code> bis heute die Grundlage vieler Arbeitsabläufe in der Softwareentwicklung; auch Versionsverwaltungssysteme und das Linux-Kernel-Projekt nutzen Patchdateien im Unified-Diff-Format zum Austausch von Änderungen.</p>
+<h2>Verwandte Themen</h2>
+<ul>
+<li><a href="../../diff/index.html">diff</a></li>
+<li><a href="../../Patch_(Software)/index.html">Patch (Software)</a></li>
+<li><a href="../../GNU/index.html">GNU-Projekt</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Lineares Mehrschrittverfahren – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 1em auto; max-width: 400px; }
+.math { font-style: italic; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Lineares Mehrschrittverfahren</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Lineare Mehrschrittverfahren</b> sind numerische Verfahren zur Lösung von <a href="../Ordinary_differential_equation/index.html">Anfangswertproblemen gewöhnlicher Differentialgleichungen</a>. Im Gegensatz zu <a href="../Runge–Kutta_methods/index.html">Einschrittverfahren</a> verwenden sie zur Berechnung des nächsten Näherungswerts nicht nur den aktuellen, sondern mehrere zurückliegende Stützwerte, wodurch sie bei gleicher Ordnung mit weniger Funktionsauswertungen pro Schritt auskommen.</p>
+<h2>Allgemeine Form</h2>
+<p>Ein lineares <span class="math">k</span>-Schritt-Verfahren zur Lösung von <span class="math">y' = f(t, y)</span> hat die Form</p>
+<p style="text-align:center;"><span class="math">Σ<sub>j=0..k</sub> a<sub>j</sub> y<sub>n+j</sub> = h Σ<sub>j=0..k</sub> b<sub>j</sub> f(t<sub>n+j</sub>, y<sub>n+j</sub>)</span>.</p>
+<p>Ist <span class="math">b<sub>k</sub> = 0</span>, so ist das Verfahren explizit, andernfalls implizit und zur Bestimmung von <span class="math">y<sub>n+k</sub></span> ist eine (meist nichtlineare) Gleichung zu lösen.</p>
+<h2>Bekannte Verfahren</h2>
+<ul>
+<li><b>Adams-Bashforth-Verfahren</b>: explizite Verfahren, die auf der Interpolation der rechten Seite beruhen.</li>
+<li><b>Adams-Moulton-Verfahren</b>: implizite Varianten höherer Genauigkeit.</li>
+<li><b>BDF-Verfahren</b> (backward differentiation formulas): implizite Verfahren, die sich besonders für <a href="../Stiff_equation/index.html">steife Differentialgleichungen</a> eignen.</li>
+</ul>
+<h2>Eigenschaften</h2>
+<p>Zentrale Begriffe sind Konsistenz, Konvergenz und Nullstabilität; nach einem Satz von Dahlquist ist ein lineares Mehrschrittverfahren genau dann konvergent, wenn es konsistent und nullstabil ist. Die erste Dahlquist-Barriere begrenzt die Ordnung nullstabiler Verfahren, die zweite Dahlquist-Barriere besagt, dass A-stabile lineare Mehrschrittverfahren höchstens die Ordnung zwei besitzen. Da Mehrschrittverfahren mehrere Startwerte benötigen, werden die ersten Werte üblicherweise mit einem Einschrittverfahren berechnet.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Numerical_methods_for_ordinary_differential_equations/index.html">Numerische Verfahren für gewöhnliche Differentialgleichungen</a></li>
+<li><a href="../Euler_method/index.html">Euler-Verfahren</a></li>
+<li><a href="../Predictor–corrector_method/index.html">Prädiktor-Korrektor-Verfahren</a></li>
+</ul>
+</div>
+</body>
+</html>

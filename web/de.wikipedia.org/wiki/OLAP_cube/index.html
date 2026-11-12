@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>OLAP-Würfel – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine","Georgia",serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 1.5em 2em; line-height: 1.6; }
+h1 { font-family: "Georgia",serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { border-bottom: 1px solid #a2a9b1; font-weight: normal; }
+p { font-family: sans-serif; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul { font-family: sans-serif; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>OLAP-Würfel</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>OLAP-Würfel</b> (englisch OLAP cube) ist ein mehrdimensionaler Datenbestand, der betriebliche Kennzahlen (Fakten) entlang geschäftlicher Dimensionen organisiert und dadurch schnelle analytische Auswertungen im Rahmen des <a href="../OLAP/index.html">Online Analytical Processing</a> ermöglicht.</p>
+<h2>Aufbau</h2>
+<p>Anschaulich besitzt ein Würfel Achsen wie Zeit, Region und Produkt; die Zellen der Kreuzungspunkte enthalten Kennzahlen, etwa Umsatz oder Stückzahl. Tatsächlich ist die Zahl der Dimensionen nicht auf drei beschränkt – „Würfel“ ist eine Metapher; genau genommen handelt es sich um einen Hyperwürfel. Dimensionen besitzen Hierarchien, beispielsweise Tag → Monat → Quartal → Jahr oder Artikel → Warengruppe → Sortiment.</p>
+<h2>Operationen</h2>
+<ul>
+<li><b>Slice:</b> Auswahl eines festen Werts einer Dimension (z. B. nur das Jahr 2024)</li>
+<li><b>Dice:</b> Auswahl eines Teilwürfels über Wertebereiche mehrerer Dimensionen</li>
+<li><b>Drill-down / Roll-up:</b> Verfeinerung beziehungsweise Verdichtung entlang einer Hierarchie</li>
+<li><b>Pivot:</b> Drehen des Würfels, d. h. Vertauschen der Darstellungsdimensionen</li>
+<li><b>Drill-through:</b> Zugriff auf die zugrunde liegenden Detaildaten</li>
+</ul>
+<h2>Speicherung</h2>
+<p>Für MOLAP-Systeme werden Aggregate vorab materialisiert, was kurze Antwortzeiten liefert, aber Speicherplatz kostet und zu einer Explosion der Zellenzahl bei dünn besetzten (sparse) Würfeln führen kann. Kompressionstechniken und die Auswahl nur häufig genutzter Aggregate (teilweise Materialisierung) mildern dieses Problem. Alternativ speichert ROLAP die Daten relational und berechnet die Würfel erst zur Abfragezeit.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../OLAP/index.html">OLAP</a></li>
+<li><a href="../Data-Warehouse/index.html">Data-Warehouse</a></li>
+<li><a href="../Sternschema/index.html">Sternschema</a></li>
+</ul>
+</div>
+</body>
+</html>

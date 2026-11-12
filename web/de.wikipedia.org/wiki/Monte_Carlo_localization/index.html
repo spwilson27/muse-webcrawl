@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Monte-Carlo-Lokalisierung – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 900px; line-height: 1.6; color: #202122; }
+h1 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 300px; float: right; margin: 0 0 1em 1em; }
+</style>
+</head>
+<body>
+<h1>Monte-Carlo-Lokalisierung</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>Monte-Carlo-Lokalisierung</b> (englisch <i>Monte Carlo localization</i>, MCL), auch als Partikelfilter-Lokalisierung bekannt, ist ein Verfahren der Robotik, mit dem ein mobiler Roboter seine Position und Orientierung (Pose) in einer bekannten Karte anhand von Sensordaten schätzt.</p>
+
+<h2>Verfahren</h2>
+<p>Der Wahrscheinlichkeitsverteilung über die möglichen Positionen des Roboters wird durch eine Menge gewichteter Stichproben („Partikel“) repräsentiert. In jedem Schritt:</p>
+<ol>
+<li>werden die Partikel entsprechend dem Bewegungsmodell des Roboters (z. B. Odometrie) fortgeschrieben,</li>
+<li>werden sie anhand des Sensormodells neu gewichtet – Partikel, deren vorhergesagte Messungen (z. B. Laserscans) gut mit den tatsächlichen Messungen übereinstimmen, erhalten höhere Gewichte,</li>
+<li>und es findet ein Resampling statt, das Partikel mit hohen Gewichten vervielfältigt und solche mit niedrigen Gewichten verwirft.</li>
+</ol>
+<p>Auf diese Weise konzentrieren sich die Partikel zunehmend um die tatsächliche Roboterpose.</p>
+
+<h2>Eigenschaften</h2>
+<p>MCL kann – anders als kalmanfilterbasierte Verfahren – multimodale Verteilungen darstellen und daher auch das Problem der globalen Lokalisierung und das „Kidnapped-Robot-Problem“ (Wiederfinden nach einem Positionssprung) lösen, besonders wenn bei der adaptiven Variante AMCL zufällig Partikel eingestreut werden. Das Verfahren wurde Ende der 1990er Jahre unter anderem von Dieter Fox und Kollegen populär gemacht und ist heute ein Standardverfahren, etwa im ROS-Navigationspaket.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Partikelfilter/index.html">Partikelfilter</a></li>
+<li><a href="../SLAM_(Robotik)/index.html">SLAM (Robotik)</a></li>
+<li><a href="../Monte-Carlo-Methode/index.html">Monte-Carlo-Methode</a></li>
+</ul>
+</body>
+</html>

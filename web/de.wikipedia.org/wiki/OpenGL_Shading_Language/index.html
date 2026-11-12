@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>OpenGL Shading Language – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; padding: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em 3em; }
+h1 { font-family: serif; font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; margin-bottom: 0.3em; }
+h2 { font-family: serif; font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.2em; }
+p { line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code, pre { font-family: monospace; background: #f6f6f6; }
+pre { padding: 0.8em; overflow-x: auto; border: 1px solid #ddd; }
+.infobox { float: right; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em 0.8em; margin: 0 0 1em 1.5em; font-size: 0.9em; }
+.infobox th { text-align: left; padding-right: 0.6em; }
+img.hero { display: block; margin: 1em 0; max-width: 100%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>OpenGL Shading Language</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<div class="infobox">
+<table>
+<tr><th>Paradigma</th><td>Imperative, shaderorientiert</td></tr>
+<tr><th>Erscheinungsjahr</th><td>2004 (mit OpenGL 2.0)</td></tr>
+<tr><th>Entwickler</th><td>3Dlabs, später Khronos Group</td></tr>
+<tr><th>Typisierung</th><td>Statisch, stark</td></tr>
+<tr><th>Erweiterungen</th><td>.vert, .frag, .geom, .tesc, .tese, .comp</td></tr>
+</table>
+</div>
+<p>Die <b>OpenGL Shading Language</b> (kurz <b>GLSL</b>) ist eine Shading-Sprache, die ursprünglich von 3Dlabs entwickelt wurde und heute von der Khronos Group gepflegt wird. Sie dient dazu, sogenannte Shader zu schreiben, die auf der GPU ausgeführt werden und die festverdrahtete Grafikpipeline von <a href="../../OpenGL/index.html">OpenGL</a> durch frei programmierbare Stufen ersetzen. GLSL wurde 2004 zusammen mit OpenGL 2.0 eingeführt und ist eng an die Syntax von <a href="../../C_(Programmiersprache)/index.html">C</a> angelehnt, ergänzt um Datentypen und eingebaute Funktionen für Vektor- und Matrixoperationen.</p>
+
+<h2>Allgemeines</h2>
+<p>GLSL-Programme werden zur Laufzeit von der Anwendung an den Grafiktreiber übergeben, dort kompiliert und auf der Grafikkarte zur Ausführung gebracht. Es gibt mehrere Shadertypen, darunter Vertex-Shader, Fragment-Shader, Geometrie-Shader, Tesselierungs-Shader und Compute-Shader. Jeder Shadertyp besitzt eine eigene Eintrittsfunktion <code>main()</code>. Über Qualifier wie <code>in</code>, <code>out</code> und <code>uniform</code> werden Daten zwischen den Pipelinestufen und der Anwendung ausgetauscht.</p>
+<p>Die Sprache kennt skalare Typen wie <code>float</code>, <code>int</code> und <code>bool</code>, Vektortypen wie <code>vec2</code>, <code>vec3</code> und <code>vec4</code> sowie Matrixtypen wie <code>mat4</code>. Ein besonderes Merkmal ist das sogenannte <i>Swizzling</i>, mit dem Komponenten eines Vektors bequem ausgewählt und neu angeordnet werden können.</p>
+
+<h2>Beispiel</h2>
+<p>Ein einfacher Vertex-Shader, der Eingabepositionen mit einer Model-View-Projection-Matrix transformiert:</p>
+<pre>
+#version 330 core
+layout(location = 0) in vec3 position;
+uniform mat4 mvp;
+void main()
+{
+    gl_Position = mvp * vec4(position, 1.0);
+}
+</pre>
+<p>Ein passender Fragment-Shader, der eine konstante Farbe ausgibt:</p>
+<pre>
+#version 330 core
+out vec4 fragColor;
+void main()
+{
+    fragColor = vec4(1.0, 0.5, 0.2, 1.0);
+}
+</pre>
+
+<h2>Versionsgeschichte</h2>
+<p>Die Versionierung von GLSL folgt weitgehend der von OpenGL: GLSL 1.10 erschien mit OpenGL 2.0, GLSL 1.20 mit OpenGL 2.1 und GLSL 1.30 mit OpenGL 3.0. Ab GLSL 3.30 entspricht die Versionsnummer der OpenGL-Version (z. B. GLSL 4.60 für OpenGL 4.6). Eine eigenständige Variante ist <b>OpenGL ES Shading Language</b> (GLSL ES) für eingebettete Systeme und mobile Geräte; diese liegt ebenfalls WebGL zugrunde. Mit Vulkan wurde zudem die Verwendung von GLSL über die Zwischenrepräsentation SPIR-V üblich.</p>
+
+<h2>Literatur</h2>
+<ul>
+<li>Randi J. Rost: <i>OpenGL Shading Language</i>. Addison-Wesley, 2. Auflage 2006.</li>
+<li>John Kessenich u. a.: <i>The OpenGL Shading Language Specification</i>. Khronos Group.</li>
+</ul>
+
+<h2>Weblinks</h2>
+<ul>
+<li>Khronos Group – OpenGL Shading Language (englisch)</li>
+<li>OpenGL-Wiki: GLSL-Übersicht (englisch)</li>
+</ul>
+
+<p><i>Kategorien: Programmiersprache, Computergrafik, OpenGL</i></p>
+</div>
+</body>
+</html>

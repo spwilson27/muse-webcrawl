@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Nichtdeterministischer endlicher Automat – Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0 auto;max-width:960px;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.4em}
+img.placeholder{display:block;background:#f8f9fa;border:1px solid #c8ccd1;padding:12px;text-align:center}
+a{color:#3056a9;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Nichtdeterministischer endlicher Automat</h1>
+<img class="placeholder" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>nichtdeterministischer endlicher Automat</b> (NEA; englisch <i>nondeterministic finite automaton</i>, NFA) ist ein Modell der theoretischen Informatik, das im Jahr 1959 von Michael O. Rabin und Dana Scott eingeführt wurde, die dafür später den Turing Award erhielten. Im Gegensatz zu einem deterministischen endlichen Automaten (DEA) entscheidet sich bei einem NEA nicht immer eindeutig, in welchen Folgezustand der Automat bei der Eingabe eines Zeichens übergeht.</p>
+<h2>Definition</h2>
+<p>Formal wird ein NEA als Tupel M = (Q, Σ, δ, q₀, F) beschrieben, wobei Q eine endliche Menge von Zuständen ist, Σ das Eingabealphabet, δ die Überführungsfunktion, q₀ der Startzustand und F die Menge der akzeptierenden Zustände (Endzustände). Die Überführungsfunktion bildet auf Teilmengen von Q ab: δ: Q × (Σ ∪ {ε}) → P(Q). Dadurch kann der Automat bei einem Eingabezeichen mehrere Zustände gleichzeitig „annehmen" oder auch keinen, und er kann Zustandsübergänge ausführen, ohne ein Eingabezeichen zu lesen (ε-Übergänge).</p>
+<h2>Arbeitsweise</h2>
+<p>Ein NEA akzeptiert eine Eingabe, wenn es mindestens eine Folge von Zustandsübergängen gibt, die vom Startzustand ausgeht, die gesamte Eingabe verbraucht und in einem Endzustand endet. Man kann sich den Automaten als Baum aller möglichen Berechnungspfade vorstellen; akzeptiert wird, sobald irgendein Pfad erfolgreich ist.</p>
+<h2>Äquivalenz zum DEA</h2>
+<p>Trotz der größeren Flexibilität sind NEA nicht mächtiger als deterministische Automaten: Zu jedem NEA existiert ein DEA, der dieselbe Sprache erkennt. Das Standardverfahren ist die Potenzmengenkonstruktion (Teilmengenkonstruktion), bei der die Zustände des DEA den Teilmengen der Zustände des NEA entsprechen. Allerdings kann die Zahl der Zustände des DEA im ungünstigsten Fall exponentiell gegenüber der des NEA wachsen.</p>
+<h2>Anwendungen</h2>
+<p>NEA spielen eine zentrale Rolle bei der Implementierung regulärer Ausdrücke, etwa in der Thompson-Konstruktion, die einen regulären Ausdruck systematisch in einen NEA mit ε-Übergängen überführt. Auch in der Lexikalanalyse von Compilern und in der Mustererkennung werden nichtdeterministische Automaten verwendet.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Deterministischer_endlicher_Automat">Deterministischer endlicher Automat</a></li>
+<li><a href="../Endlicher_Automat">Endlicher Automat</a></li>
+<li><a href="../Potenzmengenkonstruktion">Potenzmengenkonstruktion</a></li>
+<li><a href="../Regul%C3%A4re_Sprache">Reguläre Sprache</a></li>
+</ul>
+</body>
+</html>

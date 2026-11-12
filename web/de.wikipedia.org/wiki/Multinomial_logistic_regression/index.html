@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Multinomiale logistische Regression – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 50em; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0 0 1em 1em; border: 1px solid #c8ccd1; padding: 0.3em; background: #f8f9fa; font-size: 0.85em; }
+</style>
+</head>
+<body>
+<h1>Multinomiale logistische Regression</h1>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"></div>
+<p>Die <b>multinomiale logistische Regression</b> (auch <i>multinomiales Logit-Modell</i> oder, im maschinellen Lernen, <i>Softmax-Regression</i>) ist ein Verfahren der Regressionsanalyse zur Modellierung einer kategorialen Zielgröße mit mehr als zwei ungeordneten Ausprägungen. Sie verallgemeinert die binäre <a href="../Logistische_Regression/index.html">logistische Regression</a>: Für jede Kategorie wird eine eigene lineare Funktion der Einflussgrößen geschätzt, und die Wahrscheinlichkeiten ergeben sich über die Softmax-Funktion.</p>
+<h2>Modell</h2>
+<p>Bei <i>K</i> Kategorien und einer Referenzkategorie <i>K</i> lautet das Modell für die übrigen Kategorien <i>k</i>:</p>
+<p style="text-align:center"><i>ln [ P(Y = k) / P(Y = K) ] = β<sub>k0</sub> + β<sub>k1</sub>x<sub>1</sub> + … + β<sub>kp</sub>x<sub>p</sub></i>.</p>
+<p>Jede Kategorie erhält so einen eigenen Koeffizientensatz; die Wahrscheinlichkeiten summieren sich auf 1. Die Schätzung erfolgt per Maximum-Likelihood-Methode, typischerweise mit Newton-Raphson- oder Quasi-Newton-Verfahren, da keine geschlossene Lösung existiert.</p>
+<h2>Independence of Irrelevant Alternatives</h2>
+<p>Eine zentrale Eigenschaft und zugleich oft kritisierte Annahme ist die <i>Independence of Irrelevant Alternatives</i> (IIA): Das Chancenverhältnis zweier Alternativen hängt nicht davon ab, welche weiteren Alternativen verfügbar sind. In der Verkehrs- und Wahlmodellierung ist dies bei ähnlichen Alternativen problematisch (das bekannte „Red-Bus/Blue-Bus“-Problem); verschachtelte Logit-Modelle (Nested Logit) und gemischte Logit-Modelle lockern die Annahme.</p>
+<h2>Anwendungen</h2>
+<p>Typische Anwendungen sind die Modellierung von Verkehrsmittelwahl, Konsumentscheidungen zwischen Marken, Parteiwahl sowie die Klassifikation in der Bilderkennung. Die Softmax-Schicht bildet zudem die Standard-Ausgabeschicht neuronaler Netze für Mehrklassenprobleme.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Logistische_Regression/index.html">Logistische Regression</a></li>
+<li><a href="../Multinomialverteilung/index.html">Multinomialverteilung</a></li>
+<li><a href="../Probit-Modell/index.html">Probit-Modell</a></li>
+<li><a href="../Multinomial_probit/index.html">Multinomiales Probit-Modell</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Seitentabelle – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+header { background: #fff; border-bottom: 1px solid #a2a9b1; padding: 12px 24px; }
+main { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 1px 4px; }
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> – Die freie Enzyklopädie</header>
+<main>
+<h1>Seitentabelle</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Eine <b>Seitentabelle</b> (englisch <i>page table</i>) ist eine Datenstruktur des Betriebssystems, mit der bei der seitenbasierten virtuellen Speicherverwaltung die Zuordnung von virtuellen <a href="../Page_(computer_memory)/index.html">Seiten</a> zu physischen Seitenrahmen verwaltet wird. Die Memory Management Unit (MMU) der CPU nutzt sie bei jedem Speicherzugriff, um virtuelle in physische Adressen zu übersetzen.</p>
+
+<h2>Aufbau</h2>
+<p>Jeder Prozess besitzt eine eigene Seitentabelle. Jeder Eintrag (<i>page table entry</i>, PTE) enthält unter anderem:</p>
+<ul>
+<li>die Nummer des zugeordneten Seitenrahmens (sofern die Seite eingelagert ist)</li>
+<li>ein <i>Present-Bit</i>, das angibt, ob die Seite im Hauptspeicher liegt</li>
+<li>Zugriffsrechte (Lesen, Schreiben, Ausführen) und Privilegstufen</li>
+<li>ein <i>Dirty-Bit</i> für Veränderungen und ein <i>Accessed-Bit</i> für erfolgte Zugriffe</li>
+<li>gegebenenfalls die Position der Seite im Auslagerungsspeicher</li>
+</ul>
+
+<h2>Mehrstufige Seitentabellen</h2>
+<p>Bei großen Adressräumen wären einstufige Tabellen zu speicherintensiv: Für einen 32-Bit-Adressraum mit 4-KiB-Seiten wären bereits eine Million Einträge nötig. Deshalb verwenden übliche Architekturen <b>mehrstufige (hierarchische) Seitentabellen</b>: Die virtuelle Adresse wird in mehrere Indexe zerlegt, die eine Baumstruktur von Tabellen durchlaufen. Nur tatsächlich genutzte Teile des Adressraums benötigen Tabellenseiten. Auf x86-64 sind vier bis fünf Stufen üblich.</p>
+<p>Alternative Ansätze sind invertierte Seitentabellen, bei denen es nur einen Eintrag pro physikalischem Seitenrahmen gibt, sowie Hashtabellen-Verfahren.</p>
+
+<h2>Beschleunigung</h2>
+<p>Da eine Adressübersetzung mehrere Speicherzugriffe erfordern würde, hält die CPU häufig genutzte Übersetzungen in einem speziellen Cache, dem <b>Translation Lookaside Buffer</b> (TLB). Bei einem Kontextwechsel zwischen Prozessen wechselt auch die aktive Seitentabelle, indem ein Steuerregister (etwa CR3 auf x86) auf die neue Tabelle gesetzt wird.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Page_(computer_memory)/index.html">Seite (Speicherverwaltung)</a></li>
+<li><a href="../Page_fault/index.html">Seitenfehler</a></li>
+<li><a href="../Virtueller_Speicher/index.html">Virtueller Speicher</a></li>
+</ul>
+</main>
+</body>
+</html>

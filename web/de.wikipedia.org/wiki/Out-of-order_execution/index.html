@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Out-of-order execution – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em; line-height: 1.6; color: #202122; max-width: 960px; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em 1em; margin: 0 0 1em 1em; width: 260px; font-size: 90%; }
+.infobox th { text-align: left; vertical-align: top; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Out-of-order execution</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<div class="infobox">
+<table>
+<tr><th>Bereich</th><td>Rechnerarchitektur</td></tr>
+<tr><th>Erste Umsetzung</th><td>CDC 6600 (1964), IBM System/360 Model 91 (1967)</td></tr>
+<tr><th>Techniken</th><td>Scoreboarding, Tomasulo-Algorithmus, Reorder Buffer</td></tr>
+</table>
+</div>
+<p><b>Out-of-order execution</b> (deutsch etwa „Ausführung in veränderter Reihenfolge") bezeichnet eine Technik moderner Prozessoren, bei der Maschinenbefehle nicht strikt in der Programmreihenfolge, sondern abhängig von der Verfügbarkeit ihrer Operanden und Ausführungseinheiten ausgeführt werden. Ziel ist es, die Pipeline trotz Wartezeiten – etwa bei Speicherzugriffen oder Datenabhängigkeiten – besser auszulasten und so die Leistung zu steigern.</p>
+<h2>Funktionsweise</h2>
+<p>Der Prozessor zerlegt die Befehlsfolge in Mikrobefehle, prüft deren Abhängigkeiten und verteilt sie auf freie Funktionseinheiten. Umbenennung von Registern (register renaming) beseitigt Scheinabhängigkeiten (Write-after-Read und Write-after-Write). Ein Reorder Buffer stellt sicher, dass die Ergebnisse schließlich in der ursprünglichen Programmreihenfolge sichtbar werden (in-order retirement bzw. commit), sodass Unterbrechungen und Ausnahmen präzise behandelt werden können.</p>
+<h2>Geschichte</h2>
+<p>Frühe Verfahren waren das Scoreboarding der CDC 6600 (1964) und der Tomasulo-Algorithmus des IBM System/360 Model 91 (1967). In den 1990er Jahren setzte sich Out-of-order-Ausführung in Desktop-Prozessoren durch, etwa im Intel Pentium Pro (1995). Als Seitenkanal der spekulativen Ausführung wurden 2018 die Sicherheitslücken Spectre und Meltdown bekannt.</p>
+</body>
+</html>

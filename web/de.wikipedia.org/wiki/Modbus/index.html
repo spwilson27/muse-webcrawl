@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Modbus – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #fff; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; padding: 20px 30px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+ul, table { line-height: 1.6; font-size: 15px; }
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #a2a9b1; padding: 5px 10px; }
+th { background: #eaecf0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Modbus</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Modbus</b> ist ein offenes Kommunikationsprotokoll für die industrielle Automatisierungstechnik, das 1979 von der Firma Modicon (heute Schneider Electric) für speicherprogrammierbare Steuerungen (SPS) entwickelt wurde. Es entwickelte sich zu einem De-facto-Standard für die Vernetzung elektronischer Geräte in Industrie, Gebäudetechnik und Energietechnik und wird von der Modbus Organization gepflegt.</p>
+<h2>Prinzip</h2>
+<p>Modbus arbeitet nach dem Client-Server-Prinzip (früher Master-Slave genannt): Der Client fordert Daten an oder schreibt sie, die Server (bis zu 247 je Bus) antworten nur auf Anfrage. Das Datenmodell kennt vier einfache Objekttypen:</p>
+<table>
+<tr><th>Objekttyp</th><th>Zugriff</th><th>Datentyp</th></tr>
+<tr><td>Coils</td><td>lesen/schreiben</td><td>Einzelbits (Ausgänge)</td></tr>
+<tr><td>Discrete Inputs</td><td>nur lesen</td><td>Einzelbits (Eingänge)</td></tr>
+<tr><td>Holding Register</td><td>lesen/schreiben</td><td>16-Bit-Wörter</td></tr>
+<tr><td>Input Register</td><td>nur lesen</td><td>16-Bit-Wörter</td></tr>
+</table>
+<p>Die Kommunikation erfolgt über Funktionscodes, die die gewünschte Operation festlegen, etwa „Read Holding Registers“ (Code 03) oder „Write Multiple Registers“ (Code 16).</p>
+<h2>Varianten</h2>
+<ul>
+<li><b>Modbus RTU:</b> kompakte binäre Übertragung über serielle Schnittstellen (RS-232, RS-485), Datenrahmen mit CRC-Prüfsumme</li>
+<li><b>Modbus ASCII:</b> Übertragung in ASCII-Zeichen über serielle Schnittstellen, mit LRC-Prüfsumme</li>
+<li><b>Modbus TCP:</b> Übertragung über Ethernet auf Basis von TCP/IP (Port 502), Rahmen ohne eigene Prüfsumme</li>
+<li><b>Modbus Plus:</b> proprietäres, tokenbasiertes Netzwerk von Schneider Electric</li>
+</ul>
+<h2>Verbreitung und Kritik</h2>
+<p>Wegen seiner Einfachheit, der lizenzfreien Nutzung und der leichten Implementierbarkeit ist Modbus auch Jahrzehnte nach seiner Einführung weit verbreitet, etwa in Wechselrichtern von Photovoltaikanlagen, Stromzählern, Heizungssteuerungen und Frequenzumrichtern. Als Nachteil gilt, dass das Protokoll ursprünglich keine Sicherheitsmechanismen wie Authentifizierung oder Verschlüsselung vorsah; mit Modbus/TCP Security wurde später eine TLS-basierte Variante spezifiziert.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li>Feldbus</li>
+<li>Speicherprogrammierbare Steuerung</li>
+<li>Profibus</li>
+<li><a href="../Modbus/index.html">Modbus (Begriff)</a></li>
+</ul>
+</div>
+</body>
+</html>

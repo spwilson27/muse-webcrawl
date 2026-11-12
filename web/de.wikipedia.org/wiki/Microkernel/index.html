@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Mikrokernel – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 320px; float: right; margin: 0 0 1em 1.5em; border: 1px solid #c8ccd1; }
+</style>
+</head>
+<body>
+<div class="content">
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Mikrokernel</h1>
+<p>Ein <b>Mikrokernel</b> (englisch <i>microkernel</i>) ist ein minimalistisch aufgebauter Betriebssystemkern, der nur die absolut notwendigen Grundfunktionen bereitstellt, etwa Speicherverwaltung auf niedrigster Ebene, Prozess- und Threadverwaltung sowie Interprozesskommunikation (IPC). Alle übrigen Dienste – Dateisysteme, Gerätetreiber, Netzwerkprotokolle – laufen als eigenständige Prozesse im Benutzermodus (<i>user mode</i>), häufig als sogenannte Server.</p>
+<h2>Architektur</h2>
+<p>Das Design folgt dem Prinzip der minimalen Mechanismen: Der Kernel selbst übernimmt nur Aufgaben, die zwingend im privilegierten Kernelmodus ausgeführt werden müssen. Die Kommunikation zwischen den Komponenten erfolgt über Nachrichten (<i>message passing</i>). Fällt ein Serverprozess aus, kann er im Idealfall neu gestartet werden, ohne dass das Gesamtsystem abstürzt; dies erhöht Fehlertoleranz und Sicherheit.</p>
+<p>Dem Mikrokernel steht der monolithische Kernel gegenüber, bei dem nahezu alle Betriebssystemdienste im Kernelraum laufen, wie etwa bei Linux. Hybride Ansätze kombinieren beide Konzepte.</p>
+<h2>Beispiele</h2>
+<ul>
+<li><b>Mach:</b> entwickelt an der Carnegie Mellon University, Grundlage u. a. für GNU Hurd und (in abgewandelter Form) für das XNU-Kernelsystem von Apple.</li>
+<li><b>MINIX:</b> von Andrew S. Tanenbaum zu Lehrzwecken entwickelt; MINIX 3 verfolgt einen konsequenten Mikrokernelansatz.</li>
+<li><b>QNX:</b> kommerzielles Echtzeitbetriebssystem mit Mikrokernel, verbreitet in eingebetteten Systemen.</li>
+<li><b>L4-Familie:</b> besonders kleine und schnelle Mikrokernel, darunter seL4, der erste formal verifizierte Betriebssystemkern.</li>
+<li><b>Zircon:</b> Kernel des Google-Betriebssystems Fuchsia.</li>
+</ul>
+<h2>Vor- und Nachteile</h2>
+<p>Vorteile sind höhere Stabilität, bessere Modularität, leichtere Wartbarkeit und erhöhte Sicherheit durch strikte Trennung der Komponenten. Als Nachteil gilt der Kommunikationsaufwand durch häufige Kontextwechsel und Nachrichtenkopien, der gegenüber monolithischen Kernen Leistung kosten kann. Moderne IPC-Designs wie in L4 konnten diese Kosten jedoch drastisch senken.</p>
+<h2>Geschichte</h2>
+<p>Die Debatte zwischen Mikrokernel- und monolithischem Design wurde Anfang der 1990er-Jahre öffentlich prominent, etwa in der Auseinandersetzung zwischen Andrew Tanenbaum und Linus Torvalds über die Architektur von Linux.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li>Betriebssystem</li>
+<li>Monolithischer Kernel</li>
+<li><a href="../Microprocessor/index.html">Mikroprozessor</a></li>
+<li>Interprozesskommunikation</li>
+</ul>
+</div>
+</body>
+</html>

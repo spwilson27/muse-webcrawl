@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Lineare Prädiktion – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 1em auto; max-width: 400px; }
+.math { font-style: italic; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Lineare Prädiktion</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Lineare Prädiktion</b> (englisch <i>linear predictive coding</i>, LPC) ist ein Verfahren der <a href="../Signal_processing/index.html">digitalen Signalverarbeitung</a>, bei dem ein Signalwert aus einer Linearkombination vorangegangener Werte vorhergesagt wird. Es wird vor allem zur Analyse und Kompression von Sprachsignalen eingesetzt, da es die Übertragungsdatenrate stark reduzieren kann.</p>
+<h2>Prinzip</h2>
+<p>Der aktuelle Abtastwert <span class="math">s(n)</span> wird durch eine gewichtete Summe der <span class="math">p</span> vorangegangenen Werte angenähert:</p>
+<p style="text-align:center;"><span class="math">ŝ(n) = Σ<sub>k=1..p</sub> a<sub>k</sub> s(n−k)</span></p>
+<p>Die Prädiktionskoeffizienten <span class="math">a<sub>k</sub></span> werden so bestimmt, dass der quadratische Vorhersagefehler minimiert wird; dies führt auf die Yule-Walker-Gleichungen, die sich effizient mit dem Levinson-Durbin-Algorithmus lösen lassen. Übertragen werden nur die Koeffizienten und das (quantisierte) Fehlersignal.</p>
+<h2>Sprachmodell</h2>
+<p>Der LPC-Analyse liegt ein Quelle-Filter-Modell der Spracherzeugung zugrunde: Die Stimmbänder bzw. Rauschen wirken als Anregung, der Vokaltrakt als zeitveränderliches Filter. Die Prädiktionskoeffizienten beschreiben die Resonanzen (Formanten) des Vokaltrakts.</p>
+<h2>Anwendungen</h2>
+<ul>
+<li>Sprachcodecs mit niedrigen Bitraten, z. B. LPC-10 (FS-1015) und darauf aufbauende Verfahren wie <a href="../Code-excited_linear_prediction/index.html">CELP</a>, das in der Mobiltelefonie weit verbreitet ist.</li>
+<li>Verlustfreie Audiokompression, etwa in <a href="../FLAC/index.html">FLAC</a>, das lineare Prädiktion zur Dekorrelation der Abtastwerte nutzt.</li>
+<li>Sprachsynthese und Formantsynthese.</li>
+</ul>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Autoregressive_model/index.html">Autoregressives Modell</a></li>
+<li><a href="../Speech_coding/index.html">Sprachcodierung</a></li>
+<li><a href="../Vocoder/index.html">Vocoder</a></li>
+</ul>
+</div>
+</body>
+</html>

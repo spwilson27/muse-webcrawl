@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Move-Semantik – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #fff; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; font-weight: normal; margin-top: 1.4em; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { font-family: monospace; background: #f8f9fa; padding: 0 0.2em; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Move-Semantik</h1>
+<img class="thumb" src="images/hero.png" alt="Hero image (placeholder)" style="float:right;margin:0 0 1em 1em;border:1px solid #c8ccd1;padding:3px;background:#f8f9fa;">
+<p>Die <b>Move-Semantik</b> (englisch <i>move semantics</i>, deutsch auch „Verschiebesemantik“) ist ein Konzept moderner Programmiersprachen, bei dem der Besitz von Ressourcen eines Objekts auf ein anderes Objekt übertragen wird, statt die Ressourcen aufwendig zu kopieren. Sie wurde mit C++11 in der Sprache C++ eingeführt und ist auch in Rust ein zentrales Sprachmerkmal.</p>
+<h2>Prinzip</h2>
+<p>Viele Objekte verwalteten dynamische Ressourcen wie Heap-Speicher, Dateihandles oder Sockets. Beim Kopieren solcher Objekte müssten die Ressourcen dupliziert werden, was langsam ist und oft gar nicht benötigt wird – etwa wenn das Quellobjekt danach nicht mehr verwendet wird. Beim Verschieben (<i>move</i>) übernimmt das Zielobjekt stattdessen Zeiger und Handles des Quellobjekts; die Quelle wird in einen gültigen, aber leeren Zustand versetzt.</p>
+<h2>Umsetzung in C++</h2>
+<p>Grundlage sind Rvalue-Referenzen (<code>&amp;&amp;</code>). Klassen können einen Verschiebekonstruktor und eine Verschiebezuweisung definieren; die Funktion <code>std::move</code> wandelt einen Ausdruck in einen Rvalue um und signalisiert, dass sein Wert „gestohlen“ werden darf. Container der Standardbibliothek und Smart Pointer wie <code>std::unique_ptr</code> nutzen die Move-Semantik intensiv; <code>unique_ptr</code> ist überhaupt nur verschiebbar, nicht kopierbar.</p>
+<h2>Umsetzung in Rust</h2>
+<p>In Rust ist das Verschieben der Standard: Bei Zuweisung wird der Besitz (<i>Ownership</i>) übertragen, und der Compiler verhindert danach den Zugriff auf den alten Besitzer („use of moved value“). Nur Typen, die das Trait <i>Copy</i> implementieren, werden implizit kopiert.</p>
+</div>
+</body>
+</html>

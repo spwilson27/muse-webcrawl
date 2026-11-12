@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Newton-Cotes-Formeln – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 0.95em; }
+ul { line-height: 1.6; font-family: sans-serif; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { text-align: center; margin: 12px 0; }
+.formel { font-family: serif; font-style: italic; background: #f8f9fa; border: 1px solid #eaecf0; padding: 8px 14px; margin: 10px 0; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Newton-Cotes-Formeln</h1>
+<p>Die <b>Newton-Cotes-Formeln</b> (englisch <i>Newton–Cotes formulas</i>) sind eine Familie numerischer Quadraturverfahren zur näherungsweisen Berechnung bestimmter Integrale. Sie gehen auf Isaac Newton und Roger Cotes zurück und beruhen darauf, den Integranden durch ein Interpolationspolynom durch äquidistante Stützstellen zu ersetzen und dieses exakt zu integrieren.</p>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"></div>
+<h2>Konstruktion</h2>
+<p>Das Integrationsintervall [a, b] wird in n gleich große Teilintervalle der Breite h zerlegt. An den Stützstellen x<sub>i</sub> = a + i·h werden die Funktionswerte f(x<sub>i</sub>) bestimmt und gewichtet summiert:</p>
+<div class="formel">∫<sub>a</sub><sup>b</sup> f(x) dx ≈ h · Σ<sub>i=0..n</sub> c<sub>i</sub> · f(x<sub>i</sub>)</div>
+<p>Die Gewichte c<sub>i</sub> ergeben sich aus der Integration der Lagrange-Basispolynome. Bei der „geschlossenen“ Form greifen die Stützstellen die Intervallenden mit ein; bei der „offenen“ Form liegen sie im Inneren.</p>
+<h2>Bekannte Spezialfälle</h2>
+<ul>
+<li><b>Trapezregel</b> (n = 1): Integral ≈ h/2 · (f(a) + f(b))</li>
+<li><b>Simpsonregel</b> (n = 2): Integral ≈ h/3 · (f<sub>0</sub> + 4f<sub>1</sub> + f<sub>2</sub>), benannt nach Thomas Simpson</li>
+<li><b>3/8-Regel</b> (n = 3) und <b>Milne-Regel</b> (offene Form) für höhere Ordnungen</li>
+</ul>
+<h2>Eigenschaften</h2>
+<p>Newton-Cotes-Formeln gerader Ordnung besitzen eine um eins höhere Genauigkeitsordnung als erwartet. Für große n treten jedoch negative Gewichte und wachsende Fehlerkonstanten auf, und das Interpolationspolynom neigt zu Oszillationen (Runge-Phänomen). In der Praxis verwendet man daher zusammengesetzte Formeln niedriger Ordnung über vielen Teilintervallen oder adaptive Verfahren und Gauß-Quadratur mit nichtäquidistanten Stützstellen.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Newton%27s_method/index.html">Newtonverfahren</a></li>
+<li>Numerische Integration</li>
+</ul>
+</div>
+</body>
+</html>

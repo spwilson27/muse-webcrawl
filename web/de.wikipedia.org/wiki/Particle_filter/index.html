@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Partikelfilter – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0 0 1em 1em; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 3px; font-size: 0.85em; text-align: center; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Partikelfilter</h1>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"><br>Partikelmenge als Näherung einer Verteilung</div>
+<p>Ein <b>Partikelfilter</b> ist ein sequentielles Monte-Carlo-Verfahren zur Schätzung des Zustands eines dynamischen Systems, von dem nur verrauschte Beobachtungen vorliegen. Es approximiert die gesuchte Wahrscheinlichkeitsverteilung über den Zustand durch eine Menge gewichteter Stichproben, der „Partikel“. Partikelfilter eignen sich – anders als das Kalman-Filter – auch für nichtlineare Systeme und nicht-gaußsche Verteilungen und werden unter anderem in der Robotik, der Signalverarbeitung und der Ökonometrie eingesetzt. Nicht zu verwechseln ist das Verfahren mit physikalischen Filtern für <a href="../Particulates/index.html">Feinstaub</a>.</p>
+<h2>Grundidee</h2>
+<p>Der Zustand x<sub>t</sub> eines Systems entwickle sich gemäß einer (nichtlinearen) Übergangsfunktion, und es lägen Beobachtungen z<sub>t</sub> vor, die über ein Beobachtungsmodell mit dem Zustand verknüpft sind. Ziel ist die rekursive Schätzung der Posterior-Verteilung p(x<sub>t</sub> | z<sub>1:t</sub>) im Sinne einer bayesschen Filterung. Das Partikelfilter stellt diese Verteilung durch N Partikel mit zugehörigen Gewichten dar.</p>
+<h2>Algorithmus</h2>
+<ol>
+<li><b>Initialisierung:</b> Partikel werden aus einer Anfangsverteilung gezogen und gleich gewichtet.</li>
+<li><b>Prädiktion:</b> Jedes Partikel wird durch das Systemmodell einen Schritt weiterentwickelt.</li>
+<li><b>Korrektur:</b> Die Gewichte werden proportional zur Wahrscheinlichkeit der aktuellen Beobachtung unter dem jeweiligen Partikelzustand aktualisiert und normiert.</li>
+<li><b>Resampling:</b> Partikel mit hohem Gewicht werden vervielfältigt, solche mit kleinem Gewicht entfernt; dadurch konzentriert sich die Partikelmenge auf wahrscheinliche Zustände und verhindert die Degeneration der Gewichte.</li>
+</ol>
+<h2>Varianten</h2>
+<p>Die einfachste Form ist das SIR-Filter (Sampling Importance Resampling). Weitere Varianten sind das Auxiliary-Partikelfilter, das Regularized Particle Filter, das unzählige Male weiterentwickelte Rao-Blackwellisierte Partikelfilter, bei dem ein Teil des Zustands analytisch (etwa mit einem Kalman-Filter) behandelt wird.</p>
+<h2>Anwendungen</h2>
+<p>Bekannte Anwendungen sind die Selbstlokalisierung mobiler Roboter (Monte-Carlo-Lokalisierung), die Objektverfolgung in Bildfolgen, die Navigation, die Zustands- und Parameterschätzung in der Finanzmathematik sowie die Wetter- und Klimamodellierung im weiteren Umfeld sequentieller Datenassimilation.</p>
+<h2>Grenzen</h2>
+<p>Der Rechenaufwand wächst mit der Zahl der Partikel; in hochdimensionalen Zustandsräumen steigt die benötigte Partikelzahl stark an („Fluch der Dimensionalität“). Die Wahl geeigneter Vorschlagsverteilungen (Proposal Distributions) ist entscheidend für die Effizienz des Verfahrens.</p>
+</div>
+</body>
+</html>

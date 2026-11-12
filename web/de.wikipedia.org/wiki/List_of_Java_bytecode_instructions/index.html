@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Liste der Java-Bytecode-Anweisungen – Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:900px;line-height:1.6;color:#202122}
+h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{border-bottom:1px solid #c8ccd1}
+table{border-collapse:collapse;margin:1em 0}
+th,td{border:1px solid #a2a9b1;padding:.3em .7em;text-align:left}
+th{background:#eaecf0}
+code{font-family:monospace}
+img{max-width:100%}
+</style>
+</head>
+<body>
+<h1>Liste der Java-Bytecode-Anweisungen</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die Java Virtual Machine (JVM) arbeitet mit einem Satz von Bytecode-Anweisungen (Opcodes), die jeweils ein Byte lang sind. Insgesamt sind 256 Opcode-Werte möglich, von denen die meisten belegt sind. Die folgende Liste gibt einen Überblick über die wichtigsten Anweisungsgruppen und Beispiele.</p>
+<h2>Konstanten laden</h2>
+<table>
+<tr><th>Mnemonik</th><th>Opcode</th><th>Beschreibung</th></tr>
+<tr><td><code>nop</code></td><td>0x00</td><td>Keine Operation</td></tr>
+<tr><td><code>aconst_null</code></td><td>0x01</td><td>null auf den Stapel legen</td></tr>
+<tr><td><code>iconst_m1</code> bis <code>iconst_5</code></td><td>0x02–0x08</td><td>int-Konstante −1 bis 5 laden</td></tr>
+<tr><td><code>bipush</code></td><td>0x10</td><td>Byte-Konstante als int laden</td></tr>
+<tr><td><code>sipush</code></td><td>0x11</td><td>Short-Konstante als int laden</td></tr>
+<tr><td><code>ldc</code></td><td>0x12</td><td>Konstante aus dem Konstantenpool laden</td></tr>
+</table>
+<h2>Laden und Speichern</h2>
+<p>Zu dieser Gruppe gehören unter anderem <code>iload</code>, <code>lload</code>, <code>fload</code>, <code>dload</code> und <code>aload</code> zum Laden lokaler Variablen sowie die Array-Zugriffe <code>iaload</code>, <code>aaload</code> u.&nbsp;a. Die Gegenstücke zum Speichern heißen <code>istore</code>, <code>lstore</code>, <code>astore</code> usw.</p>
+<h2>Arithmetik und Stapelmanipulation</h2>
+<p>Beispiele sind <code>iadd</code>, <code>isub</code>, <code>imul</code>, <code>idiv</code>, <code>irem</code>, <code>ineg</code> für Ganzzahlarithmetik, die Shift-Operationen <code>ishl</code>, <code>ishr</code>, <code>iushr</code> sowie <code>pop</code>, <code>dup</code> und <code>swap</code> zur Stapelmanipulation.</p>
+<h2>Ablaufsteuerung</h2>
+<p>Bedingte Sprünge wie <code>ifeq</code>, <code>ifne</code>, <code>iflt</code>, <code>if_icmpeq</code>, <code>ifnull</code> und <code>ifnonnull</code>, der unbedingte Sprung <code>goto</code> sowie <code>tableswitch</code> und <code>lookupswitch</code> steuern den Programmablauf. Rücksprünge erfolgen über <code>ireturn</code>, <code>areturn</code> oder <code>return</code>.</p>
+<h2>Methodenaufrufe und Objekte</h2>
+<p>Methoden werden mit <code>invokevirtual</code>, <code>invokespecial</code>, <code>invokestatic</code>, <code>invokeinterface</code> und <code>invokedynamic</code> aufgerufen. Objekte entstehen durch <code>new</code>, Arrays durch <code>newarray</code>, <code>anewarray</code> und <code>multianewarray</code>. Feldzugriffe erfolgen über <code>getfield</code>, <code>putfield</code>, <code>getstatic</code> und <code>putstatic</code>. Weitere wichtige Anweisungen sind <code>athrow</code> (Ausnahme werfen), <code>checkcast</code>, <code>instanceof</code>, <code>monitorenter</code>, <code>monitorexit</code> und die Erweiterungsanweisung <code>wide</code>.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../../wiki/Java_Virtual_Machine/index.html">Java Virtual Machine</a></li>
+<li><a href="../../wiki/Java_(Programmiersprache)/index.html">Java (Programmiersprache)</a></li>
+<li><a href="../../wiki/Bytecode/index.html">Bytecode</a></li>
+</ul>
+</body>
+</html>

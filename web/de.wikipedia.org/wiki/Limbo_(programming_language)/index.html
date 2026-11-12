@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Limbo (Programmiersprache) – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #fff; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; padding: 20px 24px 60px; line-height: 1.6; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 12px 16px; width: 250px; font-size: 90%; }
+.infobox th { text-align: left; padding-right: 8px; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Limbo (Programmiersprache)</h1>
+<p><b>Limbo</b> ist eine Programmiersprache, die in den Bell Labs von Sean Dorward, Phil Winterbottom und Rob Pike für das Betriebssystem Inferno entwickelt wurde. Sie ist eine stark typisierte, nebenläufige Sprache, deren Programme in Bytecode übersetzt und auf der virtuellen Maschine Dis ausgeführt werden.</p>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<div class="infobox">
+<table>
+<tr><th>Entwickler</th><td>Bell Labs (Dorward, Winterbottom, Pike)</td></tr>
+<tr><th>Erscheinungsjahr</th><td>1995</td></tr>
+<tr><th>Paradigma</th><td>prozedural, nebenläufig</td></tr>
+<tr><th>Laufzeitumgebung</th><td>Dis (virtuelle Maschine, Inferno)</td></tr>
+</table>
+</div>
+<h2>Eigenschaften</h2>
+<p>Die Syntax von Limbo ist von C und Pascal beeinflusst. Die Sprache unterstützt abstrakte Datentypen, Module mit expliziten Schnittstellen sowie die Kommunikation zwischen leichtgewichtigen Prozessen über typisierte Kanäle (Channels) im Sinne der Communicating Sequential Processes (CSP). Daneben bietet Limbo Listen, Tupel, Arrays und Strings als eingebaute Typen sowie eine automatische Speicherbereinigung (Garbage Collection).</p>
+<p>Limbo-Programme werden in einen plattformunabhängigen Bytecode kompiliert, den die virtuelle Maschine Dis interpretiert oder per Just-in-time-Kompilierung ausführt. Dadurch laufen Anwendungen unverändert auf allen Plattformen, für die Inferno verfügbar ist – ein Prinzip des verteilten Rechnens, bei dem Ressourcen einheitlich über ein Namens- und Dateisystem angesprochen werden.</p>
+<h2>Geschichte und Einfluss</h2>
+<p>Limbo wurde Mitte der 1990er Jahre als Anwendungssprache für Inferno konzipiert, das aus dem Plan-9-Umfeld der Bell Labs hervorging. Das Konzept der CSP-Kanäle in Limbo beeinflusste später die Entwicklung der Sprache Go, an der Rob Pike maßgeblich beteiligt war und die Goroutinen und Channels als zentrale Sprachmittel übernahm.</p>
+<h2>Beispiel</h2>
+<pre>
+implement Command;
+
+include "sys.m";
+include "draw.m";
+
+sys: Sys;
+
+init(nil: ref Draw-&gt;Context, nil: list of string)
+{
+    sys = load Sys Sys-&gt;PATH;
+    sys-&gt;print("Hallo, Welt!\n");
+}
+</pre>
+</div>
+</body>
+</html>

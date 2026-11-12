@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>OBD-II PIDs – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine","Georgia",serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 1.5em 2em; line-height: 1.6; }
+h1 { font-family: "Georgia",serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { border-bottom: 1px solid #a2a9b1; font-weight: normal; }
+p { font-family: sans-serif; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+table { border-collapse: collapse; font-family: sans-serif; font-size: 0.9em; }
+td, th { border: 1px solid #a2a9b1; padding: 0.25em 0.5em; }
+ul { font-family: sans-serif; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>OBD-II PIDs</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>OBD-II PIDs</b> (Parameter Identifiers) sind Codes, mit denen Diagnosegeräte über das <a href="../OBD-II/index.html">OBD-II</a>-System aktuelle Messwerte und Statusinformationen eines Fahrzeugs abfragen. Die PIDs sind in der Norm SAE J1979 (ISO 15031-5) definiert und nach Diagnosediensten (Modi) gruppiert.</p>
+<h2>Diagnosedienste</h2>
+<p>Der Modus $01 liefert aktuelle Betriebsdaten, Modus $02 die Freeze-Frame-Daten zum Zeitpunkt eines gespeicherten Fehlers, Modus $03 gespeicherte Fehlercodes, Modus $04 das Löschen des Fehlerspeichers, Modus $06 Überwachungsergebnisse der bordseitigen Prüfungen, Modus $07 anstehende Fehlercodes und Modus $09 Fahrzeuginformationen wie die Fahrzeug-Identifizierungsnummer (VIN).</p>
+<h2>Beispiele für PIDs im Modus $01</h2>
+<table>
+<tr><th>PID (hex)</th><th>Messwert</th><th>Einheit</th></tr>
+<tr><td>04</td><td>berechnete Motorlast</td><td>%</td></tr>
+<tr><td>05</td><td>Kühlmitteltemperatur</td><td>°C</td></tr>
+<tr><td>0C</td><td>Motordrehzahl</td><td>min⁻¹</td></tr>
+<tr><td>0D</td><td>Fahrgeschwindigkeit</td><td>km/h</td></tr>
+<tr><td>11</td><td>Drosselklappenstellung</td><td>%</td></tr>
+<tr><td>2F</td><td>Tankfüllstand</td><td>%</td></tr>
+<tr><td>42</td><td>Bordnetzspannung</td><td>V</td></tr>
+</table>
+<p>Die Rohwerte werden als Bytefolgen übertragen und mit genormten Formeln in physikalische Größen umgerechnet; die Motordrehzahl ergibt sich beispielsweise als (256·A + B) / 4. Über die PID $00 erfährt das Diagnosegerät zunächst, welche weiteren PIDs das Steuergerät unterstützt.</p>
+<h2>Herstellerspezifische PIDs</h2>
+<p>Neben den genormten PIDs definieren Fahrzeughersteller eigene, nicht öffentliche Parameter-IDs, die mit markenspezifischen Testern zusätzliche Daten etwa aus Getriebe-, Airbag- oder Komfortsteuergeräten zugänglich machen.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../OBD-II/index.html">OBD-II</a></li>
+<li><a href="../Fahrzeugdiagnose/index.html">Fahrzeugdiagnose</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Kernelmodus – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 50em; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; margin-top: 1.5em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Kernelmodus</h1>
+<p>Der <b>Kernelmodus</b> (englisch <i>kernel mode</i>, auch <i>Supervisor-Modus</i> oder <i>privilegierter Modus</i>) ist ein Ausführungsmodus der CPU, in dem der Code des <a href="../Kernel_(operating_system)/index.html">Betriebssystemkerns</a> mit uneingeschränkten Rechten läuft. Er steht im Gegensatz zum eingeschränkten <b>Benutzermodus</b> (<i>user mode</i>), in dem Anwendungsprogramme ausgeführt werden.</p>
+<h2>Schutzringe</h2>
+<p>Auf x86-Prozessoren entspricht der Kernelmodus dem Ring 0 der Schutzring-Architektur, der Benutzermodus dem Ring 3. Im Kernelmodus darf der Code beliebige Speicherbereiche ansprechen, alle Prozessorbefehle ausführen und direkt auf die Hardware zugreifen. Im Benutzermodus sind Speicherzugriffe auf den eigenen Adressraum beschränkt und privilegierte Befehle verboten; ein Verstoß löst eine Ausnahme aus.</p>
+<h2>Moduswechsel</h2>
+<p>Anwendungen fordern Dienste des Kernels über <a href="../Systemaufruf/index.html">Systemaufrufe</a> an. Dabei wechselt die CPU kontrolliert in den Kernelmodus, der Kernel prüft die Anfrage, führt sie aus und kehrt anschließend in den Benutzermodus zurück. Auch Interrupts und Ausnahmen (etwa Seitenfehler) führen zu einem Wechsel in den Kernelmodus.</p>
+<h2>Bedeutung</h2>
+<p>Die strikte Trennung schützt das System: Ein fehlerhaftes oder bösartiges Programm kann im Benutzermodus weder andere Prozesse noch den Kernel selbst direkt beeinträchtigen. Umgekehrt kann ein Fehler im Kernelmodus – etwa in einem Gerätetreiber – das gesamte System zum Absturz bringen, weshalb möglichst wenig Code mit Kernelrechten laufen sollte.</p>
+<p><i>Siehe auch:</i> <a href="../Schutzring/index.html">Schutzring</a>, <a href="../Kernel-based_Virtual_Machine/index.html">Kernel-based Virtual Machine</a></p>
+</body>
+</html>

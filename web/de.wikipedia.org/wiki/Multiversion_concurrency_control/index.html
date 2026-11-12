@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Multiversion Concurrency Control – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 50em; line-height: 1.6; color: #202122; }
+h1 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { border-bottom: 1px solid #a2a9b1; margin-top: 1.5em; }
+img { display: block; margin: 1em 0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Multiversion Concurrency Control</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Multiversion Concurrency Control</b> (MVCC, deutsch etwa <i>Mehrversionen-Nebenläufigkeitskontrolle</i>) ist ein Verfahren in Datenbankmanagementsystemen zur Steuerung gleichzeitiger Zugriffe mehrerer Transaktionen. Anstatt Datensätze bei einer Änderung zu überschreiben, legt das System von jedem Datensatz eine neue Version an. Lesende Transaktionen erhalten dadurch einen konsistenten Schnappschuss (Snapshot) der Daten zu einem bestimmten Zeitpunkt, ohne von schreibenden Transaktionen blockiert zu werden – und umgekehrt blockieren Leser keine Schreiber.</p>
+<h2>Funktionsweise</h2>
+<p>Jede Version eines Datensatzes erhält eine Markierung, etwa die Kennung der erzeugenden Transaktion und einen Zeitstempel. Beim Lesen wählt eine Transaktion die jüngste Version aus, die zu Beginn ihrer Sichtbarkeit bereits festgeschrieben (committet) war. Dadurch ist das Verfahren Grundlage der Isolationsstufe Snapshot Isolation. Alte Versionen, die keine laufende Transaktion mehr sehen kann, werden periodisch von einem Garbage-Collection-Prozess entfernt (bei PostgreSQL „Vacuum“ genannt). Bekannte Datenbanksysteme mit MVCC sind PostgreSQL, Oracle, MySQL mit der Speicher-Engine InnoDB sowie SAP HANA.</p>
+<h2>Vor- und Nachteile</h2>
+<p>Der Hauptvorteil ist die hohe Parallelität bei leseintensiven Arbeitslasten ohne Sperrkonflikte. Nachteile sind der zusätzliche Speicherbedarf für die Versionen, der Pflegeaufwand zum Aufräumen veralteter Versionen und mögliche Schreibkonflikte, wenn zwei Transaktionen denselben Datensatz parallel ändern möchten; in diesem Fall muss eine der Transaktionen abbrechen und erneut beginnen.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Transaktion_(Informatik)/index.html">Transaktion (Informatik)</a></li>
+<li><a href="../Snapshot_Isolation/index.html">Snapshot Isolation</a></li>
+<li><a href="../PostgreSQL/index.html">PostgreSQL</a></li>
+</ul>
+</body>
+</html>

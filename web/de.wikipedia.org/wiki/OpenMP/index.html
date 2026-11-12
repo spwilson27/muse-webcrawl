@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>OpenMP – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; padding: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em 3em; }
+h1 { font-family: serif; font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; margin-bottom: 0.3em; }
+h2 { font-family: serif; font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.2em; }
+p { line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code, pre { font-family: monospace; background: #f6f6f6; }
+pre { padding: 0.8em; overflow-x: auto; border: 1px solid #ddd; }
+.infobox { float: right; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em 0.8em; margin: 0 0 1em 1.5em; font-size: 0.9em; }
+.infobox th { text-align: left; padding-right: 0.6em; }
+img.hero { display: block; margin: 1em 0; max-width: 100%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>OpenMP</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<div class="infobox">
+<table>
+<tr><th>Erstveröffentlichung</th><td>1997</td></tr>
+<tr><th>Organisation</th><td>OpenMP Architecture Review Board</td></tr>
+<tr><th>Typ</th><td>API / Programmiermodell</td></tr>
+<tr><th>Sprachen</th><td>C, C++, Fortran</td></tr>
+</table>
+</div>
+<p><b>OpenMP</b> (Open Multi-Processing) ist eine Programmierschnittstelle (API) zur parallelen Programmierung auf Systemen mit gemeinsamem Speicher. Sie wird vom OpenMP Architecture Review Board (ARB) spezifiziert, einem Zusammenschluss von Hardware- und Softwareherstellern. Die erste Version erschien 1997 zunächst für Fortran; Versionen für C und C++ folgten 1998.</p>
+
+<h2>Programmiermodell</h2>
+<p>OpenMP folgt dem Fork-Join-Modell: Ein Master-Thread startet das Programm, erzeugt an parallelen Regionen ein Team weiterer Threads und setzt die Ausführung nach deren Ende wieder allein fort. Die Parallelisierung wird überwiegend über Compilerdirektiven gesteuert – in C und C++ über <code>#pragma omp</code>, in Fortran über spezielle Kommentare. Ergänzt werden sie durch Laufzeitfunktionen und Umgebungsvariablen wie <code>OMP_NUM_THREADS</code>.</p>
+<p>Ein typisches Beispiel ist die parallele Schleife:</p>
+<pre>
+#pragma omp parallel for
+for (int i = 0; i &lt; n; i++) {
+    a[i] = b[i] + c[i];
+}
+</pre>
+<p>Neben Schleifenparallelismus unterstützt OpenMP auch Abschnitte (<i>sections</i>), Aufgaben (<i>tasks</i>) und seit Version 4.0 das Auslagern von Berechnungen auf Beschleuniger wie GPUs (<i>target</i>-Direktiven) sowie SIMD-Vektorisierung.</p>
+
+<h2>Versionsgeschichte</h2>
+<p>Wichtige Meilensteine sind Version 2.0 (2000/2002), Version 3.0 (2008) mit dem Task-Konzept, Version 4.0 (2013) mit Geräteunterstützung, Version 4.5 (2015), Version 5.0 (2018) und Version 5.2 (2021). Praktisch alle gängigen Compiler – darunter GCC, Clang, die Intel-Compiler und Microsoft Visual C++ – unterstützen OpenMP.</p>
+
+<h2>Anwendungsgebiete</h2>
+<p>OpenMP ist besonders im wissenschaftlichen Rechnen und im High Performance Computing verbreitet, weil sich bestehende sequenzielle Programme mit vergleichsweise geringem Aufwand schrittweise parallelisieren lassen. Es steht damit ergänzend zu MPI, das für Systeme mit verteiltem Speicher konzipiert ist; beide Modelle werden häufig kombiniert.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../../OpenACC/index.html">OpenACC</a></li>
+<li><a href="../../Message_Passing_Interface/index.html">Message Passing Interface</a></li>
+<li>Nebenläufigkeit</li>
+</ul>
+
+<p><i>Kategorien: Parallele Programmierung, Programmierschnittstelle, Hochleistungsrechnen</i></p>
+</div>
+</body>
+</html>

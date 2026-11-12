@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Parametrizität – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 50em; line-height: 1.6; color: #202122; }
+h1 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 0 0.2em; }
+</style>
+</head>
+<body>
+<h1>Parametrizität</h1>
+<p><b>Parametrizität</b> ist ein Prinzip der Typtheorie und der Theorie der Programmiersprachen, das von John C. Reynolds 1983 eingeführt wurde. Es besagt, dass Programme, die parametrisch polymorph typisiert sind, sich für alle Instanziierungen ihrer Typparameter einheitlich verhalten: Sie respektieren jede Relation zwischen Typen, die auf ihre Argumente übertragen wird.</p>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h2>Kernidee</h2>
+<p>Formal wird Parametrizität über Reynolds' Abstraktionstheorem ausgedrückt: Jedes gut typisierte Programm steht mit sich selbst in derjenigen Relation in Beziehung, die durch seinen Typ vorgegeben wird. Praktisch bedeutet das: Eine Funktion des Typs <code>∀ a. [a] → [a]</code> (Liste auf Liste) kann mit den Elementen der Liste nichts anfangen, außer sie umzuordnen, zu vervielfältigen oder wegzulassen – sie kann keine elementeabhängige Entscheidung treffen, weil sie den Elementtyp nicht kennt.</p>
+<h2>„Theorems for free“</h2>
+<p>Philip Wadler zeigte 1989 in seinem Aufsatz <i>Theorems for Free!</i>, dass sich aus Parametrizität und dem Typ einer Funktion kostenlos Aussagen über ihr Verhalten gewinnen lassen. So folgt beispielsweise für jede Funktion <code>r : ∀ a. [a] → [a]</code> und jede Funktion <code>f</code> eines geeigneten Typs die Gleichung <code>r (map f xs) = map f (r xs)</code>, ohne dass die Implementierung von <code>r</code> bekannt sein müsste.</p>
+<h2>Anwendung</h2>
+<p>Parametrizität wird in der Sprachgestaltung, der Verifikation von Bibliotheksfunktionen und der Analyse polymorpher Programme genutzt. In Sprachen mit Effekten oder nichtterminierendem Code gilt das Prinzip nur eingeschränkt und muss entsprechend präzisiert werden.</p>
+</body>
+</html>

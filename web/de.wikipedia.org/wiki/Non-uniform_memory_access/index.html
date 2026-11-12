@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Non-Uniform Memory Access – Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:1.5em 2em;border:1px solid #a7d7f9}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+img{max-width:300px}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Non-Uniform Memory Access</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Non-Uniform Memory Access</b> (<b>NUMA</b>) ist eine Computerarchitektur für Multiprozessorsysteme, bei der der Hauptspeicher in mehrere Bereiche aufgeteilt ist und die Zugriffszeit eines Prozessors davon abhängt, ob er auf seinen „lokalen“ oder auf einen „fernen“ Speicherbereich zugreift.</p>
+<h2>Aufbau</h2>
+<p>Das System besteht aus mehreren NUMA-Knoten, die jeweils einen oder mehrere Prozessoren (mit eigenen Caches) und einen eigenen Speicherbereich umfassen. Die Knoten sind über eine schnelle Verbindung (Interconnect, etwa Intels QPI/UPI oder AMDs Infinity Fabric) verbunden. Lokale Zugriffe sind schnell; Zugriffe auf Speicher anderer Knoten sind möglich, aber langsamer, da sie über die Knotenverbindung laufen.</p>
+<h2>Vergleich und Anwendung</h2>
+<p>NUMA steht im Gegensatz zu UMA (<i>Uniform Memory Access</i>), bei dem alle Prozessoren über einen gemeinsamen Bus gleich schnell auf den Speicher zugreifen – ein Konzept, das nur für wenige Prozessoren skaliert. NUMA ist heute die Standardarchitektur großer <a href="../Server/index.html">Server</a> und Mehrsockel-Systeme. Betriebssysteme und Laufzeitumgebungen können die Leistung durch NUMA-bewusstes Scheduling steigern, indem sie Threads und deren Daten möglichst auf demselben Knoten halten. In der virtuellen Speicherverwaltung wird häufig eine <i>First-Touch</i>-Strategie verwendet: Eine Speicherseite wird auf dem Knoten des Threads angelegt, der sie zuerst berührt.</p>
+</div>
+</body>
+</html>

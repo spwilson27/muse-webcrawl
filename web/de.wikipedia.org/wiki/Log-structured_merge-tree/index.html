@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Log-Structured Merge Tree – Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}a{color:#0645ad;text-decoration:none}a:hover{text-decoration:underline}img.hero{max-width:100%;height:auto}</style>
+</head>
+<body>
+<h1>Log-Structured Merge Tree</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>Log-Structured Merge Tree</b> (kurz <b>LSM-Baum</b>, englisch <i>log-structured merge-tree</i>) ist eine Datenstruktur für Schlüssel-Werte-Speicher, die Schreiboperationen besonders effizient unterstützt. Das Konzept wurde 1996 von Patrick O'Neil und Kollegen beschrieben und bildet die Grundlage zahlreicher moderner NoSQL-Datenbanken.</p>
+<h2>Funktionsweise</h2>
+<p>Schreibvorgänge erfolgen zunächst in eine im Hauptspeicher gehaltene, sortierte Struktur (MemTable) und in ein Write-Ahead-Log zur Wiederherstellung. Ist die MemTable voll, wird sie als unveränderliche, sortierte Datei (SSTable) sequenziell auf die Platte geschrieben. Mehrere dieser Komponenten sind in Ebenen (Levels) organisiert; durch Hintergrundprozesse (Compaction) werden die Dateien einer Ebene regelmäßig mit denen der nächsten Ebene verschmolzen, wobei veraltete und gelöschte Einträge entfernt werden.</p>
+<h2>Eigenschaften</h2>
+<p>Da auf die Platte ausschließlich sequenziell geschrieben wird, erreicht der LSM-Baum sehr hohe Schreibraten und eignet sich gut für SSDs und Schreib-lastige Arbeitslasten. Nachteilig sind die Schreibverstärkung durch die Verdichtung (Write Amplification) und potenziell höhere Leselatenzen, die durch Bloom-Filter und Caches gemildert werden.</p>
+<h2>Verwendung</h2>
+<p>LSM-Bäume werden unter anderem in Apache Cassandra, RocksDB, LevelDB, Apache HBase und Google Bigtable (bzw. deren Speicher-Engines) eingesetzt.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../B-Baum/index.html">B-Baum</a></li>
+<li><a href="../RocksDB/index.html">RocksDB</a></li>
+<li><a href="../Apache_Cassandra/index.html">Apache Cassandra</a></li>
+</ul>
+</body>
+</html>

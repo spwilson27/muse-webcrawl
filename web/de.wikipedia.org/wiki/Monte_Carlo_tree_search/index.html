@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Monte-Carlo-Baumsuche – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 900px; line-height: 1.6; color: #202122; }
+h1 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 300px; float: right; margin: 0 0 1em 1em; }
+</style>
+</head>
+<body>
+<h1>Monte-Carlo-Baumsuche</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>Monte-Carlo-Baumsuche</b> (englisch <i>Monte Carlo tree search</i>, MCTS) ist ein Suchverfahren für Entscheidungsprozesse, insbesondere für Spiele. Sie verbindet eine Baumsuche mit zufälligen Simulationen (Monte-Carlo-Methode) und wurde um 2006 unter anderem für das Spiel Go entwickelt. Bekanntheit erlangte sie als zentrale Komponente der Programme AlphaGo und AlphaZero von DeepMind.</p>
+
+<h2>Vorgehen</h2>
+<p>Der Algorithmus wächst einen Suchbaum schrittweise in vier Phasen pro Iteration:</p>
+<ol>
+<li><b>Selektion:</b> Vom Wurzelknoten abwärts werden mithilfe einer Auswahlstrategie (z. B. UCB1, Upper Confidence Bound) vielversprechende Knoten gewählt, bis ein Blatt erreicht ist.</li>
+<li><b>Expansion:</b> Dem Baum wird ein neuer Knoten hinzugefügt.</li>
+<li><b>Simulation (Rollout/Playout):</b> Ab dem neuen Knoten wird das Spiel mit (halb-)zufälligen Zügen bis zum Ende gespielt.</li>
+<li><b>Backpropagation:</b> Das Ergebnis der Simulation wird entlang des Pfades zurückpropagiert und aktualisiert die Statistiken (Besuche, Gewinne) der besuchten Knoten.</li>
+</ol>
+<p>Nach Ablauf des Zeit- oder Iterationsbudgets wird der am häufigsten besuchte bzw. bestbewertete Zug an der Wurzel gewählt.</p>
+
+<h2>Eigenschaften und Anwendungen</h2>
+<p>MCTS benötigt keine domänenspezifische Bewertungsfunktion, ist jederzeit unterbrechbar („anytime“) und eignet sich für Spiele mit großem Verzweigungsgrad wie Go, Schach und Shōgi sowie für Planungsprobleme. In AlphaZero wird die Baumsuche mit neuronalen Netzen kombiniert, die Zugprioritäten und Stellungsbewertungen liefern.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Monte-Carlo-Methode/index.html">Monte-Carlo-Methode</a></li>
+<li><a href="../AlphaGo/index.html">AlphaGo</a></li>
+<li><a href="../Suchbaum/index.html">Suchbaum</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>OpenID Connect – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; padding: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em 3em; }
+h1 { font-family: serif; font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; margin-bottom: 0.3em; }
+h2 { font-family: serif; font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.2em; }
+p { line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em 0.8em; margin: 0 0 1em 1.5em; font-size: 0.9em; }
+.infobox th { text-align: left; padding-right: 0.6em; }
+img.hero { display: block; margin: 1em 0; max-width: 100%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>OpenID Connect</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<div class="infobox">
+<table>
+<tr><th>Erstveröffentlichung</th><td>2014</td></tr>
+<tr><th>Organisation</th><td>OpenID Foundation</td></tr>
+<tr><th>Basis</th><td><a href="../../OAuth/index.html">OAuth 2.0</a></td></tr>
+<tr><th>Art</th><td>Authentifizierungsprotokoll</td></tr>
+</table>
+</div>
+<p><b>OpenID Connect</b> (OIDC) ist ein Authentifizierungsprotokoll, das auf dem Autorisierungsframework <a href="../../OAuth/index.html">OAuth 2.0</a> aufbaut. Es wurde von der OpenID Foundation entwickelt und im Februar 2014 als Standard verabschiedet. OpenID Connect ermöglicht es Clients, die Identität eines Endbenutzers anhand einer Authentifizierung durch einen Autorisierungsserver zu überprüfen und grundlegende Profilinformationen über den Benutzer auf interoperable, REST-ähnliche Weise zu erhalten.</p>
+
+<h2>Grundlagen</h2>
+<p>Während OAuth 2.0 lediglich ein Framework zur Autorisierung darstellt, fügt OpenID Connect eine Identitätsschicht hinzu. Zentrales Element ist das <b>ID Token</b>, ein JSON Web Token (JWT), das Informationen (sogenannte <i>Claims</i>) über den authentifizierten Benutzer enthält, darunter eine eindeutige Kennung (<code>sub</code>), den Aussteller (<code>iss</code>) und die Zielgruppe (<code>aud</code>). Das ID Token ist digital signiert, sodass der Client seine Echtheit prüfen kann.</p>
+<p>Die Beteiligten werden als <i>OpenID Provider</i> (OP, der Identitätsanbieter), <i>Relying Party</i> (RP, die Anwendung) und der Endbenutzer bezeichnet. Ergänzend zum ID Token bietet der UserInfo-Endpunkt standardisierte Profilangaben wie Name, E-Mail-Adresse und Profilbild.</p>
+
+<h2>Abläufe</h2>
+<p>OpenID Connect definiert mehrere Abläufe (<i>Flows</i>):</p>
+<ul>
+<li><b>Authorization Code Flow</b> – der Client erhält zunächst einen Autorisierungscode und tauscht diesen serverseitig gegen Token ein; dieser Ablauf gilt als der sicherste.</li>
+<li><b>Implicit Flow</b> – Token werden direkt über den Browser zurückgegeben; er wird heute aus Sicherheitsgründen nicht mehr empfohlen.</li>
+<li><b>Hybrid Flow</b> – eine Kombination aus beiden Verfahren.</li>
+</ul>
+<p>Über den Discovery-Mechanismus (<code>/.well-known/openid-configuration</code>) kann ein Client die Endpunkte und Fähigkeiten eines OpenID Providers automatisch ermitteln.</p>
+
+<h2>Verbreitung</h2>
+<p>OpenID Connect hat das ältere OpenID 2.0 weitgehend abgelöst und wird von zahlreichen großen Identitätsanbietern wie Google, Microsoft und Apple sowie von Unternehmenslösungen und Open-Source-Projekten wie Keycloak unterstützt. Es bildet die Grundlage vieler Single-Sign-on-Umsetzungen im Web und in mobilen Anwendungen.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../../SAML/index.html">SAML</a></li>
+<li><a href="../../JSON_Web_Token/index.html">JSON Web Token</a></li>
+<li>Single Sign-on</li>
+</ul>
+
+<p><i>Kategorien: Authentifizierung, Internetprotokoll, OAuth</i></p>
+</div>
+</body>
+</html>

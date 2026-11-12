@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Marching Cubes – Wikipedia</title>
+<style>
+body{font-family:sans-serif;line-height:1.6;margin:2em auto;max-width:900px;padding:0 1em;color:#202122}
+h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:.2em;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%}
+</style>
+</head>
+<body>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Marching Cubes</h1>
+<p><b>Marching Cubes</b> ist ein Algorithmus der <a href="../Computergrafik/index.html">Computergrafik</a> zur Rekonstruktion einer polygonalen Isofläche aus einem dreidimensionalen Skalarfeld (Volumendaten). Er wurde 1987 von William E. Lorensen und Harvey E. Cline vorgestellt und ist bis heute das Standardverfahren zur Oberflächenextraktion aus Voxeldaten, etwa aus <a href="../Computertomographie/index.html">CT-</a> und <a href="../Magnetresonanztomographie/index.html">MRT-Aufnahmen</a>.</p>
+<h2>Verfahren</h2>
+<p>Der Algorithmus durchläuft das Volumengitter Würfel für Würfel. Jeder Würfel besitzt acht Ecken, denen jeweils ein Skalarwert zugeordnet ist. Anhand eines vorgegebenen Isowerts wird für jede Ecke bestimmt, ob sie innerhalb oder außerhalb der Oberfläche liegt. Daraus ergeben sich 2<sup>8</sup> = 256 mögliche Konfigurationen, die sich durch Symmetrien auf 15 Grundfälle reduzieren lassen.</p>
+<p>Für jede Konfiguration ist in einer Nachschlagetabelle hinterlegt, durch welche Würfelkanten die Oberfläche verläuft und wie die entstehenden Dreiecke angeordnet sind. Die genauen Schnittpunkte auf den Kanten werden durch lineare Interpolation der Skalarwerte berechnet, aus denen sich wiederum die Normalen für die Schattierung interpolieren lassen.</p>
+<h2>Anwendungen</h2>
+<p>Marching Cubes wird vor allem in der medizinischen Bildverarbeitung zur dreidimensionalen Visualisierung anatomischer Strukturen eingesetzt, außerdem in der wissenschaftlichen Visualisierung, in der Geologie sowie in Videospielen und der 3D-Modellierung. Der zweidimensionale Analogfall heißt <i>Marching Squares</i>; eine Erweiterung auf Tetraeder ist der <i>Marching-Tetrahedra</i>-Algorithmus.</p>
+<h2>Patentgeschichte</h2>
+<p>Der Algorithmus war in den USA lange patentiert (US-Patent 4.710.876, General Electric), was die Entwicklung von Alternativverfahren wie Marching Tetrahedra förderte. Das Patent ist inzwischen abgelaufen.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Marching_tetrahedra/index.html">Marching Tetrahedra</a></li>
+<li><a href="../Isofläche/index.html">Isofläche</a></li>
+<li><a href="../Voxel/index.html">Voxel</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Memoisation – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 1.5em 2em 3em; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 0.95em; }
+ul { font-family: sans-serif; font-size: 0.95em; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 0.1em 0.3em; font-size: 0.9em; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0.8em; overflow: auto; font-size: 0.85em; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.6em; margin: 0 0 1em 1em; width: 250px; font-family: sans-serif; font-size: 0.85em; }
+.infobox img { width: 100%; }
+.thumbcaption { font-size: 0.8em; color: #54595d; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Memoisation</h1>
+<div class="infobox">
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<div class="thumbcaption">Memoisation tauscht Rechenzeit gegen Speicherplatz</div>
+</div>
+<p><b>Memoisation</b> (englisch <i>memoization</i>, von lateinisch <i>memorandum</i>) ist eine Technik der Informatik zur Beschleunigung von Programmen, bei der die Ergebnisse aufwendiger Funktionsaufrufe gespeichert und bei erneutem Aufruf mit denselben Argumenten direkt aus dem Speicher abgerufen werden, statt sie neu zu berechnen. Der Begriff wurde 1968 von Donald Michie geprägt.</p>
+<h2>Funktionsweise</h2>
+<p>Die Technik setzt voraus, dass die betreffende Funktion <i>referentiell transparent</i> ist, also bei gleichen Eingaben stets dieselbe Ausgabe liefert und keine Seiteneffekte besitzt. Die Ergebnisse werden typischerweise in einer Hashtabelle abgelegt, deren Schlüssel aus den Aufrufargumenten gebildet wird. Memoisation ist ein Kernelement der <a href="../Dynamic_programming/index.html">dynamischen Programmierung</a>: Rekursive Algorithmen mit überlappenden Teilproblemen, etwa die naive Berechnung der <a href="../Fibonacci_sequence/index.html">Fibonacci-Folge</a>, lassen sich damit von exponentieller auf polynomielle Laufzeit verbessern.</p>
+<h2>Beispiel</h2>
+<pre>
+cache = {}
+def fib(n):
+    if n in cache:
+        return cache[n]
+    if n &lt; 2:
+        result = n
+    else:
+        result = fib(n-1) + fib(n-2)
+    cache[n] = result
+    return result
+</pre>
+<p>Viele Programmiersprachen und Bibliotheken bieten eingebaute Unterstützung, beispielsweise Python mit dem Dekorator <code>functools.lru_cache</code>.</p>
+<h2>Vor- und Nachteile</h2>
+<ul>
+<li><b>Vorteil:</b> erhebliche Laufzeitgewinne bei wiederholten Teilberechnungen</li>
+<li><b>Nachteil:</b> zusätzlicher Speicherverbrauch; bei unbegrenzt wachsenden Caches drohen Speicherlecks</li>
+<li>Verwandt mit dem allgemeinen Konzept des <a href="../Cache_(computing)/index.html">Caching</a>, jedoch auf Funktionsergebnisse bezogen</li>
+</ul>
+<h2>Siehe auch</h2>
+<ul>
+<li>Dynamische Programmierung</li>
+<li>Rekursion</li>
+<li>Cache (Informatik)</li>
+</ul>
+</div>
+</body>
+</html>

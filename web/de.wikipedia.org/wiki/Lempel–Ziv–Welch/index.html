@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Lempel-Ziv-Welch-Algorithmus – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 24px 32px 48px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 16px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; font-weight: normal; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #3366cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 16px auto; max-width: 480px; width: 100%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Lempel-Ziv-Welch-Algorithmus</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Der <b>Lempel-Ziv-Welch-Algorithmus</b> (kurz <b>LZW</b>) ist ein verlustfreier Algorithmus zur Datenkompression, der 1984 von Terry Welch als Verbesserung des LZ78-Verfahrens von Abraham Lempel und Jacob Ziv veröffentlicht wurde. Er wurde zu einem der am weitesten verbreiteten Kompressionsverfahren und bildet unter anderem die Grundlage der Kompression im Bildformat GIF sowie der Unix-Kompression <i>compress</i>.</p>
+<h2>Funktionsweise</h2>
+<p>Der Algorithmus arbeitet mit einem Wörterbuch (einer Zeichenketten-Tabelle), das zunächst mit allen Einzelzeichen des Eingabealphabets initialisiert ist – anders als bei LZ78 muss das Wörterbuch daher nicht mitübertragen werden, da der Decoder es aus dem Datenstrom identisch rekonstruieren kann. Der Encoder sucht die längste bereits im Wörterbuch enthaltene Zeichenkette am Anfang des noch unkomprimierten Rests, gibt deren Codewort aus und trägt die Kette zusammen mit dem folgenden Zeichen als neuen Eintrag ins Wörterbuch ein. Der Decoder geht spiegelbildlich vor und ergänzt sein Wörterbuch jeweils um die vorherige Zeichenkette plus deren erstes Zeichen. LZW erreicht gute Kompressionsraten bei Daten mit vielen Wiederholungen und ist schnell und speichereffizient zu implementieren.</p>
+<h2>Patente und Verbreitung</h2>
+<p>Welch' Arbeit am Sperry-Forschungszentrum führte zu einem US-Patent (Nr. 4.558.302), dessen Lizenzierung durch Unisys im Zusammenhang mit dem GIF-Format in den 1990er Jahren für erhebliche Kontroversen in der jungen Netz-Community sorgte und die Entwicklung des patentfreien PNG-Formats begünstigte. Nach dem Auslaufen der Patente (2003/2004) ist LZW frei verwendbar. Verwandte Verfahren sind LZ77, LZ78 sowie die darauf aufbauenden Formate ZIP (Deflate) und gzip.</p>
+<h2>Siehe auch</h2>
+<p><a href="../LZ78/index.html">LZ78</a> · <a href="../GIF/index.html">GIF</a> · <a href="../Datenkompression/index.html">Datenkompression</a></p>
+</div>
+</body>
+</html>

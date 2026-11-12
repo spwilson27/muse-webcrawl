@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Linear Tape File System – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 900px; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Linear Tape File System</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Das <b>Linear Tape File System</b> (<b>LTFS</b>) ist ein <a href="../Dateisystem/index.html">Dateisystem</a> für Magnetbänder des Standards <a href="../Linear_Tape-Open/index.html">Linear Tape-Open</a> (LTO). Es wurde von IBM entwickelt, 2010 zusammen mit LTO-5 eingeführt und später als offener Standard (ISO/IEC 20919) veröffentlicht. LTFS macht ein Datenband wie einen Wechseldatenträger – vergleichbar einem USB-Stick – mit Verzeichnisstruktur und einzelnen Dateien über das Betriebssystem zugänglich.</p>
+<h2>Funktionsweise</h2>
+<p>Voraussetzung ist die mit LTO-5 eingeführte Bandpartitionierung: Ein LTFS-Band besitzt eine kleine Indexpartition und eine große Datenpartition. In der Indexpartition liegt ein XML-formatiger Index mit Verzeichnisbaum und Metadaten aller Dateien; die Dateiinhalte selbst werden sequenziell in der Datenpartition gespeichert. Beim Einlegen des Bandes liest das System den Index, sodass Verzeichnisse durchsucht und einzelne Dateien gezielt angesteuert werden können, ohne das gesamte Band durchzulesen. Geänderte Metadaten werden als neue Indexversionen an das Bandende bzw. in die Indexpartition geschrieben.</p>
+<h2>Eigenschaften und Nutzung</h2>
+<p>LTFS-Bänder sind selbstbeschreibend: Index und Daten befinden sich auf demselben Medium, eine separate Backup-Datenbank ist nicht erforderlich. Bänder können damit herstellerübergreifend zwischen Systemen ausgetauscht werden. Typische Einsatzbereiche sind Medien- und Filmarchive, Rundfunk, Wissenschaftsdaten und die Langzeitarchivierung. Nachteilig bleibt die prinzipbedingt sequenzielle Zugriffszeit eines Bandes: Der wahlfreie Zugriff auf viele kleine Dateien ist langsam, und gelöschter Speicherplatz wird erst beim Neuformatieren wieder nutzbar.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Linear_Tape-Open/index.html">Linear Tape-Open</a></li>
+<li><a href="../Magnetband/index.html">Magnetband</a></li>
+</ul>
+</body>
+</html>

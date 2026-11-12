@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Lineare temporale Logik – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 1em auto; max-width: 400px; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Lineare temporale Logik</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>lineare temporale Logik</b> (englisch <i>linear temporal logic</i>, LTL) ist eine <a href="../Modal_logic/index.html">modale</a> Temporallogik, mit der Aussagen über den zeitlichen Verlauf von Systemen formalisiert werden können. Sie wurde 1977 von Amir Pnueli in die Informatik eingeführt und ist ein zentrales Werkzeug der <a href="../Formal_verification/index.html">formalen Verifikation</a>, insbesondere des <a href="../Model_checking/index.html">Model Checking</a>.</p>
+<h2>Syntax und Semantik</h2>
+<p>LTL erweitert die Aussagenlogik um zeitliche Operatoren. Formeln werden über unendlichen Folgen von Zuständen (Pfade) ausgewertet; die Zeit wird als linear – nicht verzweigend – aufgefasst:</p>
+<ul>
+<li><b>X φ</b> („next“): φ gilt im nächsten Zustand.</li>
+<li><b>F φ</b> („finally“, irgendwann): φ gilt in einem zukünftigen Zustand.</li>
+<li><b>G φ</b> („globally“, immer): φ gilt in allen zukünftigen Zuständen.</li>
+<li><b>φ U ψ</b> („until“): φ gilt so lange, bis irgendwann ψ gilt.</li>
+<li><b>φ R ψ</b> („release“): dualer Operator zu U.</li>
+</ul>
+<h2>Anwendung</h2>
+<p>Mit LTL lassen sich Sicherheits- und Lebendigkeitseigenschaften reaktiver Systeme formulieren, etwa: „Jede Anfrage wird irgendwann beantwortet“ (G (Anfrage → F Antwort)) oder „Es treten niemals zwei Prozesse gleichzeitig in den kritischen Abschnitt ein“. Model-Checking-Werkzeuge übersetzen dazu die negierte Eigenschaft in einen Büchi-Automaten und prüfen das Produkt mit dem Systemmodell auf Leerheit. Verbreitete Werkzeuge sind SPIN und NuSMV.</p>
+<h2>Verwandte Logiken</h2>
+<p>Die <b>Computation Tree Logic</b> (CTL) betrachtet im Gegensatz zu LTL verzweigende Zeit und quantifiziert über Pfade; die Kombination beider Ansätze liefert die ausdrucksstärkere Logik CTL*. Das Erfüllbarkeits- und Modellprüfungsproblem für LTL ist PSPACE-vollständig.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Temporal_logic/index.html">Temporallogik</a></li>
+<li><a href="../Büchi_automaton/index.html">Büchi-Automat</a></li>
+<li><a href="../Computation_tree_logic/index.html">Computation Tree Logic</a></li>
+</ul>
+</div>
+</body>
+</html>

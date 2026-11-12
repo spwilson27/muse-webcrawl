@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>k-d-Baum – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 52em; padding: 0 1em; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+img.hero { max-width: 100%; }
+footer { font-size: 0.85em; color: #54595d; border-top: 1px solid #a2a9b1; margin-top: 2em; padding-top: 0.5em; }
+</style>
+</head>
+<body>
+<h1>k-d-Baum</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>k-d-Baum</b> (englisch <i>k-d tree</i>, kurz für <i>k-dimensional tree</i>) ist eine Datenstruktur der Informatik, die Punkte in einem k-dimensionalen Raum organisiert. Er wurde 1975 von Jon Louis Bentley vorgestellt und dient insbesondere der effizienten Suche nach nächsten Nachbarn und nach Punkten in einem Bereich (Bereichssuche).</p>
+<h2>Aufbau</h2>
+<p>Der k-d-Baum ist ein binärer Baum. Jeder Knoten enthält einen Punkt und teilt den Raum durch eine Hyperebene, die senkrecht zu einer der k Dimensionen steht; die aufgespannte Dimension wechselt von Ebene zu Ebene (meist im Zyklus). Alle Punkte mit kleinerem Wert in der Schnittdimension liegen im linken, alle übrigen im rechten Teilbaum. Als Trennwert wird häufig der Median der Punktmenge gewählt, woraus ein balancierter Baum mit logarithmischer Höhe entsteht. Jeder Knoten repräsentiert zugleich eine achsenparallele Zelle des Raums, die sich aus den Schnitten der darüberliegenden Ebenen ergibt.</p>
+<h2>Operationen und Komplexität</h2>
+<p>Einfügen und Suchen eines Punktes funktionieren wie in einem binären Suchbaum und kosten im Mittel O(log n) Schritte. Bei der <b>Nächste-Nachbarn-Suche</b> wird zunächst der Baum bis zu einem Blatt durchlaufen; anschließend werden auf dem Rückweg nur diejenigen Teilbäume weiter untersucht, deren Zelle näher am Suchpunkt liegen könnte als der bislang beste Kandidat. Dadurch lassen sich viele Punkte ohne Abstandsmessung ausschließen. Im Mittel ist die Suche nahezu logarithmisch, im ungünstigsten Fall jedoch linear. In hochdimensionalen Räumen verliert der k-d-Baum wegen des „Fluchs der Dimensionalität“ an Effizienz; dort kommen oft approximierende Verfahren zum Einsatz, etwa Bibliotheken für approximative nächste Nachbarn.</p>
+<h2>Anwendungen</h2>
+<p>k-d-Bäume werden unter anderem in Datenbanken und Geoinformationssystemen (räumliche Suche), in der Computergrafik (z. B. Strahlverfolgung und Punktwolken), in der Robotik, in der Bildverarbeitung und im maschinellen Lernen – dort etwa für den k-Nächste-Nachbarn-Algorithmus – eingesetzt. Verwandte Strukturen sind der Quadtree, der Octree und der BSP-Baum sowie der R-Baum.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Binärer_Suchbaum/index.html">Binärer Suchbaum</a></li>
+<li><a href="../Nächste-Nachbarn-Suche/index.html">Nächste-Nachbarn-Suche</a></li>
+<li><a href="../Octree/index.html">Octree</a></li>
+<li><a href="../Raumzerlegung/index.html">Raumzerlegung</a></li>
+</ul>
+<footer>Aus Wikipedia, der freien Enzyklopädie.</footer>
+</body>
+</html>

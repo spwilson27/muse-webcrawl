@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Partielle Applikation – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 52em; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul, ol { margin-left: 1.4em; }
+code { background: #f8f9fa; padding: 0 0.2em; font-family: monospace; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0.6em; overflow-x: auto; }
+</style>
+</head>
+<body>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Partielle Applikation</h1>
+<p>Die <b>partielle Applikation</b> (englisch <i>partial application</i>) ist ein Konzept der funktionalen Programmierung: Dabei wird eine Funktion, die mehrere Argumente erwartet, mit nur einem Teil ihrer Argumente aufgerufen. Das Ergebnis ist eine neue Funktion, die nur noch die verbleibenden Argumente benötigt.</p>
+<h2>Beispiel</h2>
+<p>Gegeben sei eine Funktion <code>add</code>, die zwei Zahlen addiert. Wendet man sie partiell nur auf das Argument 2 an, entsteht eine neue Funktion, die zu jeder Zahl 2 addiert:</p>
+<pre>
+add = λx. λy. x + y
+add2 = add 2        -- Funktion, die noch ein Argument erwartet
+add2 3              -- ergibt 5
+</pre>
+<h2>Abgrenzung zum Currying</h2>
+<p>Partielle Applikation wird häufig mit dem Currying verwechselt. Beim Currying wird eine Funktion mehrerer Argumente in eine Kette einstelliger Funktionen umgewandelt; partielle Applikation bezeichnet dagegen den Vorgang, eine (ggf. bereits curryfizierte) Funktion auf einen Teil ihrer Argumente anzuwenden und eine Restfunktion zu erhalten. Beim Currying wird stets ein Argument pro Schritt übergeben, während die partielle Applikation eine beliebige Anzahl von Argumenten auf einmal binden kann.</p>
+<h2>Sprachunterstützung</h2>
+<p>In Sprachen wie Haskell sind alle Funktionen standardmäßig curryfiziert, sodass partielle Applikation unmittelbar möglich ist. In Sprachen wie Python steht dafür etwa <code>functools.partial</code> zur Verfügung; in JavaScript kann sie unter anderem über <code>Function.prototype.bind</code> oder Pfeilfunktionen nachgebildet werden.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Participle/index.html">Partizip</a></li>
+</ul>
+</body>
+</html>

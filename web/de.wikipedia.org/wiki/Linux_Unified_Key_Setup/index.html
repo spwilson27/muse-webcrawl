@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Linux Unified Key Setup – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 900px; padding: 0 1em; color: #202122; line-height: 1.6; }
+h1 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 1em auto; max-width: 400px; }
+</style>
+</head>
+<body>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Linux Unified Key Setup</h1>
+<p>Das <b>Linux Unified Key Setup</b> (<b>LUKS</b>) ist eine Spezifikation für die Festplattenverschlüsselung unter <a href="../Linux/index.html">Linux</a>. LUKS definiert ein plattformunabhängiges Format für den Kopfbereich (Header) eines verschlüsselten Datenträgers, in dem Metadaten und die Schlüsselverwaltung standardisiert abgelegt werden. Die Referenzimplementierung ist das Werkzeug <i>cryptsetup</i>, das zusammen mit dem Device-Mapper-Ziel <i>dm-crypt</i> des <a href="../Linux_kernel/index.html">Linux-Kernels</a> arbeitet.</p>
+
+<h2>Arbeitsweise</h2>
+<p>Bei LUKS werden die Daten mit einem zufällig erzeugten Hauptschlüssel (Master Key) symmetrisch verschlüsselt, meist mit AES im XTS-Modus. Der Hauptschlüssel selbst wird nicht direkt vom Benutzerpasswort abgeleitet, sondern mit bis zu acht (bei LUKS2 bis zu 32) unabhängigen Benutzerschlüsseln verschlüsselt und in Schlüsselfächern (Key Slots) des Headers gespeichert. Dadurch lassen sich Passwörter ändern oder weitere hinzufügen, ohne die Daten neu verschlüsseln zu müssen. Zur Erschwerung von Wörterbuchangriffen wird das Passwort mit einer Schlüsselableitungsfunktion (PBKDF2, bei LUKS2 auch Argon2) zeitaufwendig gestreckt.</p>
+
+<h2>Versionen</h2>
+<p>LUKS1 wurde 2004 von Clemens Fruhwirth entwickelt und ist das langjährig gebräuchliche Format. LUKS2, eingeführt 2018 mit cryptsetup 2.0, bietet unter anderem einen erweiterten, redundant gespeicherten Header, flexiblere Metadaten im JSON-Format, stärkere Schlüsselableitung mit Argon2 sowie Unterstützung für Integritätsschutz und externe Token, etwa Smartcards oder TPMs.</p>
+
+<h2>Verwendung</h2>
+<p>Die meisten Linux-Distributionen bieten bei der Installation die vollständige Systemverschlüsselung mit LUKS an. Da der Header alle zur Entschlüsselung nötigen Informationen enthält, kann ein LUKS-Datenträger systemübergreifend geöffnet werden; geht der Header verloren, sind die Daten unwiederbringlich verloren, weshalb Sicherungskopien des Headers empfohlen werden.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Dm-crypt/index.html">dm-crypt</a></li>
+<li><a href="../Festplattenverschlüsselung/index.html">Festplattenverschlüsselung</a></li>
+<li><a href="../Linux/index.html">Linux</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Master Boot Record – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 52em; line-height: 1.55; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.4em; }
+img { max-width: 300px; float: right; margin: 0 0 1em 1em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 0 0.2em; }
+</style>
+</head>
+<body>
+<h1>Master Boot Record</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Der <b>Master Boot Record</b> (<b>MBR</b>) ist der erste Sektor eines partitionierten Datenträgers wie einer Festplatte. Er umfasst 512 Byte und enthält einen Bootloader (Bootcode), die Partitionstabelle mit bis zu vier primären Partitionen sowie die Signatur <code>0x55AA</code>.</p>
+<h2>Startvorgang</h2>
+<p>Beim Einschalten eines PCs lädt die BIOS-Firmware den MBR an die Speicheradresse 0x7C00 und führt den darin enthaltenen Bootcode aus. Dieser sucht in der Partitionstabelle nach der als aktiv (bootfähig) markierten Partition und lädt deren Volume Boot Record nach, der schließlich das Betriebssystem startet.</p>
+<h2>Aufbau</h2>
+<ul>
+<li>Byte 0–445: Bootcode</li>
+<li>Byte 446–509: Partitionstabelle (vier Einträge à 16 Byte)</li>
+<li>Byte 510–511: Boot-Signatur 55 AA (hexadezimal)</li>
+</ul>
+<h2>Grenzen und Nachfolger</h2>
+<p>Da die Partitionseinträge 32-Bit-Sektoradressen verwenden, kann der MBR Datenträger nur bis zu einer Größe von 2 TiB adressieren. Bei modernen Systemen mit UEFI wird er zunehmend von der GUID Partition Table (GPT) abgelöst, die größere Datenträger und mehr Partitionen unterstützt.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../GUID_Partition_Table/index.html">GUID Partition Table</a></li>
+<li><a href="../Bootloader/index.html">Bootloader</a></li>
+<li><a href="../Partition_(Datentr%C3%A4ger)/index.html">Partition (Datenträger)</a></li>
+</ul>
+</body>
+</html>

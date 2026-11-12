@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Linux Security Modules – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 900px; padding: 0 1em; color: #202122; line-height: 1.6; }
+h1 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 1em auto; max-width: 400px; }
+</style>
+</head>
+<body>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Linux Security Modules</h1>
+<p><b>Linux Security Modules</b> (<b>LSM</b>) ist eine Rahmenarchitektur (Framework) im <a href="../Linux_kernel/index.html">Linux-Kernel</a>, die es erlaubt, verschiedene Sicherheitsmodelle zur Zugriffskontrolle einheitlich in den Kernel zu integrieren, ohne dessen übrige Struktur zu verändern. LSM wurde mit der Kernelversion 2.6 eingeführt.</p>
+
+<h2>Hintergrund</h2>
+<p>Die klassische Unix-Zugriffskontrolle (Discretionary Access Control, DAC) über Dateirechte galt für sicherheitskritische Anwendungen als unzureichend. Verschiedene Projekte wie SELinux, entwickelt von der US-amerikanischen National Security Agency (NSA), wollten eine verbindliche Zugriffskontrolle (Mandatory Access Control, MAC) in Linux verankern. Um zu verhindern, dass sich ein einzelnes Sicherheitsmodell im Kernel festsetzt, setzte <a href="../Linus_Torvalds/index.html">Linus Torvalds</a> 2001 auf dem Linux Kernel Summit eine modulare Lösung durch: LSM stellt sogenannte Hooks an sicherheitsrelevanten Stellen des Kernels bereit, an denen registrierte Sicherheitsmodule ihre Prüfungen ausführen können.</p>
+
+<h2>Bekannte Module</h2>
+<ul>
+<li><b>SELinux</b> – sehr fein granulierbares, regelbasiertes MAC-System; Standard in Red Hat Enterprise Linux und Fedora.</li>
+<li><b>AppArmor</b> – pfadbasierte Zugriffskontrolle; Standard in Ubuntu und SUSE.</li>
+<li><b>Smack</b> – vereinfachtes, labelbasiertes System, unter anderem in Tizen eingesetzt.</li>
+<li><b>TOMOYO Linux</b> – pfadbasiertes Lernsystem, besonders in Japan verbreitet.</li>
+<li><b>Yama</b> – kleinere Härtungsfunktionen, etwa zur Einschränkung von ptrace.</li>
+</ul>
+
+<h2>Arbeitsweise</h2>
+<p>Der Kernel führt zunächst die üblichen Berechtigungsprüfungen durch und ruft anschließend die LSM-Hooks auf. Das aktive Sicherheitsmodul kann die Operation aufgrund seiner Richtlinien zusätzlich erlauben oder verweigern. Seit Kernel 5.1 können mehrere Module in begrenztem Umfang gestapelt (stacking) werden, sodass beispielsweise ein großes MAC-Modul mit kleineren Modulen kombiniert werden kann.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../SELinux/index.html">SELinux</a></li>
+<li><a href="../AppArmor/index.html">AppArmor</a></li>
+<li><a href="../Linux_kernel/index.html">Linux-Kernel</a></li>
+<li><a href="../Zugriffskontrolle/index.html">Zugriffskontrolle</a></li>
+</ul>
+</body>
+</html>

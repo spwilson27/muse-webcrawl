@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Seitenfehler – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+header { background: #fff; border-bottom: 1px solid #a2a9b1; padding: 12px 24px; }
+main { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> – Die freie Enzyklopädie</header>
+<main>
+<h1>Seitenfehler</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>Seitenfehler</b> (englisch <i>page fault</i>) ist eine von der Hardware (MMU) ausgelöste Unterbrechung, die auftritt, wenn ein Programm auf eine virtuelle Speicherseite zugreift, die gegenwärtig keinem physischen Seitenrahmen zugeordnet ist oder deren Zugriffsrechte verletzt werden. Trotz des Namens handelt es sich nicht notwendigerweise um einen Fehler, sondern um einen normalen Vorgang der virtuellen Speicherverwaltung.</p>
+
+<h2>Ablauf</h2>
+<p>Stellt die Memory Management Unit fest, dass für eine virtuelle Adresse kein gültiger Eintrag in der <a href="../Page_table/index.html">Seitentabelle</a> vorliegt, löst sie eine Ausnahme aus, und eine Routine des Betriebssystems übernimmt. Diese prüft, ob der Zugriff zulässig ist. Gehört die Seite zum gültigen Adressraum des Prozesses, wird ein freier Seitenrahmen bereitgestellt – nötigenfalls durch Verdrängen einer anderen Seite auf den Hintergrundspeicher –, die angeforderte Seite wird eingelagert, die Seitentabelle aktualisiert und der unterbrochene Befehl erneut ausgeführt.</p>
+
+<h2>Arten</h2>
+<ul>
+<li><b>Kleiner Seitenfehler</b> (<i>minor fault</i>): Die Seite kann ohne Plattenzugriff bereitgestellt werden, etwa weil sie sich bereits im Speicher befindet (z. B. im <a href="../Page_cache/index.html">Page Cache</a> oder als Nullseite beim ersten Zugriff).</li>
+<li><b>Großer Seitenfehler</b> (<i>major fault</i>): Die Seite muss von der Festplatte beziehungsweise aus der Auslagerungsdatei gelesen werden, was erheblich langsamer ist.</li>
+<li><b>Ungültiger Seitenfehler</b>: Der Zugriff ist unzulässig, etwa auf eine nicht zugeordnete Adresse (Nullzeiger) oder unter Verletzung von Schutzrechten. Das Betriebssystem beendet den Prozess dann typischerweise mit einer Segmentierungsverletzung (<i>segmentation fault</i>).</li>
+</ul>
+
+<h2>Bedeutung</h2>
+<p>Seitenfehler ermöglichen das Nachladen von Programmteilen erst bei Bedarf (<i>demand paging</i>) sowie Copy-on-Write-Verfahren. Treten sie zu häufig auf, weil der Arbeitsspeicher nicht ausreicht, kommt es zum <i>Thrashing</i>: Das System verbringt mehr Zeit mit Ein- und Auslagern als mit nützlicher Arbeit.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Page_(computer_memory)/index.html">Seite (Speicherverwaltung)</a></li>
+<li><a href="../Paging/index.html">Paging</a></li>
+<li><a href="../Virtueller_Speicher/index.html">Virtueller Speicher</a></li>
+</ul>
+</main>
+</body>
+</html>

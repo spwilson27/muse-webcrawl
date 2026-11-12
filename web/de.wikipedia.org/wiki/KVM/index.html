@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>KVM – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 20px 32px; }
+h1 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; }
+img.hero { width: 100%; max-width: 640px; display: block; margin: 12px 0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+table.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; margin: 0 0 12px 16px; border-collapse: collapse; font-size: 90%; }
+table.infobox th, table.infobox td { border: 1px solid #a2a9b1; padding: 4px 8px; text-align: left; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>KVM</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>KVM</b> (<i>Kernel-based Virtual Machine</i>) ist eine Virtualisierungslösung für den Linux-Kernel, die es ermöglicht, auf x86-Hardware mit Virtualisierungserweiterungen (<a href="../Intel_VT-x/index.html">Intel VT-x</a> oder <a href="../AMD-V/index.html">AMD-V</a>) mehrere virtuelle Maschinen mit unveränderten Gastbetriebssystemen auszuführen. KVM ist seit Version 2.6.20 (2007) Bestandteil des Linux-Kernels.</p>
+
+<h2>Geschichte</h2>
+<p>KVM wurde ursprünglich von der israelischen Firma Qumranet entwickelt. Avi Kivity war der Hauptentwickler. Im Oktober 2006 wurde KVM öffentlich vorgestellt; im September 2008 übernahm <a href="../Red_Hat/index.html">Red Hat</a> Qumranet. Seitdem wird KVM als freie Software unter der GNU General Public License weiterentwickelt.</p>
+
+<h2>Architektur</h2>
+<p>KVM besteht aus einem ladbaren Kernelmodul (<i>kvm.ko</i>) sowie prozessorspezifischen Modulen (<i>kvm-intel.ko</i> bzw. <i>kvm-amd.ko</i>). Es verwandelt den Linux-Kernel in einen Hypervisor vom Typ 1, nutzt aber zugleich die Infrastruktur des Kernels, etwa den Scheduler und die Speicherverwaltung. Jede virtuelle Maschine läuft als normaler Linux-Prozess. Für die Emulation von Geräten wird meist <a href="../QEMU/index.html">QEMU</a> eingesetzt, das mit KVM zusammen als KVM/QEMU bezeichnet wird.</p>
+
+<h2>Funktionen</h2>
+<p>KVM unterstützt unter anderem Live-Migration virtueller Maschinen, Speicher-Ballooning, Geräte-Passthrough mittels VFIO sowie die Zuweisung mehrerer virtueller CPUs. Gastsysteme können Linux, Windows und zahlreiche andere Betriebssysteme sein. Neben x86 werden auch ARM, PowerPC und s390 unterstützt.</p>
+
+<h2>Verwaltung</h2>
+<p>Zur Verwaltung werden häufig <a href="../libvirt/index.html">libvirt</a> und Werkzeuge wie <i>virt-manager</i> eingesetzt. Größere Umgebungen nutzen Plattformen wie <a href="../Proxmox_VE/index.html">Proxmox VE</a>, oVirt oder OpenStack.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Xen/index.html">Xen</a></li>
+<li><a href="../Hypervisor/index.html">Hypervisor</a></li>
+<li><a href="../Virtualisierung/index.html">Virtualisierung</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Seite (Speicherverwaltung) – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+header { background: #fff; border-bottom: 1px solid #a2a9b1; padding: 12px 24px; }
+main { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 1px 4px; }
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> – Die freie Enzyklopädie</header>
+<main>
+<h1>Seite (Speicherverwaltung)</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Eine <b>Seite</b> (englisch <i>page</i>) ist in der Informatik ein Speicherblock fester Größe, in den der Speicher bei der <a href="../Paging/index.html">seitenbasierten Speicherverwaltung</a> (Paging) eines Betriebssystems unterteilt wird. Der korrespondierende Block im physischen Arbeitsspeicher wird als <b>Seitenrahmen</b> oder <b>Kachel</b> (englisch <i>page frame</i>) bezeichnet.</p>
+
+<h2>Prinzip</h2>
+<p>Beim Paging wird der virtuelle Adressraum eines Prozesses in gleich große Seiten und der physische Speicher in gleich große Seitenrahmen zerlegt. Eine <a href="../Page_table/index.html">Seitentabelle</a> ordnet jeder virtuellen Seite einen Seitenrahmen zu. Dadurch kann der Speicher eines Prozesses zusammenhanglos im Hauptspeicher liegen, und nicht benötigte Seiten können auf einen Hintergrundspeicher ausgelagert werden (<i>Swapping</i> bzw. Auslagerung in eine Page-Datei).</p>
+<p>Die Seitengröße ist eine Zweierpotenz und beträgt auf gängigen Architekturen meist 4 KiB (x86, ARM). Daneben existieren große Seiten (<i>huge pages</i>) von 2 MiB oder 1 GiB, die den Verwaltungsaufwand für speicherintensive Anwendungen verringern.</p>
+
+<h2>Seitenfehler</h2>
+<p>Greift ein Programm auf eine Seite zu, die sich gerade nicht im Hauptspeicher befindet, löst die Hardware einen <a href="../Page_fault/index.html">Seitenfehler</a> (<i>page fault</i>) aus. Das Betriebssystem lädt die Seite dann vom Hintergrundspeicher nach, gegebenenfalls unter Verdrängung einer anderen Seite, und setzt das Programm fort.</p>
+
+<h2>Vorteile und Nachteile</h2>
+<p>Paging vermeidet externe Fragmentierung, da jeder freie Seitenrahmen für jede Seite genutzt werden kann. Nachteilig sind der Speicherbedarf der Seitentabellen sowie interne Fragmentierung, weil ein Prozess im Durchschnitt eine halbe Seite ungenutzt belegt. Zur Beschleunigung der Adressumsetzung dient ein Translation Lookaside Buffer (TLB).</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Paging/index.html">Paging</a></li>
+<li><a href="../Page_table/index.html">Seitentabelle</a></li>
+<li><a href="../Page_fault/index.html">Seitenfehler</a></li>
+<li><a href="../Virtueller_Speicher/index.html">Virtueller Speicher</a></li>
+</ul>
+</main>
+</body>
+</html>

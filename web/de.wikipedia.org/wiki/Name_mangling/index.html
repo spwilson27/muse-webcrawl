@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Name Mangling – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 900px; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 100%; }
+</style>
+</head>
+<body>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Name Mangling</h1>
+<p><b>Name Mangling</b> (deutsch etwa „Namensverstümmelung“) bezeichnet in der Informatik ein Verfahren, bei dem Compiler den Namen einer Funktion, Methode oder Variablen systematisch verändern, um zusätzliche Informationen – etwa Parametertypen, Namensräume oder Klassen – in dem erzeugten Symbolnamen zu kodieren.</p>
+<h2>Motivation</h2>
+<p>Programmiersprachen wie C++ erlauben das Überladen von Funktionen: Mehrere Funktionen können denselben Namen tragen, sofern sie sich in ihren Parametern unterscheiden. Linker arbeiten jedoch traditionell mit eindeutigen Symbolnamen. Durch das Mangling erhält jede überladene Funktion einen eigenen, eindeutigen Maschinennamen, der die komplette Signatur enthält.</p>
+<h2>Verfahren</h2>
+<p>Das genaue Kodierungsschema ist compiler- und ABI-spezifisch. Die Itanium-C++-ABI, die unter Linux und anderen Systemen von GCC und Clang verwendet wird, kodiert beispielsweise die Funktion <code>void f(int)</code> im globalen Namensraum als <code>_Z1fi</code>. Microsoft Visual C++ verwendet ein abweichendes Schema, das mit einem Fragezeichen beginnt.</p>
+<h2>Demangling</h2>
+<p>Da veränderte Namen für Menschen schwer lesbar sind, stellen Werkzeuge wie <code>c++filt</code> oder Debugger Funktionen zum Rückumwandeln (<i>Demangling</i>) bereit. Um das Mangling für bestimmte Symbole zu unterbinden, wird in C++ die Deklaration <code>extern "C"</code> verwendet, etwa für Schnittstellen zur Sprache C.</p>
+<p>Siehe auch: <a href="../Name_binding/index.html">Namensbindung</a>.</p>
+</body>
+</html>

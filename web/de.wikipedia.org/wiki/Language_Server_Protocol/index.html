@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Language Server Protocol – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 50em; line-height: 1.6; color: #202122; }
+h1 { font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+img { max-width: 100%; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<h1>Language Server Protocol</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Das <b>Language Server Protocol</b> (LSP) ist ein offenes, von Microsoft entwickeltes Protokoll, das die Kommunikation zwischen Entwicklungsumgebungen beziehungsweise Texteditoren (Clients) und sogenannten Sprachservern regelt. Sprachserver stellen Funktionen wie Autovervollständigung, Fehlerdiagnose, «Gehe zur Definition» und Umbenennen für eine bestimmte Programmiersprache bereit. Das LSP wurde 2016 zusammen mit Visual Studio Code und den Sprachservern von Red Hat und Codenvy vorgestellt.</p>
+<h2>Motivation</h2>
+<p>Vor dem LSP musste jede Entwicklungsumgebung die Unterstützung für jede Sprache gesondert implementieren; bei M Editoren und N Sprachen entstand ein Aufwand von M×N Integrationen. Mit dem Protokoll reicht es, pro Sprache einen Sprachserver zu schreiben und pro Editor einen LSP-Client: Der Aufwand sinkt auf M+N. Das LSP entwickelte sich dadurch schnell zum De-facto-Standard der Werkzeuglandschaft.</p>
+<h2>Technik</h2>
+<p>Die Kommunikation erfolgt über JSON-RPC 2.0. Nachrichten bestehen aus einem Header-Teil (ähnlich HTTP, mit Content-Length-Angabe) und einem JSON-Inhalt. Der Client sendet Anfragen (<i>requests</i>) wie <code>textDocument/completion</code> oder <code>textDocument/definition</code> und Mitteilungen (<i>notifications</i>) über geöffnete, geänderte und geschlossene Dokumente; der Server antwortet mit Ergebnissen beziehungsweise veröffentlicht Diagnosen (Fehler und Warnungen). Beim Start handeln Client und Server über die Initialisierungsnachricht ihre Fähigkeiten (<i>capabilities</i>) aus. Der Transport kann über Standardströme, Sockets oder andere Kanäle erfolgen.</p>
+<h2>Verbreitung</h2>
+<p>Bekannte Sprachserver sind etwa der TypeScript-Server, Eclipse JDT Language Server (Java), Pyright und Pylance (Python), rust-analyzer (Rust) und gopls (Go). Nahezu alle gängigen Editoren und IDEs – darunter Visual Studio Code, Neovim, Emacs, IntelliJ-basierte Umgebungen und Eclipse – unterstützen das Protokoll. Als Ergänzung entstanden verwandte Protokolle wie das Debug Adapter Protocol für Debugger.</p>
+<p>Siehe auch: <a href="../Visual_Studio_Code/index.html">Visual Studio Code</a>, <a href="../JSON-RPC/index.html">JSON-RPC</a>, <a href="../Integrierte_Entwicklungsumgebung/index.html">Integrierte Entwicklungsumgebung</a></p>
+</body>
+</html>

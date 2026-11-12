@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Paxos (Informatik) – Wikipedia</title>
+<style>body{font-family:Georgia,serif;max-width:800px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{font-size:1.8em;border-bottom:1px solid #a2a9b1}h2{font-size:1.3em;border-bottom:1px solid #a2a9b1}a{color:#0645ad}</style>
+</head>
+<body>
+<h1>Paxos (Informatik)</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Paxos</b> ist eine Familie von Protokollen der Informatik, mit denen eine Gruppe von Rechnern in einem unzuverlässigen Netz Konsens über einen Wert erzielen kann, selbst wenn einzelne Teilnehmer ausfallen. Der Algorithmus wurde von Leslie Lamport entwickelt und 1990 erstmals eingereicht; die grundlegende Veröffentlichung <i>The Part-Time Parliament</i> erschien 1998.</p>
+<h2>Prinzip</h2>
+<p>Im Basis-Paxos schlagen Teilnehmer (Proposer) Werte mit eindeutigen Vorschlagsnummern vor. Akzeptoren (Acceptors) versprechen zunächst, keine älteren Vorschläge mehr anzunehmen, und akzeptieren dann Vorschläge; ein Wert gilt als gewählt, sobald eine Mehrheit (Quorum) der Akzeptoren ihn angenommen hat. Lernende (Learners) erfahren das Ergebnis. Entscheidend ist, dass sich je zwei Mehrheiten überschneiden, sodass höchstens ein Wert gewählt werden kann.</p>
+<h2>Multi-Paxos und Anwendungen</h2>
+<p>Für Folgen von Entscheidungen (replizierte Zustandsautomaten) wird meist Multi-Paxos mit einem stabilen Anführer eingesetzt, was den Vorbereitungsdurchlauf für nachfolgende Instanzen erspart. Paxos liegt unter anderem Googles Systemen Chubby und Spanner sowie zahlreichen verteilten Datenbanken zugrunde. Bekannte Varianten sind Flexible Paxos und das verwandt verstandene Raft-Protokoll, das auf Verständlichkeit hin entworfen wurde.</p>
+<h2>Literatur</h2>
+<ul>
+<li>Leslie Lamport: <i>The Part-Time Parliament</i>, ACM Transactions on Computer Systems, 1998.</li>
+<li>Leslie Lamport: <i>Paxos Made Simple</i>, 2001.</li>
+</ul>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Konsens_(Informatik)/index.html">Konsens (Informatik)</a></li>
+<li><a href="../Raft_(Algorithmus)/index.html">Raft (Algorithmus)</a></li>
+</ul>
+</body>
+</html>

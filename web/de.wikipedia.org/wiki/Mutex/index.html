@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8"><title>Mutex – Wikipedia</title>
+<style>body{font-family:sans-serif;max-width:860px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1}h2{border-bottom:1px solid #a2a9b1}a{color:#0645ad}</style></head>
+<body><h1>Mutex</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>Mutex</b> (von englisch <i>mutual exclusion</i>, „gegenseitiger Ausschluss") ist ein Synchronisationsobjekt der Informatik, das sicherstellt, dass zu jedem Zeitpunkt höchstens ein Thread einen kritischen Abschnitt ausführt und damit gemeinsam genutzte Daten vor Wettlaufsituationen (Race Conditions) schützt.</p>
+<h2>Funktionsweise</h2>
+<p>Ein Mutex kennt die Zustände „frei" und „gesperrt". Ein Thread, der in einen kritischen Abschnitt eintreten will, sperrt (lock) den Mutex; ist dieser bereits gesperrt, wartet der Thread, bis der Besitzer ihn wieder freigibt (unlock). Im Unterschied zu einem Semaphor darf typischerweise nur der sperrende Thread den Mutex wieder freigeben.</p>
+<h2>Probleme</h2>
+<p>Falsche Verwendung kann zu Verklemmungen (Deadlocks) führen, wenn mehrere Threads wechselseitig auf Sperren warten, oder zu Prioritätsinversion, wenn ein niederpriorer Thread einen Mutex hält, den ein hochpriorer benötigt. Abhilfen sind unter anderem konsistente Sperrreihenfolgen, Priority Inheritance und rekursive Mutexe.</p>
+<h2>Verwendung</h2>
+<p>Mutexe gehören zum Grundrepertoire nahezu aller Betriebssysteme und Programmiersprachen, etwa als <code>pthread_mutex</code> in POSIX, als <code>std::mutex</code> in C++ oder als Monitor-Konzept in Java. Für lesende Zugriffe existieren erweiterte Formen wie Read-Write-Locks.</p>
+</body></html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Socket (Computer) – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1em 2em 3em; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 300px; float: right; margin: 0 0 1em 1em; }
+</style>
+</head>
+<body>
+<div id="content">
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Socket (Computer)</h1>
+<p>Ein <b>Socket</b> (englisch für „Steckdose", „Fassung") ist in der Informatik ein Endpunkt einer bidirektionalen Kommunikationsverbindung zwischen Prozessen, in der Regel über ein Rechnernetz. Sockets bilden eine standardisierte Programmierschnittstelle (API), über die Anwendungen Daten austauschen können, ohne Details der darunterliegenden Netzwerkprotokolle kennen zu müssen. Ein Netzwerk-Socket wird typischerweise durch die Kombination aus IP-Adresse und Portnummer identifiziert.</p>
+
+<h2>Geschichte</h2>
+<p>Das Socket-Konzept geht auf die Berkeley Sockets zurück, die 1983 mit der Version 4.2BSD des Betriebssystems Unix eingeführt wurden. Die Berkeley-Socket-API wurde zum De-facto-Standard und findet sich heute in nahezu allen Betriebssystemen; unter Windows ist sie als Winsock umgesetzt.</p>
+
+<h2>Funktionsweise</h2>
+<p>Eine Anwendung erzeugt mit dem Systemaufruf <code>socket()</code> einen Socket eines bestimmten Typs:</p>
+<ul>
+<li><b>Stream-Sockets</b> (SOCK_STREAM) für verbindungsorientierte, zuverlässige Kommunikation, meist über TCP.</li>
+<li><b>Datagramm-Sockets</b> (SOCK_DGRAM) für verbindungslose Kommunikation, meist über UDP.</li>
+<li><b>Raw-Sockets</b> (SOCK_RAW) für den direkten Zugriff auf Protokolle der Vermittlungsschicht.</li>
+</ul>
+<p>Server binden einen Socket an eine Adresse (<code>bind</code>), lauschen auf Verbindungen (<code>listen</code>) und nehmen diese an (<code>accept</code>); Clients stellen mit <code>connect</code> eine Verbindung her. Der Datenaustausch erfolgt über <code>send</code>/<code>recv</code> bzw. die Dateizugriffsfunktionen <code>read</code>/<code>write</code>. Daneben existieren Unix-Domain-Sockets für die lokale Interprozesskommunikation über das Dateisystem.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Transmission_Control_Protocol/index.html">Transmission Control Protocol</a></li>
+<li><a href="../User_Datagram_Protocol/index.html">User Datagram Protocol</a></li>
+<li><a href="../Port_(Protokoll)/index.html">Port (Protokoll)</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Liskovsches Substitutionsprinzip – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em; line-height: 1.6; color: #202122; }
+h1 { border-bottom: 1px solid #a2a9b1; }
+h2 { border-bottom: 1px solid #a2a9b1; margin-top: 1.5em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Liskovsches Substitutionsprinzip</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Das <b>Liskovsche Substitutionsprinzip</b> (englisch <i>Liskov Substitution Principle</i>, LSP) ist ein Prinzip der objektorientierten Programmierung. Es besagt, dass Objekte einer abgeleiteten Klasse überall dort verwendet werden können müssen, wo Objekte der Basisklasse erwartet werden, ohne dass sich die Korrektheit des Programms ändert. Das Prinzip wurde 1987 von der Informatikerin <a href="../Barbara_Liskov/index.html">Barbara Liskov</a> eingeführt und 1994 gemeinsam mit Jeannette Wing formalisiert.</p>
+<h2>Definition</h2>
+<p>Formal lautet die Forderung: Ist S ein Untertyp von T, dann müssen Objekte vom Typ T in einem Programm durch Objekte vom Typ S ersetzt werden können, ohne dass sich die wünschenswerten Eigenschaften des Programms ändern (insbesondere dessen Korrektheit).</p>
+<h2>Bedeutung</h2>
+<p>Das LSP ist das „L" in Robert C. Martins Akronym <a href="../SOLID_(Software)/index.html">SOLID</a>, das fünf Grundprinzipien des objektorientierten Designs zusammenfasst. Es sichert, dass Vererbung nicht nur zur Wiederverwendung von Code, sondern im Sinne einer echten Verhaltens-Subtypisierung eingesetzt wird.</p>
+<h2>Verhaltensbedingungen</h2>
+<ul>
+<li>Vorbedingungen dürfen in der Unterklasse nicht verschärft werden.</li>
+<li>Nachbedingungen dürfen in der Unterklasse nicht abgeschwächt werden.</li>
+<li>Invarianten der Basisklasse müssen erhalten bleiben.</li>
+<li>Methoden der Unterklasse dürfen keine neuen Ausnahmen werfen, die die Basisklasse nicht vorsieht.</li>
+</ul>
+<h2>Beispiel</h2>
+<p>Ein klassisches Gegenbeispiel ist die Modellierung eines Quadrats als Unterklasse eines Rechtecks: Verändert man an einem „Rechteck" Breite und Höhe unabhängig voneinander, scheitert ein Quadrat, bei dem beide Werte stets gleich sein müssen, an den Erwartungen der Basisklasse — ein Verstoß gegen das LSP.</p>
+<p>Siehe auch: <a href="../Objektorientierte_Programmierung/index.html">Objektorientierte Programmierung</a>, <a href="../Polymorphie_(Informatik)/index.html">Polymorphie</a>, <a href="../Design_by_Contract/index.html">Design by Contract</a>.</p>
+</body>
+</html>

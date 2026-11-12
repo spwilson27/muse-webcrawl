@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Join (SQL) – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1em 1.5em 2em; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { float: right; margin: 0 0 1em 1em; max-width: 280px; border: 1px solid #c8ccd1; background: #eaecf0; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0.6em; overflow-x: auto; }
+code { font-family: monospace; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Join (SQL)</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>Join</b> (deutsch: Verbund) ist eine Operation der Datenbanksprache <a href="../SQL/index.html">SQL</a>, mit der Datensätze aus zwei oder mehr Tabellen einer <a href="../Relationale_Datenbank/index.html">relationalen Datenbank</a> in einer Ergebnismenge kombiniert werden. Der Join entspricht dem Verbund der <a href="../Relationale_Algebra/index.html">relationalen Algebra</a>.</p>
+<h2>Join-Arten</h2>
+<h3>Inner Join</h3>
+<p>Der <i>Inner Join</i> liefert nur die Datensätze, für die in beiden Tabellen übereinstimmende Werte in der Verknüpfungsbedingung vorliegen.</p>
+<pre>SELECT * FROM Kunde
+INNER JOIN Bestellung ON Kunde.ID = Bestellung.KundenID;</pre>
+<h3>Outer Join</h3>
+<p>Beim <i>Left Outer Join</i> werden alle Datensätze der linken Tabelle übernommen, auch wenn kein passender Datensatz in der rechten Tabelle existiert; fehlende Werte werden mit <code>NULL</code> aufgefüllt. Entsprechend verhält es sich beim <i>Right Outer Join</i> spiegelbildlich, und der <i>Full Outer Join</i> übernimmt alle Datensätze beider Tabellen.</p>
+<h3>Cross Join</h3>
+<p>Der <i>Cross Join</i> bildet das kartesische Produkt zweier Tabellen, kombiniert also jeden Datensatz der einen mit jedem der anderen Tabelle.</p>
+<h3>Natural Join und Equi-Join</h3>
+<p>Beim <i>Equi-Join</i> erfolgt die Verknüpfung über die Gleichheit von Spaltenwerten. Der <i>Natural Join</i> verknüpft implizit über alle gleichnamigen Spalten beider Tabellen und gibt gemeinsame Spalten nur einmal aus.</p>
+<h2>Join-Bedingungen</h2>
+<p>Die Verknüpfungsbedingung wird modern in der <code>ON</code>-Klausel angegeben; in älterem SQL (Standard SQL-89) erfolgte die Verknüpfung implizit über die <code>WHERE</code>-Klausel bei der Angabe mehrerer Tabellen in der <code>FROM</code>-Klausel.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Datenbankabfrage/index.html">Datenbankabfrage</a></li>
+<li><a href="../Fremdschlüssel/index.html">Fremdschlüssel</a></li>
+<li><a href="../Normalisierung_(Datenbank)/index.html">Normalisierung (Datenbank)</a></li>
+</ul>
+</div>
+</body>
+</html>

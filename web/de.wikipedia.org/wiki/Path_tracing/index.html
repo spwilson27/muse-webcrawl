@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Path Tracing – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #fff; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; padding: 20px 40px; line-height: 1.6; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 300px; float: right; margin: 0 0 12px 16px; border: 1px solid #c8ccd1; }
+p { margin: 0.5em 0; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Path Tracing</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Path Tracing</b> ist ein Verfahren der Computergrafik zur fotorealistischen Bildsynthese. Es wurde 1986 von James Kajiya zusammen mit der Rendergleichung vorgestellt und verallgemeinert das klassische Raytracing: Statt Lichtwege nur geradlinig zu verfolgen, werden von der Kamera aus zufällig gestreute Strahlen durch die Szene geschickt, die an Oberflächen reflektiert, gebrochen oder absorbiert werden und so den globalen Lichttransport — einschließlich weicher Schatten, Kaustiken, Farbbluten und indirekter Beleuchtung — per Monte-Carlo-Integration annähern.</p>
+<h2>Funktionsweise</h2>
+<p>Für jeden Bildpunkt werden viele zufällige Pfade erzeugt; an jedem Treffpunkt wird die Richtung des weiterverfolgten Strahls entsprechend der BRDF der Oberfläche gewürfelt. Die Beiträge aller Pfade werden gemittelt. Das Ergebnis ist ein unverzerrter (unbiased) Schätzer der Rendergleichung, der jedoch bei wenigen Stichproben stark rauscht; mit zunehmender Samplezahl konvergiert das Bild gegen die exakte Lösung.</p>
+<h2>Anwendung und Varianten</h2>
+<p>Path Tracing ist Standard in der Filmproduktion (etwa in Arnold, RenderMan oder Cycles) und zunehmend auch in Echtzeitgrafik. Varianten wie bidirektionales Path Tracing und Metropolis Light Transport verbessern die Effizienz bei schwierigen Lichtverhältnissen; moderne Verfahren ergänzen das Rauschen durch KI-gestütztes Denoising.</p>
+<h2>Siehe auch</h2>
+<p><a href="../Ray_tracing_(graphics)/index.html">Raytracing</a> · <a href="../Global_illumination/index.html">Globale Beleuchtung</a> · Monte-Carlo-Verfahren</p>
+</div>
+</body>
+</html>

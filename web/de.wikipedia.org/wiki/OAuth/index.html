@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>OAuth – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine","Georgia",serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 1.5em 2em; line-height: 1.6; }
+h1 { font-family: "Georgia",serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { border-bottom: 1px solid #a2a9b1; font-weight: normal; }
+p { font-family: sans-serif; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+ul { font-family: sans-serif; font-size: 0.95em; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>OAuth</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>OAuth</b> ist ein offenes Protokoll für die delegierte Autorisierung im Internet. Es ermöglicht einer Anwendung (Client), im Auftrag eines Benutzers auf Ressourcen eines anderen Dienstes (Resource Server) zuzugreifen, ohne dass der Benutzer sein Passwort an die Anwendung weitergeben muss. Stattdessen erteilt er der Anwendung ein zeitlich begrenztes Zugriffstoken mit eingeschränktem Umfang (Scope).</p>
+<h2>Geschichte</h2>
+<p>OAuth 1.0 entstand 2007 aus Vorarbeiten von Entwicklern bei Twitter und anderen Webdiensten und wurde 2010 als RFC 5849 veröffentlicht. Die grundlegend überarbeitete Version OAuth 2.0 erschien im Oktober 2012 als RFC 6749 (Framework) und RFC 6750 (Bearer Token). Sie verzichtet auf kryptografische Signaturen jeder Anfrage und setzt stattdessen auf TLS-geschützte Verbindungen.</p>
+<h2>Ablauf</h2>
+<p>Die vier Rollen des Protokolls sind Ressourceneigentümer (Benutzer), Client, Autorisierungsserver und Ressourcenserver. Im verbreitetsten Verfahren, dem Authorization Code Flow, leitet der Client den Benutzer zum Autorisierungsserver um. Nach erfolgreicher Anmeldung und Zustimmung wird der Client mit einem Autorisierungscode beliefert, den er serverseitig gegen ein Access Token (und optional ein Refresh Token) eintauscht. OpenID Connect erweitert OAuth 2.0 um eine Identitätsschicht mit ID-Tokens.</p>
+<h2>Sicherheit</h2>
+<p>Da Access Tokens wie Bargeld funktionieren („Bearer“), sind sichere Speicherung und kurze Laufzeiten wichtig. Für öffentliche Clients wird die PKCE-Erweiterung (Proof Key for Code Exchange) empfohlen; der früher für native Apps und Skripte gebräuchliche Implicit Flow gilt als veraltet. Die Autorisierungsdetails werden im RFC 9700 (OAuth 2.0 Security Best Current Practice) zusammengefasst.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../OpenID_Connect/index.html">OpenID Connect</a></li>
+<li><a href="../SAML/index.html">SAML</a></li>
+<li><a href="../Autorisierung/index.html">Autorisierung</a></li>
+</ul>
+</div>
+</body>
+</html>

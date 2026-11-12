@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Marsaglia-Polar-Methode – Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f6f6f6;color:#202122}
+#content{background:#fff;max-width:960px;margin:0 auto;padding:24px 32px;line-height:1.6}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.4em}
+table.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;margin:0 0 1em 1.5em;width:270px;font-size:90%}
+table.infobox th{background:#eaf3ff;text-align:left;padding:4px 8px}
+table.infobox td{padding:4px 8px}
+a{color:#0645ad;text-decoration:none}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;max-width:260px;margin:0 0 1em 1em;float:right;font-size:88%}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Marsaglia-Polar-Methode</h1>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"><div>Zufallspunkte im Einheitskreis – Grundlage der Polar-Methode</div></div>
+<p>Die <b>Marsaglia-Polar-Methode</b> ist ein Verfahren zur Erzeugung normalverteilter (gaußverteilter) Pseudozufallszahlen aus gleichverteilten Zufallszahlen. Sie wurde 1964 von dem Statistiker George Marsaglia beschrieben und ist eine Weiterentwicklung der <a href="../Box-Muller-Methode/index.html">Box-Muller-Methode</a>, mit der sie eng verwandt ist.</p>
+<h2>Verfahren</h2>
+<p>Man erzeugt so lange Paare gleichverteilter Zufallszahlen u und v aus dem Intervall (−1, 1), bis für ihre Quadratsumme s = u² + v² gilt: 0 &lt; s &lt; 1. Die Punkte (u, v) sind dann gleichmäßig im Einheitskreis verteilt. Aus dem Faktor f = sqrt(−2 · ln s / s) erhält man durch Multiplikation mit u beziehungsweise v zwei unabhängige, standardnormalverteilte Zufallszahlen x = u · f und y = v · f.</p>
+<h2>Eigenschaften</h2>
+<p>Im Gegensatz zur klassischen Box-Muller-Methode benötigt die Polar-Methode keine trigonometrischen Funktionen wie Sinus und Kosinus, was sie auf älterer Hardware deutlich schneller machte. Dafür verwirft sie im Mittel etwa 21,5 Prozent der erzeugten Punktepaare, weil diese außerhalb des Einheitskreises liegen (die Trefferquote beträgt π/4). Die Methode liefert – wie alle auf einem Pseudozufallsgenerator aufbauenden Verfahren – nur so gute Zufallsqualität wie der zugrunde liegende Generator. Sie wird in zahlreichen Statistikbibliotheken und Simulationsprogrammen verwendet; in moderner Software treten an ihre Stelle häufig effizientere Verfahren wie der Ziggurat-Algorithmus.</p>
+<p><i>Siehe auch:</i> <a href="../Normalverteilung/index.html">Normalverteilung</a>, <a href="../Box-Muller-Methode/index.html">Box-Muller-Methode</a>, <a href="../George_Marsaglia/index.html">George Marsaglia</a></p>
+</div>
+</body>
+</html>

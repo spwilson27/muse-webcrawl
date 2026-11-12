@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Meet-in-the-middle-Angriff – Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:800px;line-height:1.6;color:#202122}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+img{max-width:100%}
+</style>
+</head>
+<body>
+<h1>Meet-in-the-middle-Angriff</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>Meet-in-the-middle-Angriff</b> (englisch <i>meet-in-the-middle attack</i>) ist ein generisches kryptoanalytisches Verfahren, das auf viele Verschlüsselungsverfahren anwendbar ist, insbesondere auf mehrfach hintereinander ausgeführte Blockchiffren. Das Verfahren beruht darauf, die Verschlüsselung von beiden Seiten – vom Klartext und vom Schlüsseltext her – zu berechnen und die Zwischenergebnisse „in der Mitte“ zu vergleichen.</p>
+<h2>Prinzip</h2>
+<p>Wird ein Klartext <i>P</i> zweimal mit zwei unabhängigen Schlüsseln <i>K<sub>1</sub></i> und <i>K<sub>2</sub></i> verschlüsselt, so gilt C = E<sub>K2</sub>(E<sub>K1</sub>(P)). Ein naiver Brute-Force-Angriff müsste bei einer Schlüssellänge von n Bit bis zu 2<sup>2n</sup> Schlüsselpaare testen. Beim Meet-in-the-middle-Angriff berechnet der Angreifer stattdessen für alle K<sub>1</sub> die Zwischenwerte E<sub>K1</sub>(P), speichert sie in einer Tabelle und entschlüsselt dann C mit allen K<sub>2</sub>. Stimmt ein Entschlüsselungsergebnis mit einem gespeicherten Zwischenwert überein, wurde das Schlüsselpaar gefunden. Der Zeitaufwand beträgt damit nur etwa 2<sup>n+1</sup> Operationen, allerdings bei einem Speicherbedarf von rund 2<sup>n</sup> Einträgen.</p>
+<h2>Anwendung auf DES</h2>
+<p>Das bekannteste Beispiel ist die doppelte Verschlüsselung mit dem Data Encryption Standard (2DES): Obwohl zwei 56-Bit-Schlüssel zusammen 112 Bit Schlüssellänge suggerieren, senkt der Meet-in-the-middle-Angriff die effektive Sicherheit auf etwa 57 Bit. Aus diesem Grund wurde statt 2DES die dreifache Verschlüsselung (3DES, Triple DES) standardisiert, bei der der Angriff deutlich weniger wirksam ist.</p>
+<h2>Geschichte</h2>
+<p>Das Verfahren wurde 1977 von Whitfield Diffie und Martin Hellman in ihrer Arbeit über die erschöpfende Suche bei DES beschrieben.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Kryptoanalyse/index.html">Kryptoanalyse</a></li>
+<li><a href="../Data_Encryption_Standard/index.html">Data Encryption Standard</a></li>
+<li><a href="../Geburtstagsangriff/index.html">Geburtstagsangriff</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Layer Normalization – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; font-size: 0.95em; }
+img { display: block; margin: 1em auto; max-width: 320px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Layer Normalization</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Layer Normalization</b> (deutsch: Schichtnormalisierung) ist ein Verfahren zur Normalisierung der Aktivierungen in künstlichen neuronalen Netzen. Es wurde 2016 von Jimmy Lei Ba, Jamie Ryan Kiros und Geoffrey Hinton vorgestellt und ist heute ein Standardbaustein moderner Architekturen, insbesondere von <a href="../Transformer_(Maschinelles_Lernen)/index.html">Transformern</a>.</p>
+<h2>Verfahren</h2>
+<p>Bei der Layer Normalization werden die Aktivierungen eines einzelnen Trainingsbeispiels über alle Einheiten einer Schicht hinweg auf Mittelwert null und Varianz eins standardisiert; anschließend werden sie mit lernbaren Parametern γ (Skalierung) und β (Verschiebung) affin transformiert: ŷ = γ · (x − μ)/σ + β, wobei μ und σ aus den Aktivierungen der Schicht desselben Beispiels berechnet werden.</p>
+<h2>Abgrenzung zur Batch Normalization</h2>
+<p>Im Unterschied zur Batch Normalization, die die Statistik über die Beispiele einer Mini-Batch bildet, arbeitet die Layer Normalization unabhängig von der Batchgröße und verwendet für jedes Beispiel eigene Statistiken. Sie verhält sich daher im Training und in der Anwendung identisch und eignet sich besonders für rekurrente Netze und Sequenzmodelle mit variabler Länge.</p>
+<h2>Varianten und Anwendung</h2>
+<p>Eine vereinfachte Variante ist die RMSNorm (Root Mean Square Layer Normalization, 2019), die auf die Zentrierung verzichtet und nur über den quadratischen Mittelwert skaliert; sie wird unter anderem in großen Sprachmodellen wie LLaMA eingesetzt. In der Transformer-Architektur wird Layer Normalization in jeder Teilschicht angewendet, wobei sich die Positionierung vor („Pre-LN“) oder nach („Post-LN“) der Teilschicht auf die Trainingsstabilität auswirkt.</p>
+<h2>Siehe auch</h2>
+<p><a href="../Neuronales_Netz/index.html">Neuronales Netz</a> · <a href="../Deep_Learning/index.html">Deep Learning</a> · <a href="../Transformer_(Maschinelles_Lernen)/index.html">Transformer</a></p>
+</div>
+</body>
+</html>

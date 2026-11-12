@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Linear rückgekoppeltes Schieberegister – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 900px; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Linear rückgekoppeltes Schieberegister</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>linear rückgekoppeltes Schieberegister</b> (englisch <i>linear feedback shift register</i>, kurz <b>LFSR</b>) ist ein <a href="../Schieberegister/index.html">Schieberegister</a>, dessen Eingangsbit aus einer linearen Funktion der bisherigen Registerzustände gebildet wird. Die häufigste lineare Funktion ist das <a href="../Exklusives_Oder/index.html">Exklusiv-Oder</a> (XOR) bestimmter Bitpositionen. LFSR erzeugen pseudozufällige Bitfolgen und werden unter anderem als Zähler, zur Erzeugung von <a href="../Pseudozufall/index.html">Pseudozufallszahlen</a> und in der <a href="../Kryptographie/index.html">Kryptographie</a> eingesetzt.</p>
+<h2>Funktionsweise</h2>
+<p>Das Register besteht aus einer Kette von Flipflops. Bei jedem Taktschritt verschiebt sich der Inhalt um eine Position; das neu einzuschiebende Bit wird durch XOR-Verknüpfung einiger ausgewählter Abgriffe (<i>taps</i>) des Registers berechnet. Die Auswahl der Abgriffe wird durch ein Rückkopplungspolynom über dem <a href="../Galoiskoerper/index.html">Galoiskörper</a> GF(2) beschrieben. Man unterscheidet die Fibonacci-Konfiguration (externe XOR-Gatter) und die Galois-Konfiguration (interne XOR-Gatter).</p>
+<h2>Periodenlänge</h2>
+<p>Ein LFSR der Länge <i>n</i> kann höchstens 2<sup><i>n</i></sup> − 1 Zustände durchlaufen, da der Nullzustand einen Stillstand bewirken würde. Ist das Rückkopplungspolynom ein primitives Polynom, wird diese maximale Periodenlänge erreicht; die erzeugte Folge heißt dann Maximalfolge (M-Sequenz). Aus einer beobachteten Folge von nur 2<i>n</i> Bits kann mit dem Berlekamp-Massey-Algorithmus das gesamte LFSR rekonstruiert werden, weshalb einzelne LFSR für kryptographische Zwecke unsicher sind und dort nur in nichtlinearen Kombinationen verwendet werden.</p>
+<h2>Anwendungen</h2>
+<ul>
+<li>Erzeugung von Pseudozufallsfolgen, etwa bei der <a href="../CRC/index.html">CRC</a>-Prüfsummenbildung (Polynomdivision in Hardware)</li>
+<li>Frequenzteiler und schnelle Zähler</li>
+<li>Rauschgeneratoren und Korrelationsmesstechnik</li>
+<li>Stream-Verschlüsselung in kombinierter Form, z. B. im <a href="../Global_System_for_Mobile_Communications/index.html">GSM</a>-Verfahren A5/1</li>
+</ul>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Fibonacci-LFSR/index.html">Fibonacci-LFSR</a></li>
+<li><a href="../Primitive_Wurzel/index.html">Primitives Polynom</a></li>
+<li><a href="../Linearer_Kongruenzgenerator/index.html">Linearer Kongruenzgenerator</a></li>
+</ul>
+</body>
+</html>

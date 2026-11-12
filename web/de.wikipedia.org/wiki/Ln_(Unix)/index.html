@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>ln (Unix) – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 52em; line-height: 1.6; color: #202122; }
+h1 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.8em; margin: 0 0 1em 1em; width: 16em; font-size: 0.9em; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<div class="infobox"><strong>ln</strong><br>Art: Unix-Kommando<br>Bestandteil von: GNU Core Utilities (u. a.)<br>Zweck: Anlegen von Verknüpfungen (Links)</div>
+<h1>ln (Unix)</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><strong>ln</strong> ist ein Kommandozeilenwerkzeug in unixartigen Betriebssystemen, mit dem Verknüpfungen (Links) auf Dateien und Verzeichnisse angelegt werden. Es gehört zu den ältesten Standardwerkzeugen von <a href="../Unix/index.html">Unix</a> und ist durch POSIX normiert.</p>
+<h2>Funktionsweise</h2>
+<p>Standardmäßig erzeugt <code>ln</code> eine <em>harte Verknüpfung</em> (Hardlink): einen weiteren Verzeichniseintrag, der auf denselben Inode wie die Ausgangsdatei verweist. Harte Links können nicht auf Verzeichnisse und nicht über Dateisystemgrenzen hinweg angelegt werden. Mit der Option <code>-s</code> (<em>symbolic</em>) wird stattdessen ein symbolischer Link (Symlink, Softlink) erstellt, der lediglich einen Pfadnamen enthält und auf Verzeichnisse sowie über Dateisysteme hinweg zeigen kann.</p>
+<h2>Syntax und Optionen</h2>
+<pre>ln [-s] [-f] [-i] [-v] Quelle Ziel</pre>
+<ul>
+<li><code>-s</code>: symbolischen statt harten Link anlegen</li>
+<li><code>-f</code>: vorhandene Zieldateien ohne Rückfrage ersetzen</li>
+<li><code>-i</code>: vor dem Überschreiben nachfragen</li>
+<li><code>-v</code>: durchgeführte Aktionen ausgeben</li>
+<li><code>-r</code> (GNU): relative Symlinks erzeugen</li>
+</ul>
+<h2>Beispiele</h2>
+<pre>$ ln -s /usr/share/doc/manual.pdf ~/manual.pdf</pre>
+<p>erzeugt im Heimatverzeichnis einen symbolischen Link auf das Handbuch. Symbolische Links, deren Ziel nicht (mehr) existiert, werden als „verwaist" oder „gebrochen" bezeichnet.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Symbolische_Verkn%C3%BCpfung/index.html">Symbolische Verknüpfung</a></li>
+<li><a href="../Hardlink/index.html">Hardlink</a></li>
+<li><a href="../GNU_Core_Utilities/index.html">GNU Core Utilities</a></li>
+</ul>
+</body>
+</html>

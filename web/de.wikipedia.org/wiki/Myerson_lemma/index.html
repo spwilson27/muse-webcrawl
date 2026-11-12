@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Myerson-Lemma – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; padding: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; margin-bottom: 0.4em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.2em; }
+h3 { font-size: 1.15em; margin-top: 1em; }
+p { line-height: 1.6; text-align: justify; }
+.infobox { float: right; width: 280px; background: #f8f9fa; border: 1px solid #a2a9b1; margin: 0 0 1em 1.5em; padding: 0.6em; font-size: 0.85em; }
+.infobox th { text-align: left; padding: 2px 6px; }
+.infobox td { padding: 2px 6px; }
+.toc { background: #f8f9fa; border: 1px solid #a2a9b1; padding: 0.5em 1em; display: inline-block; font-size: 0.9em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 1em auto; max-width: 100%; }
+.caption { font-size: 0.8em; color: #54595d; text-align: center; }
+.formula { text-align: center; font-style: italic; margin: 1em 0; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Myerson-Lemma</h1>
+<table class="infobox">
+<tr><th colspan="2" style="text-align:center; background:#eaf3ff;">Myerson-Lemma</th></tr>
+<tr><th>Fachgebiet</th><td>Mechanismus-Design, Auktionstheorie</td></tr>
+<tr><th>Namensgeber</th><td>Roger B. Myerson</td></tr>
+<tr><th>Zentrale Publikation</th><td>„Optimal Auction Design“, 1981</td></tr>
+<tr><th>Aussage</th><td>Charakterisierung anreizkompatibler Mechanismen</td></tr>
+</table>
+<p>Das <b>Myerson-Lemma</b> ist ein zentrales Ergebnis der Auktionstheorie und des Mechanismus-Designs, das auf den US-amerikanischen Ökonomen Roger B. Myerson zurückgeht (vor allem auf dessen Arbeit „Optimal Auction Design“ von 1981). Es charakterisiert für Umgebungen mit einem einzelnen Parameter – etwa private Wertschätzungen in einer Auktion – vollständig, welche Allokationsregeln durch geeignete Zahlungsregeln anreizkompatibel (wahrheitsgemäß) umgesetzt werden können, und wie die Zahlungen dann aussehen müssen.</p>
+<img src="images/hero.png" alt="Hero image (placeholder)" class="hero">
+<p class="caption">Roger B. Myerson, Nobelpreisträger für Wirtschaftswissenschaften 2007.</p>
+<h2>Aussage</h2>
+<p>Betrachtet wird ein Mechanismus mit einer Allokationsregel <i>x</i>, die jedem Bieter <i>i</i> in Abhängigkeit von seinem gemeldeten Typ (Wert) eine Gewinnwahrscheinlichkeit zuordnet, und einer Zahlungsregel <i>p</i>. Das Lemma besagt für Ein-Parameter-Umgebungen:</p>
+<p>1. Eine Allokationsregel ist genau dann (durch eine Zahlungsregel) anreizkompatibel implementierbar, wenn sie <b>monoton</b> ist: Wer einen höheren Wert angibt, erhält keine geringere Zuteilungswahrscheinlichkeit.</p>
+<p>2. Ist die Regel monoton, so ist die Zahlungsregel bis auf eine Konstante <b>eindeutig bestimmt</b>: Ein Gewinner mit Wert <i>v</i> zahlt</p>
+<p class="formula">p(v) = v · x(v) − ∫<sub>0</sub><sup>v</sup> x(z) dz + p(0),</p>
+<p>wobei die Zahlung eines Typs mit Wert null üblicherweise auf null normiert wird.</p>
+<p>3. Der erwartete Gewinn (Nutzen) eines Bieters ist damit vollständig durch die Allokationsregel und die Verteilung der Werte festgelegt.</p>
+<h2>Bedeutung</h2>
+<p>Das Myerson-Lemma reduziert das Problem des Auktionsdesigns auf die Wahl einer monotonen Allokationsregel. Aus ihm folgt unmittelbar die Struktur bekannter Auktionen: In der Zweitpreisauktion (Vickrey-Auktion) etwa ergibt die Formel, dass der Gewinner genau den zweithöchsten Wert zahlt. Myerson zeigte weiter, dass die erwartete Zahlung eines Bieters als Erwartungswert seiner „virtuellen Wertschätzung“ mal Gewinnwahrscheinlichkeit geschrieben werden kann; die erlösmaximale Auktion vergibt das Gut an den Bieter mit der höchsten (nichtnegativen) virtuellen Wertschätzung – bei symmetrischen Bietern ist das eine Zweitpreisauktion mit optimalem Mindestpreis. Die Theorie bildet eine Grundlage moderner Anzeigenauktionen im Internet und wurde durch das verallgemeinerte Revelation Principle ergänzt, das Myerson ebenfalls mitbegründete. Für seine Arbeiten zum Mechanismus-Design erhielt Myerson 2007 gemeinsam mit Leonid Hurwicz und Eric Maskin den Nobelpreis für Wirtschaftswissenschaften.</p>
+<h2>Verallgemeinerungen</h2>
+<p>Für Mehrparameter-Umgebungen (ein Bieter ist an mehreren Gütern interessiert) existiert keine ebenso einfache Charakterisierung; Monotonie allein genügt nicht mehr, und die Forschung untersucht schwächere Bedingungen wie zyklische Monotonie. In der algorithmischen Spieltheorie wird das Lemma routinemäßig zur Konstruktion wahrheitsgemäßer Mechanismen eingesetzt.</p>
+<p>Siehe auch: Auktionstheorie, Mechanismus-Design, Vickrey-Auktion, Roger Myerson.</p>
+</div>
+</body>
+</html>

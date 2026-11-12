@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Page Cache – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+header { background: #fff; border-bottom: 1px solid #a2a9b1; padding: 12px 24px; }
+main { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 1px 4px; }
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> – Die freie Enzyklopädie</header>
+<main>
+<h1>Page Cache</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Der <b>Page Cache</b> ist ein Cache des Betriebssystemkerns, in dem Seiten (<a href="../Page_(computer_memory)/index.html">pages</a>) von Dateien und Blockgeräten im Arbeitsspeicher gehalten werden, um Zugriffe auf langsame Massenspeicher zu vermeiden. Unter Linux und anderen Unix-artigen Systemen ist er der zentrale Dateisystem-Cache; auch Windows nutzt mit dem System-Cache ein vergleichbares Konzept.</p>
+
+<h2>Funktionsweise</h2>
+<p>Beim Lesen einer Datei prüft der Kernel zunächst, ob sich die benötigten Seiten bereits im Page Cache befinden. Ist dies der Fall (<i>cache hit</i>), werden die Daten direkt aus dem RAM kopiert. Andernfalls (<i>cache miss</i>) liest der Kernel die Daten vom Datenträger und legt sie zugleich im Cache ab, sodass spätere Zugriffe schneller sind.</p>
+<p>Beim Schreiben werden die Daten zunächst nur in den Cache übernommen und als „dirty“ (verändert) markiert. Ein Zurückschreiben auf den Datenträger erfolgt verzögert – spätestens bei einem Aufruf von <code>sync</code> beziehungsweise beim Aushängen des Dateisystems. Dadurch wirken Schreiboperationen für Anwendungen schnell, allerdings können noch nicht geschriebene Daten bei einem Systemabsturz verloren gehen. Programme können mit <code>fsync</code> ein sofortiges Schreiben erzwingen.</p>
+
+<h2>Verwaltung</h2>
+<p>Der Page Cache nutzt den ansonsten freien Arbeitsspeicher nahezu vollständig aus. Wird Speicher für Anwendungen benötigt, gibt der Kernel Cache-Seiten frei; Seiten, auf die lange nicht zugegriffen wurde, werden bevorzugt verdrängt (annähernd nach dem LRU-Prinzip über Aktiv/Inaktiv-Listen). Unter Linux zeigt etwa der Befehl <code>free</code> die Cache-Belegung getrennt aus; sie ist nicht als „verbraucht“ im eigentlichen Sinn zu verstehen.</p>
+
+<h2>Abgrenzung</h2>
+<p>Zu unterscheiden ist der Page Cache vom Buffer Cache, der traditionell Blöcke des Datenträgers zwischenspeicherte. In modernen Linux-Kerneln sind beide zusammengelegt: Der Page Cache ist die primäre Struktur, Puffer dienen nur noch Sonderfällen wie dem Zugriff auf Blockgeräte-Metadaten.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Cache/index.html">Cache</a></li>
+<li><a href="../Page_(computer_memory)/index.html">Seite (Speicherverwaltung)</a></li>
+<li><a href="../Virtueller_Speicher/index.html">Virtueller Speicher</a></li>
+</ul>
+</main>
+</body>
+</html>

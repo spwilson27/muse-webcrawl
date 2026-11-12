@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Mach-O – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p, li { line-height: 1.6; font-size: 15px; }
+a { color: #3366cc; text-decoration: none; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px 12px; margin: 0 0 12px 16px; font-size: 13px; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Mach-O</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<table class="infobox">
+<tr><th>Art</th><td>Binärformat (ausführbare Dateien, Objektdateien, Bibliotheken)</td></tr>
+<tr><th>Entwickler</th><td>Carnegie Mellon University (Mach-Projekt), weiterentwickelt von NeXT und Apple</td></tr>
+<tr><th>Systeme</th><td>macOS, iOS und weitere Apple-Betriebssysteme</td></tr>
+<tr><th>Magische Zahl</th><td>0xFEEDFACE / 0xFEEDFACF (32/64 Bit)</td></tr>
+</table>
+<p><b>Mach-O</b> (kurz für <i>Mach Object</i>) ist das Binärformat für ausführbare Dateien, Objektdateien und dynamische Bibliotheken auf Apples Betriebssystemen macOS und iOS. Es stammt aus dem Mach-Kernel-Projekt der Carnegie Mellon University und wurde über NeXTSTEP in die Apple-Welt übernommen, wo es das PEF-Format des klassischen Mac OS ablöste.</p>
+<h2>Aufbau</h2>
+<p>Eine Mach-O-Datei besteht aus einem Header mit magischer Zahl, Angaben zu CPU-Typ und Dateityp, gefolgt von einer Reihe von Ladekommandos (load commands), die dem dynamischen Linker (<i>dyld</i>) beschreiben, wie Segmente und Sektionen in den Speicher zu laden sind, welche Bibliotheken benötigt werden und wo sich Symboltabellen befinden.</p>
+<h2>Universal Binaries</h2>
+<p>Mehrere Mach-O-Dateien unterschiedlicher Architekturen (etwa x86_64 und ARM64) können zu einem „Fat Binary" bzw. Universal Binary zusammengefasst werden; ein Fat-Header (magische Zahl 0xCAFEBABE) verweist auf die enthaltenen Einzeldateien. Apple nutzte dieses Verfahren bei den Prozessormigrationen 68k→PowerPC, PowerPC→Intel und Intel→Apple Silicon.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Mach_(kernel)/index.html">Mach (Kernel)</a></li>
+</ul>
+</div>
+</body>
+</html>

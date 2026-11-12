@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Message Authentication Code – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em 3em; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; margin-top: 0.2em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; font-weight: normal; margin-top: 1.2em; }
+p, li { font-size: 0.95em; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 320px; float: right; margin: 0 0 1em 1em; border: 1px solid #c8ccd1; background: #eaecf0; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Message Authentication Code</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>Message Authentication Code</b> (MAC) ist in der Kryptographie ein Prüfwert, mit dem die Echtheit (Authentizität) und Unversehrtheit (Integrität) einer Nachricht nachgewiesen werden kann. Im Gegensatz zu einer digitalen Signatur basiert ein MAC auf symmetrischer Kryptographie: Sender und Empfänger teilen sich einen geheimen Schlüssel, aus dem zusammen mit der Nachricht der MAC berechnet wird.</p>
+<h2>Funktionsweise</h2>
+<p>Der Sender berechnet über Nachricht und geheimen Schlüssel einen kurzen Authentifizierungs-Tag und hängt ihn an die Nachricht an. Der Empfänger berechnet den MAC mit demselben Schlüssel erneut und vergleicht ihn mit dem übermittelten Wert. Stimmen beide überein, kann der Empfänger davon ausgehen, dass die Nachricht unverändert ist und vom Inhaber des Schlüssels stammt. Eine Vertraulichkeit der Nachricht wird durch einen MAC nicht erreicht.</p>
+<h2>Konstruktionen</h2>
+<p>Zu den gebräuchlichsten Verfahren zählen:</p>
+<ul>
+<li><b>HMAC</b> – eine Konstruktion auf Basis kryptographischer Hashfunktionen wie SHA-2.</li>
+<li><b>CMAC</b> – ein MAC auf Basis von Blockchiffren wie AES (auch als OMAC bekannt).</li>
+<li><b>Poly1305</b> – ein schneller MAC, der unter anderem zusammen mit ChaCha20 eingesetzt wird.</li>
+<li>Ältere Verfahren wie CBC-MAC, die nur bei Nachrichten fester Länge sicher sind.</li>
+</ul>
+<h2>Anwendung</h2>
+<p>MACs werden in zahlreichen Protokollen verwendet, etwa in TLS, IPsec und SSH, um die Integrität übertragener Daten zu sichern. In der modernen Praxis werden häufig Verfahren der authentifizierten Verschlüsselung (AEAD) eingesetzt, die Verschlüsselung und MAC in einem Schritt kombinieren.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Digitale_Signatur/index.html">Digitale Signatur</a></li>
+<li><a href="../HMAC/index.html">HMAC</a></li>
+<li><a href="../Kryptographische_Hashfunktion/index.html">Kryptographische Hashfunktion</a></li>
+</ul>
+</div>
+</body>
+</html>

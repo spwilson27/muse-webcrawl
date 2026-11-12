@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Level-Set-Methode – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0 auto; max-width: 960px; padding: 1em 1.5em; color: #202122; line-height: 1.6; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { border: 1px solid #c8ccd1; background: #f8f9fa; padding: 3px; font-size: 0.85em; text-align: center; }
+.small { font-size: 0.85em; color: #54595d; }
+.mono { font-family: monospace; background: #f8f9fa; padding: 0.2em 0.4em; }
+</style>
+</head>
+<body>
+<h1>Level-Set-Methode</h1>
+<p>Die <b>Level-Set-Methode</b> ist ein numerisches Verfahren zur Beschreibung und Verfolgung sich bewegender Grenzflächen und Formen. Sie wurde 1988 von Stanley Osher und James Sethian eingeführt. Die Grenzfläche wird dabei implizit als Nullniveaumenge (<i>level set</i>) einer höherdimensionalen Funktion dargestellt.</p>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"><br>Entwicklung einer Kurve unter Krümmungsfluss (Platzhalter)</div>
+<h2>Grundidee</h2>
+<p>Statt eine Kurve oder Fläche explizit durch Parameter zu beschreiben, bettet man sie als Nullmenge einer Funktion φ(x, t) ein, also als Menge aller Punkte mit φ = 0. Die Bewegung der Grenzfläche folgt aus einer partiellen Differentialgleichung für φ, der sogenannten Level-Set-Gleichung:</p>
+<p class="mono">∂φ/∂t + F |∇φ| = 0,</p>
+<p>wobei F die Geschwindigkeit der Front in Normalenrichtung bezeichnet. Topologische Änderungen wie das Verschmelzen oder Zerreißen von Formen treten automatisch und ohne gesonderte Behandlung auf.</p>
+<h2>Reinitialisierung</h2>
+<p>Im Verlauf der Rechnung verliert φ häufig die Eigenschaft einer signierten Distanzfunktion. Durch eine Reinitialisierung wird |∇φ| wieder auf 1 gesetzt, was die numerische Genauigkeit und Stabilität verbessert.</p>
+<h2>Anwendungen</h2>
+<ul>
+<li>Bildsegmentierung (z. B. aktive Konturen, Chan-Vese-Modell)</li>
+<li>Strömungsmechanik: Mehrphasenströmungen, freie Oberflächen</li>
+<li>Computergrafik: Flüssigkeitssimulation, Flammensimulation</li>
+<li>Materialwissenschaft: Kristallwachstum, Ätzprozesse</li>
+<li>Computergestützte Geometrie und Formoptimierung</li>
+</ul>
+<h2>Verwandte Verfahren</h2>
+<ul>
+<li><a href="../Level_set/index.html">Niveaumenge (Level Set)</a></li>
+<li>Volume-of-Fluid-Methode</li>
+<li>Phasenfeldmethode</li>
+<li>Fast-Marching-Methode</li>
+</ul>
+<p class="small">Kategorie: Numerische Mathematik · Partielle Differentialgleichungen</p>
+</body>
+</html>

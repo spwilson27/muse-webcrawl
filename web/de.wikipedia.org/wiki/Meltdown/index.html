@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Meltdown (Sicherheitslücke) – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-family: Georgia, serif; font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-size: 22px; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+p { line-height: 1.6; }
+img.hero { max-width: 320px; float: right; margin: 0 0 12px 16px; border: 1px solid #c8ccd1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Meltdown (Sicherheitslücke)</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Meltdown</b> ist eine Hardware-Sicherheitslücke in Mikroprozessoren, die Anfang Januar 2018 öffentlich bekannt wurde. Sie ermöglicht es einem Angreiferprogramm, unbefugt auf den Speicher anderer Prozesse und des Betriebssystemkerns zuzugreifen. Meltdown wurde zusammen mit der verwandten, aber anders gearteten Lücke <a href="../Spectre_(Sicherheitsl%C3%BCcke)/index.html">Spectre</a> vorgestellt und betraf vor allem Prozessoren von Intel, aber auch einzelne ARM-Designs.</p>
+<h2>Funktionsweise</h2>
+<p>Moderne Prozessoren führen Befehle zur Leistungssteigerung spekulativ und außerhalb der Programmreihenfolge aus (<i>Out-of-order execution</i>). Bei Meltdown nutzt ein Angreifer aus, dass ein unprivilegierter Prozess eine Ladeoperation auf eine Kernelspeicheradresse auslösen kann: Die Berechtigungsprüfung erfolgt erst verspätet, während die Daten bereits spekulativ in den Prozessorcache gelangen. Über einen Seitenkanal (etwa eine Cache-Timing-Analyse nach dem Flush+Reload-Verfahren) kann der Angreifer den Inhalt des geschützten Speichers Byte für Byte auslesen, obwohl der Zugriff letztlich verworfen wird.</p>
+<h2>Auswirkungen und Gegenmaßnahmen</h2>
+<p>Von der Lücke waren praktisch alle Intel-Prozessoren seit etwa 1995 betroffen, mit Ausnahme einiger Atom- und Itanium-Modelle; außerdem wurden bestimmte ARM-Cortex-A-Kerne als anfällig eingestuft. AMD-Prozessoren galten als nicht von Meltdown betroffen.</p>
+<p>Als Gegenmaßnahme führten die Betriebssysteme Linux, Windows und macOS die Technik der Kernel Page-Table Isolation (KPTI, unter Linux früher KAISER genannt) ein, bei der der Kernelspeicher weitgehend aus dem Adressraum von Benutzerprozessen ausgeblendet wird. Diese Maßnahme kann je nach Arbeitslast zu Leistungseinbußen führen. Neuere Prozessorgenerationen enthalten hardware-seitige Korrekturen.</p>
+<h2>Entdeckung</h2>
+<p>Meltdown wurde unabhängig voneinander von mehreren Forscherteams entdeckt, darunter Mitarbeiter von Google Project Zero, der Technischen Universität Graz und der Firma Cyberus Technology. Die koordinierte Veröffentlichung erfolgte am 3. Januar 2018.</p>
+<h2>Siehe auch</h2>
+<p><a href="../Spectre_(Sicherheitsl%C3%BCcke)/index.html">Spectre (Sicherheitslücke)</a> · <a href="../Seitenkanalattacke/index.html">Seitenkanalattacke</a></p>
+</div>
+</body>
+</html>
