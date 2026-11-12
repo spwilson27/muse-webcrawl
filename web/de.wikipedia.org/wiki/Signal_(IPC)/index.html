@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Signal (Unix) – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 800px; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.4em; }
+img { max-width: 100%; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Signal (Unix)</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>Signal</b> ist in Unix- und POSIX-Systemen ein einfacher Mechanismus der Interprozesskommunikation (englisch <i>inter-process communication</i>, IPC). Signale sind asynchrone Benachrichtigungen, die das Betriebssystem oder ein anderer Prozess an einen Prozess sendet, um ihn über ein Ereignis zu informieren – etwa über die Aufforderung zur Beendigung, einen Fehler oder das Eintreffen von Daten.</p>
+<h2>Wichtige Signale</h2>
+<p>Jedes Signal hat einen symbolischen Namen und eine Nummer. Zu den bekanntesten zählen:</p>
+<ul>
+<li><b>SIGINT</b> (2): Unterbrechung, üblicherweise durch die Tastenkombination Strg+C ausgelöst.</li>
+<li><b>SIGTERM</b> (15): Aufforderung zur Beendigung; das Standardziel des Befehls <i>kill</i>.</li>
+<li><b>SIGKILL</b> (9): Sofortiges Beenden; kann weder abgefangen noch ignoriert werden.</li>
+<li><b>SIGHUP</b> (1): „Aufgelegt" – ursprünglich der Verlust der Terminalverbindung, heute oft zum Neueinlesen der Konfiguration genutzt.</li>
+<li><b>SIGSEGV</b> (11): Ungültiger Speicherzugriff (Segmentierungsfehler).</li>
+<li><b>SIGUSR1</b> und <b>SIGUSR2</b>: Für anwendungsdefinierte Zwecke reserviert.</li>
+</ul>
+<h2>Behandlung</h2>
+<p>Ein Prozess kann auf ein Signal mit der Standardaktion reagieren (meist Beendigung, gegebenenfalls mit Speicherabbild), es ignorieren oder eine eigene Behandlungsroutine (<i>signal handler</i>) ausführen. Gesendet werden Signale über den Systemaufruf <i>kill()</i> beziehungsweise von der Shell aus mit dem gleichnamigen Befehl. Da ein Handler den laufenden Programmfluss jederzeit unterbrechen kann, dürfen in ihm nur sogenannte async-signal-sichere Funktionen aufgerufen werden. Ergänzend existieren Echtzeitsignale, die im Gegensatz zu den klassischen Signalen in Warteschlangen eingereiht werden können.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Unix/index.html">Unix</a></li>
+<li><a href="../Prozess_(Informatik)/index.html">Prozess (Informatik)</a></li>
+<li><a href="../Interprozesskommunikation/index.html">Interprozesskommunikation</a></li>
+</ul>
+</body>
+</html>

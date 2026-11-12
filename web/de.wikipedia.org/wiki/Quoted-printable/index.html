@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Quoted-printable – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1em 2em 3em; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { font-family: monospace; background: #f8f9fa; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Quoted-printable</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Quoted-printable</b> ist ein Kodierungsverfahren, das im Rahmen von <a href="../MIME/index.html">MIME</a> für den Versand von <a href="../E-Mail/index.html">E-Mails</a> verwendet wird. Es wandelt beliebige Bytefolgen so in druckbare <a href="../ASCII/index.html">ASCII</a>-Zeichen um, dass Text in Sprachen mit Sonderzeichen – etwa Umlaute im Deutschen – über Systeme übertragen werden kann, die nur 7-Bit-Daten zulassen. Das Verfahren ist in RFC 2045 definiert.</p>
+<h2>Verfahren</h2>
+<p>Die meisten druckbaren ASCII-Zeichen werden unverändert übernommen. Bytes, die nicht direkt dargestellt werden dürfen – darunter das Gleichheitszeichen selbst, Steuerzeichen und Bytes mit gesetztem achten Bit – werden als Gleichheitszeichen gefolgt von zwei hexadezimalen Ziffern geschrieben, beispielsweise <code>=C3=A4</code> für das „ä“ in <a href="../UTF-8/index.html">UTF-8</a>. Leer- und Tabulatorzeichen am Zeilenende müssen ebenfalls kodiert werden. Zeilen dürfen höchstens 76 Zeichen lang sein; längere Zeilen werden mit einem „weichen Zeilenumbruch“ aus einem Gleichheitszeichen am Zeilenende gefaltet.</p>
+<h2>Vergleich mit Base64</h2>
+<p>Während <a href="../Base64/index.html">Base64</a> den Datenumfang gleichmäßig um etwa ein Drittel vergrößert, bleibt Quoted-printable-Text für Menschen weitgehend lesbar und wächst nur bei vielen Sonderzeichen deutlich an. Daher wird Quoted-printable vor allem für überwiegend aus ASCII bestehende Nachrichtentexte mit wenigen Sonderzeichen eingesetzt, Base64 eher für Binärdaten.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../MIME/index.html">MIME</a></li>
+<li><a href="../Base64/index.html">Base64</a></li>
+<li><a href="../Zeichenkodierung/index.html">Zeichenkodierung</a></li>
+</ul>
+</div>
+</body>
+</html>

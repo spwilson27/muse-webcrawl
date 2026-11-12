@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Simple Mail Transfer Protocol – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+table { border-collapse: collapse; margin: 12px 0; }
+th, td { border: 1px solid #a2a9b1; padding: 4px 10px; text-align: left; }
+th { background: #eaecf0; }
+.ref { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Simple Mail Transfer Protocol</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Das <b>Simple Mail Transfer Protocol</b> (<b>SMTP</b>) ist ein textbasiertes Internetprotokoll zum Versenden und Weiterleiten von E-Mails zwischen Mailservern beziehungsweise vom Mailprogramm zum Server. Es wurde 1982 erstmals in RFC 821 festgelegt und später mehrfach überarbeitet; die heutige Grundlage bilden RFC 5321 sowie die Erweiterung ESMTP.</p>
+<h2>Ablauf</h2>
+<p>Eine SMTP-Sitzung beginnt mit einer Begrüßung (HELO/EHLO), gefolgt von Befehlen zur Angabe von Absender und Empfängern und zur Übertragung der Nachricht selbst:</p>
+<table>
+<tr><th>Befehl</th><th>Bedeutung</th></tr>
+<tr><td>EHLO / HELO</td><td>Anmeldung und Aushandlung der Erweiterungen</td></tr>
+<tr><td>MAIL FROM</td><td>Absenderadresse</td></tr>
+<tr><td>RCPT TO</td><td>Empfängeradresse (mehrfach möglich)</td></tr>
+<tr><td>DATA</td><td>Übertragung des Nachrichteninhalts</td></tr>
+<tr><td>QUIT</td><td>Verbindung beenden</td></tr>
+</table>
+<p>Standardmäßig nutzt SMTP den TCP-Port 25 für die Server-zu-Server-Übertragung sowie Port 587 für die Einlieferung durch Clients. Antworten des Servers sind dreistellige Statuscodes, etwa 250 für „OK“.</p>
+<h2>Erweiterungen und Sicherheit</h2>
+<p>Wichtige Erweiterungen sind STARTTLS zur Verschlüsselung, SMTP-AUTH zur Authentifizierung sowie Verfahren wie SPF, DKIM und DMARC, die den Missbrauch von Absenderadressen und Spam bekämpfen helfen. Für den Abruf der Nachrichten durch den Empfänger kommen dagegen Protokolle wie <a href="../Post_Office_Protocol/index.html">POP3</a> oder <a href="../Internet_Message_Access_Protocol/index.html">IMAP</a> zum Einsatz.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../E-Mail/index.html">E-Mail</a></li>
+<li><a href="../Post_Office_Protocol/index.html">Post Office Protocol</a></li>
+<li><a href="../Internet_Message_Access_Protocol/index.html">Internet Message Access Protocol</a></li>
+</ul>
+<p class="ref">Dieser Artikel beschreibt das SMTP-Protokoll und seine Bedeutung für den E-Mail-Verkehr.</p>
+</div>
+</body>
+</html>

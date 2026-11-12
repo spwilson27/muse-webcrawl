@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Random Early Detection – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #3366cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { border: 1px solid #c8ccd1; background: #f8f9fa; padding: 3px; text-align: center; }
+.thumb img { max-width: 100%; }
+.thumbcaption { font-size: 0.85em; padding: 0.3em; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Random Early Detection</h1>
+<p><b>Random Early Detection</b> (<b>RED</b>), auch <i>Random Early Discard</i> genannt, ist ein Verfahren des aktiven Warteschlangenmanagements (<i>Active Queue Management</i>) in Computernetzwerken. Es wurde 1993 von Sally Floyd und Van Jacobson vorgeschlagen und dient dazu, Überlastsituationen an Routern frühzeitig entgegenzuwirken, bevor die Warteschlange vollständig gefüllt ist.</p>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"><div class="thumbcaption">Die Verwerfungswahrscheinlichkeit steigt mit der mittleren Warteschlangenlänge</div></div>
+<h2>Funktionsweise</h2>
+<p>Der Router überwacht die durchschnittliche Länge seiner Ausgabewarteschlange mithilfe eines exponentiell gewichteten gleitenden Mittelwerts. Unterschreitet der Mittelwert eine untere Schwelle, werden alle Pakete weitergeleitet. Zwischen einer unteren und einer oberen Schwelle verwirft der Algorithmus ankommende Pakete mit einer Wahrscheinlichkeit, die mit der Warteschlangenlänge zunimmt. Oberhalb der oberen Schwelle wird jedes Paket verworfen. Das zufällige, frühzeitige Verwerfen signalisiert den sendenden TCP-Verbindungen eine drohende Überlastung, sodass diese ihre Senderate drosseln, bevor es zum massenhaften Paketverlust kommt.</p>
+<h2>Vorteile und Varianten</h2>
+<p>Gegenüber dem einfachen <i>Tail Drop</i>, bei dem erst die volle Warteschlange Pakete verwirft, vermeidet RED die globale Synchronisation vieler TCP-Flüsse und hält die Warteschlangen kurz, was die Verzögerung im Netz senkt. Bekannte Weiterentwicklungen sind Weighted RED (WRED), das unterschiedliche Prioritäten berücksichtigt, Adaptive RED sowie neuere Verfahren wie CoDel und PIE, die anstelle der Warteschlangenlänge die Wartezeit als Regelgröße verwenden.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Active_Queue_Management/index.html">Active Queue Management</a></li>
+<li><a href="../Transmission_Control_Protocol/index.html">Transmission Control Protocol</a></li>
+<li><a href="../%C3%9Cberlaststeuerung/index.html">Überlaststeuerung</a></li>
+</ul>
+</div>
+</body>
+</html>

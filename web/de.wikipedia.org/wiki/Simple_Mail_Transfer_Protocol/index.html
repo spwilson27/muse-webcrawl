@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Simple Mail Transfer Protocol – Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; padding: 0; background: #f6f6f6; color: #202122; }
+.container { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 4px; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px 14px; margin: 0 0 16px 20px; font-size: 13px; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { width: 100%; max-width: 480px; display: block; margin: 12px 0; border: 1px solid #ccc; }
+code { background: #f8f9fa; padding: 1px 4px; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Simple Mail Transfer Protocol</h1>
+<p>Das <b>Simple Mail Transfer Protocol</b> (<b>SMTP</b>) ist ein Protokoll der Internetprotokollfamilie zum Austausch von E-Mails in Computernetzwerken. Es wird vor allem zum Einspeisen und Weiterleiten von Nachrichten zwischen Mailservern (Mail Transfer Agents) verwendet, während der Abruf durch die Empfänger über andere Protokolle wie POP3 oder IMAP erfolgt. SMTP wurde 1982 im RFC 821 definiert und liegt heute in der Fassung des RFC 5321 vor.</p>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<table class="infobox">
+<tr><th>Abkürzung</th><td>SMTP</td></tr>
+<tr><th>Standard</th><td>RFC 5321 (zuvor RFC 821, RFC 2821)</td></tr>
+<tr><th>Port</th><td>25 (Server–Server), 587 (Submission), 465 (SMTPS)</td></tr>
+<tr><th>Transport</th><td>TCP</td></tr>
+<tr><th>Entwickelt</th><td>1982, Jon Postel u. a.</td></tr>
+</table>
+<h2>Funktionsweise</h2>
+<p>SMTP ist ein textbasiertes Protokoll, bei dem der Client Befehle wie <code>HELO</code>/<code>EHLO</code>, <code>MAIL FROM</code>, <code>RCPT TO</code> und <code>DATA</code> an den Server sendet, der mit dreistelligen Statuscodes antwortet (etwa 250 für „OK"). Die eigentliche Nachricht folgt dem Format des RFC 5322 und besteht aus Kopfzeilen (Header) und dem Nachrichtentext. Server leiten E-Mails in einem Speicher-und-Weiterleitungsverfahren (Store and Forward) weiter, bis sie den Zielserver erreichen, dessen Adresse über DNS-MX-Einträge ermittelt wird.</p>
+<h2>Erweiterungen und Sicherheit</h2>
+<p>Das Extended SMTP (ESMTP) ergänzt das Protokoll unter anderem um Authentifizierung (SMTP AUTH), Verschlüsselung über STARTTLS sowie die Übertragung binärer Anhänge mittels MIME. Da SMTP ursprünglich ohne Absenderprüfung konzipiert wurde, entstanden zum Schutz vor Spam und Fälschungen die Verfahren SPF, DKIM und DMARC, mit denen Empfangsserver die Berechtigung eines sendenden Servers überprüfen können. Für die Einlieferung durch Mailprogramme ist heute Port 587 mit Authentifizierung vorgesehen, während Port 25 dem Verkehr zwischen Servern vorbehalten bleibt.</p>
+<h2>Geschichte</h2>
+<p>Die Ursprünge von SMTP reichen in die Mailprogramme des ARPANET der 1970er Jahre zurück. Jon Postel formalisierte das Verfahren 1982. In den 1990er Jahren wurde SMTP zum weltweiten Standard des E-Mail-Versands; die anfangs offenen Relais, die beliebige Weiterleitung erlaubten, wurden im Zuge der Spam-Bekämpfung weitgehend abgeschaltet.</p>
+<h2>Siehe auch</h2>
+<p><a href="../E-Mail/index.html">E-Mail</a> · <a href="../Post_Office_Protocol/index.html">Post Office Protocol</a> · <a href="../Internet_Message_Access_Protocol/index.html">Internet Message Access Protocol</a> · <a href="../MIME/index.html">MIME</a></p>
+</div>
+</body>
+</html>

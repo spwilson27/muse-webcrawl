@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>SYN-Cookies – Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:800px;padding:0 1em;line-height:1.6;color:#202122}
+h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{border-bottom:1px solid #a2a9b1}
+img{border:1px solid #ccc;background:#f8f9fa;width:200px;height:120px}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>SYN-Cookies</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>SYN-Cookies</b> sind ein Verfahren der Netzwerktechnik, mit dem sich Server gegen SYN-Flooding-Angriffe (eine Form von Denial-of-Service-Angriffen) schützen können. Das Verfahren wurde 1996 von Daniel J. Bernstein beschrieben und unter anderem im Linux-Kernel implementiert.</p>
+<h2>Funktionsweise</h2>
+<p>Beim normalen TCP-Verbindungsaufbau speichert der Server nach Empfang eines SYN-Pakets Zustandsinformationen in einer Warteschlange, bis die Verbindung durch das ACK des Clients bestätigt wird. Bei einem SYN-Flood füllt sich diese Warteschlange mit halb offenen Verbindungen, sodass legitime Anfragen abgewiesen werden.</p>
+<p>Mit SYN-Cookies speichert der Server dagegen keinen Zustand: Die Verbindungsinformationen werden kryptographisch in der Sequenznummer des SYN/ACK-Pakets kodiert. Antwortet der Client korrekt, kann der Server den Verbindungszustand aus der zurückgesendeten Bestätigungsnummer rekonstruieren und die Verbindung regulär aufbauen.</p>
+<h2>Einschränkungen</h2>
+<p>Da in der Sequenznummer nur begrenzt Platz ist, stehen nicht alle TCP-Optionen vollständig zur Verfügung. In vielen Implementierungen werden SYN-Cookies daher nur aktiviert, wenn die Warteschlange für halb offene Verbindungen überzulaufen droht.</p>
+<p>Siehe auch: <a href="../Transmission_Control_Protocol/index.html">TCP</a>, <a href="../Denial_of_Service/index.html">Denial of Service</a></p>
+</body>
+</html>

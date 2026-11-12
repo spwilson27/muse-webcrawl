@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Reinforcement Learning from Human Feedback – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em 1em; margin: 0 0 1em 1em; font-size: 0.9em; }
+img { max-width: 300px; }
+</style>
+</head>
+<body>
+<h1>Reinforcement Learning from Human Feedback</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Reinforcement Learning from Human Feedback</b> (kurz <b>RLHF</b>, deutsch etwa „Verstärkungslernen aus menschlichem Feedback“) ist ein Verfahren des <a href="../Maschinelles_Lernen/index.html">maschinellen Lernens</a>, bei dem ein Modell mithilfe von Bewertungen durch Menschen an menschliche Präferenzen angepasst wird. Das Verfahren wurde insbesondere durch die Entwicklung großer Sprachmodelle wie <a href="../ChatGPT/index.html">ChatGPT</a> bekannt.</p>
+<h2>Verfahren</h2>
+<p>Beim RLHF werden zunächst von einem vortrainierten Modell mehrere Ausgaben zu einer Eingabe erzeugt. Menschliche Bewerter ordnen diese Ausgaben nach Qualität. Aus diesen Rangfolgen wird ein Belohnungsmodell (Reward Model) trainiert, das die menschliche Bewertung vorhersagen soll. Anschließend wird das ursprüngliche Modell mittels <a href="../Verstärkungslernen/index.html">Verstärkungslernen</a>, häufig mit dem Algorithmus Proximal Policy Optimization (PPO), so optimiert, dass es Ausgaben erzeugt, die vom Belohnungsmodell hoch bewertet werden. Eine KL-Divergenz-Strafe verhindert dabei, dass sich das Modell zu weit vom Ausgangsmodell entfernt.</p>
+<h2>Geschichte</h2>
+<p>Die Grundlagen des Verfahrens wurden 2017 in einer Arbeit von Forschern von OpenAI und DeepMind beschrieben, in der Agenten in Atari-Spielen und simulierten Roboterumgebungen aus menschlichem Feedback lernten. 2022 wandte OpenAI das Verfahren auf das Modell InstructGPT an; später wurde es zentraler Bestandteil des Trainings von ChatGPT und anderer großer Sprachmodelle.</p>
+<h2>Anwendungen und Kritik</h2>
+<p>RLHF wird eingesetzt, um Sprachmodelle hilfreicher, wahrheitsgetreuer und weniger schädlich zu machen. Kritisiert werden unter anderem die Abhängigkeit von den Urteilen der Bewerter, mögliche Verzerrungen sowie die Tendenz der Modelle, übermäßig gefällige Antworten zu geben (Sycophancy). Als Weiterentwicklungen gelten Verfahren wie Direct Preference Optimization (DPO) und Reinforcement Learning from AI Feedback (RLAIF).</p>
+</body>
+</html>

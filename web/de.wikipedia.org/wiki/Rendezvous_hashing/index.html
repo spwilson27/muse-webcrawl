@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Rendezvous-Hashing – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1em 2em 3em; }
+h1 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 300px; float: right; margin: 0 0 1em 1em; border: 1px solid #a2a9b1; background: #eaecf0; }
+.ref { font-size: 0.9em; color: #54595d; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Rendezvous-Hashing</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Rendezvous-Hashing</b>, auch bekannt als <i>Highest Random Weight</i> (HRW), ist ein Algorithmus aus der Informatik, der es Clients erlaubt, sich auf eine bestimmte Menge von Servern zu einigen, ohne dass eine zentrale Koordinationsinstanz erforderlich ist. Das Verfahren wurde in den 1990er-Jahren entwickelt, unter anderem von David Thaler und Chinya Ravishankar an der University of Michigan.</p>
+<h2>Funktionsweise</h2>
+<p>Beim Rendezvous-Hashing wird für jede Kombination aus einem Schlüssel (z.&nbsp;B. dem Namen eines Objekts) und einer Serverkennung ein Hashwert berechnet. Für einen gegebenen Schlüssel wählt der Client den Server mit dem höchsten Hashwert („höchstes zufälliges Gewicht“) aus. Alle Clients, die dieselbe Servermenge kennen, gelangen zum selben Ergebnis, da die Hashfunktion deterministisch ist.</p>
+<h2>Eigenschaften</h2>
+<p>Der größte Vorteil des Verfahrens besteht in der minimalen Störung (<i>minimal disruption</i>): Wenn ein Server hinzukommt oder ausfällt, müssen nur die Schlüssel neu vergeben werden, die diesem Server zugeordnet waren. Im Gegensatz zu einfachen Hashverfahren mit Modulo-Arithmetik, bei denen sich nahezu alle Zuordnungen ändern, bleibt die Zuordnung der übrigen Schlüssel stabil. Damit ähnelt das Rendezvous-Hashing dem <a href="../Consistent_Hashing/index.html">konsistenten Hashing</a>, ist jedoch konzeptionell einfacher: Es kommt ohne Hashring und virtuelle Knoten aus. Der Nachteil ist, dass die Auswahl für jeden Schlüssel über alle Server linear durchlaufen werden muss, was bei sehr großen Servermengen aufwendig werden kann.</p>
+<h2>Anwendungsgebiete</h2>
+<p>Rendezvous-Hashing wird unter anderem in verteilten Caches, Content-Delivery-Netzwerken, Lastverteilung und Peer-to-Peer-Systemen eingesetzt. Es eignet sich besonders, wenn die Servermenge relativ klein oder moderat ist und häufig wechselt.</p>
+<p class="ref">Siehe auch: Verteiltes System, Sharding, Load Balancing.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Profil-HMM – Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;line-height:1.6;margin:0 auto;max-width:800px;padding:20px;color:#222}
+h1{border-bottom:1px solid #a2a9b1;font-size:2em;margin-bottom:.2em}
+h2{border-bottom:1px solid #a2a9b1;font-size:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.toc{border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;display:inline-block}
+img{max-width:100%}
+</style>
+</head>
+<body>
+<h1>Profil-HMM</h1>
+<p>Ein <b>Profil-verstecktes Markow-Modell</b> (englisch <i>profile hidden Markov model</i>, kurz <i>profile HMM</i> oder <i>Profil-HMM</i>) ist ein statistisches Modell zur Beschreibung von Familien verwandter biologischer Sequenzen, insbesondere von <a href="../Protein/index.html">Proteinen</a> und <a href="../Nukleins%C3%A4ure/index.html">Nukleinsäuren</a>. Es wird in der <a href="../Bioinformatik/index.html">Bioinformatik</a> eingesetzt, um entfernte Verwandtschaften zwischen Sequenzen zu erkennen und <a href="../Multiples_Sequenzalignment/index.html">multiple Sequenzalignments</a> zu beschreiben.</p>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<div class="toc"><b>Inhaltsverzeichnis</b><ol><li>Aufbau</li><li>Erstellung</li><li>Anwendung</li><li>Software und Datenbanken</li></ol></div>
+<h2>Aufbau</h2>
+<p>Ein Profil-HMM baut auf dem Konzept des <a href="../Hidden_Markov_Model/index.html">versteckten Markow-Modells</a> auf. Für jede Position eines Alignments kennt es drei Zustandsarten: <i>Match</i>-Zustände, die ein Zeichen der betrachteten Sequenzfamilie emittieren, <i>Insert</i>-Zustände für Einschübe und <i>Delete</i>-Zustände für Lücken. Jeder Zustand besitzt Emissionswahrscheinlichkeiten für die möglichen Symbole (zum Beispiel die 20 Aminosäuren) und Übergangswahrscheinlichkeiten zwischen den Zuständen.</p>
+<h2>Erstellung</h2>
+<p>Profil-HMMs werden aus einem multiplen Alignment von Sequenzen einer Proteinfamilie abgeleitet. Häufig kommt dabei der <a href="../Baum-Welch-Algorithmus/index.html">Baum-Welch-Algorithmus</a> zur Parameterschätzung zum Einsatz, oder die Wahrscheinlichkeiten werden direkt aus den Häufigkeiten im Alignment bestimmt, wobei Pseudocounts zur Vermeidung von Nullwahrscheinlichkeiten verwendet werden.</p>
+<h2>Anwendung</h2>
+<p>Mit einem Profil-HMM kann der sogenannte <i>Score</i> einer neuen Sequenz berechnet werden, also wie gut sie zu der modellierten Familie passt. Der Abgleich erfolgt mit Dynamic-Programming-Algorithmen wie dem <a href="../Viterbi-Algorithmus/index.html">Viterbi-Algorithmus</a>. Profil-HMMs sind deutlich empfindlicher als einfache paarweise Vergleiche und erkennen auch stark divergierte Familienmitglieder.</p>
+<h2>Software und Datenbanken</h2>
+<p>Das bekannteste Softwarepaket ist <a href="../HMMER/index.html">HMMER</a> von Sean Eddy. Die Datenbank <a href="../Pfam/index.html">Pfam</a> stellt tausende von Profil-HMMs für Proteinfamilien bereit; auch <a href="../InterPro/index.html">InterPro</a> und die <a href="../CATH/index.html">CATH</a>-Datenbank nutzen Profil-HMMs zur Klassifizierung von Proteinen.</p>
+</body>
+</html>

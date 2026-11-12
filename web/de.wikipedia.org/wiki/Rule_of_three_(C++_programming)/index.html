@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Rule of Three (C++-Programmierung) – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 52em; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 1em auto; max-width: 100%; }
+code { background: #f8f9fa; padding: 0.1em 0.3em; }
+</style>
+</head>
+<body>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Rule of Three (C++-Programmierung)</h1>
+<p>Die <b>Rule of Three</b> (deutsch „Dreierregel“) ist eine Faustregel in der Programmiersprache C++ für die korrekte Verwaltung von Ressourcen durch Klassen. Sie besagt: Wenn eine Klasse eine der folgenden drei speziellen Elementfunktionen selbst definieren muss, dann müssen in der Regel alle drei definiert werden:</p>
+<ul>
+<li>Destruktor,</li>
+<li>Kopierkonstruktor,</li>
+<li>Kopier-Zuweisungsoperator.</li>
+</ul>
+<h2>Hintergrund</h2>
+<p>Der Grund liegt darin, dass der Compiler diese Funktionen automatisch erzeugt. Verwaltet eine Klasse eine Ressource – etwa dynamisch allokierten Speicher oder ein Dateihandle –, genügen die vom Compiler erzeugten flachen Kopien nicht: Zwei Objekte würden auf dieselbe Ressource zeigen, was zu doppelter Freigabe und Programmabstürzen führen kann. Wer eine der drei Funktionen anpassen muss, tut dies typischerweise wegen einer solchen Ressourcenverwaltung und muss dann auch die beiden anderen anpassen.</p>
+<h2>Erweiterungen</h2>
+<p>Mit C++11 kamen Move-Konstruktor und Move-Zuweisungsoperator hinzu, woraus die <i>Rule of Five</i> wurde. Als moderner Gegenentwurf gilt die <i>Rule of Zero</i>: Klassen sollen Ressourcen ausschließlich über dafür vorgesehene Hüllenklassen (etwa <code>std::unique_ptr</code> oder Container) verwalten, sodass gar keine der speziellen Funktionen selbst geschrieben werden muss.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Rule_of_three_(computer_programming)/index.html">Rule of Three (Programmierung)</a></li>
+<li>RAII</li>
+<li>C++</li>
+</ul>
+</body>
+</html>

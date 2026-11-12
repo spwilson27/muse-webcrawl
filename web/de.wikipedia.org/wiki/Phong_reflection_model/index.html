@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Phong-Beleuchtungsmodell – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0 0 1em 1em; border: 1px solid #c8ccd1; padding: 4px; background: #f8f9fa; font-size: 0.85em; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Phong-Beleuchtungsmodell</h1>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"><br>Die drei Komponenten des Phong-Modells: ambient, diffus, spekular</div>
+<p>Das <b>Phong-Beleuchtungsmodell</b> (englisch <i>Phong reflection model</i>) ist ein empirisches Modell zur Berechnung der lokalen Beleuchtung von Oberflächen in der 3D-Computergrafik. Es wurde 1975 von Bui Tuong Phong in seiner Dissertation an der University of Utah vorgestellt und gehört bis heute zu den am weitesten verbreiteten Beleuchtungsmodellen.</p>
+<h2>Das Modell</h2>
+<p>Die an einem Oberflächenpunkt reflektierte Lichtintensität setzt sich aus drei Anteilen zusammen:</p>
+<ul>
+<li><b>Ambienter Anteil</b>: eine konstante Grundhelligkeit, die indirektes Umgebungslicht pauschal annähert.</li>
+<li><b>Diffuser Anteil</b>: matte Streuung nach dem Lambert’schen Gesetz, proportional zum Kosinus des Winkels zwischen Oberflächennormale und Lichtrichtung.</li>
+<li><b>Spekularer Anteil</b>: spiegelnder Glanzlichtanteil, berechnet aus dem Winkel zwischen der ideal reflektierten Lichtrichtung und der Blickrichtung; ein Exponent steuert die Größe und Schärfe des Glanzlichts (Oberflächenrauheit).</li>
+</ul>
+<p>Für mehrere Lichtquellen werden die Beiträge aller Lichter addiert. Das Modell wird entweder pro Eckpunkt (Gouraud-Shading) oder pro Pixel ausgewertet; die pixelweise Auswertung ist mit dem <a href="../Phong_shading/index.html">Phong-Shading</a> verbunden.</p>
+<h2>Bewertung</h2>
+<p>Das Phong-Modell ist physikalisch nicht exakt (es verletzt unter anderem die Energieerhaltung) und kennt weder Verdeckung noch Interreflexion, ist aber einfach, schnell und liefert für viele Materialien – insbesondere Kunststoffe und glänzende Oberflächen – überzeugende Resultate. Eine verbreitete Variante ist das Blinn-Phong-Modell, das statt des Reflexionsvektors den Halbvektor zwischen Licht- und Blickrichtung verwendet und dadurch günstiger zu berechnen ist.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Phong_shading/index.html">Phong-Shading</a></li>
+<li>Gouraud-Shading</li>
+<li>Blinn-Phong-Modell</li>
+</ul>
+</div>
+</body>
+</html>

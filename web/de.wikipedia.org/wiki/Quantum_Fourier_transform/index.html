@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Quanten-Fouriertransformation – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 300px; display: block; margin: 1em 0; }
+</style>
+</head>
+<body>
+<h1>Quanten-Fouriertransformation</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>Quanten-Fouriertransformation</b> (QFT) ist die quantenmechanische Entsprechung der diskreten <a href="../Fouriertransformation/index.html">Fouriertransformation</a>. Sie ist eine unitäre Transformation auf einem Register aus Qubits und eine Schlüsselkomponente vieler <a href="../Quantenalgorithmus/index.html">Quantenalgorithmen</a>, darunter der <a href="../Shor-Algorithmus/index.html">Shor-Algorithmus</a> zur Faktorisierung und die Quanten-Phasenschätzung.</p>
+<h2>Definition</h2>
+<p>Die QFT bildet einen Basiszustand |j⟩ auf eine gleichmäßige Superposition aller Basiszustände mit phasengewichteten Amplituden ab:</p>
+<p>|j⟩ ↦ (1/√N) Σ<sub>k</sub> e<sup>2πijk/N</sup> |k⟩, mit N = 2<sup>n</sup> für n Qubits.</p>
+<p>Im Gegensatz zur klassischen schnellen Fouriertransformation (FFT), die O(N log N) Operationen benötigt, lässt sich die QFT mit nur O(n²) elementaren Quantengattern implementieren – aus Hadamard-Gattern und kontrollierten Phasendrehungen, gefolgt von einer Umkehrung der Qubit-Reihenfolge (Swap-Gatter). Allerdings können die Amplituden des Ergebnisses nicht direkt ausgelesen werden; nutzbar ist die QFT nur als Baustein, bei dem die gesuchte Information anschließend durch Interferenz in Messwahrscheinlichkeiten überführt wird.</p>
+<h2>Schaltkreis</h2>
+<p>Der Standard-Schaltkreis wendet auf jedes Qubit ein <a href="../Hadamard-Gatter/index.html">Hadamard-Gatter</a> an, gefolgt von kontrollierten R<sub>k</sub>-Phasengattern mit Winkeln π/2<sup>k−1</sup>, die durch die jeweils niederwertigeren Qubits gesteuert werden. Lässt man die kleinsten Drehwinkel weg, erhält man die approximative QFT mit geringerem Gatteraufwand.</p>
+<h2>Anwendungen</h2>
+<ul>
+<li>Phasenschätzung (<i>quantum phase estimation</i>)</li>
+<li>Shor-Algorithmus (Periodenfindung)</li>
+<li>Algorithmus für das versteckte Untergruppenproblem</li>
+<li>Quanten-Zählalgorithmus</li>
+</ul>
+</body>
+</html>

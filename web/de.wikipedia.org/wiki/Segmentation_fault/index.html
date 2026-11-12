@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Speicherzugriffsfehler – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 800px; padding: 0 1em; line-height: 1.6; color: #202122; }
+h1 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Speicherzugriffsfehler</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>Speicherzugriffsfehler</b> (englisch <i>segmentation fault</i> oder <i>segfault</i>, unter Unix gemeldet als Signal <b>SIGSEGV</b>) ist ein Fehler, der auftritt, wenn ein Computerprogramm auf einen Speicherbereich zugreift, der ihm nicht zugeordnet ist, oder versucht, schreibgeschützten Speicher zu verändern. Das Betriebssystem beendet das Programm daraufhin in der Regel („Absturz") und kann ein Speicherabbild (Core Dump) zur Fehleranalyse schreiben.</p>
+<h2>Ursachen</h2>
+<p>Typische Ursachen in Programmiersprachen mit manueller Speicherverwaltung wie <a href="../C_(Programmiersprache)">C</a> und C++ sind:</p>
+<ul>
+<li>Dereferenzieren eines Nullzeigers oder eines nicht initialisierten Zeigers</li>
+<li>Zugriffe über Arraygrenzen hinaus (Pufferüberlauf)</li>
+<li>Verwendung bereits freigegebenen Speichers („use after free") oder von Zeigern auf bereits zerstörte Objekte („dangling pointer")</li>
+<li>Endlose Rekursion, die den Stapelspeicher erschöpft (stack overflow)</li>
+<li>Schreibversuche auf nur lesbare Speicherbereiche, etwa Zeichenkettenliterale</li>
+</ul>
+<h2>Technischer Hintergrund</h2>
+<p>Moderne Betriebssysteme isolieren Prozesse durch virtuellen Speicher und eine Memory Management Unit (MMU), die jede Adresse prüft. Verletzungen der Zugriffsrechte lösen einen Seitenfehler (page fault) aus, den das Betriebssystem nicht beheben kann und deshalb an den Prozess als SIGSEGV weitergibt. Auf Systemen ohne Speicherschutz führt ein fehlerhafter Zugriff dagegen oft unentdeckt zu undefiniertem Verhalten oder zum Absturz des Gesamtsystems.</p>
+<h2>Fehlersuche</h2>
+<p>Zur Diagnose dienen <a href="../Debugger">Debugger</a> wie GDB, Auswertungen von Core Dumps sowie Laufzeitwerkzeuge wie Valgrind oder AddressSanitizer. Sprachen mit automatischer Speicherverwaltung und Laufzeitprüfungen (etwa Java, Python oder Rust in sicherem Code) verhindern die meisten dieser Fehler konstruktiv.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Pufferüberlauf">Pufferüberlauf</a></li>
+<li><a href="../Nullzeiger">Nullzeiger</a></li>
+<li><a href="../Virtueller_Speicher">Virtueller Speicher</a></li>
+<li><a href="../Core_Dump">Core Dump</a></li>
+</ul>
+</body>
+</html>

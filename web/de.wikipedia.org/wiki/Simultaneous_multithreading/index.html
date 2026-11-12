@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Simultaneous Multithreading – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 1em 2em 3em; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 300px; float: right; margin: 0 0 1em 1em; border: 1px solid #a2a9b1; background: #eaecf0; }
+p { line-height: 1.6; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Simultaneous Multithreading</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Simultaneous Multithreading</b> (<b>SMT</b>) ist eine Technik der Prozessorarchitektur, bei der ein physischer Prozessorkern die Befehle mehrerer Threads gleichzeitig bearbeitet und seine Ausführungseinheiten dadurch besser auslastet. Die bekannteste Implementierung ist Intels Hyper-Threading; auch AMD-Prozessoren der Zen-Architektur und IBMs POWER-Prozessoren nutzen SMT.</p>
+<h2>Funktionsweise</h2>
+<p>Moderne superskalare Prozessoren können pro Takt mehrere Befehle ausführen, doch ein einzelner Thread nutzt die Einheiten wegen Abhängigkeiten und Speicherwartezeiten oft nicht aus. SMT hält die Architekturzustände (Register, Programmzähler) mehrerer Threads gleichzeitig vor und mischt deren Befehle in der Pipeline, sodass Leerlaufzyklen eines Threads durch Befehle eines anderen gefüllt werden. Gegenüber dem Betriebssystem erscheint jeder SMT-Kontext als eigener logischer Prozessor.</p>
+<h2>Einordnung</h2>
+<p>SMT unterscheidet sich vom zeitlichen Multithreading (Interleaved/Coarse-grained Multithreading), bei dem Threads nur abwechselnd, etwa bei Cache-Fehlzugriffen, aktiv sind. SMT erreicht typischerweise Leistungsgewinne im Bereich von etwa 10 bis 30 Prozent bei geringem zusätzlichem Hardwareaufwand.</p>
+<h2>Sicherheit</h2>
+<p>Weil sich Threads auf einem Kern Ressourcen teilen, entstanden Seitenkanalangriffe wie TLBleed oder die MDS-Angriffe (RIDL, Fallout, ZombieLoad), die Daten des anderen Threads ausspähen können. In sicherheitskritischen Umgebungen wird SMT daher teilweise deaktiviert.</p>
+</div>
+</body>
+</html>

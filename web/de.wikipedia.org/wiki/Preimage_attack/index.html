@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Preimage-Angriff – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 40px 60px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+ul { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { text-align: center; margin: 16px 0; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Preimage-Angriff</h1>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"></div>
+<p>Ein <b>Preimage-Angriff</b> (Urbildangriff) ist in der Kryptologie ein Angriff auf eine kryptographische Hashfunktion, bei dem zu einem gegebenen Hashwert eine Nachricht gesucht wird, die genau auf diesen Wert abgebildet wird. Die Resistenz gegen solche Angriffe – die sogenannte Urbildresistenz (preimage resistance) – ist eine der grundlegenden Sicherheitsanforderungen an Hashfunktionen.</p>
+<h2>Begriff und Einordnung</h2>
+<p>Beim Preimage-Angriff im engeren Sinn ist ein Hashwert h gegeben, und es soll irgendeine Nachricht m mit H(m) = h gefunden werden. Beim Second-Preimage-Angriff ist zusätzlich eine konkrete Nachricht m₁ bekannt, und es soll eine davon verschiedene Nachricht m₂ mit demselben Hashwert gefunden werden. Davon zu unterscheiden ist der Kollisionsangriff, bei dem zwei beliebige Nachrichten mit gleichem Hashwert gesucht werden; dank des Geburtstagsparadoxons sind Kollisionen grundsätzlich mit deutlich weniger Versuchen zu finden als Urbilder, weshalb Hashfunktionen so bemessen werden, dass beides praktisch ausgeschlossen ist.</p>
+<h2>Aufwand und Gegenmaßnahmen</h2>
+<p>Gegen eine ideale Hashfunktion mit n Bit Ausgabelänge ist kein besseres Verfahren als das schlichte Ausprobieren (Brute Force) bekannt, das im Mittel etwa 2ⁿ Versuche erfordert; Quantencomputer könnten diesen Aufwand mit dem Grover-Algorithmus theoretisch auf etwa 2^(n/2) senken. Als Faustregel der Sicherheitsbewertung gilt daher: Hashfunktionen mit mindestens 256 Bit Ausgabelänge (etwa SHA-256 oder SHA-3) bieten auch langfristig sehr hohe Urbildresistenz. Ältere Verfahren wie MD5 und SHA-1 gelten wegen praktischer Kollisionsangriffe als gebrochen und sollten nicht mehr verwendet werden, auch wenn echte Preimage-Angriffe auf sie weiterhin rechnerisch aufwendig bleiben.</p>
+<h2>Bedeutung</h2>
+<p>Urbildresistenz schützt unter anderem Passwort-Hashes, digitale Signaturen und Integritätsprüfungen: Wer eine Hashfunktion umkehren könnte, könnte gültige Nachrichten oder Zugangsdaten zu bekannten Prüfwerten fälschen. In der Sicherheitsforschung dienen Preimage-Angriffe daher als Maßstab dafür, ob ein Hashverfahren weiterhin als vertrauenswürdig eingestuft werden kann.</p>
+</div>
+</body>
+</html>

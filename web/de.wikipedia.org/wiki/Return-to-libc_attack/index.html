@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Return-to-libc-Angriff – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 900px; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; margin-top: 1.5em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Return-to-libc-Angriff</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>Return-to-libc-Angriff</b> ist eine Angriffstechnik auf Computerprogramme, bei der ein Pufferüberlauf ausgenutzt wird, um die Rücksprungadresse auf dem Stack so zu verändern, dass statt in eingeschleusten Code in eine Funktion der Standard-C-Bibliothek (libc) gesprungen wird – typischerweise <code>system()</code>. Die Technik umgeht Schutzmechanismen, die den Stack als nicht ausführbar markieren (NX-Bit, DEP).</p>
+<h2>Funktionsweise</h2>
+<p>Der Angreifer überschreibt die gespeicherte Rücksprungadresse mit der Adresse einer libc-Funktion und legt deren Argumente – etwa einen Zeiger auf die Zeichenkette <code>/bin/sh</code> – auf dem Stack bereit. Kehrt die verwundbare Funktion zurück, wird stattdessen die Bibliotheksfunktion mit den präparierten Argumenten ausgeführt und startet beispielsweise eine Shell mit den Rechten des angegriffenen Prozesses.</p>
+<h2>Geschichte und Weiterentwicklung</h2>
+<p>Die Technik wurde Ende der 1990er Jahre beschrieben, als nicht-ausführbare Stacks als Gegenmaßnahme gegen klassische Shellcode-Angriffe eingeführt wurden. Eine Verallgemeinerung ist das <i>Return-Oriented Programming</i> (ROP), bei dem kurze vorhandene Codefragmente („Gadgets") zu einer Kette verbunden werden.</p>
+<h2>Gegenmaßnahmen</h2>
+<ul>
+<li>Address Space Layout Randomization (ASLR) erschwert das Auffinden der libc-Adressen.</li>
+<li>Stack-Canaries erkennen das Überschreiben der Rücksprungadresse.</li>
+<li>Sichere Programmierpraktiken und Bounds-Checking verhindern den Pufferüberlauf selbst.</li>
+</ul>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Pufferüberlauf/index.html">Pufferüberlauf</a></li>
+<li><a href="../Return-Oriented_Programming/index.html">Return-Oriented Programming</a></li>
+</ul>
+</body>
+</html>

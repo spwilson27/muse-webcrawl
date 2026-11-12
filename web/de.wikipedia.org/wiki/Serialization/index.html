@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Serialisierung – Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine","Georgia",serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:1.5em 2em;border:1px solid #a2a9b1}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:0.2em;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #c8ccd1;padding-bottom:0.15em;font-weight:normal;margin-top:1.2em}
+p{line-height:1.6;font-family:sans-serif;font-size:0.95em}
+ul{font-family:sans-serif;font-size:0.95em;line-height:1.6}
+a{color:#0645ad;text-decoration:none}
+.thumb{border:1px solid #c8ccd1;background:#f8f9fa;padding:4px;text-align:center;font-size:0.8em;font-family:sans-serif}
+code{font-family:monospace;background:#f0f0f0;padding:0 3px}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Serialisierung</h1>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"><br>Objekte werden zu einem Byte-Strom</div>
+<p>Als <b>Serialisierung</b> bezeichnet man in der Informatik den Vorgang, ein Objekt oder eine Datenstruktur in eine sequenzielle Form – meist einen Byte- oder Zeichenstrom – umzuwandeln, sodass es gespeichert oder über ein Netzwerk übertragen werden kann. Der umgekehrte Vorgang, die Wiederherstellung des Objekts aus der seriellen Form, heißt <b>Deserialisierung</b>.</p>
+<h2>Zweck</h2>
+<p>Serialisierung ist nötig, weil komplexe Datenstrukturen im Arbeitsspeicher aus Objekten mit Referenzen, Zeigern und plattformspezifischen Darstellungen bestehen, die so nicht direkt auf einem Datenträger abgelegt oder an einen anderen Prozess gesendet werden können. Die serielle Form ist dagegen unabhängig von Speicheradressen und eignet sich für Persistenz und Kommunikation zwischen Systemen.</p>
+<h2>Formate</h2>
+<ul>
+<li><b>Binärformate</b> – kompakt und schnell, aber ohne Zusatzwissen nicht lesbar (z. B. das Java-eigene Format, Protocol Buffers)</li>
+<li><b>Textformate</b> – menschenlesbar und sprachunabhängig (z. B. <a href="../JSON">JSON</a>, <a href="../XML">XML</a>, YAML)</li>
+<li><b>Sprachspezifische Mechanismen</b> – z. B. <code>pickle</code> in Python oder <code>Serializable</code> in Java</li>
+</ul>
+<h2>Probleme</h2>
+<p>Herausforderungen der Serialisierung sind unter anderem die Versionierung (ältere Programme müssen neuere Formate lesen können), die Behandlung von Objektreferenzen und Zyklen sowie Sicherheitsrisiken: Das Deserialisieren nicht vertrauenswürdiger Daten kann zu schwerwiegenden Angriffen führen, wenn dabei automatisch Objekterzeugung oder Codeausführung ausgelöst wird.</p>
+<h2>Siehe auch</h2>
+<p><a href="../Serializer">Serializer</a>, <a href="../Marshalling">Marshalling</a></p>
+</div>
+</body>
+</html>

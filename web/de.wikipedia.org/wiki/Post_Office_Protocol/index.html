@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Post Office Protocol – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 24px 32px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p, li { font-size: 15px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0 0 12px 16px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; font-size: 12px; text-align: center; }
+table { border-collapse: collapse; font-size: 14px; }
+td, th { border: 1px solid #a2a9b1; padding: 4px 8px; }
+code { background: #f8f9fa; padding: 0 3px; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Post Office Protocol</h1>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"><br>E-Mail-Abruf per POP3</div>
+<p>Das <b>Post Office Protocol</b> (<b>POP</b>) ist ein Internetprotokoll auf der Anwendungsschicht, mit dem E-Mails von einem Mailserver abgerufen werden können. Die heute gebräuchliche Version 3 (<b>POP3</b>) ist im RFC 1939 spezifiziert und nutzt standardmäßig den TCP-Port 110, mit TLS-Verschlüsselung den Port 995 (POP3S).</p>
+<h2>Funktionsweise</h2>
+<p>Der Client baut eine Verbindung zum Server auf, authentifiziert sich (u. a. mit <code>USER</code>/<code>PASS</code> oder dem sichereren <code>APOP</code>-Verfahren) und kann dann die Nachrichten im Postfach auflisten (<code>LIST</code>), herunterladen (<code>RETR</code>) und zum Löschen markieren (<code>DELE</code>). Die klassischen Befehle sind kurze ASCII-Kommandos:</p>
+<table>
+<tr><th>Befehl</th><th>Bedeutung</th></tr>
+<tr><td><code>STAT</code></td><td>Anzahl und Gesamtgröße der Nachrichten</td></tr>
+<tr><td><code>LIST</code></td><td>Nachrichten mit Größen auflisten</td></tr>
+<tr><td><code>RETR n</code></td><td>Nachricht n abrufen</td></tr>
+<tr><td><code>DELE n</code></td><td>Nachricht n zum Löschen markieren</td></tr>
+<tr><td><code>QUIT</code></td><td>Sitzung beenden, Löschungen ausführen</td></tr>
+</table>
+<p>Traditionell werden Nachrichten nach dem Abruf vom Server gelöscht; POP3 verwaltet keine Ordnerstrukturen auf dem Server.</p>
+<h2>Vergleich mit IMAP</h2>
+<p>Im Gegensatz zu <a href="../Internet_Message_Access_Protocol/index.html">IMAP</a>, das Nachrichten serverseitig verwaltet und den Zugriff von mehreren Geräten synchron hält, ist POP3 auf den Abruf auf ein lokales Gerät ausgelegt. Wegen der Verbreitung von Webmail und mehreren Endgeräten hat IMAP das ältere Protokoll weitgehend verdrängt, doch POP3 wird von vielen Anbietern weiterhin unterstützt.</p>
+<p>Siehe auch: <a href="../Simple_Mail_Transfer_Protocol/index.html">SMTP</a> · <a href="../Internet_Message_Access_Protocol/index.html">IMAP</a> · <a href="../Email/index.html">E-Mail</a></p>
+</div>
+</body>
+</html>

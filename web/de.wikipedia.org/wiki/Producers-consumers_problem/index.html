@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Erzeuger-Verbraucher-Problem – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 1.5em 2em; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 320px; float: right; margin: 0 0 1em 1em; border: 1px solid #c8ccd1; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Erzeuger-Verbraucher-Problem</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Das <b>Erzeuger-Verbraucher-Problem</b> (englisch <i>producers–consumers problem</i>) beschreibt ein klassisches Synchronisations Problem in parallelen und verteilten Systemen. Darin gibt es einen oder mehrere Erzeugerprozesse, die Datenobjekte erzeugen, und einen oder mehrere Verbraucherprozesse, die diese Datenobjekte einlesen und verarbeiten, häufig über einen begrenzten Puffer.</p>
+<h2>Problemstellung</h2>
+<p>Erzeuger und Verbraucher laufen gleichzeitig und teilen sich den Puffer. Es muss gewährleistet sein, dass ein Verbraucher keine ungültigen oder unvollständig erzeugten Daten liest, dass kein Erzeuger Daten überschreibt, die noch nicht verbraucht wurden, und dass bei vollem oder leerem Puffer die beteiligten Prozesse warten, statt falsche Daten zu verarbeiten.</p>
+<h2>Lösungsansätze</h2>
+<p>Klassischerweise werden Semaphore, Monitore oder Bedingungsvariablen verwendet. In verteilten Systemen und in der Praxis der Systemarchitektur werden häufig Nachrichtenwarteschlangen (<i>message queues</i>) eingesetzt, die Erzeuger und Verbraucher entkoppeln und Zwischenspeicherung sowie Lastverteilung übernehmen.</p>
+<h2>Beispiele</h2>
+<p>Typische Beispiele sind die Übergabe von Druckaufträgen von Anwendungsprogrammen an einen Druckspeicher (Spooler), das Streaming von Daten, die Auftragsbearbeitung in Rechnernetzen und Warteschlangen vor Servern.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Producer%E2%80%93consumer_problem">Erzeuger-Verbraucher-Problem</a></li>
+<li><a href="../Message_Queue">Message Queue</a></li>
+<li><a href="../Nebenl%C3%A4ufigkeit">Nebenläufigkeit</a></li>
+</ul>
+</div>
+</body>
+</html>

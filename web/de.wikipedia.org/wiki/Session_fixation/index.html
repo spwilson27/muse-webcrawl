@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Session Fixation – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 52em; line-height: 1.6; color: #202122; padding: 0 1em; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.2em; }
+img { max-width: 100%; }
+a { color: #0645ad; text-decoration: none; }
+</style>
+</head>
+<body>
+<h1>Session Fixation</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Session Fixation</b> (deutsch etwa „Sitzungsfestlegung“) bezeichnet eine Angriffsmethode auf webbasierte Anwendungen, bei der ein Angreifer die Sitzungskennung (Session-ID) eines Benutzers vor dessen Anmeldung festlegt, um die Sitzung später zu übernehmen.</p>
+<h2>Prinzip</h2>
+<p>Viele Webanwendungen identifizieren angemeldete Benutzer über eine Session-ID, die etwa in einem Cookie oder als URL-Parameter übertragen wird. Erlaubt die Anwendung, dass eine vom Client vorgegebene, bereits vor der Anmeldung vergebene Session-ID auch nach der Authentifizierung weiterverwendet wird, kann ein Angreifer diese Schwachstelle ausnutzen: Er beschafft sich zunächst eine gültige Session-ID, übermittelt sie dem Opfer (beispielsweise über einen präparierten Link), und nachdem sich das Opfer mit dieser Kennung angemeldet hat, kann der Angreifer mit derselben Session-ID auf das Benutzerkonto zugreifen.</p>
+<h2>Gegenmaßnahmen</h2>
+<p>Als wirksame Gegenmaßnahme gilt, die Session-ID unmittelbar nach einer erfolgreichen Authentifizierung serverseitig neu zu generieren und die alte Kennung zu verwerfen. Zusätzlich sollten Anwendungen keine Session-IDs aus unsicheren Quellen (etwa URL-Parametern von Drittanbietern) ungeprüft übernehmen.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Session_hijacking/index.html">Session Hijacking</a></li>
+<li><a href="../Cross-Site-Request-Forgery/index.html">Cross-Site-Request-Forgery</a></li>
+</ul>
+</body>
+</html>

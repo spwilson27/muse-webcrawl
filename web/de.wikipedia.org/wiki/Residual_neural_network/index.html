@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Residual Neural Network – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 52em; line-height: 1.6; color: #202122; padding: 0 1em; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Residual Neural Network</h1>
+<p>Ein <b>Residual Neural Network</b> (<b>ResNet</b>) ist eine Architektur für künstliche neuronale Netze, die 2015 von Kaiming He und Kollegen bei Microsoft Research vorgestellt wurde. Kennzeichnend sind sogenannte Abkürzungsverbindungen (<i>skip connections</i> oder <i>shortcut connections</i>), die eine oder mehrere Schichten überbrücken und deren Eingabe zur Ausgabe eines Schichtenblocks addieren. ResNet gewann 2015 den ImageNet-Wettbewerb (ILSVRC) und gilt als Meilenstein des Deep Learning, weil die Architektur erstmals das erfolgreiche Training von Netzen mit weit über einhundert Schichten ermöglichte.</p>
+<h2>Motivation: das Degradationsproblem</h2>
+<p>Bei einfach übereinandergestapelten Schichten („plain networks“) stellte man fest, dass tiefere Netze ab einer gewissen Tiefe höhere Trainingsfehler aufweisen als flachere – ein Phänomen, das nicht auf Überanpassung zurückgeht, sondern darauf, dass es für Optimierungsverfahren schwer ist, identische Abbildungen durch nichtlineare Schichtenfolgen zu lernen. Residuale Blöcke lösen das Problem, indem die Schichten statt einer vollständigen Abbildung H(x) nur die Abweichung F(x) = H(x) − x von der Identität lernen; die Ausgabe lautet y = F(x) + x. Ist die Identität bereits optimal, können die Gewichte gegen null gedrückt werden.</p>
+<h2>Aufbau</h2>
+<p>Ein Residual-Block besteht typischerweise aus zwei oder drei Faltungsschichten mit Batch-Normalisierung und ReLU-Aktivierung. In tieferen Varianten (ResNet-50, -101, -152) kommen Bottleneck-Blöcke mit 1×1-Faltungen zum Einsatz, die die Kanalzahl zunächst reduzieren und damit die Rechenkosten senken. Passen Ein- und Ausgabedimensionen nicht zueinander, wird die Abkürzung durch eine Projektion ergänzt. Das ursprüngliche ILSVRC-Netz hatte 152 Schichten und eine Fehlerrate von 3,57 Prozent im ImageNet-Test.</p>
+<h2>Wirkung und Nachfolger</h2>
+<p>Residuale Verbindungen erleichtern den Gradientenfluss bei der Rückwärtspropagation und wirken dem Verschwinden des Gradienten entgegen. Das Konzept beeinflusste zahlreiche spätere Architekturen, darunter DenseNet, und findet sich in abgewandelter Form auch in Transformer-Netzen, bei denen jede Teil­schicht von einer Residualverbindung umgeben ist. In überwachten Benchmarks der Bilderkennung sind ResNets bis heute eine verbreitete Basisarchitektur.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Deep_Learning">Deep Learning</a></li>
+<li><a href="../Convolutional_Neural_Network">Convolutional Neural Network</a></li>
+<li><a href="../Backpropagation">Backpropagation</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Proximale Gradientenmethode – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 50em; line-height: 1.6; color: #202122; }
+h1 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>Proximale Gradientenmethode</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>proximale Gradientenmethode</b> ist ein Verfahren der konvexen Optimierung zur Minimierung von Funktionen, die sich als Summe eines glatten (differenzierbaren) Anteils und eines nichtglatten, aber strukturierten Anteils darstellen lassen. Sie verallgemeinert das klassische Gradientenverfahren.</p>
+<h2>Verfahren</h2>
+<p>Für ein Problem der Form „minimiere f(x) + g(x)", wobei f konvex und differenzierbar mit Lipschitz-stetigem Gradienten und g konvex (möglicherweise nicht differenzierbar) ist, lautet die Iteration:</p>
+<p>x<sub>k+1</sub> = prox<sub>tg</sub>(x<sub>k</sub> − t ∇f(x<sub>k</sub>))</p>
+<p>Dabei ist der Proximaloperator von g definiert als prox<sub>tg</sub>(v) = argmin<sub>x</sub> ( g(x) + (1/2t) ‖x − v‖² ). Jede Iteration besteht also aus einem Gradientenschritt für f und der anschließenden Anwendung des Proximaloperators von g.</p>
+<h2>Anwendungen</h2>
+<p>Ein klassisches Beispiel ist der ISTA-Algorithmus (Iterative Shrinkage-Thresholding) für LASSO-Probleme, bei denen g die ℓ<sub>1</sub>-Norm ist; der Proximaloperator entspricht dann dem Soft-Thresholding. Die beschleunigte Variante FISTA erreicht die Konvergenzrate O(1/k²). Proximale Verfahren sind in der Signalverarbeitung (Compressed Sensing), der Bildverarbeitung und dem maschinellen Lernen weit verbreitet.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Konvexe_Optimierung/index.html">Konvexe Optimierung</a></li>
+<li><a href="../Gradientenverfahren/index.html">Gradientenverfahren</a></li>
+<li><a href="../Regularisierung/index.html">Regularisierung</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Erzeuger-Verbraucher-Problem – Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine",Georgia,serif;background:#f8f9fa;color:#202122;margin:0}
+header{background:#fff;border-bottom:1px solid #a7d7f9;padding:10px 20px;font-family:sans-serif}
+main{background:#fff;max-width:960px;margin:0 auto;padding:20px 30px;border:1px solid #a7d7f9}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:5px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1em}
+p{line-height:1.6}
+a{color:#0645ad;text-decoration:none}
+.thumb{text-align:center;margin:1em 0}
+footer{max-width:960px;margin:10px auto;font-family:sans-serif;font-size:0.85em;color:#54595d}
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> – Die freie Enzyklopädie</header>
+<main>
+<h1>Erzeuger-Verbraucher-Problem</h1>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"></div>
+<p>Das <b>Erzeuger-Verbraucher-Problem</b> (englisch <i>producer-consumer problem</i>) ist ein klassisches Problem der Prozesssynchronisation in der Informatik. Es beschreibt eine Situation, in der eine Gruppe von Prozessen oder Threads Daten erzeugt, die von einer anderen Gruppe von Prozessen konsumiert werden, wobei beide Seiten über einen gemeinsamen, meist beschränkten Puffer kommunizieren.</p>
+<h2>Beschreibung</h2>
+<p>Ein oder mehrere Erzeuger erzeugen Datenelemente und legen sie in einem Puffer ab. Ein oder mehrere Verbraucher entnehmen Elemente aus dem Puffer und verarbeiten sie weiter. Dabei sind zwei Randbedingungen zu beachten: Ein Erzeuger darf kein Element ablegen, wenn der Puffer voll ist (beim beschränkten Puffer), und ein Verbraucher darf kein Element entnehmen, wenn der Puffer leer ist.</p>
+<h2>Lösung</h2>
+<p>Das Problem wird üblicherweise mit Semaphoren oder mit Monitoren und Bedingungsvariablen gelöst. Dabei stellen ein Zählsemaphor für freie Pufferplätze und ein Zählsemaphor für belegte Pufferplätze die korrekte Blockierung sicher; ein binäres Semaphor (Mutex) schützt den wechselseitigen Ausschluss beim Zugriff auf den Puffer selbst. Eine fehlerhafte Implementierung kann zu <a href="../Race_condition/index.html">Verklemmungen (Deadlocks)</a> oder <a href="../Race_condition/index.html">Wettlaufsituationen</a> führen.</p>
+<h2>Bedeutung</h2>
+<p>Das Erzeuger-Verbraucher-Problem ist ein Standardbeispiel in Betriebssystem- und Nebenläufigkeitslehrbüchern und bildet die Grundlage zahlreicher Warteschlangen- und Nachrichtenvermittlungssysteme, etwa in Pipeline-Architekturen und bei der Verarbeitung von Datenströmen.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Semaphore_(programming)/index.html">Semaphor</a></li>
+<li><a href="../Monitor_(synchronization)/index.html">Monitor</a></li>
+<li><a href="../Deadlock/index.html">Deadlock</a></li>
+</ul>
+</main>
+<footer>Dieser Artikel basiert auf dem Wissen der freien Enzyklopädie Wikipedia.</footer>
+</body>
+</html>

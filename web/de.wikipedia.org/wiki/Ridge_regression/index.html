@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Ridge-Regression – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 900px; padding: 0 1em; color: #202122; line-height: 1.6; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Ridge-Regression</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>Ridge-Regression</b> (auch <b>Tichonow-Regularisierung</b>) ist ein regularisiertes Verfahren der linearen Regression, das 1970 von Arthur E. Hoerl und Robert W. Kennard in die Statistik eingeführt wurde. Sie dient dazu, Schätzprobleme mit Multikollinearität oder mit mehr Regressoren als Beobachtungen stabil zu lösen.</p>
+<h2>Verfahren</h2>
+<p>Während bei der gewöhnlichen Kleinste-Quadrate-Schätzung (OLS) nur die Summe der quadrierten Residuen minimiert wird, fügt die Ridge-Regression einen Strafterm hinzu, der die Summe der quadrierten Regressionskoeffizienten mit einem Faktor λ (lambda) gewichtet:</p>
+<p style="text-align:center;"><i>min Σ (yᵢ − xᵢᵀβ)² + λ Σ βⱼ²</i></p>
+<p>Das Hinzufügen von λ auf der Diagonalen der Matrix (im Englischen <i>ridge</i> = „Grat/Rücken“ auf der Matrixdiagonale) macht das Gleichungssystem auch dann lösbar, wenn die Designmatrix nicht vollen Rang hat. Die geschlossene Lösung lautet β̂ = (XᵀX + λI)⁻¹Xᵀy.</p>
+<h2>Eigenschaften</h2>
+<p>Mit wachsendem λ schrumpfen die Koeffizienten gegen null, ohne (außer im Grenzfall) exakt null zu werden. Dadurch wird die Varianz der Schätzung auf Kosten einer gewissen Verzerrung (Bias) verringert; ein geeignetes λ wird meist per Kreuzvalidierung bestimmt. Die Ridge-Regression ist damit ein klassisches Beispiel des Bias-Varianz-Dilemmas. Verwandt ist die Lasso-Regression, die einen L1-Strafterm verwendet und Koeffizienten exakt auf null setzen kann; das Elastic Net kombiniert beide Strafterme.</p>
+<h2>Anwendungen</h2>
+<p>Das Verfahren wird in der Ökonometrie, der Chemometrie, der Genetik (etwa bei genomweiten Assoziationsstudien) und im maschinellen Lernen eingesetzt, immer dann, wenn viele korrelierte Eingangsgrößen vorliegen.</p>
+<p><i>Siehe auch:</i> <a href="../Lineare_Regression/index.html">Lineare Regression</a>, <a href="../Regularisierung/index.html">Regularisierung</a>, <a href="../Lasso-Regression/index.html">Lasso-Regression</a></p>
+</body>
+</html>

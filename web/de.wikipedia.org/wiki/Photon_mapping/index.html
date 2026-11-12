@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Photon Mapping – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 28px; }
+p, li { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 12px 0; max-width: 100%; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Photon Mapping</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Photon Mapping</b> ist ein zweistufiges Verfahren der globalen Beleuchtung in der Computergrafik, das 1996 von Henrik Wann Jensen vorgestellt wurde. Es dient zur realistischen Simulation des Lichttransports in einer 3D-Szene und eignet sich besonders für die Darstellung von Kaustiken, also Lichtkonzentrationen, die durch Brechung oder Reflexion an gekrümmten Oberflächen entstehen.</p>
+
+<h2>Verfahren</h2>
+<p>Im ersten Durchlauf (<i>Photon Tracing</i>) werden von den Lichtquellen der Szene zahlreiche „Photonen“ in die Szene geschossen und ihre Wege durch Reflexion, Brechung und Absorption verfolgt. Treffen sie auf eine diffuse Oberfläche, wird ihre Position, Einfallsrichtung und Energie in einer räumlichen Datenstruktur – der Photon Map, meist einem kd-Baum – gespeichert. Getrennt angelegt werden häufig eine globale Photon Map für indirekte Beleuchtung und eine Kaustik-Map für gebündeltes Licht.</p>
+<p>Im zweiten Durchlauf wird das Bild mit einem konventionellen Raytracer berechnet. An jedem sichtbaren Oberflächenpunkt wird die einfallende Strahldichte aus den nächstgelegenen gespeicherten Photonen geschätzt (<i>density estimation</i>). So kombiniert Photon Mapping die Stärken des vorwärts gerichteten Lichttransports mit denen des kamerabasierten Raytracings.</p>
+
+<h2>Eigenschaften</h2>
+<p>Das Verfahren ist konsistent, aber voreingenommen (biased): Bei unendlich vielen Photonen konvergiert das Ergebnis gegen die exakte Lösung der Rendergleichung, bei endlicher Photonenzahl entsteht ein leicht weichgezeichneter, dafür rauschärmerer Eindruck als bei reinem Monte-Carlo-Path-Tracing. Nachteilig sind Speicherbedarf und die schwierige Darstellung spekulärer, vom Betrachter ausgehender Pfade.</p>
+
+<h2>Anwendung</h2>
+<p>Photon Mapping wurde und wird in zahlreichen Renderern eingesetzt, unter anderem in Mental Ray und V-Ray, und ist ein Standardverfahren für Architekturvisualisierung, Produktdesign und Filmanimation, wo Kaustiken durch Glas, Wasser oder Schmuck überzeugend dargestellt werden sollen.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Photon/index.html">Photon</a></li>
+<li><a href="../Photonics/index.html">Photonik</a></li>
+</ul>
+</div>
+</body>
+</html>

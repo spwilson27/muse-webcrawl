@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Return Value Optimization – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 900px; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; margin-top: 1.5em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+code { background: #f8f9fa; padding: 0.1em 0.3em; }
+</style>
+</head>
+<body>
+<h1>Return Value Optimization</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Return Value Optimization</b> (kurz <b>RVO</b>) ist eine Compileroptimierung in der Programmiersprache C++, bei der der Rückgabewert einer Funktion direkt im Speicher des Aufrufers konstruiert wird. Dadurch entfallen eine Kopie und eine Zerstörung eines temporären Objekts. Die Variante für benannte lokale Variablen heißt <i>Named Return Value Optimization</i> (NRVO).</p>
+<h2>Prinzip</h2>
+<p>Ohne RVO müsste eine Funktion, die ein Objekt per Wert zurückgibt, ein temporäres Objekt erzeugen, aus dem der Aufrufer anschließend sein Objekt kopiert oder bewegt. Mit RVO übergibt der Aufrufer der Funktion einen versteckten Zeiger auf den Zielspeicher, in dem das Ergebnis unmittelbar per Konstruktor aufgebaut wird. Semantisch ist die Optimierung auch dann zulässig, wenn Kopier- oder Verschiebekonstruktoren Seiteneffekte hätten; der Standard erlaubt ihr Weglassen ausdrücklich (<i>Copy Elision</i>).</p>
+<h2>Standardisierung</h2>
+<p>Seit C++17 ist die Elision in bestimmten Fällen – bei der Rückgabe eines nicht benannten temporären Objekts – garantiert vorgeschrieben, sodass der Kopier- bzw. Verschiebekonstruktor nicht einmal zugänglich sein muss. NRVO bleibt hingegen eine optionale Optimierung, die alle gängigen Compiler (GCC, Clang, MSVC) in der Praxis durchführen.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../C%2B%2B/index.html">C++</a></li>
+<li><a href="../Compileroptimierung/index.html">Compileroptimierung</a></li>
+</ul>
+</body>
+</html>

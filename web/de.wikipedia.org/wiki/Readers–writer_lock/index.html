@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Leser-Schreiber-Problem – Wikipedia</title>
+<style>
+body { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; color: #202122; background: #fff; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px 30px; }
+h1 { font-family: Georgia, "Times New Roman", serif; font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; font-weight: normal; }
+h2 { font-family: Georgia, "Times New Roman", serif; font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+h3 { font-size: 17px; margin-top: 20px; }
+p { line-height: 1.6; font-size: 15px; }
+ul, ol { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; border: 1px solid #eaecf0; padding: 1px 4px; font-family: monospace; font-size: 13px; }
+.hero { display: block; margin: 10px auto; max-width: 100%; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Leser-Schreiber-Problem</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Das <b>Leser-Schreiber-Problem</b> (englisch <i>readers–writer problem</i>) ist ein klassisches Synchronisationsproblem der Informatik. Eine <b>Leser-Schreiber-Sperre</b> (<i>readers–writer lock</i>, RW-Lock) ist ein Synchronisationsmechanismus, der den gemeinsamen Zugriff mehrerer Threads oder Prozesse auf eine Ressource so steuert, dass beliebig viele Leser gleichzeitig lesen dürfen, während ein Schreiber die Ressource ausschließlich belegt.</p>
+<h2>Regeln</h2>
+<ul>
+<li>Mehrere Leser dürfen gleichzeitig auf die Daten zugreifen, solange kein Schreiber aktiv ist.</li>
+<li>Ein Schreiber benötigt exklusiven Zugriff: Während er schreibt, darf weder ein weiterer Schreiber noch ein Leser zugreifen, da sonst inkonsistente Zustände gelesen würden.</li>
+</ul>
+<p>Gegenüber einem einfachen Mutex kann die Leser-Schreiber-Sperre bei leseintensiven Arbeitslasten eine deutlich höhere Parallelität ermöglichen.</p>
+<h2>Fairnessvarianten</h2>
+<ul>
+<li><b>Leserpräferenz:</b> Leser werden bevorzugt; bei ständig nachrückenden Lesern kann ein Schreiber unbegrenzt lange warten („verhungern").</li>
+<li><b>Schreiberpräferenz:</b> Ein wartender Schreiber blockiert neue Leser, sodass wartende Leser verzögert werden.</li>
+<li><b>Faire Varianten:</b> Zugriffe werden in Ankunftsreihenfolge (FIFO) gewährt.</li>
+</ul>
+<h2>Implementierungen</h2>
+<p>Leser-Schreiber-Sperren sind in vielen Laufzeitumgebungen vorhanden, beispielsweise als <code>pthread_rwlock</code> in POSIX, als <code>std::shared_mutex</code> in C++17, als <code>ReentrantReadWriteLock</code> in Java oder als <code>RwLock</code> in Rust. Anwendungsbeispiele sind Caches, Konfigurationsdaten und Indexstrukturen von Datenbanken, bei denen Lesezugriffe die Schreibzugriffe deutlich überwiegen.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Mutex/index.html">Mutex</a></li>
+<li><a href="../Semaphore_(Informatik)/index.html">Semaphore</a></li>
+<li><a href="../Race_Condition/index.html">Race Condition</a></li>
+<li><a href="../Erzeuger-Verbraucher-Problem/index.html">Erzeuger-Verbraucher-Problem</a></li>
+</ul>
+</div>
+</body>
+</html>

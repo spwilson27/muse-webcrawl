@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Erzeuger-Verbraucher-Problem – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 1.5em 2em; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 320px; float: right; margin: 0 0 1em 1em; border: 1px solid #c8ccd1; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Erzeuger-Verbraucher-Problem</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Das <b>Erzeuger-Verbraucher-Problem</b> (englisch <i>producer–consumer problem</i>, auch <i>bounded-buffer problem</i>) ist ein klassisches Problem der Nebenläufigkeit in der Informatik. Mehrere Erzeuger-Threads erzeugen Daten und legen sie in einem gemeinsamen, begrenzten Puffer ab; mehrere Verbraucher-Threads entnehmen die Daten und verarbeiten sie. Die Zugriffe müssen synchronisiert werden, damit der Puffer nicht überläuft oder leer gelesen wird.</p>
+<h2>Problembeschreibung</h2>
+<p>Der Puffer hat eine feste Kapazität. Ein Erzeuger darf nur ein Element ablegen, wenn der Puffer nicht voll ist; ein Verbraucher darf nur ein Element entnehmen, wenn der Puffer nicht leer ist. Gleichzeitig darf jeweils nur ein Thread auf den Puffer zugreifen. Ohne geeignete Synchronisation kann es zu Datenverlust, inkonsistentem Zustand oder einem Deadlock kommen.</p>
+<h2>Lösung</h2>
+<p>Die klassische Lösung verwendet einen Mutex (einen binären Semaphor) zum Schutz des Puffers und zwei zählende Semaphore: <i>empty</i> für die Zahl der freien Plätze und <i>full</i> für die Zahl der belegten Plätze. Ein Erzeuger wartet auf <i>empty</i>, sperrt den Puffer, legt ein Element ab, gibt den Puffer frei und signalisiert <i>full</i>. Ein Verbraucher wartet auf <i>full</i> und verfährt umgekehrt. Moderne Sprachen bieten fertige abstrakte Datentypen wie blockierende Warteschlangen oder Channels.</p>
+<h2>Anwendungen</h2>
+<p>Das Problem tritt unter anderem bei Betriebssystemen, Webservern (Anfragen warteschlangen), Eingabe- und Ausgabepipelines, Multimediaverarbeitung und in der Robotik auf.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Nebenl%C3%A4ufigkeit">Nebenläufigkeit</a></li>
+<li><a href="../Semaphore">Semaphore</a></li>
+<li><a href="../Deadlock">Deadlock</a></li>
+</ul>
+</div>
+</body>
+</html>

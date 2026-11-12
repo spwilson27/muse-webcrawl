@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Quaternionen und räumliche Drehung – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 50em; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.math { font-style: italic; }
+</style>
+</head>
+<body>
+<h1>Quaternionen und räumliche Drehung</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Einheitsquaternionen eignen sich besonders gut zur Beschreibung von <b>Drehungen im dreidimensionalen Raum</b>. Sie bilden eine zweifache Überlagerung der Drehgruppe SO(3) und werden in Computergrafik, Robotik, Luft- und Raumfahrt sowie in der Physik eingesetzt, weil sie kompakt, numerisch stabil und frei vom Problem des Gimbal Lock sind.</p>
+<h2>Darstellung einer Drehung</h2>
+<p>Eine Drehung um eine Einheitsachse u = (u<sub>x</sub>, u<sub>y</sub>, u<sub>z</sub>) mit dem Winkel θ wird durch die Einheitsquaternion</p>
+<p class="math">q = cos(θ/2) + sin(θ/2)(u<sub>x</sub> i + u<sub>y</sub> j + u<sub>z</sub> k)</p>
+<p>beschrieben. Ein Punkt beziehungsweise Vektor v, aufgefasst als rein imaginäre Quaternion, wird gedreht, indem man die Konjugation <span class="math">v' = q v q⁻¹</span> bildet. Das Ergebnis ist wieder eine rein imaginäre Quaternion, die den gedrehten Vektor darstellt. Die Hintereinanderausführung zweier Drehungen entspricht dabei – in der richtigen Reihenfolge – dem Produkt der zugehörigen Quaternionen.</p>
+<h2>Eigenschaften</h2>
+<p>Die Quaternionen q und −q beschreiben dieselbe Drehung; die Einheitsquaternionen bilden die Gruppe SU(2) auf der dreidimensionalen Einheitssphäre S³ und überlagern die Drehgruppe SO(3) zweifach. Gegenüber Drehmatrizen benötigen Quaternionen nur vier statt neun Zahlen, lassen sich leicht normieren und erlauben eine effiziente Verkettung. Gegenüber Eulerwinkeln vermeiden sie Singularitäten wie den Gimbal Lock.</p>
+<h2>Interpolation</h2>
+<p>Für Animationen ist die sphärische lineare Interpolation (<i>slerp</i>) zwischen zwei Einheitsquaternionen gebräuchlich: Sie beschreibt den kürzesten Weg auf der Einheitssphäre mit konstanter Winkelgeschwindigkeit und erzeugt so weiche Drehbewegungen zwischen zwei Orientierungen.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Quaternion/index.html">Quaternion</a></li>
+<li><a href="../Drehgruppe/index.html">Drehgruppe</a></li>
+<li><a href="../Eulerwinkel/index.html">Eulerwinkel</a></li>
+<li><a href="../Gimbal_Lock/index.html">Gimbal Lock</a></li>
+</ul>
+</body>
+</html>

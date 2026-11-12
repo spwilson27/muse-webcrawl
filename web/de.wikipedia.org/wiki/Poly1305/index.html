@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Poly1305 – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #fff; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; padding: 20px 30px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; margin-top: 28px; }
+p, li { line-height: 1.6; font-size: 15px; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 12px 16px; width: 260px; font-size: 13px; }
+.infobox th { text-align: left; padding-right: 8px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Poly1305</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<table class="infobox">
+<tr><th>Entwickler</th><td>Daniel J. Bernstein</td></tr>
+<tr><th>Veröffentlichung</th><td>2005</td></tr>
+<tr><th>Taglänge</th><td>128 Bit</td></tr>
+<tr><th>Schlüssellänge</th><td>256 Bit (Einmalschlüssel)</td></tr>
+</table>
+<p><b>Poly1305</b> ist ein kryptographischer Message Authentication Code (MAC), der 2005 von Daniel J. Bernstein entworfen und vorgestellt wurde. Er gehört zu den Wegman-Carter-Authentikatoren und erreicht hohe Geschwindigkeiten auf modernen Prozessoren bei gleichzeitig beweisbarer Sicherheit unter der Annahme, dass der verwendete Blockchiffren- bzw. Pseudozufallsmechanismus sicher ist.</p>
+<h2>Funktionsweise</h2>
+<p>Poly1305 interpretiert die zu authentifizierende Nachricht als Folge von Blöcken, die als Koeffizienten eines Polynoms ausgewertet werden. Die Auswertung erfolgt modulo der Primzahl 2<sup>130</sup> − 5 – daher der Name. Der Schlüssel besteht aus einem 128-Bit-Wert <i>r</i>, der bestimmten Einschränkungen genügt, und einem 128-Bit-Einmalwert („pad“), der das Polynomergebnis maskiert und so den 128 Bit langen Authentifizierungstag bildet. Da der Pad nur einmal verwendet werden darf, wird Poly1305 in der Praxis mit einer Chiffre kombiniert, die pro Nachricht einen frischen Pad erzeugt.</p>
+<h2>Verwendung</h2>
+<p>Bekannteste Anwendung ist die AEAD-Konstruktion <b>ChaCha20-Poly1305</b>, bei der der Stromchiffre ChaCha20 den Pad liefert. Sie ist in TLS 1.3 und TLS 1.2 standardisiert (RFC 8439) und wird unter anderem von Google, OpenSSH (in der Variante chacha20-poly1305@openssh.com basierend auf einem früheren Entwurf) und WireGuard eingesetzt. Auch im NaCl-/libsodium-Kontext kommt Poly1305 als Einmal-Authentikator (crypto_onetimeauth) zum Einsatz.</p>
+<h2>Sicherheit</h2>
+<p>Die Fälschungswahrscheinlichkeit für einen Angreifer ist sehr gering (größenordnungsmäßig 8·L/2<sup>106</sup> bei Nachrichtenlänge L), sofern jeder Pad nur ein einziges Mal verwendet wird. Die Wiederverwendung eines Pads für zwei verschiedene Nachrichten würde die Sicherheit dagegen zerstören.</p>
+</div>
+</body>
+</html>

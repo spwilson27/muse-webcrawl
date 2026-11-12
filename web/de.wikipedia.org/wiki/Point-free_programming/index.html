@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Punktfreie Programmierung – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; max-width: 960px; margin: 0 auto; padding: 1em 2em; color: #202122; line-height: 1.6; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero { display: block; margin: 1em auto; max-width: 400px; border: 1px solid #c8ccd1; padding: 4px; }
+code { background: #f8f9fa; padding: 0.1em 0.3em; font-family: monospace; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 1em; overflow-x: auto; }
+</style>
+</head>
+<body>
+<h1>Punktfreie Programmierung</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Punktfreie Programmierung</b> (englisch <i>point-free style</i>, auch <i>tacit programming</i>) ist ein Programmierstil, bei dem Funktionen definiert werden, ohne die Argumente („Punkte“), auf die sie angewendet werden, explizit zu benennen. Stattdessen werden Funktionen durch Komposition und andere Kombinatoren aus einfacheren Funktionen aufgebaut. Der Stil ist vor allem in funktionalen Programmiersprachen wie Haskell verbreitet, geht aber auf die Kombinatorische Logik und John Backus’ Programmiersprache FP zurück.</p>
+<h2>Beispiel</h2>
+<p>Die Summe einer Liste lässt sich in Haskell auf zwei Weisen definieren:</p>
+<pre>sum xs = foldr (+) 0 xs   -- mit benanntem Argument
+sum    = foldr (+) 0      -- punktfrei</pre>
+<p>Die zweite Variante benennt das Argument <code>xs</code> nicht; die Funktion entsteht allein durch partielle Anwendung von <code>foldr</code>. Ein weiteres klassisches Beispiel ist die Definition des Mittelwerts als Komposition: <code>mean = sum / length</code>-artige Ausdrücke in Sprachen mit entsprechender Operatorunterstützung.</p>
+<h2>Vor- und Nachteile</h2>
+<p>Befürworter sehen im punktfreien Stil eine knappe, algebraisch gut analysierbare Schreibweise, die Gleichungsbeweise über Programme erleichtert. Kritiker wenden ein, dass übermäßig punktfreier Code schwer lesbar werden könne („write-only code“), weil die Datenflüsse nicht mehr an benannten Variablen ablesbar sind. In der Praxis wird der Stil daher meist dosiert eingesetzt.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Funktionale_Programmierung">Funktionale Programmierung</a></li>
+<li><a href="../Haskell_(Programmiersprache)">Haskell</a></li>
+<li><a href="../Funktionskomposition">Funktionskomposition</a></li>
+</ul>
+</body>
+</html>

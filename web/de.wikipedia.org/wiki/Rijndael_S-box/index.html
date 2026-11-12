@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Rijndael S-box – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; line-height: 1.6; margin: 0 auto; max-width: 960px; padding: 16px; color: #202122; background: #fff; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Rijndael S-box</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>Rijndael-S-Box</b> ist die Substitutionsbox (S-Box) der Blockchiffre Rijndael beziehungsweise des Advanced Encryption Standard (AES). Sie realisiert im Schritt <i>SubBytes</i> die einzige nichtlineare Operation des Verfahrens und ersetzt jedes Byte des Zustands unabhängig durch ein anderes Byte. Dieselbe S-Box wird auch in der Schlüsselexpansion verwendet.</p>
+<h2>Konstruktion</h2>
+<p>Die S-Box ist nicht zufällig gewählt, sondern algebraisch definiert, damit keine Hintertüren vermutet werden können und die Eigenschaften analysierbar sind. Sie besteht aus zwei Schritten:</p>
+<ol>
+<li><b>Multiplikative Inversion:</b> Jedes Byte wird als Element des endlichen Körpers GF(2<sup>8</sup>) interpretiert und durch sein multiplikatives Inverses ersetzt. Das irreduzible Polynom lautet dabei x<sup>8</sup> + x<sup>4</sup> + x<sup>3</sup> + x + 1 (0x11B). Die Null wird auf sich selbst abgebildet.</li>
+<li><b>Affine Transformation:</b> Auf das Ergebnis wird eine über GF(2) affine Abbildung angewandt: Das Byte wird mit einer festen 8×8-Matrix multipliziert und der Konstantenvektor 0x63 addiert.</li>
+</ol>
+<h2>Beispiele</h2>
+<p>Die S-Box bildet etwa den Wert 0x00 auf 0x63, 0x01 auf 0x7C, 0x53 auf 0xED und 0xFF auf 0x16 ab. In Implementierungen liegt sie meist als 256 Byte große Tabelle vor; alternative Implementierungen berechnen sie zur Vermeidung von Cache-Timing-Angriffen zur Laufzeit oder über zusammengesetzte Körper (composite fields) in Hardware.</p>
+<h2>Inverse S-Box</h2>
+<p>Für die Entschlüsselung existiert die inverse S-Box, die zuerst die inverse affine Transformation und danach die multiplikative Inversion anwendet. Sie ist fest definiert und wird im Schritt <i>InvSubBytes</i> benutzt.</p>
+<h2>Eigenschaften</h2>
+<p>Die gewählte Konstruktion liefert eine hohe Nichtlinearität und gute differentielle Eigenschaften: Maximal vier Eingabedifferenzen führen auf dieselbe Ausgabedifferenz, was die Sicherheit gegen differentielle und lineare Kryptoanalyse wesentlich mitbestimmt.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Rijndael/index.html">Rijndael</a></li>
+<li><a href="../S-Box/index.html">S-Box</a></li>
+<li><a href="../Rijndael_key_schedule/index.html">Rijndael key schedule</a></li>
+</ul>
+</body>
+</html>

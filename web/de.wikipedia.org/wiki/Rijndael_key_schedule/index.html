@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Rijndael key schedule – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; line-height: 1.6; margin: 0 auto; max-width: 960px; padding: 16px; color: #202122; background: #fff; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Rijndael key schedule</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Der <b>Rijndael key schedule</b> ( deutsch etwa „Schlüsselplan") ist die Schlüsselexpansion der Blockchiffre Rijndael (AES). Er erzeugt aus dem Hauptschlüssel für jede Verschlüsselungsrunde einen eigenen Rundenschlüssel. Aus einem 128-Bit-Schlüssel entstehen so elf 128-Bit-Rundenschlüssel für zehn Runden plus die Anfangsrunde, bei 192 Bit zwölf und bei 256 Bit vierzehn Runden plus Anfangsschlüssel.</p>
+<h2>Ablauf</h2>
+<p>Der Schlüssel wird in Wörter zu je vier Byte zerlegt. Weitere Wörter werden rekursiv erzeugt: Das neue Wort ergibt sich aus dem Wort vier (bzw. Nk) Positionen zuvor, XOR-verknüpft mit einer Transformation des unmittelbar vorhergehenden Wortes. Kern der Transformation ist die Funktion <i>g</i>, die nur für jedes Nk-te Wort angewendet wird:</p>
+<ul>
+<li><b>RotWord:</b> zyklische Rotation der vier Bytes um eine Position,</li>
+<li><b>SubWord:</b> Anwendung der Rijndael-S-Box auf jedes Byte,</li>
+<li><b>Rcon:</b> XOR mit einer rundenabhängigen Konstanten, einer Potenz von x im Körper GF(2<sup>8</sup>) (1, 2, 4, 8, 16, …), die die Symmetrie zwischen den Runden bricht.</li>
+</ul>
+<p>Bei 256-Bit-Schlüsseln wird zusätzlich in der Mitte jedes Blocks die S-Box auf ein Wort angewandt (SubWord ohne Rotation).</p>
+<h2>Entschlüsselung</h2>
+<p>Die Rundenschlüssel werden bei der Entschlüsselung in umgekehrter Reihenfolge verwendet. Da die Expansion wortweise umkehrbar ist, können Rundenschlüssel bei Bedarf auch rückwärts aus späteren Wörtern rekonstruiert werden, was speichersparende Implementierungen erlaubt.</p>
+<h2>Sicherheit</h2>
+<p>Die Schlüsselexpansion soll verhindern, dass aus Teilschlüsseln Rückschlüsse auf andere Runden gezogen werden (keine schwachen Schlüsselklassen wie bei DES). Related-Key-Angriffe gegen AES-192 und AES-256 nutzen theoretische Eigenschaften des Schedules aus, sind jedoch praktisch nicht relevant, solange die Schlüssel zufällig gewählt und Protokolle richtig entworfen sind.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Rijndael/index.html">Rijndael</a></li>
+<li><a href="../Schlüsselexpansion/index.html">Schlüsselexpansion</a></li>
+</ul>
+</body>
+</html>

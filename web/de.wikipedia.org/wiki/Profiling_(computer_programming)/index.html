@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Profiling (Informatik) – Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;line-height:1.6;margin:0 auto;max-width:800px;padding:20px;color:#222}
+h1{border-bottom:1px solid #a2a9b1;font-size:2em;margin-bottom:.2em}
+h2{border-bottom:1px solid #a2a9b1;font-size:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.toc{border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;display:inline-block}
+img{max-width:100%}
+</style>
+</head>
+<body>
+<h1>Profiling (Informatik)</h1>
+<p>Als <b>Profiling</b> bezeichnet man in der <a href="../Softwareentwicklung/index.html">Softwareentwicklung</a> die dynamische Analyse eines Programms während seiner Ausführung, um sein Leistungsverhalten (englisch <i>performance</i>) zu messen. Ein Werkzeug, das solche Messungen durchführt, wird <b>Profiler</b> genannt. Ziel ist es, Engpässe (<i>Bottlenecks</i>) zu finden, also Programmstellen, die besonders viel Zeit oder Speicher verbrauchen.</p>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<div class="toc"><b>Inhaltsverzeichnis</b><ol><li>Ziele</li><li>Verfahren</li><li>Ergebnisse</li><li>Bekannte Profiler</li></ol></div>
+<h2>Ziele</h2>
+<p>Profiling dient der <a href="../Optimierung_(Informatik)/index.html">Optimierung</a> von Programmen: Es zeigt, in welchen Funktionen die meiste Ausführungszeit verbracht wird, wie oft Funktionen aufgerufen werden und wie viel Speicher (etwa auf dem <a href="../Heap/index.html">Heap</a>) belegt wird. Damit verhindert es, dass Entwickler an Stellen optimieren, die für die Gesamtleistung kaum eine Rolle spielen.</p>
+<h2>Verfahren</h2>
+<p>Man unterscheidet zwei Hauptverfahren: Beim <i>instrumentierenden Profiling</i> wird der Programmcode (zur Übersetzungs- oder Ladezeit) um Messanweisungen erweitert, die Aufrufzahlen und Zeiten exakt erfassen. Beim <i>Sampling</i> (statistisches Profiling) unterbricht das Werkzeug das laufende Programm in regelmäßigen Abständen und zeichnet den aktuellen <a href="../Call_Stack/index.html">Aufrufstapel</a> auf; daraus wird statistisch geschätzt, wo die Zeit verbraucht wird. Sampling verursacht weniger Laufzeitverluste, liefert aber nur Näherungswerte.</p>
+<h2>Ergebnisse</h2>
+<p>Die Ergebnisse werden häufig als <i>Call Graph</i> (Aufrufgraph), als Liste der zeitintensivsten Funktionen („Hot Spots“) oder als <i>Flame Graph</i> dargestellt, bei dem die Breite der Balken den Zeitanteil anzeigt. Auf dieser Grundlage entscheiden Entwickler über Optimierungen wie schnellere Algorithmen, Caching oder Parallelisierung.</p>
+<h2>Bekannte Profiler</h2>
+<p>Zu den bekannten Profilern zählen <i>gprof</i> und <i>Valgrind</i> (mit Callgrind) für C/C++, <i>perf</i> unter <a href="../Linux/index.html">Linux</a>, die Profiling-Werkzeuge der <a href="../Java_Virtual_Machine/index.html">Java Virtual Machine</a> (etwa VisualVM und Java Flight Recorder), <i>cProfile</i> für <a href="../Python_(Programmiersprache)/index.html">Python</a> sowie die Werkzeuge in integrierten Entwicklungsumgebungen wie <a href="../Visual_Studio/index.html">Visual Studio</a>.</p>
+</body>
+</html>

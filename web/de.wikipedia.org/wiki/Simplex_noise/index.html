@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Simplex Noise – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 1em 2em 3em; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 300px; float: right; margin: 0 0 1em 1em; border: 1px solid #a2a9b1; background: #eaecf0; }
+p { line-height: 1.6; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Simplex Noise</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Simplex Noise</b> ist ein Verfahren zur Erzeugung einer Rauschfunktion (Gradientenrauschen), das 2001 von Ken Perlin entwickelt wurde. Es gilt als Nachfolger des klassischen <a href="../Perlin-Noise/index.html">Perlin Noise</a> und wurde von Perlin als Verbesserung vorgestellt, um mehrere Nachteile des älteren Verfahrens zu beheben.</p>
+<h2>Geschichte</h2>
+<p>Ken Perlin entwickelte Simplex Noise im Jahr 2001, nachdem er bereits 1983 das ursprüngliche Perlin Noise entworfen hatte, für das er 1997 einen Oscar für technische Verdienste (Academy Award for Technical Achievement) erhielt. Das Simplex-Verfahren sollte vor allem in höheren Dimensionen weniger Rechenaufwand verursachen und richtungsabhängige Artefakte reduzieren.</p>
+<h2>Verfahren</h2>
+<p>Anders als das klassische Perlin Noise, das auf einem hyperkubischen Gitter basiert, unterteilt Simplex Noise den Raum in Simplexe – in zwei Dimensionen Dreiecke, in drei Dimensionen Tetraeder. An den Ecken der Simplexe werden Pseudozufalls-Gradienten definiert; der Rauschwert an einem Punkt ergibt sich durch Interpolation der Beiträge der umliegenden Gitterpunkte, gewichtet mit einer radialen Abfallfunktion.</p>
+<p>Die Koordinaten des Eingabepunkts werden zunächst durch eine Scherung (Skewing) in das Simplex-Gitter überführt, um festzustellen, in welchem Simplex er liegt. Anschließend werden die Beiträge der Ecken berechnet und summiert.</p>
+<h2>Vorteile</h2>
+<ul>
+<li>Geringere Rechenkomplexität in höheren Dimensionen: Das klassische Verfahren benötigt 2<sup>n</sup> Ecken, Simplex Noise nur n+1 Ecken eines n-dimensionalen Simplex.</li>
+<li>Weniger sichtbare Richtungsartefakte.</li>
+<li>Gut geeignet für Hardware-Implementierungen.</li>
+</ul>
+<h2>Anwendungen</h2>
+<p>Simplex Noise wird in der Computergrafik zur prozeduralen Erzeugung von Texturen, Terrains, Wolken und anderen natürlichen Strukturen eingesetzt, etwa in Computerspielen und in der Filmproduktion. Verwandte Verfahren sind das <a href="../Wertrauschen/index.html">Value Noise</a> und das offene Nachfolgeverfahren OpenSimplex Noise.</p>
+<h2>Patent</h2>
+<p>Das Verfahren war in den Vereinigten Staaten durch ein Patent geschützt, das 2022 ausgelaufen ist. Die Verwendung in drei oder mehr Dimensionen für die Textursynthese war von dem Patent betroffen, weshalb Alternativen wie OpenSimplex Noise entstanden.</p>
+</div>
+</body>
+</html>

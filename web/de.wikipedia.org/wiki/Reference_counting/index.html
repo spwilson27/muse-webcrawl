@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Referenzzählung – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 50em; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em 1em; margin: 0 0 1em 1em; font-size: 0.9em; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Referenzzählung</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>Referenzzählung</b> (englisch <i>reference counting</i>) ist eine Technik der automatischen Speicherverwaltung, bei der für jedes verwaltete Objekt gezählt wird, wie viele Verweise (Referenzen) auf dieses Objekt existieren. Sinkt der Referenzzähler eines Objekts auf null, ist das Objekt nicht mehr erreichbar und kann freigegeben werden.</p>
+<h2>Funktionsweise</h2>
+<p>Jedes Objekt besitzt ein zusätzliches Feld, den Referenzzähler. Wird eine neue Referenz auf das Objekt erzeugt, wird der Zähler erhöht; wird eine Referenz gelöscht oder überschrieben, wird er verringert. Erreicht der Zähler den Wert null, gibt das Laufzeitsystem den Speicher des Objekts frei und löst gegebenenfalls einen Destruktor aus, der weitere Referenzen des Objekts freigibt, wodurch eine Kaskade von Freigaben entstehen kann.</p>
+<h2>Vorteile und Nachteile</h2>
+<p>Zu den Vorteilen zählen die einfache Implementierung, die deterministische Freigabe von Ressourcen und der geringe Verwaltungsaufwand ohne eigenen Garbage-Collector-Prozess. Ein wesentlicher Nachteil ist die Unfähigkeit, zyklische Referenzen zu erkennen: Verweisen zwei Objekte gegenseitig aufeinander, bleibt ihr Zähler größer als null, obwohl sie von außen nicht mehr erreichbar sind. Außerdem verursacht das ständige Anpassen der Zähler Laufzeitkosten, insbesondere in nebenläufigen Programmen, in denen die Zähler atomar verändert werden müssen.</p>
+<h2>Anwendungsgebiete</h2>
+<p>Referenzzählung wird unter anderem in der Programmiersprache <a href="../Objective-C/index.html">Objective-C</a> und in <a href="../Swift_(Programmiersprache)/index.html">Swift</a> (Automatic Reference Counting, ARC), in <a href="../Python_(Programmiersprache)/index.html">Python</a> (CPython), in COM (Component Object Model) von Microsoft sowie in der Dateiverwaltung von Betriebssystemen (harte Links in Unix-Dateisystemen) eingesetzt. In Python wird die Referenzzählung durch einen zusätzlichen Zyklensammler ergänzt.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Garbage_Collection/index.html">Garbage Collection</a></li>
+<li><a href="../Speicherverwaltung/index.html">Speicherverwaltung</a></li>
+<li><a href="../Smart_Pointer/index.html">Smart Pointer</a></li>
+</ul>
+</body>
+</html>

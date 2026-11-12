@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>sendfile – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #fff; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; padding: 20px 30px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { font-size: 15px; line-height: 1.6; }
+ul, pre { font-size: 15px; line-height: 1.6; }
+pre { font-family: monospace; background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px; overflow-x: auto; font-size: 13px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>sendfile</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>sendfile</b> ist ein Systemaufruf in Unix-ähnlichen Betriebssystemen, mit dem Daten direkt zwischen zwei Dateideskriptoren – typischerweise einer Datei und einem Socket – übertragen werden können, ohne sie durch den Userspace zu kopieren. Dadurch werden Kontextwechsel und Kopien vermieden, was insbesondere Webserver und Dateiserver deutlich beschleunigt (sogenanntes <i>Zero-Copy</i>-Verfahren).</p>
+<h2>Funktionsweise</h2>
+<p>Bei der klassischen Übertragung liest ein Serverprozess die Datei mit <code>read()</code> in einen Puffer im Benutzerspeicher und schreibt ihn anschließend mit <code>write()</code> auf den Socket. Die Daten werden dabei mehrfach zwischen Kernel- und User-Speicher kopiert. Mit <code>sendfile()</code> entfällt der Umweg: Der Kernel kopiert die Daten intern vom Page Cache direkt an den Socket (beziehungsweise veranlasst DMA-Transfers der Hardware), und der Prozess erhält lediglich die Kontrolle über die übertragene Bytezahl.</p>
+<h2>Syntax unter Linux</h2>
+<pre>#include &lt;sys/sendfile.h&gt;
+
+ssize_t sendfile(int out_fd, int in_fd, off_t *offset, size_t count);</pre>
+<p>Der Parameter <code>in_fd</code> muss eine Datei bezeichnen, die mit <code>mmap()</code> abbildbar ist (in der Praxis eine reguläre Datei), während <code>out_fd</code> üblicherweise ein Socket ist. Seit Linux 2.6.33 können beide Deskriptoren allgemeiner gehalten sein. Ein einzelner Aufruf überträgt höchstens 0x7ffff000 Bytes (rund 2 GB), sodass Server die Übertragung in einer Schleife aufrufen.</p>
+<h2>Verfügbarkeit und Verwendung</h2>
+<p>sendfile wurde erstmals in Linux 2.2 eingeführt. Ähnliche Schnittstellen existieren in FreeBSD, Solaris und anderen Systemen; unter Windows entspricht dem die Funktion <code>TransmitFile</code>. Bekannte Serverprogramme wie Apache HTTP Server und nginx nutzen sendfile standardmäßig für die Auslieferung statischer Dateien. In höheren Sprachen ist der Mechanismus unter anderem über Java NIO (<code>FileChannel.transferTo</code>) zugänglich.</p>
+<h2>Grenzen</h2>
+<p>Da die Daten den Userspace nie durchlaufen, kann der Prozess sie unterwegs nicht verändern – Verschlüsselung (TLS) oder Kompression lassen sich daher nicht ohne Weiteres mit sendfile kombinieren. Moderne Ansätze wie Kernel-TLS (kTLS) oder die neueren Schnittstellen <code>copy_file_range</code> und <code>splice</code> erweitern das Zero-Copy-Konzept.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../System_call/index.html">Systemaufruf</a></li>
+<li><a href="../Zero-copy/index.html">Zero-Copy</a></li>
+<li><a href="../Splice_(system_call)/index.html">splice (Systemaufruf)</a></li>
+</ul>
+</div>
+</body>
+</html>

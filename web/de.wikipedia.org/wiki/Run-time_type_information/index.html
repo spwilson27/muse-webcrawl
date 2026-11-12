@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Laufzeit-Typinformation – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; padding: 0; background: #fff; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; padding: 20px; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 15px 15px; width: 250px; font-size: 90%; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Laufzeit-Typinformation</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Laufzeit-Typinformation</b> (englisch <i>run-time type information</i>, kurz <b>RTTI</b>) bezeichnet in der Programmierung die Möglichkeit, den Datentyp eines Objekts während der Ausführung eines Programms zu ermitteln und zu nutzen. Bekannt ist der Mechanismus vor allem aus der Programmiersprache <a href="../C++/index.html">C++</a>.</p>
+<h2>RTTI in C++</h2>
+<p>C++ stellt zwei zentrale RTTI-Werkzeuge bereit:</p>
+<ul>
+<li>den Operator <b>dynamic_cast</b>, der eine sichere Typumwandlung innerhalb einer Klassenhierarchie zur Laufzeit durchführt und bei Misserfolg einen Nullzeiger bzw. eine Ausnahme vom Typ <code>std::bad_cast</code> liefert,</li>
+<li>den Operator <b>typeid</b>, der ein Objekt der Klasse <code>std::type_info</code> zurückgibt, mit dem sich der tatsächliche Typ eines Ausdrucks bestimmen lässt.</li>
+</ul>
+<p>RTTI steht in C++ nur für polymorphe Klassen zur Verfügung, also Klassen mit mindestens einer virtuellen Funktion. Implementiert wird sie üblicherweise über die virtuelle Funktionstabelle (vtable), die auf die Typinformationen zeigt.</p>
+<h2>Verwendung und Kritik</h2>
+<p>RTTI wird unter anderem für das sichere Herunterkonvertieren (Downcasting) in Klassenhierarchien, für Diagnose- und Serialisierungszwecke sowie in Frameworks genutzt. Kritiker weisen darauf hin, dass exzessive Typabfragen zur Laufzeit ein Hinweis auf Schwächen im Entwurf sein können, da polymorphe Aufrufe oder das Visitor-Muster das Problem oft eleganter lösen. In vielen anderen Sprachen wie Java oder C# ist Laufzeit-Typinformation in Form von Reflection noch deutlich weiter ausgebaut.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Reflection_(Programmierung)/index.html">Reflection</a></li>
+<li><a href="../Polymorphie_(Informatik)/index.html">Polymorphie</a></li>
+</ul>
+</div>
+</body>
+</html>

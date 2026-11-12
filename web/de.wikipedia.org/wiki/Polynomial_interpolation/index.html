@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Polynominterpolation – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 50em; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+.lead { font-size: 1.05em; }
+.formula { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0.6em 1em; font-family: serif; }
+</style>
+</head>
+<body>
+<h1>Polynominterpolation</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p class="lead">Die <b>Polynominterpolation</b> ist ein Verfahren der numerischen Mathematik, bei dem zu gegebenen Stützstellen und Stützwerten ein Polynom gesucht wird, das an diesen Stellen exakt die vorgegebenen Werte annimmt.</p>
+
+<h2>Problemstellung und Eindeutigkeit</h2>
+<p>Gegeben seien n+1 paarweise verschiedene Stützstellen x<sub>0</sub>, …, x<sub>n</sub> und zugehörige Werte y<sub>0</sub>, …, y<sub>n</sub>. Dann existiert genau ein Polynom P vom Grad höchstens n mit P(x<sub>i</sub>) = y<sub>i</sub> für alle i. Die Eindeutigkeit folgt daraus, dass ein von Null verschiedenes Polynom vom Grad höchstens n nicht mehr als n Nullstellen besitzen kann.</p>
+
+<h2>Darstellungen</h2>
+<h3>Lagrange-Interpolation</h3>
+<p>In der Lagrange-Darstellung wird das Interpolationspolynom als Linearkombination der Lagrange-Basispolynome geschrieben:</p>
+<p class="formula">P(x) = Σ<sub>i</sub> y<sub>i</sub> · L<sub>i</sub>(x), &nbsp; L<sub>i</sub>(x) = Π<sub>j≠i</sub> (x − x<sub>j</sub>)/(x<sub>i</sub> − x<sub>j</sub>)</p>
+<h3>Newton-Interpolation</h3>
+<p>Die Newton-Darstellung verwendet dividierte Differenzen und erlaubt es, nachträglich weitere Stützstellen hinzuzufügen, ohne alle Koeffizienten neu berechnen zu müssen. Für die stabile Auswertung eignet sich die baryzentrische Form der Lagrange-Interpolation besonders gut.</p>
+
+<h2>Fehler und Konvergenz</h2>
+<p>Der Interpolationsfehler an einer Stelle x lässt sich über die (n+1)-te Ableitung der interpolierten Funktion und das Knotenpolynom Π(x − x<sub>i</sub>) abschätzen. Bei äquidistanten Stützstellen und wachsendem Grad kann es an den Intervallrändern zu starken Oszillationen kommen (Runge-Phänomen). Abhilfe schaffen Tschebyscheff-Stützstellen oder stückweise Interpolation mit Splines.</p>
+
+<h2>Anwendungen</h2>
+<p>Anwendung findet die Polynominterpolation etwa in der Computergrafik, bei der Rekonstruktion von Funktionen aus Messwerten, in der numerischen Integration (Newton-Cotes-Formeln) und in der Kryptographie, etwa beim Secret Sharing nach Shamir.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Polynomial/index.html">Polynom</a></li>
+<li>Spline-Interpolation</li>
+<li>Hermite-Interpolation</li>
+</ul>
+</body>
+</html>

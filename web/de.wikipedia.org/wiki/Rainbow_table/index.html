@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Rainbow Table – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0 auto; max-width: 960px; padding: 0 1em; line-height: 1.6; color: #202122; }
+h1 { border-bottom: 1px solid #a2a9b1; font-weight: normal; }
+h2 { border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.5em; }
+img { max-width: 300px; float: right; margin: 0 0 1em 1em; border: 1px solid #c8ccd1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Rainbow Table</h1>
+<p>Eine <b>Rainbow Table</b> (deutsch etwa „Regenbogentabelle“) ist eine in der Kryptanalyse eingesetzte Datenstruktur zum schnellen Auffinden von Klartexten zu gegebenen Hashwerten, etwa um Passwörter aus gestohlenen Passwort-Hashes wiederherzustellen. Sie geht auf eine Arbeit des Informatikers Philippe Oechslin aus dem Jahr 2003 zurück und stellt eine Weiterentwicklung der von Martin Hellman beschriebenen Zeit-Speicher-Abwägung (Time-Memory Tradeoff) dar.</p>
+<h2>Funktionsweise</h2>
+<p>Eine Rainbow Table speichert Ketten aus abwechselnden Hash- und Reduktionsfunktionen. Ausgehend von einer großen Zahl zufälliger Startwerte werden durch wiederholtes Anwenden einer Hashfunktion und verschiedener Reduktionsfunktionen Ketten gebildet. Dabei wandelt eine Reduktionsfunktion einen Hashwert in einen neuen plausiblen Klartext um. Gespeichert werden nur der Start- und der Endpunkt jeder Kette; der Speicherplatz bleibt dadurch überschaubar.</p>
+<p>Zur Umkehrung eines gegebenen Hashwerts wird der Zielhash wiederholt reduziert und gehasht, um zu prüfen, ob ein so erzeugter Wert mit einem gespeicherten Kettenendpunkt übereinstimmt. Ist dies der Fall, wird die zugehörige Kette vom Startpunkt aus neu durchlaufen, bis der Klartext gefunden ist, dessen Hash dem Zielwert entspricht. Die verwendeten Reduktionsfunktionen wechseln von Position zu Position innerhalb der Kette, was — bildlich gesprochen — die „Farben“ des Regenbogens erklärt und Kollisionen zwischen verschiedenen Ketten reduziert.</p>
+<h2>Abwehr</h2>
+<p>Die wichtigste Gegenmaßnahme gegen Rainbow Tables ist das Salzen (engl. <i>salt</i>) von Passwörtern: Jedem Hash wird ein zufälliger, benutzerspezifischer Wert beigefügt, wodurch eine vorgefertigte Tabelle für jedes einzelne Passwort neu berechnet werden müsste. Zusätzlich erschweren langsame, speicherharte Hashverfahren wie bcrypt, scrypt oder Argon2 die Kettenbildung erheblich.</p>
+<h2>Anwendungsbereiche</h2>
+<p>Rainbow Tables wurden insbesondere gegen ältere, ungesalzene Hashverfahren wie LM-Hash oder MD5 eingesetzt. Heute spielen sie vor allem in der Passwortsicherheit, bei Sicherheitsüberprüfungen (Audits) und in der forensischen Analyse eine Rolle.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Hashfunktion/index.html">Hashfunktion</a></li>
+<li><a href="../Salt_%28Kryptologie%29/index.html">Salt (Kryptologie)</a></li>
+<li><a href="../Brute-Force-Angriff/index.html">Brute-Force-Angriff</a></li>
+</ul>
+</body>
+</html>

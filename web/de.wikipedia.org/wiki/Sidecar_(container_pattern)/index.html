@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Sidecar (Softwarearchitektur) – Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:800px;padding:0 1em;color:#202122;line-height:1.6}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.3em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;margin-top:1.2em}
+a{color:#3056a9;text-decoration:none}
+.imgplaceholder{background:#f8f9fa;border:1px solid #a2a9b1;padding:1em;text-align:center;color:#72777d}
+</style>
+</head>
+<body>
+<h1>Sidecar (Softwarearchitektur)</h1>
+<div class="imgplaceholder"><img src="images/hero.png" alt="Hero image (placeholder)"></div>
+<p>Das <b>Sidecar-Pattern</b> (engl. <i>sidecar container pattern</i>) ist ein Entwurfsmuster der Softwarearchitektur, insbesondere für Microservices in containerisierten Umgebungen wie Kubernetes. Dabei läuft neben dem Hauptcontainer einer Anwendung ein zweiter, begleitender Container („Sidecar“, nach dem Beiwagen eines Motorrads), der übergreifende Aufgaben übernimmt.</p>
+<h2>Funktionsweise</h2>
+<p>Sidecar und Hauptcontainer werden gemeinsam bereitgestellt – in Kubernetes im selben Pod – und teilen sich Netzwerk und Volumes. Die Kommunikation erfolgt über localhost oder gemeinsame Dateien. Der Sidecar kapselt Funktionalität, die sonst in jede Anwendung eingebaut werden müsste, und ist von der Programmiersprache der Hauptanwendung unabhängig.</p>
+<h2>Typische Aufgaben</h2>
+<ul>
+<li>Proxy-Funktionalität in Service Meshes (z. B. Envoy in Istio oder Linkerd)</li>
+<li>Protokollierung, Metriken und Tracing (Observability)</li>
+<li>Sicherheitsfunktionen wie TLS-Terminierung und Zertifikatsverwaltung</li>
+<li>Konfigurationsabgleich und Dateisynchronisation</li>
+</ul>
+<h2>Vorteile und Nachteile</h2>
+<p>Zu den Vorteilen zählen die Wiederverwendbarkeit und die Trennung von Fachlogik und Infrastrukturbelangen. Nachteile sind zusätzlicher Ressourcenverbrauch, erhöhte Latenz und komplexerer Betrieb.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Microservices/index.html">Microservices</a></li>
+<li><a href="../Kubernetes/index.html">Kubernetes</a></li>
+<li><a href="../Service_Mesh/index.html">Service Mesh</a></li>
+</ul>
+</body>
+</html>

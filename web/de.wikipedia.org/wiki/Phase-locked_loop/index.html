@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Phasenregelschleife – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em; border: 1px solid #a7d7f9; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; margin-top: 0; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; }
+p, li { line-height: 1.6; font-family: sans-serif; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.toc { border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.6em 1.2em; display: inline-block; font-family: sans-serif; font-size: 0.9em; }
+.small { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div id="content">
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Phasenregelschleife</h1>
+<p>Eine <b>Phasenregelschleife</b> (englisch <i>phase-locked loop</i>, kurz PLL) ist ein Regelkreis aus der Elektronik und Nachrichtentechnik, der die Phase und Frequenz eines einstellbaren Oszillators an ein Referenzsignal bindet. Dazu vergleicht ein Phasendetektor die Phase des Oszillatorsignals mit der des Referenzsignals; die aus der Differenz gewonnene Regelspannung steuert den Oszillator über ein Schleifenfilter so nach, dass die Phasendifferenz konstant bleibt. Ist dieser Zustand erreicht, gilt die Schleife als „eingerastet" (locked).</p>
+
+<div class="toc"><b>Inhaltsverzeichnis</b>
+<ol>
+<li>Aufbau</li>
+<li>Funktionsweise</li>
+<li>Anwendungen</li>
+<li>Digitale PLLs</li>
+<li>Siehe auch</li>
+</ol>
+</div>
+
+<h2>Aufbau</h2>
+<ul>
+<li><b>Phasendetektor</b> (Phasenvergleicher): erzeugt ein Signal, das der Phasendifferenz zwischen Referenz und Rückführung entspricht.</li>
+<li><b>Schleifenfilter:</b> meist ein Tiefpass, der das Regelsignal glättet und das dynamische Verhalten (Bandbreite, Fangbereich, Stabilität) bestimmt.</li>
+<li><b>Spannungsgesteuerter Oszillator</b> (VCO): erzeugt das Ausgangssignal, dessen Frequenz mit der Steuerspannung variiert.</li>
+<li><b>Frequenzteiler:</b> optional im Rückführungszweig; durch ihn lässt sich die Ausgangsfrequenz als Vielfaches der Referenzfrequenz erzeugen.</li>
+</ul>
+
+<h2>Funktionsweise</h2>
+<p>Weicht die Phase des VCO-Signals von der Referenz ab, liefert der Phasendetektor ein Fehlersignal in der entsprechenden Richtung. Das gefilterte Signal verändert die VCO-Frequenz so lange, bis Phase und Frequenz beider Signale übereinstimmen. Die Schleifenbandbreite bestimmt, wie schnell die PLL Änderungen folgt: Eine schmale Bandbreite unterdrückt <a href="../Phase_noise/index.html">Phasenrauschen</a> der Referenz und des VCO, reagiert aber langsamer; eine breite Bandbreite folgt Modulationen besser. Wichtige Kenngrößen sind Haltebereich, Fangbereich und Einschwingzeit.</p>
+
+<h2>Anwendungen</h2>
+<ul>
+<li><b>Frequenzsynthese:</b> Erzeugung vieler stabiler Kanalfrequenzen aus einem Quarzoszillator, etwa in Funkgeräten und Mobiltelefonen.</li>
+<li><b>Taktgenerierung:</b> Vervielfachung des Systemtakts in Mikroprozessoren und digitalen Schaltungen.</li>
+<li><b>Demodulation:</b> von FM- und phasenmodulierten Signalen, siehe auch <a href="../Phase_modulation/index.html">Phasenmodulation</a>.</li>
+<li><b>Taktrückgewinnung</b> (Clock Recovery) in der Datenübertragung, etwa bei seriellen Schnittstellen.</li>
+<li><b>Synchronisation</b> in Rundfunk- und Fernsehempfängern historisch zur Zeilen- und Bildsynchronisation.</li>
+</ul>
+
+<h2>Digitale PLLs</h2>
+<p>Neben analogen PLLs existieren vollständig digitale Ausführungen (DPLL, ADPLL), bei denen Phasendetektor, Filter und ein numerisch gesteuerter Oszillator (NCO) digital realisiert sind. Sie sind in FPGAs, Mikrocontrollern und modernen Funkchips verbreitet und lassen sich flexibel parametrieren. Die klassische integrierte Analog-PLL NE565 ist ein historisch weit verbreitetes Beispiel.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Phase_noise/index.html">Phasenrauschen</a></li>
+<li><a href="../Phase_modulation/index.html">Phasenmodulation</a></li>
+<li>Oszillator</li>
+<li>Frequenzsynthese</li>
+<li>Regelungstechnik</li>
+</ul>
+<p class="small">Abgerufen aus der deutschsprachigen Wikipedia-Enzyklopädie.</p>
+</div>
+</body>
+</html>

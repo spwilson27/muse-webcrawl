@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Raft (Algorithmus) – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 2em auto; max-width: 960px; padding: 0 1em; color: #202122; line-height: 1.6; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 0 0.2em; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Raft (Algorithmus)</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Raft</b> ist ein Konsensalgorithmus für verteilte Systeme, der dazu dient, ein repliziertes Protokoll (Log) auf mehreren Servern konsistent zu halten. Er wurde 2013/2014 von Diego Ongaro und John Ousterhout an der Stanford University vorgestellt, mit dem ausdrücklichen Ziel, verständlicher zu sein als der ältere Paxos-Algorithmus, bei vergleichbarer Leistung und Sicherheit. Raft wird unter anderem in etcd, Consul und zahlreichen anderen verteilten Systemen eingesetzt.</p>
+<h2>Funktionsweise</h2>
+<p>Raft zerlegt das Konsensproblem in drei Teilprobleme: die Wahl eines Anführers (Leader Election), die Replikation des Protokolls (Log Replication) und die Sicherheit (Safety). Jeder Server befindet sich zu jedem Zeitpunkt in einem von drei Zuständen: Leader, Follower oder Candidate. Der Leader nimmt alle Client-Anfragen entgegen, trägt sie in sein Protokoll ein und repliziert die Einträge auf die Follower. Ein Eintrag gilt als bestätigt (committed), sobald er auf einer Mehrheit der Server gespeichert ist.</p>
+<h2>Leader-Wahl</h2>
+<p>Die Zeit wird in Terme (Terms) eingeteilt. Erhält ein Follower über eine zufällig gewählte Zeitspanne keine Nachricht vom Leader, startet er eine Wahl, erhöht seinen Term, stimmt für sich selbst und bittet die anderen Server um ihre Stimme. Ein Kandidat mit der Mehrheit der Stimmen wird neuer Leader. Die zufälligen Timeouts verhindern weitgehend, dass mehrere Kandidaten gleichzeitig antreten und sich gegenseitig blockieren.</p>
+<h2>Siehe auch</h2>
+<p><a href="../Raft_(computer_science)/index.html">Raft (Informatik)</a>, Paxos-Algorithmus, Verteiltes System, Replikation (Informatik).</p>
+</body>
+</html>
