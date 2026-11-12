@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Fünf-Punkte-Algorithmus – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; line-height: 1.6; margin: 0; padding: 0; background: #f8f9fa; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 24px 32px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; font-weight: normal; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.placeholder { display: block; margin: 16px auto; max-width: 320px; }
+p { margin: 0.6em 0; }
+ul, ol { margin: 0.6em 0 0.6em 1.6em; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Fünf-Punkte-Algorithmus</h1>
+<img class="placeholder" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Der <b>Fünf-Punkte-Algorithmus</b> (englisch <i>five-point algorithm</i>) ist ein Verfahren der Computer Vision zur Schätzung der essentiellen Matrix aus fünf Punktkorrespondenzen in zwei kalibrierten Kamerabildern. Er wurde 2006 von David Nistér vorgestellt und gilt als effizientester bekannter Minimalalgorithmus für dieses Problem. Aus der essentiellen Matrix lassen sich die relative Orientierung und Position der beiden Kameras (bis auf den Maßstab) bestimmen.</p>
+<h2>Problemstellung</h2>
+<p>Für zwei Bilder derselben Szene, aufgenommen von kalibrierten Kameras, erfüllen einander entsprechende Bildpunkte <i>x</i> und <i>x′</i> die Epipolarbedingung <i>x′<sup>T</sup> E x = 0</i>, wobei die essentielle Matrix E durch Rotation und Translation zwischen den Kameras bestimmt ist. E besitzt fünf Freiheitsgrade, so dass theoretisch fünf Korrespondenzen zu ihrer Bestimmung ausreichen.</p>
+<h2>Verfahren</h2>
+<p>Jede Punktkorrespondenz liefert eine lineare Gleichung in den neun Einträgen von E. Aus fünf Korrespondenzen ergibt sich ein vierdimensionaler Nullraum; E wird als Linearkombination von vier Basismatrizen angesetzt. Zusätzliche Bedingungen – die essentiellen Matrizen müssen Spurbedingungen erfüllen und eine verschwindende Determinante besitzen – führen auf kubische Zwangsbedingungen, deren Lösung mittels Gröbner-Basen auf ein Polynom vom Grad 10 zurückgeführt wird. Der Algorithmus liefert daher bis zu zehn mögliche Lösungen für E, aus denen die geometrisch konsistente auszuwählen ist.</p>
+<h2>Anwendung</h2>
+<p>Wegen seiner Minimalität eignet sich der Fünf-Punkte-Algorithmus besonders als Hypothesen-Generator innerhalb von RANSAC-Verfahren, etwa zur robusten Bewegungsrekonstruktion in Structure-from-Motion-Pipelines (z. B. in Software wie COLMAP) und in der visuellen Odometrie. Er hat ältere Verfahren wie den Acht-Punkte-Algorithmus für die Fundamentalmatrix bei kalibrierten Systemen weitgehend verdrängt.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Epipolargeometrie/index.html">Epipolargeometrie</a></li>
+<li><a href="../RANSAC-Algorithmus/index.html">RANSAC-Algorithmus</a></li>
+<li><a href="../Structure_from_Motion/index.html">Structure from Motion</a></li>
+</ul>
+</div>
+</body>
+</html>

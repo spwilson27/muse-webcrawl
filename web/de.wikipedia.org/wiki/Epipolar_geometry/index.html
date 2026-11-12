@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Epipolargeometrie – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0 auto; max-width: 960px; padding: 0 1em; color: #202122; background: #fff; line-height: 1.6; }
+h1 { font-family: "Linux Libertine", Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-size: 1.8em; }
+h2 { font-weight: normal; border-bottom: 1px solid #a2a9b1; font-size: 1.4em; margin-top: 1em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+ul, ol { margin-left: 1.2em; }
+</style>
+</head>
+<body>
+<h1>Epipolargeometrie</h1>
+<p>Die <b>Epipolargeometrie</b> beschreibt die geometrischen Beziehungen zwischen zwei Ansichten derselben Szene, die von verschiedenen Kamerapositionen aufgenommen wurden. Sie ist ein zentrales Konzept der <a href="../Computer_Vision/index.html">Computer Vision</a> und der <a href="../Photogrammetrie/index.html">Photogrammetrie</a>, insbesondere beim Stereo-Sehen und bei der 3D-Rekonstruktion aus Bildern.</p>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h2>Grundbegriffe</h2>
+<p>Die Verbindungslinie der beiden Kamerazentren heißt <i>Basislinie</i>. Ihre Schnittpunkte mit den beiden Bildebenen werden als <b>Epipole</b> bezeichnet. Ein 3D-Punkt und die beiden Kamerazentren spannen eine Ebene auf, die <i>Epipolarebene</i>; ihr Schnitt mit einer Bildebene ergibt eine <i>Epipolarlinie</i>. Für die Suche nach der Bildkorrespondenz eines Punktes folgt daraus eine entscheidende Vereinfachung: Der korrespondierende Punkt im anderen Bild muss auf der zugehörigen Epipolarlinie liegen. Damit reduziert sich die Korrespondenzsuche von einer zweidimensionalen auf eine eindimensionale Aufgabe.</p>
+<h2>Fundamental- und Essentialmatrix</h2>
+<p>Die Epipolarbedingung lässt sich algebraisch durch die <b>Fundamentalmatrix</b> F ausdrücken: Für korrespondierende Punkte x und x′ in homogenen Koordinaten gilt x′ᵀFx = 0. Die Fundamentalmatrix (3×3, Rang 2) fasst die innere und äußere Orientierung beider Kameras zusammen und kann aus mindestens sieben Punktkorrespondenzen geschätzt werden; in der Praxis wird häufig der Acht-Punkt-Algorithmus von Longuet-Higgins verwendet, meist in normierter Form nach Hartley. Für kalibrierte Kameras tritt an ihre Stelle die <b>Essentialmatrix</b>, aus der Rotation und Translation zwischen den Kamera­positionen bis auf einen Skalenfaktor zurückgewonnen werden können.</p>
+<h2>Anwendungen</h2>
+<ul>
+<li>Tiefenschätzung und Stereorekonstruktion</li>
+<li>Structure from Motion (Struktur aus Bewegung)</li>
+<li>Visuelle Odometrie und SLAM in der Robotik</li>
+<li>Luftbildauswertung und Vermessung</li>
+</ul>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Stereoskopie/index.html">Stereoskopie</a></li>
+<li><a href="../Kamerakalibrierung/index.html">Kamerakalibrierung</a></li>
+<li><a href="../Triangulation_(Geodäsie)/index.html">Triangulation</a></li>
+</ul>
+</body>
+</html>

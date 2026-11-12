@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Hyperparameteroptimierung – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em; line-height: 1.6; color: #202122; max-width: 960px; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 300px; float: right; margin: 0 0 1em 1em; }
+</style>
+</head>
+<body>
+<h1>Hyperparameteroptimierung</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>Hyperparameteroptimierung</b> (englisch <i>hyperparameter optimization</i> oder <i>hyperparameter tuning</i>) bezeichnet im maschinellen Lernen die Aufgabe, diejenige Kombination von Hyperparametern eines Lernverfahrens zu finden, die auf Validierungsdaten die beste Modellgüte erzielt. Da jede Bewertung ein vollständiges Training erfordert, ist die Optimierung oft rechenintensiv.</p>
+<h2>Verfahren</h2>
+<h3>Rastersuche</h3>
+<p>Bei der Rastersuche (Grid Search) wird für jeden Hyperparameter eine Auswahl diskreter Werte vorgegeben und jede Kombination des kartesischen Produkts ausprobiert. Das Verfahren ist einfach und parallelisierbar, leidet aber unter dem Fluch der Dimensionalität: Die Zahl der Trainingsläufe wächst exponentiell mit der Zahl der Hyperparameter.</p>
+<h3>Zufallssuche</h3>
+<p>Bei der Zufallssuche (Random Search) werden die Kombinationen zufällig aus vorgegebenen Verteilungen gezogen. Untersuchungen zeigten, dass sie bei gleicher Rechenzeit häufig bessere Ergebnisse liefert als die Rastersuche, weil sie den für die Modellgüte tatsächlich relevanten Parameterdimensionen mehr verschiedene Werte zuweist.</p>
+<h3>Bayessche Optimierung</h3>
+<p>Die bayessche Optimierung baut ein probabilistisches Ersatzmodell (Surrogatmodell) der Zielfunktion auf – häufig einen Gauß-Prozess – und wählt mithilfe einer Akquisitionsfunktion gezielt vielversprechende neue Punkte aus. Werkzeuge wie Hyperopt (Tree-structured Parzen Estimator) und SMAC werden hierfür eingesetzt.</p>
+<h3>Weitere Ansätze</h3>
+<p>Bandit-basierte Verfahren wie Hyperband brechen unpromising erscheinende Läufe frühzeitig ab und verteilen das Budget auf die besten Konfigurationen. Evolutionäre und populationsbasierte Verfahren (Population Based Training) variieren Hyperparameter während des Trainings.</p>
+<h2>Probleme</h2>
+<p>Eine intensive Optimierung auf einem festen Validierungsdatensatz kann zu Überanpassung an diesen Datensatz führen, sodass die geschätzte Güte die tatsächliche Generalisierungsleistung überschätzt. Abhilfe schaffen verschachtelte Kreuzvalidierung und separate Testdaten.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Hyperparameter/index.html">Hyperparameter</a></li>
+<li><a href="../AutoML/index.html">AutoML</a></li>
+<li><a href="../Kreuzvalidierung_(Statistik)/index.html">Kreuzvalidierung</a></li>
+</ul>
+</body>
+</html>

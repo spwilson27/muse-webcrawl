@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Inode – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; max-width: 960px; margin: 0 auto; padding: 20px; background: #fff; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Inode</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <strong>Inode</strong> (englisch <em>index node</em>) ist eine Datenstruktur in Unix-Dateisystemen, die die Metadaten einer Datei verwaltet. Jeder Datei – also auch Verzeichnissen, Geräte-Dateien und anderen Dateitypen – ist genau ein Inode zugeordnet, der über seine Inode-Nummer identifiziert wird.</p>
+<h2>Inhalt eines Inodes</h2>
+<p>Ein Inode enthält unter anderem:</p>
+<ul>
+<li>den Dateityp und die Zugriffsrechte (Modus)</li>
+<li>Eigentümer (UID) und Gruppe (GID)</li>
+<li>die Dateigröße in Bytes</li>
+<li>Zeitstempel für letzten Zugriff (atime), letzte Änderung (mtime) und letzte Statusänderung (ctime)</li>
+<li>einen Zähler für harte Links auf die Datei</li>
+<li>Verweise (Zeiger) auf die Datenblöcke, in denen der Dateiinhalt gespeichert ist</li>
+</ul>
+<p>Der Dateiname selbst ist nicht im Inode enthalten, sondern in Verzeichniseinträgen, die einen Namen einer Inode-Nummer zuordnen. Dadurch können mehrere Namen (Hardlinks) auf denselben Inode zeigen.</p>
+<h2>Adressierung der Datenblöcke</h2>
+<p>Klassische Unix-Dateisysteme wie ext2/ext3 speichern im Inode direkte Blockzeiger sowie einfach, zweifach und dreifach indirekte Zeiger, um auch große Dateien adressieren zu können. Moderne Dateisysteme wie ext4 verwenden stattdessen Extents, die zusammenhängende Blockbereiche effizienter verwalten.</p>
+<h2>Bedeutung im Systembetrieb</h2>
+<p>Die Anzahl der Inodes eines Dateisystems wird bei dessen Erstellung festgelegt. Sind alle Inodes verbraucht, können keine neuen Dateien angelegt werden – auch wenn noch freier Speicherplatz für Datenblöcke vorhanden ist. Der Befehl <code>df -i</code> zeigt die Inode-Auslastung an; mit <code>ls -i</code> lässt sich die Inode-Nummer einer Datei anzeigen.</p>
+<p>Siehe auch: <a href="../Dateisystem/index.html">Dateisystem</a>, <a href="../Unix/index.html">Unix</a>, <a href="../Ext4/index.html">ext4</a>, <a href="../Hardlink/index.html">Hardlink</a></p>
+</body>
+</html>

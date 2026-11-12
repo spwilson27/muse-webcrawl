@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Auswertungsstrategie – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 24px 32px 48px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p, li { font-family: sans-serif; font-size: 14px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0 0 12px 20px; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; font-size: 12px; font-family: sans-serif; width: 240px; }
+.thumb img { width: 100%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Auswertungsstrategie</h1>
+<p>Eine <b>Auswertungsstrategie</b> (englisch <i>evaluation strategy</i>) bezeichnet in der Informatik, insbesondere in der Theorie der <a href="../Programming_language/index.html">Programmiersprachen</a> und im <a href="../Lambda_calculus/index.html">Lambda-Kalkül</a>, die Regeln, nach denen Ausdrücke ausgewertet (reduziert) werden – insbesondere, wann Argumente eines Funktionsaufrufs ausgewertet werden und wann ein Wert an einen Parameter übergeben wird. Die Wahl der Auswertungsstrategie beeinflusst Terminierung, Effizienz und das Auftreten von Seiteneffekten eines Programms.</p>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"><div>Reduktionsschritte im Lambda-Kalkül.</div></div>
+<h2>Strenge Auswertung</h2>
+<p>Bei der <b>strengen Auswertung</b> (englisch <i>strict evaluation</i>, <i>eager evaluation</i>) werden die Argumente eines Funktionsaufrufs vollständig ausgewertet, bevor die Funktion angewendet wird. Die wichtigsten Varianten sind:</p>
+<ul>
+<li><b>Call by Value</b> (Übergabe als Wert): Das Argument wird ausgewertet und sein Wert übergeben. Dies ist die verbreitete Strategie in Sprachen wie C, Java, Scheme und ML.</li>
+<li><b>Call by Reference</b> (Übergabe als Referenz): Es wird eine Referenz auf die Variable des Aufrufers übergeben, sodass die Funktion diese verändern kann.</li>
+</ul>
+<h2>Nicht-strenge Auswertung</h2>
+<p>Bei der <b>nicht-strengen Auswertung</b> werden Argumente erst dann ausgewertet, wenn ihr Wert tatsächlich benötigt wird:</p>
+<ul>
+<li><b>Call by Name</b> (Übergabe als Name): Der unausgewertete Ausdruck wird bei jeder Verwendung des Parameters erneut ausgewertet (historisch in Algol 60).</li>
+<li><b>Call by Need</b> (Übergabe nach Bedarf, <i>lazy evaluation</i>): Wie Call by Name, jedoch wird das Ergebnis der ersten Auswertung zwischengespeichert (memoisiert) und wiederverwendet. Dies ist die Standardstrategie in <a href="../Haskell/index.html">Haskell</a> und ermöglicht unter anderem unendliche Datenstrukturen.</li>
+<li><b>Call by Sharing</b>: Es wird ein Verweis auf das Argument übergeben; Mutationen an Objekten sind für den Aufrufer sichtbar (z. B. in Python und Ruby für Objekte).</li>
+</ul>
+<h2>Bedeutung im Lambda-Kalkül</h2>
+<p>Im reinen Lambda-Kalkül unterscheiden sich die Strategien darin, welche Redexe (reduzierbaren Ausdrücke) zuerst reduziert werden. Die <i>Normalreihenfolge</i> (leftmost-outermost) findet nach dem Normalisierungssatz von Church und Rosser stets eine Normalform, falls diese existiert, während die applikative Reihenfolge (leftmost-innermost, entspricht Call by Value) in manchen Fällen nicht terminiert, obwohl eine Normalform existiert.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Lambda_calculus/index.html">Lambda-Kalkül</a></li>
+<li><a href="../Lazy_evaluation/index.html">Lazy Evaluation</a></li>
+<li><a href="../Short-circuit_evaluation/index.html">Kurzschlussauswertung</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Fundamentalmatrix (Computer Vision) – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+#content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; line-height: 1.6; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { text-align: center; margin: 1em 0; }
+.thumb img { max-width: 300px; border: 1px solid #a2a9b1; }
+.thumbcaption { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Fundamentalmatrix (Computer Vision)</h1>
+<p>Die <b>Fundamentalmatrix</b> (englisch <i>fundamental matrix</i>) ist ein Begriff der Bildverarbeitung und der Epipolargeometrie. Sie beschreibt die geometrische Beziehung zwischen zwei Bildern, die mit unkalibrierten Kameras von unterschiedlichen Standpunkten aus aufgenommen wurden, und fasst die epipolare Geometrie eines Stereosystems in einer 3×3-Matrix zusammen.</p>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"><div class="thumbcaption">Epipolargeometrie: Ein Bildpunkt im ersten Bild liegt im zweiten Bild auf der zugehörigen Epipolarlinie.</div></div>
+<h2>Definition</h2>
+<p>Sind <b>x</b> und <b>x′</b> die homogenen Koordinaten korrespondierender Bildpunkte in zwei Ansichten, so gilt für die Fundamentalmatrix F die epipolare Bedingung:</p>
+<p style="text-align:center;"><i><b>x′</b><sup>T</sup> F <b>x</b> = 0</i></p>
+<p>Für einen Punkt <b>x</b> im ersten Bild liefert F<b>x</b> die Epipolarlinie im zweiten Bild, auf der der korrespondierende Punkt liegen muss. Die Fundamentalmatrix hat Rang 2 und sieben Freiheitsgrade: Sie ist bis auf einen Skalenfaktor bestimmt und ihre Determinante ist null. Aus ihr lassen sich die Epipole in beiden Bildern bestimmen (als Nullräume von F bzw. F<sup>T</sup>).</p>
+<h2>Schätzung</h2>
+<p>Die Fundamentalmatrix kann aus mindestens sieben Punktkorrespondenzen geschätzt werden. In der Praxis wird häufig der normierte Acht-Punkt-Algorithmus (nach Longuet-Higgins, in der verbesserten Form von Hartley) verwendet; zur robusten Schätzung gegenüber Ausreißern kommen Verfahren wie RANSAC zum Einsatz. Eingeführt wurde der Begriff in seiner modernen Form Anfang der 1990er Jahre, unter anderem durch Olivier Faugeras sowie Richard Hartley und Andrew Zisserman.</p>
+<h2>Verwandte Konzepte</h2>
+<p>Sind die Kameras kalibriert (interne Parameter bekannt), übernimmt die <i>essentielle Matrix</i> die entsprechende Rolle; aus ihr lassen sich die relative Rotation und Translationsrichtung der Kameras rekonstruieren. In einer kalibrierten Anordnung sind Fundamental- und essentielle Matrix über die Kalibriermatrizen miteinander verknüpft. Die Fundamentalmatrix ist Grundlage vieler Verfahren des maschinellen Sehens, darunter Stereorekonstruktion, Structure from Motion und die bildbasierte Kamerakalibrierung.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Epipolar_geometry/index.html">Epipolargeometrie</a></li>
+<li><a href="../Essential_matrix/index.html">Essentielle Matrix</a></li>
+<li><a href="../Eight-point_algorithm/index.html">Acht-Punkt-Algorithmus</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Egress Filtering – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 52em; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 260px; float: right; margin: 0 0 1em 1em; }
+</style>
+</head>
+<body>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Egress Filtering</h1>
+<p><b>Egress Filtering</b> (engl. <i>egress</i> „Ausgang“) bezeichnet in der Netzwerksicherheit das Filtern des ausgehenden Datenverkehrs eines Netzwerks, meist durch eine Firewall. Es ist das Gegenstück zum <a href="../Ingress_Filtering/index.html">Ingress Filtering</a>, das den eingehenden Verkehr kontrolliert.</p>
+<h2>Zweck</h2>
+<p>Während Firewalls klassisch vor allem eingehende Verbindungen kontrollieren, dient Egress Filtering dazu, unerwünschte oder schädliche Kommunikation aus dem eigenen Netz in das Internet zu unterbinden. Dazu gehört das Blockieren von Paketen mit gefälschten Absenderadressen (IP-Spoofing): Ein Netzwerk lässt nur Pakete nach außen, deren Quelladresse aus dem eigenen Adressbereich stammt. Dieses Verfahren – dokumentiert etwa in den Empfehlungen BCP 38 / RFC 2827 – erschwert DDoS-Angriffe, die auf gefälschten Absenderadressen beruhen.</p>
+<p>Weitere Anwendungsfälle sind das Verhindern von Datenabfluss (Data Leakage), das Blockieren der Kommunikation von Schadsoftware mit ihren Command-and-Control-Servern sowie die Durchsetzung von Nutzungsrichtlinien, indem nur bestimmte Dienste und Zielports (etwa 80/443 für Webverkehr über einen Proxy) erlaubt werden.</p>
+<h2>Umsetzung</h2>
+<p>Egress-Regeln werden üblicherweise auf der Perimeter-Firewall oder einem Gateway definiert. Eine strikte „Default-Deny“-Strategie lässt nur explizit erlaubte ausgehende Verbindungen zu. Herausforderungen bestehen unter anderem darin, legitime Anwendungen nicht zu behindern und verschlüsselten Verkehr sachgerecht zu behandeln.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Firewall/index.html">Firewall</a></li>
+<li><a href="../Ingress_Filtering/index.html">Ingress Filtering</a></li>
+<li><a href="../IP-Spoofing/index.html">IP-Spoofing</a></li>
+</ul>
+</body>
+</html>

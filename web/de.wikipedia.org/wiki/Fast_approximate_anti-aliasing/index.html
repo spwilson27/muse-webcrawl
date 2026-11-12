@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Fast Approximate Anti-Aliasing – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em; line-height: 1.6; color: #202122; }
+h1 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Fast Approximate Anti-Aliasing</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Fast Approximate Anti-Aliasing</b> (kurz <b>FXAA</b>) ist ein Verfahren zur Kantenglättung (Antialiasing) in der 3D-Computergrafik. Es wurde von Timothy Lottes bei Nvidia entwickelt und 2009 vorgestellt. Im Gegensatz zu klassischen Methoden wie MSAA arbeitet FXAA als Nachbearbeitungsfilter (Post-Processing) auf dem bereits gerenderten Bild und benötigt daher nur wenig Rechenleistung und Speicher.</p>
+
+<h2>Funktionsweise</h2>
+<p>FXAA wird als Pixel-Shader am Ende der Bildberechnung ausgeführt. Der Algorithmus untersucht das fertige Bild nach Kanten, indem er Luminanzunterschiede zwischen benachbarten Pixeln auswertet. Entlang erkannter Kanten wird die Farbe der Pixel so gemischt, dass Treppenstufen („Aliasing“) abgeschwächt und subpixelgenaue Kantenverläufe geglättet werden. Die Richtung der Kante (horizontal oder vertikal) bestimmt dabei die Auswahl der zum Verschmelzen verwendeten Nachbarpixel.</p>
+
+<h2>Eigenschaften</h2>
+<p>Vorteile von FXAA sind seine Geschwindigkeit, die geringe Speicheranforderung und die Anwendbarkeit auf alle Bildelemente – einschließlich transparenter Texturen und Shader-Aliasing, die MSAA nicht erfassen kann. Als Nachteil gilt, dass das gesamte Bild leicht unscharf wirken kann und auch Text und Oberflächendetails mitgeglättet werden. FXAA wurde in zahlreichen Computerspielen der 2010er Jahre eingesetzt; in den Treibern von Nvidia ist es als globaler Schalter verfügbar. Weiterentwicklungen und Alternativen sind unter anderem SMAA und das zeitliche Antialiasing (TAA), das Bildinformationen mehrerer Frames kombiniert.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Antialiasing/index.html">Antialiasing</a></li>
+<li><a href="../Multisample_Anti-Aliasing/index.html">Multisample Anti-Aliasing</a></li>
+<li><a href="../Shader/index.html">Shader</a></li>
+<li><a href="../Computergrafik/index.html">Computergrafik</a></li>
+</ul>
+</body>
+</html>

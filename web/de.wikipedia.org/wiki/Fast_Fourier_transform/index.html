@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Schnelle Fourier-Transformation – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em; line-height: 1.6; color: #202122; }
+h1 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Schnelle Fourier-Transformation</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>schnelle Fourier-Transformation</b> (englisch <i>Fast Fourier Transform</i>, kurz <b>FFT</b>) ist ein effizienter Algorithmus zur Berechnung der diskreten Fourier-Transformation (DFT). Während die direkte Berechnung einer DFT der Länge N einen Aufwand von O(N²) Rechenoperationen erfordert, benötigt eine FFT nur O(N log N) Operationen. Diese Beschleunigung machte die digitale Signalverarbeitung in Echtzeit und viele weitere Anwendungen erst praktikabel.</p>
+
+<h2>Prinzip</h2>
+<p>Die bekannteste FFT ist der <b>Cooley-Tukey-Algorithmus</b> (1965), der auf einem Teile-und-herrsche-Verfahren beruht: Eine DFT einer zusammengesetzten Länge N = N₁ · N₂ wird in kleinere DFTs der Längen N₁ und N₂ zerlegt; im gebräuchlichsten Fall (Radix-2) zerfällt eine DFT der Länge N in zwei DFTs der halben Länge über die geraden und die ungeraden Indexpositionen, kombiniert über sogenannte Twiddle-Faktoren. Die Struktur der Rechenschritte wird anschaulich als Schmetterlingsgraph („Butterfly“) dargestellt. Die Grundidee war bereits 1805 von Carl Friedrich Gauß beschrieben, aber erst mit der Verbreitung von Computern und der Veröffentlichung durch James W. Cooley und John W. Tukey allgemein bekannt geworden.</p>
+
+<h2>Algorithmen</h2>
+<ul>
+<li><b>Cooley-Tukey-Algorithmus</b> – allgemeiner Ansatz für zusammengesetzte Längen, Radix-2 als Spezialfall für Zweierpotenzen</li>
+<li><b>Prime-Factor-Algorithmus</b> – für Längen aus teilerfremden Faktoren</li>
+<li><b>Bluestein-Algorithmus (Chirp-z)</b> – für beliebige, auch prime Längen, über eine Faltung</li>
+<li><b>Rader-Algorithmus</b> – für prime Längen</li>
+</ul>
+<p>Verbreitete Implementierungen sind die freie Bibliothek FFTW sowie die Algorithmen in numerischen Softwarepaketen.</p>
+
+<h2>Anwendungen</h2>
+<p>Die FFT wird unter anderem eingesetzt in der Spektralanalyse und Audiotechnik (etwa bei der MP3-Kompression), der Bildverarbeitung und Medizintechnik (MRT-Rekonstruktion), der Nachrichtentechnik (OFDM in WLAN und Mobilfunk), der schnellen Multiplikation großer Zahlen und der Lösung partieller Differentialgleichungen.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Diskrete_Fourier-Transformation/index.html">Diskrete Fourier-Transformation</a></li>
+<li><a href="../Fourier-Transformation/index.html">Fourier-Transformation</a></li>
+<li><a href="../Digitale_Signalverarbeitung/index.html">Digitale Signalverarbeitung</a></li>
+<li><a href="../FFTW/index.html">FFTW</a></li>
+</ul>
+</body>
+</html>

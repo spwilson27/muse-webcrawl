@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Hindley-Milner-Typsystem – Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine","Georgia",serif;margin:0 auto;max-width:960px;padding:0 1em;color:#202122;line-height:1.6}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:.1em;font-weight:normal}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;font-weight:normal;margin-top:1.2em}
+a{color:#3056a9;text-decoration:none}
+a:hover{text-decoration:underline}
+code{font-family:monospace;background:#f8f9fa;padding:0 .2em}
+img{max-width:100%}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<h1>Hindley-Milner-Typsystem</h1>
+<p>Das <b>Hindley-Milner-Typsystem</b> (kurz <b>HM</b>) ist ein formales Typsystem für den typisierten Lambda-Kalkül. Es verbindet parametrische Polymorphie mit vollständiger Typinferenz. Der Name ehrt Roger Hindley, der das Prinzip der prinzipalen Typen 1969 für Kombinatoren beschrieb, und Robin Milner, der das System 1978 im Rahmen der Sprache ML entwickelte und populär machte.</p>
+<p><img src="images/hero.png" alt="Hero image (placeholder)"></p>
+<h2>Formale Grundlagen</h2>
+<p>Typen im HM-System sind entweder Typvariablen, Grundtypen oder Funktionstypen. Typschemata der Form <code>∀a₁ … aₙ. τ</code> quantifizieren über Typvariablen und erlauben so polymorphe Werte. Die Typisierungsregeln umfassen unter anderem die Instanziierungsregel und die Generalisierungsregel, die nur bei <i>let</i>-Bindungen angewendet wird — daher spricht man von <i>Let-Polymorphie</i>.</p>
+<h2>Typinferenz</h2>
+<p>Der <b>Algorithmus W</b> von Milner inferiert den prinzipalen Typ eines Ausdrucks in einem gegebenen Kontext. Er beruht auf der Robinson-Unifikation und wendet Substitutionen systematisch an. Da jeder typisierbare Ausdruck einen prinzipalen Typ besitzt, ist die Inferenz vorhersagbar und von der Auswertungsreihenfolge unabhängig. Spätere Implementierungen nutzen häufig constraintbasierte Verfahren.</p>
+<h2>Anwendung</h2>
+<p>HM ist das Fundament der ML-Sprachfamilie (Standard ML, OCaml) und von Haskell. Auch moderne Sprachen außerhalb der funktionalen Welt — etwa Rust, TypeScript-Bibliotheken oder Swift in Teilen — übernehmen Ideen der HM-Inferenz, meist in eingeschränkter oder erweiterter Form.</p>
+<h2>Grenzen</h2>
+<p>Höherstufige Polymorphie, polymorphe Rekursion und abhängige Typen sind nicht Bestandteil des klassischen Systems. Sprachkonstrukte wie veränderbare Referenzen erfordern Zusatzbeschränkungen wie die Value Restriction, um die Typsicherheit (Soundness) zu bewahren.</p>
+<h2>Siehe auch</h2>
+<p>Lambda-Kalkül · Typinferenz · Unifikation · Haskell · OCaml</p>
+</body>
+</html>

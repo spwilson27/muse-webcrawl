@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>FM-Index – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px 12px; margin: 0 0 16px 20px; font-size: 0.85em; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>FM-Index</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<table class="infobox">
+<tr><th>Gebiet</th><td>Algorithmik, Bioinformatik</td></tr>
+<tr><th>Erfinder</th><td>Paolo Ferragina, Giovanni Manzini</td></tr>
+<tr><th>Veröffentlichung</th><td>2000/2001</td></tr>
+<tr><th>Grundlage</th><td>Burrows-Wheeler-Transformation, Suffixarray</td></tr>
+<tr><th>Anwendung</th><td>Volltextsuche, Read-Alignment</td></tr>
+</table>
+<p>Der <b>FM-Index</b> ist eine komprimierte Volltext-Indexdatenstruktur, die 2000 von Paolo Ferragina und Giovanni Manzini vorgestellt wurde. Er verbindet die Kompressionseigenschaften der <a href="../Burrows-Wheeler-Transformation/index.html">Burrows-Wheeler-Transformation</a> (BWT) mit der Suchfunktionalität eines Suffixarrays und benötigt dabei nur Speicherplatz in der Größenordnung des komprimierten Textes.</p>
+<h2>Funktionsweise</h2>
+<p>Grundlage ist die BWT des Textes. Mithilfe von Rang-Anfragen (sogenannten Occurrence-Arrays, häufig durch Wavelet-Bäume realisiert) und der sogenannten LF-Abbildung lässt sich ein Muster rückwärts durch den Index „abarbeiten“ (Backward Search). So kann die Anzahl der Vorkommen eines Musters der Länge m in Zeit O(m) bestimmt werden, ohne den Text zu dekomprimieren. Die Positionen der Treffer werden über markierte Stichproben des Suffixarrays rekonstruiert.</p>
+<h2>Eigenschaften</h2>
+<p>Der FM-Index ist ein „selbstindizierendes“ Format: Er ersetzt den Text, aus dem sich das Original vollständig wiederherstellen lässt. Die Speichergröße liegt typischerweise nahe der Entropie des Textes, bei DNA-Sequenzen etwa bei zwei Bit pro Base. Nachteilig ist die vergleichsweise langsame Lokalisierung von Trefferpositionen gegenüber unkomprimierten Suffixarrays.</p>
+<h2>Anwendungen</h2>
+<p>Bekannteste Anwendung sind Alignment-Werkzeuge der Bioinformatik wie Bowtie und BWA, die kurze DNA-Sequenzen (Reads) mithilfe BWT-basierter Indizes gegen Referenzgenome abgleichen. FM-Indizes werden außerdem in der Textkompression und bei der Suche in großen Zeichenketten-Sammlungen eingesetzt.</p>
+<p>Siehe auch: <a href="../Burrows-Wheeler-Transformation/index.html">Burrows-Wheeler-Transformation</a>, <a href="../Suffixarray/index.html">Suffixarray</a></p>
+</div>
+</body>
+</html>

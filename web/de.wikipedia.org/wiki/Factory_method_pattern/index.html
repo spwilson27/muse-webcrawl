@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Fabrikmethode – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 20px 30px; border-left: 1px solid #a7d7f9; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+p { line-height: 1.7; }
+pre { background: #f8f9fa; border: 1px solid #a2a9b1; padding: 10px; overflow-x: auto; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Fabrikmethode</h1>
+<p>Die <b>Fabrikmethode</b> (engl. <i>factory method pattern</i>) ist ein Entwurfsmuster der Softwareentwicklung aus der Gruppe der Erzeugungsmuster. Es definiert eine Methode zur Erzeugung von Objekten, überlässt die Entscheidung, welche konkrete Klasse instanziiert wird, jedoch Unterklassen. Dadurch wird die Erzeugung von Objekten von ihrer Verwendung entkoppelt. Das Muster wurde 1994 im Buch der „Gang of Four“ (Gamma u. a.) beschrieben.</p>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h2>Struktur</h2>
+<p>Eine abstrakte Erzeugerklasse (<i>Creator</i>) deklariert die Fabrikmethode, die ein Objekt eines Produkttyps (einer Schnittstelle oder abstrakten Klasse <i>Product</i>) zurückliefert. Konkrete Erzeuger (<i>ConcreteCreator</i>) überschreiben die Methode und erzeugen jeweils ein passendes konkretes Produkt. Der übrige Code der Erzeugerklasse arbeitet nur mit der Produktabstraktion und bleibt so unabhängig von den konkreten Klassen.</p>
+<pre>
+abstract class Dialog {
+    // Fabrikmethode
+    abstract Button createButton();
+    void render() {
+        Button ok = createButton();
+        ok.draw();
+    }
+}
+class WindowsDialog extends Dialog {
+    Button createButton() { return new WindowsButton(); }
+}
+</pre>
+<h2>Anwendung und Verwandte Muster</h2>
+<p>Die Fabrikmethode wird eingesetzt, wenn eine Klasse nicht vorhersehen kann, welche Objektart sie erzeugen muss, oder wenn die Erzeugungslogik an Unterklassen delegiert werden soll. Sie ist eng mit der abstrakten Fabrik verwandt, die ganze Produktfamilien erzeugt, und wird häufig mit Template-Methoden kombiniert. In vielen Programmiersprachen übernehmen auch Dependency Injection und einfache Factory-Klassen ähnliche Aufgaben.</p>
+<p>Siehe auch: <a href="../Entwurfsmuster">Entwurfsmuster</a>, <a href="../Abstrakte_Fabrik">Abstrakte Fabrik</a>, <a href="../Erzeugungsmuster">Erzeugungsmuster</a></p>
+</div>
+</body>
+</html>

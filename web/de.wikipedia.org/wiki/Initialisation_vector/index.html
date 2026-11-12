@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Initialisierungsvektor – Wikipedia</title>
+<style>
+body{font-family:sans-serif;line-height:1.6;margin:0;background:#fff;color:#202122}
+#content{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:serif;font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+a{color:#3056a9;text-decoration:none}
+.infobox{float:right;width:250px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{text-align:left;background:#b0c4de;padding:4px}
+.infobox td{padding:2px 4px}
+img.hero{max-width:100%;height:auto;display:block;margin:0 auto}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Initialisierungsvektor</h1>
+<div class="infobox">
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<table>
+<tr><th colspan="2">Initialisierungsvektor</th></tr>
+<tr><td>Abkürzung:</td><td>IV</td></tr>
+<tr><td>Gebiet:</td><td>Kryptografie</td></tr>
+<tr><td>Verwendung:</td><td>Betriebsmodi von Blockchiffren</td></tr>
+</table>
+</div>
+<p>Ein <b>Initialisierungsvektor</b> (englisch <i>initialization vector</i>, kurz <b>IV</b>) ist in der Kryptografie ein zusätzlicher Eingabewert, der bei der Verschlüsselung verwendet wird, um sicherzustellen, dass gleiche Klartexte auch bei gleichem Schlüssel zu unterschiedlichen Geheimtexten führen. Der IV muss selbst nicht geheim sein, sollte aber für jede Verschlüsselung neu und unvorhersehbar beziehungsweise eindeutig gewählt werden.</p>
+<h2>Verwendung</h2>
+<p>Bei Blockchiffren wird der IV in bestimmten Betriebsmodi eingesetzt. Im CBC-Modus (Cipher Block Chaining) wird der IV mit dem ersten Klartextblock XOR-verknüpft, bevor dieser verschlüsselt wird; jeder weitere Block wird mit dem vorangegangenen Geheimtextblock verknüpft. In Stromchiffren und in Modi wie CTR bestimmt der IV (zusammen mit einer Nonce) den erzeugten Schlüsselstrom beziehungsweise die Zählerwerte.</p>
+<h2>Sicherheit</h2>
+<p>Die korrekte Wahl des IV ist sicherheitskritisch: Wird derselbe IV bei CBC mit gleichem Schlüssel wiederholt oder ist er vorhersehbar, können Angriffe wie die BEAST-Attacke auf TLS möglich werden. Im CTR-Modus führt die Wiederholung eines IV-Schlüssel-Paares dazu, dass die XOR-Verknüpfung zweier Geheimtexte den Klartext preisgeben kann. Deshalb verlangen moderne Verfahren wie AES-GCM eine eindeutige Nonce für jede Nachricht.</p>
+<h2>Siehe auch</h2>
+<p><a href="../Block_cipher_mode_of_operation/index.html">Betriebsmodus (Kryptografie)</a> · <a href="../Cryptographic_nonce/index.html">Nonce</a> · <a href="../Salt_(cryptography)/index.html">Salt</a></p>
+</div>
+</body>
+</html>

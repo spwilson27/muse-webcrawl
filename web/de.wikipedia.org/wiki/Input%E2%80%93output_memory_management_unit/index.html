@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Input–Output Memory Management Unit – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; max-width: 960px; margin: 0 auto; padding: 20px; background: #fff; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Input–Output Memory Management Unit (IOMMU)</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Eine <strong>Input–Output Memory Management Unit</strong> (<strong>IOMMU</strong>) ist eine Hardwarekomponente, die – analog zur Memory Management Unit (MMU) für die CPU – Speicherzugriffe von Ein-/Ausgabegeräten (DMA) verwaltet und übersetzt. Sie verbindet DMA-fähige Geräte (etwa über PCI Express) mit dem Hauptspeicher des Computers.</p>
+<h2>Funktionsweise</h2>
+<p>Geräte arbeiten mit gerätespezifischen bzw. vom Betriebssystem vergebenen DMA-Adressen, die die IOMMU mithilfe von Seitentabellen in physische Adressen übersetzt. Dadurch kann jedem Gerät ein eigener Adressraum zugewiesen werden; Zugriffe außerhalb des erlaubten Bereichs werden blockiert und als Fehler gemeldet.</p>
+<h2>Vorteile</h2>
+<ul>
+<li><strong>Schutz:</strong> Fehlerhafte oder bösartige Geräte (z. B. über Thunderbolt oder FireWire angeschlossene Peripherie) können nicht auf beliebige Speicherbereiche zugreifen (DMA-Angriffe werden erschwert).</li>
+<li><strong>Virtualisierung:</strong> Durch „Device Passthrough“ (PCI-Passthrough) kann eine virtuelle Maschine ein physisches Gerät direkt nutzen, da die IOMMU die Zugriffe isoliert zum Speicher der VM umlenkt (Intel VT-d, AMD-Vi).</li>
+<li><strong>Vereinfachung:</strong> Geräte benötigen keine besonderen Treiber, um auf nicht zusammenhängenden physischen Speicher als scheinbar zusammenhängenden Bereich zuzugreifen (Scatter-Gather-Unterstützung).</li>
+</ul>
+<h2>Implementierungen</h2>
+<p>Bekannte Implementierungen sind Intels VT-d (Virtualization Technology for Directed I/O), AMDs AMD-Vi (früher allgemein IOMMU genannt) und ARM SMMU in Mobil- und Serverprozessoren. Betriebssysteme wie Linux (mit Parametern wie <code>intel_iommu=on</code>), Windows und Hypervisoren nutzen die IOMMU für Virtualisierung und Geräteschutz, etwa bei Kernel DMA Protection.</p>
+<p>Siehe auch: <a href="../Direct_Memory_Access/index.html">Direct Memory Access</a>, <a href="../Memory_Management_Unit/index.html">Memory Management Unit</a>, <a href="../Virtualisierung/index.html">Virtualisierung</a></p>
+</body>
+</html>

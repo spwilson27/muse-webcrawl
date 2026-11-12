@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>False Discovery Rate – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 20px 32px 48px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; max-width: 320px; margin: 8px 0; }
+.math { font-style: italic; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>False Discovery Rate</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>False Discovery Rate</b> (FDR; deutsch etwa „Rate falscher Entdeckungen“) ist ein Maß in der <a href="../Statistik/index.html">Statistik</a>, das beim multiplen Testen den erwarteten Anteil falsch-positiver Ergebnisse unter allen als signifikant erklärten Ergebnissen beschreibt. Sie wurde 1995 von Yoav Benjamini und Yosef Hochberg eingeführt und ist insbesondere in der <a href="../Genomik/index.html">Genomik</a> und anderen Datenwissenschaften mit sehr vielen gleichzeitig getesteten Hypothesen zum Standard geworden.</p>
+
+<h2>Definition</h2>
+<p>Werden von <span class="math">R</span> verworfenen Nullhypothesen <span class="math">V</span> fälschlicherweise verworfen (d. h. falsch-positiv), so ist der Anteil falscher Entdeckungen <span class="math">Q = V / R</span> (mit <span class="math">Q = 0</span>, falls <span class="math">R = 0</span>). Die False Discovery Rate ist der Erwartungswert dieses Anteils: FDR = E(Q).</p>
+
+<h2>Benjamini-Hochberg-Verfahren</h2>
+<p>Das <b>Benjamini-Hochberg-Verfahren</b> kontrolliert die FDR auf einem vorgegebenen Niveau <span class="math">q</span>. Dazu werden die <span class="math">p</span>-Werte aller <span class="math">m</span> Tests der Größe nach geordnet und der größte Index <span class="math">k</span> gesucht, für den <span class="math">p<sub>(k)</sub> ≤ (k/m) · q</span> gilt; alle Hypothesen bis zum Rang <span class="math">k</span> werden dann verworfen. Das Verfahren ist unter Unabhängigkeit der Tests (und unter bestimmten Formen positiver Abhängigkeit) weniger konservativ als die <a href="../Bonferroni-Korrektur/index.html">Bonferroni-Korrektur</a>, die den Fehler erster Art familienweit kontrolliert, und hat entsprechend eine höhere <a href="../Teststärke/index.html">Teststärke</a>.</p>
+
+<h2>Abgrenzung</h2>
+<p>Die FDR unterscheidet sich vom <a href="../Fehler_1._Art/index.html">Fehler 1. Art</a> eines Einzeltests und vom familienweiten Fehler (<i>family-wise error rate</i>): Während letztere die Wahrscheinlichkeit kontrollieren, dass überhaupt ein Fehler auftritt, toleriert die FDR einen kleinen erwarteten Anteil falscher unter den verkündeten „Entdeckungen“ – eine in explorativen Studien mit Tausenden von Tests praktikable Abwägung.</p>
+
+<h2>Anwendung</h2>
+<p>Standard ist die FDR-Kontrolle unter anderem in der Analyse von Genexpressionsdaten, in genomweiten Assoziationsstudien (<a href="../Genomweite_Assoziationsstudie/index.html">GWAS</a>) und in der Auswertung von bildgebenden Verfahren der Neurowissenschaften. Aus den <span class="math">p</span>-Werten lassen sich sogenannte <span class="math">q</span>-Werte ableiten, die als FDR-Analogon zum <span class="math">p</span>-Wert interpretiert werden.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Multiples_Testproblem/index.html">Multiples Testproblem</a></li>
+<li><a href="../False_positive/index.html">Falsch positiv</a></li>
+<li><a href="../Bonferroni-Korrektur/index.html">Bonferroni-Korrektur</a></li>
+</ul>
+</div>
+</body>
+</html>

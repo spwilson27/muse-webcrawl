@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Garbage Collection (Informatik) – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 900px; padding: 0 1em; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0 0 1em 1em; border: 1px solid #c8ccd1; padding: 4px; background: #f8f9fa; font-size: 0.85em; text-align: center; }
+</style>
+</head>
+<body>
+<h1>Garbage Collection (Informatik)</h1>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"><br>Automatische Speicherbereinigung</div>
+<p>Als <b>Garbage Collection</b> (GC), deutsch <b>Speicherbereinigung</b> oder <b>Freispeicherbereinigung</b>, bezeichnet man in der Informatik ein Verfahren zur automatischen Verwaltung des Arbeitsspeichers eines Programms. Dabei werden nicht mehr benötigte Speicherbereiche, auf die keine Referenz mehr zeigt, automatisch freigegeben und können erneut verwendet werden.</p>
+<h2>Geschichte</h2>
+<p>Die Garbage Collection wurde Ende der 1950er Jahre von John McCarthy für die Programmiersprache Lisp entwickelt. Heute ist sie fester Bestandteil vieler moderner Programmiersprachen wie Java, C#, Python, Ruby, JavaScript und Go, während Sprachen wie C und C++ traditionell auf manuelle Speicherverwaltung setzen beziehungsweise optionale Verfahren anbieten.</p>
+<h2>Verfahren</h2>
+<h3>Referenzzählung</h3>
+<p>Bei der Referenzzählung wird für jedes Objekt mitgezählt, von wie vielen Stellen aus auf es verwiesen wird. Sinkt der Zähler auf null, kann das Objekt freigegeben werden. Der Nachteil dieses Verfahrens ist, dass zyklische Referenzen nicht erkannt werden.</p>
+<h3>Mark-and-Sweep</h3>
+<p>Der Mark-and-Sweep-Algorithmus arbeitet in zwei Phasen: Ausgehend von den Wurzelobjekten (globale Variablen, lokale Variablen auf dem Stack) werden alle erreichbaren Objekte markiert. Anschließend wird der gesamte Speicher durchlaufen und nicht markierte Objekte werden freigegeben.</p>
+<h3>Generationenverfahren</h3>
+<p>Viele moderne Garbage Collectoren nutzen die Beobachtung, dass die meisten Objekte nur kurzlebig sind. Der Speicher wird in Generationen unterteilt; junge Generationen werden häufiger durchsucht als alte, was den Aufwand verringert.</p>
+<h3>Kopierende Verfahren</h3>
+<p>Kopierende Collectoren (Copying Collectors) verschieben lebende Objekte in einen neuen Speicherbereich und geben den alten Bereich komplett frei. Dadurch wird auch eine Defragmentierung des Speichers erreicht.</p>
+<h2>Vor- und Nachteile</h2>
+<p>Die automatische Speicherbereinigung verhindert typische Fehler der manuellen Verwaltung wie Speicherlecks und „Dangling Pointers". Dem stehen Kosten gegenüber: Der Zeitpunkt der Freigabe ist nicht vorhersagbar, die Bereinigung kann Pausen im Programmablauf verursachen und der Speicherverbrauch ist oft höher. Moderne Collectoren wie der G1GC oder ZGC in der Java Virtual Machine versuchen, diese Pausen auf wenige Millisekunden zu begrenzen.</p>
+</body>
+</html>

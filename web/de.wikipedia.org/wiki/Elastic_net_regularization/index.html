@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Elastic-Net-Regularisierung – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em; }
+h1 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; }
+h2 { font-family: 'Linux Libertine', Georgia, serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.formula { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0.6em 1em; font-family: monospace; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Elastic-Net-Regularisierung</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>Elastic-Net-Regularisierung</b> (englisch <i>elastic net regularization</i>) ist ein Verfahren der Statistik und des maschinellen Lernens, das die Strafterme der Lasso-Regression (L1-Regularisierung) und der Ridge-Regression (L2-Regularisierung) kombiniert. Es wurde 2005 von Hui Zou und Trevor Hastie eingeführt.</p>
+<h2>Definition</h2>
+<p>Beim Elastic Net wird die Zielfunktion der kleinsten Quadrate um zwei Strafterme ergänzt:</p>
+<p class="formula">min β: ||y − Xβ||² + λ₂||β||²₂ + λ₁||β||₁</p>
+<p>Alternativ wird die Mischung über einen Parameter α beschrieben, der den Anteil der L1- gegenüber der L2-Strafe steuert. Für α = 1 ergibt sich reines Lasso, für α = 0 reine Ridge-Regression.</p>
+<h2>Motivation</h2>
+<p>Das Lasso-Verfahren hat zwei bekannte Schwächen: Bei stark korrelierten Einflussgrößen wählt es aus einer Gruppe korrelierter Variablen oft willkürlich nur eine aus, und bei mehr Variablen als Beobachtungen (p &gt; n) kann es höchstens n Variablen auswählen. Das Elastic Net behebt beide Probleme: Korrelierte Variablen erhalten tendenziell ähnliche Koeffizienten und werden gemeinsam ein- oder ausgeschlossen (Gruppierungseffekt).</p>
+<h2>Anwendung</h2>
+<p>Das Verfahren wird in der linearen Regression, der logistischen Regression und weiteren generalisierten linearen Modellen eingesetzt, etwa in der Genomik, wo viele stark korrelierte Merkmale vorliegen. Die Hyperparameter werden üblicherweise per Kreuzvalidierung bestimmt. Implementierungen finden sich unter anderem in der R-Bibliothek <i>glmnet</i> und in scikit-learn.</p>
+<p>Siehe auch: <a href="../Lasso_(Statistik)/index.html">Lasso (Statistik)</a>, <a href="../Regularisierung/index.html">Regularisierung</a></p>
+</div>
+</body>
+</html>

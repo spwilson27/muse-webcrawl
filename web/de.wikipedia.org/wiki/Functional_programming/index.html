@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Funktionale Programmierung – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+#content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; line-height: 1.6; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em 1em; margin: 0 0 1em 1em; font-size: 0.9em; }
+.thumb { text-align: center; margin: 1em 0; }
+.thumb img { max-width: 300px; border: 1px solid #a2a9b1; }
+.thumbcaption { font-size: 0.85em; color: #54595d; }
+code { background: #f8f9fa; padding: 0 0.2em; font-family: monospace; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0.8em; overflow-x: auto; }
+table.wikitable { border-collapse: collapse; margin: 1em 0; }
+table.wikitable th, table.wikitable td { border: 1px solid #a2a9b1; padding: 0.3em 0.6em; }
+table.wikitable th { background: #eaecf0; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Funktionale Programmierung</h1>
+<p><b>Funktionale Programmierung</b> ist ein Programmierparadigma, bei dem Programme aus der Auswertung mathematischer Funktionen aufgebaut werden und veränderliche Zustände sowie veränderbare Daten vermieden werden. Sie ist eine Form der <a href="../Declarative_programming/index.html">deklarativen Programmierung</a>, bei der Berechnungen als Auswertung von Ausdrücken beschrieben werden, im Gegensatz zur imperativen Programmierung, bei der Anweisungen den Zustand des Programms verändern.</p>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"><div class="thumbcaption">Funktionen als Bausteine: In der funktionalen Programmierung sind Funktionen Bürger erster Klasse.</div></div>
+<h2>Geschichte</h2>
+<p>Die theoretischen Grundlagen der funktionalen Programmierung gehen auf den <a href="../Lambda_calculus/index.html">Lambda-Kalkül</a> zurück, den Alonzo Church in den 1930er Jahren entwickelte. Die erste funktionale Programmiersprache war <a href="../Lisp_(programming_language)/index.html">Lisp</a>, die John McCarthy Ende der 1950er Jahre entwarf. In den 1970er Jahren entstanden mit ML und später Haskell Sprachen, die auf strenger statischer Typisierung und reinen Funktionen beruhten. In seinem einflussreichen Vortrag <i>Can Programming Be Liberated from the von Neumann Style?</i> (1977) warb John Backus für funktionale Programmierung.</p>
+<h2>Kernkonzepte</h2>
+<h3>Reine Funktionen</h3>
+<p>Eine <i>reine Funktion</i> (pure function) liefert für dieselben Eingabewerte immer dasselbe Ergebnis und hat keine Seiteneffekte. Dadurch lassen sich Programme leichter testen, parallelisieren und formal verifizieren.</p>
+<h3>Unveränderlichkeit</h3>
+<p>Datenstrukturen sind in funktionalen Sprachen in der Regel unveränderlich (immutable). Statt einen Wert zu ändern, erzeugen Operationen neue Werte, wobei persistente Datenstrukturen eine effiziente Umsetzung ermöglichen.</p>
+<h3>Funktionen höherer Ordnung</h3>
+<p>Funktionen sind Werte erster Klasse: Sie können als Argumente übergeben, als Ergebnisse zurückgegeben und in Datenstrukturen gespeichert werden. Bekannte Funktionen höherer Ordnung sind <code>map</code>, <code>filter</code> und <code>fold</code> (reduce).</p>
+<pre>-- Verdopplung aller Elemente einer Liste in Haskell
+verdoppeln :: [Int] -&gt; [Int]
+verdoppeln = map (*2)</pre>
+<h3>Rekursion und Ausdrucksorientierung</h3>
+<p>Anstelle von Schleifen wird Iteration meist durch Rekursion oder durch Funktionen höherer Ordnung ausgedrückt. Tail-Rekursion (Endrekursion) ermöglicht dabei eine effiziente Ausführung ohne wachsenden Aufrufstapel.</p>
+<h2>Programmiersprachen</h2>
+<p>Zu den vorwiegend funktionalen Sprachen zählen <a href="../Haskell/index.html">Haskell</a>, Erlang, Elixir, OCaml, F#, Clojure, Scheme und die ML-Familie. Viele moderne Sprachen wie JavaScript, Python, Java (seit Java 8) und C# haben funktionale Konzepte wie Lambda-Ausdrücke und unveränderliche Collections übernommen.</p>
+<h2>Vor- und Nachteile</h2>
+<p>Vorteile sind die gute Parallelisierbarkeit, die Vermeidung zustandsbedingter Fehler und die mathematisch fundierte Semantik. Als Nachteile gelten der Lernaufwand für Einsteiger sowie in manchen Fällen ein höherer Speicherverbrauch durch unveränderliche Datenstrukturen.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Lambda_calculus/index.html">Lambda-Kalkül</a></li>
+<li><a href="../Referential_transparency/index.html">Referentielle Transparenz</a></li>
+<li><a href="../Monad_(functional_programming)/index.html">Monade (funktionale Programmierung)</a></li>
+</ul>
+<h2>Literatur</h2>
+<ul>
+<li>John Hughes: <i>Why Functional Programming Matters</i>, 1989.</li>
+<li>Harold Abelson, Gerald Jay Sussman: <i>Structure and Interpretation of Computer Programs</i>, MIT Press.</li>
+</ul>
+</div>
+</body>
+</html>

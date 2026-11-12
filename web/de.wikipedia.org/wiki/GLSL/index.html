@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>GLSL – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em 3em; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.4em; }
+p, li { line-height: 1.6; font-family: sans-serif; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0.8em; overflow-x: auto; font-size: 0.85em; }
+img.hero { max-width: 100%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>GLSL</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>GLSL</b> (OpenGL Shading Language, auch GLslang) ist eine an <a href="../C_(Programmiersprache)/index.html">C</a> angelehnte Programmiersprache zum Schreiben von Shadern, die auf der Grafikkarte (GPU) ausgeführt werden. Sie ist Bestandteil von <a href="../OpenGL/index.html">OpenGL</a> und wird von der Khronos Group standardisiert. Mit GLSL lassen sich Vertex-Shader, Fragment-Shader (Pixel-Shader), Geometrie-, Tessellations- und Compute-Shader programmieren.</p>
+<h2>Geschichte</h2>
+<p>GLSL wurde mit OpenGL 2.0 im Jahr 2004 eingeführt und löste zunehmend fest verdrahtete Rendering-Pipelines sowie Assembler-nahe Sprachen wie ARB-Assembly ab. Spätere Versionen erweiterten die Sprache parallel zu den OpenGL-Versionen; GLSL ES ist die Variante für OpenGL ES und <a href="../WebGL/index.html">WebGL</a> auf mobilen Geräten und im Browser. Für die Grafik-API Vulkan wurde mit SPIR-V eine Zwischendarstellung geschaffen, in die GLSL-Shader kompiliert werden können.</p>
+<h2>Sprachmerkmale</h2>
+<p>GLSL ist statisch typisiert und bietet eingebaute Vektor- und Matrizentypen (vec2 bis vec4, mat3, mat4) sowie zahlreiche mathematische Funktionen, die direkt auf die Hardware abgestimmt sind. Ein einfacher Fragment-Shader sieht beispielsweise so aus:</p>
+<pre>
+#version 330 core
+out vec4 FragColor;
+void main() {
+    FragColor = vec4(1.0, 0.5, 0.2, 1.0);
+}
+</pre>
+<p>Die Kommunikation zwischen Programm und Shader erfolgt über Uniform-Variablen (konstante Werte pro Zeichenaufruf) sowie über Ein- und Ausgabevariablen, die zwischen den Shader-Stufen interpoliert werden.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Shader/index.html">Shader</a></li>
+<li><a href="../HLSL/index.html">HLSL</a></li>
+<li><a href="../Vulkan_(API)/index.html">Vulkan (API)</a></li>
+</ul>
+</div>
+</body>
+</html>

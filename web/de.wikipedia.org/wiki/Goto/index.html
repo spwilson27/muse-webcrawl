@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Goto – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; padding: 0; background: #fff; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; padding: 20px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-family: 'Linux Libertine', Georgia, serif; font-weight: normal; margin-top: 28px; }
+h3 { font-size: 18px; font-family: 'Linux Libertine', Georgia, serif; font-weight: bold; margin-top: 20px; }
+p { line-height: 1.6; font-size: 14px; }
+ul { line-height: 1.6; font-size: 14px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; border: 1px solid #eaecf0; padding: 1px 4px; font-size: 13px; }
+img.hero { display: block; margin: 10px 0; max-width: 100%; }
+</style>
+</head>
+<body>
+<div class="content">
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Goto</h1>
+<p><b>Goto</b> (englisch für „gehe zu") ist eine Sprunganweisung in vielen Programmiersprachen, die den Programmfluss ohne Bedingung zu einer markierten Stelle (einem Label bzw. einer Sprungmarke) im Quelltext fortsetzt. Goto gehörte zu den frühesten Kontrollstrukturen der Programmierung und findet sich etwa in Fortran, BASIC, COBOL, Pascal und C. In der modernen Softwareentwicklung gilt der freie Gebrauch von Goto als weitgehend verpönt, weil er den Programmfluss schwer nachvollziehbar macht („Spaghetticode").</p>
+
+<h2>Geschichte und Kritik</h2>
+<p>In den Anfängen der Programmierung waren Sprünge das selbstverständliche Mittel der Ablaufsteuerung, zumal sie direkt den Sprungbefehlen der Maschinensprache entsprachen. Mit dem Aufkommen der <a href="../Strukturierte_Programmierung/index.html">strukturierten Programmierung</a> in den 1960er Jahren geriet Goto in die Kritik. Berühmt wurde der offene Brief <i>Go To Statement Considered Harmful</i> (1968) von <a href="../Edsger_W._Dijkstra/index.html">Edsger W. Dijkstra</a>, der argumentierte, unbeschränkte Sprünge erschwerten die statische Analyse und das Verstehen von Programmen erheblich. Theoretisch hatten Corrado Böhm und Giuseppe Jacopini 1966 gezeigt, dass sich jeder Goto-Algorithmus mit Sequenz, Auswahl und Wiederholung nachbilden lässt.</p>
+
+<h2>Verwendung heute</h2>
+<p>Viele moderne Sprachen verzichten ganz auf Goto (etwa Java und Python) oder bieten es nur eingeschränkt an. In C und C++ wird Goto gelegentlich noch verwendet, vor allem zur zentralen Fehlerbehandlung und zum Verlassen mehrfach verschachtelter Schleifen, wozu es in diesen Sprachen keine direkte Alternative (wie beschriftetes <code>break</code> in Java) gibt. Donald Knuth verteidigte 1974 in <i>Structured Programming with go to Statements</i> einen maßvollen, disziplinierten Einsatz. Der Linux-Kernel verwendet Goto verbreitet für die einheitliche Aufräumlogik in Fehlerpfaden.</p>
+
+<h2>Beispiel</h2>
+<p>In C markiert ein Label mit einem Doppelpunkt die Sprungstelle:</p>
+<p><code>if (fehler) goto cleanup; … cleanup: free(puffer);</code></p>
+<p>Das Programm springt im Fehlerfall direkt zum Label <code>cleanup</code>, an dem zentrale Freigabeschritte ausgeführt werden.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Strukturierte_Programmierung/index.html">Strukturierte Programmierung</a></li>
+<li><a href="../Kontrollstruktur/index.html">Kontrollstruktur</a></li>
+<li><a href="../Ausnahmebehandlung/index.html">Ausnahmebehandlung</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Google File System – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em; }
+h1 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Google File System</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Das <b>Google File System</b> (GFS) ist ein proprietäres, verteiltes Dateisystem, das <a href="../Google/index.html">Google</a> für den Einsatz auf großen Rechnerclustern aus Standardhardware entwickelte. Es wurde 2003 in einer wissenschaftlichen Veröffentlichung vorgestellt und bildete lange die Speichergrundlage vieler Google-Dienste. Der Nachfolger wird intern als <i>Colossus</i> bezeichnet.</p>
+<h2>Entwurf</h2>
+<p>GFS ist auf sehr große Dateien (typischerweise mehrere Gigabyte), hohe Durchsatzraten und Fehlertoleranz ausgelegt. Hardwareausfälle werden nicht als Ausnahme, sondern als Regelfall behandelt: Daten werden in Blöcken (Chunks) von 64 Megabyte gespeichert und standardmäßig dreifach auf verschiedene Rechner repliziert.</p>
+<h2>Architektur</h2>
+<p>Ein GFS-Cluster besteht aus einem einzelnen Master-Server, der Metadaten und die Zuordnung von Dateien zu Chunks verwaltet, sowie zahlreichen Chunkservern, die die eigentlichen Datenblöcke speichern. Clients erfragen beim Master die Standorte der Chunks und übertragen die Daten anschließend direkt mit den Chunkservern, was den Master entlastet.</p>
+<h2>Bedeutung</h2>
+<p>Die Veröffentlichung des GFS-Konzepts – zusammen mit dem MapReduce-Papier – prägte die Entwicklung verteilter Systeme maßgeblich und inspirierte unter anderem das Hadoop Distributed File System (HDFS) des Apache-Hadoop-Projekts.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Verteiltes_Dateisystem/index.html">Verteiltes Dateisystem</a></li>
+<li><a href="../Bigtable/index.html">Bigtable</a></li>
+<li><a href="../MapReduce/index.html">MapReduce</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Elliptic Curve Diffie-Hellman – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1em 2em 3em; }
+h1 { font-family: "Linux Libertine", Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: "Linux Libertine", Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em; margin: 0 0 1em 1em; width: 250px; font-size: 90%; }
+.infobox th { text-align: left; vertical-align: top; padding-right: 0.5em; }
+.catlinks { border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.4em; font-size: 90%; margin-top: 2em; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Elliptic Curve Diffie-Hellman</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Elliptic Curve Diffie-Hellman</b> (<b>ECDH</b>) ist ein Schlüsselaustauschprotokoll, das auf dem klassischen Diffie-Hellman-Verfahren aufbaut, jedoch die algebraische Struktur <a href="../Elliptic_curve_cryptography/index.html">elliptischer Kurven</a> über endlichen Körpern nutzt. Es erlaubt zwei Parteien, über einen unsicheren Kanal ein gemeinsames Geheimnis zu vereinbaren, ohne es direkt zu übertragen.</p>
+<h2>Funktionsweise</h2>
+<p>Beide Parteien einigen sich auf eine elliptische Kurve und einen Basispunkt G. Jede Partei wählt ein privates Geheimnis (eine Zufallszahl d) und berechnet den öffentlichen Schlüssel Q = d·G (Skalarmultiplikation auf der Kurve). Tauschen beide ihre öffentlichen Schlüssel aus, kann jede Seite aus dem eigenen privaten Schlüssel und dem fremden öffentlichen Schlüssel denselben Punkt S berechnen; dessen x-Koordinate dient als Ausgangspunkt für einen symmetrischen Sitzungsschlüssel, meist über eine Schlüsselableitungsfunktion.</p>
+<p>Die Sicherheit beruht auf dem Problem des diskreten Logarithmus auf elliptischen Kurven (ECDLP), für das kein effizienter klassischer Algorithmus bekannt ist. Dadurch genügen deutlich kürzere Schlüssel als beim klassischen Diffie-Hellman oder bei RSA: 256 Bit bei ECDH bieten eine vergleichbare Sicherheit wie 3072 Bit bei RSA.</p>
+<h2>Verwendung</h2>
+<p>ECDH – häufig in der ephemeren Variante ECDHE, die Perfect Forward Secrecy bietet – ist Bestandteil moderner Protokolle wie TLS 1.2 und TLS 1.3. Verbreitete Kurven sind NIST P-256 und P-384 sowie die von Daniel J. Bernstein entworfene Curve25519 (X25519).</p>
+<div class="catlinks">Kategorien: Kryptologie | Kryptographisches Protokoll</div>
+</div>
+</body>
+</html>

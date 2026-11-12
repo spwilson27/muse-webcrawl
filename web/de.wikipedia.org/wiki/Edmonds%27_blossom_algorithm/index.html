@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Edmonds' Blossom-Algorithmus – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 1.5em 2em 3em; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em 1em; margin: 0 0 1em 1em; font-size: 0.9em; }
+img.hero { max-width: 220px; display: block; margin-bottom: 0.5em; }
+.small { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Edmonds' Blossom-Algorithmus</h1>
+<div class="infobox">
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<b>Blossom-Algorithmus</b><br>
+Entwickler: Jack Edmonds<br>
+Veröffentlicht: 1965<br>
+Problem: Maximales Matching in allgemeinen Graphen
+</div>
+<p><b>Edmonds' Blossom-Algorithmus</b> (englisch <i>blossom algorithm</i>) ist ein Algorithmus aus der Graphentheorie, der ein Matching maximaler Kardinalität in einem beliebigen (nicht notwendig bipartiten) Graphen berechnet. Er wurde 1965 von Jack Edmonds veröffentlicht und gilt als einer der Grundsteine der kombinatorischen Optimierung und der Theorie der polynomialen Algorithmen.</p>
+<h2>Problemstellung</h2>
+<p>Ein Matching in einem Graphen ist eine Menge von Kanten, die keine gemeinsamen Endpunkte besitzen. Während in bipartiten Graphen maximale Matchings leicht mit augmentierenden Wegen gefunden werden können, scheitert dieses Vorgehen in allgemeinen Graphen an ungeraden Kreisen. Edmonds nannte solche ungeraden Kreise, die bei der Suche nach augmentierenden Wegen auftreten, <i>blossoms</i> („Blüten").</p>
+<h2>Idee des Algorithmus</h2>
+<p>Der Algorithmus sucht wie bei bipartiten Graphen nach augmentierenden Wegen bezüglich des aktuellen Matchings. Wird dabei eine „Blüte" gefunden – ein ungerader Kreis, dessen Basis über eine gematchte Kante mit dem Kreis verbunden ist –, so wird die gesamte Blüte zu einem einzigen Pseudoknoten kontrahiert („shrinking"). Im kontrahierten Graphen wird die Suche fortgesetzt; nach Auffinden eines augmentierenden Weges wird die Kontraktion wieder expandiert und das Matching innerhalb der Blüte geeignet angepasst.</p>
+<p>Die ursprüngliche Implementierung hatte eine Laufzeit von O(n<sup>4</sup>); spätere Verfeinerungen, etwa von Micali und Vazirani, erreichen O(m·√n).</p>
+<h2>Bedeutung</h2>
+<p>Die Arbeit von 1965, in der Edmonds den Algorithmus vorstellte, trug wesentlich zur Begriffsbildung der Komplexitätstheorie bei: Edmonds schlug darin vor, „gute" Algorithmen mit solchen in Polynomialzeit gleichzusetzen – ein Gedanke, der später in der Definition der Komplexitätsklasse P und der Cobham-Edmonds-These aufging.</p>
+<p class="small">Siehe auch: <a href="../Matching_(Graphentheorie)/index.html">Matching</a> · <a href="../Jack_Edmonds/index.html">Jack Edmonds</a> · <a href="../Graphentheorie/index.html">Graphentheorie</a></p>
+</div>
+</body>
+</html>

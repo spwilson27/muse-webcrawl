@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Failover – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; color: #202122; background: #fff; }
+#content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; font-weight: normal; margin-top: 1.2em; }
+p, li { font-family: sans-serif; font-size: 0.92em; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Failover</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Als <b>Failover</b> bezeichnet man in der Informationstechnik das automatische Umschalten auf ein Ersatzsystem (Standby), wenn das primäre System ausfällt. Ziel ist eine hohe Verfügbarkeit von Diensten: Der Betrieb wird durch den Ausfall möglichst nicht oder nur kurz unterbrochen.</p>
+<h2>Funktionsweise</h2>
+<p>Primär- und Ersatzsystem überwachen sich gegenseitig, typischerweise durch regelmäßige Lebenszeichen (<i>Heartbeat</i>). Bleibt der Heartbeat aus oder meldet die Überwachung einen Fehler, übernimmt das Standby-System die Aufgaben des ausgefallenen Systems: Es aktiviert die benötigten Dienste, übernimmt IP-Adressen oder Speicherzugriffe und setzt den Betrieb fort. Bei Datenbanken wird der Zustand durch Replikation synchron gehalten, damit beim Umschalten keine oder nur wenige Daten verloren gehen. Das spätere Zurückschalten auf das reparierte Primärsystem heißt <i>Failback</i>.</p>
+<h2>Konfigurationen</h2>
+<ul>
+<li><b>Aktiv/Passiv:</b> Ein System arbeitet, das andere steht als „hot standby" (laufend, sofort einsatzbereit), „warm standby" (teilweise vorbereitet) oder „cold standby" (ausgeschaltet, muss erst gestartet werden) bereit.</li>
+<li><b>Aktiv/Aktiv:</b> Beide Systeme verarbeiten Anfragen parallel; beim Ausfall übernimmt das verbleibende System die volle Last.</li>
+</ul>
+<h2>Anwendungsbereiche</h2>
+<p>Failover wird bei Datenbank- und Dateiservern, Netzwerkkomponenten (Router, Firewalls mit Protokollen wie VRRP), Stromversorgungen, Internetanbindungen und Cloud-Diensten eingesetzt. Wesentliche Kennzahlen sind die Wiederanlaufzeit (RTO) und der maximal tolerierbare Datenverlust (RPO).</p>
+</div>
+</body>
+</html>

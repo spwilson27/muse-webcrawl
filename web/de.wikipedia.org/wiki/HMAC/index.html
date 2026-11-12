@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>HMAC – Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine","Georgia",serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:2em 2.5em;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em;margin-top:0}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:.15em}
+p{line-height:1.6}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:280px;border:1px solid #a2a9b1;background:#f8f9fa;padding:.6em;margin:0 0 1em 1em;font-size:.88em}
+.infobox th{background:#b0c4de;text-align:center;padding:.3em}
+.infobox td{padding:.2em .4em}
+img.hero{width:100%;max-height:240px;object-fit:cover;background:#eaecf0;display:block}
+.cat{font-size:.85em;color:#54595d;border-top:1px solid #a2a9b1;padding-top:.5em;margin-top:2em}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>HMAC</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<table class="infobox">
+<tr><th colspan="2">HMAC</th></tr>
+<tr><td><b>Art</b></td><td>Message Authentication Code</td></tr>
+<tr><td><b>Grundlage</b></td><td>kryptographische Hashfunktion + geheimer Schlüssel</td></tr>
+<tr><td><b>Standard</b></td><td>RFC 2104, FIPS 198-1</td></tr>
+<tr><td><b>Entwickler</b></td><td>Bellare, Canetti, Krawczyk (1996)</td></tr>
+</table>
+<p><b>HMAC</b> (englisch für <i>keyed-hash message authentication code</i>) ist ein Verfahren zur Berechnung eines <a href="../Message_Authentication_Code/index.html">Message Authentication Codes</a> mithilfe einer kryptographischen <a href="../Hashfunktion/index.html">Hashfunktion</a> und eines geheimen Schlüssels. Es dient der Sicherstellung von Integrität und Authentizität von Nachrichten: Nur wer den Schlüssel kennt, kann den korrekten Prüfwert erzeugen.</p>
+<h2>Konstruktion</h2>
+<p>HMAC verknüpft den Schlüssel durch zweimaliges Hashen mit zwei unterschiedlichen Füllwerten (inner pad und outer pad, hexadezimal 0x36 beziehungsweise 0x5c) mit der Nachricht: HMAC(K, m) = H((K′ ⊕ opad) ‖ H((K′ ⊕ ipad) ‖ m)). Diese Konstruktion schützt – anders als die naive Verkettung H(K ‖ m) – unter anderem gegen Längenerweiterungsangriffe auf Hashfunktionen der Merkle-Damgård-Bauart. HMAC lässt sich mit jeder iterierten Hashfunktion wie <a href="../SHA-2/index.html">SHA-256</a> kombinieren; die Bezeichnung lautet dann etwa HMAC-SHA256.</p>
+<h2>Sicherheit</h2>
+<p>Die Sicherheit von HMAC ist formal bewiesen, solange die zugrunde liegende Kompressionsfunktion als Pseudozufallsfunktion modellierbar ist. Bemerkenswert ist, dass HMAC auch mit der als gebrochen geltenden Hashfunktion MD5 keine praktikablen Angriffe auf die MAC-Eigenschaft zulässt; dennoch wird für neue Anwendungen SHA-2 oder SHA-3 empfohlen.</p>
+<h2>Anwendungen</h2>
+<p>HMAC wird in zahlreichen Protokollen eingesetzt, etwa in <a href="../IPsec/index.html">IPsec</a>, <a href="../Transport_Layer_Security/index.html">TLS</a>, SSH, JSON Web Tokens (HS256) und als Baustein der Schlüsselableitungsfunktion <a href="../HKDF/index.html">HKDF</a> sowie der Passwortableitung PBKDF2.</p>
+<div class="cat">Kategorien: Kryptographie | Hashfunktion</div>
+</div>
+</body>
+</html>

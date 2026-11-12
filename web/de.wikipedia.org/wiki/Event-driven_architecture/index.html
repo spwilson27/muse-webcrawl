@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Ereignisgesteuerte Architektur – Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine","Georgia",serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;background:#f8f9fa;border:1px solid #a2a9b1;margin:0 0 12px 16px;padding:8px;font-size:0.9em}
+.infobox th{text-align:left;background:#eaecf0;padding:4px}
+.infobox td{padding:4px}
+.thumb{float:right;margin:0 0 12px 16px;background:#f8f9fa;border:1px solid #c8ccd1;padding:4px;font-size:0.85em;text-align:center}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Ereignisgesteuerte Architektur</h1>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Event-Driven Architecture</th></tr>
+<tr><td><b>Art</b></td><td>Softwarearchitektur-Muster</td></tr>
+<tr><td><b>Komponenten</b></td><td>Ereigniserzeuger, Ereigniskanal, Ereigniskonsument</td></tr>
+<tr><td><b>Kommunikation</b></td><td>asynchron, Publish/Subscribe</td></tr>
+</table>
+</div>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"><br>Schema einer ereignisgesteuerten Architektur</div>
+<p>Eine <b>ereignisgesteuerte Architektur</b> (englisch <i>event-driven architecture</i>, EDA) ist ein Muster der Softwarearchitektur, bei dem die Komponenten eines Systems über Ereignisse (Events) miteinander kommunizieren. Ein Ereignis ist eine feststellbare Zustandsänderung, etwa „Bestellung eingegangen" oder „Temperatur überschritten". Erzeuger veröffentlichen Ereignisse, ohne die Empfänger zu kennen; Konsumenten abonnieren die für sie relevanten Ereignistypen und reagieren asynchron darauf.</p>
+<h2>Bausteine</h2>
+<ul>
+<li><b>Ereigniserzeuger (Producer/Event Source):</b> erkennt Zustandsänderungen und emittiert Ereignisse.</li>
+<li><b>Ereigniskanal (Event Broker/Channel):</b> transportiert und puffert Ereignisse, z. B. ein Message Broker oder eine Streaming-Plattform.</li>
+<li><b>Ereigniskonsument (Consumer):</b> verarbeitet Ereignisse und löst ggf. weitere Ereignisse aus.</li>
+<li><b>Ereignisverarbeitung (Event Processing):</b> kann von einfacher Weiterleitung bis zur komplexen Ereignisverarbeitung (CEP) reichen, die Muster in Ereignisströmen erkennt.</li>
+</ul>
+<h2>Eigenschaften</h2>
+<p>EDA-Systeme sind lose gekoppelt, gut skalierbar und können in Echtzeit auf Veränderungen reagieren. Dem stehen Herausforderungen gegenüber: Die Nachverfolgung von Abläufen (Tracing) ist schwieriger, die Reihenfolge von Ereignissen und die Konsistenz verteilter Daten müssen besonders beachtet werden, und die Fehlersuche in asynchronen Abläufen ist aufwendiger als bei synchronen Aufrufen.</p>
+<h2>Anwendungsgebiete</h2>
+<p>Ereignisgesteuerte Architekturen finden sich in Mikroservice-Systemen, im Internet der Dinge, bei Echtzeit-Analysen, in Handels- und Überwachungssystemen sowie in grafischen Benutzeroberflächen, deren Interaktion traditionell ereignisbasiert ist. Eng verwandt sind Konzepte wie <a href="../Event_sourcing/index.html">Event Sourcing</a> und CQRS.</p>
+</div>
+</body>
+</html>

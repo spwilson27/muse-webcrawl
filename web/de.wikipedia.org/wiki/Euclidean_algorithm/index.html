@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Euklidischer Algorithmus – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em; }
+h1 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em 1em; margin: 0 0 1em 1em; font-size: 0.85em; width: 250px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+code { background: #f0f0f0; padding: 0.1em 0.3em; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Euklidischer Algorithmus</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<div class="infobox">
+<p><b>Zweck:</b> größter gemeinsamer Teiler (ggT) zweier Zahlen</p>
+<p><b>Quelle:</b> Euklid, <i>Elemente</i>, Buch VII, Sätze 1–2; Buch X</p>
+<p><b>Verfahren:</b> wiederholte Division mit Rest</p>
+</div>
+<p>Der <b>euklidische Algorithmus</b> ist ein Verfahren zur Berechnung des größten gemeinsamen Teilers (ggT) zweier natürlicher Zahlen. Er wurde von Euklid in seinen <i>Elementen</i> beschrieben (Buch VII), geht vermutlich auf ältere Mathematik zurück und zählt zu den ältesten heute noch verwendeten Algorithmen überhaupt.</p>
+<h2>Verfahren</h2>
+<p>Grundgedanke: Der ggT zweier Zahlen ändert sich nicht, wenn man die größere Zahl durch den Rest ersetzt, der bei der Division durch die kleinere Zahl bleibt. Man wiederholt dies so lange, bis der Rest 0 ist; die letzte von 0 verschiedene Zahl ist der ggT. In moderner Schreibweise für die Zahlen a und b (mit a ≥ b):</p>
+<ul>
+<li>Ist b = 0, so ist der ggT gleich a.</li>
+<li>Sonst berechne den Rest r von a bei Division durch b und fahre mit (b, r) fort.</li>
+</ul>
+<p><b>Beispiel:</b> ggT(1071, 462): 1071 = 2 · 462 + 147; 462 = 3 · 147 + 21; 147 = 7 · 21 + 0. Also ggT = 21.</p>
+<p>Bei Euklid selbst wurde die Division noch als wiederholte Subtraktion der kleineren von der größeren Strecke (Wechselwegnahme, griechisch <i>anthyphairesis</i>) ausgeführt und anschaulich an Größen statt an Zahlen erklärt.</p>
+<h2>Erweiterter euklidischer Algorithmus</h2>
+<p>Die erweiterte Fassung berechnet zusätzlich ganze Zahlen x und y mit <code>x·a + y·b = ggT(a, b)</code> (Bézout-Identität). Sie ist unentbehrlich für die Berechnung modularer Inverser und findet unter anderem in der Kryptographie – etwa beim RSA-Verfahren – Anwendung. Das kleinste gemeinsame Vielfache zweier Zahlen erhält man über die Beziehung kgV(a,b) = a·b / ggT(a,b).</p>
+<h2>Effizienz</h2>
+<p>Die Zahl der Schritte ist minimal für Paare aufeinanderfolgender Fibonacci-Zahlen am ungünstigsten; Gabriel Lamé bewies 1844, dass die Schrittzahl höchstens fünfmal so groß ist wie die Zahl der Dezimalstellen der kleineren Eingabe – eine der frühesten Laufzeitanalysen der Geschichte. In der Praxis ist der Algorithmus außerordentlich schnell.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Euclid/index.html">Euklid</a></li>
+<li><a href="../Euclid's_Elements/index.html">Elemente (Euklid)</a></li>
+<li><a href="../Greatest_common_divisor/index.html">Größter gemeinsamer Teiler</a></li>
+<li><a href="../Extended_Euclidean_algorithm/index.html">Erweiterter euklidischer Algorithmus</a></li>
+<li><a href="../B%C3%A9zout's_identity/index.html">Lemma von Bézout</a></li>
+</ul>
+</div>
+</body>
+</html>

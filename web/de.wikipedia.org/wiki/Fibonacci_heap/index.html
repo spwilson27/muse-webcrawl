@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Fibonacci-Heap – Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f8f9fa;color:#202122}
+.wrap{max-width:960px;margin:0 auto;background:#fff;padding:2em 2.5em;box-shadow:0 0 4px rgba(0,0,0,.1)}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.imgbox{float:right;width:250px;margin:0 0 1em 1.5em;background:#f8f9fa;border:1px solid #a2a9b1;padding:6px;font-size:.85em;text-align:center}
+.imgbox img{max-width:100%}
+.small{font-size:.85em;color:#54595d}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Fibonacci-Heap</h1>
+<div class="imgbox"><img src="images/hero.png" alt="Hero image (placeholder)"><br>Beispiel eines Fibonacci-Heaps</div>
+<p>Ein <b>Fibonacci-Heap</b> ist eine Datenstruktur für eine Prioritätswarteschlange, die 1984 von Michael L. Fredman und Robert E. Tarjan entwickelt wurde. Er besteht aus einer Sammlung heapgeordneter Bäume und zeichnet sich durch besonders gute amortisierte Laufzeiten aus: Einfügen, Vereinigen und Decrease-Key laufen in amortisiert konstanter Zeit O(1), das Entfernen des Minimums in amortisiert O(log n).</p>
+<h2>Struktur</h2>
+<p>Die Bäume des Heaps sind nur lose organisiert; eine Wurzelliste verbindet alle Baumwurzeln ringförmig. Operationen werden so lange wie möglich hinausgezögert („lazy“): Erst beim Entfernen des Minimums werden Bäume gleichen Grades konsolidiert. Markierungen an Knoten steuern das Abschneiden von Teilbäumen bei Decrease-Key; gerade die Analyse der dabei entstehenden Baumgrößen führt über die Fibonacci-Zahlen zur Namensgebung – der Grad eines Knotens wächst höchstens logarithmisch mit der Teilbaumgröße, wobei die Fibonacci-Folge die untere Schranke für dieses Wachstum liefert.</p>
+<h2>Anwendung</h2>
+<p>Fibonacci-Heaps verbessern die theoretische Laufzeit von Graphalgorithmen wie dem Dijkstra-Algorithmus und dem Prim-Algorithmus auf O(E + V log V). In der Praxis sind sie wegen hoher Konstanten und schlechter Cache-Lokalität oft langsamer als einfachere Heaps.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Fibonacci/index.html">Leonardo Fibonacci</a></li>
+</ul>
+<p class="small">Kategorie: Datenstruktur | Suchalgorithmus</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Event Sourcing – Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine","Georgia",serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;background:#f8f9fa;border:1px solid #a2a9b1;margin:0 0 12px 16px;padding:8px;font-size:0.9em}
+.infobox th{text-align:left;background:#eaecf0;padding:4px}
+.infobox td{padding:4px}
+.thumb{float:right;margin:0 0 12px 16px;background:#f8f9fa;border:1px solid #c8ccd1;padding:4px;font-size:0.85em;text-align:center}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Event Sourcing</h1>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Event Sourcing</th></tr>
+<tr><td><b>Art</b></td><td>Architektur-/Persistenzmuster</td></tr>
+<tr><td><b>Speicherung</b></td><td>unveränderliche Folge von Ereignissen (Event Store)</td></tr>
+<tr><td><b>Verwandte Muster</b></td><td>CQRS, Event-Driven Architecture</td></tr>
+</table>
+</div>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"><br>Rekonstruktion eines Zustands aus einer Ereignisfolge</div>
+<p><b>Event Sourcing</b> ist ein Muster der Softwareentwicklung, bei dem der Zustand einer Anwendung nicht direkt gespeichert wird, sondern als Folge aller ihn verursachenden Ereignisse (Events). Statt den aktuellen Stand einer Entität – etwa den Kontostand – zu überschreiben, speichert ein sogenannter Event Store jedes fachliche Ereignis („Konto eröffnet", „Betrag eingezahlt", „Betrag abgehoben") in zeitlicher Reihenfolge und unveränderlich ab. Der aktuelle Zustand ergibt sich durch das Nachspielen (Replay) aller Ereignisse.</p>
+<h2>Vorteile</h2>
+<ul>
+<li><b>Vollständige Historie:</b> Jede Änderung ist nachvollziehbar; der Zustand zu jedem beliebigen vergangenen Zeitpunkt kann rekonstruiert werden (Audit, „Zeitreisen").</li>
+<li><b>Fehlersuche und Analyse:</b> Fehler lassen sich aus der Ereignisfolge reproduzieren; aus den Ereignissen können nachträglich neue Auswertungen und Sichten (Projektionen) abgeleitet werden.</li>
+<li><b>Skalierung:</b> Das Muster passt gut zu <a href="../Event-driven_architecture/index.html">ereignisgesteuerten Architekturen</a> und wird häufig zusammen mit CQRS eingesetzt, bei dem Schreib- und Lesemodelle getrennt werden.</li>
+</ul>
+<h2>Nachteile und Herausforderungen</h2>
+<p>Das Nachspielen langer Ereignisfolgen kann langsam sein; dem wird mit Snapshots (gespeicherten Zwischenständen) begegnet. Ereignisschemata müssen über Jahre abwärtskompatibel weiterentwickelt werden (Versionierung, Upcasting). Zudem erschwert das Modell einfache Abfragen des aktuellen Stands, und das Löschen personenbezogener Daten (etwa nach der DSGVO) steht im Spannungsverhältnis zur Unveränderlichkeit des Event Stores.</p>
+<h2>Anwendung</h2>
+<p>Event Sourcing wird vor allem in Domänen mit strengen Nachweispflichten eingesetzt, etwa in Finanzsystemen, im Versicherungswesen und in der Logistik, sowie in komplexen Mikroservice-Landschaften.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>GRASP (Metaheuristik) – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0 auto; max-width: 960px; padding: 16px; line-height: 1.6; color: #202122; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; }
+.infobox { float: right; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px; margin: 0 0 12px 12px; font-size: 90%; }
+.infobox caption { font-weight: bold; background: #eaecf0; padding: 4px; }
+a { color: #36c; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0 0 10px 14px; font-size: 88%; }
+</style>
+</head>
+<body>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"></div>
+<h1>GRASP (Metaheuristik)</h1>
+<p><b>GRASP</b> (<i>Greedy Randomized Adaptive Search Procedure</i>) ist eine iterative <a href="../Metaheuristik/index.html">Metaheuristik</a> zur Lösung kombinatorischer Optimierungsprobleme. Sie wurde 1989 von Thomas A. Feo und Mauricio G. C. Resende vorgestellt und kombiniert eine randomized <a href="../Greedy-Algorithmus/index.html">Greedy-Konstruktion</a> mit einer anschließenden lokalen Suche.</p>
+
+<h2>Verfahren</h2>
+<p>Jede GRASP-Iteration besteht aus zwei Phasen:</p>
+<ol>
+<li><b>Konstruktionsphase:</b> Eine Lösung wird schrittweise aufgebaut. In jedem Schritt werden alle noch einsetzbaren Elemente nach einer Greedy-Funktion bewertet; aus den besten Elementen wird die sogenannte <i>Restricted Candidate List</i> (RCL) gebildet. Aus dieser Liste wird zufällig ein Element ausgewählt und in die Teillösung übernommen. Da die Bewertungen nach jedem Schritt neu berechnet werden, ist das Verfahren adaptiv, und durch die Zufallsauswahl entstehen in jeder Iteration unterschiedliche Lösungen.</li>
+<li><b>Lokale Suche:</b> Die konstruierte Lösung wird durch ein Verfahren der lokalen Suche (etwa 2-opt oder Vertauschungsnachbarschaften) verbessert, bis ein lokales Optimum erreicht ist.</li>
+</ol>
+<p>Die beste über alle Iterationen gefundene Lösung wird als Ergebnis zurückgegeben.</p>
+
+<h2>Parameter und Varianten</h2>
+<p>Zentraler Steuerparameter ist die Größe der RCL, häufig über einen Wert α ∈ [0,1] als Schwelle relativ zum besten Greedy-Wert definiert: α = 0 entspricht reinem Greedy, α = 1 der reinen Zufallskonstruktion. Wichtige Weiterentwicklungen sind Reactive GRASP (α wird aus der bisherigen Lösungsqualität angepasst), Pfadverknüpfung (Path Relinking) zwischen Elite-Lösungen sowie parallele GRASP-Varianten.</p>
+
+<h2>Anwendungen</h2>
+<p>GRASP wurde erfolgreich auf zahlreiche Probleme angewandt, darunter das quadratische Zuordnungsproblem, Set-Covering-Probleme, Touren- und Einsatzplanung, Maximal-Clique-Probleme, Ablaufplanung (Scheduling) und das Problem des Handlungsreisenden.</p>
+
+<h2>Literatur</h2>
+<ul>
+<li>Thomas A. Feo, Mauricio G. C. Resende: <i>Greedy Randomized Adaptive Search Procedures</i>. In: Journal of Global Optimization 6 (1995), S. 109–133.</li>
+<li>Mauricio G. C. Resende, Celso C. Ribeiro: <i>Optimization by GRASP</i>. Springer, New York 2016.</li>
+</ul>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Metaheuristik/index.html">Metaheuristik</a></li>
+<li><a href="../Lokale_Suche/index.html">Lokale Suche</a></li>
+<li><a href="../Simulated_Annealing/index.html">Simulated Annealing</a></li>
+</ul>
+</body>
+</html>

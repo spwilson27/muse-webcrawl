@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Hinge loss – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 1.5em 2em 3em; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { font-size: 1.35em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; font-weight: normal; margin-top: 1.2em; }
+p, li { line-height: 1.6; font-size: 0.95em; }
+.formula { text-align: center; font-size: 1.1em; margin: 1em 0; font-style: italic; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 1em auto; max-width: 100%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Hinge loss</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>Hinge loss</b> (englisch für „Scharnier-Verlust“) ist eine Verlustfunktion, die im maschinellen Lernen zum Trainieren von Klassifikatoren verwendet wird, insbesondere bei Support Vector Machines (SVM). Sie bestraft falsch klassifizierte Beispiele sowie korrekt klassifizierte Beispiele, die zu nahe an der Entscheidungsgrenze liegen.</p>
+<h2>Definition</h2>
+<p>Für eine binäre Klassifikation mit wahren Klassenbezeichnungen <i>y</i> ∈ {−1, +1} und der Vorhersage <i>ŷ</i> eines linearen Modells ist die Hinge loss definiert als:</p>
+<p class="formula">ℓ(ŷ) = max(0, 1 − y · ŷ)</p>
+<p>Ist das Beispiel korrekt und mit ausreichendem Abstand (Margin) klassifiziert, also <i>y · ŷ</i> ≥ 1, beträgt der Verlust null. Andernfalls wächst der Verlust linear mit dem Ausmaß der Verletzung der Margin-Bedingung.</p>
+<h2>Eigenschaften</h2>
+<p>Die Hinge loss ist konvex, aber an der Stelle <i>y · ŷ</i> = 1 nicht differenzierbar; zur Optimierung werden daher Subgradientenverfahren eingesetzt. Die Minimierung der Hinge loss zusammen mit einem Regularisierungsterm führt genau auf das Optimierungsproblem der <a href="../Support_Vector_Machine/index.html">Support Vector Machine</a> zurück. Gegenüber der 0-1-Verlustfunktion ist sie ein rechnerisch handhabbarer Ersatz; gegenüber quadratischen Verlustfunktionen reagiert sie robuster auf einzelne stark abweichende Beispiele.</p>
+<h2>Varianten</h2>
+<p>Eine verbreitete Variante ist die quadrierte Hinge loss, max(0, 1 − y·ŷ)², die überall differenzierbar ist. Für Mehrklassenprobleme existieren Verallgemeinerungen, etwa die Crammer-Singer-Formulierung. Auch in neuronalen Netzen wird die Hinge loss gelegentlich als Alternative zur Kreuzentropie eingesetzt.</p>
+</div>
+</body>
+</html>

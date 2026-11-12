@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Huffman-Kodierung – Wikipedia</title>
+<style>
+body { font-family: sans-serif; line-height: 1.6; max-width: 900px; margin: 0 auto; padding: 1em; color: #202122; }
+h1 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { border-bottom: 1px solid #a2a9b1; }
+img { max-width: 100%; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em; margin: 0 0 1em 1em; width: 250px; font-size: 0.9em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Huffman-Kodierung</h1>
+<p>Die <b>Huffman-Kodierung</b> ist ein Verfahren der Datenkompression, das 1952 von David A. Huffman entwickelt wurde. Sie gehört zu den entropiekodierenden Verfahren und ordnet jedem Zeichen eines Alphabets einen Code variabler Länge zu, wobei häufigere Zeichen kürzere Codes erhalten als seltenere. Die Huffman-Kodierung wird unter anderem bei den Kompressionsverfahren DEFLATE (ZIP, gzip, PNG) und bei JPEG verwendet.</p>
+<h2>Verfahren</h2>
+<p>Grundlage des Verfahrens ist die Häufigkeitsverteilung der zu kodierenden Zeichen. Ausgehend von den Blättern, die jeweils ein Zeichen mit seiner Wahrscheinlichkeit darstellen, wird ein binärer Baum (der sogenannte Huffman-Baum) aufgebaut: In jedem Schritt werden die beiden Knoten mit den geringsten Gewichten zu einem neuen Knoten zusammengefasst, dessen Gewicht der Summe der beiden Einzelgewichte entspricht. Dieser Vorgang wird wiederholt, bis nur noch ein Knoten (die Wurzel) übrig ist. Der Code eines Zeichens ergibt sich aus dem Weg von der Wurzel zum Blatt, wobei eine Kante nach links üblicherweise mit 0 und eine Kante nach rechts mit 1 beschriftet wird.</p>
+<h2>Eigenschaften</h2>
+<p>Die Huffman-Kodierung erzeugt einen präfixfreien Code: Kein Codewort ist Präfix eines anderen Codewortes, sodass die Dekodierung ohne zusätzliche Trennzeichen eindeutig möglich ist. Es lässt sich zeigen, dass der Huffman-Code für eine gegebene Häufigkeitsverteilung die minimale durchschnittliche Codewortlänge unter allen präfixfreien Codes erreicht, sofern die Wahrscheinlichkeiten der Zeichen exakt bekannt sind.</p>
+<h2>Varianten</h2>
+<p>Neben der klassischen statischen Huffman-Kodierung, bei der der Codebaum vor der Übertragung bekannt sein muss, existieren adaptive Verfahren, bei denen Sender und Empfänger den Baum während der Übertragung laufend anpassen. Eine weitere Verallgemeinerung erlaubt Codealphabetgrößen größer als zwei (n-äre Huffman-Kodierung).</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Arithmetische_Kodierung/index.html">Arithmetische Kodierung</a></li>
+<li><a href="../Shannon-Fano-Kodierung/index.html">Shannon-Fano-Kodierung</a></li>
+<li><a href="../Datenkompression/index.html">Datenkompression</a></li>
+</ul>
+<h2>Literatur</h2>
+<ul>
+<li>David A. Huffman: <i>A Method for the Construction of Minimum-Redundancy Codes.</i> In: Proceedings of the IRE, Band 40, Nr. 9, 1952, S. 1098–1101.</li>
+</ul>
+</body>
+</html>

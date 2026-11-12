@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Algorithmus von Ford und Fulkerson – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 1em 2em 3em; }
+h1 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.small { font-size: 85%; color: #54595d; }
+code { background: #f8f9fa; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Algorithmus von Ford und Fulkerson</h1>
+<p>Der <b>Algorithmus von Ford und Fulkerson</b> ist ein Algorithmus aus der Graphentheorie zur Berechnung eines maximalen Flusses in einem Flussnetzwerk. Er wurde 1956 von Lester Randolph Ford Jr. und Delbert Ray Fulkerson veröffentlicht und beruht auf der Idee der flussvergrößernden (augmentierenden) Wege im Residualgraphen.</p>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h2>Problemstellung</h2>
+<p>Gegeben ist ein gerichteter Graph mit einer Quelle s und einer Senke t sowie Kapazitäten auf den Kanten. Gesucht ist ein Fluss maximaler Stärke von s nach t, der auf keiner Kante die Kapazität überschreitet und in jedem inneren Knoten die Flusserhaltung erfüllt (Zufluss gleich Abfluss).</p>
+<h2>Ablauf</h2>
+<p>Der Algorithmus beginnt mit dem Nullfluss. Solange im Residualgraphen – dem Graphen der Kanten, über die der Fluss noch erhöht (vorwärts) oder verringert (rückwärts) werden kann – ein Weg von s nach t existiert, wird der Fluss entlang dieses Weges um die Engpasskapazität (die minimale Restkapazität auf dem Weg) erhöht. Existiert kein solcher Weg mehr, ist der Fluss maximal.</p>
+<h2>Korrektheit und Max-Flow-Min-Cut-Theorem</h2>
+<p>Die Korrektheit folgt aus dem von Ford und Fulkerson bewiesenen Max-Flow-Min-Cut-Theorem: Der Wert eines maximalen Flusses entspricht der Kapazität eines minimalen Schnitts zwischen Quelle und Senke. Ist kein augmentierender Weg mehr vorhanden, so bilden die von s aus erreichbaren Knoten zusammen mit den übrigen Knoten einen Schnitt, dessen Kapazität dem aktuellen Flusswert entspricht.</p>
+<h2>Laufzeit</h2>
+<p>Bei ganzzahligen Kapazitäten ist die Zahl der Augmentierungen durch den Wert des maximalen Flusses beschränkt, was zu einer pseudopolynomiellen Laufzeit führen kann. Bei irrationalen Kapazitäten terminiert der Algorithmus im schlimmsten Fall nicht einmal. Wählt man die augmentierenden Wege gezielt – etwa mit Breitensuche nach kürzesten Wegen –, ergibt sich der Algorithmus von Edmonds und Karp mit polynomieller Laufzeit O(V · E²).</p>
+<p class="small">Siehe auch: Max-Flow-Min-Cut-Theorem · Algorithmus von Edmonds und Karp · Flussnetzwerk</p>
+</div>
+</body>
+</html>

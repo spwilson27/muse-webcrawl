@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Elliptic Curve Digital Signature Algorithm – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1em 2em 3em; }
+h1 { font-family: "Linux Libertine", Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: "Linux Libertine", Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em; margin: 0 0 1em 1em; width: 250px; font-size: 90%; }
+.infobox th { text-align: left; vertical-align: top; padding-right: 0.5em; }
+.catlinks { border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.4em; font-size: 90%; margin-top: 2em; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Elliptic Curve Digital Signature Algorithm</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Der <b>Elliptic Curve Digital Signature Algorithm</b> (<b>ECDSA</b>) ist ein Verfahren zur Erzeugung digitaler Signaturen. Er ist die auf <a href="../Elliptic_curve_cryptography/index.html">elliptischen Kurven</a> beruhende Variante des Digital Signature Algorithm (DSA) und unter anderem in den Standards ANSI X9.62, FIPS 186 und ISO/IEC 14888 beschrieben.</p>
+<h2>Verfahren</h2>
+<p>Der Unterzeichner besitzt einen privaten Schlüssel d und einen öffentlichen Schlüssel Q = d·G auf einer elliptischen Kurve mit Basispunkt G der Ordnung n. Zum Signieren einer Nachricht wird deren Hashwert z gebildet; der Signierer wählt eine geheime Zufallszahl k, berechnet den Punkt k·G und daraus den ersten Signaturwert r (x-Koordinate modulo n) sowie den zweiten Wert s = k⁻¹(z + r·d) mod n. Das Paar (r, s) ist die Signatur. Der Empfänger kann die Signatur nur mit dem öffentlichen Schlüssel verifizieren, ohne den privaten Schlüssel zu kennen.</p>
+<p>Kritisch ist die Zufallszahl k: Sie muss für jede Signatur neu, unvorhersehbar und geheim sein. Wird derselbe k-Wert zweimal verwendet oder ist er bekannt, lässt sich der private Schlüssel aus zwei Signaturen direkt berechnen – auf diese Weise wurde 2010 der Signaturschlüssel der PlayStation 3 kompromittiert. Deterministische Verfahren nach RFC 6979 erzeugen k stattdessen reproduzierbar aus Nachricht und Schlüssel.</p>
+<h2>Anwendung</h2>
+<p>ECDSA wird unter anderem in TLS-Zertifikaten, im Bitcoin-Protokoll (Kurve secp256k1), in der Chipkarten- und E-Pass-Technik sowie in Code-Signing-Systemen verwendet. Zunehmend wird es durch das neuere EdDSA-Verfahren ergänzt.</p>
+<div class="catlinks">Kategorien: Kryptologie | Signaturverfahren</div>
+</div>
+</body>
+</html>

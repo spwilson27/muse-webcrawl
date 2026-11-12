@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Fletchers Prüfsumme – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em; }
+h1 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #3366cc; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em; margin: 0 0 1em 1em; width: 260px; font-size: 0.9em; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Fletchers Prüfsumme</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Fletchers Prüfsumme</b> (englisch <i>Fletcher's checksum</i>) ist ein Algorithmus zur Berechnung einer Prüfsumme zur Fehlererkennung in Datenübertragungen. Er wurde 1982 von John G. Fletcher bei den Lawrence Livermore Labs entwickelt und veröffentlicht. Im Vergleich zur einfachen Addition von Datenwörtern berücksichtigt die Fletcher-Prüfsumme auch die Position der Wörter und erkennt dadurch unter anderem Vertauschungen.</p>
+<h2>Verfahren</h2>
+<p>Der Datenstrom wird in Wörter der Länge von 8, 16 oder 32 Bit zerlegt (Varianten Fletcher-16, Fletcher-32 und Fletcher-64). Zwei Summen werden akkumuliert: Die erste ist die Summe aller Wörter modulo (2<sup>n</sup> − 1), die zweite ist die Summe aller Zwischenwerte der ersten Summe, ebenfalls modulo (2<sup>n</sup> − 1). Am Ende werden beide Summen zur Prüfsumme zusammengefügt. Durch die Positionsgewichtung der zweiten Summe unterscheiden sich z. B. die Folgen „AB“ und „BA“ im Prüfergebnis.</p>
+<h2>Eigenschaften</h2>
+<p>Die Fletcher-Prüfsumme erreicht eine Fehlererkennungsleistung, die nahezu der einer zyklischen Redundanzprüfung (CRC) gleicher Länge entspricht, lässt sich in Software jedoch ohne Tabellen und mit geringer Rechenleistung implementieren. Sie erkennt alle Ein-Bit-Fehler sowie die meisten Burst-Fehler und Vertauschungen, ist aber nicht gegen absichtliche Manipulation gesichert (kein kryptographisches Verfahren).</p>
+<h2>Verwendung</h2>
+<p>Verwendet wird der Algorithmus unter anderem im Dateisystem ZFS, im D-Bus-Protokoll sowie in verschiedenen Netzwerk- und Speicherprotokollen als schnelle Integritätsprüfung.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Prüfsumme/index.html">Prüfsumme</a></li>
+<li><a href="../Zyklische_Redundanzprüfung/index.html">Zyklische Redundanzprüfung</a></li>
+<li><a href="../Adler-32/index.html">Adler-32</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Algorithmus von Edmonds und Karp – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 1.5em 2em 3em; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em 1em; margin: 0 0 1em 1em; font-size: 0.9em; }
+img.hero { max-width: 220px; display: block; margin-bottom: 0.5em; }
+.small { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Algorithmus von Edmonds und Karp</h1>
+<div class="infobox">
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<b>Edmonds-Karp-Algorithmus</b><br>
+Entwickler: Jack Edmonds, Richard Karp<br>
+Veröffentlicht: 1972<br>
+Problem: Maximaler Fluss in Netzwerken<br>
+Laufzeit: O(V·E²)
+</div>
+<p>Der <b>Algorithmus von Edmonds und Karp</b> ist ein Algorithmus zur Berechnung eines maximalen Flusses in einem Flussnetzwerk. Er ist eine Konkretisierung der Methode von Ford und Fulkerson, bei der der augmentierende Weg jeweils durch Breitensuche gewählt wird. Er wurde 1972 von Jack Edmonds und Richard M. Karp veröffentlicht (und unabhängig davon bereits 1970 von Jefim Dinz in der Sowjetunion beschrieben).</p>
+<h2>Verfahren</h2>
+<p>Ausgehend von einem Fluss (anfangs der Nullfluss) sucht der Algorithmus wiederholt nach einem Pfad von der Quelle zur Senke im Restgraphen, entlang dessen der Fluss noch erhöht werden kann. Im Unterschied zur allgemeinen Ford-Fulkerson-Methode wird dieser augmentierende Weg per Breitensuche (BFS) bestimmt, sodass er bezüglich der Kantenzahl der kürzeste mögliche ist. Der Fluss wird dann um die kleinste Restkapazität entlang des Weges (Engpass) erhöht.</p>
+<h2>Laufzeit</h2>
+<p>Durch die Wahl kürzester augmentierender Wege lässt sich zeigen, dass jede Kante nur O(V)-mal Engpass eines augmentierenden Weges sein kann. Daraus folgt eine Laufzeit von O(V·E²), die – anders als bei beliebiger Wegwahl – nicht von den Kapazitätswerten abhängt. Der Algorithmus löst damit das Max-Flow-Problem in stark polynomialer Zeit.</p>
+<h2>Anwendung</h2>
+<p>Max-Fluss-Algorithmen werden unter anderem in der Netzwerktechnik, der Logistik, der Bildverarbeitung (Graph-Cut-Verfahren) und zur Lösung von Zuordnungsproblemen eingesetzt, die sich als bipartites Matching formulieren lassen.</p>
+<p class="small">Siehe auch: <a href="../Max-Flow-Min-Cut-Theorem/index.html">Max-Flow-Min-Cut-Theorem</a> · <a href="../Algorithmus_von_Dinic/index.html">Algorithmus von Dinic</a> · <a href="../Breitensuche/index.html">Breitensuche</a></p>
+</div>
+</body>
+</html>

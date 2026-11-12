@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Foreign key – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #fff; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 12px 0; max-width: 320px; }
+code { background: #f8f9fa; padding: 1px 4px; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Foreign key</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>Foreign key</b> (deutsch <b>Fremdschlüssel</b>) ist im relationalen Datenbankmodell ein Attribut oder eine Attributkombination einer Tabelle, die auf den Primärschlüssel (Primary key) einer anderen – oder derselben – Tabelle verweist. Fremdschlüssel stellen Beziehungen zwischen Datensätzen her und sind die Grundlage der referenziellen Integrität.</p>
+<h2>Referenzielle Integrität</h2>
+<p>Eine Fremdschlüssel-Bedingung (FOREIGN KEY constraint) legt fest, dass jeder Wert des Fremdschlüssels entweder als Primärschlüsselwert in der referenzierten Tabelle existiert oder NULL ist. Das Datenbanksystem verhindert so „verwaiste“ Datensätze, etwa eine Bestellung, die auf einen nicht existierenden Kunden verweist. Für Änderungen und Löschungen in der referenzierten Tabelle können Verhaltensregeln definiert werden, insbesondere:</p>
+<ul>
+<li><code>ON DELETE CASCADE</code> – abhängige Datensätze werden mitgelöscht,</li>
+<li><code>ON DELETE SET NULL</code> – der Fremdschlüssel wird auf NULL gesetzt,</li>
+<li><code>ON DELETE RESTRICT</</code> / <code>NO ACTION</code> – die Löschung wird blockiert.</li>
+</ul>
+<h2>Beispiel in SQL</h2>
+<p>In SQL wird ein Fremdschlüssel bei der Tabellenerstellung oder nachträglich deklariert, etwa wenn die Spalte <code>kunden_id</code> der Tabelle <code>bestellung</code> auf <code>kunde(id)</code> verweist. Fremdschlüssel dienen auch der Umsetzung von Beziehungstypen (1:n, m:n über Zwischentabellen) aus dem Datenmodell.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Primary_key/index.html">Primärschlüssel</a></li>
+<li><a href="../Relational_database/index.html">Relationale Datenbank</a></li>
+</ul>
+</div>
+</body>
+</html>

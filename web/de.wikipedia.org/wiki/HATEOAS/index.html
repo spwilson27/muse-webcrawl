@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>HATEOAS – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 16px; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 15px; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; margin: 0 0 16px 20px; font-size: 13px; font-family: sans-serif; }
+.infobox th, .infobox td { padding: 4px 8px; text-align: left; vertical-align: top; }
+.infobox caption { font-weight: bold; padding: 6px; background: #eaecf0; }
+img.hero { width: 100%; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>HATEOAS</h1>
+<table class="infobox">
+<caption>HATEOAS</caption>
+<tr><td colspan="2"><img class="hero" src="images/hero.png" alt="Hero image (placeholder)"></td></tr>
+<tr><th>Ausgeschrieben</th><td>Hypermedia as the Engine of Application State</td></tr>
+<tr><th>Kontext</th><td>REST-Architekturstil (Roy Fielding, 2000)</td></tr>
+<tr><th>Ziel</th><td>Verknüpfungen in Antworten treiben die Navigation einer API</td></tr>
+</table>
+<p><b>HATEOAS</b> (Akronym für <i>Hypermedia as the Engine of Application State</i>) ist ein Grundprinzip der REST-Architektur für verteilte Systeme. Es besagt, dass ein Client mit einer REST-Anwendung ausschließlich über Hypermedia interagieren soll, die der Server dynamisch in seinen Antworten bereitstellt – ähnlich wie ein Mensch eine Website bedient, indem er den dort angebotenen Links und Formularen folgt, ohne deren Adressen vorab zu kennen.</p>
+<h2>Prinzip</h2>
+<p>Bei einer HATEOAS-konformen API enthält jede Antwort neben den Nutzdaten auch Verknüpfungen (Links) zu den Aktionen, die auf der Ressource im aktuellen Zustand möglich sind – zum Beispiel „bezahlen“, „stornieren“ oder „zur nächsten Seite“. Der Client muss daher keine URL-Schemata auswendig kennen und sich nicht auf eine fest verdrahtete Dokumentation verlassen; er folgt den übermittelten Links mit ihren Relationen (rel-Attributen) und Medientypen. Dadurch lässt sich der Server weiterentwickeln, ohne dass Clients angepasst werden müssen, und der aktuelle Anwendungszustand ergibt sich aus dem durchlaufenen Linkgraphen.</p>
+<h2>Umsetzung und Kritik</h2>
+<p>In der Praxis wird HATEOAS häufig mit dem Format HAL (Hypertext Application Language) oder JSON:API umgesetzt; auch die HTML-Schnittstelle des World Wide Web selbst ist das ursprüngliche Vorbild. Viele reale „REST-APIs“ verzichten auf HATEOAS und begnügen sich mit statischer URL-Dokumentation (Stufe 2 im Reifegradmodell nach Leonard Richardson), weil Hypermedia-Steuerung als aufwendig gilt und die Vorteile erst bei langlebigen, föderierten Systemen voll zum Tragen kommen.</p>
+<p>Siehe auch: <a href="../REST/index.html">REST</a>, <a href="../Hypermedia/index.html">Hypermedia</a>, <a href="../API/index.html">API</a></p>
+</div>
+</body>
+</html>

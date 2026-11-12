@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Input–Output Memory Management Unit – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; max-width: 960px; margin: 0 auto; padding: 20px; background: #fff; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Input–Output Memory Management Unit (IOMMU)</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Eine <strong>Input–Output Memory Management Unit</strong> (<strong>IOMMU</strong>) ist eine Speicherschutzeinheit in Computersystemen, die Speicherzugriffe von Ein-/Ausgabegeräten per Direct Memory Access (DMA) verwaltet und übersetzt. Während die Memory Management Unit (MMU) die Adressübersetzung für die CPU übernimmt, erfüllt die IOMMU dieselbe Aufgabe für Peripheriegeräte.</p>
+<h2>Arbeitsweise</h2>
+<p>Die IOMMU führt Seitentabellen, die die von einem Gerät verwendeten Adressen auf physische Speicheradressen abbilden. Greift ein Gerät per DMA auf den Speicher zu, prüft und übersetzt die IOMMU jede Transaktion. Zugriffe außerhalb des freigegebenen Bereichs werden verworfen und als Fehlerereignis signalisiert.</p>
+<h2>Anwendungen</h2>
+<ul>
+<li><strong>Systemvirtualisierung:</strong> Sicherer direkter Gerätezugriff (Passthrough) für virtuelle Maschinen, z. B. mit Intels VT-d und AMDs AMD-Vi.</li>
+<li><strong>Sicherheit:</strong> Abwehr von DMA-Angriffen durch externe Schnittstellen wie Thunderbolt; Funktionen wie „Kernel DMA Protection“ in modernen Betriebssystemen beruhen auf der IOMMU.</li>
+<li><strong>Adressraumgröße:</strong> Auch Geräte mit begrenztem Adressbereich (32-Bit) können so auf großen Hauptspeicher zugreifen.</li>
+</ul>
+<h2>Geschichte und Implementierungen</h2>
+<p>Vorreiter waren die IOMMUs in Workstations von Sun und die GART (Graphics Address Remapping Table) für AGP-Grafikkarten. Standardisiert wurden moderne Varianten von AMD (AMD-Vi, Spezifikation unter dem Namen „IOMMU“) und Intel (VT-d); auf ARM-Plattformen übernimmt die SMMU (System Memory Management Unit) die gleiche Aufgabe.</p>
+<p>Siehe auch: <a href="../Direct_Memory_Access/index.html">Direct Memory Access</a>, <a href="../Memory_Management_Unit/index.html">Memory Management Unit</a>, <a href="../Hypervisor/index.html">Hypervisor</a></p>
+</body>
+</html>

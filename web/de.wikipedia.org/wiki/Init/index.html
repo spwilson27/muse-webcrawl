@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Init – Wikipedia</title>
+<style>
+body{font-family:sans-serif;line-height:1.6;margin:0;background:#fff;color:#202122}
+#content{max-width:960px;margin:0 auto;padding:20px}
+h1{font-family:serif;font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-size:1.4em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.2em}
+a{color:#3056a9;text-decoration:none}
+.infobox{float:right;width:250px;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:0.9em}
+.infobox th{text-align:left;background:#b0c4de;padding:4px}
+.infobox td{padding:2px 4px}
+img.hero{max-width:100%;height:auto;display:block;margin:0 auto}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Init</h1>
+<div class="infobox">
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<table>
+<tr><th colspan="2">Init</th></tr>
+<tr><td>Typ:</td><td>System- und Dienstemanager</td></tr>
+<tr><td>Erstveröffentlichung:</td><td>1970er Jahre (Unix)</td></tr>
+<tr><td>Betriebssystem:</td><td>Unix-ähnliche Systeme</td></tr>
+<tr><td>Prozess-ID:</td><td>1</td></tr>
+</table>
+</div>
+<p><b>Init</b> (von englisch <i>initialization</i>, „Initialisierung“) ist in Unix- und Unix-ähnlichen Betriebssystemen der erste Prozess, der beim Booten vom Kernel gestartet wird. Er besitzt stets die Prozess-ID 1 und ist der Stammvater aller weiteren Prozesse. Seine Hauptaufgabe ist es, das System in einen definierten Betriebszustand zu bringen, weitere Systemdienste zu starten und verwaiste Prozesse zu adoptieren.</p>
+<h2>Geschichte</h2>
+<p>Die klassische Form des Init-Systems geht auf das System V von AT&amp;T zurück („SysVinit“). Es arbeitet mit Runlevels, die verschiedene Betriebszustände des Systems beschreiben, und einer Konfigurationsdatei (<code>/etc/inittab</code>), in der festgelegt wird, welche Skripte in welchem Runlevel ausgeführt werden. Die eigentlichen Startskripte liegen in Verzeichnissen wie <code>/etc/init.d/</code> und werden der Reihe nach abgearbeitet.</p>
+<h2>Runlevel</h2>
+<p>Zu den üblichen Runlevels des System-V-Init gehören: 0 (System anhalten), 1 (Einzelbenutzermodus), 2–5 (Mehrbenutzermodi mit unterschiedlichen Diensten) und 6 (Neustart). Der gewünschte Runlevel kann beim Booten übergeben oder zur Laufzeit mit dem Befehl <code>telinit</code> gewechselt werden.</p>
+<h2>Moderne Nachfolger</h2>
+<p>Da das klassische Init als langsam und wenig flexibel gilt, haben viele Linux-Distributionen es durch modernere Systeme ersetzt. Die bekanntesten sind <b>systemd</b>, das unter anderem paralleles Starten von Diensten und eine einheitliche Verwaltung bietet, sowie <b>Upstart</b> (früher bei Ubuntu verwendet) und OpenRC. Unter macOS übernimmt launchd eine vergleichbare Rolle. Trotz dieser Entwicklungen wird der erste Benutzerprozess des Systems umgangssprachlich weiterhin oft „Init“ genannt.</p>
+<h2>Siehe auch</h2>
+<p><a href="../Systemd/index.html">systemd</a> · <a href="../Runlevel/index.html">Runlevel</a> · <a href="../Booting/index.html">Booten</a> · <a href="../Daemon_(computing)/index.html">Daemon</a></p>
+</div>
+</body>
+</html>

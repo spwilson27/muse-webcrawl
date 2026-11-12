@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Intel 8259 – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #fff; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; padding: 20px; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 0.95em; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 12px 16px; font-size: 0.85em; font-family: sans-serif; }
+.infobox th { text-align: left; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Intel 8259</h1>
+<div class="infobox">
+<table>
+<tr><th>Hersteller</th><td>Intel</td></tr>
+<tr><th>Typ</th><td>Programmierbarer Interrupt-Controller (PIC)</td></tr>
+<tr><th>Einführung</th><td>1976</td></tr>
+<tr><th>Interrupt-Eingänge</th><td>8 (kaskadierbar auf 64)</td></tr>
+<tr><th>Gehäuse</th><td>28-poliges DIP</td></tr>
+</table>
+</div>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Der <b>Intel 8259</b> ist ein programmierbarer Interrupt-Controller (englisch <i>Programmable Interrupt Controller</i>, PIC), der von Intel entwickelt wurde. Er wurde ursprünglich für die Mikroprozessoren <a href="../Intel_8080/index.html">8080</a> und <a href="../Intel_8085/index.html">8085</a> entworfen und später auch in Systemen mit den Prozessoren <a href="../Intel_8086/index.html">8086</a> und <a href="../Intel_8088/index.html">8088</a> eingesetzt. Der Baustein verwaltet bis zu acht Interrupt-Anforderungen und ordnet ihnen Prioritäten zu.</p>
+<h2>Funktionsweise</h2>
+<p>Der 8259 nimmt Interrupt-Anfragen (IRQ) von Peripheriegeräten entgegen, priorisiert sie und meldet sie der CPU über einen einzigen Interrupt-Eingang. Durch Kaskadierung eines Master- mit bis zu acht Slave-Controllern lässt sich die Zahl der verwaltbaren Interrupts auf 64 erweitern. In klassischen IBM-PC-Systemen kamen zwei 8259 zum Einsatz, die zusammen 15 nutzbare IRQ-Leitungen bereitstellten.</p>
+<h2>Programmierung</h2>
+<p>Der Baustein wird über Initialisierungsbefehlsworte (ICW) und Operationsbefehlsworte (OCW) konfiguriert. Zu den einstellbaren Modi gehören der vollständig verschachtelte Modus (<i>fully nested mode</i>), die rotierende Priorität und die Maskierung einzelner Interrupt-Leitungen. Mit dem Befehl EOI (<i>End of Interrupt</i>) signalisiert die Interrupt-Service-Routine dem Controller das Ende der Bearbeitung.</p>
+<h2>Nachfolger</h2>
+<p>In moderneren Systemen wurde der 8259 weitgehend durch den <a href="../APIC/index.html">APIC</a> (Advanced Programmable Interrupt Controller) ersetzt, der insbesondere für Mehrprozessorsysteme ausgelegt ist. Aus Kompatibilitätsgründen wird die Funktionalität des 8259 in vielen Chipsätzen jedoch weiterhin emuliert.</p>
+<h2>Siehe auch</h2>
+<p><a href="../Interrupt/index.html">Interrupt</a> · <a href="../Intel_8237/index.html">Intel 8237</a> · <a href="../Intel_8253/index.html">Intel 8253</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Hierarchisches Bayes-Modell – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 52em; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.35em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.4em; }
+a { color: #36c; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { width: 100%; }
+</style>
+</head>
+<body>
+<h1>Hierarchisches Bayes-Modell</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>hierarchisches Bayes-Modell</b> (englisch <i>hierarchical Bayes model</i>) ist ein statistisches Modell der bayesschen Statistik, bei dem die Parameter selbst als Zufallsgrößen mit eigenen Verteilungen (Prior-Verteilungen) modelliert werden, deren Hyperparameter wiederum eigene Priors erhalten. Dadurch entsteht eine mehrstufige (hierarchische) Struktur, die es erlaubt, Informationen zwischen verwandten Gruppen von Beobachtungen zu „teilen“ (<i>partial pooling</i>).</p>
+<h2>Aufbau</h2>
+<p>In der einfachsten Form besitzt das Modell drei Stufen: Auf der ersten Stufe beschreibt die Likelihood die Beobachtungen gegeben gruppenspezifische Parameter. Auf der zweiten Stufe folgen diese Parameter einer gemeinsamen Verteilung, die von Hyperparametern abhängt. Auf der dritten Stufe erhalten die Hyperparameter selbst eine Prior-Verteilung. Die gemeinsame Posterior-Verteilung ergibt sich nach dem Satz von Bayes aus dem Produkt aller Stufen.</p>
+<h2>Vorteile</h2>
+<p>Hierarchische Modelle vermeiden die Extreme des vollständigen Poolings (alle Gruppen werden als identisch behandelt) und des fehlenden Poolings (jede Gruppe wird isoliert geschätzt). Durch die gemeinsame Verteilung werden Schätzungen kleiner Gruppen in Richtung des Gesamtmittels „geschrumpft“ (<i>shrinkage</i>), was zu stabileren und oft genaueren Schätzungen führt. Berühmte Beispiele sind die Schätzung von Baseball-Schlagdurchschnitten und das Stein-Paradoxon.</p>
+<h2>Berechnung</h2>
+<p>Da die Posterior-Verteilung in der Regel nicht analytisch verfügbar ist, werden hierarchische Modelle meist mit Markov-Ketten-Monte-Carlo-Verfahren (MCMC) wie dem Gibbs-Sampling oder Hamiltonian Monte Carlo berechnet, etwa mit Software wie BUGS, JAGS oder Stan.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Bayessche_Statistik/index.html">Bayessche Statistik</a></li>
+<li><a href="../Gemischtes_Modell/index.html">Gemischtes Modell</a></li>
+<li><a href="../Satz_von_Bayes/index.html">Satz von Bayes</a></li>
+</ul>
+</body>
+</html>

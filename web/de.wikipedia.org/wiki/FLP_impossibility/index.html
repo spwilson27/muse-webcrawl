@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>FLP-Unmöglichkeit – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; width: 260px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px 12px; margin: 0 0 16px 20px; font-size: 0.85em; }
+.infobox th { text-align: left; padding-right: 8px; vertical-align: top; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>FLP-Unmöglichkeit</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<table class="infobox">
+<tr><th>Gebiet</th><td>Verteilte Systeme, theoretische Informatik</td></tr>
+<tr><th>Autoren</th><td>Michael J. Fischer, Nancy A. Lynch, Michael S. Paterson</td></tr>
+<tr><th>Veröffentlichung</th><td>1985 (Journal of the ACM)</td></tr>
+<tr><th>Aussage</th><td>Kein deterministischer Konsensalgorithmus in asynchronen Systemen bei einem möglichen Absturz</td></tr>
+</table>
+<p>Die <b>FLP-Unmöglichkeit</b> (nach den Anfangsbuchstaben der Autoren Fischer, Lynch und Paterson) ist ein fundamentales Resultat der Theorie <a href="../Verteiltes_System/index.html">verteilter Systeme</a>. Es besagt, dass es in einem vollständig asynchronen verteilten System keinen deterministischen Algorithmus gibt, der das Konsensproblem löst, wenn auch nur ein einziger Prozess abstürzen kann.</p>
+<h2>Aussage</h2>
+<p>Das Konsensproblem verlangt, dass sich alle nicht abgestürzten Prozesse auf denselben Wert einigen (Agreement), dass der entschiedene Wert von einem Prozess vorgeschlagen wurde (Validity) und dass jeder korrekte Prozess schließlich eine Entscheidung trifft (Termination). Fischer, Lynch und Paterson zeigten 1985 in ihrer Arbeit „Impossibility of Distributed Consensus with One Faulty Process“, dass in einem asynchronen Nachrichtenmodell – ohne Schranken für Nachrichtenlaufzeiten und relative Prozessgeschwindigkeiten – kein deterministischer Algorithmus alle drei Eigenschaften garantieren kann, sobald ein Prozess ausfallen darf.</p>
+<h2>Beweisidee</h2>
+<p>Der Beweis zeigt, dass es zu jeder erreichbaren „bivalenten“ Konfiguration, aus der heraus noch beide Entscheidungen möglich sind, stets einen Ablauf gibt, der wieder in eine bivalente Konfiguration führt. Ein Gegner (Adversary), der Nachrichten gezielt verzögert, kann so die Entscheidung unbegrenzt hinausschieben, ohne dass ein Prozess abstürzen muss.</p>
+<h2>Bedeutung und Umgehungen</h2>
+<p>Das Ergebnis bedeutet nicht, dass Konsens in der Praxis unmöglich ist. Reale Systeme umgehen die Schranke durch zusätzliche Annahmen: teilweise Synchronie (wie im Paxos- und Raft-Verfahren), Randomisierung (etwa bei Ben-Or) oder Fehlerdetektoren. Die FLP-Unmöglichkeit erklärt, warum Konsensprotokolle in rein asynchronen Umgebungen keine gleichzeitige Sicherheit und Lebendigkeit ohne Zusatzannahmen garantieren können.</p>
+<p>Siehe auch: <a href="../Paxos_(Informatik)/index.html">Paxos</a>, <a href="../Byzantinischer_Fehler/index.html">Byzantinischer Fehler</a>, <a href="../CAP-Theorem/index.html">CAP-Theorem</a></p>
+</div>
+</body>
+</html>

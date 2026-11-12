@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>GUID Partition Table – Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9}
+h1{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-family:serif;font-weight:normal;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:8px;margin:0 0 12px 16px;font-size:90%;width:260px}
+.infobox th{text-align:left;padding-right:8px}
+.small{font-size:90%;color:#54595d}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>GUID Partition Table</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<table class="infobox">
+<tr><th>Abkürzung</th><td>GPT</td></tr>
+<tr><th>Standard</th><td>Teil der UEFI-Spezifikation</td></tr>
+<tr><th>Vorgänger</th><td>Master Boot Record (MBR)</td></tr>
+<tr><th>Max. Datenträgergröße</th><td>praktisch weit über 2 TB (theoretisch bis 9,4 ZB bei 512-Byte-Sektoren)</td></tr>
+<tr><th>Max. Partitionen</th><td>typischerweise 128</td></tr>
+</table>
+<p>Die <b>GUID Partition Table</b> (<b>GPT</b>) ist ein Standard für das Layout von Partitionstabellen auf Festplatten und SSDs. Sie ist Teil der UEFI-Spezifikation und ersetzt den älteren Master Boot Record (MBR), dessen Beschränkungen – maximal 2 TB Datenträgergröße und nur vier primäre Partitionen – sie überwindet.</p>
+<h2>Aufbau</h2>
+<p>GPT verwendet Logical Block Addressing (LBA) und identifiziert jede Partition durch eine weltweit eindeutige GUID; auch der Partitionstyp wird als GUID angegeben, statt eines einzelnen Bytes wie beim MBR. Am Anfang des Datenträgers steht ein „schützender MBR" (Protective MBR), der ältere Software daran hindert, den Datenträger für leer zu halten. Es folgen der primäre GPT-Header, das Partitionseintrags-Array mit in der Regel 128 Einträgen à 128 Byte und am Ende des Datenträgers eine identische Backup-Struktur. Prüfsummen (CRC32) sichern Header und Einträge gegen Beschädigung ab.</p>
+<h2>Eigenschaften</h2>
+<ul>
+<li>Unterstützung sehr großer Datenträger (64-Bit-LBA-Adressen)</li>
+<li>Bis zu 128 Partitionen ohne erweiterte/logische Partitionskonstruktionen</li>
+<li>Eindeutige Kennzeichnung von Datenträger und Partitionen per GUID</li>
+<li>Redundanz durch Backup-Header und Prüfsummen</li>
+<li>UTF-16-Partitionsnamen mit bis zu 36 Zeichen</li>
+</ul>
+<h2>Verwendung</h2>
+<p>Moderne Betriebssysteme wie Windows (ab Vista/Server 2008 für Datenlaufwerke, für Startlaufwerke mit UEFI), macOS und Linux verwenden GPT als Standardpartitionierung, insbesondere in Verbindung mit UEFI-Firmware.</p>
+<p class="small">Siehe auch: <a href="../Master_Boot_Record/index.html">Master Boot Record</a>, <a href="../UEFI/index.html">UEFI</a>, <a href="../Partition_(Datenträger)/index.html">Partition</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Insertionsort – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em; line-height: 1.6; color: #222; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.1em; }
+img { display: block; margin: 1em auto; max-width: 300px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+pre { background: #f8f9fa; padding: 0.8em; border: 1px solid #eaecf0; overflow-x: auto; }
+</style>
+</head>
+<body>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Insertionsort</h1>
+<p><b>Insertionsort</b> (englisch <i>insertion sort</i>, Sortieren durch Einfügen) ist ein einfacher, stabiler Sortieralgorithmus. Er arbeitet ähnlich wie das Sortieren von Spielkarten in der Hand: Aus der unsortierten Teilfolge wird jeweils ein Element entnommen und an der richtigen Stelle in die bereits sortierte Teilfolge eingefügt.</p>
+<h2>Algorithmus</h2>
+<pre>
+für i = 1 bis n-1:
+    schlüssel = A[i]
+    j = i - 1
+    solange j ≥ 0 und A[j] &gt; schlüssel:
+        A[j+1] = A[j]
+        j = j - 1
+    A[j+1] = schlüssel
+</pre>
+<h2>Komplexität</h2>
+<p>Die Laufzeit beträgt im schlechtesten und durchschnittlichen Fall O(n²), bei bereits sortierten Eingaben jedoch nur O(n), da dann kaum Verschiebungen nötig sind. Der zusätzliche Speicherbedarf ist O(1), das Verfahren arbeitet also <i>in-place</i> und ist stabil, sofern gleiche Elemente nicht vertauscht werden.</p>
+<h2>Anwendung</h2>
+<p>Insertionsort ist für kleine oder fast sortierte Datenmengen sehr effizient und wird daher als Unterroutine in hybriden Sortierverfahren wie Timsort oder Introsort verwendet. Für große Datenmengen sind schnellere Verfahren wie Quicksort oder Mergesort überlegen.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Sortierverfahren/index.html">Sortierverfahren</a></li>
+<li><a href="../Bubblesort/index.html">Bubblesort</a></li>
+<li><a href="../Quicksort/index.html">Quicksort</a></li>
+</ul>
+</body>
+</html>

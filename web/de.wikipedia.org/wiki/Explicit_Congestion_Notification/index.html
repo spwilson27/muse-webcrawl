@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Explicit Congestion Notification – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 1.5em 2em 3em; }
+h1 { font-family: "Linux Libertine", Georgia, serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; font-size: 1.8em; }
+h2 { border-bottom: 1px solid #a2a9b1; font-weight: normal; font-size: 1.4em; margin-top: 1.2em; }
+p, li { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 0 0.2em; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Explicit Congestion Notification</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Explicit Congestion Notification</b> (<b>ECN</b>, deutsch „explizite Überlastbenachrichtigung“) ist eine Erweiterung der Netzwerkprotokolle IP und TCP, die es Endpunkten erlaubt, eine drohende Überlastung im Netzwerk zu signalisieren, ohne dass Pakete verworfen werden müssen. ECN wurde 2001 in RFC 3168 standardisiert.</p>
+<h2>Funktionsweise</h2>
+<p>Im IP-Header stehen zwei Bits des früheren TOS-Feldes für ECN zur Verfügung. Ein Sender, der ECN unterstützt, markiert Pakete als „ECN-fähig“. Erkennt ein Router auf dem Weg eine beginnende Überlastung, setzt er statt des Verwerfens die Markierung <i>Congestion Experienced</i> (CE). Der Empfänger meldet diese Markierung über das TCP-Flag ECE an den Sender zurück, der daraufhin seine Senderate reduziert, als wäre ein Paket verloren gegangen – jedoch ohne tatsächlichen Paketverlust.</p>
+<h2>Vorteile</h2>
+<ul>
+<li>Vermeidung von Verzögerungen durch erneute Übertragung verworfener Pakete.</li>
+<li>Geringere Latenz, insbesondere bei kurzen Datenströmen.</li>
+<li>Wirkt besonders gut zusammen mit Active Queue Management, etwa Random Early Detection.</li>
+</ul>
+<h2>Verbreitung</h2>
+<p>Moderne Betriebssysteme unterstützen ECN, aktivieren es für ausgehende Verbindungen jedoch teilweise nur zurückhaltend, da fehlerhaft konfigurierte Middleboxes ECN-markierte Pakete früher mitunter verwarfen.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Transmission_Control_Protocol/index.html">Transmission Control Protocol</a></li>
+<li><a href="../Internet_Protocol/index.html">Internet Protocol</a></li>
+<li><a href="../%C3%9Cberlaststeuerung/index.html">Überlaststeuerung</a></li>
+</ul>
+</div>
+</body>
+</html>

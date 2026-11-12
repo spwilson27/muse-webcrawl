@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Greedoid – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0 auto; max-width: 960px; padding: 16px; line-height: 1.6; color: #202122; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; }
+.infobox { float: right; width: 280px; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px; margin: 0 0 12px 12px; font-size: 90%; }
+.infobox caption { font-weight: bold; background: #eaecf0; padding: 4px; }
+a { color: #36c; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0 0 10px 14px; font-size: 88%; }
+</style>
+</head>
+<body>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"></div>
+<h1>Greedoid</h1>
+<p>Ein <b>Greedoid</b> ist eine kombinatorische Struktur der diskreten Mathematik, die das Konzept des <a href="../Matroid/index.html">Matroids</a> verallgemeinert und insbesondere dazu dient, die Funktionsweise von <a href="../Greedy-Algorithmus/index.html">Greedy-Algorithmen</a> abstrakt zu beschreiben. Der Begriff wurde Anfang der 1980er Jahre von Bernhard Korte und László Lovász eingeführt.</p>
+
+<h2>Definition</h2>
+<p>Ein Greedoid ist ein Paar <i>(E, F)</i> aus einer endlichen Grundmenge <i>E</i> und einer Familie <i>F</i> von Teilmengen von <i>E</i>, den „zulässigen Mengen“, das folgende Axiome erfüllt:</p>
+<ol>
+<li>Die leere Menge ist zulässig: ∅ ∈ F.</li>
+<li>Jede nichtleere zulässige Menge enthält ein Element, dessen Entfernung die Zulässigkeit erhält: Zu jedem X ∈ F mit X ≠ ∅ existiert ein x ∈ X, sodass X ∖ {x} ∈ F (Zugänglichkeit).</li>
+<li>Austauscheigenschaft: Sind X, Y ∈ F mit |X| &gt; |Y|, so existiert ein x ∈ X ∖ Y, sodass Y ∪ {x} ∈ F.</li>
+</ol>
+<p>Im Unterschied zu Matroiden sind die zulässigen Mengen eines Greedoids nicht notwendigerweise erblich abgeschlossen: Nicht jede Teilmenge einer zulässigen Menge muss zulässig sein, sondern nur über die Zugänglichkeit erreichbar sein. Darum lassen sich Greedoide auch als Familien geordneter Mengen („machbarer Wörter“) beschreiben.</p>
+
+<h2>Beispiele</h2>
+<ul>
+<li>Jedes Matroid ist ein Greedoid.</li>
+<li>Antimatroiden sind Greedoide, deren zulässige Mengen zusätzlich unter Vereinigung abgeschlossen sind.</li>
+<li>Die Familie der zusammenhängenden Teilgraphenordnungen, die von einem Wurzelknoten aus durch Suche (etwa Tiefensuche oder Breitensuche) in einem Graphen erzeugt werden.</li>
+<li>Intervallsysteme und Poset-Greedoide, die zulässige Mengen als Ideale in partiellen Ordnungen beschreiben.</li>
+</ul>
+
+<h2>Greedy-Algorithmen</h2>
+<p>Greedoide charakterisieren genau jene Strukturen, auf denen ein einfacher Greedy-Algorithmus – der die Elemente schrittweise nach Gewicht auswählt – für eine Klasse von Zielfunktionen (die sogenannten „Greedoid-kompatiblen“ bzw. Rado-Edmonds-Funktionen) stets eine optimale zulässige Menge liefert. Damit verallgemeinern sie den Satz von Rado und Edmonds über Matroide.</p>
+
+<h2>Literatur</h2>
+<ul>
+<li>Bernhard Korte, Jens Vygen: <i>Kombinatorische Optimierung</i>. 2. Auflage, Springer, Berlin 2012.</li>
+<li>Bernhard Korte, László Lovász, Rainer Schrader: <i>Greedoids</i>. Springer, Berlin 1991.</li>
+</ul>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Matroid/index.html">Matroid</a></li>
+<li><a href="../Greedy-Algorithmus/index.html">Greedy-Algorithmus</a></li>
+</ul>
+</body>
+</html>

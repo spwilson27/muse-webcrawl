@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Executable and Linkable Format – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em; border: 1px solid #a2a9b1; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+table { border-collapse: collapse; }
+td, th { border: 1px solid #a2a9b1; padding: 0.3em 0.6em; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Executable and Linkable Format</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Das <b>Executable and Linkable Format</b> (kurz <b>ELF</b>, früher <i>Extensible Linking Format</i>) ist ein Standard-Dateiformat für ausführbare Dateien, Objektdateien, dynamische Bibliotheken (<i>Shared Libraries</i>) und Speicherabbilder (Core Dumps). Es ist das Standardformat unter Linux und vielen anderen Unix-ähnlichen Betriebssystemen und löste dort ältere Formate wie a.out und COFF ab.</p>
+
+<h2>Geschichte</h2>
+<p>ELF wurde ursprünglich von den Unix System Laboratories (USL) als Teil der Application Binary Interface (ABI) von System V Release 4 entwickelt und im GABI-Standard (<i>System V Application Binary Interface</i>) spezifiziert. Durch seine Flexibilität und Erweiterbarkeit setzte es sich rasch als De-facto-Standard durch. Auch zahlreiche Spielkonsolen und eingebettete Systeme verwenden das Format.</p>
+
+<h2>Aufbau</h2>
+<p>Eine ELF-Datei beginnt mit einem Header, der unter anderem eine magische Zahl (0x7F gefolgt von den ASCII-Zeichen „ELF"), die Angabe der Wortbreite (32 oder 64 Bit), die Byte-Reihenfolge (Endianness), die Zielarchitektur und den Dateityp enthält. Darauf folgen je nach Sichtweise zwei Strukturen:</p>
+<ul>
+<li>Die <b>Programm-Header-Tabelle</b> beschreibt Segmente, die für die Ausführung des Programms geladen werden müssen (Sicht des Laders).</li>
+<li>Die <b>Sektions-Header-Tabelle</b> beschreibt Sektionen wie .text (Code), .data (initialisierte Daten) und .bss (uninitialisierte Daten), die für den Linker relevant sind.</li>
+</ul>
+
+<h2>Dateitypen</h2>
+<table>
+<tr><th>Typ</th><th>Bedeutung</th></tr>
+<tr><td>ET_REL</td><td>Relokalisierbare Objektdatei</td></tr>
+<tr><td>ET_EXEC</td><td>Ausführbare Datei mit fester Ladeadresse</td></tr>
+<tr><td>ET_DYN</td><td>Shared Object / positionsunabhängige ausführbare Datei (PIE)</td></tr>
+<tr><td>ET_CORE</td><td>Core Dump</td></tr>
+</table>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Executable">Ausführbare Datei</a></li>
+<li><a href="../Portable_Executable">Portable Executable</a></li>
+<li><a href="../Mach-O">Mach-O</a></li>
+<li><a href="../Linker">Linker</a></li>
+</ul>
+</div>
+</body>
+</html>

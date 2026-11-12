@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>High-Level Shading Language – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #fff; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 0.95em; }
+ul { line-height: 1.6; font-family: sans-serif; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em 1em; margin: 0 0 1em 1em; font-size: 0.85em; font-family: sans-serif; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 1em; overflow-x: auto; font-size: 0.85em; }
+</style>
+</head>
+<body>
+<div id="content">
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h1>High-Level Shading Language</h1>
+<table class="infobox">
+<tr><th colspan="2">High-Level Shading Language</th></tr>
+<tr><td>Entwickler</td><td>Microsoft</td></tr>
+<tr><td>Erscheinungsjahr</td><td>2002</td></tr>
+<tr><td>Aktuelle Version</td><td>Shader Model 6.x</td></tr>
+<tr><td>Paradigma</td><td>imperativ, C-ähnlich</td></tr>
+<tr><td>Verwendung</td><td><a href="../DirectX/index.html">DirectX</a>, <a href="../Direct3D/index.html">Direct3D</a></td></tr>
+</table>
+<p>Die <b>High-Level Shading Language</b> (<b>HLSL</b>) ist eine von <a href="../Microsoft/index.html">Microsoft</a> entwickelte Programmiersprache zur Erstellung von <a href="../Shader/index.html">Shadern</a> für die Grafik-API <a href="../Direct3D/index.html">Direct3D</a>. Sie wurde mit DirectX 9 eingeführt und ähnelt syntaktisch der Programmiersprache C. HLSL-Programme werden zur Laufzeit oder vorab in einen Zwischencode (DXBC bzw. DXIL) übersetzt und auf der <a href="../Graphics_Processing_Unit/index.html">GPU</a> ausgeführt.</p>
+<h2>Geschichte</h2>
+<p>HLSL entstand aus einer Zusammenarbeit zwischen Microsoft und <a href="../Nvidia/index.html">Nvidia</a>; die verwandte Sprache <a href="../Cg_(programming_language)/index.html">Cg</a> (C for Graphics) von Nvidia ist weitgehend kompatibel. Mit jedem neuen Shader Model wurden zusätzliche Fähigkeiten eingeführt, etwa Geometrie-Shader in Shader Model 4.0 (DirectX 10) und Compute-Shader in Shader Model 5.0 (DirectX 11). Mit DirectX 12 und Shader Model 6.0 wechselte der Compiler zur LLVM-basierten DXIL-Darstellung (DirectX Intermediate Language).</p>
+<h2>Shadertypen</h2>
+<ul>
+<li><b>Vertex-Shader</b> – verarbeiten einzelne Vertices und transformieren deren Positionen.</li>
+<li><b>Pixel-Shader</b> (Fragment-Shader) – berechnen die Farbe einzelner Pixel.</li>
+<li><b>Geometrie-Shader</b> – erzeugen oder verwerfen Primitive.</li>
+<li><b>Hull- und Domain-Shader</b> – steuern die Tessellation.</li>
+<li><b>Compute-Shader</b> – für allgemeine Berechnungen auf der GPU (GPGPU).</li>
+<li><b>Mesh- und Amplification-Shader</b> – moderne Geometrie-Pipeline seit Shader Model 6.5.</li>
+<li><b>Raytracing-Shader</b> – für hardwarebeschleunigtes Raytracing (DXR).</li>
+</ul>
+<h2>Beispiel</h2>
+<pre>
+float4 main(float4 pos : SV_POSITION, float2 uv : TEXCOORD) : SV_TARGET
+{
+    return tex.Sample(samp, uv);
+}
+</pre>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../GLSL/index.html">GLSL</a></li>
+<li><a href="../OpenGL/index.html">OpenGL</a></li>
+<li><a href="../Vulkan/index.html">Vulkan</a></li>
+<li><a href="../SPIR-V/index.html">SPIR-V</a></li>
+</ul>
+</div>
+</body>
+</html>

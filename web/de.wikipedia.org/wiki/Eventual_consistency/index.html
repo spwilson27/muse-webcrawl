@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Eventuelle Konsistenz – Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine","Georgia",serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;width:260px;background:#f8f9fa;border:1px solid #a2a9b1;margin:0 0 12px 16px;padding:8px;font-size:0.9em}
+.infobox th{text-align:left;background:#eaecf0;padding:4px}
+.infobox td{padding:4px}
+.thumb{float:right;margin:0 0 12px 16px;background:#f8f9fa;border:1px solid #c8ccd1;padding:4px;font-size:0.85em;text-align:center}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Eventuelle Konsistenz</h1>
+<div class="infobox">
+<table>
+<tr><th colspan="2">Eventual Consistency</th></tr>
+<tr><td><b>Gebiet</b></td><td>Verteilte Systeme, Datenbanken</td></tr>
+<tr><td><b>Kontext</b></td><td>CAP-Theorem, BASE</td></tr>
+<tr><td><b>Gegenbegriff</b></td><td>Starke Konsistenz</td></tr>
+</table>
+</div>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"><br>Replikate gleichen sich zeitversetzt an</div>
+<p><b>Eventuelle Konsistenz</b> (englisch <i>eventual consistency</i>) ist ein Konsistenzmodell für verteilte Datenhaltung. Es garantiert, dass alle Replikate eines Datensatzes übereinstimmen werden, sofern keine neuen Änderungen mehr eintreffen – jedoch nicht, dass ein Lesevorgang zu jedem Zeitpunkt bereits den neuesten Wert liefert. Zwischenzeitlich können verschiedene Knoten unterschiedliche, veraltete Stände anzeigen.</p>
+<h2>Hintergrund</h2>
+<p>Nach dem CAP-Theorem kann ein verteiltes System bei einer Netzwerkpartition nicht gleichzeitig stark konsistent und verfügbar sein. Systeme, die Verfügbarkeit und Partitionstoleranz bevorzugen (sogenannte AP-Systeme nach dem BASE-Prinzip: Basically Available, Soft State, Eventually Consistent), nehmen vorübergehende Inkonsistenzen in Kauf. Bekannte Vertreter sind verteilte NoSQL-Datenbanken wie Amazons Dynamo und die darauf aufbauenden Systeme Cassandra und DynamoDB, aber auch das Domain Name System (DNS) arbeitet im Kern mit eventueller Konsistenz.</p>
+<h2>Mechanismen</h2>
+<p>Zur Angleichung der Replikate dienen unter anderem asynchrone Replikation, Anti-Entropy-Verfahren und Gossip-Protokolle, bei denen Knoten paarweise Zustände abgleichen. Schreibkonflikte, die entstehen, wenn derselbe Datensatz gleichzeitig auf mehreren Knoten geändert wurde, müssen aufgelöst werden – beispielsweise nach dem Prinzip „Last Write Wins", durch Vektoruhren zur Kausalitätserkennung oder durch konfliktresistente replizierte Datentypen (CRDTs), die mathematisch garantiert zusammenführbar sind.</p>
+<h2>Bewertung</h2>
+<p>Eventuelle Konsistenz ermöglicht hochverfügbare, weltweit skalierende Dienste wie soziale Netzwerke oder Warenkörbe in Online-Shops, bei denen kurzzeitig veraltete Anzeigen tolerierbar sind. Für Anwendungen mit strengen Korrektheitsanforderungen – etwa Kontobuchungen – ist sie dagegen ohne zusätzliche Mechanismen ungeeignet.</p>
+</div>
+</body>
+</html>

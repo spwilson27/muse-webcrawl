@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Generator (Programmierung) – Wikipedia</title>
+<style>body{font-family:sans-serif;max-width:900px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1;padding-bottom:5px}h2{border-bottom:1px solid #a2a9b1}img{max-width:100%}pre{background:#f8f9fa;border:1px solid #eaecf0;padding:10px;overflow-x:auto}ul{margin:0.3em 0}</style>
+</head>
+<body>
+<h1>Generator (Programmierung)</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>Generator</b> ist in der Programmierung eine spezielle Art von Funktion oder Routine, die eine Folge von Werten nach und nach erzeugt, statt alle Werte auf einmal zu berechnen und als fertige Liste zurückzugeben. Generatoren sind eng mit Iteratoren verwandt, lassen sich jedoch meist deutlich einfacher schreiben, da der Zustand der Erzeugung automatisch erhalten bleibt.</p>
+<h2>Funktionsweise</h2>
+<p>Ein Generator gibt bei jedem Aufruf den nächsten Wert einer Folge zurück und pausiert danach, bis er erneut aufgerufen wird. Dabei bleiben lokale Variablen und die Ausführungsposition zwischen den Aufrufen erhalten. In vielen Sprachen wird dies mit dem Schlüsselwort <i>yield</i> ausgedrückt: Die Ausführung wird an dieser Stelle unterbrochen und der angegebene Wert an den Aufrufer übergeben.</p>
+<h2>Beispiel in Python</h2>
+<pre>def fibonacci():
+    a, b = 0, 1
+    while True:
+        yield a
+        a, b = b, a + b
+
+for zahl in fibonacci():
+    if zahl &gt; 100:
+        break
+    print(zahl)</pre>
+<p>Der Generator <i>fibonacci</i> erzeugt die Fibonacci-Folge endlos; der Aufrufer entscheidet, wie viele Werte er abruft.</p>
+<h2>Vorteile</h2>
+<p>Generatoren arbeiten speichereffizient, da sie Werte erst bei Bedarf berechnen (Lazy Evaluation). Dadurch eignen sie sich besonders für große oder potenziell unendliche Datenfolgen, etwa beim zeilenweisen Lesen großer Dateien oder bei der Verarbeitung von Datenströmen.</p>
+<h2>Verbreitung</h2>
+<p>Generatoren werden unter anderem von Python, C#, JavaScript, PHP, Ruby und Kotlin unterstützt. In Python sind Generatorausdrücke eine kompakte Schreibweise analog zu Listen-Abstraktionen (List Comprehensions).</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Iterator/index.html">Iterator</a></li>
+<li><a href="../Koroutine/index.html">Koroutine</a></li>
+<li><a href="../Lazy_Evaluation/index.html">Lazy Evaluation</a></li>
+</ul>
+</body>
+</html>

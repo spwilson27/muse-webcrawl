@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Ensemble-Kalman-Filter – Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine",Georgia,serif;margin:0;color:#202122;background:#fff}
+header{background:#f8f9fa;border-bottom:1px solid #a2a9b1;padding:12px 24px}
+header .site{font-size:20px;font-weight:bold}
+nav{font-size:13px;color:#0645ad}
+main{max-width:960px;margin:0 auto;padding:24px;line-height:1.6}
+h1{font-size:28px;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{font-size:21px;border-bottom:1px solid #a2a9b1;padding-bottom:4px;margin-top:28px}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;margin:0 0 16px 20px;width:250px;font-size:13px}
+footer{border-top:1px solid #a2a9b1;margin-top:40px;padding:12px 24px;font-size:12px;color:#54595d}
+</style>
+</head>
+<body>
+<header><div class="site">Wikipedia</div><nav>Die freie Enzyklopädie</nav></header>
+<main>
+<h1>Ensemble-Kalman-Filter</h1>
+<div class="infobox"><b>Anwendungsgebiete:</b> Wettervorhersage, Ozeanographie, Datenassimilation<br><b>Methodenklasse:</b> Sequentielle Bayes-Filter<br><b>Verwandte Verfahren:</b> Kalman-Filter, Partikelfilter</div>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Der <b>Ensemble-Kalman-Filter</b> (EnKF) ist ein rekursives Filterverfahren, das zur Schätzung des Zustands nichtlinearer dynamischer Systeme dient. Er verbindet Ideen des klassischen <a href="../Kalman-Filter">Kalman-Filters</a> mit der Monte-Carlo-Approximation: Anstatt Mittelwert und Kovarianzmatrix eines einzelnen Zustands explizit fortzupflanzen, wird die Wahrscheinlichkeitsverteilung des Systemzustands durch eine Menge (ein Ensemble) von Stichproben repräsentiert.</p>
+<h2>Geschichte</h2>
+<p>Das Verfahren wurde 1994 von Geir Evensen für die Datenassimilation in ozeanographischen Modellen vorgeschlagen und 1998 gemeinsam mit Peter Jan van Leeuwen weiterentwickelt. In der numerischen Wettervorhersage fand es rasch Verbreitung, da es sich gut auf hochdimensionale Modelle anwenden lässt, bei denen die explizite Speicherung der Kovarianzmatrix unmöglich ist.</p>
+<h2>Verfahren</h2>
+<p>Der Filter arbeitet in zwei Schritten. Im Vorhersageschritt wird jedes Ensemblemitglied mit dem dynamischen Modell weiterentwickelt. Im Analyseschritt werden die neuen Beobachtungen genutzt, um jedes Mitglied zu korrigieren; dabei kommen stochastisch gestörte Beobachtungen oder deterministische Varianten (etwa der Ensemble Square Root Filter) zum Einsatz. Die Kovarianz des Zustands wird aus der Streuung der Ensemblemitglieder geschätzt, wodurch das Verfahren auch Fließabhängigkeiten („errors of the day“) abbilden kann.</p>
+<h2>Anwendungen und Grenzen</h2>
+<p>Eingesetzt wird der EnKF unter anderem in der Wetter- und Ozeanvorhersage, in der Hydrologie, bei der Grundwassermodellierung und in der Erdölförderung zur Geschichte-Anpassung (History Matching). Grenzen ergeben sich aus der endlichen Ensemblegröße: Stichprobenfehler können zu unterschätzter Kovarianz führen, weshalb Kovarianzinflation und Lokalisierung übliche Gegenmaßnahmen sind. Bei stark nicht-gaußschen Verteilungen stößt das Verfahren an prinzipielle Grenzen.</p>
+</main>
+<footer>Diese Seite wurde zuletzt bearbeitet. Ihr Inhalt steht unter der Lizenz CC BY-SA.</footer>
+</body>
+</html>

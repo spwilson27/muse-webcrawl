@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Exponentielle Glättung – Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:24px 32px;border:1px solid #a7d7f9;min-height:100vh}
+h1{font-family:Georgia,serif;font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:6px}
+h2{font-family:Georgia,serif;font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+p,li{line-height:1.6}
+a{color:#3056a9;text-decoration:none}
+img{max-width:100%}
+.formel{background:#f8f9fa;border:1px solid #a2a9b1;padding:10px;text-align:center;font-family:Georgia,serif}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Exponentielle Glättung</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>exponentielle Glättung</b> (englisch <i>exponential smoothing</i>) ist ein Verfahren zur Prognose von Zeitreihen, insbesondere in der Materialwirtschaft und Absatzplanung. Neuere Beobachtungswerte gehen dabei mit exponentiell abnehmenden Gewichten in die Prognose ein: Je älter eine Beobachtung, desto geringer ihr Einfluss.</p>
+<h2>Verfahren erster Ordnung</h2>
+<p>Bei der exponentiellen Glättung erster Ordnung wird der Prognosewert ŷ<sub>t+1</sub> rekursiv aus dem aktuellen Beobachtungswert y<sub>t</sub> und dem bisherigen Prognosewert gebildet:</p>
+<p class="formel">ŷ<sub>t+1</sub> = α · y<sub>t</sub> + (1 − α) · ŷ<sub>t</sub></p>
+<p>Der Glättungsparameter α liegt zwischen 0 und 1. Ein großes α (nahe 1) lässt die Prognose schnell auf neue Daten reagieren, glättet aber wenig; ein kleines α reagiert träge, dämpft zufällige Schwankungen jedoch stärker. Das Verfahren wurde in den 1950er Jahren unter anderem von Robert Goodell Brown und Charles C. Holt entwickelt.</p>
+<h2>Erweiterungen</h2>
+<ul>
+<li><b>Holt-Verfahren (Glättung zweiter Ordnung):</b> berücksichtigt zusätzlich einen linearen Trend in der Zeitreihe.</li>
+<li><b>Holt-Winters-Verfahren:</b> modelliert neben Niveau und Trend auch eine Saisonkomponente; es ist eines der meistgenutzten Verfahren für Absatzprognosen mit saisonalem Verlauf.</li>
+</ul>
+<h2>Anwendung</h2>
+<p>Exponentielle Glättungen sind fester Bestandteil vieler ERP- und Warenwirtschaftssysteme, weil sie mit geringem Speicherbedarf auskommen – für die jeweils nächste Prognose muss nur der letzte geglättete Wert gespeichert werden. Die Wahl von α erfolgt häufig durch Minimierung des historischen Prognosefehlers.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Gleitender_Mittelwert">Gleitender Mittelwert</a></li>
+<li><a href="../Prognose">Prognose</a></li>
+<li><a href="../ARIMA">ARIMA</a></li>
+</ul>
+</div>
+</body>
+</html>

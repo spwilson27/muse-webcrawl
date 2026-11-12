@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Euler-Verfahren – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 52em; padding: 0 1em; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; margin-top: 1.4em; }
+img { max-width: 100%; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.formel { font-family: serif; font-style: italic; background: #f8f9fa; padding: 0.6em 1em; border: 1px solid #eaecf0; }
+</style>
+</head>
+<body>
+<h1>Euler-Verfahren</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Das <b>Euler-Verfahren</b> (auch <i>explizites Euler-Verfahren</i> oder Polygonzugverfahren, englisch <i>Euler method</i>) ist das einfachste numerische Verfahren zur näherungsweisen Lösung von Anfangswertproblemen gewöhnlicher Differentialgleichungen. Es geht auf <a href="../Leonhard_Euler/index.html">Leonhard Euler</a> zurück, der es 1768 in seinen <i>Institutiones calculi integralis</i> beschrieb.</p>
+
+<h2>Verfahren</h2>
+<p>Gegeben sei das Anfangswertproblem y′ = f(x, y), y(x<sub>0</sub>) = y<sub>0</sub>. Mit einer Schrittweite h &gt; 0 und den Gitterpunkten x<sub>n</sub> = x<sub>0</sub> + nh berechnet man iterativ:</p>
+<p class="formel">y<sub>n+1</sub> = y<sub>n</sub> + h · f(x<sub>n</sub>, y<sub>n</sub>)</p>
+<p>Anschaulich folgt man ausgehend vom aktuellen Punkt ein Stück der Tangente an die (unbekannte) Lösungskurve, statt der Kurve selbst.</p>
+
+<h2>Fehler und Konvergenz</h2>
+<p>Das Verfahren ist konsistent und konvergent von der Ordnung 1: Der globale Fehler ist proportional zur Schrittweite h. Wegen dieser geringen Genauigkeit und der eingeschränkten Stabilität (für steife Differentialgleichungen ist das explizite Euler-Verfahren nur bedingt brauchbar) wird es in der Praxis meist durch genauere Verfahren wie die Runge-Kutta-Verfahren ersetzt; es besitzt jedoch großen didaktischen Wert und dient als Baustein vieler komplexerer Methoden.</p>
+
+<h2>Varianten</h2>
+<ul>
+<li><b>Implizites Euler-Verfahren:</b> y<sub>n+1</sub> = y<sub>n</sub> + h · f(x<sub>n+1</sub>, y<sub>n+1</sub>); A-stabil, aber pro Schritt ist eine (nichtlineare) Gleichung zu lösen.</li>
+<li><b>Semi-implizites (symplektisches) Euler-Verfahren:</b> in der Hamiltonschen Mechanik verbreitet.</li>
+<li><b>Verfahren von Heun</b> und Mittelpunktverfahren als verbesserte explizite Varianten.</li>
+</ul>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Runge%E2%80%93Kutta_methods/index.html">Runge-Kutta-Verfahren</a></li>
+<li><a href="../Ordinary_differential_equation/index.html">Gewöhnliche Differentialgleichung</a></li>
+<li><a href="../Initial_value_problem/index.html">Anfangswertproblem</a></li>
+</ul>
+</body>
+</html>

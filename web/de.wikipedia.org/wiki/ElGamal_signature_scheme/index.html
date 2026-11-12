@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Elgamal-Signaturverfahren – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 20px 30px; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 10px 20px; width: 260px; font-size: 90%; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Elgamal-Signaturverfahren</h1>
+<p>Das <b>Elgamal-Signaturverfahren</b> ist ein Verfahren für digitale Signaturen, das Taher Elgamal 1985 zusammen mit seinem Verschlüsselungsverfahren vorstellte. Seine Sicherheit beruht auf dem Problem des diskreten Logarithmus.</p>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h2>Verfahren</h2>
+<p>Wie beim Verschlüsselungsverfahren besteht der öffentliche Schlüssel aus einer Primzahl p, einem Erzeuger g und y = g^x mod p mit geheimem x. Zum Signieren einer Nachricht m wählt der Unterzeichner eine zufällige, geheim zu haltende Zahl k, die teilerfremd zu p−1 ist, und berechnet r = g^k mod p sowie s aus der Kongruenz m ≡ x·r + k·s (mod p−1). Die Signatur ist das Paar (r, s). Die Verifikation prüft die Gleichung g^m ≡ y^r · r^s (mod p).</p>
+<h2>Sicherheit</h2>
+<p>Entscheidend ist, dass die Zahl k für jede Signatur neu und zufällig gewählt wird. Wird dieselbe k für zwei Signaturen verwendet oder wird k bekannt, lässt sich der geheime Schlüssel x aus den Signaturen berechnen – ein Fehler, der in der Praxis auch bei verwandten Verfahren (DSA/ECDSA) zu Schlüsselkompromittierungen geführt hat.</p>
+<h2>Varianten</h2>
+<p>Das Elgamal-Signaturverfahren ist der Ausgangspunkt einer ganzen Familie von Signaturverfahren, zu der der Digital Signature Algorithm (DSA), das Schnorr-Verfahren und die in Russland standardisierte GOST-Signatur gehören. In der ursprünglichen Form wird es heute selten eingesetzt; verbreitet sind vor allem seine Varianten auf elliptischen Kurven.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Elgamal-Verschlüsselungsverfahren/index.html">Elgamal-Verschlüsselungsverfahren</a></li>
+<li><a href="../Digitale_Signatur/index.html">Digitale Signatur</a></li>
+<li><a href="../Digital_Signature_Algorithm/index.html">Digital Signature Algorithm</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>FASTQ-Format – Wikipedia</title>
+<style>
+body{font-family:sans-serif;background:#f8f9fa;color:#202122;margin:0;padding:0}
+.container{max-width:960px;margin:0 auto;background:#fff;padding:2em;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:0.2em}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em;margin:0 0 1em 1em;font-size:90%;width:260px}
+.infobox th{background:#cee0f2;padding:0.3em;text-align:center}
+.infobox td{padding:0.2em 0.4em}
+img.hero{display:block;max-width:100%}
+.small{font-size:85%;color:#54595d}
+pre{background:#f8f9fa;border:1px solid #a2a9b1;padding:0.6em;overflow-x:auto}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>FASTQ-Format</h1>
+<p class="small">Aus Wikipedia, der freien Enzyklopädie</p>
+<table class="infobox">
+<tr><th colspan="2">FASTQ-Format</th></tr>
+<tr><td><b>Dateiendungen</b></td><td>.fastq, .fq</td></tr>
+<tr><td><b>Typ</b></td><td>Sequenzformat mit Qualitätswerten</td></tr>
+<tr><td><b>Entwicklung</b></td><td>Wellcome Trust Sanger Institute</td></tr>
+<tr><td><b>Erstbeschreibung</b></td><td>2010 (Cock et al.)</td></tr>
+</table>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Das <b>FASTQ-Format</b> ist ein textbasiertes Dateiformat zur Speicherung von Nukleotidsequenzen zusammen mit ihren per-Base-Qualitätswerten. Es ist der De-facto-Standard für die Ausgabe von Hochdurchsatz-Sequenziergeräten (Next-Generation Sequencing, NGS) und baut auf dem älteren <a href="../FASTA_format/index.html">FASTA-Format</a> auf.</p>
+
+<h2>Aufbau</h2>
+<p>Jeder Sequenzsatz („Read“) besteht in der klassischen Form aus genau vier Zeilen:</p>
+<ol>
+<li>Eine mit <code>@</code> beginnende Kopfzeile mit der Read-Kennung</li>
+<li>Die Rohsequenz</li>
+<li>Eine Zeile mit einem alleinstehenden <code>+</code> (optional gefolgt von der wiederholten Kennung)</li>
+<li>Die Qualitätszeile mit einem ASCII-Zeichen pro Base</li>
+</ol>
+<pre>@SEQ_ID_1
+GATTTGGGGTTCAAAGCAGTATCGATCAAATAGTAAATCCATTTGTTCAACTCACAGTTT
++
+!''*((((***+))%%%++)(%%%%).1***-+*''))**55CCF&gt;&gt;&gt;&gt;CCCCCCC65</pre>
+
+<h2>Qualitätskodierung</h2>
+<p>Die Qualität jeder Base wird als Phred-Wert Q ausgedrückt und durch ein einzelnes ASCII-Zeichen dargestellt. Der Zusammenhang zwischen Zeichen und Phred-Wert hängt von der verwendeten Kodierung ab:</p>
+<ul>
+<li><b>Sanger-Format (Phred+33)</b>: Zeichenwerte 33 (!) bis 74 (J), heute Standard, etwa bei Illumina-Geräten ab Version 1.8</li>
+<li><b>Phred+64</b>: Zeichenwerte 64 (@) bis 105, verwendet von älteren Illumina-Pipelines (1.3–1.7)</li>
+<li><b>Solexa-Kodierung</b>: frühe Variante mit eigenem, logarithmischem Bewertungsschema</li>
+</ul>
+<p>Die Mehrdeutigkeit der Kodierungen gilt als größtes praktisches Problem des Formats, da falsch angenommene Offsets zu fehlerhaften Qualitätswerten führen.</p>
+
+<h2>Geschichte</h2>
+<p>FASTQ wurde am Wellcome Trust Sanger Institute entwickelt und 2010 in einer formellen Spezifikation von Peter Cock und Kollegen beschrieben. Es hat sich als Standardformat der Sequenzarchive durchgesetzt; das Sequence Read Archive (SRA) und das European Nucleotide Archive (ENA) liefern Daten üblicherweise im FASTQ-Format aus. Wegen der enormen Dateigrößen bei modernen Sequenzierläufen werden FASTQ-Dateien fast immer gzip-komprimiert (<code>.fastq.gz</code>) bereitgestellt.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../FASTA_format/index.html">FASTA-Format</a></li>
+<li><a href="../DNA-Sequenzierung/index.html">DNA-Sequenzierung</a></li>
+</ul>
+<p class="small">Kategorie: Bioinformatik | Dateiformat</p>
+</div>
+</body>
+</html>

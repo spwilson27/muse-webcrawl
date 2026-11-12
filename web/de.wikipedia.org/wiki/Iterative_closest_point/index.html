@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Iterative Closest Point – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 52em; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.1em; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Iterative Closest Point</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Iterative Closest Point</b> (ICP) ist ein Algorithmus zur Registrierung von Punktwolken: Er bestimmt eine starre Transformation (Rotation und Translation), die zwei Punktmengen möglichst genau zur Deckung bringt, indem er den mittleren Abstand zwischen den Punkten minimiert. Vorgestellt wurde das Verfahren Anfang der 1990er Jahre, unter anderem von Besl und McKay sowie von Chen und Medioni.</p>
+<h2>Ablauf</h2>
+<ol>
+<li>Jedem Punkt der Quell-Punktwolke wird der nächstgelegene Punkt der Ziel-Punktwolke zugeordnet.</li>
+<li>Aus diesen Paaren wird die optimale Transformation berechnet, die den mittleren quadratischen Fehler minimiert (etwa über Singulärwertzerlegung).</li>
+<li>Die Transformation wird angewendet; die Schritte werden wiederholt, bis der Fehler kaum noch sinkt.</li>
+</ol>
+<h2>Anwendung</h2>
+<p>ICP wird in der <a href="../Robotik/index.html">Robotik</a> (etwa beim SLAM-Verfahren zur gleichzeitigen Lokalisierung und Kartierung), in der 3D-Vermessung, der medizinischen Bildverarbeitung und beim Zusammenfügen von Teilansichten gescannter Objekte eingesetzt. Schwachpunkte sind die Konvergenz in lokale Minima bei schlechter Anfangsschätzung sowie die Empfindlichkeit gegenüber Ausreißern; zahlreiche Varianten (etwa point-to-plane ICP) verbessern das Verfahren.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Punktwolke/index.html">Punktwolke</a></li>
+<li><a href="../SLAM_(Robotik)/index.html">SLAM</a></li>
+</ul>
+</body>
+</html>

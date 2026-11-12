@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Elgamal-Verschlüsselungsverfahren – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 20px 30px; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 10px; margin: 0 0 10px 20px; width: 260px; font-size: 90%; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Elgamal-Verschlüsselungsverfahren</h1>
+<p>Das <b>Elgamal-Verschlüsselungsverfahren</b> ist ein 1985 von Taher Elgamal vorgestelltes asymmetrisches Kryptosystem. Seine Sicherheit beruht auf der Schwierigkeit, diskrete Logarithmen in endlichen Gruppen zu berechnen; es ist mit dem Diffie-Hellman-Schlüsselaustausch verwandt.</p>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h2>Verfahren</h2>
+<p>Zur Schlüsselerzeugung wählt der Empfänger eine große Primzahl p, einen Erzeuger g der multiplikativen Gruppe sowie ein geheimes x; der öffentliche Schlüssel enthält p, g und y = g^x mod p. Zum Verschlüsseln einer Nachricht m wählt der Sender eine zufällige Zahl k und sendet das Paar (c₁, c₂) = (g^k, m · y^k). Der Empfänger berechnet m = c₂ · (c₁^x)⁻¹.</p>
+<h2>Eigenschaften</h2>
+<p>Da der Zufallswert k in jede Verschlüsselung eingeht, ist das Verfahren probabilistisch: Dieselbe Nachricht ergibt verschiedene Chiffretexte; das Chiffrat ist etwa doppelt so lang wie der Klartext. Elgamal ist homomorph bezüglich der Multiplikation, was einerseits für manche Protokolle nützlich ist, andererseits aber bedeutet, dass das System nicht gegen adaptive Chosen-Ciphertext-Angriffe sicher ist (IND-CCA2). Varianten des Verfahrens arbeiten auch auf elliptischen Kurven.</p>
+<h2>Anwendung</h2>
+<p>Elgamal bzw. seine Varianten werden unter anderem in PGP/GnuPG (historisch als Standardverfahren von PGP), in der Digital Signature Algorithm-Familie (als Signaturvariante) sowie in Wahl- und Mixnet-Protokollen eingesetzt.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Elgamal-Signaturverfahren/index.html">Elgamal-Signaturverfahren</a></li>
+<li><a href="../Diffie-Hellman-Schlüsselaustausch/index.html">Diffie-Hellman-Schlüsselaustausch</a></li>
+<li><a href="../Diskreter_Logarithmus/index.html">Diskreter Logarithmus</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Interrupt-Handler – Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;margin:2em auto;max-width:52em;line-height:1.6;color:#202122;padding:0 1em}
+h1{border-bottom:1px solid #a2a9b1;font-weight:normal}
+h2{border-bottom:1px solid #eaecf0;font-weight:normal}
+img{max-width:100%}
+a{color:#0645ad;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>Interrupt-Handler</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>Interrupt-Handler</b>, auch Interrupt-Service-Routine (ISR) genannt, ist die Programmroutine, die ausgeführt wird, wenn ein <a href="../Interrupt/index.html">Interrupt</a> eintritt. Sie behandelt das auslösende Ereignis, etwa ankommende Daten eines Geräts, und kehrt anschließend zur unterbrochenen Ausführung zurück.</p>
+<h2>Ablauf</h2>
+<p>Der Prozessor ermittelt über die Interrupt-Vektortabelle die Adresse des Handlers. Dieser sichert gegebenenfalls weitere Register, quittiert die Interrupt-Quelle am Gerät oder Controller und führt die zeitkritische Mindestarbeit aus. Mit einem speziellen Rücksprungbefehl (zum Beispiel IRET bei x86) wird die ursprüngliche Ausführung fortgesetzt.</p>
+<h2>Entwurf</h2>
+<p>Handler sollen kurz sein, weil während ihrer Ausführung gleich- oder niederpriore Interrupts blockiert sein können. Aufwendige Folgearbeiten verlagern Betriebssysteme daher in einen späteren Kontext; Linux unterscheidet etwa einen „Top Half“ im Handler und verzögerte „Bottom Halves“ wie Softirqs oder Workqueues. Handler dürfen nicht schlafen und nur eingeschränkte Systemdienste nutzen.</p>
+<h2>Praxis</h2>
+<p>Gerätetreiber registrieren ihre Handler beim Betriebssystem und können sich Interrupt-Leitungen mit anderen Geräten teilen. Fehlerhafte Handler zählen zu den heiklen Problemen der Systemprogrammierung, weil ihre Fehler das gesamte System destabilisieren können.</p>
+</body>
+</html>

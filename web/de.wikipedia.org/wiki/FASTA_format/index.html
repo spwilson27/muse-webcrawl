@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>FASTA-Format – Wikipedia</title>
+<style>
+body{font-family:sans-serif;background:#f8f9fa;color:#202122;margin:0;padding:0}
+.container{max-width:960px;margin:0 auto;background:#fff;padding:2em;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1;padding-bottom:0.2em}
+h2{font-family:Georgia,serif;font-weight:normal;border-bottom:1px solid #a2a9b1}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:0.5em;margin:0 0 1em 1em;font-size:90%;width:260px}
+.infobox th{background:#cee0f2;padding:0.3em;text-align:center}
+.infobox td{padding:0.2em 0.4em}
+img.hero{display:block;max-width:100%}
+.small{font-size:85%;color:#54595d}
+pre{background:#f8f9fa;border:1px solid #a2a9b1;padding:0.6em;overflow-x:auto}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>FASTA-Format</h1>
+<p class="small">Aus Wikipedia, der freien Enzyklopädie</p>
+<table class="infobox">
+<tr><th colspan="2">FASTA-Format</th></tr>
+<tr><td><b>Dateiendungen</b></td><td>.fasta, .fa, .fna, .faa, .ffn, .frn</td></tr>
+<tr><td><b>Typ</b></td><td>Textformat für biologische Sequenzen</td></tr>
+<tr><td><b>Ursprung</b></td><td><a href="../FASTA/index.html">FASTA</a>-Softwarepaket (Pearson)</td></tr>
+</table>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Das <b>FASTA-Format</b> ist ein einfaches, textbasiertes Dateiformat zur Speicherung biologischer Sequenzen, insbesondere von Nukleotid- und Aminosäuresequenzen. Es geht auf das gleichnamige Programmpaket <a href="../FASTA/index.html">FASTA</a> von William R. Pearson zurück und ist heute eines der am weitesten verbreiteten Austauschformate der <a href="../Bioinformatik/index.html">Bioinformatik</a>.</p>
+
+<h2>Aufbau</h2>
+<p>Eine FASTA-Datei besteht aus einem oder mehreren Sequenzeinträgen. Jeder Eintrag beginnt mit einer einzeiligen Beschreibung, der sogenannten <i>Header</i>- oder Defline-Zeile, die mit einem Größer-als-Zeichen (<code>&gt;</code>) beginnt. Darauf folgen die Sequenzdaten, die sich über mehrere Zeilen erstrecken dürfen. Eine Leerzeile kann Einträge trennen, gehört aber nicht zum Standard.</p>
+<pre>&gt;sp|P04637|P53_HUMAN Cellular tumor antigen p53
+MEEPQSDPSVEPPLSQETFSDLWKLLPENNVLSPLPSQAMDDLMLSPDDIEQWFTEDPGP
+DEAPPEAEGAPPVAPAPAAPTPAAPAPAPSWPLSSSVPSQKTYQGSYGFRLGFLHSGTAK</pre>
+
+<h2>Header</h2>
+<p>Der Text nach dem Zeichen <code>&gt;</code> bis zum ersten Leerzeichen wird von den meisten Programmen als eindeutige Sequenzkennung (ID) interpretiert, der Rest der Zeile als freie Beschreibung. Historisch gab es Konventionen verschiedener Datenbanken, bei denen die Kennung aus durch senkrechte Striche getrennten Feldern besteht, etwa <code>&gt;gi|…|ref|…|</code> bei GenBank oder <code>&gt;sp|…|…</code> bei UniProt.</p>
+
+<h2>Sequenzdarstellung</h2>
+<p>Die Sequenz wird im Ein-Buchstaben-Code geschrieben. Für Nukleotide sind die IUPAC-Symbole üblich (A, C, G, T, U sowie Ambiguitätscodes wie N). Proteine werden in den 20 Standard-Aminosäurecodes dargestellt, ergänzt um Zeichen wie X für unbekannte Reste, * für ein Stopcodon und - für Lücken (Gaps) in Alignments.</p>
+<p>Die Zeilenlänge ist nicht festgelegt; empfohlen werden 60 bis 80 Zeichen.</p>
+
+<h2>Dateiendungen</h2>
+<ul>
+<li><code>.fasta</code>, <code>.fa</code> – allgemeine Sequenzdateien</li>
+<li><code>.fna</code> – Nukleinsäuresequenzen (FASTA nucleic acid)</li>
+<li><code>.faa</code> – Aminosäuresequenzen (FASTA amino acid)</li>
+<li><code>.ffn</code> – Nukleotidsequenzen von Genen eines Gesamtgenoms</li>
+<li><code>.frn</code> – nichtcodierende RNA-Sequenzen</li>
+</ul>
+
+<h2>Verwendung</h2>
+<p>Das FASTA-Format wird von nahezu allen Sequenzanalysewerkzeugen gelesen, darunter <a href="../BLAST_(Bioinformatik)/index.html">BLAST</a>, <a href="../FASTA/index.html">FASTA</a> und gängige Alignmentprogramme. Für große Datenmengen werden Varianten wie das verwandte <a href="../FASTQ_format/index.html">FASTQ-Format</a> verwendet, das zusätzlich Qualitätswerte enthält. Mehrere Sequenzen in einer Datei werden als „Multi-FASTA“ bezeichnet.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../FASTQ_format/index.html">FASTQ-Format</a></li>
+<li><a href="../FASTA/index.html">FASTA</a></li>
+</ul>
+<p class="small">Kategorie: Bioinformatik | Dateiformat</p>
+</div>
+</body>
+</html>
