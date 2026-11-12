@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Cross-Origin Resource Sharing – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 52em; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 1em auto; max-width: 100%; }
+code { background: #f8f9fa; padding: 0.1em 0.3em; }
+</style>
+</head>
+<body>
+<h1>Cross-Origin Resource Sharing</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Cross-Origin Resource Sharing</b> (kurz <b>CORS</b>) ist ein Mechanismus des Webs, der auf HTTP-Headern beruht und es einem Server erlaubt anzugeben, welche fremden Ursprünge (Origins) über einen Browser auf seine Ressourcen zugreifen dürfen. CORS lockert damit gezielt die Same-Origin-Policy, die Webseiten den Zugriff auf Antworten fremder Herkunft grundsätzlich untersagt.</p>
+<h2>Hintergrund</h2>
+<p>Aus Sicherheitsgründen darf ein Skript, das von einer Herkunft geladen wurde, zwar Anfragen an andere Server senden, deren Antworten jedoch nur lesen, wenn der Zielserver dies erlaubt. Ein „Ursprung“ (Origin) setzt sich aus Schema (etwa https), Host und Port zusammen. Ohne CORS wäre die Nutzung vieler Web-APIs von anderen Domains aus – etwa von Single-Page-Anwendungen – nicht möglich.</p>
+<h2>Ablauf</h2>
+<p>Bei einfachen Anfragen (z. B. GET ohne besondere Header) sendet der Browser die Anfrage mit einem <code>Origin</code>-Header; der Server antwortet mit <code>Access-Control-Allow-Origin</code> und nennt die zugelassenen Ursprünge oder „*“. Erhält der Browser keine passende Freigabe, blockiert er den Zugriff des Skripts auf die Antwort.</p>
+<p>Bei nicht einfachen Anfragen – etwa mit Methoden wie PUT oder DELETE oder eigenen Headern – sendet der Browser zunächst eine Voranfrage (Preflight) mit der Methode OPTIONS, in der er Methode und Header des eigentlichen Requests ankündigt. Der Server erklärt per Antwort-Headern (z. B. <code>Access-Control-Allow-Methods</code>, <code>Access-Control-Allow-Headers</code>), ob die Anfrage zulässig ist. Für Anfragen mit Cookies oder Zugangsdaten muss der Server die konkrete Herkunft nennen und <code>Access-Control-Allow-Credentials: true</code> senden; „*“ genügt dann nicht.</p>
+<h2>Sicherheit</h2>
+<p>CORS ist ein reiner Browser-Mechanismus und schützt den Server nicht vor Zugriffen durch andere Programme. Eine zu großzügige Konfiguration – etwa das Spiegeln beliebiger Origins zusammen mit Credentials – kann Daten ungewollt für fremde Webseiten lesbar machen. CORS verhindert zudem kein Cross-Site Request Forgery; dafür sind eigene Maßnahmen nötig.</p>
+<p>Siehe auch: <a href="../Same-Origin-Policy/index.html">Same-Origin-Policy</a>, <a href="../HTTP/index.html">HTTP</a>, <a href="../Web-API/index.html">Web-API</a>.</p>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Cron – Wikipedia</title>
+<style>
+body{font-family:sans-serif;margin:2em auto;max-width:800px;padding:0 1em;color:#202122;line-height:1.6}
+h1{border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%}
+.infobox{float:right;border:1px solid #a2a9b1;background:#f8f9fa;padding:.5em;margin:0 0 1em 1em;font-size:.9em}
+code{background:#f8f9fa;padding:0 .2em}
+</style>
+</head>
+<body>
+<h1>Cron</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Cron</b> ist ein zeitbasierter Dienst zur Aufgabenplanung (englisch <i>job scheduling</i>) in unixartigen Betriebssystemen. Benutzer, die wiederkehrende Aufgaben einrichten und verwalten, werden als <i>Cron-Jobs</i> bezeichnet. Mit Cron können Skripte oder Befehle automatisch zu festgelegten Zeiten oder in bestimmten Intervallen ausgeführt werden.</p>
+<h2>Geschichte</h2>
+<p>Der Name „Cron“ leitet sich vom griechischen Wort <i>chronos</i> (χρόνος) für „Zeit“ ab. Eine erste Version des Programms erschien in Version 7 Unix und wurde von Ken Thompson entwickelt. Spätere Implementierungen, insbesondere der weit verbreitete <i>Vixie Cron</i> von Paul Vixie (1987), erweiterten den Funktionsumfang erheblich, unter anderem um die Dateien <code>/etc/crontab</code> und Verzeichnisse wie <code>/etc/cron.d</code>.</p>
+<h2>Funktionsweise</h2>
+<p>Der Cron-Daemon (<code>crond</code>) läuft im Hintergrund und prüft jede Minute, ob geplante Aufgaben auszuführen sind. Die Konfiguration erfolgt über sogenannte <i>Crontab</i>-Dateien (kurz für „cron table“). Jeder Benutzer kann eine eigene Crontab besitzen, die mit dem Befehl <code>crontab -e</code> bearbeitet wird.</p>
+<h2>Crontab-Syntax</h2>
+<p>Jede Zeile einer Crontab besteht aus fünf Zeitfeldern, gefolgt vom auszuführenden Befehl:</p>
+<pre><code># Minute Stunde Tag_des_Monats Monat Wochentag Befehl
+  0      2     *                *     *         /pfad/zum/skript.sh</code></pre>
+<p>Die Felder bedeuten im Einzelnen: Minute (0–59), Stunde (0–23), Tag des Monats (1–31), Monat (1–12) und Wochentag (0–7, wobei 0 und 7 für Sonntag stehen). Ein Sternchen (<code>*</code>) steht für „jeder Wert“. Zusätzlich existieren Kurzschreibweisen wie <code>@daily</code>, <code>@weekly</code>, <code>@monthly</code> und <code>@reboot</code>.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Systemd/index.html">systemd</a> (Timer-Einheiten)</li>
+<li><a href="../At_(Unix)/index.html">at (Unix)</a></li>
+<li><a href="../Anacron/index.html">Anacron</a></li>
+</ul>
+</body>
+</html>

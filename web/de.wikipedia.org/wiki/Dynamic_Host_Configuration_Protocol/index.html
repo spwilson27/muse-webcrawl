@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Dynamic Host Configuration Protocol – Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 4px; }
+h2 { font-size: 1.35em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p { line-height: 1.6; margin: 10px 0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 320px; float: right; margin: 0 0 16px 20px; border: 1px solid #c8ccd1; }
+ul, ol { line-height: 1.6; }
+.small { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Dynamic Host Configuration Protocol</h1>
+<p class="small">Aus Wikipedia, der freien Enzyklopädie</p>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Das <b>Dynamic Host Configuration Protocol</b> (DHCP) ist ein Netzwerkprotokoll, mit dem Rechnern in einem IP-Netzwerk automatisch Konfigurationsdaten – vor allem IP-Adressen – zugewiesen werden. Es erspart die manuelle Konfiguration jedes einzelnen Geräts und wird in praktisch allen Heim- und Unternehmensnetzwerken sowie für IPv4-Netze eingesetzt. DHCP für IPv4 ist im RFC 2131 spezifiziert, die Variante für IPv6 (DHCPv6) im RFC 8415.</p>
+<h2>Ablauf der Adressvergabe</h2>
+<p>Der Aushandlungsprozess wird mit der Abkürzung <i>DORA</i> beschrieben:</p>
+<ol>
+<li><b>Discover:</b> Der Client sendet eine Broadcast-Anfrage, um verfügbare DHCP-Server zu finden.</li>
+<li><b>Offer:</b> Ein oder mehrere Server bieten eine IP-Adresse samt Konfigurationsparametern an.</li>
+<li><b>Request:</b> Der Client wählt ein Angebot aus und fordert die Adresse formell an.</li>
+<li><b>Acknowledge:</b> Der Server bestätigt die Zuweisung; der Client konfiguriert seine Netzwerkschnittstelle.</li>
+</ol>
+<p>Die Kommunikation erfolgt über UDP (Server-Port 67, Client-Port 68). Die Adresse wird nur für eine begrenzte Zeit („Lease“) vergeben und muss vor Ablauf erneuert werden. Neben der IP-Adresse übermittelt der Server typischerweise Subnetzmaske, Standardgateway, DNS-Server und Domainname; über zusätzliche Optionen lassen sich weitere Parameter wie NTP-Server verteilen.</p>
+<h2>Geschichte</h2>
+<p>DHCP baut auf dem älteren BOOTP-Protokoll von 1985 auf und wurde 1993 erstmals standardisiert. Es erweiterte BOOTP um die automatische, zeitlich begrenzte Adressvergabe aus einem Adresspool sowie um ein flexibles Optionsfeld.</p>
+<h2>Sicherheit</h2>
+<p>DHCP selbst enthält keine Authentifizierung, sodass sich sowohl Clients durch unbefugte „Rogue“-Server als auch Server durch Anfragenfluten angreifen lassen. In verwalteten Netzwerken kommen daher Verfahren wie DHCP-Snooping auf Switches zum Einsatz.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../IP-Adresse/index.html">IP-Adresse</a></li>
+<li><a href="../Domain_Name_System/index.html">Domain Name System</a></li>
+<li><a href="../BOOTP/index.html">BOOTP</a></li>
+<li><a href="../IPv6/index.html">IPv6</a></li>
+</ul>
+</div>
+</body>
+</html>

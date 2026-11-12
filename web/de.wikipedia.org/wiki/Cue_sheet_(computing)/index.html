@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Cue Sheet (Computing) – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 52em; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 0.1em 0.3em; }
+pre { background: #f8f9fa; border: 1px solid #a2a9b1; padding: 0.8em; overflow-x: auto; }
+img.hero { display: block; margin: 1em auto; max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Cue Sheet (Computing)</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>Cue Sheet</b> ist im Bereich der Computertechnik eine Textdatei (Dateiendung <code>.cue</code>), die beschreibt, wie die Titel (Tracks) auf einer CD angeordnet sind. Sie enthält Angaben zu Art, Position und Länge der einzelnen Tracks sowie Metadaten wie Interpret und Titel. Cue Sheets werden vor allem beim Erstellen und Brennen von CD-Abbildern (Images), beim Rippen von Audio-CDs in einer einzigen Datei und bei der Emulation optischer Laufwerke verwendet.</p>
+<h2>Format</h2>
+<p>Die Syntax ist zeilenorientiert. Wichtige Befehle sind <code>FILE</code> (die zugehörige Datendatei, z. B. eine WAV- oder BIN-Datei), <code>TRACK</code> (Beginn eines Tracks mit Nummern- und Typangabe), <code>INDEX</code> (Startposition innerhalb der Datei, im Format Minute:Sekunde:Frame) sowie <code>REM</code> für Kommentare und Metadaten wie Genre oder Datum.</p>
+<pre>
+FILE "album.wav" WAVE
+  TRACK 01 AUDIO
+    TITLE "Erster Song"
+    INDEX 01 00:00:00
+  TRACK 02 AUDIO
+    TITLE "Zweiter Song"
+    INDEX 01 03:25:12
+</pre>
+<h2>Anwendung</h2>
+<p>Brennprogramme wie CDRWIN, das das Format ursprünglich einführte, nutzen Cue Sheets zusammen mit einer BIN-Datei zur Rekonstruktion einer CD. Mediaplayer wie foobar2000 lesen Cue Sheets, um eine lange Audiodatei in einzelne Titel zu gliedern und mit Metadaten zu versehen. Auch bei verlustfreier Archivierung von Audio-CDs (etwa als FLAC mit eingebettetem Cue Sheet) spielt das Format eine wichtige Rolle.</p>
+</body>
+</html>

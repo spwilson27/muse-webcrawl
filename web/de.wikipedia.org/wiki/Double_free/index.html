@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Double Free – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+header { background: #f8f9fa; border-bottom: 1px solid #a2a9b1; padding: 10px 20px; }
+main { max-width: 960px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: serif; border-bottom: 1px solid #c8ccd1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 1px 4px; }
+figure { text-align: center; }
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> – Die freie Enzyklopädie</header>
+<main>
+<h1>Double Free</h1>
+<figure><img src="images/hero.png" alt="Hero image (placeholder)"></figure>
+<p>Als <b>Double Free</b> (deutsch etwa „doppelte Freigabe“) bezeichnet man einen Programmierfehler in Sprachen mit manueller Speicherverwaltung wie C oder C++, bei dem ein bereits freigegebener Speicherbereich erneut mit <code>free()</code> beziehungsweise <code>delete</code> freigegeben wird.</p>
+<h2>Folgen</h2>
+<p>Ein Double Free führt zu undefiniertem Verhalten. Die Speicherverwaltung kann dadurch korrumpiert werden, sodass derselbe Speicherblock später zweimal vergeben wird; zwei scheinbar unabhängige Zeiger verweisen dann auf denselben Bereich. Das Programm kann abstürzen, Daten können unbemerkt überschrieben werden, und Angreifer können die Schwachstelle unter Umständen zur Ausführung beliebigen Codes ausnutzen. Im Common Weakness Enumeration System ist der Fehler als CWE-415 katalogisiert.</p>
+<h2>Vermeidung</h2>
+<ul>
+<li>Zeiger nach der Freigabe auf <code>NULL</code> setzen – ein erneutes <code>free(NULL)</code> ist wirkungslos definiert.</li>
+<li>Eindeutige Besitzverhältnisse (Ownership) festlegen, sodass nur eine Stelle für die Freigabe zuständig ist.</li>
+<li>In C++ Smart Pointer wie <code>std::unique_ptr</code> verwenden; in Rust verhindert das Ownership-System den Fehler bereits zur Kompilierzeit.</li>
+<li>Analysewerkzeuge wie Valgrind oder AddressSanitizer einsetzen, die doppelte Freigaben zur Laufzeit erkennen.</li>
+</ul>
+<h2>Verwandte Fehler</h2>
+<p>Eng verwandt sind der Zugriff auf bereits freigegebenen Speicher (Use-After-Free), Speicherlecks und der doppelte Freigabeversuch über zwei Zeiger auf denselben Block (Dangling Pointer).</p>
+</main>
+</body>
+</html>

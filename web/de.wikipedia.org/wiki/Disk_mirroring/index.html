@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Plattenspiegelung – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; padding: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 1em 2em 3em; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: "Linux Libertine", Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.5em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 1em auto; max-width: 100%; }
+p { line-height: 1.6; }
+ul { line-height: 1.6; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Plattenspiegelung</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>Plattenspiegelung</b> (englisch <i>disk mirroring</i>) ist ein Verfahren zur Erhöhung der Verfügbarkeit von Daten, bei dem alle Daten eines Laufwerks in Echtzeit und identisch auf mindestens ein zweites Laufwerk geschrieben werden. Die Spiegelung entspricht der RAID-Stufe 1. Fällt ein Laufwerk aus, steht der vollständige Datenbestand auf dem Spiegel ohne Unterbrechung weiterhin zur Verfügung.</p>
+
+<h2>Funktionsweise</h2>
+<p>Jeder Schreibvorgang des Controllers oder der Software wird gleichzeitig auf beide Laufwerke ausgeführt; Lesevorgänge können zur Lastverteilung auf beide Laufwerke verteilt werden, was die Leseleistung erhöht. Nach dem Austausch eines defekten Laufwerks wird der Spiegel durch eine vollständige Neusynchronisation (<i>Resync</i>) wiederhergestellt, bei der die überlebende Platte auf die neue kopiert wird. Eine Erweiterung mit drei Spiegelplatten erlaubt es, eine Platte für Datensicherungszwecke zeitweise abzutrennen.</p>
+
+<h2>Vor- und Nachteile</h2>
+<p>Vorteile sind die einfache Implementierung, die hohe Ausfallsicherheit gegenüber einem einzelnen Laufwerksausfall und der meist nahtlose Weiterbetrieb. Nachteilig ist, dass nur die Hälfte (bei zwei Platten) der Rohkapazität nutzbar ist. Die Spiegelung schützt nicht vor logischen Fehlern wie versehentlichem Löschen, fehlerhaften Schreibvorgängen oder Schadsoftware, da diese sofort auf beide Platten repliziert werden – sie ersetzt daher kein <a href="../Datensicherung/index.html">Backup</a>.</p>
+
+<h2>Anwendungsformen</h2>
+<p>Neben der lokalen Spiegelung durch RAID-Controller oder Betriebssysteme (etwa Windows-Speicherplätze, Linux-mdadm, ZFS) existiert die <b>entfernte Spiegelung</b> (Remote Mirroring), bei der Disk-Arrays ihren Datenbestand synchron oder asynchron über ein SAN auf ein zweites Rechenzentrum replizieren, um auch standortweite Ausfälle abzufedern.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../RAID/index.html">RAID</a></li>
+<li><a href="../Replikation_(Datenverarbeitung)/index.html">Replikation</a></li>
+<li><a href="../Klonen_(Datenträger)/index.html">Klonen (Datenträger)</a></li>
+<li><a href="../Hochverfügbarkeit/index.html">Hochverfügbarkeit</a></li>
+</ul>
+</div>
+</body>
+</html>

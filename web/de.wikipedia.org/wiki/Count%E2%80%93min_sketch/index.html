@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Count-Min Sketch – Wikipedia</title>
+<style>body{font-family:sans-serif;max-width:820px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}h1{border-bottom:1px solid #a2a9b1}h2{border-bottom:1px solid #eaecf0}a{color:#36c}</style>
+</head>
+<body>
+<h1>Count-Min Sketch</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Der <b>Count-Min Sketch</b> ist eine probabilistische Datenstruktur aus der Informatik, die zur approximativen Zählung der Häufigkeit von Ereignissen in großen Datenströmen dient. Er wurde 2005 von Graham Cormode und S. Muthukrishnan vorgestellt und gehört zur Familie der Sketches, zu der auch der <a href="../Count_sketch">Count Sketch</a> zählt.</p>
+<h2>Aufbau und Funktionsweise</h2>
+<p>Die Struktur besteht aus einer zweidimensionalen Zählmatrix mit d Zeilen und w Spalten sowie d paarweise unabhängigen Hashfunktionen. Beim Einfügen eines Elements wird in jeder Zeile die durch die jeweilige Hashfunktion bestimmte Zelle um eins erhöht. Zur Schätzung der Häufigkeit eines Elements wird das Minimum der d entsprechenden Zählerwerte zurückgegeben. Da Hashkollisionen nur zu Überschätzungen führen können, ist der zurückgegebene Wert nie kleiner als die wahre Häufigkeit.</p>
+<h2>Fehlerschranken und Anwendungen</h2>
+<p>Mit geeigneter Wahl von Breite und Tiefe lässt sich der Fehler mit hoher Wahrscheinlichkeit auf einen kleinen Bruchteil der Gesamtzahl der Elemente begrenzen, bei einem Speicherbedarf, der deutlich unter dem einer exakten Zählung liegt. Anwendungen finden sich in der Netzwerkanalyse, bei Datenbanken, in der Verarbeitung von Datenströmen und beim Finden der häufigsten Elemente („Heavy Hitters“).</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Count_sketch">Count Sketch</a></li>
+<li><a href="../Bloomfilter">Bloomfilter</a></li>
+<li><a href="../HyperLogLog">HyperLogLog</a></li>
+</ul>
+</body>
+</html>

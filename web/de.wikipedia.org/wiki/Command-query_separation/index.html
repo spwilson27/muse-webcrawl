@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Command-Query Separation – Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:900px;margin:2em auto;padding:0 1em;line-height:1.6;color:#202122}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+a{color:#36c;text-decoration:none}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<h1>Command-Query Separation</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Command-Query Separation</b> (CQS), deutsch etwa „Trennung von Befehl und Abfrage“, ist ein Prinzip des Softwareentwurfs, das von <a href="../Bertrand_Meyer/index.html">Bertrand Meyer</a> im Zusammenhang mit der Programmiersprache <a href="../Eiffel_(Programmiersprache)/index.html">Eiffel</a> formuliert wurde. Es besagt, dass jede Methode eines Objekts entweder ein <i>Befehl</i> (command) oder eine <i>Abfrage</i> (query) sein soll, aber nicht beides.</p>
+<h2>Das Prinzip</h2>
+<p>Eine Abfrage liefert ein Ergebnis und verändert den beobachtbaren Zustand des Objekts nicht; sie ist frei von <a href="../Seiteneffekt_(Informatik)/index.html">Seiteneffekten</a> und kann beliebig oft wiederholt werden. Ein Befehl dagegen verändert den Zustand, liefert aber keinen Rückgabewert. Durch diese Trennung wird der Programmcode leichter nachvollziehbar, testbar und gegen Fehler robust: Wer einen Wert abfragt, muss keine unerwarteten Zustandsänderungen befürchten.</p>
+<h2>Ausnahmen und Diskussion</h2>
+<p>In der Praxis gibt es gebräuchliche Ausnahmen, etwa das Entfernen eines Elements aus einer Datenstruktur, das zugleich das entfernte Element zurückgibt (wie die Operation <i>pop</i> bei einem <a href="../Stapelspeicher/index.html">Stack</a>). Solche Operationen sind bequem, verletzen aber das Prinzip. Das verwandte, aber weitergehende Architekturmuster <a href="../Command_Query_Responsibility_Segregation/index.html">Command Query Responsibility Segregation</a> (CQRS) greift die Idee auf Systemebene auf und trennt Lese- und Schreibmodelle vollständig.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Command_Query_Responsibility_Segregation/index.html">Command Query Responsibility Segregation</a></li>
+<li><a href="../Objektorientierte_Programmierung/index.html">Objektorientierte Programmierung</a></li>
+<li><a href="../Seiteneffekt_(Informatik)/index.html">Seiteneffekt (Informatik)</a></li>
+</ul>
+</body>
+</html>

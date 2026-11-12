@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Conditional Random Field – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 2em auto; max-width: 960px; padding: 0 1em; color: #202122; background: #fff; line-height: 1.6; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em; margin: 0 0 1em 1em; width: 280px; font-size: 0.9em; }
+.infobox img { width: 100%; }
+.thumbcaption { font-size: 0.85em; color: #54595d; }
+ul { margin: 0.3em 0 0.3em 1.6em; }
+</style>
+</head>
+<body>
+<h1>Conditional Random Field</h1>
+<div class="infobox">
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<div class="thumbcaption">Graphenstruktur eines linearen CRF für die Sequenzetikettierung</div>
+</div>
+<p><b>Conditional Random Fields</b> (CRF) sind eine Klasse statistischer Modelle des maschinellen Lernens zur strukturierten Vorhersage. Sie wurden 2001 von John Lafferty, Andrew McCallum und Fernando Pereira vorgestellt. Im Gegensatz zu gewöhnlichen Klassifikatoren, die jede Beobachtung isoliert einordnen, berücksichtigen CRFs den Kontext und modellieren die bedingte Wahrscheinlichkeit einer gesamten Labelsequenz gegeben eine Eingabesequenz.</p>
+<h2>Modell</h2>
+<p>Ein CRF ist ein ungerichtetes graphisches Modell (ein Markow-Zufallsfeld), dessen Knotenvariablen in Beobachtungen X und Zielvariablen Y zerfallen; modelliert wird direkt die bedingte Verteilung P(Y | X). Die Wahrscheinlichkeit einer Labelsequenz wird als Produkt von Potentialfunktionen (Merkmalsfunktionen) über den Cliquen des Graphen definiert und durch eine globale Partitionssumme normiert. Dadurch vermeiden CRFs den <i>label bias</i>, der bei direktionalen Modellen wie Maximum-Entropy-Markow-Modellen auftritt.</p>
+<h2>Lineare CRFs</h2>
+<p>Für Sequenzaufgaben wie die Wortartmarkierung (<i>part-of-speech tagging</i>) und die Erkennung benannter Entitäten (NER) wird meist die lineare Kettenstruktur verwendet. Training erfolgt durch Maximierung der regularisierten Log-Likelihood mit gradientenbasierten Verfahren (etwa L-BFGS); die Inferenz der besten Labelsequenz geschieht exakt mit dem <a href="../Viterbi_algorithm/index.html">Viterbi-Algorithmus</a>, die Berechnung der Randverteilungen mit dem <a href="../Forward–backward_algorithm/index.html">Forward-Backward-Algorithmus</a>.</p>
+<h2>Anwendungen</h2>
+<ul>
+<li>Computerlinguistik: NER, POS-Tagging, flache Satzanalyse (Chunking)</li>
+<li>Bioinformatik: Genfindung, Proteinstrukturvorhersage</li>
+<li>Bildverarbeitung: semantische Segmentierung</li>
+<li>Informationsextraktion aus Texten und Formularen</li>
+</ul>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Markov_random_field/index.html">Markow-Zufallsfeld</a></li>
+<li><a href="../Hidden_Markov_model/index.html">Hidden-Markov-Modell</a></li>
+<li><a href="../Named-entity_recognition/index.html">Named-Entity Recognition</a></li>
+</ul>
+</body>
+</html>

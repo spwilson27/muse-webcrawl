@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Direct Memory Access – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 900px; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; margin-top: 1.5em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 300px; float: right; margin: 0 0 1em 1em; }
+</style>
+</head>
+<body>
+<h1>Direct Memory Access</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Direct Memory Access</b> (<b>DMA</b>, deutsch „direkter Speicherzugriff“) ist ein Verfahren der Computertechnik, bei dem ein Peripheriegerät oder ein spezieller DMA-Controller Daten direkt mit dem Arbeitsspeicher austauschen kann, ohne dass die CPU jeden einzelnen Transfer ausführen muss. Die CPU stößt den Transfer nur an und wird nach dessen Abschluss – etwa per Interrupt – benachrichtigt.</p>
+
+<h2>Funktionsweise</h2>
+<p>Zum Start eines DMA-Transfers programmiert die CPU den DMA-Controller mit Quell- und Zieladresse, Transferlänge und Richtung. Der Controller übernimmt daraufhin die Bussteuerung und überträgt die Daten, während die CPU andere Aufgaben ausführen kann. Nach Abschluss meldet der Controller die Beendigung. Für die Kohärenz mit CPU-Caches sorgen je nach Architektur Hardwaremechanismen oder Software.</p>
+
+<h2>Bedeutung</h2>
+<p>Ohne DMA müsste die CPU jedes Datenwort einzeln bewegen (Programmed Input/Output, PIO), was insbesondere bei schnellen Geräten wie Festplatten, SSDs, Netzwerkkarten und Grafikkarten unverhältnismäßig viel Rechenzeit binden würde. DMA ist daher ein Grundprinzip praktisch aller modernen Computersysteme. Historisch gab es im PC-Bereich fest verdrahtete ISA-DMA-Kanäle; moderne Busse wie PCI Express realisieren DMA über Bus-Mastering der Geräte selbst.</p>
+
+<h2>Varianten</h2>
+<ul>
+<li><b>Scatter-Gather-DMA:</b> Ein einziger Transferauftrag verarbeitet mehrere verstreute Speicherbereiche.</li>
+<li><b>Remote DMA (RDMA):</b> Direkter Speicherzugriff über ein Netzwerk auf den Speicher eines anderen Rechners, wichtig im Hochleistungsrechnen.</li>
+</ul>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Interrupt">Interrupt</a></li>
+<li><a href="../Input/Output">Input/Output</a></li>
+<li><a href="../Arbeitsspeicher">Arbeitsspeicher</a></li>
+</ul>
+</body>
+</html>

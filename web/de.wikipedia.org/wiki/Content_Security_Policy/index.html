@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Content Security Policy – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 52em; line-height: 1.55; color: #202122; padding: 0 1em; }
+h1 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0 0.2em; font-size: 0.9em; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Content Security Policy</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>Content Security Policy</b> (<b>CSP</b>) ist ein Sicherheitskonzept für Webanwendungen, das vom World Wide Web Consortium (W3C) standardisiert wurde. Sie wird über den HTTP-Header <code>Content-Security-Policy</code> (früher auch <code>X-Content-Security-Policy</code>) vom Server an den Browser übermittelt und legt fest, aus welchen Quellen eine Webseite Inhalte wie Skripte, Stylesheets, Bilder oder Schriftarten laden darf. Ziel ist es vor allem, Cross-Site-Scripting (XSS) und das Einschleusen fremder Inhalte zu erschweren.</p>
+<h2>Funktionsweise</h2>
+<p>Die Policy besteht aus einer Liste von Direktiven, die jeweils durch Semikolons getrennt werden. Zu den wichtigsten Direktiven zählen:</p>
+<ul>
+<li><code>default-src</code> – Fallback für alle nicht näher bestimmten Ressourcenarten</li>
+<li><code>script-src</code> – erlaubte Quellen für JavaScript</li>
+<li><code>style-src</code> – erlaubte Quellen für CSS</li>
+<li><code>img-src</code> – erlaubte Quellen für Bilder</li>
+<li><code>connect-src</code> – erlaubte Ziele für Fetch- und XHR-Anfragen</li>
+<li><code>frame-ancestors</code> – legt fest, welche Seiten die Seite in einem Frame einbetten dürfen</li>
+</ul>
+<p>Als Werte können unter anderem <code>'self'</code> (nur die eigene Herkunft), <code>'none'</code> (gar keine Quelle), Hostnamen, Schemata wie <code>https:</code> sowie Nonces und Hashes angegeben werden. Mit <code>'unsafe-inline'</code> werden Inline-Skripte erlaubt, was den Schutz jedoch deutlich schwächt.</p>
+<h2>Berichtsmodus</h2>
+<p>Über den Header <code>Content-Security-Policy-Report-Only</code> kann eine Policy zunächst nur überwacht werden: Verstöße werden nicht blockiert, sondern an eine per <code>report-uri</code> bzw. <code>report-to</code> angegebene Adresse gemeldet. So lässt sich eine Policy testen, bevor sie scharf geschaltet wird.</p>
+<h2>Geschichte</h2>
+<p>Das Konzept geht auf einen Vorschlag von Robert Hansen aus dem Jahr 2004 zurück. Die erste Implementierung erschien 2010 in Mozilla Firefox 4. Das W3C veröffentlichte die Spezifikation in mehreren Stufen (CSP Level 1, 2 und 3); alle gängigen Browser unterstützen CSP heute.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Contents/index.html">Inhaltsverzeichnis</a></li>
+</ul>
+</body>
+</html>

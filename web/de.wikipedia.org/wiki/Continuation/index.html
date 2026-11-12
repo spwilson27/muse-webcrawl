@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Continuation – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0 auto; max-width: 960px; padding: 16px; line-height: 1.6; color: #202122; background: #fff; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+pre { background: #f8f9fa; border: 1px solid #a2a9b1; padding: 10px; overflow-x: auto; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Continuation</h1>
+<p>Eine <b>Continuation</b> (englisch, „Fortsetzung") bezeichnet in der Informatik die abstrakte Darstellung des weiteren Programmablaufs an einer bestimmten Stelle eines Programms. Formal ist eine Continuation eine Funktion, die als Argument das Ergebnis der bisherigen Berechnung erhält und die Berechnung von diesem Punkt an „zu Ende" führt – sie beschreibt also „das, was noch zu tun ist".</p>
+<h2>Konzept</h2>
+<p>Der Begriff stammt aus der Theorie der Programmiersprachen und der denotationellen Semantik. Jede Berechnung lässt sich in zwei Teile zerlegen: das, was bereits geschehen ist, und die Continuation, also die ausstehende Fortsetzung. In vielen funktionalen Programmiersprachen, etwa Scheme oder Standard ML, ist der aktuelle Kontrollzustand als Continuation erster Klasse verfügbar; in Scheme geschieht dies mit der Prozedur <code>call-with-current-continuation</code> (kurz <i>call/cc</i>).</p>
+<pre>(call-with-current-continuation
+  (lambda (k) (+ 1 (k 41))))  ; ergibt 41</pre>
+<h2>Anwendungen</h2>
+<p>Continuations erlauben es, anspruchsvolle Kontrollstrukturen selbst zu definieren: Ausnahmen, Backtracking, Generatoren, Koroutinen und auch die Beendigung oder das Wiederaufnehmen von Berechnungen. In der Webprogrammierung wurden Continuations diskutiert, um den zustandslosen Ablauf von HTTP-Anfragen mit mehrschrittigen Dialogen zu verbinden. Verwandte Konzepte in modernen Sprachen sind begrenzte Continuations (delimited continuations), Versprechen (Promises) und async/await-Konstrukte.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Continuation-passing_style/index.html">Continuation-passing style</a></li>
+<li><a href="../Scheme_(Programmiersprache)/index.html">Scheme (Programmiersprache)</a></li>
+<li><a href="../Koroutine/index.html">Koroutine</a></li>
+</ul>
+</body>
+</html>

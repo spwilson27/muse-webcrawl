@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Earley-Parser – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 1.2em; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 0.95em; }
+ul { font-family: sans-serif; font-size: 0.95em; line-height: 1.6; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 10px; font-size: 0.85em; overflow-x: auto; }
+a { color: #0645ad; text-decoration: none; }
+img.hero { max-width: 100%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Earley-Parser</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Der <b>Earley-Parser</b> ist ein Parsing-Algorithmus für kontextfreie Grammatiken, der 1970 von Jay Earley in seiner Dissertation „An efficient context-free parsing algorithm" vorgestellt wurde. Er arbeitet top-down mit dynamischer Programmierung und kann auch mehrdeutige und linksrekursive Grammatiken verarbeiten.</p>
+<h2>Verfahren</h2>
+<p>Der Algorithmus verarbeitet die Eingabe zeichenweise und führt für jede Eingabeposition eine Menge von Zuständen (Items). Ein Earley-Item besteht aus einer Grammatikregel mit einem Punkt, der markiert, wie viel der rechten Regelseite bereits erkannt wurde, zusammen mit der Startposition des Items. Drei Operationen erzeugen neue Items:</p>
+<ul>
+<li><b>Vorhersage (Predictor):</b> Steht der Punkt vor einem Nichtterminal, werden alle Regeln dieses Nichtterminals mit Punkt am Anfang hinzugefügt.</li>
+<li><b>Abtastung (Scanner):</b> Steht der Punkt vor einem Terminal, das dem nächsten Eingabezeichen entspricht, wird das Item mit fortgeschobenem Punkt in die nächste Zustandsmenge übernommen.</li>
+<li><b>Vervollständigung (Completer):</b> Steht der Punkt am Ende einer Regel, werden alle Items in der Ausgangsmenge, die auf dieses Nichtterminal warten, mit fortgeschobenem Punkt ergänzt.</li>
+</ul>
+<h2>Komplexität</h2>
+<p>Die Laufzeit beträgt im mehrdeutigen Fall O(n³), für eindeutige Grammatiken O(n²) und für viele deterministische kontextfreie Grammatiken – einschließlich aller LR(k)-Grammatiken – O(n). Damit ist der Earley-Parser für allgemeine kontextfreie Grammatiken asymptotisch so effizient wie der CYK-Algorithmus, hat aber in der Praxis den Vorteil der Top-down-Steuerung.</p>
+<h2>Anwendungen</h2>
+<p>Earley-Parser finden Anwendung bei der Verarbeitung natürlicher Sprache, in Grammatik-Werkzeugen und in erweiterten Varianten wie dem von John Aycock und R. Nigel Horspool beschriebenen praktischen Earley-Parsing für LR(0)-ähnliche Grammatiken.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Parser/index.html">Parser</a></li>
+<li><a href="../CYK-Algorithmus/index.html">CYK-Algorithmus</a></li>
+<li><a href="../Kontextfreie_Grammatik/index.html">Kontextfreie Grammatik</a></li>
+</ul>
+</div>
+</body>
+</html>

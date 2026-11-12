@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Constrained Delaunay Triangulation – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 960px; padding: 0 1em; color: #202122; line-height: 1.6; }
+h1, h2, h3 { font-family: serif; }
+h1 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 320px; display: block; margin: 1em 0; }
+</style>
+</head>
+<body>
+<h1>Constrained Delaunay Triangulation</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Eine <b>Constrained Delaunay Triangulation</b> (CDT), deutsch etwa <b>beschränkte Delaunay-Triangulation</b>, ist in der algorithmischen Geometrie eine Triangulation einer ebenen Punktmenge, bei der vorgegebene Strecken (die Constraints oder Zwangskanten) als Kanten der Triangulation vorkommen müssen. Sie verallgemeinert die Delaunay-Triangulation, bei der der kleinste Umkreiswinkel maximiert und damit besonders „gut geformte“ Dreiecke erzeugt werden.</p>
+<h2>Definition</h2>
+<p>Gegeben seien eine Menge von Punkten in der Ebene sowie eine Menge paarweise sich nicht schneidender Strecken (Constraints) zwischen diesen Punkten, zusammen ein planarer geradliniger Graph. Eine Triangulation der konvexen Hülle, die alle Punkte als Ecken enthält und jede Constraint-Strecke als Kante führt, heißt Constrained-Triangulation. Sie ist eine Constrained Delaunay Triangulation, wenn für jedes Dreieck dessen Umkreis keinen im Inneren sichtbaren Punkt der Eingabe enthält; Sichtbarkeit bedeutet dabei, dass die Verbindungsstrecke zu einem Dreiecksinneren keine Constraint-Kante kreuzt. Unter üblichen Voraussetzungen existiert die CDT und ist – bis auf entartete Fälle – eindeutig.</p>
+<h2>Eigenschaften und Algorithmen</h2>
+<p>Wie die gewöhnliche Delaunay-Triangulation maximiert die CDT lokal den minimalen Winkel, soweit dies die Zwangskanten zulassen; Dreiecke sind daher möglichst weit von schmaler, entarteter Form entfernt. Zur Berechnung dienen inkrementelle Algorithmen, die Punkte und Constraints nacheinander einfügen und die Delaunay-Eigenschaft durch Kantentausche (Flips) wiederherstellen; effiziente Verfahren erreichen eine Laufzeit von O(n log n). Bekannte Implementierungen finden sich in der Bibliothek CGAL und im Programm Triangle von Jonathan Shewchuk.</p>
+<h2>Anwendungen</h2>
+<p>CDTs werden überall eingesetzt, wo vorgegebene Linienstrukturen in einer Vermaschung erhalten bleiben müssen: in geographischen Informationssystemen zur Geländemodellierung mit Bruchkanten (etwa Flussläufe oder Straßen), bei der Finite-Elemente-Netzgenerierung, in der Computergrafik und bei der Rekonstruktion von Flächen aus unstrukturierten Messdaten. Verwandte Verfahren sind die Conforming Delaunay Triangulation, bei der Constraints notfalls durch zusätzliche Steiner-Punkte unterteilt werden, sowie die Qualitätsvermaschung nach Chew und Ruppert (siehe auch <a href="../Constrained_Delaunay_triangulation/index.html">Delaunay-Triangulation</a>).</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Constrained_optimization/index.html">Optimierung unter Nebenbedingungen</a></li>
+<li><a href="../Constructible_polygon/index.html">Konstruierbares Polygon</a></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Diffie-Hellman-Schlüsselaustausch – Wikipedia</title>
+<style>
+body{font-family:Georgia,serif;max-width:860px;margin:0 auto;padding:20px;line-height:1.6;color:#202122;background:#fff}
+h1{font-size:1.8em;border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+h2{font-size:1.35em;border-bottom:1px solid #a2a9b1;padding-bottom:3px;margin-top:1.4em}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%}
+</style>
+</head>
+<body>
+<h1>Diffie-Hellman-Schlüsselaustausch</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Der <b>Diffie-Hellman-Schlüsselaustausch</b> ist ein Protokoll zur Schlüsselvereinbarung, mit dem zwei Kommunikationspartner über einen unsicheren Kanal einen gemeinsamen geheimen Schlüssel erzeugen können, ohne ihn zu übertragen. Das Verfahren wurde 1976 von Whitfield Diffie und Martin Hellman veröffentlicht und gilt als Geburtsstunde der asymmetrischen Kryptographie.</p>
+<h2>Ablauf</h2>
+<p>Die Partner einigen sich öffentlich auf eine große Primzahl p und eine Basis g. Jeder wählt einen eigenen geheimen Exponenten a beziehungsweise b und sendet den Wert g<sup>a</sup> mod p beziehungsweise g<sup>b</sup> mod p an den anderen. Aus dem empfangenen Wert und dem eigenen Geheimnis berechnet jeder (g<sup>b</sup>)<sup>a</sup> mod p beziehungsweise (g<sup>a</sup>)<sup>b</sup> mod p – in beiden Fällen ergibt sich derselbe gemeinsame Schlüssel g<sup>ab</sup> mod p.</p>
+<h2>Sicherheit</h2>
+<p>Ein Angreifer, der die ausgetauschten Werte abhört, müsste zur Berechnung des Schlüssels das diskrete Logarithmusproblem lösen, was für hinreichend große Primzahlen als praktisch unmöglich gilt. Das Verfahren allein schützt jedoch nicht vor Man-in-the-Middle-Angriffen, weil die Identität der Partner nicht geprüft wird; in der Praxis wird der Schlüsselaustausch deshalb mit digitalen Signaturen kombiniert, etwa in TLS.</p>
+<h2>Varianten und Anwendungen</h2>
+<p>Eine elliptische Variante (ECDH) arbeitet in Gruppen auf elliptischen Kurven und erreicht gleiche Sicherheit mit deutlich kürzeren Schlüsseln. Der Diffie-Hellman-Austausch wird unter anderem in TLS, SSH, IPsec und modernen Messaging-Protokollen eingesetzt und bildet die Grundlage der Perfect Forward Secrecy, wenn er mit ephemeren Schlüsseln betrieben wird.</p>
+<p>Siehe auch: <a href="../Diffie-Hellman_key_exchange/index.html">Diffie-Hellman-Schlüsselaustausch (Schreibvariante mit Bindestrich)</a>, <a href="../Diffie–Hellman_key_exchange/index.html">Diffie-Hellman-Schlüsselaustausch (Schreibvariante mit Halbgeviertstrich)</a></p>
+</body>
+</html>

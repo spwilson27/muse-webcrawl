@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Content Addressable Network – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 52em; line-height: 1.55; color: #202122; padding: 0 1em; }
+h1 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Content Addressable Network</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Das <b>Content Addressable Network</b> (<b>CAN</b>) ist ein dezentrales Peer-to-Peer-Overlay-Netz, das eine verteilte Hashtabelle (DHT) bereitstellt. Es wurde 2001 von Sylvia Ratnasamy, Paul Francis, Mark Handley, Richard Karp und Scott Shenker vorgestellt und gehört neben Chord, Pastry und Tapestry zu den vier ursprünglichen DHT-Entwürfen.</p>
+<h2>Entwurf</h2>
+<p>CAN basiert auf einem virtuellen d-dimensionalen kartesischen Koordinatenraum, der dynamisch unter allen teilnehmenden Knoten aufgeteilt wird. Jeder Knoten verwaltet eine zusammenhängende Zone dieses Raums. Schlüssel-Wert-Paare werden gespeichert, indem der Schlüssel per Hashfunktion auf einen Punkt im Koordinatenraum abgebildet wird; der Knoten, in dessen Zone der Punkt liegt, ist für das Paar zuständig.</p>
+<h2>Routing</h2>
+<p>Um einen Schlüssel zu finden, leitet ein Knoten die Anfrage gierig an den Nachbarn weiter, dessen Zone dem Zielpunkt am nächsten liegt. Bei n Knoten und d Dimensionen beträgt die durchschnittliche Pfadlänge O(d · n<sup>1/d</sup>) und jeder Knoten hält 2d Nachbareinträge. Durch Erhöhung der Dimensionen lässt sich die Pfadlänge verkürzen.</p>
+<h2>Beitritt und Ausfall</h2>
+<p>Ein neuer Knoten sucht einen Punkt im Raum, kontaktiert den zuständigen Knoten und übernimmt die Hälfte von dessen Zone. Fällt ein Knoten aus, übernehmen seine Nachbarn dessen Zone; regelmäßige Heartbeats dienen der Erkennung von Ausfällen.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Content_delivery_network/index.html">Content Delivery Network</a></li>
+</ul>
+</body>
+</html>

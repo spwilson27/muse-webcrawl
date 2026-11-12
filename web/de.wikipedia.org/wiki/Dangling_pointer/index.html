@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Dangling Pointer – Wikipedia</title>
+<style>
+body{font-family:'Linux Libertine','Georgia',serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:2em 2.5em;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9;min-height:100vh}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;margin:0 0 .4em;padding-bottom:.15em;font-weight:normal}
+h2{font-size:1.5em;border-bottom:1px solid #a2a9b1;margin:1.2em 0 .4em;font-weight:normal}
+p{line-height:1.65;margin:.5em 0;font-size:.95em}
+ul{line-height:1.6;font-size:.95em}
+a{color:#3366cc;text-decoration:none}
+a:hover{text-decoration:underline}
+.thumb{clear:both;margin:1em 0}
+img{max-width:100%}
+code{background:#f8f9fa;border:1px solid #eaecf0;padding:0 .2em}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Dangling Pointer</h1>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"></div>
+<p>Ein <b>Dangling Pointer</b> (deutsch etwa „hängender Zeiger“) ist in der Informatik ein Zeiger, der auf einen Speicherbereich verweist, der bereits freigegeben wurde oder dessen Gültigkeitsdauer abgelaufen ist. Das Dereferenzieren eines solchen Zeigers führt zu undefiniertem Verhalten und zählt zu den häufigsten und schwerwiegendsten Fehlern in Programmiersprachen mit manueller Speicherverwaltung wie <a href="../C_(Programmiersprache)/index.html">C</a> und <a href="../C++/index.html">C++</a>.</p>
+<h2>Ursachen</h2>
+<ul>
+<li>Freigeben von Speicher mit <code>free()</code> bzw. <code>delete</code>, während weitere Zeiger auf denselben Bereich existieren</li>
+<li>Zurückgeben der Adresse einer lokalen Variable aus einer Funktion, deren Aktivierungsrahmen beim Rücksprung aufgelöst wird</li>
+<li>Zeiger auf ein Objekt, dessen Lebensdauer durch einen anderen Eigentümer beendet wurde</li>
+</ul>
+<h2>Folgen</h2>
+<p>Wird über einen Dangling Pointer gelesen oder geschrieben, kann das Programm abstürzen, falsche Ergebnisse liefern oder Sicherheitslücken eröffnen. Der Fehler „Use-After-Free“ ist ein bekanntes Einfallstor für Angriffe, da Angreifer den freigegebenen Speicher gezielt mit kontrollierten Daten belegen können.</p>
+<h2>Vermeidung</h2>
+<p>Zu den Gegenmaßnahmen gehören das Setzen des Zeigers auf <code>NULL</code> nach der Freigabe, der Einsatz von Smart Pointern und Besitzkonzepten (etwa in modernem C++ oder in <a href="../Rust_(Programmiersprache)/index.html">Rust</a>), Garbage Collection sowie statische Analysewerkzeuge und Laufzeitprüfer wie AddressSanitizer.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Dangling_modifier/index.html">Fehlbezogener Modifikator</a></li>
+<li><a href="../Speicherleck/index.html">Speicherleck</a></li>
+<li><a href="../Garbage_Collection/index.html">Garbage Collection</a></li>
+</ul>
+</div>
+</body>
+</html>

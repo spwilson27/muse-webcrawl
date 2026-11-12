@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Dynamischer Linker – Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 4px; }
+h2 { font-size: 1.35em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p { line-height: 1.6; margin: 10px 0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 320px; float: right; margin: 0 0 16px 20px; border: 1px solid #c8ccd1; }
+ul { line-height: 1.6; }
+.small { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Dynamischer Linker</h1>
+<p class="small">Aus Wikipedia, der freien Enzyklopädie</p>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>dynamischer Linker</b> (englisch <i>dynamic linker</i> oder <i>dynamic loader</i>) ist ein Programm, das beim Start einer ausführbaren Datei deren dynamisch einzubindende Bibliotheken in den Speicher lädt und die symbolischen Verweise des Programms auf die tatsächlichen Adressen auflöst. Er ist Bestandteil nahezu aller modernen Betriebssysteme und bildet die Laufzeit-Hälfte des dynamischen Linkens.</p>
+<h2>Aufgaben</h2>
+<ul>
+<li>Laden der im Programm verzeichneten Shared Libraries aus den Suchpfaden des Systems</li>
+<li>Anwenden von Relokationen, also das Eintragen der tatsächlichen Ladeadressen in den Code</li>
+<li>Auflösen von Symbolen (Funktionen und Variablen) über die Symboltabellen der Bibliotheken</li>
+<li>Ausführen der Initialisierungsroutinen der geladenen Bibliotheken</li>
+</ul>
+<p>Zur Effizienz wird die Auflösung von Funktionsadressen häufig verzögert (<i>lazy binding</i>): Erst beim ersten Aufruf wird über die Procedure Linkage Table (PLT) und die Global Offset Table (GOT) die Zieladresse ermittelt und zwischengespeichert.</p>
+<h2>Implementierungen</h2>
+<p>Unter Linux mit dem ELF-Format heißt der dynamische Linker <code>ld.so</code> beziehungsweise – je nach Architektur – <code>ld-linux-x86-64.so.2</code>; er ist Teil der glibc, kann aber auch direkt aufgerufen werden, um ein Programm mit einer anderen Bibliothekskonfiguration zu starten. Suchpfade lassen sich über <code>/etc/ld.so.conf</code>, den Cache <code>/etc/ld.so.cache</code> und die Umgebungsvariable <code>LD_LIBRARY_PATH</code> beeinflussen. Das Pendant unter macOS heißt <code>dyld</code>; unter Windows übernimmt die Ladefunktion von ntdll/kernel32 das dynamische Binden der DLLs.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Linker/index.html">Linker</a></li>
+<li><a href="../Dynamic_Link_Library/index.html">Dynamic Link Library</a></li>
+<li><a href="../Executable_and_Linkable_Format/index.html">Executable and Linkable Format</a></li>
+<li><a href="../Programmbibliothek/index.html">Programmbibliothek</a></li>
+</ul>
+</div>
+</body>
+</html>

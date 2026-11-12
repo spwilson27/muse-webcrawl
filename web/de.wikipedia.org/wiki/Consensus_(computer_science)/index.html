@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Konsens (Verteilte Systeme) – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 24px 32px; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0 0 12px 16px; border: 1px solid #c8ccd1; padding: 4px; background: #f8f9fa; font-size: 90%; text-align: center; }
+.thumb img { max-width: 220px; display: block; }
+ul { line-height: 1.6; }
+p { line-height: 1.6; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Konsens (Verteilte Systeme)</h1>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"><div>Verteilte Systeme müssen sich auf gemeinsame Werte einigen.</div></div>
+<p>Das <b>Konsensproblem</b> ist ein fundamentales Problem der <a href="../Verteiltes_System/index.html">verteilten Systeme</a> und der <a href="../Informatik/index.html">Informatik</a>. Es besteht darin, dass sich mehrere Prozesse beziehungsweise Knoten eines Netzwerks trotz möglicher Ausfälle einzelner Komponenten auf einen gemeinsamen Wert einigen müssen, sodass alle korrekten Teilnehmer dieselbe Entscheidung treffen.</p>
+<h2>Definition</h2>
+<p>Ein Konsensalgorithmus muss drei Eigenschaften erfüllen:</p>
+<ul>
+<li><b>Terminierung:</b> Jeder korrekt arbeitende Prozess entscheidet sich irgendwann für einen Wert.</li>
+<li><b>Übereinstimmung (Agreement):</b> Kein zwei korrekte Prozesse entscheiden sich für unterschiedliche Werte.</li>
+<li><b>Integrität beziehungsweise Gültigkeit (Validity):</b> Der entschiedene Wert wurde von einem der Prozesse vorgeschlagen.</li>
+</ul>
+<h2>Unmöglichkeitsresultat</h2>
+<p>Das bekannte <b>FLP-Resultat</b> von Fischer, Lynch und Paterson aus dem Jahr 1985 zeigt, dass es in einem vollständig asynchronen System keinen deterministischen Konsensalgorithmus gibt, der selbst bei Ausfall nur eines einzigen Prozesses (Crash-Fehler) garantiert terminiert. In der Praxis wird dieses Problem durch Annahmen über Zeitüberschreitungen (Timeouts), partielle Synchronie oder Zufallsverfahren umgangen.</p>
+<h2>Fehlermodelle</h2>
+<p>Neben einfachen Abstürzen (Crash-Fehler) betrachtet man auch <b>byzantinische Fehler</b>, bei denen defekte Knoten beliebig falsche Informationen verbreiten können. Algorithmen, die solche Fehler tolerieren, werden als byzantinisch fehlertolerant bezeichnet. Ein klassisches Beispiel ist das Problem der <a href="../Byzantinische_Gener%C3%A4le/index.html">byzantinischen Generäle</a>, das von Lamport, Shostak und Pease 1982 formuliert wurde.</p>
+<h2>Bekannte Algorithmen</h2>
+<ul>
+<li><b>Paxos</b> – von Leslie Lamport entwickelter Konsensalgorithmus für fehlertolerante verteilte Systeme.</li>
+<li><b>Raft</b> – ein 2014 vorgestellter, bewusst verständlich gestalteter Alternative zu Paxos.</li>
+<li><b>PBFT (Practical Byzantine Fault Tolerance)</b> – von Castro und Liskov, toleriert byzantinische Fehler.</li>
+<li><b>Proof of Work</b> und verwandte Verfahren, die in <a href="../Blockchain/index.html">Blockchains</a> wie Bitcoin eine probabilistische Konsensform herstellen.</li>
+</ul>
+<h2>Anwendungen</h2>
+<p>Konsensalgorithmen bilden die Grundlage replizierter Datenbanken, verteilter Sperrdienste, Leader-Wahlen in Clustersystemen sowie von Kryptowährungen. Auch das <a href="../Zwei-Phasen-Commit/index.html">Zwei-Phasen-Commit</a>-Protokoll zur Koordination verteilter Transaktionen ist eng mit dem Konsensproblem verwandt.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../CAP-Theorem/index.html">CAP-Theorem</a></li>
+<li><a href="../Fehlertoleranz/index.html">Fehlertoleranz</a></li>
+<li><a href="../Replikation_(Datenverarbeitung)/index.html">Replikation</a></li>
+</ul>
+</div>
+</body>
+</html>

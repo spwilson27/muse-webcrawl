@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Cross-Site Scripting – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #fff; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; font-weight: normal; }
+p, li { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 1em auto; max-width: 100%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Cross-Site Scripting</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Cross-Site Scripting</b> (<b>XSS</b>) ist eine Sicherheitslücke in Webanwendungen, die entsteht, wenn nicht vertrauenswürdige Daten – meist Benutzereingaben – ohne ausreichende Prüfung und Kodierung in eine Webseite eingebettet werden. Ein Angreifer kann dadurch eigenen JavaScript-Code in Seiten einschleusen, der anschließend im Browser anderer Benutzer im Kontext der betroffenen Website ausgeführt wird. Die Abkürzung XSS wurde gewählt, um Verwechslungen mit der Abkürzung CSS für Cascading Style Sheets zu vermeiden.</p>
+<h2>Varianten</h2>
+<p>Beim <b>gespeicherten XSS</b> (<i>stored XSS</i>) wird der Schadcode dauerhaft auf dem Server abgelegt, etwa in einem Gästebuch, Kommentar oder Profil, und an jeden Besucher ausgeliefert. Beim <b>reflektierten XSS</b> (<i>reflected XSS</i>) ist der Code Teil einer manipulierten URL und wird vom Server unmittelbar in die Antwort „reflektiert“; das Opfer muss auf den präparierten Link klicken. Beim <b>DOM-basierten XSS</b> schließlich entsteht die Lücke ausschließlich im clientseitigen Code, der Eingaben unsicher in das Document Object Model schreibt, etwa über <code>innerHTML</code>.</p>
+<h2>Auswirkungen</h2>
+<p>Mit XSS lassen sich Sitzungs-Cookies auslesen (sofern sie nicht durch das Attribut <code>HttpOnly</code> geschützt sind), Aktionen im Namen des Opfers ausführen, Inhalte der Seite verändern, Tastatureingaben protokollieren oder Phishing-Inhalte einblenden. Ein spektakulärer Fall war der Wurm Samy, der sich 2005 innerhalb weniger Stunden auf über eine Million Profile des Netzwerks MySpace verbreitete. XSS gehört seit Jahren zu den am häufigsten gemeldeten Schwachstellenkategorien und wird unter anderem in den OWASP Top 10 geführt.</p>
+<h2>Abwehrmaßnahmen</h2>
+<p>Die wichtigste Gegenmaßnahme ist die kontextgerechte Ausgabekodierung aller dynamischen Daten, ergänzt durch Eingabevalidierung und moderne Frameworks, die Ausgaben standardmäßig escapen. Zusätzlich kann eine Content Security Policy (CSP) die Ausführung eingeschleuster Skripte erschweren, und Cookies sollten mit den Attributen <code>HttpOnly</code> und <code>SameSite</code> versehen werden.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Cross-site_request_forgery/index.html">Cross-Site Request Forgery</a></li>
+<li><a href="../SQL-Injection/index.html">SQL-Injection</a></li>
+<li><a href="../Content_Security_Policy/index.html">Content Security Policy</a></li>
+</ul>
+</div>
+</body>
+</html>

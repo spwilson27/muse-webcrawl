@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Constraint-Erfüllungsproblem – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 960px; padding: 0 1em; color: #202122; line-height: 1.6; }
+h1, h2, h3 { font-family: serif; }
+h1 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 320px; display: block; margin: 1em 0; }
+</style>
+</head>
+<body>
+<h1>Constraint-Erfüllungsproblem</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>Constraint-Erfüllungsproblem</b> (englisch <i>constraint satisfaction problem</i>, CSP) ist in der Informatik und künstlichen Intelligenz ein Problem, bei dem einer Menge von Variablen Werte so zugewiesen werden müssen, dass eine Reihe von Bedingungen (Constraints) erfüllt ist. Gesucht ist eine vollständige, konsistente Belegung; CSPs bilden das formale Grundmodell der <a href="../Constraint_programming/index.html">Constraint-Programmierung</a>.</p>
+<h2>Definition</h2>
+<p>Formell ist ein CSP ein Tripel (X, D, C) aus einer endlichen Menge von Variablen X, der Familie D ihrer Wertebereiche (Domänen) und einer Menge C von Constraints. Ein Constraint über einer Teilmenge der Variablen legt fest, welche Wertekombinationen für diese Variablen zulässig sind. Eine Belegung, die jeder Variablen einen Wert aus ihrer Domäne zuweist und keinen Constraint verletzt, heißt Lösung. Beispiele sind die Färbung einer Landkarte mit wenigen Farben, das Damenproblem, Sudoku, Kryptarithmetik und Stundenplanprobleme.</p>
+<h2>Komplexität und Lösung</h2>
+<p>Die Entscheidung, ob ein CSP eine Lösung besitzt, ist im Allgemeinen NP-vollständig. Praktische Löser kombinieren systematisches Backtracking mit Inferenzverfahren: Früh erkannt wird ein Widerspruch durch Vorwärtsprüfung (forward checking) und durch Konsistenzerhaltung, bei der Werte entfernt werden, die mit keiner konsistenten Fortsetzung vereinbar sind (etwa der Algorithmus AC-3 zur Bogenkonsistenz und das Verfahren MAC, <i>maintaining arc consistency</i>). Für unvollständige Suche auf sehr großen Instanzen wird das lokale Verfahren Min-Conflicts verwendet, das schrittweise die Zahl verletzter Bedingungen verringert.</p>
+<h2>Erweiterungen</h2>
+<p>Erweiterungen umfassen Optimierungsvarianten (etwa das Max-CSP und das weiche CSP, bei dem verletzte Bedingungen mit Kosten belegt werden), quantifizierte CSPs sowie dynamische Probleme, bei denen sich die Bedingungen im Lauf der Zeit ändern. Zahlreiche klassische Probleme der KI – von der Planung über die Konfiguration bis zur maschinellen Sicht – lassen sich als CSP modellieren und mit generischen Lösern bearbeiten, was das Modell zu einem zentralen Werkzeug der deklarativen Problemlösung macht (siehe auch <a href="../Constraint_logic_programming/index.html">Constraint Logic Programming</a>).</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Constrained_optimization/index.html">Optimierung unter Nebenbedingungen</a></li>
+<li><a href="../Constraint_programming/index.html">Constraint-Programmierung</a></li>
+</ul>
+</body>
+</html>

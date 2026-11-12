@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Count-Min Sketch – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #fff; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; padding: 20px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 14.5px; }
+ul { font-family: sans-serif; font-size: 14.5px; line-height: 1.6; }
+code { background: #f8f9fa; padding: 1px 4px; }
+img.hero { max-width: 320px; float: right; margin: 0 0 12px 16px; border: 1px solid #c8ccd1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div id="content">
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Count-Min Sketch</h1>
+<p>Der <b>Count-Min Sketch</b> ist eine probabilistische Datenstruktur aus der Informatik, die zur näherungsweisen Zählung von Ereignishäufigkeiten in Datenströmen dient. Er wurde 2005 von Graham Cormode und S. Muthu Muthukrishnan eingeführt und gehört zur Familie der Skizzen-Algorithmen (Streaming-Algorithmen) mit sublinearem Speicherverbrauch.</p>
+<h2>Funktionsweise</h2>
+<p>Die Struktur besteht aus einer zweidimensionalen Zählermatrix mit <i>d</i> Zeilen und <i>w</i> Spalten. Jede Zeile ist mit einer eigenen Hashfunktion versehen. Beim Einfügen eines Elements wird in jeder Zeile der durch die Hashfunktion bestimmte Zähler um eins erhöht. Zur Häufigkeitsschätzung eines Elements liest man alle zugehörigen Zähler aus und nimmt deren Minimum – daher der Name. Kollisionen können den Schätzwert nur nach oben verfälschen, nie nach unten.</p>
+<h2>Fehlergarantien</h2>
+<p>Mit Breite <i>w</i> = ⌈e/ε⌉ und Tiefe <i>d</i> = ⌈ln(1/δ)⌉ überschätzt der Sketch die wahre Häufigkeit mit Wahrscheinlichkeit mindestens 1 − δ um höchstens ε·N, wobei N die Gesamtzahl der eingefügten Elemente ist. Verwandte Strukturen sind der Count Sketch und der Bloomfilter.</p>
+<h2>Anwendungen</h2>
+<ul>
+<li>Netzwerkverkehrsanalyse und Erkennung „schwerer Hitter“ (häufige Elemente)</li>
+<li>Datenbankanfrageoptimierung</li>
+<li>Natürliche Sprachverarbeitung und verteilte Systeme</li>
+</ul>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Coupon_collector's_problem/index.html">Sammelbilderproblem</a></li>
+</ul>
+</div>
+</body>
+</html>

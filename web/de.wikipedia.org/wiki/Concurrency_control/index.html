@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Nebenläufigkeitskontrolle – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 900px; line-height: 1.6; color: #202122; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Nebenläufigkeitskontrolle</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>Nebenläufigkeitskontrolle</b> (englisch <i>concurrency control</i>) ist ein Aufgabenbereich von Datenbanksystemen und Transaktionssystemen. Sie stellt sicher, dass gleichzeitig ausgeführte Transaktionen sich nicht gegenseitig stören und die Konsistenz der Daten gewahrt bleibt, als ob die Transaktionen nacheinander abgelaufen wären (Serialisierbarkeit).</p>
+<h2>Probleme ohne Kontrolle</h2>
+<p>Ohne Koordination können Anomalien auftreten: das <i>Lost Update</i> (eine Änderung überschreibt unbemerkt eine andere), das Lesen noch nicht festgeschriebener Daten (Dirty Read), nicht wiederholbare Leseergebnisse (Non-Repeatable Read) und Phantomdaten bei wiederholten Abfragen. Die SQL-Isolationsstufen legen fest, welche dieser Phänomene ein System zulassen darf.</p>
+<h2>Verfahren</h2>
+<p>Klassische Verfahren sind das <b>Zwei-Phasen-Sperrprotokoll</b> (2PL), bei dem Transaktionen Lese- und Schreibsperren erwerben und erst nach der Wachstumsphase wieder freigeben, sowie Zeitstempelverfahren, die jeder Transaktion eine eindeutige Ordnung zuweisen. Die optimistische Nebenläufigkeitskontrolle verzichtet zunächst auf Sperren und prüft erst beim Festschreiben, ob Konflikte aufgetreten sind. Die Mehrversionskontrolle (MVCC), die etwa PostgreSQL und Oracle nutzen, hält mehrere Versionen eines Datensatzes, sodass Leser und Schreiber sich kaum blockieren.</p>
+<h2>Deadlocks</h2>
+<p>Sperrverfahren können zu Verklemmungen führen, die das System durch Wartegraphen erkennt und durch Abbruch einer der beteiligten Transaktionen auflöst.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Concurrency_(computer_science)/index.html">Nebenläufigkeit</a></li>
+<li><a href="../Transaktion_(Informatik)/index.html">Transaktion (Informatik)</a></li>
+<li><a href="../ACID/index.html">ACID</a></li>
+<li><a href="../Datenbank/index.html">Datenbank</a></li>
+</ul>
+</body>
+</html>

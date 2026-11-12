@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Kreuzentropie – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 52em; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.4em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 1em auto; max-width: 100%; }
+code { background: #f8f9fa; padding: 0.1em 0.3em; }
+</style>
+</head>
+<body>
+<h1>Kreuzentropie</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>Kreuzentropie</b> (englisch <i>cross-entropy</i>) ist ein Begriff aus der Informationstheorie. Sie misst den durchschnittlichen Informationsgehalt beziehungsweise den Codierungsaufwand, wenn Ereignisse einer Verteilung p mit einem Code beschrieben werden, der für eine (angenommene) Verteilung q optimiert ist.</p>
+<h2>Definition</h2>
+<p>Für zwei diskrete Wahrscheinlichkeitsverteilungen p und q über derselben Menge ist die Kreuzentropie definiert als</p>
+<p><code>H(p, q) = − Σ p(x) · log q(x)</code>.</p>
+<p>Sie setzt sich zusammen aus der Entropie der wahren Verteilung und der Kullback-Leibler-Divergenz: <code>H(p, q) = H(p) + D<sub>KL</sub>(p ‖ q)</code>. Die Kreuzentropie ist minimal, wenn q = p ist; sie ist nicht symmetrisch.</p>
+<h2>Bedeutung im maschinellen Lernen</h2>
+<p>Im maschinellen Lernen wird die Kreuzentropie als Verlustfunktion für Klassifikationsaufgaben verwendet. Dabei ist p die wahre Verteilung der Klassen (häufig eine One-Hot-Verteilung) und q die vom Modell vorhergesagte Verteilung, etwa der Ausgang einer Softmax-Schicht eines neuronalen Netzes. Die Minimierung der Kreuzentropie entspricht der Maximierung der Likelihood der Trainingsdaten und bestraft sichere, aber falsche Vorhersagen besonders stark.</p>
+<p>Für den binären Fall spricht man von der binären Kreuzentropie (<i>binary cross-entropy</i>), die beim Training logistischer Regressionen und binärer Klassifikatoren Standard ist. Auch Sprachmodelle werden üblicherweise mit Kreuzentropie trainiert; aus ihr leitet sich die Perplexität als Bewertungsmaß ab.</p>
+<p>Siehe auch: <a href="../Entropie_(Informationstheorie)/index.html">Entropie (Informationstheorie)</a>, <a href="../Kullback-Leibler-Divergenz/index.html">Kullback-Leibler-Divergenz</a>, <a href="../Verlustfunktion/index.html">Verlustfunktion</a>.</p>
+</body>
+</html>

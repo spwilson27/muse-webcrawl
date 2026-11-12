@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>cut (Unix) – Wikipedia</title>
+<style>
+body{font-family:sans-serif;line-height:1.6;margin:2em auto;max-width:800px;padding:0 1em;color:#202122}
+h1{font-family:serif;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-family:serif;border-bottom:1px solid #a2a9b1}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:.5em;overflow:auto}
+code{font-family:monospace}
+</style>
+</head>
+<body>
+<h1>cut (Unix)</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>cut</b> ist ein Kommandozeilenwerkzeug der Unix- und Unix-artigen Betriebssysteme, das Zeilen aus Dateien oder der Standardeingabe spaltenweise zerschneidet und ausgewählte Teile davon ausgibt. Es gehört zu den klassischen Textverarbeitungsfiltern der Shell und ist durch den POSIX-Standard spezifiziert.</p>
+<h2>Verwendung</h2>
+<p>Mit <code>cut</code> lassen sich aus jeder Eingabezeile entweder bestimmte Bytepositionen, Zeichenpositionen oder durch ein Trennzeichen abgegrenzte Felder extrahieren. Typische Anwendungsfälle sind das Auslesen einzelner Spalten aus CSV-ähnlichen Dateien oder aus Systemdateien wie <code>/etc/passwd</code>.</p>
+<h2>Wichtige Optionen</h2>
+<ul>
+<li><code>-b Liste</code> – gibt die angegebenen Bytes aus</li>
+<li><code>-c Liste</code> – gibt die angegebenen Zeichen aus</li>
+<li><code>-f Liste</code> – gibt die angegebenen Felder aus</li>
+<li><code>-d Zeichen</code> – legt das Feldtrennzeichen fest (Standard: Tabulator)</li>
+<li><code>-s</code> – unterdrückt Zeilen ohne Trennzeichen</li>
+<li><code>--complement</code> – invertiert die Auswahl (GNU-Erweiterung)</li>
+</ul>
+<h2>Beispiele</h2>
+<pre>$ cut -d: -f1 /etc/passwd
+root
+daemon
+bin</pre>
+<p>Dieses Beispiel gibt das erste Feld – den Benutzernamen – jeder Zeile der Passwortdatei aus.</p>
+<pre>$ echo "eins:zwei:drei" | cut -d: -f2
+zwei</pre>
+<h2>Geschichte</h2>
+<p>Das Programm erschien erstmals in AT&amp;T Unix System III und war in Version 7 Unix enthalten; es wurde von Gottfried W. R. Luderer mitentwickelt. Heute existieren Implementierungen unter anderem im GNU-Coreutils-Paket und in den BSD-Systemen.</p>
+<p>Siehe auch: <a href="../Awk/index.html">awk</a>, <a href="../Sed/index.html">sed</a>, <a href="../Grep/index.html">grep</a>, <a href="../Paste_(Unix)/index.html">paste</a></p>
+</body>
+</html>

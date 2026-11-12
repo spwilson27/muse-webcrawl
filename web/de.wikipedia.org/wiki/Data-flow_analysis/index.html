@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Datenflussanalyse – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0 auto; max-width: 960px; padding: 1em 2em; color: #202122; background: #fff; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; font-weight: normal; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 0.95em; }
+ul { font-family: sans-serif; font-size: 0.95em; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 0.1em 0.3em; }
+</style>
+</head>
+<body>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Datenflussanalyse</h1>
+<p>Die <b>Datenflussanalyse</b> (englisch <i>data-flow analysis</i>) ist ein Verfahren der statischen Programmanalyse, das Informationen über die möglichen Werte und Verwendungen von Variablen an verschiedenen Punkten eines Computerprogramms sammelt. Sie bildet eine der wichtigsten Grundlagen für optimierende Compiler.</p>
+
+<h2>Grundlagen</h2>
+<p>Die Analyse arbeitet auf dem Kontrollflussgraphen eines Programms, dessen Knoten Basisblöcke und dessen Kanten den möglichen Kontrollfluss darstellen. Für jeden Programmpunkt werden Mengen von Fakten berechnet, beispielsweise welche Definitionen einer Variablen diesen Punkt erreichen können (<i>reaching definitions</i>) oder welche Variablen an dieser Stelle noch „lebendig“ sind, weil ihr Wert später noch gelesen wird (<i>live variable analysis</i>).</p>
+<p>Die Berechnung erfolgt iterativ: Ausgehend von Anfangswerten werden die Fakten entlang der Kanten des Graphen propagiert, bis ein Fixpunkt erreicht ist, das heißt, bis sich keine der Mengen mehr ändert. Transferfunktionen beschreiben dabei, wie ein Basisblock die eingehenden Fakten verändert.</p>
+
+<h2>Wichtige Analysen</h2>
+<ul>
+<li><b>Erreichende Definitionen</b> (<i>reaching definitions</i>): welche Zuweisungen einen Programmpunkt beeinflussen können.</li>
+<li><b>Lebendige Variablen</b> (<i>live variables</i>): Variablen, deren Wert später noch benötigt wird.</li>
+<li><b>Verfügbare Ausdrücke</b> (<i>available expressions</i>): Ausdrücke, die bereits berechnet wurden und deren Operanden sich nicht geändert haben.</li>
+<li><b>Sehr aktive Variablen</b> (<i>very busy expressions</i>): Ausdrücke, die auf jedem Pfad erneut ausgewertet werden.</li>
+</ul>
+
+<h2>Anwendungen</h2>
+<p>Auf der Datenflussanalyse beruhen zahlreiche Compileroptimierungen, darunter die Eliminierung toten Codes, die Konstantenpropagation, die gemeinsame Teilausdruck-Eliminierung und die Registerzuteilung. Auch Werkzeuge zur statischen Fehlererkennung und zur Sicherheitsanalyse nutzen Datenflusstechniken.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Compiler/index.html">Compiler</a></li>
+<li><a href="../Control-flow_graph/index.html">Kontrollflussgraph</a></li>
+<li><a href="../Static_program_analysis/index.html">Statische Programmanalyse</a></li>
+</ul>
+</body>
+</html>

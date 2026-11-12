@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Deflate – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; padding: 20px 40px; color: #202122; line-height: 1.6; max-width: 960px; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 22px; border-bottom: 1px solid #a2a9b1; padding-bottom: 2px; font-weight: normal; margin-top: 28px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+table.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 8px; margin: 0 0 12px 16px; font-size: 13px; width: 260px; }
+</style>
+</head>
+<body>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Deflate</h1>
+<table class="infobox">
+<tr><th colspan="2">Deflate</th></tr>
+<tr><td><b>Entwickler</b></td><td>Phil Katz</td></tr>
+<tr><td><b>Spezifikation</b></td><td>RFC 1951 (1996)</td></tr>
+<tr><td><b>Verfahren</b></td><td>LZ77 + Huffman-Kodierung</td></tr>
+<tr><td><b>Verwendung</b></td><td>ZIP, gzip, PNG, HTTP-Kompression</td></tr>
+</table>
+<p><b>Deflate</b> (Eigenschreibweise <i>DEFLATE</i>) ist ein verlustfreies Verfahren zur <a href="../Datenkompression/index.html">Datenkompression</a>. Es kombiniert den <a href="../LZ77/index.html">LZ77-Algorithmus</a> mit der <a href="../Huffman-Kodierung/index.html">Huffman-Kodierung</a> und wurde ursprünglich von Phil Katz für die Version 2 seines Archivierungsprogramms PKZIP entwickelt. Die Spezifikation wurde 1996 im RFC 1951 veröffentlicht.</p>
+<h2>Verfahren</h2>
+<p>Im ersten Schritt ersetzt das LZ77-Verfahren wiederholt auftretende Bytefolgen durch Rückverweise der Form (Abstand, Länge) auf eine frühere Position im bereits verarbeiteten Datenstrom. Das dabei verwendete Gleitfenster ist auf 32 KiB begrenzt. Im zweiten Schritt werden die Literale sowie die Längen- und Abstandssymbole mit einer Huffman-Kodierung entropiekodiert. Der Datenstrom ist in Blöcke unterteilt, die jeweils unkomprimiert, mit festen Huffman-Tabellen oder mit dynamisch übertragenen Huffman-Tabellen gespeichert werden können.</p>
+<h2>Verwendung</h2>
+<p>Deflate ist das Kompressionsverfahren hinter zahlreichen weit verbreiteten Formaten: Es bildet die Grundlage der Archivformate ZIP und (indirekt über gzip, RFC 1952) des Programms <a href="../Gzip/index.html">gzip</a>, des Bildformats <a href="../Portable_Network_Graphics/index.html">PNG</a>, der Kompression in PDF-Dateien sowie der HTTP-Übertragungscodierungen <i>gzip</i> und <i>deflate</i>. Die weit verbreitete Programmbibliothek <a href="../Zlib/index.html">zlib</a> implementiert Deflate und wird von unzähligen Anwendungen genutzt.</p>
+<h2>Eigenschaften</h2>
+<p>Deflate erreicht bei typischen Text- und Binärdaten gute Kompressionsraten bei mäßigem Rechenaufwand und eignet sich daher auch für die Dekompression auf leistungsschwacher Hardware. Modernere Verfahren wie LZMA, Brotli oder Zstandard erzielen häufig höhere Kompressionsraten, bauen aber teils auf verwandten Konzepten auf.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Zlib/index.html">zlib</a></li>
+<li><a href="../ZIP_(Dateiformat)/index.html">ZIP (Dateiformat)</a></li>
+<li><a href="../Brotli/index.html">Brotli</a></li>
+</ul>
+</body>
+</html>

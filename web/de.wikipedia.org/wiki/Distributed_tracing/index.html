@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Distributed Tracing – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 1.5em 2em; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; margin-bottom: 0.4em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.2em; }
+p, li { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { display: block; margin: 1em auto; max-width: 320px; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Distributed Tracing</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Distributed Tracing</b> (deutsch „verteilte Ablaufverfolgung“) ist ein Verfahren zur Beobachtung von Anfragen in verteilten Softwaresystemen, insbesondere in Microservice-Architekturen. Es macht den gesamten Weg einer Anfrage durch alle beteiligten Dienste sichtbar und dient der Leistungsanalyse und Fehlersuche.</p>
+<h2>Funktionsweise</h2>
+<p>Jeder Anfrage wird beim Eintritt ins System eine eindeutige Trace-ID zugewiesen. Jeder Arbeitsschritt eines Dienstes wird als <i>Span</i> erfasst – mit Startzeit, Dauer und Metadaten (<i>Tags</i>) sowie Verweisen auf den übergeordneten Span. Die Kontextdaten werden bei jedem Dienstaufruf, etwa in HTTP-Headern, weitergereicht (<i>Context Propagation</i>), sodass sich alle Spans einer Anfrage zu einem Baum, dem Trace, zusammensetzen lassen.</p>
+<h2>Anwendung</h2>
+<p>Aus den Traces lassen sich Engpässe und Latenzen lokalisieren, etwa um zu erkennen, welcher von Dutzenden Diensten eine langsame Antwort verursacht. Häufig werden Trace-Daten wegen des hohen Volumens nur stichprobenartig gespeichert (Sampling). Tracing ergänzt die klassischen Beobachtbarkeitssäulen Metriken und Logs.</p>
+<h2>Werkzeuge und Standards</h2>
+<p>Bekannte Systeme sind Zipkin (ursprünglich von Twitter) und Jaeger (von Uber, heute bei der Cloud Native Computing Foundation). Der herstellerneutrale Standard <b>OpenTelemetry</b> vereinheitlicht Instrumentierung und Datenformate für Traces, Metriken und Logs.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Microservices/index.html">Microservices</a></li>
+<li><a href="../OpenTelemetry/index.html">OpenTelemetry</a></li>
+<li><a href="../Observability/index.html">Observability</a></li>
+</ul>
+</div>
+</body>
+</html>

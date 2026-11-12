@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Dimensionale Modellierung – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #fff; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; font-weight: normal; margin-top: 1.2em; }
+p, li { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em 1em; margin: 0 0 1em 1em; font-size: 0.85em; }
+img.hero { display: block; margin: 1em auto; max-width: 320px; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Dimensionale Modellierung</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>dimensionale Modellierung</b> (englisch <i>dimensional modeling</i>) ist eine Entwurfstechnik für <a href="../Data_Warehouse/index.html">Data Warehouses</a> und analytische Datenbanken. Sie wurde maßgeblich von Ralph Kimball geprägt und stellt Daten in Form von Fakten und Dimensionen dar, um sie für Abfragen und Berichte leicht verständlich und performant zugänglich zu machen.</p>
+<h2>Grundbegriffe</h2>
+<p>Eine <b>Faktentabelle</b> enthält die quantitativen Messwerte eines Geschäftsprozesses, beispielsweise Umsätze oder Stückzahlen. Die umgebenden <b>Dimensionstabellen</b> liefern den beschreibenden Kontext – etwa Produkt, Kunde, Zeit und Filiale. Faktentabellen verweisen über Fremdschlüssel auf die Dimensionen.</p>
+<h2>Schemata</h2>
+<ul>
+<li><b>Sternschema</b> (Star Schema): Eine zentrale Faktentabelle ist direkt mit denormalisierten Dimensionstabellen verbunden.</li>
+<li><b>Schneeflockenschema</b> (Snowflake Schema): Dimensionstabellen sind weiter normalisiert und hierarchisch verschachtelt.</li>
+</ul>
+<h2>Slowly Changing Dimensions</h2>
+<p>Da sich Dimensionsattribute im Zeitverlauf ändern können (z. B. die Adresse eines Kunden), beschreibt die Kimball-Methodik verschiedene Typen des Umgangs mit Änderungen, von Überschreiben (Typ 1) bis zur vollständigen Historisierung über neue Datensätze (Typ 2) oder zusätzliche Spalten (Typ 3).</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Data_Warehouse/index.html">Data Warehouse</a></li>
+<li><a href="../OLAP/index.html">OLAP</a></li>
+<li><a href="../Business_Intelligence/index.html">Business Intelligence</a></li>
+</ul>
+</div>
+</body>
+</html>

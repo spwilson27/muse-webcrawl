@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Disjunktive Normalform – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; padding: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 1em 2em 3em; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-family: "Linux Libertine", Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-weight: normal; border-bottom: 1px solid #a2a9b1; margin-top: 1.5em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 1em auto; max-width: 100%; }
+p { line-height: 1.6; }
+ul { line-height: 1.6; }
+code { background: #f8f9fa; padding: 0 0.2em; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Disjunktive Normalform</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Als <b>disjunktive Normalform</b> (kurz <b>DNF</b>, englisch <i>Disjunctive Normal Form</i>) bezeichnet man in der Aussagenlogik einen Ausdruck, der eine Disjunktion von Konjunktionstermen ist. Ein Konjunktionsterm besteht seinerseits aus einer Konjunktion von <a href="../Literal/index.html">Literalen</a>, wobei ein Literal eine Aussagevariable oder deren Negation ist. Die disjunktive Normalform ist neben der konjunktiven Normalform (KNF) eine der beiden kanonischen Normalformen der Aussagenlogik.</p>
+
+<h2>Definition</h2>
+<p>Eine Formel der Aussagenlogik liegt in disjunktiver Normalform vor, wenn sie die Gestalt</p>
+<p style="text-align:center;">(L<sub>11</sub> ∧ … ∧ L<sub>1n₁</sub>) ∨ (L<sub>21</sub> ∧ … ∧ L<sub>2n₂</sub>) ∨ … ∨ (L<sub>k1</sub> ∧ … ∧ L<sub>knₖ</sub>)</p>
+<p>hat, wobei jedes L<sub>ij</sub> ein Literal ist. Zu jeder aussagenlogischen Formel existiert eine äquivalente Formel in DNF; sie kann aus der Wahrheitstabelle abgelesen werden, indem für jede Zeile mit dem Wahrheitswert „wahr" ein Konjunktionsterm (Minterm) gebildet wird, der genau diese Belegung beschreibt.</p>
+
+<h2>Kanonische disjunktive Normalform</h2>
+<p>Die <b>kanonische</b> (oder <i>vollständige</i>) disjunktive Normalform enthält in jedem Konjunktionsterm jede Aussagevariable genau einmal, entweder positiv oder negiert. Sie ist für eine gegebene Wahrheitsfunktion bis auf die Reihenfolge der Terme und Literale eindeutig und wird auch als disjunktive Normalform aus Mintermen bezeichnet.</p>
+
+<h2>Beispiel</h2>
+<p>Die Formel (A ∧ ¬B) ∨ (¬A ∧ B) ∨ C liegt in DNF vor; sie entspricht der disjunktiven Verknüpfung zweier Konjunktionsterme und des Literals C. Hingegen ist A ∧ (B ∨ C) keine DNF, sondern muss zunächst durch Distributivgesetze umgeformt werden zu (A ∧ B) ∨ (A ∧ C).</p>
+
+<h2>Herstellung</h2>
+<p>Zur Umformung einer beliebigen Formel in eine DNF werden zunächst Implikationen und Äquivalenzen beseitigt, dann die Negationen mit den Regeln von De Morgan nach innen gezogen (Negationsnormalform) und schließlich das Distributivgesetz angewandt, um Konjunktionen über Disjunktionen aufzulösen. Die entstehende Formel kann exponentiell länger sein als die Ausgangsformel.</p>
+
+<h2>Anwendungen</h2>
+<p>Disjunktive Normalformen spielen eine Rolle in der digitalen Schaltungstechnik (Realisierung von Schaltfunktionen durch UND-ODER-Schaltungen, PLAs), in der Wissensrepräsentation, bei der Vereinfachung logischer Ausdrücke (z.&nbsp;B. mit dem Verfahren nach Quine und McCluskey) sowie in der Komplexitätstheorie: Das Erfüllbarkeitsproblem für DNF-Formeln (DNF-SAT) ist im Gegensatz zu KNF-SAT effizient lösbar, während die Prüfung, ob eine DNF-Formel eine Tautologie ist, coNP-vollständig bleibt.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Konjunktive_Normalform/index.html">Konjunktive Normalform</a></li>
+<li><a href="../Boolesche_Algebra/index.html">Boolesche Algebra</a></li>
+<li><a href="../Minterm/index.html">Minterm</a></li>
+<li><a href="../Karnaugh-Veitch-Diagramm/index.html">Karnaugh-Veitch-Diagramm</a></li>
+</ul>
+</div>
+</body>
+</html>

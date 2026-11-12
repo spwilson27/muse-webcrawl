@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Dijkstra-Algorithmus – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em 3em; border: 1px solid #a7d7f9; }
+h1 { font-family: "Linux Libertine", Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: "Linux Libertine", Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0 0 1em 1.5em; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 4px; font-size: 0.85em; text-align: center; }
+.thumb img { max-width: 220px; display: block; background: #eaecf0; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Dijkstra-Algorithmus</h1>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"><div>Ablauf des Dijkstra-Algorithmus an einem Beispielgraphen</div></div>
+<p>Der <b>Dijkstra-Algorithmus</b> ist ein <a href="../Algorithm/index.html">Algorithmus</a> der <a href="../Graph_theory/index.html">Graphentheorie</a> zur Berechnung kürzester Wege in einem <a href="../Graph_(discrete_mathematics)/index.html">Graphen</a> mit nichtnegativen Kantengewichten. Er geht auf den niederländischen Informatiker <a href="../Edsger_W._Dijkstra/index.html">Edsger W. Dijkstra</a> zurück, der ihn 1956 entwickelte und 1959 veröffentlichte. Ausgehend von einem Startknoten bestimmt er die kürzesten Abstände zu allen anderen Knoten des Graphen (Single-Source-Shortest-Path-Problem).</p>
+<h2>Arbeitsweise</h2>
+<p>Der Algorithmus verwaltet für jeden Knoten die Länge des bisher kürzesten bekannten Weges vom Startknoten. Zunächst wird der Startknoten mit dem Abstand 0 initialisiert, alle anderen mit unendlich. In jedem Schritt wählt der Algorithmus unter den noch nicht abgearbeiteten Knoten denjenigen mit dem kleinsten vorläufigen Abstand aus und „entspannt“ (relaxiert) dessen ausgehende Kanten: Führt der Weg über diesen Knoten zu einem Nachbarn kürzer als der bisher bekannte, wird der Abstand des Nachbarn aktualisiert. Da alle Kantengewichte nichtnegativ sind, ist der gewählte Knoten bei seiner Auswahl bereits endgültig optimal; der Algorithmus arbeitet daher nach dem Prinzip eines <a href="../Greedy_algorithm/index.html">Greedy-Algorithmus</a>.</p>
+<h2>Laufzeit</h2>
+<p>Mit einer einfachen Implementierung beträgt die Laufzeit O(|V|²). Unter Verwendung einer Prioritätswarteschlange (etwa eines Fibonacci-Heaps) für die Auswahl des Minimums sinkt sie auf O(|E| + |V| log |V|). Für Graphen mit negativen Kantengewichten ist der Algorithmus nicht anwendbar; hierfür eignet sich etwa der <a href="../Bellman%E2%80%93Ford_algorithm/index.html">Bellman-Ford-Algorithmus</a>.</p>
+<h2>Anwendungen</h2>
+<p>Dijkstras Algorithmus ist Grundlage vieler Wegfindungsverfahren, unter anderem in Navigationssystemen, in den Routingprotokollen <a href="../Open_Shortest_Path_First/index.html">OSPF</a> und IS-IS der Rechnernetze sowie in seiner Erweiterung zum <a href="../A*_search_algorithm/index.html">A*-Algorithmus</a>, der zusätzlich eine Heuristik verwendet. Dijkstra selbst berichtete später, er habe den Algorithmus 1956 bei einem Cafébesuch in Amsterdam in etwa zwanzig Minuten entworfen, als er mit seiner Verlobten den schnellsten Weg von Rotterdam nach Groningen überlegte.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Shortest_path_problem/index.html">Kürzester Weg</a></li>
+<li><a href="../Breadth-first_search/index.html">Breitensuche</a></li>
+<li><a href="../A*_search_algorithm/index.html">A*-Algorithmus</a></li>
+</ul>
+</div>
+</body>
+</html>

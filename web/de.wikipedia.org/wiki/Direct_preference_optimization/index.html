@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Direct Preference Optimization – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 900px; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; margin-top: 1.5em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 300px; float: right; margin: 0 0 1em 1em; }
+</style>
+</head>
+<body>
+<h1>Direct Preference Optimization</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Direct Preference Optimization</b> (<b>DPO</b>) ist ein Verfahren des maschinellen Lernens zum Ausrichten von Sprachmodellen an menschlichen Präferenzen. Es wurde 2023 von Forschern der Stanford University vorgestellt und bietet eine einfachere Alternative zum bestärkenden Lernen mit menschlichem Feedback (RLHF).</p>
+
+<h2>Verfahren</h2>
+<p>Beim klassischen RLHF wird zunächst ein separates Belohnungsmodell aus Präferenzdaten trainiert und das Sprachmodell anschließend mit bestärkendem Lernen (etwa PPO) dagegen optimiert. DPO umgeht diesen Zwischenschritt: Aus der mathematischen Beziehung zwischen optimaler Policy und Belohnungsfunktion ergibt sich eine Klassifikationsverlustfunktion, mit der das Sprachmodell direkt anhand von Paaren aus bevorzugter und abgelehnter Antwort trainiert werden kann. Als Anker dient ein eingefrorenes Referenzmodell, von dem sich das zu trainierende Modell nur begrenzt entfernen soll; die Stärke dieser Bindung steuert ein Temperaturparameter.</p>
+
+<h2>Bedeutung</h2>
+<p>DPO ist rechnerisch stabiler und einfacher zu implementieren als PPO-basiertes RLHF und wird deshalb in vielen Open-Source-Sprachmodellen zur Feinabstimmung eingesetzt. In der Folge entstanden zahlreiche Varianten, darunter IPO, KTO und ORPO.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Reinforcement_Learning_from_Human_Feedback">Reinforcement Learning from Human Feedback</a></li>
+<li><a href="../Sprachmodell">Sprachmodell</a></li>
+<li><a href="../Maschinelles_Lernen">Maschinelles Lernen</a></li>
+</ul>
+</body>
+</html>

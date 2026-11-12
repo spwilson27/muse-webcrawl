@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Cross-Site Request Forgery – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #fff; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; padding: 1em 1.5em 3em; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-weight: normal; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; font-weight: normal; }
+p, li { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 0 0.2em; }
+img.hero { display: block; margin: 1em auto; max-width: 100%; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Cross-Site Request Forgery</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Cross-Site Request Forgery</b> (<b>CSRF</b>, auch <i>XSRF</i>, deutsch etwa „seitenübergreifende Anfragenfälschung“) ist eine Angriffstechnik auf Webanwendungen, bei der ein Angreifer den Browser eines angemeldeten Benutzers dazu bringt, ungewollt eine zustandsverändernde Anfrage an eine Webanwendung zu senden. Der Angriff nutzt aus, dass der Browser bei Anfragen an eine Domain automatisch die für diese Domain gespeicherten Cookies mitsendet – einschließlich der Sitzungs-Cookies einer laufenden Anmeldung.</p>
+<h2>Ablauf eines Angriffs</h2>
+<p>Der Angreifer platziert auf einer von ihm kontrollierten oder kompromittierten Webseite ein manipuliertes Element, etwa ein Bild mit einer URL wie <code>https://bank.example/ueberweisen?betrag=1000&amp;an=angreifer</code> oder ein automatisch abgeschicktes Formular. Besucht das Opfer diese Seite, während es bei der Zielanwendung angemeldet ist, führt der Browser die Anfrage mit gültiger Sitzung aus. Die Anwendung kann nicht unterscheiden, ob die Anfrage vom Benutzer beabsichtigt war. Auf diese Weise lassen sich etwa Passwörter und E-Mail-Adressen ändern, Überweisungen auslösen oder Administratorenfunktionen aufrufen. Bekannte Fälle betrafen unter anderem Router, deren Administrationsoberflächen über CSRF angreifbar waren.</p>
+<h2>Abwehrmaßnahmen</h2>
+<p>Die wichtigste Gegenmaßnahme ist das CSRF-Token: Die Anwendung bettet in jedes Formular und jede zustandsverändernde Anfrage einen geheimen, sitzungsgebundenen Zufallswert ein, den ein Angreifer von einer fremden Seite aus nicht kennen oder vorhersagen kann. Anfragen ohne gültiges Token werden zurückgewiesen. Zusätzlich hilft das Cookie-Attribut <code>SameSite</code>, das verhindert, dass Cookies bei seitenübergreifenden Anfragen mitgesendet werden. Weitere Maßnahmen sind die Prüfung der Header <code>Origin</code> und <code>Referer</code> sowie die Anforderung einer erneuten Authentifizierung oder Bestätigung bei kritischen Aktionen. Reine GET-Anfragen sollten grundsätzlich keine Zustandsänderungen auslösen.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Cross-site_scripting/index.html">Cross-Site Scripting</a></li>
+<li><a href="../Session_Hijacking/index.html">Session Hijacking</a></li>
+<li><a href="../Cross-origin_resource_sharing/index.html">Cross-Origin Resource Sharing</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>DMARC – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; padding: 0 1.5em 2em; line-height: 1.6; color: #202122; }
+h1 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; }
+h2 { font-family: Georgia, serif; border-bottom: 1px solid #a2a9b1; font-weight: normal; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h1>DMARC</h1>
+<p><b>DMARC</b> (Domain-based Message Authentication, Reporting and Conformance) ist ein Verfahren zur Authentifizierung von E-Mails, das den Missbrauch von Absenderdomains durch Spoofing und Phishing erschweren soll. Es ist im RFC 7489 spezifiziert.</p>
+<h2>Funktionsweise</h2>
+<p>DMARC baut auf den Verfahren <a href="../Sender_Policy_Framework/index.html">SPF</a> und <a href="../DKIM/index.html">DKIM</a> auf. Der Inhaber einer Domain veröffentlicht im DNS einen DMARC-Eintrag (TXT-Record unter _dmarc), in dem er festlegt, wie Empfänger mit E-Mails umgehen sollen, deren sichtbare Absenderdomain („From") weder per SPF noch per DKIM übereinstimmend authentifiziert werden kann (Alignment). Mögliche Richtlinien sind <i>none</i> (nur überwachen), <i>quarantine</i> (als Spam behandeln) und <i>reject</i> (abweisen).</p>
+<h2>Berichte</h2>
+<p>Empfangende Mailserver können dem Domaininhaber aggregierte Berichte (Aggregate Reports) und gegebenenfalls Fehlerberichte zusenden. Dadurch erhält der Betreiber einen Überblick darüber, welche Systeme – legitime wie missbräuchliche – in seinem Namen E-Mails versenden.</p>
+<h2>Verbreitung</h2>
+<p>DMARC wurde ab 2012 von großen E-Mail-Anbietern eingeführt und wird heute von vielen Unternehmen und Behörden eingesetzt. Große Postfachanbieter fordern zunehmend eine DMARC-Richtlinie von Massenversendern.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../DKIM/index.html">DKIM</a></li>
+<li><a href="../Sender_Policy_Framework/index.html">Sender Policy Framework</a></li>
+<li><a href="../Phishing/index.html">Phishing</a></li>
+</ul>
+</body>
+</html>

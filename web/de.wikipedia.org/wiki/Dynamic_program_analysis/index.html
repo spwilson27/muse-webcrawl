@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Dynamische Programmanalyse – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em 3em; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; margin-bottom: 0.4em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.2em; }
+p, li { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0 0 1em 1.5em; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 0.4em; font-size: 0.8em; text-align: center; }
+.thumb img { max-width: 220px; display: block; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Dynamische Programmanalyse</h1>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"><div>Symbolbild: Ablaufverfolgung eines Programms</div></div>
+<p>Die <b>dynamische Programmanalyse</b> (englisch <i>dynamic program analysis</i>) ist ein Verfahren der Softwaretechnik, bei dem Eigenschaften eines Computerprogramms untersucht werden, während das Programm tatsächlich ausgeführt wird. Sie steht im Gegensatz zur <a href="../Static_program_analysis/index.html">statischen Programmanalyse</a>, die den Quelltext analysiert, ohne ihn auszuführen.</p>
+<h2>Verfahren</h2>
+<p>Da die dynamische Analyse auf realen Ausführungen beruht, liefert sie präzise Informationen über das tatsächliche Laufzeitverhalten, etwa über belegte Speicherbereiche, tatsächlich durchlaufene Ausführungspfade oder konkrete Werte von Variablen. Typische Techniken sind:</p>
+<ul>
+<li><b>Profiling</b>: Messung von Laufzeiten und Häufigkeiten von Funktionsaufrufen, etwa mit Werkzeugen wie gprof oder Valgrind.</li>
+<li><b>Speicherfehleranalyse</b>: Aufdecken von Speicherlecks, Pufferüberläufen und Zugriffen auf nicht initialisierten Speicher, beispielsweise mit AddressSanitizer.</li>
+<li><b>Code Coverage</b>: Bestimmung, welche Teile des Codes durch Tests ausgeführt wurden.</li>
+<li><b>Taint-Analyse</b>: Verfolgung des Datenflusses von Benutzereingaben durch das Programm, um Sicherheitslücken zu finden.</li>
+<li><b>Instrumentierung</b>: Einfügen zusätzlicher Mess- oder Prüflogik in das Programm, entweder im Quelltext, im Bytecode oder zur Laufzeit.</li>
+</ul>
+<h2>Vor- und Nachteile</h2>
+<p>Der Hauptvorteil der dynamischen Analyse liegt in ihrer Genauigkeit: Da sie reale Daten verarbeitet, sind die Ergebnisse frei von vielen Fehlalarmen, die bei statischen Verfahren durch Überapproximation entstehen. Ihr Hauptnachteil ist, dass sie nur Aussagen über die tatsächlich ausgeführten Pfade treffen kann; nicht ausgeführter Code bleibt ununtersucht. Zudem verursacht die Instrumentierung meist einen erheblichen Laufzeit-Overhead.</p>
+<h2>Anwendungsgebiete</h2>
+<p>Dynamische Analyse wird in der Qualitätssicherung, im Debugging, in der Leistungsoptimierung und in der IT-Sicherheit eingesetzt. <a href="../Fuzzing/index.html">Fuzzing</a> kombiniert dynamische Analyse häufig mit automatisierter Eingabegenerierung, um Absturzursachen systematisch aufzudecken.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Softwaretest/index.html">Softwaretest</a></li>
+<li><a href="../Debugger/index.html">Debugger</a></li>
+<li><a href="../Profiling_(computer_programming)/index.html">Profiling</a></li>
+</ul>
+</div>
+</body>
+</html>

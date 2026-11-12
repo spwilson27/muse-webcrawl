@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Strikte Auswertung – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; font-weight: normal; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 3px; font-weight: normal; margin-top: 28px; }
+p { line-height: 1.6; font-size: 15px; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 12px auto; max-width: 100%; }
+.mono { font-family: monospace; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Strikte Auswertung</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Als <b>strikte Auswertung</b> (englisch <i>eager evaluation</i> oder <i>strict evaluation</i>) bezeichnet man in der Informatik eine Auswertungsstrategie für Ausdrücke und Funktionsaufrufe, bei der die Argumente eines Funktionsaufrufs vollständig ausgewertet werden, <i>bevor</i> die Funktion ausgeführt wird (applikative Ordnung, <i>call by value</i>). Die große Mehrheit der verbreiteten Programmiersprachen – darunter C, Java und Python – wertet standardmäßig strikt aus.</p>
+<h2>Abgrenzung</h2>
+<p>Das Gegenstück ist die verzögerte Auswertung (<i>lazy evaluation</i>, Bedarfsauswertung), bei der ein Ausdruck erst dann berechnet wird, wenn sein Wert tatsächlich benötigt wird. Sie ist unter anderem Standard in der Sprache Haskell. Strikte Auswertung hat zur Folge, dass ein Funktionsaufruf auch dann alle Argumentausdrücke berechnet (und deren Fehler oder Nichttermination auslöst), wenn die Funktion das Ergebnis gar nicht verwendet:</p>
+<p class="mono">f(x) = 42; &nbsp; f(1/0) → Laufzeitfehler (strikte Auswertung), aber 42 bei verzögerter Auswertung.</p>
+<h2>Vor- und Nachteile</h2>
+<p>Strikte Auswertung ist leicht vorherzusehen und effizient umzusetzen: Zeitpunkt und Kosten einer Berechnung sind offenkundig, Seiteneffekte treten in wohldefinierter Reihenfolge auf. Nachteile zeigen sich bei potenziell unendlichen Datenstrukturen (etwa Streams), die strikt nicht vollständig ausgewertet werden können, sowie bei unnötigen Berechnungen verworfener Argumente. Viele Sprachen kombinieren daher beide Strategien und bieten verzögerte Konstrukte als Option an (z. B. Kurzschlussauswertung bei logischen Operatoren, Generatoren, Futures).</p>
+<h2>Siehe auch</h2>
+<p><a href="../Verzögerte_Auswertung/index.html">Verzögerte Auswertung</a> · <a href="../Auswertungsstrategie/index.html">Auswertungsstrategie</a> · <a href="../Call-by-value/index.html">Call-by-value</a></p>
+</div>
+</body>
+</html>

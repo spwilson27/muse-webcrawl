@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Transaktion (Informatik) – Wikipedia</title>
+<style>
+body{font-family:"Linux Libertine","Georgia",serif;margin:0;background:#f8f9fa;color:#202122}
+#content{max-width:960px;margin:0 auto;background:#fff;padding:2em 2.5em;border-left:1px solid #a7d7f9;border-right:1px solid #a7d7f9}
+h1{font-size:1.9em;border-bottom:1px solid #a2a9b1;padding-bottom:.2em}
+h2{font-size:1.4em;border-bottom:1px solid #a2a9b1;margin-top:1.2em}
+p{line-height:1.6}
+a{color:#0645ad;text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%}
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Transaktion (Informatik)</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Eine <b>Transaktion</b> ist in der Informatik eine Folge von Operationen auf einer <a href="../Database/index.html">Datenbank</a>, die als unteilbare Einheit behandelt wird: Entweder werden alle Operationen dauerhaft wirksam (Commit) oder keine von ihnen (Rollback). Das klassische Beispiel ist eine Banküberweisung, bei der Abbuchung und Gutschrift nur gemeinsam erfolgen dürfen.</p>
+<h2>ACID-Eigenschaften</h2>
+<ul>
+<li><b>Atomarität:</b> Eine Transaktion wird ganz oder gar nicht ausgeführt.</li>
+<li><b>Konsistenz:</b> Sie überführt die Datenbank von einem gültigen Zustand in einen anderen gültigen Zustand.</li>
+<li><b>Isolation:</b> Parallel laufende Transaktionen beeinflussen sich nicht gegenseitig, als liefen sie nacheinander.</li>
+<li><b>Dauerhaftigkeit:</b> Nach einem erfolgreichen Commit überstehen die Änderungen auch Systemfehler.</li>
+</ul>
+<h2>Realisierung</h2>
+<p>Datenbanksysteme setzen Transaktionen mit Sperrverfahren oder Mehrversionenverfahren (MVCC) um und protokollieren Änderungen in einem Transaktionslog, das nach einem Absturz die Wiederherstellung ermöglicht. Zu starke Isolation kann zu Sperrkonflikten und Deadlocks führen; deshalb lassen sich Isolationsstufen (etwa Read Committed oder Serializable) einstellen.</p>
+<h2>Verteilte Transaktionen</h2>
+<p>Über mehrere Systeme hinweg wird die Atomarität etwa durch das Zwei-Phasen-Commit-Protokoll erreicht. In Microservice-Architekturen sind stattdessen häufig Saga-Muster mit Kompensationsaktionen üblich.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Database/index.html">Datenbank</a></li>
+<li><a href="../Data_integrity/index.html">Datenintegrität</a></li>
+</ul>
+</div>
+</body>
+</html>

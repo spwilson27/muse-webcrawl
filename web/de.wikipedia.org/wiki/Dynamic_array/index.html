@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Dynamisches Array – Wikipedia</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px 48px; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-bottom: 4px; }
+h2 { font-size: 1.35em; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; margin-top: 28px; }
+p { line-height: 1.6; margin: 10px 0; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 320px; float: right; margin: 0 0 16px 20px; border: 1px solid #c8ccd1; }
+ul { line-height: 1.6; }
+.small { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Dynamisches Array</h1>
+<p class="small">Aus Wikipedia, der freien Enzyklopädie</p>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Ein <b>dynamisches Array</b> (englisch <i>dynamic array</i>, auch <i>array list</i> oder <i>growable array</i>) ist eine Datenstruktur der Informatik, die wie ein Array wahlfreien Zugriff auf Elemente in konstanter Zeit bietet, deren Größe sich aber zur Laufzeit verändern kann. Dynamische Arrays gehören zu den am häufigsten verwendeten Datenstrukturen überhaupt.</p>
+<h2>Funktionsweise</h2>
+<p>Intern verwaltet ein dynamisches Array einen zusammenhängenden Speicherblock mit einer bestimmten <i>Kapazität</i>, die größer oder gleich der aktuellen <i>Größe</i> (Anzahl der Elemente) ist. Reicht die Kapazität beim Anhängen eines Elements nicht mehr aus, wird ein größerer Speicherblock angelegt – üblicherweise mit der doppelten Kapazität –, die vorhandenen Elemente werden kopiert und der alte Block freigegeben.</p>
+<p>Durch dieses geometrische Wachstum besitzt das Einfügen am Ende trotz gelegentlicher teurer Kopiervorgänge eine amortisierte Laufzeit von O(1). Der Zugriff über einen Index kostet ebenfalls O(1), während Einfügen und Löschen in der Mitte wegen des Verschiebens der nachfolgenden Elemente O(n) kostet.</p>
+<h2>Implementierungen</h2>
+<p>Nahezu jede verbreitete Programmiersprache stellt dynamische Arrays bereit, etwa als <code>std::vector</code> in C++, <code>ArrayList</code> in Java, <code>List&lt;T&gt;</code> in C# oder als eingebaute Liste in Python. Der Wachstumsfaktor variiert je nach Implementierung zwischen 1,5 und 2.</p>
+<h2>Abgrenzung</h2>
+<p>Gegenüber verketteten Listen bieten dynamische Arrays bessere Cache-Lokalität und konstanten Indexzugriff, benötigen dafür aber zusammenhängenden Speicher und erzeugen Kopieraufwand beim Wachsen. Eine verwandte Struktur ist das Gap-Buffer, das bei Texteditoren eingesetzt wird.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Array/index.html">Array</a></li>
+<li><a href="../Verkettete_Liste/index.html">Verkettete Liste</a></li>
+<li><a href="../Datenstruktur/index.html">Datenstruktur</a></li>
+<li><a href="../Amortisierte_Analyse/index.html">Amortisierte Analyse</a></li>
+</ul>
+</div>
+</body>
+</html>

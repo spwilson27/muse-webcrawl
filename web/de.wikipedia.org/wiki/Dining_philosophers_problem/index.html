@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Philosophenproblem – Wikipedia</title>
+<style>
+body{font-family:sans-serif;max-width:900px;margin:0 auto;padding:20px;line-height:1.6;color:#202122}
+h1{font-size:2em;border-bottom:1px solid #a2a9b1;padding-bottom:5px}
+h2{border-bottom:1px solid #a2a9b1;padding-bottom:3px}
+a{color:#0645ad;text-decoration:none}
+.thumb{float:right;margin:0 0 15px 15px;background:#f8f9fa;border:1px solid #c8ccd1;padding:5px;font-size:0.85em;max-width:250px;text-align:center}
+</style>
+</head>
+<body>
+<h1>Philosophenproblem</h1>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"><br>Schema: Fünf Philosophen, fünf Gabeln, eine Schüssel Reis</div>
+<p>Das <b>Philosophenproblem</b> (englisch <i>dining philosophers problem</i>) ist ein klassisches Problem der Informatik zur Veranschaulichung von Synchronisationsproblemen und <a href="../Deadlock/index.html">Verklemmungen</a> (Deadlocks) in nebenläufigen Systemen. Es wurde 1965 von Edsger W. Dijkstra formuliert und später von Tony Hoare in seine bekannte Form gebracht.</p>
+<h2>Beschreibung</h2>
+<p>Fünf Philosophen sitzen schweigend an einem runden Tisch. Vor ihnen steht eine Schüssel Reis; zwischen je zwei Tellern liegt eine Gabel (insgesamt fünf). Um zu essen, benötigt ein Philosoph zwei Gabeln – die zu seiner Linken und die zu seiner Rechten. Nach dem Essen legt er beide Gabeln zurück und denkt eine Weile nach, bevor er erneut zu essen versucht.</p>
+<h2>Problemstellung</h2>
+<p>Nehmen alle Philosophen gleichzeitig zuerst ihre linke Gabel auf, wartet jeder vergeblich auf die rechte Gabel des Nachbarn: Das System ist verklemmt, niemand kann je essen. Weitere Gefahren nebenläufiger Programme, die das Beispiel illustriert, sind Verhungern (Starvation), wenn ein Philosoph nie beide Gabeln erhält, und Livelock, wenn alle Beteiligten höflich im selben Takt die Gabeln zurücklegen und wieder aufnehmen.</p>
+<h2>Lösungsansätze</h2>
+<p>Bewährte Lösungen sind unter anderem: ein Kellner (ein zentraler Prozess/Mutex), der höchstens vier Philosophen gleichzeitig das Aufnehmen der Gabeln erlaubt; eine asymmetrische Aufnahmereihenfolge, bei der ein Philosoph zuerst die rechte Gabel greift; und das von Dijkstra entwickelte Konzept der Semaphore bzw. Monitore, mit denen der Zugriff auf gemeinsame Ressourcen koordiniert wird.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Prozesssynchronisation/index.html">Prozesssynchronisation</a></li>
+<li><a href="../Race_Condition/index.html">Race Condition</a></li>
+</ul>
+</body>
+</html>

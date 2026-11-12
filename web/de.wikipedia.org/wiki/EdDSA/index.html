@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>EdDSA – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1em 2em 3em; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; margin-top: 1.2em; }
+p, li { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.infobox { float: right; border: 1px solid #a2a9b1; background: #f8f9fa; padding: 0.5em; margin: 0 0 1em 1em; width: 250px; font-size: 0.85em; }
+.thumb { text-align: center; color: #54595d; font-size: 0.85em; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>EdDSA</h1>
+<div class="infobox">
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"><br>Edwards-Kurven eignen sich besonders für schnelle, sichere Signaturen.</div>
+</div>
+<p><b>EdDSA</b> (Edwards-curve Digital Signature Algorithm) ist ein Verfahren zur Erzeugung digitaler Signaturen, das auf Twisted-Edwards-Kurven und einem Schnorr-ähnlichen Signaturschema basiert. Es wurde von Daniel J. Bernstein, Niels Duif, Tanja Lange, Peter Schwabe und Bo-Yin Yang entworfen und ist in RFC 8032 standardisiert.</p>
+<h2>Varianten</h2>
+<p>Die bekanntesten Instanzen sind Ed25519 auf Grundlage der Kurve Curve25519 mit einem Sicherheitsniveau von etwa 128 Bit sowie Ed448 auf Grundlage der Kurve Curve448 mit etwa 224 Bit Sicherheitsniveau. Beide Varianten existieren in einer reinen Form (PureEdDSA) und einer Form mit Vorab-Hashung der Nachricht (HashEdDSA).</p>
+<h2>Funktionsweise</h2>
+<p>Der private Schlüssel besteht aus einem zufälligen Seed, aus dem durch Hashung sowohl der eigentliche Geheimwert als auch ein Präfix zur deterministischen Nonce-Erzeugung gewonnen werden. Die Signatur setzt sich aus einem Kurvenpunkt R und einem Skalar S zusammen. Durch die deterministische Nonce-Erzeugung entfällt die Abhängigkeit von einem Zufallszahlengenerator beim Signieren, was EdDSA gegenüber ECDSA robuster gegen Implementierungsfehler macht.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Ed25519/index.html">Ed25519</a></li>
+<li><a href="../Ed_(software)/index.html">ed (Software)</a></li>
+</ul>
+</div>
+</body>
+</html>

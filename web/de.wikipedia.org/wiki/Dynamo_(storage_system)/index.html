@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Dynamo (Speichersystem) – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em 3em; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 1.9em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; margin-bottom: 0.4em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.2em; }
+p, li { line-height: 1.6; font-size: 0.95em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.thumb { float: right; margin: 0 0 1em 1.5em; border: 1px solid #c8ccd1; background: #f8f9fa; padding: 0.4em; font-size: 0.8em; text-align: center; }
+.thumb img { max-width: 220px; display: block; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Dynamo (Speichersystem)</h1>
+<div class="thumb"><img src="images/hero.png" alt="Hero image (placeholder)"><div>Symbolbild: Verteilter Schlüssel-Werte-Speicher</div></div>
+<p><b>Dynamo</b> ist ein hochverfügbares, verteiltes Schlüssel-Werte-Speichersystem, das der Onlinehändler <a href="../Amazon_(company)/index.html">Amazon</a> für seine eigenen Dienste entwickelt und 2007 in einer vielbeachteten wissenschaftlichen Veröffentlichung vorgestellt hat. Dynamo betreibt unter anderem den Einkaufswagen-Dienst der Amazon-Plattform und legte die Grundlagen für die spätere Cloud-Datenbank <b>Amazon DynamoDB</b>.</p>
+<h2>Entwurfsziele</h2>
+<p>Im Vordergrund steht <i>Verfügbarkeit</i>: Schreibzugriffe sollen praktisch nie zurückgewiesen werden („always writeable"), auch nicht bei Knoten- oder Netzwerkausfällen. Konsistenz wird dafür nur als <i>eventuelle Konsistenz</i> garantiert; widersprüchliche Versionen eines Datensatzes werden erkannt und – etwa beim Einkaufswagen – anwendungsseitig zusammengeführt.</p>
+<h2>Techniken</h2>
+<ul>
+<li><b>Konsistentes Hashing</b> zur Partitionierung der Daten auf viele Knoten, mit virtuellen Knoten zur Lastverteilung.</li>
+<li><b>Replikation</b> jeder Partition auf N Knoten, gesteuert über Quoren (Parameter N, R, W).</li>
+<li><b>Vektoruhren</b> zur Versionierung und Erkennung kausal konkurrierender Änderungen.</li>
+<li><b>Sloppy Quorum und Hinted Handover</b>, damit Schreibvorgänge auch bei temporär ausgefallenen Knoten gelingen.</li>
+<li><b>Gossip-Protokolle</b> zur Mitgliedschaftsverwaltung und Fehlererkennung ohne zentrale Instanz.</li>
+</ul>
+<h2>Einfluss</h2>
+<p>Dynamo prägte eine ganze Generation <a href="../NoSQL/index.html">NoSQL</a>-Datenbanken; Open-Source-Systeme wie Apache Cassandra und Riak übernahmen wesentliche Architekturprinzipien. DynamoDB überführte das Konzept 2012 in einen vollständig verwalteten Cloud-Dienst.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../CAP_theorem/index.html">CAP-Theorem</a></li>
+<li><a href="../Amazon_DynamoDB/index.html">Amazon DynamoDB</a></li>
+</ul>
+</div>
+</body>
+</html>

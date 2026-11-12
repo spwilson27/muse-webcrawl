@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Compilerkorrektheit – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f6f6f6; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 24px 32px; border-left: 1px solid #a7d7f9; border-right: 1px solid #a7d7f9; }
+h1 { font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 6px; margin-top: 0; }
+h2 { font-size: 21px; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+p { line-height: 1.6; font-family: sans-serif; font-size: 14px; }
+ul { font-family: sans-serif; font-size: 14px; line-height: 1.6; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Compilerkorrektheit</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Compilerkorrektheit</b> bezeichnet die Eigenschaft eines <a href="../Compiler/index.html">Compilers</a>, dass das von ihm erzeugte Zielprogramm dieselbe Bedeutung (Semantik) hat wie das Quellprogramm. Da Fehler in Compilern besonders tückisch sind – sie führen dazu, dass korrekte Programme sich falsch verhalten –, ist die Korrektheit von Übersetzern ein zentrales Thema der Programmverifikation.</p>
+<h2>Formale Verifikation</h2>
+<p>Beim formal verifizierten Compiler wird maschinell bewiesen, dass die Übersetzung die Semantik erhält. Das bekannteste Projekt ist <b>CompCert</b>, ein optimierender C-Compiler, dessen Korrektheit im Beweisassistenten Coq bewiesen wurde; er wird unter anderem in sicherheitskritischer Software, etwa in der Luftfahrt, eingesetzt. Weitere Projekte sind CakeML (ein verifizierter ML-Compiler) und CertiCoq.</p>
+<h2>Testen von Compilern</h2>
+<p>Da vollständige Verifikation aufwendig ist, werden Compiler meist intensiv getestet:</p>
+<ul>
+<li><b>Differentielles Testen:</b> Dasselbe Programm wird von mehreren Compilern oder mit verschiedenen Optimierungsstufen übersetzt; abweichendes Verhalten weist auf Fehler hin.</li>
+<li><b>Zufallsgenerierung:</b> Werkzeuge wie Csmith erzeugen zufällige, wohldefinierte C-Programme und fanden damit Hunderte Fehler in GCC und LLVM.</li>
+<li><b>Übersetzungsvalidierung</b> (<i>translation validation</i>): Statt den Compiler selbst wird jede einzelne Übersetzung nachträglich geprüft.</li>
+</ul>
+<h2>Bedeutung</h2>
+<p>Ken Thompson wies in seiner Turing-Award-Rede „Reflections on Trusting Trust“ (1984) darauf hin, dass ein manipulierter Compiler Hintertüren selbst in scheinbar sauberen Quelltext einschleusen kann – ein grundlegendes Vertrauensproblem, das durch Verfahren wie Diverse Double-Compiling adressiert wird.</p>
+<h2>Siehe auch</h2>
+<p><a href="../Compiler/index.html">Compiler</a> · <a href="../Compiler_construction/index.html">Compilerbau</a> · Formale Verifikation · CompCert</p>
+</div>
+</body>
+</html>

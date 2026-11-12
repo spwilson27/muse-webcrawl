@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Chromatisches Polynom – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 12px auto; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Chromatisches Polynom</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Das <b>chromatische Polynom</b> eines Graphen G, meist als P(G, λ) geschrieben, ist ein Polynom, das für jede natürliche Zahl λ die Anzahl der zulässigen Knotenfärbungen des Graphen mit λ Farben angibt. Es wurde 1912 von George David Birkhoff im Zusammenhang mit dem Vier-Farben-Problem eingeführt.</p>
+
+<h2>Definition und Eigenschaften</h2>
+<p>Für einen Graphen ohne Kanten mit n Knoten ist P(G, λ) = λ<sup>n</sup>, da jeder Knoten frei gefärbt werden kann. Besitzt der Graph eine Schlinge, so gibt es keine zulässige Färbung und das Polynom ist null. Die kleinste natürliche Zahl λ mit P(G, λ) &gt; 0 ist genau die <a href="../Chromatic_number/index.html">chromatische Zahl</a> des Graphen.</p>
+
+<h2>Berechnung</h2>
+<p>Die wichtigste Berechnungsmethode ist die <b>Deletions-Kontraktions-Formel</b>: Für eine Kante e gilt</p>
+<p style="text-align:center;">P(G, λ) = P(G − e, λ) − P(G/e, λ),</p>
+<p>wobei G − e der Graph mit gelöschter Kante und G/e der Graph mit zusammengezogener (kontrahierter) Kante ist. Diese Rekursion ist für große Graphen sehr aufwendig; die Berechnung des chromatischen Polynoms ist im Allgemeinen #P-schwer.</p>
+
+<h2>Beispiele</h2>
+<ul>
+<li>Vollständiger Graph K<sub>n</sub>: P(K<sub>n</sub>, λ) = λ(λ−1)(λ−2)…(λ−n+1)</li>
+<li>Baum mit n Knoten: P(G, λ) = λ(λ−1)<sup>n−1</sup></li>
+<li>Kreis C<sub>n</sub>: P(C<sub>n</sub>, λ) = (λ−1)<sup>n</sup> + (−1)<sup>n</sup>(λ−1)</li>
+</ul>
+
+<h2>Verallgemeinerungen</h2>
+<p>Das chromatische Polynom ist ein Spezialfall des allgemeineren Tutte-Polynoms. Die Auswertung an negativen Werten besitzt nach einem Satz von Richard Stanley eine kombinatorische Deutung: |P(G, −1)| zählt die azyklischen Orientierungen des Graphen. Lange vermutete man, dass die Nullstellen des chromatischen Polynoms bestimmte Bereiche der komplexen Ebene meiden; entsprechende Fragen zu reellen Nullstellen und zur Log-Konkavität der Koeffizienten wurden unter anderem durch Arbeiten von June Huh (2012) im Rahmen der Theorie der Matroide weitgehend geklärt.</p>
+
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Chromatic_number/index.html">Chromatische Zahl</a></li>
+<li><a href="../Tutte-Polynom/index.html">Tutte-Polynom</a></li>
+</ul>
+</div>
+</body>
+</html>

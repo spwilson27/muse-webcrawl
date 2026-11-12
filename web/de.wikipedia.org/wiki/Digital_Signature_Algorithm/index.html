@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Digital Signature Algorithm – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 50em; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<h1>Digital Signature Algorithm</h1>
+<p>Der <b>Digital Signature Algorithm</b> (DSA) ist ein kryptographisches Verfahren zur Erzeugung <a href="../Digitale_Signatur/index.html">digitaler Signaturen</a>. Er wurde von der US-amerikanischen National Security Agency entwickelt und 1991 vom National Institute of Standards and Technology (NIST) im Digital Signature Standard (FIPS 186) als Standard vorgeschlagen und 1994 verabschiedet. DSA basiert auf dem diskreten Logarithmusproblem in endlichen Körpern und ist mit dem Elgamal-Verfahren verwandt.</p>
+<h2>Verfahren</h2>
+<p>Zur Schlüsselerzeugung wählt man eine Primzahl p von 2048 oder 3072 Bit Länge, eine Primzahl q von 224 bzw. 256 Bit, die p − 1 teilt, sowie einen Generator g der Untergruppe der Ordnung q. Der private Schlüssel ist eine Zufallszahl x, der öffentliche Schlüssel y = g<sup>x</sup> mod p.</p>
+<p>Beim Signieren einer Nachricht wird zunächst ihr Hashwert gebildet. Mit einer zufälligen, streng geheimen und nur einmal verwendbaren Zahl k berechnet der Signierer die Werte r und s, die zusammen die Signatur bilden. Der Prüfer kann mit dem öffentlichen Schlüssel verifizieren, ob die Signatur zum Hashwert und zum öffentlichen Schlüssel passt, ohne den privaten Schlüssel zu kennen.</p>
+<h2>Sicherheit</h2>
+<p>Die Sicherheit hängt entscheidend von der Qualität und Geheimhaltung der Zufallszahl k ab: Wird k wiederholt oder bekannt, kann der private Schlüssel aus zwei Signaturen berechnet werden – ein Fehler, der in der Praxis beispielsweise bei der PlayStation 3 und bei fehlerhaften Zufallsgeneratoren ausgenutzt wurde. Moderne Varianten leiten k deterministisch aus dem privaten Schlüssel und der Nachricht ab (RFC 6979).</p>
+<h2>Verwendung</h2>
+<p>DSA wurde unter anderem in OpenPGP, SSH und früheren TLS-Versionen eingesetzt. Zunehmend wird es durch Verfahren auf elliptischen Kurven wie ECDSA und EdDSA abgelöst, die bei kürzeren Schlüsseln gleiche Sicherheit bieten.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Digitale_Signatur/index.html">Digitale Signatur</a></li>
+<li><a href="../ECDSA/index.html">ECDSA</a></li>
+</ul>
+</body>
+</html>

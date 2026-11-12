@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Cholesky-Zerlegung – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 50em; line-height: 1.6; color: #202122; padding: 0 1em; }
+h1 { border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; font-family: serif; }
+h2 { border-bottom: 1px solid #a2a9b1; font-family: serif; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 0 0.2em; }
+</style>
+</head>
+<body>
+<h1>Cholesky-Zerlegung</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p>Die <b>Cholesky-Zerlegung</b> (auch Cholesky-Faktorisierung) ist ein Verfahren der linearen Algebra zur Zerlegung einer symmetrischen positiv definiten Matrix in das Produkt einer unteren Dreiecksmatrix mit ihrer Transponierten. Sie ist nach dem französischen Mathematiker André-Louis Cholesky benannt.</p>
+<h2>Definition</h2>
+<p>Zu jeder symmetrischen, positiv definiten Matrix <i>A</i> existiert eine eindeutig bestimmte untere Dreiecksmatrix <i>L</i> mit positiven Diagonaleinträgen, so dass gilt:</p>
+<p style="text-align:center;"><i>A = L · L</i><sup>T</sup></p>
+<p>Im komplexen Fall verwendet man entsprechend eine hermitesche positiv definite Matrix und die konjugiert Transponierte.</p>
+<h2>Algorithmus</h2>
+<p>Die Einträge von <i>L</i> lassen sich spaltenweise berechnen. Für das Diagonalelement gilt <i>l</i><sub>ii</sub> = √(<i>a</i><sub>ii</sub> − Σ <i>l</i><sub>ik</sub>²), für die Elemente unterhalb der Diagonalen <i>l</i><sub>ij</sub> = (<i>a</i><sub>ij</sub> − Σ <i>l</i><sub>ik</sub>·<i>l</i><sub>jk</sub>) / <i>l</i><sub>jj</sub>. Der Rechenaufwand beträgt etwa n³/3 Operationen, also nur halb so viel wie bei der LU-Zerlegung. Das Verfahren ist numerisch stabil und benötigt keine Pivotisierung.</p>
+<h2>Anwendungen</h2>
+<p>Die Cholesky-Zerlegung dient vor allem dem Lösen linearer Gleichungssysteme mit symmetrischer positiv definiter Koeffizientenmatrix: Nach der Zerlegung löst man zunächst <i>Ly = b</i> durch Vorwärtseinsetzen und anschließend <i>L</i><sup>T</sup><i>x = y</i> durch Rückwärtseinsetzen. Weitere Anwendungen sind die Prüfung auf positive Definitheit, die Erzeugung korrelierter Zufallszahlen in der Monte-Carlo-Simulation und die Optimierung, etwa bei der Gauß-Newton-Methode und in der Kalman-Filterung.</p>
+<h2>Geschichte</h2>
+<p>Cholesky entwickelte das Verfahren für geodätische Berechnungen beim Ausgleich von Triangulationsnetzen. Es wurde erst nach seinem Tod 1918 durch eine Veröffentlichung von 1924 allgemein bekannt.</p>
+<p>Siehe auch: <a href="../LR-Zerlegung/index.html">LR-Zerlegung</a>, <a href="../Positiv_definite_Matrix/index.html">Positiv definite Matrix</a>, <a href="../Dreiecksmatrix/index.html">Dreiecksmatrix</a></p>
+</body>
+</html>

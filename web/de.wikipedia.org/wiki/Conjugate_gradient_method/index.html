@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Konjugierte-Gradienten-Verfahren – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f8f9fa; color: #202122; }
+#content { background: #fff; max-width: 960px; margin: 0 auto; padding: 1em 2em 3em; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { max-width: 300px; float: right; margin: 0 0 1em 1em; border: 1px solid #a2a9b1; background: #eaecf0; padding: 4px; }
+.small { font-size: 0.85em; color: #54595d; }
+</style>
+</head>
+<body>
+<div id="content">
+<h1>Konjugierte-Gradienten-Verfahren</h1>
+<p class="small">Aus Wikipedia, der freien Enzyklopädie</p>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p>Das <b>Verfahren der konjugierten Gradienten</b> (englisch <i>conjugate gradient method</i>, kurz <b>CG-Verfahren</b>) ist ein iteratives numerisches Verfahren zur Lösung großer, dünnbesetzter linearer Gleichungssysteme der Form <i>Ax = b</i>, bei denen die Matrix <i>A</i> symmetrisch und positiv definit ist. Es wurde 1952 von Magnus Hestenes und Eduard Stiefel unabhängig voneinander entwickelt und gehört zu den Krylow-Unterraum-Verfahren.</p>
+<h2>Grundidee</h2>
+<p>Die Lösung des Gleichungssystems ist gleichbedeutend mit der Minimierung der quadratischen Funktion <i>f(x) = ½x<sup>T</sup>Ax − b<sup>T</sup>x</i>. Anstatt wie beim klassischen Gradientenverfahren jeweils in Richtung des steilsten Abstiegs zu suchen, wählt das CG-Verfahren Suchrichtungen, die zueinander <i>A</i>-konjugiert sind, das heißt, es gilt <i>p<sub>i</sub><sup>T</sup>Ap<sub>j</sub> = 0</i> für <i>i ≠ j</i>. Dadurch wird in jeder Richtung nur einmal optimiert, und das Verfahren terminiert bei exakter Arithmetik nach höchstens <i>n</i> Schritten, wobei <i>n</i> die Dimension des Systems ist.</p>
+<h2>Algorithmus</h2>
+<p>Ausgehend von einem Startvektor <i>x<sub>0</sub></i> werden Residuum <i>r<sub>0</sub> = b − Ax<sub>0</sub></i> und Anfangsrichtung <i>p<sub>0</sub> = r<sub>0</sub></i> gebildet. In jedem Schritt werden die Schrittweite <i>α</i> und ein Korrekturfaktor <i>β</i> so bestimmt, dass das neue Residuum orthogonal zu allen vorherigen Residuen steht. Pro Iteration ist im Wesentlichen nur eine Matrix-Vektor-Multiplikation nötig, weshalb sich das Verfahren besonders für <a href="../Sparse_matrix/index.html">dünnbesetzte Matrizen</a> eignet.</p>
+<h2>Konvergenz</h2>
+<p>Die Konvergenzgeschwindigkeit hängt von der Konditionszahl der Matrix und von der Verteilung ihrer Eigenwerte ab. In der Praxis wird das Verfahren fast immer mit einer <a href="../Preconditioner/index.html">Vorkonditionierung</a> kombiniert (PCG-Verfahren), um die Zahl der benötigten Iterationen deutlich zu verringern.</p>
+<h2>Anwendungen und Erweiterungen</h2>
+<p>Das CG-Verfahren wird unter anderem in der Finite-Elemente-Methode, in der Strukturoptimierung und beim Training großer Modelle eingesetzt. Für nichtsymmetrische oder indefinite Systeme existieren Verallgemeinerungen wie BiCG, BiCGSTAB und GMRES. Für nichtlineare Optimierungsprobleme wurde die Idee von Fletcher und Reeves sowie von Polak und Ribière weiterentwickelt.</p>
+<h2>Literatur</h2>
+<ul>
+<li>M. R. Hestenes, E. Stiefel: <i>Methods of Conjugate Gradients for Solving Linear Systems.</i> Journal of Research of the National Bureau of Standards, 1952.</li>
+<li>Y. Saad: <i>Iterative Methods for Sparse Linear Systems.</i> SIAM, 2003.</li>
+<li>J. R. Shewchuk: <i>An Introduction to the Conjugate Gradient Method Without the Agonizing Pain.</i> 1994.</li>
+</ul>
+</div>
+</body>
+</html>

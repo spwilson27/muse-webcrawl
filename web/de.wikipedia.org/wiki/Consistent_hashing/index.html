@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Konsistentes Hashing – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; background: #f6f6f6; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 24px 32px; }
+h1 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: Georgia, serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 16px auto; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Konsistentes Hashing</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Konsistentes Hashing</b> (englisch <i>consistent hashing</i>) ist ein Verfahren zur Verteilung von Schlüsseln auf mehrere Server oder Knoten, das 1997 von David Karger und Kollegen am MIT vorgestellt wurde. Sein wesentlicher Vorteil gegenüber dem klassischen Modulo-Hashing besteht darin, dass beim Hinzufügen oder Entfernen eines Knotens nur ein kleiner Teil der Schlüssel neu zugeordnet werden muss.</p>
+<h2>Verfahren</h2>
+<p>Sowohl die Knoten als auch die Schlüssel werden durch eine <a href="../Hash_function/index.html">Hashfunktion</a> auf einen kreisförmigen Wertebereich (den „Ring") abgebildet. Jeder Schlüssel wird dem ersten Knoten zugeordnet, der ihm im Uhrzeigersinn auf dem Ring folgt. Wird ein Knoten entfernt, übernehmen seine Nachfolger nur dessen Schlüssel; alle übrigen Zuordnungen bleiben bestehen. Im Mittel muss beim Wechsel der Knotenzahl nur der Anteil <i>K/n</i> der Schlüssel verschoben werden.</p>
+<h2>Virtuelle Knoten</h2>
+<p>Um die Last gleichmäßiger zu verteilen, wird jeder physische Knoten durch viele „virtuelle Knoten" an zufälligen Positionen des Rings repräsentiert. Dadurch sinkt die Varianz der Lastverteilung erheblich.</p>
+<h2>Anwendungsgebiete</h2>
+<p>Konsistentes Hashing wird in verteilten Caches (etwa Memcached), verteilten Datenbanken wie Amazon Dynamo, Cassandra und Riak sowie in Content-Delivery-Netzen eingesetzt.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Hash_function/index.html">Hashfunktion</a></li>
+<li><a href="../Rendezvous_hashing/index.html">Rendezvous-Hashing</a></li>
+<li><a href="../Distributed_hash_table/index.html">Verteilte Hashtabelle</a></li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Copy elision – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 800px; line-height: 1.6; color: #202122; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.3em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Copy elision</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Copy elision</b> (deutsch etwa „Kopierelision“) bezeichnet eine vom C++-Standard erlaubte Optimierung, bei der der Compiler den Aufruf von Kopier- oder Verschiebekonstruktoren auslassen darf, wenn er ein ansonsten notwendiges temporäres Objekt gleich an seinem Zielort erzeugt.</p>
+<h2>Hintergrund</h2>
+<p>Die Optimierung umfasst insbesondere die Rückgabewertoptimierung (<i>return value optimization</i>, RVO) sowie die Initialisierung eines Objekts aus einem Temporärwert. Bis C++14 war die Elision lediglich erlaubt, aber nicht garantiert; der weggelassene Konstruktor musste gleichwohl existieren und zugänglich sein. Mit C++17 wurde die Elision für sogenannte Prvalue-Ergebnisse verbindlich vorgeschrieben, was unter anderem die Rückgabe nicht kopierbarer und nicht verschiebbarer Typen aus Funktionen ermöglicht.</p>
+<h2>Beispiel</h2>
+<p>Gibt eine Funktion ein Objekt als Wert zurück und übergibt der Aufrufer dieses Ergebnis unmittelbar an eine Initialisierung, kann das Objekt direkt im Zielspeicher entstehen; die Zwischenkopie entfällt vollständig.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Copy_elision/index.html">Copy elision (Kopierelision)</a></li>
+<li><a href="../Kopierkonstruktor/index.html">Kopierkonstruktor</a></li>
+</ul>
+</body>
+</html>

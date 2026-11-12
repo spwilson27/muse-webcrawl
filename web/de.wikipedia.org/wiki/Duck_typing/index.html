@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Duck-Typing – Wikipedia</title>
+<style>
+body { font-family: "Linux Libertine", Georgia, serif; margin: 0; background: #f8f9fa; color: #202122; }
+.content { max-width: 960px; margin: 0 auto; background: #fff; padding: 1.5em 2em; border: 1px solid #a7d7f9; }
+h1 { font-size: 1.8em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-size: 1.4em; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.15em; margin-top: 1.2em; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+img.hero { display: block; margin: 1em auto; max-width: 100%; }
+code { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0 0.3em; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0.7em; overflow-x: auto; }
+</style>
+</head>
+<body>
+<div class="content">
+<h1>Duck-Typing</h1>
+<img class="hero" src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Duck-Typing</b> (englisch <i>duck typing</i>) ist ein Konzept der objektorientierten Programmierung, bei dem der Typ eines Objekts nicht durch seine Klasse oder eine deklarierte Schnittstelle bestimmt wird, sondern durch die Menge der Methoden und Attribute, die das Objekt zur Laufzeit tatsächlich bereitstellt. Der Name geht auf den sogenannten „Ententest" zurück: „Wenn es wie eine Ente aussieht, wie eine Ente schwimmt und wie eine Ente schnattert, dann ist es wahrscheinlich eine Ente."</p>
+<h2>Prinzip</h2>
+<p>Beim Duck-Typing wird ein Objekt in einem bestimmten Kontext verwendet, ohne dass seine Klasse vorab festgelegt sein muss. Entscheidend ist allein, ob das Objekt die im jeweiligen Programmteil aufgerufenen Methoden unterstützt. Dadurch entfällt die Notwendigkeit expliziter Schnittstellendeklarationen oder Vererbungshierarchien.</p>
+<pre><code>class Ente:
+    def schnattern(self):
+        return "Quak!"
+
+class Hund:
+    def schnattern(self):
+        return "Quak?"
+
+def lasse_schnattern(tier):
+    return tier.schnattern()</code></pre>
+<p>Beide Objekte können an die Funktion übergeben werden, weil sie die Methode <code>schnattern</code> besitzen – unabhängig von ihrer Klasse.</p>
+<h2>Verbreitung</h2>
+<p>Duck-Typing ist ein zentrales Merkmal dynamisch typisierter Programmiersprachen wie Python, Ruby, JavaScript und Smalltalk. In statisch typisierten Sprachen wird ein ähnliches Verhalten über strukturelle Typisierung (englisch <i>structural typing</i>) erreicht, etwa in Go, TypeScript oder über Templates in C++.</p>
+<h2>Vor- und Nachteile</h2>
+<p>Zu den Vorteilen zählen hohe Flexibilität, geringer Boilerplate-Code und eine lose Kopplung zwischen Komponenten. Als Nachteile gelten, dass Typfehler häufig erst zur Laufzeit auftreten und die Lesbarkeit sowie Werkzeugunterstützung (etwa Autovervollständigung) erschwert werden können.</p>
+<h2>Siehe auch</h2>
+<ul>
+<li><a href="../Dynamische_Typisierung/index.html">Dynamische Typisierung</a></li>
+<li><a href="../Polymorphie_(Informatik)/index.html">Polymorphie (Informatik)</a></li>
+<li><a href="../Python_(Programmiersprache)/index.html">Python (Programmiersprache)</a></li>
+</ul>
+</div>
+</body>
+</html>

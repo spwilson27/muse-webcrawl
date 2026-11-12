@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Content Negotiation – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 2em auto; max-width: 52em; line-height: 1.55; color: #202122; padding: 0 1em; }
+h1 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; padding-bottom: 0.2em; }
+h2 { font-family: serif; font-weight: normal; border-bottom: 1px solid #a2a9b1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; border: 1px solid #eaecf0; padding: 0 0.2em; font-size: 0.9em; }
+img { max-width: 100%; }
+</style>
+</head>
+<body>
+<h1>Content Negotiation</h1>
+<img src="images/hero.png" alt="Hero image (placeholder)">
+<p><b>Content Negotiation</b> (deutsch <i>Inhaltsaushandlung</i> oder <i>Inhaltsvereinbarung</i>) ist ein Mechanismus des Hypertext Transfer Protocol (HTTP), bei dem Client und Server aushandeln, in welcher Form eine Ressource übertragen wird. Dieselbe URL kann so je nach Fähigkeiten und Einstellungen des Clients unterschiedliche Repräsentationen liefern – etwa ein anderes Medienformat, eine andere Sprache oder eine andere Zeichenkodierung.</p>
+<h2>Verfahren</h2>
+<p>Bei der servergesteuerten Aushandlung sendet der Client seine Präferenzen in den Anfrage-Headern mit:</p>
+<ul>
+<li><code>Accept</code> – akzeptierte Medientypen, z. B. <code>text/html</code> oder <code>application/json</code></li>
+<li><code>Accept-Language</code> – bevorzugte Sprachen</li>
+<li><code>Accept-Encoding</code> – unterstützte Kompressionsverfahren wie gzip oder Brotli</li>
+<li><code>Accept-Charset</code> – akzeptierte Zeichensätze (heute kaum noch genutzt)</li>
+</ul>
+<p>Die Angaben können mit Qualitätswerten (q-Werten) gewichtet werden. Der Server wählt die am besten passende Repräsentation und teilt seine Wahl in der Antwort mit, etwa über <code>Content-Type</code> und <code>Vary</code>. Daneben existieren die agentengesteuerte Aushandlung, bei der der Server eine Liste von Varianten liefert und der Client auswählt, sowie die transparente Aushandlung als Kombination beider Verfahren.</p>
+<h2>Anwendung</h2>
+<p>Content Negotiation wird unter anderem bei mehrsprachigen Webseiten, bei Web-APIs (HTML-, JSON- oder XML-Ausgabe) und im Semantic Web eingesetzt, wo dieselbe Ressource als HTML-Seite für Menschen oder als RDF-Daten für Maschinen bereitgestellt wird.</p>
+</body>
+</html>

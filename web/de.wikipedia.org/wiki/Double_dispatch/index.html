@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Double Dispatch – Wikipedia</title>
+<style>
+body { font-family: sans-serif; margin: 0; color: #202122; background: #fff; }
+header { background: #f8f9fa; border-bottom: 1px solid #a2a9b1; padding: 10px 20px; }
+main { max-width: 960px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+h1 { font-family: serif; border-bottom: 1px solid #a2a9b1; padding-bottom: 4px; }
+h2 { font-family: serif; border-bottom: 1px solid #c8ccd1; }
+a { color: #0645ad; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: #f8f9fa; padding: 1px 4px; }
+figure { text-align: center; }
+</style>
+</head>
+<body>
+<header><strong>Wikipedia</strong> – Die freie Enzyklopädie</header>
+<main>
+<h1>Double Dispatch</h1>
+<figure><img src="images/hero.png" alt="Hero image (placeholder)"></figure>
+<p><b>Double Dispatch</b> ist ein Entwurfsmuster der objektorientierten Programmierung, bei dem die Auswahl der auszuführenden Methode von den Laufzeittypen zweier Objekte abhängt. Während die meisten objektorientierten Sprachen nur einfaches Dispatch unterstützen – die Methodenwahl richtet sich allein nach dem Typ des Empfängerobjekts –, bezieht Double Dispatch auch den Typ eines Arguments ein.</p>
+<h2>Problemstellung</h2>
+<p>Soll etwa beim Zusammenstoß zweier Spielelemente (Raumschiff und Asteroid, Raumschiff und Raumschiff usw.) jeweils unterschiedliches Verhalten ausgelöst werden, reicht die dynamische Typinformation eines einzelnen Objekts nicht aus. Eine Lösung mit Fallunterscheidungen über Typen (<code>instanceof</code>-Ketten) ist fehleranfällig und schlecht erweiterbar.</p>
+<h2>Lösung</h2>
+<p>Das erste Objekt erhält die Nachricht und ruft seinerseits eine spezialisierte Methode auf dem zweiten Objekt auf, wobei es sich selbst als Argument übergibt. Dadurch werden beide Laufzeittypen berücksichtigt. Das bekannteste Anwendungsbeispiel und eine Standardumsetzung ist das Visitor-Muster (Besuchermuster), bei dem ein Besucherobjekt je nach besuchtem Elementtyp eine passende <code>visit</code>-Methode durchläuft.</p>
+<h2>Sprachunterstützung</h2>
+<p>Einige Sprachen wie Common Lisp (CLOS) oder Julia bieten nativ multiples Dispatch, sodass die Methodenwahl direkt von allen Argumenttypen abhängt. In Sprachen wie Java, C++ oder C# muss Double Dispatch von Hand nachgebaut werden.</p>
+</main>
+</body>
+</html>
